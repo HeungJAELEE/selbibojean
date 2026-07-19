@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-label="피드백 제어와 PID: 오차를 보고, 누적하고, 변화를 예측한다">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#334155"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+<style>
+text{font-family:Arial,"Noto Sans KR",sans-serif;fill:#0f172a} .title{font-size:32px;font-weight:700}.sub{font-size:18px;fill:#64748b} .h{font-size:22px;font-weight:700}.b{font-size:17px}.s{font-size:15px;fill:#64748b} .tiny{font-size:13px;fill:#64748b} .axis{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#arr)} .grid{stroke:#cbd5e1;stroke-width:1;stroke-dasharray:4 5}.panel{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.5}.label{font-size:16px;font-weight:700}.white{fill:#fff}.num{font-size:26px;font-weight:700}
+</style>
+</defs>
+<rect width="1200" height="780" fill="#fff"/>
+<text x="60" y="54" class="title">피드백 제어와 PID: 오차를 보고, 누적하고, 변화를 예측한다</text>
+<text x="60" y="84" class="sub">제어기는 목표값과 측정값의 차이 e(t)를 이용해 공정 입력을 계속 조정한다.</text>
+<rect x="55" y="125" width="1090" height="255" rx="18" class="panel"/>
+<text x="90" y="165" class="h">폐루프(피드백) 흐름</text>
+<rect x="100" y="215" width="135" height="70" rx="12" fill="#e0f2fe" stroke="#2563eb" stroke-width="2"/><text x="168" y="245" text-anchor="middle" class="label">목표값 r</text><text x="168" y="270" text-anchor="middle" class="s">어디로 갈까?</text>
+<circle cx="305" cy="250" r="33" fill="#fff" stroke="#334155" stroke-width="3"/><text x="305" y="244" text-anchor="middle" class="num">Σ</text><text x="293" y="275" class="label">+</text><text x="312" y="290" class="label">−</text>
+<rect x="385" y="215" width="155" height="70" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/><text x="462" y="246" text-anchor="middle" class="label">PID 제어기</text><text x="462" y="271" text-anchor="middle" class="s">u(t) 결정</text>
+<rect x="605" y="215" width="155" height="70" rx="12" fill="#ccfbf1" stroke="#0f766e" stroke-width="2"/><text x="682" y="246" text-anchor="middle" class="label">제어대상</text><text x="682" y="271" text-anchor="middle" class="s">밸브·모터·공정</text>
+<rect x="825" y="215" width="135" height="70" rx="12" fill="#e0f2fe" stroke="#2563eb" stroke-width="2"/><text x="892" y="246" text-anchor="middle" class="label">출력 y</text><text x="892" y="271" text-anchor="middle" class="s">실제 결과</text>
+<line x1="235" y1="250" x2="270" y2="250" stroke="#334155" stroke-width="3" marker-end="url(#arr)"/>
+<line x1="338" y1="250" x2="380" y2="250" stroke="#334155" stroke-width="3" marker-end="url(#arr)"/>
+<line x1="540" y1="250" x2="600" y2="250" stroke="#334155" stroke-width="3" marker-end="url(#arr)"/>
+<line x1="760" y1="250" x2="820" y2="250" stroke="#334155" stroke-width="3" marker-end="url(#arr)"/>
+<rect x="825" y="320" width="135" height="45" rx="10" fill="#fff" stroke="#64748b" stroke-width="2"/><text x="892" y="348" text-anchor="middle" class="label">센서</text>
+<path d="M892 285 L892 315 M825 343 H305 V287" fill="none" stroke="#64748b" stroke-width="3" marker-end="url(#arr)"/>
+<text x="552" y="335" text-anchor="middle" class="s">측정값을 되먹임</text>
+<rect x="55" y="410" width="340" height="245" rx="18" fill="#e0f2fe" stroke="#2563eb"/>
+<rect x="430" y="410" width="340" height="245" rx="18" fill="#ccfbf1" stroke="#0f766e"/>
+<rect x="805" y="410" width="340" height="245" rx="18" fill="#fef3c7" stroke="#d97706"/>
+<text x="225" y="452" text-anchor="middle" class="h" fill="#2563eb">P: 지금 오차</text>
+<text x="225" y="500" text-anchor="middle" class="num">uₚ = Kₚe</text>
+<text x="225" y="542" text-anchor="middle" class="b">오차가 클수록 즉시 크게 반응</text>
+<text x="225" y="575" text-anchor="middle" class="s">너무 크면 진동·불안정 가능</text>
+<text x="600" y="452" text-anchor="middle" class="h" fill="#0f766e">I: 오차의 누적</text>
+<text x="600" y="500" text-anchor="middle" class="num">uᵢ ∝ ∫e dt</text>
+<text x="600" y="542" text-anchor="middle" class="b">작은 오차도 쌓아 정상편차 제거</text>
+<text x="600" y="575" text-anchor="middle" class="s">과도하면 오버슈트·와인드업</text>
+<text x="975" y="452" text-anchor="middle" class="h" fill="#d97706">D: 오차의 변화율</text>
+<text x="975" y="500" text-anchor="middle" class="num">uᴅ ∝ de/dt</text>
+<text x="975" y="542" text-anchor="middle" class="b">급격한 변화를 미리 제동</text>
+<text x="975" y="575" text-anchor="middle" class="s">측정 노이즈에 민감</text>
+<rect x="180" y="682" width="840" height="50" rx="12" fill="#fee2e2"/>
+<text x="600" y="714" text-anchor="middle" class="b">튜닝은 ‘빠르게’만이 목표가 아니다: 안정성·오버슈트·정상편차·조작량을 함께 본다.</text>
+<line x1="60" y1="738" x2="1140" y2="738" stroke="#cbd5e1"/>
+<text x="60" y="763" class="tiny">각 항의 효과는 공정 동특성·샘플링·필터·포화·튜닝값에 따라 달라짐</text>
+</svg>

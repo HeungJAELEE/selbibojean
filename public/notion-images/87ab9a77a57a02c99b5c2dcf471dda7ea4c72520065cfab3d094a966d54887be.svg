@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="725" viewBox="0 0 1200 725" role="img" aria-label="파스칼 원리와 실린더 힘: 압력은 같게, 힘은 면적만큼">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#334155"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+<style>
+text{font-family:Arial,"Noto Sans KR",sans-serif;fill:#0f172a} .title{font-size:32px;font-weight:700}.sub{font-size:18px;fill:#64748b} .h{font-size:22px;font-weight:700}.b{font-size:17px}.s{font-size:15px;fill:#64748b} .tiny{font-size:13px;fill:#64748b} .axis{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#arr)} .grid{stroke:#cbd5e1;stroke-width:1;stroke-dasharray:4 5}.panel{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.5}.label{font-size:16px;font-weight:700}.white{fill:#fff}.num{font-size:26px;font-weight:700}
+</style>
+</defs>
+<rect width="1200" height="725" fill="#fff"/>
+<text x="60" y="54" class="title">파스칼 원리와 실린더 힘: 압력은 같게, 힘은 면적만큼</text>
+<text x="60" y="84" class="sub">밀폐 유체에서는 p = F/A가 전달되므로 같은 압력에서 피스톤 면적이 크면 힘이 커진다.</text>
+<rect x="55" y="125" width="650" height="480" rx="18" class="panel"/>
+<text x="90" y="165" class="h">유압 프레스 개념도</text>
+<path d="M160 445 L160 275 L350 275 L350 445 L520 445 L520 210 L650 210 L650 520 L160 520 Z" fill="#e0f2fe" stroke="#2563eb" stroke-width="5"/>
+<rect x="172" y="245" width="166" height="35" rx="4" fill="#334155"/>
+<rect x="532" y="180" width="106" height="35" rx="4" fill="#334155"/>
+<line x1="255" y1="145" x2="255" y2="236" stroke="#dc2626" stroke-width="7" marker-end="url(#arr)"/>
+<line x1="585" y1="170" x2="585" y2="88" stroke="#0f766e" stroke-width="9" marker-end="url(#arr)"/>
+<text x="255" y="132" text-anchor="middle" class="label" fill="#dc2626">입력 F₁</text>
+<text x="585" y="78" text-anchor="middle" class="label" fill="#0f766e">출력 F₂</text>
+<text x="255" y="310" text-anchor="middle" class="b">작은 면적 A₁</text>
+<text x="585" y="252" text-anchor="middle" class="b">큰 면적 A₂</text>
+<text x="405" y="485" text-anchor="middle" class="num" fill="#2563eb">F₁/A₁ = F₂/A₂ = p</text>
+<rect x="735" y="125" width="410" height="480" rx="18" class="panel"/>
+<text x="770" y="165" class="h">같은 압력 p에서 F = pA</text>
+<line x1="800" y1="520" x2="1095" y2="520" class="axis"/>
+<line x1="800" y1="520" x2="800" y2="220" class="axis"/>
+<line x1="800" y1="445" x2="1080" y2="445" class="grid"/>
+<line x1="800" y1="370" x2="1080" y2="370" class="grid"/>
+<line x1="800" y1="295" x2="1080" y2="295" class="grid"/>
+<polyline points="800,520 870,445 940,370 1010,295 1080,220" fill="none" stroke="#2563eb" stroke-width="7"/>
+<circle cx="870" cy="445" r="8" fill="#2563eb"/><circle cx="1010" cy="295" r="8" fill="#2563eb"/>
+<text x="1090" y="550" text-anchor="end" class="s">피스톤 면적 A</text>
+<text x="760" y="220" transform="rotate(-90 760 220)" class="s">발생 힘 F</text>
+<text x="940" y="576" text-anchor="middle" class="label">면적 2배 → 힘 2배</text>
+<rect x="160" y="625" width="880" height="52" rx="13" fill="#fef3c7"/>
+<text x="600" y="658" text-anchor="middle" class="b">힘을 얻는 대신 이동거리는 줄어든다: 이상적 비압축성 조건에서 A₁x₁ = A₂x₂</text>
+<line x1="60" y1="683" x2="1140" y2="683" stroke="#cbd5e1"/>
+<text x="60" y="708" class="tiny">마찰·누설·배압을 제외한 이론 관계 — 실제 출력은 이론값보다 작음</text>
+</svg>

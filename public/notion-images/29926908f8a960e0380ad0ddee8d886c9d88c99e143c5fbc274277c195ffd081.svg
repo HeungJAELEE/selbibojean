@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="공기압과 유압이 다르게 느껴지는 이유: 매체의 압축성">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#334155"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+<style>
+text{font-family:Arial,"Noto Sans KR",sans-serif;fill:#0f172a} .title{font-size:32px;font-weight:700}.sub{font-size:18px;fill:#64748b} .h{font-size:22px;font-weight:700}.b{font-size:17px}.s{font-size:15px;fill:#64748b} .tiny{font-size:13px;fill:#64748b} .axis{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#arr)} .grid{stroke:#cbd5e1;stroke-width:1;stroke-dasharray:4 5}.panel{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.5}.label{font-size:16px;font-weight:700}.white{fill:#fff}.num{font-size:26px;font-weight:700}
+</style>
+</defs>
+<rect width="1200" height="750" fill="#fff"/>
+<text x="60" y="54" class="title">공기압과 유압이 다르게 느껴지는 이유: 매체의 압축성</text>
+<text x="60" y="84" class="sub">같은 피스톤을 눌러도 공기는 부피가 눈에 띄게 줄고, 작동유는 체적 변화가 매우 작다.</text>
+<rect x="55" y="125" width="525" height="500" rx="18" fill="#e0f2fe" stroke="#2563eb" stroke-width="2"/>
+<rect x="620" y="125" width="525" height="500" rx="18" fill="#ccfbf1" stroke="#0f766e" stroke-width="2"/>
+<text x="318" y="170" text-anchor="middle" class="h" fill="#2563eb">공기압: ‘스프링 같은’ 압축공기</text>
+<rect x="145" y="235" width="345" height="260" rx="14" fill="#fff" stroke="#334155" stroke-width="4"/>
+<rect x="155" y="265" width="325" height="35" fill="#334155"/>
+<line x1="318" y1="195" x2="318" y2="255" stroke="#dc2626" stroke-width="8" marker-end="url(#arr)"/>
+<path d="M190 350 q18 -28 36 0 t36 0 t36 0 t36 0 t36 0 t36 0" fill="none" stroke="#2563eb" stroke-width="6"/>
+<circle cx="195" cy="430" r="10" fill="#2563eb"/><circle cx="240" cy="410" r="10" fill="#2563eb"/><circle cx="285" cy="438" r="10" fill="#2563eb"/><circle cx="330" cy="414" r="10" fill="#2563eb"/><circle cx="375" cy="435" r="10" fill="#2563eb"/><circle cx="425" cy="408" r="10" fill="#2563eb"/>
+<text x="318" y="540" text-anchor="middle" class="b">압축·팽창 → 탄성, 응답 지연, 위치 강성 저하</text>
+<text x="318" y="575" text-anchor="middle" class="label">빠른 동작·청결 / 정밀 저속·큰 힘에는 불리</text>
+<text x="883" y="170" text-anchor="middle" class="h" fill="#0f766e">유압: 거의 비압축성인 작동유</text>
+<rect x="710" y="235" width="345" height="260" rx="14" fill="#fff" stroke="#334155" stroke-width="4"/>
+<rect x="720" y="250" width="325" height="35" fill="#334155"/>
+<line x1="883" y1="195" x2="883" y2="240" stroke="#dc2626" stroke-width="8" marker-end="url(#arr)"/>
+<circle cx="755" cy="325" r="9" fill="#0f766e" opacity=".86"/><circle cx="798" cy="325" r="9" fill="#0f766e" opacity=".86"/><circle cx="841" cy="325" r="9" fill="#0f766e" opacity=".86"/><circle cx="884" cy="325" r="9" fill="#0f766e" opacity=".86"/><circle cx="927" cy="325" r="9" fill="#0f766e" opacity=".86"/><circle cx="970" cy="325" r="9" fill="#0f766e" opacity=".86"/><circle cx="1013" cy="325" r="9" fill="#0f766e" opacity=".86"/><circle cx="755" cy="352" r="9" fill="#0f766e" opacity=".86"/><circle cx="798" cy="352" r="9" fill="#0f766e" opacity=".86"/><circle cx="841" cy="352" r="9" fill="#0f766e" opacity=".86"/><circle cx="884" cy="352" r="9" fill="#0f766e" opacity=".86"/><circle cx="927" cy="352" r="9" fill="#0f766e" opacity=".86"/><circle cx="970" cy="352" r="9" fill="#0f766e" opacity=".86"/><circle cx="1013" cy="352" r="9" fill="#0f766e" opacity=".86"/><circle cx="755" cy="379" r="9" fill="#0f766e" opacity=".86"/><circle cx="798" cy="379" r="9" fill="#0f766e" opacity=".86"/><circle cx="841" cy="379" r="9" fill="#0f766e" opacity=".86"/><circle cx="884" cy="379" r="9" fill="#0f766e" opacity=".86"/><circle cx="927" cy="379" r="9" fill="#0f766e" opacity=".86"/><circle cx="970" cy="379" r="9" fill="#0f766e" opacity=".86"/><circle cx="1013" cy="379" r="9" fill="#0f766e" opacity=".86"/><circle cx="755" cy="406" r="9" fill="#0f766e" opacity=".86"/><circle cx="798" cy="406" r="9" fill="#0f766e" opacity=".86"/><circle cx="841" cy="406" r="9" fill="#0f766e" opacity=".86"/><circle cx="884" cy="406" r="9" fill="#0f766e" opacity=".86"/><circle cx="927" cy="406" r="9" fill="#0f766e" opacity=".86"/><circle cx="970" cy="406" r="9" fill="#0f766e" opacity=".86"/><circle cx="1013" cy="406" r="9" fill="#0f766e" opacity=".86"/><circle cx="755" cy="433" r="9" fill="#0f766e" opacity=".86"/><circle cx="798" cy="433" r="9" fill="#0f766e" opacity=".86"/><circle cx="841" cy="433" r="9" fill="#0f766e" opacity=".86"/><circle cx="884" cy="433" r="9" fill="#0f766e" opacity=".86"/><circle cx="927" cy="433" r="9" fill="#0f766e" opacity=".86"/><circle cx="970" cy="433" r="9" fill="#0f766e" opacity=".86"/><circle cx="1013" cy="433" r="9" fill="#0f766e" opacity=".86"/><circle cx="755" cy="460" r="9" fill="#0f766e" opacity=".86"/><circle cx="798" cy="460" r="9" fill="#0f766e" opacity=".86"/><circle cx="841" cy="460" r="9" fill="#0f766e" opacity=".86"/><circle cx="884" cy="460" r="9" fill="#0f766e" opacity=".86"/><circle cx="927" cy="460" r="9" fill="#0f766e" opacity=".86"/><circle cx="970" cy="460" r="9" fill="#0f766e" opacity=".86"/><circle cx="1013" cy="460" r="9" fill="#0f766e" opacity=".86"/>
+<text x="883" y="540" text-anchor="middle" class="b">체적 변화 작음 → 높은 강성, 안정된 저속 제어</text>
+<text x="883" y="575" text-anchor="middle" class="label">큰 힘 / 누유·오염·발열 관리 필요</text>
+<rect x="175" y="650" width="850" height="52" rx="13" fill="#fef3c7"/>
+<text x="600" y="683" text-anchor="middle" class="b">시험 키워드: 공압 = 압축성 큼 · 유압 = 체적탄성계수 큼(압축되기 어려움)</text>
+<line x1="60" y1="708" x2="1140" y2="708" stroke="#cbd5e1"/>
+<text x="60" y="733" class="tiny">작동유도 완전 비압축성은 아니며, 호스 탄성·혼입 공기는 유압계 강성을 낮춤</text>
+</svg>

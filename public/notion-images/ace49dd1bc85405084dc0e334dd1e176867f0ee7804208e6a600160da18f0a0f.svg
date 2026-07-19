@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="4–20 mA 스케일링: 4 mA가 0%, 20 mA가 100%">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#334155"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+<style>
+text{font-family:Arial,"Noto Sans KR",sans-serif;fill:#0f172a} .title{font-size:32px;font-weight:700}.sub{font-size:18px;fill:#64748b} .h{font-size:22px;font-weight:700}.b{font-size:17px}.s{font-size:15px;fill:#64748b} .tiny{font-size:13px;fill:#64748b} .axis{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#arr)} .grid{stroke:#cbd5e1;stroke-width:1;stroke-dasharray:4 5}.panel{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.5}.label{font-size:16px;font-weight:700}.white{fill:#fff}.num{font-size:26px;font-weight:700}
+</style>
+</defs>
+<rect width="1200" height="675" fill="#fff"/>
+<text x="60" y="54" class="title">4–20 mA 스케일링: 4 mA가 0%, 20 mA가 100%</text>
+<text x="60" y="84" class="sub">‘라이브 제로(live zero)’ 덕분에 0% 측정값과 전원·배선 이상을 구분할 실마리가 생긴다.</text>
+<rect x="55" y="125" width="760" height="500" rx="18" class="panel"/>
+<text x="90" y="165" class="h">선형 변환 그래프</text>
+<line x1="150" y1="550" x2="750" y2="550" class="axis"/>
+<line x1="150" y1="550" x2="150" y2="205" class="axis"/>
+<line x1="150" y1="480" x2="735" y2="480" class="grid"/>
+<line x1="150" y1="340" x2="735" y2="340" class="grid"/>
+<line x1="150" y1="220" x2="735" y2="220" class="grid"/>
+<line x1="150" y1="550" x2="150" y2="195" stroke="#dc2626" stroke-width="5" opacity=".25"/>
+<polyline points="150,480 435,340 720,220" fill="none" stroke="#2563eb" stroke-width="8"/>
+<circle cx="150" cy="480" r="10" fill="#2563eb"/><circle cx="435" cy="340" r="10" fill="#2563eb"/><circle cx="720" cy="220" r="10" fill="#2563eb"/>
+<text x="130" y="486" text-anchor="end" class="label">4</text><text x="130" y="346" text-anchor="end" class="label">12</text><text x="130" y="226" text-anchor="end" class="label">20</text><text x="130" y="555" text-anchor="end" class="label" fill="#dc2626">0</text>
+<text x="150" y="580" text-anchor="middle" class="label">0%</text><text x="435" y="580" text-anchor="middle" class="label">50%</text><text x="720" y="580" text-anchor="middle" class="label">100%</text>
+<text x="735" y="607" text-anchor="end" class="s">공정 범위 (%)</text>
+<text x="95" y="225" transform="rotate(-90 95 225)" class="s">루프 전류 (mA)</text>
+<text x="235" y="455" class="label" fill="#2563eb">4 mA = 정상 하한</text>
+<text x="165" y="525" class="label" fill="#dc2626">0 mA 부근 = 단선·전원 상실 의심</text>
+<rect x="845" y="125" width="300" height="500" rx="18" fill="#e0f2fe" stroke="#2563eb" stroke-width="2"/>
+<text x="995" y="175" text-anchor="middle" class="h">암기 공식</text>
+<text x="995" y="242" text-anchor="middle" class="num" fill="#2563eb">(I − 4) / 16</text>
+<text x="995" y="280" text-anchor="middle" class="b">= 범위 내 비율</text>
+<line x1="885" y1="315" x2="1105" y2="315" stroke="#cbd5e1"/>
+<text x="995" y="360" text-anchor="middle" class="label">예: 12 mA</text>
+<text x="995" y="405" text-anchor="middle" class="num">8 / 16 = 50%</text>
+<text x="995" y="465" text-anchor="middle" class="b">PV = LRV</text>
+<text x="995" y="493" text-anchor="middle" class="b">+ 비율 × (URV − LRV)</text>
+<rect x="875" y="535" width="240" height="55" rx="12" fill="#fef3c7"/>
+<text x="995" y="559" text-anchor="middle" class="s">이상 판정 임계값은</text>
+<text x="995" y="580" text-anchor="middle" class="s">장치·표준 설정을 확인</text>
+<line x1="60" y1="633" x2="1140" y2="633" stroke="#cbd5e1"/>
+<text x="60" y="658" class="tiny">2선식 루프는 공급전압·송신기 최소전압·배선 및 수신저항의 전압강하도 함께 검토</text>
+</svg>

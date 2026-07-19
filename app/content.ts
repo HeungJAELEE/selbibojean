@@ -63,6 +63,8 @@ export type TheoryContentBlock =
       caption?: string;
       sourceUrl?: string;
       rightsStatus?: "cleared" | "unknown" | "link-only";
+      width?: number;
+      height?: number;
     }
   | { type: "divider" };
 
@@ -1072,13 +1074,17 @@ function mergeSubjectCatalog(curated: Subject[], imported: Subject[]): Subject[]
         continue;
       }
 
-      for (const importedTopic of importedChapter.topics) {
-        const collision = existingChapter.topics.some((topic) => topic.id === importedTopic.id);
-        if (collision) {
-          throw new Error(`Duplicate topic id in Notion catalog: ${importedTopic.id}`);
-        }
-        existingChapter.topics.push(importedTopic);
+      const collision = importedChapter.topics.find((importedTopic) =>
+        existingChapter.topics.some((topic) => topic.id === importedTopic.id),
+      );
+      if (collision) {
+        throw new Error(`Duplicate topic id in Notion catalog: ${collision.id}`);
       }
+
+      existingChapter.topics = [
+        ...importedChapter.topics,
+        ...existingChapter.topics,
+      ];
     }
   }
 

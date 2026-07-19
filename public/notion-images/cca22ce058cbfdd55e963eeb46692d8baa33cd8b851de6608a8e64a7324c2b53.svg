@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980">
+<rect width="1600" height="980" fill="#f7f8fa"/>
+<style>.t{font-family:Arial,'Noto Sans KR',sans-serif;fill:#17212b}.h{font-size:34px;font-weight:700}.s{font-size:25px;font-weight:700}.b{font-size:20px}.n{font-size:18px}.box{fill:#fff;stroke:#243b53;stroke-width:3;rx:16}.blue{fill:#e8f0ff;stroke:#2463eb;stroke-width:3;rx:14}.yellow{fill:#fff3cd;stroke:#b07b00;stroke-width:3;rx:14}.red{fill:#ffe8e8;stroke:#c73535;stroke-width:3;rx:14}.arrow{stroke:#2463eb;stroke-width:5;fill:none;marker-end:url(#m)}</style>
+<defs><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2463eb"/></marker></defs>
+<text class="t h" x="60" y="62">실물·기호·숫자형 문제 판별판</text>
+<rect class="box" x="50" y="100" width="480" height="390"/>
+<text class="t s" x="80" y="145">① SEMS 볼트(와셔 조립 볼트)</text>
+<rect x="210" y="185" width="160" height="58" rx="8" fill="#66788a"/><rect x="275" y="240" width="30" height="170" fill="#8a99a8"/>
+<path d="M275 260 h30 M275 280 h30 M275 300 h30 M275 320 h30 M275 340 h30 M275 360 h30 M275 380 h30 M275 400 h30" stroke="#fff" stroke-width="4"/>
+<ellipse cx="290" cy="260" rx="75" ry="18" fill="#c9d3dc" stroke="#243b53" stroke-width="3"/>
+<ellipse cx="290" cy="260" rx="27" ry="8" fill="#f7f8fa"/>
+<path d="M220 290 H120" class="arrow"/><text class="t b" x="78" y="326">와셔가 빠지지 않게</text><text class="t b" x="92" y="352">미리 조립됨</text>
+<text class="t n" x="80" y="445">플랜지 볼트(머리와 플랜지 일체)와 구별</text>
+<rect class="box" x="560" y="100" width="480" height="390"/>
+<text class="t s" x="590" y="145">② M18×2.0 읽기</text>
+<text class="t b" x="600" y="200">M = 미터 보통/가는나사 계열 표기</text>
+<text class="t b" x="600" y="245">18 = 호칭 바깥지름 18 mm</text>
+<text class="t b" x="600" y="290">2.0 = 피치 2.0 mm</text>
+<circle cx="800" cy="370" r="90" fill="#e8f0ff" stroke="#2463eb" stroke-width="4"/><circle cx="800" cy="370" r="70" fill="#fff" stroke="#243b53" stroke-width="4" stroke-dasharray="12 10"/>
+<path d="M800 370 H890" class="arrow"/><text class="t b" x="760" y="475">바깥 반지름 = 9 mm</text>
+<rect class="yellow" x="1070" y="100" width="480" height="390"/>
+<text class="t s" x="1100" y="145">③ 연삭숫돌 법정 숫자</text>
+<text class="t h" x="1140" y="235">작업 시작 전 1분</text>
+<text class="t h" x="1140" y="315">교체 후 3분</text>
+<text class="t b" x="1120" y="380">위험 부위 명칭: 덮개(방호덮개)</text>
+<text class="t n" x="1120" y="430">최고 사용회전속도 초과 금지</text>
+<text class="t n" x="1120" y="460">측면용이 아니면 측면 사용 금지</text>
+<rect class="box" x="50" y="530" width="1500" height="395"/>
+<text class="t s" x="80" y="575">④ 윤활방법 사진판별: 무엇이 오일을 움직이는가?</text>
+<rect class="blue" x="90" y="625" width="245" height="205"/><text class="t s" x="155" y="670">적하</text><text class="t b" x="120" y="715">오일컵</text><text class="t b" x="120" y="750">모세관·사이펀</text><text class="t n" x="120" y="790">방울/공급점 확인</text>
+<rect class="blue" x="385" y="625" width="245" height="205"/><text class="t s" x="455" y="670">유욕</text><text class="t b" x="420" y="715">오일에 잠김</text><text class="t b" x="420" y="750">링이 끌어올림</text><text class="t n" x="420" y="790">저·중속</text>
+<rect class="blue" x="680" y="625" width="245" height="205"/><text class="t s" x="750" y="670">패드</text><text class="t b" x="715" y="715">패드+스프링</text><text class="t b" x="715" y="750">축에 눌러 공급</text><text class="t n" x="715" y="790">철도차량 예</text>
+<rect class="blue" x="975" y="625" width="245" height="205"/><text class="t s" x="1045" y="670">비산</text><text class="t b" x="1010" y="715">국자·회전체</text><text class="t b" x="1010" y="750">오일을 튀김</text><text class="t n" x="1010" y="790">내연기관 예</text>
+<rect class="blue" x="1270" y="625" width="245" height="205"/><text class="t s" x="1330" y="670">순환</text><text class="t b" x="1305" y="715">펌프 압력 또는</text><text class="t b" x="1305" y="750">중력 수두</text><text class="t n" x="1305" y="790">회수·여과·냉각</text>
+<text class="t b" x="90" y="885">함정: 패드급유·유욕급유·비산급유를 “오일이 천천히 간다”는 이유만으로 적하급유에 포함하지 않는다.</text>
+</svg>

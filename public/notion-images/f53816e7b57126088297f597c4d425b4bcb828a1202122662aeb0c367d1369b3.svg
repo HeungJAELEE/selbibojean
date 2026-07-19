@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="755" viewBox="0 0 1200 755" role="img" aria-label="용접 입열: 전류·전압에는 비례, 이동속도에는 반비례">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#334155"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+<style>
+text{font-family:Arial,"Noto Sans KR",sans-serif;fill:#0f172a} .title{font-size:32px;font-weight:700}.sub{font-size:18px;fill:#64748b} .h{font-size:22px;font-weight:700}.b{font-size:17px}.s{font-size:15px;fill:#64748b} .tiny{font-size:13px;fill:#64748b} .axis{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#arr)} .grid{stroke:#cbd5e1;stroke-width:1;stroke-dasharray:4 5}.panel{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.5}.label{font-size:16px;font-weight:700}.white{fill:#fff}.num{font-size:26px;font-weight:700}
+</style>
+</defs>
+<rect width="1200" height="755" fill="#fff"/>
+<text x="60" y="54" class="title">용접 입열: 전류·전압에는 비례, 이동속도에는 반비례</text>
+<text x="60" y="84" class="sub">같은 공정·열효율을 가정하면 H ∝ VI/v. 단위가 mm/s인지 mm/min인지 먼저 확인한다.</text>
+<rect x="55" y="125" width="570" height="500" rx="18" class="panel"/>
+<text x="90" y="165" class="h">속도 변화와 입열 (V·I·η 일정)</text>
+<line x1="145" y1="510" x2="580" y2="510" class="axis"/><line x1="145" y1="510" x2="145" y2="205" class="axis"/>
+<polyline points="145.0,230.0 159.0,263.9 173.0,292.2 187.0,316.2 201.0,336.7 215.0,354.4 229.0,370.0 243.0,383.7 257.0,395.9 271.0,406.8 285.0,416.7 299.0,425.6 313.0,433.6 327.0,441.0 341.0,447.8 355.0,454.0 369.0,459.7 383.0,465.1 397.0,470.0 411.0,474.6 425.0,478.9 439.0,482.9 453.0,486.7 467.0,490.2 481.0,493.5 495.0,496.7 509.0,499.6 523.0,502.4 537.0,505.1 551.0,507.6" fill="none" stroke="#2563eb" stroke-width="7"/>
+<circle cx="145" cy="230" r="9" fill="#2563eb"/><circle cx="285" cy="417" r="9" fill="#2563eb"/><circle cx="565" cy="510" r="9" fill="#2563eb"/>
+<text x="145" y="550" text-anchor="middle" class="label">0.5× v</text><text x="285" y="550" text-anchor="middle" class="label">1× v</text><text x="565" y="550" text-anchor="middle" class="label">2× v</text>
+<text x="170" y="220" class="label">2× H</text><text x="300" y="405" class="label">1× H</text><text x="505" y="495" class="label">0.5× H</text>
+<text x="570" y="585" text-anchor="end" class="s">이동속도 v (정규화)</text><text x="100" y="230" transform="rotate(-90 100 230)" class="s">입열 H</text>
+<rect x="660" y="125" width="485" height="500" rx="18" class="panel"/>
+<text x="902" y="175" text-anchor="middle" class="num" fill="#2563eb">H = ηVI / v</text>
+<text x="902" y="215" text-anchor="middle" class="s">단위 환산계수는 속도 단위에 따라 적용</text>
+<rect x="705" y="255" width="395" height="75" rx="14" fill="#e0f2fe"/>
+<text x="902" y="285" text-anchor="middle" class="label" fill="#2563eb">전압 V ↑ 또는 전류 I ↑</text><text x="902" y="315" text-anchor="middle" class="b">→ 입열 H ↑</text>
+<rect x="705" y="350" width="395" height="75" rx="14" fill="#ccfbf1"/>
+<text x="902" y="380" text-anchor="middle" class="label" fill="#0f766e">이동속도 v ↑</text><text x="902" y="410" text-anchor="middle" class="b">→ 입열 H ↓</text>
+<rect x="690" y="465" width="140" height="110" rx="14" fill="#fee2e2"/><text x="760" y="495" text-anchor="middle" class="label">너무 낮음</text><text x="760" y="525" text-anchor="middle" class="s">융합·용입 불량</text><text x="760" y="550" text-anchor="middle" class="s">급랭·경화 위험</text>
+<rect x="835" y="465" width="135" height="110" rx="14" fill="#ccfbf1"/><text x="902" y="495" text-anchor="middle" class="label">WPS 범위</text><text x="902" y="525" text-anchor="middle" class="s">재료·두께·자세</text><text x="902" y="550" text-anchor="middle" class="s">층간온도와 함께</text>
+<rect x="975" y="465" width="140" height="110" rx="14" fill="#fef3c7"/><text x="1045" y="495" text-anchor="middle" class="label">너무 높음</text><text x="1045" y="525" text-anchor="middle" class="s">넓은 HAZ·변형</text><text x="1045" y="550" text-anchor="middle" class="s">조직 조대화 위험</text>
+<rect x="150" y="650" width="900" height="55" rx="13" fill="#fee2e2"/>
+<text x="600" y="674" text-anchor="middle" class="b">입열은 클수록도, 작을수록도 좋지 않다. 승인된 WPS의 범위와 공정별 열효율 η를 따른다.</text>
+<text x="600" y="696" text-anchor="middle" class="s">mm/s: H(kJ/mm)=ηVI/(1000v) · mm/min: H(kJ/mm)=0.06ηVI/v</text>
+<line x1="60" y1="713" x2="1140" y2="713" stroke="#cbd5e1"/>
+<text x="60" y="738" class="tiny">정규화 예시 — 실제 열영향은 재료·두께·구속·패스·예열·층간온도·공정에 좌우</text>
+</svg>

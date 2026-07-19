@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
@@ -9,6 +10,7 @@ const appGeneratedRoot = path.join(projectRoot, "app", "generated");
 const publicRoot = path.join(projectRoot, "public");
 const publicGeneratedRoot = path.join(publicRoot, "generated");
 const topicRoot = path.join(publicGeneratedRoot, "topics");
+const notionImageRoot = path.join(publicRoot, "notion-images");
 
 const allowedBlockTypes = new Set([
   "paragraph",
@@ -22,18 +24,7 @@ const allowedBlockTypes = new Set([
   "divider",
 ]);
 
-const imageExtensions = new Set([
-  ".avif",
-  ".bmp",
-  ".gif",
-  ".jpeg",
-  ".jpg",
-  ".png",
-  ".svg",
-  ".tif",
-  ".tiff",
-  ".webp",
-]);
+const imageExtensions = new Set([".jpg", ".png", ".svg"]);
 
 async function listFilesRecursively(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -119,6 +110,8 @@ function assertBlock(block, topicId, blockIndex) {
         ["cleared", "unknown", "link-only"].includes(block.rightsStatus),
         `${label}.rightsStatus is invalid`,
       );
+      assert.ok(Number.isInteger(block.width) && block.width > 0, `${label}.width must be positive`);
+      assert.ok(Number.isInteger(block.height) && block.height > 0, `${label}.height must be positive`);
       break;
     case "divider":
       break;
@@ -163,7 +156,7 @@ test("Notion catalog preserves the complete source inventory", async () => {
   assert.equal(catalog.stats.headings, 556);
   assert.equal(catalog.stats.tables, 49);
   assert.equal(catalog.stats.images, 125);
-  assert.equal(catalog.stats.topics, 420);
+  assert.equal(catalog.stats.topics, 70);
   assert.equal(catalogTopics.length, catalog.stats.topics);
   assertUnique(catalogTopics.map((topic) => topic.id), "catalog topic ids");
 });
@@ -204,23 +197,29 @@ test("every catalog topic resolves to one matching payload and search entry", as
     assert.ok(searchEntry, `${topic.id} search entry is missing`);
     assert.equal(searchEntry.title, topic.title);
     assert.equal(typeof searchEntry.normalizedText, "string");
+    assert.ok(Array.isArray(searchEntry.sections), `${topic.id} search sections must be an array`);
   }
 });
 
 test("topic payloads use only supported blocks and preserve every table and image", async () => {
   const { payloads } = await importDataPromise;
   let tableCount = 0;
+  let headerTableCount = 0;
   let imageCount = 0;
 
   for (const { payload } of payloads) {
     payload.blocks.forEach((block, blockIndex) => {
       assertBlock(block, payload.id, blockIndex);
-      if (block.type === "table") tableCount += 1;
+      if (block.type === "table") {
+        tableCount += 1;
+        if (block.headers?.length) headerTableCount += 1;
+      }
       if (block.type === "image") imageCount += 1;
     });
   }
 
   assert.equal(tableCount, 49);
+  assert.equal(headerTableCount, 49);
   assert.equal(imageCount, 125);
 });
 
@@ -234,6 +233,7 @@ test("generated JSON contains no signed URLs, private Notion wrapper, or local p
     ["AWS signed query", /X-Amz-/i],
     ["AWS security token", /Security-Token/i],
     ["AWS object URL", /amazonaws\.com/i],
+    ["Notion temporary object host", /prod-files-secure/i],
     ["Notion ancestor wrapper", /<ancestor-path/i],
     ["Notion properties wrapper", /<properties/i],
     ["private workspace label", /Personal Space/i],
@@ -241,6 +241,8 @@ test("generated JSON contains no signed URLs, private Notion wrapper, or local p
     ["file URL", /file:\/\//i],
     ["Windows absolute path", /\b[A-Za-z]:[\\/]/],
     ["Unix local absolute path", /(?:^|["'\s])\/(?:Users|home|tmp|private\/tmp|var\/tmp|mnt|workspace)\//im],
+    ["raw display-math delimiter", /\$\$/],
+    ["raw TeX fraction", /\\frac\{/],
   ];
 
   for (const filePath of generatedFiles) {
@@ -251,29 +253,41 @@ test("generated JSON contains no signed URLs, private Notion wrapper, or local p
   }
 });
 
-test("rights-unknown images have no public source file", async () => {
+test("approved source images are published one-to-one with safe local paths", async () => {
   const { payloads } = await importDataPromise;
   const imageBlocks = payloads.flatMap(({ payload }) =>
     payload.blocks.filter((block) => block.type === "image"),
   );
-  const unknownImages = imageBlocks.filter((block) => block.rightsStatus !== "cleared");
-  const clearedPublicSources = new Set(
-    imageBlocks
-      .filter((block) => block.rightsStatus === "cleared" && block.src.startsWith("/generated/"))
-      .map((block) => block.src),
+  const publicImageFiles = (await listFilesRecursively(notionImageRoot)).filter((filePath) =>
+    imageExtensions.has(path.extname(filePath).toLowerCase()),
   );
 
   assert.equal(imageBlocks.length, 125);
-  for (const image of unknownImages) {
-    assert.equal(image.src, "", "an uncleared image must not expose a public or remote source");
+  assert.equal(publicImageFiles.length, 125);
+  assertUnique(imageBlocks.map((image) => image.src), "published image sources");
+
+  const imageSources = new Set();
+  for (const image of imageBlocks) {
+    assert.equal(image.rightsStatus, "cleared");
+    assert.match(image.src, /^\/notion-images\/[0-9a-f]{64}\.(?:svg|png|jpg)$/);
+    assert.ok(image.alt && image.alt !== "Notion 원문 이미지", `${image.src} needs contextual alt text`);
+    assert.ok(image.caption && image.caption !== "Notion 원문 이미지", `${image.src} needs a caption`);
+    imageSources.add(image.src);
   }
 
-  const publicGeneratedFiles = await listFilesRecursively(publicGeneratedRoot);
-  const publicImageFiles = publicGeneratedFiles.filter((filePath) =>
-    imageExtensions.has(path.extname(filePath).toLowerCase()),
-  );
   for (const filePath of publicImageFiles) {
     const publicUrl = `/${path.relative(publicRoot, filePath).split(path.sep).join("/")}`;
-    assert.ok(clearedPublicSources.has(publicUrl), `${publicUrl} is public without cleared rights`);
+    assert.ok(imageSources.has(publicUrl), `${publicUrl} is not referenced by one approved block`);
+    const bytes = await readFile(filePath);
+    const digest = createHash("sha256").update(bytes).digest("hex");
+    assert.equal(path.basename(filePath, path.extname(filePath)), digest, `${publicUrl} filename must match its bytes`);
+    if (path.extname(filePath).toLowerCase() === ".svg") {
+      const svg = bytes.toString("utf8");
+      assert.doesNotMatch(
+        svg,
+        /<\s*(?:script|foreignObject)\b|\son[a-z]+\s*=|javascript:|<!DOCTYPE|<!ENTITY|(?:href|xlink:href)\s*=\s*["']\s*(?:https?:|\/\/)/i,
+        `${publicUrl} contains active or external SVG content`,
+      );
+    }
   }
 });

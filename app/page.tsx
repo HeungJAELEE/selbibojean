@@ -49,6 +49,7 @@ type SearchIndexPayload = {
 
 const notionTopicCache = new Map<string, NotionTopicPayload>();
 const knownTopicIds = new Set(allTopics.map((topic) => topic.id));
+const NOTION_IMAGE_PATH_RE = /^\/notion-images\/[0-9a-f]{64}\.(svg|png|jpg)$/;
 
 const notionBlockTypes = new Set([
   "paragraph",
@@ -98,7 +99,10 @@ function isValidTheoryBlock(value: unknown): value is TheoryContentBlock {
   if (value.type === "image") {
     const optionalTextValid = [value.caption, value.sourceUrl].every((item) => item === undefined || typeof item === "string");
     const rightsValid = value.rightsStatus === undefined || ["cleared", "unknown", "link-only"].includes(String(value.rightsStatus));
-    return typeof value.src === "string" && typeof value.alt === "string" && optionalTextValid && rightsValid;
+    const dimensionsValid = [value.width, value.height].every(
+      (item) => item === undefined || (typeof item === "number" && Number.isInteger(item) && item > 0 && item <= 20_000),
+    );
+    return typeof value.src === "string" && typeof value.alt === "string" && optionalTextValid && rightsValid && dimensionsValid;
   }
   return false;
 }
@@ -248,16 +252,82 @@ function Badge({ children, tone = "neutral" }: { children: React.ReactNode; tone
   return <span className={`badge badge-${tone}`}>{children}</span>;
 }
 
-function NotionTheoryContent({ blocks }: { blocks: TheoryContentBlock[] }) {
+type NotionHeadingAnchor = {
+  blockIndex: number;
+  id: string;
+  level: number;
+  text: string;
+};
+
+function notionHeadingSlug(value: string) {
+  return value
+    .normalize("NFKC")
+    .toLocaleLowerCase("ko-KR")
+    .replace(/[^0-9a-z가-힣]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "section";
+}
+
+function getNotionHeadingAnchors(blocks: TheoryContentBlock[], topicId: string): NotionHeadingAnchor[] {
+  const occurrences = new Map<string, number>();
+  const anchors: NotionHeadingAnchor[] = [];
+
+  blocks.forEach((block, blockIndex) => {
+    if (block.type !== "heading") return;
+    const slug = notionHeadingSlug(block.text);
+    const occurrence = (occurrences.get(slug) ?? 0) + 1;
+    occurrences.set(slug, occurrence);
+    anchors.push({
+      blockIndex,
+      id: `${topicId}-section-${slug}${occurrence > 1 ? `-${occurrence}` : ""}`,
+      level: block.level,
+      text: block.text,
+    });
+  });
+
+  return anchors;
+}
+
+function NotionPageToc({ blocks, topicId }: { blocks: TheoryContentBlock[]; topicId: string }) {
+  const headings = getNotionHeadingAnchors(blocks, topicId);
+  if (headings.length === 0) return null;
+  const minimumLevel = Math.min(...headings.map((heading) => heading.level));
+
+  return (
+    <nav className="notion-page-toc" aria-label="이 페이지 목차">
+      <div className="notion-page-toc-title">
+        <span>ON THIS PAGE</span>
+        <strong>이 페이지 목차</strong>
+      </div>
+      <ol>
+        {headings.map((heading) => (
+          <li
+            key={heading.id}
+            style={{ "--notion-toc-depth": Math.max(0, heading.level - minimumLevel) } as React.CSSProperties}
+          >
+            <a href={`#${heading.id}`}>{heading.text}</a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+}
+
+function NotionTheoryContent({ blocks, topicId }: { blocks: TheoryContentBlock[]; topicId: string }) {
+  const headingsByBlockIndex = new Map(
+    getNotionHeadingAnchors(blocks, topicId).map((heading) => [heading.blockIndex, heading]),
+  );
+
   return (
     <section className="notion-theory" aria-label="Notion 원문 이론">
       {blocks.map((block, index) => {
         const key = `${block.type}-${index}`;
         switch (block.type) {
-          case "heading":
+          case "heading": {
+            const headingId = headingsByBlockIndex.get(index)?.id;
             return block.level <= 3
-              ? <h3 key={key}>{block.text}</h3>
-              : <h4 key={key}>{block.text}</h4>;
+              ? <h3 id={headingId} key={key}>{block.text}</h3>
+              : <h4 id={headingId} key={key}>{block.text}</h4>;
+          }
           case "paragraph":
             return <p key={key}>{block.text}</p>;
           case "list": {
@@ -269,7 +339,7 @@ function NotionTheoryContent({ blocks }: { blocks: TheoryContentBlock[] }) {
           case "callout":
             return <aside className="notion-callout" key={key}>{block.icon && <span aria-hidden="true">{block.icon}</span>}<p>{block.text}</p></aside>;
           case "code":
-            return <pre key={key}><code data-language={block.language}>{block.text}</code></pre>;
+            return <pre className={block.language === "formula" ? "notion-formula" : undefined} key={key}><code data-language={block.language}>{block.text}</code></pre>;
           case "table":
             return (
               <div className="notion-table-wrap" key={key}>
@@ -281,20 +351,31 @@ function NotionTheoryContent({ blocks }: { blocks: TheoryContentBlock[] }) {
               </div>
             );
           case "image": {
-            const publishable = block.rightsStatus === "cleared" && block.src.startsWith("/generated/");
+            const publishable = block.rightsStatus === "cleared" && NOTION_IMAGE_PATH_RE.test(block.src);
             return (
               <figure className="notion-figure" key={key}>
                 {publishable ? (
-                  <Image
-                    src={block.src}
-                    alt={block.alt}
-                    width={1200}
-                    height={800}
-                    sizes="(max-width: 800px) 100vw, 760px"
-                  />
+                  <a
+                    className="notion-image-link"
+                    href={block.src}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${block.alt || "원문 이미지"} 새 탭에서 확대`}
+                  >
+                    <Image
+                      src={block.src}
+                      alt={block.alt}
+                      width={block.width ?? 1200}
+                      height={block.height ?? 800}
+                      sizes="(max-width: 800px) 100vw, 760px"
+                      loading="lazy"
+                      unoptimized
+                    />
+                    <span>새 탭에서 확대</span>
+                  </a>
                 ) : (
                   <div className="notion-image-placeholder" role="img" aria-label={block.alt || "출처 확인이 필요한 원문 이미지"}>
-                    이미지 원본 보존 완료 · 공개 이용조건 확인 후 표시
+                    승인된 이미지 경로를 확인하지 못했습니다.
                   </div>
                 )}
                 {(block.caption || block.alt) && <figcaption>{block.caption || block.alt}</figcaption>}
@@ -311,10 +392,24 @@ function NotionTheoryContent({ blocks }: { blocks: TheoryContentBlock[] }) {
   );
 }
 
+function getInitialLearningSelection() {
+  const subject = subjects[0];
+  if (!subject) throw new Error("학습 과목이 없습니다.");
+  const chapter = subject.chapters.find((item) =>
+    item.topics.some((topic) => topic.kind === "notion-original"),
+  ) ?? subject.chapters[0];
+  if (!chapter) throw new Error("학습 장이 없습니다.");
+  const topic = chapter.topics.find((item) => item.kind === "notion-original") ?? chapter.topics[0];
+  if (!topic) throw new Error("학습 문서가 없습니다.");
+  return { subjectId: subject.id, chapterId: chapter.id, topicId: topic.id };
+}
+
+const initialLearningSelection = getInitialLearningSelection();
+
 export default function Home() {
-  const [selectedSubjectId, setSelectedSubjectId] = useState(subjects[2].id);
-  const [selectedChapterId, setSelectedChapterId] = useState("chapter-14");
-  const [selectedTopicId, setSelectedTopicId] = useState("tapered-roller-bearing");
+  const [selectedSubjectId, setSelectedSubjectId] = useState(initialLearningSelection.subjectId);
+  const [selectedChapterId, setSelectedChapterId] = useState(initialLearningSelection.chapterId);
+  const [selectedTopicId, setSelectedTopicId] = useState(initialLearningSelection.topicId);
   const [completed, setCompleted] = useState<string[]>([]);
   const [bookmarks, setBookmarks] = useState<string[]>([]);
   const [lastTopicId, setLastTopicId] = useState<string | null>(null);
@@ -458,6 +553,7 @@ export default function Home() {
               typeof entry.id === "string" &&
               typeof entry.title === "string" &&
               typeof entry.normalizedText === "string" &&
+              (entry.excerpt === undefined || typeof entry.excerpt === "string") &&
               knownTopicIds.has(entry.id),
           );
           setSearchIndex(new Map(entries.map((entry) => [entry.id, entry])));
@@ -768,6 +864,7 @@ export default function Home() {
                 {searchResults.length ? (
                   searchResults.slice(0, 10).map((topic) => {
                     const path = getTopicPath(topic.id);
+                    const excerpt = searchIndex?.get(topic.id)?.excerpt?.trim();
                     return (
                       <button
                         type="button"
@@ -778,6 +875,7 @@ export default function Home() {
                         <span>
                           <strong>{topic.title}</strong>
                           <small>{[path?.subject.title, path?.chapter.title, ...(topic.categoryPath ?? [])].filter(Boolean).join(" · ")}</small>
+                          {excerpt ? <span className="search-result-excerpt">{excerpt}</span> : null}
                         </span>
                         <span className="search-result-badges">
                           <Badge tone={topic.kind === "notion-original" ? "notion" : "explain"}>{topic.sourceType}</Badge>
@@ -835,7 +933,7 @@ export default function Home() {
               <div><strong>06</strong><span>문제 유형</span></div>
             </div>
             <p>{hasNotionCatalog
-              ? `원문 제목 ${notionCatalogStats.headings}개·표 ${notionCatalogStats.tables}개·이미지 ${notionCatalogStats.images}개를 전수 분할했습니다.`
+              ? `${notionCatalogStats.topics}개 학습 페이지로 재구성했고, 표 ${notionCatalogStats.tables}개와 이미지 ${notionCatalogStats.images}개를 원래 순서로 보존했습니다.`
               : "Notion 원문 전수 변환과 출처 검수를 준비하고 있습니다."}</p>
           </div>
         </section>
@@ -993,13 +1091,15 @@ export default function Home() {
               </div>
 
               <div className="lesson-content">
-              <section className="summary-card" aria-labelledby="summary-title">
-                <span className="card-number">01</span>
-                <div>
-                  <h3 id="summary-title">30초 핵심</h3>
-                  <p>{selectedTopic.summary30s}</p>
-                </div>
-              </section>
+              {selectedTopic.kind !== "notion-original" ? (
+                <section className="summary-card" aria-labelledby="summary-title">
+                  <span className="card-number">01</span>
+                  <div>
+                    <h3 id="summary-title">30초 핵심</h3>
+                    <p>{selectedTopic.summary30s}</p>
+                  </div>
+                </section>
+              ) : null}
 
               {selectedTopic.kind === "notion-original" && notionPayloadLoading ? (
                 <section className="notion-loading" aria-live="polite">
@@ -1016,7 +1116,10 @@ export default function Home() {
               ) : null}
 
               {selectedTopic.kind === "notion-original" && notionPayload ? (
-                <NotionTheoryContent blocks={notionPayload.blocks} />
+                <>
+                  <NotionPageToc blocks={notionPayload.blocks} topicId={notionPayload.id} />
+                  <NotionTheoryContent blocks={notionPayload.blocks} topicId={notionPayload.id} />
+                </>
               ) : null}
 
               {selectedTopic.keyPoints?.length ? (
@@ -1157,7 +1260,7 @@ export default function Home() {
                   <div><dt>검증 상태</dt><dd>{selectedTopic.reviewStatus}</dd></div>
                   <div><dt>{selectedTopic.kind === "notion-original" ? "수집 기준일" : "검토 기준일"}</dt><dd>{selectedTopic.reviewedAt}</dd></div>
                   {selectedTopic.kind === "notion-original" && selectedTopic.categoryPath?.length ? <div><dt>원문 계층</dt><dd>{selectedTopic.categoryPath.join(" › ")}</dd></div> : null}
-                  <div><dt>공개 기준</dt><dd>원문·이미지 이용조건 확인 후 단계별 공개</dd></div>
+                  <div><dt>공개 기준</dt><dd>{selectedTopic.kind === "notion-original" ? "사용 승인된 원문 이미지 포함" : "원문 대조 후 공개"}</dd></div>
                 </dl>
                 <p>{selectedTopic.kind === "notion-original"
                   ? "Notion 원문을 제목 계층과 블록 구조에 따라 분리한 학습 문서입니다. 수치·법령·표현은 검토 상태 배지를 함께 확인하세요."
@@ -1216,7 +1319,7 @@ export default function Home() {
                 selectPractice(5);
                 navigateTo("practice");
               }}>사진판별 문제 풀기</button>
-              <small>{hasNotionCatalog ? `원문 이미지 ${notionCatalogStats.images}개는 원본 보존 후 공개 이용조건에 따라 표시합니다.` : "Notion 원본 이미지는 권리·출처 검수 후 자체 저장소로 이관합니다."}</small>
+              <small>{hasNotionCatalog ? `원문 이미지 ${notionCatalogStats.images}개는 각 이론 페이지의 원래 위치에서 확대해 볼 수 있습니다.` : "Notion 원본 이미지는 권리·출처 검수 후 자체 저장소로 이관합니다."}</small>
             </div>
           </div>
         </section>

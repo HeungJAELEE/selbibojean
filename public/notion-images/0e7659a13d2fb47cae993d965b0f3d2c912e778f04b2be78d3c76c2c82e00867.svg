@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="770" viewBox="0 0 1200 770" role="img" aria-label="OEE는 평균이 아니라 곱셈: 작은 손실이 연쇄적으로 남는다">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#334155"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+<style>
+text{font-family:Arial,"Noto Sans KR",sans-serif;fill:#0f172a} .title{font-size:32px;font-weight:700}.sub{font-size:18px;fill:#64748b} .h{font-size:22px;font-weight:700}.b{font-size:17px}.s{font-size:15px;fill:#64748b} .tiny{font-size:13px;fill:#64748b} .axis{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#arr)} .grid{stroke:#cbd5e1;stroke-width:1;stroke-dasharray:4 5}.panel{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.5}.label{font-size:16px;font-weight:700}.white{fill:#fff}.num{font-size:26px;font-weight:700}
+</style>
+</defs>
+<rect width="1200" height="770" fill="#fff"/>
+<text x="60" y="54" class="title">OEE는 평균이 아니라 곱셈: 작은 손실이 연쇄적으로 남는다</text>
+<text x="60" y="84" class="sub">시간가동률 × 성능가동률 × 양품률로 ‘계획된 생산시간에서 나온 양품 성과’를 본다.</text>
+<rect x="55" y="125" width="1090" height="510" rx="18" class="panel"/>
+<text x="90" y="165" class="h">계산 예시</text>
+<text x="600" y="225" text-anchor="middle" class="num" fill="#2563eb">90% × 95% × 98% = 83.79% ≈ 83.8%</text>
+<text x="600" y="260" text-anchor="middle" class="s">세 값을 더해 3으로 나누지 않는다.</text>
+<text x="105" y="330" class="label">계획 생산시간 기준</text>
+<rect x="305" y="300" width="760" height="46" rx="10" fill="#e2e8f0"/><rect x="305" y="300" width="760" height="46" rx="10" fill="#2563eb"/><text x="1080" y="330" class="label">100.0%</text>
+<text x="105" y="405" class="label">시간가동률 90%</text>
+<rect x="305" y="375" width="760" height="46" rx="10" fill="#e2e8f0"/><rect x="305" y="375" width="684" height="46" rx="10" fill="#0f766e"/><text x="1005" y="405" class="label">90.0%</text>
+<text x="105" y="480" class="label">성능가동률 95%</text>
+<rect x="305" y="450" width="760" height="46" rx="10" fill="#e2e8f0"/><rect x="305" y="450" width="650" height="46" rx="10" fill="#d97706"/><text x="972" y="480" class="label">85.5%</text>
+<text x="105" y="555" class="label">양품률 98%</text>
+<rect x="305" y="525" width="760" height="46" rx="10" fill="#e2e8f0"/><rect x="305" y="525" width="637" height="46" rx="10" fill="#16a34a"/><text x="960" y="555" class="label">83.8%</text>
+<rect x="155" y="665" width="890" height="55" rx="13" fill="#fef3c7"/>
+<text x="600" y="689" text-anchor="middle" class="b">정지손실 → 속도·순간정지손실 → 불량손실이 차례로 반영된다.</text>
+<text x="600" y="711" text-anchor="middle" class="s">OEE 수치만 올리려 하지 말고 손실 항목과 안전·품질의 원인을 함께 개선</text>
+<line x1="60" y1="728" x2="1140" y2="728" stroke="#cbd5e1"/>
+<text x="60" y="753" class="tiny">수치는 계산법 설명용 예시 — 조직 간 비교 전 부하시간·이상속도·양품 정의를 통일</text>
+</svg>

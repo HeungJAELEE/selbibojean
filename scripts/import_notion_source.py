@@ -11,8 +11,10 @@ import json
 from pathlib import Path
 import re
 import shutil
+import struct
 import sys
 from typing import Any, Iterable
+from urllib.parse import unquote, urlsplit, urlunsplit
 
 
 PAGE_ID_DEFAULT = "39902e78-962a-8051-8275-d4d91a78e607"
@@ -27,6 +29,26 @@ TAG_RE = re.compile(r"<[^>]+>")
 MARK_RE = re.compile(r"(?<!\\)(?:\*\*|__|~~|`)")
 SENSITIVE_RE = re.compile(
     r"x-amz-|security-token|amazonaws\.com|<ancestor-path|<properties|<mention-page|personal space",
+    re.IGNORECASE,
+)
+CORE_H4_RE = re.compile(
+    r"^\s*(?!(?:19|20)\d{2}\b)(?:\d+(?:\.\d+)+(?:[.)])?|\d+[.)])\s+"
+)
+SUPPLEMENT_H4_RE = re.compile(
+    r"^\s*(?:[★☆📷]|NCS\b|최근\s*기출|(?:19|20)\d{2}\s*기출|기출\s*(?:연결|예상)|웹\s*실사)",
+    re.IGNORECASE,
+)
+PART_RE = re.compile(r"제\s*[1-4]\s*편")
+CHAPTER_RE = re.compile(r"제\s*\d+\s*장")
+CANONICAL_IMAGE_SET_SHA256 = "904fa66bbbb78d7b01f07a3e05e2f8982042a6b6054b3ec37154821e9a077f19"
+IMAGE_MIME_EXTENSIONS = {
+    "image/svg+xml": ".svg",
+    "image/png": ".png",
+    "image/jpeg": ".jpg",
+}
+SVG_ACTIVE_CONTENT_RE = re.compile(
+    r"<\s*(?:script|foreignObject)\b|\son[a-z]+\s*=|javascript:|<!DOCTYPE|<!ENTITY|"
+    r"(?:href|xlink:href)\s*=\s*['\"]\s*(?:https?:|//)",
     re.IGNORECASE,
 )
 
@@ -68,18 +90,175 @@ def canonical(value: str) -> str:
 def clean_inline(value: str) -> str:
     value = IMAGE_RE.sub(lambda match: match.group(1), value)
     value = LINK_RE.sub(lambda match: match.group(1), value)
+    value = re.sub(r"\$`([^`]+)`\$", r"\1", value)
+    value = re.sub(r"\$([^$\n]+)\$", r"\1", value)
     # Remove Notion's inline XML-like tags before stripping raw URLs. A signed
     # URL can otherwise consume the closing `/>` and leave a partial tag such
     # as `<mention-page url="` in the public text.
     value = TAG_RE.sub("", value)
     value = RAW_URL_RE.sub("", value)
     value = MARK_RE.sub("", value)
+    value = re.sub(r"(?<!\*)\*([^*\n]+)\*(?!\*)", r"\1", value)
     value = value.replace("\\~", "~").replace("\\*", "*").replace("\\_", "_")
     return re.sub(r"\s+", " ", html.unescape(value)).strip()
 
 
+def clean_formula(value: str) -> str:
+    """Turn the small TeX subset in the source into readable plain math."""
+    value = value.strip()
+    for _ in range(6):
+        updated = re.sub(r"\\frac\{([^{}]+)\}\{([^{}]+)\}", r"(\1)/(\2)", value)
+        if updated == value:
+            break
+        value = updated
+    value = re.sub(r"\\sqrt\{([^{}]+)\}", r"√(\1)", value)
+    value = re.sub(r"\\(?:mathrm|text)\{([^{}]+)\}", r"\1", value)
+    replacements = {
+        r"\qquad": "    ", r"\quad": "  ", r"\,": " ", r"\;": " ",
+        r"\left": "", r"\right": "", r"\times": "×", r"\propto": "∝",
+        r"\Delta": "Δ", r"\sigma": "σ", r"\varepsilon": "ε", r"\tau": "τ",
+        r"\eta": "η", r"\lambda": "λ", r"\mu": "μ", r"\rho": "ρ",
+        r"\omega": "ω", r"\phi": "φ", r"\pi": "π", r"\approx": "≈",
+    }
+    for source, target in replacements.items():
+        value = value.replace(source, target)
+    return re.sub(r"[ \t]+", " ", value).strip()
+
+
 def normalize_search(value: str) -> str:
     return re.sub(r"\s+", "", value.casefold())
+
+
+def canonical_image_url(value: str) -> str:
+    parsed = urlsplit(value)
+    return urlunsplit((parsed.scheme.lower(), parsed.netloc.lower(), parsed.path, "", ""))
+
+
+def image_filename_label(value: str) -> str:
+    filename = Path(unquote(urlsplit(value).path)).stem
+    label = re.sub(r"[_-]+", " ", filename).strip()
+    return label or "원문 참고 이미지"
+
+
+def image_dimensions(path: Path, mime: str) -> tuple[int, int]:
+    data = path.read_bytes()
+    if mime == "image/png":
+        if not data.startswith(b"\x89PNG\r\n\x1a\n") or len(data) < 24:
+            raise ValueError(f"Invalid PNG signature: {path}")
+        return struct.unpack(">II", data[16:24])
+    if mime == "image/jpeg":
+        if not data.startswith(b"\xff\xd8\xff"):
+            raise ValueError(f"Invalid JPEG signature: {path}")
+        cursor = 2
+        while cursor + 9 < len(data):
+            if data[cursor] != 0xFF:
+                cursor += 1
+                continue
+            marker = data[cursor + 1]
+            cursor += 2
+            if marker in {0xD8, 0xD9}:
+                continue
+            if cursor + 2 > len(data):
+                break
+            segment_length = int.from_bytes(data[cursor:cursor + 2], "big")
+            if segment_length < 2 or cursor + segment_length > len(data):
+                break
+            if marker in {0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7, 0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF}:
+                height = int.from_bytes(data[cursor + 3:cursor + 5], "big")
+                width = int.from_bytes(data[cursor + 5:cursor + 7], "big")
+                return width, height
+            cursor += segment_length
+        raise ValueError(f"JPEG dimensions were not found: {path}")
+    if mime == "image/svg+xml":
+        text = data.decode("utf-8-sig")
+        if "<svg" not in text[:4096].lower() or SVG_ACTIVE_CONTENT_RE.search(text):
+            raise ValueError(f"SVG is invalid or contains active/external content: {path}")
+        view_box = re.search(
+            r"\bviewBox\s*=\s*['\"]\s*[-+0-9.eE]+[ ,]+[-+0-9.eE]+[ ,]+([-+0-9.eE]+)[ ,]+([-+0-9.eE]+)\s*['\"]",
+            text,
+            re.IGNORECASE,
+        )
+        if view_box:
+            return max(1, round(float(view_box.group(1)))), max(1, round(float(view_box.group(2))))
+        width_match = re.search(r"\bwidth\s*=\s*['\"]\s*([0-9.]+)", text, re.IGNORECASE)
+        height_match = re.search(r"\bheight\s*=\s*['\"]\s*([0-9.]+)", text, re.IGNORECASE)
+        if width_match and height_match:
+            return max(1, round(float(width_match.group(1)))), max(1, round(float(height_match.group(1))))
+        raise ValueError(f"SVG dimensions were not found: {path}")
+    raise ValueError(f"Unsupported image MIME type: {mime}")
+
+
+def prepare_public_images(
+    project_root: Path,
+    source: Path,
+    allow_noncanonical: bool,
+) -> tuple[dict[str, dict[str, Any]], list[Path]]:
+    image_map_path = source.parent / "image-map.json"
+    if not image_map_path.is_file():
+        raise ValueError(f"Image map is missing: {image_map_path}")
+    raw_map = json.loads(image_map_path.read_text(encoding="utf-8"))
+    if not isinstance(raw_map, dict):
+        raise ValueError("Image map root must be an object")
+
+    hashes = sorted(str(item.get("sha256") or "") for item in raw_map.values() if isinstance(item, dict))
+    image_set_digest = hashlib.sha256("\n".join(hashes).encode("utf-8")).hexdigest()
+    if not allow_noncanonical and image_set_digest != CANONICAL_IMAGE_SET_SHA256:
+        raise ValueError("The source image set differs from the approved 125-image snapshot")
+
+    source_root = source.parent.resolve()
+    public_root = (project_root / "public" / "notion-images").resolve()
+    expected_public_root = (project_root / "public").resolve()
+    if not public_root.is_relative_to(expected_public_root):
+        raise ValueError("Public image directory escaped the project public directory")
+    public_root.mkdir(parents=True, exist_ok=True)
+
+    assets: dict[str, dict[str, Any]] = {}
+    public_paths: list[Path] = []
+    expected_names: set[str] = set()
+    for source_url, metadata in raw_map.items():
+        if not isinstance(source_url, str) or not isinstance(metadata, dict):
+            raise ValueError("Image map contains an invalid entry")
+        sha256 = str(metadata.get("sha256") or "")
+        mime = str(metadata.get("mime") or "")
+        expected_bytes = metadata.get("bytes")
+        local_path = str(metadata.get("localPath") or "")
+        extension = IMAGE_MIME_EXTENSIONS.get(mime)
+        if not re.fullmatch(r"[0-9a-f]{64}", sha256) or extension is None:
+            raise ValueError(f"Image map contains an unapproved digest or MIME: {source_url}")
+
+        asset_path = (source_root / local_path).resolve()
+        if not asset_path.is_relative_to(source_root) or asset_path.is_symlink() or not asset_path.is_file():
+            raise ValueError(f"Image asset path is invalid: {local_path}")
+        data = asset_path.read_bytes()
+        if expected_bytes != len(data) or hashlib.sha256(data).hexdigest() != sha256:
+            raise ValueError(f"Image bytes or digest changed: {local_path}")
+        if asset_path.suffix.lower() != extension:
+            raise ValueError(f"Image extension does not match MIME: {local_path}")
+        width, height = image_dimensions(asset_path, mime)
+        if width > 20_000 or height > 20_000:
+            raise ValueError(f"Image dimensions exceed the renderer limit: {local_path}")
+
+        public_name = f"{sha256}{extension}"
+        public_path = public_root / public_name
+        shutil.copy2(asset_path, public_path)
+        expected_names.add(public_name)
+        public_paths.append(public_path)
+        canonical_url = canonical_image_url(source_url)
+        if canonical_url in assets:
+            raise ValueError(f"Duplicate canonical image URL: {canonical_url}")
+        assets[canonical_url] = {
+            "src": f"/notion-images/{public_name}",
+            "width": width,
+            "height": height,
+            "sha256": sha256,
+        }
+
+    for stale_path in public_root.iterdir():
+        if stale_path.is_file() and stale_path.name not in expected_names:
+            stale_path.unlink()
+    if len(assets) != len(raw_map) or len(public_paths) != len(expected_names):
+        raise ValueError("Image map, public files, and canonical URLs are not one-to-one")
+    return assets, sorted(public_paths)
 
 
 def stable_id(page_id: str, path: list[str], occurrence: int, segment_kind: str) -> str:
@@ -107,11 +286,14 @@ class TableParser(HTMLParser):
         self._cell: list[str] | None = None
         self._cell_is_header = False
         self._caption_parts: list[str] | None = None
+        self._header_row_requested = False
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        del attrs
         tag = tag.lower()
-        if tag == "tr":
+        if tag == "table":
+            attributes = {name.lower(): (value or "") for name, value in attrs}
+            self._header_row_requested = attributes.get("header-row", "").lower() == "true"
+        elif tag == "tr":
             self._row = []
         elif tag in {"th", "td"}:
             self._cell = []
@@ -151,7 +333,18 @@ def parse_table(raw_html: str) -> dict[str, Any]:
     parser.feed(raw_html)
     rows = parser.rows
     headers: list[str] | None = None
-    if rows and parser.headers and len(parser.headers) >= len(rows[0]):
+    markdown_alignment_row = (
+        len(rows) >= 2
+        and len(rows[0]) == len(rows[1])
+        and all(re.fullmatch(r":?-{3,}:?", cell.strip()) for cell in rows[1])
+    )
+    if markdown_alignment_row:
+        headers = rows[0]
+        rows = rows[2:]
+    elif rows and (
+        (parser.headers and len(parser.headers) >= len(rows[0]))
+        or parser._header_row_requested
+    ):
         headers = rows[0]
         rows = rows[1:]
     return {
@@ -162,7 +355,11 @@ def parse_table(raw_html: str) -> dict[str, Any]:
     }
 
 
-def parse_blocks(lines: list[str]) -> tuple[list[dict[str, Any]], str]:
+def parse_blocks(
+    lines: list[str],
+    image_assets: dict[str, dict[str, Any]] | None = None,
+    context_title: str = "",
+) -> tuple[list[dict[str, Any]], str]:
     blocks: list[dict[str, Any]] = []
     plain_parts: list[str] = []
     paragraph: list[str] = []
@@ -203,6 +400,21 @@ def parse_blocks(lines: list[str]) -> tuple[list[dict[str, Any]], str]:
                 plain_parts.append(code)
             continue
 
+        if stripped == "$$":
+            flush_paragraph()
+            index += 1
+            formula_lines: list[str] = []
+            while index < len(lines) and lines[index].strip() != "$$":
+                formula_lines.append(lines[index])
+                index += 1
+            if index < len(lines):
+                index += 1
+            formula = clean_formula(" ".join(formula_lines))
+            if formula:
+                blocks.append({"type": "code", "text": formula, "language": "formula"})
+                plain_parts.append(formula)
+            continue
+
         if "<table" in stripped.lower():
             flush_paragraph()
             table_lines = [line]
@@ -220,19 +432,39 @@ def parse_blocks(lines: list[str]) -> tuple[list[dict[str, Any]], str]:
         if images:
             flush_paragraph()
             for image_match in images:
-                alt = clean_inline(image_match.group(1)) or "Notion 원문 이미지"
-                blocks.append({
+                source_url = image_match.group(2)
+                canonical_url = canonical_image_url(source_url)
+                asset = image_assets.get(canonical_url) if image_assets is not None else None
+                if image_assets is not None and asset is None:
+                    raise ValueError(f"Image asset is missing from the approved map: {canonical_url}")
+                filename_label = image_filename_label(source_url)
+                alt = clean_inline(image_match.group(1)) or clean_inline(context_title) or filename_label
+                image_block: dict[str, Any] = {
                     "type": "image",
-                    "src": "",
+                    "src": asset["src"] if asset else "",
                     "alt": alt,
                     "caption": alt,
-                    "rightsStatus": "unknown",
-                })
+                    "rightsStatus": "cleared" if asset else "unknown",
+                }
+                if asset:
+                    image_block["width"] = asset["width"]
+                    image_block["height"] = asset["height"]
+                blocks.append(image_block)
                 plain_parts.append(alt)
             remainder = clean_inline(IMAGE_RE.sub("", line))
             if remainder:
                 blocks.append({"type": "paragraph", "text": remainder})
                 plain_parts.append(remainder)
+            index += 1
+            continue
+
+        bold_heading = re.fullmatch(r"\s*\*\*([^*\n]{2,100})\*\*\s*", line)
+        if bold_heading:
+            flush_paragraph()
+            heading_text = clean_inline(bold_heading.group(1))
+            if heading_text:
+                blocks.append({"type": "heading", "text": heading_text, "level": 5})
+                plain_parts.append(heading_text)
             index += 1
             continue
 
@@ -281,6 +513,26 @@ def parse_blocks(lines: list[str]) -> tuple[list[dict[str, Any]], str]:
         index += 1
 
     flush_paragraph()
+    merged_blocks: list[dict[str, Any]] = []
+    block_index = 0
+    while block_index < len(blocks):
+        block = blocks[block_index]
+        if (
+            block["type"] == "image"
+            and block_index + 1 < len(blocks)
+            and blocks[block_index + 1]["type"] in {"quote", "callout"}
+            and len(blocks[block_index + 1].get("text", "")) <= 600
+        ):
+            caption = blocks[block_index + 1]["text"]
+            block["caption"] = caption
+            if block.get("alt") in {"", "Notion 원문 이미지"}:
+                block["alt"] = clean_inline(context_title) or caption[:140]
+            merged_blocks.append(block)
+            block_index += 2
+            continue
+        merged_blocks.append(block)
+        block_index += 1
+    blocks = merged_blocks
     plain_text = re.sub(r"\s+", " ", " ".join(plain_parts)).strip()
     return blocks, plain_text
 
@@ -408,6 +660,288 @@ def resolve_location(segment: dict[str, Any]) -> tuple[tuple[str, str, str], tup
     return intro_subject, chapter, parents
 
 
+def prepare_segment(
+    segment: dict[str, Any],
+    image_assets: dict[str, dict[str, Any]] | None = None,
+) -> None:
+    """Cache a segment's parsed representation without changing its source body."""
+    if "_blocks" in segment:
+        return
+    blocks, plain_text = parse_blocks(
+        segment["body"],
+        image_assets=image_assets,
+        context_title=segment["title"],
+    )
+    segment["_blocks"] = blocks
+    segment["_plain_text"] = plain_text
+    # Page-size decisions intentionally ignore whitespace and markup. This
+    # avoids signed image URLs and HTML syntax distorting the textbook size.
+    segment["_plain_chars"] = len(normalize_search(plain_text))
+    segment["_body_raw"] = "\n".join(segment["body"])
+
+
+def build_heading_tree(
+    segments: list[dict[str, Any]],
+    image_assets: dict[str, dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    root: dict[str, Any] = {"level": -1, "segment": None, "children": []}
+    stack = [root]
+    for index, segment in enumerate(segments):
+        prepare_segment(segment, image_assets=image_assets)
+        node = {
+            "level": segment["level"],
+            "segment": segment,
+            "children": [],
+            "source_index": index,
+        }
+        if segment["level"] == 0:
+            # The connector preamble inside <content> is a document overview,
+            # not a parent heading for the first H2.
+            root["children"].append(node)
+            continue
+        while stack[-1]["level"] >= segment["level"]:
+            stack.pop()
+        stack[-1]["children"].append(node)
+        stack.append(node)
+    return root
+
+
+def flatten_nodes(node: dict[str, Any]) -> list[dict[str, Any]]:
+    nodes = [node]
+    for child in node["children"]:
+        nodes.extend(flatten_nodes(child))
+    return nodes
+
+
+def nodes_plain_chars(nodes: Iterable[dict[str, Any]]) -> int:
+    return sum(node["segment"]["_plain_chars"] for node in nodes)
+
+
+def is_h4_supplement(title: str) -> bool:
+    """Return True for evidence/photo/practice headings attached to a core."""
+    return bool(SUPPLEMENT_H4_RE.match(title))
+
+
+def h4_bundles(h4_nodes: list[dict[str, Any]]) -> list[list[dict[str, Any]]]:
+    """Keep supplemental H4 sections with the preceding substantive H4.
+
+    Leading supplements have no preceding core, so they are retained in source
+    order and attached to the first following core. No source node is dropped.
+    """
+    bundles: list[list[dict[str, Any]]] = []
+    leading: list[dict[str, Any]] = []
+    for node in h4_nodes:
+        title = node["segment"]["title"]
+        explicit_core = bool(CORE_H4_RE.match(title))
+        if is_h4_supplement(title) and not explicit_core:
+            if bundles:
+                bundles[-1].append(node)
+            else:
+                leading.append(node)
+            continue
+        bundle = [*leading, node]
+        leading = []
+        bundles.append(bundle)
+    if leading:
+        if bundles:
+            bundles[-1].extend(leading)
+        else:
+            bundles.append(leading)
+    return bundles
+
+
+def bundle_core_title(bundle: list[dict[str, Any]]) -> str:
+    for node in bundle:
+        title = node["segment"]["title"]
+        if not is_h4_supplement(title):
+            return title
+    return bundle[0]["segment"]["title"]
+
+
+def cohesion_terms(value: str) -> set[str]:
+    terms = set(re.findall(r"[A-Za-z][A-Za-z0-9+-]{2,}|[가-힣]{2,}", value.casefold()))
+    for domain_term in {
+        "베어링", "용접", "윤활", "공압", "유압", "밸브", "센서", "모터",
+        "진동", "소음", "기어", "벨트", "체인", "측정", "검사", "안전",
+    }:
+        if domain_term in value:
+            terms.add(domain_term)
+    return terms
+
+
+def partition_h4_bundles(
+    bundles: list[list[dict[str, Any]]],
+    preface_chars: int,
+) -> list[list[list[dict[str, Any]]]]:
+    """Partition an oversized H3 into readable, source-order chunks.
+
+    The dynamic program targets about 4,500 normalized characters, accepts
+    3,000-8,000 naturally, and only exceeds 8,000 to avoid breaking one
+    indivisible microsection. A shared domain term discourages a cut.
+    """
+    if not bundles:
+        return [[]]
+    sizes = [nodes_plain_chars(bundle) for bundle in bundles]
+    prefix = [0]
+    for size in sizes:
+        prefix.append(prefix[-1] + size)
+    count = len(bundles)
+    infinity = float("inf")
+    costs = [infinity] * (count + 1)
+    previous = [-1] * (count + 1)
+    costs[0] = 0.0
+
+    for end in range(1, count + 1):
+        for start in range(end):
+            size = prefix[end] - prefix[start] + (preface_chars if start == 0 else 0)
+            single_bundle = end - start == 1
+            if size > 12_000 and not single_bundle:
+                continue
+            deviation = (size - 4_500) / 4_500
+            page_cost = deviation * deviation * 100
+            if size < 3_000:
+                page_cost += ((3_000 - size) / 3_000) * 120
+            if size > 8_000:
+                page_cost += ((size - 8_000) / 4_000) * 600
+            if start > 0:
+                left_terms = cohesion_terms(bundle_core_title(bundles[start - 1]))
+                right_terms = cohesion_terms(bundle_core_title(bundles[start]))
+                if left_terms & right_terms:
+                    page_cost += 90
+            candidate = costs[start] + page_cost
+            if candidate < costs[end]:
+                costs[end] = candidate
+                previous[end] = start
+
+    if previous[count] < 0:
+        # This can only occur when a single source microsection is itself very
+        # large. Keeping it whole is safer than splitting a table or image run.
+        return [bundles]
+    chunks: list[list[list[dict[str, Any]]]] = []
+    cursor = count
+    while cursor:
+        start = previous[cursor]
+        chunks.append(bundles[start:cursor])
+        cursor = start
+    chunks.reverse()
+    return chunks
+
+
+def build_topic_groups(
+    segments: list[dict[str, Any]],
+    image_assets: dict[str, dict[str, Any]] | None = None,
+) -> list[dict[str, Any]]:
+    """Turn the heading tree into human-sized textbook pages.
+
+    H1/H2 are navigation, H3 is the normal page boundary, and H4 stays inside
+    a page as an anchored heading. Intro/TOC/appendix subtrees are intentionally
+    kept together. Every body-bearing source segment is assigned exactly once.
+    """
+    root = build_heading_tree(segments, image_assets=image_assets)
+    groups: list[dict[str, Any]] = []
+    assigned: set[int] = set()
+
+    def add_group(
+        anchor: dict[str, Any],
+        nodes: list[dict[str, Any]],
+        kind: str,
+        title: str | None = None,
+        semantic_suffix: list[str] | None = None,
+    ) -> None:
+        unique_nodes: list[dict[str, Any]] = []
+        for node in nodes:
+            source_index = node["source_index"]
+            if source_index in assigned:
+                raise ValueError(f"Source segment assigned more than once: {source_index}")
+            assigned.add(source_index)
+            unique_nodes.append(node)
+        anchor_segment = anchor["segment"]
+        groups.append({
+            "anchor": anchor,
+            "nodes": unique_nodes,
+            "kind": kind,
+            "title": title or anchor_segment["title"],
+            "semantic_path": [*anchor_segment["path"], *(semantic_suffix or [])],
+        })
+
+    def add_h3(node: dict[str, Any]) -> None:
+        segment = node["segment"]
+        h4_nodes = [child for child in node["children"] if child["level"] == 4]
+        other_children = [child for child in node["children"] if child["level"] != 4]
+        if other_children:
+            raise ValueError(f"Unexpected heading below H3: {segment['title']}")
+        all_nodes = flatten_nodes(node)
+        if nodes_plain_chars(all_nodes) <= 10_000 or not h4_nodes:
+            add_group(node, all_nodes, "section")
+            return
+
+        bundles = h4_bundles(h4_nodes)
+        chunks = partition_h4_bundles(bundles, segment["_plain_chars"])
+        for chunk_index, chunk_bundles in enumerate(chunks):
+            chunk_h4 = [item for bundle in chunk_bundles for item in bundle]
+            chunk_nodes = ([node] if chunk_index == 0 else []) + chunk_h4
+            lead = bundle_core_title(chunk_bundles[0]) if chunk_bundles else segment["title"]
+            page_title = f"{segment['title']} · {lead}"
+            tail = bundle_core_title(chunk_bundles[-1]) if chunk_bundles else lead
+            add_group(
+                node,
+                chunk_nodes,
+                "section-split",
+                title=page_title,
+                semantic_suffix=[lead, tail],
+            )
+
+    for node in root["children"]:
+        segment = node["segment"]
+        if node["level"] == 0:
+            add_group(node, [node], "document-overview")
+            continue
+
+        part = parse_number(segment["title"], "편") if PART_RE.search(segment["title"]) else None
+        if node["level"] == 1 and part in {1, 2, 3, 4}:
+            if segment["_body_raw"]:
+                add_group(node, [node], "subject-overview", title=f"{segment['title']} 개요")
+            for h2_node in node["children"]:
+                h2_segment = h2_node["segment"]
+                chapter_number = (
+                    parse_number(h2_segment["title"], "장")
+                    if CHAPTER_RE.search(h2_segment["title"])
+                    else None
+                )
+                if h2_node["level"] == 2 and chapter_number is not None:
+                    if h2_segment["_body_raw"]:
+                        add_group(h2_node, [h2_node], "chapter-overview", title=f"{h2_segment['title']} 개요")
+                    extras: list[dict[str, Any]] = []
+                    for child in h2_node["children"]:
+                        if child["level"] == 3:
+                            add_h3(child)
+                        else:
+                            extras.extend(flatten_nodes(child))
+                    if extras:
+                        add_group(
+                            h2_node,
+                            extras,
+                            "chapter-details",
+                            title=f"{h2_segment['title']} 세부 항목",
+                            semantic_suffix=["세부 항목"],
+                        )
+                else:
+                    # Sources and the quick-reference material after Part 4
+                    # must not leak into the final lubrication chapter.
+                    add_group(h2_node, flatten_nodes(h2_node), "appendix")
+            continue
+
+        # "전체 목차" and top-level intro sections are one readable page,
+        # with all descendant headings retained inside it.
+        add_group(node, flatten_nodes(node), "intro")
+
+    # Fail closed if a future source shape leaves meaningful body content out.
+    for node in flatten_nodes(root)[1:]:
+        if node["source_index"] not in assigned and node["segment"]["_body_raw"]:
+            add_group(node, [node], "unmapped-overview")
+    return groups
+
+
 def tags_for(title: str, path: Iterable[str]) -> list[str]:
     tokens: list[str] = []
     for value in [title, *path]:
@@ -448,46 +982,61 @@ def convert(project_root: Path, source: Path, manifest_path: Path, allow_noncano
             f"Canonical source counts changed: headings={raw_heading_count}, tables={raw_table_count}, images={raw_image_count}"
         )
 
+    image_assets, public_image_paths = prepare_public_images(
+        project_root,
+        source,
+        allow_noncanonical=allow_noncanonical,
+    )
+    topic_groups = build_topic_groups(segments, image_assets=image_assets)
     occurrences: dict[str, int] = {}
+    anchor_occurrences: dict[str, int] = {}
     subjects_order: list[str] = []
     subjects_by_id: dict[str, dict[str, Any]] = {}
     topic_payloads: list[tuple[dict[str, Any], dict[str, Any]]] = []
-    search_topics: list[dict[str, str]] = []
+    search_topics: list[dict[str, Any]] = []
     emitted_body_chars = 0
-    skipped_empty_overviews = 0
-    skipped_empty_leaf_categories = 0
-    pending_leaf_category: tuple[tuple[str, ...], str] | None = None
+    internal_heading_count = 0
 
-    for segment in segments:
-        body_raw = "\n".join(segment["body"])
-        is_leaf = segment["level"] == 4
-        if not is_leaf and not body_raw.strip():
-            skipped_empty_overviews += 1
-            pending_leaf_category = None
-            continue
-        path: list[str] = segment["path"]
-        parent_path = tuple(path[:-1])
-        if is_leaf and not body_raw.strip():
-            skipped_empty_leaf_categories += 1
-            pending_leaf_category = (parent_path, segment["title"])
-            continue
-
-        inherited_leaf_category = ""
-        if is_leaf and pending_leaf_category and pending_leaf_category[0] == parent_path:
-            inherited_leaf_category = pending_leaf_category[1]
-        pending_leaf_category = None
-
-        segment_kind = "leaf" if is_leaf else "overview"
-        semantic_path = [*path[:-1], inherited_leaf_category, path[-1]] if inherited_leaf_category else path
+    for group in topic_groups:
+        anchor_node = group["anchor"]
+        segment = anchor_node["segment"]
+        semantic_path: list[str] = group["semantic_path"]
+        segment_kind: str = group["kind"]
         occurrence_key = "/".join(canonical(item) for item in semantic_path)
         occurrence = occurrences.get(occurrence_key, 0)
         occurrences[occurrence_key] = occurrence + 1
         topic_id = stable_id(page_id, semantic_path, occurrence, segment_kind)
-        blocks, plain_text = parse_blocks(segment["body"])
-        emitted_body_chars += len(body_raw)
+        blocks: list[dict[str, Any]] = []
+        body_plain_parts: list[str] = []
+        searchable_parts: list[str] = []
+        section_anchors: list[dict[str, str]] = []
+        anchor_is_in_group = any(node is anchor_node for node in group["nodes"])
+
+        for node in group["nodes"]:
+            source_segment = node["segment"]
+            is_page_heading = anchor_is_in_group and node is anchor_node
+            if source_segment["level"] > 0 and not is_page_heading:
+                anchor_key = "/".join(canonical(item) for item in source_segment["path"])
+                anchor_occurrence = anchor_occurrences.get(anchor_key, 0)
+                anchor_occurrences[anchor_key] = anchor_occurrence + 1
+                section_id = stable_id(page_id, source_segment["path"], anchor_occurrence, "section-anchor")
+                blocks.append({
+                    "type": "heading",
+                    "level": source_segment["level"],
+                    "text": source_segment["title"],
+                    "id": section_id,
+                })
+                section_anchors.append({"id": section_id, "title": source_segment["title"]})
+                searchable_parts.append(source_segment["title"])
+                internal_heading_count += 1
+            blocks.extend(source_segment["_blocks"])
+            if source_segment["_plain_text"]:
+                body_plain_parts.append(source_segment["_plain_text"])
+                searchable_parts.append(source_segment["_plain_text"])
+            emitted_body_chars += len(source_segment["_body_raw"])
+
+        plain_text = re.sub(r"\s+", " ", " ".join(body_plain_parts)).strip()
         subject_info, chapter_info, category_path = resolve_location(segment)
-        if inherited_leaf_category:
-            category_path = [*category_path, inherited_leaf_category]
         subject_id, subject_title, short_title = subject_info
         chapter_id, chapter_title = chapter_info
 
@@ -511,11 +1060,11 @@ def convert(project_root: Path, source: Path, manifest_path: Path, allow_noncano
         # and full body live in separately fetched public files.
         summary = plain_text[:120].strip()
         if not summary:
-            summary = f"{segment['title']}의 원문 학습 항목입니다."
+            summary = f"{group['title']}의 원문 학습 항목입니다."
         logical_path = " › ".join(semantic_path)
         topic = {
             "id": topic_id,
-            "title": segment["title"],
+            "title": group["title"],
             "summary30s": summary,
             "categoryPath": category_path,
         }
@@ -523,16 +1072,20 @@ def convert(project_root: Path, source: Path, manifest_path: Path, allow_noncano
         payload = {
             "schemaVersion": 1,
             "id": topic_id,
-            "title": segment["title"],
+            "title": group["title"],
             "sourcePath": f"Notion page {page_id} › {logical_path}",
             "blocks": blocks,
+            "sectionAnchors": section_anchors,
         }
         topic_payloads.append((topic, payload))
         search_topics.append({
             "id": topic_id,
-            "title": segment["title"],
-            "normalizedText": normalize_search(" ".join([segment["title"], *semantic_path, plain_text])),
+            "title": group["title"],
+            "normalizedText": normalize_search(
+                " ".join([group["title"], *semantic_path, *searchable_parts])
+            ),
             "excerpt": plain_text[:240],
+            "sections": section_anchors,
         })
 
     subjects: list[dict[str, Any]] = []
@@ -577,6 +1130,14 @@ def convert(project_root: Path, source: Path, manifest_path: Path, allow_noncano
     payload_image_count = sum(
         1 for _topic, payload in topic_payloads for block in payload["blocks"] if block["type"] == "image"
     )
+    cleared_image_blocks = [
+        block
+        for _topic, payload in topic_payloads
+        for block in payload["blocks"]
+        if block["type"] == "image"
+        and block.get("rightsStatus") == "cleared"
+        and re.fullmatch(r"/notion-images/[0-9a-f]{64}\.(?:svg|png|jpg)", block.get("src", ""))
+    ]
     unique_ids = len({payload["id"] for _topic, payload in topic_payloads})
     source_body_chars = sum(len("\n".join(segment["body"])) for segment in segments if segment["body"])
     report = {
@@ -590,13 +1151,15 @@ def convert(project_root: Path, source: Path, manifest_path: Path, allow_noncano
             **heading_counts,
             "tables": raw_table_count,
             "images": raw_image_count,
+            "publicImageFiles": len(public_image_paths),
+            "publicImageBytes": sum(path.stat().st_size for path in public_image_paths),
             "topics": len(topic_payloads),
             "topicJsonFiles": len(list(topics_dir.glob("*.json"))),
             "searchEntries": len(search_topics),
             "subjects": len(subjects),
             "chapters": catalog["stats"]["chapters"],
-            "skippedEmptyOverviews": skipped_empty_overviews,
-            "skippedEmptyLeafCategories": skipped_empty_leaf_categories,
+            "groupedSourceSegments": sum(len(group["nodes"]) for group in topic_groups),
+            "internalHeadings": internal_heading_count,
         },
         "checks": {
             "uniqueTopicIds": unique_ids == len(topic_payloads),
@@ -604,9 +1167,14 @@ def convert(project_root: Path, source: Path, manifest_path: Path, allow_noncano
             "searchParity": len(search_topics) == len(topic_payloads),
             "tableParity": payload_table_count == raw_table_count,
             "imageParity": payload_image_count == raw_image_count,
+            "publicImageParity": (
+                len(cleared_image_blocks) == raw_image_count
+                and len(public_image_paths) == raw_image_count
+            ),
             "bodyCoverageMatched": emitted_body_chars == source_body_chars,
+            "groupingTargetMatched": allow_noncanonical or len(topic_payloads) == 70,
             "securityViolations": security_violations,
-            "unknownRightsPublicAssets": 0,
+            "approvedImageSet": len(image_assets) == raw_image_count,
         },
     }
     report_path = project_root / "work" / "notion-import-report.json"
@@ -618,9 +1186,11 @@ def convert(project_root: Path, source: Path, manifest_path: Path, allow_noncano
         report["checks"]["searchParity"],
         report["checks"]["tableParity"],
         report["checks"]["imageParity"],
+        report["checks"]["publicImageParity"],
         report["checks"]["bodyCoverageMatched"],
+        report["checks"]["groupingTargetMatched"],
+        report["checks"]["approvedImageSet"],
         not security_violations,
-        allow_noncanonical or len(topic_payloads) == 420,
     ]
     if not all(required_checks):
         raise ValueError(f"Import validation failed; inspect {report_path}")

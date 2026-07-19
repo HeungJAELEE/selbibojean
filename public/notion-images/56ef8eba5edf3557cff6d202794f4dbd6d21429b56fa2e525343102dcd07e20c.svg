@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="600" viewBox="0 0 1100 600">
+<rect width="1100" height="600" fill="#fff"/>
+<style>.title{font:700 34px Arial,'Noto Sans KR',sans-serif;fill:#111827}.h{font:700 24px Arial,'Noto Sans KR',sans-serif;fill:#1f2937}.t{font:20px Arial,'Noto Sans KR',sans-serif;fill:#374151}.axis{stroke:#111827;stroke-width:4;fill:none}.plan{stroke:#2563eb;stroke-width:6;fill:none}.loss{stroke:#dc2626;stroke-width:6;fill:none}.total{stroke:#16a34a;stroke-width:7;fill:none}.dash{stroke:#6b7280;stroke-width:3;stroke-dasharray:10 8}.note{fill:#f0fdf4;stroke:#86efac;stroke-width:2}</style>
+<text x="550" y="48" text-anchor="middle" class="title">경제적 보전주기: 총비용이 최소가 되는 간격</text>
+<path d="M115 500 V105 M115 500 H1000" class="axis"/>
+<path d="M115 105 l-10 20 m10 -20 l10 20 M1000 500 l-20 -10 m20 10 l-20 10" class="axis"/>
+<text x="48" y="295" transform="rotate(-90 48 295)" text-anchor="middle" class="h">기간당 비용</text>
+<text x="560" y="555" text-anchor="middle" class="h">보전 간격 T  (짧음 → 김)</text>
+<!-- curves -->
+<path d="M145 155 C300 230 480 335 950 455" class="plan"/>
+<path d="M145 465 C360 455 620 360 950 145" class="loss"/>
+<path d="M145 270 C300 360 450 390 565 385 C710 380 820 310 950 220" class="total"/>
+<text x="765" y="430" class="t" fill="#2563eb">계획보전비</text>
+<text x="790" y="175" class="t" fill="#dc2626">고장·손실비</text>
+<text x="700" y="300" class="t" fill="#16a34a">총비용</text>
+<!-- optimum -->
+<path d="M565 385 V500" class="dash"/><circle cx="565" cy="385" r="10" fill="#16a34a"/>
+<rect x="410" y="72" width="310" height="70" rx="14" class="note"/>
+<text x="565" y="103" text-anchor="middle" class="h">경제적 최적 보전주기 T*</text>
+<text x="565" y="130" text-anchor="middle" class="t">총비용 = 계획보전비 + 고장·손실비</text>
+<text x="170" y="525" class="t">과잉 정비</text><text x="865" y="525" class="t">고장 위험 증가</text>
+</svg>

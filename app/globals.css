@@ -2702,6 +2702,61 @@ button.subject-card {
   padding: 5px;
 }
 
+.notion-page-toc {
+  display: grid;
+  gap: 13px;
+  padding: 17px 19px;
+  border: 1px solid #cbdad4;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #f8fcfa, var(--teal-soft));
+}
+
+.notion-page-toc-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.notion-page-toc-title span {
+  color: var(--teal);
+  font-size: 0.67rem;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+}
+
+.notion-page-toc-title strong {
+  color: var(--forest-deep);
+  font-size: 0.94rem;
+}
+
+.notion-page-toc ol {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notion-page-toc li {
+  margin-left: calc(var(--notion-toc-depth, 0) * 15px);
+}
+
+.notion-page-toc a {
+  display: block;
+  padding: 6px 9px;
+  border-radius: 8px;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  font-weight: 730;
+  line-height: 1.45;
+}
+
+.notion-page-toc a:hover {
+  background: rgb(255 255 255 / 0.72);
+  color: var(--forest);
+}
+
 .notion-theory {
   display: grid;
   gap: 15px;
@@ -2714,6 +2769,7 @@ button.subject-card {
   color: var(--ink);
   letter-spacing: -0.035em;
   line-height: 1.4;
+  scroll-margin-top: calc(var(--topbar-height) + 24px);
 }
 
 .notion-theory h3 {
@@ -2771,6 +2827,17 @@ button.subject-card {
   white-space: pre-wrap;
 }
 
+.notion-theory .notion-formula {
+  background: #eef4ed;
+  border: 1px solid rgba(27, 82, 66, 0.16);
+  color: var(--forest-900);
+  font-family: "Cambria Math", "STIX Two Math", Georgia, serif;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.7;
+  text-align: center;
+  white-space: pre-wrap;
+}
+
 .notion-table-wrap {
   max-width: 100%;
   overflow-x: auto;
@@ -2825,6 +2892,33 @@ button.subject-card {
   max-height: 720px;
   object-fit: contain;
   background: #f7f8f5;
+}
+
+.notion-image-link {
+  position: relative;
+  display: block;
+  cursor: zoom-in;
+}
+
+.notion-image-link > span {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: rgb(20 33 29 / 0.78);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.notion-image-link:hover > span,
+.notion-image-link:focus-visible > span {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .notion-image-placeholder {
@@ -2886,6 +2980,20 @@ button.subject-card {
 }
 
 @media (max-width: 640px) {
+  .notion-page-toc {
+    padding: 15px;
+  }
+
+  .notion-page-toc-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .notion-page-toc li {
+    margin-left: calc(var(--notion-toc-depth, 0) * 10px);
+  }
+
   .notion-loading,
   .notion-error,
   .notion-quiz-note {
@@ -3046,6 +3154,18 @@ body:has(.modal) {
 .search-result > span:first-child small {
   color: var(--ink-muted);
   font-size: 0.7rem;
+}
+
+.search-result-excerpt {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-weight: 560;
+  line-height: 1.5;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .search-result-badges {

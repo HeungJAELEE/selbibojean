@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="480" viewBox="0 0 1100 480">
+<rect width="1100" height="480" fill="#fff"/>
+<style>.title{font:700 34px Arial,'Noto Sans KR',sans-serif;fill:#111827}.h{font:700 27px Arial,'Noto Sans KR',sans-serif;fill:#1f2937}.t{font:21px Arial,'Noto Sans KR',sans-serif;fill:#374151}.s{font:18px Arial,'Noto Sans KR',sans-serif;fill:#4b5563}.line{stroke:#111827;stroke-width:5;fill:none}.spring{stroke:#2563eb;stroke-width:6;fill:none}.damper{stroke:#dc2626;stroke-width:6;fill:none}.mass{fill:#e0f2fe;stroke:#0284c7;stroke-width:4}.note{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}</style>
+<text x="550" y="48" text-anchor="middle" class="title">1자유도 진동계: 질량 m · 강성 k · 감쇠 c</text>
+<!-- base -->
+<path d="M80 405 H520 M90 405 l25 25 m25 -25 l25 25 m25 -25 l25 25 m25 -25 l25 25 m25 -25 l25 25 m25 -25 l25 25 m25 -25 l25 25 m25 -25 l25 25" class="line"/>
+<!-- mass -->
+<rect x="175" y="105" width="250" height="100" rx="12" class="mass"/><text x="300" y="165" text-anchor="middle" class="h">질량 m</text>
+<!-- spring -->
+<path d="M225 205 v28 l-22 18 l44 28 l-44 28 l44 28 l-22 18 v52" class="spring"/><text x="150" y="310" class="h" fill="#2563eb">강성 k</text>
+<!-- damper -->
+<path d="M375 205 v70 h-35 v48 h70 v-48 h-35 M375 323 v82" class="damper"/><text x="420" y="310" class="h" fill="#dc2626">감쇠 c</text>
+<!-- displacement -->
+<path d="M455 90 v115 m0 -115 l-12 20 m12 -20 l12 20" class="line"/><text x="480" y="120" class="t">변위 x(t)</text>
+<!-- relation -->
+<rect x="570" y="85" width="470" height="320" rx="20" class="note"/>
+<text x="805" y="132" text-anchor="middle" class="h">고유진동수</text>
+<text x="805" y="190" text-anchor="middle" class="h">fₙ = 1/(2π) · √(k/m)</text>
+<text x="620" y="245" class="t">강성 k ↑  →  고유진동수 fₙ ↑</text>
+<text x="620" y="290" class="t">질량 m ↑  →  고유진동수 fₙ ↓</text>
+<text x="620" y="335" class="t">감쇠 c ↑  →  공진 피크 ↓</text>
+<text x="805" y="382" text-anchor="middle" class="s">가진주파수 ≈ 고유진동수이면 공진에 주의</text>
+</svg>
