@@ -704,7 +704,7 @@ export default function Home() {
         <div className="topbar-inner">
           <button className="brand" type="button" onClick={() => navigateTo("home")}>
             <span className="brand-mark" aria-hidden="true">M</span>
-            <span>
+            <span className="brand-copy">
               <strong>설비보전 마스터북</strong>
               <small>Maintenance Masterbook</small>
             </span>
@@ -803,7 +803,7 @@ export default function Home() {
           <div className="hero-copy">
             <div className="eyebrow"><span /> {hasNotionCatalog ? "Notion 원문 전수 이관판" : "공개형 학습 기본판"} · 검토 기준일 {REVIEW_DATE}</div>
             <h1>현장에서 찾고,<br />시험장에서 떠올리는<br /><em>설비보전 이론서</em></h1>
-            <p>
+            <p className="hero-lead">
               4과목·19개 장을 학습 단위로 나누고, 원문 이론과 출처, 문제풀이와 오답을 한 화면에 연결했습니다.
             </p>
             <div className="hero-actions">
