@@ -6,8 +6,13 @@ import {
   allChapters,
   allTopics,
   getTopicById,
+  notionCatalogStats,
   subjects,
+  topicPathById,
   type IndexedTopic,
+  type NotionTopicPayload,
+  type TheoryContentBlock,
+  type Topic,
 } from "./content";
 
 const STORAGE_KEY = "maintenance-masterbook:v1";
@@ -29,6 +34,82 @@ type StoredStudyState = {
   lastTopicId: string | null;
   wrongAnswers: WrongAnswer[];
 };
+
+type SearchIndexEntry = {
+  id: string;
+  title: string;
+  normalizedText: string;
+  excerpt?: string;
+};
+
+type SearchIndexPayload = {
+  schemaVersion: number;
+  topics: SearchIndexEntry[];
+};
+
+const notionTopicCache = new Map<string, NotionTopicPayload>();
+const knownTopicIds = new Set(allTopics.map((topic) => topic.id));
+
+const notionBlockTypes = new Set([
+  "paragraph",
+  "heading",
+  "list",
+  "quote",
+  "callout",
+  "code",
+  "table",
+  "image",
+  "divider",
+]);
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null;
+}
+
+function isValidTheoryBlock(value: unknown): value is TheoryContentBlock {
+  if (!isRecord(value) || typeof value.type !== "string" || !notionBlockTypes.has(value.type)) {
+    return false;
+  }
+  if (value.type === "divider") return true;
+  if (value.type === "paragraph" || value.type === "quote") {
+    return typeof value.text === "string" && value.text.length <= 200_000;
+  }
+  if (value.type === "heading") {
+    return typeof value.text === "string" && Number.isInteger(value.level) && Number(value.level) >= 1 && Number(value.level) <= 6;
+  }
+  if (value.type === "callout") {
+    return typeof value.text === "string" && (value.icon === undefined || typeof value.icon === "string");
+  }
+  if (value.type === "code") {
+    return typeof value.text === "string" && (value.language === undefined || typeof value.language === "string");
+  }
+  if (value.type === "list") {
+    return Array.isArray(value.items) && value.items.length <= 2_000 && value.items.every((item) => typeof item === "string") &&
+      (value.ordered === undefined || typeof value.ordered === "boolean");
+  }
+  if (value.type === "table") {
+    const headersValid = value.headers === undefined ||
+      (Array.isArray(value.headers) && value.headers.length <= 100 && value.headers.every((header) => typeof header === "string"));
+    const rowsValid = Array.isArray(value.rows) && value.rows.length <= 2_000 && value.rows.every(
+      (row) => Array.isArray(row) && row.length <= 100 && row.every((cell) => typeof cell === "string"),
+    );
+    return headersValid && rowsValid && (value.caption === undefined || typeof value.caption === "string");
+  }
+  if (value.type === "image") {
+    const optionalTextValid = [value.caption, value.sourceUrl].every((item) => item === undefined || typeof item === "string");
+    const rightsValid = value.rightsStatus === undefined || ["cleared", "unknown", "link-only"].includes(String(value.rightsStatus));
+    return typeof value.src === "string" && typeof value.alt === "string" && optionalTextValid && rightsValid;
+  }
+  return false;
+}
+
+function parseNotionTopicPayload(value: unknown, expectedId: string): NotionTopicPayload | null {
+  if (!isRecord(value) || value.schemaVersion !== 1 || value.id !== expectedId) return null;
+  if (typeof value.title !== "string" || typeof value.sourcePath !== "string") return null;
+  if (!Array.isArray(value.blocks) || value.blocks.length > 10_000) return null;
+  if (!value.blocks.every(isValidTheoryBlock)) return null;
+  return value as unknown as NotionTopicPayload;
+}
 
 type PracticeQuestion = {
   id: string;
@@ -121,13 +202,23 @@ const practiceQuestions: PracticeQuestion[] = [
 const subjectAccents = ["forest", "teal", "orange", "slate"] as const;
 
 function getTopicPath(topicId: string) {
-  for (const subject of subjects) {
-    for (const chapter of subject.chapters) {
-      const topic = chapter.topics.find((item) => item.id === topicId);
-      if (topic) return { subject, chapter, topic };
-    }
+  const path = topicPathById.get(topicId);
+  if (!path) return null;
+  const subject = subjects.find((item) => item.id === path.subjectId);
+  const chapter = subject?.chapters.find((item) => item.id === path.chapterId);
+  const topic = getTopicById(topicId);
+  return subject && chapter && topic ? { subject, chapter, topic } : null;
+}
+
+function groupTopicsByCategory(topics: Topic[]) {
+  const groups = new Map<string, Topic[]>();
+  for (const topic of topics) {
+    const label = topic.categoryPath?.length
+      ? topic.categoryPath.join(" › ")
+      : topic.kind === "notion-original" ? "원문 개요" : "핵심 해설";
+    groups.set(label, [...(groups.get(label) ?? []), topic]);
   }
-  return null;
+  return [...groups.entries()];
 }
 
 function normalize(value: string) {
@@ -157,6 +248,69 @@ function Badge({ children, tone = "neutral" }: { children: React.ReactNode; tone
   return <span className={`badge badge-${tone}`}>{children}</span>;
 }
 
+function NotionTheoryContent({ blocks }: { blocks: TheoryContentBlock[] }) {
+  return (
+    <section className="notion-theory" aria-label="Notion 원문 이론">
+      {blocks.map((block, index) => {
+        const key = `${block.type}-${index}`;
+        switch (block.type) {
+          case "heading":
+            return block.level <= 3
+              ? <h3 key={key}>{block.text}</h3>
+              : <h4 key={key}>{block.text}</h4>;
+          case "paragraph":
+            return <p key={key}>{block.text}</p>;
+          case "list": {
+            const List = block.ordered ? "ol" : "ul";
+            return <List key={key}>{block.items.map((item, itemIndex) => <li key={`${key}-${itemIndex}`}>{item}</li>)}</List>;
+          }
+          case "quote":
+            return <blockquote key={key}>{block.text}</blockquote>;
+          case "callout":
+            return <aside className="notion-callout" key={key}>{block.icon && <span aria-hidden="true">{block.icon}</span>}<p>{block.text}</p></aside>;
+          case "code":
+            return <pre key={key}><code data-language={block.language}>{block.text}</code></pre>;
+          case "table":
+            return (
+              <div className="notion-table-wrap" key={key}>
+                <table>
+                  {block.caption && <caption>{block.caption}</caption>}
+                  {block.headers?.length ? <thead><tr>{block.headers.map((header) => <th key={header} scope="col">{header}</th>)}</tr></thead> : null}
+                  <tbody>{block.rows.map((row, rowIndex) => <tr key={`${key}-row-${rowIndex}`}>{row.map((cell, cellIndex) => <td key={`${key}-${rowIndex}-${cellIndex}`}>{cell}</td>)}</tr>)}</tbody>
+                </table>
+              </div>
+            );
+          case "image": {
+            const publishable = block.rightsStatus === "cleared" && block.src.startsWith("/generated/");
+            return (
+              <figure className="notion-figure" key={key}>
+                {publishable ? (
+                  <Image
+                    src={block.src}
+                    alt={block.alt}
+                    width={1200}
+                    height={800}
+                    sizes="(max-width: 800px) 100vw, 760px"
+                  />
+                ) : (
+                  <div className="notion-image-placeholder" role="img" aria-label={block.alt || "출처 확인이 필요한 원문 이미지"}>
+                    이미지 원본 보존 완료 · 공개 이용조건 확인 후 표시
+                  </div>
+                )}
+                {(block.caption || block.alt) && <figcaption>{block.caption || block.alt}</figcaption>}
+              </figure>
+            );
+          }
+          case "divider":
+            return <hr key={key} />;
+          default:
+            return null;
+        }
+      })}
+    </section>
+  );
+}
+
 export default function Home() {
   const [selectedSubjectId, setSelectedSubjectId] = useState(subjects[2].id);
   const [selectedChapterId, setSelectedChapterId] = useState("chapter-14");
@@ -168,6 +322,12 @@ export default function Home() {
   const [hydrated, setHydrated] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchIndex, setSearchIndex] = useState<Map<string, SearchIndexEntry> | null>(null);
+  const [searchIndexLoading, setSearchIndexLoading] = useState(false);
+  const [notionPayload, setNotionPayload] = useState<NotionTopicPayload | null>(null);
+  const [notionPayloadLoading, setNotionPayloadLoading] = useState(false);
+  const [notionPayloadError, setNotionPayloadError] = useState("");
+  const [notionReloadKey, setNotionReloadKey] = useState(0);
   const [topicAnswer, setTopicAnswer] = useState("");
   const [topicResult, setTopicResult] = useState<"correct" | "wrong" | null>(null);
   const [practiceIndex, setPracticeIndex] = useState(0);
@@ -190,22 +350,35 @@ export default function Home() {
   const selectedTopic = getTopicById(selectedTopicId) ?? selectedChapter.topics[0];
   const selectedPath = getTopicPath(selectedTopic.id);
   const activePractice = practiceQuestions[practiceIndex];
+  const hasSearchQuery = searchQuery.trim().length > 0;
+  const hasNotionCatalog = notionCatalogStats.topics > 0;
+  const completedSet = useMemo(
+    () => new Set(completed.filter((topicId) => knownTopicIds.has(topicId))),
+    [completed],
+  );
+  const bookmarkSet = useMemo(
+    () => new Set(bookmarks.filter((topicId) => knownTopicIds.has(topicId))),
+    [bookmarks],
+  );
 
   useEffect(() => {
-    try {
-      const saved = window.localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved) as Partial<StoredStudyState>;
-        setCompleted(Array.isArray(parsed.completed) ? parsed.completed : []);
-        setBookmarks(Array.isArray(parsed.bookmarks) ? parsed.bookmarks : []);
-        setLastTopicId(typeof parsed.lastTopicId === "string" ? parsed.lastTopicId : null);
-        setWrongAnswers(Array.isArray(parsed.wrongAnswers) ? parsed.wrongAnswers : []);
+    const timer = window.setTimeout(() => {
+      try {
+        const saved = window.localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          const parsed = JSON.parse(saved) as Partial<StoredStudyState>;
+          setCompleted(Array.isArray(parsed.completed) ? parsed.completed.filter((id) => knownTopicIds.has(id)) : []);
+          setBookmarks(Array.isArray(parsed.bookmarks) ? parsed.bookmarks.filter((id) => knownTopicIds.has(id)) : []);
+          setLastTopicId(typeof parsed.lastTopicId === "string" && knownTopicIds.has(parsed.lastTopicId) ? parsed.lastTopicId : null);
+          setWrongAnswers(Array.isArray(parsed.wrongAnswers) ? parsed.wrongAnswers : []);
+        }
+      } catch {
+        // Corrupt or unavailable storage falls back to a clean local state.
+      } finally {
+        setHydrated(true);
       }
-    } catch {
-      // Corrupt or unavailable storage falls back to a clean local state.
-    } finally {
-      setHydrated(true);
-    }
+    }, 0);
+    return () => window.clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -225,18 +398,88 @@ export default function Home() {
   }, [toast]);
 
   useEffect(() => {
-    setTopicAnswer("");
-    setTopicResult(null);
-  }, [selectedTopicId]);
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => {
+      setNotionPayload(null);
+      setNotionPayloadError("");
+      setNotionPayloadLoading(false);
+
+      if (selectedTopic.kind !== "notion-original" || !selectedTopic.contentUrl) return;
+      if (!selectedTopic.contentUrl.startsWith("/generated/topics/")) {
+        setNotionPayloadError("허용되지 않은 원문 경로입니다.");
+        return;
+      }
+
+      const cached = notionTopicCache.get(selectedTopic.id);
+      if (cached) {
+        setNotionPayload(cached);
+        return;
+      }
+
+      setNotionPayloadLoading(true);
+      void fetch(selectedTopic.contentUrl, { signal: controller.signal, cache: "force-cache" })
+        .then(async (response) => {
+          if (!response.ok) throw new Error(`원문을 불러오지 못했습니다 (${response.status})`);
+          const parsed = parseNotionTopicPayload(await response.json(), selectedTopic.id);
+          if (!parsed) throw new Error("원문 데이터 검증에 실패했습니다.");
+          notionTopicCache.set(selectedTopic.id, parsed);
+          setNotionPayload(parsed);
+        })
+        .catch((error: unknown) => {
+          if (controller.signal.aborted) return;
+          setNotionPayloadError(error instanceof Error ? error.message : "원문을 불러오지 못했습니다.");
+        })
+        .finally(() => {
+          if (!controller.signal.aborted) setNotionPayloadLoading(false);
+        });
+    }, 0);
+
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
+  }, [notionReloadKey, selectedTopic.contentUrl, selectedTopic.id, selectedTopic.kind]);
 
   useEffect(() => {
-    setPracticeSelections([]);
-    setPracticeText("");
-    setPracticeOrder(practiceQuestions[practiceIndex].orderItems ?? []);
-    setPracticeResult(null);
-  }, [practiceIndex]);
+    if (!hasSearchQuery || searchIndex || notionCatalogStats.topics === 0) return;
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => {
+      setSearchIndexLoading(true);
+      void fetch("/generated/search-index.json", { signal: controller.signal, cache: "force-cache" })
+        .then(async (response) => {
+          if (!response.ok) throw new Error("검색 색인을 불러오지 못했습니다.");
+          const value: unknown = await response.json();
+          if (!isRecord(value) || value.schemaVersion !== 1 || !Array.isArray(value.topics)) {
+            throw new Error("검색 색인 형식이 올바르지 않습니다.");
+          }
+          const entries = (value as unknown as SearchIndexPayload).topics.filter(
+            (entry) =>
+              isRecord(entry) &&
+              typeof entry.id === "string" &&
+              typeof entry.title === "string" &&
+              typeof entry.normalizedText === "string" &&
+              knownTopicIds.has(entry.id),
+          );
+          setSearchIndex(new Map(entries.map((entry) => [entry.id, entry])));
+        })
+        .catch(() => {
+          if (!controller.signal.aborted) setSearchIndex(new Map());
+        })
+        .finally(() => {
+          if (!controller.signal.aborted) setSearchIndexLoading(false);
+        });
+    }, 150);
 
-  const progress = Math.round((completed.length / allTopics.length) * 100);
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+      setSearchIndexLoading(false);
+    };
+  }, [hasSearchQuery, searchIndex]);
+
+  const progress = allTopics.length
+    ? Math.round((completedSet.size / allTopics.length) * 100)
+    : 0;
 
   const searchResults = useMemo(() => {
     const needle = normalize(searchQuery);
@@ -256,6 +499,9 @@ export default function Home() {
           topic.summary30s,
           ...topic.tags,
           ...topic.synonyms,
+          ...(topic.categoryPath ?? []),
+          topic.plainTextExcerpt ?? "",
+          searchIndex?.get(topic.id)?.normalizedText ?? "",
           path?.subject.title ?? "",
           path?.chapter.title ?? "",
           path?.chapter.title === "비파괴검사" ? "NDT" : "",
@@ -265,7 +511,7 @@ export default function Home() {
       );
       return haystack.includes(needle) || haystack.includes(normalize(expanded));
     });
-  }, [searchQuery]);
+  }, [searchIndex, searchQuery]);
 
   const openTopic = (topicId: string, shouldScroll = true) => {
     const path = getTopicPath(topicId);
@@ -273,6 +519,11 @@ export default function Home() {
     setSelectedSubjectId(path.subject.id);
     setSelectedChapterId(path.chapter.id);
     setSelectedTopicId(topicId);
+    setTopicAnswer("");
+    setTopicResult(null);
+    setNotionPayload(null);
+    setNotionPayloadError("");
+    setNotionPayloadLoading(path.topic.kind === "notion-original");
     setLastTopicId(topicId);
     setSearchOpen(false);
     setSearchQuery("");
@@ -282,6 +533,14 @@ export default function Home() {
         lessonHeadingRef.current?.focus();
       }, 80);
     }
+  };
+
+  const selectPractice = (index: number) => {
+    setPracticeIndex(index);
+    setPracticeSelections([]);
+    setPracticeText("");
+    setPracticeOrder(practiceQuestions[index].orderItems ?? []);
+    setPracticeResult(null);
   };
 
   const navigateTo = (id: string) => {
@@ -295,7 +554,7 @@ export default function Home() {
         ? current.filter((id) => id !== topicId)
         : [...current, topicId],
     );
-    setToast(completed.includes(topicId) ? "학습 완료를 해제했습니다." : "학습 완료로 기록했습니다.");
+    setToast(completedSet.has(topicId) ? "학습 완료를 해제했습니다." : "학습 완료로 기록했습니다.");
   };
 
   const toggleBookmark = (topicId: string) => {
@@ -304,7 +563,7 @@ export default function Home() {
         ? current.filter((id) => id !== topicId)
         : [...current, topicId],
     );
-    setToast(bookmarks.includes(topicId) ? "북마크를 해제했습니다." : "북마크에 저장했습니다.");
+    setToast(bookmarkSet.has(topicId) ? "북마크를 해제했습니다." : "북마크에 저장했습니다.");
   };
 
   const saveWrongAnswer = (item: Omit<WrongAnswer, "attempts">) => {
@@ -500,7 +759,7 @@ export default function Home() {
           {searchOpen && searchQuery && (
             <div className="search-panel" role="dialog" aria-label="검색 결과">
               <div className="search-panel-head">
-                <strong>검색 결과 {searchResults.length}건</strong>
+                <strong>검색 결과 {searchResults.length}건{searchIndexLoading ? " · 원문 색인 불러오는 중" : ""}</strong>
                 <button type="button" className="ghost-button" onClick={() => setSearchOpen(false)}>
                   닫기
                 </button>
@@ -518,10 +777,10 @@ export default function Home() {
                       >
                         <span>
                           <strong>{topic.title}</strong>
-                          <small>{path?.subject.title} · {path?.chapter.title}</small>
+                          <small>{[path?.subject.title, path?.chapter.title, ...(topic.categoryPath ?? [])].filter(Boolean).join(" · ")}</small>
                         </span>
                         <span className="search-result-badges">
-                          <Badge tone="explain">{topic.sourceType}</Badge>
+                          <Badge tone={topic.kind === "notion-original" ? "notion" : "explain"}>{topic.sourceType}</Badge>
                           <Badge tone="check">{topic.reviewStatus}</Badge>
                         </span>
                       </button>
@@ -542,10 +801,10 @@ export default function Home() {
       <main id="main-content">
         <section className="hero" id="home">
           <div className="hero-copy">
-            <div className="eyebrow"><span /> 공개형 학습 MVP · 검토 기준일 {REVIEW_DATE}</div>
+            <div className="eyebrow"><span /> {hasNotionCatalog ? "Notion 원문 전수 이관판" : "공개형 학습 기본판"} · 검토 기준일 {REVIEW_DATE}</div>
             <h1>현장에서 찾고,<br />시험장에서 떠올리는<br /><em>설비보전 이론서</em></h1>
             <p>
-              4과목·19개 장을 학습 단위로 나누고, 핵심 이론과 출처, 문제풀이와 오답을 한 화면에 연결했습니다.
+              4과목·19개 장을 학습 단위로 나누고, 원문 이론과 출처, 문제풀이와 오답을 한 화면에 연결했습니다.
             </p>
             <div className="hero-actions">
               <button className="primary-button" type="button" onClick={() => navigateTo("curriculum")}>
@@ -570,12 +829,14 @@ export default function Home() {
               <small>전체 진도</small>
             </div>
             <div className="board-grid">
-              <div><strong>04</strong><span>과목</span></div>
-              <div><strong>19</strong><span>장</span></div>
-              <div><strong>{allTopics.length}</strong><span>대표 개념</span></div>
+              <div><strong>{String(subjects.length).padStart(2, "0")}</strong><span>과목·부록</span></div>
+              <div><strong>{allChapters.length}</strong><span>목차 그룹</span></div>
+              <div><strong>{allTopics.length}</strong><span>학습 문서</span></div>
               <div><strong>06</strong><span>문제 유형</span></div>
             </div>
-            <p>전체 556개 제목·125개 이미지는 출처 검수 후 같은 구조로 단계적으로 이관됩니다.</p>
+            <p>{hasNotionCatalog
+              ? `원문 제목 ${notionCatalogStats.headings}개·표 ${notionCatalogStats.tables}개·이미지 ${notionCatalogStats.images}개를 전수 분할했습니다.`
+              : "Notion 원문 전수 변환과 출처 검수를 준비하고 있습니다."}</p>
           </div>
         </section>
 
@@ -583,7 +844,7 @@ export default function Home() {
           <div className="section-heading">
             <div>
               <span className="section-kicker">CURRICULUM</span>
-              <h2>4개 과목, 19개 장 학습 목차</h2>
+              <h2>{subjects.length}개 과목·부록, {allChapters.length}개 목차 그룹</h2>
             </div>
             <p>과목을 고르면 장과 세부 개념을 바로 펼쳐볼 수 있습니다.</p>
           </div>
@@ -591,13 +852,13 @@ export default function Home() {
           <div className="subject-grid">
             {subjects.map((subject, index) => {
               const subjectTopicIds = subject.chapters.flatMap((chapter) => chapter.topics.map((topic) => topic.id));
-              const done = subjectTopicIds.filter((id) => completed.includes(id)).length;
+              const done = subjectTopicIds.filter((id) => completedSet.has(id)).length;
               const value = Math.round((done / subjectTopicIds.length) * 100);
               return (
                 <button
                   type="button"
                   key={subject.id}
-                  className={`subject-card accent-${subjectAccents[index]} ${selectedSubject.id === subject.id ? "active" : ""}`}
+                  className={`subject-card accent-${subjectAccents[index % subjectAccents.length]} ${selectedSubject.id === subject.id ? "active" : ""}`}
                   onClick={() => {
                     const firstChapter = subject.chapters[0];
                     setSelectedSubjectId(subject.id);
@@ -605,10 +866,10 @@ export default function Home() {
                     openTopic(firstChapter.topics[0].id);
                   }}
                 >
-                  <span className="subject-index">0{index + 1}</span>
+                  <span className="subject-index">{String(index + 1).padStart(2, "0")}</span>
                   <span className="subject-card-body">
                     <strong>{subject.title}</strong>
-                    <small>{subject.chapters.length}개 장 · {subjectTopicIds.length}개 대표 개념</small>
+                    <small>{subject.chapters.length}개 목차 그룹 · {subjectTopicIds.length}개 학습 문서</small>
                     <ProgressBar value={value} label={`${subject.title} 진도`} />
                   </span>
                   <span className="subject-arrow" aria-hidden="true">↗</span>
@@ -642,7 +903,7 @@ export default function Home() {
               </div>
               <div className="chapter-list">
                 {selectedSubject.chapters.map((chapter) => {
-                  const chapterDone = chapter.topics.filter((topic) => completed.includes(topic.id)).length;
+                  const chapterDone = chapter.topics.filter((topic) => completedSet.has(topic.id)).length;
                   const active = chapter.id === selectedChapter.id;
                   return (
                     <div className={`chapter-group ${active ? "active" : ""}`} key={chapter.id}>
@@ -662,18 +923,29 @@ export default function Home() {
                       </button>
                       {active && (
                         <div className="topic-list">
-                          {chapter.topics.map((topic) => (
-                            <button
-                              type="button"
-                              key={topic.id}
-                              className={`topic-item ${selectedTopic.id === topic.id ? "active" : ""}`}
-                              onClick={() => openTopic(topic.id, false)}
-                            >
-                              <span className={`status-dot ${completed.includes(topic.id) ? "done" : ""}`} />
-                              <span>{topic.title}</span>
-                              {bookmarks.includes(topic.id) && <span aria-label="북마크됨">★</span>}
-                            </button>
-                          ))}
+                          {groupTopicsByCategory(chapter.topics).map(([label, topics]) => {
+                            const groupSelected = topics.some((topic) => topic.id === selectedTopic.id);
+                            const groupDone = topics.filter((topic) => completedSet.has(topic.id)).length;
+                            return (
+                              <details className="topic-category" key={`${label}-${groupSelected}`} defaultOpen={groupSelected}>
+                                <summary><span>{label}</span><small>{groupDone}/{topics.length}</small></summary>
+                                <div className="topic-sublist">
+                                  {topics.map((topic) => (
+                                    <button
+                                      type="button"
+                                      key={topic.id}
+                                      className={`topic-item ${selectedTopic.id === topic.id ? "active" : ""}`}
+                                      onClick={() => openTopic(topic.id, false)}
+                                    >
+                                      <span className={`status-dot ${completedSet.has(topic.id) ? "done" : ""}`} />
+                                      <span>{topic.title}</span>
+                                      {bookmarkSet.has(topic.id) && <span aria-label="북마크됨">★</span>}
+                                    </button>
+                                  ))}
+                                </div>
+                              </details>
+                            );
+                          })}
                         </div>
                       )}
                     </div>
@@ -688,11 +960,12 @@ export default function Home() {
                   <span>{selectedPath?.subject.title}</span>
                   <span aria-hidden="true">/</span>
                   <span>{selectedPath?.chapter.title}</span>
+                  {selectedTopic.categoryPath?.length ? <><span aria-hidden="true">/</span><span>{selectedTopic.categoryPath.join(" › ")}</span></> : null}
                 </div>
                 <div className="lesson-title-row">
                   <div>
                     <div className="lesson-badges">
-                      <Badge tone="explain">{selectedTopic.sourceType}</Badge>
+                      <Badge tone={selectedTopic.kind === "notion-original" ? "notion" : "explain"}>{selectedTopic.sourceType}</Badge>
                       <Badge tone="check">{selectedTopic.reviewStatus}</Badge>
                     </div>
                     <h2 ref={lessonHeadingRef} tabIndex={-1}>{selectedTopic.title}</h2>
@@ -701,19 +974,19 @@ export default function Home() {
                     <button
                       type="button"
                       className="icon-button"
-                      aria-label={bookmarks.includes(selectedTopic.id) ? "북마크 해제" : "북마크 추가"}
-                      aria-pressed={bookmarks.includes(selectedTopic.id)}
+                      aria-label={bookmarkSet.has(selectedTopic.id) ? "북마크 해제" : "북마크 추가"}
+                      aria-pressed={bookmarkSet.has(selectedTopic.id)}
                       onClick={() => toggleBookmark(selectedTopic.id)}
                     >
-                      {bookmarks.includes(selectedTopic.id) ? "★" : "☆"}
+                      {bookmarkSet.has(selectedTopic.id) ? "★" : "☆"}
                     </button>
                     <button
                       type="button"
-                      className={completed.includes(selectedTopic.id) ? "complete-button done" : "complete-button"}
-                      aria-pressed={completed.includes(selectedTopic.id)}
+                      className={completedSet.has(selectedTopic.id) ? "complete-button done" : "complete-button"}
+                      aria-pressed={completedSet.has(selectedTopic.id)}
                       onClick={() => toggleCompleted(selectedTopic.id)}
                     >
-                      {completed.includes(selectedTopic.id) ? "✓ 학습 완료" : "학습 완료하기"}
+                      {completedSet.has(selectedTopic.id) ? "✓ 학습 완료" : "학습 완료하기"}
                     </button>
                   </div>
                 </div>
@@ -727,6 +1000,24 @@ export default function Home() {
                   <p>{selectedTopic.summary30s}</p>
                 </div>
               </section>
+
+              {selectedTopic.kind === "notion-original" && notionPayloadLoading ? (
+                <section className="notion-loading" aria-live="polite">
+                  <span className="loading-pulse" aria-hidden="true" />
+                  <div><strong>원문 이론을 불러오는 중입니다.</strong><p>선택한 학습 문서만 불러와 초기 화면 속도를 유지합니다.</p></div>
+                </section>
+              ) : null}
+
+              {selectedTopic.kind === "notion-original" && notionPayloadError ? (
+                <section className="notion-error" role="alert">
+                  <div><strong>원문을 표시하지 못했습니다.</strong><p>{notionPayloadError}</p></div>
+                  <button className="secondary-button" type="button" onClick={() => setNotionReloadKey((value) => value + 1)}>다시 불러오기</button>
+                </section>
+              ) : null}
+
+              {selectedTopic.kind === "notion-original" && notionPayload ? (
+                <NotionTheoryContent blocks={notionPayload.blocks} />
+              ) : null}
 
               {selectedTopic.keyPoints?.length ? (
                 <section className="lesson-section">
@@ -846,6 +1137,11 @@ export default function Home() {
                     </div>
                   )}
                 </section>
+              ) : selectedTopic.kind === "notion-original" ? (
+                <div className="notion-quiz-note">
+                  <Badge tone="pending">문제 연결 예정</Badge>
+                  <span>원문 학습 완료는 기록할 수 있으며, 검수된 문제는 이후 연결됩니다.</span>
+                </div>
               ) : (
                 <section className="empty-state lesson-empty">
                   <strong>이 개념의 문제는 검수 중입니다.</strong>
@@ -859,10 +1155,13 @@ export default function Home() {
                 <dl>
                   <div><dt>자료 성격</dt><dd>{selectedTopic.sourceType}</dd></div>
                   <div><dt>검증 상태</dt><dd>{selectedTopic.reviewStatus}</dd></div>
-                  <div><dt>검토 기준일</dt><dd>{selectedTopic.reviewedAt}</dd></div>
+                  <div><dt>{selectedTopic.kind === "notion-original" ? "수집 기준일" : "검토 기준일"}</dt><dd>{selectedTopic.reviewedAt}</dd></div>
+                  {selectedTopic.kind === "notion-original" && selectedTopic.categoryPath?.length ? <div><dt>원문 계층</dt><dd>{selectedTopic.categoryPath.join(" › ")}</dd></div> : null}
                   <div><dt>공개 기준</dt><dd>원문·이미지 이용조건 확인 후 단계별 공개</dd></div>
                 </dl>
-                <p>현재 본문은 학습 구조 검증용 상세 해설입니다. 공식 기준이나 NCS 원문으로 확정하기 전 원문 대조가 필요합니다.</p>
+                <p>{selectedTopic.kind === "notion-original"
+                  ? "Notion 원문을 제목 계층과 블록 구조에 따라 분리한 학습 문서입니다. 수치·법령·표현은 검토 상태 배지를 함께 확인하세요."
+                  : "현재 본문은 학습 구조 검증용 상세 해설입니다. 공식 기준이나 NCS 원문으로 확정하기 전 원문 대조가 필요합니다."}</p>
               </section>
               </div>
             </article>
@@ -870,11 +1169,11 @@ export default function Home() {
             <aside className="study-rail" aria-label="나의 학습 현황">
               <div className="quick-card progress-card">
                 <span className="section-kicker">MY PROGRESS</span>
-                <div className="progress-big"><strong>{progress}%</strong><span>완료 {completed.length}/{allTopics.length}</span></div>
+                <div className="progress-big"><strong>{progress}%</strong><span>완료 {completedSet.size}/{allTopics.length}</span></div>
                 <ProgressBar value={progress} label="전체 진도" />
               </div>
               <div className="quick-card">
-                <div className="quick-card-head"><strong>북마크</strong><span>{bookmarks.length}</span></div>
+                <div className="quick-card-head"><strong>북마크</strong><span>{bookmarkSet.size}</span></div>
                 {bookmarkedTopics.length ? (
                   <div className="mini-list">
                     {bookmarkedTopics.slice(0, 4).map((topic) => (
@@ -914,10 +1213,10 @@ export default function Home() {
                 <li><strong>출처 상태</strong><span>AI 직접 제작 · 원문 이미지 미사용</span></li>
               </ul>
               <button className="secondary-button light-button" type="button" onClick={() => {
-                setPracticeIndex(5);
+                selectPractice(5);
                 navigateTo("practice");
               }}>사진판별 문제 풀기</button>
-              <small>Notion 원본의 125개 이미지는 권리·출처 검수 후 자체 저장소로 이관합니다.</small>
+              <small>{hasNotionCatalog ? `원문 이미지 ${notionCatalogStats.images}개는 원본 보존 후 공개 이용조건에 따라 표시합니다.` : "Notion 원본 이미지는 권리·출처 검수 후 자체 저장소로 이관합니다."}</small>
             </div>
           </div>
         </section>
@@ -935,7 +1234,7 @@ export default function Home() {
                   role="tab"
                   aria-selected={practiceIndex === index}
                   className={practiceIndex === index ? "active" : ""}
-                  onClick={() => setPracticeIndex(index)}
+                  onClick={() => selectPractice(index)}
                   key={question.id}
                 >
                   <span>{String(index + 1).padStart(2, "0")}</span>{question.type}

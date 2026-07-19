@@ -1,98 +1,59 @@
-# vinext-starter
+# 설비보전 마스터북
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+Notion의 설비보전기사 이론서를 검색·진도·문제풀이 중심의 공개 학습 사이트로 변환한 vinext 프로젝트입니다.
 
-## Prerequisites
+## 현재 콘텐츠
 
-- Node.js `>=22.13.0`
+- 원문 507,673자
+- 제목 556개
+- 표 49개
+- 이미지 메타데이터 125개
+- 원문 학습 문서 420개와 검수형 핵심 해설 57개
 
-## Quick Start
+원문 본문은 토픽별 JSON으로 분리해 선택한 문서만 불러오고, 전체 본문 검색 색인도 첫 검색 때만 내려받습니다. 출처 권한이 확인되지 않은 원문 이미지 파일은 `public/`에 넣지 않으며 자리표시자와 설명만 노출합니다.
+
+## 실행과 검증
+
+Node.js 22.13 이상이 필요합니다.
 
 ```bash
 npm install
 npm run dev
-npm run build
+npm test
+npm run lint
 ```
 
-This starter does not use `wrangler.jsonc`.
+`npm test`는 빌드와 함께 카탈로그·검색 색인·토픽 본문의 수량, ID 연결, 허용 블록, 민감한 임시 URL 및 로컬 경로 유출, 이미지 공개 권한을 검사합니다.
 
-## Included Shape
+## Notion 원문 다시 가져오기
 
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
+커넥터로 수집한 원문과 매니페스트를 각각 아래 위치에 둡니다. `work/`는 비공개 작업 영역이며 Git에 포함되지 않습니다.
 
-## Workspace Auth Headers
-
-OpenAI workspace sites can read the current user's email from
-`oai-authenticated-user-email`.
-
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
-
-Treat the full name as optional and fall back to email when it is absent:
-
-```tsx
-import { headers } from "next/headers";
-
-export default async function Home() {
-  const requestHeaders = await headers();
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
-
-  const displayName = fullName ?? email;
-  // ...
-}
+```text
+work/notion-source/main.md
+work/notion-source/source-manifest.json
 ```
 
-## Optional Dispatch-Owned ChatGPT Sign-In
+Python 3.12 이상으로 변환기를 실행합니다.
 
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
+```bash
+python scripts/import_notion_source.py
+```
 
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
+생성 결과:
 
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
+```text
+app/generated/notion-catalog.json
+public/generated/search-index.json
+public/generated/topics/*.json
+work/notion-import-report.json
+```
 
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
+변환기는 원문의 제목·표·이미지 수량이 기준과 다르거나, 공개 JSON에 AWS 서명값·Notion 비공개 래퍼·로컬 경로가 남아 있거나, 본문 및 검색 색인의 ID가 맞지 않으면 실패합니다.
 
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
+## 콘텐츠 운영 원칙
 
-## Useful Commands
-
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
-
-## Learn More
-
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+- Notion은 편집 원본, 웹사이트는 검증된 공개 학습판으로 사용합니다.
+- `Notion 원문`, `상세 해설`, `출제 예상·변형` 등 자료 성격을 구분합니다.
+- 법령·수치·공식은 검토 기준일과 검증 상태를 함께 표시합니다.
+- 이미지 파일은 공개 재배포 권한이 확인된 경우에만 자체 저장소로 옮깁니다.

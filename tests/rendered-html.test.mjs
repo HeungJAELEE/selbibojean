@@ -33,7 +33,8 @@ test("server-renders the learning portal", async () => {
   const html = await response.text();
   assert.match(html, /<html[^>]*lang="ko"/i);
   assert.match(html, /설비보전 마스터북/);
-  assert.match(html, /4개 과목, 19개 장 학습 목차/);
+  assert.match(html, /과목·부록/);
+  assert.match(html, /개 목차 그룹/);
   assert.match(html, /6가지 문제 유형 연습/);
   assert.match(html, /나의 오답노트/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);

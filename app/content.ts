@@ -2,11 +2,13 @@ import { subject1Enrichment } from "./enrichment/subject1";
 import { subject2Enrichment } from "./enrichment/subject2";
 import { subject3Enrichment } from "./enrichment/subject3";
 import { subject4Enrichment } from "./enrichment/subject4";
+import notionCatalogJson from "./generated/notion-catalog.json";
 
 export type SourceType =
   | "NCS 원문"
   | "공식 기준"
   | "상세 해설"
+  | "Notion 원문"
   | "비공식 수험자 복원"
   | "출제 예상·변형";
 
@@ -46,6 +48,32 @@ export interface ComparisonRow {
   note?: string;
 }
 
+export type TheoryContentBlock =
+  | { type: "paragraph"; text: string }
+  | { type: "heading"; text: string; level: number }
+  | { type: "list"; items: string[]; ordered?: boolean }
+  | { type: "quote"; text: string }
+  | { type: "callout"; text: string; icon?: string }
+  | { type: "code"; text: string; language?: string }
+  | { type: "table"; headers?: string[]; rows: string[][]; caption?: string }
+  | {
+      type: "image";
+      src: string;
+      alt: string;
+      caption?: string;
+      sourceUrl?: string;
+      rightsStatus?: "cleared" | "unknown" | "link-only";
+    }
+  | { type: "divider" };
+
+export interface NotionTopicPayload {
+  schemaVersion: number;
+  id: string;
+  title: string;
+  sourcePath: string;
+  blocks: TheoryContentBlock[];
+}
+
 export interface Topic {
   id: string;
   title: string;
@@ -63,6 +91,12 @@ export interface Topic {
   commonTrap?: string;
   sourceNote?: string;
   quiz?: Quiz;
+  kind?: "curated" | "notion-original";
+  categoryPath?: string[];
+  contentUrl?: string;
+  plainTextExcerpt?: string;
+  sourcePath?: string;
+  sourceUrl?: string;
 }
 
 export interface Chapter {
@@ -83,6 +117,102 @@ export interface IndexedTopic extends Topic {
   subjectTitle: string;
   chapterId: string;
   chapterTitle: string;
+}
+
+export interface NotionCatalogStats {
+  subjects: number;
+  chapters: number;
+  topics: number;
+  headings: number;
+  tables: number;
+  images: number;
+  textCharacters: number;
+}
+
+interface NotionCatalog {
+  schemaVersion: number;
+  generatedFrom: string[];
+  generatedAt: string | null;
+  subjects: Subject[];
+  stats: NotionCatalogStats;
+}
+
+function isObjectRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null;
+}
+
+function parseNotionCatalog(value: unknown): NotionCatalog {
+  if (!isObjectRecord(value) || value.schemaVersion !== 1 || !Array.isArray(value.subjects)) {
+    throw new Error("Invalid Notion catalog root");
+  }
+  if (!Array.isArray(value.generatedFrom) || !value.generatedFrom.every((item) => typeof item === "string")) {
+    throw new Error("Invalid Notion catalog source metadata");
+  }
+  if (value.generatedFrom.some((item) => /(?:^[a-z]:\\|\/users\/|x-amz-|security-token)/i.test(item))) {
+    throw new Error("Notion catalog exposes a local path or temporary credential");
+  }
+  if (!(value.generatedAt === null || typeof value.generatedAt === "string") || !isObjectRecord(value.stats)) {
+    throw new Error("Invalid Notion catalog generation metadata");
+  }
+
+  const statKeys: Array<keyof NotionCatalogStats> = [
+    "subjects",
+    "chapters",
+    "topics",
+    "headings",
+    "tables",
+    "images",
+    "textCharacters",
+  ];
+  if (!statKeys.every((key) => typeof value.stats[key] === "number" && Number.isInteger(value.stats[key]) && Number(value.stats[key]) >= 0)) {
+    throw new Error("Invalid Notion catalog statistics");
+  }
+
+  let chapterCount = 0;
+  let topicCount = 0;
+  for (const subject of value.subjects) {
+    if (!isObjectRecord(subject) || typeof subject.id !== "string" || typeof subject.title !== "string" ||
+      typeof subject.shortTitle !== "string" || !Array.isArray(subject.chapters)) {
+      throw new Error("Invalid Notion catalog subject");
+    }
+    chapterCount += subject.chapters.length;
+    for (const chapter of subject.chapters) {
+      if (!isObjectRecord(chapter) || typeof chapter.id !== "string" || typeof chapter.title !== "string" || !Array.isArray(chapter.topics)) {
+        throw new Error("Invalid Notion catalog chapter");
+      }
+      topicCount += chapter.topics.length;
+      for (const topic of chapter.topics) {
+        if (!isObjectRecord(topic) || typeof topic.id !== "string" || typeof topic.title !== "string" ||
+          typeof topic.summary30s !== "string") {
+          throw new Error("Invalid Notion catalog topic");
+        }
+        if (topic.tags !== undefined && (!Array.isArray(topic.tags) || !topic.tags.every((item) => typeof item === "string"))) {
+          throw new Error("Invalid Notion topic search metadata");
+        }
+        if (topic.synonyms !== undefined && (!Array.isArray(topic.synonyms) || !topic.synonyms.every((item) => typeof item === "string"))) {
+          throw new Error("Invalid Notion topic synonym metadata");
+        }
+        if (topic.contentUrl !== undefined && (typeof topic.contentUrl !== "string" || !/^\/generated\/topics\/[a-z0-9._-]+\.json$/i.test(topic.contentUrl))) {
+          throw new Error("Invalid Notion topic content URL");
+        }
+        if (topic.reviewedAt !== undefined && typeof topic.reviewedAt !== "string") {
+          throw new Error("Invalid Notion topic review date");
+        }
+        if (topic.categoryPath !== undefined && (!Array.isArray(topic.categoryPath) || !topic.categoryPath.every((item) => typeof item === "string"))) {
+          throw new Error("Invalid Notion topic category path");
+        }
+        if (typeof topic.sourcePath === "string" && /(?:^[a-z]:\\|\/users\/|x-amz-|security-token)/i.test(topic.sourcePath)) {
+          throw new Error("Notion topic exposes a local path or temporary credential");
+        }
+      }
+    }
+  }
+
+  if (topicCount !== Number(value.stats.topics) || chapterCount !== Number(value.stats.chapters) ||
+    value.subjects.length !== Number(value.stats.subjects)) {
+    throw new Error("Notion catalog statistics do not match its hierarchy");
+  }
+  return value as unknown as NotionCatalog;
 }
 
 const REVIEWED_AT = "2026-07-20";
@@ -873,16 +1003,92 @@ const topicEnrichment: Record<string, Partial<Topic>> = {
   ...subject4Enrichment,
 };
 
-export const subjects: Subject[] = baseSubjects.map((subject) => ({
+const curatedSubjects: Subject[] = baseSubjects.map((subject) => ({
   ...subject,
   chapters: subject.chapters.map((chapter) => ({
     ...chapter,
     topics: chapter.topics.map((topic) => ({
       ...topic,
       ...(topicEnrichment[topic.id] ?? {}),
+      kind: "curated" as const,
     })),
   })),
 }));
+
+const notionCatalog = parseNotionCatalog(notionCatalogJson);
+
+export const notionCatalogStats: NotionCatalogStats = notionCatalog.stats;
+export const notionCatalogGeneratedAt = notionCatalog.generatedAt;
+
+function normalizeNotionSubject(subject: Subject): Subject {
+  const importedAt = typeof notionCatalog.generatedAt === "string"
+    ? notionCatalog.generatedAt.slice(0, 10)
+    : REVIEWED_AT;
+  return {
+    ...subject,
+    chapters: subject.chapters
+      .filter((chapter) => chapter.topics.length > 0)
+      .map((chapter) => ({
+        ...chapter,
+        topics: chapter.topics.map((topic) => ({
+          ...topic,
+          tags: topic.tags ?? [],
+          synonyms: topic.synonyms ?? [],
+          contentUrl: topic.contentUrl ?? `/generated/topics/${topic.id}.json`,
+          reviewedAt: topic.reviewedAt ?? importedAt,
+          kind: "notion-original" as const,
+          sourceType: "Notion 원문" as const,
+          reviewStatus: "확인 필요" as const,
+        })),
+      })),
+  };
+}
+
+function mergeSubjectCatalog(curated: Subject[], imported: Subject[]): Subject[] {
+  const merged = curated.map((subject) => ({
+    ...subject,
+    chapters: subject.chapters.map((chapter) => ({
+      ...chapter,
+      topics: [...chapter.topics],
+    })),
+  }));
+
+  for (const rawSubject of imported) {
+    const importedSubject = normalizeNotionSubject(rawSubject);
+    if (importedSubject.chapters.length === 0) continue;
+
+    const existingSubject = merged.find((subject) => subject.id === importedSubject.id);
+    if (!existingSubject) {
+      merged.push(importedSubject);
+      continue;
+    }
+
+    for (const importedChapter of importedSubject.chapters) {
+      const existingChapter = existingSubject.chapters.find(
+        (chapter) => chapter.id === importedChapter.id,
+      );
+      if (!existingChapter) {
+        existingSubject.chapters.push(importedChapter);
+        continue;
+      }
+
+      for (const importedTopic of importedChapter.topics) {
+        const collision = existingChapter.topics.some((topic) => topic.id === importedTopic.id);
+        if (collision) {
+          throw new Error(`Duplicate topic id in Notion catalog: ${importedTopic.id}`);
+        }
+        existingChapter.topics.push(importedTopic);
+      }
+    }
+  }
+
+  return merged;
+}
+
+export const subjects: Subject[] = mergeSubjectCatalog(
+  curatedSubjects,
+  notionCatalog.subjects ?? [],
+);
 
 export const allChapters: Chapter[] = subjects.flatMap((subject) => subject.chapters);
 
@@ -898,16 +1104,41 @@ export const allTopics: IndexedTopic[] = subjects.flatMap((subject) =>
   ),
 );
 
+export const topicById = new Map(allTopics.map((topic) => [topic.id, topic]));
+
+if (topicById.size !== allTopics.length) {
+  throw new Error("Notion catalog contains duplicate topic ids");
+}
+
+export const topicPathById = new Map(
+  allTopics.map((topic) => [
+    topic.id,
+    {
+      subjectId: topic.subjectId,
+      subjectTitle: topic.subjectTitle,
+      chapterId: topic.chapterId,
+      chapterTitle: topic.chapterTitle,
+    },
+  ]),
+);
+
+const curatedTopicIds = new Set(
+  curatedSubjects.flatMap((subject) =>
+    subject.chapters.flatMap((chapter) => chapter.topics.map((topic) => topic.id)),
+  ),
+);
+
 const incompleteTopics = allTopics.filter(
   (topic) =>
-    topic.keyPoints?.length !== 3 ||
-    (topic.detailSections?.length ?? 0) < 2 ||
-    (topic.comparisons?.length ?? 0) < 2 ||
-    (topic.workSteps?.length ?? 0) < 3 ||
-    !topic.examConnection ||
-    !topic.commonTrap ||
-    !topic.quiz ||
-    topic.quiz.options.length !== 4,
+    curatedTopicIds.has(topic.id) &&
+    (topic.keyPoints?.length !== 3 ||
+      (topic.detailSections?.length ?? 0) < 2 ||
+      (topic.comparisons?.length ?? 0) < 2 ||
+      (topic.workSteps?.length ?? 0) < 3 ||
+      !topic.examConnection ||
+      !topic.commonTrap ||
+      !topic.quiz ||
+      topic.quiz.options.length !== 4),
 );
 
 if (incompleteTopics.length > 0) {
@@ -928,5 +1159,5 @@ export const representativeTopics: IndexedTopic[] = representativeTopicIds
   .filter((topic): topic is IndexedTopic => topic !== undefined);
 
 export function getTopicById(topicId: string): IndexedTopic | undefined {
-  return allTopics.find((topic) => topic.id === topicId);
+  return topicById.get(topicId);
 }
