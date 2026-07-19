@@ -1,3 +1,8 @@
+import { subject1Enrichment } from "./enrichment/subject1";
+import { subject2Enrichment } from "./enrichment/subject2";
+import { subject3Enrichment } from "./enrichment/subject3";
+import { subject4Enrichment } from "./enrichment/subject4";
+
 export type SourceType =
   | "NCS 원문"
   | "공식 기준"
@@ -341,7 +346,7 @@ const vibrationDiagnosis: Topic = {
   },
 };
 
-export const subjects: Subject[] = [
+const baseSubjects: Subject[] = [
   {
     id: "subject-01",
     title: "공유압 및 자동제어",
@@ -861,6 +866,24 @@ export const subjects: Subject[] = [
   },
 ];
 
+const topicEnrichment: Record<string, Partial<Topic>> = {
+  ...subject1Enrichment,
+  ...subject2Enrichment,
+  ...subject3Enrichment,
+  ...subject4Enrichment,
+};
+
+export const subjects: Subject[] = baseSubjects.map((subject) => ({
+  ...subject,
+  chapters: subject.chapters.map((chapter) => ({
+    ...chapter,
+    topics: chapter.topics.map((topic) => ({
+      ...topic,
+      ...(topicEnrichment[topic.id] ?? {}),
+    })),
+  })),
+}));
+
 export const allChapters: Chapter[] = subjects.flatMap((subject) => subject.chapters);
 
 export const allTopics: IndexedTopic[] = subjects.flatMap((subject) =>
@@ -874,6 +897,24 @@ export const allTopics: IndexedTopic[] = subjects.flatMap((subject) =>
     })),
   ),
 );
+
+const incompleteTopics = allTopics.filter(
+  (topic) =>
+    topic.keyPoints?.length !== 3 ||
+    (topic.detailSections?.length ?? 0) < 2 ||
+    (topic.comparisons?.length ?? 0) < 2 ||
+    (topic.workSteps?.length ?? 0) < 3 ||
+    !topic.examConnection ||
+    !topic.commonTrap ||
+    !topic.quiz ||
+    topic.quiz.options.length !== 4,
+);
+
+if (incompleteTopics.length > 0) {
+  throw new Error(
+    `Incomplete textbook topics: ${incompleteTopics.map((topic) => topic.id).join(", ")}`,
+  );
+}
 
 export const representativeTopicIds = [
   "tapered-roller-bearing",

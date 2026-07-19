@@ -741,6 +741,20 @@ export default function Home() {
                 </section>
               ) : null}
 
+              {selectedTopic.detailSections?.length ? (
+                <section className="theory-blocks" aria-label="개념 상세 설명">
+                  {selectedTopic.detailSections.map((section, index) => (
+                    <div className="theory-block" key={section.title}>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <div>
+                        <h3>{section.title}</h3>
+                        <p>{section.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </section>
+              ) : null}
+
               {selectedTopic.id === "oee-calculation" && (
                 <section className="formula-card">
                   <div><span>공식</span><strong>OEE = 시간가동률 × 성능가동률 × 양품률</strong></div>
@@ -748,32 +762,46 @@ export default function Home() {
                 </section>
               )}
 
-              {selectedTopic.id === "tapered-roller-bearing" && (
+              {selectedTopic.comparisons?.length ? (
                 <section className="comparison-card">
                   <div className="lesson-section-title"><span>03</span><h3>공식·비교</h3></div>
-                  <div className="comparison-table" role="table" aria-label="베어링 비교">
-                    <div role="row"><strong role="cell">구분</strong><strong role="cell">테이퍼 롤러</strong><strong role="cell">깊은 홈 볼</strong></div>
-                    <div role="row"><span role="cell">주요 하중</span><span role="cell">반경 + 한 방향 축</span><span role="cell">반경 + 제한적 축</span></div>
-                    <div role="row"><span role="cell">조정</span><span role="cell">간극·예압 조정 가능</span><span role="cell">일반적으로 조정 없음</span></div>
+                  <div className="comparison-list" role="table" aria-label={`${selectedTopic.title} 핵심 비교`}>
+                    <div role="row"><strong role="columnheader">구분</strong><strong role="columnheader">핵심 내용</strong><strong role="columnheader">판단 포인트</strong></div>
+                    {selectedTopic.comparisons.map((row) => (
+                      <div role="row" key={`${row.label}-${row.value}`}>
+                        <strong role="cell">{row.label}</strong>
+                        <span role="cell">{row.value}</span>
+                        <span role="cell">{row.note ?? "—"}</span>
+                      </div>
+                    ))}
                   </div>
                 </section>
-              )}
+              ) : null}
 
-              {selectedTopic.id === "tapered-roller-bearing" && (
+              {selectedTopic.workSteps?.length ? (
                 <section className="procedure-card" id="ncs-procedure">
-                  <div className="lesson-section-title"><span>04</span><h3>NCS 사진·작업순서</h3></div>
+                  <div className="lesson-section-title"><span>04</span><h3>점검·작업 순서</h3></div>
                   <ol>
-                    <li><span>1</span><p><strong>상태 확인</strong> 축·하우징·끼워맞춤면의 손상과 오염을 확인합니다.</p></li>
-                    <li><span>2</span><p><strong>가열 또는 압입</strong> 끼워맞춤되는 궤도륜에만 힘을 전달합니다.</p></li>
-                    <li><span>3</span><p><strong>간극·예압 조정</strong> 제조사 절차와 운전조건을 기준으로 설정합니다.</p></li>
-                    <li><span>4</span><p><strong>시운전 점검</strong> 온도·소음·진동과 윤활 상태를 확인합니다.</p></li>
+                    {selectedTopic.workSteps.map((step, index) => (
+                      <li key={step}><span>{index + 1}</span><p>{step}</p></li>
+                    ))}
                   </ol>
                   <div className="source-caution">
-                    <Badge tone="ncs">NCS 연결 예정</Badge>
-                    <span>원문 문서·페이지·그림 번호 대조 후 공개합니다.</span>
+                    <Badge tone="ncs">실무 연결</Badge>
+                    <span>현장에서는 설비 제작사 절차와 사업장 안전기준을 우선 적용합니다.</span>
                   </div>
                 </section>
-              )}
+              ) : null}
+
+              {selectedTopic.examConnection ? (
+                <section className="exam-card">
+                  <span className="exam-label">출제 연결</span>
+                  <div>
+                    <h3>시험에서는 이렇게 연결됩니다</h3>
+                    <p>{selectedTopic.examConnection}</p>
+                  </div>
+                </section>
+              ) : null}
 
               {selectedTopic.commonTrap && (
                 <section className="trap-card">

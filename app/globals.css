@@ -2348,6 +2348,227 @@ button.subject-card {
   }
 }
 
+/* Full textbook content blocks */
+.theory-blocks {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 28px;
+}
+
+.theory-block {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid var(--border, #d8ddd7);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.theory-block > span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e7f0ec;
+  color: #173f35;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.theory-block h3 {
+  margin: 0 0 8px;
+  color: #14211d;
+  font-size: 1.02rem;
+}
+
+.theory-block p {
+  margin: 0;
+  color: #4b5d56;
+  line-height: 1.78;
+}
+
+.comparison-card,
+.procedure-card {
+  margin: 24px 0;
+  padding: 22px;
+  border: 1px solid #d8ddd7;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.lesson-section-title {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 16px;
+}
+
+.lesson-section-title > span {
+  color: #ef7b45;
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+.lesson-section-title h3 {
+  margin: 0;
+  color: #14211d;
+  font-size: 1.08rem;
+}
+
+.comparison-list {
+  overflow: hidden;
+  border: 1px solid #dfe4df;
+  border-radius: 12px;
+}
+
+.comparison-list > div {
+  display: grid;
+  grid-template-columns: minmax(90px, 0.72fr) minmax(130px, 1.15fr) minmax(130px, 1.25fr);
+}
+
+.comparison-list > div + div {
+  border-top: 1px solid #e6e9e5;
+}
+
+.comparison-list > div:first-child {
+  background: #173f35;
+  color: #fff;
+}
+
+.comparison-list [role="cell"],
+.comparison-list [role="columnheader"] {
+  padding: 12px 14px;
+  line-height: 1.45;
+}
+
+.comparison-list [role="cell"] + [role="cell"],
+.comparison-list [role="columnheader"] + [role="columnheader"] {
+  border-left: 1px solid #e6e9e5;
+}
+
+.comparison-list > div:first-child [role="columnheader"] + [role="columnheader"] {
+  border-left-color: rgba(255, 255, 255, 0.18);
+}
+
+.procedure-card ol {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.procedure-card li {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  padding: 13px 14px;
+  border-radius: 12px;
+  background: #f4f6f3;
+}
+
+.procedure-card li > span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #2c7668;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.procedure-card li p {
+  margin: 3px 0 0;
+  color: #34463f;
+  line-height: 1.65;
+}
+
+.source-caution {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  color: #5b6d66;
+  font-size: 0.82rem;
+}
+
+.exam-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 16px;
+  margin: 22px 0;
+  padding: 20px;
+  border: 1px solid #edcfbd;
+  border-radius: 16px;
+  background: #fff6ef;
+}
+
+.exam-label {
+  align-self: start;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #ef7b45;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.exam-card h3 {
+  margin: 0 0 7px;
+  color: #6f341d;
+  font-size: 1rem;
+}
+
+.exam-card p {
+  margin: 0;
+  color: #704c3b;
+  line-height: 1.68;
+}
+
+@media (max-width: 640px) {
+  .theory-block {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .comparison-card,
+  .procedure-card {
+    padding: 16px;
+  }
+
+  .comparison-list > div {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-list > div:first-child {
+    display: none;
+  }
+
+  .comparison-list [role="cell"] + [role="cell"] {
+    border-left: 0;
+    border-top: 1px dashed #e1e5e0;
+  }
+
+  .comparison-list [role="cell"]:first-child {
+    background: #eef3f0;
+    color: #173f35;
+  }
+
+  .source-caution,
+  .exam-card {
+    align-items: flex-start;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+}
+
 @media print {
   body {
     background: #fff;
