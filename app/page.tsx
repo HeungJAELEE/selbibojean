@@ -806,7 +806,6 @@ export default function Home() {
 
               {selectedTopic.commonTrap && (
                 <section className="trap-card">
-                  <span className="trap-icon" aria-hidden="true">!</span>
                   <div><h3>자주 틀리는 함정</h3><p>{selectedTopic.commonTrap}</p></div>
                 </section>
               )}

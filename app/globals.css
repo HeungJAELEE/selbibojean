@@ -1000,7 +1000,9 @@ button.subject-card {
 }
 
 .lesson-title-row h1,
-.lesson-header h1 {
+.lesson-title-row h2,
+.lesson-header h1,
+.lesson-header h2 {
   margin: 0;
   color: var(--ink);
   font-size: clamp(2rem, 4vw, 3.3rem);
@@ -1025,6 +1027,42 @@ button.subject-card {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 8px;
+}
+
+.lesson-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+
+.complete-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border: 1px solid var(--line-strong);
+  border-radius: 11px;
+  background: var(--surface);
+  color: var(--forest);
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 820;
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.complete-button:hover {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+  box-shadow: var(--shadow-xs);
+}
+
+.complete-button.done,
+.complete-button[aria-pressed="true"] {
+  border-color: var(--forest);
+  background: var(--forest);
+  color: #fff;
 }
 
 .lesson-meta,
@@ -1171,9 +1209,45 @@ button.subject-card {
   background: var(--blue-gray);
 }
 
+.badge-explain {
+  border-color: #c5c9c2;
+  background: #f0f0eb;
+  color: #48534f;
+}
+
+.badge-check {
+  border-color: #9fcbbf;
+  background: var(--teal-soft);
+  color: #155a4d;
+}
+
+.badge-forecast,
+.badge-pending {
+  border-color: #ddc38a;
+  background: var(--gold-soft);
+  color: #755114;
+}
+
+.badge-restore {
+  border-color: #e8ab8e;
+  border-style: dashed;
+  background: var(--orange-soft);
+  color: #91411e;
+}
+
+.badge-warning {
+  border-color: #dfa59d;
+  background: var(--red-soft);
+  color: #8e352d;
+}
+
 /* Lesson cards */
 .summary-card {
   position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
   overflow: hidden;
   padding: clamp(22px, 3vw, 30px);
   border: 1px solid #acd0c6;
@@ -1181,6 +1255,19 @@ button.subject-card {
   background:
     linear-gradient(135deg, rgb(255 255 255 / 0.7), transparent 50%),
     var(--teal-soft);
+}
+
+.card-number {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--forest);
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
 }
 
 .summary-card::before {
@@ -2226,7 +2313,9 @@ button.subject-card {
   }
 
   .lesson-title-row h1,
-  .lesson-header h1 {
+  .lesson-title-row h2,
+  .lesson-header h1,
+  .lesson-header h2 {
     font-size: clamp(1.82rem, 9vw, 2.45rem);
   }
 
@@ -2352,7 +2441,7 @@ button.subject-card {
 .theory-blocks {
   display: grid;
   gap: 12px;
-  margin: 18px 0 28px;
+  margin: 0;
 }
 
 .theory-block {
@@ -2391,7 +2480,7 @@ button.subject-card {
 
 .comparison-card,
 .procedure-card {
-  margin: 24px 0;
+  margin: 0;
   padding: 22px;
   border: 1px solid #d8ddd7;
   border-radius: 18px;
@@ -2502,7 +2591,7 @@ button.subject-card {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   gap: 16px;
-  margin: 22px 0;
+  margin: 0;
   padding: 20px;
   border: 1px solid #edcfbd;
   border-radius: 16px;
