@@ -1119,10 +1119,13 @@ def convert(project_root: Path, source: Path, manifest_path: Path, allow_noncano
     }
     catalog_path = project_root / "app" / "generated" / "notion-catalog.json"
     search_path = project_root / "public" / "generated" / "search-index.json"
+    bundled_search_path = project_root / "app" / "generated" / "notion-search-index.json"
     write_json(catalog_path, catalog)
-    write_json(search_path, {"schemaVersion": 1, "topics": search_topics})
+    search_payload = {"schemaVersion": 1, "topics": search_topics}
+    write_json(search_path, search_payload)
+    write_json(bundled_search_path, search_payload)
 
-    public_json_paths = [catalog_path, search_path, *topics_dir.glob("*.json")]
+    public_json_paths = [catalog_path, bundled_search_path, search_path, *topics_dir.glob("*.json")]
     security_violations = scan_public_json(public_json_paths)
     payload_table_count = sum(
         1 for _topic, payload in topic_payloads for block in payload["blocks"] if block["type"] == "table"

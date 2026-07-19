@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
+import bundledSearchIndexPayload from "./generated/notion-search-index.json";
 import {
   allChapters,
   allTopics,
@@ -66,6 +67,20 @@ const notionBlockTypes = new Set([
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
 }
+
+const bundledSearchIndex = new Map(
+  ((bundledSearchIndexPayload as SearchIndexPayload).topics ?? [])
+    .filter(
+      (entry) =>
+        isRecord(entry) &&
+        typeof entry.id === "string" &&
+        typeof entry.title === "string" &&
+        typeof entry.normalizedText === "string" &&
+        (entry.excerpt === undefined || typeof entry.excerpt === "string") &&
+        knownTopicIds.has(entry.id),
+    )
+    .map((entry) => [entry.id, entry] as const),
+);
 
 function isValidTheoryBlock(value: unknown): value is TheoryContentBlock {
   if (!isRecord(value) || typeof value.type !== "string" || !notionBlockTypes.has(value.type)) {
@@ -417,8 +432,6 @@ export default function Home() {
   const [hydrated, setHydrated] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
-  const [searchIndex, setSearchIndex] = useState<Map<string, SearchIndexEntry> | null>(null);
-  const [searchIndexLoading, setSearchIndexLoading] = useState(false);
   const [notionPayload, setNotionPayload] = useState<NotionTopicPayload | null>(null);
   const [notionPayloadLoading, setNotionPayloadLoading] = useState(false);
   const [notionPayloadError, setNotionPayloadError] = useState("");
@@ -445,7 +458,6 @@ export default function Home() {
   const selectedTopic = getTopicById(selectedTopicId) ?? selectedChapter.topics[0];
   const selectedPath = getTopicPath(selectedTopic.id);
   const activePractice = practiceQuestions[practiceIndex];
-  const hasSearchQuery = searchQuery.trim().length > 0;
   const hasNotionCatalog = notionCatalogStats.topics > 0;
   const completedSet = useMemo(
     () => new Set(completed.filter((topicId) => knownTopicIds.has(topicId))),
@@ -535,44 +547,6 @@ export default function Home() {
     };
   }, [notionReloadKey, selectedTopic.contentUrl, selectedTopic.id, selectedTopic.kind]);
 
-  useEffect(() => {
-    if (!hasSearchQuery || searchIndex || notionCatalogStats.topics === 0) return;
-    const controller = new AbortController();
-    const timer = window.setTimeout(() => {
-      setSearchIndexLoading(true);
-      void fetch("/generated/search-index.json", { signal: controller.signal, cache: "force-cache" })
-        .then(async (response) => {
-          if (!response.ok) throw new Error("검색 색인을 불러오지 못했습니다.");
-          const value: unknown = await response.json();
-          if (!isRecord(value) || value.schemaVersion !== 1 || !Array.isArray(value.topics)) {
-            throw new Error("검색 색인 형식이 올바르지 않습니다.");
-          }
-          const entries = (value as unknown as SearchIndexPayload).topics.filter(
-            (entry) =>
-              isRecord(entry) &&
-              typeof entry.id === "string" &&
-              typeof entry.title === "string" &&
-              typeof entry.normalizedText === "string" &&
-              (entry.excerpt === undefined || typeof entry.excerpt === "string") &&
-              knownTopicIds.has(entry.id),
-          );
-          setSearchIndex(new Map(entries.map((entry) => [entry.id, entry])));
-        })
-        .catch(() => {
-          if (!controller.signal.aborted) setSearchIndex(new Map());
-        })
-        .finally(() => {
-          if (!controller.signal.aborted) setSearchIndexLoading(false);
-        });
-    }, 150);
-
-    return () => {
-      window.clearTimeout(timer);
-      controller.abort();
-      setSearchIndexLoading(false);
-    };
-  }, [hasSearchQuery, searchIndex]);
-
   const progress = allTopics.length
     ? Math.round((completedSet.size / allTopics.length) * 100)
     : 0;
@@ -597,7 +571,7 @@ export default function Home() {
           ...topic.synonyms,
           ...(topic.categoryPath ?? []),
           topic.plainTextExcerpt ?? "",
-          searchIndex?.get(topic.id)?.normalizedText ?? "",
+          bundledSearchIndex.get(topic.id)?.normalizedText ?? "",
           path?.subject.title ?? "",
           path?.chapter.title ?? "",
           path?.chapter.title === "비파괴검사" ? "NDT" : "",
@@ -607,7 +581,7 @@ export default function Home() {
       );
       return haystack.includes(needle) || haystack.includes(normalize(expanded));
     });
-  }, [searchIndex, searchQuery]);
+  }, [searchQuery]);
 
   const openTopic = (topicId: string, shouldScroll = true) => {
     const path = getTopicPath(topicId);
@@ -855,7 +829,7 @@ export default function Home() {
           {searchOpen && searchQuery && (
             <div className="search-panel" role="dialog" aria-label="검색 결과">
               <div className="search-panel-head">
-                <strong>검색 결과 {searchResults.length}건{searchIndexLoading ? " · 원문 색인 불러오는 중" : ""}</strong>
+                <strong>검색 결과 {searchResults.length}건</strong>
                 <button type="button" className="ghost-button" onClick={() => setSearchOpen(false)}>
                   닫기
                 </button>
@@ -864,7 +838,7 @@ export default function Home() {
                 {searchResults.length ? (
                   searchResults.slice(0, 10).map((topic) => {
                     const path = getTopicPath(topic.id);
-                    const excerpt = searchIndex?.get(topic.id)?.excerpt?.trim();
+                    const excerpt = bundledSearchIndex.get(topic.id)?.excerpt?.trim();
                     return (
                       <button
                         type="button"
@@ -1025,7 +999,7 @@ export default function Home() {
                             const groupSelected = topics.some((topic) => topic.id === selectedTopic.id);
                             const groupDone = topics.filter((topic) => completedSet.has(topic.id)).length;
                             return (
-                              <details className="topic-category" key={`${label}-${groupSelected}`} defaultOpen={groupSelected}>
+                              <details className="topic-category" key={`${label}-${groupSelected}`} open={groupSelected}>
                                 <summary><span>{label}</span><small>{groupDone}/{topics.length}</small></summary>
                                 <div className="topic-sublist">
                                   {topics.map((topic) => (

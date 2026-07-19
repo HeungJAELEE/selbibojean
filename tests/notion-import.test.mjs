@@ -130,9 +130,11 @@ function publicPathFromUrl(urlPath) {
 
 const importDataPromise = (async () => {
   const catalogPath = path.join(appGeneratedRoot, "notion-catalog.json");
+  const bundledSearchIndexPath = path.join(appGeneratedRoot, "notion-search-index.json");
   const searchIndexPath = path.join(publicGeneratedRoot, "search-index.json");
-  const [catalog, searchIndex, topicFiles] = await Promise.all([
+  const [catalog, bundledSearchIndex, searchIndex, topicFiles] = await Promise.all([
     readJson(catalogPath),
+    readJson(bundledSearchIndexPath),
     readJson(searchIndexPath),
     listFilesRecursively(topicRoot),
   ]);
@@ -144,6 +146,7 @@ const importDataPromise = (async () => {
     catalog,
     catalogTopics: flattenCatalogTopics(catalog),
     payloads,
+    bundledSearchIndex,
     searchIndex,
     topicJsonFiles,
   };
@@ -162,13 +165,15 @@ test("Notion catalog preserves the complete source inventory", async () => {
 });
 
 test("every catalog topic resolves to one matching payload and search entry", async () => {
-  const { catalog, catalogTopics, payloads, searchIndex, topicJsonFiles } = await importDataPromise;
+  const { bundledSearchIndex, catalog, catalogTopics, payloads, searchIndex, topicJsonFiles } = await importDataPromise;
 
   assert.equal(topicJsonFiles.length, catalog.stats.topics);
   assert.equal(payloads.length, catalog.stats.topics);
   assert.equal(searchIndex.schemaVersion, 1);
   assert.ok(Array.isArray(searchIndex.topics));
   assert.equal(searchIndex.topics.length, catalog.stats.topics);
+  assert.deepEqual(bundledSearchIndex, searchIndex);
+  assert.ok(searchIndex.topics.some((entry) => entry.normalizedText.includes("파스칼원리")));
 
   const metadataById = new Map(catalogTopics.map((topic) => [topic.id, topic]));
   const payloadById = new Map(payloads.map(({ payload }) => [payload.id, payload]));
