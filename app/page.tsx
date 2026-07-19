@@ -7,7 +7,7 @@ import {
   allTopics,
   getTopicById,
   subjects,
-  type Topic,
+  type IndexedTopic,
 } from "./content";
 
 const STORAGE_KEY = "maintenance-masterbook:v1";
@@ -433,7 +433,7 @@ export default function Home() {
 
   const bookmarkedTopics = bookmarks
     .map((id) => getTopicById(id))
-    .filter((topic): topic is Topic => Boolean(topic));
+    .filter((topic): topic is IndexedTopic => Boolean(topic));
 
   return (
     <div className="shell">
@@ -719,6 +719,7 @@ export default function Home() {
                 </div>
               </div>
 
+              <div className="lesson-content">
               <section className="summary-card" aria-labelledby="summary-title">
                 <span className="card-number">01</span>
                 <div>
@@ -812,7 +813,7 @@ export default function Home() {
 
               {selectedTopic.quiz ? (
                 <section className="quiz-card">
-                  <div className="quiz-head">
+                  <div className="quiz-header">
                     <div>
                       <span className="section-kicker">QUICK CHECK</span>
                       <h3>바로 확인하는 1문제</h3>
@@ -822,7 +823,7 @@ export default function Home() {
                   <p className="quiz-question">{selectedTopic.quiz.question}</p>
                   <div className="quiz-options">
                     {selectedTopic.quiz.options.map((option) => (
-                      <label className={`quiz-choice ${topicAnswer === option.id ? "selected" : ""}`} key={option.id}>
+                      <label className={`quiz-choice ${topicAnswer === option.id ? "is-selected" : ""}`} key={option.id}>
                         <input
                           type="radio"
                           name={`topic-${selectedTopic.id}`}
@@ -838,9 +839,9 @@ export default function Home() {
                       </label>
                     ))}
                   </div>
-                  <button className="primary-button full" type="button" onClick={submitTopicQuiz}>정답 확인</button>
+                  <button className="primary-button full-width" type="button" onClick={submitTopicQuiz}>정답 확인</button>
                   {topicResult && (
-                    <div className={`answer-panel ${topicResult}`} role="status">
+                    <div className={`answer-feedback is-${topicResult}`} role="status">
                       <strong>{topicResult === "correct" ? "정답입니다." : "다시 확인해 보세요."}</strong>
                       <p>{selectedTopic.quiz.explanation}</p>
                     </div>
@@ -864,6 +865,7 @@ export default function Home() {
                 </dl>
                 <p>현재 본문은 학습 구조 검증용 상세 해설입니다. 공식 기준이나 NCS 원문으로 확정하기 전 원문 대조가 필요합니다.</p>
               </section>
+              </div>
             </article>
 
             <aside className="study-rail" aria-label="나의 학습 현황">
@@ -1003,9 +1005,9 @@ export default function Home() {
                 </ol>
               )}
 
-              <button className="primary-button full" type="button" onClick={submitPractice}>채점하고 해설 보기</button>
+              <button className="primary-button full-width" type="button" onClick={submitPractice}>채점하고 해설 보기</button>
               {practiceResult && (
-                <div className={`answer-panel ${practiceResult}`} role="status">
+                <div className={`answer-feedback is-${practiceResult}`} role="status">
                   <strong>{practiceResult === "correct" ? "정답입니다." : `정답: ${answerLabel(activePractice)}`}</strong>
                   <p>{activePractice.explanation}</p>
                   <button type="button" className="ghost-button" onClick={() => openTopic(activePractice.topicId)}>관련 개념 복습하기 →</button>
