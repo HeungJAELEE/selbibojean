@@ -39,7 +39,7 @@ type GroupSeed = [string, string[]];
 
 const groupSeeds: Record<number, GroupSeed[]> = {
   1: [
-    ["공유압 기초", ["공유압", "파스칼", "연속의 법칙", "레이놀즈", "베르누이", "Darcy", "보일 법칙", "샤를의 법칙", "비중", "비체적", "대기압", "압력 SI", "압력 단위", "힘 관계식", "유압장치 특징", "유압유 고점도", "작동유 과열", "에어레이션", "유압작동유 역할", "힘의 단위", "SI 기본단위"]],
+    ["공유압 기초", ["공유압", "공압·유압 비교", "공압과 유압", "유압 특성", "공압 특성", "파스칼", "연속의 법칙", "레이놀즈", "베르누이", "Darcy", "보일 법칙", "샤를의 법칙", "비중", "비체적", "대기압", "압력 SI", "압력 단위", "힘 관계식", "유압장치 특징", "유압유 고점도", "작동유 과열", "에어레이션", "유압작동유 역할", "힘의 단위", "SI 기본단위"]],
     ["유압 동력원과 액추에이터", ["유압펌프", "유압모터", "실린더", "액추에이터", "베인펌프", "피스톤펌프", "기어펌프", "용적식 펌프", "로브펌프", "트로코이드펌프", "오일탱크", "유압탱크", "어큐뮬레이터", "유압 부속"]],
     ["유압 제어밸브", ["유압밸브", "릴리프", "감압", "시퀀스"]],
     ["유압·공압 제어밸브", ["방향제어", "체크밸브", "셔틀", "밸브"]],
@@ -60,7 +60,7 @@ const groupSeeds: Record<number, GroupSeed[]> = {
     ["용접·작업안전", ["용접안전", "역화", "화재", "보호구", "환기", "안전장치", "원형톱"]],
   ],
   3: [
-    ["도면·측정·공차", ["도면", "공차", "끼워맞춤", "측정", "표면거칠기", "한계게이지", "제도"]],
+    ["도면·측정·공차", ["도면", "공차", "끼워맞춤", "측정", "아베 원리", "아베의 원리", "마이크로미터", "버니어캘리퍼스", "하이트게이지", "블록게이지", "표면거칠기", "한계게이지", "제도"]],
     ["기계재료·열처리", ["재료", "강", "주철", "열처리", "담금질"]],
     ["나사·볼트·키·핀", ["나사", "볼트", "키", "핀", "와셔"]],
     ["축·커플링·클러치", ["축", "커플링", "클러치", "스플라인"]],
@@ -110,25 +110,51 @@ export function getConceptGroup(groupId: string) {
   return conceptGroups.find((group) => group.id === groupId);
 }
 
+const conceptGroupOverrides: Record<number, Array<{ pattern: RegExp; groupId: string }>> = {
+  1: [
+    { pattern: /공압[·\s/]*(?:과|및)?[·\s/]*유압.*(?:비교|특성)|유압[·\s/]*(?:과|및)?[·\s/]*공압.*(?:비교|특성)/i, groupId: "s1-g01" },
+  ],
+  3: [
+    { pattern: /아베(?:의)?\s*원리|애비(?:의)?\s*원리/i, groupId: "s3-g01" },
+  ],
+};
+
+function keywordMatchScore(text: string, keyword: string, weight: number) {
+  const normalizedKeyword = keyword.toLowerCase();
+  if (!text.includes(normalizedKeyword)) return 0;
+  if ([...normalizedKeyword.replace(/\s/g, "")].length <= 1) {
+    const escaped = normalizedKeyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const standalone = new RegExp(`(^|[^가-힣a-z0-9])${escaped}($|[^가-힣a-z0-9])`, "i").test(text);
+    return standalone ? weight : 0;
+  }
+  return [...normalizedKeyword].length * weight;
+}
+
 export function mapConceptGroup(subjectCode: number, ...texts: Array<string | null | undefined>) {
   const candidates = conceptGroups.filter((group) => group.subjectId === `subject-${subjectCode}`);
   const conceptText = (texts[0] ?? "").toLowerCase();
-  const contextText = texts.slice(1).filter(Boolean).join(" ").toLowerCase();
-  let best = candidates[0];
-  let bestScore = -1;
-
-  for (const candidate of candidates) {
-    const score = candidate.keywords.reduce((total, keyword) => {
-      const normalized = keyword.toLowerCase();
-      const conceptScore = conceptText.includes(normalized) ? normalized.length * 100 : 0;
-      const contextScore = contextText.includes(normalized) ? normalized.length : 0;
-      return total + conceptScore + contextScore;
-    }, 0);
-    if (score > bestScore) {
-      best = candidate;
-      bestScore = score;
-    }
+  const stemText = (texts[1] ?? "").toLowerCase();
+  const contextText = texts.slice(2).filter(Boolean).join(" ").toLowerCase();
+  const override = conceptGroupOverrides[subjectCode]?.find(({ pattern }) => pattern.test(conceptText));
+  if (override) {
+    const group = candidates.find((candidate) => candidate.id === override.groupId) ?? candidates[0];
+    return { group, confidence: "override", score: 10_000, margin: 10_000 } as const;
   }
 
-  return { group: best, confidence: bestScore > 0 ? "keyword" : "fallback" } as const;
+  const ranked = candidates.map((candidate) => {
+    const score = candidate.keywords.reduce((total, keyword) => {
+      return total +
+        keywordMatchScore(conceptText, keyword, 100) +
+        keywordMatchScore(stemText, keyword, 10) +
+        keywordMatchScore(contextText, keyword, 1);
+    }, 0);
+    return { group: candidate, score };
+  }).sort((a, b) => b.score - a.score || a.group.order - b.group.order);
+
+  const best = ranked[0];
+  const margin = best.score - (ranked[1]?.score ?? 0);
+  const hasConceptSignal = best.group.keywords.some((keyword) => keywordMatchScore(conceptText, keyword, 100) > 0);
+  const confidence = best.score <= 0 ? "fallback" : hasConceptSignal || margin >= 20 ? "keyword" : "weak";
+
+  return { group: best.group, confidence, score: best.score, margin } as const;
 }

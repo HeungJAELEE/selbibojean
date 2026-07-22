@@ -11,6 +11,7 @@ import {
   lessonAnchorForQuestion,
 } from "../src/lib/content/enrichment";
 import { GOLDEN_LESSONS, GOLDEN_QUESTION_FEEDBACK } from "../src/data/source/golden-content";
+import { findKoreanLanguageIssues } from "../src/lib/content/korean";
 import { conceptGroups, mapConceptGroup, subjects } from "../src/lib/domain/catalog";
 import type {
   Choice,
@@ -60,6 +61,17 @@ function rowsToRecords(sheetRows: CellValue[][]) {
 
 function asText(value: string | number | null | undefined) {
   return value === null || value === undefined ? "" : String(value).trim();
+}
+
+function polishTechnicalKorean(value: string) {
+  return value
+    .replace(/잔류공기/g, "잔류 공기")
+    .replace(/응답지연/g, "응답 지연")
+    .replace(/발열장치/g, "발열 장치")
+    .replace(/에어\s*빼기(?:를)?\s*한다/g, "공기를 제거해야 한다")
+    .replace(/판단근거/g, "판단 근거")
+    .replace(/적용조건/g, "적용 조건")
+    .replace(/작동조건/g, "작동 조건");
 }
 
 function parseSubjectCode(value: string) {
@@ -135,6 +147,8 @@ function cleanTheoryMarkdown(value: string) {
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
     .replace(/\*\*([^*]+)\*\*/g, "$1")
     .replace(/__([^_]+)__/g, "$1")
+    .replace(/\*+/g, "")
+    .replace(/(?:대조\s*)?원문\s*:\s*/g, "")
     .replace(/`([^`]+)`/g, "$1")
     .replace(/^>\s?/gm, "")
     .replace(/^#{1,6}\s+/gm, "")
@@ -231,14 +245,16 @@ async function main() {
     const sourceId = asText(row["고유ID"]) || `U-${String(rowIndex + 1).padStart(3, "0")}`;
     const concept = asText(row["개념군"]) || "미분류 개념";
     const subjectCode = parseSubjectCode(asText(row["현행과목"]));
-    const stem = asText(row["문제"]);
-    const explanation = asText(row["근거"]);
-    const answer = asText(row["정답"]);
+    const stem = polishTechnicalKorean(asText(row["문제"]));
+    const explanation = polishTechnicalKorean(asText(row["근거"]));
+    const answer = polishTechnicalKorean(asText(row["정답"]));
     if (/^[①②③④1-4]$/.test(answer)) numberOnlyAnswers += 1;
-    const choiceTexts = [1, 2, 3, 4].map((index) => asText(row[`보기${["①", "②", "③", "④"][index - 1]}`]));
+    const choiceTexts = [1, 2, 3, 4].map((index) =>
+      polishTechnicalKorean(asText(row[`보기${["①", "②", "③", "④"][index - 1]}`])),
+    );
     const correctIndex = parseAnswerIndex(answer, choiceTexts);
     const decision = publishDecision(row, correctIndex, choiceTexts);
-    const { group, confidence } = mapConceptGroup(subjectCode, concept, stem, explanation, choiceTexts.join(" "));
+    const { group, confidence, score, margin } = mapConceptGroup(subjectCode, concept, stem, explanation, choiceTexts.join(" "));
     const conceptId = `concept-${stableHash(`${subjectCode}:${concept}`)}`;
     const lessonId = `lesson-${stableHash(`${subjectCode}:${concept}`)}`;
     const originalIds = originalIdsByCanonical.get(sourceId) ?? [];
@@ -246,7 +262,9 @@ async function main() {
       .map((id) => asText(originalById.get(id)?.["출처URL"]))
       .filter(Boolean);
     if (correctIndex < 0) warnings.push(`${sourceId}: 정답을 보기와 연결하지 못했습니다.`);
-    if (confidence === "fallback") warnings.push(`${sourceId}: 세부항목군을 키워드로 확정하지 못했습니다.`);
+    if (confidence === "fallback" || confidence === "weak") {
+      warnings.push(`${sourceId}: 세부항목군 분류 검토 필요(${confidence}, score=${score}, margin=${margin}).`);
+    }
 
     const errorReason = classifyErrorReason(stem, explanation, asText(row["검증상태"]));
     const correctText = correctIndex >= 0 ? choiceTexts[correctIndex] : answer;
@@ -272,7 +290,12 @@ async function main() {
     const choiceFeedbackValid = choices.every((choice, index) =>
       choiceFeedbackPasses(choice.feedback, index === correctIndex),
     );
-    const contentStatus: ContentStatus = decision.publishable ? "published" : decision.complete ? "in_review" : "draft";
+    const mappingReliable = confidence === "override" || confidence === "keyword";
+    const contentStatus: ContentStatus = decision.publishable && mappingReliable
+      ? "published"
+      : decision.complete
+        ? "in_review"
+        : "draft";
     const lessonAnchor = decision.highRisk
       ? "source"
       : lessonAnchorForQuestion({ stem, errorReason, conceptGroupId: group.id });
@@ -402,6 +425,9 @@ async function main() {
   const genericPhraseMatches =
     lessons.reduce((total, lesson) => total + lesson.quality.genericPhraseMatches.length, 0) +
     GENERIC_CONTENT_PATTERNS.filter((pattern) => feedbackText.includes(pattern)).length;
+  const languageIssueMatches =
+    lessons.reduce((total, lesson) => total + lesson.quality.languageIssueMatches.length, 0) +
+    findKoreanLanguageIssues(feedbackText).length;
   const groupQuality = conceptGroups.map((group) => {
     const groupLessons = lessons.filter((lesson) => lesson.conceptGroupId === group.id);
     const groupQuestions = questions.filter((question) => question.conceptGroupId === group.id);
@@ -416,6 +442,8 @@ async function main() {
       title: group.title,
       lessonCount: groupLessons.length,
       lessonPassed: groupLessons.filter((lesson) => lesson.quality.passed).length,
+      publishedLessonCount: groupLessons.filter((lesson) => lesson.contentStatus === "published").length,
+      publishedLessonPassed: groupLessons.filter((lesson) => lesson.contentStatus === "published" && lesson.quality.passed).length,
       questionCount: groupQuestions.length,
       publishedQuestionCount: groupQuestions.filter((question) => question.contentStatus === "published").length,
       choiceFeedbackCount: groupChoices.length,
@@ -471,6 +499,7 @@ async function main() {
         choiceFeedbackPassed: feedbackResults.filter(Boolean).length,
         choiceFeedbackFailed: feedbackResults.filter((passed) => !passed).length,
         genericPhraseMatches,
+        languageIssueMatches,
       },
       groupQuality,
       warnings: warnings.slice(0, 500),

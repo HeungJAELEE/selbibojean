@@ -76,7 +76,7 @@ describe("random practice", () => {
       contentStatus: "published",
       sourceNeeded: false,
       reviewedAt: null,
-      quality: { tier: "standard", substantiveCharacters: 800, genericPhraseMatches: [], sourceLinked: true, passed: true },
+      quality: { tier: "standard", substantiveCharacters: 800, genericPhraseMatches: [], languageIssueMatches: [], sourceLinked: true, passed: true },
     };
     const feedback = gradeQuestion(makeQuestion(1), "U-1-c2", "unsure", lesson);
     expect(feedback.isCorrect).toBe(false);

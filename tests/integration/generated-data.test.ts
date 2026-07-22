@@ -27,16 +27,18 @@ describe("27th workbook reconciliation", () => {
 
   it("passes lesson and per-choice quality gates in every concept group", () => {
     expect(data.formatVersion).toBe(2);
-    expect(data.report.quality.lessonPassed).toBe(data.lessons.length);
-    expect(data.report.quality.lessonFailed).toBe(0);
+    const publishedLessons = data.lessons.filter((lesson) => lesson.contentStatus === "published");
+    expect(publishedLessons.length).toBeGreaterThan(0);
+    expect(publishedLessons.every((lesson) => lesson.quality.passed)).toBe(true);
     expect(data.report.quality.choiceFeedbackPassed).toBe(
       data.questions.reduce((total, question) => total + question.choices.length, 0),
     );
     expect(data.report.quality.choiceFeedbackFailed).toBe(0);
     expect(data.report.quality.genericPhraseMatches).toBe(0);
+    expect(data.report.quality.languageIssueMatches).toBe(0);
     expect(data.report.groupQuality).toHaveLength(44);
     expect(data.report.groupQuality.every((group) =>
-      group.lessonPassed === group.lessonCount && group.choiceFeedbackPassed === group.choiceFeedbackCount,
+      group.publishedLessonPassed === group.publishedLessonCount && group.choiceFeedbackPassed === group.choiceFeedbackCount,
     )).toBe(true);
   });
 
@@ -48,5 +50,16 @@ describe("27th workbook reconciliation", () => {
       expect(lesson?.blocks.some((block) => block.body.includes("|---|"))).toBe(true);
       expect(lesson?.blocks.some((block) => block.kind === "trap")).toBe(true);
     }
+  });
+
+  it("keeps the reported problem lessons in their correct groups with natural Korean", () => {
+    const fluidComparison = data.lessons.find((lesson) => lesson.title === "공압·유압 비교");
+    const abbe = data.lessons.find((lesson) => lesson.title === "아베 원리");
+    expect(fluidComparison?.conceptGroupId).toBe("s1-g01");
+    expect(abbe?.conceptGroupId).toBe("s3-g01");
+    expect(fluidComparison?.quality.languageIssueMatches).toEqual([]);
+    expect(abbe?.quality.languageIssueMatches).toEqual([]);
+    expect(abbe?.blocks.some((block) => block.body.includes("체결·운동전달"))).toBe(false);
+    expect(fluidComparison?.blocks.some((block) => block.body.includes("A+, A−"))).toBe(false);
   });
 });

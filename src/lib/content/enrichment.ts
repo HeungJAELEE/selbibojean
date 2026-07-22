@@ -1,4 +1,5 @@
 import { getGroupGuide } from "@/lib/content/group-guides";
+import { findKoreanLanguageIssues, quoteWithJosa } from "@/lib/content/korean";
 import type {
   ChoiceFeedback,
   ContentQuality,
@@ -72,7 +73,7 @@ function sharedCategory(choiceText: string, correctText: string) {
     "이음",
   ];
   const suffix = suffixes.find((item) => choiceText.includes(item) || correctText.includes(item));
-  if (suffix) return `두 표현 모두 ‘${suffix}’와 연결되어 같은 계열의 답처럼 보일 수 있습니다.`;
+  if (suffix) return `두 표현 모두 ${quoteWithJosa(suffix, "과/와")} 연결되어 같은 계열의 답처럼 보일 수 있습니다.`;
   if (/\d|%|mm|cm|MPa|Pa|Hz|rpm|℃|°C|dB/i.test(`${choiceText} ${correctText}`)) {
     return "수치·단위가 함께 제시되어 계산식이나 기준값의 일부처럼 보이기 쉽습니다.";
   }
@@ -86,29 +87,29 @@ export function buildChoiceFeedback(input: FeedbackInput): ChoiceFeedback {
   const rule = sentence(input.explanation) || `${input.concept}의 정의와 적용 조건을 기준으로 판단합니다.`;
   if (input.correct) {
     const rationale = isNegativeStem(input.stem)
-      ? `‘${input.choiceText}’ 보기는 문제에서 제외 대상으로 찾는 항목입니다. ${rule}`
-      : `‘${input.choiceText}’ 보기가 문제의 요구와 직접 대응합니다. ${rule}`;
+      ? `${quoteWithJosa(input.choiceText, "은/는")} 이 문항에서 ‘옳지 않은 것’으로 골라야 하는 보기입니다. ${rule}`
+      : `${quoteWithJosa(input.choiceText, "이/가")} 질문의 요구에 직접 답합니다. ${rule}`;
     return {
       rationale,
-      plausibleReason: `문제의 핵심어와 정답 ‘${input.choiceText}’의 기능·조건이 직접 연결됩니다.`,
+      plausibleReason: `문제의 핵심어가 정답 보기의 기능·조건과 직접 연결되어 가장 타당하게 보입니다.`,
       incorrectPoint: null,
-      keyRule: `핵심 판단규칙은 다음과 같습니다. ${rule}`,
+      keyRule: `핵심 판단 기준은 다음과 같습니다. ${rule}`,
       differenceFromCorrect: null,
     };
   }
 
   const negative = isNegativeStem(input.stem);
   const incorrectPoint = negative
-      ? `‘${input.choiceText}’ 보기는 ${input.concept}과 관련해 실제로 성립하는 원인·특징·방법 쪽에 놓입니다. 따라서 ‘아닌 것’을 찾는 이 문항에서는 제외할 수 없습니다.`
-      : `‘${input.choiceText}’ 보기는 정답 ‘${input.correctText}’과 대상·기능·적용조건 중 핵심 범주가 다릅니다. 문제의 요구를 충족시키는 직접 근거는 ${rule}`;
+      ? `${quoteWithJosa(input.choiceText, "은/는")} ${quoteWithJosa(input.concept, "과/와")} 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.`
+      : `${quoteWithJosa(input.choiceText, "은/는")} ${quoteWithJosa(input.correctText, "과/와")} 대상·기능·적용 조건이 다릅니다. 정답을 판단하는 직접 근거는 ${rule}`;
   return {
     rationale: negative
-      ? `‘${input.choiceText}’ 보기는 문항이 찾는 예외가 아니라 ${input.groupTitle}에서 성립하는 항목입니다.`
-      : `‘${input.choiceText}’ 보기는 관련 용어이지만 이 문항의 직접 답은 ‘${input.correctText}’입니다.`,
+      ? `${quoteWithJosa(input.choiceText, "은/는")} 문항이 찾는 예외가 아니라 ${input.groupTitle}에서 성립하는 설명입니다.`
+      : `${quoteWithJosa(input.choiceText, "은/는")} 관련 용어이지만, 질문이 요구하는 조건에 직접 답하는 보기는 ‘${input.correctText}’입니다.`,
     plausibleReason: sharedCategory(input.choiceText, input.correctText),
     incorrectPoint,
-    keyRule: `핵심 판단규칙은 다음과 같습니다. ${rule}`,
-    differenceFromCorrect: `정답 보기인 ‘${input.correctText}’의 판단근거는 ${rule} 반면 ‘${input.choiceText}’ 보기는 그 판단기준의 대상 또는 작동조건이 달라 서로 바꿔 쓸 수 없습니다.`,
+    keyRule: `핵심 판단 기준은 다음과 같습니다. ${rule}`,
+    differenceFromCorrect: `정답 ${quoteWithJosa(input.correctText, "은/는")} ${rule} 반면 ${quoteWithJosa(input.choiceText, "은/는")} 같은 판단 기준을 충족하지 않습니다.`,
   };
 }
 
@@ -117,7 +118,8 @@ export function choiceFeedbackPasses(feedback: ChoiceFeedback, correct: boolean)
   if (!correct) values.push(feedback.incorrectPoint ?? "", feedback.differenceFromCorrect ?? "");
   const minimums = correct ? [35, 18, 24] : [35, 18, 35, 24, 45];
   return values.every((value, index) => compact(value).length >= minimums[index]) &&
-    !GENERIC_CONTENT_PATTERNS.some((pattern) => values.some((value) => value.includes(pattern)));
+    !GENERIC_CONTENT_PATTERNS.some((pattern) => values.some((value) => value.includes(pattern))) &&
+    findKoreanLanguageIssues(values.join("\n")).length === 0;
 }
 
 export function lessonAnchorForQuestion(question: Pick<Question, "stem" | "errorReason" | "conceptGroupId">) {
@@ -155,6 +157,11 @@ function genericMatches(blocks: LessonBlock[]) {
   return GENERIC_CONTENT_PATTERNS.filter((pattern) => text.includes(pattern));
 }
 
+function languageIssueMatches(blocks: LessonBlock[]) {
+  const text = blocks.map((block) => `${block.title}\n${block.body}`).join("\n");
+  return [...new Set(findKoreanLanguageIssues(text).map((issue) => issue.expression))];
+}
+
 function substantiveCharacters(blocks: LessonBlock[]) {
   return blocks
     .filter((block) => block.kind !== "source")
@@ -176,6 +183,7 @@ export function assessLessonQuality(
 ): ContentQuality {
   const characters = substantiveCharacters(blocks);
   const matches = genericMatches(blocks);
+  const languageIssues = languageIssueMatches(blocks);
   const requiredCharacters = tier === "core" ? 1000 : tier === "standard" ? 700 : 500;
   const requiredKinds = ["definition", "principle", "exam_point", "trap", "source"];
   const kinds = new Set(blocks.map((block) => block.kind));
@@ -184,10 +192,12 @@ export function assessLessonQuality(
     tier,
     substantiveCharacters: characters,
     genericPhraseMatches: [...matches],
+    languageIssueMatches: languageIssues,
     sourceLinked,
     passed:
       characters >= requiredCharacters &&
       matches.length === 0 &&
+      languageIssues.length === 0 &&
       summaryIsUseful &&
       requiredKinds.every((kind) => kinds.has(kind as LessonBlockKind)),
   };
@@ -213,18 +223,28 @@ export function buildEvidenceLesson({
   const primary = questions[0];
   const correctText = primary?.answerText || concept;
   const sourceExcerpt = theoryEvidence?.body
-    ? theoryEvidence.body.slice(0, 3600)
+    ? theoryEvidence.body
+        .replace(/\*+/g, "")
+        .replace(/(?:대조\s*)?원문\s*:\s*/g, "")
+        .split(/\n{2,}/)
+        .filter((paragraph) => paragraph.includes(concept) || paragraph.includes(correctText))
+        .slice(0, 3)
+        .join("\n\n")
+        .slice(0, 1600) || theoryEvidence.body.slice(0, 1200)
     : `이 레슨의 직접 판단근거는 대표문제의 확정 정답과 근거에서 시작합니다. ${evidence.join(" ")}`;
   const summary = [
     evidence[0] || `${concept}의 정의와 적용 범위를 구분합니다.`,
-    `${guide.decisionSteps[0]} ${guide.decisionSteps[1]}`,
-    `정답 보기인 ‘${correctText}’와 비슷한 표현은 대상·조건·기능의 차이까지 확인합니다.`,
+    theoryEvidence ? sourceExcerpt.split(/(?<=[.!?다요])\s+/)[0] : `${guide.decisionSteps[0]} ${guide.decisionSteps[1]}`,
+    guide.trap,
   ].map((line) => compact(line).slice(0, 260));
   if (summary[0].length < 24) summary[0] = `${summary[0]} ${concept}의 핵심 판단기준입니다.`;
 
-  const preferredKind: LessonBlockKind = ["formula", "diagnosis", "selection"].includes(guide.preferredBlock)
+  const preferredKind: LessonBlockKind = ["formula", "diagnosis", "selection", "safety"].includes(guide.preferredBlock)
     ? guide.preferredBlock
     : "selection";
+  const needsDiagnosis = questions.some((question) => /원인|고장|진단|점검|누설|파손|마모|이상|불량/.test(question.stem));
+  const needsFormula = questions.some((question) => question.errorReason === "공식 적용" || question.errorReason === "단위 오류");
+  const needsSafety = questions.some((question) => /안전|보호구|화재|폭발|방호|작업 전/.test(question.stem));
   const blocks: LessonBlock[] = [
     {
       id: "summary",
@@ -244,7 +264,7 @@ export function buildEvidenceLesson({
       id: "purpose",
       kind: "purpose",
       title: "왜 이 개념을 구분하는가",
-      body: `‘${concept}’ 개념은 ${groupTitle} 문제에서 장치 선정, 계산조건 또는 고장판단의 기준으로 사용됩니다. 비슷한 명칭만 외우면 적용 대상과 직접 원인을 바꾸어 고르기 쉬우므로 **정의 → 작동원리 → 적용조건 → 확인방법**을 한 흐름으로 묶어야 합니다.\n\n${guide.scope}`,
+      body: `${quoteWithJosa(concept, "은/는")} ${groupTitle} 문제에서 장치 선정, 계산 조건 또는 고장 판단의 기준이 됩니다. 비슷한 명칭만 외우면 적용 대상과 직접 원인을 혼동하기 쉬우므로 **정의 → 작동 원리 → 적용 조건 → 확인 방법**의 순서로 구분해야 합니다.\n\n${guide.scope}`,
       order: 3,
     },
     {
@@ -286,14 +306,14 @@ export function buildEvidenceLesson({
       id: "exam-point",
       kind: "exam_point",
       title: "시험에서 판단하는 순서",
-      body: `- 문제의 긍정형·부정형을 먼저 표시합니다.\n- ${guide.decisionSteps.join("\n- ")}\n- 마지막으로 정답 ‘${correctText}’이 질문의 대상과 정확히 일치하는지 확인합니다.`,
+      body: `- 문제의 긍정형·부정형을 먼저 표시합니다.\n- ${guide.decisionSteps.join("\n- ")}\n- 마지막으로 ${quoteWithJosa(correctText, "이/가")} 문제에서 요구한 조건을 모두 충족하는지 확인합니다.`,
       order: 8,
     },
     {
       id: "trap",
       kind: "trap",
       title: "헷갈리기 쉬운 부분",
-      body: `${guide.trap}\n\n대표문제의 오답 보기: ${primary?.choices.filter((choice) => choice.id !== primary.correctChoiceId).map((choice) => `‘${choice.text}’`).join(", ") || "없음"}. 이 표현들은 관련 분야 용어이지만 정답 ‘${correctText}’과 같은 조건으로 바꾸어 쓸 수 없습니다.`,
+      body: `${guide.trap}\n\n대표문제의 오답 보기: ${primary?.choices.filter((choice) => choice.id !== primary.correctChoiceId).map((choice) => `‘${choice.text}’`).join(", ") || "없음"}. 이 보기들은 관련 분야의 표현이지만 ${quoteWithJosa(correctText, "과/와")} 같은 조건에서 서로 바꾸어 쓸 수 없습니다.`,
       order: 9,
     },
     {
@@ -302,13 +322,6 @@ export function buildEvidenceLesson({
       title: "한 줄 암기",
       body: `**${concept}:** ${compact(evidence[0] || guide.decisionSteps[2])}`,
       order: 10,
-    },
-    {
-      id: "safety",
-      kind: "safety",
-      title: "현행기준·안전 확인",
-      body: `법령, KS·ISO, 제조사 설정값, 허용간극·온도·압력처럼 시점과 설비에 따라 달라지는 값은 문제의 과거 표현을 그대로 현장기준으로 사용하지 않습니다. **시험에서는 제시된 조건과 출제기준**, 실무에서는 최신 법령·승인도서·제조사 매뉴얼을 우선합니다. ${concept}에 수치조건이 있다면 적용 연도와 기준 문서를 함께 기록합니다.`,
-      order: 11,
     },
     {
       id: "source",
@@ -325,7 +338,7 @@ export function buildEvidenceLesson({
     },
   ];
 
-  if (preferredKind !== "diagnosis") {
+  if (preferredKind !== "diagnosis" && needsDiagnosis) {
     blocks.splice(6, 0, {
       id: "diagnosis",
       kind: "diagnosis",
@@ -334,13 +347,22 @@ export function buildEvidenceLesson({
       order: 7,
     });
   }
-  if (preferredKind !== "formula") {
+  if (preferredKind !== "formula" && needsFormula) {
     blocks.splice(4, 0, {
       id: "formula",
       kind: "formula",
       title: "수치·단위 문제 확인",
       body: "수치가 없는 개념문제라도 단위, 기준온도, 압력의 기준, 이상·이하·초과·미만 같은 경계조건이 숨어 있는지 확인합니다. 공식이 필요한 문제는 기호의 뜻과 단위를 먼저 적고 계산 뒤 차원을 검산합니다.",
       order: 5,
+    });
+  }
+  if (preferredKind !== "safety" && needsSafety) {
+    blocks.splice(blocks.findIndex((block) => block.id === "source"), 0, {
+      id: "safety",
+      kind: "safety",
+      title: "현행 기준과 안전 확인",
+      body: `안전 관련 수치와 작업 절차는 문제의 출제 시점과 현재 기준이 다를 수 있습니다. 시험에서는 제시된 조건과 출제 기준을 따르고, 실무에서는 최신 법령·승인도서·제조사 매뉴얼을 우선합니다. ${concept}에 수치 조건이 있다면 적용 연도와 기준 문서를 함께 기록합니다.`,
+      order: 11,
     });
   }
   blocks.forEach((block, index) => {

@@ -48,6 +48,7 @@ export type ContentQuality = {
   tier: "compact" | "standard" | "core";
   substantiveCharacters: number;
   genericPhraseMatches: string[];
+  languageIssueMatches: string[];
   sourceLinked: boolean;
   passed: boolean;
 };
@@ -179,12 +180,15 @@ export type ImportReport = {
     choiceFeedbackPassed: number;
     choiceFeedbackFailed: number;
     genericPhraseMatches: number;
+    languageIssueMatches: number;
   };
   groupQuality: Array<{
     groupId: string;
     title: string;
     lessonCount: number;
     lessonPassed: number;
+    publishedLessonCount: number;
+    publishedLessonPassed: number;
     questionCount: number;
     publishedQuestionCount: number;
     choiceFeedbackCount: number;
