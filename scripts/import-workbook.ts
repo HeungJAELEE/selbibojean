@@ -2,6 +2,15 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { readSheet } from "read-excel-file/node";
+import {
+  assessLessonQuality,
+  buildChoiceFeedback,
+  buildEvidenceLesson,
+  choiceFeedbackPasses,
+  GENERIC_CONTENT_PATTERNS,
+  lessonAnchorForQuestion,
+} from "../src/lib/content/enrichment";
+import { GOLDEN_LESSONS, GOLDEN_QUESTION_FEEDBACK } from "../src/data/source/golden-content";
 import { conceptGroups, mapConceptGroup, subjects } from "../src/lib/domain/catalog";
 import type {
   Choice,
@@ -18,6 +27,7 @@ const EXPECTED = { originals: 2384, canonicalQuestions: 1396, mappings: 2384, ba
 const DEFAULT_SOURCE =
   "C:/Users/JaeheungLee/Downloads/설비보전기사_전회차_중복제거_마스터_27차_웹앱설계.xlsx";
 const OUTPUT = path.join(process.cwd(), "src", "data", "generated", "content.json");
+const THEORY_SOURCE = path.join(process.cwd(), "src", "data", "source", "notion-theory.md");
 
 type Row = Record<string, string | number | null>;
 
@@ -80,36 +90,6 @@ function classifyErrorReason(stem: string, explanation: string, reviewStatus: st
   return "개념 혼동";
 }
 
-function feedbackForChoice({
-  text,
-  correct,
-  explanation,
-  trap,
-}: {
-  text: string;
-  correct: boolean;
-  explanation: string;
-  trap: string;
-}) {
-  const rule = explanation || "정답의 정의와 적용 조건을 다시 확인해야 합니다.";
-  if (correct) {
-    return {
-      rationale: `이 보기는 정답의 판단 기준과 일치합니다. ${rule}`,
-      plausibleReason: "문제에서 묻는 핵심 정의와 조건을 직접 충족합니다.",
-      incorrectPoint: null,
-      keyRule: rule,
-      differenceFromCorrect: null,
-    };
-  }
-  return {
-    rationale: `‘${text}’은(는) 정답의 핵심 조건과 일치하지 않습니다.`,
-    plausibleReason: trap || "관련 용어가 포함되어 있어 정답처럼 보일 수 있습니다.",
-    incorrectPoint: "정의·조건·적용 범위 중 적어도 하나가 문제의 판단 기준과 다릅니다.",
-    keyRule: rule,
-    differenceFromCorrect: `정답은 ‘${rule}’을 기준으로 판단하지만, 이 보기는 그 기준을 충족하지 않습니다.`,
-  };
-}
-
 function publishDecision(row: Row, correctIndex: number, choices: string[]) {
   const status = asText(row["검증상태"]);
   const text = `${asText(row["문제"])} ${asText(row["근거"])} ${status}`;
@@ -119,21 +99,112 @@ function publishDecision(row: Row, correctIndex: number, choices: string[]) {
   return { publishable: complete && statusConfirmed && !highRisk, complete, highRisk, statusConfirmed };
 }
 
-function splitSummary(explanation: string, concept: string) {
-  const sentences = explanation
-    .split(/(?<=[.!?。])\s+|\n+/)
-    .map((item) => item.trim())
-    .filter(Boolean);
-  return [
-    sentences[0] || `${concept}의 핵심 정의를 먼저 확인합니다.`,
-    sentences[1] || "공식·단위·적용 조건을 함께 구분합니다.",
-    sentences[2] || "보기의 절대 표현과 유사 용어를 오답 함정으로 점검합니다.",
-  ];
+type TheorySection = {
+  title: string;
+  level: number;
+  start: number;
+  end: number;
+  body: string;
+  normalizedTitle: string;
+  normalizedBody: string;
+};
+
+function normalizeTheoryText(value: string) {
+  return value
+    .normalize("NFKC")
+    .replace(/^[★⭐📷🔧⚠️📌\s]+/g, "")
+    .replace(/^(최근\s*기출|기출\s*예상|NCS\s*(실무\s*)?(보강|추가)?|웹\s*실사\s*보강|원문\s*실사)\s*[｜|·:-]\s*/i, "")
+    .replace(/^제?\d+(?:\.\d+)*[장절편과목)]?\s*/g, "")
+    .replace(/^\d+\)\s*/g, "")
+    .replace(/[^가-힣a-z0-9]+/gi, "")
+    .toLowerCase();
+}
+
+function cleanTheoryMarkdown(value: string) {
+  return value
+    .replace(/<mention-page[^>]*\/>/g, "")
+    .replace(/<image[^>]*\/>/g, "[관련 도해는 원본 이론서에서 확인]")
+    .replace(/<table[^>]*>/g, "")
+    .replace(/<\/table>/g, "")
+    .replace(/<tr[^>]*>/g, "")
+    .replace(/<\/tr>/g, "\n")
+    .replace(/<td[^>]*>/g, " · ")
+    .replace(/<\/td>/g, "")
+    .replace(/<[^>]+>/g, "")
+    .replace(/!\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/__([^_]+)__/g, "$1")
+    .replace(/`([^`]+)`/g, "$1")
+    .replace(/^>\s?/gm, "")
+    .replace(/^#{1,6}\s+/gm, "")
+    .replace(/^\|?\s*:?-{3,}.*$/gm, "")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+function parseTheorySections(markdown: string) {
+  const lines = markdown.split(/\r?\n/);
+  const mainStart = lines.findIndex((line) => /^# 제1편\s/.test(line));
+  const headings = lines
+    .map((line, index) => {
+      const match = line.match(/^(#{1,6})\s+(.+)$/);
+      return match && index >= Math.max(mainStart, 0)
+        ? { index, level: match[1].length, title: cleanTheoryMarkdown(match[2]) }
+        : null;
+    })
+    .filter((item): item is { index: number; level: number; title: string } => Boolean(item));
+
+  return headings.map<TheorySection>((heading, index) => {
+    const next = headings.slice(index + 1).find((candidate) => candidate.level <= heading.level);
+    const end = next?.index ?? lines.length;
+    const body = cleanTheoryMarkdown(lines.slice(heading.index + 1, end).join("\n"));
+    return {
+      title: heading.title,
+      level: heading.level,
+      start: heading.index,
+      end,
+      body,
+      normalizedTitle: normalizeTheoryText(heading.title),
+      normalizedBody: normalizeTheoryText(body.slice(0, 12000)),
+    };
+  });
+}
+
+function theoryMatchScore(concept: string, groupTitle: string, section: TheorySection) {
+  const conceptKey = normalizeTheoryText(concept);
+  const groupKey = normalizeTheoryText(groupTitle);
+  if (!conceptKey || section.body.length < 80) return 0;
+  let score = section.level * 3;
+  if (section.normalizedTitle === conceptKey) score += 1200;
+  else if (conceptKey.length >= 3 && section.normalizedTitle.includes(conceptKey)) score += 950 + conceptKey.length;
+  else if (section.normalizedTitle.length >= 3 && conceptKey.includes(section.normalizedTitle)) score += 720;
+  const tokens = concept
+    .replace(/[()·/,:-]/g, " ")
+    .split(/\s+/)
+    .map(normalizeTheoryText)
+    .filter((token) => token.length >= 2);
+  const overlap = tokens.filter((token) => section.normalizedTitle.includes(token)).length;
+  if (tokens.length && overlap) score += Math.round((overlap / tokens.length) * 500);
+  if (conceptKey.length >= 4 && section.normalizedBody.includes(conceptKey)) score += 560;
+  if (groupKey.length >= 3 && section.normalizedTitle.includes(groupKey)) score += 180;
+  return score;
+}
+
+function findTheorySection(concept: string, groupTitle: string, sections: TheorySection[]) {
+  const ranked = sections
+    .map((section) => ({ section, score: theoryMatchScore(concept, groupTitle, section) }))
+    .filter((item) => item.score >= 560)
+    .sort((a, b) => b.score - a.score || a.section.body.length - b.section.body.length);
+  return ranked[0] ?? null;
 }
 
 async function main() {
   const sourcePath = path.resolve(process.argv[2] || process.env.SOURCE_WORKBOOK_PATH || DEFAULT_SOURCE);
   const sourceBuffer = await readFile(sourcePath);
+  const theoryMarkdown = await readFile(THEORY_SOURCE, "utf8");
+  const theorySections = parseTheorySections(theoryMarkdown);
   const sourceSha256 = createHash("sha256").update(sourceBuffer).digest("hex");
   const [canonicalSheet, originalSheet, mappingSheet, backlogSheet] = await Promise.all([
     readSheet(sourceBuffer, "고유문제_통합_26차"),
@@ -162,13 +233,12 @@ async function main() {
     const subjectCode = parseSubjectCode(asText(row["현행과목"]));
     const stem = asText(row["문제"]);
     const explanation = asText(row["근거"]);
-    const trap = asText(row["오답함정"]);
     const answer = asText(row["정답"]);
     if (/^[①②③④1-4]$/.test(answer)) numberOnlyAnswers += 1;
     const choiceTexts = [1, 2, 3, 4].map((index) => asText(row[`보기${["①", "②", "③", "④"][index - 1]}`]));
     const correctIndex = parseAnswerIndex(answer, choiceTexts);
     const decision = publishDecision(row, correctIndex, choiceTexts);
-    const { group, confidence } = mapConceptGroup(subjectCode, concept, stem, explanation);
+    const { group, confidence } = mapConceptGroup(subjectCode, concept, stem, explanation, choiceTexts.join(" "));
     const conceptId = `concept-${stableHash(`${subjectCode}:${concept}`)}`;
     const lessonId = `lesson-${stableHash(`${subjectCode}:${concept}`)}`;
     const originalIds = originalIdsByCanonical.get(sourceId) ?? [];
@@ -178,13 +248,34 @@ async function main() {
     if (correctIndex < 0) warnings.push(`${sourceId}: 정답을 보기와 연결하지 못했습니다.`);
     if (confidence === "fallback") warnings.push(`${sourceId}: 세부항목군을 키워드로 확정하지 못했습니다.`);
 
+    const errorReason = classifyErrorReason(stem, explanation, asText(row["검증상태"]));
+    const correctText = correctIndex >= 0 ? choiceTexts[correctIndex] : answer;
+    const groupTitle = group.title;
+    const goldenFeedback = GOLDEN_QUESTION_FEEDBACK[sourceId];
     const choices: Choice[] = choiceTexts.map((text, index) => ({
       id: `${sourceId}-c${index + 1}`,
       order: index + 1,
       text,
-      feedback: feedbackForChoice({ text, correct: index === correctIndex, explanation, trap }),
+      feedback:
+        goldenFeedback?.[index + 1] ??
+        buildChoiceFeedback({
+          stem,
+          choiceText: text,
+          correctText,
+          correct: index === correctIndex,
+          explanation,
+          concept,
+          groupId: group.id,
+          groupTitle,
+        }),
     }));
+    const choiceFeedbackValid = choices.every((choice, index) =>
+      choiceFeedbackPasses(choice.feedback, index === correctIndex),
+    );
     const contentStatus: ContentStatus = decision.publishable ? "published" : decision.complete ? "in_review" : "draft";
+    const lessonAnchor = decision.highRisk
+      ? "source"
+      : lessonAnchorForQuestion({ stem, errorReason, conceptGroupId: group.id });
 
     return {
       id: sourceId,
@@ -193,21 +284,22 @@ async function main() {
       conceptGroupId: group.id,
       conceptId,
       lessonId,
-      lessonAnchor: decision.highRisk ? "source" : /[=×÷√]|공식|계산/.test(explanation) ? "formula" : "principle",
+      lessonAnchor,
       stem,
       choices,
       correctChoiceId: correctIndex >= 0 ? choices[correctIndex].id : "",
-      answerText: correctIndex >= 0 ? choiceTexts[correctIndex] : answer,
+      answerText: correctText,
       explanation,
-      errorReason: classifyErrorReason(stem, explanation, asText(row["검증상태"])),
+      errorReason,
       sourceLabel: sourceUrls[0] || asText(row["출제이력"]) || "27차 엑셀 정규화 자료",
       reviewStatus: asText(row["검증상태"]),
       contentStatus,
       validation: {
         answer: correctIndex >= 0,
         explanation: explanation.length >= 15,
-        choiceFeedback: choices.every((choice) => choice.feedback.keyRule.length >= 15),
+        choiceFeedback: choiceFeedbackValid,
         theoryLink: Boolean(lessonId),
+        contentQuality: choiceFeedbackValid,
       },
     };
   });
@@ -226,12 +318,38 @@ async function main() {
     const first = linkedQuestions[0];
     const row = conceptRowById.get(conceptId)!;
     const concept = asText(row["개념군"]) || "미분류 개념";
-    const explanation = linkedQuestions.map((question) => question.explanation).filter(Boolean).sort((a, b) => b.length - a.length)[0] ?? "";
-    const trap = asText(row["오답함정"]);
+    const explanation = linkedQuestions
+      .map((question) => question.explanation)
+      .filter(Boolean)
+      .sort((a, b) => b.length - a.length)[0] ?? "";
     const coverageStatus: CoverageStatus = explanation.length >= 30 ? "covered" : explanation ? "partial" : "missing";
     const hasPublished = linkedQuestions.some((question) => question.contentStatus === "published");
-    const sourceNeeded = !hasPublished;
-    const summary = splitSummary(explanation, concept);
+    const groupTitle = conceptGroups.find((group) => group.id === first.conceptGroupId)?.title ?? "";
+    const theoryMatch = findTheorySection(concept, groupTitle, theorySections);
+    const theoryEvidence = theoryMatch
+      ? { title: theoryMatch.section.title, body: theoryMatch.section.body, score: theoryMatch.score }
+      : null;
+    const golden = GOLDEN_LESSONS[concept];
+    const sourceNeeded = !golden && !theoryEvidence && !hasPublished;
+    const generatedLesson = golden
+      ? {
+          summary: [...golden.summary],
+          blocks: golden.blocks,
+          quality: assessLessonQuality(golden.blocks, [...golden.summary], "core", true),
+        }
+      : buildEvidenceLesson({
+          concept,
+          groupId: first.conceptGroupId,
+          groupTitle,
+          questions: linkedQuestions,
+          theoryEvidence,
+          sourceNeeded,
+        });
+    const baseAliases = linkedQuestions
+      .map((question) => question.stem.match(/[가-힣A-Za-z0-9·-]{2,18}/)?.[0])
+      .filter((value): value is string => Boolean(value));
+    const terminologyAliases = /오일휩|오일휠/.test(concept) ? ["오일월", "오일휠", "oil whirl", "oil whip"] : [];
+    const contentStatus: ContentStatus = hasPublished && generatedLesson.quality.passed ? "published" : "in_review";
 
     return {
       id: first.lessonId,
@@ -239,23 +357,27 @@ async function main() {
       conceptGroupId: first.conceptGroupId,
       conceptId,
       title: concept,
-      aliases: [...new Set(linkedQuestions.map((question) => question.stem.match(/[가-힣A-Za-z0-9·-]{2,18}/)?.[0]).filter((v): v is string => Boolean(v)))].slice(0, 5),
-      summary,
-      blocks: [
-        { id: "summary", kind: "summary", title: "핵심 3줄", body: summary.map((line, index) => `${index + 1}. ${line}`).join("\n"), order: 1 },
-        { id: "definition", kind: "definition", title: "개념의 범위", body: `${concept}과 관련된 정의, 작동 원리, 적용 조건을 문제의 표현과 분리해 이해합니다.`, order: 2 },
-        { id: "principle", kind: "principle", title: "작동 원리와 판단 기준", body: explanation || "정확한 근거 출처 확인 후 보강할 블록입니다.", order: 3 },
-        { id: "formula", kind: "formula", title: "공식·단위·조건", body: /[=×÷√]|공식|단위|계산/.test(explanation) ? explanation : "공식이 직접 필요한 개념인지 검수 단계에서 확인합니다.", order: 4 },
-        { id: "exam-point", kind: "exam_point", title: "시험 포인트", body: `관련 대표문제 ${linkedQuestions.length}개에서 반복되는 판단 기준을 먼저 찾습니다.`, order: 5 },
-        { id: "trap", kind: "trap", title: "오답 함정", body: trap || "유사 용어, 절대 표현, 조건 누락을 확인합니다.", order: 6 },
-        { id: "source", kind: "source", title: "출처·검토 상태", body: sourceNeeded ? "출처 추가 검수가 필요하여 자동 발행하지 않습니다." : `27차 정규화 자료의 ‘확정’ 문제 ${linkedQuestions.filter((question) => question.contentStatus === "published").length}개를 근거로 구성했습니다.`, order: 7 },
-      ],
+      aliases: [...new Set([...baseAliases, ...terminologyAliases])].slice(0, 8),
+      summary: generatedLesson.summary,
+      blocks: generatedLesson.blocks,
       relatedQuestionIds: linkedQuestions.map((question) => question.id),
-      coverageStatus,
-      contentStatus: hasPublished ? "published" : "in_review",
+      coverageStatus: golden || theoryEvidence ? "covered" : coverageStatus,
+      contentStatus,
       sourceNeeded,
-      reviewedAt: hasPublished ? new Date().toISOString() : null,
+      reviewedAt: contentStatus === "published" ? "2026-07-23T00:00:00.000Z" : null,
+      quality: generatedLesson.quality,
     };
+  });
+
+  const lessonsById = new Map(lessons.map((lesson) => [lesson.id, lesson]));
+  questions.forEach((question) => {
+    const lesson = lessonsById.get(question.lessonId);
+    const anchorExists = Boolean(lesson?.blocks.some((block) => block.id === question.lessonAnchor));
+    question.validation.theoryLink = anchorExists;
+    question.validation.contentQuality = question.validation.choiceFeedback && Boolean(lesson?.quality.passed);
+    if (question.contentStatus === "published" && (!anchorExists || !question.validation.contentQuality)) {
+      question.contentStatus = "in_review";
+    }
   });
 
   const rows = {
@@ -270,7 +392,38 @@ async function main() {
     (result, lesson) => ({ ...result, [lesson.coverageStatus]: result[lesson.coverageStatus] + 1 }),
     { covered: 0, partial: 0, missing: 0, blocked: 0 },
   );
+  const feedbackResults = questions.flatMap((question) =>
+    question.choices.map((choice) => choiceFeedbackPasses(choice.feedback, choice.id === question.correctChoiceId)),
+  );
+  const feedbackText = questions
+    .flatMap((question) => question.choices)
+    .map((choice) => Object.values(choice.feedback).filter(Boolean).join(" "))
+    .join("\n");
+  const genericPhraseMatches =
+    lessons.reduce((total, lesson) => total + lesson.quality.genericPhraseMatches.length, 0) +
+    GENERIC_CONTENT_PATTERNS.filter((pattern) => feedbackText.includes(pattern)).length;
+  const groupQuality = conceptGroups.map((group) => {
+    const groupLessons = lessons.filter((lesson) => lesson.conceptGroupId === group.id);
+    const groupQuestions = questions.filter((question) => question.conceptGroupId === group.id);
+    const groupChoices = groupQuestions.flatMap((question) =>
+      question.choices.map((choice) => ({
+        choice,
+        correct: choice.id === question.correctChoiceId,
+      })),
+    );
+    return {
+      groupId: group.id,
+      title: group.title,
+      lessonCount: groupLessons.length,
+      lessonPassed: groupLessons.filter((lesson) => lesson.quality.passed).length,
+      questionCount: groupQuestions.length,
+      publishedQuestionCount: groupQuestions.filter((question) => question.contentStatus === "published").length,
+      choiceFeedbackCount: groupChoices.length,
+      choiceFeedbackPassed: groupChoices.filter(({ choice, correct }) => choiceFeedbackPasses(choice.feedback, correct)).length,
+    };
+  });
   const generated: GeneratedContent = {
+    formatVersion: 2,
     subjects,
     conceptGroups,
     questions,
@@ -312,6 +465,14 @@ async function main() {
       reviewQuestionCount: questions.filter((question) => question.contentStatus === "in_review").length,
       blockedQuestionCount: questions.filter((question) => question.contentStatus === "draft").length,
       coverage,
+      quality: {
+        lessonPassed: lessons.filter((lesson) => lesson.quality.passed).length,
+        lessonFailed: lessons.filter((lesson) => !lesson.quality.passed).length,
+        choiceFeedbackPassed: feedbackResults.filter(Boolean).length,
+        choiceFeedbackFailed: feedbackResults.filter((passed) => !passed).length,
+        genericPhraseMatches,
+      },
+      groupQuality,
       warnings: warnings.slice(0, 500),
     },
   };

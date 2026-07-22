@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { gradeQuestion, selectPracticeQuestions, toPublicQuestion } from "@/lib/domain/practice";
-import type { Question } from "@/lib/domain/types";
+import type { Lesson, Question } from "@/lib/domain/types";
 
 function makeQuestion(index: number): Question {
   return {
@@ -31,7 +31,7 @@ function makeQuestion(index: number): Question {
     sourceLabel: "source",
     reviewStatus: "확정",
     contentStatus: "published",
-    validation: { answer: true, explanation: true, choiceFeedback: true, theoryLink: true },
+    validation: { answer: true, explanation: true, choiceFeedback: true, theoryLink: true, contentQuality: true },
   };
 }
 
@@ -59,11 +59,31 @@ describe("random practice", () => {
   });
 
   it("returns selected-choice reasoning and the exact lesson anchor after submission", () => {
-    const feedback = gradeQuestion(makeQuestion(1), "U-1-c2", "unsure");
+    const lesson: Lesson = {
+      id: "lesson-a",
+      subjectId: "subject-1",
+      conceptGroupId: "s1-g01",
+      conceptId: "concept-a",
+      title: "시험 개념",
+      aliases: [],
+      summary: ["첫 번째 핵심 요약입니다.", "두 번째 핵심 요약입니다.", "세 번째 핵심 요약입니다."],
+      blocks: [
+        { id: "principle", kind: "principle", title: "작동 원리", body: "문제와 직접 연결되는 작동 원리입니다.", order: 1 },
+        { id: "trap", kind: "trap", title: "오답 함정", body: "혼동 기준을 비교합니다.", order: 2 },
+      ],
+      relatedQuestionIds: ["U-1"],
+      coverageStatus: "covered",
+      contentStatus: "published",
+      sourceNeeded: false,
+      reviewedAt: null,
+      quality: { tier: "standard", substantiveCharacters: 800, genericPhraseMatches: [], sourceLinked: true, passed: true },
+    };
+    const feedback = gradeQuestion(makeQuestion(1), "U-1-c2", "unsure", lesson);
     expect(feedback.isCorrect).toBe(false);
     expect(feedback.errorReason).toBe("개념 혼동");
     expect(feedback.lesson.href).toBe("/written/theory/lesson-a#principle");
     expect(feedback.selectedChoice.incorrectPoint).toBe("조건이 다름");
+    expect(feedback.conceptSupport?.title).toBe("시험 개념");
+    expect(feedback.conceptSupport?.blocks[0].id).toBe("principle");
   });
 });
-

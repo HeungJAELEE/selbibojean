@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, BookOpen, CheckCircle2, RotateCcw, XCircle } from "lucide-react";
-import type { ConceptGroup, PublicQuestion, Subject } from "@/lib/domain/types";
+import { ArrowLeft, ArrowRight, RotateCcw } from "lucide-react";
+import type { ConceptGroup, PracticeFeedback, PublicQuestion, Subject } from "@/lib/domain/types";
 import { cn } from "@/lib/utils";
+import { PracticeFeedbackPanel } from "@/components/practice-feedback";
 
 type Session = {
   sessionId: string;
@@ -13,16 +13,6 @@ type Session = {
   availableCount: number;
   limited: boolean;
   questions: PublicQuestion[];
-};
-
-type Feedback = {
-  isCorrect: boolean;
-  selectedChoice: { id: string; text: string; rationale: string; plausibleReason: string; incorrectPoint: string | null; keyRule: string; differenceFromCorrect: string | null };
-  correctChoice: { id: string; text: string };
-  explanation: string;
-  errorReason: string | null;
-  lesson: { id: string; anchor: string; href: string };
-  otherChoices: Array<{ id: string; text: string; rationale: string; isCorrect: boolean }>;
 };
 
 const SESSION_PREFIX = "seolbi:practice:";
@@ -43,7 +33,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
   const [index, setIndex] = useState(() => Number(searchParams.get("index") ?? 0));
   const [selectedChoiceId, setSelectedChoiceId] = useState("");
   const [selfRating, setSelfRating] = useState<"unknown" | "unsure" | "known">("unsure");
-  const [feedback, setFeedback] = useState<Feedback | null>(null);
+  const [feedback, setFeedback] = useState<PracticeFeedback | null>(null);
   const [isRetry, setIsRetry] = useState(() => Boolean(searchParams.get("retry")));
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -67,7 +57,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ mode, subjectId, conceptGroupId: groupId, count: count === "all" ? "all" : Number(count), guestQuestionIds }),
       });
-      const result = await response.json();
+      const result = await response.json() as Session & { error?: string };
       if (!response.ok) throw new Error(result.error);
       setSession(result);
       setIndex(0);
@@ -91,7 +81,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ questionId: question.id, choiceId: selectedChoiceId, selfRating, sessionId: session.sessionId, attemptKind }),
       });
-      const result = await response.json();
+      const result = await response.json() as PracticeFeedback & { error?: string };
       if (!response.ok) throw new Error(result.error);
       setFeedback(result);
       if (session.storage === "guest") {
@@ -159,7 +149,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
           {question.choices.map((choice) => <button key={choice.id} disabled={Boolean(feedback)} onClick={() => setSelectedChoiceId(choice.id)} className={cn("flex gap-4 rounded-2xl border p-4 text-left transition", selectedChoiceId === choice.id ? "border-[#16697a] bg-[#eaf7f6] ring-1 ring-[#16697a]" : "border-slate-200 hover:border-slate-400", feedback && choice.id === feedback.correctChoice.id && "border-emerald-500 bg-emerald-50")}><span className="grid size-7 shrink-0 place-items-center rounded-full border border-current text-sm font-extrabold">{choice.order}</span><span>{choice.text}</span></button>)}
         </div>
         {!feedback && <div className="mt-7 flex flex-col gap-4 border-t border-slate-200 pt-6 md:flex-row md:items-end md:justify-between"><fieldset><legend className="text-sm font-bold">지금 이 개념은?</legend><div className="mt-2 flex gap-2">{([['unknown','모름'],['unsure','헷갈림'],['known','앎']] as const).map(([value,label]) => <label key={value} className={cn("cursor-pointer rounded-lg border px-3 py-2 text-sm",selfRating===value&&"border-[#16697a] bg-[#eaf7f6]")}><input type="radio" className="sr-only" checked={selfRating===value} onChange={() => setSelfRating(value)} />{label}</label>)}</div></fieldset><button onClick={() => submitAnswer(isRetry ? "retry" : "initial")} disabled={!selectedChoiceId || loading} className="rounded-xl bg-[#173957] px-8 py-3.5 font-extrabold text-white disabled:opacity-40">{loading ? "채점 중…" : "답안 제출"}</button></div>}
-        {feedback && <div className={cn("mt-7 rounded-2xl border p-5", feedback.isCorrect ? "border-emerald-200 bg-emerald-50" : "border-red-200 bg-red-50")}><div className="flex items-center gap-3">{feedback.isCorrect ? <CheckCircle2 className="text-emerald-700" /> : <XCircle className="text-red-700" />}<h3 className="text-lg font-extrabold">{feedback.isCorrect ? "정답입니다" : `${feedback.errorReason ?? "오답"}으로 분류했어요`}</h3></div><p className="mt-4 font-semibold">{feedback.selectedChoice.rationale}</p>{!feedback.isCorrect && <><dl className="mt-5 grid gap-4 text-sm"><div><dt className="font-extrabold">왜 그럴듯했나</dt><dd className="mt-1 text-slate-700">{feedback.selectedChoice.plausibleReason}</dd></div><div><dt className="font-extrabold">실제로 틀린 지점</dt><dd className="mt-1 text-slate-700">{feedback.selectedChoice.incorrectPoint}</dd></div><div><dt className="font-extrabold">핵심 판단 규칙</dt><dd className="mt-1 text-slate-700">{feedback.selectedChoice.keyRule}</dd></div><div><dt className="font-extrabold">정답과의 차이</dt><dd className="mt-1 text-slate-700">{feedback.selectedChoice.differenceFromCorrect}</dd></div></dl><Link href={`/written/theory/${feedback.lesson.id}?returnTo=${encodeURIComponent(returnTo)}#${feedback.lesson.anchor}`} className="mt-6 flex items-center justify-center gap-2 rounded-xl bg-[#173957] px-5 py-3.5 font-extrabold text-white"><BookOpen size={18} />개념 이해하기</Link></>}<details className="mt-5 border-t border-current/15 pt-4"><summary className="cursor-pointer font-bold">전체 해설과 다른 보기 설명</summary><p className="mt-3 text-sm leading-7">{feedback.explanation}</p>{feedback.otherChoices.map((choice) => <p key={choice.id} className="mt-3 text-sm"><strong>{choice.text}</strong> — {choice.rationale}</p>)}</details></div>}
+        {feedback && <PracticeFeedbackPanel feedback={feedback} lessonHref={`/written/theory/${feedback.lesson.id}?returnTo=${encodeURIComponent(returnTo)}#${feedback.lesson.anchor}`} />}
         {error && <p className="mt-4 text-sm text-red-700" role="alert">{error}</p>}
         {feedback && <div className="mt-6 flex flex-wrap justify-between gap-3"><button onClick={retry} className="flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-3 font-bold"><RotateCcw size={17} />정답 숨기고 재도전</button><button onClick={() => move(Math.min(index + 1, session.questions.length))} className="flex items-center gap-2 rounded-xl bg-[#16697a] px-5 py-3 font-bold text-white">{index + 1 === session.questions.length ? "결과 보기" : "다음 문제"}<ArrowRight size={17} /></button></div>}
       </div>

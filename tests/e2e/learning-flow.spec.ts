@@ -27,8 +27,10 @@ test("wrong answer links to a theory anchor", async ({ request }) => {
   });
   expect(response.ok()).toBeTruthy();
   const feedback = await response.json();
-  expect(feedback.lesson.href).toMatch(/^\/written\/theory\/.+#(principle|formula|source)$/);
+  expect(feedback.lesson.href).toMatch(/^\/written\/theory\/.+#(principle|formula|diagnosis|trap|source)$/);
   expect(feedback.selectedChoice.keyRule).toBeTruthy();
+  expect(feedback.conceptSupport?.summary).toHaveLength(3);
+  expect(feedback.conceptSupport?.blocks.length).toBeGreaterThan(0);
 });
 
 test("theory remediation preserves a return-to-retry location", async ({ page, request }) => {

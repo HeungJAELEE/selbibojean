@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getQuestion } from "@/lib/content/repository";
+import { getLesson, getQuestion } from "@/lib/content/repository";
 import { gradeQuestion, isPublishableQuestion } from "@/lib/domain/practice";
 import { submitAnswerSchema } from "@/lib/validation/auth";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
@@ -12,7 +12,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "현재 공개된 문제가 아닙니다." }, { status: 404 });
   }
 
-  const feedback = gradeQuestion(question, parsed.data.choiceId, parsed.data.selfRating);
+  const lesson = await getLesson(question.lessonId);
+  const feedback = gradeQuestion(question, parsed.data.choiceId, parsed.data.selfRating, lesson);
   const supabase = await createSupabaseServerClient();
   const { data: auth } = supabase ? await supabase.auth.getUser() : { data: { user: null } };
   let attemptId: string | null = null;

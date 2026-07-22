@@ -1,4 +1,4 @@
-import type { PublicQuestion, Question, SelfRating } from "./types";
+import type { Lesson, PracticeFeedback, PublicQuestion, Question, SelfRating } from "./types";
 
 export type PracticeFilter = {
   subjectId?: string;
@@ -32,6 +32,7 @@ export function isPublishableQuestion(question: Question) {
     question.validation.explanation &&
     question.validation.choiceFeedback &&
     question.validation.theoryLink &&
+    question.validation.contentQuality &&
     question.choices.length >= 2
   );
 }
@@ -76,7 +77,12 @@ export function toPublicQuestion(question: Question): PublicQuestion {
   return { ...safeQuestion, choices: choices.map(({ id, order, text }) => ({ id, order, text })) };
 }
 
-export function gradeQuestion(question: Question, choiceId: string, selfRating: SelfRating) {
+export function gradeQuestion(
+  question: Question,
+  choiceId: string,
+  selfRating: SelfRating,
+  lesson?: Lesson,
+): PracticeFeedback {
   const selectedChoice = question.choices.find((choice) => choice.id === choiceId);
   const correctChoice = question.choices.find((choice) => choice.id === question.correctChoiceId);
   if (!selectedChoice || !correctChoice) {
@@ -84,6 +90,19 @@ export function gradeQuestion(question: Question, choiceId: string, selfRating: 
   }
 
   const isCorrect = selectedChoice.id === correctChoice.id;
+  const supportBlocks = lesson
+    ? [
+        lesson.blocks.find((block) => block.id === question.lessonAnchor),
+        lesson.blocks.find((block) => block.kind === "definition"),
+        lesson.blocks.find((block) => block.kind === "formula" || block.kind === "diagnosis"),
+        lesson.blocks.find((block) => block.kind === "exam_point"),
+        lesson.blocks.find((block) => block.kind === "trap"),
+      ]
+        .filter((block): block is Lesson["blocks"][number] => Boolean(block))
+        .filter((block, index, blocks) => blocks.findIndex((candidate) => candidate.id === block.id) === index)
+        .slice(0, 4)
+    : [];
+
   return {
     isCorrect,
     selectedChoice: {
@@ -100,6 +119,13 @@ export function gradeQuestion(question: Question, choiceId: string, selfRating: 
       anchor: question.lessonAnchor,
       href: `/written/theory/${question.lessonId}#${question.lessonAnchor}`,
     },
+    conceptSupport: lesson
+      ? {
+          title: lesson.title,
+          summary: lesson.summary,
+          blocks: supportBlocks.map(({ id, kind, title, body }) => ({ id, kind, title, body })),
+        }
+      : null,
     otherChoices: question.choices
       .filter((choice) => choice.id !== selectedChoice.id)
       .map((choice) => ({ id: choice.id, text: choice.text, isCorrect: choice.id === correctChoice.id, ...choice.feedback })),

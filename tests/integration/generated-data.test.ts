@@ -24,5 +24,29 @@ describe("27th workbook reconciliation", () => {
     expect(publicQuestions.every(isPublishableQuestion)).toBe(true);
     expect(data.questions.filter((question) => question.contentStatus !== "published").length).toBeGreaterThan(0);
   });
-});
 
+  it("passes lesson and per-choice quality gates in every concept group", () => {
+    expect(data.formatVersion).toBe(2);
+    expect(data.report.quality.lessonPassed).toBe(data.lessons.length);
+    expect(data.report.quality.lessonFailed).toBe(0);
+    expect(data.report.quality.choiceFeedbackPassed).toBe(
+      data.questions.reduce((total, question) => total + question.choices.length, 0),
+    );
+    expect(data.report.quality.choiceFeedbackFailed).toBe(0);
+    expect(data.report.quality.genericPhraseMatches).toBe(0);
+    expect(data.report.groupQuality).toHaveLength(44);
+    expect(data.report.groupQuality.every((group) =>
+      group.lessonPassed === group.lessonCount && group.choiceFeedbackPassed === group.choiceFeedbackCount,
+    )).toBe(true);
+  });
+
+  it("keeps the three approved golden lessons rich and structured", () => {
+    for (const title of ["용접 분류", "디스크브레이크 누유", "오일휩 진단기법"]) {
+      const lesson = data.lessons.find((candidate) => candidate.title === title);
+      expect(lesson, `${title} 레슨`).toBeTruthy();
+      expect(lesson?.quality.passed).toBe(true);
+      expect(lesson?.blocks.some((block) => block.body.includes("|---|"))).toBe(true);
+      expect(lesson?.blocks.some((block) => block.kind === "trap")).toBe(true);
+    }
+  });
+});

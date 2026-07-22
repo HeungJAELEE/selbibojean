@@ -44,6 +44,14 @@ export type ChoiceFeedback = {
   differenceFromCorrect: string | null;
 };
 
+export type ContentQuality = {
+  tier: "compact" | "standard" | "core";
+  substantiveCharacters: number;
+  genericPhraseMatches: string[];
+  sourceLinked: boolean;
+  passed: boolean;
+};
+
 export type Choice = {
   id: string;
   order: number;
@@ -73,6 +81,7 @@ export type Question = {
     explanation: boolean;
     choiceFeedback: boolean;
     theoryLink: boolean;
+    contentQuality: boolean;
   };
 };
 
@@ -81,6 +90,22 @@ export type PublicQuestion = Omit<
   "choices" | "correctChoiceId" | "answerText" | "explanation" | "errorReason" | "validation" | "reviewStatus"
 > & {
   choices: Array<Pick<Choice, "id" | "order" | "text">>;
+};
+
+export type PracticeFeedback = {
+  isCorrect: boolean;
+  selectedChoice: Pick<Choice, "id" | "text"> & ChoiceFeedback;
+  correctChoice: Pick<Choice, "id" | "text">;
+  explanation: string;
+  errorReason: ErrorReason | null;
+  selfRating: SelfRating;
+  lesson: { id: string; anchor: string; href: string };
+  conceptSupport: {
+    title: string;
+    summary: string[];
+    blocks: Array<Pick<LessonBlock, "id" | "kind" | "title" | "body">>;
+  } | null;
+  otherChoices: Array<Pick<Choice, "id" | "text"> & ChoiceFeedback & { isCorrect: boolean }>;
 };
 
 export type LessonBlockKind =
@@ -120,6 +145,7 @@ export type Lesson = {
   contentStatus: ContentStatus;
   sourceNeeded: boolean;
   reviewedAt: string | null;
+  quality: ContentQuality;
 };
 
 export type ImportReport = {
@@ -147,10 +173,28 @@ export type ImportReport = {
   reviewQuestionCount: number;
   blockedQuestionCount: number;
   coverage: Record<CoverageStatus, number>;
+  quality: {
+    lessonPassed: number;
+    lessonFailed: number;
+    choiceFeedbackPassed: number;
+    choiceFeedbackFailed: number;
+    genericPhraseMatches: number;
+  };
+  groupQuality: Array<{
+    groupId: string;
+    title: string;
+    lessonCount: number;
+    lessonPassed: number;
+    questionCount: number;
+    publishedQuestionCount: number;
+    choiceFeedbackCount: number;
+    choiceFeedbackPassed: number;
+  }>;
   warnings: string[];
 };
 
 export type GeneratedContent = {
+  formatVersion: 2;
   subjects: Subject[];
   conceptGroups: ConceptGroup[];
   questions: Question[];
