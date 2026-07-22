@@ -1,0 +1,3 @@
+import { PageHeading } from "@/components/page-heading";
+export default function PrivacyPage(){return <div className="page-wrap"><PageHeading eyebrow="Privacy" title="개인정보·계정 안내" description="이 페이지는 운영 배포 전 법률·공급자 정책과 함께 최종 검토해야 하는 초안입니다."/><article className="card prose-learning p-7 md:p-10"><h2>일반 계정</h2><p>이메일 없이 아이디와 비밀번호로 가입합니다. 비밀번호 복구는 제공하지 않습니다. 아이디와 Supabase Auth 내부 식별값의 연결은 서버에서만 처리합니다.</p><h2>비활동 삭제</h2><p>문제 제출, 진도 저장, 북마크, 메모 같은 인증 활동이 168시간 없으면 계정과 서버 학습기록을 삭제하고 아이디를 다시 사용할 수 있게 합니다. 활동 시각은 최대 한 시간에 한 번 갱신됩니다.</p><h2>감사 기록</h2><p>삭제 감사에는 되돌릴 수 없는 해시, 삭제 시각과 사유만 남깁니다. 복구 가능한 개인정보는 별도로 보관하지 않습니다.</p><h2>공급자 백업</h2><p>삭제된 데이터가 Supabase 또는 호스팅 공급자의 제한된 백업 보존기간 동안 남을 수 있습니다. 실제 운영 전 선택한 요금제와 공급자 정책에 맞춰 정확한 기간을 이곳에 고지해야 합니다.</p></article></div>}
+

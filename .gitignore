@@ -1,0 +1,13 @@
+.next/
+dist/
+.wrangler/
+node_modules/
+coverage/
+playwright-report/
+test-results/
+.env*
+!.env.example
+.vercel/
+*.tsbuildinfo
+supabase/.temp/
+data/private/

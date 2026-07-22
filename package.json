@@ -1,0 +1,68 @@
+{
+  "name": "seolbi-learning-platform",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vinext dev",
+    "build": "vinext build",
+    "build:next": "next build",
+    "start": "vinext start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:rls": "supabase test db",
+    "import:workbook": "tsx scripts/import-workbook.ts",
+    "stage:supabase": "tsx scripts/stage-supabase-import.ts",
+    "verify:data": "tsx scripts/verify-generated-data.ts",
+    "check": "npm run verify:data && npm run typecheck && npm run lint && npm run test && npm run build"
+  },
+  "dependencies": {
+    "@supabase/ssr": "0.12.3",
+    "@supabase/supabase-js": "2.110.8",
+    "clsx": "2.1.1",
+    "lucide-react": "0.468.0",
+    "next": "16.2.11",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "read-excel-file": "9.3.4",
+    "server-only": "0.0.1",
+    "tailwind-merge": "3.3.1",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1",
+    "@axe-core/playwright": "4.12.1",
+    "@cloudflare/vite-plugin": "1.46.0",
+    "@rolldown/binding-win32-x64-msvc": "1.1.5",
+    "@tailwindcss/postcss": "4.3.3",
+    "@vitejs/plugin-react": "6.0.4",
+    "@vitejs/plugin-rsc": "0.5.26",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.1",
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.1",
+    "eslint-config-next": "16.2.11",
+    "jsdom": "27.2.0",
+    "postcss": "8.5.22",
+    "react-server-dom-webpack": "19.2.8",
+    "tsx": "4.21.0",
+    "typescript": "6.0.3",
+    "vinext": "0.0.50",
+    "vite": "8.1.5",
+    "vitest": "4.1.10",
+    "wrangler": "4.113.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "overrides": {
+    "esbuild": "0.28.1",
+    "postcss": "8.5.22",
+    "sharp": "0.35.3"
+  },
+  "type": "module"
+}

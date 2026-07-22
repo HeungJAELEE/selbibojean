@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #12263a;
+  --muted: #5f6f7f;
+  --line: #dce4e9;
+  --paper: #f7f9fa;
+  --navy: #173957;
+  --teal: #16697a;
+  --teal-light: #dff3f2;
+  --orange: #8f3f0a;
+  --success: #1f7a55;
+  --danger: #b6413c;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+a { text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid #f59e0b; outline-offset: 3px; }
+
+.page-wrap { width: min(1180px, calc(100% - 32px)); margin-inline: auto; }
+.card {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgb(18 38 58 / 0.06);
+}
+.eyebrow { color: var(--teal); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.display { font-family: Georgia, "Times New Roman", "Noto Serif KR", serif; letter-spacing: -.04em; }
+.soft-grid {
+  background-image: linear-gradient(to right, rgb(255 255 255 / .045) 1px, transparent 1px), linear-gradient(to bottom, rgb(255 255 255 / .045) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.prose-learning h2 { margin-top: 2.2rem; font-size: 1.4rem; font-weight: 850; scroll-margin-top: 110px; }
+.prose-learning p { color: #344b60; line-height: 1.82; white-space: pre-wrap; }
+
+@media (max-width: 720px) {
+  .page-wrap { width: min(100% - 22px, 1180px); }
+}

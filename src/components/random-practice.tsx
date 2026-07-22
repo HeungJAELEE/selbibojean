@@ -1,0 +1,169 @@
+"use client";
+
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { useMemo, useState } from "react";
+import { ArrowLeft, ArrowRight, BookOpen, CheckCircle2, RotateCcw, XCircle } from "lucide-react";
+import type { ConceptGroup, PublicQuestion, Subject } from "@/lib/domain/types";
+import { cn } from "@/lib/utils";
+
+type Session = {
+  sessionId: string;
+  storage: "guest" | "account";
+  availableCount: number;
+  limited: boolean;
+  questions: PublicQuestion[];
+};
+
+type Feedback = {
+  isCorrect: boolean;
+  selectedChoice: { id: string; text: string; rationale: string; plausibleReason: string; incorrectPoint: string | null; keyRule: string; differenceFromCorrect: string | null };
+  correctChoice: { id: string; text: string };
+  explanation: string;
+  errorReason: string | null;
+  lesson: { id: string; anchor: string; href: string };
+  otherChoices: Array<{ id: string; text: string; rationale: string; isCorrect: boolean }>;
+};
+
+const SESSION_PREFIX = "seolbi:practice:";
+const ATTEMPTS_KEY = "seolbi:guest-attempts";
+
+export function RandomPractice({ subjects, groups }: { subjects: Subject[]; groups: ConceptGroup[] }) {
+  const searchParams = useSearchParams();
+  const [mode, setMode] = useState(searchParams.get("mode") ?? "all");
+  const [subjectId, setSubjectId] = useState(subjects[0]?.id ?? "");
+  const [groupId, setGroupId] = useState("");
+  const [count, setCount] = useState<"10" | "20" | "50" | "all">("20");
+  const [session, setSession] = useState<Session | null>(() => {
+    if (typeof window === "undefined") return null;
+    const resume = searchParams.get("resume");
+    const raw = resume ? localStorage.getItem(`${SESSION_PREFIX}${resume}`) : null;
+    return raw ? (JSON.parse(raw) as Session) : null;
+  });
+  const [index, setIndex] = useState(() => Number(searchParams.get("index") ?? 0));
+  const [selectedChoiceId, setSelectedChoiceId] = useState("");
+  const [selfRating, setSelfRating] = useState<"unknown" | "unsure" | "known">("unsure");
+  const [feedback, setFeedback] = useState<Feedback | null>(null);
+  const [isRetry, setIsRetry] = useState(() => Boolean(searchParams.get("retry")));
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const availableGroups = useMemo(() => groups.filter((group) => group.subjectId === subjectId), [groups, subjectId]);
+  const question = session?.questions[index];
+
+  async function startSession() {
+    setLoading(true);
+    setError("");
+    const guestAttempts = JSON.parse(localStorage.getItem(ATTEMPTS_KEY) ?? "[]") as Array<{ questionId: string; isCorrect: boolean; dueAt: string }>;
+    const guestQuestionIds =
+      mode === "wrong"
+        ? guestAttempts.filter((attempt) => !attempt.isCorrect).map((attempt) => attempt.questionId)
+        : mode === "due"
+          ? guestAttempts.filter((attempt) => new Date(attempt.dueAt) <= new Date()).map((attempt) => attempt.questionId)
+          : undefined;
+    try {
+      const response = await fetch("/api/practice/session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mode, subjectId, conceptGroupId: groupId, count: count === "all" ? "all" : Number(count), guestQuestionIds }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error);
+      setSession(result);
+      setIndex(0);
+      setFeedback(null);
+      setSelectedChoiceId("");
+      localStorage.setItem(`${SESSION_PREFIX}${result.sessionId}`, JSON.stringify({ ...result, index: 0 }));
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "문제 세션을 만들지 못했습니다.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function submitAnswer(attemptKind: "initial" | "retry" = "initial") {
+    if (!question || !selectedChoiceId || !session) return;
+    setLoading(true);
+    setError("");
+    try {
+      const response = await fetch("/api/practice/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ questionId: question.id, choiceId: selectedChoiceId, selfRating, sessionId: session.sessionId, attemptKind }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error);
+      setFeedback(result);
+      if (session.storage === "guest") {
+        const attempts = JSON.parse(localStorage.getItem(ATTEMPTS_KEY) ?? "[]") as unknown[];
+        const dueAt = new Date();
+        dueAt.setMinutes(dueAt.getMinutes() + (result.isCorrect ? selfRating === "known" ? 7 * 1440 : selfRating === "unsure" ? 3 * 1440 : 1440 : 10));
+        attempts.push({ questionId: question.id, selectedChoiceId, isCorrect: result.isCorrect, selfRating, dueAt: dueAt.toISOString(), attemptKind, attemptedAt: new Date().toISOString() });
+        localStorage.setItem(ATTEMPTS_KEY, JSON.stringify(attempts));
+      }
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "채점하지 못했습니다.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function move(nextIndex: number) {
+    if (!session) return;
+    setIndex(nextIndex);
+    setSelectedChoiceId("");
+    setFeedback(null);
+    setIsRetry(false);
+    localStorage.setItem(`${SESSION_PREFIX}${session.sessionId}`, JSON.stringify({ ...session, index: nextIndex }));
+  }
+
+  function retry() {
+    setSelectedChoiceId("");
+    setFeedback(null);
+    setIsRetry(true);
+  }
+
+  if (!session) {
+    return (
+      <section className="card p-6 md:p-8" aria-labelledby="random-options">
+        <h2 id="random-options" className="text-xl font-extrabold">출제 범위 설정</h2>
+        <div className="mt-6 grid gap-5 md:grid-cols-2">
+          <label className="grid gap-2 text-sm font-bold">범위
+            <select className="rounded-xl border border-slate-300 bg-white p-3" value={mode} onChange={(event) => setMode(event.target.value)}>
+              <option value="all">전체 공개 문제</option><option value="subject">과목</option><option value="group">44개 세부항목군</option><option value="wrong">내 오답</option><option value="due">복습 예정</option>
+            </select>
+          </label>
+          {(mode === "subject" || mode === "group") && <label className="grid gap-2 text-sm font-bold">과목<select className="rounded-xl border border-slate-300 bg-white p-3" value={subjectId} onChange={(event) => { setSubjectId(event.target.value); setGroupId(""); }}>{subjects.map((subject) => <option key={subject.id} value={subject.id}>{subject.shortTitle}</option>)}</select></label>}
+          {mode === "group" && <label className="grid gap-2 text-sm font-bold">세부항목군<select className="rounded-xl border border-slate-300 bg-white p-3" value={groupId} onChange={(event) => setGroupId(event.target.value)}><option value="">선택하세요</option>{availableGroups.map((group) => <option key={group.id} value={group.id}>{group.title}</option>)}</select></label>}
+          <label className="grid gap-2 text-sm font-bold">문제 수<select className="rounded-xl border border-slate-300 bg-white p-3" value={count} onChange={(event) => setCount(event.target.value as typeof count)}><option value="10">10문제</option><option value="20">20문제</option><option value="50">50문제</option><option value="all">가능한 문제 전체</option></select></label>
+        </div>
+        {error && <p className="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-700" role="alert">{error}</p>}
+        <button onClick={startSession} disabled={loading || (mode === "group" && !groupId)} className="mt-7 w-full rounded-xl bg-[#173957] px-5 py-4 font-extrabold text-white disabled:opacity-50">{loading ? "문제를 고르는 중…" : "중복 없이 시작하기"}</button>
+      </section>
+    );
+  }
+
+  if (!question) {
+    return <section className="card p-10 text-center"><h2 className="text-2xl font-extrabold">조건에 맞는 공개 문제가 없습니다.</h2><p className="mt-3 text-slate-600">검수 완료된 문제만 출제됩니다. 범위를 바꿔 다시 시도해 주세요.</p><button onClick={() => setSession(null)} className="mt-6 rounded-xl bg-[#173957] px-5 py-3 font-bold text-white">범위 다시 선택</button></section>;
+  }
+
+  const returnTo = `/written/practice/random?resume=${session.sessionId}&index=${index}&retry=${question.id}`;
+  return (
+    <section className="grid gap-5 lg:grid-cols-[1fr_290px]">
+      <div className="card p-6 md:p-9">
+        <div className="flex items-center justify-between gap-4 text-sm text-slate-500"><span>문제 {index + 1} / {session.questions.length}</span><span>{question.id}</span></div>
+        <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-slate-100"><div className="h-full bg-[#16697a]" style={{ width: `${((index + 1) / session.questions.length) * 100}%` }} /></div>
+        {session.limited && index === 0 && <p className="mt-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-800">요청한 수보다 공개 가능 문제가 적어 {session.questions.length}문제를 한 번씩 출제합니다.</p>}
+        <h2 className="mt-8 text-xl font-extrabold leading-relaxed md:text-2xl">{question.stem}</h2>
+        <div className="mt-7 grid gap-3">
+          {question.choices.map((choice) => <button key={choice.id} disabled={Boolean(feedback)} onClick={() => setSelectedChoiceId(choice.id)} className={cn("flex gap-4 rounded-2xl border p-4 text-left transition", selectedChoiceId === choice.id ? "border-[#16697a] bg-[#eaf7f6] ring-1 ring-[#16697a]" : "border-slate-200 hover:border-slate-400", feedback && choice.id === feedback.correctChoice.id && "border-emerald-500 bg-emerald-50")}><span className="grid size-7 shrink-0 place-items-center rounded-full border border-current text-sm font-extrabold">{choice.order}</span><span>{choice.text}</span></button>)}
+        </div>
+        {!feedback && <div className="mt-7 flex flex-col gap-4 border-t border-slate-200 pt-6 md:flex-row md:items-end md:justify-between"><fieldset><legend className="text-sm font-bold">지금 이 개념은?</legend><div className="mt-2 flex gap-2">{([['unknown','모름'],['unsure','헷갈림'],['known','앎']] as const).map(([value,label]) => <label key={value} className={cn("cursor-pointer rounded-lg border px-3 py-2 text-sm",selfRating===value&&"border-[#16697a] bg-[#eaf7f6]")}><input type="radio" className="sr-only" checked={selfRating===value} onChange={() => setSelfRating(value)} />{label}</label>)}</div></fieldset><button onClick={() => submitAnswer(isRetry ? "retry" : "initial")} disabled={!selectedChoiceId || loading} className="rounded-xl bg-[#173957] px-8 py-3.5 font-extrabold text-white disabled:opacity-40">{loading ? "채점 중…" : "답안 제출"}</button></div>}
+        {feedback && <div className={cn("mt-7 rounded-2xl border p-5", feedback.isCorrect ? "border-emerald-200 bg-emerald-50" : "border-red-200 bg-red-50")}><div className="flex items-center gap-3">{feedback.isCorrect ? <CheckCircle2 className="text-emerald-700" /> : <XCircle className="text-red-700" />}<h3 className="text-lg font-extrabold">{feedback.isCorrect ? "정답입니다" : `${feedback.errorReason ?? "오답"}으로 분류했어요`}</h3></div><p className="mt-4 font-semibold">{feedback.selectedChoice.rationale}</p>{!feedback.isCorrect && <><dl className="mt-5 grid gap-4 text-sm"><div><dt className="font-extrabold">왜 그럴듯했나</dt><dd className="mt-1 text-slate-700">{feedback.selectedChoice.plausibleReason}</dd></div><div><dt className="font-extrabold">실제로 틀린 지점</dt><dd className="mt-1 text-slate-700">{feedback.selectedChoice.incorrectPoint}</dd></div><div><dt className="font-extrabold">핵심 판단 규칙</dt><dd className="mt-1 text-slate-700">{feedback.selectedChoice.keyRule}</dd></div><div><dt className="font-extrabold">정답과의 차이</dt><dd className="mt-1 text-slate-700">{feedback.selectedChoice.differenceFromCorrect}</dd></div></dl><Link href={`/written/theory/${feedback.lesson.id}?returnTo=${encodeURIComponent(returnTo)}#${feedback.lesson.anchor}`} className="mt-6 flex items-center justify-center gap-2 rounded-xl bg-[#173957] px-5 py-3.5 font-extrabold text-white"><BookOpen size={18} />개념 이해하기</Link></>}<details className="mt-5 border-t border-current/15 pt-4"><summary className="cursor-pointer font-bold">전체 해설과 다른 보기 설명</summary><p className="mt-3 text-sm leading-7">{feedback.explanation}</p>{feedback.otherChoices.map((choice) => <p key={choice.id} className="mt-3 text-sm"><strong>{choice.text}</strong> — {choice.rationale}</p>)}</details></div>}
+        {error && <p className="mt-4 text-sm text-red-700" role="alert">{error}</p>}
+        {feedback && <div className="mt-6 flex flex-wrap justify-between gap-3"><button onClick={retry} className="flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-3 font-bold"><RotateCcw size={17} />정답 숨기고 재도전</button><button onClick={() => move(Math.min(index + 1, session.questions.length))} className="flex items-center gap-2 rounded-xl bg-[#16697a] px-5 py-3 font-bold text-white">{index + 1 === session.questions.length ? "결과 보기" : "다음 문제"}<ArrowRight size={17} /></button></div>}
+      </div>
+      <aside className="card h-fit p-5"><h3 className="font-extrabold">세션 진행</h3><p className="mt-2 text-sm text-slate-500">한 세션에서는 같은 문제를 다시 뽑지 않습니다.</p><div className="mt-5 grid grid-cols-5 gap-2">{session.questions.map((item, itemIndex) => <button key={item.id} onClick={() => move(itemIndex)} aria-label={`${itemIndex + 1}번 문제로 이동`} className={cn("aspect-square rounded-lg text-sm font-bold",itemIndex===index?"bg-[#173957] text-white":"bg-slate-100")}>{itemIndex+1}</button>)}</div><button onClick={() => setSession(null)} className="mt-6 flex items-center gap-2 text-sm font-bold text-slate-600"><ArrowLeft size={16} />새 범위로 시작</button></aside>
+    </section>
+  );
+}

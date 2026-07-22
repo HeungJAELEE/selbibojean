@@ -1,0 +1,23 @@
+-- Apply only after the Edge Function is deployed and the secrets are stored in Vault.
+-- 18:00 UTC is 03:00 KST the following day. Korea does not observe DST.
+create extension if not exists pg_cron;
+create extension if not exists pg_net;
+
+select vault.create_secret('https://YOUR_PROJECT_REF.supabase.co', 'project_url');
+select vault.create_secret('REPLACE_WITH_CRON_SECRET', 'purge_cron_secret');
+
+select cron.schedule(
+  'purge-inactive-username-accounts-03-kst',
+  '0 18 * * *',
+  $$
+  select net.http_post(
+    url := (select decrypted_secret from vault.decrypted_secrets where name = 'project_url') || '/functions/v1/purge-inactive-accounts',
+    headers := jsonb_build_object(
+      'Content-Type', 'application/json',
+      'Authorization', 'Bearer ' || (select decrypted_secret from vault.decrypted_secrets where name = 'purge_cron_secret')
+    ),
+    body := jsonb_build_object('scheduled_at', now())
+  );
+  $$
+);
+
