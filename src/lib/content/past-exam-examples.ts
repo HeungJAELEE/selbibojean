@@ -24,7 +24,7 @@ type RankedExample = PastExamExample & {
   score: number;
 };
 
-export function getPastExamExamples(content: GeneratedContent, lessonId: string, limit = 3): PastExamExample[] {
+export function getPastExamExamples(content: GeneratedContent, lessonId: string, limit = Number.POSITIVE_INFINITY): PastExamExample[] {
   const publicQuestions = new Map(
     content.questions
       .filter((question) => question.lessonId === lessonId && isPublishableQuestion(question))

@@ -23,7 +23,7 @@ export default async function LessonPage({
   const content = await getContent();
   const subject = getSubject(lesson.subjectId);
   const group = getConceptGroup(lesson.conceptGroupId);
-  const pastExamExamples = getPastExamExamples(content, lesson.id, 3);
+  const pastExamExamples = getPastExamExamples(content, lesson.id);
   const practiceQuestions = selectPracticeQuestions(content, lesson.id, lesson.conceptGroupId, lesson.relatedQuestionIds, 3);
 
   return (

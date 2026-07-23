@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowUpRight, BookOpenCheck, History } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, BookOpenCheck, ChevronDown, ChevronUp, History } from "lucide-react";
 import type { PastExamExample, PastExamFormat } from "@/lib/content/past-exam-examples";
 
 const CHOICE_MARKS = ["①", "②", "③", "④", "⑤"];
@@ -11,7 +14,10 @@ const FORMAT_LABELS: Record<PastExamFormat, string> = {
 };
 
 export function PastExamExamples({ examples }: { examples: PastExamExample[] }) {
+  const [visibleCount, setVisibleCount] = useState(3);
   if (examples.length === 0) return null;
+  const visibleExamples = examples.slice(0, visibleCount);
+  const remainingCount = Math.max(examples.length - visibleCount, 0);
 
   return (
     <section id="past-exams" className="mt-9 scroll-mt-28 rounded-2xl border border-[#b9d9d7] bg-[#f2fbfa] p-5 md:p-6">
@@ -24,13 +30,13 @@ export function PastExamExamples({ examples }: { examples: PastExamExample[] }) 
           <h2 className="mt-1 text-xl font-extrabold text-[#173957]">실제 기출 원문으로 확인하기</h2>
           <p className="mt-2 text-sm leading-6 text-slate-600">
             방금 익힌 개념이 실제 시험에서 어떻게 묻혔는지 확인하세요. 계산·진단·부정형 문항을 우선 배치했고,
-            스스로 판단할 수 있도록 정답은 먼저 노출하지 않습니다.
+            처음 3개를 본 뒤 더 보기로 같은 레슨의 나머지 기출도 계속 풀어볼 수 있습니다. 정답은 먼저 노출하지 않습니다.
           </p>
         </div>
       </div>
 
       <div className="mt-5 grid gap-3">
-        {examples.map((example, index) => (
+        {visibleExamples.map((example, index) => (
           <details
             key={example.externalId}
             open={index === 0}
@@ -75,6 +81,31 @@ export function PastExamExamples({ examples }: { examples: PastExamExample[] }) 
           </details>
         ))}
       </div>
+
+      {examples.length > 3 && (
+        <div className="mt-5 flex justify-center">
+          {remainingCount > 0 ? (
+            <button
+              type="button"
+              data-testid="past-exam-more"
+              onClick={() => setVisibleCount((count) => Math.min(count + 3, examples.length))}
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#6fb5b1] bg-white px-5 py-3 text-sm font-extrabold text-[#16697a] sm:w-auto"
+            >
+              기출 {Math.min(remainingCount, 3)}개 더 보기
+              <ChevronDown size={17} />
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setVisibleCount(3)}
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-600 sm:w-auto"
+            >
+              처음 3개만 보기
+              <ChevronUp size={17} />
+            </button>
+          )}
+        </div>
+      )}
     </section>
   );
 }

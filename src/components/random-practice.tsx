@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, RotateCcw } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, RotateCcw } from "lucide-react";
 import type { ConceptGroup, PracticeFeedback, PublicQuestion, Subject } from "@/lib/domain/types";
 import { cn } from "@/lib/utils";
 import { PracticeFeedbackPanel } from "@/components/practice-feedback";
@@ -24,6 +24,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
   const [subjectId, setSubjectId] = useState(subjects[0]?.id ?? "");
   const [groupId, setGroupId] = useState("");
   const [count, setCount] = useState<"10" | "20" | "50" | "all">("20");
+  const [composition, setComposition] = useState<"mixed" | "original" | "concept">("mixed");
   const [session, setSession] = useState<Session | null>(() => {
     if (typeof window === "undefined") return null;
     const resume = searchParams.get("resume");
@@ -55,7 +56,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
       const response = await fetch("/api/practice/session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ mode, subjectId, conceptGroupId: groupId, count: count === "all" ? "all" : Number(count), guestQuestionIds }),
+        body: JSON.stringify({ mode, subjectId, conceptGroupId: groupId, count: count === "all" ? "all" : Number(count), composition, guestQuestionIds }),
       });
       const result = await response.json() as Session & { error?: string };
       if (!response.ok) throw new Error(result.error);
@@ -126,7 +127,9 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
           {(mode === "subject" || mode === "group") && <label className="grid gap-2 text-sm font-bold">과목<select className="rounded-xl border border-slate-300 bg-white p-3" value={subjectId} onChange={(event) => { setSubjectId(event.target.value); setGroupId(""); }}>{subjects.map((subject) => <option key={subject.id} value={subject.id}>{subject.shortTitle}</option>)}</select></label>}
           {mode === "group" && <label className="grid gap-2 text-sm font-bold">세부항목군<select className="rounded-xl border border-slate-300 bg-white p-3" value={groupId} onChange={(event) => setGroupId(event.target.value)}><option value="">선택하세요</option>{availableGroups.map((group) => <option key={group.id} value={group.id}>{group.title}</option>)}</select></label>}
           <label className="grid gap-2 text-sm font-bold">문제 수<select className="rounded-xl border border-slate-300 bg-white p-3" value={count} onChange={(event) => setCount(event.target.value as typeof count)}><option value="10">10문제</option><option value="20">20문제</option><option value="50">50문제</option><option value="all">가능한 문제 전체</option></select></label>
+          <label className="grid gap-2 text-sm font-bold">출제 구성<select className="rounded-xl border border-slate-300 bg-white p-3" value={composition} onChange={(event) => setComposition(event.target.value as typeof composition)}><option value="mixed">실제 기출 + 개념 문제 혼합</option><option value="original">실제 기출 중심</option><option value="concept">개념 문제 중심</option></select></label>
         </div>
+        <p className="mt-4 rounded-xl bg-[#eaf7f6] p-3 text-sm leading-6 text-[#135c69]">기본 혼합 모드는 검증된 실제 기출을 약 절반 포함합니다. 원문과 정답·보기가 정확히 대조되지 않은 문제는 기출 출제에서 제외됩니다.</p>
         {error && <p className="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-700" role="alert">{error}</p>}
         <button onClick={startSession} disabled={loading || (mode === "group" && !groupId)} className="mt-7 w-full rounded-xl bg-[#173957] px-5 py-4 font-extrabold text-white disabled:opacity-50">{loading ? "문제를 고르는 중…" : "중복 없이 시작하기"}</button>
       </section>
@@ -144,7 +147,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
         <div className="flex items-center justify-between gap-4 text-sm text-slate-500"><span>문제 {index + 1} / {session.questions.length}</span><span>{question.id}</span></div>
         <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-slate-100"><div className="h-full bg-[#16697a]" style={{ width: `${((index + 1) / session.questions.length) * 100}%` }} /></div>
         {session.limited && index === 0 && <p className="mt-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-800">요청한 수보다 공개 가능 문제가 적어 {session.questions.length}문제를 한 번씩 출제합니다.</p>}
-        {(question.provenance.reconstructed || question.provenance.historical) && <div className="mt-5 flex flex-wrap gap-2 text-xs font-bold">{question.provenance.reconstructed && <span className="rounded-full bg-sky-50 px-3 py-1 text-sky-800">원문 근거 학습용 재구성</span>}{question.provenance.historical && <span className="rounded-full bg-amber-50 px-3 py-1 text-amber-800">과거 시험 맥락</span>}</div>}
+        {(question.provenance.original || question.provenance.reconstructed || question.provenance.historical) && <div className="mt-5 flex flex-wrap items-center gap-2 text-xs font-bold">{question.provenance.original && question.provenance.exam && <><span className="rounded-full bg-emerald-50 px-3 py-1 text-emerald-800">실제 기출 원문</span><span className="rounded-full bg-slate-100 px-3 py-1 text-slate-600">{formatExamLabel(question.provenance.exam)}</span><a href={question.provenance.exam.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1 text-slate-600">원문 출처 <ArrowUpRight size={12} /></a></>}{question.provenance.reconstructed && <span className="rounded-full bg-sky-50 px-3 py-1 text-sky-800">원문 근거 학습용 재구성</span>}{question.provenance.historical && <span className="rounded-full bg-amber-50 px-3 py-1 text-amber-800">과거 시험 맥락</span>}</div>}
         <h2 className="mt-8 text-xl font-extrabold leading-relaxed md:text-2xl">{question.stem}</h2>
         <div className="mt-7 grid gap-3">
           {question.choices.map((choice) => <button key={choice.id} disabled={Boolean(feedback)} onClick={() => setSelectedChoiceId(choice.id)} className={cn("flex gap-4 rounded-2xl border p-4 text-left transition", selectedChoiceId === choice.id ? "border-[#16697a] bg-[#eaf7f6] ring-1 ring-[#16697a]" : "border-slate-200 hover:border-slate-400", feedback && choice.id === feedback.correctChoice.id && "border-emerald-500 bg-emerald-50")}><span className="grid size-7 shrink-0 place-items-center rounded-full border border-current text-sm font-extrabold">{choice.order}</span><span>{choice.text}</span></button>)}
@@ -157,4 +160,9 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
       <aside className="card h-fit p-5"><h3 className="font-extrabold">세션 진행</h3><p className="mt-2 text-sm text-slate-500">한 세션에서는 같은 문제를 다시 뽑지 않습니다.</p><div className="mt-5 grid grid-cols-5 gap-2">{session.questions.map((item, itemIndex) => <button key={item.id} onClick={() => move(itemIndex)} aria-label={`${itemIndex + 1}번 문제로 이동`} className={cn("aspect-square rounded-lg text-sm font-bold",itemIndex===index?"bg-[#173957] text-white":"bg-slate-100")}>{itemIndex+1}</button>)}</div><button onClick={() => setSession(null)} className="mt-6 flex items-center gap-2 text-sm font-bold text-slate-600"><ArrowLeft size={16} />새 범위로 시작</button></aside>
     </section>
   );
+}
+
+function formatExamLabel(exam: NonNullable<PublicQuestion["provenance"]["exam"]>) {
+  const number = exam.questionNumber ? ` · ${exam.questionNumber}번` : "";
+  return `${exam.year}년 ${exam.sessionLabel}${number}`;
 }

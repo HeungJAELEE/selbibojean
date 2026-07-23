@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getContent } from "@/lib/content/repository";
-import { selectPracticeQuestions, toPublicQuestion } from "@/lib/domain/practice";
+import { createPracticePresentations } from "@/lib/content/practice-presentations";
+import { selectPracticeQuestions } from "@/lib/domain/practice";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
 const requestSchema = z.object({
@@ -11,6 +12,7 @@ const requestSchema = z.object({
   count: z.union([z.literal(10), z.literal(20), z.literal(50), z.literal("all")]).default(20),
   guestQuestionIds: z.array(z.string()).optional(),
   seed: z.number().int().optional(),
+  composition: z.enum(["mixed", "original", "concept"]).default("mixed"),
 });
 
 export async function POST(request: Request) {
@@ -39,6 +41,7 @@ export async function POST(request: Request) {
     scopedIds = (rows ?? []).map((item) => item.external_id as string);
   }
 
+  const seed = parsed.data.seed ?? Date.now();
   const selected = selectPracticeQuestions(
     content.questions,
     {
@@ -47,7 +50,13 @@ export async function POST(request: Request) {
       questionIds: parsed.data.mode === "wrong" || parsed.data.mode === "due" ? scopedIds ?? [] : undefined,
     },
     parsed.data.count,
-    parsed.data.seed,
+    seed,
+  );
+  const publicQuestions = createPracticePresentations(
+    selected.questions,
+    content.variants,
+    parsed.data.composition,
+    seed,
   );
 
   const sessionId = crypto.randomUUID();
@@ -79,6 +88,7 @@ export async function POST(request: Request) {
     storage: auth.user ? "account" : "guest",
     availableCount: selected.availableCount,
     limited: selected.limited,
-    questions: selected.questions.map(toPublicQuestion),
+    composition: parsed.data.composition,
+    questions: publicQuestions,
   });
 }

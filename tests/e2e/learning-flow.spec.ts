@@ -2,6 +2,8 @@ import { expect, test } from "@playwright/test";
 
 test("home exposes the main learning paths", async ({ page }) => {
   await page.goto("/");
+  await expect(page).toHaveTitle("설비보전기사 마스터북");
+  await expect(page.getByRole("link", { name: "설비보전기사 마스터북 홈" })).toContainText("설비보전기사");
   await expect(page.getByRole("heading", { name: /문제를 맞히는 데서/ })).toBeVisible();
   await expect(page.getByRole("link", { name: /랜덤 20문제 시작/ })).toBeVisible();
   await expect(page.getByRole("link", { name: "이론 목차 보기", exact: true })).toBeVisible();
@@ -13,6 +15,7 @@ test("practice session is answer-safe and contains no duplicate question", async
   const body = await response.json();
   expect(body.questions).toHaveLength(20);
   expect(new Set(body.questions.map((question: { id: string }) => question.id)).size).toBe(20);
+  expect(body.questions.filter((question: { provenance: { original: boolean } }) => question.provenance.original)).toHaveLength(10);
   const serialized = JSON.stringify(body);
   expect(serialized).not.toContain("correctChoiceId");
   expect(serialized).not.toContain("answerText");
@@ -22,6 +25,25 @@ test("practice session is answer-safe and contains no duplicate question", async
   expect(body.questions.every((question: { provenance?: { reconstructed: boolean; historical: boolean } }) =>
     typeof question.provenance?.reconstructed === "boolean" && typeof question.provenance?.historical === "boolean",
   )).toBe(true);
+});
+
+test("an actual past exam presentation remains gradeable through the canonical answer", async ({ request }) => {
+  const session = await (await request.post("/api/practice/session", {
+    data: { mode: "all", count: 20, seed: 20260723, composition: "original" },
+  })).json();
+  const question = session.questions.find((candidate: { provenance: { original: boolean } }) => candidate.provenance.original);
+  expect(question).toBeTruthy();
+  expect(question.provenance.exam.sourceUrl).toMatch(/^https?:\/\//);
+
+  const results = [];
+  for (const choice of question.choices) {
+    const response = await request.post("/api/practice/submit", {
+      data: { questionId: question.id, choiceId: choice.id, selfRating: "unsure", attemptKind: "initial" },
+    });
+    expect(response.ok()).toBeTruthy();
+    results.push(await response.json());
+  }
+  expect(results.filter((result) => result.isCorrect)).toHaveLength(1);
 });
 
 test("admin review queue exposes every intentionally blocked item with evidence links", async ({ page }) => {
@@ -69,6 +91,29 @@ test("lesson flows from concept to actual past exams and similar practice", asyn
   await expect(practiceSet.getByRole("heading", { name: "실전 유사 문제 풀기" })).toBeVisible();
   await expect(practiceSet.getByRole("link").first()).toHaveAttribute("href", "/written/practice/U-748");
   await expect(practiceSet).toContainText("답을 제출하기 전에는 정답과 해설을 전송하지 않습니다.");
+});
+
+test("lesson past exams show three previews and reveal the rest in batches", async ({ page }) => {
+  await page.goto("/written/theory/lesson-ds62tl");
+  const section = page.locator("#past-exams");
+  await expect(section.locator("details")).toHaveCount(3);
+
+  for (let index = 0; index < 4; index += 1) {
+    await section.getByTestId("past-exam-more").click();
+  }
+
+  await expect(section.locator("details")).toHaveCount(14);
+  await expect(section.getByRole("button", { name: "처음 3개만 보기" })).toBeVisible();
+});
+
+test("mobile header exposes the complete navigation", async ({ page }) => {
+  test.skip((page.viewportSize()?.width ?? 1280) >= 768, "mobile-only navigation check");
+  await page.goto("/");
+  const menu = page.getByRole("button", { name: "메뉴 열기" });
+  await expect(menu).toBeVisible();
+  await menu.click();
+  await expect(page.getByRole("navigation", { name: "모바일 주 메뉴" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "통합 검색" })).toBeVisible();
 });
 
 test("wrong answer links to a theory anchor", async ({ request }) => {

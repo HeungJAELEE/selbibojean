@@ -6,6 +6,7 @@ import type { GeneratedContent } from "@/lib/domain/types";
 import { isPublishableQuestion } from "@/lib/domain/practice";
 import { getLessonSubcategories } from "@/lib/content/lesson-subcategories";
 import { getPastExamExamples } from "@/lib/content/past-exam-examples";
+import { createPracticePresentations, getSafeOriginalsByQuestion } from "@/lib/content/practice-presentations";
 
 const data = JSON.parse(await readFile(path.join(process.cwd(), "src/data/generated/content.json"), "utf8")) as GeneratedContent;
 
@@ -170,5 +171,31 @@ describe("27th workbook reconciliation", () => {
     expect(orificeExamples).toHaveLength(2);
     expect(orificeExamples.map((example) => example.year)).toEqual([2018, 2011]);
     expect(orificeExamples.map((example) => example.questionNumber)).toEqual([88, 82]);
+  });
+
+  it("mixes only answer-aligned actual originals into random practice", () => {
+    const publishedQuestions = data.questions.filter(isPublishableQuestion);
+    const originalsByQuestion = getSafeOriginalsByQuestion(publishedQuestions, data.variants);
+
+    expect(originalsByQuestion.size).toBe(1300);
+    expect([...originalsByQuestion.values()].flat()).toHaveLength(1377);
+
+    const sample = publishedQuestions.slice(0, 20);
+    const mixed = createPracticePresentations(sample, data.variants, "mixed", 20260723);
+    const originalFocused = createPracticePresentations(sample, data.variants, "original", 20260723);
+    const conceptFocused = createPracticePresentations(sample, data.variants, "concept", 20260723);
+
+    expect(mixed.filter((question) => question.provenance.original)).toHaveLength(10);
+    expect(originalFocused.filter((question) => question.provenance.original).length).toBeGreaterThan(10);
+    expect(conceptFocused.every((question) => !question.provenance.original)).toBe(true);
+
+    for (const presented of originalFocused.filter((question) => question.provenance.original)) {
+      const canonical = publishedQuestions.find((question) => question.id === presented.id);
+      expect(canonical).toBeTruthy();
+      expect(new Set(presented.choices.map((choice) => choice.id))).toEqual(new Set(canonical?.choices.map((choice) => choice.id)));
+      expect(JSON.stringify(presented)).not.toContain("correctChoiceId");
+      expect(JSON.stringify(presented)).not.toContain("answerText");
+      expect(JSON.stringify(presented)).not.toContain("explanation");
+    }
   });
 });

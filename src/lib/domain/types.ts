@@ -133,6 +133,14 @@ export type PublicQuestion = Omit<
   provenance: {
     reconstructed: boolean;
     historical: boolean;
+    original: boolean;
+    exam?: {
+      externalId: string;
+      year: number;
+      sessionLabel: string;
+      questionNumber: number | null;
+      sourceUrl: string;
+    };
   };
 };
 

@@ -81,6 +81,7 @@ export function toPublicQuestion(question: Question): PublicQuestion {
     provenance: {
       reconstructed: verification?.riskTags.includes("editorial_reconstruction") ?? false,
       historical: verification?.riskTags.includes("historical_context") ?? false,
+      original: false,
     },
   };
 }

@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: { default: "설비마스터", template: "%s | 설비마스터" },
+  title: { default: "설비보전기사 마스터북", template: "%s | 설비보전기사 마스터북" },
   description: "설비보전기사 이론, 랜덤 문제, 오답 이해와 반복 학습을 한 흐름으로 연결합니다.",
 };
 
