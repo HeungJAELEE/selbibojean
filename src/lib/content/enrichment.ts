@@ -23,6 +23,7 @@ type FeedbackInput = {
   correctText: string;
   correct: boolean;
   explanation: string;
+  choiceEvidence?: string;
   concept: string;
   groupId: string;
   groupTitle: string;
@@ -41,6 +42,11 @@ function compact(value: string) {
 function sentence(value: string) {
   const clean = compact(value).replace(/[.。]+$/g, "");
   return clean ? `${clean}.` : "";
+}
+
+function withoutRepeatedSubject(value: string, subject: string) {
+  const escaped = subject.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return value.replace(new RegExp(`^${escaped}\\s*(?:은|는|이|가)\\s*`), "");
 }
 
 function tableCell(value: string) {
@@ -85,6 +91,8 @@ function sharedCategory(choiceText: string, correctText: string) {
 
 export function buildChoiceFeedback(input: FeedbackInput): ChoiceFeedback {
   const rule = sentence(input.explanation) || `${input.concept}의 정의와 적용 조건을 기준으로 판단합니다.`;
+  const comparisonRule = sentence(withoutRepeatedSubject(input.explanation, input.correctText)) || rule;
+  const choiceEvidence = sentence(withoutRepeatedSubject(input.choiceEvidence ?? "", input.choiceText));
   if (input.correct) {
     const rationale = isNegativeStem(input.stem)
       ? `${quoteWithJosa(input.choiceText, "은/는")} 이 문항에서 ‘옳지 않은 것’으로 골라야 하는 보기입니다. ${rule}`
@@ -100,16 +108,24 @@ export function buildChoiceFeedback(input: FeedbackInput): ChoiceFeedback {
 
   const negative = isNegativeStem(input.stem);
   const incorrectPoint = negative
-      ? `${quoteWithJosa(input.choiceText, "은/는")} ${quoteWithJosa(input.concept, "과/와")} 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.`
-      : `${quoteWithJosa(input.choiceText, "은/는")} ${quoteWithJosa(input.correctText, "과/와")} 대상·기능·적용 조건이 다릅니다. 정답을 판단하는 직접 근거는 ${rule}`;
+      ? choiceEvidence
+        ? `${quoteWithJosa(input.choiceText, "은/는")} 다음 근거에 따라 실제로 성립합니다. ${choiceEvidence} 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.`
+        : `${quoteWithJosa(input.choiceText, "은/는")} ${quoteWithJosa(input.concept, "과/와")} 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.`
+      : choiceEvidence
+        ? `${quoteWithJosa(input.choiceText, "은/는")} 다음 조건을 설명하는 별개의 개념입니다. ${choiceEvidence} 이 문항이 요구하는 직접 근거는 ${rule}`
+        : `${quoteWithJosa(input.choiceText, "은/는")} ${quoteWithJosa(input.correctText, "과/와")} 대상·기능·적용 조건이 다릅니다. 정답을 판단하는 직접 근거는 ${rule}`;
   return {
     rationale: negative
       ? `${quoteWithJosa(input.choiceText, "은/는")} 문항이 찾는 예외가 아니라 ${input.groupTitle}에서 성립하는 설명입니다.`
       : `${quoteWithJosa(input.choiceText, "은/는")} 관련 용어이지만, 질문이 요구하는 조건에 직접 답하는 보기는 ‘${input.correctText}’입니다.`,
-    plausibleReason: sharedCategory(input.choiceText, input.correctText),
+    plausibleReason: choiceEvidence
+      ? `‘${input.choiceText}’ 자체는 기술적으로 성립하는 설명과 연결되므로, 문항이 묻는 대상까지 확인하지 않으면 정답처럼 보일 수 있습니다.`
+      : sharedCategory(input.choiceText, input.correctText),
     incorrectPoint,
     keyRule: `핵심 판단 기준은 다음과 같습니다. ${rule}`,
-    differenceFromCorrect: `정답 ${quoteWithJosa(input.correctText, "은/는")} ${rule} 반면 ${quoteWithJosa(input.choiceText, "은/는")} 같은 판단 기준을 충족하지 않습니다.`,
+    differenceFromCorrect: choiceEvidence
+      ? `정답 ${quoteWithJosa(input.correctText, "은/는")} ${comparisonRule} 반면 ${quoteWithJosa(input.choiceText, "은/는")} ${choiceEvidence} 두 보기는 적용 대상과 판단 조건이 서로 다릅니다.`
+      : `정답 ${quoteWithJosa(input.correctText, "은/는")} ${comparisonRule} 반면 ${quoteWithJosa(input.choiceText, "은/는")} 같은 판단 기준을 충족하지 않습니다.`,
   };
 }
 
@@ -232,12 +248,22 @@ export function buildEvidenceLesson({
         .join("\n\n")
         .slice(0, 1600) || theoryEvidence.body.slice(0, 1200)
     : `이 레슨의 직접 판단근거는 대표문제의 확정 정답과 근거에서 시작합니다. ${evidence.join(" ")}`;
+  const summaryClarifiers = [
+    `${concept}의 핵심 정의와 적용 대상을 함께 기억합니다.`,
+    `${groupTitle}의 판단 순서에 따라 조건을 대입합니다.`,
+    `비슷한 용어와 바꾸어 쓰지 않도록 차이를 확인합니다.`,
+  ];
   const summary = [
     evidence[0] || `${concept}의 정의와 적용 범위를 구분합니다.`,
     theoryEvidence ? sourceExcerpt.split(/(?<=[.!?다요])\s+/)[0] : `${guide.decisionSteps[0]} ${guide.decisionSteps[1]}`,
     guide.trap,
-  ].map((line) => compact(line).slice(0, 260));
-  if (summary[0].length < 24) summary[0] = `${summary[0]} ${concept}의 핵심 판단기준입니다.`;
+  ].map((line, index) => {
+    const clean = compact(line).slice(0, 260);
+    return clean.length >= 24 ? clean : `${clean} ${summaryClarifiers[index]}`.trim();
+  });
+  summary.forEach((line, index) => {
+    if (summary.indexOf(line) !== index) summary[index] = `${line} ${summaryClarifiers[index]}`;
+  });
 
   const preferredKind: LessonBlockKind = ["formula", "diagnosis", "selection", "safety"].includes(guide.preferredBlock)
     ? guide.preferredBlock

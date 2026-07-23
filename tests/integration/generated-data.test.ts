@@ -23,6 +23,9 @@ describe("27th workbook reconciliation", () => {
     expect(publicQuestions.length).toBeGreaterThan(0);
     expect(publicQuestions.every(isPublishableQuestion)).toBe(true);
     expect(data.questions.filter((question) => question.contentStatus !== "published").length).toBeGreaterThan(0);
+    expect(publicQuestions.every((question) => question.publication?.readiness === "ready")).toBe(true);
+    expect(data.report.publication.ready).toBe(publicQuestions.length);
+    expect(data.report.publication.ready + data.report.publication.review + data.report.publication.blocked).toBe(data.questions.length);
   });
 
   it("passes lesson and per-choice quality gates in every concept group", () => {
@@ -30,6 +33,8 @@ describe("27th workbook reconciliation", () => {
     const publishedLessons = data.lessons.filter((lesson) => lesson.contentStatus === "published");
     expect(publishedLessons.length).toBeGreaterThan(0);
     expect(publishedLessons.every((lesson) => lesson.quality.passed)).toBe(true);
+    expect(data.lessons.every((lesson) => lesson.quality.passed)).toBe(true);
+    expect(publishedLessons.every((lesson) => !lesson.sourceNeeded)).toBe(true);
     expect(data.report.quality.choiceFeedbackPassed).toBe(
       data.questions.reduce((total, question) => total + question.choices.length, 0),
     );
@@ -40,6 +45,14 @@ describe("27th workbook reconciliation", () => {
     expect(data.report.groupQuality.every((group) =>
       group.publishedLessonPassed === group.publishedLessonCount && group.choiceFeedbackPassed === group.choiceFeedbackCount,
     )).toBe(true);
+    expect(data.report.warnings).toEqual([]);
+  });
+
+  it("has no spacing-only duplicate concepts inside the same subject", () => {
+    const keys = data.lessons.map((lesson) =>
+      `${lesson.subjectId}:${lesson.title.normalize("NFKC").toLocaleLowerCase("ko").replace(/[\s·ㆍ,.()\[\]{}'"/\\_-]+/g, "")}`,
+    );
+    expect(new Set(keys).size).toBe(keys.length);
   });
 
   it("keeps the three approved golden lessons rich and structured", () => {

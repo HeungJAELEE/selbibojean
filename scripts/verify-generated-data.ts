@@ -17,6 +17,10 @@ async function main() {
   const publishedLessons = data.lessons.filter((lesson) => lesson.contentStatus === "published");
   const failedPublishedLessons = publishedLessons.filter((lesson) => !lesson.quality.passed);
   if (failedPublishedLessons.length) errors.push(`공개 레슨 품질 게이트 실패: ${failedPublishedLessons.length}개`);
+  const failedLessons = data.lessons.filter((lesson) => !lesson.quality.passed);
+  if (failedLessons.length) errors.push(`전체 레슨 품질 게이트 실패: ${failedLessons.length}개`);
+  const sourceBlockedPublishedLessons = publishedLessons.filter((lesson) => lesson.sourceNeeded);
+  if (sourceBlockedPublishedLessons.length) errors.push(`출처 검토가 필요한 공개 레슨: ${sourceBlockedPublishedLessons.length}개`);
   const choiceCount = data.questions.reduce((total, question) => total + question.choices.length, 0);
   if (data.report.quality.choiceFeedbackPassed !== choiceCount || data.report.quality.choiceFeedbackFailed !== 0) {
     errors.push(`선택지별 해설 품질 게이트 실패: ${data.report.quality.choiceFeedbackFailed}개`);
@@ -28,6 +32,7 @@ async function main() {
     errors.push(`기계적으로 탐지된 한국어 문장 오류가 ${data.report.quality.languageIssueMatches}건 남아 있습니다.`);
   }
   if (data.report.groupQuality.length !== 44) errors.push(`세부항목군 품질 대사가 44개가 아닙니다: ${data.report.groupQuality.length}`);
+  if (data.report.warnings.length !== 0) errors.push(`해결되지 않은 이관·분류 경고: ${data.report.warnings.length}개`);
   const emptyGroups = data.report.groupQuality.filter((group) => group.lessonCount === 0 || group.questionCount === 0);
   if (emptyGroups.length) errors.push(`문제·레슨이 비어 있는 세부항목군: ${emptyGroups.map((group) => group.groupId).join(", ")}`);
   const failedGroups = data.report.groupQuality.filter(
@@ -39,6 +44,17 @@ async function main() {
     (question) => question.contentStatus === "published" && !isPublishableQuestion(question),
   );
   if (invalidPublished.length) errors.push(`공개 조건 미충족 문제가 ${invalidPublished.length}개 있습니다.`);
+  const publicationMismatch = data.questions.filter((question) =>
+    question.contentStatus === "published"
+      ? question.publication?.readiness !== "ready"
+      : question.publication?.readiness === "ready",
+  );
+  if (publicationMismatch.length) errors.push(`공개 상태와 발행 준비도가 다른 문제: ${publicationMismatch.length}개`);
+  const publicationTotal = data.report.publication.ready + data.report.publication.review + data.report.publication.blocked;
+  if (publicationTotal !== data.questions.length) errors.push(`발행 준비도 대사 불일치: ${publicationTotal}/${data.questions.length}`);
+  if (data.report.publication.ready !== data.report.publishedQuestionCount) {
+    errors.push(`공개 완료 수와 발행 준비 수가 다릅니다: ${data.report.publishedQuestionCount}/${data.report.publication.ready}`);
+  }
 
   const lessonIds = new Set(data.lessons.map((lesson) => lesson.id));
   const brokenLinks = data.questions.filter((question) => !lessonIds.has(question.lessonId));
@@ -53,6 +69,12 @@ async function main() {
     return lesson.summary.length !== 3 || new Set(ids).size !== ids.length || !lesson.blocks.some((block) => block.kind === "source");
   });
   if (invalidLessons.length) errors.push(`구조 검증에 실패한 레슨이 ${invalidLessons.length}개 있습니다.`);
+  const normalizedLessonKeys = data.lessons.map((lesson) =>
+    `${lesson.subjectId}:${lesson.title.normalize("NFKC").toLocaleLowerCase("ko").replace(/[\s·ㆍ,.()\[\]{}'"/\\_-]+/g, "")}`,
+  );
+  if (new Set(normalizedLessonKeys).size !== normalizedLessonKeys.length) {
+    errors.push("같은 과목 안에 띄어쓰기·구두점만 다른 중복 레슨이 있습니다.");
+  }
 
   if (errors.length) {
     errors.forEach((error) => console.error(`FAIL: ${error}`));

@@ -31,6 +31,7 @@ function makeQuestion(index: number): Question {
     sourceLabel: "source",
     reviewStatus: "확정",
     contentStatus: "published",
+    publication: { readiness: "ready", blockers: [] },
     validation: { answer: true, explanation: true, choiceFeedback: true, theoryLink: true, contentQuality: true },
   };
 }
@@ -56,6 +57,7 @@ describe("random practice", () => {
     expect(payload).not.toContain("answerText");
     expect(payload).not.toContain("전체 해설");
     expect(payload).not.toContain("plausibleReason");
+    expect(payload).not.toContain("readiness");
   });
 
   it("returns selected-choice reasoning and the exact lesson anchor after submission", () => {

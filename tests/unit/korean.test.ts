@@ -10,9 +10,10 @@ describe("Korean postpositions", () => {
   });
 
   it("detects mismatched quoted particles and awkward generated phrases", () => {
-    const issues = findKoreanLanguageIssues("정답 ‘외측 마이크로미터’이 맞는지 판단규칙을 확인한다.");
+    const issues = findKoreanLanguageIssues("정답 ‘외측 마이크로미터’이 맞는지 판단규칙을 확인한다. ‘굴절’은 굴절은 진행방향이 바뀌는 현상이다.");
     expect(issues.map((issue) => issue.expression)).toEqual([
       "‘외측 마이크로미터’이",
+      "‘굴절’은 굴절은",
       "판단규칙",
     ]);
   });

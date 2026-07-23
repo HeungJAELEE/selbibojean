@@ -67,13 +67,14 @@ export function selectPracticeQuestions(
 }
 
 export function toPublicQuestion(question: Question): PublicQuestion {
-  const { correctChoiceId, answerText, explanation, errorReason, validation, reviewStatus, choices, ...safeQuestion } = question;
+  const { correctChoiceId, answerText, explanation, errorReason, validation, reviewStatus, publication, choices, ...safeQuestion } = question;
   void correctChoiceId;
   void answerText;
   void explanation;
   void errorReason;
   void validation;
   void reviewStatus;
+  void publication;
   return { ...safeQuestion, choices: choices.map(({ id, order, text }) => ({ id, order, text })) };
 }
 

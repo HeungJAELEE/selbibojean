@@ -19,6 +19,19 @@ export const ERROR_REASONS = [
 ] as const;
 export type ErrorReason = (typeof ERROR_REASONS)[number];
 
+export type PublicationBlocker =
+  | "incomplete"
+  | "answer_unverified"
+  | "mapping_unverified"
+  | "high_risk_source"
+  | "content_quality"
+  | "lesson_source_needed";
+
+export type PublicationAssessment = {
+  readiness: "ready" | "review" | "blocked";
+  blockers: PublicationBlocker[];
+};
+
 export type Subject = {
   id: string;
   code: number;
@@ -77,6 +90,7 @@ export type Question = {
   sourceLabel: string;
   reviewStatus: string;
   contentStatus: ContentStatus;
+  publication?: PublicationAssessment;
   validation: {
     answer: boolean;
     explanation: boolean;
@@ -88,7 +102,7 @@ export type Question = {
 
 export type PublicQuestion = Omit<
   Question,
-  "choices" | "correctChoiceId" | "answerText" | "explanation" | "errorReason" | "validation" | "reviewStatus"
+  "choices" | "correctChoiceId" | "answerText" | "explanation" | "errorReason" | "validation" | "reviewStatus" | "publication"
 > & {
   choices: Array<Pick<Choice, "id" | "order" | "text">>;
 };
@@ -146,6 +160,7 @@ export type Lesson = {
   contentStatus: ContentStatus;
   sourceNeeded: boolean;
   reviewedAt: string | null;
+  publication?: PublicationAssessment;
   quality: ContentQuality;
 };
 
@@ -173,6 +188,12 @@ export type ImportReport = {
   publishedQuestionCount: number;
   reviewQuestionCount: number;
   blockedQuestionCount: number;
+  publication: {
+    ready: number;
+    review: number;
+    blocked: number;
+    blockerCounts: Record<PublicationBlocker, number>;
+  };
   coverage: Record<CoverageStatus, number>;
   quality: {
     lessonPassed: number;

@@ -119,6 +119,66 @@ const conceptGroupOverrides: Record<number, Array<{ pattern: RegExp; groupId: st
   ],
 };
 
+function normalizeConceptKey(value: string) {
+  return value
+    .normalize("NFKC")
+    .toLocaleLowerCase("ko")
+    .replace(/[\s·ㆍ,.()\[\]{}'"/\\_-]+/g, "")
+    .trim();
+}
+
+/**
+ * 27차 대표문제의 자동분류 경고를 사람이 문맥까지 확인해 확정한 매핑입니다.
+ * 키워드 점수에 다시 맡기지 않고, 원문 개념명이 정확히 일치할 때만 적용합니다.
+ */
+const reviewedConceptGroupAssignments = new Map(
+  [
+    [4, "차압식 유량검출", "s4-g05"], [4, "푸리에 변환", "s4-g01"], [4, "전하 증폭기", "s4-g01"],
+    [3, "비접촉 씰", "s3-g09"], [3, "유니언 이음", "s3-g09"],
+    [4, "기어 스코어링", "s4-g13"], [4, "위상", "s4-g01"], [4, "불량로스 대책", "s4-g09"],
+    [3, "칼로라이징", "s3-g02"], [4, "압전효과", "s4-g01"], [4, "플러싱", "s4-g15"],
+    [3, "다이얼게이지", "s3-g01"], [4, "긴급공사", "s4-g07"], [2, "보일러 안전밸브", "s2-g05"],
+    [1, "FMS", "s1-g12"], [4, "동기시간평균", "s4-g01"], [4, "제품별 배치", "s4-g10"],
+    [4, "가용도", "s4-g08"], [3, "O링", "s3-g09"], [1, "전하량 단위", "s1-g09"],
+    [3, "서피스 게이지", "s3-g08"], [4, "유틸리티설비", "s4-g10"], [3, "공작기계 구비조건", "s3-g08"],
+    [3, "액상 개스킷", "s3-g09"], [4, "인화점", "s4-g13"], [1, "시그널 프로세서", "s1-g12"],
+    [1, "압력 관계", "s1-g01"], [1, "애프터쿨러", "s1-g07"], [1, "전자식 회전수 검출", "s1-g10"],
+    [4, "가청범위", "s4-g04"], [4, "일시정체로스", "s4-g09"], [4, "절삭유 성능", "s4-g14"],
+    [1, "변위-단계선도", "s1-g08"], [1, "절대압력", "s1-g01"], [4, "초기수율로스", "s4-g09"],
+    [4, "차음 성능", "s4-g04"], [4, "기류음", "s4-g04"], [4, "공기단축 기법", "s4-g10"],
+    [4, "전력손실", "s4-g12"], [4, "기회손실", "s4-g11"], [3, "리밍", "s3-g08"],
+    [3, "관 이음쇠 기능", "s3-g09"], [3, "코터", "s3-g03"], [4, "유압펌프 토출저하", "s4-g06"],
+    [4, "유압유 탱크온도", "s4-g15"], [4, "동판부식시험", "s4-g14"], [1, "백업링", "s1-g06"],
+    [4, "헬름홀츠 공명기", "s4-g04"], [4, "ICP 오일분석", "s4-g06"], [4, "설비 성능표준", "s4-g07"],
+    [3, "질화처리", "s3-g02"], [4, "유성향상제", "s4-g14"], [1, "전동기 인터록", "s1-g12"],
+    [4, "정밀진단", "s4-g06"], [4, "고장로스", "s4-g09"], [4, "정비표준", "s4-g07"],
+    [4, "정미가동시간", "s4-g09"], [4, "고장 재발방지", "s4-g07"], [3, "분할핀 표시", "s3-g03"],
+    [4, "베어링 오일선정", "s4-g14"], [4, "광유계 유압작동유", "s4-g14"], [1, "공기의 압축성", "s1-g01"],
+    [4, "발산파", "s4-g04"], [4, "오일분석 진단", "s4-g06"], [4, "신제품 개발순서", "s4-g10"],
+    [4, "개수공사", "s4-g07"], [3, "틈새게이지", "s3-g01"], [4, "산화안정성", "s4-g13"],
+    [1, "전선 굵기 선정", "s1-g09"], [4, "고장로스 대책", "s4-g09"], [1, "리드스위치", "s1-g10"],
+    [1, "솔레노이드 스파크방지", "s1-g12"], [4, "연삭마모", "s4-g13"], [4, "유압유 인화점", "s4-g13"],
+    [1, "자이로스코프", "s1-g10"], [4, "진행파", "s4-g04"], [4, "관로 유량측정", "s4-g05"],
+    [4, "치구 사용목적", "s4-g10"], [3, "고장 진행형태", "s3-g06"], [4, "포락선 분석", "s4-g03"],
+    [4, "인화점 시험", "s4-g14"], [1, "원호보간", "s1-g12"], [4, "음파 현상", "s4-g04"],
+    [4, "전산가", "s4-g13"], [4, "유압펌프 토출불능", "s4-g06"], [4, "왕복압축기 외부유", "s4-g14"],
+    [1, "로봇 운용용어", "s1-g12"], [1, "자동조립라인 고장진단", "s1-g08"], [4, "음의 굴절", "s4-g04"],
+    [1, "절대압력 관계", "s1-g01"], [4, "설비 범위", "s4-g07"], [4, "진도·일정관리", "s4-g10"],
+    [3, "포지셔너 점검", "s3-g09"], [4, "플러싱 전처리", "s4-g15"], [3, "열팽창 신축량", "s3-g02"],
+    [4, "유압작동유 관리요인", "s4-g15"], [4, "차음벽 특성", "s4-g04"], [4, "GT 셀 배치", "s4-g10"],
+    [1, "케이블 절연진단", "s1-g09"], [1, "유압 동력전달 순서", "s1-g02"], [4, "파고율", "s4-g01"],
+    [4, "위상차 계산", "s4-g01"], [4, "축궤도 분석", "s4-g03"], [4, "설비 LCC", "s4-g11"],
+    [4, "항유화성", "s4-g13"], [1, "서보모터 속도검출", "s1-g10"], [4, "차음벽 투과계수", "s4-g04"],
+    [4, "배열회수 검토", "s4-g12"], [4, "베어링 온도상승", "s4-g03"], [4, "설비 코드분류", "s4-g07"],
+    [4, "QM 매트릭스", "s4-g09"], [3, "스크루 엑스트렉터", "s3-g08"], [4, "O/W 유화형 작동유", "s4-g14"],
+    [4, "터빈유 기포장애", "s4-g14"], [3, "액상 개스킷 사용", "s3-g09"], [4, "광물계 유압작동유", "s4-g14"],
+    [1, "직류 직권전동기", "s1-g09"], [1, "수동소자", "s1-g09"],
+  ].map(([subjectCode, concept, groupId]) => [
+    `${subjectCode}:${normalizeConceptKey(String(concept))}`,
+    String(groupId),
+  ]),
+);
+
 function keywordMatchScore(text: string, keyword: string, weight: number) {
   const normalizedKeyword = keyword.toLowerCase();
   if (!text.includes(normalizedKeyword)) return 0;
@@ -136,6 +196,13 @@ export function mapConceptGroup(subjectCode: number, ...texts: Array<string | nu
   const stemText = (texts[1] ?? "").toLowerCase();
   const contextText = texts.slice(2).filter(Boolean).join(" ").toLowerCase();
   const override = conceptGroupOverrides[subjectCode]?.find(({ pattern }) => pattern.test(conceptText));
+  const reviewedGroupId = reviewedConceptGroupAssignments.get(
+    `${subjectCode}:${normalizeConceptKey(texts[0] ?? "")}`,
+  );
+  if (reviewedGroupId) {
+    const group = candidates.find((candidate) => candidate.id === reviewedGroupId) ?? candidates[0];
+    return { group, confidence: "reviewed", score: 20_000, margin: 20_000 } as const;
+  }
   if (override) {
     const group = candidates.find((candidate) => candidate.id === override.groupId) ?? candidates[0];
     return { group, confidence: "override", score: 10_000, margin: 10_000 } as const;

@@ -12,6 +12,11 @@ import {
 } from "../src/lib/content/enrichment";
 import { GOLDEN_LESSONS, GOLDEN_QUESTION_FEEDBACK } from "../src/data/source/golden-content";
 import { findKoreanLanguageIssues } from "../src/lib/content/korean";
+import {
+  assessQuestionPublication,
+  isConfirmedAnswerStatus,
+  requiresAuthoritativeSource,
+} from "../src/lib/content/publication";
 import { conceptGroups, mapConceptGroup, subjects } from "../src/lib/domain/catalog";
 import type {
   Choice,
@@ -20,6 +25,7 @@ import type {
   ErrorReason,
   GeneratedContent,
   Lesson,
+  PublicationBlocker,
   Question,
 } from "../src/lib/domain/types";
 import { stableHash } from "../src/lib/utils";
@@ -63,6 +69,31 @@ function asText(value: string | number | null | undefined) {
   return value === null || value === undefined ? "" : String(value).trim();
 }
 
+function normalizeConceptTitle(value: string) {
+  return value
+    .normalize("NFKC")
+    .toLocaleLowerCase("ko")
+    .replace(/[\s·ㆍ,.()\[\]{}'"/\\_-]+/g, "")
+    .trim();
+}
+
+const canonicalConceptTitles = new Map(
+  [
+    "진동 센서",
+    "전하 증폭기",
+    "테르밋 용접",
+    "단상 유도전동기 과열",
+    "설비 가동률",
+    "하이포이드 기어유",
+    "시퀀스 제어",
+  ].map((title) => [normalizeConceptTitle(title), title]),
+);
+
+function canonicalConceptTitle(value: string) {
+  const clean = value || "미분류 개념";
+  return canonicalConceptTitles.get(normalizeConceptTitle(clean)) ?? clean;
+}
+
 function polishTechnicalKorean(value: string) {
   return value
     .replace(/잔류공기/g, "잔류 공기")
@@ -104,10 +135,13 @@ function classifyErrorReason(stem: string, explanation: string, reviewStatus: st
 
 function publishDecision(row: Row, correctIndex: number, choices: string[]) {
   const status = asText(row["검증상태"]);
-  const text = `${asText(row["문제"])} ${asText(row["근거"])} ${status}`;
-  const highRisk = /법령|산업안전|안전보건|KS\b|ISO\b|규격|제조사|이미지|사진|과거 기준|현행 확인|미확인|충돌|오류|복원 필요/i.test(text);
+  const highRisk = requiresAuthoritativeSource({
+    status,
+    stem: asText(row["문제"]),
+    explanation: asText(row["근거"]),
+  });
   const complete = correctIndex >= 0 && choices.length === 4 && choices.every(Boolean) && asText(row["근거"]).length >= 15;
-  const statusConfirmed = status === "확정" || status.startsWith("확정 ");
+  const statusConfirmed = isConfirmedAnswerStatus(status);
   return { publishable: complete && statusConfirmed && !highRisk, complete, highRisk, statusConfirmed };
 }
 
@@ -239,11 +273,28 @@ async function main() {
     originalIdsByCanonical.set(canonicalId, [...(originalIdsByCanonical.get(canonicalId) ?? []), originalId]);
   });
 
+  const answerEvidenceByText = new Map<string, string>();
+  canonicalRows.forEach((row) => {
+    const choiceTexts = [1, 2, 3, 4].map((index) =>
+      polishTechnicalKorean(asText(row[`보기${["①", "②", "③", "④"][index - 1]}`])),
+    );
+    const answer = polishTechnicalKorean(asText(row["정답"]));
+    const correctIndex = parseAnswerIndex(answer, choiceTexts);
+    const correctText = correctIndex >= 0 ? choiceTexts[correctIndex] : answer;
+    const explanation = polishTechnicalKorean(asText(row["근거"]));
+    const key = normalizeConceptTitle(correctText);
+    if (!key || explanation.length < 15) return;
+    const current = answerEvidenceByText.get(key) ?? "";
+    if (explanation.length > current.length) answerEvidenceByText.set(key, explanation);
+  });
+
   let numberOnlyAnswers = 0;
   const warnings: string[] = [];
+  const conceptAliasesById = new Map<string, Set<string>>();
   const questions: Question[] = canonicalRows.map((row, rowIndex) => {
     const sourceId = asText(row["고유ID"]) || `U-${String(rowIndex + 1).padStart(3, "0")}`;
-    const concept = asText(row["개념군"]) || "미분류 개념";
+    const sourceConcept = asText(row["개념군"]) || "미분류 개념";
+    const concept = canonicalConceptTitle(sourceConcept);
     const subjectCode = parseSubjectCode(asText(row["현행과목"]));
     const stem = polishTechnicalKorean(asText(row["문제"]));
     const explanation = polishTechnicalKorean(asText(row["근거"]));
@@ -257,6 +308,7 @@ async function main() {
     const { group, confidence, score, margin } = mapConceptGroup(subjectCode, concept, stem, explanation, choiceTexts.join(" "));
     const conceptId = `concept-${stableHash(`${subjectCode}:${concept}`)}`;
     const lessonId = `lesson-${stableHash(`${subjectCode}:${concept}`)}`;
+    conceptAliasesById.set(conceptId, new Set([...(conceptAliasesById.get(conceptId) ?? []), sourceConcept]));
     const originalIds = originalIdsByCanonical.get(sourceId) ?? [];
     const sourceUrls = originalIds
       .map((id) => asText(originalById.get(id)?.["출처URL"]))
@@ -282,6 +334,10 @@ async function main() {
           correctText,
           correct: index === correctIndex,
           explanation,
+          choiceEvidence:
+            answerEvidenceByText.get(normalizeConceptTitle(text)) !== explanation
+              ? answerEvidenceByText.get(normalizeConceptTitle(text))
+              : undefined,
           concept,
           groupId: group.id,
           groupTitle,
@@ -290,7 +346,7 @@ async function main() {
     const choiceFeedbackValid = choices.every((choice, index) =>
       choiceFeedbackPasses(choice.feedback, index === correctIndex),
     );
-    const mappingReliable = confidence === "override" || confidence === "keyword";
+    const mappingReliable = confidence === "reviewed" || confidence === "override" || confidence === "keyword";
     const contentStatus: ContentStatus = decision.publishable && mappingReliable
       ? "published"
       : decision.complete
@@ -317,6 +373,12 @@ async function main() {
       sourceLabel: sourceUrls[0] || asText(row["출제이력"]) || "27차 엑셀 정규화 자료",
       reviewStatus: asText(row["검증상태"]),
       contentStatus,
+      publication: assessQuestionPublication({
+        complete: decision.complete,
+        answerConfirmed: decision.statusConfirmed,
+        mappingReliable,
+        highRisk: decision.highRisk,
+      }),
       validation: {
         answer: correctIndex >= 0,
         explanation: explanation.length >= 15,
@@ -331,16 +393,16 @@ async function main() {
   questions.forEach((question) =>
     questionsByConcept.set(question.conceptId, [...(questionsByConcept.get(question.conceptId) ?? []), question]),
   );
-  const conceptRowById = new Map<string, Row>();
-  canonicalRows.forEach((row) => {
-    const subjectCode = parseSubjectCode(asText(row["현행과목"]));
-    conceptRowById.set(`concept-${stableHash(`${subjectCode}:${asText(row["개념군"]) || "미분류 개념"}`)}`, row);
-  });
+  const conceptTitleById = new Map(
+    questions.map((question) => [
+      question.conceptId,
+      canonicalConceptTitle([...conceptAliasesById.get(question.conceptId) ?? []][0] ?? "미분류 개념"),
+    ]),
+  );
 
   const lessons: Lesson[] = [...questionsByConcept.entries()].map(([conceptId, linkedQuestions]) => {
     const first = linkedQuestions[0];
-    const row = conceptRowById.get(conceptId)!;
-    const concept = asText(row["개념군"]) || "미분류 개념";
+    const concept = conceptTitleById.get(conceptId) ?? "미분류 개념";
     const explanation = linkedQuestions
       .map((question) => question.explanation)
       .filter(Boolean)
@@ -371,8 +433,14 @@ async function main() {
     const baseAliases = linkedQuestions
       .map((question) => question.stem.match(/[가-힣A-Za-z0-9·-]{2,18}/)?.[0])
       .filter((value): value is string => Boolean(value));
+    const sourceConceptAliases = [...conceptAliasesById.get(conceptId) ?? []].filter((value) => value !== concept);
     const terminologyAliases = /오일휩|오일휠/.test(concept) ? ["오일월", "오일휠", "oil whirl", "oil whip"] : [];
     const contentStatus: ContentStatus = hasPublished && generatedLesson.quality.passed ? "published" : "in_review";
+    const lessonBlockers: PublicationBlocker[] = [
+      ...(!generatedLesson.quality.passed ? ["content_quality" as const] : []),
+      ...(sourceNeeded ? ["lesson_source_needed" as const] : []),
+      ...(!hasPublished && !sourceNeeded ? ["answer_unverified" as const] : []),
+    ];
 
     return {
       id: first.lessonId,
@@ -380,7 +448,7 @@ async function main() {
       conceptGroupId: first.conceptGroupId,
       conceptId,
       title: concept,
-      aliases: [...new Set([...baseAliases, ...terminologyAliases])].slice(0, 8),
+      aliases: [...new Set([...sourceConceptAliases, ...baseAliases, ...terminologyAliases])].slice(0, 8),
       summary: generatedLesson.summary,
       blocks: generatedLesson.blocks,
       relatedQuestionIds: linkedQuestions.map((question) => question.id),
@@ -388,6 +456,14 @@ async function main() {
       contentStatus,
       sourceNeeded,
       reviewedAt: contentStatus === "published" ? "2026-07-23T00:00:00.000Z" : null,
+      publication: {
+        readiness: lessonBlockers.length === 0
+          ? "ready"
+          : lessonBlockers.includes("content_quality")
+            ? "blocked"
+            : "review",
+        blockers: lessonBlockers,
+      },
       quality: generatedLesson.quality,
     };
   });
@@ -398,6 +474,15 @@ async function main() {
     const anchorExists = Boolean(lesson?.blocks.some((block) => block.id === question.lessonAnchor));
     question.validation.theoryLink = anchorExists;
     question.validation.contentQuality = question.validation.choiceFeedback && Boolean(lesson?.quality.passed);
+    const initialPublication = question.publication ?? { readiness: "review" as const, blockers: [] };
+    question.publication = assessQuestionPublication({
+      complete: question.validation.answer && question.validation.explanation,
+      answerConfirmed: !initialPublication.blockers.includes("answer_unverified"),
+      mappingReliable: !initialPublication.blockers.includes("mapping_unverified"),
+      highRisk: initialPublication.blockers.includes("high_risk_source"),
+      contentQuality: question.validation.contentQuality && anchorExists,
+      lessonSourceNeeded: lesson?.sourceNeeded,
+    });
     if (question.contentStatus === "published" && (!anchorExists || !question.validation.contentQuality)) {
       question.contentStatus = "in_review";
     }
@@ -450,6 +535,29 @@ async function main() {
       choiceFeedbackPassed: groupChoices.filter(({ choice, correct }) => choiceFeedbackPasses(choice.feedback, correct)).length,
     };
   });
+  const publicationCounts = questions.reduce(
+    (result, question) => {
+      const assessment = question.publication ?? { readiness: "review" as const, blockers: [] };
+      result[assessment.readiness] += 1;
+      assessment.blockers.forEach((blocker) => {
+        result.blockerCounts[blocker] += 1;
+      });
+      return result;
+    },
+    {
+      ready: 0,
+      review: 0,
+      blocked: 0,
+      blockerCounts: {
+        incomplete: 0,
+        answer_unverified: 0,
+        mapping_unverified: 0,
+        high_risk_source: 0,
+        content_quality: 0,
+        lesson_source_needed: 0,
+      } satisfies Record<PublicationBlocker, number>,
+    },
+  );
   const generated: GeneratedContent = {
     formatVersion: 2,
     subjects,
@@ -492,6 +600,7 @@ async function main() {
       publishedQuestionCount: questions.filter((question) => question.contentStatus === "published").length,
       reviewQuestionCount: questions.filter((question) => question.contentStatus === "in_review").length,
       blockedQuestionCount: questions.filter((question) => question.contentStatus === "draft").length,
+      publication: publicationCounts,
       coverage,
       quality: {
         lessonPassed: lessons.filter((lesson) => lesson.quality.passed).length,

@@ -12,3 +12,4 @@ test-results/
 supabase/.temp/
 data/private/
 _workspace/
+.superloopy/

@@ -15,6 +15,7 @@
     "test:rls": "supabase test db",
     "import:workbook": "tsx scripts/import-workbook.ts",
     "stage:supabase": "tsx scripts/stage-supabase-import.ts",
+    "audit:publication": "tsx scripts/audit-publication-scope.ts",
     "verify:data": "tsx scripts/verify-generated-data.ts",
     "check": "npm run verify:data && npm run typecheck && npm run lint && npm run test && npm run build"
   },
