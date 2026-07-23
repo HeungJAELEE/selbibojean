@@ -55,6 +55,24 @@ async function main() {
   if (data.report.publication.ready !== data.report.publishedQuestionCount) {
     errors.push(`공개 완료 수와 발행 준비 수가 다릅니다: ${data.report.publishedQuestionCount}/${data.report.publication.ready}`);
   }
+  const missingVerification = data.questions.filter((question) =>
+    !question.verification || question.verification.sourceUrls.length === 0,
+  );
+  if (missingVerification.length) errors.push(`출처 검증 메타데이터가 없는 문제: ${missingVerification.length}개`);
+  const unsafePublished = data.questions.filter((question) =>
+    question.contentStatus === "published" && question.verification?.status !== "verified",
+  );
+  if (unsafePublished.length) errors.push(`검증 상태가 완료되지 않은 공개 문제: ${unsafePublished.length}개`);
+  const blockedWithoutReason = data.questions.filter((question) =>
+    question.publication?.readiness === "blocked" &&
+    !question.verification?.riskTags.some((risk) =>
+      ["asset_required", "answer_conflict", "authoritative_source_required"].includes(risk),
+    ),
+  );
+  if (blockedWithoutReason.length) errors.push(`구조화된 차단 사유가 없는 문제: ${blockedWithoutReason.length}개`);
+  if (data.report.verification.verified + data.report.verification.blocked !== data.questions.length) {
+    errors.push(`검증 상태 대사 불일치: ${data.report.verification.verified + data.report.verification.blocked}/${data.questions.length}`);
+  }
 
   const lessonIds = new Set(data.lessons.map((lesson) => lesson.id));
   const brokenLinks = data.questions.filter((question) => !lessonIds.has(question.lessonId));
@@ -82,7 +100,7 @@ async function main() {
     return;
   }
   console.log(
-    `PASS: 원문 ${data.report.rows.originals}, 대표 ${data.report.rows.canonicalQuestions}, 매핑 ${data.report.rows.mappings}, 잔여 ${data.report.rows.backlog}, 44개 세부항목군, 공개 레슨 ${publishedLessons.length}, 선택지 해설 ${data.report.quality.choiceFeedbackPassed}, 공개 문제 ${data.report.publishedQuestionCount}`,
+    `PASS: 원문 ${data.report.rows.originals}, 대표 ${data.report.rows.canonicalQuestions}, 매핑 ${data.report.rows.mappings}, 잔여 ${data.report.rows.backlog}, 44개 세부항목군, 공개 레슨 ${publishedLessons.length}, 선택지 해설 ${data.report.quality.choiceFeedbackPassed}, 공개 문제 ${data.report.publishedQuestionCount}, 근거 확인 대기 ${data.report.verification.blocked}`,
   );
 }
 

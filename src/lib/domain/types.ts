@@ -23,6 +23,9 @@ export type PublicationBlocker =
   | "incomplete"
   | "answer_unverified"
   | "mapping_unverified"
+  | "asset_required"
+  | "answer_conflict"
+  | "authoritative_source_required"
   | "high_risk_source"
   | "content_quality"
   | "lesson_source_needed";
@@ -30,6 +33,27 @@ export type PublicationBlocker =
 export type PublicationAssessment = {
   readiness: "ready" | "review" | "blocked";
   blockers: PublicationBlocker[];
+};
+
+export type VerificationRiskTag =
+  | "asset_required"
+  | "answer_conflict"
+  | "authoritative_source_required"
+  | "historical_context"
+  | "editorial_reconstruction";
+
+export type QuestionVerification = {
+  status: "verified" | "blocked";
+  method:
+    | "workbook_confirmed"
+    | "source_backed_reconstruction"
+    | "authoritative_source_verified"
+    | "manual_source_required";
+  variantCount: number;
+  sourceUrls: string[];
+  riskTags: VerificationRiskTag[];
+  note: string;
+  reviewedAt: string;
 };
 
 export type Subject = {
@@ -91,6 +115,7 @@ export type Question = {
   reviewStatus: string;
   contentStatus: ContentStatus;
   publication?: PublicationAssessment;
+  verification?: QuestionVerification;
   validation: {
     answer: boolean;
     explanation: boolean;
@@ -102,9 +127,13 @@ export type Question = {
 
 export type PublicQuestion = Omit<
   Question,
-  "choices" | "correctChoiceId" | "answerText" | "explanation" | "errorReason" | "validation" | "reviewStatus" | "publication"
+  "choices" | "correctChoiceId" | "answerText" | "explanation" | "errorReason" | "validation" | "reviewStatus" | "publication" | "verification"
 > & {
   choices: Array<Pick<Choice, "id" | "order" | "text">>;
+  provenance: {
+    reconstructed: boolean;
+    historical: boolean;
+  };
 };
 
 export type PracticeFeedback = {
@@ -193,6 +222,15 @@ export type ImportReport = {
     review: number;
     blocked: number;
     blockerCounts: Record<PublicationBlocker, number>;
+  };
+  verification: {
+    verified: number;
+    blocked: number;
+    workbookConfirmed: number;
+    sourceBackedReconstruction: number;
+    authoritativeSourceVerified: number;
+    manualSourceRequired: number;
+    riskCounts: Record<VerificationRiskTag, number>;
   };
   coverage: Record<CoverageStatus, number>;
   quality: {

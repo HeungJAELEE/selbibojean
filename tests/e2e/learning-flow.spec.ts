@@ -17,6 +17,18 @@ test("practice session is answer-safe and contains no duplicate question", async
   expect(serialized).not.toContain("correctChoiceId");
   expect(serialized).not.toContain("answerText");
   expect(serialized).not.toContain("plausibleReason");
+  expect(serialized).not.toContain("sourceUrls");
+  expect(serialized).not.toContain("source_backed_reconstruction");
+  expect(body.questions.every((question: { provenance?: { reconstructed: boolean; historical: boolean } }) =>
+    typeof question.provenance?.reconstructed === "boolean" && typeof question.provenance?.historical === "boolean",
+  )).toBe(true);
+});
+
+test("admin review queue exposes every intentionally blocked item with evidence links", async ({ page }) => {
+  await page.goto("/admin/review");
+  await expect(page.getByRole("heading", { name: "공식 출처·원문 자산 검수 대기" })).toBeVisible();
+    await expect(page.locator("article")).toHaveCount(82);
+  await expect(page.getByRole("link", { name: /Q-Net 설비보전기사 출제기준/ })).toBeVisible();
 });
 
 test("wrong answer links to a theory anchor", async ({ request }) => {

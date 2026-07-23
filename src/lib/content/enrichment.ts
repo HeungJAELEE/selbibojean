@@ -237,6 +237,13 @@ export function buildEvidenceLesson({
   const guide = getGroupGuide(groupId);
   const evidence = uniqueEvidence(questions);
   const primary = questions[0];
+  const sourceUrls = [...new Set(questions.flatMap((question) =>
+    question.verification?.sourceUrls.length
+      ? question.verification.sourceUrls
+      : /^https?:\/\//.test(question.sourceLabel)
+        ? [question.sourceLabel]
+        : [],
+  ))].slice(0, 5);
   const correctText = primary?.answerText || concept;
   const sourceExcerpt = theoryEvidence?.body
     ? theoryEvidence.body
@@ -358,6 +365,7 @@ export function buildEvidenceLesson({
         theoryEvidence
           ? `- 이론 근거: 설비보전기사 필기 이론 최종 정리본(2025–2028) — ‘${theoryEvidence.title}’`
           : "- 이론 상태: 문제 근거에서 도출한 보강안이며 독립 이론 출처 대조가 추가로 필요합니다.",
+        ...sourceUrls.map((url, index) => `- 원문 출처 ${index + 1}: ${url}`),
         `- 공개 상태: ${sourceNeeded ? "출처·기술 검수 전까지 검토 대기" : "확정 문제와 연결된 공개 후보"}`,
       ].join("\n"),
       order: 12,

@@ -32,6 +32,15 @@ function makeQuestion(index: number): Question {
     reviewStatus: "확정",
     contentStatus: "published",
     publication: { readiness: "ready", blockers: [] },
+    verification: {
+      status: "verified",
+      method: "source_backed_reconstruction",
+      variantCount: 2,
+      sourceUrls: ["https://example.com/source"],
+      riskTags: ["editorial_reconstruction"],
+      note: "원문 대조 완료",
+      reviewedAt: "2026-07-23T00:00:00.000Z",
+    },
     validation: { answer: true, explanation: true, choiceFeedback: true, theoryLink: true, contentQuality: true },
   };
 }
@@ -58,6 +67,8 @@ describe("random practice", () => {
     expect(payload).not.toContain("전체 해설");
     expect(payload).not.toContain("plausibleReason");
     expect(payload).not.toContain("readiness");
+    expect(payload).not.toContain("source_backed_reconstruction");
+    expect(payload).not.toContain("example.com/source");
   });
 
   it("returns selected-choice reasoning and the exact lesson anchor after submission", () => {

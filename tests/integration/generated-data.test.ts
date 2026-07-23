@@ -20,12 +20,28 @@ describe("27th workbook reconciliation", () => {
   });
   it("keeps unverified content out of public practice", () => {
     const publicQuestions = data.questions.filter((question) => question.contentStatus === "published");
-    expect(publicQuestions.length).toBeGreaterThan(0);
+    expect(publicQuestions).toHaveLength(1314);
+    expect(data.questions.filter((question) => question.publication?.readiness === "blocked")).toHaveLength(82);
     expect(publicQuestions.every(isPublishableQuestion)).toBe(true);
     expect(data.questions.filter((question) => question.contentStatus !== "published").length).toBeGreaterThan(0);
     expect(publicQuestions.every((question) => question.publication?.readiness === "ready")).toBe(true);
     expect(data.report.publication.ready).toBe(publicQuestions.length);
     expect(data.report.publication.ready + data.report.publication.review + data.report.publication.blocked).toBe(data.questions.length);
+  });
+
+  it("records a source-backed disposition for every canonical question", () => {
+    expect(data.questions.every((question) => Boolean(question.verification))).toBe(true);
+    expect(data.report.verification.verified).toBe(1314);
+    expect(data.report.verification.blocked).toBe(82);
+    expect(data.report.verification.sourceBackedReconstruction).toBe(1015);
+    expect(data.report.verification.authoritativeSourceVerified).toBe(4);
+    expect(data.report.verification.manualSourceRequired).toBe(82);
+    expect(data.questions.every((question) => (question.verification?.sourceUrls.length ?? 0) > 0)).toBe(true);
+
+    const blocked = data.questions.filter((question) => question.publication?.readiness === "blocked");
+    expect(blocked.every((question) => question.verification?.riskTags.some((risk) =>
+      ["asset_required", "answer_conflict", "authoritative_source_required"].includes(risk),
+    ))).toBe(true);
   });
 
   it("passes lesson and per-choice quality gates in every concept group", () => {

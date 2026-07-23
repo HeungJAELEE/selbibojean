@@ -33,6 +33,12 @@ export function SingleQuestion({ question }: { question: PublicQuestion }) {
   return (
     <div className="card p-6 md:p-9">
       <p className="text-sm font-bold text-[#16697a]">{question.id}</p>
+      {(question.provenance.reconstructed || question.provenance.historical) && (
+        <div className="mt-3 flex flex-wrap gap-2 text-xs font-bold">
+          {question.provenance.reconstructed && <span className="rounded-full bg-sky-50 px-3 py-1 text-sky-800">원문 근거 학습용 재구성</span>}
+          {question.provenance.historical && <span className="rounded-full bg-amber-50 px-3 py-1 text-amber-800">과거 시험 맥락</span>}
+        </div>
+      )}
       <h1 className="mt-5 text-2xl font-extrabold leading-relaxed">{question.stem}</h1>
       <div className="mt-7 grid gap-3">
         {question.choices.map((item) => (

@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 
 import type {
   GeneratedContent,
@@ -172,6 +172,27 @@ const report = {
       ]),
     ),
   },
+  verification: {
+    summary: data.report.verification,
+    byStatus: countBy(data.questions, (question) => question.verification?.status ?? "missing"),
+    byMethod: countBy(data.questions, (question) => question.verification?.method ?? "missing"),
+    byRisk: countBy(
+      data.questions.flatMap((question) => question.verification?.riskTags ?? []),
+      (risk) => risk,
+    ),
+    missingMetadata: data.questions.filter((question) => !question.verification).length,
+    manualReviewSamples: sample(
+      data.questions.filter((question) => question.verification?.method === "manual_source_required"),
+      (question) => ({
+        id: question.id,
+        stem: question.stem,
+        status: question.reviewStatus,
+        riskTags: question.verification?.riskTags,
+        sourceUrls: question.verification?.sourceUrls,
+      }),
+      30,
+    ),
+  },
   lessons: {
     byStatus: countBy(data.lessons, (lesson) => lesson.contentStatus),
     byCoverage: countBy(data.lessons, (lesson) => lesson.coverageStatus),
@@ -230,4 +251,12 @@ const report = {
   },
 };
 
-process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
+const outputIndex = process.argv.indexOf("--output");
+const outputPath = outputIndex >= 0 ? process.argv[outputIndex + 1] : null;
+const serialized = `${JSON.stringify(report, null, 2)}\n`;
+if (outputPath) {
+  writeFileSync(outputPath, serialized, "utf8");
+  process.stdout.write(`Publication audit written to ${outputPath}\n`);
+} else {
+  process.stdout.write(serialized);
+}

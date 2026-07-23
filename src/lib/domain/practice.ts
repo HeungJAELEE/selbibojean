@@ -67,7 +67,7 @@ export function selectPracticeQuestions(
 }
 
 export function toPublicQuestion(question: Question): PublicQuestion {
-  const { correctChoiceId, answerText, explanation, errorReason, validation, reviewStatus, publication, choices, ...safeQuestion } = question;
+  const { correctChoiceId, answerText, explanation, errorReason, validation, reviewStatus, publication, verification, choices, ...safeQuestion } = question;
   void correctChoiceId;
   void answerText;
   void explanation;
@@ -75,7 +75,14 @@ export function toPublicQuestion(question: Question): PublicQuestion {
   void validation;
   void reviewStatus;
   void publication;
-  return { ...safeQuestion, choices: choices.map(({ id, order, text }) => ({ id, order, text })) };
+  return {
+    ...safeQuestion,
+    choices: choices.map(({ id, order, text }) => ({ id, order, text })),
+    provenance: {
+      reconstructed: verification?.riskTags.includes("editorial_reconstruction") ?? false,
+      historical: verification?.riskTags.includes("historical_context") ?? false,
+    },
+  };
 }
 
 export function gradeQuestion(

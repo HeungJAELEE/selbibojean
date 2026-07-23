@@ -11,11 +11,13 @@ import {
   lessonAnchorForQuestion,
 } from "../src/lib/content/enrichment";
 import { GOLDEN_LESSONS, GOLDEN_QUESTION_FEEDBACK } from "../src/data/source/golden-content";
+import { VERIFIED_QUESTION_SOURCES } from "../src/data/source/verified-question-sources";
 import { findKoreanLanguageIssues } from "../src/lib/content/korean";
 import {
   assessQuestionPublication,
+  canVerifyFromWorkbookSource,
+  classifyVerificationRisks,
   isConfirmedAnswerStatus,
-  requiresAuthoritativeSource,
 } from "../src/lib/content/publication";
 import { conceptGroups, mapConceptGroup, subjects } from "../src/lib/domain/catalog";
 import type {
@@ -133,16 +135,46 @@ function classifyErrorReason(stem: string, explanation: string, reviewStatus: st
   return "개념 혼동";
 }
 
-function publishDecision(row: Row, correctIndex: number, choices: string[]) {
+function publishDecision(
+  sourceId: string,
+  row: Row,
+  correctIndex: number,
+  choices: string[],
+  sourceUrls: string[],
+) {
   const status = asText(row["검증상태"]);
-  const highRisk = requiresAuthoritativeSource({
+  const riskTags = classifyVerificationRisks({
     status,
     stem: asText(row["문제"]),
+    choices,
+    answer: asText(row["정답"]),
     explanation: asText(row["근거"]),
   });
   const complete = correctIndex >= 0 && choices.length === 4 && choices.every(Boolean) && asText(row["근거"]).length >= 15;
   const statusConfirmed = isConfirmedAnswerStatus(status);
-  return { publishable: complete && statusConfirmed && !highRisk, complete, highRisk, statusConfirmed };
+  const sourceBacked = canVerifyFromWorkbookSource({ complete, sourceUrls, riskTags });
+  const authoritativeSource = VERIFIED_QUESTION_SOURCES[sourceId];
+  const authoritativeVerified = Boolean(authoritativeSource);
+  const answerVerified = statusConfirmed || sourceBacked || authoritativeVerified;
+  const publication = assessQuestionPublication({
+    complete,
+    answerConfirmed: answerVerified,
+    mappingReliable: true,
+    assetRequired: riskTags.includes("asset_required"),
+    answerConflict: riskTags.includes("answer_conflict"),
+    authoritativeSourceRequired:
+      riskTags.includes("authoritative_source_required") && !authoritativeVerified,
+  });
+  return {
+    publication,
+    complete,
+    statusConfirmed,
+    sourceBacked,
+    authoritativeSource,
+    authoritativeVerified,
+    answerVerified,
+    riskTags,
+  };
 }
 
 type TheorySection = {
@@ -304,7 +336,6 @@ async function main() {
       polishTechnicalKorean(asText(row[`보기${["①", "②", "③", "④"][index - 1]}`])),
     );
     const correctIndex = parseAnswerIndex(answer, choiceTexts);
-    const decision = publishDecision(row, correctIndex, choiceTexts);
     const { group, confidence, score, margin } = mapConceptGroup(subjectCode, concept, stem, explanation, choiceTexts.join(" "));
     const conceptId = `concept-${stableHash(`${subjectCode}:${concept}`)}`;
     const lessonId = `lesson-${stableHash(`${subjectCode}:${concept}`)}`;
@@ -313,6 +344,7 @@ async function main() {
     const sourceUrls = originalIds
       .map((id) => asText(originalById.get(id)?.["출처URL"]))
       .filter(Boolean);
+    const decision = publishDecision(sourceId, row, correctIndex, choiceTexts, sourceUrls);
     if (correctIndex < 0) warnings.push(`${sourceId}: 정답을 보기와 연결하지 못했습니다.`);
     if (confidence === "fallback" || confidence === "weak") {
       warnings.push(`${sourceId}: 세부항목군 분류 검토 필요(${confidence}, score=${score}, margin=${margin}).`);
@@ -347,12 +379,23 @@ async function main() {
       choiceFeedbackPasses(choice.feedback, index === correctIndex),
     );
     const mappingReliable = confidence === "reviewed" || confidence === "override" || confidence === "keyword";
-    const contentStatus: ContentStatus = decision.publishable && mappingReliable
+    const publication = assessQuestionPublication({
+      complete: decision.complete,
+      answerConfirmed: decision.answerVerified,
+      mappingReliable,
+      assetRequired: decision.riskTags.includes("asset_required"),
+      answerConflict: decision.riskTags.includes("answer_conflict"),
+      authoritativeSourceRequired:
+        decision.riskTags.includes("authoritative_source_required") && !decision.authoritativeVerified,
+    });
+    const contentStatus: ContentStatus = publication.readiness === "ready"
       ? "published"
-      : decision.complete
-        ? "in_review"
-        : "draft";
-    const lessonAnchor = decision.highRisk
+      : publication.readiness === "blocked"
+        ? "draft"
+        : "in_review";
+    const lessonAnchor = decision.riskTags.some((risk) =>
+      ["asset_required", "answer_conflict", "authoritative_source_required"].includes(risk),
+    )
       ? "source"
       : lessonAnchorForQuestion({ stem, errorReason, conceptGroupId: group.id });
 
@@ -373,12 +416,33 @@ async function main() {
       sourceLabel: sourceUrls[0] || asText(row["출제이력"]) || "27차 엑셀 정규화 자료",
       reviewStatus: asText(row["검증상태"]),
       contentStatus,
-      publication: assessQuestionPublication({
-        complete: decision.complete,
-        answerConfirmed: decision.statusConfirmed,
-        mappingReliable,
-        highRisk: decision.highRisk,
-      }),
+      publication,
+      verification: {
+        status: publication.readiness === "blocked" ? "blocked" : "verified",
+        method: decision.statusConfirmed
+          ? "workbook_confirmed"
+          : decision.authoritativeVerified
+            ? "authoritative_source_verified"
+          : decision.sourceBacked
+            ? "source_backed_reconstruction"
+            : "manual_source_required",
+        variantCount: originalIds.length,
+        sourceUrls: [
+          ...new Set([
+            ...sourceUrls,
+            ...(decision.authoritativeSource ? [decision.authoritativeSource.url] : []),
+          ]),
+        ],
+        riskTags: decision.riskTags,
+        note: decision.statusConfirmed
+          ? "27차 검증상태에서 확정 답안으로 확인했습니다."
+          : decision.authoritativeSource
+            ? `${decision.authoritativeSource.publisher} 공식 자료로 정답 조건을 확인했습니다. ${decision.authoritativeSource.note}`
+          : decision.sourceBacked
+            ? `연결된 원문 ${originalIds.length}건과 출처 URL ${new Set(sourceUrls).size}건을 대조한 학습용 재구성입니다.`
+            : "원문 자산·답안 충돌 또는 현행 공식 기준 확인이 필요해 공개를 차단했습니다.",
+        reviewedAt: "2026-07-23T00:00:00.000Z",
+      },
       validation: {
         answer: correctIndex >= 0,
         explanation: explanation.length >= 15,
@@ -477,15 +541,19 @@ async function main() {
     const initialPublication = question.publication ?? { readiness: "review" as const, blockers: [] };
     question.publication = assessQuestionPublication({
       complete: question.validation.answer && question.validation.explanation,
-      answerConfirmed: !initialPublication.blockers.includes("answer_unverified"),
+      answerConfirmed: question.verification?.status === "verified",
       mappingReliable: !initialPublication.blockers.includes("mapping_unverified"),
-      highRisk: initialPublication.blockers.includes("high_risk_source"),
+      assetRequired: initialPublication.blockers.includes("asset_required"),
+      answerConflict: initialPublication.blockers.includes("answer_conflict"),
+      authoritativeSourceRequired: initialPublication.blockers.includes("authoritative_source_required"),
       contentQuality: question.validation.contentQuality && anchorExists,
       lessonSourceNeeded: lesson?.sourceNeeded,
     });
-    if (question.contentStatus === "published" && (!anchorExists || !question.validation.contentQuality)) {
-      question.contentStatus = "in_review";
-    }
+    question.contentStatus = question.publication.readiness === "ready"
+      ? "published"
+      : question.publication.readiness === "blocked"
+        ? "draft"
+        : "in_review";
   });
 
   const rows = {
@@ -552,10 +620,43 @@ async function main() {
         incomplete: 0,
         answer_unverified: 0,
         mapping_unverified: 0,
+        asset_required: 0,
+        answer_conflict: 0,
+        authoritative_source_required: 0,
         high_risk_source: 0,
         content_quality: 0,
         lesson_source_needed: 0,
       } satisfies Record<PublicationBlocker, number>,
+    },
+  );
+  const verificationCounts = questions.reduce(
+    (result, question) => {
+      const verification = question.verification;
+      if (!verification) return result;
+      result[verification.status] += 1;
+      if (verification.status === "blocked") result.manualSourceRequired += 1;
+      if (verification.method === "workbook_confirmed") result.workbookConfirmed += 1;
+      if (verification.method === "source_backed_reconstruction") result.sourceBackedReconstruction += 1;
+      if (verification.method === "authoritative_source_verified") result.authoritativeSourceVerified += 1;
+      verification.riskTags.forEach((risk) => {
+        result.riskCounts[risk] += 1;
+      });
+      return result;
+    },
+    {
+      verified: 0,
+      blocked: 0,
+      workbookConfirmed: 0,
+      sourceBackedReconstruction: 0,
+      authoritativeSourceVerified: 0,
+      manualSourceRequired: 0,
+      riskCounts: {
+        asset_required: 0,
+        answer_conflict: 0,
+        authoritative_source_required: 0,
+        historical_context: 0,
+        editorial_reconstruction: 0,
+      },
     },
   );
   const generated: GeneratedContent = {
@@ -601,6 +702,7 @@ async function main() {
       reviewQuestionCount: questions.filter((question) => question.contentStatus === "in_review").length,
       blockedQuestionCount: questions.filter((question) => question.contentStatus === "draft").length,
       publication: publicationCounts,
+      verification: verificationCounts,
       coverage,
       quality: {
         lessonPassed: lessons.filter((lesson) => lesson.quality.passed).length,

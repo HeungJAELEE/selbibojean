@@ -28,6 +28,7 @@ export default async function AdminPage() {
           <div><dt className="text-slate-500">정규 개념</dt><dd className="mt-1 font-bold">{report.canonicalConcepts.toLocaleString()}</dd></div>
         </dl>
         <Link href="/admin/imports" className="mt-6 inline-block rounded-xl bg-[#173957] px-5 py-3 font-bold text-white">이관·검수 상세</Link>
+        <Link href="/admin/review" className="ml-3 mt-6 inline-block rounded-xl border border-slate-300 px-5 py-3 font-bold text-slate-700">근거 확인 대기 {report.publication.blocked.toLocaleString()}건</Link>
       </div>
     </div>
   );

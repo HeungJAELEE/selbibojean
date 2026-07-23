@@ -6,6 +6,9 @@ const blockerLabels: Record<PublicationBlocker, string> = {
   incomplete: "정답·보기·근거 미완성",
   answer_unverified: "정답 검수 필요",
   mapping_unverified: "세부항목군 분류 필요",
+  asset_required: "원문 이미지·도표 복원 필요",
+  answer_conflict: "복수정답·답안 충돌 검토 필요",
+  authoritative_source_required: "현행 공식·제조사 출처 필요",
   high_risk_source: "법령·안전·표준 등 권위 출처 필요",
   content_quality: "이론·해설 품질 미달",
   lesson_source_needed: "독립 이론 근거 필요",
@@ -45,6 +48,18 @@ export default async function ImportsPage() {
             <div key={key} className="flex items-center justify-between rounded-xl bg-slate-50 px-4 py-3"><dt>{blockerLabels[key]}</dt><dd className="font-extrabold">{value.toLocaleString()}</dd></div>
           ))}
         </dl>
+      </section>
+      <section className="card mt-6 p-6">
+        <h2 className="font-extrabold">잔여 문제 처리 현황</h2>
+        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+          <Status value={report.verification.workbookConfirmed} label="엑셀 확정답안" className="bg-sky-50 text-sky-800" />
+          <Status value={report.verification.sourceBackedReconstruction} label="원문 교차검증·재구성" className="bg-emerald-50 text-emerald-800" />
+          <Status value={report.verification.authoritativeSourceVerified} label="공식 출처 직접 검증" className="bg-cyan-50 text-cyan-800" />
+          <Status value={report.verification.manualSourceRequired} label="공식 출처·자산 확인 필요" className="bg-rose-50 text-rose-800" />
+        </div>
+        <p className="mt-4 text-sm leading-6 text-slate-600">
+          학습용 재구성 문제는 연결된 원문과 출처 URL을 문제 단위로 기록했습니다. 이미지·복수정답·현행 규격·제조사 조건은 자동 공개하지 않습니다.
+        </p>
       </section>
       <section className="card mt-6 p-6">
         <h2 className="font-extrabold">세부항목군 분류 검수</h2>
