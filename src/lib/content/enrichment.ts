@@ -147,21 +147,83 @@ export function lessonAnchorForQuestion(question: Pick<Question, "stem" | "error
   return "principle";
 }
 
-function comparisonTable(questions: Question[]) {
-  const rows = questions.flatMap((question) =>
-    question.choices.map((choice) => {
-      const correct = choice.id === question.correctChoiceId;
-      const role = isNegativeStem(question.stem)
-        ? correct
-          ? "문제에서 찾는 제외 항목"
-          : "실제로 성립하는 항목"
-        : correct
-          ? "정답 판단기준에 부합"
-          : "관련되지만 직접 답은 아님";
-      return `| ${tableCell(choice.text)} | ${role} |`;
-    }),
+function shortened(value: string, maximum = 360) {
+  const clean = compact(value);
+  return clean.length > maximum ? `${clean.slice(0, maximum - 1).trim()}…` : clean;
+}
+
+function practicalInspectionCase(
+  concept: string,
+  groupTitle: string,
+  questions: Question[],
+  decisionSteps: string[],
+) {
+  const primary = questions[0];
+  const diagnosis = questions.some((question) => /원인|고장|진단|점검|누설|파손|마모|이상|불량/.test(question.stem));
+  const safety = questions.some((question) => /안전|보호구|화재|폭발|방호|작업 전/.test(question.stem));
+  const calculation = questions.some((question) => question.errorReason === "공식 적용" || question.errorReason === "단위 오류");
+  const situation = safety
+    ? `${groupTitle} 작업을 시작하기 전에 ${concept}의 적용 조건과 위험요인을 확인해야 하는 상황`
+    : diagnosis
+      ? `운전 중 ${concept}와 관련된 이상 징후가 나타나 원인을 좁혀야 하는 상황`
+      : calculation
+        ? `${concept}의 운전값이나 선정값을 계산하고 현장 조건에 맞는지 검산해야 하는 상황`
+        : `${groupTitle} 설비에서 ${concept}의 적용 여부를 판단하거나 점검해야 하는 상황`;
+  const directEvidence = shortened(primary?.explanation || `${concept}의 정의와 적용 조건을 기준으로 판단합니다.`, 420);
+
+  return [
+    `**현장 상황**`,
+    situation,
+    "",
+    `**점검 순서**`,
+    ...decisionSteps.map((step, index) => `${index + 1}. ${step}`),
+    `4. 확인한 결과를 설비의 정상 기준, 도면, 작업표준 또는 제조사 자료와 대조해 기록합니다.`,
+    "",
+    `**판정 예시**`,
+    `${directEvidence} 따라서 명칭이 비슷하다는 이유만으로 결론을 내리지 않고, 실제 대상·기능·조건이 모두 일치할 때만 ${concept}에 해당한다고 판정합니다.`,
+    "",
+    `> **실무 주의:** 법령·안전·설정값이 관련된 작업은 이 학습 예시만으로 결정하지 않고 최신 법령, 승인된 작업표준과 제조사 매뉴얼을 우선합니다.`,
+  ].join("\n");
+}
+
+function trapChoiceExamples(questions: Question[]) {
+  const candidates = questions.flatMap((question) =>
+    question.choices
+      .filter((choice) => choice.id !== question.correctChoiceId)
+      .map((choice) => ({ question, choice })),
   );
-  return ["| 보기·비교대상 | 문제에서의 역할 |", "|---|---|", ...rows.slice(0, 12)].join("\n");
+  const unique = candidates.filter(
+    ({ choice }, index) => candidates.findIndex((candidate) => compact(candidate.choice.text) === compact(choice.text)) === index,
+  );
+  const selected = unique.slice(0, 3);
+  const hasNegativeQuestion = selected.some(({ question }) => isNegativeStem(question.stem));
+
+  if (selected.length === 0) {
+    return "연결된 문제에서 검증된 오답 보기를 찾지 못했습니다. 임의의 함정 보기는 만들지 않습니다.";
+  }
+
+  return [
+    "아래 문장은 이 레슨에 연결된 문제에서 실제로 사용된 오답 보기입니다. 문장 자체만 외우지 말고, 왜 그럴듯하며 어느 조건에서 틀리는지 함께 확인합니다.",
+    ...selected.flatMap(({ question, choice }, index) => {
+      const feedback = choice.feedback;
+      return [
+        "",
+        `### 함정 보기 ${index + 1}`,
+        `> **“${choice.text}”**`,
+        "",
+        `- **문항 맥락:** ${shortened(question.stem, 220)}`,
+        `- **왜 그럴듯한가:** ${shortened(feedback.plausibleReason, 320)}`,
+        `- **틀린 부분:** ${shortened(feedback.incorrectPoint || feedback.rationale, 420)}`,
+        `- **판단 기준:** ${shortened(feedback.keyRule, 420)}`,
+      ];
+    }),
+    ...(hasNegativeQuestion
+      ? [
+          "",
+          `> 부정형 문항에서는 기술적으로 옳은 보기가 오히려 오답 선택지가 됩니다. 문제의 ‘옳지 않은 것’, ‘아닌 것’, ‘거리가 먼 것’을 먼저 표시한 뒤 판단합니다.`,
+        ]
+      : []),
+  ].join("\n");
 }
 
 function uniqueEvidence(questions: Question[]) {
@@ -329,10 +391,10 @@ export function buildEvidenceLesson({
       order: 6,
     },
     {
-      id: "comparison",
-      kind: "pros_cons",
-      title: "보기와 유사 개념 비교",
-      body: comparisonTable(questions),
+      id: "field-case",
+      kind: "diagnosis",
+      title: "실무 점검 예시",
+      body: practicalInspectionCase(concept, groupTitle, questions, guide.decisionSteps),
       order: 7,
     },
     {
@@ -345,8 +407,8 @@ export function buildEvidenceLesson({
     {
       id: "trap",
       kind: "trap",
-      title: "헷갈리기 쉬운 부분",
-      body: `${guide.trap}\n\n대표문제의 오답 보기: ${primary?.choices.filter((choice) => choice.id !== primary.correctChoiceId).map((choice) => `‘${choice.text}’`).join(", ") || "없음"}. 이 보기들은 관련 분야의 표현이지만 ${quoteWithJosa(correctText, "과/와")} 같은 조건에서 서로 바꾸어 쓸 수 없습니다.`,
+      title: "시험에서 자주 나오는 실제 함정 보기",
+      body: trapChoiceExamples(questions),
       order: 9,
     },
     {

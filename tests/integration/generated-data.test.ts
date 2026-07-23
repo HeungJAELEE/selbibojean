@@ -96,6 +96,34 @@ describe("27th workbook reconciliation", () => {
     expect(fluidComparison?.blocks.some((block) => block.body.includes("A+, A−"))).toBe(false);
   });
 
+  it("uses practical inspection cases and verified trap choices instead of mechanical choice lists", () => {
+    const generatedLessons = data.lessons.filter((lesson) => lesson.blocks.some((block) => block.id === "field-case"));
+    expect(generatedLessons.length).toBeGreaterThan(1200);
+    expect(generatedLessons.every((lesson) =>
+      lesson.blocks.some((block) =>
+        block.id === "field-case" &&
+        block.title === "실무 점검 예시" &&
+        block.body.includes("**현장 상황**") &&
+        block.body.includes("**점검 순서**") &&
+        block.body.includes("**판정 예시**"),
+      ),
+    )).toBe(true);
+    expect(generatedLessons.every((lesson) =>
+      lesson.blocks.some((block) =>
+        block.id === "trap" &&
+        block.title === "시험에서 자주 나오는 실제 함정 보기" &&
+        block.body.includes("### 함정 보기 1") &&
+        block.body.includes("**왜 그럴듯한가:**") &&
+        block.body.includes("**틀린 부분:**") &&
+        block.body.includes("**판단 기준:**"),
+      ),
+    )).toBe(true);
+
+    const allLessonText = data.lessons.flatMap((lesson) => lesson.blocks.map((block) => `${block.title}\n${block.body}`)).join("\n");
+    expect(allLessonText).not.toContain("보기와 유사 개념 비교");
+    expect(allLessonText).not.toContain("대표문제의 오답 보기:");
+  });
+
   it("places every public lesson once in a semantic subcategory", () => {
     for (const group of data.conceptGroups) {
       const lessons = data.lessons.filter(
