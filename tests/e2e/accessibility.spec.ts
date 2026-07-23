@@ -1,7 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-for (const path of ["/", "/written/theory", "/written/practice/random", "/login"]) {
+for (const path of ["/", "/written/theory", "/written/practice/random", "/written/mock", "/practical/mock", "/login"]) {
   test(`no serious accessibility violations on ${path}`, async ({ page }) => {
     await page.goto(path);
     const results = await new AxeBuilder({ page }).analyze();
@@ -17,4 +17,3 @@ test("keyboard focus is visible and can reach the primary action", async ({ page
   await expect(focused).toBeVisible();
   await expect(focused).toHaveAttribute("href", "/");
 });
-

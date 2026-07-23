@@ -5,8 +5,10 @@ test("home exposes the main learning paths", async ({ page }) => {
   await expect(page).toHaveTitle("설비보전기사 마스터북");
   await expect(page.getByRole("link", { name: "설비보전기사 마스터북 홈" })).toContainText("설비보전기사");
   await expect(page.getByRole("heading", { name: /문제를 맞히는 데서/ })).toBeVisible();
-  await expect(page.getByRole("link", { name: /랜덤 20문제 시작/ })).toBeVisible();
-  await expect(page.getByRole("link", { name: "이론 목차 보기", exact: true })).toBeVisible();
+  const primaryPaths = page.getByTestId("primary-learning-paths");
+  await expect(primaryPaths.getByRole("link", { name: "이론 보기", exact: true })).toHaveAttribute("href", "/written/theory");
+  await expect(primaryPaths.getByRole("link", { name: "필기 모의고사", exact: true })).toHaveAttribute("href", "/written/mock");
+  await expect(primaryPaths.getByRole("link", { name: "실기 모의고사", exact: true })).toHaveAttribute("href", "/practical/mock");
 });
 
 test("practice session is answer-safe and contains no duplicate question", async ({ request }) => {
@@ -29,7 +31,7 @@ test("practice session is answer-safe and contains no duplicate question", async
 
 test("an actual past exam presentation remains gradeable through the canonical answer", async ({ request }) => {
   const session = await (await request.post("/api/practice/session", {
-    data: { mode: "all", count: 20, seed: 20260723, composition: "original" },
+    data: { mode: "all", count: 20, seed: 20260723, originalRatio: 100 },
   })).json();
   const question = session.questions.find((candidate: { provenance: { original: boolean } }) => candidate.provenance.original);
   expect(question).toBeTruthy();
@@ -44,6 +46,77 @@ test("an actual past exam presentation remains gradeable through the canonical a
     results.push(await response.json());
   }
   expect(results.filter((result) => result.isCorrect)).toHaveLength(1);
+});
+
+test("weak-area practice expands repeated mistakes within the selected subject", async ({ request }) => {
+  const response = await request.post("/api/practice/session", {
+    data: {
+      mode: "weak",
+      subjectId: "subject-1",
+      count: 20,
+      seed: 73,
+      originalRatio: 75,
+      guestQuestionIds: ["U-002", "U-002", "U-002", "U-003"],
+    },
+  });
+  expect(response.ok()).toBeTruthy();
+  const session = await response.json();
+  expect(session.focus.fallback).toBe(false);
+  expect(session.focus.groups[0]).toMatchObject({ id: "s1-g10", mistakes: 3 });
+  expect(session.questions.every((question: { subjectId: string }) => question.subjectId === "subject-1")).toBe(true);
+  expect(session.questions.every((question: { conceptGroupId: string }) =>
+    session.focus.groups.some((group: { id: string }) => group.id === question.conceptGroupId),
+  )).toBe(true);
+  expect(session.actualOriginalCount).toBe(Math.round(session.questions.length * 0.75));
+});
+
+test("random practice lets users choose a past-exam ratio and weak subject", async ({ page }) => {
+  await page.goto("/written/practice/random");
+  await page.getByLabel("범위", { exact: true }).selectOption("weak");
+  await expect(page.getByLabel("과목", { exact: true })).toBeVisible();
+  await page.getByLabel("과목", { exact: true }).selectOption("subject-3");
+  await page.getByLabel("실제 기출 비율", { exact: true }).selectOption("75");
+  await expect(page.getByLabel("실제 기출 비율", { exact: true })).toHaveValue("75");
+  await expect(page.getByText(/많이 틀린 최대 3개 영역/)).toBeVisible();
+});
+
+test("written mock preserves subject quotas without repeating or exposing unverified questions", async ({ request }) => {
+  const response = await request.post("/api/practice/session", {
+    data: {
+      mode: "mock",
+      count: 80,
+      originalRatio: 50,
+      seed: 80,
+      subjectAllocations: [1, 2, 3, 4].map((code) => ({ subjectId: `subject-${code}`, count: 20 })),
+    },
+  });
+  expect(response.ok()).toBeTruthy();
+  const session = await response.json();
+  expect(session.questions).toHaveLength(78);
+  expect(new Set(session.questions.map((question: { id: string }) => question.id)).size).toBe(78);
+  expect(session.subjectBreakdown.map((item: { actualCount: number }) => item.actualCount)).toEqual([20, 18, 20, 20]);
+  expect(session.subjectBreakdown[1]).toMatchObject({ requestedCount: 20, limited: true });
+  expect(session.actualOriginalCount).toBe(39);
+  expect(session.questions.filter((question: { subjectId: string }) => question.subjectId === "subject-2")).toHaveLength(18);
+});
+
+test("written mock UI supports subject checkboxes and per-subject counts", async ({ page }) => {
+  await page.goto("/written/mock");
+  await expect(page.getByRole("heading", { name: "필기 모의고사", exact: true, level: 1 })).toBeVisible();
+  await expect(page.getByText("총 78문제", { exact: true })).toBeVisible();
+  await expect(page.getByText("검수 완료 78문제 시작", { exact: true })).toBeVisible();
+  await page.getByRole("checkbox").last().uncheck();
+  await page.getByLabel("제1과목 문제 수").selectOption("10");
+  await expect(page.getByText("총 48문제", { exact: true })).toBeVisible();
+  await page.getByRole("radio", { name: "75%" }).check();
+  await expect(page.getByText(/실제 기출 목표 36문제/)).toBeVisible();
+});
+
+test("practical mock reserves a verified ten-question structure", async ({ page }) => {
+  await page.goto("/practical/mock");
+  await expect(page.getByRole("heading", { name: "실기 모의고사", exact: true, level: 1 })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "10문제형 실기 모의고사", exact: true })).toBeVisible();
+  await expect(page.getByText(/검증되지 않은 실기 문제는 임의로 출제하지 않습니다/)).toBeVisible();
 });
 
 test("admin review queue exposes every intentionally blocked item with evidence links", async ({ page }) => {

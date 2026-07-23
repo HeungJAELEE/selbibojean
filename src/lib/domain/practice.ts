@@ -6,6 +6,17 @@ export type PracticeFilter = {
   questionIds?: string[];
 };
 
+export type WeakFocus = {
+  questionIds: string[];
+  groups: Array<{ id: string; mistakes: number }>;
+  fallback: boolean;
+};
+
+export type SubjectAllocation = {
+  subjectId: string;
+  count: number;
+};
+
 function mulberry32(seed: number) {
   return () => {
     let value = (seed += 0x6d2b79f5);
@@ -43,13 +54,19 @@ export function selectPracticeQuestions(
   requestedCount: number | "all",
   seed = Date.now(),
 ) {
-  const eligible = questions.filter(
-    (question) =>
-      isPublishableQuestion(question) &&
-      (!filter.subjectId || question.subjectId === filter.subjectId) &&
-      (!filter.conceptGroupId || question.conceptGroupId === filter.conceptGroupId) &&
-      (!filter.questionIds || filter.questionIds.includes(question.id)),
-  );
+  const eligible = [
+    ...new Map(
+      questions
+        .filter(
+          (question) =>
+            isPublishableQuestion(question) &&
+            (!filter.subjectId || question.subjectId === filter.subjectId) &&
+            (!filter.conceptGroupId || question.conceptGroupId === filter.conceptGroupId) &&
+            (!filter.questionIds || filter.questionIds.includes(question.id)),
+        )
+        .map((question) => [question.id, question]),
+    ).values(),
+  ];
   const shuffledIds = shuffleQuestionIds(
     eligible.map((question) => question.id),
     seed,
@@ -63,6 +80,77 @@ export function selectPracticeQuestions(
     requestedCount,
     limited: requestedCount !== "all" && eligible.length < requestedCount,
     questions: selectedIds.map((id) => questionById.get(id)).filter((question): question is Question => Boolean(question)),
+  };
+}
+
+export function buildWeakFocus(
+  questions: Question[],
+  wrongQuestionIds: string[],
+  subjectId?: string,
+  maxGroups = 3,
+): WeakFocus {
+  const eligible = questions.filter(
+    (question) => isPublishableQuestion(question) && (!subjectId || question.subjectId === subjectId),
+  );
+  const eligibleById = new Map(eligible.map((question) => [question.id, question]));
+  const mistakeCounts = new Map<string, number>();
+
+  for (const questionId of wrongQuestionIds) {
+    const question = eligibleById.get(questionId);
+    if (!question) continue;
+    mistakeCounts.set(question.conceptGroupId, (mistakeCounts.get(question.conceptGroupId) ?? 0) + 1);
+  }
+
+  const groups = [...mistakeCounts.entries()]
+    .map(([id, mistakes]) => ({ id, mistakes }))
+    .sort((left, right) => right.mistakes - left.mistakes || left.id.localeCompare(right.id))
+    .slice(0, maxGroups);
+  const focusedGroupIds = new Set(groups.map((group) => group.id));
+
+  return {
+    questionIds: groups.length > 0
+      ? eligible.filter((question) => focusedGroupIds.has(question.conceptGroupId)).map((question) => question.id)
+      : eligible.map((question) => question.id),
+    groups,
+    fallback: groups.length === 0,
+  };
+}
+
+export function selectAllocatedPracticeQuestions(
+  questions: Question[],
+  allocations: SubjectAllocation[],
+  seed: number,
+) {
+  const selected: Question[] = [];
+  const usedQuestionIds = new Set<string>();
+  const breakdown = allocations.map((allocation, index) => {
+    const result = selectPracticeQuestions(
+      questions.filter((question) => !usedQuestionIds.has(question.id)),
+      { subjectId: allocation.subjectId },
+      allocation.count,
+      seed ^ ((index + 1) * 0x45d9f3b),
+    );
+    selected.push(...result.questions);
+    result.questions.forEach((question) => usedQuestionIds.add(question.id));
+    return {
+      subjectId: allocation.subjectId,
+      requestedCount: allocation.count,
+      actualCount: result.questions.length,
+      availableCount: result.availableCount,
+      limited: result.limited,
+    };
+  });
+  const selectedById = new Map(selected.map((question) => [question.id, question]));
+  const shuffled = shuffleQuestionIds([...selectedById.keys()], seed ^ 0x6a09e667)
+    .map((id) => selectedById.get(id))
+    .filter((question): question is Question => Boolean(question));
+
+  return {
+    availableCount: breakdown.reduce((total, item) => total + item.availableCount, 0),
+    requestedCount: allocations.reduce((total, item) => total + item.count, 0),
+    limited: breakdown.some((item) => item.limited),
+    questions: shuffled,
+    breakdown,
   };
 }
 

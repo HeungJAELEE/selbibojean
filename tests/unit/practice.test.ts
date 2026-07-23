@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { gradeQuestion, selectPracticeQuestions, toPublicQuestion } from "@/lib/domain/practice";
+import { buildWeakFocus, gradeQuestion, selectAllocatedPracticeQuestions, selectPracticeQuestions, toPublicQuestion } from "@/lib/domain/practice";
 import type { Lesson, Question } from "@/lib/domain/types";
 
 function makeQuestion(index: number): Question {
@@ -58,6 +58,41 @@ describe("random practice", () => {
     const first = selectPracticeQuestions(questions, {}, 10, 2026).questions.map((question) => question.id);
     const second = selectPracticeQuestions(questions, {}, 10, 2026).questions.map((question) => question.id);
     expect(first).toEqual(second);
+  });
+
+  it("expands repeated mistakes into related questions from the weakest groups", () => {
+    const questions = Array.from({ length: 12 }, (_, index) => {
+      const question = makeQuestion(index + 1);
+      question.conceptGroupId = index < 5 ? "s1-g01" : index < 9 ? "s1-g02" : "s1-g03";
+      return question;
+    });
+    const focus = buildWeakFocus(questions, ["U-1", "U-1", "U-2", "U-6"], "subject-1", 2);
+
+    expect(focus.fallback).toBe(false);
+    expect(focus.groups).toEqual([
+      { id: "s1-g01", mistakes: 3 },
+      { id: "s1-g02", mistakes: 1 },
+    ]);
+    expect(focus.questionIds).toHaveLength(9);
+    expect(focus.questionIds).toContain("U-5");
+    expect(focus.questionIds).toContain("U-9");
+  });
+
+  it("builds an 80-question mock with exactly 20 unique questions per subject", () => {
+    const questions = Array.from({ length: 100 }, (_, index) => {
+      const question = makeQuestion(index + 1);
+      question.subjectId = `subject-${Math.floor(index / 25) + 1}`;
+      return question;
+    });
+    const result = selectAllocatedPracticeQuestions(
+      questions,
+      [1, 2, 3, 4].map((code) => ({ subjectId: `subject-${code}`, count: 20 })),
+      80,
+    );
+
+    expect(result.questions).toHaveLength(80);
+    expect(new Set(result.questions.map((question) => question.id)).size).toBe(80);
+    expect(result.breakdown.map((item) => item.actualCount)).toEqual([20, 20, 20, 20]);
   });
 
   it("does not expose answers or feedback before submission", () => {

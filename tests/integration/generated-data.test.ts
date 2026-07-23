@@ -181,9 +181,9 @@ describe("27th workbook reconciliation", () => {
     expect([...originalsByQuestion.values()].flat()).toHaveLength(1377);
 
     const sample = publishedQuestions.slice(0, 20);
-    const mixed = createPracticePresentations(sample, data.variants, "mixed", 20260723);
-    const originalFocused = createPracticePresentations(sample, data.variants, "original", 20260723);
-    const conceptFocused = createPracticePresentations(sample, data.variants, "concept", 20260723);
+    const mixed = createPracticePresentations(sample, data.variants, 50, 20260723);
+    const originalFocused = createPracticePresentations(sample, data.variants, 100, 20260723);
+    const conceptFocused = createPracticePresentations(sample, data.variants, 0, 20260723);
 
     expect(mixed.filter((question) => question.provenance.original)).toHaveLength(10);
     expect(originalFocused.filter((question) => question.provenance.original).length).toBeGreaterThan(10);

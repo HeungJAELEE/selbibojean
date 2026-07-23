@@ -2,23 +2,19 @@ import type { GeneratedContent, PublicQuestion, Question } from "@/lib/domain/ty
 import { isUsablePastExamVariant } from "@/lib/content/past-exam-examples";
 import { shuffleQuestionIds, toPublicQuestion } from "@/lib/domain/practice";
 
-export type PracticeComposition = "mixed" | "original" | "concept";
+export type OriginalPracticeRatio = 0 | 25 | 50 | 75 | 100;
 
 type Variant = GeneratedContent["variants"][number];
 
 export function createPracticePresentations(
   questions: Question[],
   variants: Variant[],
-  composition: PracticeComposition,
+  originalRatio: OriginalPracticeRatio,
   seed: number,
 ): PublicQuestion[] {
   const originalsByQuestion = getSafeOriginalsByQuestion(questions, variants);
   const eligibleIds = questions.filter((question) => originalsByQuestion.has(question.id)).map((question) => question.id);
-  const targetCount = composition === "concept"
-    ? 0
-    : composition === "original"
-      ? eligibleIds.length
-      : Math.min(Math.ceil(questions.length / 2), eligibleIds.length);
+  const targetCount = Math.min(Math.round(questions.length * (originalRatio / 100)), eligibleIds.length);
   const originalIds = new Set(shuffleQuestionIds(eligibleIds, seed ^ 0x51f15e).slice(0, targetCount));
 
   return questions.map((question) => {

@@ -5,10 +5,10 @@ import { useState } from "react";
 import { BookOpenCheck, Menu, Search, X } from "lucide-react";
 
 const navItems = [
-  ["이론", "/written/theory"],
-  ["문제풀이", "/written/practice"],
-  ["복습", "/written/review"],
-  ["학습현황", "/progress"],
+  ["이론 보기", "/written/theory"],
+  ["필기 모의고사", "/written/mock"],
+  ["실기 모의고사", "/practical/mock"],
+  ["오답·복습", "/written/review"],
 ] as const;
 
 export function SiteHeader() {
@@ -24,7 +24,7 @@ export function SiteHeader() {
             <span className="block whitespace-nowrap text-xs text-[#16697a] sm:inline sm:text-base sm:text-inherit"> 마스터북</span>
           </span>
         </Link>
-        <nav className="hidden items-center gap-7 text-sm font-semibold text-slate-600 md:flex" aria-label="주 메뉴">
+        <nav className="hidden items-center gap-4 text-xs font-semibold text-slate-600 md:flex lg:gap-7 lg:text-sm" aria-label="주 메뉴">
           {navItems.map(([label, href]) => <Link key={href} href={href} className="hover:text-[#16697a]">{label}</Link>)}
         </nav>
         <div className="flex shrink-0 items-center gap-2">

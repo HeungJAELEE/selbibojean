@@ -2,17 +2,30 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getContent } from "@/lib/content/repository";
 import { createPracticePresentations } from "@/lib/content/practice-presentations";
-import { selectPracticeQuestions } from "@/lib/domain/practice";
+import { buildWeakFocus, selectAllocatedPracticeQuestions, selectPracticeQuestions } from "@/lib/domain/practice";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
 const requestSchema = z.object({
-  mode: z.enum(["all", "subject", "group", "wrong", "due"]).default("all"),
+  mode: z.enum(["all", "subject", "group", "wrong", "due", "weak", "mock"]).default("all"),
   subjectId: z.string().optional(),
   conceptGroupId: z.string().optional(),
-  count: z.union([z.literal(10), z.literal(20), z.literal(50), z.literal("all")]).default(20),
+  count: z.union([z.number().int().min(1).max(80), z.literal("all")]).default(20),
+  subjectAllocations: z.array(z.object({ subjectId: z.string().min(1), count: z.number().int().min(1).max(20) })).max(4).optional(),
   guestQuestionIds: z.array(z.string()).optional(),
   seed: z.number().int().optional(),
-  composition: z.enum(["mixed", "original", "concept"]).default("mixed"),
+  originalRatio: z.union([z.literal(0), z.literal(25), z.literal(50), z.literal(75), z.literal(100)]).default(50),
+}).superRefine((value, context) => {
+  if (value.mode !== "mock") return;
+  if (!value.subjectAllocations?.length) {
+    context.addIssue({ code: "custom", path: ["subjectAllocations"], message: "모의고사 과목을 선택하세요." });
+    return;
+  }
+  if (new Set(value.subjectAllocations.map((item) => item.subjectId)).size !== value.subjectAllocations.length) {
+    context.addIssue({ code: "custom", path: ["subjectAllocations"], message: "과목은 한 번씩만 선택할 수 있습니다." });
+  }
+  if (value.subjectAllocations.reduce((total, item) => total + item.count, 0) > 80) {
+    context.addIssue({ code: "custom", path: ["subjectAllocations"], message: "필기 모의고사는 최대 80문제입니다." });
+  }
 });
 
 export async function POST(request: Request) {
@@ -24,11 +37,13 @@ export async function POST(request: Request) {
   const { data: auth } = supabase ? await supabase.auth.getUser() : { data: { user: null } };
   let scopedIds = parsed.data.guestQuestionIds;
 
-  if (auth.user && parsed.data.mode === "wrong" && supabase) {
+  if (auth.user && (parsed.data.mode === "wrong" || parsed.data.mode === "weak") && supabase) {
     const { data } = await supabase.from("attempts").select("question_id").eq("user_id", auth.user.id).eq("is_correct", false);
-    const ids = [...new Set((data ?? []).map((item) => item.question_id as string))];
-    const { data: rows } = ids.length ? await supabase.from("questions").select("external_id").in("id", ids) : { data: [] };
-    scopedIds = (rows ?? []).map((item) => item.external_id as string);
+    const ids = (data ?? []).map((item) => item.question_id as string);
+    const uniqueIds = [...new Set(ids)];
+    const { data: rows } = uniqueIds.length ? await supabase.from("questions").select("id,external_id").in("id", uniqueIds) : { data: [] };
+    const externalById = new Map((rows ?? []).map((item) => [item.id as string, item.external_id as string]));
+    scopedIds = ids.map((id) => externalById.get(id)).filter((id): id is string => Boolean(id));
   }
   if (auth.user && parsed.data.mode === "due" && supabase) {
     const { data } = await supabase
@@ -41,21 +56,26 @@ export async function POST(request: Request) {
     scopedIds = (rows ?? []).map((item) => item.external_id as string);
   }
 
+  const weakFocus = parsed.data.mode === "weak"
+    ? buildWeakFocus(content.questions, scopedIds ?? [], parsed.data.subjectId)
+    : null;
   const seed = parsed.data.seed ?? Date.now();
-  const selected = selectPracticeQuestions(
-    content.questions,
-    {
-      subjectId: parsed.data.mode === "subject" || parsed.data.mode === "group" ? parsed.data.subjectId : undefined,
-      conceptGroupId: parsed.data.mode === "group" ? parsed.data.conceptGroupId : undefined,
-      questionIds: parsed.data.mode === "wrong" || parsed.data.mode === "due" ? scopedIds ?? [] : undefined,
-    },
-    parsed.data.count,
-    seed,
-  );
+  const selected = parsed.data.mode === "mock"
+    ? selectAllocatedPracticeQuestions(content.questions, parsed.data.subjectAllocations ?? [], seed)
+    : selectPracticeQuestions(
+        content.questions,
+        {
+          subjectId: parsed.data.mode === "subject" || parsed.data.mode === "group" || parsed.data.mode === "weak" ? parsed.data.subjectId : undefined,
+          conceptGroupId: parsed.data.mode === "group" ? parsed.data.conceptGroupId : undefined,
+          questionIds: parsed.data.mode === "weak" ? weakFocus?.questionIds : parsed.data.mode === "wrong" || parsed.data.mode === "due" ? scopedIds ?? [] : undefined,
+        },
+        parsed.data.count,
+        seed,
+      );
   const publicQuestions = createPracticePresentations(
     selected.questions,
     content.variants,
-    parsed.data.composition,
+    parsed.data.originalRatio,
     seed,
   );
 
@@ -65,7 +85,7 @@ export async function POST(request: Request) {
       id: sessionId,
       user_id: auth.user.id,
       filter: parsed.data,
-      requested_count: parsed.data.count === "all" ? null : parsed.data.count,
+      requested_count: selected.requestedCount === "all" ? null : selected.requestedCount,
       actual_count: selected.questions.length,
       status: "active",
     });
@@ -88,7 +108,16 @@ export async function POST(request: Request) {
     storage: auth.user ? "account" : "guest",
     availableCount: selected.availableCount,
     limited: selected.limited,
-    composition: parsed.data.composition,
+    originalRatio: parsed.data.originalRatio,
+    actualOriginalCount: publicQuestions.filter((question) => question.provenance.original).length,
+    focus: weakFocus ? {
+      fallback: weakFocus.fallback,
+      groups: weakFocus.groups.map((group) => ({
+        ...group,
+        title: content.conceptGroups.find((candidate) => candidate.id === group.id)?.title ?? group.id,
+      })),
+    } : null,
+    subjectBreakdown: "breakdown" in selected ? selected.breakdown : null,
     questions: publicQuestions,
   });
 }
