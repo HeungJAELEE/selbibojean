@@ -42,6 +42,18 @@ button { cursor: pointer; }
 }
 .prose-learning h2 { margin-top: 2.2rem; font-size: 1.4rem; font-weight: 850; scroll-margin-top: 110px; }
 .prose-learning p { color: #344b60; line-height: 1.82; white-space: pre-wrap; }
+.markdown-content .katex { color: #173957; font-size: 1.05em; }
+.markdown-content .katex-display {
+  margin-block: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: .85rem 1rem;
+  border: 1px solid #dce4e9;
+  border-radius: .75rem;
+  background: #f7f9fa;
+  text-align: center;
+}
+.markdown-content .katex-display > .katex { min-width: max-content; }
 
 @media (max-width: 720px) {
   .page-wrap { width: min(100% - 22px, 1180px); }

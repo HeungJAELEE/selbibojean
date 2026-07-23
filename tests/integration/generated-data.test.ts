@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import katex from "katex";
 import { describe, expect, it } from "vitest";
 import type { GeneratedContent } from "@/lib/domain/types";
 import { isPublishableQuestion } from "@/lib/domain/practice";
@@ -121,5 +122,29 @@ describe("27th workbook reconciliation", () => {
       "시험·판정·시료채취",
     ]));
     expect(categories.find((category) => category.label === "그리스 종류·특성·급유")?.lessons.length).toBeGreaterThan(20);
+  });
+
+  it("keeps every stored inline and display formula valid for KaTeX", () => {
+    const bodies = data.lessons.flatMap((lesson) => lesson.blocks.map((block) => block.body));
+    let inlineCount = 0;
+    let displayCount = 0;
+
+    for (const body of bodies) {
+      const displayFormulas = [...body.matchAll(/\$\$([\s\S]*?)\$\$/g)];
+      displayCount += displayFormulas.length;
+      for (const match of displayFormulas) {
+        expect(() => katex.renderToString(match[1].trim(), { displayMode: true, strict: false, throwOnError: true })).not.toThrow();
+      }
+
+      const withoutDisplayMath = body.replace(/\$\$[\s\S]*?\$\$/g, "");
+      const inlineFormulas = [...withoutDisplayMath.matchAll(/(?<!\$)\$([^\n$]+?)\$(?!\$)/g)];
+      inlineCount += inlineFormulas.length;
+      for (const match of inlineFormulas) {
+        expect(() => katex.renderToString(match[1].trim(), { strict: false, throwOnError: true })).not.toThrow();
+      }
+    }
+
+    expect(inlineCount).toBe(238);
+    expect(displayCount).toBe(16);
   });
 });

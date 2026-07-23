@@ -2,7 +2,9 @@
 
 import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
+import rehypeKatex from "rehype-katex";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 import { cn } from "@/lib/utils";
 
 const components: Components = {
@@ -41,7 +43,11 @@ const components: Components = {
 export function MarkdownContent({ content, compact = false }: { content: string; compact?: boolean }) {
   return (
     <div className={cn("markdown-content", compact && "text-sm [&_p]:leading-7")}>
-      <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm, remarkMath]}
+        rehypePlugins={[[rehypeKatex, { throwOnError: false, strict: false }]]}
+        components={components}
+      >
         {content}
       </ReactMarkdown>
     </div>

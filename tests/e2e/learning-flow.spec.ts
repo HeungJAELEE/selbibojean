@@ -48,6 +48,15 @@ test("theory index groups lessons into semantic category disclosures", async ({ 
   await expect(degradation.getByRole("link", { name: "윤활유 열화판정", exact: true })).toBeVisible();
 });
 
+test("lesson formulas render as readable math instead of raw LaTeX", async ({ page }) => {
+  await page.goto("/written/theory/lesson-tcxwqa");
+
+  const formula = page.locator(".katex").filter({ hasText: "Q" }).first();
+  await expect(formula).toBeVisible();
+  await expect(page.getByText(String.raw`$Q\propto\sqrt{\Delta p}$`, { exact: true })).toHaveCount(0);
+  await expect(page.locator(".katex-mathml math").first()).toHaveCount(1);
+});
+
 test("wrong answer links to a theory anchor", async ({ request }) => {
   const session = await (await request.post("/api/practice/session", { data: { mode: "all", count: 10, seed: 7 } })).json();
   const question = session.questions[0];
