@@ -3,6 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import type { GeneratedContent } from "@/lib/domain/types";
 import { isPublishableQuestion } from "@/lib/domain/practice";
+import { getLessonSubcategories } from "@/lib/content/lesson-subcategories";
 
 const data = JSON.parse(await readFile(path.join(process.cwd(), "src/data/generated/content.json"), "utf8")) as GeneratedContent;
 
@@ -90,5 +91,35 @@ describe("27th workbook reconciliation", () => {
     expect(abbe?.quality.languageIssueMatches).toEqual([]);
     expect(abbe?.blocks.some((block) => block.body.includes("체결·운동전달"))).toBe(false);
     expect(fluidComparison?.blocks.some((block) => block.body.includes("A+, A−"))).toBe(false);
+  });
+
+  it("places every public lesson once in a semantic subcategory", () => {
+    for (const group of data.conceptGroups) {
+      const lessons = data.lessons.filter(
+        (lesson) => lesson.contentStatus === "published" && lesson.conceptGroupId === group.id,
+      );
+      const categories = getLessonSubcategories(group.id, lessons);
+      const categorizedIds = categories.flatMap((category) => category.lessons.map((lesson) => lesson.id));
+
+      expect(categorizedIds, group.title).toHaveLength(lessons.length);
+      expect(new Set(categorizedIds).size, group.title).toBe(lessons.length);
+      expect(categories.every((category) => category.lessons.length > 0), group.title).toBe(true);
+    }
+  });
+
+  it("uses subject-matter categories for the long lubricant lesson group", () => {
+    const lessons = data.lessons.filter(
+      (lesson) => lesson.contentStatus === "published" && lesson.conceptGroupId === "s4-g14",
+    );
+    const categories = getLessonSubcategories("s4-g14", lessons);
+
+    expect(categories.map((category) => category.label)).toEqual(expect.arrayContaining([
+      "열화·산화·유화·오염",
+      "그리스 종류·특성·급유",
+      "윤활유 첨가제",
+      "용도별 윤활유",
+      "시험·판정·시료채취",
+    ]));
+    expect(categories.find((category) => category.label === "그리스 종류·특성·급유")?.lessons.length).toBeGreaterThan(20);
   });
 });

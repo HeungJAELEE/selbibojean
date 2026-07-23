@@ -31,6 +31,23 @@ test("admin review queue exposes every intentionally blocked item with evidence 
   await expect(page.getByRole("link", { name: /Q-Net 설비보전기사 출제기준/ })).toBeVisible();
 });
 
+test("theory index groups lessons into semantic category disclosures", async ({ page }) => {
+  await page.goto("/written/theory");
+
+  const lubricantCategories = page.getByTestId("lesson-categories-s4-g14");
+  await expect(lubricantCategories).toBeVisible();
+  await expect(page.getByTestId("lesson-category-s4-g14-degradation").locator("summary")).toContainText("열화·산화·유화·오염");
+  await expect(page.getByTestId("lesson-category-s4-g14-grease").locator("summary")).toContainText("그리스 종류·특성·급유");
+  await expect(page.getByTestId("lesson-category-s4-g14-additive").locator("summary")).toContainText("윤활유 첨가제");
+  await expect(page.getByTestId("lesson-category-s4-g14-test").locator("summary")).toContainText("시험·판정·시료채취");
+
+  const degradation = page.getByTestId("lesson-category-s4-g14-degradation");
+  await expect(degradation).not.toHaveAttribute("open", "");
+  await degradation.locator("summary").click();
+  await expect(degradation.locator("ul")).toBeVisible();
+  await expect(degradation.getByRole("link", { name: "윤활유 열화판정", exact: true })).toBeVisible();
+});
+
 test("wrong answer links to a theory anchor", async ({ request }) => {
   const session = await (await request.post("/api/practice/session", { data: { mode: "all", count: 10, seed: 7 } })).json();
   const question = session.questions[0];
@@ -61,6 +78,8 @@ test("theory remediation preserves a return-to-retry location", async ({ page, r
   await page.goto(`/written/theory/${feedback.lesson.id}?returnTo=${encodeURIComponent(returnTo)}#${feedback.lesson.anchor}`);
   const returnLink = page.getByRole("link", { name: /문제로 돌아가/ });
   await expect(returnLink).toBeVisible();
-  await returnLink.click();
-  await expect(page).toHaveURL(new RegExp(`resume=${session.sessionId}`));
+  await Promise.all([
+    page.waitForURL(new RegExp(`resume=${session.sessionId}`), { timeout: 15_000 }),
+    returnLink.click(),
+  ]);
 });
