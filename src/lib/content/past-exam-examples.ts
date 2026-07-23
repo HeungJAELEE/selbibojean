@@ -16,6 +16,7 @@ export type PastExamExample = {
   questionNumber: number | null;
   stem: string;
   choices: string[];
+  choiceIds: string[];
   sourceUrl: string;
   format: PastExamFormat;
 };
@@ -43,8 +44,12 @@ export function getPastExamExamplesForLessons(
   const unique = new Map<string, RankedExample>();
 
   for (const variant of content.variants) {
-    if (!publicQuestions.has(variant.canonicalId)) continue;
+    const question = publicQuestions.get(variant.canonicalId);
+    if (!question) continue;
     if (!isUsablePastExamVariant(variant)) continue;
+    const mappedChoices = mapVariantChoices(question, variant.choices);
+    const answerIndex = parseVariantAnswerIndex(variant.answer, variant.choices);
+    if (!mappedChoices || answerIndex < 0 || mappedChoices[answerIndex]?.id !== question.correctChoiceId) continue;
 
     const format = classifyPastExamFormat(variant.stem);
     const example: RankedExample = {
@@ -55,6 +60,7 @@ export function getPastExamExamplesForLessons(
       questionNumber: variant.questionNumber,
       stem: variant.stem.trim(),
       choices: variant.choices.map((choice) => choice.trim()).filter(Boolean),
+      choiceIds: mappedChoices.map((choice) => choice.id),
       sourceUrl: variant.sourceUrl,
       format,
       score: challengeScore(variant.stem, variant.choices, format),
@@ -85,6 +91,7 @@ export function getPastExamExamplesForLessons(
     questionNumber: example.questionNumber,
     stem: example.stem,
     choices: example.choices,
+    choiceIds: example.choiceIds,
     sourceUrl: example.sourceUrl,
     format: example.format,
   }));
@@ -130,4 +137,35 @@ function normalizeStem(stem: string) {
     .normalize("NFKC")
     .toLocaleLowerCase("ko")
     .replace(/[\s·ㆍ,.?()\[\]{}'"/\\_-]+/g, "");
+}
+
+function mapVariantChoices(
+  question: GeneratedContent["questions"][number],
+  variantChoices: string[],
+) {
+  const mapped = variantChoices.map((choice) =>
+    question.choices.find((candidate) => normalizeChoice(candidate.text) === normalizeChoice(choice)));
+  if (mapped.some((choice) => !choice)) return null;
+  const complete = mapped.filter((choice): choice is GeneratedContent["questions"][number]["choices"][number] => Boolean(choice));
+  return new Set(complete.map((choice) => choice.id)).size === complete.length ? complete : null;
+}
+
+function parseVariantAnswerIndex(answer: string, choices: string[]) {
+  const circled = ["①", "②", "③", "④", "⑤"];
+  const bySymbol = circled.findIndex((symbol) => answer.startsWith(symbol));
+  if (bySymbol >= 0) return bySymbol;
+  const number = answer.match(/^([1-5])/);
+  if (number) return Number(number[1]) - 1;
+
+  const normalizedAnswer = normalizeChoice(answer.replace(/^[①②③④⑤1-5][.)]?\s*/, ""));
+  return choices.findIndex((choice) => {
+    const normalizedChoice = normalizeChoice(choice);
+    return normalizedChoice === normalizedAnswer
+      || normalizedChoice.includes(normalizedAnswer)
+      || normalizedAnswer.includes(normalizedChoice);
+  });
+}
+
+function normalizeChoice(value: string) {
+  return value.normalize("NFKC").toLocaleLowerCase("ko").replace(/[\s·ㆍ,.?()\[\]{}'"/\\_-]+/g, "");
 }

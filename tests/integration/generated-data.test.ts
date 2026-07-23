@@ -153,7 +153,7 @@ describe("27th workbook reconciliation", () => {
         && family.scope.length > 40
         && family.mechanism.length > 40
         && family.comparison.length > 0
-        && family.trapQuestions.length <= 3,
+        && family.trapQuestions.length <= 5,
       ), group.title).toBe(true);
     }
 
@@ -178,7 +178,8 @@ describe("27th workbook reconciliation", () => {
     ]));
     expect(family?.comparison.map((item) => item.term)).toEqual(["P 제어", "I 제어", "D 제어", "PI·PID"]);
     expect(family?.fieldCases.map((item) => item.focus)).toEqual(["P 제어", "I 제어", "D 제어"]);
-    expect(family?.trapQuestions.map((question) => question.id)).toEqual(["U-030", "U-683", "U-556"]);
+    expect(family?.trapQuestions.slice(0, 3).map((question) => question.id)).toEqual(["U-030", "U-683", "U-556"]);
+    expect(family?.trapQuestions.length).toBe(5);
     expect(family?.lessons.map((lesson) => lesson.title)).toEqual(expect.arrayContaining([
       "제어동작",
       "적분제어",
@@ -186,6 +187,21 @@ describe("27th workbook reconciliation", () => {
       "제어편차",
       "비례게인·비례대",
     ]));
+  });
+
+  it("uses actual exam criteria instead of repeating generic comparison cautions", () => {
+    const lubricantFamily = getLessonFamily(data, "s4-g14", "application");
+    const adhesiveFamily = getLessonFamily(data, "s3-g08", "surface");
+
+    expect(lubricantFamily).toBeTruthy();
+    expect(adhesiveFamily).toBeTruthy();
+    expect(new Set(lubricantFamily?.comparison.map((item) => item.effect)).size).toBeGreaterThan(2);
+    expect(new Set(lubricantFamily?.comparison.map((item) => item.caution)).size).toBeGreaterThan(2);
+    expect(lubricantFamily?.comparison.every((item) => item.effect !== item.role)).toBe(true);
+    expect(lubricantFamily?.comparison.every(
+      (item) => item.caution !== "명칭만으로 판단하지 말고 대상·조건·기능이 모두 맞는지 확인한다.",
+    )).toBe(true);
+    expect(adhesiveFamily?.trapQuestions.map((question) => question.id)).toContain("U-727");
   });
 
   it("uses subject-matter categories for the long lubricant lesson group", () => {
@@ -233,22 +249,32 @@ describe("27th workbook reconciliation", () => {
     const coveredLessons = publishedLessons.filter((lesson) => getPastExamExamples(data, lesson.id, 3).length > 0);
 
     expect(publishedLessons).toHaveLength(1190);
-    expect(coveredLessons).toHaveLength(1187);
+    expect(coveredLessons).toHaveLength(1176);
 
     for (const lesson of coveredLessons) {
       const examples = getPastExamExamples(data, lesson.id, 3);
       expect(examples.length).toBeLessThanOrEqual(3);
       expect(new Set(examples.map((example) => example.stem.normalize("NFKC"))).size).toBe(examples.length);
       expect(examples.every((example) => example.choices.length >= 4)).toBe(true);
+      expect(examples.every((example) =>
+        example.choiceIds.length === example.choices.length
+        && new Set(example.choiceIds).size === example.choiceIds.length,
+      )).toBe(true);
+      for (const example of examples) {
+        const canonical = data.questions.find((question) => question.id === example.canonicalId);
+        expect(canonical).toBeTruthy();
+        expect(new Set(example.choiceIds)).toEqual(new Set(canonical?.choices.map((choice) => choice.id)));
+      }
       expect(JSON.stringify(examples)).not.toContain("correctChoiceId");
       expect(JSON.stringify(examples)).not.toContain("answerText");
       expect(JSON.stringify(examples)).not.toContain("explanation");
+      expect(JSON.stringify(examples)).not.toContain("\"answer\":");
     }
 
     const orificeExamples = getPastExamExamples(data, "lesson-tcxwqa", 3);
-    expect(orificeExamples).toHaveLength(2);
-    expect(orificeExamples.map((example) => example.year)).toEqual([2018, 2011]);
-    expect(orificeExamples.map((example) => example.questionNumber)).toEqual([88, 82]);
+    expect(orificeExamples).toHaveLength(1);
+    expect(orificeExamples.map((example) => example.year)).toEqual([2018]);
+    expect(orificeExamples.map((example) => example.questionNumber)).toEqual([88]);
   });
 
   it("aggregates answer-safe actual originals across a lesson family", () => {
@@ -257,6 +283,7 @@ describe("27th workbook reconciliation", () => {
 
     expect(examples.length).toBeGreaterThan(0);
     expect(new Set(examples.map((example) => example.externalId)).size).toBe(examples.length);
+    expect(examples.every((example) => example.choiceIds.length === example.choices.length)).toBe(true);
     expect(JSON.stringify(examples)).not.toContain("correctChoiceId");
     expect(JSON.stringify(examples)).not.toContain("answerText");
     expect(JSON.stringify(examples)).not.toContain("explanation");

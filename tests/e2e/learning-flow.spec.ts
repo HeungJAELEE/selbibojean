@@ -161,7 +161,7 @@ test("PID is taught as one family with issue-based application and question-spec
   await expect(page.getByRole("rowheader", { name: "D 제어", exact: true })).toBeVisible();
   await expect(page.getByText("설정값을 바꿨는데 현재값이 너무 느리게 따라온다.")).toBeVisible();
   await expect(page.getByText("응답은 안정됐지만 목표값과 실제값 사이에 작은 편차가 계속 남는다.")).toBeVisible();
-  await expect(page.getByTestId("trap-question-U-030")).toContainText("왜 틀렸는가");
+  await expect(page.getByTestId("trap-question-U-030")).toContainText("왜 오답인가");
   await expect(page.getByTestId("trap-question-U-683")).toContainText("정상상태 편차");
   await expect(page.getByTestId("trap-question-U-556")).toContainText("변화율");
 });
@@ -188,13 +188,17 @@ test("lesson formulas render as readable math instead of raw LaTeX", async ({ pa
   await expect(page.locator(".katex-mathml math").first()).toHaveCount(1);
 });
 
-test("lesson flows from concept to actual past exams and similar practice", async ({ page }) => {
+test("lesson explains the concept before actual past exams and similar practice", async ({ page }) => {
   await page.goto("/written/theory/lesson-tcxwqa");
 
   await expect(page.getByRole("heading", { name: "개념부터 이해하기" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "실제 기출 원문으로 확인하기" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "기출 문제 풀기" })).toBeVisible();
   await expect(page.getByTestId("past-exam-2018-2-Q88")).toBeVisible();
   await expect(page.getByText("2018년 2회 · 88번", { exact: true })).toBeVisible();
+
+  const pastExamsBox = await page.locator("#past-exams").boundingBox();
+  const conceptBox = await page.locator("#concept").boundingBox();
+  expect(conceptBox?.y ?? Number.MAX_SAFE_INTEGER).toBeLessThan(pastExamsBox?.y ?? 0);
 
   const practiceSet = page.getByTestId("lesson-practice-set");
   await expect(practiceSet.getByRole("heading", { name: "실전 유사 문제 풀기" })).toBeVisible();
@@ -202,16 +206,62 @@ test("lesson flows from concept to actual past exams and similar practice", asyn
   await expect(practiceSet).toContainText("답을 제출하기 전에는 정답과 해설을 전송하지 않습니다.");
 });
 
+test("family study explains concepts before more actual exams and concrete adhesive choices", async ({ page }) => {
+  await page.goto("/written/theory/family/s3-g08/surface");
+
+  const pastExams = page.locator("#past-exams");
+  const traps = page.locator("#question-traps");
+  const relatedTerms = page.locator("#related-terms");
+  await expect(pastExams.locator("details")).toHaveCount(3);
+  await expect(page.getByRole("heading", { name: "기출 문제 풀기" })).toBeVisible();
+
+  const pastExamsBox = await pastExams.boundingBox();
+  const trapsBox = await traps.boundingBox();
+  const relatedTermsBox = await relatedTerms.boundingBox();
+  expect(relatedTermsBox?.y ?? Number.MAX_SAFE_INTEGER).toBeLessThan(pastExamsBox?.y ?? 0);
+  expect(pastExamsBox?.y ?? Number.MAX_SAFE_INTEGER).toBeLessThan(trapsBox?.y ?? 0);
+
+  const adhesiveQuestion = page.getByTestId("trap-question-U-727");
+  await expect(adhesiveQuestion).toContainText("접착부가 인장·전단·박리 하중");
+  await expect(adhesiveQuestion).toContainText("사용 온도와 기름·세정제·약품");
+  await expect(adhesiveQuestion).toContainText("균일하게 경화");
+  await expect(adhesiveQuestion.getByText("이 보기의 뜻", { exact: true })).toHaveCount(3);
+  await expect(adhesiveQuestion.getByText("왜 오답인가", { exact: true })).toHaveCount(3);
+});
+
+test("actual past exam grades inline and reveals the explanation without navigation", async ({ page }) => {
+  await page.goto("/written/theory/lesson-tcxwqa");
+  const originalUrl = page.url();
+  const question = page.getByTestId("past-exam-2018-2-Q88");
+
+  await expect(question.getByText("전체 해설", { exact: true })).toHaveCount(0);
+  await question.locator("fieldset button").first().click();
+  await question.getByRole("button", { name: "정답 확인" }).click({ force: true });
+
+  const feedback = question.getByTestId("past-exam-feedback-2018-2-Q88");
+  await expect(feedback).toContainText(/정답입니다|오답입니다/);
+  await expect(feedback.getByText("전체 해설", { exact: true })).toBeVisible();
+  await expect(feedback.getByRole("button", { name: "정답 숨기고 다시 풀기" })).toBeVisible();
+  expect(page.url()).toBe(originalUrl);
+});
+
+test("family comparison rows use distinct actual exam effects and cautions", async ({ page }) => {
+  await page.goto("/written/theory/family/s4-g14/application");
+
+  await expect(page.getByText("명칭만으로 판단하지 말고 대상·조건·기능이 모두 맞는지 확인한다.", { exact: true })).toHaveCount(0);
+  await expect(page.getByRole("columnheader", { name: "기출 판정" })).toBeVisible();
+  await expect(page.getByRole("columnheader", { name: "실제 함정" })).toBeVisible();
+  await expect(page.locator("#comparison tbody tr").first()).toContainText(/실제 함정 보기|부정형 함정/);
+});
+
 test("lesson past exams show three previews and reveal the rest in batches", async ({ page }) => {
-  await page.goto("/written/theory/lesson-ds62tl");
+  await page.goto("/written/theory/lesson-5cda76");
   const section = page.locator("#past-exams");
   await expect(section.locator("details")).toHaveCount(3);
 
-  for (let index = 0; index < 4; index += 1) {
-    await section.getByTestId("past-exam-more").click();
-  }
+  await section.getByTestId("past-exam-more").click();
 
-  await expect(section.locator("details")).toHaveCount(14);
+  await expect(section.locator("details")).toHaveCount(6);
   await expect(section.getByRole("button", { name: "처음 3개만 보기" })).toBeVisible();
 });
 

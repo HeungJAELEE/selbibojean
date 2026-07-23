@@ -56,7 +56,7 @@ export default async function LessonFamilyPage({
 
   const lessonIds = family.lessons.map((lesson) => lesson.id);
   const pastExamExamples = getPastExamExamplesForLessons(content, lessonIds);
-  const practiceQuestions = selectFamilyPracticeQuestions(content, family, 3);
+  const practiceQuestions = selectFamilyPracticeQuestions(content, family, 6);
   const pid = isPidFamily(groupId, familyId);
 
   return (
@@ -70,9 +70,9 @@ export default async function LessonFamilyPage({
           <a href="#umbrella" className="block py-2 text-sm font-bold text-[#16697a]">2. 포괄 개념·원리</a>
           <a href="#comparison" className="block py-2 text-sm font-bold text-[#16697a]">3. 개념별 차이</a>
           <a href="#field-application" className="block py-2 text-sm font-bold text-[#16697a]">4. 실무 적용</a>
-          <a href="#question-traps" className="block py-2 text-sm font-bold text-[#16697a]">5. 실제 문항 함정</a>
-          <a href="#detail-lessons" className="block py-2 text-sm font-bold text-[#16697a]">6. 세부 개념</a>
-          {pastExamExamples.length > 0 && <a href="#past-exams" className="block py-2 text-sm font-bold text-[#16697a]">7. 실제 기출 원문</a>}
+          <a href="#detail-lessons" className="block py-2 text-sm font-bold text-[#16697a]">5. 세부 개념</a>
+          {pastExamExamples.length > 0 && <a href="#past-exams" className="block py-2 text-sm font-bold text-[#16697a]">6. 실제 기출 원문</a>}
+          <a href="#question-traps" className="block py-2 text-sm font-bold text-[#16697a]">7. 보기별 오답 근거</a>
           {practiceQuestions.length > 0 && <a href="#practice-set" className="block py-2 text-sm font-bold text-[#16697a]">8. 실전 유사 문제</a>}
         </nav>
       </aside>
@@ -81,8 +81,8 @@ export default async function LessonFamilyPage({
         <p className="eyebrow">제{subject.code}과목 · {group.title}</p>
         <h1 className="display mt-4 text-4xl font-bold md:text-5xl">{family.label}</h1>
         <p className="mt-5 max-w-3xl text-base leading-7 text-slate-600">
-          흩어진 {family.lessons.length}개 세부 개념을 하나의 판단 흐름으로 묶었습니다.
-          용어를 먼저 비교한 뒤 원리, 현장 상황, 실제 문항 순서로 학습합니다.
+          관련 용어와 작동 원리, 개념별 차이를 먼저 이해한 뒤 실제 기출과 보기별 오답 근거로
+          확인합니다. 흩어진 {family.lessons.length}개 세부 개념을 하나의 학습 흐름으로 묶었습니다.
         </p>
 
         <section id="related-terms" className="mt-8 scroll-mt-28">
@@ -117,10 +117,10 @@ export default async function LessonFamilyPage({
               <thead className="bg-[#173957] text-white">
                 <tr>
                   <th className="px-4 py-3">구분</th>
-                  <th className="px-4 py-3">무엇을 보는가</th>
-                  <th className="px-4 py-3">역할</th>
-                  <th className="px-4 py-3">주요 효과</th>
-                  <th className="px-4 py-3">주의점</th>
+                  <th className="px-4 py-3">{pid ? "무엇을 보는가" : "기출에서 묻는 것"}</th>
+                  <th className="px-4 py-3">{pid ? "역할" : "핵심 근거"}</th>
+                  <th className="px-4 py-3">{pid ? "주요 효과" : "기출 판정"}</th>
+                  <th className="px-4 py-3">{pid ? "주의점" : "실제 함정"}</th>
                 </tr>
               </thead>
               <tbody>
@@ -171,8 +171,6 @@ export default async function LessonFamilyPage({
           )}
         </section>
 
-        <QuestionTrapReview questions={family.trapQuestions} pid={pid} />
-
         <section id="detail-lessons" className="mt-10 scroll-mt-28">
           <SectionTitle icon={<CheckCircle2 size={19} />} eyebrow="Deep dive" title="세부 개념으로 들어가기" />
           <div className="mt-4 grid gap-3 md:grid-cols-2">
@@ -192,7 +190,12 @@ export default async function LessonFamilyPage({
           </div>
         </section>
 
-        <PastExamExamples examples={pastExamExamples} />
+        <PastExamExamples
+          examples={pastExamExamples}
+          initialCount={6}
+          batchSize={6}
+        />
+        <QuestionTrapReview questions={family.trapQuestions} pid={pid} />
         <LessonPracticeSet questions={practiceQuestions} />
       </article>
 
@@ -202,8 +205,8 @@ export default async function LessonFamilyPage({
           <h2 className="font-extrabold">통합 학습 묶음</h2>
         </div>
         <p className="mt-3 text-sm leading-6 text-slate-600">
-          세부 개념 {family.lessons.length}개, 실제 문항 함정 {family.trapQuestions.length}개,
-          실제 기출 원문 {pastExamExamples.length}개를 한 흐름으로 연결합니다.
+          세부 개념 {family.lessons.length}개를 먼저 이해한 뒤 실제 기출 원문 {pastExamExamples.length}개와
+          보기별 오답 근거 {family.trapQuestions.length}개로 확인합니다.
         </p>
         <Link
           href={getLessonFamilyHref(groupId, familyId)}

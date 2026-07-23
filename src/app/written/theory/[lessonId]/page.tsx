@@ -32,9 +32,9 @@ export default async function LessonPage({
   const subject = getSubject(lesson.subjectId);
   const group = getConceptGroup(lesson.conceptGroupId);
   const pastExamExamples = getPastExamExamples(content, lesson.id);
-  const practiceQuestions = selectPracticeQuestions(content, lesson.id, lesson.conceptGroupId, lesson.relatedQuestionIds, 3);
+  const practiceQuestions = selectPracticeQuestions(content, lesson.id, lesson.conceptGroupId, lesson.relatedQuestionIds, 5);
   const family = getLessonFamilyForLesson(content, lesson.id);
-  const trapQuestions = getLessonTrapQuestions(content, lesson.id);
+  const trapQuestions = getLessonTrapQuestions(content, lesson.id, 3);
   const visibleBlocks = lesson.blocks.filter(
     (block) => block.kind !== "summary" && !shouldReplaceWithFamilySection(block),
   );
@@ -54,11 +54,11 @@ export default async function LessonPage({
                 {block.title}
               </a>
             ))}
-          {trapQuestions.length > 0 && (
-            <a href="#trap" className="block py-2 text-sm font-bold text-[#16697a]">문항별 함정</a>
-          )}
           {pastExamExamples.length > 0 && (
             <a href="#past-exams" className="block py-2 text-sm font-bold text-[#16697a]">실제 기출 원문</a>
+          )}
+          {trapQuestions.length > 0 && (
+            <a href="#question-traps" className="block py-2 text-sm font-bold text-[#16697a]">보기별 오답 근거</a>
           )}
           {practiceQuestions.length > 0 && (
             <a href="#practice-set" className="block py-2 text-sm font-bold text-[#16697a]">실전 유사 문제</a>
@@ -98,7 +98,7 @@ export default async function LessonPage({
         )}
 
         <section id="concept" className="scroll-mt-28">
-          <p className="mt-7 text-xs font-black uppercase tracking-[.14em] text-[#16697a]">Step 1 · Concept</p>
+          <p className="mt-9 text-xs font-black uppercase tracking-[.14em] text-[#16697a]">Step 1 · Concept</p>
           <h2 className="mt-1 text-xl font-extrabold text-[#173957]">개념부터 이해하기</h2>
           <div className="mt-4 grid gap-3 rounded-2xl bg-[#eaf7f6] p-5">
             {lesson.summary.map((line, index) => (
@@ -121,15 +121,11 @@ export default async function LessonPage({
           </div>
         </section>
 
-        {trapQuestions.length > 0 && (
-          <div id="trap" className="scroll-mt-28">
-            <QuestionTrapReview
-              questions={trapQuestions}
-              pid={Boolean(family && isPidFamily(family.groupId, family.id))}
-            />
-          </div>
-        )}
         <PastExamExamples examples={pastExamExamples} />
+        <QuestionTrapReview
+          questions={trapQuestions}
+          pid={Boolean(family && isPidFamily(family.groupId, family.id))}
+        />
         <LessonPracticeSet questions={practiceQuestions} />
 
         {query.returnTo && (
@@ -148,9 +144,10 @@ export default async function LessonPage({
           <h2 className="font-extrabold">이 레슨 학습 순서</h2>
         </div>
         <ol className="mt-4 grid gap-3 text-sm">
-          <LearningStep number="1" title="개념 이해" text="정의·원리·공식·오답 함정을 먼저 정리합니다." />
-          <LearningStep number="2" title="실제 기출 원문" text={`${pastExamExamples.length}개 원문으로 CBT 표현을 확인합니다.`} />
-          <LearningStep number="3" title="실전 유사 문제" text={`${practiceQuestions.length}개 문제를 직접 풀고 채점합니다.`} />
+          <LearningStep number="1" title="개념 이해" text="정의·원리·공식과 핵심 판단 기준을 먼저 정리합니다." />
+          <LearningStep number="2" title="실제 기출 원문" text={`${pastExamExamples.length}개 CBT 원문에서 개념의 출제 방식을 확인합니다.`} />
+          <LearningStep number="3" title="보기별 오답 근거" text={`${trapQuestions.length}개 대표문항에서 보기의 뜻과 틀린 조건을 확인합니다.`} />
+          <LearningStep number="4" title="실전 유사 문제" text={`${practiceQuestions.length}개 문제를 직접 풀고 채점합니다.`} />
         </ol>
       </aside>
     </div>

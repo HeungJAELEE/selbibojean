@@ -134,7 +134,7 @@ export function getLessonFamilies(content: GeneratedContent, groupId: string): L
       relatedTerms: override?.relatedTerms ?? orderedLessons.map((lesson) => lesson.title),
       scope: override?.scope ?? `${subcategory.label}은(는) ${guide.scope}`,
       mechanism: override?.mechanism ?? guide.mechanism,
-      comparison: override?.comparison ?? orderedLessons.map(toGenericComparison),
+      comparison: override?.comparison ?? orderedLessons.map((lesson) => toGenericComparison(content, lesson)),
       fieldCases: override?.fieldCases ?? [],
       decisionSteps: guide.decisionSteps,
       trapQuestions: selectTrapQuestions(content, orderedLessons, override?.trapQuestionIds),
@@ -184,24 +184,84 @@ function selectTrapQuestions(content: GeneratedContent, lessons: Lesson[], prefe
     if (question) selected.push(question);
   }
   for (const lesson of lessons) {
-    if (selected.length >= 3) break;
+    if (selected.length >= 5) break;
     const question = candidates.find(
       (candidate) => candidate.lessonId === lesson.id && !selected.some((item) => item.id === candidate.id),
     );
     if (question) selected.push(question);
   }
 
-  return selected.slice(0, 3);
+  return selected.slice(0, 5);
 }
 
-function toGenericComparison(lesson: Lesson): FamilyComparison {
+function toGenericComparison(content: GeneratedContent, lesson: Lesson): FamilyComparison {
+  const question = content.questions.find(
+    (candidate) => candidate.lessonId === lesson.id && isPublishableQuestion(candidate),
+  );
+  const wrongChoice = question?.choices.find((choice) => choice.id !== question.correctChoiceId);
+  const trapChoice = extractFirstTrapChoice(lesson);
+
   return {
     term: lesson.title,
-    input: "문항의 대상·조건",
-    role: lesson.summary[0] ?? `${lesson.title}의 정의와 기능을 확인한다.`,
-    effect: lesson.summary[1] ?? "상위 개념 안에서 고유한 기능과 적용 조건을 구분한다.",
-    caution: "명칭만으로 판단하지 말고 대상·조건·기능이 모두 맞는지 확인한다.",
+    input: question
+      ? shorten(`“${question.stem}”에서 요구하는 조건`, 92)
+      : `${lesson.title}의 정의·적용 대상`,
+    role: shorten(lesson.summary[0] ?? `${lesson.title}의 정의와 기능을 확인한다.`, 125),
+    effect: question
+      ? buildExamJudgment(question)
+      : "연결된 공개 기출이 없어 세부 레슨에서 정의·적용 조건을 직접 확인합니다.",
+    caution: question && wrongChoice
+      ? buildExamCaution(question, wrongChoice.text)
+      : trapChoice
+        ? `실제 문항에서는 “${trapChoice}”을(를) 헷갈리는 보기로 제시합니다. 정의뿐 아니라 적용 조건까지 대조합니다.`
+        : shorten(
+          lesson.summary[2]
+            ?? `${lesson.title}의 대상과 적용 조건을 비슷한 용어와 바꾸어 제시하는 보기에 주의합니다.`,
+          135,
+        ),
   };
+}
+
+function buildExamCaution(question: Question, wrongChoice: string) {
+  if (isNegativeStem(question.stem)) {
+    return shorten(
+      `부정형 함정 보기: “${wrongChoice}”. 이 보기는 실제로 성립하므로 제외하면 안 됩니다. 정답(제외 대상)은 “${question.answerText}”입니다.`,
+      170,
+    );
+  }
+
+  return shorten(
+    `실제 함정 보기: “${wrongChoice}”. 이 보기를 정답과 바꿔 제시합니다. 판단 기준: ${question.explanation}`,
+    170,
+  );
+}
+
+function buildExamJudgment(question: Question) {
+  const answer = shorten(question.answerText, 90);
+  if (isNegativeStem(question.stem)) {
+    return `정답(제외할 보기): “${answer}”`;
+  }
+  if (/계산|구하|얼마|값은|회전수|유량|압력|동력/u.test(question.stem)) {
+    return `계산·판정 결과: “${answer}”`;
+  }
+  return `정답 보기: “${answer}”`;
+}
+
+function isNegativeStem(stem: string) {
+  return /아닌|아니|옳지\s*않|않는|않은|되지\s*않|보기\s*어려운|거리가\s*먼|부적절|잘못된|가장\s*적은|제외|없는/u.test(stem);
+}
+
+function extractFirstTrapChoice(lesson: Lesson) {
+  const trapBody = lesson.blocks.find((block) => block.id === "trap")?.body;
+  return trapBody?.match(/>\s*\*\*[“"]([^”"]+)[”"]\*\*/u)?.[1];
+}
+
+function shorten(value: string, limit: number) {
+  const normalized = value
+    .replace(/[*_#>`]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return normalized.length > limit ? `${normalized.slice(0, limit - 1).trim()}…` : normalized;
 }
 
 function familyKey(groupId: string, familyId: string) {
