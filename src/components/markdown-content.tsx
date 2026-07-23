@@ -83,11 +83,11 @@ function MathExpression({ source, display = false }: { source: string; display?:
   const normalized = normalizeMathExpression(source);
   const mathMl = createElement(
     "math" as "span",
-    null,
+    { "aria-label": normalized },
     createElement("mtext" as "span", null, normalized),
   );
   const expression = (
-    <span className="katex" aria-label={normalized}>
+    <span className="katex">
       <span className="katex-mathml">{mathMl}</span>
       <span className="katex-html font-serif" aria-hidden="true">
         {normalized}

@@ -4,8 +4,9 @@ import katex from "katex";
 import { describe, expect, it } from "vitest";
 import type { GeneratedContent } from "@/lib/domain/types";
 import { isPublishableQuestion } from "@/lib/domain/practice";
+import { getLessonFamilies, getLessonFamily } from "@/lib/content/lesson-families";
 import { getLessonSubcategories } from "@/lib/content/lesson-subcategories";
-import { getPastExamExamples } from "@/lib/content/past-exam-examples";
+import { getPastExamExamples, getPastExamExamplesForLessons } from "@/lib/content/past-exam-examples";
 import { createPracticePresentations, getSafeOriginalsByQuestion } from "@/lib/content/practice-presentations";
 
 const data = JSON.parse(await readFile(path.join(process.cwd(), "src/data/generated/content.json"), "utf8")) as GeneratedContent;
@@ -138,6 +139,55 @@ describe("27th workbook reconciliation", () => {
     }
   });
 
+  it("promotes semantic subcategories into complete, collision-free lesson families", () => {
+    const allFamilyLessonIds: string[] = [];
+    let familyCount = 0;
+
+    for (const group of data.conceptGroups) {
+      const families = getLessonFamilies(data, group.id);
+      familyCount += families.length;
+      allFamilyLessonIds.push(...families.flatMap((family) => family.lessons.map((lesson) => lesson.id)));
+
+      expect(families.every((family) =>
+        family.relatedTerms.length > 0
+        && family.scope.length > 40
+        && family.mechanism.length > 40
+        && family.comparison.length > 0
+        && family.trapQuestions.length <= 3,
+      ), group.title).toBe(true);
+    }
+
+    const publicLessonIds = data.lessons
+      .filter((lesson) => lesson.contentStatus === "published")
+      .map((lesson) => lesson.id);
+    expect(new Set(allFamilyLessonIds)).toEqual(new Set(publicLessonIds));
+    expect(allFamilyLessonIds).toHaveLength(publicLessonIds.length);
+    expect(familyCount).toBeGreaterThan(100);
+    expect(familyCount).toBeLessThan(500);
+  });
+
+  it("teaches P, I, and D as one curated comparison family", () => {
+    const family = getLessonFamily(data, "s1-g11", "action");
+    expect(family).toBeTruthy();
+    expect(family?.label).toBe("P·I·D 제어동작");
+    expect(family?.relatedTerms).toEqual(expect.arrayContaining([
+      "P·비례동작",
+      "I·적분동작",
+      "D·미분동작",
+      "PI·PID 제어",
+    ]));
+    expect(family?.comparison.map((item) => item.term)).toEqual(["P 제어", "I 제어", "D 제어", "PI·PID"]);
+    expect(family?.fieldCases.map((item) => item.focus)).toEqual(["P 제어", "I 제어", "D 제어"]);
+    expect(family?.trapQuestions.map((question) => question.id)).toEqual(["U-030", "U-683", "U-556"]);
+    expect(family?.lessons.map((lesson) => lesson.title)).toEqual(expect.arrayContaining([
+      "제어동작",
+      "적분제어",
+      "미분제어",
+      "제어편차",
+      "비례게인·비례대",
+    ]));
+  });
+
   it("uses subject-matter categories for the long lubricant lesson group", () => {
     const lessons = data.lessons.filter(
       (lesson) => lesson.contentStatus === "published" && lesson.conceptGroupId === "s4-g14",
@@ -199,6 +249,17 @@ describe("27th workbook reconciliation", () => {
     expect(orificeExamples).toHaveLength(2);
     expect(orificeExamples.map((example) => example.year)).toEqual([2018, 2011]);
     expect(orificeExamples.map((example) => example.questionNumber)).toEqual([88, 82]);
+  });
+
+  it("aggregates answer-safe actual originals across a lesson family", () => {
+    const family = getLessonFamily(data, "s1-g11", "action");
+    const examples = getPastExamExamplesForLessons(data, family?.lessons.map((lesson) => lesson.id) ?? [], 6);
+
+    expect(examples.length).toBeGreaterThan(0);
+    expect(new Set(examples.map((example) => example.externalId)).size).toBe(examples.length);
+    expect(JSON.stringify(examples)).not.toContain("correctChoiceId");
+    expect(JSON.stringify(examples)).not.toContain("answerText");
+    expect(JSON.stringify(examples)).not.toContain("explanation");
   });
 
   it("mixes only answer-aligned actual originals into random practice", () => {

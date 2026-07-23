@@ -25,9 +25,18 @@ type RankedExample = PastExamExample & {
 };
 
 export function getPastExamExamples(content: GeneratedContent, lessonId: string, limit = Number.POSITIVE_INFINITY): PastExamExample[] {
+  return getPastExamExamplesForLessons(content, [lessonId], limit);
+}
+
+export function getPastExamExamplesForLessons(
+  content: GeneratedContent,
+  lessonIds: string[],
+  limit = Number.POSITIVE_INFINITY,
+): PastExamExample[] {
+  const lessonIdSet = new Set(lessonIds);
   const publicQuestions = new Map(
     content.questions
-      .filter((question) => question.lessonId === lessonId && isPublishableQuestion(question))
+      .filter((question) => lessonIdSet.has(question.lessonId) && isPublishableQuestion(question))
       .map((question) => [question.id, question]),
   );
 

@@ -128,19 +128,55 @@ test("admin review queue exposes every intentionally blocked item with evidence 
 
 test("theory index groups lessons into semantic category disclosures", async ({ page }) => {
   await page.goto("/written/theory");
+  await page.waitForLoadState("networkidle");
 
   const lubricantCategories = page.getByTestId("lesson-categories-s4-g14");
   await expect(lubricantCategories).toBeVisible();
-  await expect(page.getByTestId("lesson-category-s4-g14-degradation").locator("summary")).toContainText("열화·산화·유화·오염");
-  await expect(page.getByTestId("lesson-category-s4-g14-grease").locator("summary")).toContainText("그리스 종류·특성·급유");
-  await expect(page.getByTestId("lesson-category-s4-g14-additive").locator("summary")).toContainText("윤활유 첨가제");
-  await expect(page.getByTestId("lesson-category-s4-g14-test").locator("summary")).toContainText("시험·판정·시료채취");
+  await expect(page.getByTestId("lesson-category-s4-g14-degradation").locator(":scope > summary")).toContainText("열화·산화·유화·오염");
+  await expect(page.getByTestId("lesson-category-s4-g14-grease").locator(":scope > summary")).toContainText("그리스 종류·특성·급유");
+  await expect(page.getByTestId("lesson-category-s4-g14-additive").locator(":scope > summary")).toContainText("윤활유 첨가제");
+  await expect(page.getByTestId("lesson-category-s4-g14-test").locator(":scope > summary")).toContainText("시험·판정·시료채취");
 
   const degradation = page.getByTestId("lesson-category-s4-g14-degradation");
   await expect(degradation).not.toHaveAttribute("open", "");
-  await degradation.locator("summary").click();
+  await degradation.locator(":scope > summary").click();
+  const familyLink = page.getByTestId("lesson-family-link-s4-g14-degradation");
+  await expect(familyLink).toBeVisible();
+  await expect(familyLink).toHaveAttribute("href", "/written/theory/family/s4-g14/degradation");
+  await degradation.getByText(/세부 개념 \d+개 바로가기/).click();
   await expect(degradation.locator("ul")).toBeVisible();
   await expect(degradation.getByRole("link", { name: "윤활유 열화판정", exact: true })).toBeVisible();
+});
+
+test("PID is taught as one family with issue-based application and question-specific traps", async ({ page }) => {
+  await page.goto("/written/theory/family/s1-g11/action");
+
+  await expect(page.getByRole("heading", { name: "P·I·D 제어동작", level: 1 })).toBeVisible();
+  await expect(page.getByText("P·비례동작", { exact: true })).toBeVisible();
+  await expect(page.getByText("I·적분동작", { exact: true })).toBeVisible();
+  await expect(page.getByText("D·미분동작", { exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "포괄 개념과 작동 원리" })).toBeVisible();
+  await expect(page.getByRole("rowheader", { name: "P 제어", exact: true })).toBeVisible();
+  await expect(page.getByRole("rowheader", { name: "I 제어", exact: true })).toBeVisible();
+  await expect(page.getByRole("rowheader", { name: "D 제어", exact: true })).toBeVisible();
+  await expect(page.getByText("설정값을 바꿨는데 현재값이 너무 느리게 따라온다.")).toBeVisible();
+  await expect(page.getByText("응답은 안정됐지만 목표값과 실제값 사이에 작은 편차가 계속 남는다.")).toBeVisible();
+  await expect(page.getByTestId("trap-question-U-030")).toContainText("왜 틀렸는가");
+  await expect(page.getByTestId("trap-question-U-683")).toContainText("정상상태 편차");
+  await expect(page.getByTestId("trap-question-U-556")).toContainText("변화율");
+});
+
+test("an individual PID lesson starts with its related family and replaces the generic trap copy", async ({ page }) => {
+  await page.goto("/written/theory/lesson-bx3sdi");
+
+  const family = page.getByTestId("lesson-family-overview");
+  await expect(family).toContainText("먼저 함께 구분할 용어");
+  await expect(family.getByRole("link", { name: /P·I·D 제어동작 전체를 묶어서 비교/ })).toHaveAttribute(
+    "href",
+    "/written/theory/family/s1-g11/action",
+  );
+  await expect(page.getByTestId("trap-question-U-556")).toContainText("P 동작은 현재 편차의 크기에 비례");
+  await expect(page.getByText("같은 세부항목군에서 함께 학습하는 용어이므로", { exact: false })).toHaveCount(0);
 });
 
 test("lesson formulas render as readable math instead of raw LaTeX", async ({ page }) => {

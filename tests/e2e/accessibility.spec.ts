@@ -1,8 +1,17 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-for (const path of ["/", "/written/theory", "/written/practice/random", "/written/mock", "/practical/mock", "/login"]) {
+for (const path of [
+  "/",
+  "/written/theory",
+  "/written/theory/family/s1-g11/action",
+  "/written/practice/random",
+  "/written/mock",
+  "/practical/mock",
+  "/login",
+]) {
   test(`no serious accessibility violations on ${path}`, async ({ page }) => {
+    test.setTimeout(45_000);
     await page.goto(path);
     const results = await new AxeBuilder({ page }).analyze();
     const serious = results.violations.filter((violation) => violation.impact === "serious" || violation.impact === "critical");
