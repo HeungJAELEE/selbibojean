@@ -57,6 +57,20 @@ test("lesson formulas render as readable math instead of raw LaTeX", async ({ pa
   await expect(page.locator(".katex-mathml math").first()).toHaveCount(1);
 });
 
+test("lesson flows from concept to actual past exams and similar practice", async ({ page }) => {
+  await page.goto("/written/theory/lesson-tcxwqa");
+
+  await expect(page.getByRole("heading", { name: "개념부터 이해하기" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "실제 기출 원문으로 확인하기" })).toBeVisible();
+  await expect(page.getByTestId("past-exam-2018-2-Q88")).toBeVisible();
+  await expect(page.getByText("2018년 2회 · 88번", { exact: true })).toBeVisible();
+
+  const practiceSet = page.getByTestId("lesson-practice-set");
+  await expect(practiceSet.getByRole("heading", { name: "실전 유사 문제 풀기" })).toBeVisible();
+  await expect(practiceSet.getByRole("link").first()).toHaveAttribute("href", "/written/practice/U-748");
+  await expect(practiceSet).toContainText("답을 제출하기 전에는 정답과 해설을 전송하지 않습니다.");
+});
+
 test("wrong answer links to a theory anchor", async ({ request }) => {
   const session = await (await request.post("/api/practice/session", { data: { mode: "all", count: 10, seed: 7 } })).json();
   const question = session.questions[0];

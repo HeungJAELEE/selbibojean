@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest";
 import type { GeneratedContent } from "@/lib/domain/types";
 import { isPublishableQuestion } from "@/lib/domain/practice";
 import { getLessonSubcategories } from "@/lib/content/lesson-subcategories";
+import { getPastExamExamples } from "@/lib/content/past-exam-examples";
 
 const data = JSON.parse(await readFile(path.join(process.cwd(), "src/data/generated/content.json"), "utf8")) as GeneratedContent;
 
@@ -146,5 +147,28 @@ describe("27th workbook reconciliation", () => {
 
     expect(inlineCount).toBe(238);
     expect(displayCount).toBe(16);
+  });
+
+  it("surfaces answer-safe actual past exam originals for nearly every public lesson", () => {
+    const publishedLessons = data.lessons.filter((lesson) => lesson.contentStatus === "published");
+    const coveredLessons = publishedLessons.filter((lesson) => getPastExamExamples(data, lesson.id, 3).length > 0);
+
+    expect(publishedLessons).toHaveLength(1190);
+    expect(coveredLessons).toHaveLength(1187);
+
+    for (const lesson of coveredLessons) {
+      const examples = getPastExamExamples(data, lesson.id, 3);
+      expect(examples.length).toBeLessThanOrEqual(3);
+      expect(new Set(examples.map((example) => example.stem.normalize("NFKC"))).size).toBe(examples.length);
+      expect(examples.every((example) => example.choices.length >= 4)).toBe(true);
+      expect(JSON.stringify(examples)).not.toContain("correctChoiceId");
+      expect(JSON.stringify(examples)).not.toContain("answerText");
+      expect(JSON.stringify(examples)).not.toContain("explanation");
+    }
+
+    const orificeExamples = getPastExamExamples(data, "lesson-tcxwqa", 3);
+    expect(orificeExamples).toHaveLength(2);
+    expect(orificeExamples.map((example) => example.year)).toEqual([2018, 2011]);
+    expect(orificeExamples.map((example) => example.questionNumber)).toEqual([88, 82]);
   });
 });
