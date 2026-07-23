@@ -23,7 +23,6 @@ interface ExecutionContext {
 
 const worker = {
   async fetch(request: Request, env: Env, context: ExecutionContext) {
-    globalThis.__SEOLBI_ASSETS__ = env.ASSETS;
     const url = new URL(request.url);
     if (url.pathname === "/data" || url.pathname.startsWith("/data/")) {
       return new Response("Not Found", {

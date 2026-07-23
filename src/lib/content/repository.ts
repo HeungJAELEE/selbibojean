@@ -1,54 +1,16 @@
 import "server-only";
 
-import type { GeneratedContent, Lesson, Question } from "@/lib/domain/types";
+import rawGeneratedContent from "@/data/generated/content.json";
 import { buildRuntimeContent } from "@/lib/content/runtime-content";
-
-interface AssetFetcher {
-  fetch(request: Request): Promise<Response>;
-}
-
-declare global {
-  var __SEOLBI_ASSETS__: AssetFetcher | undefined;
-}
+import type { GeneratedContent, Lesson, Question } from "@/lib/domain/types";
 
 let contentPromise: Promise<GeneratedContent> | undefined;
 
-interface ContentManifest {
-  schemaVersion: 1;
-  base: Record<string, unknown>;
-  collections: Record<string, string[]>;
-}
-
-async function fetchAssetJson(pathname: string) {
-  const response = await globalThis.__SEOLBI_ASSETS__!.fetch(
-    new Request(`https://seolbi-assets.local/data/${pathname}`),
-  );
-  if (!response.ok) {
-    throw new Error(`콘텐츠 자산을 불러오지 못했습니다. (${response.status})`);
-  }
-  return response.json() as Promise<unknown>;
-}
-
 async function loadContent() {
-  try {
-    if (globalThis.__SEOLBI_ASSETS__) {
-      const manifest = (await fetchAssetJson("content-manifest.json")) as ContentManifest;
-      const content: Record<string, unknown> = { ...manifest.base };
-
-      for (const [key, files] of Object.entries(manifest.collections)) {
-        const chunks = (await Promise.all(files.map((file) => fetchAssetJson(file)))) as unknown[][];
-        content[key] = chunks.flat();
-      }
-      return content as unknown as GeneratedContent;
-    }
-
-    const [{ readFile }, path] = await Promise.all([import("node:fs/promises"), import("node:path")]);
-    const filePath = path.join(process.cwd(), "src", "data", "generated", "content.json");
-    return JSON.parse(await readFile(filePath, "utf8")) as GeneratedContent;
-  } catch (error) {
-    console.error("Failed to load the generated learning content.", error);
-    throw error;
-  }
+  // 정답·해설이 포함된 기준 데이터는 서버 전용 모듈 그래프에만 번들한다.
+  // Sites 정적 자산에 복사하지 않으므로 /data 경로를 통한 원본 공개를
+  // 구조적으로 차단한다.
+  return rawGeneratedContent as GeneratedContent;
 }
 
 export async function getContent() {
