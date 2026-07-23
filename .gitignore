@@ -12,5 +12,9 @@ test-results/
 supabase/.temp/
 data/private/
 public/data/
+.runtime-assets/
+*.xlsx
+*.xls
+*.hwp
 _workspace/
 .superloopy/

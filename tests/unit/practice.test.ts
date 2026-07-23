@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildWeakFocus, gradeQuestion, selectAllocatedPracticeQuestions, selectPracticeQuestions, toPublicQuestion } from "@/lib/domain/practice";
+import { buildWeakFocus, gradeQuestion, isPublishableQuestion, selectAllocatedPracticeQuestions, selectPracticeQuestions, toPublicQuestion } from "@/lib/domain/practice";
 import type { Lesson, Question } from "@/lib/domain/types";
 
 function makeQuestion(index: number): Question {
@@ -96,7 +96,22 @@ describe("random practice", () => {
   });
 
   it("does not expose answers or feedback before submission", () => {
-    const payload = JSON.stringify(toPublicQuestion(makeQuestion(1)));
+    const question = makeQuestion(1);
+    question.audit = {
+      questionId: question.id,
+      scope: "high_risk_public",
+      sourceContentStatus: "published",
+      auditDisposition: "cbt_corrected",
+      evidenceLevel: "primary",
+      cbtAnswer: "공개 CBT 답",
+      verifiedAnswer: "검증된 답",
+      evidenceUrls: ["https://example.com/official"],
+      reviewNote: "공식 근거로 답을 보정했습니다.",
+      nextAction: "정기 검토",
+      assetStatus: "not_required",
+      reviewedAt: "2026-07-23T00:00:00.000Z",
+    };
+    const payload = JSON.stringify(toPublicQuestion(question));
     expect(payload).not.toContain("correctChoiceId");
     expect(payload).not.toContain("answerText");
     expect(payload).not.toContain("전체 해설");
@@ -104,6 +119,40 @@ describe("random practice", () => {
     expect(payload).not.toContain("readiness");
     expect(payload).not.toContain("source_backed_reconstruction");
     expect(payload).not.toContain("example.com/source");
+    expect(payload).not.toContain("auditDisposition");
+    expect(payload).not.toContain("cbtAnswer");
+    expect(payload).not.toContain("verifiedAnswer");
+    expect(payload).not.toContain("evidenceUrls");
+    expect(payload).not.toContain("공식 근거로 답을 보정했습니다.");
+  });
+
+  it("blocks every held audit disposition from public practice", () => {
+    const dispositions = [
+      "held_answer_conflict",
+      "held_asset_missing",
+      "held_source_missing",
+    ] as const;
+
+    for (const auditDisposition of dispositions) {
+      const question = makeQuestion(1);
+      question.audit = {
+        questionId: question.id,
+        scope: "review_queue",
+        sourceContentStatus: "in_review",
+        auditDisposition,
+        evidenceLevel: null,
+        cbtAnswer: "CBT 공개답",
+        verifiedAnswer: null,
+        evidenceUrls: [],
+        reviewNote: "공개할 수 없는 보류 사유가 있습니다.",
+        nextAction: "원문과 상위 근거를 추가 확인합니다.",
+        assetStatus:
+          auditDisposition === "held_asset_missing" ? "missing" : "not_required",
+        reviewedAt: "2026-07-23T00:00:00.000Z",
+      };
+
+      expect(isPublishableQuestion(question)).toBe(false);
+    }
   });
 
   it("returns selected-choice reasoning and the exact lesson anchor after submission", () => {
@@ -133,5 +182,33 @@ describe("random practice", () => {
     expect(feedback.selectedChoice.incorrectPoint).toBe("조건이 다름");
     expect(feedback.conceptSupport?.title).toBe("시험 개념");
     expect(feedback.conceptSupport?.blocks[0].id).toBe("principle");
+  });
+
+  it("returns CBT correction evidence only after grading", () => {
+    const question = makeQuestion(1);
+    question.audit = {
+      questionId: question.id,
+      scope: "high_risk_public",
+      sourceContentStatus: "published",
+      auditDisposition: "cbt_corrected",
+      evidenceLevel: "primary",
+      cbtAnswer: "② 공개 CBT 답",
+      verifiedAnswer: "① 검증 답",
+      evidenceUrls: ["https://example.com/official-standard"],
+      reviewNote: "공식 표준에 따라 CBT 공개답을 보정했습니다.",
+      nextAction: "정기 검토",
+      assetStatus: "not_required",
+      reviewedAt: "2026-07-23T00:00:00.000Z",
+    };
+
+    const feedback = gradeQuestion(question, "U-1-c1", "known");
+
+    expect(feedback.answerAudit).toEqual({
+      auditDisposition: "cbt_corrected",
+      cbtAnswer: "② 공개 CBT 답",
+      verifiedAnswer: "① 검증 답",
+      evidenceUrls: ["https://example.com/official-standard"],
+      reviewNote: "공식 표준에 따라 CBT 공개답을 보정했습니다.",
+    });
   });
 });

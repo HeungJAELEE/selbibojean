@@ -1,6 +1,7 @@
 import "server-only";
 
 import type { GeneratedContent, Lesson, Question } from "@/lib/domain/types";
+import { buildRuntimeContent } from "@/lib/content/runtime-content";
 
 interface AssetFetcher {
   fetch(request: Request): Promise<Response>;
@@ -51,7 +52,7 @@ async function loadContent() {
 }
 
 export async function getContent() {
-  contentPromise ??= loadContent();
+  contentPromise ??= loadContent().then(buildRuntimeContent);
   return contentPromise;
 }
 

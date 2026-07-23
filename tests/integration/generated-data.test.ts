@@ -3,7 +3,7 @@ import path from "node:path";
 import katex from "katex";
 import { describe, expect, it } from "vitest";
 import type { GeneratedContent } from "@/lib/domain/types";
-import { isPublishableQuestion } from "@/lib/domain/practice";
+import { isPublishableLesson, isPublishableQuestion } from "@/lib/domain/practice";
 import { getLessonFamilies, getLessonFamily } from "@/lib/content/lesson-families";
 import { getLessonSubcategories } from "@/lib/content/lesson-subcategories";
 import { getPastExamExamples, getPastExamExamplesForLessons } from "@/lib/content/past-exam-examples";
@@ -158,12 +158,11 @@ describe("27th workbook reconciliation", () => {
     }
 
     const publicLessonIds = data.lessons
-      .filter((lesson) => lesson.contentStatus === "published")
+      .filter(isPublishableLesson)
       .map((lesson) => lesson.id);
     expect(new Set(allFamilyLessonIds)).toEqual(new Set(publicLessonIds));
     expect(allFamilyLessonIds).toHaveLength(publicLessonIds.length);
-    expect(familyCount).toBeGreaterThan(100);
-    expect(familyCount).toBeLessThan(500);
+    expect(familyCount).toBe(195);
   });
 
   it("teaches P, I, and D as one curated comparison family", () => {
@@ -177,11 +176,12 @@ describe("27th workbook reconciliation", () => {
       "PI·PID 제어",
     ]));
     expect(family?.comparison.map((item) => item.term)).toEqual(["P 제어", "I 제어", "D 제어", "PI·PID"]);
+    expect(family?.comparison.every((item) => !/U-\d{3}/.test(item.effect))).toBe(true);
     expect(family?.fieldCases.map((item) => item.focus)).toEqual(["P 제어", "I 제어", "D 제어"]);
-    expect(family?.trapQuestions.slice(0, 3).map((question) => question.id)).toEqual(["U-030", "U-683", "U-556"]);
-    expect(family?.trapQuestions.length).toBe(5);
+    expect(family?.trapQuestions.slice(0, 3).map((question) => question.id)).toEqual(["U-683", "U-556", "U-329"]);
+    expect(family?.trapQuestions.every(isPublishableQuestion)).toBe(true);
+    expect(family?.trapQuestions.length).toBe(4);
     expect(family?.lessons.map((lesson) => lesson.title)).toEqual(expect.arrayContaining([
-      "제어동작",
       "적분제어",
       "미분제어",
       "제어편차",
@@ -192,6 +192,8 @@ describe("27th workbook reconciliation", () => {
   it("uses actual exam criteria instead of repeating generic comparison cautions", () => {
     const lubricantFamily = getLessonFamily(data, "s4-g14", "application");
     const adhesiveFamily = getLessonFamily(data, "s3-g08", "surface");
+    const accumulatorFamily = getLessonFamily(data, "s1-g02", "accumulator");
+    const weldingFamily = getLessonFamily(data, "s2-g01", "classification");
 
     expect(lubricantFamily).toBeTruthy();
     expect(adhesiveFamily).toBeTruthy();
@@ -202,6 +204,8 @@ describe("27th workbook reconciliation", () => {
       (item) => item.caution !== "명칭만으로 판단하지 말고 대상·조건·기능이 모두 맞는지 확인한다.",
     )).toBe(true);
     expect(adhesiveFamily?.trapQuestions.map((question) => question.id)).toContain("U-727");
+    expect(accumulatorFamily?.comparison.every((item) => !/U-\d{3}/.test(item.effect))).toBe(true);
+    expect(weldingFamily?.comparison.every((item) => !/U-\d{3}/.test(item.effect))).toBe(true);
   });
 
   it("uses subject-matter categories for the long lubricant lesson group", () => {

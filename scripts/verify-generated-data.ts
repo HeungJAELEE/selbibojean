@@ -1,11 +1,35 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import type { GeneratedContent } from "../src/lib/domain/types";
-import { isPublishableQuestion } from "../src/lib/domain/practice";
+import {
+  isPublishableLesson,
+  isPublishableQuestion,
+} from "../src/lib/domain/practice";
+import { weldingSafetyReviewDatasetSchema } from "../src/lib/content/welding-safety-supplement";
+import { getApprovedWeldingSafetyContent } from "../src/lib/content/welding-safety-approved";
+import { buildRuntimeContent } from "../src/lib/content/runtime-content";
+import { supplementalWrittenLessons } from "../src/lib/content/supplemental-written-lessons";
+import { parseWrittenQuestionAuditManifest } from "../src/lib/content/written-question-audit";
+import rawWrittenQuestionAudit from "../src/data/generated/written-question-audit.json";
 
 async function main() {
   const filePath = path.join(process.cwd(), "src", "data", "generated", "content.json");
   const data = JSON.parse(await readFile(filePath, "utf8")) as GeneratedContent;
+  const runtimeData = buildRuntimeContent(data);
+  const weldingSafetyPath = path.join(
+    process.cwd(),
+    "src",
+    "data",
+    "generated",
+    "welding-safety-review.json",
+  );
+  const weldingSafety = weldingSafetyReviewDatasetSchema.parse(
+    JSON.parse(await readFile(weldingSafetyPath, "utf8")),
+  );
+  const approvedWeldingSafety = getApprovedWeldingSafetyContent();
+  const writtenQuestionAudit = parseWrittenQuestionAuditManifest(
+    rawWrittenQuestionAudit,
+  );
   const errors: string[] = [];
   if (data.formatVersion !== 2) errors.push(`콘텐츠 포맷 버전이 2가 아닙니다: ${data.formatVersion}`);
   if (!data.report.exactMatch) errors.push("엑셀 기준 수량 대사가 일치하지 않습니다.");
@@ -94,13 +118,190 @@ async function main() {
     errors.push("같은 과목 안에 띄어쓰기·구두점만 다른 중복 레슨이 있습니다.");
   }
 
+  if (weldingSafety.status !== "imported") {
+    errors.push("33차 용접 안전 원본이 이관되지 않았습니다.");
+  }
+  if (
+    weldingSafety.counts.importedQuestions !== weldingSafety.expected.questions ||
+    weldingSafety.counts.importedLessons !== weldingSafety.expected.lessons ||
+    weldingSafety.counts.importedReviewQueueEntries !== weldingSafety.expected.reviewQueueEntries ||
+    weldingSafety.counts.importedRounds !== weldingSafety.expected.rounds ||
+    weldingSafety.counts.completedRounds !== weldingSafety.expected.completedRounds
+  ) {
+    errors.push("33차 용접 안전 문제·레슨·검수대기·회차 수량 대사가 일치하지 않습니다.");
+  }
+  if (
+    weldingSafety.counts.excludedRows ||
+    weldingSafety.counts.duplicateRows ||
+    weldingSafety.counts.invalidRows
+  ) {
+    errors.push(
+      `33차 용접 안전 이관 오류: 제외 ${weldingSafety.counts.excludedRows}, ` +
+      `중복 ${weldingSafety.counts.duplicateRows}, 불완전 ${weldingSafety.counts.invalidRows}`,
+    );
+  }
+  const unsafeWeldingSafety = weldingSafety.questions.filter(
+    (question) =>
+      question.publicationStatus !== "blocked" ||
+      !question.blockers.includes("authoritative_source_required") ||
+      !question.blockers.includes("choice_feedback_required") ||
+      !question.blockers.includes("theory_link_required"),
+  );
+  if (unsafeWeldingSafety.length) {
+    errors.push(`공개 차단 게이트가 누락된 용접 안전 문제: ${unsafeWeldingSafety.length}개`);
+  }
+  if (weldingSafety.questions.filter((question) => question.reviewPriority !== null).length !== 150) {
+    errors.push("33차 용접 안전 우선 검수대기 150개 연결이 일치하지 않습니다.");
+  }
+  if (
+    approvedWeldingSafety.audit.reviewedQuestions !== 150 ||
+    approvedWeldingSafety.audit.publishedQuestions !== 0 ||
+    approvedWeldingSafety.audit.heldQuestions !== 150
+  ) {
+    errors.push(
+      `33차 용접 안전 문제 검수 결과가 일치하지 않습니다: ` +
+      `${approvedWeldingSafety.audit.publishedQuestions}/150 공개, ` +
+      `${approvedWeldingSafety.audit.heldQuestions} 보류`,
+    );
+  }
+  if (
+    approvedWeldingSafety.audit.publishedLessons !== 0 ||
+    approvedWeldingSafety.audit.heldLessons !== 30 ||
+    approvedWeldingSafety.audit.invalidAnswerLinks !== 0 ||
+    approvedWeldingSafety.audit.invalidTheoryLinks !== 0 ||
+    approvedWeldingSafety.audit.invalidChoiceFeedback !== 0
+  ) {
+    errors.push(
+      `33차 용접 안전 공개 게이트 실패: ` +
+      `레슨 ${approvedWeldingSafety.audit.publishedLessons}/30, ` +
+      `정답 ${approvedWeldingSafety.audit.invalidAnswerLinks}, ` +
+      `이론 ${approvedWeldingSafety.audit.invalidTheoryLinks}, ` +
+      `선택지 해설 ${approvedWeldingSafety.audit.invalidChoiceFeedback}`,
+    );
+  }
+  const mainQuestionIds = new Set(data.questions.map((question) => question.id));
+  if (weldingSafety.questions.some((question) => mainQuestionIds.has(question.id))) {
+    errors.push("용접 안전 검수 문제 ID가 공개 문제은행 ID와 충돌합니다.");
+  }
+  const runtimeLessonById = new Map(
+    runtimeData.lessons.map((lesson) => [lesson.id, lesson]),
+  );
+  const runtimeBrokenPublicGraph = runtimeData.questions
+    .filter(isPublishableQuestion)
+    .filter((question) => {
+      const lesson = runtimeLessonById.get(question.lessonId);
+      return (
+        !lesson ||
+        !isPublishableLesson(lesson) ||
+        lesson.conceptGroupId !== question.conceptGroupId
+      );
+    });
+  if (runtimeBrokenPublicGraph.length) {
+    errors.push(
+      `런타임 병합 후 공개 문제-이론 관계 오류: ${runtimeBrokenPublicGraph.length}개`,
+    );
+  }
+  const runtimeWeldingSafety = runtimeData.questions.filter((question) =>
+    question.id.startsWith("welding-safety-b33-"),
+  );
+  const publishedWeldingSafety = runtimeWeldingSafety.filter(
+    isPublishableQuestion,
+  );
+  const invalidPublishedWeldingSafety = publishedWeldingSafety.filter(
+    (question) =>
+      question.audit?.auditDisposition !== "verified" &&
+      question.audit?.auditDisposition !== "cbt_corrected",
+  );
+  if (invalidPublishedWeldingSafety.length) {
+    errors.push(
+      `감사 승인되지 않은 33차 용접 안전 문제가 공개됩니다: ${invalidPublishedWeldingSafety
+        .map((question) => question.id)
+        .join(", ")}`,
+    );
+  }
+  const expectedPublishedWeldingSafety = writtenQuestionAudit.entries.filter(
+    (entry) =>
+      entry.questionId.startsWith("welding-safety-b33-") &&
+      (entry.auditDisposition === "verified" ||
+        entry.auditDisposition === "cbt_corrected"),
+  ).length;
+  if (publishedWeldingSafety.length !== expectedPublishedWeldingSafety) {
+    errors.push(
+      `33차 용접 안전 감사 승인 수량 불일치: 공개 ${publishedWeldingSafety.length}, 승인 ${expectedPublishedWeldingSafety}`,
+    );
+  }
+
+  if (
+    writtenQuestionAudit.counts.reviewQueueAudited !== 257 ||
+    writtenQuestionAudit.counts.highRiskPublicAudited !== 24 ||
+    writtenQuestionAudit.entries.length !== 281
+  ) {
+    errors.push(
+      `필기 감사목록 수량 불일치: 검수대기 ${writtenQuestionAudit.counts.reviewQueueAudited}, ` +
+        `고위험 공개 ${writtenQuestionAudit.counts.highRiskPublicAudited}, 전체 ${writtenQuestionAudit.entries.length}`,
+    );
+  }
+  const auditedRuntimeQuestions = runtimeData.questions.filter(
+    (question) => question.audit,
+  );
+  if (auditedRuntimeQuestions.length !== writtenQuestionAudit.entries.length) {
+    errors.push(
+      `필기 감사 매니페스트 런타임 연결 불일치: ${auditedRuntimeQuestions.length}/${writtenQuestionAudit.entries.length}`,
+    );
+  }
+  const heldAuditQuestions = auditedRuntimeQuestions.filter((question) =>
+    question.audit?.auditDisposition.startsWith("held_"),
+  );
+  const leakedHeldQuestions = heldAuditQuestions.filter(isPublishableQuestion);
+  if (leakedHeldQuestions.length) {
+    errors.push(
+      `보류 필기문제가 공개 게이트를 통과했습니다: ${leakedHeldQuestions
+        .map((question) => question.id)
+        .join(", ")}`,
+    );
+  }
+  const heldWithoutAction = heldAuditQuestions.filter(
+    (question) =>
+      !question.audit?.reviewNote.trim() || !question.audit.nextAction.trim(),
+  );
+  if (heldWithoutAction.length) {
+    errors.push(
+      `보류 사유 또는 후속조치가 없는 필기 감사문제: ${heldWithoutAction.length}`,
+    );
+  }
+
+  const supplementalRuntimeLessons = runtimeData.lessons.filter(
+    (lesson) => lesson.contentRole === "supplemental",
+  );
+  if (
+    supplementalWrittenLessons.length !== 14 ||
+    supplementalRuntimeLessons.length !== 14
+  ) {
+    errors.push(
+      `보강용 레슨 수량 불일치: 정의 ${supplementalWrittenLessons.length}, 런타임 ${supplementalRuntimeLessons.length}`,
+    );
+  }
+  const invalidSupplementalLessons = supplementalRuntimeLessons.filter(
+    (lesson) =>
+      !isPublishableLesson(lesson) ||
+      lesson.relatedQuestionIds.length !== 0 ||
+      !lesson.blocks.some((block) => block.kind === "source"),
+  );
+  if (invalidSupplementalLessons.length) {
+    errors.push(
+      `보강용 레슨 공개·문제통계 분리·출처 검증 실패: ${invalidSupplementalLessons
+        .map((lesson) => lesson.id)
+        .join(", ")}`,
+    );
+  }
+
   if (errors.length) {
     errors.forEach((error) => console.error(`FAIL: ${error}`));
     process.exitCode = 1;
     return;
   }
   console.log(
-    `PASS: 원문 ${data.report.rows.originals}, 대표 ${data.report.rows.canonicalQuestions}, 매핑 ${data.report.rows.mappings}, 잔여 ${data.report.rows.backlog}, 44개 세부항목군, 공개 레슨 ${publishedLessons.length}, 선택지 해설 ${data.report.quality.choiceFeedbackPassed}, 공개 문제 ${data.report.publishedQuestionCount}, 근거 확인 대기 ${data.report.verification.blocked}`,
+    `PASS: 원문 ${data.report.rows.originals}, 대표 ${data.report.rows.canonicalQuestions}, 매핑 ${data.report.rows.mappings}, 잔여 ${data.report.rows.backlog}, 44개 세부항목군, 공개 레슨 ${publishedLessons.length}, 선택지 해설 ${data.report.quality.choiceFeedbackPassed}, 공개 문제 ${data.report.publishedQuestionCount}, 근거 확인 대기 ${data.report.verification.blocked}, 용접 안전 원본 ${weldingSafety.counts.importedQuestions}문제·${weldingSafety.counts.importedLessons}레슨·${weldingSafety.counts.completedRounds}회차, 명시승인 ${approvedWeldingSafety.audit.publishedQuestions}문제·${approvedWeldingSafety.audit.publishedLessons}레슨, 검수대기 ${approvedWeldingSafety.audit.heldQuestions}문제·${approvedWeldingSafety.audit.heldLessons}레슨, 런타임 공개 ${runtimeData.questions.filter(isPublishableQuestion).length}문제·${runtimeData.lessons.filter(isPublishableLesson).length}레슨`,
   );
 }
 

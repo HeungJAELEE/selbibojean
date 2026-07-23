@@ -37,7 +37,13 @@ export function shuffleQuestionIds(ids: string[], seed: number) {
 }
 
 export function isPublishableQuestion(question: Question) {
+  const auditAllowsPublication =
+    !question.audit ||
+    question.audit.auditDisposition === "verified" ||
+    question.audit.auditDisposition === "cbt_corrected";
+
   return (
+    auditAllowsPublication &&
     question.contentStatus === "published" &&
     question.validation.answer &&
     question.validation.explanation &&
@@ -46,6 +52,38 @@ export function isPublishableQuestion(question: Question) {
     question.validation.contentQuality &&
     question.choices.length >= 2
   );
+}
+
+export function isPublishableLesson(lesson: Lesson) {
+  return (
+    lesson.contentStatus === "published" &&
+    lesson.publication?.readiness === "ready" &&
+    lesson.coverageStatus === "covered" &&
+    lesson.quality.passed &&
+    !lesson.sourceNeeded
+  );
+}
+
+export function buildLessonReturnHref(
+  lessonHref: string,
+  returnTo: string,
+) {
+  const [pathname, anchor] = lessonHref.split("#", 2);
+  return `${pathname}?returnTo=${encodeURIComponent(returnTo)}${
+    anchor ? `#${anchor}` : ""
+  }`;
+}
+
+export function safePracticeReturnTo(value?: string) {
+  if (
+    !value ||
+    !value.startsWith("/written/practice/") ||
+    value.startsWith("//") ||
+    /[\r\n\\]/.test(value)
+  ) {
+    return null;
+  }
+  return value;
 }
 
 export function selectPracticeQuestions(
@@ -155,7 +193,7 @@ export function selectAllocatedPracticeQuestions(
 }
 
 export function toPublicQuestion(question: Question): PublicQuestion {
-  const { correctChoiceId, answerText, explanation, errorReason, validation, reviewStatus, publication, verification, choices, ...safeQuestion } = question;
+  const { correctChoiceId, answerText, explanation, errorReason, validation, reviewStatus, publication, verification, audit, choices, ...safeQuestion } = question;
   void correctChoiceId;
   void answerText;
   void explanation;
@@ -163,6 +201,7 @@ export function toPublicQuestion(question: Question): PublicQuestion {
   void validation;
   void reviewStatus;
   void publication;
+  void audit;
   return {
     ...safeQuestion,
     choices: choices.map(({ id, order, text }) => ({ id, order, text })),
@@ -226,5 +265,17 @@ export function gradeQuestion(
     otherChoices: question.choices
       .filter((choice) => choice.id !== selectedChoice.id)
       .map((choice) => ({ id: choice.id, text: choice.text, isCorrect: choice.id === correctChoice.id, ...choice.feedback })),
+    answerAudit:
+      question.audit?.auditDisposition === "cbt_corrected" &&
+      question.audit.cbtAnswer &&
+      question.audit.verifiedAnswer
+        ? {
+            auditDisposition: "cbt_corrected",
+            cbtAnswer: question.audit.cbtAnswer,
+            verifiedAnswer: question.audit.verifiedAnswer,
+            evidenceUrls: question.audit.evidenceUrls,
+            reviewNote: question.audit.reviewNote,
+          }
+        : undefined,
   };
 }

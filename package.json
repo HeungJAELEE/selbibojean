@@ -17,9 +17,14 @@
     "test:e2e": "playwright test",
     "test:rls": "supabase test db",
     "import:workbook": "tsx scripts/import-workbook.ts",
+    "import:welding-safety": "tsx scripts/import-welding-safety-workbook.ts",
     "stage:supabase": "tsx scripts/stage-supabase-import.ts",
     "audit:publication": "tsx scripts/audit-publication-scope.ts",
+    "audit:merge-decisions": "tsx scripts/merge-written-audit-decisions.ts",
+    "audit:report": "tsx scripts/generate-written-audit-report.ts",
     "verify:data": "tsx scripts/verify-generated-data.ts",
+    "verify:deploy": "tsx scripts/verify-deployment-readiness.ts",
+    "preflight:deploy": "npm run check && npm run test:e2e && npm run verify:deploy",
     "check": "npm run verify:data && npm run typecheck && npm run lint && npm run test && npm run build"
   },
   "dependencies": {

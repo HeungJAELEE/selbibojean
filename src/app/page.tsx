@@ -1,11 +1,20 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen, ClipboardCheck, FileCheck2, Gauge, Layers3, RotateCcw, Sparkles, Wrench } from "lucide-react";
 import { getContent } from "@/lib/content/repository";
+import {
+  isPublishableLesson,
+  isPublishableQuestion,
+} from "@/lib/domain/practice";
 
 export default async function HomePage() {
   const content = await getContent();
-  const publicQuestions = content.questions.filter((question) => question.contentStatus === "published").length;
-  const publicLessons = content.lessons.filter((lesson) => lesson.contentStatus === "published").length;
+  const publicQuestions = content.questions.filter(isPublishableQuestion).length;
+  const publicLessons = content.lessons.filter(isPublishableLesson).length;
+  const supplementalLessons = content.lessons.filter(
+    (lesson) =>
+      isPublishableLesson(lesson) && lesson.contentRole === "supplemental",
+  ).length;
+  const examLinkedLessons = publicLessons - supplementalLessons;
   return (
     <>
       <section className="soft-grid bg-[#173957] py-18 text-white md:py-24">
@@ -15,7 +24,7 @@ export default async function HomePage() {
         </div>
       </section>
       <section className="page-wrap py-16">
-        <div className="flex items-end justify-between gap-4"><div><p className="eyebrow">오늘의 학습</p><h2 className="display mt-3 text-3xl font-bold md:text-4xl">짧게 시작하고, 정확히 복습하세요</h2></div><p className="hidden text-sm text-slate-500 md:block">공개 이론 {publicLessons}개 · 공개 문제 {publicQuestions}개</p></div>
+        <div className="flex items-end justify-between gap-4"><div><p className="eyebrow">오늘의 학습</p><h2 className="display mt-3 text-3xl font-bold md:text-4xl">짧게 시작하고, 정확히 복습하세요</h2></div><p className="hidden text-sm text-slate-500 md:block">기출 연결 이론 {examLinkedLessons}개 · (+보강용) {supplementalLessons}개 · 공개 문제 {publicQuestions}개</p></div>
         <div className="mt-8 grid gap-5 md:grid-cols-3"><ActionCard href="/written/theory" icon={<BookOpen />} title="이론 보기" text="44개 세부항목군과 정규 개념 레슨, 실제 기출 원문을 함께 학습합니다." action="이론 목차" /><ActionCard href="/written/mock" icon={<FileCheck2 />} title="필기 모의고사" text="4과목×20문제 실전형 또는 과목·문제 수·기출 비율을 고른 커스텀 시험입니다." action="필기 시험 설정" /><ActionCard href="/practical/mock" icon={<Wrench />} title="실기 모의고사" text="10문제형 실기 모의고사를 위한 필답형·작업형 구조를 준비하고 있습니다." action="준비 현황" /></div>
         <div className="mt-5 flex flex-col gap-3 rounded-2xl bg-slate-50 p-4 text-sm sm:flex-row sm:items-center sm:justify-between"><span className="text-slate-600">짧은 연습이나 오답 복습이 필요하신가요?</span><span className="flex flex-wrap gap-2"><Link href="/written/practice/random" className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 font-bold text-[#16697a]"><Sparkles size={15} /> 랜덤·취약 문제</Link><Link href="/written/review" className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 font-bold text-[#8f3f0a]"><RotateCcw size={15} /> 오답노트·복습</Link></span></div>
       </section>

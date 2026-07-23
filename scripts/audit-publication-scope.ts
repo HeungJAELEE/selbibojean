@@ -6,10 +6,16 @@ import type {
   LessonBlockKind,
   Question,
 } from "../src/lib/domain/types";
+import { buildRuntimeContent } from "../src/lib/content/runtime-content";
 
-const data = JSON.parse(
-  readFileSync(new URL("../src/data/generated/content.json", import.meta.url), "utf8"),
-) as GeneratedContent;
+const data = buildRuntimeContent(
+  JSON.parse(
+    readFileSync(
+      new URL("../src/data/generated/content.json", import.meta.url),
+      "utf8",
+    ),
+  ) as GeneratedContent,
+);
 
 function countBy<T>(items: T[], key: (item: T) => string) {
   return Object.fromEntries(

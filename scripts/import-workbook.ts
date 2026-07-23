@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { homedir } from "node:os";
 import path from "node:path";
 import { readSheet } from "read-excel-file/node";
 import {
@@ -34,7 +35,7 @@ import { stableHash } from "../src/lib/utils";
 
 const EXPECTED = { originals: 2384, canonicalQuestions: 1396, mappings: 2384, backlog: 276 };
 const DEFAULT_SOURCE =
-  "C:/Users/JaeheungLee/Downloads/설비보전기사_전회차_중복제거_마스터_27차_웹앱설계.xlsx";
+  path.join(homedir(), "Downloads", "설비보전기사_전회차_중복제거_마스터_27차_웹앱설계.xlsx");
 const OUTPUT = path.join(process.cwd(), "src", "data", "generated", "content.json");
 const THEORY_SOURCE = path.join(process.cwd(), "src", "data", "source", "notion-theory.md");
 

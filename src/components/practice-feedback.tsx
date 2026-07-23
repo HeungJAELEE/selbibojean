@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { BookOpen, CheckCircle2, ChevronDown, XCircle } from "lucide-react";
 import type { PracticeFeedback } from "@/lib/domain/types";
 import { cn } from "@/lib/utils";
@@ -13,10 +14,18 @@ export function PracticeFeedbackPanel({
   feedback: PracticeFeedback;
   lessonHref: string;
 }) {
+  const feedbackRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    feedbackRef.current?.focus();
+  }, []);
+
   return (
     <section
+      ref={feedbackRef}
+      tabIndex={-1}
       className={cn(
-        "mt-7 overflow-hidden rounded-2xl border",
+        "mt-7 overflow-hidden rounded-2xl border outline-none focus-visible:ring-2 focus-visible:ring-[#16697a] focus-visible:ring-offset-2",
         feedback.isCorrect ? "border-emerald-200 bg-emerald-50/70" : "border-red-200 bg-red-50/70",
       )}
       aria-live="polite"
@@ -48,6 +57,41 @@ export function PracticeFeedbackPanel({
           <p className="text-sm font-extrabold">전체 해설</p>
           <MarkdownContent content={feedback.explanation} compact />
         </div>
+
+        {feedback.answerAudit && (
+          <aside
+            data-testid="cbt-answer-correction"
+            className="mt-5 rounded-xl border border-amber-300 bg-amber-50 p-4 text-amber-950"
+          >
+            <p className="text-sm font-extrabold">CBT 공개답과 기술근거 불일치</p>
+            <dl className="mt-3 grid gap-3 text-sm sm:grid-cols-2">
+              <div>
+                <dt className="font-bold text-amber-800">CBT 공개답</dt>
+                <dd className="mt-1">{feedback.answerAudit.cbtAnswer}</dd>
+              </div>
+              <div>
+                <dt className="font-bold text-amber-800">검증된 정답</dt>
+                <dd className="mt-1">{feedback.answerAudit.verifiedAnswer}</dd>
+              </div>
+            </dl>
+            <p className="mt-3 text-sm leading-6">{feedback.answerAudit.reviewNote}</p>
+            {feedback.answerAudit.evidenceUrls.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {feedback.answerAudit.evidenceUrls.map((url, index) => (
+                  <a
+                    key={url}
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg border border-amber-300 bg-white px-3 py-2 text-xs font-bold"
+                  >
+                    검증 근거 {index + 1}
+                  </a>
+                ))}
+              </div>
+            )}
+          </aside>
+        )}
       </div>
 
       {feedback.conceptSupport && (

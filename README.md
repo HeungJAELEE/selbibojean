@@ -7,6 +7,8 @@
 - 27차 원본 엑셀 ETL과 체크섬·수량 대사
 - 현행 4과목 → 44개 세부항목군 → 정규 개념 레슨 1,258개(공개 1,190개)
 - 대표문제 1,396개, 원문 변형 2,384개, 잔여 백로그 276개 보존
+- 용접 안전 33차 전용자료 283문제·30레슨·25회차를 관리자 검수 큐로 별도 이관
+- 33차 우선 검수 150건과 권위 출처 누락 33건을 공개 차단 상태로 관리
 - 공개 검증을 통과한 문제만 사용하는 전체·과목·세부항목군·오답·복습 랜덤 세션과 실제 기출·개념 문제 혼합 출제
 - 실제 기출 비율 0·25·50·75·100% 선택과 과목별 반복 오답 세부항목군 집중 출제
 - 필기 4과목×20문제(총 80문제) 실전 형식과 과목별 체크·문제 수 커스텀 모의고사(현재 검수 공개 범위 최대 78문제)
@@ -17,6 +19,7 @@
 - 168시간 비활동 삭제 Edge Function과 03:00 KST 예약 예시
 - 관리자 Magic Link·allowlist, import staging, RLS, 검수·승인 데이터 모델
 - 필답형·작업형 확장 경로
+- Cloudflare 런타임 정답 자산을 `public/`에서 분리하고 외부 `/data/*` 요청 차단
 
 ## 요구 환경
 
@@ -29,10 +32,13 @@
 ```bash
 npm install
 npm run import:workbook -- "C:/path/to/27차_웹앱설계.xlsx"
+npm run import:welding-safety -- "C:/path/to/33차_전회차완료.xlsx" "C:/path/to/33차_보고서.md"
 npm run dev
 ```
 
-원본 기본 경로는 현재 작업 환경의 Downloads 파일로 설정되어 있지만, 다른 환경에서는 인자 또는 `SOURCE_WORKBOOK_PATH`를 사용하세요. 원본 파일은 커밋하지 않습니다.
+원본 기본 경로는 실행 사용자의 `Downloads` 폴더입니다. 다른 환경에서는 인자 또는
+`SOURCE_WORKBOOK_PATH`, `WELDING_SAFETY_WORKBOOK_PATH`, `WELDING_SAFETY_REPORT_PATH`를
+사용하세요. 원본 엑셀·HWP와 자격 증명은 커밋하지 않습니다.
 
 ## 검증
 
@@ -43,7 +49,11 @@ npm run lint
 npm run test
 npm run test:e2e
 npm run build
+npm run verify:deploy
 ```
+
+배포 직전 전체 검증은 `npm run preflight:deploy` 한 번으로 실행합니다. 이 명령은 배포하지 않습니다.
+Node.js 22 미만에서는 `node:fs/promises.glob` 오류가 발생하므로 반드시 요구 버전을 사용하세요.
 
 Supabase CLI와 Docker가 준비되면 `npm run test:rls`로 정책 테스트를 실행합니다.
 
@@ -55,7 +65,14 @@ Supabase CLI와 Docker가 준비되면 `npm run test:rls`로 정책 테스트를
 4. 관리자 검수·승인 후 materialization/발행 단계를 수행합니다.
 5. `purge-inactive-accounts` Edge Function을 배포하고 `supabase/cron.sql.example`의 자리표시자를 Vault 비밀로 교체합니다.
 
-현재 저장소에서는 외부 Supabase 프로젝트 생성·마이그레이션 적용·Vercel 배포를 실행하지 않았습니다. 이는 자격 증명과 사용자 승인이 필요한 별도 단계입니다.
+Supabase가 없으면 공개 이론·문제풀이와 게스트 브라우저 기록은 동작하지만 계정 동기화는
+503으로 안전하게 비활성화됩니다. 운영 환경에서 관리자 인증 변수가 완전하지 않으면 `/admin`은
+차단됩니다.
+
+현재 Sites 프로젝트는 기존 `설비보전 마스터북` 프로젝트를 재사용하며, 이 저장소에서는 새
+버전 저장·배포·외부 Supabase 생성·마이그레이션 적용을 실행하지 않습니다. 모두 사용자 승인과
+운영 자격 증명이 필요한 별도 단계입니다. 배포 절차와 점검표는
+[`docs/deployment-readiness.md`](docs/deployment-readiness.md)를 참고하세요.
 
 ## 콘텐츠 출처와 공개 기준
 
@@ -64,3 +81,7 @@ Supabase CLI와 Docker가 준비되면 `npm run test:rls`로 정책 테스트를
 - 2026 작업형 공개문제: [Q-Net](https://www.q-net.or.kr/cst006.do?artlSeq=5209398&brdId=Q006&gSite=Q&id=cst00602)
 
 자동 분류 또는 근거가 부족한 문제와 레슨은 `in_review`로 유지됩니다. 법령·안전·KS/ISO·제조사 조건은 권위 있는 출처 검수 전 공개하지 않습니다.
+
+33차 용접 안전 자료는 현재 283문제 전부 `blocked`이며 공개 문제 수 1,314개에 포함되지
+않습니다. 정답 검증, 선택지별 해설, 정확한 이론 연결, 권위 출처가 모두 채워진 항목만 기존
+공개 절차를 거쳐 발행할 수 있습니다.

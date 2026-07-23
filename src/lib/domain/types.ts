@@ -56,6 +56,47 @@ export type QuestionVerification = {
   reviewedAt: string;
 };
 
+export const AUDIT_DISPOSITIONS = [
+  "verified",
+  "cbt_corrected",
+  "held_answer_conflict",
+  "held_asset_missing",
+  "held_source_missing",
+] as const;
+export type AuditDisposition = (typeof AUDIT_DISPOSITIONS)[number];
+
+export const EVIDENCE_LEVELS = ["primary", "dual_secondary"] as const;
+export type EvidenceLevel = (typeof EVIDENCE_LEVELS)[number];
+
+export const ASSET_STATUSES = [
+  "not_required",
+  "self_authored",
+  "available",
+  "missing",
+] as const;
+export type AssetStatus = (typeof ASSET_STATUSES)[number];
+
+export type QuestionAudit = {
+  questionId?: string;
+  scope?: "review_queue" | "high_risk_public";
+  sourceContentStatus?: ContentStatus;
+  auditDisposition: AuditDisposition;
+  evidenceLevel: EvidenceLevel | null;
+  cbtAnswer: string | null;
+  verifiedAnswer: string | null;
+  evidenceUrls: string[];
+  reviewNote: string;
+  assetStatus: AssetStatus;
+  nextAction: string;
+  reviewRationale?: string;
+  reviewChoiceFeedback?: Array<{
+    choiceId: string;
+    verdict: "correct" | "incorrect";
+    rationale: string;
+  }>;
+  reviewedAt?: string;
+};
+
 export type Subject = {
   id: string;
   code: number;
@@ -116,6 +157,7 @@ export type Question = {
   contentStatus: ContentStatus;
   publication?: PublicationAssessment;
   verification?: QuestionVerification;
+  audit?: QuestionAudit;
   validation: {
     answer: boolean;
     explanation: boolean;
@@ -127,7 +169,7 @@ export type Question = {
 
 export type PublicQuestion = Omit<
   Question,
-  "choices" | "correctChoiceId" | "answerText" | "explanation" | "errorReason" | "validation" | "reviewStatus" | "publication" | "verification"
+  "choices" | "correctChoiceId" | "answerText" | "explanation" | "errorReason" | "validation" | "reviewStatus" | "publication" | "verification" | "audit"
 > & {
   choices: Array<Pick<Choice, "id" | "order" | "text">>;
   provenance: {
@@ -158,6 +200,13 @@ export type PracticeFeedback = {
     blocks: Array<Pick<LessonBlock, "id" | "kind" | "title" | "body">>;
   } | null;
   otherChoices: Array<Pick<Choice, "id" | "text"> & ChoiceFeedback & { isCorrect: boolean }>;
+  answerAudit?: {
+    auditDisposition: "cbt_corrected";
+    cbtAnswer: string;
+    verifiedAnswer: string;
+    evidenceUrls: string[];
+    reviewNote: string;
+  };
 };
 
 export type LessonBlockKind =
@@ -197,6 +246,8 @@ export type Lesson = {
   contentStatus: ContentStatus;
   sourceNeeded: boolean;
   reviewedAt: string | null;
+  contentRole?: "exam_linked" | "supplemental";
+  visualAidId?: string;
   publication?: PublicationAssessment;
   quality: ContentQuality;
 };

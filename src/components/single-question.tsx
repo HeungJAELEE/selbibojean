@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { PracticeFeedback, PublicQuestion } from "@/lib/domain/types";
 import { cn } from "@/lib/utils";
 import { PracticeFeedbackPanel } from "@/components/practice-feedback";
+import { buildLessonReturnHref } from "@/lib/domain/practice";
 
 export function SingleQuestion({ question }: { question: PublicQuestion }) {
   const [choice, setChoice] = useState("");
@@ -32,7 +33,7 @@ export function SingleQuestion({ question }: { question: PublicQuestion }) {
 
   return (
     <div className="card p-6 md:p-9">
-      <p className="text-sm font-bold text-[#16697a]">{question.id}</p>
+      <p className="text-sm font-bold text-[#16697a]">검수 완료 문제</p>
       {(question.provenance.reconstructed || question.provenance.historical) && (
         <div className="mt-3 flex flex-wrap gap-2 text-xs font-bold">
           {question.provenance.reconstructed && <span className="rounded-full bg-sky-50 px-3 py-1 text-sky-800">원문 근거 학습용 재구성</span>}
@@ -40,11 +41,12 @@ export function SingleQuestion({ question }: { question: PublicQuestion }) {
         </div>
       )}
       <h1 className="mt-5 text-2xl font-extrabold leading-relaxed">{question.stem}</h1>
-      <div className="mt-7 grid gap-3">
+      <div className="mt-7 grid gap-3" role="group" aria-label="문제 보기">
         {question.choices.map((item) => (
           <button
             key={item.id}
             disabled={Boolean(feedback)}
+            aria-pressed={choice === item.id}
             onClick={() => setChoice(item.id)}
             className={cn(
               "rounded-xl border p-4 text-left",
@@ -61,7 +63,15 @@ export function SingleQuestion({ question }: { question: PublicQuestion }) {
           {loading ? "채점 중…" : "답안 제출"}
         </button>
       )}
-      {feedback && <PracticeFeedbackPanel feedback={feedback} lessonHref={feedback.lesson.href} />}
+      {feedback && (
+        <PracticeFeedbackPanel
+          feedback={feedback}
+          lessonHref={buildLessonReturnHref(
+            feedback.lesson.href,
+            `/written/practice/${question.id}`,
+          )}
+        />
+      )}
       {error && <p className="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-700" role="alert">{error}</p>}
     </div>
   );

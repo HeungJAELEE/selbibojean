@@ -23,10 +23,17 @@ export function sites(): Plugin {
     async closeBundle() {
       const outputDirectory = resolve(root, "dist", ".openai");
       const hostingConfig = resolve(root, ".openai", "hosting.json");
+      const runtimeAssets = resolve(root, ".runtime-assets", "data");
+      const builtRuntimeAssets = resolve(root, "dist", "client", "data");
       await rm(outputDirectory, { recursive: true, force: true });
       await mkdir(outputDirectory, { recursive: true });
       if (await exists(hostingConfig)) {
         await cp(hostingConfig, resolve(outputDirectory, "hosting.json"));
+      }
+      await rm(builtRuntimeAssets, { recursive: true, force: true });
+      if (await exists(runtimeAssets)) {
+        await mkdir(resolve(root, "dist", "client"), { recursive: true });
+        await cp(runtimeAssets, builtRuntimeAssets, { recursive: true });
       }
     },
   };

@@ -43,7 +43,6 @@ export function LessonPracticeSet({ questions }: { questions: LessonPracticeItem
             <span className="min-w-0 flex-1">
               <span className="flex flex-wrap items-center gap-2 text-xs font-bold text-[#8dd5ce]">
                 <span>{question.scope === "lesson" ? "이 개념 직접 적용" : "같은 세부항목군 확장"}</span>
-                <span className="text-slate-200">{question.id}</span>
               </span>
               <span className="mt-1 line-clamp-2 block text-sm font-bold leading-6 text-white">{question.stem}</span>
             </span>

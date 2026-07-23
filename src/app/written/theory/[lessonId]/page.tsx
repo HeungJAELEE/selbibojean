@@ -1,10 +1,14 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, ArrowRight, BookOpenCheck, Layers3, RotateCcw } from "lucide-react";
+import { ContentRoleBadge } from "@/components/content-role-badge";
 import { LessonPracticeSet, type LessonPracticeItem } from "@/components/lesson-practice-set";
 import { MarkdownContent } from "@/components/markdown-content";
 import { PastExamExamples } from "@/components/past-exam-examples";
 import { QuestionTrapReview } from "@/components/question-trap-review";
+import { SupplementalVisualAid } from "@/components/supplemental-visual-aid";
 import {
   getLessonFamilyForLesson,
   getLessonFamilyHref,
@@ -15,7 +19,26 @@ import {
 import { getPastExamExamples } from "@/lib/content/past-exam-examples";
 import { getContent, getLesson } from "@/lib/content/repository";
 import { getConceptGroup, getSubject } from "@/lib/domain/catalog";
-import { isPublishableQuestion } from "@/lib/domain/practice";
+import {
+  isPublishableLesson,
+  isPublishableQuestion,
+  safePracticeReturnTo,
+} from "@/lib/domain/practice";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lessonId: string }>;
+}): Promise<Metadata> {
+  const { lessonId } = await params;
+  const lesson = await getLesson(lessonId);
+  return {
+    title:
+      lesson && isPublishableLesson(lesson)
+        ? `${lesson.title} | 설비보전기사 마스터북`
+        : "이론 레슨",
+  };
+}
 
 export default async function LessonPage({
   params,
@@ -26,7 +49,8 @@ export default async function LessonPage({
 }) {
   const [{ lessonId }, query] = await Promise.all([params, searchParams]);
   const lesson = await getLesson(lessonId);
-  if (!lesson || lesson.contentStatus !== "published") notFound();
+  if (!lesson || !isPublishableLesson(lesson)) notFound();
+  const returnTo = safePracticeReturnTo(query.returnTo);
 
   const content = await getContent();
   const subject = getSubject(lesson.subjectId);
@@ -41,7 +65,7 @@ export default async function LessonPage({
 
   return (
     <div className="page-wrap grid gap-8 py-10 lg:grid-cols-[240px_1fr_260px]">
-      <aside className="hidden h-fit lg:block">
+      <aside className="hidden h-fit lg:block" aria-label="이론 목차 탐색">
         <Link href="/written/theory" className="flex items-center gap-2 text-sm font-bold text-slate-500">
           <ArrowLeft size={16} /> 이론 목차
         </Link>
@@ -58,7 +82,7 @@ export default async function LessonPage({
             <a href="#past-exams" className="block py-2 text-sm font-bold text-[#16697a]">실제 기출 원문</a>
           )}
           {trapQuestions.length > 0 && (
-            <a href="#question-traps" className="block py-2 text-sm font-bold text-[#16697a]">보기별 오답 근거</a>
+            <a href="#question-traps" className="block py-2 text-sm font-bold text-[#16697a]">연결 문제 미리보기</a>
           )}
           {practiceQuestions.length > 0 && (
             <a href="#practice-set" className="block py-2 text-sm font-bold text-[#16697a]">실전 유사 문제</a>
@@ -66,9 +90,38 @@ export default async function LessonPage({
         </nav>
       </aside>
 
-      <article className="card p-6 md:p-10">
+      <article className="card min-w-0 p-6 md:p-10">
+        <Link href="/written/theory" className="mb-5 inline-flex items-center gap-2 text-sm font-bold text-slate-500 lg:hidden">
+          <ArrowLeft size={16} /> 이론 목차
+        </Link>
         <p className="eyebrow">제{subject?.code}과목 · {group?.title}</p>
-        <h1 className="display mt-4 text-4xl font-bold md:text-5xl">{lesson.title}</h1>
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <h1 className="display break-words text-4xl font-bold [overflow-wrap:anywhere] md:text-5xl">
+            {lesson.title}
+          </h1>
+          <ContentRoleBadge contentRole={lesson.contentRole} className="px-3 py-1 text-xs" />
+        </div>
+
+        {lesson.visualAidId && (
+          <SupplementalVisualAid visualAidId={lesson.visualAidId} />
+        )}
+
+        {lesson.id.startsWith("welding-safety-b33-") && (
+          <figure className="mt-7 overflow-hidden rounded-2xl border border-amber-200 bg-amber-50">
+            <Image
+              src="/images/welding-safety/welding-safety-overview.png"
+              alt="용접기 전원 격리, 가스용기 고정, 화재감시, 국소배기, 보호구, 밀폐공간 감시를 여섯 장면으로 정리한 용접 안전 그림"
+              width={1536}
+              height={1024}
+              className="h-auto w-full"
+              priority={false}
+            />
+            <figcaption className="px-4 py-3 text-sm leading-6 text-amber-950">
+              용접 안전은 한 가지 보호구가 아니라 전원 격리, 가스설비 점검, 화재감시,
+              발생원 환기, 개인보호구와 밀폐공간 감시를 함께 적용해야 합니다.
+            </figcaption>
+          </figure>
+        )}
 
         {family && (
           <section id="family" data-testid="lesson-family-overview" className="mt-7 scroll-mt-28 rounded-2xl border border-[#b9d9d7] bg-[#f2fbfa] p-5">
@@ -88,7 +141,7 @@ export default async function LessonPage({
                 </div>
                 <Link
                   href={getLessonFamilyHref(family.groupId, family.id)}
-                  className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#173957] px-4 py-2 text-sm font-extrabold text-white"
+                  className="mt-4 inline-flex max-w-full items-center gap-2 whitespace-normal rounded-lg bg-[#173957] px-4 py-2 text-sm font-extrabold text-white"
                 >
                   {family.label} 전체를 묶어서 비교 <ArrowRight size={15} />
                 </Link>
@@ -128,9 +181,9 @@ export default async function LessonPage({
         />
         <LessonPracticeSet questions={practiceQuestions} />
 
-        {query.returnTo && (
+        {returnTo && (
           <Link
-            href={query.returnTo}
+            href={returnTo}
             className="mt-10 flex items-center justify-center gap-2 rounded-xl bg-[#8f3f0a] px-5 py-4 font-extrabold text-white"
           >
             <RotateCcw size={18} /> 문제로 돌아가 정답 숨기고 재도전
@@ -138,7 +191,7 @@ export default async function LessonPage({
         )}
       </article>
 
-      <aside className="card h-fit p-5">
+      <aside className="card h-fit p-5" aria-label="레슨 학습 정보">
         <div className="flex items-center gap-2">
           <BookOpenCheck className="text-[#16697a]" size={19} />
           <h2 className="font-extrabold">이 레슨 학습 순서</h2>
@@ -146,7 +199,7 @@ export default async function LessonPage({
         <ol className="mt-4 grid gap-3 text-sm">
           <LearningStep number="1" title="개념 이해" text="정의·원리·공식과 핵심 판단 기준을 먼저 정리합니다." />
           <LearningStep number="2" title="실제 기출 원문" text={`${pastExamExamples.length}개 CBT 원문에서 개념의 출제 방식을 확인합니다.`} />
-          <LearningStep number="3" title="보기별 오답 근거" text={`${trapQuestions.length}개 대표문항에서 보기의 뜻과 틀린 조건을 확인합니다.`} />
+          <LearningStep number="3" title="연결 문제 미리보기" text={`${trapQuestions.length}개 문제를 정답 노출 없이 먼저 판단합니다.`} />
           <LearningStep number="4" title="실전 유사 문제" text={`${practiceQuestions.length}개 문제를 직접 풀고 채점합니다.`} />
         </ol>
       </aside>

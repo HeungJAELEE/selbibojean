@@ -2,7 +2,7 @@ import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const source = path.join(process.cwd(), "src", "data", "generated", "content.json");
-const outputDirectory = path.join(process.cwd(), "public", "data");
+const outputDirectory = path.join(process.cwd(), ".runtime-assets", "data");
 const chunkByteLimit = 4_000_000;
 
 await rm(outputDirectory, { recursive: true, force: true });
@@ -52,4 +52,4 @@ const manifest = {
 await writeFile(path.join(outputDirectory, "content-manifest.json"), JSON.stringify(manifest));
 
 const generatedFiles = 1 + Object.values(collections).reduce((count, files) => count + files.length, 0);
-console.log(`Prepared ${generatedFiles} Cloudflare runtime content assets in public/data`);
+console.log(`Prepared ${generatedFiles} private runtime content assets in .runtime-assets/data`);

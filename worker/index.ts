@@ -25,6 +25,16 @@ const worker = {
   async fetch(request: Request, env: Env, context: ExecutionContext) {
     globalThis.__SEOLBI_ASSETS__ = env.ASSETS;
     const url = new URL(request.url);
+    if (url.pathname === "/data" || url.pathname.startsWith("/data/")) {
+      return new Response("Not Found", {
+        status: 404,
+        headers: {
+          "Cache-Control": "no-store",
+          "Content-Type": "text/plain; charset=utf-8",
+          "X-Content-Type-Options": "nosniff",
+        },
+      });
+    }
     if (url.pathname === "/_vinext/image") {
       const widths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];
       return handleImageOptimization(

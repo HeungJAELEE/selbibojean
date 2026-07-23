@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { createClient } from "@supabase/supabase-js";
+import { normalizeCanonicalTaxonomy } from "../src/lib/content/taxonomy-normalization";
 import type { GeneratedContent } from "../src/lib/domain/types";
 
 function chunks<T>(items: T[], size: number) {
@@ -17,7 +18,9 @@ async function main() {
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !serviceKey) throw new Error("NEXT_PUBLIC_SUPABASE_URL과 SUPABASE_SERVICE_ROLE_KEY가 필요합니다.");
   const filePath = path.join(process.cwd(), "src", "data", "generated", "content.json");
-  const content = JSON.parse(await readFile(filePath, "utf8")) as GeneratedContent;
+  const content = normalizeCanonicalTaxonomy(
+    JSON.parse(await readFile(filePath, "utf8")) as GeneratedContent,
+  );
   const supabase = createClient(url, serviceKey, { auth: { autoRefreshToken: false, persistSession: false } });
   const expectedCounts = content.report.expected;
   const actualCounts = content.report.rows;
@@ -83,4 +86,3 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
-

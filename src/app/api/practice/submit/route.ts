@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { getLesson, getQuestion } from "@/lib/content/repository";
-import { gradeQuestion, isPublishableQuestion } from "@/lib/domain/practice";
+import {
+  gradeQuestion,
+  isPublishableLesson,
+  isPublishableQuestion,
+} from "@/lib/domain/practice";
 import { submitAnswerSchema } from "@/lib/validation/auth";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
@@ -13,6 +17,12 @@ export async function POST(request: Request) {
   }
 
   const lesson = await getLesson(question.lessonId);
+  if (!lesson || !isPublishableLesson(lesson)) {
+    return NextResponse.json(
+      { error: "연결 이론 검수가 완료되지 않은 문제입니다." },
+      { status: 404 },
+    );
+  }
   const feedback = gradeQuestion(question, parsed.data.choiceId, parsed.data.selfRating, lesson);
   const supabase = await createSupabaseServerClient();
   const { data: auth } = supabase ? await supabase.auth.getUser() : { data: { user: null } };

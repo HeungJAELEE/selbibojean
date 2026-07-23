@@ -6,14 +6,18 @@ import {
   ArrowRight,
   BookOpenCheck,
   CheckCircle2,
+  ChevronDown,
   GitCompareArrows,
   Lightbulb,
   Wrench,
 } from "lucide-react";
+import { ConceptVisualAid } from "@/components/concept-visual-aid";
+import { ContentRoleBadge } from "@/components/content-role-badge";
 import { LessonPracticeSet, type LessonPracticeItem } from "@/components/lesson-practice-set";
 import { MarkdownContent } from "@/components/markdown-content";
 import { PastExamExamples } from "@/components/past-exam-examples";
 import { QuestionTrapReview } from "@/components/question-trap-review";
+import { TextbookActivityLab } from "@/components/textbook-activity-lab";
 import {
   getLessonFamily,
   getLessonFamilyHref,
@@ -22,6 +26,7 @@ import {
 } from "@/lib/content/lesson-families";
 import { getPastExamExamplesForLessons } from "@/lib/content/past-exam-examples";
 import { getContent } from "@/lib/content/repository";
+import { getTextbookActivity } from "@/lib/content/textbook-activities";
 import { isPublishableQuestion } from "@/lib/domain/practice";
 
 type FamilyParams = {
@@ -57,32 +62,44 @@ export default async function LessonFamilyPage({
   const lessonIds = family.lessons.map((lesson) => lesson.id);
   const pastExamExamples = getPastExamExamplesForLessons(content, lessonIds);
   const practiceQuestions = selectFamilyPracticeQuestions(content, family, 6);
+  const activity = getTextbookActivity(groupId, familyId);
   const pid = isPidFamily(groupId, familyId);
+  const reconstructedFamily =
+    family.trapQuestions.length > 0 &&
+    family.trapQuestions.every(
+      (question) => question.verification?.riskTags.includes("editorial_reconstruction") ?? false,
+    );
+  const fieldNavNumber = activity ? 5 : 4;
+  const detailNavNumber = fieldNavNumber + 1;
+  const pastExamNavNumber = detailNavNumber + 1;
+  const trapNavNumber = pastExamNavNumber + (pastExamExamples.length > 0 ? 1 : 0);
+  const practiceNavNumber = trapNavNumber + 1;
 
   return (
-    <div className="page-wrap grid gap-8 py-10 lg:grid-cols-[230px_1fr_260px]">
-      <aside className="hidden h-fit lg:block">
+    <div className="page-wrap grid gap-8 py-10 xl:grid-cols-[200px_minmax(0,1fr)_240px]">
+      <aside className="hidden h-fit xl:block">
         <Link href="/written/theory" className="flex items-center gap-2 text-sm font-bold text-slate-500">
           <ArrowLeft size={16} /> 이론 목차
         </Link>
         <nav className="mt-7 border-l border-slate-200 pl-4" aria-label="통합 레슨 내부 목차">
           <a href="#related-terms" className="block py-2 text-sm font-bold text-[#16697a]">1. 관련 용어</a>
-          <a href="#umbrella" className="block py-2 text-sm font-bold text-[#16697a]">2. 포괄 개념·원리</a>
+          <a href="#umbrella" className="block py-2 text-sm font-bold text-[#16697a]">2. 개념</a>
           <a href="#comparison" className="block py-2 text-sm font-bold text-[#16697a]">3. 개념별 차이</a>
-          <a href="#field-application" className="block py-2 text-sm font-bold text-[#16697a]">4. 실무 적용</a>
-          <a href="#detail-lessons" className="block py-2 text-sm font-bold text-[#16697a]">5. 세부 개념</a>
-          {pastExamExamples.length > 0 && <a href="#past-exams" className="block py-2 text-sm font-bold text-[#16697a]">6. 실제 기출 원문</a>}
-          <a href="#question-traps" className="block py-2 text-sm font-bold text-[#16697a]">7. 보기별 오답 근거</a>
-          {practiceQuestions.length > 0 && <a href="#practice-set" className="block py-2 text-sm font-bold text-[#16697a]">8. 실전 유사 문제</a>}
+          {activity && <a href="#concept-lab" className="block py-2 text-sm font-bold text-[#16697a]">4. 직접 확인</a>}
+          <a href="#field-application" className="block py-2 text-sm font-bold text-[#16697a]">{fieldNavNumber}. 실무 적용</a>
+          <a href="#detail-lessons" className="block py-2 text-sm font-bold text-[#16697a]">{detailNavNumber}. 세부 개념</a>
+          {pastExamExamples.length > 0 && <a href="#past-exams" className="block py-2 text-sm font-bold text-[#16697a]">{pastExamNavNumber}. 실제 기출 원문</a>}
+          <a href="#question-traps" className="block py-2 text-sm font-bold text-[#16697a]">{trapNavNumber}. 연결 문제 미리보기</a>
+          {practiceQuestions.length > 0 && <a href="#practice-set" className="block py-2 text-sm font-bold text-[#16697a]">{practiceNavNumber}. 문제 풀이</a>}
         </nav>
       </aside>
 
-      <article className="card p-6 md:p-10">
+      <article className="card min-w-0 p-6 md:p-10">
         <p className="eyebrow">제{subject.code}과목 · {group.title}</p>
-        <h1 className="display mt-4 text-4xl font-bold md:text-5xl">{family.label}</h1>
+        <h1 className="display mt-4 break-words text-4xl font-bold [overflow-wrap:anywhere] md:text-5xl">{family.label}</h1>
         <p className="mt-5 max-w-3xl text-base leading-7 text-slate-600">
-          관련 용어와 작동 원리, 개념별 차이를 먼저 이해한 뒤 실제 기출과 보기별 오답 근거로
-          확인합니다. 흩어진 {family.lessons.length}개 세부 개념을 하나의 학습 흐름으로 묶었습니다.
+          관련 용어와 작동 원리, 개념별 차이를 먼저 이해한 뒤 연결 문제를 직접 풀고 제출 후
+          보기별 근거를 확인합니다. 흩어진 {family.lessons.length}개 세부 개념을 하나의 학습 흐름으로 묶었습니다.
         </p>
 
         <section id="related-terms" className="mt-8 scroll-mt-28">
@@ -101,26 +118,30 @@ export default async function LessonFamilyPage({
         </section>
 
         <section id="umbrella" className="mt-10 scroll-mt-28">
-          <SectionTitle icon={<Lightbulb size={19} />} eyebrow="Big picture" title="포괄 개념과 작동 원리" />
+          <SectionTitle icon={<Lightbulb size={19} />} eyebrow="Concept" title="개념" />
           <div className="prose-learning mt-4 rounded-2xl bg-[#eaf7f6] p-5 md:p-6">
-            <h3 className="!mt-0">이 묶음이 다루는 범위</h3>
             <MarkdownContent content={family.scope} />
-            <h3>작동 원리</h3>
             <MarkdownContent content={family.mechanism} />
           </div>
+          <ConceptVisualAid family={family} />
         </section>
 
         <section id="comparison" className="mt-10 scroll-mt-28">
           <SectionTitle icon={<GitCompareArrows size={19} />} eyebrow="Compare" title="개념별 역할과 차이" />
-          <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-200">
+          <div
+            className="mt-4 overflow-x-auto rounded-2xl border border-slate-200"
+            role="region"
+            aria-label="개념 비교표"
+            tabIndex={0}
+          >
             <table className="min-w-[760px] w-full border-collapse text-left text-sm">
               <thead className="bg-[#173957] text-white">
                 <tr>
                   <th className="px-4 py-3">구분</th>
-                  <th className="px-4 py-3">{pid ? "무엇을 보는가" : "기출에서 묻는 것"}</th>
+                  <th className="px-4 py-3">{pid ? "무엇을 보는가" : reconstructedFamily ? "문제에서 묻는 것" : "기출에서 묻는 것"}</th>
                   <th className="px-4 py-3">{pid ? "역할" : "핵심 근거"}</th>
-                  <th className="px-4 py-3">{pid ? "주요 효과" : "기출 판정"}</th>
-                  <th className="px-4 py-3">{pid ? "주의점" : "실제 함정"}</th>
+                  <th className="px-4 py-3">{pid ? "주요 효과" : reconstructedFamily ? "문제 유형" : "기출 유형"}</th>
+                  <th className="px-4 py-3">{pid ? "주의점" : reconstructedFamily ? "대표 함정" : "실제 함정"}</th>
                 </tr>
               </thead>
               <tbody>
@@ -138,10 +159,38 @@ export default async function LessonFamilyPage({
           </div>
         </section>
 
-        <section id="field-application" className="mt-10 scroll-mt-28">
-          <SectionTitle icon={<Wrench size={19} />} eyebrow="Field application" title="증상에서 출발하는 실무 적용" />
+        {activity && <TextbookActivityLab activity={activity} />}
+
+        <details
+          id="field-application"
+          data-testid="field-application-toggle"
+          className="group mt-10 scroll-mt-28 rounded-2xl border border-slate-200 bg-white"
+        >
+          <summary className="flex cursor-pointer list-none items-center gap-3 rounded-2xl p-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16697a] focus-visible:ring-offset-2 md:p-5 [&::-webkit-details-marker]:hidden">
+            <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#173957] text-white">
+              <Wrench size={19} aria-hidden="true" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-xs font-black uppercase tracking-[.14em] text-[#16697a]">
+                Field application
+              </span>
+              <span className="mt-1 block text-xl font-extrabold text-[#173957]">
+                증상에서 출발하는 실무 적용
+              </span>
+            </span>
+            <span className="flex shrink-0 items-center gap-1 text-sm font-extrabold text-[#16697a]">
+              <span className="group-open:hidden">펼쳐보기</span>
+              <span className="hidden group-open:inline">접기</span>
+              <ChevronDown
+                size={18}
+                aria-hidden="true"
+                className="transition-transform group-open:rotate-180"
+              />
+            </span>
+          </summary>
+          <div className="border-t border-slate-200 p-4 md:p-5">
           {family.fieldCases.length > 0 ? (
-            <div className="mt-4 grid gap-4">
+            <div className="grid gap-4">
               {family.fieldCases.map((item, index) => (
                 <article key={item.focus} className="rounded-2xl border border-slate-200 p-5">
                   <div className="flex flex-wrap items-center gap-2">
@@ -160,7 +209,7 @@ export default async function LessonFamilyPage({
               ))}
             </div>
           ) : (
-            <div className="mt-4 grid gap-3 md:grid-cols-3">
+            <div className="grid gap-3 md:grid-cols-3">
               {family.decisionSteps.map((step, index) => (
                 <article key={step} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
                   <span className="grid size-7 place-items-center rounded-full bg-[#16697a] text-xs font-black text-white">{index + 1}</span>
@@ -169,7 +218,8 @@ export default async function LessonFamilyPage({
               ))}
             </div>
           )}
-        </section>
+          </div>
+        </details>
 
         <section id="detail-lessons" className="mt-10 scroll-mt-28">
           <SectionTitle icon={<CheckCircle2 size={19} />} eyebrow="Deep dive" title="세부 개념으로 들어가기" />
@@ -180,7 +230,10 @@ export default async function LessonFamilyPage({
                 href={`/written/theory/${lesson.id}`}
                 className="group rounded-2xl border border-slate-200 p-4 transition hover:border-[#6fb5b1] hover:bg-[#f2fbfa]"
               >
-                <span className="font-extrabold text-[#173957]">{lesson.title}</span>
+                <span className="flex flex-wrap items-center gap-2 font-extrabold text-[#173957]">
+                  {lesson.title}
+                  <ContentRoleBadge contentRole={lesson.contentRole} />
+                </span>
                 <span className="mt-2 line-clamp-2 block text-sm leading-6 text-slate-600">{lesson.summary[0]}</span>
                 <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#16697a]">
                   정의·공식·세부 근거 보기 <ArrowRight size={13} />
@@ -192,8 +245,8 @@ export default async function LessonFamilyPage({
 
         <PastExamExamples
           examples={pastExamExamples}
-          initialCount={6}
-          batchSize={6}
+          initialCount={3}
+          batchSize={3}
         />
         <QuestionTrapReview questions={family.trapQuestions} pid={pid} />
         <LessonPracticeSet questions={practiceQuestions} />
@@ -206,7 +259,7 @@ export default async function LessonFamilyPage({
         </div>
         <p className="mt-3 text-sm leading-6 text-slate-600">
           세부 개념 {family.lessons.length}개를 먼저 이해한 뒤 실제 기출 원문 {pastExamExamples.length}개와
-          보기별 오답 근거 {family.trapQuestions.length}개로 확인합니다.
+          연결 문제 {family.trapQuestions.length}개를 직접 풀어 확인합니다.
         </p>
         <Link
           href={getLessonFamilyHref(groupId, familyId)}

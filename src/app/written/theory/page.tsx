@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpen, CheckCircle2, Layers3 } from "lucide-react";
+import { ContentRoleBadge } from "@/components/content-role-badge";
 import { PageHeading } from "@/components/page-heading";
 import { getLessonFamilyHref } from "@/lib/content/lesson-families";
 import { getLessonSubcategories } from "@/lib/content/lesson-subcategories";
 import { getContent } from "@/lib/content/repository";
+import { isPublishableLesson } from "@/lib/domain/practice";
 
 export const metadata: Metadata = { title: "필기 이론" };
 
 type LessonSummary = {
   id: string;
   title: string;
+  contentRole?: "exam_linked" | "supplemental";
 };
 
 export default async function TheoryIndexPage() {
   const content = await getContent();
-  const publicLessons = content.lessons.filter((lesson) => lesson.contentStatus === "published");
+  const publicLessons = content.lessons.filter(isPublishableLesson);
 
   return (
     <div className="page-wrap">
@@ -34,6 +37,9 @@ export default async function TheoryIndexPage() {
         {content.subjects.map((subject) => {
           const subjectGroups = content.conceptGroups.filter((group) => group.subjectId === subject.id);
           const count = publicLessons.filter((lesson) => lesson.subjectId === subject.id).length;
+          const supplementalCount = publicLessons.filter(
+            (lesson) => lesson.subjectId === subject.id && lesson.contentRole === "supplemental",
+          ).length;
           const familyCount = subjectGroups.reduce((total, group) => {
             const lessons = publicLessons.filter((lesson) => lesson.conceptGroupId === group.id);
             return total + getLessonSubcategories(group.id, lessons).length;
@@ -54,7 +60,10 @@ export default async function TheoryIndexPage() {
                     <h2 className="text-2xl font-extrabold">{subject.title}</h2>
                   </div>
                 </div>
-                <p className="text-sm text-slate-500">통합 묶음 {familyCount}개 · 세부 레슨 {count}개</p>
+                <p className="text-sm text-slate-500">
+                  통합 묶음 {familyCount}개 · 이론 레슨 {count}개
+                  {supplementalCount > 0 ? ` · 보강용 ${supplementalCount}개` : ""}
+                </p>
               </header>
 
               <div className="grid gap-0 md:grid-cols-2">
@@ -156,7 +165,8 @@ function LessonList({ lessons }: { lessons: LessonSummary[] }) {
           >
             <span className="flex items-center gap-2">
               <CheckCircle2 size={14} />
-              {lesson.title}
+              <span>{lesson.title}</span>
+              <ContentRoleBadge contentRole={lesson.contentRole} />
             </span>
             <ArrowRight size={14} className="opacity-0 group-hover/lesson:opacity-100" />
           </Link>
