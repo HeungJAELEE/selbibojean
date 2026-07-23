@@ -16,6 +16,7 @@ export default defineConfig(async () => {
         config: {
           main: "./worker/index.ts",
           compatibility_flags: ["nodejs_compat"],
+          assets: { binding: "ASSETS" },
           d1_databases: [],
           r2_buckets: [],
         },

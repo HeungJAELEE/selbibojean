@@ -8,6 +8,7 @@ describe("MarkdownContent math rendering", () => {
 
     expect(container.querySelector(".katex")).toBeInTheDocument();
     expect(container.querySelector(".katex-mathml math")).not.toBeNull();
+    expect(container.textContent).toContain("Q ∝ √(Δ p)");
     expect(container.textContent).not.toContain("$Q");
   });
 

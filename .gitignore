@@ -11,5 +11,6 @@ test-results/
 *.tsbuildinfo
 supabase/.temp/
 data/private/
+public/data/
 _workspace/
 .superloopy/

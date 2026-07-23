@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "tsx scripts/prepare-runtime-assets.ts",
     "dev": "vinext dev",
     "build": "vinext build",
+    "deploy:cloudflare": "npm run build && wrangler deploy --config dist/server/wrangler.json",
+    "preview:cloudflare": "npm run build && wrangler dev --config dist/server/wrangler.json",
     "build:next": "next build",
     "start": "vinext start",
     "lint": "eslint .",

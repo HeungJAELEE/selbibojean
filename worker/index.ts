@@ -23,6 +23,7 @@ interface ExecutionContext {
 
 const worker = {
   async fetch(request: Request, env: Env, context: ExecutionContext) {
+    globalThis.__SEOLBI_ASSETS__ = env.ASSETS;
     const url = new URL(request.url);
     if (url.pathname === "/_vinext/image") {
       const widths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];
