@@ -7,6 +7,7 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
+import { bdaCodeLabs } from "@/data/source/bda-practical-content";
 import { getBdaContent } from "@/lib/content/bda-repository";
 
 export default function BdaHomePage() {
@@ -39,7 +40,7 @@ export default function BdaHomePage() {
               가장하지 않고, 출처와 검수 상태가 분명한 학습 콘텐츠부터
               확장합니다.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="/bda/written/theory"
                 className="flex items-center justify-center gap-2 rounded-xl bg-teal-300 px-6 py-4 font-black text-[#102d47]"
@@ -52,6 +53,12 @@ export default function BdaHomePage() {
               >
                 개념 문제 풀기
               </Link>
+              <Link
+                href="/bda/practical"
+                className="flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-4 font-black text-white"
+              >
+                실기 코드 학습
+              </Link>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-3">
@@ -59,7 +66,7 @@ export default function BdaHomePage() {
               [content.subjects.length, "필기 과목"],
               [content.lessons.length, "핵심 레슨"],
               [content.questions.length, "검수 문제"],
-              ["B", "현재 근거등급"],
+              [bdaCodeLabs.length, "실기 코드 랩"],
             ].map(([value, label]) => (
               <div
                 key={label}

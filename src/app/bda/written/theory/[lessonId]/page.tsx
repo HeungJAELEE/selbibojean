@@ -4,11 +4,16 @@ import { notFound } from "next/navigation";
 import {
   ArrowLeft,
   ArrowRight,
+  BookOpenCheck,
+  BrainCircuit,
   CheckCircle2,
   ExternalLink,
   Lightbulb,
+  ListChecks,
+  Scale,
   Target,
   TriangleAlert,
+  Workflow,
 } from "lucide-react";
 import {
   getBdaContent,
@@ -104,6 +109,68 @@ export default async function BdaLessonPage({ params }: Props) {
 
         <section className="mt-6 card p-6 sm:p-8">
           <div className="flex items-center gap-3">
+            <BookOpenCheck className="text-[#0f766e]" />
+            <div>
+              <p className="text-xs font-black uppercase tracking-[.15em] text-[#0f766e]">
+                Step 1 · Concept
+              </p>
+              <h2 className="mt-1 text-xl font-black text-[#142f4b]">
+                개념의 범위와 정의
+              </h2>
+            </div>
+          </div>
+          <div className="mt-6 grid gap-4 text-[15px] leading-8 text-slate-700">
+            {lesson.conceptDefinition.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+          <div className="mt-6 rounded-2xl border-l-4 border-[#0f766e] bg-[#edf8f5] p-5">
+            <p className="text-xs font-black uppercase tracking-[.15em] text-[#0f766e]">
+              한 줄 암기
+            </p>
+            <p className="mt-2 font-black leading-7 text-[#142f4b]">
+              {lesson.memoryLine}
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-6 card overflow-hidden">
+          <div className="border-b border-slate-200 p-6 sm:p-8">
+            <div className="flex items-center gap-3">
+              <Workflow className="text-[#0f766e]" />
+              <div>
+                <p className="text-xs font-black uppercase tracking-[.15em] text-[#0f766e]">
+                  Concept map
+                </p>
+                <h2 className="mt-1 text-xl font-black text-[#142f4b]">
+                  문제에서 판단하는 순서
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div className="grid gap-3 p-6 sm:grid-cols-3 sm:p-8">
+            {lesson.decisionSteps.map((step, stepIndex) => (
+              <div
+                key={step.label}
+                className="relative rounded-2xl border border-slate-200 bg-slate-50 p-5"
+              >
+                <span className="grid size-8 place-items-center rounded-lg bg-[#142f4b] text-sm font-black text-white">
+                  {stepIndex + 1}
+                </span>
+                <h3 className="mt-4 font-black text-[#142f4b]">{step.label}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  {step.description}
+                </p>
+                {stepIndex < lesson.decisionSteps.length - 1 ? (
+                  <ArrowRight className="absolute -right-5 top-1/2 z-10 hidden -translate-y-1/2 text-[#0f766e] sm:block" />
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-6 card p-6 sm:p-8">
+          <div className="flex items-center gap-3">
             <Lightbulb className="text-amber-600" />
             <h2 className="text-xl font-black text-[#142f4b]">핵심 정리</h2>
           </div>
@@ -117,6 +184,71 @@ export default async function BdaLessonPage({ params }: Props) {
                   {pointIndex + 1}
                 </span>
                 <span className="pt-0.5 leading-7 text-slate-700">{point}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section className="mt-6 card overflow-hidden">
+          <div className="flex items-center gap-3 p-6 sm:p-8">
+            <Scale className="text-blue-700" />
+            <div>
+              <p className="text-xs font-black uppercase tracking-[.15em] text-blue-700">
+                Compare
+              </p>
+              <h2 className="mt-1 text-xl font-black text-[#142f4b]">
+                개념별 역할과 차이
+              </h2>
+            </div>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[760px] border-collapse text-left text-sm">
+              <thead className="bg-[#173957] text-white">
+                <tr>
+                  <th className="px-5 py-4">구분</th>
+                  <th className="px-5 py-4">핵심 기준</th>
+                  <th className="px-5 py-4">언제 쓰는가</th>
+                  <th className="px-5 py-4">실제 함정</th>
+                </tr>
+              </thead>
+              <tbody>
+                {lesson.comparisonRows.map((row) => (
+                  <tr key={row.label} className="border-b border-slate-200 align-top">
+                    <th className="bg-slate-50 px-5 py-5 font-black text-[#142f4b]">
+                      {row.label}
+                    </th>
+                    <td className="px-5 py-5 leading-6 text-slate-700">{row.core}</td>
+                    <td className="px-5 py-5 leading-6 text-slate-700">{row.use}</td>
+                    <td className="px-5 py-5 leading-6 text-slate-700">{row.trap}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section className="mt-6 card p-6 sm:p-8">
+          <div className="flex items-center gap-3">
+            <ListChecks className="text-[#0f766e]" />
+            <div>
+              <p className="text-xs font-black uppercase tracking-[.15em] text-[#0f766e]">
+                Exam checklist
+              </p>
+              <h2 className="mt-1 text-xl font-black text-[#142f4b]">
+                시험장에서 확인할 것
+              </h2>
+            </div>
+          </div>
+          <ol className="mt-6 grid gap-3">
+            {lesson.examChecklist.map((item, itemIndex) => (
+              <li
+                key={item}
+                className="flex items-center gap-4 rounded-xl bg-[#edf8f5] p-4"
+              >
+                <span className="grid size-8 shrink-0 place-items-center rounded-full bg-[#0f766e] text-sm font-black text-white">
+                  {itemIndex + 1}
+                </span>
+                <span className="font-bold leading-7 text-[#142f4b]">{item}</span>
               </li>
             ))}
           </ol>
@@ -138,6 +270,34 @@ export default async function BdaLessonPage({ params }: Props) {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section className="mt-6 rounded-2xl bg-[#173957] p-6 text-white sm:p-8">
+          <div className="flex items-center gap-3">
+            <BrainCircuit className="text-teal-200" />
+            <div>
+              <p className="text-xs font-black uppercase tracking-[.15em] text-teal-200">
+                Step 3 · Exam practice
+              </p>
+              <h2 className="mt-1 text-xl font-black">이 개념을 문제로 확인</h2>
+            </div>
+          </div>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-200">
+            개념과 판단 기준을 확인했다면 정답이 노출되지 않은 상태에서 직접
+            선택하고, 제출 뒤 선택지별 근거와 오답 원인을 확인하세요.
+          </p>
+          {firstQuestionId ? (
+            <Link
+              href={`/bda/written/practice/${firstQuestionId}`}
+              className="mt-6 flex items-center justify-between rounded-xl border border-white/15 bg-white/10 p-5 font-black text-white"
+            >
+              연결 문제 풀기 <ArrowRight />
+            </Link>
+          ) : (
+            <p className="mt-6 rounded-xl bg-white/10 p-5 text-sm text-slate-200">
+              이 레슨의 연결 문제는 검수 후 순차적으로 공개됩니다.
+            </p>
+          )}
         </section>
 
         <section className="mt-6 rounded-2xl border border-slate-200 bg-white p-5">
@@ -164,15 +324,6 @@ export default async function BdaLessonPage({ params }: Props) {
             </a>
           </div>
         </section>
-
-        {firstQuestionId ? (
-          <Link
-            href={`/bda/written/practice/${firstQuestionId}`}
-            className="mt-6 flex items-center justify-between rounded-2xl bg-[#0f766e] p-5 font-black text-white"
-          >
-            이 개념 문제로 확인하기 <ArrowRight />
-          </Link>
-        ) : null}
 
         <nav className="mt-8 grid gap-3 sm:grid-cols-2" aria-label="레슨 이동">
           {previous ? (

@@ -28,6 +28,27 @@ export const bdaLessonSchema = z.object({
   keyPoints: z.array(z.string().min(1)).min(3),
   examTraps: z.array(z.string().min(1)).min(2),
   relatedTerms: z.array(z.string().min(1)).min(2),
+  conceptDefinition: z.array(z.string().min(1)).min(2),
+  decisionSteps: z
+    .array(
+      z.object({
+        label: z.string().min(1),
+        description: z.string().min(1),
+      }),
+    )
+    .min(3),
+  comparisonRows: z
+    .array(
+      z.object({
+        label: z.string().min(1),
+        core: z.string().min(1),
+        use: z.string().min(1),
+        trap: z.string().min(1),
+      }),
+    )
+    .min(2),
+  examChecklist: z.array(z.string().min(1)).min(3),
+  memoryLine: z.string().min(1),
   sourceRefs: z.array(bdaSourceRefSchema).min(1),
   questionIds: z.array(z.string().min(1)),
   contentStatus: z.enum(["draft", "in_review", "published"]),

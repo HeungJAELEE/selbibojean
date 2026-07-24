@@ -1,17 +1,24 @@
 import Link from "next/link";
-import { BarChart3, BookOpenText, BrainCircuit, Home } from "lucide-react";
+import {
+  BarChart3,
+  BookOpenText,
+  BrainCircuit,
+  Code2,
+  Home,
+} from "lucide-react";
 
 const links = [
   { href: "/bda", label: "학습 홈", icon: Home },
   { href: "/bda/written/theory", label: "필기 이론", icon: BookOpenText },
   { href: "/bda/written/practice", label: "개념 문제", icon: BrainCircuit },
+  { href: "/bda/practical", label: "실기 코드", icon: Code2 },
 ] as const;
 
-export function BdaSectionNav() {
+export function BdaSectionNav({ homeHref = "/bda" }: { homeHref?: string }) {
   return (
     <div className="border-b border-slate-200 bg-[#f7fbff]">
       <div className="page-wrap flex min-h-14 items-center justify-between gap-3 py-2">
-        <Link href="/bda" className="flex items-center gap-2 font-black text-[#142f4b]">
+        <Link href={homeHref} className="flex items-center gap-2 font-black text-[#142f4b]">
           <span className="grid size-8 place-items-center rounded-lg bg-[#0f766e] text-white">
             <BarChart3 size={17} />
           </span>
