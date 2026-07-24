@@ -1,0 +1,536 @@
+[
+  {
+    "id": "ncs-bearing-four-types",
+    "title": "구름베어링 4종 실사 비교",
+    "imagePaths": [
+      "/practical/ncs/bearing-cylindrical-roller.png",
+      "/practical/ncs/bearing-tapered-roller.png",
+      "/practical/ncs/bearing-thrust-ball.png",
+      "/practical/ncs/bearing-thrust-needle.png"
+    ],
+    "promptLabels": [
+      "가",
+      "나",
+      "다",
+      "라"
+    ],
+    "promptAltTexts": [
+      "(가) 원통형 전동체가 배열된 베어링 실사",
+      "(나) 경사진 원통형 전동체가 배열된 베어링 실사",
+      "(다) 두 와셔 사이에 구형 전동체가 배열된 베어링 실사",
+      "(라) 두 와셔 사이에 가는 원통형 전동체가 배열된 베어링 실사"
+    ],
+    "altText": "원통 롤러, 테이퍼 롤러, 스러스트 볼, 스러스트 니들 베어링을 차례로 보여 주는 NCS 원문 사진",
+    "caption": "전동체 형상과 궤도륜 구조를 비교해 네 종류의 베어링을 식별한다.",
+    "sourceLabel": "NCS 학습모듈 「일반산업기계 구동장치 정비」",
+    "ncsCode": "1505010108",
+    "pdfPage": 96,
+    "printedPage": 84,
+    "figureNumber": "그림 3-6~3-9",
+    "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "examMatchStatus": "exact_source",
+    "rightsStatus": "education_use_with_attribution",
+    "publicUseStatus": "public"
+  },
+  {
+    "id": "ncs-spherical-roller-bearing",
+    "title": "복열 자동조심 롤러베어링",
+    "imagePaths": [
+      "/practical/ncs/bearing-self-aligning-ball.png"
+    ],
+    "promptLabels": [
+      "가"
+    ],
+    "promptAltTexts": [
+      "두 줄의 배럴형 전동체와 구면 궤도를 가진 베어링 실사"
+    ],
+    "altText": "두 줄의 배럴형 롤러와 구면 외륜 궤도를 가진 복열 자동조심 롤러베어링 NCS 원문 사진",
+    "caption": "그림의 전동체는 구가 아닌 배럴형 롤러이다. NCS 원문 그림 캡션은 ‘자동 조심 볼 베어링’으로 적혀 있으나, 형상에 따른 기술적 식별은 복열 자동조심 롤러베어링이다.",
+    "sourceLabel": "NCS 학습모듈 「운반하역기계 구동장치 정비」",
+    "ncsCode": "1505010108",
+    "pdfPage": 100,
+    "printedPage": 88,
+    "figureNumber": "그림 3-12",
+    "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "examMatchStatus": "exact_source",
+    "rightsStatus": "education_use_with_attribution",
+    "publicUseStatus": "public"
+  },
+  {
+    "id": "ncs-bearing-types",
+    "title": "구름베어링 형식 비교",
+    "imagePaths": [
+      "/practical/ncs/bearing-cylindrical-roller.png",
+      "/practical/ncs/bearing-tapered-roller.png",
+      "/practical/ncs/bearing-thrust-ball.png",
+      "/practical/ncs/bearing-thrust-needle.png",
+      "/practical/ncs/bearing-magnetic-ball.png",
+      "/practical/ncs/bearing-self-aligning-ball.png"
+    ],
+    "altText": "원통 롤러, 테이퍼 롤러, 스러스트 볼, 스러스트 니들, 마그네틱 볼, 자동조심 볼베어링의 NCS 원문 사진",
+    "caption": "전동체 형상과 궤도륜 구조를 비교해 베어링 형식을 식별한다.",
+    "sourceLabel": "NCS 학습모듈 「운반하역기계 구동장치 정비」",
+    "ncsCode": "1505010108",
+    "pdfPage": 96,
+    "printedPage": 84,
+    "figureNumber": "그림 3-6~3-12",
+    "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "examMatchStatus": "concept_source",
+    "rightsStatus": "education_use_with_attribution",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "ncs-bearing-heating",
+    "title": "베어링 열팽창 조립",
+    "imagePaths": [
+      "/practical/ncs/bearing-oil-bath-heating-diagram.png",
+      "/practical/ncs/bearing-heated-assembly-photo.png"
+    ],
+    "altText": "오일 배스 가열장치와 가열된 대형 베어링을 조립하는 NCS 원문 사진",
+    "caption": "베어링을 균일하게 가열하고 온도를 관리한 뒤 축에 직각으로 조립하는 절차를 보여준다.",
+    "sourceLabel": "NCS 학습모듈 「운반하역기계 구동장치 정비」",
+    "ncsCode": "1505010108",
+    "pdfPage": 122,
+    "printedPage": 110,
+    "figureNumber": "그림 3-33~3-34",
+    "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "examMatchStatus": "exact_source",
+    "rightsStatus": "education_use_with_attribution",
+    "publicUseStatus": "public"
+  },
+  {
+    "id": "ncs-tapered-bearing-disassembly",
+    "title": "테이퍼 롤러베어링 분해",
+    "imagePaths": [
+      "/practical/ncs/tapered-bearing-disassembly-photo.png"
+    ],
+    "altText": "베어링 조립부의 잠금부품을 공구로 분해하는 NCS 원문 연속 사진",
+    "caption": "회전체 정지와 에너지 차단 후 지정 공구로 잠금부품을 순서대로 분해한다.",
+    "sourceLabel": "NCS 학습모듈 「운반하역기계 구동장치 정비」",
+    "ncsCode": "1505010108",
+    "pdfPage": 129,
+    "printedPage": 117,
+    "figureNumber": "그림 3-42",
+    "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "examMatchStatus": "concept_source",
+    "rightsStatus": "education_use_with_attribution",
+    "publicUseStatus": "public"
+  },
+  {
+    "id": "ncs-vernier-reading",
+    "title": "버니어캘리퍼스 눈금 판독",
+    "imagePaths": [
+      "/practical/ncs/vernier-scale-reading.png"
+    ],
+    "altText": "주척과 버니어 눈금이 겹쳐 보이는 아날로그 버니어캘리퍼스의 NCS 원문 확대 사진",
+    "caption": "주척 기준값에 버니어의 일치 눈금 값을 더해 측정값을 판독한다.",
+    "sourceLabel": "NCS 학습모듈 「기본측정기 사용」",
+    "ncsCode": "1502010504",
+    "pdfPage": 84,
+    "printedPage": 72,
+    "figureNumber": "그림 3-46",
+    "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+    "examMatchStatus": "exact_source",
+    "rightsStatus": "education_use_with_attribution",
+    "publicUseStatus": "public"
+  },
+  {
+    "id": "ncs-accumulator-safety-circuit",
+    "title": "어큐뮬레이터 안전회로",
+    "imagePaths": [
+      "/practical/ncs/accumulator-safety-circuit.png"
+    ],
+    "promptAltTexts": [
+      "축압기와 밸브류가 연결된 유압 안전회로의 NCS 원문 도해"
+    ],
+    "altText": "압력용기, 차단밸브, 방출밸브, 안전밸브, 압력계로 구성된 NCS 어큐뮬레이터 안전회로",
+    "caption": "정비 전 차단과 잔압 방출이 가능한 어큐뮬레이터 회로 구성을 나타낸다.",
+    "sourceLabel": "NCS 학습모듈 「유압제어」",
+    "ncsCode": "1503010216",
+    "pdfPage": 78,
+    "printedPage": 66,
+    "figureNumber": "그림 2-14",
+    "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
+    "examMatchStatus": "exact_source",
+    "rightsStatus": "education_use_with_attribution",
+    "publicUseStatus": "public"
+  },
+  {
+    "id": "diagram-sensor-directions",
+    "title": "센서 검출 방향",
+    "imagePaths": [
+      "/practical/diagrams/sensor-directions-v2.svg"
+    ],
+    "altText": "축방향과 반경방향을 화살표로 표시한 센서 설치 방향 개념도",
+    "caption": "축방향과 반경방향의 차이를 구분하는 자체 제작 도식이다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기계시스템 분석",
+    "ncsCode": "1503010201",
+    "pdfPage": 25,
+    "printedPage": 13,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "34717f4b8c8df1db9e4681fd90985ce6293830d050f7d0dc44a9abcf66be2441",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-maintenance-tools",
+    "title": "정비 공구 식별",
+    "imagePaths": [
+      "/practical/diagrams/maintenance-tools-v2.svg"
+    ],
+    "altText": "스패너, 체인블록, 풀러, 플라이어를 단순화한 정비 공구 도식",
+    "caption": "작업 목적에 맞는 정비 공구를 식별하기 위한 자체 제작 도식이다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기계구동장치 조립",
+    "ncsCode": "1503010120",
+    "pdfPage": 42,
+    "printedPage": 30,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-gear-damage",
+    "title": "기어 손상 비교",
+    "imagePaths": [
+      "/practical/diagrams/gear-damage-v2.svg"
+    ],
+    "altText": "피팅, 스폴링, 스코어링의 치면 손상을 비교한 개념도",
+    "caption": "손상 크기와 방향을 비교해 기어 치면 결함을 판별한다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 운반하역기계 구동장치 정비",
+    "ncsCode": "1505010108",
+    "pdfPage": 71,
+    "printedPage": 59,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-thread-profiles",
+    "title": "나사산 형상 비교",
+    "imagePaths": [
+      "/practical/diagrams/thread-profiles-v2.svg"
+    ],
+    "altText": "삼각나사, 사각나사, 사다리꼴나사, 톱니나사의 단면 형상",
+    "caption": "나사산 각도와 하중 전달면을 비교하는 자체 제작 도식이다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기계구동장치 조립",
+    "ncsCode": "1503010120",
+    "pdfPage": 42,
+    "printedPage": 30,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-shaft-misalignment",
+    "title": "축정렬 불량 비교",
+    "imagePaths": [
+      "/practical/diagrams/shaft-misalignment-v2.svg"
+    ],
+    "altText": "평행 오프셋과 각도 축정렬 불량을 비교한 두 축의 중심선 도식",
+    "caption": "두 축 중심선의 위치와 각도를 비교해 정렬 불량 유형을 판별한다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기계구동장치 조립",
+    "ncsCode": "1503010120",
+    "pdfPage": 42,
+    "printedPage": 30,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-gear-tooth-curves",
+    "title": "기어 치형 곡선 비교",
+    "imagePaths": [
+      "/practical/diagrams/gear-tooth-curves-v2.svg"
+    ],
+    "altText": "인벌류트와 사이클로이드 계열 치형 곡선을 비교한 도식",
+    "caption": "곡선 생성 원리의 차이를 구분하기 위한 자체 제작 개념도이다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 운반하역기계 구동장치 정비",
+    "ncsCode": "1505010108",
+    "pdfPage": 71,
+    "printedPage": 59,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-dial-vblock",
+    "title": "다이얼 게이지와 V블록 측정",
+    "imagePaths": [
+      "/practical/diagrams/dial-vblock-v2.svg"
+    ],
+    "altText": "V블록 위 축에 다이얼 게이지를 접촉시킨 흔들림 측정 도식",
+    "caption": "축을 회전시키며 지시값 변화를 확인하는 측정 배치를 나타낸다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기본측정기 사용",
+    "ncsCode": "1502010504",
+    "pdfPage": 39,
+    "printedPage": 27,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-bearing-components",
+    "title": "구름베어링 구성요소",
+    "imagePaths": [
+      "/practical/diagrams/bearing-components-v2.svg"
+    ],
+    "altText": "내륜, 외륜, 전동체, 케이지를 표시한 구름베어링 단면도",
+    "caption": "구름베어링의 네 기본 구성요소를 구분한다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 운반하역기계 구동장치 정비",
+    "ncsCode": "1505010108",
+    "pdfPage": 96,
+    "printedPage": 84,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-pascal-force",
+    "title": "파스칼 원리와 출력",
+    "imagePaths": [
+      "/practical/diagrams/pascal-force-v2.svg"
+    ],
+    "altText": "서로 다른 단면적의 두 피스톤에 압력이 전달되는 유압 장치 도식",
+    "caption": "동일 압력에서 피스톤 면적비에 따라 출력이 달라지는 원리를 나타낸다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 유압제어",
+    "ncsCode": "1503010216",
+    "pdfPage": 49,
+    "printedPage": 37,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-journal-clearance",
+    "title": "저널베어링 간극 측정",
+    "imagePaths": [
+      "/practical/diagrams/journal-clearance-v2.svg"
+    ],
+    "altText": "저널과 베어링 사이 연선을 압착해 간극을 측정하는 단면 도식",
+    "caption": "규정 토크로 캡을 체결한 뒤 압착된 연선 두께로 간극을 판정한다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 운반하역기계 구동장치 정비",
+    "ncsCode": "1505010108",
+    "pdfPage": 96,
+    "printedPage": 84,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-vernier-48-2",
+    "title": "버니어캘리퍼스 48.2 mm 판독",
+    "imagePaths": [
+      "/practical/diagrams/vernier-48-2-v2.svg"
+    ],
+    "altText": "주척 48 mm와 버니어 일치 눈금 0.2 mm를 나타낸 버니어 눈금도",
+    "caption": "주척값과 버니어 일치값을 더해 48.2 mm를 판독한다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기본측정기 사용",
+    "ncsCode": "1502010504",
+    "pdfPage": 84,
+    "printedPage": 72,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-spherical-roller-bearing",
+    "title": "복열 자동조심 롤러베어링",
+    "imagePaths": [
+      "/practical/diagrams/spherical-roller-bearing-v2.svg"
+    ],
+    "altText": "두 줄의 배럴형 롤러와 구면 외륜 궤도를 가진 자동조심 롤러베어링 단면도",
+    "caption": "복열 롤러와 구면 궤도로 각도 오차를 허용하는 구조를 나타낸다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 운반하역기계 구동장치 정비",
+    "ncsCode": "1505010108",
+    "pdfPage": 96,
+    "printedPage": 84,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-measurement-instruments",
+    "title": "측정기 3종 식별",
+    "imagePaths": [
+      "/practical/diagrams/measurement-instruments-v2.svg"
+    ],
+    "altText": "다이얼 게이지, 버니어캘리퍼스, 외측 마이크로미터를 나란히 표시한 도식",
+    "caption": "형상과 측정 용도를 기준으로 세 측정기를 식별한다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기본측정기 사용",
+    "ncsCode": "1502010504",
+    "pdfPage": 39,
+    "printedPage": 27,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-measurement-tools",
+    "title": "측정 보조기구 식별",
+    "imagePaths": [
+      "/practical/diagrams/measurement-tools-v2.svg"
+    ],
+    "altText": "버니어캘리퍼스, 마이크로미터, 다이얼 게이지, V블록을 비교한 도식",
+    "caption": "측정기와 보조기구의 형상 및 용도를 비교한다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기본측정기 사용",
+    "ncsCode": "1502010504",
+    "pdfPage": 39,
+    "printedPage": 27,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-bearing-four-exam",
+    "title": "베어링 4종 식별",
+    "imagePaths": [
+      "/practical/diagrams/bearing-four-exam.svg"
+    ],
+    "altText": "A부터 D까지 표시한 원통 롤러, 테이퍼 롤러, 스러스트 볼, 자동조심 롤러베어링 개념도",
+    "caption": "전동체와 궤도륜 구조를 기준으로 네 종류의 베어링을 구분한다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 운반하역기계 구동장치 정비",
+    "ncsCode": "1505010108",
+    "pdfPage": 96,
+    "printedPage": 84,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-tapered-endplay",
+    "title": "테이퍼 롤러베어링 엔드플레이",
+    "imagePaths": [
+      "/practical/diagrams/tapered-endplay.svg"
+    ],
+    "altText": "마주 보는 테이퍼 롤러베어링의 축방향 간극을 다이얼 게이지로 측정하는 도식",
+    "caption": "조정너트와 다이얼 게이지를 이용해 축방향 엔드플레이를 확인한다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 운반하역기계 구동장치 정비",
+    "ncsCode": "1505010108",
+    "pdfPage": 96,
+    "printedPage": 84,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-shaft-misalignment-three",
+    "title": "축정렬 불량 3종",
+    "imagePaths": [
+      "/practical/diagrams/shaft-misalignment-three.svg"
+    ],
+    "altText": "평행, 각도, 복합 축정렬 불량을 A부터 C까지 비교한 도식",
+    "caption": "중심선의 오프셋과 각도를 기준으로 세 정렬 불량을 판별한다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기계구동장치 조립",
+    "ncsCode": "1503010120",
+    "pdfPage": 42,
+    "printedPage": 30,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-maintenance-tools-five",
+    "title": "정비 공구 5종",
+    "imagePaths": [
+      "/practical/diagrams/maintenance-tools-five.svg"
+    ],
+    "altText": "후크스패너, 소켓렌치, 기어풀러, 스냅링플라이어, 토크렌치를 A부터 E까지 표시한 도식",
+    "caption": "공구 형상과 적용 작업을 연결해 다섯 정비 공구를 식별한다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기계구동장치 조립",
+    "ncsCode": "1503010120",
+    "pdfPage": 42,
+    "printedPage": 30,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-vernier-37-35",
+    "title": "버니어캘리퍼스 37.35 mm 판독",
+    "imagePaths": [
+      "/practical/diagrams/vernier-37-35.svg"
+    ],
+    "altText": "주척 37 mm를 지나 버니어 7번째 눈금이 일치하는 0.05 mm 버니어 눈금도",
+    "caption": "주척 37 mm와 버니어 0.35 mm를 더해 측정값을 판독한다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기본측정기 사용",
+    "ncsCode": "1502010504",
+    "pdfPage": 84,
+    "printedPage": 72,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-micrometer-12-73",
+    "title": "외측 마이크로미터 12.73 mm 판독",
+    "imagePaths": [
+      "/practical/diagrams/micrometer-12-73.svg"
+    ],
+    "altText": "슬리브 12.5 mm와 딤블 23눈금이 표시된 외측 마이크로미터 눈금도",
+    "caption": "슬리브값과 딤블값을 합산해 외측 마이크로미터 값을 판독한다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기본측정기 사용",
+    "ncsCode": "1502010504",
+    "pdfPage": 53,
+    "printedPage": 41,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  },
+  {
+    "id": "diagram-double-acting-cylinder",
+    "title": "복동실린더 전진·후진 유효면적",
+    "imagePaths": [
+      "/practical/diagrams/double-acting-cylinder.svg"
+    ],
+    "altText": "실린더 내경 D와 로드 지름 d에 따른 전진면적과 후진 환상면적 도식",
+    "caption": "전진은 피스톤 전면적, 후진은 로드 단면적을 제외한 환상면적을 사용한다.",
+    "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 유압제어",
+    "ncsCode": "1503010216",
+    "pdfPage": 49,
+    "printedPage": 37,
+    "figureNumber": "NCS 원문 기반 자체 제작",
+    "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "internal_only"
+  }
+]

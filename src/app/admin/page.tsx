@@ -41,6 +41,9 @@ export default async function AdminPage() {
         <Link href="/admin/review/welding-safety" className="ml-3 mt-6 inline-block rounded-xl border border-amber-300 bg-amber-50 px-5 py-3 font-bold text-amber-900">
           용접 안전 29~33차 {weldingSafety.status === "source_missing" ? "원본 대기" : `${weldingSafety.counts.importedQuestions}문항`}
         </Link>
+        <Link href="/admin/review/practical" className="ml-3 mt-6 inline-block rounded-xl border border-sky-300 bg-sky-50 px-5 py-3 font-bold text-sky-900">
+          실기 원문·정답·이미지 검수
+        </Link>
       </div>
     </div>
   );

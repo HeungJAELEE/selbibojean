@@ -115,7 +115,7 @@ function AccumulatorState({
         role="img"
         aria-labelledby={`${id}-title ${id}-desc`}
       >
-        <title id={`${id}-title`}>어큐뮬레이터 {title} 상태 구조도</title>
+        <title id={`${id}-title`}>{`어큐뮬레이터 ${title} 상태 구조도`}</title>
         <desc id={`${id}-desc`}>{explanation}</desc>
         <rect x="86" y="22" width="148" height="170" rx="52" fill="#f8fafc" stroke="#173957" strokeWidth="5" />
         <rect x="94" y="28" width="132" height={gasHeight} rx="40" fill="#d9eef0" />
@@ -405,7 +405,7 @@ function WeldingCard({
         role="img"
         aria-labelledby={`${id}-title ${id}-desc`}
       >
-        <title id={`${id}-title`}>{title}의 결합 원리</title>
+        <title id={`${id}-title`}>{`${title}의 결합 원리`}</title>
         <desc id={`${id}-desc`}>{description}</desc>
         <rect x="18" y="82" width="92" height="34" rx="6" fill="#cbd5e1" stroke="#64748b" strokeWidth="2" />
         <rect x="130" y="82" width="92" height="34" rx="6" fill="#cbd5e1" stroke="#64748b" strokeWidth="2" />

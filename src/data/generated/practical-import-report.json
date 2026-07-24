@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-07-24T13:32:31.505Z",
+  "sourceFile": "설비보전기사_작업형실기_기출복원_출제예상40_개념통합_2차.xlsx",
+  "sourceSha256": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+  "rows": {
+    "past": 41,
+    "predicted": 40,
+    "concepts": 46,
+    "supplementalConcepts": 43,
+    "ncsDocuments": 11,
+    "visualAids": 28
+  },
+  "publication": {
+    "past": 17,
+    "predicted": 39,
+    "concepts": 46,
+    "supplementalConcepts": 43,
+    "held": 25,
+    "heldByDisposition": {
+      "held_asset_missing": 16,
+      "held_source_missing": 7,
+      "held_answer_conflict": 2
+    }
+  },
+  "exactMatch": true,
+  "warnings": [
+    "EXP-C03 OEE 계산은 현재 확보한 NCS 11종 밖의 원문이 필요하여 공개 보류했다.",
+    "제3각법 등 제3자 표준 출처가 표시된 원도형은 공개 자산으로 복제하지 않았다.",
+    "응시자 복원 캡처는 출제 이력 대조에만 사용하고 공개 이미지로 복제하지 않았다."
+  ]
+}

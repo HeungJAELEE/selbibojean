@@ -8,7 +8,7 @@ export default defineConfig({
   reporter: "html",
   use: { baseURL: "http://127.0.0.1:3000", trace: "on-first-retry" },
   webServer: {
-    command: `"${process.execPath}" node_modules/next/dist/bin/next dev`,
+    command: `"${process.execPath}" node_modules/vinext/dist/cli.js dev --port 3000`,
     url: "http://127.0.0.1:3000",
     reuseExistingServer: true,
     timeout: 120_000,

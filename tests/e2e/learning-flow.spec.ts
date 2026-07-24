@@ -17,11 +17,11 @@ test("home exposes the main learning paths", async ({ page }) => {
   await page.goto("/");
   await expect(page).toHaveTitle("설비보전기사 마스터북");
   await expect(page.getByRole("link", { name: "설비보전기사 마스터북 홈" })).toContainText("설비보전기사");
-  await expect(page.getByRole("heading", { name: /문제를 맞히는 데서/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /이론에서 문제까지/ })).toBeVisible();
   const primaryPaths = page.getByTestId("primary-learning-paths");
-  await expect(primaryPaths.getByRole("link", { name: "이론 보기", exact: true })).toHaveAttribute("href", "/written/theory");
+  await expect(primaryPaths.getByRole("link", { name: "필기 이론", exact: true })).toHaveAttribute("href", "/written/theory");
   await expect(primaryPaths.getByRole("link", { name: "필기 모의고사", exact: true })).toHaveAttribute("href", "/written/mock");
-  await expect(primaryPaths.getByRole("link", { name: "실기 모의고사", exact: true })).toHaveAttribute("href", "/practical/mock");
+  await expect(primaryPaths.getByRole("link", { name: "실기 학습", exact: true })).toHaveAttribute("href", "/practical");
 });
 
 test("practice session is answer-safe and contains no duplicate question", async ({ request }) => {
@@ -144,11 +144,10 @@ test("written mock UI supports subject checkboxes and per-subject counts", async
   await expect(page.getByText(/실제 기출 목표 38문제/)).toBeVisible();
 });
 
-test("practical mock reserves a verified ten-question structure", async ({ page }) => {
+test("legacy practical mock route redirects to the practical learning hub", async ({ page }) => {
   await page.goto("/practical/mock");
-  await expect(page.getByRole("heading", { name: "실기 모의고사", exact: true, level: 1 })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "10문제형 실기 모의고사", exact: true })).toBeVisible();
-  await expect(page.getByText(/검증되지 않은 실기 문제는 임의로 출제하지 않습니다/)).toBeVisible();
+  await expect(page).toHaveURL(/\/practical$/);
+  await expect(page.getByRole("heading", { name: "실기 학습", exact: true, level: 1 })).toBeVisible();
 });
 
 test("admin review queue exposes every intentionally blocked item with evidence links", async ({ page }) => {

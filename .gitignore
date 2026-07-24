@@ -18,3 +18,4 @@ public/data/
 *.hwp
 _workspace/
 .superloopy/
+tmp/
