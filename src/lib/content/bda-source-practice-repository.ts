@@ -26,6 +26,22 @@ const PRACTICE_OVERRIDES: Record<
   string,
   PracticeOverride | PracticeOverride[]
 > = {
+  "s1-final-b001": {
+    stem: "다음 중 DIKW 피라미드의 '지식(Knowledge)'에 해당하는 사례는?",
+    choices: [
+      "스마트폰 A는 100만 원, B는 80만 원이다.",
+      "B 대리점이 A보다 20만 원 더 저렴하다.",
+      "저렴한 B 대리점에서 스마트폰을 사야겠다.",
+      "앞으로 가전제품은 무조건 B 대리점을 먼저 방문할 것이다.",
+    ],
+    correctOrder: 3,
+    answerText: "저렴한 B 대리점에서 스마트폰을 사야겠다.",
+    explanation:
+      "가격이라는 개별 사실은 데이터이고, 두 가격을 비교해 B가 더 저렴하다고 해석한 결과는 정보입니다. 그 정보를 구매 행동에 적용하는 판단은 지식에 해당합니다. 이후의 모든 구매에 일반화한 전략적 원칙은 지혜에 가깝습니다.",
+    disposition: "corrected",
+    reviewNote:
+      "원천의 '지계' 오탈자와 4번 앞 정답 표시를 바로잡고 DIKW 단계 정의로 3번을 교차 검수했습니다.",
+  },
   "s1-final-b003": [
     {
       stem: "다음 중 비정형 데이터로 보기 가장 어려운 것은?",
