@@ -523,9 +523,12 @@ function questionStemFromSource(summary: string, source: string) {
   );
   if (bracketedQuestion) return cleanQuestionStem(bracketedQuestion[1]);
 
-  const question = source.match(
-    /(?:문제(?:\s*\d+)?\s*[:.]?|Q\d*\.|\\?\[Q\d+\])\s*([\s\S]*?\?)(?=\*{0,2}\s*[①②③④⑤]|\*{0,2}\s*\n|$)/i,
-  );
+  const questionMatches = [
+    ...source.matchAll(
+      /(?:^|\n)\s*(?:>\s*)?(?:#{1,4}\s*)?(?:[-*]\s*)?(?:\*\*)?(?:문제(?:\s*\d+)?|Q\d+\.|\\?\[Q\d+\])(?:\*\*)?\s*[:：]?\s*([\s\S]*?\?)(?=\*{0,2}\s*[①②③④⑤]|\*{0,2}\s*\n|$)/gi,
+    ),
+  ];
+  const question = questionMatches.at(-1);
   if (question) return cleanQuestionStem(question[1]);
 
   const generic = source.match(/((?:다음|어느|전체|변수|랜덤|SOM|실루엣)[^?\n]{5,300}\?)/);

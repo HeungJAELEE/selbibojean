@@ -72,8 +72,10 @@ describe("BDA source practice publication", () => {
     expect(questions.length).toBeGreaterThanOrEqual(100);
     for (const question of questions) {
       expect(question.stem.length).toBeGreaterThan(5);
+      expect(question.stem.length, question.id).toBeLessThan(500);
       expect(question.reviewStatus).toBe("검수 완료");
       expect(question.stem).not.toMatch(/\[\[|<details|<summary>/);
+      expect(question.stem).not.toMatch(/```|#{2,}|\[!(?:TIP|WARNING|CAUTION)/);
       const privateQuestion = getBdaSourcePracticeQuestion(question.id);
       expect(privateQuestion?.answerText.length).toBeGreaterThan(0);
       expect(privateQuestion?.explanation.length).toBeGreaterThan(10);

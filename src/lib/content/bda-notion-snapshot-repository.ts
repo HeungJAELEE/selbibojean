@@ -171,6 +171,8 @@ export function sanitizeNotionSnapshot(snapshot: BdaNotionSnapshot) {
     .replace(/<table[^>]*>[\s\S]*?<\/table>/gi, (table) => `\n${tableToMarkdown(table)}\n`)
     .replace(/<\/?(?:columns|column|colgroup|col)(?:\s[^>]*)?>/gi, "\n")
     .replace(/<empty-block\s*\/>/gi, "")
+    .replace(/✅\s*/g, "")
+    .replace(/\*\*([①②③④⑤][^*\n]+)\*\*/g, "$1")
     .replace(/\s*\{toggle="true"\}\s*$/gm, "")
     .replace(/\s*\{color="[^"]+"\}\s*$/gm, "")
     .replace(/^\t+/gm, "")

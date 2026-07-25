@@ -72,6 +72,7 @@ describe("BDA Notion full migration snapshots", () => {
     expect(migrated.content).toContain("A[비즈니스 이해] <--> B[데이터 이해]");
     expect(migrated.content).toContain("$Value(W) \\\\gg Value(K) > Value(I) > Value(D)$");
     expect(migrated.content).not.toContain("Value*Value*");
+    expect(migrated.content).not.toContain("✅");
   });
 
   it("keeps every canonical Mermaid diagram syntactically valid after migration", async () => {
