@@ -1,5 +1,6 @@
 import "server-only";
 import { bdaContent } from "@/data/source/bda-content";
+import { bdaNotionPracticeQuestions } from "@/data/source/bda-notion-library";
 import {
   bdaContentSchema,
   isPublishableBdaQuestion,
@@ -10,8 +11,13 @@ import {
 
 let parsedContent: ReturnType<typeof bdaContentSchema.parse> | null = null;
 
+const contentWithNotionPractice = {
+  ...bdaContent,
+  questions: [...bdaContent.questions, ...bdaNotionPracticeQuestions],
+};
+
 export function getBdaContent() {
-  parsedContent ??= bdaContentSchema.parse(bdaContent);
+  parsedContent ??= bdaContentSchema.parse(contentWithNotionPractice);
   return parsedContent;
 }
 

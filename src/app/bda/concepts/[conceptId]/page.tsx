@@ -11,6 +11,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { notFound } from "next/navigation";
+import { getBdaNotionModulesForConcept } from "@/data/source/bda-notion-library";
 import {
   getBdaQbank,
   getBdaQbankConceptDetail,
@@ -46,6 +47,7 @@ export default async function BdaConceptDetailPage({
   if (!detail || !detail.enrichment) notFound();
 
   const { concept, enrichment, relatedItems, relatedTopics, relatedPracticalTasks } = detail;
+  const notionModules = getBdaNotionModulesForConcept(conceptId);
 
   return (
     <main className="page-wrap pb-16 pt-8">
@@ -145,6 +147,21 @@ export default async function BdaConceptDetailPage({
                 {enrichment.examFocus.map((focus) => <li key={focus} className="rounded-xl bg-slate-50 px-3 py-2">{focus}</li>)}
               </ul>
             </section>
+
+            {notionModules.length ? (
+              <section className="rounded-2xl border border-teal-200 bg-teal-50 p-5">
+                <p className="eyebrow text-teal-700">Notion reinforcement</p>
+                <h2 className="mt-2 text-xl font-black text-teal-950">원천 이론에서 이어 보기</h2>
+                <p className="mt-2 text-xs leading-5 text-teal-900">사용자 제공 Notion 하위 페이지에서 이 개념을 다룬 학습 모듈입니다.</p>
+                <div className="mt-4 grid gap-2">
+                  {notionModules.map((module) => (
+                    <Link key={module.id} href={`/bda/notion#${module.id}`} className="rounded-xl border border-teal-200 bg-white px-3 py-2.5 text-sm font-black text-teal-950 hover:bg-teal-100">
+                      {module.title}
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            ) : null}
 
             <section className="rounded-2xl border border-slate-200 p-5">
               <p className="eyebrow">Linked topics</p>

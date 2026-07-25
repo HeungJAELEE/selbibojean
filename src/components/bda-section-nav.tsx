@@ -5,11 +5,13 @@ import {
   BrainCircuit,
   Code2,
   Database,
+  FileStack,
   Home,
 } from "lucide-react";
 
 const links = [
   { href: "/bda", label: "학습 홈", icon: Home },
+  { href: "/bda/notion", label: "Notion 이론", icon: FileStack },
   { href: "/bda/concepts", label: "개념 지도", icon: BookOpenText },
   { href: "/bda/bank", label: "문제은행", icon: BrainCircuit },
   { href: "/bda/practical", label: "실기 코드", icon: Code2 },
