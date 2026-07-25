@@ -39,7 +39,7 @@ describe("BDA Notion full migration snapshots", () => {
     }
   });
 
-  it("renders tables and diagrams while keeping unverified answer blocks off the client", () => {
+  it("renders tables and diagrams while replacing source answer blocks with reviewed practice markers", () => {
     for (const subject of bdaTextbookSubjects) {
       const canonical = getBdaCanonicalSnapshot(subject.id);
       expect(canonical).toBeDefined();
@@ -48,6 +48,7 @@ describe("BDA Notion full migration snapshots", () => {
       expect(migrated.content).not.toContain("<table");
       expect(migrated.content).not.toContain("<details");
       expect(migrated.content).not.toContain("> **정답");
+      expect(migrated.content).toContain("[[BDA_SOURCE_PRACTICE:");
       expect(migrated.hiddenExerciseCount).toBeGreaterThanOrEqual(0);
     }
 
@@ -56,6 +57,9 @@ describe("BDA Notion full migration snapshots", () => {
       .join("\n");
     expect(allMigrated).toContain("| ---");
     expect(allMigrated).toContain("```mermaid");
+    expect(
+      allMigrated.match(/\[\[BDA_SOURCE_PRACTICE:[^\]]+\]\]/g),
+    ).toHaveLength(100);
   });
 
   it("normalizes common Notion equation and divider artifacts before rendering", () => {
@@ -65,5 +69,31 @@ describe("BDA Notion full migration snapshots", () => {
     expect(migrated.content).not.toContain("10211021");
     expect(migrated.content).not.toContain("250250");
     expect(migrated.content).not.toContain("판단합니다. ---");
+    expect(migrated.content).toContain("A[비즈니스 이해] <--> B[데이터 이해]");
+    expect(migrated.content).toContain("$Value(W) \\\\gg Value(K) > Value(I) > Value(D)$");
+    expect(migrated.content).not.toContain("Value*Value*");
+  });
+
+  it("keeps every canonical Mermaid diagram syntactically valid after migration", async () => {
+    const { default: mermaid } = await import("mermaid");
+    mermaid.initialize({ startOnLoad: false, securityLevel: "strict" });
+    let diagramCount = 0;
+
+    for (const subject of bdaTextbookSubjects) {
+      const migrated = sanitizeNotionSnapshot(getBdaCanonicalSnapshot(subject.id)!);
+      const diagrams = [
+        ...migrated.content.matchAll(/```mermaid\s*\n([\s\S]*?)```/g),
+      ].map((match) => match[1].trim());
+
+      diagramCount += diagrams.length;
+      for (const [index, diagram] of diagrams.entries()) {
+        await expect(
+          mermaid.parse(diagram),
+          `${subject.id} Mermaid ${index + 1}`,
+        ).resolves.toBeTruthy();
+      }
+    }
+
+    expect(diagramCount).toBeGreaterThan(0);
   });
 });

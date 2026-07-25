@@ -5,6 +5,10 @@ import { notFound } from "next/navigation";
 import { MarkdownContent } from "@/components/markdown-content";
 import { extractMarkdownOutline, type MarkdownOutlineItem } from "@/lib/markdown-outline";
 import {
+  getBdaSourcePracticeAudit,
+  getPublicBdaSourcePracticeBlocks,
+} from "@/lib/content/bda-source-practice-repository";
+import {
   bdaTextbookSubjects,
   getBdaCanonicalSnapshot,
   getBdaTextbookSubject,
@@ -42,6 +46,12 @@ export default async function BdaTextbookSubjectPage({
   const snapshots = getBdaTextbookSubjectSnapshots(subjectId);
   const supplements = snapshots.filter((snapshot) => snapshot.id !== canonical.id);
   const migrated = sanitizeNotionSnapshot(canonical);
+  const sourcePracticeBlocks = getPublicBdaSourcePracticeBlocks(canonical.id);
+  const sourcePracticeQuestionCount = sourcePracticeBlocks.reduce(
+    (sum, block) => sum + block.questions.length,
+    0,
+  );
+  const sourcePracticeAudit = getBdaSourcePracticeAudit();
   const outline = extractMarkdownOutline(migrated.content);
 
   return (
@@ -57,7 +67,9 @@ export default async function BdaTextbookSubjectPage({
         <div className="mt-6 flex flex-wrap gap-2 text-xs font-bold">
           <span className="rounded-full bg-white/10 px-3 py-1.5">대표 원천: {canonical.title}</span>
           <span className="rounded-full bg-white/10 px-3 py-1.5">보강 스냅샷 {supplements.length}개</span>
-          <span className="rounded-full bg-white/10 px-3 py-1.5">정답보호 제외 블록 {migrated.hiddenExerciseCount}개</span>
+          <span className="rounded-full bg-white/10 px-3 py-1.5">
+            검수 공개 원천문제 {sourcePracticeQuestionCount}개
+          </span>
         </div>
         <nav aria-label="과목 바로가기" className="mt-7 grid grid-cols-2 gap-2 border-t border-white/10 pt-5 sm:flex">
           {bdaTextbookSubjects.map((item) => (
@@ -91,7 +103,10 @@ export default async function BdaTextbookSubjectPage({
               <h2 className="mt-1 text-2xl font-black text-[#142f4b]">전체 이론·표·도식</h2>
             </div>
           </div>
-          <MarkdownContent content={migrated.content} />
+          <MarkdownContent
+            content={migrated.content}
+            sourcePracticeBlocks={sourcePracticeBlocks}
+          />
         </article>
 
         <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
@@ -133,7 +148,15 @@ export default async function BdaTextbookSubjectPage({
 
           <section className="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950">
             <ShieldCheck size={18} />
-            <p className="mt-2"><strong>답안 보호:</strong> 원천 연습문제와 정답은 서버 스냅샷에 보존되지만, 검수 전에는 이 화면에 전달하지 않습니다.</p>
+            <p className="mt-2">
+              <strong>제출 후 공개:</strong> 검수한 원천 문제는 모두 본문 토글에서
+              풀 수 있습니다. 정답·해설은 답안을 제출한 뒤에만 표시합니다.
+            </p>
+            <p className="mt-2 text-xs">
+              전체 원천 블록 {sourcePracticeAudit.sourceBlockCount}개 · 검수 공개{" "}
+              {sourcePracticeAudit.publishedBlockCount}개 · 보류{" "}
+              {sourcePracticeAudit.heldBlockCount}개
+            </p>
           </section>
         </aside>
       </div>

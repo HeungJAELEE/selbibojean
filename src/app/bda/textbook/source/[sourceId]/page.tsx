@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, Archive, ShieldCheck } from "lucide-react";
 import { notFound } from "next/navigation";
 import { MarkdownContent } from "@/components/markdown-content";
+import { getPublicBdaSourcePracticeBlocks } from "@/lib/content/bda-source-practice-repository";
 import {
   getBdaNotionSnapshot,
   getBdaNotionSnapshots,
@@ -38,6 +39,11 @@ export default async function BdaTextbookSourcePage({
 
   const subject = getBdaTextbookSubject(snapshot.subjectId);
   const migrated = sanitizeNotionSnapshot(snapshot);
+  const sourcePracticeBlocks = getPublicBdaSourcePracticeBlocks(snapshot.id);
+  const sourcePracticeQuestionCount = sourcePracticeBlocks.reduce(
+    (sum, block) => sum + block.questions.length,
+    0,
+  );
 
   return (
     <main className="page-wrap pb-16 pt-8">
@@ -54,17 +60,26 @@ export default async function BdaTextbookSourcePage({
         <div className="mt-5 flex flex-wrap gap-2 text-xs font-bold">
           <span className="rounded-full bg-slate-100 px-3 py-1.5 text-slate-700">{snapshot.revision}</span>
           <span className="rounded-full bg-teal-50 px-3 py-1.5 text-teal-800">서버 내부 이관 완료</span>
-          <span className="rounded-full bg-amber-50 px-3 py-1.5 text-amber-800">정답보호 {migrated.hiddenExerciseCount}개</span>
+          <span className="rounded-full bg-amber-50 px-3 py-1.5 text-amber-800">
+            검수 공개 원천문제 {sourcePracticeQuestionCount}개
+          </span>
         </div>
       </header>
 
       <aside className="mt-6 flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-7 text-amber-950">
         <ShieldCheck className="mt-1 shrink-0" />
-        <p>연습문제·정답 토글은 원천에 보존했지만, 정답 검수와 제출 후 공개 구조가 완료되기 전에는 본문에서 제외합니다.</p>
+        <p>
+          검수 완료 문제는 본문 토글에서 직접 풀 수 있으며 정답과 해설은 제출한
+          뒤에만 공개합니다. 이 보충 스냅샷에 연결된 검수 문제는{" "}
+          {sourcePracticeQuestionCount}개입니다.
+        </p>
       </aside>
 
       <article className="card mt-6 p-6 sm:p-9">
-        <MarkdownContent content={migrated.content} />
+        <MarkdownContent
+          content={migrated.content}
+          sourcePracticeBlocks={sourcePracticeBlocks}
+        />
       </article>
     </main>
   );

@@ -82,7 +82,7 @@ function rawContent(snapshot: BdaNotionSnapshot) {
 function stripHtml(text: string) {
   return text
     .replace(/<br\s*\/?>/gi, " / ")
-    .replace(/<[^>]+>/g, "")
+    .replace(/<\/?[A-Za-z][^>\n]*>/g, "")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -113,14 +113,60 @@ function tableToMarkdown(table: string) {
   ].join("\n");
 }
 
+function protectFencedCode(content: string) {
+  const blocks: string[] = [];
+  const protectedContent = content.replace(/```[\s\S]*?```/g, (block) => {
+    const token = `\uE000BDA_CODE_${blocks.length}\uE001`;
+    blocks.push(block);
+    return token;
+  });
+  return {
+    content: protectedContent,
+    restore(value: string) {
+      return value.replace(/\uE000BDA_CODE_(\d+)\uE001/g, (_, rawIndex: string) =>
+        blocks[Number(rawIndex)] ?? "",
+      );
+    },
+  };
+}
+
+function normalizeQuotedStructure(content: string) {
+  const output: string[] = [];
+  let quoteOpen = false;
+
+  for (const rawLine of content.split("\n")) {
+    const isQuote = /^\s*>/.test(rawLine);
+    const isIndentedQuoteChild =
+      quoteOpen && /^\t+\s*(?:[-*+]|\d+\.)\s+/.test(rawLine);
+
+    if (isQuote) {
+      const expanded = rawLine.replace(/<br\s*\/?>\s*/gi, "\n> ");
+      output.push(...expanded.split("\n"));
+      quoteOpen = true;
+      continue;
+    }
+
+    if (isIndentedQuoteChild) {
+      output.push(`> ${rawLine.trim()}`);
+      continue;
+    }
+
+    output.push(rawLine);
+    if (rawLine.trim()) quoteOpen = false;
+  }
+
+  return output.join("\n");
+}
+
 export function sanitizeNotionSnapshot(snapshot: BdaNotionSnapshot) {
-  const content = rawContent(snapshot);
+  const protectedCode = protectFencedCode(rawContent(snapshot));
+  const content = normalizeQuotedStructure(protectedCode.content);
   let hiddenExerciseCount = 0;
 
-  const sanitized = content
+  const sanitized = protectedCode.restore(content
     .replace(/<details[^>]*>[\s\S]*?<\/details>/gi, () => {
       hiddenExerciseCount += 1;
-      return "\n> 원천의 연습문제·정답 블록은 서버 스냅샷에 보존했습니다. 정답 검수와 제출 후 공개 구조가 완료되기 전에는 학습 화면에 노출하지 않습니다.\n";
+      return `\n[[BDA_SOURCE_PRACTICE:${blockId(snapshot.id, hiddenExerciseCount)}]]\n`;
     })
     .replace(/<table[^>]*>[\s\S]*?<\/table>/gi, (table) => `\n${tableToMarkdown(table)}\n`)
     .replace(/<\/?(?:columns|column|colgroup|col)(?:\s[^>]*)?>/gi, "\n")
@@ -130,7 +176,12 @@ export function sanitizeNotionSnapshot(snapshot: BdaNotionSnapshot) {
     .replace(/^\t+/gm, "")
     .replace(/\[!([A-Z]+)\]<br>\s*/g, "**$1** — ")
     .replace(/<br\s*\/?>/gi, "\n")
-    .replace(/<[^>]+>/g, "")
+    .replace(/<\/?[A-Za-z][^>\n]*>/g, "")
+    .replace(
+      /Value\(W\)≫Value\(K\)\\?>Value\(I\)\\?>Value\(D\)[^\n]*/g,
+      "$Value(W) \\\\gg Value(K) > Value(I) > Value(D)$",
+    )
+    .replace(/Value\*Value\*/g, "Value")
     .replace(/\b(10|2)(\d{1,2})\1\2\b/g, (_, base: string, exponent: string) =>
       `$${base}^{${exponent}}$`,
     )
@@ -138,9 +189,13 @@ export function sanitizeNotionSnapshot(snapshot: BdaNotionSnapshot) {
     .replace(/\b(10|2)\*n\*/g, "$1ⁿ")
     .replace(/[ \t]+---[ \t]*$/gm, "\n---")
     .replace(/\n{3,}/g, "\n\n")
-    .trim();
+    .trim());
 
   return { content: sanitized, hiddenExerciseCount };
+}
+
+function blockId(snapshotId: string, blockIndex: number) {
+  return `${snapshotId}-b${String(blockIndex).padStart(3, "0")}`;
 }
 
 export function getBdaNotionSnapshots() {

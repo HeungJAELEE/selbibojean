@@ -1,7 +1,9 @@
 "use client";
 
 import { createElement, Fragment, type ReactNode } from "react";
+import { BdaSourcePracticeBlock } from "@/components/bda-source-practice-block";
 import { MermaidDiagram } from "@/components/mermaid-diagram";
+import type { PublicBdaSourcePracticeBlock } from "@/lib/domain/bda-source-practice";
 import { markdownHeadingId, stripMarkdownDecoration } from "@/lib/markdown-outline";
 import { cn } from "@/lib/utils";
 
@@ -36,6 +38,7 @@ const TEX_SYMBOLS: Record<string, string> = {
   "\\leftarrow": "←",
   "\\infty": "∞",
   "\\sum": "∑",
+  "\\gg": "≫",
 };
 
 const SUPERSCRIPTS: Record<string, string> = {
@@ -181,11 +184,18 @@ function isBlockStart(lines: string[], index: number) {
     /^\s*>\s?/.test(line) ||
     /^\s*```/.test(line) ||
     /^\s*\$\$\s*$/.test(line) ||
+    /^\s*\[\[BDA_SOURCE_PRACTICE:[^\]]+\]\]\s*$/.test(line) ||
     isTableDivider(lines[index + 1])
   );
 }
 
-function MarkdownBlocks({ content }: { content: string }) {
+function MarkdownBlocks({
+  content,
+  sourcePracticeById,
+}: {
+  content: string;
+  sourcePracticeById: Map<string, PublicBdaSourcePracticeBlock>;
+}) {
   const lines = content.replace(/\r\n?/g, "\n").split("\n");
   const blocks: ReactNode[] = [];
   let index = 0;
@@ -193,6 +203,27 @@ function MarkdownBlocks({ content }: { content: string }) {
   while (index < lines.length) {
     const line = lines[index];
     if (!line.trim()) {
+      index += 1;
+      continue;
+    }
+
+    const sourcePracticeMarker = line
+      .trim()
+      .match(/^\[\[BDA_SOURCE_PRACTICE:([^\]]+)\]\]$/);
+    if (sourcePracticeMarker) {
+      const block = sourcePracticeById.get(sourcePracticeMarker[1]);
+      blocks.push(
+        block ? (
+          <BdaSourcePracticeBlock key={`source-practice-${block.id}`} block={block} />
+        ) : (
+          <aside
+            key={`source-practice-held-${sourcePracticeMarker[1]}`}
+            className="my-6 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-950"
+          >
+            이 원천 문제는 정답 근거를 다시 확인하고 있어 아직 공개하지 않았습니다.
+          </aside>
+        ),
+      );
       index += 1;
       continue;
     }
@@ -320,10 +351,24 @@ function MarkdownBlocks({ content }: { content: string }) {
         quote.push(lines[index].replace(/^\s*>\s?/, ""));
         index += 1;
       }
-      const quoteText = quote.join(" ").trim();
-      const markerMatch = quoteText.match(/^(?:\*\*)?\\?\[!?([^\]\\]+)\\?\](?:\*\*)?\s*(.*)$/);
+      const quoteText = quote.join("\n").trim();
+      const firstLine = quote[0]?.trim() ?? "";
+      const markerMatch = firstLine.match(/^(?:\*\*)?\\?\[!?([^\]\\]+)\\?\](?:\*\*)?\s*(.*)$/);
       const marker = markerMatch?.[1]?.toUpperCase();
-      const quoteBody = markerMatch ? markerMatch[2] : quoteText;
+      const isConceptAddition = /^\s*⭐\s*\(\+개념추가\)/.test(firstLine);
+      let normalizedFirstLine = markerMatch
+        ? markerMatch[2]
+        : firstLine.replace(/^\s*⭐\s*\(\+개념추가\)\s*/, "");
+      if (isConceptAddition) {
+        normalizedFirstLine = normalizedFirstLine.replace(
+          /\s+(💡\s*\*\*\(친숙한 비유\)\*\*)/,
+          "\n\n$1",
+        );
+      }
+      let quoteBody = [normalizedFirstLine, ...quote.slice(1)].join("\n").trim();
+      if (isConceptAddition) {
+        quoteBody = quoteBody.replace(/\n(?=\s*💡)/, "\n\n");
+      }
       const isGoal = marker === "학습 목표";
       const isWarning = marker === "WARNING" || marker === "CAUTION" || marker === "IMPORTANT";
       const isTip = marker === "TIP" || marker === "NOTE";
@@ -332,6 +377,8 @@ function MarkdownBlocks({ content }: { content: string }) {
         ? "학습 목표"
         : isWarning
           ? "시험 주의"
+          : isConceptAddition
+            ? "개념 확장"
           : isTip
             ? "핵심 팁"
             : isAnswerGuard
@@ -361,7 +408,12 @@ function MarkdownBlocks({ content }: { content: string }) {
               {label}
             </span>
           ) : null}
-          <p className="leading-8">{renderInline(quoteBody, `quote-${index}`)}</p>
+          <div className="-my-2 leading-8 [&_p]:my-2 [&_ul]:my-2">
+            <MarkdownBlocks
+              content={quoteBody}
+              sourcePracticeById={sourcePracticeById}
+            />
+          </div>
         </blockquote>,
       );
       continue;
@@ -386,22 +438,61 @@ function MarkdownBlocks({ content }: { content: string }) {
     }
 
     if (/^\s*\d+\.\s+/.test(line)) {
-      const items: string[] = [];
+      const items: Array<{ number: number; title: string; details: string[] }> = [];
       while (index < lines.length && /^\s*\d+\.\s+/.test(lines[index])) {
-        items.push(lines[index].replace(/^\s*\d+\.\s+/, ""));
+        const itemMatch = lines[index].match(/^\s*(\d+)\.\s+(.+)$/);
+        if (!itemMatch) break;
         index += 1;
+        const details: string[] = [];
+        while (index < lines.length && /^\s*[-*+]\s+/.test(lines[index])) {
+          details.push(lines[index].replace(/^\s*[-*+]\s+/, ""));
+          index += 1;
+        }
+        items.push({
+          number: Number(itemMatch[1]),
+          title: itemMatch[2],
+          details,
+        });
       }
       blocks.push(
-        <ol
+        <div
           key={`ol-${index}`}
-          className="my-4 list-decimal space-y-2 pl-6 text-[#344b60] marker:font-bold marker:text-[#16697a]"
+          className="my-6 grid gap-3"
         >
           {items.map((item, itemIndex) => (
-            <li key={itemIndex} className="pl-1 leading-7">
-              {renderInline(item, `ol-${index}-${itemIndex}`)}
-            </li>
+            <section
+              key={`${item.number}-${itemIndex}`}
+              className="grid grid-cols-[2.25rem_1fr] gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+            >
+              <span className="grid size-9 place-items-center rounded-xl bg-teal-100 text-sm font-black text-teal-900">
+                {item.number}
+              </span>
+              <div className="min-w-0">
+                <p className="font-extrabold leading-7 text-[#173957]">
+                  {renderInline(item.title, `ol-${index}-${itemIndex}-title`)}
+                </p>
+                {item.details.length ? (
+                  <ul className="mt-2 grid gap-1.5 text-sm leading-6 text-[#455b70]">
+                    {item.details.map((detail, detailIndex) => (
+                      <li
+                        key={detailIndex}
+                        className="grid grid-cols-[.75rem_1fr] gap-1"
+                      >
+                        <span aria-hidden="true" className="pt-0.5 text-teal-700">•</span>
+                        <span>
+                          {renderInline(
+                            detail,
+                            `ol-${index}-${itemIndex}-${detailIndex}`,
+                          )}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+            </section>
           ))}
-        </ol>,
+        </div>,
       );
       continue;
     }
@@ -422,10 +513,21 @@ function MarkdownBlocks({ content }: { content: string }) {
   return <>{blocks.map((block, blockIndex) => <Fragment key={blockIndex}>{block}</Fragment>)}</>;
 }
 
-export function MarkdownContent({ content, compact = false }: { content: string; compact?: boolean }) {
+export function MarkdownContent({
+  content,
+  compact = false,
+  sourcePracticeBlocks = [],
+}: {
+  content: string;
+  compact?: boolean;
+  sourcePracticeBlocks?: PublicBdaSourcePracticeBlock[];
+}) {
+  const sourcePracticeById = new Map(
+    sourcePracticeBlocks.map((block) => [block.id, block]),
+  );
   return (
     <div className={cn("markdown-content min-w-0", compact && "text-sm [&_p]:leading-7")}>
-      <MarkdownBlocks content={content} />
+      <MarkdownBlocks content={content} sourcePracticeById={sourcePracticeById} />
     </div>
   );
 }
