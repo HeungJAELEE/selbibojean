@@ -47,7 +47,8 @@ await assertFile("dist/server/index.js");
 await assertFile("dist/.openai/hosting.json");
 await assertFile("dist/server/wrangler.json");
 await assertMissing("public/data");
-await assertMissing("dist/client/data");
+await assertFile("dist/client/data/content.bin");
+await assertFile("dist/client/data/content.meta.json");
 
 const sourceHosting = await readJson<{ project_id?: string }>(".openai/hosting.json");
 const builtHosting = await readJson<{ project_id?: string }>("dist/.openai/hosting.json");

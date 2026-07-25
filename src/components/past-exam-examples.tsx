@@ -14,6 +14,7 @@ import type { PastExamExample, PastExamFormat } from "@/lib/content/past-exam-ex
 import type { PracticeFeedback } from "@/lib/domain/types";
 import { MarkdownContent } from "@/components/markdown-content";
 import { cn } from "@/lib/utils";
+import { useHydrated } from "@/lib/use-hydrated";
 
 const CHOICE_MARKS = ["①", "②", "③", "④", "⑤"];
 const FORMAT_LABELS: Record<PastExamFormat, string> = {
@@ -35,6 +36,7 @@ export function PastExamExamples({
   examFirst?: boolean;
 }) {
   const [visibleCount, setVisibleCount] = useState(initialCount);
+  const isHydrated = useHydrated();
   if (examples.length === 0) return null;
   const visibleExamples = examples.slice(0, visibleCount);
   const remainingCount = Math.max(examples.length - visibleCount, 0);
@@ -74,6 +76,7 @@ export function PastExamExamples({
             <button
               type="button"
               data-testid="past-exam-more"
+              disabled={!isHydrated}
               onClick={() => setVisibleCount((count) => Math.min(count + batchSize, examples.length))}
               className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#6fb5b1] bg-white px-5 py-3 text-sm font-extrabold text-[#16697a] sm:w-auto"
             >
@@ -83,6 +86,7 @@ export function PastExamExamples({
           ) : (
             <button
               type="button"
+              disabled={!isHydrated}
               onClick={() => setVisibleCount(initialCount)}
               className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-600 sm:w-auto"
             >
@@ -107,6 +111,7 @@ function PastExamQuestionCard({
   const [feedback, setFeedback] = useState<PracticeFeedback | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const isHydrated = useHydrated();
 
   async function submitAnswer() {
     if (!selectedChoiceId || feedback) return;
@@ -160,7 +165,7 @@ function PastExamQuestionCard({
       </summary>
 
       {!feedback && (
-        <fieldset className="mt-4 grid gap-2 border-t border-slate-100 pt-4" disabled={loading}>
+        <fieldset className="mt-4 grid gap-2 border-t border-slate-100 pt-4" disabled={!isHydrated || loading}>
           <legend className="sr-only">{example.stem} 보기 선택</legend>
           {example.choices.map((choice, choiceIndex) => {
             const choiceId = example.choiceIds[choiceIndex];
@@ -198,7 +203,7 @@ function PastExamQuestionCard({
             type="button"
             data-testid={`past-exam-submit-${example.externalId}`}
             onClick={submitAnswer}
-            disabled={!selectedChoiceId || loading}
+            disabled={!isHydrated || !selectedChoiceId || loading}
             className="rounded-lg bg-[#173957] px-4 py-2.5 text-sm font-extrabold text-white disabled:cursor-not-allowed disabled:opacity-40"
           >
             {loading ? "채점 중…" : "정답 확인"}
@@ -260,6 +265,7 @@ function PastExamQuestionCard({
               <button
                 type="button"
                 onClick={retry}
+                disabled={!isHydrated}
                 className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-bold text-slate-700"
               >
                 <RotateCcw size={16} /> 정답 숨기고 다시 풀기

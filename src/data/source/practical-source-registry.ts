@@ -451,6 +451,8 @@ export const PRACTICAL_VISUAL_AID_BY_QUESTION: Record<string, string> = {
   "P-2025-1-Q04": "ncs-bearing-four-types",
   "EXP-B01": "ncs-bearing-four-types",
   "EXP-H04": "ncs-accumulator-safety-circuit",
+  "EXP-H04A": "ncs-accumulator-safety-circuit",
+  "EXP-H04B": "ncs-accumulator-safety-circuit",
 };
 
 export const PRACTICAL_PDF_PAGE_BY_TOPIC: Record<string, { pdfPage: number; printedPage: number; figureNumber: string | null }> = {

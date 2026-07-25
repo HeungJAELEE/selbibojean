@@ -1,11 +1,16 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { PracticalLabelBadges } from "@/components/practical-label-badges";
 import { PracticalQuestionList } from "@/components/practical-question-list";
 import { conceptGroups, subjects } from "@/lib/domain/catalog";
+import type { PracticalConcept } from "@/lib/domain/practical-types";
 import {
   getPracticalConcept,
+  getPracticalTextbookPlacementForConcept,
+  getPracticalTextbookSubject,
   getPublicPracticalQuestion,
+  practicalConceptsByTextbookSubject,
 } from "@/lib/content/practical-repository";
 
 export default async function PracticalConceptPage({
@@ -42,9 +47,35 @@ export default async function PracticalConceptPage({
     ? `제${subject.code}과목 ${subject.title}`
     : concept.subjectLabel;
   const groupName = group?.title ?? concept.groupLabel;
+  const textbookPlacement = getPracticalTextbookPlacementForConcept(concept.id);
+  const textbookSubject = textbookPlacement
+    ? getPracticalTextbookSubject(textbookPlacement.subjectId)
+    : undefined;
+  const siblingConcepts = textbookPlacement
+    ? practicalConceptsByTextbookSubject(textbookPlacement.subjectId)
+    : [];
+  const siblingIndex = siblingConcepts.findIndex((item) => item.id === concept.id);
+  const previousConcept =
+    siblingIndex > 0 ? siblingConcepts[siblingIndex - 1] : null;
+  const nextConcept =
+    siblingIndex >= 0 && siblingIndex < siblingConcepts.length - 1
+      ? siblingConcepts[siblingIndex + 1]
+      : null;
+  const navigation = textbookPlacement
+    ? {
+        subjectId: textbookPlacement.subjectId,
+        subjectTitle: textbookSubject?.title ?? subjectName,
+        groupTitle: groupName,
+        previousConcept,
+        nextConcept,
+      }
+    : null;
 
   return (
-    <div className="page-wrap max-w-5xl py-12">
+    <div
+      data-testid="practical-textbook-concept-integrated-sheet"
+      className="page-wrap max-w-5xl py-12"
+    >
       <div className="flex flex-wrap items-center gap-2">
         <PracticalLabelBadges labels={concept.labels} />
         {concept.contentRole === "supplemental" ? (
@@ -57,6 +88,11 @@ export default async function PracticalConceptPage({
       <p className="mt-3 text-sm font-bold text-[#8f3f0a]">
         {subjectName} · {groupName}
       </p>
+      <ConceptNavigation
+        navigation={navigation}
+        pastQuestionCount={pastQuestions.length}
+        predictedQuestionCount={predictedQuestions.length}
+      />
       <section className="mt-8 rounded-3xl border border-sky-200 bg-sky-50 p-6">
         <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sky-700">
           이 레슨에서 익힐 것
@@ -79,12 +115,18 @@ export default async function PracticalConceptPage({
             <ProseBlock title="정의" body={concept.definition} />
             <ProseBlock title="핵심 원리" body={concept.principle} />
           </div>
-          <CompactList title="구성·구분" items={concept.components} />
+          <CompactList title="구성요소와 역할" items={concept.components} />
         </section>
 
         <section className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
           <SectionEyebrow>현장 적용</SectionEyebrow>
-          <h2 className="mt-2 text-2xl font-extrabold">점검·작업은 어떤 순서로 하는가</h2>
+          <h2 className="mt-2 text-2xl font-extrabold">
+            작동·조립·점검은 어떤 순서로 하는가
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-slate-600">
+            선후관계가 있는 동작과 작업만 번호 순서로 정리합니다. 서로
+            병렬인 구성요소·종류에는 임의 순번을 붙이지 않습니다.
+          </p>
           <TheoryList items={concept.procedure} ordered />
           <CompactList title="계산·판정 기준" items={concept.formula} />
           <CompactList title="이상 현상과 원인·대책" items={concept.diagnosis} />
@@ -115,7 +157,10 @@ export default async function PracticalConceptPage({
         ) : null}
       </div>
       {pastQuestions.length > 0 ? (
-        <section className="mt-10 border-t border-slate-200 pt-8">
+        <section
+          id="practical-past-questions"
+          className="mt-10 scroll-mt-24 border-t border-slate-200 pt-8"
+        >
           <h2 className="text-2xl font-extrabold">
             기출복원 · (실기 출제)
           </h2>
@@ -123,7 +168,10 @@ export default async function PracticalConceptPage({
         </section>
       ) : null}
       {predictedQuestions.length > 0 ? (
-        <section className="mt-10 border-t border-slate-200 pt-8">
+        <section
+          id="practical-predicted-questions"
+          className="mt-10 scroll-mt-24 border-t border-slate-200 pt-8"
+        >
           <h2 className="text-2xl font-extrabold">
             출제예상 · (출제 예상)
           </h2>
@@ -191,7 +239,145 @@ export default async function PracticalConceptPage({
           </p>
         </div>
       </section>
+      <ConceptNavigation
+        navigation={navigation}
+        pastQuestionCount={pastQuestions.length}
+        predictedQuestionCount={predictedQuestions.length}
+        position="bottom"
+      />
     </div>
+  );
+}
+
+type ConceptNavigationModel = {
+  subjectId: string;
+  subjectTitle: string;
+  groupTitle: string;
+  previousConcept: PracticalConcept | null;
+  nextConcept: PracticalConcept | null;
+} | null;
+
+function ConceptNavigation({
+  navigation,
+  pastQuestionCount,
+  predictedQuestionCount,
+  position = "top",
+}: {
+  navigation: ConceptNavigationModel;
+  pastQuestionCount: number;
+  predictedQuestionCount: number;
+  position?: "top" | "bottom";
+}) {
+  if (!navigation) return null;
+
+  if (position === "bottom") {
+    return (
+      <nav
+        aria-label="실기 개념 이전 다음 이동"
+        className="mt-10 border-t border-slate-200 pt-6"
+      >
+        <Link
+          href={`/practical/written/theory/subject/${navigation.subjectId}`}
+          className="inline-flex rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-extrabold text-slate-700 hover:border-[#16697a] hover:text-[#16697a]"
+        >
+          ↑ {navigation.subjectTitle} 목록으로
+        </Link>
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
+          {navigation.previousConcept ? (
+            <Link
+              href={`/practical/written/theory/${navigation.previousConcept.id}`}
+              className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 hover:border-[#16697a]"
+            >
+              <span className="block text-xs font-bold text-slate-500">
+                이전 개념
+              </span>
+              <strong className="mt-1 block">
+                ← {navigation.previousConcept.title}
+              </strong>
+            </Link>
+          ) : (
+            <span className="rounded-2xl border border-dashed border-slate-200 px-4 py-3 text-sm text-slate-400">
+              이전 개념 없음
+            </span>
+          )}
+          {navigation.nextConcept ? (
+            <Link
+              href={`/practical/written/theory/${navigation.nextConcept.id}`}
+              className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-right text-sm text-slate-700 hover:border-[#16697a]"
+            >
+              <span className="block text-xs font-bold text-slate-500">
+                다음 개념
+              </span>
+              <strong className="mt-1 block">
+                {navigation.nextConcept.title} →
+              </strong>
+            </Link>
+          ) : (
+            <span className="rounded-2xl border border-dashed border-slate-200 px-4 py-3 text-right text-sm text-slate-400">
+              다음 개념 없음
+            </span>
+          )}
+        </div>
+      </nav>
+    );
+  }
+
+  return (
+    <nav
+      data-testid="practical-concept-navigation"
+      aria-label="실기 개념 빠른 이동"
+      className="mt-6 border-y border-slate-200 py-3"
+    >
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-2 text-sm">
+        <Link
+          href="/practical/written/theory"
+          className="font-extrabold text-[#16697a] hover:underline"
+        >
+          실기 이론 목차
+        </Link>
+        <span aria-hidden="true" className="text-slate-300">›</span>
+        <Link
+          href={`/practical/written/theory/subject/${navigation.subjectId}`}
+          className="font-bold text-slate-700 hover:text-[#16697a] hover:underline"
+        >
+          {navigation.subjectTitle}
+        </Link>
+        <span aria-hidden="true" className="text-slate-300">›</span>
+        <span className="font-bold text-slate-500">
+          {navigation.groupTitle}
+        </span>
+      </div>
+      <div className="mt-3 flex flex-wrap gap-2">
+        <Link
+          href="/practical/written/past"
+          className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-extrabold text-emerald-800 hover:border-emerald-500"
+        >
+          기출복원 전체
+        </Link>
+        <Link
+          href="/practical/written/predicted"
+          className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5 text-xs font-extrabold text-amber-800 hover:border-amber-500"
+        >
+          출제예상 전체
+        </Link>
+        {pastQuestionCount > 0 ? (
+          <Link
+            href="#practical-past-questions"
+            className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-700 hover:border-[#16697a]"
+          >
+            이 개념 기출 {pastQuestionCount}개 ↓
+          </Link>
+        ) : null}
+        {predictedQuestionCount > 0 ? (
+          <Link
+            href="#practical-predicted-questions"
+            className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-700 hover:border-[#16697a]"
+          >
+            이 개념 예상 {predictedQuestionCount}개 ↓
+          </Link>
+        ) : null}
+      </div>
+    </nav>
   );
 }
 

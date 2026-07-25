@@ -42,7 +42,7 @@ export default async function PracticalTheorySubjectPage({
       <PageHeading
         eyebrow={`${subject.code} · NCS 기반 실기 필답형`}
         title={subject.title}
-        description="필기 이론 목차와 같은 2열 세부 묶음입니다. 실제 계산식은 계산 공식에만, 그림·도면·작업절차는 각각의 유형에 분리해 두었습니다."
+        description="세부 개념군 안에서 개념별 통합 학습을 먼저 열고, 그 아래의 여섯 학습유형을 확인합니다. 실제 계산식은 계산 공식에만, 그림·도면·작업절차는 각각의 유형에 분리해 두었으며, 없는 유형은 빈 행으로 남깁니다."
       />
 
       <PracticalTextbookSubjectPanel

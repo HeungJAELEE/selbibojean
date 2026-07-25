@@ -18,7 +18,9 @@ describe("NCS practical content import", () => {
   it("reconciles all source rows", () => {
     expect(content.report.rows).toEqual({
       past: 41,
-      predicted: 40,
+      predicted: 87,
+      workbookPredicted: 41,
+      authoredPredicted: 46,
       concepts: 46,
       supplementalConcepts: 43,
       ncsDocuments: 11,
@@ -26,7 +28,7 @@ describe("NCS practical content import", () => {
     });
     expect(content.report.exactMatch).toBe(true);
     expect(content.report.publication.past).toBe(17);
-    expect(content.report.publication.predicted).toBe(39);
+    expect(content.report.publication.predicted).toBe(86);
     expect(content.report.publication.concepts).toBe(46);
     expect(content.report.publication.supplementalConcepts).toBe(43);
     expect(content.report.publication.held).toBe(25);
@@ -40,6 +42,52 @@ describe("NCS practical content import", () => {
           isPublishablePracticalQuestion(question),
       ),
     ).toEqual([]);
+  });
+
+  it("keeps component roles separate from ordered practical procedures", () => {
+    const publishedConcepts = content.concepts.filter(
+      (concept) => concept.contentStatus === "published",
+    );
+    expect(publishedConcepts).toHaveLength(89);
+    expect(
+      publishedConcepts.every(
+        (concept) =>
+          concept.components.length > 0 && concept.procedure.length >= 3,
+      ),
+    ).toBe(true);
+
+    const pneumaticSequence = publishedConcepts.find(
+      (concept) => concept.id === "PCON-SUP-005",
+    );
+    expect(pneumaticSequence?.principle).toContain(
+      "타이머와 카운터는 모든 회로에 직렬로 들어가는 구성품이 아니라",
+    );
+    expect(pneumaticSequence?.procedure).toContain(
+      "요구되는 액추에이터의 초기위치와 동작순서를 먼저 정한다. 예: A 전진 → B 전진 → B 후진 → A 후진.",
+    );
+  });
+
+  it("accounts for every NCS source document without publishing held source details", () => {
+    expect(content.ncsCoverage.summary).toMatchObject({
+      totalDocuments: 11,
+      accountedDocuments: 11,
+      uniqueLessonCount: 84,
+      sourceReferenceCount: 105,
+      heldItems: 13,
+    });
+    expect(content.report.ncsCoverage).toEqual(content.ncsCoverage.summary);
+    expect(content.ncsCoverage.documents).toHaveLength(11);
+    expect(
+      content.ncsCoverage.documents.every(
+        (document) =>
+          Boolean(document.sourceUrl) &&
+          Boolean(document.sourceFileHash) &&
+          (document.conceptIds.length > 0 || document.heldItems.length > 0),
+      ),
+    ).toBe(true);
+    expect(
+      content.ncsCoverage.documents.flatMap((document) => document.heldItems),
+    ).toHaveLength(13);
   });
 
   it("strips every answer field before submit", () => {
@@ -71,17 +119,17 @@ describe("NCS practical content import", () => {
           category.questionIds.length,
         ]),
       ),
-    ).toEqual({
-      visual_identification: 20,
-      formula_calculation: 16,
-      theory_concept: 29,
-      work_procedure: 16,
-    });
+      ).toEqual({
+        visual_identification: 34,
+        formula_calculation: 22,
+        theory_concept: 39,
+        work_procedure: 33,
+      });
     const primaryIds = content.studyCategories.flatMap(
       (category) => category.questionIds,
     );
-    expect(primaryIds).toHaveLength(81);
-    expect(new Set(primaryIds).size).toBe(81);
+    expect(primaryIds).toHaveLength(128);
+    expect(new Set(primaryIds).size).toBe(128);
     expect(
       content.questions.every(
         (question) =>
@@ -121,11 +169,121 @@ describe("NCS practical content import", () => {
     const predicted = content.questions.filter(
       (question) => question.kind === "predicted",
     );
-    expect(predicted).toHaveLength(40);
+    expect(predicted).toHaveLength(87);
+    expect(content.report.rows.workbookPredicted).toBe(41);
+    expect(content.report.rows.authoredPredicted).toBe(46);
     expect(predicted.every((question) => question.occurrence === null)).toBe(true);
     expect(predicted.every((question) => Boolean(question.predictedBasis))).toBe(
       true,
     );
+  });
+
+  it("links one NCS-grounded predicted question to every supplemental concept", () => {
+    const supplementalConcepts = content.concepts.filter(
+      (concept) => concept.contentRole === "supplemental",
+    );
+    const supplementalPredicted = content.questions.filter((question) =>
+      question.id.startsWith("EXP-SUP-"),
+    );
+
+    expect(supplementalConcepts).toHaveLength(43);
+    expect(supplementalPredicted).toHaveLength(43);
+    expect(
+      supplementalPredicted.every(
+        (question) =>
+          question.kind === "predicted" &&
+          question.label === "predicted_exam" &&
+          question.auditDisposition === "verified" &&
+          question.contentStatus === "published" &&
+          question.occurrence === null &&
+          question.visualAidId === null &&
+          question.ncsSources.length > 0 &&
+          Boolean(question.predictedBasis),
+      ),
+    ).toBe(true);
+
+    for (const concept of supplementalConcepts) {
+      const linked = supplementalPredicted.filter((question) =>
+        question.conceptIds.includes(concept.id),
+      );
+      expect(linked, concept.id).toHaveLength(1);
+      expect(concept.relatedPredictedQuestionIds).toEqual([linked[0].id]);
+    }
+  });
+
+  it("separates the confirmed Pascal reconstruction from NCS-grounded predictions", () => {
+    const actual = content.questions.find(
+      (question) => question.id === "P-2026-1-Q07",
+    );
+    expect(actual).toMatchObject({
+      kind: "past",
+      formatLabel: "두 피스톤의 힘·면적 관계식 완성",
+      auditDisposition: "verified",
+      occurrence: {
+        year: 2026,
+        round: 1,
+        questionNumber: "Q7",
+        sourceType: "응시자 복원 블로그",
+        reconstructionConfidence: "B",
+      },
+    });
+
+    const authoredPredicted = ["EXP-C06", "EXP-C07", "EXP-C08"].map(
+      (id) => content.questions.find((question) => question.id === id),
+    );
+    expect(authoredPredicted).toHaveLength(3);
+    expect(authoredPredicted.every(Boolean)).toBe(true);
+    expect(
+      authoredPredicted.every(
+        (question) =>
+          question?.kind === "predicted" &&
+          question.occurrence === null &&
+          question.ncsSources.some(
+            (source) => source.ncsCode === "1505010108",
+          ) &&
+          Boolean(question.predictedBasis),
+      ),
+    ).toBe(true);
+  });
+
+  it("splits the accumulator function and disassembly safety prompts", () => {
+    expect(content.questions.find((question) => question.id === "EXP-H04")).toBeUndefined();
+
+    const functionPrompt = content.questions.find(
+      (question) => question.id === "EXP-H04A",
+    );
+    expect(functionPrompt).toMatchObject({
+      kind: "predicted",
+      title: "축압기의 기능 3가지",
+      formatLabel: "축압기의 기능 3가지",
+      primaryStudyCategoryId: "theory_concept",
+      occurrence: null,
+    });
+    expect(functionPrompt?.rubric).toHaveLength(3);
+    expect(functionPrompt?.conceptIds).toContain("PCON-040");
+
+    const safetyPrompt = content.questions.find(
+      (question) => question.id === "EXP-H04B",
+    );
+    expect(safetyPrompt).toMatchObject({
+      kind: "predicted",
+      title: "축압기 분해 전 조치 2가지",
+      formatLabel: "축압기 분해 전 조치 2가지",
+      primaryStudyCategoryId: "work_procedure",
+      occurrence: null,
+    });
+    expect(safetyPrompt?.requiredKeywords).toEqual(
+      expect.arrayContaining(["유압측 잔압 제거", "가스측 잔압 확인"]),
+    );
+    expect(safetyPrompt?.conceptIds).toContain("PCON-040");
+
+    const accumulatorConcept = content.concepts.find(
+      (concept) => concept.id === "PCON-040",
+    );
+    expect(accumulatorConcept?.relatedPredictedQuestionIds).toEqual(
+      expect.arrayContaining(["EXP-H04A", "EXP-H04B"]),
+    );
+    expect(accumulatorConcept?.relatedPredictedQuestionIds).not.toContain("EXP-H04");
   });
 
   it("publishes only attributed NCS visual aids without third-party holds", () => {

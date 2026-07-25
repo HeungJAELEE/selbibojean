@@ -30,6 +30,52 @@ export type PracticalSourceRef = {
   sourceUrl: string;
 };
 
+/**
+ * NCS 원문을 그대로 복제하지 않고, 어떤 학습 레슨에 반영했는지와
+ * 원문 그림·수치표·표준 해석 때문에 보류한 범위를 함께 추적한다.
+ */
+export type PracticalNcsCoverageDisposition =
+  | "held_source_or_standard"
+  | "held_visual_asset"
+  | "outside_practical_scope";
+
+export type PracticalNcsCoverageHold = {
+  id: string;
+  ncsCode: string;
+  title: string;
+  pdfPages: string;
+  printedPages: string;
+  figureNumbers: string[];
+  disposition: PracticalNcsCoverageDisposition;
+  rationale: string;
+  nextAction: string;
+};
+
+export type PracticalNcsCoverageDocument = {
+  ncsCode: string;
+  documentTitle: string;
+  version: string;
+  sourceUrl: string;
+  sourceFileHash: string;
+  conceptIds: string[];
+  sourceReferenceCount: number;
+  heldItems: PracticalNcsCoverageHold[];
+  status: "covered" | "covered_with_holds" | "held";
+};
+
+export type PracticalNcsCoverageSummary = {
+  totalDocuments: number;
+  accountedDocuments: number;
+  uniqueLessonCount: number;
+  sourceReferenceCount: number;
+  heldItems: number;
+};
+
+export type PracticalNcsCoverage = {
+  summary: PracticalNcsCoverageSummary;
+  documents: PracticalNcsCoverageDocument[];
+};
+
 export type PracticalVisualAid = {
   id: string;
   title: string;
@@ -59,6 +105,8 @@ export type PracticalQuestion = {
   id: string;
   kind: PracticalQuestionKind;
   title: string;
+  /** 문제를 풀기 전에 보이는 학습·출제 형태 요약이다. 정답은 포함하지 않는다. */
+  formatLabel: string;
   stem: string;
   modelAnswer: string;
   requiredKeywords: string[];
@@ -159,6 +207,10 @@ export type PracticalImportReport = {
   rows: {
     past: number;
     predicted: number;
+    /** 원본 실기 준비 워크북에서 읽은 출제예상 행 수 */
+    workbookPredicted: number;
+    /** NCS 원문 근거를 붙여 별도 매니페스트로 보강한 자체 예상문항 수 */
+    authoredPredicted: number;
     concepts: number;
     supplementalConcepts: number;
     ncsDocuments: number;
@@ -172,6 +224,7 @@ export type PracticalImportReport = {
     held: number;
     heldByDisposition: Record<string, number>;
   };
+  ncsCoverage: PracticalNcsCoverageSummary;
   exactMatch: boolean;
   warnings: string[];
 };
@@ -183,5 +236,6 @@ export type PracticalContent = {
   concepts: PracticalConcept[];
   studyCategories: PracticalStudyCategory[];
   visualAids: PracticalVisualAid[];
+  ncsCoverage: PracticalNcsCoverage;
   report: PracticalImportReport;
 };

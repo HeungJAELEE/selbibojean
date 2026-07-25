@@ -1,11 +1,12 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, RotateCcw } from "lucide-react";
 import type { ConceptGroup, PracticeFeedback, PublicQuestion, Subject } from "@/lib/domain/types";
 import { cn } from "@/lib/utils";
 import { PracticeFeedbackPanel } from "@/components/practice-feedback";
+import { useHydrated } from "@/lib/use-hydrated";
 
 type Session = {
   sessionId: string;
@@ -26,17 +27,13 @@ const ATTEMPTS_KEY = "seolbi:guest-attempts";
 
 export function RandomPractice({ subjects, groups }: { subjects: Subject[]; groups: ConceptGroup[] }) {
   const searchParams = useSearchParams();
+  const isHydrated = useHydrated();
   const [mode, setMode] = useState(searchParams.get("mode") ?? "all");
   const [subjectId, setSubjectId] = useState(subjects[0]?.id ?? "");
   const [groupId, setGroupId] = useState("");
   const [count, setCount] = useState<"10" | "20" | "50" | "all">("20");
   const [originalRatio, setOriginalRatio] = useState<0 | 25 | 50 | 75 | 100>(50);
-  const [session, setSession] = useState<Session | null>(() => {
-    if (typeof window === "undefined") return null;
-    const resume = searchParams.get("resume");
-    const raw = resume ? localStorage.getItem(`${SESSION_PREFIX}${resume}`) : null;
-    return raw ? (JSON.parse(raw) as Session) : null;
-  });
+  const [session, setSession] = useState<Session | null>(null);
   const [index, setIndex] = useState(() => Number(searchParams.get("index") ?? 0));
   const [selectedChoiceId, setSelectedChoiceId] = useState("");
   const [selfRating, setSelfRating] = useState<"unknown" | "unsure" | "known">("unsure");
@@ -46,6 +43,25 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
   const [isRetry, setIsRetry] = useState(() => Boolean(searchParams.get("retry")));
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    const resume = searchParams.get("resume");
+    if (!resume) return;
+    const raw = localStorage.getItem(`${SESSION_PREFIX}${resume}`);
+    if (!raw) return;
+    const timer = window.setTimeout(() => {
+      try {
+        setSession(JSON.parse(raw) as Session);
+      } catch {
+        localStorage.removeItem(`${SESSION_PREFIX}${resume}`);
+        setError(
+          "저장된 문제 세션을 불러오지 못했습니다. 새 세션을 시작해 주세요.",
+        );
+      }
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [searchParams]);
 
   const availableGroups = useMemo(() => groups.filter((group) => group.subjectId === subjectId), [groups, subjectId]);
   const question = session?.questions[index];
@@ -132,18 +148,18 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
         <h2 id="random-options" className="text-xl font-extrabold">출제 범위 설정</h2>
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           <label className="grid gap-2 text-sm font-bold">범위
-            <select aria-label="범위" className="rounded-xl border border-slate-300 bg-white p-3" value={mode} onChange={(event) => setMode(event.target.value)}>
+            <select aria-label="범위" disabled={!isHydrated} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50" value={mode} onChange={(event) => setMode(event.target.value)}>
               <option value="all">전체 공개 문제</option><option value="subject">과목</option><option value="group">44개 세부항목군</option><option value="weak">취약 영역 집중</option><option value="wrong">내 오답만</option><option value="due">복습 예정</option>
             </select>
           </label>
-          {(mode === "subject" || mode === "group" || mode === "weak") && <label className="grid gap-2 text-sm font-bold">과목<select aria-label="과목" className="rounded-xl border border-slate-300 bg-white p-3" value={subjectId} onChange={(event) => { setSubjectId(event.target.value); setGroupId(""); }}>{subjects.map((subject) => <option key={subject.id} value={subject.id}>{subject.shortTitle}</option>)}</select></label>}
-          {mode === "group" && <label className="grid gap-2 text-sm font-bold">세부항목군<select aria-label="세부항목군" className="rounded-xl border border-slate-300 bg-white p-3" value={groupId} onChange={(event) => setGroupId(event.target.value)}><option value="">선택하세요</option>{availableGroups.map((group) => <option key={group.id} value={group.id}>{group.title}</option>)}</select></label>}
-          <label className="grid gap-2 text-sm font-bold">문제 수<select aria-label="문제 수" className="rounded-xl border border-slate-300 bg-white p-3" value={count} onChange={(event) => setCount(event.target.value as typeof count)}><option value="10">10문제</option><option value="20">20문제</option><option value="50">50문제</option><option value="all">가능한 문제 전체</option></select></label>
-          <label className="grid gap-2 text-sm font-bold">실제 기출 비율<select aria-label="실제 기출 비율" className="rounded-xl border border-slate-300 bg-white p-3" value={originalRatio} onChange={(event) => setOriginalRatio(Number(event.target.value) as typeof originalRatio)}><option value="0">0% · 개념 문제만</option><option value="25">25% · 개념 중심</option><option value="50">50% · 균형 혼합</option><option value="75">75% · 기출 중심</option><option value="100">100% · 가능한 기출 전체</option></select></label>
+          {(mode === "subject" || mode === "group" || mode === "weak") && <label className="grid gap-2 text-sm font-bold">과목<select aria-label="과목" disabled={!isHydrated} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50" value={subjectId} onChange={(event) => { setSubjectId(event.target.value); setGroupId(""); }}>{subjects.map((subject) => <option key={subject.id} value={subject.id}>{subject.shortTitle}</option>)}</select></label>}
+          {mode === "group" && <label className="grid gap-2 text-sm font-bold">세부항목군<select aria-label="세부항목군" disabled={!isHydrated} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50" value={groupId} onChange={(event) => setGroupId(event.target.value)}><option value="">선택하세요</option>{availableGroups.map((group) => <option key={group.id} value={group.id}>{group.title}</option>)}</select></label>}
+          <label className="grid gap-2 text-sm font-bold">문제 수<select aria-label="문제 수" disabled={!isHydrated} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50" value={count} onChange={(event) => setCount(event.target.value as typeof count)}><option value="10">10문제</option><option value="20">20문제</option><option value="50">50문제</option><option value="all">가능한 문제 전체</option></select></label>
+          <label className="grid gap-2 text-sm font-bold">실제 기출 비율<select aria-label="실제 기출 비율" disabled={!isHydrated} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50" value={originalRatio} onChange={(event) => setOriginalRatio(Number(event.target.value) as typeof originalRatio)}><option value="0">0% · 개념 문제만</option><option value="25">25% · 개념 중심</option><option value="50">50% · 균형 혼합</option><option value="75">75% · 기출 중심</option><option value="100">100% · 가능한 기출 전체</option></select></label>
         </div>
         <p className="mt-4 rounded-xl bg-[#eaf7f6] p-3 text-sm leading-6 text-[#135c69]">{mode === "weak" ? "선택 과목의 오답 기록을 세부항목군별로 집계해 많이 틀린 최대 3개 영역의 다른 문제까지 출제합니다. 오답 기록이 없으면 선택 과목 전체에서 시작합니다." : "기출 비율을 직접 정할 수 있습니다."} 원문과 정답·보기가 정확히 대조되지 않은 문제는 실제 기출 출제에서 제외됩니다.</p>
         {error && <p className="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-700" role="alert">{error}</p>}
-        <button onClick={startSession} disabled={loading || (mode === "group" && !groupId)} className="mt-7 w-full rounded-xl bg-[#173957] px-5 py-4 font-extrabold text-white disabled:opacity-50">{loading ? "문제를 고르는 중…" : "중복 없이 시작하기"}</button>
+        <button onClick={startSession} disabled={!isHydrated || loading || (mode === "group" && !groupId)} className="mt-7 w-full rounded-xl bg-[#173957] px-5 py-4 font-extrabold text-white disabled:opacity-50">{loading ? "문제를 고르는 중…" : "중복 없이 시작하기"}</button>
       </section>
     );
   }

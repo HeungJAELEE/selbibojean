@@ -4,8 +4,13 @@
   "private": true,
   "scripts": {
     "prebuild": "tsx scripts/prepare-runtime-assets.ts",
+    "predev": "tsx scripts/prepare-runtime-assets.ts",
     "dev": "vinext dev",
     "build": "vinext build",
+    "generate:static-seo": "tsx scripts/generate-static-seo.ts",
+    "package:pages": "npm run build && tsx scripts/pages-package.ts",
+    "preview:pages": "npm run package:pages && tsx scripts/run-pages-command.ts dev",
+    "deploy:pages": "npm run package:pages && tsx scripts/run-pages-command.ts deploy",
     "deploy:cloudflare": "npm run build && wrangler deploy --config dist/server/wrangler.json",
     "preview:cloudflare": "npm run build && wrangler dev --config dist/server/wrangler.json",
     "build:next": "next build",

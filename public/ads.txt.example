@@ -1,0 +1,4 @@
+# Copy this file to public/ads.txt only after the AdSense account provides the real publisher ID.
+# Do not publish a placeholder publisher ID.
+# Expected production format:
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0

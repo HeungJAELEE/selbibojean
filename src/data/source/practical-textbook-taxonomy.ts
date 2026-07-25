@@ -45,7 +45,7 @@ export type PracticalTextbookSubject =
 export const practicalTextbookStudyTypes = [
   {
     id: "definition",
-    title: "개념 정의·특징",
+    title: "개념 정의",
     description: "무엇인지, 어떤 역할을 하는지, 답안에서 구분할 핵심 특징을 정리합니다.",
   },
   {
@@ -72,7 +72,7 @@ export const practicalTextbookStudyTypes = [
   },
   {
     id: "diagnosis_safety",
-    title: "기타: 선정·판정·진단·안전·관리",
+    title: "기타·판정·진단·안전",
     description:
       "선정·비교·판정, 점검·결함추적, 안전·품질기준, 기록·계획·모델링을 정리합니다.",
   },

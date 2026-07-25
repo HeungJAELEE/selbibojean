@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { BookOpenCheck, Menu, Search, X } from "lucide-react";
+import { useHydrated } from "@/lib/use-hydrated";
 
 const navItems = [
-  ["빅데이터분석", "/bda"],
   ["필기 이론", "/written/theory"],
   ["필기 모의고사", "/written/mock"],
   ["실기 학습", "/practical"],
@@ -14,6 +14,7 @@ const navItems = [
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const isHydrated = useHydrated();
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="page-wrap flex min-h-18 items-center justify-between gap-2 py-2 sm:gap-5">
@@ -63,6 +64,7 @@ export function SiteHeader() {
             aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
+            disabled={!isHydrated}
             onClick={() => setMenuOpen((open) => !open)}
           >
             {menuOpen ? <X size={19} /> : <Menu size={19} />}

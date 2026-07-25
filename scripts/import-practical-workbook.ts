@@ -9,12 +9,17 @@ import {
   PRACTICAL_VISUAL_AIDS,
 } from "../src/data/source/practical-source-registry";
 import { PRACTICAL_PRIMARY_CATEGORY_BY_QUESTION } from "../src/data/source/practical-question-categories";
+import { practicalQuestionFormatLabel } from "../src/data/source/practical-question-format-labels";
+import { PRACTICAL_AUTHORED_PREDICTED_QUESTIONS } from "../src/data/source/practical-authored-predicted-questions";
+import { PRACTICAL_SUPPLEMENTAL_PREDICTED_QUESTIONS } from "../src/data/source/practical-supplemental-predicted-questions";
 import { PRACTICAL_CONCEPT_EDITORIAL } from "../src/data/source/practical-concept-editorial";
+import { PRACTICAL_NCS_COVERAGE_HOLDS } from "../src/data/source/practical-ncs-coverage-audit";
 import { PRACTICAL_SUPPLEMENTAL_CONCEPTS } from "../src/data/source/practical-supplemental-concepts";
 import type {
   PracticalConcept,
   PracticalContent,
   PracticalImportReport,
+  PracticalNcsCoverage,
   PracticalQuestion,
   PracticalRubricItem,
   PracticalSourceRef,
@@ -259,6 +264,74 @@ function conceptSourceRefs(
   });
 }
 
+function buildNcsCoverage(concepts: PracticalConcept[]): PracticalNcsCoverage {
+  const documents = Object.entries(NCS_SOURCE_REGISTRY).map(
+    ([ncsCode, registry]) => {
+      const linkedConcepts = concepts.filter((concept) =>
+        concept.ncsSources.some((source) => source.ncsCode === ncsCode),
+      );
+      const conceptIds = linkedConcepts.map((concept) => concept.id).sort();
+      const sourceReferenceCount = linkedConcepts.reduce(
+        (count, concept) =>
+          count +
+          concept.ncsSources.filter((source) => source.ncsCode === ncsCode)
+            .length,
+        0,
+      );
+      const heldItems = PRACTICAL_NCS_COVERAGE_HOLDS.filter(
+        (item) => item.ncsCode === ncsCode,
+      );
+
+      return {
+        ncsCode,
+        documentTitle: registry.title,
+        version: registry.version,
+        sourceUrl: registry.sourceUrl,
+        sourceFileHash: registry.hash,
+        conceptIds,
+        sourceReferenceCount,
+        heldItems,
+        status:
+          conceptIds.length > 0 && heldItems.length > 0
+            ? ("covered_with_holds" as const)
+            : conceptIds.length > 0
+              ? ("covered" as const)
+              : ("held" as const),
+      };
+    },
+  );
+
+  const unaccounted = documents.filter(
+    (document) =>
+      document.conceptIds.length === 0 && document.heldItems.length === 0,
+  );
+  if (unaccounted.length > 0) {
+    throw new Error(
+      `NCS 원문 대조 누락: ${unaccounted.map((item) => item.ncsCode).join(", ")}`,
+    );
+  }
+
+  const uniqueLessonIds = new Set(
+    documents.flatMap((document) => document.conceptIds),
+  );
+  return {
+    summary: {
+      totalDocuments: documents.length,
+      accountedDocuments: documents.filter(
+        (document) =>
+          document.conceptIds.length > 0 || document.heldItems.length > 0,
+      ).length,
+      uniqueLessonCount: uniqueLessonIds.size,
+      sourceReferenceCount: documents.reduce(
+        (count, document) => count + document.sourceReferenceCount,
+        0,
+      ),
+      heldItems: PRACTICAL_NCS_COVERAGE_HOLDS.length,
+    },
+    documents,
+  };
+}
+
 function rubric(value: unknown, questionId: string): PracticalRubricItem[] {
   const raw = list(value);
   if (raw.length === 0) {
@@ -499,6 +572,12 @@ function studyCategoriesForQuestion(input: {
 } {
   const explicitPrimary =
     PRACTICAL_PRIMARY_CATEGORY_BY_QUESTION[input.id];
+  if (!explicitPrimary && input.id === "EXP-H04") {
+    return {
+      primaryStudyCategoryId: "work_procedure",
+      studyCategoryIds: ["work_procedure", "visual_identification", "theory_concept"],
+    };
+  }
   if (!explicitPrimary) {
     throw new Error(`문항 주분류가 없습니다: ${input.id}`);
   }
@@ -634,10 +713,11 @@ async function main() {
         visualAidId,
       });
       return {
-        id,
-        kind: "past",
-        title,
-        stem: text(row["문제요약"]),
+      id,
+      kind: "past",
+      title,
+      formatLabel: practicalQuestionFormatLabel(id, title),
+      stem: text(row["문제요약"]),
         modelAnswer: answer,
         requiredKeywords: list(answer),
         acceptedAnswers: [answer],
@@ -675,7 +755,7 @@ async function main() {
     },
   );
 
-  const predictedQuestions: PracticalQuestion[] = rowsToRecords(
+  const workbookPredictedQuestions: PracticalQuestion[] = rowsToRecords(
     predictedRows,
   ).map((row) => {
     const id = text(row["예상문제ID"]);
@@ -695,6 +775,7 @@ async function main() {
       id,
       kind: "predicted",
       title,
+      formatLabel: practicalQuestionFormatLabel(id, title),
       stem,
       modelAnswer: predictedAnswer(id, text(row["모범답안"])),
       requiredKeywords:
@@ -750,6 +831,90 @@ async function main() {
     };
   });
 
+  const expandedWorkbookPredictedQuestions = workbookPredictedQuestions.flatMap(
+    (question) => {
+      if (question.id !== "EXP-H04") return [question];
+
+      const functionQuestion: PracticalQuestion = {
+        ...question,
+        id: "EXP-H04A",
+        title: "축압기의 기능 3가지",
+        formatLabel: "축압기의 기능 3가지",
+        stem: "축압기의 기능 3가지를 쓰시오.",
+        modelAnswer:
+          "에너지 저장, 맥동·충격 흡수, 누설 보상 또는 비상 동력 공급.",
+        requiredKeywords: ["에너지 저장", "맥동·충격 흡수", "누설 보상"],
+        acceptedAnswers: [
+          "에너지 저장",
+          "압력에너지 저장",
+          "맥동 흡수",
+          "충격 흡수",
+          "누설 보상",
+          "비상 동력",
+        ],
+        rubric: [
+          { id: "EXP-H04A-r1", label: "에너지 저장", points: 1 },
+          { id: "EXP-H04A-r2", label: "맥동 또는 충격 흡수", points: 1 },
+          { id: "EXP-H04A-r3", label: "누설 보상 또는 비상 동력 공급", points: 1 },
+        ],
+        traps: ["증압기처럼 압력을 높이는 장치로 설명", "안전조치를 기능 답안에 섞어 작성"],
+        primaryStudyCategoryId: "theory_concept",
+        studyCategoryIds: ["theory_concept"],
+        predictedBasis: "NCS 유압제어의 어큐뮬레이터 기능·안전회로 수행내용",
+        reviewNote:
+          "원본 예상문항 EXP-H04의 복합 요구 중 기능 서술만 분리했다.",
+      };
+
+      const safetyQuestion: PracticalQuestion = {
+        ...question,
+        id: "EXP-H04B",
+        title: "축압기 분해 전 조치 2가지",
+        formatLabel: "축압기 분해 전 조치 2가지",
+        stem: "축압기를 분해하기 전에 해야 할 안전조치 2가지를 쓰시오.",
+        modelAnswer:
+          "유압측을 차단·감압하여 잔압을 제거하고, 가스측 잔압 또는 충전압을 확인한 뒤 제조사 절차에 따라 방출·격리한다.",
+        requiredKeywords: ["유압측 잔압 제거", "가스측 잔압 확인"],
+        acceptedAnswers: [
+          "유압 배출",
+          "잔압 제거",
+          "감압",
+          "가스측 잔압 확인",
+          "질소 충전압 확인",
+          "차단 격리",
+        ],
+        rubric: [
+          { id: "EXP-H04B-r1", label: "유압측 차단·감압·잔압 제거", points: 2 },
+          { id: "EXP-H04B-r2", label: "가스측 잔압 또는 충전압 확인", points: 2 },
+          { id: "EXP-H04B-r3", label: "제조사 절차·전용장비·격리 언급", points: 1 },
+        ],
+        traps: ["압력계 0만 보고 바로 분해", "산소나 압축공기 충전", "가압상태에서 플러그 또는 밸브 해체"],
+        primaryStudyCategoryId: "work_procedure",
+        studyCategoryIds: ["work_procedure", "theory_concept"],
+        predictedBasis: "NCS 유압제어의 어큐뮬레이터 안전회로와 정비 전 잔압 제거 절차",
+        reviewNote:
+          "원본 예상문항 EXP-H04의 복합 요구 중 분해 전 안전조치만 분리했다.",
+      };
+
+      return [functionQuestion, safetyQuestion];
+    },
+  );
+
+  const authoredPredictedQuestions = [
+    ...PRACTICAL_AUTHORED_PREDICTED_QUESTIONS,
+    ...PRACTICAL_SUPPLEMENTAL_PREDICTED_QUESTIONS,
+  ];
+  const predictedQuestions = [
+    ...expandedWorkbookPredictedQuestions,
+    ...authoredPredictedQuestions,
+  ];
+  const duplicatePredictedId = predictedQuestions.find(
+    (question, index) =>
+      predictedQuestions.findIndex((candidate) => candidate.id === question.id) !==
+      index,
+  );
+  if (duplicatePredictedId) {
+    throw new Error(`출제예상 문항 ID가 중복되었습니다: ${duplicatePredictedId.id}`);
+  }
   const questions = [...actualQuestions, ...predictedQuestions];
   const questionById = new Map(questions.map((question) => [question.id, question]));
 
@@ -813,9 +978,44 @@ async function main() {
     };
   });
 
+  const supplementalConcepts = PRACTICAL_SUPPLEMENTAL_CONCEPTS.map(
+    (concept): PracticalConcept => {
+      const relatedPastQuestionIds = actualQuestions
+        .filter((question) => question.conceptIds.includes(concept.id))
+        .map((question) => question.id);
+      const relatedPredictedQuestionIds = predictedQuestions
+        .filter((question) => question.conceptIds.includes(concept.id))
+        .map((question) => question.id);
+      const visualAidIds = [
+        ...new Set(
+          [...relatedPastQuestionIds, ...relatedPredictedQuestionIds]
+            .map((questionId) => questionById.get(questionId)?.visualAidId)
+            .filter((visualAidId): visualAidId is string =>
+              Boolean(visualAidId),
+            ),
+        ),
+      ];
+
+      return {
+        ...concept,
+        labels: [
+          ...(relatedPastQuestionIds.length > 0
+            ? (["practical_exam"] as const)
+            : []),
+          ...(relatedPredictedQuestionIds.length > 0
+            ? (["predicted_exam"] as const)
+            : []),
+        ],
+        relatedPastQuestionIds,
+        relatedPredictedQuestionIds,
+        visualAidIds,
+      };
+    },
+  );
+
   const concepts: PracticalConcept[] = [
     ...workbookConcepts,
-    ...PRACTICAL_SUPPLEMENTAL_CONCEPTS,
+    ...supplementalConcepts,
   ];
 
   const studyCategories: PracticalStudyCategory[] =
@@ -860,6 +1060,7 @@ async function main() {
     },
     {},
   );
+  const ncsCoverage = buildNcsCoverage(concepts);
   const report: PracticalImportReport = {
     generatedAt: new Date().toISOString(),
     sourceFile: path.basename(sourcePath),
@@ -867,6 +1068,8 @@ async function main() {
     rows: {
       past: actualQuestions.length,
       predicted: predictedQuestions.length,
+      workbookPredicted: expandedWorkbookPredictedQuestions.length,
+      authoredPredicted: authoredPredictedQuestions.length,
       concepts: workbookConcepts.length,
       supplementalConcepts: PRACTICAL_SUPPLEMENTAL_CONCEPTS.length,
       ncsDocuments: rowsToRecords(ncsRows).length,
@@ -882,11 +1085,16 @@ async function main() {
       held: held.length,
       heldByDisposition,
     },
+    ncsCoverage: ncsCoverage.summary,
     exactMatch:
       actualQuestions.length === 41 &&
-      predictedQuestions.length === 40 &&
+      expandedWorkbookPredictedQuestions.length === 41 &&
+      authoredPredictedQuestions.length === 46 &&
+      predictedQuestions.length === 87 &&
       workbookConcepts.length === 46 &&
-      rowsToRecords(ncsRows).length === 11,
+      rowsToRecords(ncsRows).length === 11 &&
+      ncsCoverage.summary.totalDocuments === 11 &&
+      ncsCoverage.summary.accountedDocuments === 11,
     warnings: [
       "EXP-C03 OEE 계산은 현재 확보한 NCS 11종 밖의 원문이 필요하여 공개 보류했다.",
       "제3각법 등 제3자 표준 출처가 표시된 원도형은 공개 자산으로 복제하지 않았다.",
@@ -901,6 +1109,7 @@ async function main() {
     concepts,
     studyCategories,
     visualAids: PRACTICAL_VISUAL_AIDS,
+    ncsCoverage,
     report,
   };
 

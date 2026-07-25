@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { ArrowRight, BookOpenCheck, ClipboardList, RotateCcw } from "lucide-react";
 import type { Subject } from "@/lib/domain/types";
 import { cn } from "@/lib/utils";
+import { useHydrated } from "@/lib/use-hydrated";
 
 const SESSION_PREFIX = "seolbi:practice:";
 const RATIOS = [0, 25, 50, 75, 100] as const;
@@ -18,6 +19,7 @@ type Allocation = {
 
 export function WrittenMockSetup({ subjects, availableBySubject }: { subjects: Subject[]; availableBySubject: Record<string, number> }) {
   const router = useRouter();
+  const isHydrated = useHydrated();
   const [allocations, setAllocations] = useState<Allocation[]>(
     subjects.map((subject) => ({ subjectId: subject.id, enabled: true, count: Math.min(20, availableBySubject[subject.id] ?? 0) })),
   );
@@ -79,7 +81,7 @@ export function WrittenMockSetup({ subjects, availableBySubject }: { subjects: S
             <p className="mt-3 leading-7 text-slate-200">시험 형식은 4과목을 각각 20문제씩 구성합니다. 현재 공개 검수를 통과한 문제는 총 {standardTotal}개이며 같은 문제는 한 시험에서 중복되지 않습니다.</p>
             {!standardReady && <p className="mt-3 rounded-xl bg-amber-300/15 px-4 py-3 text-sm font-bold text-amber-100">제2과목을 포함한 부족 문제를 검수·보강하면 자동으로 80문제 구성이 활성화됩니다.</p>}
           </div>
-          <button type="button" onClick={() => startMock(true)} disabled={loading} className="flex items-center justify-center gap-2 rounded-xl bg-[#8f3f0a] px-6 py-4 font-extrabold text-white disabled:opacity-50">
+          <button type="button" onClick={() => startMock(true)} disabled={!isHydrated || loading} className="flex items-center justify-center gap-2 rounded-xl bg-[#8f3f0a] px-6 py-4 font-extrabold text-white disabled:opacity-50">
             {loading ? "구성 중…" : standardReady ? "80문제 시작" : `검수 완료 ${standardTotal}문제 시작`} <ArrowRight size={18} />
           </button>
         </div>
@@ -102,11 +104,11 @@ export function WrittenMockSetup({ subjects, availableBySubject }: { subjects: S
             return (
               <div key={subject.id} className={cn("rounded-2xl border p-4", allocation.enabled ? "border-[#6fb5b1] bg-[#f2fbfa]" : "border-slate-200 bg-slate-50")}>
                 <label className="flex cursor-pointer items-start gap-3">
-                  <input type="checkbox" checked={allocation.enabled} onChange={(event) => updateAllocation(subject.id, { enabled: event.target.checked })} className="mt-1 size-5 accent-[#16697a]" />
+                  <input type="checkbox" disabled={!isHydrated} checked={allocation.enabled} onChange={(event) => updateAllocation(subject.id, { enabled: event.target.checked })} className="mt-1 size-5 accent-[#16697a]" />
                   <span><strong className="block text-[#173957]">제{subject.code}과목 · {subject.shortTitle}</strong><span className="mt-1 block text-xs leading-5 text-slate-500">{subject.description}</span></span>
                 </label>
                 <label className="mt-4 grid gap-2 text-sm font-bold">문제 수
-                  <select aria-label={`제${subject.code}과목 문제 수`} disabled={!allocation.enabled} value={allocation.count} onChange={(event) => updateAllocation(subject.id, { count: Number(event.target.value) })} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50">
+                  <select aria-label={`제${subject.code}과목 문제 수`} disabled={!isHydrated || !allocation.enabled} value={allocation.count} onChange={(event) => updateAllocation(subject.id, { count: Number(event.target.value) })} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50">
                     {countOptions.map((count) => <option key={count} value={count}>{count}문제</option>)}
                   </select>
                   <span className="text-xs font-medium text-slate-500">검수 완료 {availableCount}문제</span>
@@ -121,7 +123,7 @@ export function WrittenMockSetup({ subjects, availableBySubject }: { subjects: S
           <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-5">
             {RATIOS.map((ratio) => (
               <label key={ratio} className={cn("relative cursor-pointer overflow-hidden rounded-xl border px-3 py-3 text-center text-sm font-bold", originalRatio === ratio ? "border-[#16697a] bg-[#eaf7f6] text-[#135c69]" : "border-slate-200")}>
-                <input type="radio" name="mock-original-ratio" value={ratio} checked={originalRatio === ratio} onChange={() => setOriginalRatio(ratio)} className="absolute inset-0 size-full cursor-pointer opacity-0" />
+                <input type="radio" disabled={!isHydrated} name="mock-original-ratio" value={ratio} checked={originalRatio === ratio} onChange={() => setOriginalRatio(ratio)} className="absolute inset-0 size-full cursor-pointer opacity-0" />
                 <span className="pointer-events-none relative">{ratio}%</span>
               </label>
             ))}
@@ -130,7 +132,7 @@ export function WrittenMockSetup({ subjects, availableBySubject }: { subjects: S
 
         <div className="mt-7 flex flex-col gap-4 rounded-2xl bg-slate-50 p-5 sm:flex-row sm:items-center sm:justify-between">
           <div><strong className="text-lg text-[#173957]">총 {totalCount}문제</strong><p className="mt-1 text-sm text-slate-500">선택 과목 {enabledAllocations.length}개 · 실제 기출 목표 {Math.round(totalCount * originalRatio / 100)}문제</p></div>
-          <button type="button" onClick={() => startMock(false)} disabled={loading || totalCount === 0} className="flex items-center justify-center gap-2 rounded-xl bg-[#173957] px-6 py-4 font-extrabold text-white disabled:opacity-40">
+          <button type="button" onClick={() => startMock(false)} disabled={!isHydrated || loading || totalCount === 0} className="flex items-center justify-center gap-2 rounded-xl bg-[#173957] px-6 py-4 font-extrabold text-white disabled:opacity-40">
             커스텀 모의고사 시작 <ArrowRight size={18} />
           </button>
         </div>

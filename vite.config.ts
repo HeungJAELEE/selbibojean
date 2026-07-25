@@ -8,6 +8,14 @@ export default defineConfig(async () => {
   process.env.MINIFLARE_REGISTRY_PATH ??= ".wrangler/registry";
   const { cloudflare } = await import("@cloudflare/vite-plugin");
   return {
+    resolve: {
+      dedupe: ["react", "react-dom"],
+    },
+    server: {
+      watch: {
+        ignored: ["**/playwright-report/**", "**/test-results/**", "**/tmp/**"],
+      },
+    },
     plugins: [
       vinext(),
       sites(),

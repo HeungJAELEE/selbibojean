@@ -14,6 +14,7 @@ import {
 import type {
   PracticalConcept,
   PracticalContent,
+  PracticalNcsCoverage,
   PracticalStudyCategoryId,
   PracticalVisualAid,
 } from "@/lib/domain/practical-types";
@@ -31,6 +32,10 @@ const content = rawPracticalContent as PracticalContent;
 
 export async function getPracticalContent() {
   return content;
+}
+
+export async function getPracticalNcsCoverage(): Promise<PracticalNcsCoverage> {
+  return content.ncsCoverage;
 }
 
 export async function getPracticalQuestion(questionId: string) {

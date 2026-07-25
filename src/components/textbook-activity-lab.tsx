@@ -4,9 +4,11 @@ import { useState } from "react";
 import { ArrowDown, Beaker, ChevronDown, RotateCcw } from "lucide-react";
 import type { TextbookActivity } from "@/lib/content/textbook-activities";
 import { cn } from "@/lib/utils";
+import { useHydrated } from "@/lib/use-hydrated";
 
 export function TextbookActivityLab({ activity }: { activity: TextbookActivity }) {
   const [hintLevel, setHintLevel] = useState(0);
+  const isHydrated = useHydrated();
 
   return (
     <section
@@ -39,9 +41,17 @@ export function TextbookActivityLab({ activity }: { activity: TextbookActivity }
         </div>
 
         <div className="mt-5">
-          {activity.type === "accumulator-pressure" && <AccumulatorExplorer activity={activity} />}
-          {activity.type === "pid-effects" && <PidExplorer activity={activity} />}
-          {activity.type === "welding-classification" && <WeldingExplorer activity={activity} />}
+          {!isHydrated ? (
+            <div className="rounded-xl bg-white p-5 text-sm font-bold text-slate-500" role="status">
+              실습 도구를 준비하고 있습니다…
+            </div>
+          ) : (
+            <>
+              {activity.type === "accumulator-pressure" && <AccumulatorExplorer activity={activity} isHydrated />}
+              {activity.type === "pid-effects" && <PidExplorer activity={activity} isHydrated />}
+              {activity.type === "welding-classification" && <WeldingExplorer activity={activity} isHydrated />}
+            </>
+          )}
         </div>
 
         <div className="mt-5 rounded-xl border border-[#b9d9d7] bg-white p-4">
@@ -52,6 +62,7 @@ export function TextbookActivityLab({ activity }: { activity: TextbookActivity }
             </div>
             <button
               type="button"
+              disabled={!isHydrated}
               onClick={() =>
                 setHintLevel((level) => level >= activity.hints.length ? 0 : level + 1)
               }
@@ -95,8 +106,10 @@ export function TextbookActivityLab({ activity }: { activity: TextbookActivity }
 
 function AccumulatorExplorer({
   activity,
+  isHydrated,
 }: {
   activity: Extract<TextbookActivity, { type: "accumulator-pressure" }>;
+  isHydrated: boolean;
 }) {
   const { minRatio, maxRatio, initialRatio, step } = activity.config;
   const [ratio, setRatio] = useState(initialRatio);
@@ -147,6 +160,7 @@ function AccumulatorExplorer({
         max={maxRatio}
         step={step}
         value={ratio}
+        disabled={!isHydrated}
         onChange={(event) => setRatio(Number(event.target.value))}
         className="mt-4 w-full accent-[#16697a]"
       />
@@ -184,8 +198,10 @@ function PressureBar({ label, percent, value }: { label: string; percent: number
 
 function PidExplorer({
   activity,
+  isHydrated,
 }: {
   activity: Extract<TextbookActivity, { type: "pid-effects" }>;
+  isHydrated: boolean;
 }) {
   const { min, max, step, initial } = activity.config;
   const [kp, setKp] = useState(initial.kp);
@@ -196,9 +212,9 @@ function PidExplorer({
   return (
     <div className="grid gap-4 lg:grid-cols-[1fr_0.9fr]">
       <div className="rounded-xl bg-white p-4 md:p-5">
-        <PidSlider id={`${activity.id}-kp`} label="P · 현재 편차 반응" value={kp} min={min} max={max} step={step} onChange={setKp} />
-        <PidSlider id={`${activity.id}-ki`} label="I · 누적 편차 보정" value={ki} min={min} max={max} step={step} onChange={setKi} />
-        <PidSlider id={`${activity.id}-kd`} label="D · 변화율 제동" value={kd} min={min} max={max} step={step} onChange={setKd} />
+        <PidSlider id={`${activity.id}-kp`} label="P · 현재 편차 반응" value={kp} min={min} max={max} step={step} onChange={setKp} disabled={!isHydrated} />
+        <PidSlider id={`${activity.id}-ki`} label="I · 누적 편차 보정" value={ki} min={min} max={max} step={step} onChange={setKi} disabled={!isHydrated} />
+        <PidSlider id={`${activity.id}-kd`} label="D · 변화율 제동" value={kd} min={min} max={max} step={step} onChange={setKd} disabled={!isHydrated} />
         <p className="mt-3 text-xs leading-5 text-slate-500">
           막대값은 제어기 튜닝값이 아니라 각 항의 상대적인 영향만 비교하는 교육용 지표입니다.
         </p>
@@ -238,6 +254,7 @@ function PidSlider({
   max,
   step,
   onChange,
+  disabled,
 }: {
   id: string;
   label: string;
@@ -246,6 +263,7 @@ function PidSlider({
   max: number;
   step: number;
   onChange: (value: number) => void;
+  disabled: boolean;
 }) {
   return (
     <div className="border-b border-slate-100 py-3 last:border-0">
@@ -260,6 +278,7 @@ function PidSlider({
         max={max}
         step={step}
         value={value}
+        disabled={disabled}
         onChange={(event) => onChange(Number(event.target.value))}
         className="mt-2 w-full accent-[#16697a]"
       />
@@ -299,8 +318,10 @@ function TendencyCard({
 
 function WeldingExplorer({
   activity,
+  isHydrated,
 }: {
   activity: Extract<TextbookActivity, { type: "welding-classification" }>;
+  isHydrated: boolean;
 }) {
   const [selectedId, setSelectedId] = useState(activity.config.initialOptionId);
   const selected = activity.config.options.find((option) => option.id === selectedId)
@@ -313,6 +334,7 @@ function WeldingExplorer({
           <button
             key={option.id}
             type="button"
+            disabled={!isHydrated}
             aria-pressed={selected.id === option.id}
             onClick={() => setSelectedId(option.id)}
             className={cn(

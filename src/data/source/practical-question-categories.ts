@@ -1,4 +1,5 @@
 import type { PracticalStudyCategoryId } from "../../lib/domain/practical-types";
+import { PRACTICAL_SUPPLEMENTAL_PRIMARY_CATEGORY_BY_QUESTION } from "./practical-supplemental-predicted-questions";
 
 const ids = <T extends PracticalStudyCategoryId>(
   primaryStudyCategoryId: T,
@@ -45,6 +46,7 @@ export const PRACTICAL_PRIMARY_CATEGORY_BY_QUESTION = Object.fromEntries([
     "EXP-C03",
     "EXP-C04",
     "EXP-C05",
+    "EXP-C06",
   ]),
   ...ids("work_procedure", [
     "P-2025-1-Q02",
@@ -56,7 +58,7 @@ export const PRACTICAL_PRIMARY_CATEGORY_BY_QUESTION = Object.fromEntries([
     "EXP-B06",
     "EXP-G02",
     "EXP-G05",
-    "EXP-H04",
+    "EXP-H04B",
     "EXP-S01",
     "EXP-S03",
     "EXP-S04",
@@ -87,6 +89,7 @@ export const PRACTICAL_PRIMARY_CATEGORY_BY_QUESTION = Object.fromEntries([
     "EXP-M06",
     "EXP-H02",
     "EXP-H03",
+    "EXP-H04A",
     "EXP-H05",
     "EXP-H06",
     "EXP-D02",
@@ -94,5 +97,8 @@ export const PRACTICAL_PRIMARY_CATEGORY_BY_QUESTION = Object.fromEntries([
     "EXP-W01",
     "EXP-W02",
     "EXP-S02",
+    "EXP-C07",
+    "EXP-C08",
   ]),
+  ...Object.entries(PRACTICAL_SUPPLEMENTAL_PRIMARY_CATEGORY_BY_QUESTION),
 ]) as Record<string, PracticalStudyCategoryId>;
