@@ -8,8 +8,16 @@ export const metadata: Metadata = {
   description: "v0.4의 학습 재구성 183건을 개념·과목·출처·검수 상태로 탐색합니다.",
 };
 
-export default function BdaBankPage() {
+export default async function BdaBankPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ concept?: string }>;
+}) {
   const qbank = getBdaQbank();
+  const { concept } = await searchParams;
+  const initialConceptId = qbank.concepts.some((item) => item.id === concept)
+    ? concept
+    : undefined;
 
   return (
     <main className="page-wrap pb-16">
@@ -33,7 +41,11 @@ export default function BdaBankPage() {
       </aside>
 
       <section className="mt-8">
-        <BdaQuestionBank items={qbank.learningItems} concepts={qbank.concepts} />
+        <BdaQuestionBank
+          items={qbank.learningItems}
+          concepts={qbank.concepts}
+          initialConceptId={initialConceptId}
+        />
       </section>
     </main>
   );

@@ -1,5 +1,6 @@
 import "server-only";
 import rawQbank from "@/data/source/bda-qbank-v04.json";
+import { getBdaConceptEnrichment } from "@/data/source/bda-concept-enrichment";
 import type {
   BdaQbank,
   BdaQbankConcept,
@@ -28,6 +29,25 @@ export function getBdaQbankPracticalTask(taskId: string) {
 
 export function getBdaQbankConceptItems(conceptId: string) {
   return qbank.learningItems.filter((item) => item.conceptIds.includes(conceptId));
+}
+
+export function getBdaQbankConceptDetail(conceptId: string) {
+  const concept = getBdaQbankConcept(conceptId);
+  if (!concept) return undefined;
+
+  const relatedItems = getBdaQbankConceptItems(conceptId);
+  const relatedTopics = [...new Set(relatedItems.map((item) => item.topicSummary).filter(Boolean))];
+  const relatedPracticalTasks = qbank.practicalTasks.filter((task) =>
+    task.conceptIds.includes(conceptId),
+  );
+
+  return {
+    concept,
+    enrichment: getBdaConceptEnrichment(conceptId),
+    relatedItems,
+    relatedTopics,
+    relatedPracticalTasks,
+  };
 }
 
 export function getBdaQbankInventoryForRound(round: string) {

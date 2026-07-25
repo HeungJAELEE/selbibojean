@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import rawQbank from "@/data/source/bda-qbank-v04.json";
+import { bdaConceptEnrichments } from "@/data/source/bda-concept-enrichment";
 import type { BdaQbank } from "@/lib/domain/bda-qbank";
 
 describe("BDA QBank v0.4 import", () => {
@@ -32,5 +33,21 @@ describe("BDA QBank v0.4 import", () => {
     expect(qbank.practicalTasks.every((task) => task.dataLeakageChecks)).toBe(true);
     expect(qbank.practicalTasks.every((task) => task.privacyChecks)).toBe(true);
     expect(qbank.codeSnippets.length).toBeGreaterThan(0);
+  });
+
+  it("expands every normalized concept and keeps every learning item linked", () => {
+    expect(bdaConceptEnrichments).toHaveLength(40);
+    expect(new Set(bdaConceptEnrichments.map((item) => item.conceptId)).size).toBe(40);
+    expect(qbank.learningItems.every((item) => item.conceptIds.length > 0)).toBe(true);
+
+    for (const concept of qbank.concepts) {
+      const enrichment = bdaConceptEnrichments.find((item) => item.conceptId === concept.id);
+      expect(enrichment).toBeDefined();
+      expect(enrichment?.examFocus.length).toBeGreaterThanOrEqual(2);
+      expect(enrichment?.decisionSteps.length).toBeGreaterThanOrEqual(3);
+      expect(enrichment?.comparisonRows.length).toBeGreaterThanOrEqual(3);
+      expect(enrichment?.practicalSteps.length).toBeGreaterThanOrEqual(2);
+      expect(enrichment?.finalChecklist.length).toBeGreaterThanOrEqual(2);
+    }
   });
 });

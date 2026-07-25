@@ -19,6 +19,7 @@
     "import:workbook": "tsx scripts/import-workbook.ts",
     "import:welding-safety": "tsx scripts/import-welding-safety-workbook.ts",
     "import:practical": "tsx scripts/import-practical-workbook.ts",
+    "audit:bda-concepts": "tsx scripts/audit-bda-concept-coverage.ts",
     "stage:supabase": "tsx scripts/stage-supabase-import.ts",
     "audit:publication": "tsx scripts/audit-publication-scope.ts",
     "audit:merge-decisions": "tsx scripts/merge-written-audit-decisions.ts",

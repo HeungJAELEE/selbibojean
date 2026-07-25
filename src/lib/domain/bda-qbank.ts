@@ -29,6 +29,20 @@ export type BdaQbankConcept = {
   validatorNote?: string;
 };
 
+export type BdaConceptEnrichment = {
+  conceptId: string;
+  overview: string;
+  examFocus: string[];
+  decisionSteps: string[];
+  comparisonRows: Array<{
+    label: string;
+    core: string;
+    distinction: string;
+  }>;
+  practicalSteps: string[];
+  finalChecklist: string[];
+};
+
 export type BdaQbankLearningItem = {
   id: string;
   platform?: string;

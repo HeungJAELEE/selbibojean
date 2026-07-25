@@ -11,11 +11,12 @@ import type {
 type Props = {
   items: BdaQbankLearningItem[];
   concepts: BdaQbankConcept[];
+  initialConceptId?: string;
 };
 
-export function BdaQuestionBank({ items, concepts }: Props) {
+export function BdaQuestionBank({ items, concepts, initialConceptId }: Props) {
   const [subjectNo, setSubjectNo] = useState("all");
-  const [conceptId, setConceptId] = useState("all");
+  const [conceptId, setConceptId] = useState(initialConceptId ?? "all");
   const [platform, setPlatform] = useState("all");
   const [validation, setValidation] = useState("all");
 
