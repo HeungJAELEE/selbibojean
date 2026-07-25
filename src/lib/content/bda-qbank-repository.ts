@@ -1,6 +1,7 @@
 import "server-only";
 import rawQbank from "@/data/source/bda-qbank-v04.json";
 import { getBdaConceptEnrichment } from "@/data/source/bda-concept-enrichment";
+import { getBdaIntegratedConceptTheory } from "@/data/source/bda-integrated-concept-theory";
 import type {
   BdaQbank,
   BdaQbankConcept,
@@ -44,6 +45,7 @@ export function getBdaQbankConceptDetail(conceptId: string) {
   return {
     concept,
     enrichment: getBdaConceptEnrichment(conceptId),
+    integratedTheory: getBdaIntegratedConceptTheory(conceptId),
     relatedItems,
     relatedTopics,
     relatedPracticalTasks,

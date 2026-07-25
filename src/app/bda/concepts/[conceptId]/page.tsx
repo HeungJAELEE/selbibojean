@@ -11,7 +11,11 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { notFound } from "next/navigation";
-import { getBdaNotionModulesForConcept } from "@/data/source/bda-notion-library";
+import { bdaCodeLabs } from "@/data/source/bda-practical-content";
+import {
+  bdaNotionSourcePages,
+  getBdaNotionModulesForConcept,
+} from "@/data/source/bda-notion-library";
 import {
   getBdaQbank,
   getBdaQbankConceptDetail,
@@ -44,10 +48,21 @@ export default async function BdaConceptDetailPage({
 }) {
   const { conceptId } = await params;
   const detail = getBdaQbankConceptDetail(conceptId);
-  if (!detail || !detail.enrichment) notFound();
+  if (!detail || !detail.enrichment || !detail.integratedTheory) notFound();
 
-  const { concept, enrichment, relatedItems, relatedTopics, relatedPracticalTasks } = detail;
+  const {
+    concept,
+    enrichment,
+    integratedTheory,
+    relatedItems,
+    relatedTopics,
+    relatedPracticalTasks,
+  } = detail;
   const notionModules = getBdaNotionModulesForConcept(conceptId);
+  const sourcePage = integratedTheory.sourcePageId
+    ? bdaNotionSourcePages.find((page) => page.id === integratedTheory.sourcePageId)
+    : undefined;
+  const codeLabs = bdaCodeLabs.filter((lab) => integratedTheory.codeLabIds.includes(lab.id));
 
   return (
     <main className="page-wrap pb-16 pt-8">
@@ -80,6 +95,58 @@ export default async function BdaConceptDetailPage({
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 <Callout label="핵심 규칙" text={concept.formulaOrRule} tone="teal" />
                 <Callout label="자주 틀리는 지점" text={concept.commonTraps} tone="amber" />
+              </div>
+            </section>
+
+            <section className="overflow-hidden rounded-3xl border border-teal-200 bg-[#f0fbf8]">
+              <div className="border-b border-teal-200 bg-teal-100/70 px-5 py-4 sm:px-6">
+                <p className="text-xs font-black uppercase tracking-[.14em] text-teal-800">Integrated theory</p>
+                <h2 className="mt-1 text-2xl font-black text-[#143b43]">Notion 이론을 흡수한 개념 학습</h2>
+              </div>
+              <div className="p-5 sm:p-6">
+                <p className="text-base leading-8 text-slate-800">{integratedTheory.learningSummary}</p>
+                <div className="mt-5 grid gap-4 lg:grid-cols-2">
+                  <article className="rounded-2xl border border-teal-100 bg-white p-4">
+                    <h3 className="font-black text-teal-950">반드시 연결할 규칙</h3>
+                    <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-700">
+                      {integratedTheory.mustKnow.map((rule) => (
+                        <li key={rule} className="flex gap-2"><CheckCircle2 size={16} className="mt-1 shrink-0 text-teal-700" />{rule}</li>
+                      ))}
+                    </ul>
+                  </article>
+                  <article className="rounded-2xl border border-amber-200 bg-amber-50 p-4">
+                    <h3 className="font-black text-amber-950">문제에서 걸러낼 함정</h3>
+                    <ul className="mt-3 grid gap-2 text-sm leading-6 text-amber-950">
+                      {integratedTheory.examTraps.map((trap) => (
+                        <li key={trap} className="flex gap-2"><ShieldCheck size={16} className="mt-1 shrink-0 text-amber-700" />{trap}</li>
+                      ))}
+                    </ul>
+                  </article>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-2 text-xs font-bold">
+                  {integratedTheory.sourceSections.map((section) => (
+                    <span key={section} className="rounded-full border border-teal-200 bg-white px-3 py-1.5 text-teal-950">{section}</span>
+                  ))}
+                </div>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  {sourcePage ? (
+                    <a href={sourcePage.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-teal-300 bg-white px-3 py-2 text-sm font-black text-teal-900 hover:bg-teal-50">
+                      원천 Notion 확인 <ExternalLink size={15} />
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center rounded-xl border border-blue-200 bg-blue-50 px-3 py-2 text-sm font-black text-blue-900">실기 확장: Notion 이론 범위 밖의 코드·검수 보강</span>
+                  )}
+                  {integratedTheory.practiceQuestionIds.map((questionId) => (
+                    <Link key={questionId} href={`/bda/written/practice/${questionId}`} className="inline-flex items-center gap-2 rounded-xl bg-[#173957] px-3 py-2 text-sm font-black text-white hover:bg-[#0f766e]">
+                      확인문제 {questionId} <ArrowRight size={15} />
+                    </Link>
+                  ))}
+                  {codeLabs.map((lab) => (
+                    <Link key={lab.id} href={`/bda/practical/${lab.id}`} className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-black text-[#173957] hover:bg-slate-50">
+                      <Code2 size={15} /> 코드 레슨: {lab.title}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </section>
 
@@ -150,9 +217,9 @@ export default async function BdaConceptDetailPage({
 
             {notionModules.length ? (
               <section className="rounded-2xl border border-teal-200 bg-teal-50 p-5">
-                <p className="eyebrow text-teal-700">Notion reinforcement</p>
-                <h2 className="mt-2 text-xl font-black text-teal-950">원천 이론에서 이어 보기</h2>
-                <p className="mt-2 text-xs leading-5 text-teal-900">사용자 제공 Notion 하위 페이지에서 이 개념을 다룬 학습 모듈입니다.</p>
+                <p className="eyebrow text-teal-700">Source trail</p>
+                <h2 className="mt-2 text-xl font-black text-teal-950">추가 원천·연결 모듈</h2>
+                <p className="mt-2 text-xs leading-5 text-teal-900">핵심 내용은 본문에 통합했습니다. 여기서는 원천을 더 깊게 확인할 때만 이어 보세요.</p>
                 <div className="mt-4 grid gap-2">
                   {notionModules.map((module) => (
                     <Link key={module.id} href={`/bda/notion#${module.id}`} className="rounded-xl border border-teal-200 bg-white px-3 py-2.5 text-sm font-black text-teal-950 hover:bg-teal-100">

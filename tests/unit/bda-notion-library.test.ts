@@ -1,11 +1,13 @@
 import { describe, expect, it } from "vitest";
 import rawQbank from "@/data/source/bda-qbank-v04.json";
 import { bdaContent } from "@/data/source/bda-content";
+import { bdaIntegratedConceptTheories } from "@/data/source/bda-integrated-concept-theory";
 import {
   bdaNotionModules,
   bdaNotionPracticeQuestions,
   bdaNotionSourcePages,
 } from "@/data/source/bda-notion-library";
+import { bdaCodeLabs } from "@/data/source/bda-practical-content";
 import type { BdaQbank } from "@/lib/domain/bda-qbank";
 
 describe("BDA Notion child-page learning map", () => {
@@ -45,5 +47,34 @@ describe("BDA Notion child-page learning map", () => {
       expect(question.choices).toHaveLength(4);
       expect(question.choices.some((choice) => choice.id === question.correctChoiceId)).toBe(true);
     }
+  });
+
+  it("integrates every C001~C040 detail with actual theory or an explicit practical extension", () => {
+    const sourceIds = new Set(bdaNotionSourcePages.map((page) => page.id));
+    const conceptIds = new Set(qbank.concepts.map((concept) => concept.id));
+    const questionIds = new Set([
+      ...bdaContent.questions.map((question) => question.id),
+      ...bdaNotionPracticeQuestions.map((question) => question.id),
+    ]);
+    const codeLabIds = new Set(bdaCodeLabs.map((lab) => lab.id));
+
+    expect(bdaIntegratedConceptTheories).toHaveLength(qbank.concepts.length);
+    expect(new Set(bdaIntegratedConceptTheories.map((theory) => theory.conceptId)).size)
+      .toBe(qbank.concepts.length);
+
+    for (const theory of bdaIntegratedConceptTheories) {
+      expect(conceptIds.has(theory.conceptId)).toBe(true);
+      expect(theory.learningSummary.length).toBeGreaterThan(60);
+      expect(theory.mustKnow.length).toBeGreaterThanOrEqual(3);
+      expect(theory.examTraps.length).toBeGreaterThanOrEqual(2);
+      expect(theory.practiceQuestionIds.every((questionId) => questionIds.has(questionId))).toBe(true);
+      expect(theory.codeLabIds.every((codeLabId) => codeLabIds.has(codeLabId))).toBe(true);
+      if (theory.sourceKind === "notion") {
+        expect(sourceIds.has(theory.sourcePageId ?? "")).toBe(true);
+      }
+    }
+
+    expect(bdaIntegratedConceptTheories.filter((theory) => theory.sourceKind === "practical-extension"))
+      .toHaveLength(4);
   });
 });

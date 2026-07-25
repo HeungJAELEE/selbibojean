@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpenText, Code2, ShieldCheck } from "lucide-react";
+import { bdaIntegratedConceptTheories } from "@/data/source/bda-integrated-concept-theory";
 import {
   getBdaQbankConceptItems,
   getBdaQbankSubjects,
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 
 export default function BdaConceptsPage() {
   const subjects = getBdaQbankSubjects();
+  const integratedCount = bdaIntegratedConceptTheories.length;
 
   return (
     <main className="page-wrap pb-16">
@@ -29,6 +31,14 @@ export default function BdaConceptsPage() {
         <strong>이번 보강:</strong> 183개 학습 재구성 항목은 모두 개념에 연결되어 있습니다. MapReduce·HDFS·NoSQL,
         CRISP-DM·SEMMA·WBS, 검정 종류, 딥러닝·앙상블, 제출 파일·데이터누수처럼 한 줄 요약에 묶였던 주제도
         각 상세 개념 안에서 별도 판단 기준으로 확장했습니다.
+      </section>
+
+      <section className="mb-8 grid gap-4 rounded-3xl border border-[#c9e7df] bg-[#f5fcfa] p-5 sm:grid-cols-[auto_1fr] sm:items-center sm:p-6">
+        <div className="grid size-12 place-items-center rounded-2xl bg-[#173957] text-lg font-black text-white">{integratedCount}</div>
+        <div>
+          <p className="text-sm font-black text-[#143b43]">Notion 이론 통합 완료</p>
+          <p className="mt-1 text-sm leading-6 text-slate-700">C001~C040 상세 페이지마다 원천 이론을 요약·정리해 정의, 판단 규칙, 빈출 함정, 확인문제와 실기 코드까지 한 흐름으로 연결했습니다. C037~C040은 Notion 이론이 아니라 실기 코드·검수 확장으로 표시합니다.</p>
+        </div>
       </section>
 
       <div className="grid gap-8">
@@ -65,6 +75,7 @@ export default function BdaConceptsPage() {
                     ) : null}
                     <div className="mt-4 flex flex-wrap gap-2 text-xs font-bold">
                       <span className="rounded-full bg-white px-2.5 py-1 text-slate-600">연결 학습 항목 {relatedCount}개</span>
+                      <span className="rounded-full bg-teal-100 px-2.5 py-1 text-teal-800">Notion 통합 이론</span>
                       {concept.practicalLink ? <span className="flex items-center gap-1 rounded-full bg-blue-50 px-2.5 py-1 text-blue-800"><Code2 size={13} /> {concept.practicalLink}</span> : null}
                       <span className="flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800"><ShieldCheck size={13} /> {concept.validationStatus}</span>
                     </div>
