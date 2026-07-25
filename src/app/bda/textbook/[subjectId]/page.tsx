@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Archive, ArrowLeft, ArrowRight, BookOpenCheck, ShieldCheck } from "lucide-react";
+import { Archive, ArrowLeft, ArrowRight, BookOpenCheck, ListTree, ShieldCheck } from "lucide-react";
 import { notFound } from "next/navigation";
 import { MarkdownContent } from "@/components/markdown-content";
+import { extractMarkdownOutline, type MarkdownOutlineItem } from "@/lib/markdown-outline";
 import {
   bdaTextbookSubjects,
   getBdaCanonicalSnapshot,
@@ -41,26 +42,48 @@ export default async function BdaTextbookSubjectPage({
   const snapshots = getBdaTextbookSubjectSnapshots(subjectId);
   const supplements = snapshots.filter((snapshot) => snapshot.id !== canonical.id);
   const migrated = sanitizeNotionSnapshot(canonical);
+  const outline = extractMarkdownOutline(migrated.content);
 
   return (
-    <main className="page-wrap pb-16 pt-8">
+    <main className="page-wrap overflow-x-clip pb-16 pt-6 sm:pt-8">
       <Link href="/bda/textbook" className="inline-flex items-center gap-2 text-sm font-black text-teal-800 hover:underline">
         <ArrowLeft size={16} /> 통합 개념서
       </Link>
 
-      <header className="mt-5 overflow-hidden rounded-3xl bg-[#173957] p-7 text-white sm:p-10">
-        <p className="text-xs font-black uppercase tracking-[.18em] text-teal-200">Subject {subject.order} · canonical textbook</p>
-        <h1 className="mt-3 text-4xl font-black sm:text-5xl">{subject.title}</h1>
+      <header className="soft-grid mt-5 overflow-hidden rounded-[28px] bg-[#173957] p-6 text-white shadow-[0_24px_70px_rgb(23_57_87_/_0.18)] sm:p-10">
+        <p className="text-xs font-black uppercase tracking-[.18em] text-teal-200">{subject.order}과목 · 통합 교재</p>
+        <h1 className="mt-3 break-keep text-[clamp(2rem,8vw,3rem)] font-black leading-[1.14] tracking-[-.04em]">{subject.title}</h1>
         <p className="mt-4 max-w-3xl leading-8 text-slate-200">{subject.description}</p>
         <div className="mt-6 flex flex-wrap gap-2 text-xs font-bold">
           <span className="rounded-full bg-white/10 px-3 py-1.5">대표 원천: {canonical.title}</span>
           <span className="rounded-full bg-white/10 px-3 py-1.5">보강 스냅샷 {supplements.length}개</span>
           <span className="rounded-full bg-white/10 px-3 py-1.5">정답보호 제외 블록 {migrated.hiddenExerciseCount}개</span>
         </div>
+        <nav aria-label="과목 바로가기" className="mt-7 grid grid-cols-2 gap-2 border-t border-white/10 pt-5 sm:flex">
+          {bdaTextbookSubjects.map((item) => (
+            <Link
+              key={item.id}
+              href={`/bda/textbook/${item.id}`}
+              aria-current={item.id === subject.id ? "page" : undefined}
+              className={item.id === subject.id
+                ? "rounded-xl bg-teal-200 px-3 py-2 text-center text-xs font-black text-[#12364f]"
+                : "rounded-xl bg-white/10 px-3 py-2 text-center text-xs font-bold text-slate-100 transition hover:bg-white/20"}
+            >
+              {item.order}과목
+            </Link>
+          ))}
+        </nav>
       </header>
 
+      <details className="card mt-5 p-4 lg:hidden">
+        <summary className="flex cursor-pointer list-none items-center gap-2 font-black text-[#173957]">
+          <ListTree size={18} className="text-teal-700" /> 이 페이지 빠른 목차
+        </summary>
+        <OutlineLinks outline={outline} />
+      </details>
+
       <div className="mt-7 grid gap-7 lg:grid-cols-[minmax(0,1fr)_280px]">
-        <article className="card min-w-0 p-6 sm:p-9">
+        <article className="card min-w-0 overflow-hidden p-5 sm:p-9">
           <div className="mb-7 flex items-center gap-3 border-b border-slate-200 pb-5">
             <BookOpenCheck className="text-teal-700" />
             <div>
@@ -72,6 +95,14 @@ export default async function BdaTextbookSubjectPage({
         </article>
 
         <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
+          <section className="hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:block">
+            <div className="flex items-center gap-2">
+              <ListTree size={17} className="text-teal-700" />
+              <h2 className="font-black text-[#142f4b]">이 페이지 목차</h2>
+            </div>
+            <OutlineLinks outline={outline} />
+          </section>
+
           <section className="rounded-2xl border border-teal-200 bg-teal-50 p-5">
             <p className="eyebrow text-teal-700">Integrated map</p>
             <h2 className="mt-2 text-lg font-black text-teal-950">개념·문제로 연결</h2>
@@ -107,5 +138,22 @@ export default async function BdaTextbookSubjectPage({
         </aside>
       </div>
     </main>
+  );
+}
+
+function OutlineLinks({ outline }: { outline: MarkdownOutlineItem[] }) {
+  return (
+    <nav aria-label="교재 장 목차" className="mt-4 grid max-h-[46vh] gap-1.5 overflow-y-auto pr-1">
+      {outline.map((item, index) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          className="group grid grid-cols-[1.5rem_1fr] gap-2 rounded-lg px-2 py-2 text-sm leading-5 text-slate-600 transition hover:bg-teal-50 hover:text-teal-900"
+        >
+          <span className="font-black text-teal-700">{String(index + 1).padStart(2, "0")}</span>
+          <span>{item.label}</span>
+        </a>
+      ))}
+    </nav>
   );
 }

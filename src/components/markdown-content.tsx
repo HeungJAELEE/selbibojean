@@ -2,6 +2,7 @@
 
 import { createElement, Fragment, type ReactNode } from "react";
 import { MermaidDiagram } from "@/components/mermaid-diagram";
+import { markdownHeadingId, stripMarkdownDecoration } from "@/lib/markdown-outline";
 import { cn } from "@/lib/utils";
 
 const TEX_SYMBOLS: Record<string, string> = {
@@ -110,6 +111,7 @@ function safeHref(href: string) {
 }
 
 function renderInline(text: string, keyPrefix: string): ReactNode[] {
+  text = text.replace(/\\([*_[\]()>#])/g, "$1");
   const tokenPattern = /(\$[^$\n]+\$|`[^`\n]+`|\*\*[^*\n]+\*\*|\[[^\]\n]+\]\([^)]+\))/g;
   const output: ReactNode[] = [];
   let cursor = 0;
@@ -174,6 +176,7 @@ function isBlockStart(lines: string[], index: number) {
   return (
     !line.trim() ||
     /^#{1,3}\s+/.test(line) ||
+    /^\s*(?:-{3,}|\*{3,}|_{3,})\s*$/.test(line) ||
     /^\s*([-*+]|\d+\.)\s+/.test(line) ||
     /^\s*>\s?/.test(line) ||
     /^\s*```/.test(line) ||
@@ -190,6 +193,12 @@ function MarkdownBlocks({ content }: { content: string }) {
   while (index < lines.length) {
     const line = lines[index];
     if (!line.trim()) {
+      index += 1;
+      continue;
+    }
+
+    if (/^\s*(?:-{3,}|\*{3,}|_{3,})\s*$/.test(line)) {
+      blocks.push(<hr key={`divider-${index}`} className="my-9 border-0 border-t border-slate-200" />);
       index += 1;
       continue;
     }
@@ -228,15 +237,34 @@ function MarkdownBlocks({ content }: { content: string }) {
     const heading = line.match(/^(#{1,3})\s+(.+)$/);
     if (heading) {
       const children = renderInline(heading[2], `heading-${index}`);
+      const headingId = markdownHeadingId(index);
+      const headingLabel = stripMarkdownDecoration(heading[2]);
+      const isChapter = /^(?:part|chapter)\s*\d*/i.test(headingLabel);
       blocks.push(
-        heading[1].length === 1 ? (
-          <h2 key={`heading-${index}`} className="mt-7 text-xl font-extrabold text-[#173957]">
+        isChapter ? (
+          <h2
+            id={headingId}
+            key={`heading-${index}`}
+            className="textbook-chapter mt-12 scroll-mt-24 rounded-2xl border border-teal-100 bg-gradient-to-r from-[#e9f7f5] to-white px-5 py-4 text-xl font-black leading-snug text-[#133d4c] sm:text-2xl"
+          >
             {children}
           </h2>
-        ) : (
-          <h3 key={`heading-${index}`} className="mt-6 text-lg font-extrabold text-[#173957]">
+        ) : heading[1].length <= 2 ? (
+          <h3
+            id={headingId}
+            key={`heading-${index}`}
+            className="mt-10 scroll-mt-24 border-b border-slate-200 pb-3 text-xl font-black leading-snug text-[#173957] sm:text-2xl"
+          >
             {children}
           </h3>
+        ) : (
+          <h4
+            id={headingId}
+            key={`heading-${index}`}
+            className="mt-7 scroll-mt-24 text-lg font-extrabold leading-snug text-[#173957]"
+          >
+            {children}
+          </h4>
         ),
       );
       index += 1;
@@ -252,12 +280,18 @@ function MarkdownBlocks({ content }: { content: string }) {
         index += 1;
       }
       blocks.push(
-        <div key={`table-${index}`} className="my-5 overflow-x-auto rounded-xl border border-slate-200">
-          <table className="w-full min-w-[520px] border-collapse text-left text-sm">
+        <div
+          key={`table-${index}`}
+          className="markdown-table my-6 max-w-full min-w-0 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm"
+          role="region"
+          aria-label="좌우로 스크롤할 수 있는 비교표"
+          tabIndex={0}
+        >
+          <table className="w-max min-w-full max-w-none border-collapse text-left text-[13px] sm:text-sm">
             <thead className="bg-[#173957] text-white">
               <tr>
                 {header.map((cell, cellIndex) => (
-                  <th key={cellIndex} className="px-4 py-3 font-extrabold">
+                  <th key={cellIndex} className="min-w-32 px-4 py-3 font-extrabold first:min-w-28">
                     {renderInline(cell, `th-${index}-${cellIndex}`)}
                   </th>
                 ))}
@@ -267,7 +301,7 @@ function MarkdownBlocks({ content }: { content: string }) {
               {rows.map((row, rowIndex) => (
                 <tr key={rowIndex}>
                   {row.map((cell, cellIndex) => (
-                    <td key={cellIndex} className="px-4 py-3 align-top leading-6 text-[#344b60]">
+                    <td key={cellIndex} className="max-w-80 px-4 py-3 align-top leading-6 text-[#344b60]">
                       {renderInline(cell, `td-${index}-${rowIndex}-${cellIndex}`)}
                     </td>
                   ))}
@@ -286,12 +320,48 @@ function MarkdownBlocks({ content }: { content: string }) {
         quote.push(lines[index].replace(/^\s*>\s?/, ""));
         index += 1;
       }
+      const quoteText = quote.join(" ").trim();
+      const markerMatch = quoteText.match(/^(?:\*\*)?\\?\[!?([^\]\\]+)\\?\](?:\*\*)?\s*(.*)$/);
+      const marker = markerMatch?.[1]?.toUpperCase();
+      const quoteBody = markerMatch ? markerMatch[2] : quoteText;
+      const isGoal = marker === "학습 목표";
+      const isWarning = marker === "WARNING" || marker === "CAUTION" || marker === "IMPORTANT";
+      const isTip = marker === "TIP" || marker === "NOTE";
+      const isAnswerGuard = quoteText.startsWith("원천의 연습문제·정답 블록");
+      const label = isGoal
+        ? "학습 목표"
+        : isWarning
+          ? "시험 주의"
+          : isTip
+            ? "핵심 팁"
+            : isAnswerGuard
+              ? "답안 보호"
+              : null;
       blocks.push(
         <blockquote
           key={`quote-${index}`}
-          className="my-5 rounded-r-xl border-l-4 border-[#16697a] bg-[#eaf7f6] px-5 py-2 text-[#294a58]"
+          className={cn(
+            "my-6 rounded-2xl border px-5 py-4 text-[#294a58]",
+            isWarning
+              ? "border-amber-200 bg-amber-50"
+              : isAnswerGuard
+                ? "border-slate-200 bg-slate-50"
+                : "border-teal-100 bg-[#eaf7f6]",
+          )}
         >
-          <p className="my-3 leading-8">{renderInline(quote.join(" "), `quote-${index}`)}</p>
+          {label ? (
+            <span className={cn(
+              "mb-2 inline-flex rounded-full px-2.5 py-1 text-[11px] font-black tracking-wide",
+              isWarning
+                ? "bg-amber-200/70 text-amber-950"
+                : isAnswerGuard
+                  ? "bg-slate-200 text-slate-700"
+                  : "bg-teal-100 text-teal-900",
+            )}>
+              {label}
+            </span>
+          ) : null}
+          <p className="leading-8">{renderInline(quoteBody, `quote-${index}`)}</p>
         </blockquote>,
       );
       continue;
@@ -343,7 +413,7 @@ function MarkdownBlocks({ content }: { content: string }) {
       index += 1;
     }
     blocks.push(
-      <p key={`paragraph-${index}`} className="my-3 leading-8 text-[#344b60]">
+      <p key={`paragraph-${index}`} className="my-4 break-words leading-8 text-[#344b60]">
         {renderInline(paragraph.join(" "), `paragraph-${index}`)}
       </p>,
     );
@@ -354,7 +424,7 @@ function MarkdownBlocks({ content }: { content: string }) {
 
 export function MarkdownContent({ content, compact = false }: { content: string; compact?: boolean }) {
   return (
-    <div className={cn("markdown-content", compact && "text-sm [&_p]:leading-7")}>
+    <div className={cn("markdown-content min-w-0", compact && "text-sm [&_p]:leading-7")}>
       <MarkdownBlocks content={content} />
     </div>
   );

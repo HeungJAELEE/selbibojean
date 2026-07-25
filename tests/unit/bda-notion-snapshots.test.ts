@@ -57,4 +57,13 @@ describe("BDA Notion full migration snapshots", () => {
     expect(allMigrated).toContain("| ---");
     expect(allMigrated).toContain("```mermaid");
   });
+
+  it("normalizes common Notion equation and divider artifacts before rendering", () => {
+    const migrated = sanitizeNotionSnapshot(getBdaCanonicalSnapshot("bda-s1")!);
+    expect(migrated.content).toContain("$10^{21}$");
+    expect(migrated.content).toContain("$2^{50}$");
+    expect(migrated.content).not.toContain("10211021");
+    expect(migrated.content).not.toContain("250250");
+    expect(migrated.content).not.toContain("판단합니다. ---");
+  });
 });

@@ -131,6 +131,12 @@ export function sanitizeNotionSnapshot(snapshot: BdaNotionSnapshot) {
     .replace(/\[!([A-Z]+)\]<br>\s*/g, "**$1** — ")
     .replace(/<br\s*\/?>/gi, "\n")
     .replace(/<[^>]+>/g, "")
+    .replace(/\b(10|2)(\d{1,2})\1\2\b/g, (_, base: string, exponent: string) =>
+      `$${base}^{${exponent}}$`,
+    )
+    .replace(/\b(10|2)n\1\*n\*/g, "$1ⁿ")
+    .replace(/\b(10|2)\*n\*/g, "$1ⁿ")
+    .replace(/[ \t]+---[ \t]*$/gm, "\n---")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 

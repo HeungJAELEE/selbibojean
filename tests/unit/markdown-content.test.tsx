@@ -21,3 +21,29 @@ $$`} />);
     expect(container.querySelector(".katex-display .katex-mathml math")).not.toBeNull();
   });
 });
+
+describe("MarkdownContent textbook rendering", () => {
+  it("renders chapter hierarchy, dividers, callouts, and a contained scrollable table", () => {
+    const { container } = render(
+      <MarkdownContent
+        content={[
+          "## Part1: 데이터의 기초",
+          "> **\\[학습 목표\\]** 핵심 구분을 익힌다.",
+          "---",
+          "## 1. 데이터 정의",
+          "### (1) 존재적 특성",
+          "| 구분 | 설명 |",
+          "| --- | --- |",
+          "| 데이터 | 객관적 사실 |",
+        ].join("\n")}
+      />,
+    );
+
+    expect(container.querySelector("h2.textbook-chapter")).toHaveTextContent("Part1: 데이터의 기초");
+    expect(container.querySelector("h3")).toHaveTextContent("1. 데이터 정의");
+    expect(container.querySelector("h4")).toHaveTextContent("(1) 존재적 특성");
+    expect(container.querySelector("hr")).toBeInTheDocument();
+    expect(container.querySelector("blockquote")).toHaveTextContent("학습 목표");
+    expect(container.querySelector(".markdown-table")).toHaveAttribute("tabindex", "0");
+  });
+});

@@ -54,7 +54,34 @@ button { cursor: pointer; }
   text-align: center;
 }
 .markdown-content .katex-display > .katex { min-width: max-content; }
+.markdown-content {
+  color: #344b60;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.markdown-content .textbook-chapter:first-child { margin-top: 0; }
+.markdown-table {
+  contain: inline-size;
+  overscroll-behavior-inline: contain;
+  scrollbar-color: #86b9b7 #eef5f5;
+  scrollbar-width: thin;
+}
+.markdown-table:focus-visible {
+  outline: 3px solid #5eead4;
+  outline-offset: 2px;
+}
+.markdown-content pre {
+  max-width: 100%;
+  contain: inline-size;
+}
 
 @media (max-width: 720px) {
   .page-wrap { width: min(100% - 22px, 1180px); }
+  .markdown-content {
+    font-size: .96rem;
+  }
+  .markdown-content p,
+  .markdown-content li {
+    line-height: 1.75;
+  }
 }
