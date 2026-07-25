@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink, ShieldCheck } from "lucide-react";
 import { notFound } from "next/navigation";
+import { BdaLearningItemPractice } from "@/components/bda-learning-item-practice";
 import {
   getBdaQbank,
   getBdaQbankLearningItem,
+  toPublicBdaQbankLearningItem,
 } from "@/lib/content/bda-qbank-repository";
 
 export function generateStaticParams() {
@@ -22,6 +24,7 @@ export default async function BdaBankItemPage({ params }: { params: Promise<{ it
   const { itemId } = await params;
   const item = getBdaQbankLearningItem(itemId);
   if (!item) notFound();
+  const publicItem = toPublicBdaQbankLearningItem(item);
   const qbank = getBdaQbank();
   const concepts = item.conceptIds
     .map((id) => qbank.concepts.find((concept) => concept.id === id))
@@ -48,22 +51,11 @@ export default async function BdaBankItemPage({ params }: { params: Promise<{ it
         <div className="grid gap-6 p-6 sm:p-9 lg:grid-cols-[1.2fr_.8fr]">
           <div>
             <section>
-              <p className="eyebrow">Learning prompt</p>
-              <h2 className="mt-2 text-xl font-black text-[#142f4b]">학습용 재구성 질문</h2>
-              <p className="mt-4 rounded-2xl bg-slate-50 p-5 text-base leading-8 text-slate-800">
-                {item.paraphrasedLearningPrompt}
-              </p>
-            </section>
-            <section className="mt-7">
-              <p className="eyebrow">Independent review</p>
-              <h2 className="mt-2 text-xl font-black text-[#142f4b]">정답 핵심과 독립 해설</h2>
-              <div className="mt-4 rounded-2xl border border-teal-100 bg-teal-50 p-5 text-sm leading-7 text-teal-950">
-                <p><strong>정답 핵심</strong> · {item.answerCore ?? "미확정"}</p>
-                {item.independentExplanation ? <p className="mt-3"><strong>독립 해설</strong> · {item.independentExplanation}</p> : null}
-              </div>
-              <p className="mt-3 text-xs leading-5 text-slate-500">
-                이 표기는 원 출처의 공식 정답을 뜻하지 않으며, 현재 검수 상태의 학습용 핵심입니다.
-              </p>
+              <p className="eyebrow">Practice question</p>
+              <h2 className="mt-2 text-xl font-black text-[#142f4b]">
+                질문·보기·채점이 포함된 실전형 재구성
+              </h2>
+              <BdaLearningItemPractice item={publicItem} />
             </section>
           </div>
           <aside className="space-y-4">
@@ -71,7 +63,7 @@ export default async function BdaBankItemPage({ params }: { params: Promise<{ it
               <h2 className="font-black text-[#142f4b]">연결 개념</h2>
               <div className="mt-3 flex flex-wrap gap-2">
                 {concepts.map((concept) => (
-                  <Link key={concept!.id} href={`/bda/concepts#${concept!.id}`} className="rounded-full bg-teal-50 px-3 py-1.5 text-sm font-bold text-teal-800 hover:underline">
+                  <Link key={concept!.id} href={`/bda/concepts/${concept!.id}`} className="rounded-full bg-teal-50 px-3 py-1.5 text-sm font-bold text-teal-800 hover:underline">
                     {concept!.id} · {concept!.name}
                   </Link>
                 ))}
@@ -91,7 +83,7 @@ export default async function BdaBankItemPage({ params }: { params: Promise<{ it
                 출처 위치 열기 <ExternalLink size={15} />
               </a>
             ) : null}
-            <p className="flex gap-2 rounded-xl bg-emerald-50 p-3 text-xs leading-5 text-emerald-900"><ShieldCheck size={15} className="shrink-0" />원문·선지를 저장하지 않은 재구성 항목입니다.</p>
+            <p className="flex gap-2 rounded-xl bg-emerald-50 p-3 text-xs leading-5 text-emerald-900"><ShieldCheck size={15} className="shrink-0" />질문과 보기 4개는 학습 목표·정답 핵심을 바탕으로 새로 구성했으며 원 출처의 공식 문제·정답을 뜻하지 않습니다.</p>
           </aside>
         </div>
       </article>

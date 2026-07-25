@@ -11,6 +11,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { notFound } from "next/navigation";
+import { BdaLearningItemPractice } from "@/components/bda-learning-item-practice";
 import { bdaCodeLabs } from "@/data/source/bda-practical-content";
 import {
   bdaNotionSourcePages,
@@ -19,6 +20,7 @@ import {
 import {
   getBdaQbank,
   getBdaQbankConceptDetail,
+  toPublicBdaQbankLearningItem,
 } from "@/lib/content/bda-qbank-repository";
 
 export function generateStaticParams() {
@@ -63,6 +65,7 @@ export default async function BdaConceptDetailPage({
     ? bdaNotionSourcePages.find((page) => page.id === integratedTheory.sourcePageId)
     : undefined;
   const codeLabs = bdaCodeLabs.filter((lab) => integratedTheory.codeLabIds.includes(lab.id));
+  const publicRelatedItems = relatedItems.map(toPublicBdaQbankLearningItem);
 
   return (
     <main className="page-wrap pb-16 pt-8">
@@ -233,7 +236,7 @@ export default async function BdaConceptDetailPage({
             <section className="rounded-2xl border border-slate-200 p-5">
               <p className="eyebrow">Linked topics</p>
               <h2 className="mt-2 text-xl font-black text-[#142f4b]">문제은행에서 확인된 모든 주제</h2>
-              <p className="mt-2 text-xs leading-5 text-slate-500">학습용 재구성 항목의 주제 요약입니다. 원문·선지는 표시하지 않습니다.</p>
+              <p className="mt-2 text-xs leading-5 text-slate-500">학습용 재구성 항목의 주제 요약이며, 아래 연결 문제에서 질문과 보기 4개를 함께 제공합니다.</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {relatedTopics.length ? relatedTopics.map((topic) => <span key={topic} className="rounded-full bg-blue-50 px-2.5 py-1.5 text-xs font-bold text-blue-900">{topic}</span>) : <p className="text-sm text-slate-500">필기 연결 항목은 없으며 실기 과제로 보강합니다.</p>}
               </div>
@@ -256,17 +259,35 @@ export default async function BdaConceptDetailPage({
         </div>
 
         <section className="border-t border-slate-200 p-6 sm:p-10">
-          <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
-            <div><p className="eyebrow">Learning bank</p><h2 className="mt-2 text-2xl font-black text-[#142f4b]">연결 학습 재구성 {relatedItems.length}개</h2></div>
-            <Link href={`/bda/bank?concept=${concept.id}`} className="inline-flex items-center gap-2 text-sm font-black text-[#0f766e] hover:underline">이 개념으로 문제 풀기 <ArrowRight size={16} /></Link>
+          <div>
+            <p className="eyebrow">Learning bank</p>
+            <h2 className="mt-2 text-2xl font-black text-[#142f4b]">
+              연결 실전형 문제 {publicRelatedItems.length}개
+            </h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              이동하지 않고 각 문제를 펼쳐 질문과 보기 4개를 확인한 뒤 바로
+              제출할 수 있습니다.
+            </p>
           </div>
-          <div className="mt-5 grid gap-3 md:grid-cols-2">
-            {relatedItems.map((item) => (
-              <Link key={item.id} href={`/bda/bank/${item.id}`} className="rounded-xl border border-slate-200 p-4 transition hover:border-teal-300 hover:bg-teal-50">
-                <p className="text-xs font-black text-slate-500">{item.id} · {item.platform} · {item.technicalValidationStatus}</p>
-                <h3 className="mt-1 font-black text-[#142f4b]">{item.topicSummary}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{item.paraphrasedLearningPrompt}</p>
-              </Link>
+          <div className="mt-5 grid gap-3">
+            {publicRelatedItems.map((item, index) => (
+              <details
+                key={item.id}
+                className="rounded-2xl border border-slate-200 bg-white"
+              >
+                <summary className="cursor-pointer list-none p-4 transition hover:bg-teal-50 [&::-webkit-details-marker]:hidden sm:p-5">
+                  <p className="text-xs font-black text-[#0f766e]">
+                    문제 {index + 1} · {item.id} · {item.platform} ·{" "}
+                    {item.technicalValidationStatus}
+                  </p>
+                  <h3 className="mt-1 font-black leading-7 text-[#142f4b]">
+                    {item.questionStem}
+                  </h3>
+                </summary>
+                <div className="border-t border-slate-200 p-4 sm:p-5">
+                  <BdaLearningItemPractice item={item} />
+                </div>
+              </details>
             ))}
           </div>
         </section>

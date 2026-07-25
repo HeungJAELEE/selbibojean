@@ -72,11 +72,11 @@ export function BdaLinkedPracticeSet({
               <FileQuestion className="mt-0.5 shrink-0 text-[#0f766e]" />
               <div>
                 <h3 className="font-black text-[#142f4b]">
-                  공개 복원·교재 기반 학습문제
+                  공개 복원·교재 기반 실전형 4지선다
                 </h3>
                 <p className="mt-1 text-sm leading-6 text-slate-600">
-                  원문 복제가 아닌 학습용 재구성 문항입니다. 답을 먼저 작성해
-                  제출하면 정답 핵심과 독립 해설을 불러옵니다.
+                  질문 본문과 보기 4개를 모두 제공합니다. 보기를 선택해
+                  제출한 뒤에만 정답과 해설이 표시됩니다.
                 </p>
               </div>
             </div>
@@ -95,10 +95,7 @@ export function BdaLinkedPracticeSet({
                     </strong>
                   </summary>
                   <div className="border-t border-slate-200 p-4">
-                    <p className="text-sm leading-7 text-slate-800">
-                      {item.paraphrasedLearningPrompt}
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2 text-xs font-bold text-slate-500">
+                    <div className="flex flex-wrap gap-2 text-xs font-bold text-slate-500">
                       <span>{item.platform}</span>
                       <span>{item.examRound}</span>
                       <span>{item.questionMode}</span>

@@ -70,6 +70,12 @@ export type BdaQbankLearningItem = {
   updatedAt?: string;
 };
 
+export type BdaQbankLearningChoice = {
+  id: string;
+  order: number;
+  text: string;
+};
+
 export type PublicBdaQbankLearningItem = Pick<
   BdaQbankLearningItem,
   | "id"
@@ -84,10 +90,17 @@ export type PublicBdaQbankLearningItem = Pick<
   | "reviewStatus"
   | "evidenceGrade"
   | "conceptIds"
->;
+> & {
+  questionStem: string;
+  choices: BdaQbankLearningChoice[];
+  practiceNotice: string;
+};
 
 export type BdaQbankLearningFeedback = {
   itemId: string;
+  isCorrect: boolean;
+  selectedChoice: BdaQbankLearningChoice;
+  correctChoice: BdaQbankLearningChoice;
   answerCore: string;
   independentExplanation?: string;
   technicalValidationStatus?: string;

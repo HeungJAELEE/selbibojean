@@ -3,6 +3,7 @@ import rawQbank from "@/data/source/bda-qbank-v04.json";
 import { bdaConceptEnrichments } from "@/data/source/bda-concept-enrichment";
 import { bdaLessonConceptMap } from "@/data/source/bda-lesson-concept-map";
 import { bdaContent } from "@/data/source/bda-content";
+import { generateBdaLearningPractice } from "@/lib/content/bda-learning-practice";
 import type { BdaQbank } from "@/lib/domain/bda-qbank";
 
 describe("BDA QBank v0.4 import", () => {
@@ -79,6 +80,23 @@ describe("BDA QBank v0.4 import", () => {
           item.conceptIds.some((conceptId) => conceptIds.includes(conceptId)),
         ),
       ).toBe(true);
+    }
+  });
+
+  it("turns all 183 learning items into complete four-choice practice questions", () => {
+    for (const item of qbank.learningItems) {
+      const practice = generateBdaLearningPractice(item, qbank.learningItems);
+      expect(practice.publicItem.questionStem).toBeTruthy();
+      expect(practice.publicItem.choices).toHaveLength(4);
+      expect(
+        new Set(practice.publicItem.choices.map((choice) => choice.text)).size,
+      ).toBe(4);
+      expect(
+        practice.publicItem.choices.some(
+          (choice) => choice.id === practice.correctChoiceId,
+        ),
+      ).toBe(true);
+      expect(practice.publicItem).not.toHaveProperty("correctChoiceId");
     }
   });
 });

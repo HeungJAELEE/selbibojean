@@ -3,6 +3,7 @@ import rawQbank from "@/data/source/bda-qbank-v04.json";
 import { getBdaConceptEnrichment } from "@/data/source/bda-concept-enrichment";
 import { getBdaIntegratedConceptTheory } from "@/data/source/bda-integrated-concept-theory";
 import { bdaLessonConceptMap } from "@/data/source/bda-lesson-concept-map";
+import { generateBdaLearningPractice } from "@/lib/content/bda-learning-practice";
 import type {
   BdaQbank,
   BdaQbankConcept,
@@ -48,20 +49,14 @@ export function getBdaLessonLearningItems(lessonId: string) {
 export function toPublicBdaQbankLearningItem(
   item: BdaQbankLearningItem,
 ): PublicBdaQbankLearningItem {
-  return {
-    id: item.id,
-    platform: item.platform,
-    sourceSetType: item.sourceSetType,
-    examRound: item.examRound,
-    sourceItemNo: item.sourceItemNo,
-    topicSummary: item.topicSummary,
-    paraphrasedLearningPrompt: item.paraphrasedLearningPrompt,
-    questionMode: item.questionMode,
-    technicalValidationStatus: item.technicalValidationStatus,
-    reviewStatus: item.reviewStatus,
-    evidenceGrade: item.evidenceGrade,
-    conceptIds: item.conceptIds,
-  };
+  return generateBdaLearningPractice(item, qbank.learningItems).publicItem;
+}
+
+export function getBdaLearningPractice(itemId: string) {
+  const item = getBdaQbankLearningItem(itemId);
+  return item
+    ? generateBdaLearningPractice(item, qbank.learningItems)
+    : undefined;
 }
 
 export function getBdaQbankConceptDetail(conceptId: string) {
