@@ -70,6 +70,32 @@ export type BdaQbankLearningItem = {
   updatedAt?: string;
 };
 
+export type PublicBdaQbankLearningItem = Pick<
+  BdaQbankLearningItem,
+  | "id"
+  | "platform"
+  | "sourceSetType"
+  | "examRound"
+  | "sourceItemNo"
+  | "topicSummary"
+  | "paraphrasedLearningPrompt"
+  | "questionMode"
+  | "technicalValidationStatus"
+  | "reviewStatus"
+  | "evidenceGrade"
+  | "conceptIds"
+>;
+
+export type BdaQbankLearningFeedback = {
+  itemId: string;
+  answerCore: string;
+  independentExplanation?: string;
+  technicalValidationStatus?: string;
+  reviewStatus?: string;
+  evidenceGrade?: string;
+  notice: string;
+};
+
 export type BdaQbankInventoryItem = {
   id: string;
   platform?: string;

@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import rawQbank from "@/data/source/bda-qbank-v04.json";
 import { bdaConceptEnrichments } from "@/data/source/bda-concept-enrichment";
+import { bdaLessonConceptMap } from "@/data/source/bda-lesson-concept-map";
+import { bdaContent } from "@/data/source/bda-content";
 import type { BdaQbank } from "@/lib/domain/bda-qbank";
 
 describe("BDA QBank v0.4 import", () => {
@@ -48,6 +50,35 @@ describe("BDA QBank v0.4 import", () => {
       expect(enrichment?.comparisonRows.length).toBeGreaterThanOrEqual(3);
       expect(enrichment?.practicalSteps.length).toBeGreaterThanOrEqual(2);
       expect(enrichment?.finalChecklist.length).toBeGreaterThanOrEqual(2);
+    }
+  });
+
+  it("connects all 183 reconstructed learning items to at least one theory lesson", () => {
+    const linkedItemIds = new Set<string>();
+    for (const conceptIds of Object.values(bdaLessonConceptMap)) {
+      qbank.learningItems
+        .filter((item) =>
+          item.conceptIds.some((conceptId) => conceptIds.includes(conceptId)),
+        )
+        .forEach((item) => linkedItemIds.add(item.id));
+    }
+
+    expect(linkedItemIds.size).toBe(qbank.learningItems.length);
+  });
+
+  it("gives every written-theory lesson at least one relevant reconstructed item", () => {
+    expect(Object.keys(bdaLessonConceptMap)).toHaveLength(
+      bdaContent.lessons.length,
+    );
+
+    for (const lesson of bdaContent.lessons) {
+      const conceptIds = bdaLessonConceptMap[lesson.id];
+      expect(conceptIds?.length).toBeGreaterThan(0);
+      expect(
+        qbank.learningItems.some((item) =>
+          item.conceptIds.some((conceptId) => conceptIds.includes(conceptId)),
+        ),
+      ).toBe(true);
     }
   });
 });

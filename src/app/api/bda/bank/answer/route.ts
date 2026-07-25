@@ -1,0 +1,42 @@
+import { NextResponse } from "next/server";
+import { z } from "zod";
+import { getBdaQbankLearningItem } from "@/lib/content/bda-qbank-repository";
+import type { BdaQbankLearningFeedback } from "@/lib/domain/bda-qbank";
+
+const submitSchema = z.object({
+  itemId: z.string().min(1).max(120),
+  attempt: z.string().trim().min(1).max(2_000),
+});
+
+export async function POST(request: Request) {
+  const parsed = submitSchema.safeParse(
+    await request.json().catch(() => null),
+  );
+  if (!parsed.success) {
+    return NextResponse.json(
+      { error: "문제와 작성한 답안을 확인해 주세요." },
+      { status: 400 },
+    );
+  }
+
+  const item = getBdaQbankLearningItem(parsed.data.itemId);
+  if (!item) {
+    return NextResponse.json(
+      { error: "연결된 학습문제를 찾지 못했습니다." },
+      { status: 404 },
+    );
+  }
+
+  const feedback: BdaQbankLearningFeedback = {
+    itemId: item.id,
+    answerCore: item.answerCore?.trim() || "정답 핵심 미확정",
+    independentExplanation: item.independentExplanation?.trim() || undefined,
+    technicalValidationStatus: item.technicalValidationStatus,
+    reviewStatus: item.reviewStatus,
+    evidenceGrade: item.evidenceGrade,
+    notice:
+      "공식 정답이 아니라 현재 근거등급과 검수상태에 따른 학습용 정답 핵심입니다.",
+  };
+
+  return NextResponse.json(feedback);
+}

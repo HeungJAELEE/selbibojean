@@ -18,8 +18,15 @@ import {
 import {
   getBdaContent,
   getBdaLesson,
+  getPublishedBdaQuestions,
   getBdaSubject,
 } from "@/lib/content/bda-repository";
+import {
+  getBdaLessonLearningItems,
+  toPublicBdaQbankLearningItem,
+} from "@/lib/content/bda-qbank-repository";
+import { toPublicBdaQuestion } from "@/lib/domain/bda";
+import { BdaLinkedPracticeSet } from "@/components/bda-linked-practice-set";
 
 type Props = { params: Promise<{ lessonId: string }> };
 
@@ -46,7 +53,12 @@ export default async function BdaLessonPage({ params }: Props) {
   const index = siblings.findIndex((item) => item.id === lesson.id);
   const previous = siblings[index - 1];
   const next = siblings[index + 1];
-  const firstQuestionId = lesson.questionIds[0];
+  const verifiedQuestions = getPublishedBdaQuestions()
+    .filter((question) => question.lessonId === lesson.id)
+    .map(toPublicBdaQuestion);
+  const learningItems = getBdaLessonLearningItems(lesson.id).map(
+    toPublicBdaQbankLearningItem,
+  );
 
   return (
     <main className="page-wrap pb-16">
@@ -286,18 +298,10 @@ export default async function BdaLessonPage({ params }: Props) {
             개념과 판단 기준을 확인했다면 정답이 노출되지 않은 상태에서 직접
             선택하고, 제출 뒤 선택지별 근거와 오답 원인을 확인하세요.
           </p>
-          {firstQuestionId ? (
-            <Link
-              href={`/bda/written/practice/${firstQuestionId}`}
-              className="mt-6 flex items-center justify-between rounded-xl border border-white/15 bg-white/10 p-5 font-black text-white"
-            >
-              연결 문제 풀기 <ArrowRight />
-            </Link>
-          ) : (
-            <p className="mt-6 rounded-xl bg-white/10 p-5 text-sm text-slate-200">
-              이 레슨의 연결 문제는 검수 후 순차적으로 공개됩니다.
-            </p>
-          )}
+          <BdaLinkedPracticeSet
+            verifiedQuestions={verifiedQuestions}
+            learningItems={learningItems}
+          />
         </section>
 
         <section className="mt-6 rounded-2xl border border-slate-200 bg-white p-5">

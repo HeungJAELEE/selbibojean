@@ -2,12 +2,14 @@ import "server-only";
 import rawQbank from "@/data/source/bda-qbank-v04.json";
 import { getBdaConceptEnrichment } from "@/data/source/bda-concept-enrichment";
 import { getBdaIntegratedConceptTheory } from "@/data/source/bda-integrated-concept-theory";
+import { bdaLessonConceptMap } from "@/data/source/bda-lesson-concept-map";
 import type {
   BdaQbank,
   BdaQbankConcept,
   BdaQbankInventoryItem,
   BdaQbankLearningItem,
   BdaQbankPracticalTask,
+  PublicBdaQbankLearningItem,
 } from "@/lib/domain/bda-qbank";
 
 const qbank = rawQbank as BdaQbank;
@@ -30,6 +32,36 @@ export function getBdaQbankPracticalTask(taskId: string) {
 
 export function getBdaQbankConceptItems(conceptId: string) {
   return qbank.learningItems.filter((item) => item.conceptIds.includes(conceptId));
+}
+
+export function getBdaLessonConceptIds(lessonId: string) {
+  return bdaLessonConceptMap[lessonId] ?? [];
+}
+
+export function getBdaLessonLearningItems(lessonId: string) {
+  const conceptIds = new Set(getBdaLessonConceptIds(lessonId));
+  return qbank.learningItems
+    .filter((item) => item.conceptIds.some((conceptId) => conceptIds.has(conceptId)))
+    .sort((left, right) => left.id.localeCompare(right.id, "ko"));
+}
+
+export function toPublicBdaQbankLearningItem(
+  item: BdaQbankLearningItem,
+): PublicBdaQbankLearningItem {
+  return {
+    id: item.id,
+    platform: item.platform,
+    sourceSetType: item.sourceSetType,
+    examRound: item.examRound,
+    sourceItemNo: item.sourceItemNo,
+    topicSummary: item.topicSummary,
+    paraphrasedLearningPrompt: item.paraphrasedLearningPrompt,
+    questionMode: item.questionMode,
+    technicalValidationStatus: item.technicalValidationStatus,
+    reviewStatus: item.reviewStatus,
+    evidenceGrade: item.evidenceGrade,
+    conceptIds: item.conceptIds,
+  };
 }
 
 export function getBdaQbankConceptDetail(conceptId: string) {
