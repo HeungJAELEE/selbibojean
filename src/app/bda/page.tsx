@@ -8,13 +8,14 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { bdaCodeLabs } from "@/data/source/bda-practical-content";
-import { bdaNotionModules } from "@/data/source/bda-notion-library";
 import { getBdaContent } from "@/lib/content/bda-repository";
+import { getBdaNotionMigrationStats } from "@/lib/content/bda-notion-snapshot-repository";
 import { getBdaQbank } from "@/lib/content/bda-qbank-repository";
 
 export default function BdaHomePage() {
   const content = getBdaContent();
   const qbank = getBdaQbank();
+  const migration = getBdaNotionMigrationStats();
 
   return (
     <main className="pb-16">
@@ -38,7 +39,7 @@ export default function BdaHomePage() {
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:flex lg:flex-wrap">
               <Cta href="/bda/concepts" label="40개 개념 지도" primary />
-              <Cta href="/bda/notion" label={`Notion 이론 ${bdaNotionModules.length}개`} />
+              <Cta href="/bda/textbook" label={`통합 개념서 ${migration.pageCount}개 원천`} />
               <Cta href="/bda/bank" label="183개 학습 문제은행" />
               <Cta href="/bda/practical/bank" label="58개 실기 과제" />
               <Cta href="/bda/sources" label="출처·검수 현황" />

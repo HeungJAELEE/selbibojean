@@ -101,7 +101,7 @@ export default async function BdaConceptDetailPage({
             <section className="overflow-hidden rounded-3xl border border-teal-200 bg-[#f0fbf8]">
               <div className="border-b border-teal-200 bg-teal-100/70 px-5 py-4 sm:px-6">
                 <p className="text-xs font-black uppercase tracking-[.14em] text-teal-800">Integrated theory</p>
-                <h2 className="mt-1 text-2xl font-black text-[#143b43]">Notion 이론을 흡수한 개념 학습</h2>
+                <h2 className="mt-1 text-2xl font-black text-[#143b43]">통합 개념서 기반 심화 학습</h2>
               </div>
               <div className="p-5 sm:p-6">
                 <p className="text-base leading-8 text-slate-800">{integratedTheory.learningSummary}</p>
@@ -130,11 +130,11 @@ export default async function BdaConceptDetailPage({
                 </div>
                 <div className="mt-5 flex flex-wrap gap-3">
                   {sourcePage ? (
-                    <a href={sourcePage.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-teal-300 bg-white px-3 py-2 text-sm font-black text-teal-900 hover:bg-teal-50">
-                      원천 Notion 확인 <ExternalLink size={15} />
-                    </a>
+                    <Link href={`/bda/textbook/${sourcePage.subjectId}`} className="inline-flex items-center gap-2 rounded-xl border border-teal-300 bg-white px-3 py-2 text-sm font-black text-teal-900 hover:bg-teal-50">
+                      통합 개념서에서 전체 이론 <ExternalLink size={15} />
+                    </Link>
                   ) : (
-                    <span className="inline-flex items-center rounded-xl border border-blue-200 bg-blue-50 px-3 py-2 text-sm font-black text-blue-900">실기 확장: Notion 이론 범위 밖의 코드·검수 보강</span>
+                    <span className="inline-flex items-center rounded-xl border border-blue-200 bg-blue-50 px-3 py-2 text-sm font-black text-blue-900">실기 확장: 유형별 코드·검수 보강</span>
                   )}
                   {integratedTheory.practiceQuestionIds.map((questionId) => (
                     <Link key={questionId} href={`/bda/written/practice/${questionId}`} className="inline-flex items-center gap-2 rounded-xl bg-[#173957] px-3 py-2 text-sm font-black text-white hover:bg-[#0f766e]">
@@ -222,7 +222,7 @@ export default async function BdaConceptDetailPage({
                 <p className="mt-2 text-xs leading-5 text-teal-900">핵심 내용은 본문에 통합했습니다. 여기서는 원천을 더 깊게 확인할 때만 이어 보세요.</p>
                 <div className="mt-4 grid gap-2">
                   {notionModules.map((module) => (
-                    <Link key={module.id} href={`/bda/notion#${module.id}`} className="rounded-xl border border-teal-200 bg-white px-3 py-2.5 text-sm font-black text-teal-950 hover:bg-teal-100">
+                    <Link key={module.id} href={`/bda/textbook/${module.subjectId}`} className="rounded-xl border border-teal-200 bg-white px-3 py-2.5 text-sm font-black text-teal-950 hover:bg-teal-100">
                       {module.title}
                     </Link>
                   ))}

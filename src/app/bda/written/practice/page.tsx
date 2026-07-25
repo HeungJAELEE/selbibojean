@@ -19,7 +19,7 @@ export default function BdaPracticePage() {
           개념 확인문제
         </h1>
         <p className="mt-4 max-w-3xl leading-7 text-slate-600">
-          Notion 이론을 정확히 이해했는지 확인하는 자체 제작 문제입니다.
+          통합 개념서의 이론을 정확히 이해했는지 확인하는 자체 제작 문제입니다.
           정답과 해설은 답안을 제출한 뒤에만 공개됩니다.
         </p>
       </header>

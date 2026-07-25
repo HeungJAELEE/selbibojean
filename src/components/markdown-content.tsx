@@ -1,6 +1,7 @@
 "use client";
 
 import { createElement, Fragment, type ReactNode } from "react";
+import { MermaidDiagram } from "@/components/mermaid-diagram";
 import { cn } from "@/lib/utils";
 
 const TEX_SYMBOLS: Record<string, string> = {
@@ -206,6 +207,7 @@ function MarkdownBlocks({ content }: { content: string }) {
     }
 
     if (/^\s*```/.test(line)) {
+      const language = line.trim().slice(3).trim().toLowerCase();
       const code: string[] = [];
       index += 1;
       while (index < lines.length && !/^\s*```/.test(lines[index])) {
@@ -213,11 +215,13 @@ function MarkdownBlocks({ content }: { content: string }) {
         index += 1;
       }
       index += 1;
-      blocks.push(
-        <pre key={`code-${index}`} className="my-5 overflow-x-auto rounded-xl bg-[#173957] p-4 text-sm text-slate-50">
-          <code>{code.join("\n")}</code>
-        </pre>,
-      );
+      blocks.push(language === "mermaid"
+        ? <MermaidDiagram key={`mermaid-${index}`} code={code.join("\n")} />
+        : (
+          <pre key={`code-${index}`} className="my-5 overflow-x-auto rounded-xl bg-[#173957] p-4 text-sm text-slate-50">
+            <code>{code.join("\n")}</code>
+          </pre>
+        ));
       continue;
     }
 
