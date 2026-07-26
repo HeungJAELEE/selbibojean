@@ -22,16 +22,13 @@ describe("static SEO artifacts", () => {
     ],
     studyCategories: [{ id: "formula_calculation" }],
   };
-  const unifiedLearning = [{ id: "bearing" }, { id: "loto" }];
-
   it("includes only published content and excludes account and admin routes", () => {
-    const paths = getPublicSitemapPaths(written, practical, unifiedLearning).map(
+    const paths = getPublicSitemapPaths(written, practical).map(
       (entry) => entry.path,
     );
 
-    expect(paths).toContain("/study");
-    expect(paths).toContain("/study/bearing");
-    expect(paths).toContain("/study/loto");
+    expect(paths).toContain("/theory");
+    expect(paths).toContain("/practical/info");
     expect(paths).toContain("/written/theory/published%20lesson");
     expect(paths).toContain("/practical/written/question/P-001");
     expect(paths).not.toContain("/written/theory/draft-lesson");
@@ -43,10 +40,10 @@ describe("static SEO artifacts", () => {
     const siteUrl = normalizeSiteUrl("https://seolbi.pages.dev");
     const sitemap = renderSitemapXml(
       siteUrl,
-      getPublicSitemapPaths(written, practical, unifiedLearning),
+      getPublicSitemapPaths(written, practical),
     );
 
-    expect(sitemap).toContain("https://seolbi.pages.dev/study/bearing");
+    expect(sitemap).toContain("https://seolbi.pages.dev/theory");
     expect(sitemap).toContain("https://seolbi.pages.dev/written/theory/published%20lesson");
     expect(renderRobotsTxt(siteUrl)).toBe("User-agent: *\nAllow: /\n\nSitemap: https://seolbi.pages.dev/sitemap.xml\n");
   });

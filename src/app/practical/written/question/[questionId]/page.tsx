@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { PracticalLabelBadges } from "@/components/practical-label-badges";
 import { PracticalVisualAidFigure } from "@/components/practical-visual-aid";
 import { PracticalWrittenQuestion } from "@/components/practical-written-question";
+import { PracticalMockNavigator } from "@/components/practical-mock-navigator";
 import { PracticalStudyCategoryBadge } from "@/components/practical-study-category-badge";
 import Link from "next/link";
 import {
@@ -11,10 +12,12 @@ import {
 
 export default async function PracticalQuestionPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ questionId: string }>;
+  searchParams: Promise<{ mock?: string; index?: string }>;
 }) {
-  const { questionId } = await params;
+  const [{ questionId }, query] = await Promise.all([params, searchParams]);
   const question = await getPublicPracticalQuestion(questionId);
   if (!question) notFound();
   const visualAid = await getPublicPracticalVisualAid(
@@ -24,6 +27,13 @@ export default async function PracticalQuestionPage({
 
   return (
     <div className="page-wrap max-w-4xl py-12">
+      {query.mock && Number.isInteger(Number(query.index)) ? (
+        <PracticalMockNavigator
+          sessionId={query.mock}
+          index={Number(query.index)}
+          currentQuestionId={question.id}
+        />
+      ) : null}
       <div className="flex flex-wrap items-center gap-3">
         <PracticalLabelBadges labels={[question.label]} />
         <PracticalStudyCategoryBadge

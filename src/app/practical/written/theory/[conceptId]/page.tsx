@@ -4,8 +4,6 @@ import type { ReactNode } from "react";
 import { PracticalLabelBadges } from "@/components/practical-label-badges";
 import { PracticalQuestionList } from "@/components/practical-question-list";
 import { PracticalVisualAidFigure } from "@/components/practical-visual-aid";
-import { StudyModeSwitch } from "@/components/study-mode-switch";
-import { getUnifiedConceptForPracticalConcept } from "@/data/source/unified-learning-concepts";
 import { getPracticalWorkTasksForConcept } from "@/data/source/practical-work-tasks";
 import { conceptGroups, subjects } from "@/lib/domain/catalog";
 import type { PracticalConcept } from "@/lib/domain/practical-types";
@@ -77,7 +75,6 @@ export default async function PracticalConceptPage({
     siblingIndex >= 0 && siblingIndex < siblingConcepts.length - 1
       ? siblingConcepts[siblingIndex + 1]
       : null;
-  const unifiedConcept = getUnifiedConceptForPracticalConcept(concept.id);
   const navigation = textbookPlacement
     ? {
         subjectId: textbookPlacement.subjectId,
@@ -93,14 +90,6 @@ export default async function PracticalConceptPage({
       data-testid="practical-textbook-concept-integrated-sheet"
       className="page-wrap max-w-5xl py-12"
     >
-      {unifiedConcept ? (
-        <div className="mb-7">
-          <StudyModeSwitch
-            concept={unifiedConcept}
-            currentMode="practical"
-          />
-        </div>
-      ) : null}
       <div className="flex flex-wrap items-center gap-2">
         <PracticalLabelBadges labels={concept.labels} />
         {concept.contentRole === "supplemental" ? (

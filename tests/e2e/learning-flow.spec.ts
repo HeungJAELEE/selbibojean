@@ -19,9 +19,10 @@ test("home exposes the main learning paths", async ({ page }) => {
   await expect(page.getByRole("link", { name: "설비보전기사 마스터북 홈" })).toContainText("설비보전기사");
   await expect(page.getByRole("heading", { name: /이론에서 문제까지/ })).toBeVisible();
   const primaryPaths = page.getByTestId("primary-learning-paths");
-  await expect(primaryPaths.getByRole("link", { name: "필기 이론", exact: true })).toHaveAttribute("href", "/written/theory");
+  await expect(primaryPaths.getByRole("link", { name: "이론 학습", exact: true })).toHaveAttribute("href", "/theory");
   await expect(primaryPaths.getByRole("link", { name: "필기 모의고사", exact: true })).toHaveAttribute("href", "/written/mock");
-  await expect(primaryPaths.getByRole("link", { name: "실기 학습", exact: true })).toHaveAttribute("href", "/practical");
+  await expect(primaryPaths.getByRole("link", { name: "필답 모의고사", exact: true })).toHaveAttribute("href", "/practical/mock");
+  await expect(primaryPaths.getByRole("link", { name: "실기 정보", exact: true })).toHaveAttribute("href", "/practical/info");
 });
 
 test("practice session is answer-safe and contains no duplicate question", async ({ request }) => {
@@ -144,10 +145,11 @@ test("written mock UI supports subject checkboxes and per-subject counts", async
   await expect(page.getByText(/실제 기출 목표 38문제/)).toBeVisible();
 });
 
-test("legacy practical mock route redirects to the practical learning hub", async ({ page }) => {
+test("practical mock route configures reconstructed and predicted questions", async ({ page }) => {
   await page.goto("/practical/mock");
-  await expect(page).toHaveURL(/\/practical$/);
-  await expect(page.getByRole("heading", { name: "실기 학습", exact: true, level: 1 })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "필답 모의고사", exact: true, level: 1 })).toBeVisible();
+  await expect(page.getByRole("button", { name: "기출 + 예상 혼합" })).toBeVisible();
+  await expect(page.getByRole("button", { name: /문제 모의고사 시작/ })).toBeVisible();
 });
 
 test("admin review queue exposes every intentionally blocked item with evidence links", async ({ page }) => {

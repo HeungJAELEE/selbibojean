@@ -3,13 +3,14 @@ import { expect, test } from "@playwright/test";
 
 for (const path of [
   "/",
-  "/study",
-  "/study/bearing",
+  "/theory",
+  "/theory?mode=practical",
   "/written/theory",
   "/written/theory/family/s1-g11/action",
   "/written/practice/random",
   "/written/mock",
   "/practical/mock",
+  "/practical/info",
   "/login",
 ]) {
   test(`no serious accessibility violations on ${path}`, async ({ page }) => {

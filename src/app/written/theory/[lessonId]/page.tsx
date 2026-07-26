@@ -9,8 +9,6 @@ import { MarkdownContent } from "@/components/markdown-content";
 import { PastExamExamples } from "@/components/past-exam-examples";
 import { QuestionTrapReview } from "@/components/question-trap-review";
 import { SupplementalVisualAid } from "@/components/supplemental-visual-aid";
-import { StudyModeSwitch } from "@/components/study-mode-switch";
-import { getUnifiedConceptForWrittenLesson } from "@/data/source/unified-learning-concepts";
 import {
   getLessonFamilyForLesson,
   getLessonFamilyHref,
@@ -64,7 +62,6 @@ export default async function LessonPage({
   const visibleBlocks = lesson.blocks.filter(
     (block) => block.kind !== "summary" && !shouldReplaceWithFamilySection(block),
   );
-  const unifiedConcept = getUnifiedConceptForWrittenLesson(lesson.id);
 
   return (
     <div className="page-wrap grid gap-8 py-10 lg:grid-cols-[240px_1fr_260px]">
@@ -97,14 +94,6 @@ export default async function LessonPage({
         <Link href="/written/theory" className="mb-5 inline-flex items-center gap-2 text-sm font-bold text-slate-500 lg:hidden">
           <ArrowLeft size={16} /> 이론 목차
         </Link>
-        {unifiedConcept ? (
-          <div className="mb-7">
-            <StudyModeSwitch
-              concept={unifiedConcept}
-              currentMode="written"
-            />
-          </div>
-        ) : null}
         <p className="eyebrow">제{subject?.code}과목 · {group?.title}</p>
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <h1 className="display break-words text-4xl font-bold [overflow-wrap:anywhere] md:text-5xl">
