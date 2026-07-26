@@ -16,6 +16,7 @@ import { PRACTICAL_CONCEPT_EDITORIAL } from "../src/data/source/practical-concep
 import { PRACTICAL_NCS_COVERAGE_HOLDS } from "../src/data/source/practical-ncs-coverage-audit";
 import { PRACTICAL_SUPPLEMENTAL_CONCEPTS } from "../src/data/source/practical-supplemental-concepts";
 import { PRACTICAL_WRITTEN_AUDIT_DECISIONS } from "../src/data/source/practical-written-audit-decisions";
+import { applyPracticalTheoryReinforcement } from "../src/data/source/practical-theory-reinforcements";
 import type {
   PracticalConcept,
   PracticalContent,
@@ -1025,7 +1026,7 @@ async function main() {
   const concepts: PracticalConcept[] = [
     ...workbookConcepts,
     ...supplementalConcepts,
-  ];
+  ].map(applyPracticalTheoryReinforcement);
 
   const studyCategories: PracticalStudyCategory[] =
     STUDY_CATEGORY_DEFINITIONS.map((category) => {

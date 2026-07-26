@@ -4,157 +4,11 @@ import {
   PRACTICAL_WORK_MODULES,
   PRACTICAL_WORK_TASKS,
 } from "../src/data/source/practical-work-tasks";
+import { PRACTICAL_REQUIRED_TOPICS_BY_NCS_CODE } from "../src/data/source/practical-required-topics";
 import type { PracticalContent } from "../src/lib/domain/practical-types";
 
 const content = rawPracticalContent as PracticalContent;
 const errors: string[] = [];
-
-const requiredTopicsByNcsCode: Record<string, string[]> = {
-  "1502010504": [
-    "최신 도면",
-    "공차",
-    "보조기구",
-    "영점",
-    "오차",
-    "실린더 게이지",
-    "원통도",
-    "동심도",
-    "삼침법",
-    "사인센터",
-    "검사성적서",
-  ],
-  "1502010511": [
-    "개정번호",
-    "제3각법",
-    "단면도",
-    "부품표",
-    "끼워맞춤",
-    "데이텀",
-    "표면거칠기",
-    "검사기준서",
-  ],
-  "1503010120": [
-    "BOM",
-    "공정순서",
-    "치공구",
-    "베어링",
-    "오일실",
-    "키",
-    "풀리",
-    "기어",
-    "엔드플레이",
-    "축 흔들림",
-    "무부하",
-    "부하시운전",
-  ],
-  "1503010122": [
-    "위험성평가",
-    "LOTO",
-    "보호구",
-    "수공구",
-    "전동공구",
-    "정리정돈",
-    "응급",
-    "시정조치",
-  ],
-  "1503010201": [
-    "요구사항",
-    "블록도",
-    "액추에이터",
-    "제어모드",
-    "I/O",
-    "HMI",
-    "사이클타임",
-    "비상정지",
-  ],
-  "1503010204": [
-    "리미트",
-    "리드",
-    "근접",
-    "광전",
-    "NPN",
-    "PNP",
-    "2선",
-    "3선",
-    "PLC 입력",
-    "신호변환",
-    "특성시험",
-    "점검이력",
-  ],
-  "1503010215": [
-    "FRL",
-    "변위단계선도",
-    "논리식",
-    "포트",
-    "배관",
-    "배선",
-    "초기상태",
-    "압력",
-    "속도",
-    "고장진단",
-  ],
-  "1503010216": [
-    "잔압",
-    "하중",
-    "어큐뮬레이터",
-    "펌프",
-    "방향",
-    "압력",
-    "유량",
-    "로킹",
-    "감압",
-    "시퀀스",
-    "카운터밸런스",
-    "조사계통도",
-    "재시험",
-  ],
-  "1505010108": [
-    "커플링",
-    "축정렬",
-    "다이얼 게이지",
-    "유니버설",
-    "감속기",
-    "윤활유",
-    "베어링",
-    "간극",
-    "손상",
-    "브레이크",
-    "라이닝",
-    "에어갭",
-    "시운전",
-  ],
-  "1601050108": [
-    "결함",
-    "판정",
-    "가우징",
-    "정지구멍",
-    "WPS",
-    "후열",
-    "변형",
-    "PT",
-    "MT",
-    "UT",
-    "RT",
-    "재검사",
-  ],
-  "1601050111": [
-    "WPS",
-    "개선",
-    "루트간격",
-    "역변형",
-    "예열",
-    "층간",
-    "열쇠구멍",
-    "아크 재시작",
-    "크레이터",
-    "1G",
-    "2G",
-    "3G",
-    "4G",
-    "외관",
-    "굽힘",
-  ],
-};
 
 function duplicateValues(values: string[]) {
   const seen = new Set<string>();
@@ -220,7 +74,7 @@ for (const workModule of PRACTICAL_WORK_MODULES) {
     ),
   );
   const missingRequiredTopics = (
-    requiredTopicsByNcsCode[workModule.ncsCode] ?? []
+    PRACTICAL_REQUIRED_TOPICS_BY_NCS_CODE[workModule.ncsCode] ?? []
   ).filter((topic) => !moduleContentText.includes(topic));
   if (missingRequiredTopics.length > 0) {
     errors.push(
@@ -313,7 +167,9 @@ const totalSteps = PRACTICAL_WORK_TASKS.reduce(
   (sum, task) => sum + task.steps.length,
   0,
 );
-const totalRequiredTopics = Object.values(requiredTopicsByNcsCode).reduce(
+const totalRequiredTopics = Object.values(
+  PRACTICAL_REQUIRED_TOPICS_BY_NCS_CODE,
+).reduce(
   (sum, topics) => sum + topics.length,
   0,
 );

@@ -6,6 +6,7 @@ import {
   PRACTICAL_WORK_MODULES,
   PRACTICAL_WORK_TASKS,
 } from "@/data/source/practical-work-tasks";
+import { PRACTICAL_REQUIRED_TOPICS_BY_NCS_CODE } from "@/data/source/practical-required-topics";
 import type { PracticalContent } from "@/lib/domain/practical-types";
 
 const content = rawPracticalContent as PracticalContent;
@@ -69,6 +70,25 @@ describe("NCS practical work content", () => {
         expect(getPracticalWorkTasksForConcept(conceptId).length).toBeGreaterThan(
           0,
         );
+      }
+    }
+  });
+
+  it("covers every analyzed textbook topic in the written theory itself", () => {
+    const publishedConcepts = new Map(
+      content.concepts
+        .filter((concept) => concept.contentStatus === "published")
+        .map((concept) => [concept.id, concept]),
+    );
+    for (const document of content.ncsCoverage.documents) {
+      const theoryText = JSON.stringify(
+        document.conceptIds.map((conceptId) =>
+          publishedConcepts.get(conceptId),
+        ),
+      );
+      for (const topic of
+        PRACTICAL_REQUIRED_TOPICS_BY_NCS_CODE[document.ncsCode] ?? []) {
+        expect(theoryText, `${document.ncsCode}/${topic}`).toContain(topic);
       }
     }
   });
