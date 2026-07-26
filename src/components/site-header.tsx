@@ -6,6 +6,7 @@ import { BookOpenCheck, Menu, Search, X } from "lucide-react";
 import { useHydrated } from "@/lib/use-hydrated";
 
 const navItems = [
+  ["통합 학습", "/study"],
   ["필기 이론", "/written/theory"],
   ["필기 모의고사", "/written/mock"],
   ["실기 학습", "/practical"],

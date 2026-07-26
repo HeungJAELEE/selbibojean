@@ -2,6 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import practical from "../src/data/generated/practical-content.json";
 import written from "../src/data/generated/content.json";
+import { UNIFIED_LEARNING_CONCEPTS } from "../src/data/source/unified-learning-concepts";
 import {
   getPublicSitemapPaths,
   normalizeSiteUrl,
@@ -15,7 +16,11 @@ if (!rawSiteUrl) {
 }
 
 const siteUrl = normalizeSiteUrl(rawSiteUrl);
-const entries = getPublicSitemapPaths(written, practical);
+const entries = getPublicSitemapPaths(
+  written,
+  practical,
+  UNIFIED_LEARNING_CONCEPTS,
+);
 const publicDir = resolve(process.cwd(), "public");
 
 async function writeUtf8(path: string, contents: string) {

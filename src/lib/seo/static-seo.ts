@@ -13,10 +13,13 @@ type PracticalContent = {
   studyCategories: Array<{ id: string }>;
 };
 
+type UnifiedLearningContent = Array<{ id: string }>;
+
 const STATIC_PUBLIC_PATHS = [
   "/",
   "/library",
   "/privacy",
+  "/study",
   "/written/theory",
   "/written/practice",
   "/written/practice/random",
@@ -43,6 +46,7 @@ function publishedPaths<T extends { id: string; contentStatus: string }>(
 export function getPublicSitemapPaths(
   written: WrittenContent,
   practical: PracticalContent,
+  unifiedLearning: UnifiedLearningContent = [],
 ): SitemapEntry[] {
   const paths = new Set<string>(STATIC_PUBLIC_PATHS);
 
@@ -52,6 +56,9 @@ export function getPublicSitemapPaths(
   for (const path of publishedPaths(practical.questions, "/practical/written/question")) paths.add(path);
   for (const category of practical.studyCategories) {
     paths.add(`/practical/written/theory/category/${encodeURIComponent(category.id)}`);
+  }
+  for (const concept of unifiedLearning) {
+    paths.add(`/study/${encodeURIComponent(concept.id)}`);
   }
 
   return [...paths]
