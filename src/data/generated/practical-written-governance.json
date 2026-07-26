@@ -1,0 +1,6124 @@
+{
+  "formatVersion": 1,
+  "generatedAt": "2026-07-25T04:18:26.432Z",
+  "sourceSha256": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+  "scope": "practical_written_only",
+  "evidence": [
+    {
+      "id": "evidence:P-2025-1-Q01",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-001"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-1-Q01"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 1,
+          "questionNo": 1,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "플랜지 커플링 전달토크",
+        "PCON-001"
+      ],
+      "gradingRequiredKeywords": [
+        "약 589.05 N·m"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-1-Q02",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-002"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-1-Q02"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 1,
+          "questionNo": 2,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "기어 백래시 측정",
+        "PCON-002"
+      ],
+      "gradingRequiredKeywords": [
+        "한 기어를 고정하고 다른 기어를 양방향으로 흔들어 다이얼게이지 변위차를 읽는다."
+      ]
+    },
+    {
+      "id": "evidence:P-2025-1-Q03",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-003"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-1-Q03"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 1,
+          "questionNo": 3,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "센서 요구성능",
+        "PCON-003"
+      ],
+      "gradingRequiredKeywords": [
+        "안정성",
+        "신뢰성",
+        "내구성",
+        "장수명"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-1-Q04",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-004"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-1-Q04"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 1,
+          "questionNo": 4,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "구름베어링 사진 식별",
+        "PCON-004"
+      ],
+      "gradingRequiredKeywords": [
+        "원통 롤러베어링",
+        "테이퍼 롤러베어링",
+        "스러스트 볼베어링",
+        "스러스트 니들 롤러베어링"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-1-Q05",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-005"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-1-Q05"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 1,
+          "questionNo": 5,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "제3각법 투상도",
+        "PCON-005"
+      ],
+      "gradingRequiredKeywords": [
+        "원본 도형 없이는 투상배치와 가시선·숨은선을 확정할 수 없음"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-1-Q06",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-006"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-1-Q06"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 1,
+          "questionNo": 6,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "베어링 유도가열 장착순서",
+        "PCON-006"
+      ],
+      "gradingRequiredKeywords": [
+        "점검·치수확인",
+        "요크선택",
+        "센서부착",
+        "베어링설치",
+        "목표온도설정",
+        "가열·탈자",
+        "보호구착용 후 신속 장착·밀착"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-1-Q07",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-007"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-1-Q07"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 1,
+          "questionNo": 7,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "오버홀 정의와 목적",
+        "PCON-007"
+      ],
+      "gradingRequiredKeywords": [
+        "설비를 전면 분해·점검·수리·교체·재조립하여 성능과 신뢰성을 회복하는 계획정비"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-1-Q08",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-008"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-1-Q08"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 1,
+          "questionNo": 8,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "O링 요구성능",
+        "PCON-008"
+      ],
+      "gradingRequiredKeywords": [
+        "내열성",
+        "내유성",
+        "내마모성",
+        "내약품성",
+        "낮은 압축영구변형",
+        "충분한 탄성"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-1-Q09",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-009"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-1-Q09"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 1,
+          "questionNo": 9,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "GHS 유해성 그림문자",
+        "PCON-009"
+      ],
+      "gradingRequiredKeywords": [
+        "GHS 유해성·위험성 그림문자. 폭발성·인화성·산화성·독성·부식성 등 위험을 표시"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-1-Q10",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-010"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-1-Q10"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 1,
+          "questionNo": 10,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "진동센서 측정방향",
+        "PCON-010"
+      ],
+      "gradingRequiredKeywords": [
+        "H: 수평방향",
+        "V: 수직방향",
+        "A: 축방향"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-2-Q01-1",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-004"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-2-Q01-1"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 2,
+          "questionNo": 1,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "자동조심 롤러베어링 식별",
+        "PCON-004"
+      ],
+      "gradingRequiredKeywords": [
+        "다"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-2-Q01-2",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-004"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-2-Q01-2"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 2,
+          "questionNo": 1,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "자동조심 롤러베어링 특징",
+        "PCON-004"
+      ],
+      "gradingRequiredKeywords": [
+        "조심성",
+        "큰 방사하중·일부 축하중",
+        "축·하우징의 약간의 정렬오차 허용"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-2-Q02",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-011"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-2-Q02"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 2,
+          "questionNo": 2,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "센서 히스테리시스",
+        "PCON-011"
+      ],
+      "gradingRequiredKeywords": [
+        "히스테리시스"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-2-Q03",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-012"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-2-Q03"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 2,
+          "questionNo": 3,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "도면 주석 판독",
+        "PCON-012"
+      ],
+      "gradingRequiredKeywords": [
+        "A: 3-M4 깊이 10",
+        "B: 두께 10 mm의 리브 3개소"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-2-Q04",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-013"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-2-Q04"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 2,
+          "questionNo": 4,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image",
+        "matching"
+      ],
+      "learningKeywords": [
+        "정비 공구 식별",
+        "PCON-013"
+      ],
+      "gradingRequiredKeywords": [
+        "후크스패너-홈붙이너트",
+        "소켓렌치-육각체결",
+        "기어풀러-축부품분리",
+        "스냅링플라이어-스냅링착탈"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-2-Q05",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-014"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-2-Q05"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 2,
+          "questionNo": 5,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "버니어캘리퍼스 판독",
+        "PCON-014"
+      ],
+      "gradingRequiredKeywords": [
+        "48.2 mm"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-2-Q06",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-001"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-2-Q06"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 2,
+          "questionNo": 6,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "플랜지 커플링 전달토크",
+        "PCON-001"
+      ],
+      "gradingRequiredKeywords": [
+        "약 377 N·m"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-2-Q07",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-015"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-2-Q07"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 2,
+          "questionNo": 7,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "베이퍼 록",
+        "PCON-015"
+      ],
+      "gradingRequiredKeywords": [
+        "베이퍼 록(vapor lock)"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-2-Q08",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-016"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-2-Q08"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 2,
+          "questionNo": 8,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "definition",
+        "matching"
+      ],
+      "learningKeywords": [
+        "호흡보호구 종류와 용도",
+        "PCON-016"
+      ],
+      "gradingRequiredKeywords": [
+        "분진-방진",
+        "가스·증기-방독",
+        "외부공기공급-송기",
+        "송풍기필터-전동식"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-2-Q09",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-017"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-2-Q09"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 2,
+          "questionNo": 9,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "LOTO",
+        "PCON-017"
+      ],
+      "gradingRequiredKeywords": [
+        "Lockout-Tagout. 에너지원을 차단·잠금·표지하고 잔류에너지를 제거·검증해 예기치 않은 재가동을 방지"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-2-Q10",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-018"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-2-Q10"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 2,
+          "questionNo": 10,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "기어 손상 식별",
+        "PCON-018"
+      ],
+      "gradingRequiredKeywords": [
+        "피팅: 점상피로",
+        "스폴링: 큰 조각 박리",
+        "스코어링: 윤활막 파괴와 미끄럼에 의한 긁힘·용착"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-3-Q01",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-019"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-3-Q01"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 3,
+          "questionNo": 1,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "끼워맞춤과 틈새",
+        "PCON-019"
+      ],
+      "gradingRequiredKeywords": [
+        "틈새끼워맞춤",
+        "최대 0.040 mm",
+        "최소 0.005 mm"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-3-Q02",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-009"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-3-Q02"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 3,
+          "questionNo": 2,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "안전표지 식별",
+        "PCON-009"
+      ],
+      "gradingRequiredKeywords": [
+        "보안경 착용",
+        "안면보호구 착용",
+        "방진마스크 착용",
+        "낙하물 경고"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-3-Q03",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-020"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-3-Q03"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 3,
+          "questionNo": 3,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "자주보전 정의와 7스텝",
+        "PCON-020"
+      ],
+      "gradingRequiredKeywords": [
+        "초기청소",
+        "발생원·곤란개소 대책",
+        "청소·급유 가기준",
+        "총점검",
+        "자주점검",
+        "표준화",
+        "자율관리"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-3-Q04",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-021"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-3-Q04"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 3,
+          "questionNo": 4,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "나사산 형상 식별",
+        "PCON-021"
+      ],
+      "gradingRequiredKeywords": [
+        "사각나사",
+        "사다리꼴나사",
+        "톱니나사",
+        "둥근나사"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-3-Q05",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-022"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-3-Q05"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 3,
+          "questionNo": 5,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "축정렬 불량 식별",
+        "PCON-022"
+      ],
+      "gradingRequiredKeywords": [
+        "평행(옵셋) 미스얼라인먼트",
+        "각(앵귤러) 미스얼라인먼트"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-3-Q06",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-023"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-3-Q06"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 3,
+          "questionNo": 6,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "기어 치형 곡선",
+        "PCON-023"
+      ],
+      "gradingRequiredKeywords": [
+        "인벌류트 치형",
+        "사이클로이드 치형"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-3-Q07",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-024"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-3-Q07"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 3,
+          "questionNo": 7,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "축 휨 측정도구",
+        "PCON-024"
+      ],
+      "gradingRequiredKeywords": [
+        "다이얼게이지",
+        "V블록"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-3-Q08",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-025"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-3-Q08"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 3,
+          "questionNo": 8,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "복동실린더 전진·후진 추력",
+        "PCON-025"
+      ],
+      "gradingRequiredKeywords": [
+        "전진 약 321.70 N",
+        "후진 약 276.46 N"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-3-Q09",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-026"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-3-Q09"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 3,
+          "questionNo": 9,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "브레이크액 요구성능",
+        "PCON-026"
+      ],
+      "gradingRequiredKeywords": [
+        "적정 점도",
+        "높은 비점",
+        "낮은 응고점",
+        "고무·금속 적합성",
+        "윤활성",
+        "산화안정성"
+      ]
+    },
+    {
+      "id": "evidence:P-2025-3-Q10",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-004"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2025-3-Q10"
+      ],
+      "sessions": [
+        {
+          "year": 2025,
+          "round": 3,
+          "questionNo": 10,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "구름베어링 구성요소",
+        "PCON-004"
+      ],
+      "gradingRequiredKeywords": [
+        "외륜",
+        "내륜",
+        "전동체",
+        "케이지"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-1-Q01",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-027"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-1-Q01"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 1,
+          "questionNo": 1,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "랙과 피니언",
+        "PCON-027"
+      ],
+      "gradingRequiredKeywords": [
+        "랙과 피니언"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-1-Q02",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-009"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-1-Q02"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 1,
+          "questionNo": 2,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "금지·경고·지시 안전표지",
+        "PCON-009"
+      ],
+      "gradingRequiredKeywords": [
+        "금지표지",
+        "경고표지",
+        "지시표지"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-1-Q03",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-028"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-1-Q03"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 1,
+          "questionNo": 3,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "구동장치 단면 부품 식별",
+        "PCON-028"
+      ],
+      "gradingRequiredKeywords": [
+        "⑥ 베어링",
+        "⑦ 오일실",
+        "⑧ 평행키(묻힘키)"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-1-Q04",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-1-Q04"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 1,
+          "questionNo": 4,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "일상점검·정기점검",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "일상점검은 운전 전·중·후 반복하는 상태확인",
+        "정기점검은 정해진 주기에 계획적으로 분해·측정·시험하는 점검"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-1-Q05",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-030"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-1-Q05"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 1,
+          "questionNo": 5,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "OEE 계산",
+        "PCON-030"
+      ],
+      "gradingRequiredKeywords": [
+        "시간가동률 86.96%",
+        "성능가동률 50%",
+        "양품률 98%",
+        "OEE 약 42.61%"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-1-Q06",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-031"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-1-Q06"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 1,
+          "questionNo": 6,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "측정기 식별",
+        "PCON-031"
+      ],
+      "gradingRequiredKeywords": [
+        "다이얼게이지",
+        "깊이마이크로미터",
+        "내측마이크로미터"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-1-Q07",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-032"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-1-Q07"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 1,
+          "questionNo": 7,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "calculation",
+        "matching"
+      ],
+      "learningKeywords": [
+        "파스칼 원리",
+        "두 피스톤의 힘·면적 관계식 완성",
+        "PCON-032"
+      ],
+      "gradingRequiredKeywords": [
+        "F₂=F₁×A₂/A₁"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-1-Q08",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-033"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-1-Q08"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 1,
+          "questionNo": 8,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "기어 커플링 특징",
+        "PCON-033"
+      ],
+      "gradingRequiredKeywords": [
+        "기어 커플링. 큰 토크 전달",
+        "약간의 편심·편각 허용",
+        "윤활·씰·치면 점검 필요"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-1-Q09",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-034"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-1-Q09"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 1,
+          "questionNo": 9,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "image",
+        "symbol"
+      ],
+      "learningKeywords": [
+        "외접기어펌프·기어·공차기호",
+        "PCON-034"
+      ],
+      "gradingRequiredKeywords": [
+        "외접기어펌프",
+        "평기어. 세부 공차기호는 원도면 확인 필요"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-1-Q10",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-035"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-1-Q10"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 1,
+          "questionNo": 10,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-25T04:18:26.432Z"
+        }
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "저널베어링 간극 측정",
+        "PCON-035"
+      ],
+      "gradingRequiredKeywords": [
+        "청소",
+        "연선 배치",
+        "캡을 규정토크로 체결",
+        "재분해",
+        "눌린 연선 두께 측정·판정"
+      ]
+    },
+    {
+      "id": "evidence:EXP-B01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-004"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-B01"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "sequence"
+      ],
+      "learningKeywords": [
+        "베어링 형식 식별",
+        "PCON-004"
+      ],
+      "gradingRequiredKeywords": [
+        "원통 롤러",
+        "테이퍼 롤러",
+        "스러스트 볼",
+        "스러스트 니들"
+      ]
+    },
+    {
+      "id": "evidence:EXP-B02",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-004"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-B02"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "자동조심 롤러베어링 특징",
+        "PCON-004"
+      ],
+      "gradingRequiredKeywords": [
+        "구면궤도",
+        "2열",
+        "조심성",
+        "방사하중"
+      ]
+    },
+    {
+      "id": "evidence:EXP-B03",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-006"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-B03"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "유도가열 장착순서",
+        "PCON-006"
+      ],
+      "gradingRequiredKeywords": [
+        "온도센서",
+        "목표온도",
+        "탈자",
+        "내륜",
+        "신속장착"
+      ]
+    },
+    {
+      "id": "evidence:EXP-B04",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-010"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-B04"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "진동센서 방향",
+        "PCON-010"
+      ],
+      "gradingRequiredKeywords": [
+        "수평",
+        "수직",
+        "축방향",
+        "정렬불량"
+      ]
+    },
+    {
+      "id": "evidence:EXP-B05",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-036"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-B05"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "테이퍼 롤러베어링 엔드플레이",
+        "PCON-036"
+      ],
+      "gradingRequiredKeywords": [
+        "조정너트",
+        "자리잡힘",
+        "다이얼게이지",
+        "발열"
+      ]
+    },
+    {
+      "id": "evidence:EXP-B06",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-004"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-B06"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "압입력 적용 위치",
+        "PCON-004"
+      ],
+      "gradingRequiredKeywords": [
+        "내륜",
+        "외륜",
+        "전동체 손상방지"
+      ]
+    },
+    {
+      "id": "evidence:EXP-G01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-001"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-G01"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "플랜지 커플링 토크",
+        "PCON-001"
+      ],
+      "gradingRequiredKeywords": [
+        "유효볼트 5개",
+        "단전단",
+        "PCD 반지름"
+      ]
+    },
+    {
+      "id": "evidence:EXP-G02",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-002"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-G02"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "기어 백래시 측정",
+        "PCON-002"
+      ],
+      "gradingRequiredKeywords": [
+        "한 기어 고정",
+        "접선방향",
+        "변위차",
+        "규정값"
+      ]
+    },
+    {
+      "id": "evidence:EXP-G03",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-018"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-G03"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "기어 손상 비교",
+        "PCON-018"
+      ],
+      "gradingRequiredKeywords": [
+        "접촉피로",
+        "박리",
+        "윤활막 파괴"
+      ]
+    },
+    {
+      "id": "evidence:EXP-G04",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-022"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-G04"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "축정렬 불량 구분",
+        "PCON-022"
+      ],
+      "gradingRequiredKeywords": [
+        "옵셋",
+        "앵귤러",
+        "축방향",
+        "위상"
+      ]
+    },
+    {
+      "id": "evidence:EXP-G05",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-033"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-G05"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "기어 커플링 점검",
+        "PCON-033"
+      ],
+      "gradingRequiredKeywords": [
+        "치면",
+        "윤활",
+        "씰",
+        "볼트",
+        "정렬"
+      ]
+    },
+    {
+      "id": "evidence:EXP-G06",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-013"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-G06"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition",
+        "matching"
+      ],
+      "learningKeywords": [
+        "정비공구와 용도",
+        "PCON-013"
+      ],
+      "gradingRequiredKeywords": [
+        "공구명",
+        "적용부품",
+        "안전한 사용"
+      ]
+    },
+    {
+      "id": "evidence:EXP-M01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-014"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-M01"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "버니어캘리퍼스 판독",
+        "PCON-014"
+      ],
+      "gradingRequiredKeywords": [
+        "주척값",
+        "일치눈금",
+        "최소눈금"
+      ]
+    },
+    {
+      "id": "evidence:EXP-M02",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-037"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-M02"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "외측마이크로미터 판독",
+        "PCON-037"
+      ],
+      "gradingRequiredKeywords": [
+        "슬리브",
+        "딤블",
+        "최소눈금"
+      ]
+    },
+    {
+      "id": "evidence:EXP-M03",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-024"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-M03"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "다이얼게이지 TIR",
+        "PCON-024"
+      ],
+      "gradingRequiredKeywords": [
+        "최대값-최소값",
+        "TIR"
+      ]
+    },
+    {
+      "id": "evidence:EXP-M04",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-012"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-M04"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "도면 주석 해독",
+        "PCON-012"
+      ],
+      "gradingRequiredKeywords": [
+        "개수",
+        "M6",
+        "깊이",
+        "리브 두께"
+      ]
+    },
+    {
+      "id": "evidence:EXP-M05",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-005"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-M05"
+      ],
+      "sessions": [],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "제3각법 투상배치",
+        "PCON-005"
+      ],
+      "gradingRequiredKeywords": [
+        "제3각법",
+        "평면도 위",
+        "우측면도 오른쪽"
+      ]
+    },
+    {
+      "id": "evidence:EXP-M06",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-038"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-M06"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "단면도 해칭 생략",
+        "PCON-038"
+      ],
+      "gradingRequiredKeywords": [
+        "축",
+        "체결부품",
+        "핀",
+        "리브"
+      ]
+    },
+    {
+      "id": "evidence:EXP-H01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-025"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-H01"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "복동실린더 추력",
+        "PCON-025"
+      ],
+      "gradingRequiredKeywords": [
+        "전면적",
+        "환상면적"
+      ]
+    },
+    {
+      "id": "evidence:EXP-H02",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-039"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-H02"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "유량제어회로 비교",
+        "PCON-039"
+      ],
+      "gradingRequiredKeywords": [
+        "입구교축",
+        "출구교축",
+        "우회유량"
+      ]
+    },
+    {
+      "id": "evidence:EXP-H03",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-039"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-H03"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "블리드오프 회로",
+        "PCON-039"
+      ],
+      "gradingRequiredKeywords": [
+        "잉여유량",
+        "탱크 귀환",
+        "발열감소",
+        "부하영향"
+      ]
+    },
+    {
+      "id": "evidence:EXP-H04A",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-040"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-H04A"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "축압기의 기능 3가지",
+        "PCON-040"
+      ],
+      "gradingRequiredKeywords": [
+        "에너지 저장",
+        "맥동·충격 흡수",
+        "누설 보상"
+      ]
+    },
+    {
+      "id": "evidence:EXP-H04B",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-040"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-H04B"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "축압기 분해 전 조치 2가지",
+        "PCON-040"
+      ],
+      "gradingRequiredKeywords": [
+        "유압측 잔압 제거",
+        "가스측 잔압 확인"
+      ]
+    },
+    {
+      "id": "evidence:EXP-H05",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-041"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-H05"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition",
+        "sequence"
+      ],
+      "learningKeywords": [
+        "FRL 순서와 기능",
+        "PCON-041"
+      ],
+      "gradingRequiredKeywords": [
+        "Filter",
+        "Regulator",
+        "Lubricator"
+      ]
+    },
+    {
+      "id": "evidence:EXP-H06",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-042"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-H06"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "5/2 방향제어밸브",
+        "PCON-042"
+      ],
+      "gradingRequiredKeywords": [
+        "공급",
+        "작업포트",
+        "배기",
+        "압력차"
+      ]
+    },
+    {
+      "id": "evidence:EXP-C01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-001"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-C01"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "플랜지 커플링 토크",
+        "PCON-001"
+      ],
+      "gradingRequiredKeywords": [
+        "단전단",
+        "단면적",
+        "반지름"
+      ]
+    },
+    {
+      "id": "evidence:EXP-C02",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-025"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-C02"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "복동실린더 효율 적용",
+        "PCON-025"
+      ],
+      "gradingRequiredKeywords": [
+        "전면적",
+        "환상면적",
+        "효율"
+      ]
+    },
+    {
+      "id": "evidence:EXP-C03",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-030"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-C03"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "OEE 계산",
+        "PCON-030"
+      ],
+      "gradingRequiredKeywords": [
+        "시간가동률",
+        "성능가동률",
+        "양품률"
+      ]
+    },
+    {
+      "id": "evidence:EXP-C04",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-019"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-C04"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "최대·최소 틈새",
+        "PCON-019"
+      ],
+      "gradingRequiredKeywords": [
+        "구멍최대-축최소",
+        "구멍최소-축최대"
+      ]
+    },
+    {
+      "id": "evidence:EXP-C05",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-032"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-C05"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "파스칼 유압출력",
+        "출력힘 계산(지름비·효율 조건)",
+        "PCON-032"
+      ],
+      "gradingRequiredKeywords": [
+        "면적비",
+        "지름비 제곱",
+        "효율"
+      ]
+    },
+    {
+      "id": "evidence:EXP-S01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-017"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-S01"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "LOTO 기본순서",
+        "PCON-017"
+      ],
+      "gradingRequiredKeywords": [
+        "통보",
+        "격리",
+        "잠금표지",
+        "잔류에너지",
+        "검증"
+      ]
+    },
+    {
+      "id": "evidence:EXP-S02",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-009"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-S02"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "보호구 표지 판독",
+        "PCON-009"
+      ],
+      "gradingRequiredKeywords": [
+        "눈",
+        "얼굴",
+        "호흡",
+        "청력 보호"
+      ]
+    },
+    {
+      "id": "evidence:EXP-S03",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-017"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-S03"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "유압 잔류에너지 제거",
+        "PCON-017"
+      ],
+      "gradingRequiredKeywords": [
+        "격리",
+        "잔압",
+        "기계적 지지",
+        "검증"
+      ]
+    },
+    {
+      "id": "evidence:EXP-S04",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-043"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-S04"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "밀폐공간 보수용접 안전",
+        "PCON-043"
+      ],
+      "gradingRequiredKeywords": [
+        "허가",
+        "격리",
+        "가스측정",
+        "환기",
+        "감시인",
+        "구조"
+      ]
+    },
+    {
+      "id": "evidence:EXP-D01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-006"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-D01"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "베어링 유도가열 순서",
+        "PCON-006"
+      ],
+      "gradingRequiredKeywords": [
+        "센서",
+        "온도",
+        "탈자",
+        "신속장착"
+      ]
+    },
+    {
+      "id": "evidence:EXP-D02",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-022"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-D02"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "축정렬 불량",
+        "PCON-022"
+      ],
+      "gradingRequiredKeywords": [
+        "중심선 평행",
+        "중심선 각도"
+      ]
+    },
+    {
+      "id": "evidence:EXP-D03",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-018"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-D03"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "기어 손상 진단",
+        "PCON-018"
+      ],
+      "gradingRequiredKeywords": [
+        "접촉피로",
+        "박리",
+        "윤활막파괴"
+      ]
+    },
+    {
+      "id": "evidence:EXP-D04",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-035"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-D04"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "저널베어링 간극 측정",
+        "PCON-035"
+      ],
+      "gradingRequiredKeywords": [
+        "연선",
+        "규정토크",
+        "압착두께"
+      ]
+    },
+    {
+      "id": "evidence:EXP-W01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-044"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-W01"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "용접결함 원인·대책",
+        "PCON-044"
+      ],
+      "gradingRequiredKeywords": [
+        "토우",
+        "가스공동",
+        "미융합",
+        "원인대책"
+      ]
+    },
+    {
+      "id": "evidence:EXP-W02",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-045"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-W02"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition",
+        "matching"
+      ],
+      "learningKeywords": [
+        "비파괴검사 선정",
+        "PCON-045"
+      ],
+      "gradingRequiredKeywords": [
+        "침투",
+        "자분",
+        "초음파",
+        "방사선"
+      ]
+    },
+    {
+      "id": "evidence:EXP-W03",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-046"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-W03"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "보수용접 표준흐름",
+        "PCON-046"
+      ],
+      "gradingRequiredKeywords": [
+        "격리",
+        "결함제거",
+        "WPS",
+        "예열",
+        "최종NDT"
+      ]
+    },
+    {
+      "id": "evidence:EXP-C08",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-032"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-C08"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "파스칼 원리의 압력 전달",
+        "원리 정의(밀폐 정지유체의 압력 전달)",
+        "PCON-032"
+      ],
+      "gradingRequiredKeywords": [
+        "밀폐 정지유체",
+        "동일 압력 전달",
+        "P=F/A",
+        "출력 피스톤 면적"
+      ]
+    },
+    {
+      "id": "evidence:EXP-C06",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-032"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-C06"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "파스칼 면적비·이동거리 비교",
+        "지름비에서 힘비·이동거리 비교",
+        "PCON-032"
+      ],
+      "gradingRequiredKeywords": [
+        "지름비 제곱",
+        "면적비 9",
+        "체적 보존",
+        "10 mm"
+      ]
+    },
+    {
+      "id": "evidence:EXP-C07",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-032"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-C07"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "유압 브레이크의 파스칼 원리 적용",
+        "유압 브레이크 적용과 압력 전달 설명",
+        "PCON-032"
+      ],
+      "gradingRequiredKeywords": [
+        "마스터 실린더",
+        "밀폐 브레이크액·배관",
+        "휠 실린더 또는 캘리퍼",
+        "같은 압력",
+        "유효면적"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-001",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-001"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-001"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "공압실린더 출력 예상문제",
+        "계산식·적용조건",
+        "PCON-SUP-001"
+      ],
+      "gradingRequiredKeywords": [
+        "전진면적",
+        "후진 환상면적",
+        "압력×면적",
+        "단위 통일"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-002",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-002"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-002"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "탄소당량(Ceq) 예상문제",
+        "계산식·적용조건",
+        "PCON-SUP-002"
+      ],
+      "gradingRequiredKeywords": [
+        "탄소당량",
+        "용접성",
+        "열영향부",
+        "예열",
+        "저온균열"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-003",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-003"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-003"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "압축공기 생산·처리·공급계통 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-003"
+      ],
+      "gradingRequiredKeywords": [
+        "압축기",
+        "저장탱크",
+        "수분분리",
+        "건조",
+        "분배",
+        "FRL"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-004",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-004"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-004"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "공압 유량제어와 미터인·미터아웃 예상문제",
+        "개념 정의·작동원리",
+        "PCON-SUP-004"
+      ],
+      "gradingRequiredKeywords": [
+        "유입측",
+        "배기측",
+        "일방향 유량제어",
+        "자유유동",
+        "교축",
+        "실린더 속도"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-005",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-005"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-005"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "공압 시퀀스·타이머·카운터 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-005"
+      ],
+      "gradingRequiredKeywords": [
+        "순서제어",
+        "온딜레이",
+        "오프딜레이",
+        "계수",
+        "리셋",
+        "완료신호"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-006",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-006"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-006"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "유압 동력원과 저장탱크 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-006"
+      ],
+      "gradingRequiredKeywords": [
+        "전동기",
+        "유압펌프",
+        "저장탱크",
+        "제어밸브",
+        "액추에이터",
+        "순환"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-007",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-007"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-007"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "압력제어밸브: 릴리프·감압·시퀀스·카운터밸런스 예상문제",
+        "사진·도면 판독기준",
+        "PCON-SUP-007"
+      ],
+      "gradingRequiredKeywords": [
+        "압력 제한",
+        "감압",
+        "설정압력",
+        "작동순서",
+        "하중 낙하 방지"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-008",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-008"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-008"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "유압모터와 회전 액추에이터 예상문제",
+        "개념 정의·작동원리",
+        "PCON-SUP-008"
+      ],
+      "gradingRequiredKeywords": [
+        "유체동력",
+        "회전운동",
+        "토크",
+        "기어형",
+        "베인형",
+        "피스톤형"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-009",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-009"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-009"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "파일럿 작동 체크밸브와 로킹회로 예상문제",
+        "개념 정의·작동원리",
+        "PCON-SUP-009"
+      ],
+      "gradingRequiredKeywords": [
+        "파일럿 압력",
+        "역류 차단",
+        "잠금 해제",
+        "중간정지",
+        "하중 유지"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-010",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-010"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-010"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "유압 시퀀스·카운터밸런스회로 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-010"
+      ],
+      "gradingRequiredKeywords": [
+        "설정압력",
+        "선행·후행",
+        "작동순서",
+        "배압",
+        "하중 낙하 방지"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-011",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-011"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-011"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "근접센서 형식과 설치 예상문제",
+        "사진·도면 판독기준",
+        "PCON-SUP-011"
+      ],
+      "gradingRequiredKeywords": [
+        "유도형",
+        "정전용량형",
+        "검출대상",
+        "검출거리",
+        "설치간섭",
+        "출력"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-012",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-012"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-012"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "광전스위치 3형식과 설치 예상문제",
+        "사진·도면 판독기준",
+        "PCON-SUP-012"
+      ],
+      "gradingRequiredKeywords": [
+        "투과형",
+        "미러반사형",
+        "확산반사형",
+        "광축",
+        "반사판",
+        "반사율"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-013",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-013"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-013"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "압력센서·압력스위치 예상문제",
+        "사진·도면 판독기준",
+        "PCON-SUP-013"
+      ],
+      "gradingRequiredKeywords": [
+        "연속신호",
+        "ON·OFF",
+        "설정압력",
+        "압력범위",
+        "출력형식",
+        "누설"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-014",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-014"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-014"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "센서 특성·점검기록 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-014"
+      ],
+      "gradingRequiredKeywords": [
+        "정특성",
+        "동특성",
+        "감도",
+        "히스테리시스",
+        "응답시간",
+        "분해능"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-015",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-015"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-015"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "PLC·인터록·인버터 기본 예상문제",
+        "개념 정의·작동원리",
+        "PCON-SUP-015"
+      ],
+      "gradingRequiredKeywords": [
+        "입력",
+        "출력",
+        "인터록",
+        "금지조건",
+        "순서제어",
+        "속도제어"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-016",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-016"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-016"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition",
+        "sequence"
+      ],
+      "learningKeywords": [
+        "용접절차서(WPS)와 작업조건 예상문제",
+        "개념 정의·작동원리",
+        "PCON-SUP-016"
+      ],
+      "gradingRequiredKeywords": [
+        "모재",
+        "용접방법",
+        "이음형상",
+        "용접재료",
+        "전류·전압",
+        "자세"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-017",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-017"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-017"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "용접부 온도관리: 예열·층간온도·후열 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-017"
+      ],
+      "gradingRequiredKeywords": [
+        "예열",
+        "층간온도",
+        "냉각속도",
+        "열영향부",
+        "균열",
+        "WPS"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-018",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-018"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-018"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "용접 입열 예상문제",
+        "계산식·적용조건",
+        "PCON-SUP-018"
+      ],
+      "gradingRequiredKeywords": [
+        "입열",
+        "전압",
+        "전류",
+        "용접속도",
+        "J/cm",
+        "용입"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-019",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-019"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-019"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "피복아크 맞대기용접 자세 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-019"
+      ],
+      "gradingRequiredKeywords": [
+        "G",
+        "F",
+        "수평",
+        "수직",
+        "위보기",
+        "용융지"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-020",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-020"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-020"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "맞대기 이음부 홈·개선 형상 예상문제",
+        "사진·도면 판독기준",
+        "PCON-SUP-020"
+      ],
+      "gradingRequiredKeywords": [
+        "개선",
+        "루트면",
+        "루트간격",
+        "개선각",
+        "맞대기",
+        "용입"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-021",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-021"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-021"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "아크길이·비드 형성·용접봉 운용 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-021"
+      ],
+      "gradingRequiredKeywords": [
+        "아크길이",
+        "용융지",
+        "운봉",
+        "슬래그 제거",
+        "전류",
+        "용접속도"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-022",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-022"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-022"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "용접기 설치·접지·귀환선 관리 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-022"
+      ],
+      "gradingRequiredKeywords": [
+        "보호접지",
+        "귀환선",
+        "외함",
+        "귀환클램프",
+        "절연",
+        "전원차단"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-023",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-023"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-023"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "기하공차·데이텀 기준 예상문제",
+        "사진·도면 판독기준",
+        "PCON-SUP-023"
+      ],
+      "gradingRequiredKeywords": [
+        "데이텀",
+        "기준면",
+        "기준축",
+        "측정요소",
+        "기하공차",
+        "측정기준"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-024",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-024"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-024"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing",
+        "symbol"
+      ],
+      "learningKeywords": [
+        "표면거칠기 기호·가공방향 해석 예상문제",
+        "사진·도면 판독기준",
+        "PCON-SUP-024"
+      ],
+      "gradingRequiredKeywords": [
+        "표면거칠기",
+        "적용면",
+        "지시선",
+        "가공방향",
+        "측정조건"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-025",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-025"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-025"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "사인바·사인센터 경사도 측정 예상문제",
+        "계산식·적용조건",
+        "PCON-SUP-025"
+      ],
+      "gradingRequiredKeywords": [
+        "사인바",
+        "사인센터",
+        "게이지블록",
+        "롤러 간 거리",
+        "테이퍼 각도",
+        "정반"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-026",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-026"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-026"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "V블록 동심도 측정 예상문제",
+        "계산식·적용조건",
+        "PCON-SUP-026"
+      ],
+      "gradingRequiredKeywords": [
+        "데이텀",
+        "V블록",
+        "TIR",
+        "M1",
+        "M2",
+        "K"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-027",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-027"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-027"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "나사 유효경·피치 측정 예상문제",
+        "사진·도면 판독기준",
+        "PCON-SUP-027"
+      ],
+      "gradingRequiredKeywords": [
+        "피치",
+        "유효경",
+        "외경",
+        "피치게이지",
+        "삼침법",
+        "공차"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-028",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-028"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-028"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "오일실 구조·선정·조립 예상문제",
+        "사진·도면 판독기준",
+        "PCON-SUP-028"
+      ],
+      "gradingRequiredKeywords": [
+        "립",
+        "가터스프링",
+        "회전축",
+        "누설 방지",
+        "이물 차단",
+        "축 표면"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-029",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-029"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "감속기 구조·종류 예상문제",
+        "사진·도면 판독기준",
+        "PCON-SUP-029"
+      ],
+      "gradingRequiredKeywords": [
+        "감속",
+        "토크",
+        "입력축",
+        "출력축",
+        "기어열",
+        "윤활"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-030",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-030"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-030"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "브레이크 라이닝·패드 마모점검 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-030"
+      ],
+      "gradingRequiredKeywords": [
+        "마모",
+        "편마모",
+        "균열",
+        "간극",
+        "제동시험",
+        "제조사 기준"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-031",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-031"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-031"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "V벨트·풀리 형식과 조립 예상문제",
+        "사진·도면 판독기준",
+        "PCON-SUP-031"
+      ],
+      "gradingRequiredKeywords": [
+        "V벨트",
+        "풀리",
+        "마찰",
+        "장력",
+        "정렬",
+        "가드"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-032",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-032"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-032"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "베어링 윤활방식·급유점검 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-032"
+      ],
+      "gradingRequiredKeywords": [
+        "급유방식",
+        "윤활유",
+        "오염",
+        "수분",
+        "잔여량",
+        "혼용 금지"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-033",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-033"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-033"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "구동장치 상태진단: 소음·온도·진동·누유 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-033"
+      ],
+      "gradingRequiredKeywords": [
+        "소음",
+        "온도",
+        "진동",
+        "누유",
+        "H·V·A",
+        "동일 조건"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-034",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-034"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-034"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "고장추적·조치기록·재시험 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-034"
+      ],
+      "gradingRequiredKeywords": [
+        "증상",
+        "원인",
+        "조치",
+        "재시험",
+        "반복동작",
+        "기록"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-035",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-035"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-035"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "베어링 고장형태·원인·대책 예상문제",
+        "사진·도면 판독기준",
+        "PCON-SUP-035"
+      ],
+      "gradingRequiredKeywords": [
+        "손상형태",
+        "윤활",
+        "오염",
+        "정렬",
+        "하중",
+        "재발방지"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-036",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-036"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-036"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "부하토크·구동모터 선정조건 예상문제",
+        "개념 정의·작동원리",
+        "PCON-SUP-036"
+      ],
+      "gradingRequiredKeywords": [
+        "부하토크",
+        "기동",
+        "가속",
+        "관성",
+        "회전수",
+        "정격"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-037",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-037"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-037"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "공압 논리제어: YES·NOT·AND·OR 예상문제",
+        "사진·도면 판독기준",
+        "PCON-SUP-037"
+      ],
+      "gradingRequiredKeywords": [
+        "입력",
+        "출력",
+        "동시조건",
+        "선택조건",
+        "금지조건",
+        "진리표"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-038",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-038"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-038"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "공압 시퀀스 제어·변위-단계선도 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-038"
+      ],
+      "gradingRequiredKeywords": [
+        "초기위치",
+        "단계",
+        "전진",
+        "후진",
+        "완료신호",
+        "리셋"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-039",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-039"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-039"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "리미트스위치와 기계식 위치검출 예상문제",
+        "사진·도면 판독기준",
+        "PCON-SUP-039"
+      ],
+      "gradingRequiredKeywords": [
+        "기계식 작동",
+        "레버",
+        "플런저",
+        "접점",
+        "끝단 위치",
+        "NO·NC"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-040",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-040"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-040"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "센서 신호증폭·변환회로 기초 예상문제",
+        "개념 정의·작동원리",
+        "PCON-SUP-040"
+      ],
+      "gradingRequiredKeywords": [
+        "증폭",
+        "변환",
+        "입력범위",
+        "출력범위",
+        "노이즈",
+        "차폐·접지"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-041",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-041"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-041"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "피복아크용접봉 선정·건조·보관 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-041"
+      ],
+      "gradingRequiredKeywords": [
+        "모재",
+        "자세",
+        "피복",
+        "흡습",
+        "WPS",
+        "제조사 지침"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-042",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-042"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-042"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "다층용접·패스간 청소·층간관리 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-042"
+      ],
+      "gradingRequiredKeywords": [
+        "루트패스",
+        "충전패스",
+        "마감패스",
+        "패스간 청소",
+        "층간온도",
+        "검사"
+      ]
+    },
+    {
+      "id": "evidence:EXP-SUP-043",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-043"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-043"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "전동공구 안전작업 예상문제",
+        "작업·점검 순서",
+        "PCON-SUP-043"
+      ],
+      "gradingRequiredKeywords": [
+        "방호덮개",
+        "연마석",
+        "보안경",
+        "전원차단",
+        "작업물 고정",
+        "비산"
+      ]
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-001",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-001"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-001"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "공압실린더 출력",
+        "전진면적",
+        "후진 환상면적",
+        "압력×면적",
+        "단위 통일"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-002",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-002"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-002"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "탄소당량(Ceq)",
+        "탄소당량",
+        "용접성",
+        "열영향부",
+        "예열",
+        "저온균열"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-003",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-003"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-003"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "압축공기 생산·처리·공급계통",
+        "압축기",
+        "저장탱크",
+        "수분분리",
+        "건조",
+        "분배",
+        "FRL"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-004",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-004"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-004"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "공압 유량제어와 미터인·미터아웃",
+        "유입측",
+        "배기측",
+        "일방향 유량제어",
+        "자유유동",
+        "교축",
+        "실린더 속도"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-005",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-005"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-005"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "공압 시퀀스·타이머·카운터",
+        "순서제어",
+        "온딜레이",
+        "오프딜레이",
+        "계수",
+        "리셋",
+        "완료신호"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-006",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-006"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-006"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "유압 동력원과 저장탱크",
+        "전동기",
+        "유압펌프",
+        "저장탱크",
+        "제어밸브",
+        "액추에이터",
+        "순환"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-007",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-007"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-007"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "압력제어밸브: 릴리프·감압·시퀀스·카운터밸런스",
+        "압력 제한",
+        "감압",
+        "설정압력",
+        "작동순서",
+        "하중 낙하 방지"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-008",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-008"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-008"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "유압모터와 회전 액추에이터",
+        "유체동력",
+        "회전운동",
+        "토크",
+        "기어형",
+        "베인형",
+        "피스톤형"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-009",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-009"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-009"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "파일럿 작동 체크밸브와 로킹회로",
+        "파일럿 압력",
+        "역류 차단",
+        "잠금 해제",
+        "중간정지",
+        "하중 유지"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-010",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-010"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-010"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "유압 시퀀스·카운터밸런스회로",
+        "설정압력",
+        "선행·후행",
+        "작동순서",
+        "배압",
+        "하중 낙하 방지"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-011",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-011"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-011"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "근접센서 형식과 설치",
+        "유도형",
+        "정전용량형",
+        "검출대상",
+        "검출거리",
+        "설치간섭",
+        "출력"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-012",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-012"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-012"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "광전스위치 3형식과 설치",
+        "투과형",
+        "미러반사형",
+        "확산반사형",
+        "광축",
+        "반사판",
+        "반사율"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-013",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-013"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-013"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "압력센서·압력스위치",
+        "연속신호",
+        "ON·OFF",
+        "설정압력",
+        "압력범위",
+        "출력형식",
+        "누설"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-014",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-014"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-014"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "센서 특성·점검기록",
+        "정특성",
+        "동특성",
+        "감도",
+        "히스테리시스",
+        "응답시간",
+        "분해능",
+        "기록"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-015",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-015"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-015"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "PLC·인터록·인버터 기본",
+        "입력",
+        "출력",
+        "인터록",
+        "금지조건",
+        "순서제어",
+        "속도제어"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-016",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-016"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-016"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition",
+        "sequence"
+      ],
+      "learningKeywords": [
+        "용접절차서(WPS)와 작업조건",
+        "모재",
+        "용접방법",
+        "이음형상",
+        "용접재료",
+        "전류·전압",
+        "자세",
+        "작업절차"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-017",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-017"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-017"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "용접부 온도관리: 예열·층간온도·후열",
+        "예열",
+        "층간온도",
+        "냉각속도",
+        "열영향부",
+        "균열",
+        "WPS"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-018",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-018"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-018"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "용접 입열",
+        "입열",
+        "전압",
+        "전류",
+        "용접속도",
+        "J/cm",
+        "용입"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-019",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-019"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-019"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "피복아크 맞대기용접 자세",
+        "G",
+        "F",
+        "수평",
+        "수직",
+        "위보기",
+        "용융지"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-020",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-020"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-020"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "맞대기 이음부 홈·개선 형상",
+        "개선",
+        "루트면",
+        "루트간격",
+        "개선각",
+        "맞대기",
+        "용입"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-021",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-021"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-021"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "아크길이·비드 형성·용접봉 운용",
+        "아크길이",
+        "용융지",
+        "운봉",
+        "슬래그 제거",
+        "전류",
+        "용접속도"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-022",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-022"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-022"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "용접기 설치·접지·귀환선 관리",
+        "보호접지",
+        "귀환선",
+        "외함",
+        "귀환클램프",
+        "절연",
+        "전원차단"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-023",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-023"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-023"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "기하공차·데이텀 기준",
+        "데이텀",
+        "기준면",
+        "기준축",
+        "측정요소",
+        "기하공차",
+        "측정기준"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-024",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-024"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-024"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing",
+        "symbol"
+      ],
+      "learningKeywords": [
+        "표면거칠기 기호·가공방향 해석",
+        "표면거칠기",
+        "적용면",
+        "지시선",
+        "가공방향",
+        "측정조건"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-025",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-025"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-025"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "사인바·사인센터 경사도 측정",
+        "사인바",
+        "사인센터",
+        "게이지블록",
+        "롤러 간 거리",
+        "테이퍼 각도",
+        "정반"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-026",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-026"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-026"
+      ],
+      "sessions": [],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "V블록 동심도 측정",
+        "데이텀",
+        "V블록",
+        "TIR",
+        "M1",
+        "M2",
+        "K",
+        "180° 회전"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-027",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-027"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-027"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "나사 유효경·피치 측정",
+        "피치",
+        "유효경",
+        "외경",
+        "피치게이지",
+        "삼침법",
+        "공차"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-028",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-028"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-028"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "오일실 구조·선정·조립",
+        "립",
+        "가터스프링",
+        "회전축",
+        "누설 방지",
+        "이물 차단",
+        "축 표면"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-029",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-029"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "감속기 구조·종류",
+        "감속",
+        "토크",
+        "입력축",
+        "출력축",
+        "기어열",
+        "윤활"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-030",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-030"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-030"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "브레이크 라이닝·패드 마모점검",
+        "마모",
+        "편마모",
+        "균열",
+        "간극",
+        "제동시험",
+        "제조사 기준"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-031",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-031"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-031"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "V벨트·풀리 형식과 조립",
+        "V벨트",
+        "풀리",
+        "마찰",
+        "장력",
+        "정렬",
+        "가드"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-032",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-032"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-032"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "베어링 윤활방식·급유점검",
+        "급유방식",
+        "윤활유",
+        "오염",
+        "수분",
+        "잔여량",
+        "혼용 금지"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-033",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-033"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-033"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "구동장치 상태진단: 소음·온도·진동·누유",
+        "소음",
+        "온도",
+        "진동",
+        "누유",
+        "H·V·A",
+        "동일 조건",
+        "추세"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-034",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-034"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-034"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "고장추적·조치기록·재시험",
+        "증상",
+        "원인",
+        "조치",
+        "재시험",
+        "반복동작",
+        "기록",
+        "재발방지"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-035",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-035"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-035"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "베어링 고장형태·원인·대책",
+        "손상형태",
+        "윤활",
+        "오염",
+        "정렬",
+        "하중",
+        "재발방지"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-036",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-036"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-036"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "부하토크·구동모터 선정조건",
+        "부하토크",
+        "기동",
+        "가속",
+        "관성",
+        "회전수",
+        "정격",
+        "시운전"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-037",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-037"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-037"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "공압 논리제어: YES·NOT·AND·OR",
+        "입력",
+        "출력",
+        "동시조건",
+        "선택조건",
+        "금지조건",
+        "진리표"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-038",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-038"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-038"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "공압 시퀀스 제어·변위-단계선도",
+        "초기위치",
+        "단계",
+        "전진",
+        "후진",
+        "완료신호",
+        "리셋"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-039",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-039"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-039"
+      ],
+      "sessions": [],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "리미트스위치와 기계식 위치검출",
+        "기계식 작동",
+        "레버",
+        "플런저",
+        "접점",
+        "끝단 위치",
+        "NO·NC"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-040",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-040"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-040"
+      ],
+      "sessions": [],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "센서 신호증폭·변환회로 기초",
+        "증폭",
+        "변환",
+        "입력범위",
+        "출력범위",
+        "노이즈",
+        "차폐·접지"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-041",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-041"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-041"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "피복아크용접봉 선정·건조·보관",
+        "모재",
+        "자세",
+        "피복",
+        "흡습",
+        "WPS",
+        "제조사 지침"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-042",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-042"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-042"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "다층용접·패스간 청소·층간관리",
+        "루트패스",
+        "충전패스",
+        "마감패스",
+        "패스간 청소",
+        "층간온도",
+        "검사"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-SUP-043",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-043"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-SUP-043"
+      ],
+      "sessions": [],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "전동공구 안전작업",
+        "방호덮개",
+        "연마석",
+        "보안경",
+        "전원차단",
+        "작업물 고정",
+        "비산"
+      ],
+      "gradingRequiredKeywords": []
+    }
+  ],
+  "coverage": [
+    {
+      "id": "coverage:ncs:1502010504",
+      "ncsCode": "1502010504",
+      "documentTitle": "기본측정기 사용",
+      "deliverables": [
+        {
+          "kind": "theory",
+          "status": "published",
+          "linkedIds": [
+            "PCON-014",
+            "PCON-024",
+            "PCON-031",
+            "PCON-037",
+            "PCON-SUP-023",
+            "PCON-SUP-025",
+            "PCON-SUP-026",
+            "PCON-SUP-027"
+          ],
+          "disposition": null,
+          "rationale": "NCS 원문 위치와 연결된 필답형 개념을 공개한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "visual",
+          "status": "published",
+          "linkedIds": [
+            "ncs-vernier-reading"
+          ],
+          "disposition": null,
+          "rationale": "출처·그림번호·이용조건이 확인된 NCS 시각자료다.",
+          "nextAction": null
+        },
+        {
+          "kind": "assessment",
+          "status": "published",
+          "linkedIds": [
+            "EXP-M01",
+            "EXP-M02",
+            "EXP-M03",
+            "EXP-SUP-023",
+            "EXP-SUP-025",
+            "EXP-SUP-026",
+            "EXP-SUP-027"
+          ],
+          "disposition": null,
+          "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
+          "nextAction": null
+        },
+        {
+          "kind": "task",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 전용이며 공유압·유압·용접 작업형 과제는 사용자 지시에 따라 제외한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "record",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 Evidence·Coverage 정리이며 작업 수행기록은 생성하지 않는다.",
+          "nextAction": null
+        }
+      ]
+    },
+    {
+      "id": "coverage:ncs:1502010511",
+      "ncsCode": "1502010511",
+      "documentTitle": "측정 도면 해독",
+      "deliverables": [
+        {
+          "kind": "theory",
+          "status": "published",
+          "linkedIds": [
+            "PCON-005",
+            "PCON-012",
+            "PCON-019",
+            "PCON-028",
+            "PCON-038",
+            "PCON-SUP-024"
+          ],
+          "disposition": null,
+          "rationale": "NCS 원문 위치와 연결된 필답형 개념을 공개한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "visual",
+          "status": "draft",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "필답 판단에 필요한 공개 시각자료가 아직 연결되지 않았다.",
+          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+        },
+        {
+          "kind": "assessment",
+          "status": "published",
+          "linkedIds": [
+            "P-2025-3-Q01",
+            "EXP-M04",
+            "EXP-M05",
+            "EXP-M06",
+            "EXP-C04",
+            "EXP-SUP-024"
+          ],
+          "disposition": null,
+          "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
+          "nextAction": null
+        },
+        {
+          "kind": "task",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 전용이며 공유압·유압·용접 작업형 과제는 사용자 지시에 따라 제외한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "record",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 Evidence·Coverage 정리이며 작업 수행기록은 생성하지 않는다.",
+          "nextAction": null
+        }
+      ]
+    },
+    {
+      "id": "coverage:ncs:1503010120",
+      "ncsCode": "1503010120",
+      "documentTitle": "기계구동장치 조립",
+      "deliverables": [
+        {
+          "kind": "theory",
+          "status": "published",
+          "linkedIds": [
+            "PCON-001",
+            "PCON-007",
+            "PCON-013",
+            "PCON-036",
+            "PCON-SUP-028",
+            "PCON-SUP-031"
+          ],
+          "disposition": null,
+          "rationale": "NCS 원문 위치와 연결된 필답형 개념을 공개한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "visual",
+          "status": "held",
+          "linkedIds": [],
+          "disposition": "held_visual_asset",
+          "rationale": "원본 그림 또는 공개 이용조건 검증이 남아 있다.",
+          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+        },
+        {
+          "kind": "assessment",
+          "status": "published",
+          "linkedIds": [
+            "P-2025-1-Q01",
+            "P-2025-1-Q07",
+            "P-2025-2-Q06",
+            "P-2026-1-Q01",
+            "EXP-G01",
+            "EXP-G06",
+            "EXP-C01",
+            "EXP-SUP-028",
+            "EXP-SUP-031"
+          ],
+          "disposition": null,
+          "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
+          "nextAction": null
+        },
+        {
+          "kind": "task",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 전용이며 공유압·유압·용접 작업형 과제는 사용자 지시에 따라 제외한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "record",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 Evidence·Coverage 정리이며 작업 수행기록은 생성하지 않는다.",
+          "nextAction": null
+        }
+      ]
+    },
+    {
+      "id": "coverage:ncs:1503010122",
+      "ncsCode": "1503010122",
+      "documentTitle": "조립안전관리",
+      "deliverables": [
+        {
+          "kind": "theory",
+          "status": "published",
+          "linkedIds": [
+            "PCON-009",
+            "PCON-016",
+            "PCON-017",
+            "PCON-043",
+            "PCON-SUP-043"
+          ],
+          "disposition": null,
+          "rationale": "NCS 원문 위치와 연결된 필답형 개념을 공개한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "visual",
+          "status": "draft",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "필답 판단에 필요한 공개 시각자료가 아직 연결되지 않았다.",
+          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+        },
+        {
+          "kind": "assessment",
+          "status": "published",
+          "linkedIds": [
+            "P-2025-2-Q09",
+            "EXP-S01",
+            "EXP-S02",
+            "EXP-S03",
+            "EXP-S04",
+            "EXP-SUP-043"
+          ],
+          "disposition": null,
+          "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
+          "nextAction": null
+        },
+        {
+          "kind": "task",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 전용이며 공유압·유압·용접 작업형 과제는 사용자 지시에 따라 제외한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "record",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 Evidence·Coverage 정리이며 작업 수행기록은 생성하지 않는다.",
+          "nextAction": null
+        }
+      ]
+    },
+    {
+      "id": "coverage:ncs:1503010201",
+      "ncsCode": "1503010201",
+      "documentTitle": "기계시스템 분석",
+      "deliverables": [
+        {
+          "kind": "theory",
+          "status": "published",
+          "linkedIds": [
+            "PCON-029",
+            "PCON-039",
+            "PCON-SUP-001",
+            "PCON-SUP-004",
+            "PCON-SUP-015",
+            "PCON-SUP-036"
+          ],
+          "disposition": null,
+          "rationale": "NCS 원문 위치와 연결된 필답형 개념을 공개한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "visual",
+          "status": "draft",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "필답 판단에 필요한 공개 시각자료가 아직 연결되지 않았다.",
+          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+        },
+        {
+          "kind": "assessment",
+          "status": "published",
+          "linkedIds": [
+            "P-2026-1-Q04",
+            "EXP-B04",
+            "EXP-SUP-001",
+            "EXP-SUP-004",
+            "EXP-SUP-015",
+            "EXP-SUP-036"
+          ],
+          "disposition": null,
+          "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
+          "nextAction": null
+        },
+        {
+          "kind": "task",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 전용이며 공유압·유압·용접 작업형 과제는 사용자 지시에 따라 제외한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "record",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 Evidence·Coverage 정리이며 작업 수행기록은 생성하지 않는다.",
+          "nextAction": null
+        }
+      ]
+    },
+    {
+      "id": "coverage:ncs:1503010204",
+      "ncsCode": "1503010204",
+      "documentTitle": "센서 활용 기술",
+      "deliverables": [
+        {
+          "kind": "theory",
+          "status": "published",
+          "linkedIds": [
+            "PCON-003",
+            "PCON-011",
+            "PCON-SUP-011",
+            "PCON-SUP-012",
+            "PCON-SUP-013",
+            "PCON-SUP-014",
+            "PCON-SUP-039",
+            "PCON-SUP-040"
+          ],
+          "disposition": null,
+          "rationale": "NCS 원문 위치와 연결된 필답형 개념을 공개한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "visual",
+          "status": "held",
+          "linkedIds": [],
+          "disposition": "held_visual_asset",
+          "rationale": "원본 그림 또는 공개 이용조건 검증이 남아 있다.",
+          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+        },
+        {
+          "kind": "assessment",
+          "status": "published",
+          "linkedIds": [
+            "P-2025-1-Q03",
+            "P-2025-2-Q02",
+            "EXP-SUP-011",
+            "EXP-SUP-012",
+            "EXP-SUP-013",
+            "EXP-SUP-014",
+            "EXP-SUP-039",
+            "EXP-SUP-040"
+          ],
+          "disposition": null,
+          "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
+          "nextAction": null
+        },
+        {
+          "kind": "task",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 전용이며 공유압·유압·용접 작업형 과제는 사용자 지시에 따라 제외한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "record",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 Evidence·Coverage 정리이며 작업 수행기록은 생성하지 않는다.",
+          "nextAction": null
+        }
+      ]
+    },
+    {
+      "id": "coverage:ncs:1503010215",
+      "ncsCode": "1503010215",
+      "documentTitle": "공기압제어",
+      "deliverables": [
+        {
+          "kind": "theory",
+          "status": "published",
+          "linkedIds": [
+            "PCON-041",
+            "PCON-042",
+            "PCON-SUP-003",
+            "PCON-SUP-004",
+            "PCON-SUP-005",
+            "PCON-SUP-037",
+            "PCON-SUP-038"
+          ],
+          "disposition": null,
+          "rationale": "NCS 원문 위치와 연결된 필답형 개념을 공개한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "visual",
+          "status": "draft",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "필답 판단에 필요한 공개 시각자료가 아직 연결되지 않았다.",
+          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+        },
+        {
+          "kind": "assessment",
+          "status": "published",
+          "linkedIds": [
+            "EXP-H05",
+            "EXP-H06",
+            "EXP-SUP-003",
+            "EXP-SUP-004",
+            "EXP-SUP-005",
+            "EXP-SUP-037",
+            "EXP-SUP-038"
+          ],
+          "disposition": null,
+          "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
+          "nextAction": null
+        },
+        {
+          "kind": "task",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 전용이며 공유압·유압·용접 작업형 과제는 사용자 지시에 따라 제외한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "record",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 Evidence·Coverage 정리이며 작업 수행기록은 생성하지 않는다.",
+          "nextAction": null
+        }
+      ]
+    },
+    {
+      "id": "coverage:ncs:1503010216",
+      "ncsCode": "1503010216",
+      "documentTitle": "유압제어",
+      "deliverables": [
+        {
+          "kind": "theory",
+          "status": "published",
+          "linkedIds": [
+            "PCON-008",
+            "PCON-025",
+            "PCON-040",
+            "PCON-SUP-006",
+            "PCON-SUP-007",
+            "PCON-SUP-008",
+            "PCON-SUP-009",
+            "PCON-SUP-010",
+            "PCON-SUP-034"
+          ],
+          "disposition": null,
+          "rationale": "NCS 원문 위치와 연결된 필답형 개념을 공개한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "visual",
+          "status": "published",
+          "linkedIds": [
+            "ncs-accumulator-safety-circuit"
+          ],
+          "disposition": null,
+          "rationale": "출처·그림번호·이용조건이 확인된 NCS 시각자료다.",
+          "nextAction": null
+        },
+        {
+          "kind": "assessment",
+          "status": "published",
+          "linkedIds": [
+            "P-2025-1-Q08",
+            "P-2025-3-Q08",
+            "P-2026-1-Q07",
+            "EXP-H01",
+            "EXP-H02",
+            "EXP-H03",
+            "EXP-H04A",
+            "EXP-H04B",
+            "EXP-C02",
+            "EXP-C05",
+            "EXP-S03",
+            "EXP-SUP-006",
+            "EXP-SUP-007",
+            "EXP-SUP-008",
+            "EXP-SUP-009",
+            "EXP-SUP-010",
+            "EXP-SUP-034"
+          ],
+          "disposition": null,
+          "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
+          "nextAction": null
+        },
+        {
+          "kind": "task",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 전용이며 공유압·유압·용접 작업형 과제는 사용자 지시에 따라 제외한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "record",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 Evidence·Coverage 정리이며 작업 수행기록은 생성하지 않는다.",
+          "nextAction": null
+        }
+      ]
+    },
+    {
+      "id": "coverage:ncs:1505010108",
+      "ncsCode": "1505010108",
+      "documentTitle": "운반하역기계 구동장치 정비",
+      "deliverables": [
+        {
+          "kind": "theory",
+          "status": "published",
+          "linkedIds": [
+            "PCON-002",
+            "PCON-004",
+            "PCON-006",
+            "PCON-010",
+            "PCON-015",
+            "PCON-017",
+            "PCON-018",
+            "PCON-022",
+            "PCON-023",
+            "PCON-026",
+            "PCON-032",
+            "PCON-033",
+            "PCON-035",
+            "PCON-SUP-029",
+            "PCON-SUP-030",
+            "PCON-SUP-032",
+            "PCON-SUP-033",
+            "PCON-SUP-035"
+          ],
+          "disposition": null,
+          "rationale": "NCS 원문 위치와 연결된 필답형 개념을 공개한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "visual",
+          "status": "published",
+          "linkedIds": [
+            "ncs-bearing-four-types",
+            "ncs-spherical-roller-bearing",
+            "ncs-bearing-heating",
+            "ncs-tapered-bearing-disassembly"
+          ],
+          "disposition": null,
+          "rationale": "출처·그림번호·이용조건이 확인된 NCS 시각자료다.",
+          "nextAction": null
+        },
+        {
+          "kind": "assessment",
+          "status": "published",
+          "linkedIds": [
+            "P-2025-1-Q02",
+            "P-2025-1-Q04",
+            "P-2025-2-Q07",
+            "EXP-B01",
+            "EXP-B02",
+            "EXP-B03",
+            "EXP-B05",
+            "EXP-B06",
+            "EXP-G02",
+            "EXP-G03",
+            "EXP-G04",
+            "EXP-G05",
+            "EXP-D01",
+            "EXP-D02",
+            "EXP-D03",
+            "EXP-D04",
+            "EXP-C08",
+            "EXP-C06",
+            "EXP-C07",
+            "EXP-SUP-029",
+            "EXP-SUP-030",
+            "EXP-SUP-032",
+            "EXP-SUP-033",
+            "EXP-SUP-035"
+          ],
+          "disposition": null,
+          "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
+          "nextAction": null
+        },
+        {
+          "kind": "task",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 전용이며 공유압·유압·용접 작업형 과제는 사용자 지시에 따라 제외한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "record",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 Evidence·Coverage 정리이며 작업 수행기록은 생성하지 않는다.",
+          "nextAction": null
+        }
+      ]
+    },
+    {
+      "id": "coverage:ncs:1601050108",
+      "ncsCode": "1601050108",
+      "documentTitle": "피복아크용접 결함부 보수용접",
+      "deliverables": [
+        {
+          "kind": "theory",
+          "status": "published",
+          "linkedIds": [
+            "PCON-043",
+            "PCON-044",
+            "PCON-045",
+            "PCON-046"
+          ],
+          "disposition": null,
+          "rationale": "NCS 원문 위치와 연결된 필답형 개념을 공개한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "visual",
+          "status": "held",
+          "linkedIds": [],
+          "disposition": "held_visual_asset",
+          "rationale": "원본 그림 또는 공개 이용조건 검증이 남아 있다.",
+          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+        },
+        {
+          "kind": "assessment",
+          "status": "published",
+          "linkedIds": [
+            "EXP-S04",
+            "EXP-W01",
+            "EXP-W02",
+            "EXP-W03"
+          ],
+          "disposition": null,
+          "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
+          "nextAction": null
+        },
+        {
+          "kind": "task",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 전용이며 공유압·유압·용접 작업형 과제는 사용자 지시에 따라 제외한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "record",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 Evidence·Coverage 정리이며 작업 수행기록은 생성하지 않는다.",
+          "nextAction": null
+        }
+      ]
+    },
+    {
+      "id": "coverage:ncs:1601050111",
+      "ncsCode": "1601050111",
+      "documentTitle": "피복아크용접 맞대기용접",
+      "deliverables": [
+        {
+          "kind": "theory",
+          "status": "published",
+          "linkedIds": [
+            "PCON-046",
+            "PCON-SUP-002",
+            "PCON-SUP-016",
+            "PCON-SUP-017",
+            "PCON-SUP-018",
+            "PCON-SUP-019",
+            "PCON-SUP-020",
+            "PCON-SUP-021",
+            "PCON-SUP-022",
+            "PCON-SUP-041",
+            "PCON-SUP-042"
+          ],
+          "disposition": null,
+          "rationale": "NCS 원문 위치와 연결된 필답형 개념을 공개한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "visual",
+          "status": "draft",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "필답 판단에 필요한 공개 시각자료가 아직 연결되지 않았다.",
+          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+        },
+        {
+          "kind": "assessment",
+          "status": "published",
+          "linkedIds": [
+            "EXP-W03",
+            "EXP-SUP-002",
+            "EXP-SUP-016",
+            "EXP-SUP-017",
+            "EXP-SUP-018",
+            "EXP-SUP-019",
+            "EXP-SUP-020",
+            "EXP-SUP-021",
+            "EXP-SUP-022",
+            "EXP-SUP-041",
+            "EXP-SUP-042"
+          ],
+          "disposition": null,
+          "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
+          "nextAction": null
+        },
+        {
+          "kind": "task",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 전용이며 공유압·유압·용접 작업형 과제는 사용자 지시에 따라 제외한다.",
+          "nextAction": null
+        },
+        {
+          "kind": "record",
+          "status": "not_applicable",
+          "linkedIds": [],
+          "disposition": null,
+          "rationale": "이번 단계는 필답형 Evidence·Coverage 정리이며 작업 수행기록은 생성하지 않는다.",
+          "nextAction": null
+        }
+      ]
+    }
+  ],
+  "holds": [
+    {
+      "id": "hold:question:P-2025-1-Q05",
+      "sourceKind": "question",
+      "sourceId": "P-2025-1-Q05",
+      "disposition": "held_asset_missing",
+      "rationale": "시험 캡처의 원도형과 NCS 원본 그림번호 확인 필요",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2025-1-Q06",
+      "sourceKind": "question",
+      "sourceId": "P-2025-1-Q06",
+      "disposition": "held_source_missing",
+      "rationale": "복원문제는 유도가열기 작업순서를 요구하지만 확보한 NCS 그림은 오일 배스 가열·가열 후 조립 장면이다. 동일 작업순서 원문을 확보하기 전까지 공개하지 않는다.",
+      "nextAction": "NCS·Q-Net·공식 기술자료에서 직접 근거를 추가 확보한다."
+    },
+    {
+      "id": "hold:question:P-2025-1-Q09",
+      "sourceKind": "question",
+      "sourceId": "P-2025-1-Q09",
+      "disposition": "held_asset_missing",
+      "rationale": "안전표지의 모양·색상 식별에 원그림이 필요하나 현재 저장소에 시험 원그림 또는 동일 NCS 원본이 없다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2025-1-Q10",
+      "sourceKind": "question",
+      "sourceId": "P-2025-1-Q10",
+      "disposition": "held_asset_missing",
+      "rationale": "H·V·A 측정방향을 판단할 시험 원그림과 동일 NCS 원본을 찾지 못했다. 자체 제작 도식은 기출 문제 자료로 사용하지 않는다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2025-2-Q01-1",
+      "sourceKind": "question",
+      "sourceId": "P-2025-2-Q01-1",
+      "disposition": "held_asset_missing",
+      "rationale": "정답 후보인 복열 자동조심 롤러베어링과 일치하는 NCS 사진은 확인했지만, 복원문제의 네 선택 사진 전체와 순서를 재현할 동일 원문 묶음은 확보하지 못했다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2025-2-Q01-2",
+      "sourceKind": "question",
+      "sourceId": "P-2025-2-Q01-2",
+      "disposition": "held_answer_conflict",
+      "rationale": "복원 선택지의 '고속회전에 적합'은 범용적 특징으로 단정하기 어려움",
+      "nextAction": "상위 공식 근거 또는 독립 전문자료로 답안 충돌을 재검수한다."
+    },
+    {
+      "id": "hold:question:P-2025-2-Q03",
+      "sourceKind": "question",
+      "sourceId": "P-2025-2-Q03",
+      "disposition": "held_asset_missing",
+      "rationale": "원도면의 화살표·기호 위치가 정답 결정에 필수",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2025-2-Q04",
+      "sourceKind": "question",
+      "sourceId": "P-2025-2-Q04",
+      "disposition": "held_asset_missing",
+      "rationale": "복원문제의 네 정비 공구를 모두 포함하는 동일 NCS 원사진을 확인하지 못했다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2025-2-Q05",
+      "sourceKind": "question",
+      "sourceId": "P-2025-2-Q05",
+      "disposition": "held_asset_missing",
+      "rationale": "확보한 NCS 버니어캘리퍼스 원문 예시는 21.60 mm이며 복원문제의 48.2 mm 눈금과 다르다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2025-2-Q08",
+      "sourceKind": "question",
+      "sourceId": "P-2025-2-Q08",
+      "disposition": "held_source_missing",
+      "rationale": "산소결핍·밀폐공간 조건을 포함한 현행 공식 분류 대조 필요",
+      "nextAction": "NCS·Q-Net·공식 기술자료에서 직접 근거를 추가 확보한다."
+    },
+    {
+      "id": "hold:question:P-2025-2-Q10",
+      "sourceKind": "question",
+      "sourceId": "P-2025-2-Q10",
+      "disposition": "held_source_missing",
+      "rationale": "기어 손상 사진과 공개답을 함께 확정할 동일 NCS 원문 또는 독립 기술근거를 확보하지 못했다.",
+      "nextAction": "NCS·Q-Net·공식 기술자료에서 직접 근거를 추가 확보한다."
+    },
+    {
+      "id": "hold:question:P-2025-3-Q02",
+      "sourceKind": "question",
+      "sourceId": "P-2025-3-Q02",
+      "disposition": "held_source_missing",
+      "rationale": "현행 산업안전보건표지 도안·명칭 확인 필요",
+      "nextAction": "NCS·Q-Net·공식 기술자료에서 직접 근거를 추가 확보한다."
+    },
+    {
+      "id": "hold:question:P-2025-3-Q04",
+      "sourceKind": "question",
+      "sourceId": "P-2025-3-Q04",
+      "disposition": "held_asset_missing",
+      "rationale": "나사산 형상 식별에 필요한 시험 원그림과 동일 NCS 원본이 없다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2025-3-Q05",
+      "sourceKind": "question",
+      "sourceId": "P-2025-3-Q05",
+      "disposition": "held_asset_missing",
+      "rationale": "축정렬 불량 유형을 판별할 시험 원그림과 동일 NCS 원본이 없다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2025-3-Q06",
+      "sourceKind": "question",
+      "sourceId": "P-2025-3-Q06",
+      "disposition": "held_asset_missing",
+      "rationale": "기어 치형 곡선을 판별할 시험 원그림과 동일 NCS 원본이 없다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2025-3-Q07",
+      "sourceKind": "question",
+      "sourceId": "P-2025-3-Q07",
+      "disposition": "held_asset_missing",
+      "rationale": "다이얼 게이지·V블록의 정확한 측정 배치를 보여 주는 시험 원그림과 동일 NCS 원본이 없다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2025-3-Q09",
+      "sourceKind": "question",
+      "sourceId": "P-2025-3-Q09",
+      "disposition": "held_source_missing",
+      "rationale": "적용 규격과 선택지 원문을 독립 출처로 확인 필요",
+      "nextAction": "NCS·Q-Net·공식 기술자료에서 직접 근거를 추가 확보한다."
+    },
+    {
+      "id": "hold:question:P-2025-3-Q10",
+      "sourceKind": "question",
+      "sourceId": "P-2025-3-Q10",
+      "disposition": "held_asset_missing",
+      "rationale": "번호가 붙은 베어링 구성요소 원그림과 동일 NCS 원본이 없다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2026-1-Q02",
+      "sourceKind": "question",
+      "sourceId": "P-2026-1-Q02",
+      "disposition": "held_source_missing",
+      "rationale": "도안과 공식 명칭 현행 확인 필요",
+      "nextAction": "NCS·Q-Net·공식 기술자료에서 직접 근거를 추가 확보한다."
+    },
+    {
+      "id": "hold:question:P-2026-1-Q03",
+      "sourceKind": "question",
+      "sourceId": "P-2026-1-Q03",
+      "disposition": "held_asset_missing",
+      "rationale": "번호·지시선이 있는 원도면과 NCS 그림번호 확인 필요",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2026-1-Q06",
+      "sourceKind": "question",
+      "sourceId": "P-2026-1-Q06",
+      "disposition": "held_asset_missing",
+      "rationale": "세 측정기의 시험 실사와 동일한 NCS 원사진을 확인하지 못했다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2026-1-Q08",
+      "sourceKind": "question",
+      "sourceId": "P-2026-1-Q08",
+      "disposition": "held_answer_conflict",
+      "rationale": "복원 해설의 '정기 윤활 불필요'는 일반 기어커플링 특성과 충돌",
+      "nextAction": "상위 공식 근거 또는 독립 전문자료로 답안 충돌을 재검수한다."
+    },
+    {
+      "id": "hold:question:P-2026-1-Q09",
+      "sourceKind": "question",
+      "sourceId": "P-2026-1-Q09",
+      "disposition": "held_asset_missing",
+      "rationale": "기하공차 프레임의 기호가 정답 결정에 필수",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:P-2026-1-Q10",
+      "sourceKind": "question",
+      "sourceId": "P-2026-1-Q10",
+      "disposition": "held_asset_missing",
+      "rationale": "저널베어링 납선 간극 측정의 시험 단면도와 동일한 NCS 원본을 확인하지 못했다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
+    },
+    {
+      "id": "hold:question:EXP-C03",
+      "sourceKind": "question",
+      "sourceId": "EXP-C03",
+      "disposition": "held_source_missing",
+      "rationale": "OEE 계산 근거가 현재 확보한 NCS 11종에 없어 추가 원문 확보 전까지 공개하지 않는다.",
+      "nextAction": "NCS·Q-Net·공식 기술자료에서 직접 근거를 추가 확보한다."
+    },
+    {
+      "id": "hold:ncs:NCS-HOLD-MEASURING-VISUAL",
+      "sourceKind": "ncs_coverage",
+      "sourceId": "NCS-HOLD-MEASURING-VISUAL",
+      "disposition": "held_visual_asset",
+      "rationale": "측정값을 판정하는 핵심은 기구 배치와 눈금이므로, 원문 그림을 정확히 대조하기 전에는 그림 맞추기 문제로 공개하지 않는다.",
+      "nextAction": "원문 그림의 페이지·번호·정답 결정요소를 대조한 뒤 이미지를 별도 등록한다."
+    },
+    {
+      "id": "hold:ncs:NCS-HOLD-DRAWING-STANDARD-TABLES",
+      "sourceKind": "ncs_coverage",
+      "sourceId": "NCS-HOLD-DRAWING-STANDARD-TABLES",
+      "disposition": "held_source_or_standard",
+      "rationale": "표준 기호와 수치표는 적용판·도면 조건이 있어 표 일부만 분리해 정답화하지 않는다.",
+      "nextAction": "개념 정의는 유지하고 표준표·도면 이미지는 최신판 및 원본 이용조건 확인 후 추가한다."
+    },
+    {
+      "id": "hold:ncs:NCS-HOLD-DRIVE-VISUAL",
+      "sourceKind": "ncs_coverage",
+      "sourceId": "NCS-HOLD-DRIVE-VISUAL",
+      "disposition": "held_visual_asset",
+      "rationale": "공구·정렬 상태는 촬영 방향과 부품 형상에 따라 답이 달라질 수 있어 원문 사진을 추정해 붙이지 않는다.",
+      "nextAction": "NCS 원본 사진의 공개 이용조건과 답안 판정요소를 확인한 후 이미지 학습으로 승격한다."
+    },
+    {
+      "id": "hold:ncs:NCS-HOLD-SAFE-LEGAL",
+      "sourceKind": "ncs_coverage",
+      "sourceId": "NCS-HOLD-SAFE-LEGAL",
+      "disposition": "held_source_or_standard",
+      "rationale": "LOTO와 전동공구 안전의 세부 조건은 최신 법령, 사업장 절차, 제조사 매뉴얼이 우선이다.",
+      "nextAction": "현재 공개 레슨은 작업순서와 원칙만 유지하고, 수치·법정조건은 공식 최신근거 확인 후 추가한다."
+    },
+    {
+      "id": "hold:ncs:NCS-HOLD-MSA-IPIK",
+      "sourceKind": "ncs_coverage",
+      "sourceId": "NCS-HOLD-MSA-IPIK",
+      "disposition": "held_source_or_standard",
+      "rationale": "보호등급은 표준의 최신판과 제품 사양을 함께 확인해야 하므로 일부 숫자나 표를 발췌해 시험정답처럼 공개하지 않는다.",
+      "nextAction": "적용 표준판과 출제조건이 확인되면 표준·제품조건을 분리한 레슨으로 작성한다."
+    },
+    {
+      "id": "hold:ncs:NCS-HOLD-MSA-MOTOR-SELECTION",
+      "sourceKind": "ncs_coverage",
+      "sourceId": "NCS-HOLD-MSA-MOTOR-SELECTION",
+      "disposition": "held_source_or_standard",
+      "rationale": "부하 관성·가감속·안전율·효율이 빠진 상태에서 모터 선정을 단일 식으로 단정하면 오답이 될 수 있다.",
+      "nextAction": "변수와 적용조건이 완전한 문제 또는 제조사 선정 절차를 근거로 보강한다."
+    },
+    {
+      "id": "hold:ncs:NCS-HOLD-SEN-PHOTOELECTRIC",
+      "sourceKind": "ncs_coverage",
+      "sourceId": "NCS-HOLD-SEN-PHOTOELECTRIC",
+      "disposition": "held_visual_asset",
+      "rationale": "원문 예시 그림만으로는 시험에서 요구할 수 있는 설치·광축·반사형 세부 판정을 동일하게 복원할 수 없다.",
+      "nextAction": "원본 그림번호와 정답 결정요소가 대조되면 그림 맞추기 항목으로 별도 승격한다."
+    },
+    {
+      "id": "hold:ncs:NCS-HOLD-SEN-LOADCELL",
+      "sourceKind": "ncs_coverage",
+      "sourceId": "NCS-HOLD-SEN-LOADCELL",
+      "disposition": "held_source_or_standard",
+      "rationale": "현재 확보된 원문 위치만으로는 로드셀의 형식별 원리·배선·정격을 안정적으로 교재화할 수 없다.",
+      "nextAction": "원리와 적용조건을 함께 제시하는 공식 기술자료를 추가 확보한다."
+    },
+    {
+      "id": "hold:ncs:NCS-HOLD-PNE-FLOW-CALC",
+      "sourceKind": "ncs_coverage",
+      "sourceId": "NCS-HOLD-PNE-FLOW-CALC",
+      "disposition": "held_source_or_standard",
+      "rationale": "원문에는 Q=A×v 관계가 있으나, L/min 환산과 압축공기 압력조건을 분리하지 않으면 계산문항 정답이 달라질 수 있다.",
+      "nextAction": "시험 조건과 단위가 함께 확인된 경우에만 계산문제로 승격한다."
+    },
+    {
+      "id": "hold:ncs:NCS-HOLD-HYD-MOTOR-TORQUE",
+      "sourceKind": "ncs_coverage",
+      "sourceId": "NCS-HOLD-HYD-MOTOR-TORQUE",
+      "disposition": "held_source_or_standard",
+      "rationale": "토크·배제용적·압력의 단위변환과 효율 조건이 문제별로 달라질 수 있어 원문 식만으로 공개 계산 풀이를 확정할 수 없다.",
+      "nextAction": "단위와 효율 조건이 명시된 독립 문제 또는 공식 기준을 확보한다."
+    },
+    {
+      "id": "hold:ncs:NCS-HOLD-DRIVE-MAINTENANCE-VISUAL",
+      "sourceKind": "ncs_coverage",
+      "sourceId": "NCS-HOLD-DRIVE-MAINTENANCE-VISUAL",
+      "disposition": "held_visual_asset",
+      "rationale": "베어링·브레이크·윤활의 실사 사진과 간극 수치는 기종·도면·정비기준을 확인해야 하므로 원문 그대로 복제하거나 임의 도식으로 대체하지 않는다.",
+      "nextAction": "원본 사진·표의 이용조건과 실제 출제 캡처 일치 여부를 대조한 뒤 항목별로 승격한다."
+    },
+    {
+      "id": "hold:ncs:NCS-HOLD-WELD-REPAIR-VISUAL",
+      "sourceKind": "ncs_coverage",
+      "sourceId": "NCS-HOLD-WELD-REPAIR-VISUAL",
+      "disposition": "held_visual_asset",
+      "rationale": "결함 판정은 사진의 확대방향·표시·검사 조건에 좌우되므로 원본과 동일성 검증 없이 그림 문제로 공개하지 않는다.",
+      "nextAction": "NCS 그림번호와 공개 이용조건을 확인한 뒤 원본 또는 독립 재도식으로 재검수한다."
+    },
+    {
+      "id": "hold:ncs:NCS-HOLD-WELD-CONDITIONS",
+      "sourceKind": "ncs_coverage",
+      "sourceId": "NCS-HOLD-WELD-CONDITIONS",
+      "disposition": "held_source_or_standard",
+      "rationale": "예열온도·층간온도·건조조건은 재질, 두께, 용접봉, WPS에 따라 달라 일반 수치로 공개하면 위험하다.",
+      "nextAction": "원리는 현재 레슨으로 유지하고 수치는 WPS·제조사 조건이 확인된 경우에만 제시한다."
+    }
+  ],
+  "report": {
+    "evidence": {
+      "pastReconstructed": 41,
+      "pastVariant": 0,
+      "predictedRelated": 87,
+      "ncsSupplement": 43
+    },
+    "publication": {
+      "past": 17,
+      "predicted": 86,
+      "held": 25
+    },
+    "coverage": {
+      "ncsDocuments": 11,
+      "publishedTheoryLinks": 88,
+      "publishedAssessmentLinks": 105,
+      "publishedVisualLinks": 6,
+      "excludedTaskDeliverables": 11,
+      "excludedRecordDeliverables": 11
+    }
+  }
+}

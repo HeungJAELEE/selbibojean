@@ -65,6 +65,58 @@ export type PracticalCoverageEntityRegistry = Record<
   ReadonlySet<string>
 >;
 
+export type PracticalWrittenCoverageItem = {
+  id: string;
+  ncsCode: string;
+  documentTitle: string;
+  deliverables: PracticalCoverageDeliverable[];
+};
+
+export type PracticalWrittenGovernanceHold = {
+  id: string;
+  sourceKind: "question" | "ncs_coverage";
+  sourceId: string;
+  disposition:
+    | "held_asset_missing"
+    | "held_source_missing"
+    | "held_answer_conflict"
+    | "held_visual_asset"
+    | "held_source_or_standard";
+  rationale: string;
+  nextAction: string;
+};
+
+export type PracticalWrittenGovernanceManifest = {
+  formatVersion: 1;
+  generatedAt: string;
+  sourceSha256: string;
+  scope: "practical_written_only";
+  evidence: PracticalExamEvidence[];
+  coverage: PracticalWrittenCoverageItem[];
+  holds: PracticalWrittenGovernanceHold[];
+  report: {
+    evidence: {
+      pastReconstructed: number;
+      pastVariant: number;
+      predictedRelated: number;
+      ncsSupplement: number;
+    };
+    publication: {
+      past: number;
+      predicted: number;
+      held: number;
+    };
+    coverage: {
+      ncsDocuments: number;
+      publishedTheoryLinks: number;
+      publishedAssessmentLinks: number;
+      publishedVisualLinks: number;
+      excludedTaskDeliverables: number;
+      excludedRecordDeliverables: number;
+    };
+  };
+};
+
 export type PracticalWorkStatus =
   | "not_started"
   | "in_progress"

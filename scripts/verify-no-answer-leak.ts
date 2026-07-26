@@ -39,7 +39,7 @@ const findings: Finding[] = [];
 const textExtensions = new Set([".js", ".mjs", ".cjs", ".json"]);
 const manifestNamePattern = /(answer|solution|rubric|grading).*\.(json|js)$/i;
 const forbiddenImportPattern =
-  /from\s+["'][^"']*(practical-repository|generated\/practical-content\.json|server-answer)[^"']*["']/;
+  /from\s+["'][^"']*(practical-repository|generated\/practical-content\.json|generated\/practical-written-governance\.json|server-answer)[^"']*["']/;
 const unsafeCodePatterns = [
   { code: "dynamic_eval", value: "eval" + "(" },
   { code: "dynamic_function", value: "new " + "Function(" },
