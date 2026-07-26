@@ -154,6 +154,93 @@ export type PracticalTask = {
   publishBlockerIds: string[];
 };
 
+export type PracticalTaskPhase =
+  | "prepare"
+  | "isolate"
+  | "execute"
+  | "measure"
+  | "judge"
+  | "diagnose"
+  | "restore"
+  | "record";
+
+export type PracticalTaskSafetyCheck = {
+  id: string;
+  label: string;
+  guidance: string;
+  allowNotApplicable: boolean;
+};
+
+export type PracticalTaskStep = {
+  id: string;
+  phase: PracticalTaskPhase;
+  title: string;
+  instruction: string;
+  completionEvidence: string;
+  warning: string | null;
+};
+
+export type PracticalTaskMeasurement = PracticalMeasurement & {
+  label: string;
+  instrument: string;
+  method: string;
+  acceptanceCriteria: string;
+  sourceCondition: string;
+  allowedValues: string[];
+};
+
+export type PracticalTaskDiagnostic = {
+  symptom: string;
+  probableCauses: string[];
+  checks: string[];
+  actions: string[];
+  retest: string;
+};
+
+export type PracticalTaskRecordField = {
+  id: string;
+  label: string;
+  inputType: "text" | "number" | "choice" | "checklist" | "date";
+  required: boolean;
+  options: string[];
+  guidance: string;
+};
+
+export type PracticalTaskContent = PracticalTask & {
+  slug: string;
+  ncsCode: string;
+  documentTitle: string;
+  title: string;
+  summary: string;
+  difficulty: "foundation" | "intermediate" | "advanced";
+  estimatedMinutes: number;
+  conceptIds: string[];
+  learningObjectives: string[];
+  theoryTopics: string[];
+  prerequisites: string[];
+  tools: string[];
+  materials: string[];
+  protectiveEquipment: string[];
+  safetyChecks: PracticalTaskSafetyCheck[];
+  steps: PracticalTaskStep[];
+  measurements: PracticalTaskMeasurement[];
+  acceptanceChecks: string[];
+  diagnostics: PracticalTaskDiagnostic[];
+  recordFields: PracticalTaskRecordField[];
+  sourceRefs: string[];
+  reviewNotes: string[];
+};
+
+export type PracticalWorkModule = {
+  ncsCode: string;
+  documentTitle: string;
+  version: string;
+  sourceUrl: string;
+  description: string;
+  taskIds: string[];
+  conceptIds: string[];
+};
+
 export type PracticalWorkRecord = {
   clientRecordId: string;
   taskId: string;

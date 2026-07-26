@@ -11,6 +11,10 @@ import {
   getPracticalContent,
   publicPracticalQuestions,
 } from "@/lib/content/practical-repository";
+import {
+  PRACTICAL_WORK_MODULES,
+  PRACTICAL_WORK_TASKS,
+} from "@/data/source/practical-work-tasks";
 
 export default async function PracticalPage() {
   const content = await getPracticalContent();
@@ -51,8 +55,8 @@ export default async function PracticalPage() {
           href="/practical/work"
           icon={<Wrench />}
           title="작업형"
-          text="공기압·유압·보수용접 수행과제와 안전·실격조건을 별도 구조로 학습합니다."
-          label="작업형 구조"
+          text="NCS 11권의 누락 이론을 실제 준비·안전·수행·측정·판정·진단·기록 과제로 연결해 학습합니다."
+          label={`${PRACTICAL_WORK_MODULES.length}권 · ${PRACTICAL_WORK_TASKS.length}과제`}
         />
       </div>
       <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm leading-6 text-slate-600">

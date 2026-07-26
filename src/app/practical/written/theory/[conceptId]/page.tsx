@@ -3,12 +3,15 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { PracticalLabelBadges } from "@/components/practical-label-badges";
 import { PracticalQuestionList } from "@/components/practical-question-list";
+import { PracticalVisualAidFigure } from "@/components/practical-visual-aid";
+import { getPracticalWorkTasksForConcept } from "@/data/source/practical-work-tasks";
 import { conceptGroups, subjects } from "@/lib/domain/catalog";
 import type { PracticalConcept } from "@/lib/domain/practical-types";
 import {
   getPracticalConcept,
   getPracticalTextbookPlacementForConcept,
   getPracticalTextbookSubject,
+  getPublicPracticalVisualAid,
   getPublicPracticalQuestion,
   practicalConceptsByTextbookSubject,
 } from "@/lib/content/practical-repository";
@@ -21,6 +24,17 @@ export default async function PracticalConceptPage({
   const { conceptId } = await params;
   const concept = await getPracticalConcept(conceptId);
   if (!concept || concept.contentStatus !== "published") notFound();
+  const relatedWorkTasks = getPracticalWorkTasksForConcept(concept.id);
+  const publicVisualAids = (
+    await Promise.all(
+      concept.visualAidIds.map((visualAidId) =>
+        getPublicPracticalVisualAid(visualAidId, "theory"),
+      ),
+    )
+  ).filter(
+    (visualAid): visualAid is NonNullable<typeof visualAid> =>
+      Boolean(visualAid),
+  );
   const relatedQuestionIds = [
     ...concept.relatedPastQuestionIds,
     ...concept.relatedPredictedQuestionIds,
@@ -107,6 +121,30 @@ export default async function PracticalConceptPage({
         </ul>
       </section>
 
+      {publicVisualAids.length > 0 ? (
+        <section
+          className="mt-8 rounded-3xl border border-indigo-200 bg-indigo-50 p-6 md:p-8"
+          aria-labelledby="concept-visual-aids-heading"
+        >
+          <SectionEyebrow>원문·검수 시각자료</SectionEyebrow>
+          <h2
+            id="concept-visual-aids-heading"
+            className="mt-2 text-2xl font-extrabold"
+          >
+            구조와 작업 위치를 그림으로 확인
+          </h2>
+          <div className="mt-6 grid gap-5">
+            {publicVisualAids.map((visualAid) => (
+              <PracticalVisualAidFigure
+                key={visualAid.id}
+                visualAid={visualAid}
+                mode="theory"
+              />
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <div className="mt-8 grid gap-8">
         <section className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
           <SectionEyebrow>개념 이해</SectionEyebrow>
@@ -156,6 +194,43 @@ export default async function PracticalConceptPage({
           </section>
         ) : null}
       </div>
+      {relatedWorkTasks.length > 0 ? (
+        <section
+          id="related-practical-work"
+          className="mt-10 rounded-3xl border border-teal-200 bg-teal-50 p-6 md:p-8"
+        >
+          <SectionEyebrow>이론을 실제 작업으로 연결하기</SectionEyebrow>
+          <h2 className="mt-2 text-2xl font-extrabold">
+            이 개념이 사용되는 수행과제
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-slate-700">
+            정의를 읽는 데서 끝내지 않고 안전 확인, 작업순서, 측정,
+            판정, 고장진단과 기록까지 이어서 연습합니다.
+          </p>
+          <div className="mt-6 grid gap-3 md:grid-cols-2">
+            {relatedWorkTasks.map((task) => (
+              <Link
+                key={task.id}
+                href={`/practical/work/${task.slug}`}
+                className="rounded-2xl border border-teal-200 bg-white p-5 transition hover:border-teal-600"
+              >
+                <p className="text-xs font-extrabold text-teal-700">
+                  {task.documentTitle} · {task.ncsCode}
+                </p>
+                <h3 className="mt-2 font-extrabold text-slate-900">
+                  {task.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  {task.summary}
+                </p>
+                <span className="mt-4 inline-flex text-sm font-extrabold text-teal-700">
+                  수행과제 시작 →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
       {pastQuestions.length > 0 ? (
         <section
           id="practical-past-questions"

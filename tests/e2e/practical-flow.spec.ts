@@ -10,6 +10,41 @@ test("practical hub exposes the practical theory entry point", async ({
   await expect(theoryEntry).toContainText("46");
 });
 
+test("practical work exposes all eleven NCS modules and real task records", async ({
+  page,
+}) => {
+  await page.goto("/practical/work");
+
+  await expect(page.getByTestId("practical-work-summary")).toContainText("11");
+  await expect(
+    page.locator('[data-testid^="practical-work-module-"]'),
+  ).toHaveCount(11);
+
+  await page
+    .getByRole("link", {
+      name: /2실린더 순차동작 회로 구성·시험·고장진단/,
+    })
+    .click();
+  await expect(page).toHaveURL(/two-cylinder-sequence-circuit/);
+  await expect(page.getByTestId("practical-task-runner")).toBeVisible();
+  await expect(
+    page.getByText(/새 작업기록입니다|저장된 기록을 복구했습니다/),
+  ).toBeVisible();
+
+  const startButton = page.getByTestId("practical-task-start");
+  await expect(startButton).toBeDisabled();
+  const safetyGate = page.getByTestId("practical-task-safety-gate");
+  const passRadios = safetyGate.locator('input[type="radio"][value="pass"]');
+  await expect(passRadios).toHaveCount(4);
+  for (const radio of await passRadios.all()) {
+    await radio.check();
+  }
+  await expect(startButton).toBeEnabled();
+  await startButton.click();
+  await expect(page.getByText("상태: 수행 중")).toBeVisible();
+  await expect(page.getByTestId("practical-task-complete")).toBeDisabled();
+});
+
 test("practical work loads only the selected repair welding video in its toggle guide", async ({
   page,
 }) => {
@@ -456,6 +491,12 @@ test("a practical concept exposes responsive aids without linking held questions
   await page.goto("/practical/written/theory/PCON-004");
 
   await expect(page.locator('a[href*="P-2025-1-Q05"]')).toHaveCount(0);
+  await expect(
+    page.getByTestId("practical-visual-aid-ncs-bearing-four-types"),
+  ).toBeVisible();
+  await expect(
+    page.locator('a[href^="/practical/work/"]').first(),
+  ).toBeVisible();
   const accessibility = await new AxeBuilder({ page })
     .include("main")
     .analyze();
