@@ -15,6 +15,7 @@ import { PRACTICAL_SUPPLEMENTAL_PREDICTED_QUESTIONS } from "../src/data/source/p
 import { PRACTICAL_CONCEPT_EDITORIAL } from "../src/data/source/practical-concept-editorial";
 import { PRACTICAL_NCS_COVERAGE_HOLDS } from "../src/data/source/practical-ncs-coverage-audit";
 import { PRACTICAL_SUPPLEMENTAL_CONCEPTS } from "../src/data/source/practical-supplemental-concepts";
+import { PRACTICAL_WRITTEN_AUDIT_DECISIONS } from "../src/data/source/practical-written-audit-decisions";
 import type {
   PracticalConcept,
   PracticalContent,
@@ -419,6 +420,8 @@ const ACTUAL_AUDIT_OVERRIDES: Record<
 };
 
 function actualAudit(id: string, value: unknown): AuditDisposition {
+  const decision = PRACTICAL_WRITTEN_AUDIT_DECISIONS[id];
+  if (decision) return decision.disposition;
   const override = ACTUAL_AUDIT_OVERRIDES[id];
   if (override) return override.disposition;
   const status = text(value);
@@ -702,7 +705,9 @@ async function main() {
         row["회차"],
         row["문항번호"],
       );
-      const answer = text(row["검증답안"]);
+      const auditDecision = PRACTICAL_WRITTEN_AUDIT_DECISIONS[id];
+      const answer =
+        auditDecision?.modelAnswer ?? text(row["검증답안"]);
       const calculation = lines(row["계산식·조건"]);
       const visualAidId = promptVisualAidId(id);
       const studyCategories = studyCategoriesForQuestion({
@@ -719,12 +724,14 @@ async function main() {
       formatLabel: practicalQuestionFormatLabel(id, title),
       stem: text(row["문제요약"]),
         modelAnswer: answer,
-        requiredKeywords: list(answer),
-        acceptedAnswers: [answer],
+        requiredKeywords:
+          auditDecision?.requiredKeywords ?? list(answer),
+        acceptedAnswers:
+          auditDecision?.acceptedAnswers ?? [answer],
         calculation,
         unit: answer.match(/\b(?:N·m|N|MPa|mm|%|kN)\b/)?.[0] ?? null,
         rubric: rubric(null, id),
-        traps: list(row["검토메모"]),
+        traps: auditDecision?.traps ?? list(row["검토메모"]),
         conceptIds: conceptForQuestion(
           id,
           occurrenceKey,
@@ -750,7 +757,9 @@ async function main() {
         },
         predictedBasis: null,
         reviewNote:
-          ACTUAL_AUDIT_OVERRIDES[id]?.note ?? text(row["검토메모"]),
+          auditDecision?.note ??
+          ACTUAL_AUDIT_OVERRIDES[id]?.note ??
+          text(row["검토메모"]),
       };
     },
   );

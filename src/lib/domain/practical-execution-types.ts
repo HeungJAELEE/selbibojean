@@ -34,6 +34,7 @@ export type PracticalExamEvidence = {
   taskIds: string[];
   questionIds: string[];
   sessions: PracticalExamEvidenceSession[];
+  sourceRefs: string[];
   formats: PracticalExamEvidenceFormat[];
   learningKeywords: string[];
   gradingRequiredKeywords: string[];

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "generatedAt": "2026-07-25T04:18:26.432Z",
+  "generatedAt": "2026-07-26T11:53:05.937Z",
   "sourceSha256": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
   "scope": "practical_written_only",
   "evidence": [
@@ -25,8 +25,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223848831284",
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
       ],
       "formats": [
         "calculation"
@@ -60,8 +64,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223848831284",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
         "sequence"
@@ -95,8 +103,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223848831284",
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
       ],
       "formats": [
         "definition"
@@ -133,8 +145,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223848831284",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
         "image"
@@ -171,8 +187,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223848831284",
+        "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
       ],
       "formats": [
         "image"
@@ -206,8 +226,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223848831284",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
         "sequence"
@@ -247,8 +271,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223848831284",
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
       ],
       "formats": [
         "definition"
@@ -282,8 +310,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223848831284",
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
       ],
       "formats": [
         "definition"
@@ -322,8 +354,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223848831284",
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
       ],
       "formats": [
         "image"
@@ -357,8 +393,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223848831284",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
       ],
       "formats": [
         "image"
@@ -394,8 +434,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223951709068",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
         "image"
@@ -429,8 +473,14 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223951709068",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view",
+        "https://cdn.skfmediahub.skf.com/api/public/0901d1968027f7c9/pdf_preview_medium/0901d1968027f7c9_pdf_preview_medium.pdf",
+        "https://evolution.skf.com/en/spherical-roller-bearings-the-bearing-for-all-seasons/"
       ],
       "formats": [
         "definition"
@@ -442,7 +492,7 @@
       "gradingRequiredKeywords": [
         "조심성",
         "큰 방사하중·일부 축하중",
-        "축·하우징의 약간의 정렬오차 허용"
+        "약간의 정렬오차 허용"
       ]
     },
     {
@@ -466,8 +516,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223951709068",
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
       ],
       "formats": [
         "definition"
@@ -501,8 +555,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223951709068",
+        "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
       ],
       "formats": [
         "image",
@@ -538,8 +596,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223951709068",
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
       ],
       "formats": [
         "image",
@@ -577,8 +639,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223951709068",
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
       ],
       "formats": [
         "image"
@@ -612,8 +678,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223952223215",
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
       ],
       "formats": [
         "calculation"
@@ -647,8 +717,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223952223215",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
         "definition"
@@ -682,8 +756,14 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223952223215",
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view",
+        "https://miis.kosha.or.kr/oshci/busi/viewProtectionFees.do",
+        "https://360vr.kosha.or.kr/eduDutyInfo?search=true"
       ],
       "formats": [
         "definition",
@@ -694,10 +774,10 @@
         "PCON-016"
       ],
       "gradingRequiredKeywords": [
-        "분진-방진",
-        "가스·증기-방독",
-        "외부공기공급-송기",
-        "송풍기필터-전동식"
+        "방진마스크-입자상 물질",
+        "방독마스크-가스·증기",
+        "송기마스크-외부 공기 공급",
+        "전동식 호흡보호구-송풍기와 필터·정화통"
       ]
     },
     {
@@ -721,8 +801,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223952223215",
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
       ],
       "formats": [
         "definition"
@@ -756,8 +840,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/223952223215",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
         "definition"
@@ -793,8 +881,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224072357786",
+        "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
       ],
       "formats": [
         "calculation"
@@ -830,8 +922,13 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224072357786",
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view",
+        "https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000207172"
       ],
       "formats": [
         "image"
@@ -868,8 +965,11 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224072357786"
       ],
       "formats": [
         "sequence"
@@ -909,8 +1009,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224072357786",
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
       ],
       "formats": [
         "image"
@@ -947,8 +1051,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224072357786",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
         "image"
@@ -983,8 +1091,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224072357786",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
         "image"
@@ -1019,8 +1131,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224072357786",
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
       ],
       "formats": [
         "image"
@@ -1055,8 +1171,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224072357786",
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
       ],
       "formats": [
         "calculation"
@@ -1091,8 +1211,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224072357786",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
         "definition"
@@ -1103,11 +1227,11 @@
       ],
       "gradingRequiredKeywords": [
         "적정 점도",
-        "높은 비점",
-        "낮은 응고점",
-        "고무·금속 적합성",
+        "온도 변화에 따른 점도 변화가 작음",
         "윤활성",
-        "산화안정성"
+        "높은 비점",
+        "낮은 빙점",
+        "높은 인화점"
       ]
     },
     {
@@ -1131,8 +1255,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224072357786",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
         "image"
@@ -1169,8 +1297,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224275574425",
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
       ],
       "formats": [
         "definition"
@@ -1204,8 +1336,13 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224275574425",
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view",
+        "https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000207172"
       ],
       "formats": [
         "image"
@@ -1241,8 +1378,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224275574425",
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
       ],
       "formats": [
         "image"
@@ -1278,8 +1419,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224275574425",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
       ],
       "formats": [
         "definition"
@@ -1314,8 +1459,11 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224275574425"
       ],
       "formats": [
         "calculation"
@@ -1352,8 +1500,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224275574425",
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
       ],
       "formats": [
         "image"
@@ -1389,8 +1541,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224275574425",
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
       ],
       "formats": [
         "calculation",
@@ -1426,8 +1582,13 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224275574425",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view",
+        "https://www.rexnord.com/contentitems/techlibrary/documents/couplings/cp3-012_manual"
       ],
       "formats": [
         "definition"
@@ -1437,9 +1598,10 @@
         "PCON-033"
       ],
       "gradingRequiredKeywords": [
-        "기어 커플링. 큰 토크 전달",
-        "약간의 편심·편각 허용",
-        "윤활·씰·치면 점검 필요"
+        "기어 커플링",
+        "큰 토크 전달",
+        "편심·편각 허용",
+        "윤활·씰·치면 점검"
       ]
     },
     {
@@ -1463,8 +1625,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224275574425",
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
       ],
       "formats": [
         "image",
@@ -1500,8 +1666,12 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-25T04:18:26.432Z"
+          "capturedAt": "2026-07-26T11:53:05.937Z"
         }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/moru-1/224275574425",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
         "sequence"
@@ -1530,6 +1700,9 @@
         "EXP-B01"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "image",
         "sequence"
@@ -1557,6 +1730,9 @@
         "EXP-B02"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -1583,6 +1759,9 @@
         "EXP-B03"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -1610,6 +1789,9 @@
         "EXP-B04"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -1636,6 +1818,9 @@
         "EXP-B05"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -1662,6 +1847,9 @@
         "EXP-B06"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -1687,6 +1875,9 @@
         "EXP-G01"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -1712,6 +1903,9 @@
         "EXP-G02"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -1738,6 +1932,9 @@
         "EXP-G03"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "definition",
         "diagnosis"
@@ -1764,6 +1961,9 @@
         "EXP-G04"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -1790,6 +1990,9 @@
         "EXP-G05"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -1817,6 +2020,9 @@
         "EXP-G06"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
       "formats": [
         "definition",
         "matching"
@@ -1843,6 +2049,9 @@
         "EXP-M01"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -1868,6 +2077,9 @@
         "EXP-M02"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -1893,6 +2105,9 @@
         "EXP-M03"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -1917,6 +2132,9 @@
         "EXP-M04"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+      ],
       "formats": [
         "definition",
         "drawing"
@@ -1944,6 +2162,9 @@
         "EXP-M05"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+      ],
       "formats": [
         "image"
       ],
@@ -1969,6 +2190,9 @@
         "EXP-M06"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -1995,6 +2219,9 @@
         "EXP-H01"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -2019,6 +2246,9 @@
         "EXP-H02"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -2044,6 +2274,9 @@
         "EXP-H03"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -2070,6 +2303,9 @@
         "EXP-H04A"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -2095,6 +2331,9 @@
         "EXP-H04B"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -2119,6 +2358,9 @@
         "EXP-H05"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
       "formats": [
         "definition",
         "sequence"
@@ -2145,6 +2387,9 @@
         "EXP-H06"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -2171,6 +2416,9 @@
         "EXP-C01"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -2196,6 +2444,9 @@
         "EXP-C02"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -2221,6 +2472,7 @@
         "EXP-C03"
       ],
       "sessions": [],
+      "sourceRefs": [],
       "formats": [
         "calculation"
       ],
@@ -2246,6 +2498,9 @@
         "EXP-C04"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -2270,6 +2525,9 @@
         "EXP-C05"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -2296,6 +2554,9 @@
         "EXP-S01"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -2323,6 +2584,9 @@
         "EXP-S02"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -2349,6 +2613,10 @@
         "EXP-S03"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view",
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -2375,6 +2643,10 @@
         "EXP-S04"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view",
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -2403,6 +2675,9 @@
         "EXP-D01"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -2429,6 +2704,9 @@
         "EXP-D02"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -2453,6 +2731,9 @@
         "EXP-D03"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "definition",
         "diagnosis"
@@ -2479,6 +2760,9 @@
         "EXP-D04"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -2504,6 +2788,9 @@
         "EXP-W01"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
       "formats": [
         "definition",
         "diagnosis"
@@ -2531,6 +2818,9 @@
         "EXP-W02"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
       "formats": [
         "definition",
         "matching"
@@ -2558,6 +2848,10 @@
         "EXP-W03"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view",
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -2585,6 +2879,9 @@
         "EXP-C08"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -2612,6 +2909,9 @@
         "EXP-C06"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -2639,6 +2939,9 @@
         "EXP-C07"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -2667,6 +2970,9 @@
         "EXP-SUP-001"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -2694,6 +3000,9 @@
         "EXP-SUP-002"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -2722,6 +3031,9 @@
         "EXP-SUP-003"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -2751,6 +3063,10 @@
         "EXP-SUP-004"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -2780,6 +3096,9 @@
         "EXP-SUP-005"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -2809,6 +3128,9 @@
         "EXP-SUP-006"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -2838,6 +3160,9 @@
         "EXP-SUP-007"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -2867,6 +3192,9 @@
         "EXP-SUP-008"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -2896,6 +3224,9 @@
         "EXP-SUP-009"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -2924,6 +3255,9 @@
         "EXP-SUP-010"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -2952,6 +3286,9 @@
         "EXP-SUP-011"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -2982,6 +3319,9 @@
         "EXP-SUP-012"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -3012,6 +3352,9 @@
         "EXP-SUP-013"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -3042,6 +3385,9 @@
         "EXP-SUP-014"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -3071,6 +3417,9 @@
         "EXP-SUP-015"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -3100,6 +3449,9 @@
         "EXP-SUP-016"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "definition",
         "sequence"
@@ -3130,6 +3482,9 @@
         "EXP-SUP-017"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -3159,6 +3514,9 @@
         "EXP-SUP-018"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -3188,6 +3546,9 @@
         "EXP-SUP-019"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -3217,6 +3578,9 @@
         "EXP-SUP-020"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -3247,6 +3611,9 @@
         "EXP-SUP-021"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -3276,6 +3643,9 @@
         "EXP-SUP-022"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -3305,6 +3675,9 @@
         "EXP-SUP-023"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -3335,6 +3708,9 @@
         "EXP-SUP-024"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+      ],
       "formats": [
         "image",
         "drawing",
@@ -3365,6 +3741,9 @@
         "EXP-SUP-025"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -3394,6 +3773,9 @@
         "EXP-SUP-026"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -3423,6 +3805,9 @@
         "EXP-SUP-027"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -3453,6 +3838,9 @@
         "EXP-SUP-028"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -3483,6 +3871,9 @@
         "EXP-SUP-029"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -3513,6 +3904,9 @@
         "EXP-SUP-030"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -3542,6 +3936,9 @@
         "EXP-SUP-031"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -3572,6 +3969,9 @@
         "EXP-SUP-032"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -3601,6 +4001,9 @@
         "EXP-SUP-033"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "sequence",
         "diagnosis"
@@ -3631,6 +4034,9 @@
         "EXP-SUP-034"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "sequence",
         "diagnosis"
@@ -3661,6 +4067,9 @@
         "EXP-SUP-035"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "image",
         "drawing",
@@ -3692,6 +4101,9 @@
         "EXP-SUP-036"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -3721,6 +4133,9 @@
         "EXP-SUP-037"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -3751,6 +4166,9 @@
         "EXP-SUP-038"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -3780,6 +4198,9 @@
         "EXP-SUP-039"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -3810,6 +4231,9 @@
         "EXP-SUP-040"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -3839,6 +4263,9 @@
         "EXP-SUP-041"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -3868,6 +4295,9 @@
         "EXP-SUP-042"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -3897,6 +4327,9 @@
         "EXP-SUP-043"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -3926,6 +4359,9 @@
         "EXP-SUP-001"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -3950,6 +4386,9 @@
         "EXP-SUP-002"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -3975,6 +4414,9 @@
         "EXP-SUP-003"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -4001,6 +4443,10 @@
         "EXP-SUP-004"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -4027,6 +4473,9 @@
         "EXP-SUP-005"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -4053,6 +4502,9 @@
         "EXP-SUP-006"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -4079,6 +4531,9 @@
         "EXP-SUP-007"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -4105,6 +4560,9 @@
         "EXP-SUP-008"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -4131,6 +4589,9 @@
         "EXP-SUP-009"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -4156,6 +4617,9 @@
         "EXP-SUP-010"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -4181,6 +4645,9 @@
         "EXP-SUP-011"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -4208,6 +4675,9 @@
         "EXP-SUP-012"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -4235,6 +4705,9 @@
         "EXP-SUP-013"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -4262,6 +4735,9 @@
         "EXP-SUP-014"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -4289,6 +4765,9 @@
         "EXP-SUP-015"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -4315,6 +4794,9 @@
         "EXP-SUP-016"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "definition",
         "sequence"
@@ -4343,6 +4825,9 @@
         "EXP-SUP-017"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -4369,6 +4854,9 @@
         "EXP-SUP-018"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -4395,6 +4883,9 @@
         "EXP-SUP-019"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -4421,6 +4912,9 @@
         "EXP-SUP-020"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -4448,6 +4942,9 @@
         "EXP-SUP-021"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -4474,6 +4971,9 @@
         "EXP-SUP-022"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -4500,6 +5000,9 @@
         "EXP-SUP-023"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -4527,6 +5030,9 @@
         "EXP-SUP-024"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+      ],
       "formats": [
         "image",
         "drawing",
@@ -4554,6 +5060,9 @@
         "EXP-SUP-025"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -4580,6 +5089,9 @@
         "EXP-SUP-026"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
       "formats": [
         "calculation"
       ],
@@ -4607,6 +5119,9 @@
         "EXP-SUP-027"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -4634,6 +5149,9 @@
         "EXP-SUP-028"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -4661,6 +5179,9 @@
         "EXP-SUP-029"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -4688,6 +5209,9 @@
         "EXP-SUP-030"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -4714,6 +5238,9 @@
         "EXP-SUP-031"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -4741,6 +5268,9 @@
         "EXP-SUP-032"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -4767,6 +5297,9 @@
         "EXP-SUP-033"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "sequence",
         "diagnosis"
@@ -4795,6 +5328,9 @@
         "EXP-SUP-034"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
       "formats": [
         "sequence",
         "diagnosis"
@@ -4823,6 +5359,9 @@
         "EXP-SUP-035"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
       "formats": [
         "image",
         "drawing",
@@ -4851,6 +5390,9 @@
         "EXP-SUP-036"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -4878,6 +5420,9 @@
         "EXP-SUP-037"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -4905,6 +5450,9 @@
         "EXP-SUP-038"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -4931,6 +5479,9 @@
         "EXP-SUP-039"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
       "formats": [
         "image",
         "drawing"
@@ -4958,6 +5509,9 @@
         "EXP-SUP-040"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
       "formats": [
         "definition"
       ],
@@ -4984,6 +5538,9 @@
         "EXP-SUP-041"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -5010,6 +5567,9 @@
         "EXP-SUP-042"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -5036,6 +5596,9 @@
         "EXP-SUP-043"
       ],
       "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+      ],
       "formats": [
         "sequence"
       ],
@@ -5274,6 +5837,7 @@
           "kind": "assessment",
           "status": "published",
           "linkedIds": [
+            "P-2025-2-Q08",
             "P-2025-2-Q09",
             "EXP-S01",
             "EXP-S02",
@@ -5620,7 +6184,10 @@
           "linkedIds": [
             "P-2025-1-Q02",
             "P-2025-1-Q04",
+            "P-2025-2-Q01-2",
             "P-2025-2-Q07",
+            "P-2025-3-Q09",
+            "P-2026-1-Q08",
             "EXP-B01",
             "EXP-B02",
             "EXP-B03",
@@ -5836,14 +6403,6 @@
       "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
     },
     {
-      "id": "hold:question:P-2025-2-Q01-2",
-      "sourceKind": "question",
-      "sourceId": "P-2025-2-Q01-2",
-      "disposition": "held_answer_conflict",
-      "rationale": "복원 선택지의 '고속회전에 적합'은 범용적 특징으로 단정하기 어려움",
-      "nextAction": "상위 공식 근거 또는 독립 전문자료로 답안 충돌을 재검수한다."
-    },
-    {
       "id": "hold:question:P-2025-2-Q03",
       "sourceKind": "question",
       "sourceId": "P-2025-2-Q03",
@@ -5868,28 +6427,20 @@
       "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
     },
     {
-      "id": "hold:question:P-2025-2-Q08",
-      "sourceKind": "question",
-      "sourceId": "P-2025-2-Q08",
-      "disposition": "held_source_missing",
-      "rationale": "산소결핍·밀폐공간 조건을 포함한 현행 공식 분류 대조 필요",
-      "nextAction": "NCS·Q-Net·공식 기술자료에서 직접 근거를 추가 확보한다."
-    },
-    {
       "id": "hold:question:P-2025-2-Q10",
       "sourceKind": "question",
       "sourceId": "P-2025-2-Q10",
-      "disposition": "held_source_missing",
-      "rationale": "기어 손상 사진과 공개답을 함께 확정할 동일 NCS 원문 또는 독립 기술근거를 확보하지 못했다.",
-      "nextAction": "NCS·Q-Net·공식 기술자료에서 직접 근거를 추가 확보한다."
+      "disposition": "held_asset_missing",
+      "rationale": "피팅·스폴링·스코어링의 일반 정의만으로는 복원문제의 세 사진 순서와 정답을 확정할 수 없다. 동일 시험 원그림 또는 출처가 확인된 동일 사진 묶음이 필요하다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
     },
     {
       "id": "hold:question:P-2025-3-Q02",
       "sourceKind": "question",
       "sourceId": "P-2025-3-Q02",
-      "disposition": "held_source_missing",
-      "rationale": "현행 산업안전보건표지 도안·명칭 확인 필요",
-      "nextAction": "NCS·Q-Net·공식 기술자료에서 직접 근거를 추가 확보한다."
+      "disposition": "held_asset_missing",
+      "rationale": "현행 안전표지 분류 근거는 확인했지만 복원문제의 네 도안과 순서를 확인할 원그림이 없다. 도안이 정답을 결정하므로 원그림 확보 전에는 공개하지 않는다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
     },
     {
       "id": "hold:question:P-2025-3-Q04",
@@ -5924,14 +6475,6 @@
       "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
     },
     {
-      "id": "hold:question:P-2025-3-Q09",
-      "sourceKind": "question",
-      "sourceId": "P-2025-3-Q09",
-      "disposition": "held_source_missing",
-      "rationale": "적용 규격과 선택지 원문을 독립 출처로 확인 필요",
-      "nextAction": "NCS·Q-Net·공식 기술자료에서 직접 근거를 추가 확보한다."
-    },
-    {
       "id": "hold:question:P-2025-3-Q10",
       "sourceKind": "question",
       "sourceId": "P-2025-3-Q10",
@@ -5943,9 +6486,9 @@
       "id": "hold:question:P-2026-1-Q02",
       "sourceKind": "question",
       "sourceId": "P-2026-1-Q02",
-      "disposition": "held_source_missing",
-      "rationale": "도안과 공식 명칭 현행 확인 필요",
-      "nextAction": "NCS·Q-Net·공식 기술자료에서 직접 근거를 추가 확보한다."
+      "disposition": "held_asset_missing",
+      "rationale": "금지·경고·지시표지의 현행 분류 근거는 확인했지만 복원문제의 도안과 배열을 확인할 원그림이 없다. 도안 식별 문제이므로 원그림 확보 전에는 공개하지 않는다.",
+      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
     },
     {
       "id": "hold:question:P-2026-1-Q03",
@@ -5962,14 +6505,6 @@
       "disposition": "held_asset_missing",
       "rationale": "세 측정기의 시험 실사와 동일한 NCS 원사진을 확인하지 못했다.",
       "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2026-1-Q08",
-      "sourceKind": "question",
-      "sourceId": "P-2026-1-Q08",
-      "disposition": "held_answer_conflict",
-      "rationale": "복원 해설의 '정기 윤활 불필요'는 일반 기어커플링 특성과 충돌",
-      "nextAction": "상위 공식 근거 또는 독립 전문자료로 답안 충돌을 재검수한다."
     },
     {
       "id": "hold:question:P-2026-1-Q09",
@@ -6108,14 +6643,14 @@
       "ncsSupplement": 43
     },
     "publication": {
-      "past": 17,
+      "past": 21,
       "predicted": 86,
-      "held": 25
+      "held": 21
     },
     "coverage": {
       "ncsDocuments": 11,
       "publishedTheoryLinks": 88,
-      "publishedAssessmentLinks": 105,
+      "publishedAssessmentLinks": 109,
       "publishedVisualLinks": 6,
       "excludedTaskDeliverables": 11,
       "excludedRecordDeliverables": 11

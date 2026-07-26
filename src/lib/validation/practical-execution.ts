@@ -63,12 +63,13 @@ export function validatePracticalExamEvidenceGraph(
     if (
       hasDuplicates(evidence.conceptIds) ||
       hasDuplicates(evidence.taskIds) ||
-      hasDuplicates(evidence.questionIds)
+      hasDuplicates(evidence.questionIds) ||
+      hasDuplicates(evidence.sourceRefs)
     ) {
       issues.push({
         code: "duplicate_evidence_link",
         entityId: evidence.id,
-        message: "Evidence 연결 ID에 중복이 있습니다.",
+        message: "Evidence 연결 ID 또는 출처에 중복이 있습니다.",
       });
     }
     if (

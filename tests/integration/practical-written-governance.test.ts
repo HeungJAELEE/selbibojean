@@ -90,6 +90,21 @@ describe("practical written governance manifest", () => {
       .map((hold) => hold.sourceId)
       .sort();
     expect(recordedIds).toEqual(heldQuestionIds);
-    expect(recordedIds).toHaveLength(25);
+    expect(recordedIds).toHaveLength(21);
+  });
+
+  it("keeps official and NCS source references for promoted corrections", () => {
+    const byQuestionId = (questionId: string) =>
+      manifest.evidence.find((item) => item.questionIds.includes(questionId));
+
+    expect(byQuestionId("P-2025-2-Q08")?.sourceRefs.length).toBeGreaterThanOrEqual(
+      3,
+    );
+    expect(byQuestionId("P-2025-2-Q01-2")?.sourceRefs.length).toBeGreaterThanOrEqual(
+      3,
+    );
+    expect(byQuestionId("P-2026-1-Q08")?.sourceRefs.length).toBeGreaterThanOrEqual(
+      3,
+    );
   });
 });

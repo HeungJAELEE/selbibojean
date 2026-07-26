@@ -285,7 +285,7 @@ test("practical hub exposes only publishable source-backed content", async ({
   page,
 }) => {
   await page.goto("/practical/written");
-  await expect(page.getByText("17문제", { exact: true })).toBeVisible();
+  await expect(page.getByText("21문제", { exact: true })).toBeVisible();
   await expect(page.getByText("86문제", { exact: true })).toBeVisible();
   await expect(
     page.locator('a[href^="/practical/written/theory/subject/subject-"]'),

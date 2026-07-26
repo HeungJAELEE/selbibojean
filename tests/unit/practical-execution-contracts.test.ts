@@ -47,6 +47,7 @@ function evidence(
             },
           ]
         : [],
+    sourceRefs: [],
     formats: ["definition"],
     learningKeywords: ["축압기"],
     gradingRequiredKeywords: ["압력에너지 저장"],

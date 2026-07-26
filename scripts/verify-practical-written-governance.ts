@@ -11,6 +11,7 @@ import {
   validatePracticalCoverageDeliverables,
   validatePracticalExamEvidenceGraph,
 } from "../src/lib/validation/practical-execution";
+import { PRACTICAL_WRITTEN_AUDIT_DECISIONS } from "../src/data/source/practical-written-audit-decisions";
 
 const root = process.cwd();
 const [content, manifest] = await Promise.all([
@@ -50,6 +51,16 @@ for (const evidence of manifest.evidence) {
   }
   if (evidence.conceptIds.some((id) => !conceptIds.has(id))) {
     errors.push(`존재하지 않는 필답 개념 연결: ${evidence.id}`);
+  }
+  const questionId = evidence.questionIds[0];
+  const decision = questionId
+    ? PRACTICAL_WRITTEN_AUDIT_DECISIONS[questionId]
+    : undefined;
+  if (
+    decision?.disposition === "cbt_corrected" &&
+    evidence.sourceRefs.length < 2
+  ) {
+    errors.push(`CBT 교정 근거가 부족합니다: ${evidence.id}`);
   }
 }
 

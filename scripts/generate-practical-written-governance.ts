@@ -12,6 +12,7 @@ import type {
   PracticalQuestion,
   PracticalStudyCategoryId,
 } from "../src/lib/domain/practical-types";
+import { PRACTICAL_WRITTEN_AUDIT_DECISIONS } from "../src/data/source/practical-written-audit-decisions";
 import { isPublishablePracticalQuestion } from "../src/lib/domain/practical";
 
 const root = process.cwd();
@@ -75,6 +76,7 @@ function evidenceForQuestion(
   content: PracticalContent,
 ): PracticalExamEvidence {
   const occurrence = question.occurrence;
+  const auditDecision = PRACTICAL_WRITTEN_AUDIT_DECISIONS[question.id];
   return {
     id: `evidence:${question.id}`,
     status:
@@ -105,6 +107,11 @@ function evidenceForQuestion(
             },
           ]
         : [],
+    sourceRefs: unique([
+      ...(occurrence?.sourceUrl ? [occurrence.sourceUrl] : []),
+      ...question.ncsSources.map((source) => source.sourceUrl),
+      ...(auditDecision?.evidenceUrls ?? []),
+    ]),
     formats: questionFormats(question),
     learningKeywords: unique([
       question.title,
@@ -126,6 +133,16 @@ function supplementalEvidence(content: PracticalContent) {
       taskIds: [],
       questionIds: unique(concept.relatedPredictedQuestionIds),
       sessions: [],
+      sourceRefs: unique(
+        concept.relatedPredictedQuestionIds
+          .map((questionId) =>
+            content.questions.find((question) => question.id === questionId),
+          )
+          .filter((question): question is PracticalQuestion => Boolean(question))
+          .flatMap((question) =>
+            question.ncsSources.map((source) => source.sourceUrl),
+          ),
+      ),
       formats: unique(
         concept.relatedPredictedQuestionIds
           .map((questionId) =>

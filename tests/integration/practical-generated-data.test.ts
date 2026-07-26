@@ -27,11 +27,11 @@ describe("NCS practical content import", () => {
       visualAids: 28,
     });
     expect(content.report.exactMatch).toBe(true);
-    expect(content.report.publication.past).toBe(17);
+    expect(content.report.publication.past).toBe(21);
     expect(content.report.publication.predicted).toBe(86);
     expect(content.report.publication.concepts).toBe(46);
     expect(content.report.publication.supplementalConcepts).toBe(43);
-    expect(content.report.publication.held).toBe(25);
+    expect(content.report.publication.held).toBe(21);
   });
 
   it("never publishes held questions", () => {
@@ -42,6 +42,67 @@ describe("NCS practical content import", () => {
           isPublishablePracticalQuestion(question),
       ),
     ).toEqual([]);
+  });
+
+  it("publishes source-verified corrections and keeps image-dependent prompts held", () => {
+    const byId = (id: string) =>
+      content.questions.find((question) => question.id === id);
+
+    expect(byId("P-2025-2-Q08")).toMatchObject({
+      auditDisposition: "verified",
+      contentStatus: "published",
+    });
+    expect(byId("P-2025-2-Q08")?.requiredKeywords).toEqual(
+      expect.arrayContaining([
+        "방진마스크-입자상 물질",
+        "방독마스크-가스·증기",
+        "송기마스크-외부 공기 공급",
+        "전동식 호흡보호구-송풍기와 필터·정화통",
+      ]),
+    );
+
+    expect(byId("P-2025-3-Q09")).toMatchObject({
+      auditDisposition: "verified",
+      contentStatus: "published",
+    });
+    expect(byId("P-2025-3-Q09")?.requiredKeywords).toEqual(
+      expect.arrayContaining([
+        "적정 점도",
+        "온도 변화에 따른 점도 변화가 작음",
+        "윤활성",
+        "높은 비점",
+        "낮은 빙점",
+        "높은 인화점",
+      ]),
+    );
+
+    for (const id of ["P-2025-2-Q01-2", "P-2026-1-Q08"]) {
+      expect(byId(id)).toMatchObject({
+        auditDisposition: "cbt_corrected",
+        contentStatus: "published",
+      });
+    }
+
+    for (const id of [
+      "P-2025-2-Q10",
+      "P-2025-3-Q02",
+      "P-2026-1-Q02",
+    ]) {
+      expect(byId(id)).toMatchObject({
+        auditDisposition: "held_asset_missing",
+        contentStatus: "in_review",
+      });
+    }
+
+    expect(
+      content.questions.filter(
+        (question) => question.auditDisposition === "held_answer_conflict",
+      ),
+    ).toEqual([]);
+    expect(byId("P-2025-1-Q06")?.auditDisposition).toBe(
+      "held_source_missing",
+    );
+    expect(byId("EXP-C03")?.auditDisposition).toBe("held_source_missing");
   });
 
   it("keeps component roles separate from ordered practical procedures", () => {
