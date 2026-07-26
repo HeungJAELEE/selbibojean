@@ -1,5 +1,6 @@
 ﻿import { access, readFile } from "node:fs/promises";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import type { PracticalContent } from "../src/lib/domain/practical-types";
 import { isPublishablePracticalQuestion } from "../src/lib/domain/practical";
 import {
@@ -8,6 +9,14 @@ import {
   practicalTextbookSubjects,
 } from "../src/data/source/practical-textbook-taxonomy";
 import { PRACTICAL_SUPPLEMENTAL_CONCEPTS } from "../src/data/source/practical-supplemental-concepts";
+import { PRACTICAL_BASELINE_MANIFEST } from "../src/data/source/practical-baseline-manifest";
+
+function sortedIdsSha256(items: Array<{ id: string }>) {
+  const sortedIds = items.map((item) => item.id).sort();
+  return createHash("sha256")
+    .update(JSON.stringify(sortedIds))
+    .digest("hex");
+}
 
 async function main() {
   const source = path.join(
@@ -19,6 +28,22 @@ async function main() {
   );
   const content = JSON.parse(await readFile(source, "utf8")) as PracticalContent;
   const errors: string[] = [];
+
+  for (const [setName, items] of [
+    ["questions", content.questions],
+    ["concepts", content.concepts],
+    ["visualAids", content.visualAids],
+  ] as const) {
+    const baseline = PRACTICAL_BASELINE_MANIFEST.sets[setName];
+    if (
+      items.length !== baseline.count ||
+      sortedIdsSha256(items) !== baseline.sortedIdsSha256
+    ) {
+      errors.push(
+        `실기 ${setName} 기준선 ID 집합이 변경됐습니다. 승인된 변경이력과 함께 기준선을 갱신해야 합니다.`,
+      );
+    }
+  }
 
   if (content.report.rows.past !== 41) errors.push("기출복원 41개가 아닙니다.");
   if (content.report.rows.predicted !== 87)
