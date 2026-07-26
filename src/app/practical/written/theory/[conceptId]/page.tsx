@@ -4,13 +4,16 @@ import type { ReactNode } from "react";
 import { PracticalLabelBadges } from "@/components/practical-label-badges";
 import { PracticalQuestionList } from "@/components/practical-question-list";
 import { PracticalVisualAidFigure } from "@/components/practical-visual-aid";
+import { PracticalWrittenExamCardView } from "@/components/practical-written-exam-card";
 import { getPracticalWorkTasksForConcept } from "@/data/source/practical-work-tasks";
 import { conceptGroups, subjects } from "@/lib/domain/catalog";
 import type { PracticalConcept } from "@/lib/domain/practical-types";
 import {
   getPracticalConcept,
+  getPracticalQuestion,
   getPracticalTextbookPlacementForConcept,
   getPracticalTextbookSubject,
+  getPracticalWrittenExamCardsForConcept,
   getPublicPracticalVisualAid,
   getPublicPracticalQuestion,
   practicalConceptsByTextbookSubject,
@@ -24,6 +27,7 @@ export default async function PracticalConceptPage({
   const { conceptId } = await params;
   const concept = await getPracticalConcept(conceptId);
   if (!concept || concept.contentStatus !== "published") notFound();
+  const examCards = await getPracticalWrittenExamCardsForConcept(concept.id);
   const relatedWorkTasks = getPracticalWorkTasksForConcept(concept.id);
   const publicVisualAids = (
     await Promise.all(
@@ -54,6 +58,27 @@ export default async function PracticalConceptPage({
   );
   const predictedQuestions = publicRelatedQuestions.filter(
     (question) => question.kind === "predicted",
+  );
+  const examCardBundles = await Promise.all(
+    examCards.map(async (card) => {
+      const [cardPastQuestions, cardPredictedQuestions] = await Promise.all([
+        Promise.all(card.pastQuestionIds.map((id) => getPracticalQuestion(id))),
+        Promise.all(
+          card.predictedQuestionIds.map((id) => getPracticalQuestion(id)),
+        ),
+      ]);
+      return {
+        card,
+        pastQuestions: cardPastQuestions.filter(
+          (question): question is NonNullable<typeof question> =>
+            Boolean(question),
+        ),
+        predictedQuestions: cardPredictedQuestions.filter(
+          (question): question is NonNullable<typeof question> =>
+            Boolean(question),
+        ),
+      };
+    }),
   );
   const subject = subjects.find((item) => item.id === concept.subjectLabel);
   const group = conceptGroups.find((item) => item.id === concept.groupLabel);
@@ -107,6 +132,30 @@ export default async function PracticalConceptPage({
         pastQuestionCount={pastQuestions.length}
         predictedQuestionCount={predictedQuestions.length}
       />
+      {examCardBundles.map(({ card, pastQuestions: cardPast, predictedQuestions: cardPredicted }) => (
+        <PracticalWrittenExamCardView
+          key={card.id}
+          card={card}
+          pastQuestions={cardPast}
+          predictedQuestions={cardPredicted}
+          visualAids={publicVisualAids}
+        />
+      ))}
+      <details
+        data-testid="practical-written-supplement"
+        className="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-4 md:p-6"
+        open={examCardBundles.length === 0}
+      >
+        <summary className="cursor-pointer text-base font-extrabold text-slate-800">
+          보충 개념·작업 적용·NCS 원문 근거
+          <span className="ml-2 text-xs font-bold text-slate-500">
+            시험카드 학습 후 필요할 때 펼치세요
+          </span>
+        </summary>
+        <div
+          data-testid="practical-written-supplement-content"
+          className="mt-6"
+        >
       <section className="mt-8 rounded-3xl border border-sky-200 bg-sky-50 p-6">
         <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-sky-700">
           이 레슨에서 익힐 것
@@ -314,6 +363,8 @@ export default async function PracticalConceptPage({
           </p>
         </div>
       </section>
+        </div>
+      </details>
       <ConceptNavigation
         navigation={navigation}
         pastQuestionCount={pastQuestions.length}

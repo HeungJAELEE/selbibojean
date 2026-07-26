@@ -2,6 +2,9 @@ import "server-only";
 
 import rawPracticalContent from "@/data/generated/practical-content.json";
 import {
+  PRACTICAL_WRITTEN_EXAM_CARD_SEEDS,
+} from "@/data/source/practical-written-exam-cards";
+import {
   getPracticalTextbookPlacement,
   getPracticalTextbookStudyType as getPracticalTextbookStudyTypeRecord,
   getPracticalTextbookSubject as getPracticalTextbookSubjectRecord,
@@ -17,6 +20,7 @@ import type {
   PracticalNcsCoverage,
   PracticalStudyCategoryId,
   PracticalVisualAid,
+  PracticalWrittenExamCard,
 } from "@/lib/domain/practical-types";
 import {
   isPublishablePracticalQuestion,
@@ -30,12 +34,49 @@ export {
 
 const content = rawPracticalContent as PracticalContent;
 
+const practicalWrittenExamCards: PracticalWrittenExamCard[] =
+  PRACTICAL_WRITTEN_EXAM_CARD_SEEDS.map((seed) => {
+    const linkedConceptIds = new Set([
+      ...seed.conceptIds,
+      ...seed.supplementalConceptIds,
+    ]);
+    const sourceRefs = content.concepts
+      .filter((concept) => linkedConceptIds.has(concept.id))
+      .flatMap((concept) => concept.ncsSources)
+      .filter(
+        (source, index, sources) =>
+          sources.findIndex(
+            (candidate) =>
+              candidate.ncsCode === source.ncsCode &&
+              candidate.pdfPage === source.pdfPage &&
+              candidate.figureNumber === source.figureNumber,
+          ) === index,
+      );
+
+    return {
+      ...seed,
+      sourceRefs,
+    };
+  });
+
 export async function getPracticalContent() {
   return content;
 }
 
 export async function getPracticalNcsCoverage(): Promise<PracticalNcsCoverage> {
   return content.ncsCoverage;
+}
+
+export async function getPracticalWrittenExamCards() {
+  return practicalWrittenExamCards;
+}
+
+export async function getPracticalWrittenExamCardsForConcept(
+  conceptId: string,
+) {
+  return practicalWrittenExamCards.filter((card) =>
+    card.conceptIds.includes(conceptId),
+  );
 }
 
 export async function getPracticalQuestion(questionId: string) {

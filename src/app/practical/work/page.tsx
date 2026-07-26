@@ -38,10 +38,18 @@ export default function PracticalWorkPage() {
   return (
     <div className="page-wrap pb-16">
       <PageHeading
-        eyebrow="Practical · work"
-        title="NCS 실기 수행과제"
-        description="11권의 이론을 준비 → 안전 → 수행 → 측정 → 판정 → 진단 → 복구 → 기록으로 연결했습니다. 과제별 수치와 허용값은 최신 도면·WPS·제작사 기준을 우선합니다."
+        eyebrow="Additional NCS practice"
+        title="추가 학습용 NCS 수행과제"
+        description="공압·유압·용접의 실제 수험 동선은 ‘실기 관련 정보’에서 시작합니다. 이곳은 11권의 이론을 준비 → 안전 → 수행 → 측정 → 판정 → 진단 → 복구 → 기록으로 확장한 추가 학습·교육자용 과제 모음입니다."
       />
+
+      <div className="mb-8 rounded-2xl border border-teal-200 bg-teal-50 p-5 text-sm leading-6 text-slate-700">
+        실제 시험 작업형을 준비한다면{" "}
+        <Link href="/practical/info" className="font-extrabold text-teal-800 underline">
+          공압·유압·용접 실기 정보
+        </Link>
+        에서 장비별 핵심과 대표 수행과제를 먼저 확인하세요.
+      </div>
 
       <section
         data-testid="practical-work-summary"

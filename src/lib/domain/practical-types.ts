@@ -30,6 +30,42 @@ export type PracticalSourceRef = {
   sourceUrl: string;
 };
 
+export type PracticalWrittenExamCardFormat =
+  | "image"
+  | "drawing"
+  | "symbol"
+  | "calculation"
+  | "definition"
+  | "sequence"
+  | "matching"
+  | "diagnosis";
+
+/**
+ * PracticalConcept를 그대로 노출하지 않고, 실제 필답 답안 작성에 필요한
+ * 내용만 첫 화면에 재조립한 학습자용 시험카드다.
+ */
+export type PracticalWrittenExamCard = {
+  id: string;
+  title: string;
+  conceptIds: string[];
+  evidenceIds: string[];
+  format: PracticalWrittenExamCardFormat;
+  questionPattern: string;
+  directAnswer: string;
+  studyKeywords: string[];
+  answerSkeleton: string[];
+  recognitionPoints: string[];
+  reasoningSummary: string[];
+  commonWrongAnswers: string[];
+  variationAxes: string[];
+  pastQuestionIds: string[];
+  predictedQuestionIds: string[];
+  /** 중앙 문제은행에 아직 없는 안전한 카드 전용 예상문제 문장이다. */
+  predictedExamples: string[];
+  supplementalConceptIds: string[];
+  sourceRefs: PracticalSourceRef[];
+};
+
 /**
  * NCS 원문을 그대로 복제하지 않고, 어떤 학습 레슨에 반영했는지와
  * 원문 그림·수치표·표준 해석 때문에 보류한 범위를 함께 추적한다.

@@ -15,7 +15,7 @@ export default function PracticalInfoPage() {
       <PageHeading
         eyebrow="Practical information"
         title="실기 관련 정보"
-        description="공압·유압·용접은 NCS 이론과 수행과제로 연결하고, 준비물·팁은 시험 전 확인사항과 작업 순서 중심으로 정리합니다."
+        description="실제 작업형 범위인 공압·유압·용접 수행과제와 준비물, 낯선 시험장 장비에 적응하는 확인 순서를 정리합니다. 필답 이론은 이 페이지에서 반복하지 않습니다."
       />
       <PracticalInfoTabs
         pneumaticTasks={taskSummaries("1503010215")}

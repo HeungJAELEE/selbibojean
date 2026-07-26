@@ -11,6 +11,7 @@ import {
   Flame,
   Gauge,
   Info,
+  MapPinned,
   Wind,
 } from "lucide-react";
 
@@ -24,7 +25,12 @@ type PracticalInfoTask = {
   safetyCount: number;
 };
 
-type PracticalInfoCategory = "pneumatic" | "hydraulic" | "welding" | "prep";
+type PracticalInfoCategory =
+  | "pneumatic"
+  | "hydraulic"
+  | "welding"
+  | "prep"
+  | "venue";
 
 const tabs: Array<{
   id: PracticalInfoCategory;
@@ -34,7 +40,8 @@ const tabs: Array<{
   { id: "pneumatic", label: "공압", icon: Wind },
   { id: "hydraulic", label: "유압", icon: Droplets },
   { id: "welding", label: "용접", icon: Flame },
-  { id: "prep", label: "수험자 준비물·팁", icon: ClipboardCheck },
+  { id: "prep", label: "준비물·당일 팁", icon: ClipboardCheck },
+  { id: "venue", label: "시험장 적응", icon: MapPinned },
 ];
 
 const categoryCopy = {
@@ -96,7 +103,7 @@ export function PracticalInfoTabs({
       <div
         role="tablist"
         aria-label="실기 관련 정보 분류"
-        className="grid gap-2 rounded-2xl border border-slate-200 bg-white p-2 sm:grid-cols-2 lg:grid-cols-4"
+        className="grid gap-2 rounded-2xl border border-slate-200 bg-white p-2 sm:grid-cols-2 lg:grid-cols-5"
       >
         {tabs.map((tab) => {
           const Icon = tab.icon;
@@ -125,6 +132,8 @@ export function PracticalInfoTabs({
 
       {activeTab === "prep" ? (
         <PrepPanel />
+      ) : activeTab === "venue" ? (
+        <ExamVenuePanel />
       ) : (
         <TaskPanel
           category={activeTab}
@@ -139,7 +148,7 @@ function TaskPanel({
   category,
   tasks,
 }: {
-  category: Exclude<PracticalInfoCategory, "prep">;
+  category: Exclude<PracticalInfoCategory, "prep" | "venue">;
   tasks: PracticalInfoTask[];
 }) {
   const copy = categoryCopy[category];
@@ -309,6 +318,75 @@ function PrepPanel() {
             </Link>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function ExamVenuePanel() {
+  return (
+    <section
+      id="practical-info-panel-venue"
+      role="tabpanel"
+      aria-labelledby="practical-info-tab-venue"
+      className="mt-6 grid gap-6"
+    >
+      <div className="rounded-3xl bg-[#173957] p-6 text-white md:p-8">
+        <p className="text-xs font-black uppercase tracking-[.14em] text-teal-200">
+          Test site adaptation
+        </p>
+        <h2 className="mt-2 text-3xl font-extrabold">
+          낯선 장비에서도 확인 순서는 바꾸지 않습니다
+        </h2>
+        <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-200">
+          시험장마다 장비 제조사·포트 배치·조작부 위치가 다를 수 있습니다.
+          암기한 위치에 바로 연결하지 말고 명판·기호·포트번호·초기상태를
+          확인한 뒤 작업하세요. 실제 시험 규칙은 해당 회차 공식 안내가
+          최종 기준입니다.
+        </p>
+      </div>
+
+      <div className="grid gap-5 md:grid-cols-2">
+        <PrepCard
+          title="입실 직후"
+          items={[
+            "과제지의 장비 형식·동작조건·완료조건을 끝까지 읽습니다.",
+            "지급 부품과 공구의 수량·손상·규격을 먼저 확인합니다.",
+            "비상정지·전원·공급압·잔압 배출 위치를 찾습니다.",
+            "공압·유압 포트번호와 전기 단자표시를 회로도와 대조합니다.",
+            "이상이 있으면 임의 수리보다 감독위원 안내 절차를 따릅니다.",
+          ]}
+        />
+        <PrepCard
+          title="장비 차이에 적응"
+          items={[
+            "밸브 본체의 P·T·A·B 또는 1·2·3·4·5 표시를 직접 확인합니다.",
+            "센서 NPN·PNP와 PLC 입력 공통단자 호환을 명판으로 확인합니다.",
+            "용접기는 전류·극성·케이블·접지 상태를 WPS와 대조합니다.",
+            "조절기는 낮은 값에서 시작해 조금씩 올리고 변경값을 기록합니다.",
+            "조작 전 초기상태를 사진처럼 외우지 말고 실제 위치로 재확인합니다.",
+          ]}
+        />
+        <PrepCard
+          title="이상 발생 시"
+          items={[
+            "동작을 멈추고 전원·압력·잔류에너지를 안전하게 통제합니다.",
+            "증상을 한 문장으로 정리하고 회로 흐름의 앞단부터 확인합니다.",
+            "한 번에 한 조건만 바꾸고 변경 전·후 결과를 비교합니다.",
+            "고장 원인과 조치, 재시험 결과를 작업기록에 남깁니다.",
+            "시간이 부족해도 안전 게이트와 최종 복구를 생략하지 않습니다.",
+          ]}
+        />
+        <PrepCard
+          title="제출 직전"
+          items={[
+            "공구·부품·폐기물과 호스·케이블을 지정 상태로 정리합니다.",
+            "누유·누기·풀림·비정상 소음과 초기복귀 상태를 확인합니다.",
+            "요구 동작을 정해진 순서로 다시 한 번 시연합니다.",
+            "측정값·조정값·판정·재작업 내용을 빠짐없이 기록합니다.",
+            "과제지의 완료조건과 실격조건을 마지막으로 대조합니다.",
+          ]}
+        />
       </div>
     </section>
   );

@@ -492,10 +492,19 @@ test("a practical concept exposes responsive aids without linking held questions
 
   await expect(page.locator('a[href*="P-2025-1-Q05"]')).toHaveCount(0);
   await expect(
-    page.getByTestId("practical-visual-aid-ncs-bearing-four-types"),
+    page
+      .getByTestId("practical-written-exam-card-PWEC-BEARING-IDENTIFICATION")
+      .getByTestId("practical-visual-aid-ncs-bearing-four-types"),
   ).toBeVisible();
+  await page
+    .getByTestId("practical-written-supplement")
+    .locator("summary")
+    .click();
   await expect(
-    page.locator('a[href^="/practical/work/"]').first(),
+    page
+      .getByTestId("practical-written-supplement")
+      .locator('a[href^="/practical/work/"]')
+      .first(),
   ).toBeVisible();
   const accessibility = await new AxeBuilder({ page })
     .include("main")
@@ -507,17 +516,24 @@ test("practical concept reads as a lesson and keeps source links at the end", as
   page,
 }) => {
   await page.goto("/practical/written/theory/PCON-040");
-  const mainText = await page.locator("main").innerText();
-  expect(mainText.indexOf("무엇이며, 어떻게 작동하는가")).toBeLessThan(
-    mainText.indexOf("작동·조립·점검은 어떤 순서로 하는가"),
+  const supplement = page.getByTestId("practical-written-supplement");
+  const supplementText = await page
+    .getByTestId("practical-written-supplement-content")
+    .innerText();
+  expect(
+    supplementText.indexOf("무엇이며, 어떻게 작동하는가"),
+  ).toBeLessThan(
+    supplementText.indexOf("작동·조립·점검은 어떤 순서로 하는가"),
   );
   expect(
-    mainText.indexOf("작동·조립·점검은 어떤 순서로 하는가"),
+    supplementText.indexOf("작동·조립·점검은 어떤 순서로 하는가"),
   ).toBeLessThan(
-    mainText.indexOf("실기에서는 이렇게 묻습니다"),
+    supplementText.indexOf("실기에서는 이렇게 묻습니다"),
   );
-  expect(mainText.indexOf("실기에서는 이렇게 묻습니다")).toBeLessThan(
-    mainText.indexOf("NCS 원문 근거"),
+  expect(
+    supplementText.indexOf("실기에서는 이렇게 묻습니다"),
+  ).toBeLessThan(
+    supplementText.indexOf("NCS 원문 근거"),
   );
   await expect(page.getByRole("link", { name: "NCS 원문 확인" })).toBeVisible();
   await expect(page.getByTestId("practical-concept-navigation").first()).toBeVisible();
@@ -577,7 +593,9 @@ test("unsupported NCS links are not fabricated and OEE is separated from autonom
   page,
 }) => {
   await page.goto("/practical/written/theory/PCON-020");
-  await expect(page.getByRole("heading", { name: "자주보전" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "자주보전", exact: true }),
+  ).toBeVisible();
   await expect(page.locator("main")).toContainText("운전자가 자기 설비");
   await expect(page.locator("main")).not.toContainText("OEE=시간가동률");
   await expect(page.getByRole("link", { name: "NCS 원문 확인" })).toHaveCount(0);
