@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   AlertTriangle,
   ArrowRight,
@@ -45,6 +46,11 @@ export function PracticalWrittenExamCardView({
   );
   const publicPredictedQuestions = predictedQuestions.filter(
     (question) => question.contentStatus === "published",
+  );
+  const visualFramesById = new Map(
+    visualAids.flatMap((visualAid) =>
+      visualAid.frames.map((frame) => [frame.id, frame] as const),
+    ),
   );
 
   return (
@@ -237,6 +243,51 @@ export function PracticalWrittenExamCardView({
               </li>
             ))}
           </ol>
+          {card.sequenceSteps.some(
+            (step) => step.visualFrameIds.length > 0,
+          ) ? (
+            <ol className="mt-5 grid gap-3 md:grid-cols-3">
+              {card.sequenceSteps.map((step, index) => {
+                const frames = step.visualFrameIds
+                  .map((frameId) => visualFramesById.get(frameId))
+                  .filter((frame) => frame !== undefined);
+                return (
+                  <li
+                    key={step.id}
+                    className="overflow-hidden rounded-xl border border-indigo-200 bg-white"
+                  >
+                    {frames.map((frame) => (
+                      <div
+                        key={frame.id}
+                        className="relative min-h-40 border-b border-indigo-100 bg-slate-50"
+                      >
+                        <Image
+                          src={frame.path}
+                          alt={frame.learningAltText}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-contain p-3"
+                        />
+                      </div>
+                    ))}
+                    <div className="p-4">
+                      <p className="text-xs font-black text-indigo-700">
+                        STEP {index + 1}
+                      </p>
+                      <p className="mt-1 text-sm font-extrabold leading-6 text-slate-900">
+                        {step.answerPhrase ?? step.label}
+                      </p>
+                      {step.checkpoint ? (
+                        <p className="mt-2 text-xs leading-5 text-slate-600">
+                          확인: {step.checkpoint}
+                        </p>
+                      ) : null}
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          ) : null}
         </details>
 
         <div className="grid gap-5 lg:grid-cols-2">

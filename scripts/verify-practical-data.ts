@@ -178,21 +178,52 @@ async function main() {
   const publicVisualAids = content.visualAids.filter(
     (visualAid) => visualAid.publicUseStatus === "public",
   );
+  const frameIds = new Set<string>();
   for (const visualAid of publicVisualAids) {
     if (
       !visualAid.altText ||
       !visualAid.caption ||
       !visualAid.sourceFileHash ||
+      !/^[a-f0-9]{64}$/.test(visualAid.outputAssetHash) ||
+      visualAid.technicalReviewStatus !== "verified" ||
+      visualAid.usageTypes.length === 0 ||
+      visualAid.frames.length === 0 ||
       visualAid.rightsStatus === "unknown" ||
       visualAid.rightsStatus === "third_party_permission_required"
     ) {
       errors.push(`시각자료 메타데이터 오류: ${visualAid.id}`);
     }
-    for (const imagePath of visualAid.imagePaths) {
-      await access(
-        path.join(process.cwd(), "public", imagePath.replace(/^\//, "")),
-      ).catch(() => errors.push(`시각자료 파일 누락: ${imagePath}`));
+    for (const frame of visualAid.frames) {
+      if (frameIds.has(frame.id)) {
+        errors.push(`시각자료 프레임 ID 중복: ${frame.id}`);
+      }
+      frameIds.add(frame.id);
+      const assetPath = path.join(
+        process.cwd(),
+        "public",
+        frame.path.replace(/^\//, ""),
+      );
+      await access(assetPath).catch(() =>
+        errors.push(`시각자료 파일 누락: ${frame.path}`),
+      );
+      const assetBuffer = await readFile(assetPath).catch(() => null);
+      if (
+        assetBuffer &&
+        createHash("sha256").update(assetBuffer).digest("hex") !==
+          frame.outputAssetHash
+      ) {
+        errors.push(`시각자료 출력 해시 불일치: ${frame.id}`);
+      }
     }
+  }
+  if (
+    content.visualAids.some(
+      (visualAid) =>
+        visualAid.originType === "ai_generated" &&
+        visualAid.publicUseStatus === "public",
+    )
+  ) {
+    errors.push("이번 공개 범위에는 ai_generated 시각자료를 사용할 수 없습니다.");
   }
 
   const publishedConceptIds = content.concepts

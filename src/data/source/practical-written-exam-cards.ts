@@ -24,7 +24,7 @@ type LegacyPracticalWrittenExamCardSeed = Omit<
   Partial<
     Pick<
       PracticalWrittenExamCardSeed,
-      "visualAidIds" | "recognitionVisualAidIds"
+      "visualAidIds" | "recognitionVisualAidIds" | "sequenceSteps"
     >
   >;
 
@@ -47,14 +47,17 @@ const card = (
   recognitionVisualAidIds: value.recognitionVisualAidIds ?? [],
   pastQuestionVisualMappings: [],
   sequenceSteps:
-    value.format === "sequence"
+    value.sequenceSteps ??
+    (value.format === "sequence"
       ? value.answerSkeleton.map((label, index) => ({
           id: `${value.id}-STEP-${index + 1}`,
           label,
           safetyCritical:
             /안전|차단|잠금|잔압|보호구/.test(label),
+          visualFrameIds: [],
+          answerPhrase: label,
         }))
-      : [],
+      : []),
   contentStatus: "published",
 });
 
@@ -178,6 +181,38 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
       "가열 후 축 어깨에 밀착되지 않았을 때 조치 순서를 쓰시오.",
     ],
     visualAidIds: ["ncs-bearing-heating"],
+    sequenceSteps: [
+      {
+        id: "PWEC-BEARING-INDUCTION-HEATING-STEP-1",
+        label: "베어링·축 치수와 가열기 상태를 확인한다.",
+        visualFrameIds: [],
+        checkpoint: "끼워맞춤 대상과 가열 가능 베어링인지 확인",
+        wrongAction: "밀봉형·그리스 봉입형 베어링을 조건 확인 없이 가열",
+        answerPhrase: "치수·상태 확인",
+      },
+      {
+        id: "PWEC-BEARING-INDUCTION-HEATING-STEP-2",
+        label: "온도센서를 설치하고 지정 목표온도까지 균일하게 가열한다.",
+        visualFrameIds: [
+          "ncs-bearing-heating--bearing-oil-bath-heating-diagram",
+        ],
+        checkpoint: "온도센서 접촉과 균일 가열 확인",
+        wrongAction: "직화로 한쪽만 가열",
+        answerPhrase: "온도센서 설치·균일 가열",
+      },
+      {
+        id: "PWEC-BEARING-INDUCTION-HEATING-STEP-3",
+        label:
+          "보호구를 착용해 신속히 삽입하고 어깨부 밀착·냉각 상태를 확인한다.",
+        safetyCritical: true,
+        visualFrameIds: [
+          "ncs-bearing-heating--bearing-heated-assembly-photo",
+        ],
+        checkpoint: "축 어깨부 밀착과 냉각 후 고정 상태 확인",
+        wrongAction: "가열 후 방치하거나 전동체를 타격",
+        answerPhrase: "신속 삽입·밀착·냉각 확인",
+      },
+    ],
     supplementalConceptIds: ["PCON-036"],
   }),
   card({
@@ -504,6 +539,7 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
       "자주보전 7스텝을 순서대로 쓰고 1단계의 목적을 설명하시오.",
       "총점검과 자주점검의 차이를 쓰시오.",
     ],
+    visualAidIds: ["diagram-autonomous-maintenance-7-steps"],
     supplementalConceptIds: ["PCON-029"],
   }),
   card({
@@ -551,6 +587,7 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
       "정지시간과 불량수가 주어졌을 때 OEE를 구하시오.",
       "목표 OEE와 두 비율이 주어졌을 때 필요한 양품률을 구하시오.",
     ],
+    visualAidIds: ["diagram-oee-six-losses"],
     supplementalConceptIds: ["PCON-029"],
   }),
 ];

@@ -1,4 +1,160 @@
-import type { PracticalVisualAid } from "@/lib/domain/practical-types";
+import type {
+  PracticalVisualAid,
+  PracticalVisualFrame,
+  PracticalVisualOriginType,
+  PracticalVisualTechnicalReviewStatus,
+  PracticalVisualUsage,
+} from "@/lib/domain/practical-types";
+
+type PracticalVisualAidEnrichment =
+  | "frames"
+  | "originType"
+  | "usageTypes"
+  | "answerCritical"
+  | "derivedFromVisualAidId"
+  | "sourcePageImageHash"
+  | "outputAssetHash"
+  | "technicalReviewStatus"
+  | "technicalReviewedAt"
+  | "technicalReviewer"
+  | "visualReviewNote";
+
+type PracticalVisualAidInput = Omit<
+  PracticalVisualAid,
+  PracticalVisualAidEnrichment
+> &
+  Partial<
+    Pick<
+      PracticalVisualAid,
+      PracticalVisualAidEnrichment
+    >
+  >;
+
+const OUTPUT_HASH_BY_PATH: Record<string, string> = {
+  "/practical/ncs/bearing-q04-a.png":
+    "7fb5e24768f6893ce61c7b66b15e36ae7cfba83f6be73a6ffe760a4bdddaf76b",
+  "/practical/ncs/bearing-q04-b.png":
+    "1c17a1886492f6e17ac2ceeebed1991cb6b95c373e53c6bb59aee574d499f3c5",
+  "/practical/ncs/bearing-q04-c.png":
+    "1b8a41dab5e67fdaf0423b3d474fcf4315950e346ec844b06f7a627195435122",
+  "/practical/ncs/bearing-q04-d.png":
+    "939c548ccc96fb4bcf00cffbfad99649cb3bd40cd913a4d56aec31ab4da89678",
+  "/practical/ncs/bearing-oil-bath-heating-diagram.png":
+    "a4f77b355b15fa467ee8ea4244950db4d3d37fdb23468a67524f229d9827ae0b",
+  "/practical/ncs/bearing-heated-assembly-photo.png":
+    "969cbcc8e0f56a3cf39127de40522db3323968e03d26ae3310137158e66b9bff",
+  "/practical/ncs/bearing-self-aligning-ball.png":
+    "be48ba3d41f68c0be3831dfd1c7f33203cda8979d2f2be29b41be0e984256414",
+  "/practical/ncs/tapered-bearing-disassembly-photo.png":
+    "16f3cea5af42a06e37b3f13a40715a7502a5c40c52914d4755bc7ac6132c3047",
+  "/practical/ncs/vernier-scale-reading.png":
+    "3ff50419c349df3ecd75e0c1d725b0c465f57cb02441fae2b0c9d3275e3e919a",
+  "/practical/ncs/hydraulic-qh04.png":
+    "c001ee1eec2da3038e57a1cf536fbb98bebb27f888610a3e39b49f41476fdfb7",
+  "/practical/visuals/autonomous-maintenance-7-steps.svg":
+    "1d0777e598762033dba6a0a863e09fc5bbc582ebc397bac6ecbabdf1a16c8984",
+  "/practical/visuals/oee-six-losses.svg":
+    "ba3964d31051b63dd5b9cb22181239f2b99192fa85ea37ec6992f6a24d5bdfed",
+  "/practical/visuals/vibration-hva-directions.svg":
+    "d0e59c6f540e162a7b79de8616e9fab5b35e3f282619160cade5894449625166",
+};
+
+const OUTPUT_HASH_BY_VISUAL_AID: Record<string, string> = {
+  "ncs-bearing-four-types":
+    "63e7eefa6ff1a7676423b463fdc3344ec9047996f8365a76920d3a8313bf7e4a",
+  "ncs-bearing-heating":
+    "5c6c1b19707e46ae26851954a9407a4bc48d442df04efdf4a9e8c406c0ae145e",
+};
+
+const frameIdFromPath = (visualAidId: string, imagePath: string) => {
+  const fileName = imagePath.split("/").at(-1) ?? imagePath;
+  const stem = fileName.replace(/\.[^.]+$/, "");
+  return `${visualAidId}--${stem}`;
+};
+
+const defaultOriginType = (
+  aid: PracticalVisualAidInput,
+): PracticalVisualOriginType =>
+  aid.examMatchStatus === "self_authored" ? "self_authored" : "ncs_crop";
+
+const defaultUsageTypes = (
+  aid: PracticalVisualAidInput,
+): PracticalVisualUsage[] => {
+  if (aid.id === "ncs-bearing-four-types") {
+    return [
+      "past_exam_prompt",
+      "recognition",
+      "concept_explanation",
+      "summary_diagram",
+    ];
+  }
+  if (aid.id === "ncs-bearing-heating") {
+    return ["sequence_step", "concept_explanation", "summary_diagram"];
+  }
+  if (aid.id === "ncs-accumulator-safety-circuit") {
+    return ["variant_exam_prompt", "concept_explanation"];
+  }
+  return aid.examMatchStatus === "self_authored"
+    ? ["concept_explanation"]
+    : ["recognition", "concept_explanation"];
+};
+
+const defaultTechnicalStatus = (
+  aid: PracticalVisualAidInput,
+): PracticalVisualTechnicalReviewStatus =>
+  aid.publicUseStatus === "public" ? "verified" : "held";
+
+const enrichVisualAid = (
+  aid: PracticalVisualAidInput,
+): PracticalVisualAid => {
+  const frames: PracticalVisualFrame[] =
+    aid.frames ??
+    aid.imagePaths.map((imagePath, index) => ({
+      id: frameIdFromPath(aid.id, imagePath),
+      path: imagePath,
+      promptAltText:
+        aid.promptAltTexts?.[index] ??
+        `문제에 제시된 시각자료 ${aid.promptLabels?.[index] ?? index + 1}`,
+      learningAltText: `${aid.altText}${
+        aid.imagePaths.length > 1 ? ` ${index + 1}` : ""
+      }`,
+      captionBeforeAnswer: null,
+      captionAfterAnswer: aid.caption,
+      outputAssetHash:
+        OUTPUT_HASH_BY_PATH[imagePath] ?? aid.sourceFileHash,
+    }));
+
+  return {
+    ...aid,
+    frames,
+    originType: aid.originType ?? defaultOriginType(aid),
+    usageTypes: aid.usageTypes ?? defaultUsageTypes(aid),
+    answerCritical:
+      aid.answerCritical ??
+      aid.usageTypes?.some((usage) => usage.endsWith("_exam_prompt")) ??
+      defaultUsageTypes(aid).some((usage) => usage.endsWith("_exam_prompt")),
+    derivedFromVisualAidId: aid.derivedFromVisualAidId ?? null,
+    sourcePageImageHash: aid.sourcePageImageHash ?? null,
+    outputAssetHash:
+      aid.outputAssetHash ??
+      OUTPUT_HASH_BY_VISUAL_AID[aid.id] ??
+      frames[0]?.outputAssetHash ??
+      aid.sourceFileHash,
+    technicalReviewStatus:
+      aid.technicalReviewStatus ?? defaultTechnicalStatus(aid),
+    technicalReviewedAt:
+      aid.technicalReviewedAt ??
+      (aid.publicUseStatus === "public" ? "2026-07-27T00:00:00.000Z" : null),
+    technicalReviewer:
+      aid.technicalReviewer ??
+      (aid.publicUseStatus === "public" ? "source-visual-audit" : null),
+    visualReviewNote:
+      aid.visualReviewNote ??
+      (aid.publicUseStatus === "public"
+        ? "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
+        : "공개 전 원본 대응 또는 기술 검수가 더 필요함."),
+  };
+};
 
 export const NCS_SOURCE_REGISTRY = {
   "1503010215": {
@@ -69,15 +225,15 @@ export const NCS_SOURCE_REGISTRY = {
   },
 } as const;
 
-export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = [
+export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = ([
   {
     id: "ncs-bearing-four-types",
     title: "구름베어링 4종 실사 비교",
     imagePaths: [
-      "/practical/ncs/bearing-cylindrical-roller.png",
-      "/practical/ncs/bearing-tapered-roller.png",
-      "/practical/ncs/bearing-thrust-ball.png",
-      "/practical/ncs/bearing-thrust-needle.png",
+      "/practical/ncs/bearing-q04-a.png",
+      "/practical/ncs/bearing-q04-b.png",
+      "/practical/ncs/bearing-q04-c.png",
+      "/practical/ncs/bearing-q04-d.png",
     ],
     promptLabels: ["가", "나", "다", "라"],
     promptAltTexts: [
@@ -126,10 +282,10 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = [
     id: "ncs-bearing-types",
     title: "구름베어링 형식 비교",
     imagePaths: [
-      "/practical/ncs/bearing-cylindrical-roller.png",
-      "/practical/ncs/bearing-tapered-roller.png",
-      "/practical/ncs/bearing-thrust-ball.png",
-      "/practical/ncs/bearing-thrust-needle.png",
+      "/practical/ncs/bearing-q04-a.png",
+      "/practical/ncs/bearing-q04-b.png",
+      "/practical/ncs/bearing-q04-c.png",
+      "/practical/ncs/bearing-q04-d.png",
       "/practical/ncs/bearing-magnetic-ball.png",
       "/practical/ncs/bearing-self-aligning-ball.png",
     ],
@@ -199,7 +355,7 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = [
   {
     id: "ncs-accumulator-safety-circuit",
     title: "어큐뮬레이터 안전회로",
-    imagePaths: ["/practical/ncs/accumulator-safety-circuit.png"],
+    imagePaths: ["/practical/ncs/hydraulic-qh04.png"],
     promptAltTexts: [
       "축압기와 밸브류가 연결된 유압 안전회로의 NCS 원문 도해",
     ],
@@ -214,6 +370,98 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = [
     examMatchStatus: "exact_source",
     rightsStatus: "education_use_with_attribution",
     publicUseStatus: "public",
+  },
+  {
+    id: "diagram-autonomous-maintenance-7-steps",
+    title: "자주보전 7단계",
+    imagePaths: [
+      "/practical/visuals/autonomous-maintenance-7-steps.svg",
+    ],
+    altText:
+      "초기청소, 발생원·곤란개소 대책, 청소·급유 기준, 총점검, 자주점검, 표준화, 자주관리 철저의 순서를 보여 주는 도식",
+    caption:
+      "청소에서 시작해 원인 제거와 기준화를 거쳐 작업자의 점검 능력과 자주관리 체계를 완성한다.",
+    sourceLabel: "TPM 자주보전 7단계 학습내용 기반 자체 제작",
+    ncsCode: "1503010201",
+    pdfPage: 25,
+    printedPage: 13,
+    figureNumber: "학습용 자체 제작 흐름도",
+    sourceFileHash: NCS_SOURCE_REGISTRY["1503010201"].hash,
+    examMatchStatus: "self_authored",
+    rightsStatus: "self_authored",
+    publicUseStatus: "public",
+    originType: "self_authored",
+    usageTypes: ["summary_diagram", "sequence_step", "concept_explanation"],
+    answerCritical: false,
+    derivedFromVisualAidId: null,
+    sourcePageImageHash: null,
+    outputAssetHash:
+      "1d0777e598762033dba6a0a863e09fc5bbc582ebc397bac6ecbabdf1a16c8984",
+    technicalReviewStatus: "verified",
+    technicalReviewedAt: "2026-07-27T00:00:00.000Z",
+    technicalReviewer: "source-visual-audit",
+    visualReviewNote:
+      "시험문제 원본이 아닌 과목 요약용 자체 제작 SVG로, 단계 명칭과 순서를 교재 데이터와 대조함.",
+  },
+  {
+    id: "diagram-oee-six-losses",
+    title: "OEE와 설비 6대 로스",
+    imagePaths: ["/practical/visuals/oee-six-losses.svg"],
+    altText:
+      "시간가동률에는 고장·준비조정 로스, 성능가동률에는 공회전순간정지·속도저하 로스, 양품률에는 공정불량·초기수율 로스를 연결한 도식",
+    caption:
+      "OEE의 세 요소를 설비 6대 로스와 연결해 정지·속도·품질 손실을 구분한다.",
+    sourceLabel: "OEE 및 설비 6대 로스 학습내용 기반 자체 제작",
+    ncsCode: "1503010201",
+    pdfPage: 25,
+    printedPage: 13,
+    figureNumber: "학습용 자체 제작 관계도",
+    sourceFileHash: NCS_SOURCE_REGISTRY["1503010201"].hash,
+    examMatchStatus: "self_authored",
+    rightsStatus: "self_authored",
+    publicUseStatus: "public",
+    originType: "self_authored",
+    usageTypes: ["summary_diagram", "concept_explanation"],
+    answerCritical: false,
+    derivedFromVisualAidId: null,
+    sourcePageImageHash: null,
+    outputAssetHash:
+      "ba3964d31051b63dd5b9cb22181239f2b99192fa85ea37ec6992f6a24d5bdfed",
+    technicalReviewStatus: "verified",
+    technicalReviewedAt: "2026-07-27T00:00:00.000Z",
+    technicalReviewer: "source-visual-audit",
+    visualReviewNote:
+      "시험문제 원본이 아닌 과목 요약용 자체 제작 SVG로, OEE 세 요소와 6대 로스의 대응을 검수함.",
+  },
+  {
+    id: "diagram-vibration-hva-directions",
+    title: "진동 H·V·A 측정방향",
+    imagePaths: ["/practical/visuals/vibration-hva-directions.svg"],
+    altText:
+      "회전축과 베어링 하우징에서 수평 H, 수직 V, 축방향 A의 측정방향을 표시한 도식",
+    caption:
+      "H와 V는 축에 수직인 반경방향이고 A는 회전축과 나란한 축방향이다.",
+    sourceLabel: "회전기계 진동 측정방향 학습내용 기반 자체 제작",
+    ncsCode: "1503010201",
+    pdfPage: 25,
+    printedPage: 13,
+    figureNumber: "학습용 자체 제작 방향도",
+    sourceFileHash: NCS_SOURCE_REGISTRY["1503010201"].hash,
+    examMatchStatus: "self_authored",
+    rightsStatus: "self_authored",
+    publicUseStatus: "public",
+    originType: "self_authored",
+    usageTypes: ["summary_diagram", "concept_explanation"],
+    answerCritical: false,
+    derivedFromVisualAidId: null,
+    sourcePageImageHash: null,
+    outputAssetHash:
+      "d0e59c6f540e162a7b79de8616e9fab5b35e3f282619160cade5894449625166",
+    technicalReviewStatus: "verified",
+    technicalReviewedAt: "2026-07-27T00:00:00.000Z",
+    technicalReviewer: "source-visual-audit",
+    visualReviewNote:
+      "시험문제 원본이 아닌 과목 요약용 자체 제작 SVG로, H·V·A 방향 정의를 검수함.",
   },
   ...[
     {
@@ -427,7 +675,7 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = [
       printed: 37,
     },
   ].map(
-    (aid): PracticalVisualAid => ({
+    (aid): PracticalVisualAidInput => ({
       id: aid.id,
       title: aid.title,
       imagePaths: [`/practical/diagrams/${aid.file}`],
@@ -445,14 +693,11 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = [
       publicUseStatus: "internal_only",
     }),
   ),
-];
+] satisfies PracticalVisualAidInput[]).map(enrichVisualAid);
 
 export const PRACTICAL_VISUAL_AID_BY_QUESTION: Record<string, string> = {
   "P-2025-1-Q04": "ncs-bearing-four-types",
   "EXP-B01": "ncs-bearing-four-types",
-  "EXP-H04": "ncs-accumulator-safety-circuit",
-  "EXP-H04A": "ncs-accumulator-safety-circuit",
-  "EXP-H04B": "ncs-accumulator-safety-circuit",
 };
 
 export const PRACTICAL_PDF_PAGE_BY_TOPIC: Record<string, { pdfPage: number; printedPage: number; figureNumber: string | null }> = {

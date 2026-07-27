@@ -9,16 +9,20 @@ import {
   PracticalExamRepresentativeQuestions,
   type PracticalExamRepresentativeQuestion,
 } from "@/components/practical-exam-representative-questions";
+import { PracticalVisualAidFigure } from "@/components/practical-visual-aid";
+import type { PracticalVisualAid } from "@/lib/domain/practical-types";
 
 export function PracticalExamSubjectCheatSheet({
   subject,
   summary,
   questions,
+  visualAids = [],
   lensId = "practicalWritten",
 }: {
   subject: PracticalTextbookSubject;
   summary: ExamSubjectCheatSheet | undefined;
   questions: PracticalExamRepresentativeQuestion[];
+  visualAids?: PracticalVisualAid[];
   lensId?: ExamSubjectLensId;
 }) {
   if (!summary) {
@@ -112,6 +116,39 @@ export function PracticalExamSubjectCheatSheet({
           ))}
         </dl>
       </section>
+
+      {visualAids.length > 0 ? (
+        <section
+          className="rounded-2xl border border-teal-200 bg-teal-50/60 p-5 md:p-6"
+          data-testid={`practical-subject-summary-visuals-${subject.id}`}
+        >
+          <div className="max-w-3xl">
+            <p className="text-xs font-black tracking-[.14em] text-teal-800">
+              그림으로 30초 확인
+            </p>
+            <h3 className="mt-1 text-xl font-extrabold text-slate-950">
+              글보다 빠른 핵심 구조만 봅니다
+            </h3>
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              과목 요약에는 최대 3개만 노출합니다. 실제 기출 원본과 자체
+              학습 도식은 출처·용도를 구분해 표시합니다.
+            </p>
+          </div>
+          <div
+            className={`mt-4 grid gap-4 ${
+              visualAids.length > 1 ? "lg:grid-cols-2" : ""
+            }`}
+          >
+            {visualAids.slice(0, 3).map((visualAid) => (
+              <PracticalVisualAidFigure
+                key={visualAid.id}
+                visualAid={visualAid}
+                density="compact"
+              />
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {summary.quickComparisons.length > 0 || summary.formulas.length > 0 ? (
         <div className="grid gap-4 lg:grid-cols-2">

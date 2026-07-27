@@ -7,6 +7,7 @@ import { PracticalWrittenSectionNav } from "@/components/practical-written-secti
 import { PracticalExamSubjectTabs } from "@/components/practical-exam-subject-tabs";
 import { PracticalExamSubjectCheatSheet } from "@/components/practical-exam-subject-cheat-sheet";
 import { getExamSubjectCheatSheet } from "@/data/source/practical-exam-subject-summaries";
+import { visualAidIdsForSubjectSummary } from "@/data/source/practical-visual-coverage";
 import type { PracticalTextbookSubjectId } from "@/data/source/practical-textbook-taxonomy";
 import {
   PracticalWrittenViewTabs,
@@ -20,6 +21,7 @@ import {
   getPracticalWrittenExamCards,
   getPracticalWrittenEvidenceCoverage,
   getPublicPracticalExamRepresentativeQuestions,
+  getPublicPracticalVisualAid,
   practicalConceptsByTextbookSubject,
 } from "@/lib/content/practical-repository";
 import type {
@@ -53,6 +55,13 @@ export default async function PracticalTheoryPage({
       getPublicPracticalExamRepresentativeQuestions(
         subjectSummary?.practicalWritten.representativeQuestionIds ?? [],
       );
+    const summaryVisualAids = (
+      await Promise.all(
+        visualAidIdsForSubjectSummary(selectedSubjectId).map((visualAidId) =>
+          getPublicPracticalVisualAid(visualAidId, "summary_diagram"),
+        ),
+      )
+    ).filter((visualAid) => visualAid !== undefined);
 
     return (
       <div className="page-wrap py-12">
@@ -70,6 +79,7 @@ export default async function PracticalTheoryPage({
           subject={selectedSubject}
           summary={subjectSummary}
           questions={representativeQuestions}
+          visualAids={summaryVisualAids}
         />
       </div>
     );

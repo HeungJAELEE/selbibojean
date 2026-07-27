@@ -3,10 +3,10 @@
     "id": "ncs-bearing-four-types",
     "title": "구름베어링 4종 실사 비교",
     "imagePaths": [
-      "/practical/ncs/bearing-cylindrical-roller.png",
-      "/practical/ncs/bearing-tapered-roller.png",
-      "/practical/ncs/bearing-thrust-ball.png",
-      "/practical/ncs/bearing-thrust-needle.png"
+      "/practical/ncs/bearing-q04-a.png",
+      "/practical/ncs/bearing-q04-b.png",
+      "/practical/ncs/bearing-q04-c.png",
+      "/practical/ncs/bearing-q04-d.png"
     ],
     "promptLabels": [
       "가",
@@ -30,7 +30,60 @@
     "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
     "examMatchStatus": "exact_source",
     "rightsStatus": "education_use_with_attribution",
-    "publicUseStatus": "public"
+    "publicUseStatus": "public",
+    "frames": [
+      {
+        "id": "ncs-bearing-four-types--bearing-q04-a",
+        "path": "/practical/ncs/bearing-q04-a.png",
+        "promptAltText": "(가) 원통형 전동체가 배열된 베어링 실사",
+        "learningAltText": "원통 롤러, 테이퍼 롤러, 스러스트 볼, 스러스트 니들 베어링을 차례로 보여 주는 NCS 원문 사진 1",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "전동체 형상과 궤도륜 구조를 비교해 네 종류의 베어링을 식별한다.",
+        "outputAssetHash": "7fb5e24768f6893ce61c7b66b15e36ae7cfba83f6be73a6ffe760a4bdddaf76b"
+      },
+      {
+        "id": "ncs-bearing-four-types--bearing-q04-b",
+        "path": "/practical/ncs/bearing-q04-b.png",
+        "promptAltText": "(나) 경사진 원통형 전동체가 배열된 베어링 실사",
+        "learningAltText": "원통 롤러, 테이퍼 롤러, 스러스트 볼, 스러스트 니들 베어링을 차례로 보여 주는 NCS 원문 사진 2",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "전동체 형상과 궤도륜 구조를 비교해 네 종류의 베어링을 식별한다.",
+        "outputAssetHash": "1c17a1886492f6e17ac2ceeebed1991cb6b95c373e53c6bb59aee574d499f3c5"
+      },
+      {
+        "id": "ncs-bearing-four-types--bearing-q04-c",
+        "path": "/practical/ncs/bearing-q04-c.png",
+        "promptAltText": "(다) 두 와셔 사이에 구형 전동체가 배열된 베어링 실사",
+        "learningAltText": "원통 롤러, 테이퍼 롤러, 스러스트 볼, 스러스트 니들 베어링을 차례로 보여 주는 NCS 원문 사진 3",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "전동체 형상과 궤도륜 구조를 비교해 네 종류의 베어링을 식별한다.",
+        "outputAssetHash": "1b8a41dab5e67fdaf0423b3d474fcf4315950e346ec844b06f7a627195435122"
+      },
+      {
+        "id": "ncs-bearing-four-types--bearing-q04-d",
+        "path": "/practical/ncs/bearing-q04-d.png",
+        "promptAltText": "(라) 두 와셔 사이에 가는 원통형 전동체가 배열된 베어링 실사",
+        "learningAltText": "원통 롤러, 테이퍼 롤러, 스러스트 볼, 스러스트 니들 베어링을 차례로 보여 주는 NCS 원문 사진 4",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "전동체 형상과 궤도륜 구조를 비교해 네 종류의 베어링을 식별한다.",
+        "outputAssetHash": "939c548ccc96fb4bcf00cffbfad99649cb3bd40cd913a4d56aec31ab4da89678"
+      }
+    ],
+    "originType": "ncs_crop",
+    "usageTypes": [
+      "past_exam_prompt",
+      "recognition",
+      "concept_explanation",
+      "summary_diagram"
+    ],
+    "answerCritical": true,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "63e7eefa6ff1a7676423b463fdc3344ec9047996f8365a76920d3a8313bf7e4a",
+    "technicalReviewStatus": "verified",
+    "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+    "technicalReviewer": "source-visual-audit",
+    "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
   },
   {
     "id": "ncs-spherical-roller-bearing",
@@ -54,16 +107,40 @@
     "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
     "examMatchStatus": "exact_source",
     "rightsStatus": "education_use_with_attribution",
-    "publicUseStatus": "public"
+    "publicUseStatus": "public",
+    "frames": [
+      {
+        "id": "ncs-spherical-roller-bearing--bearing-self-aligning-ball",
+        "path": "/practical/ncs/bearing-self-aligning-ball.png",
+        "promptAltText": "두 줄의 배럴형 전동체와 구면 궤도를 가진 베어링 실사",
+        "learningAltText": "두 줄의 배럴형 롤러와 구면 외륜 궤도를 가진 복열 자동조심 롤러베어링 NCS 원문 사진",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "그림의 전동체는 구가 아닌 배럴형 롤러이다. NCS 원문 그림 캡션은 ‘자동 조심 볼 베어링’으로 적혀 있으나, 형상에 따른 기술적 식별은 복열 자동조심 롤러베어링이다.",
+        "outputAssetHash": "be48ba3d41f68c0be3831dfd1c7f33203cda8979d2f2be29b41be0e984256414"
+      }
+    ],
+    "originType": "ncs_crop",
+    "usageTypes": [
+      "recognition",
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "be48ba3d41f68c0be3831dfd1c7f33203cda8979d2f2be29b41be0e984256414",
+    "technicalReviewStatus": "verified",
+    "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+    "technicalReviewer": "source-visual-audit",
+    "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
   },
   {
     "id": "ncs-bearing-types",
     "title": "구름베어링 형식 비교",
     "imagePaths": [
-      "/practical/ncs/bearing-cylindrical-roller.png",
-      "/practical/ncs/bearing-tapered-roller.png",
-      "/practical/ncs/bearing-thrust-ball.png",
-      "/practical/ncs/bearing-thrust-needle.png",
+      "/practical/ncs/bearing-q04-a.png",
+      "/practical/ncs/bearing-q04-b.png",
+      "/practical/ncs/bearing-q04-c.png",
+      "/practical/ncs/bearing-q04-d.png",
       "/practical/ncs/bearing-magnetic-ball.png",
       "/practical/ncs/bearing-self-aligning-ball.png"
     ],
@@ -77,7 +154,76 @@
     "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
     "examMatchStatus": "concept_source",
     "rightsStatus": "education_use_with_attribution",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "ncs-bearing-types--bearing-q04-a",
+        "path": "/practical/ncs/bearing-q04-a.png",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "원통 롤러, 테이퍼 롤러, 스러스트 볼, 스러스트 니들, 마그네틱 볼, 자동조심 볼베어링의 NCS 원문 사진 1",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "전동체 형상과 궤도륜 구조를 비교해 베어링 형식을 식별한다.",
+        "outputAssetHash": "7fb5e24768f6893ce61c7b66b15e36ae7cfba83f6be73a6ffe760a4bdddaf76b"
+      },
+      {
+        "id": "ncs-bearing-types--bearing-q04-b",
+        "path": "/practical/ncs/bearing-q04-b.png",
+        "promptAltText": "문제에 제시된 시각자료 2",
+        "learningAltText": "원통 롤러, 테이퍼 롤러, 스러스트 볼, 스러스트 니들, 마그네틱 볼, 자동조심 볼베어링의 NCS 원문 사진 2",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "전동체 형상과 궤도륜 구조를 비교해 베어링 형식을 식별한다.",
+        "outputAssetHash": "1c17a1886492f6e17ac2ceeebed1991cb6b95c373e53c6bb59aee574d499f3c5"
+      },
+      {
+        "id": "ncs-bearing-types--bearing-q04-c",
+        "path": "/practical/ncs/bearing-q04-c.png",
+        "promptAltText": "문제에 제시된 시각자료 3",
+        "learningAltText": "원통 롤러, 테이퍼 롤러, 스러스트 볼, 스러스트 니들, 마그네틱 볼, 자동조심 볼베어링의 NCS 원문 사진 3",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "전동체 형상과 궤도륜 구조를 비교해 베어링 형식을 식별한다.",
+        "outputAssetHash": "1b8a41dab5e67fdaf0423b3d474fcf4315950e346ec844b06f7a627195435122"
+      },
+      {
+        "id": "ncs-bearing-types--bearing-q04-d",
+        "path": "/practical/ncs/bearing-q04-d.png",
+        "promptAltText": "문제에 제시된 시각자료 4",
+        "learningAltText": "원통 롤러, 테이퍼 롤러, 스러스트 볼, 스러스트 니들, 마그네틱 볼, 자동조심 볼베어링의 NCS 원문 사진 4",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "전동체 형상과 궤도륜 구조를 비교해 베어링 형식을 식별한다.",
+        "outputAssetHash": "939c548ccc96fb4bcf00cffbfad99649cb3bd40cd913a4d56aec31ab4da89678"
+      },
+      {
+        "id": "ncs-bearing-types--bearing-magnetic-ball",
+        "path": "/practical/ncs/bearing-magnetic-ball.png",
+        "promptAltText": "문제에 제시된 시각자료 5",
+        "learningAltText": "원통 롤러, 테이퍼 롤러, 스러스트 볼, 스러스트 니들, 마그네틱 볼, 자동조심 볼베어링의 NCS 원문 사진 5",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "전동체 형상과 궤도륜 구조를 비교해 베어링 형식을 식별한다.",
+        "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574"
+      },
+      {
+        "id": "ncs-bearing-types--bearing-self-aligning-ball",
+        "path": "/practical/ncs/bearing-self-aligning-ball.png",
+        "promptAltText": "문제에 제시된 시각자료 6",
+        "learningAltText": "원통 롤러, 테이퍼 롤러, 스러스트 볼, 스러스트 니들, 마그네틱 볼, 자동조심 볼베어링의 NCS 원문 사진 6",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "전동체 형상과 궤도륜 구조를 비교해 베어링 형식을 식별한다.",
+        "outputAssetHash": "be48ba3d41f68c0be3831dfd1c7f33203cda8979d2f2be29b41be0e984256414"
+      }
+    ],
+    "originType": "ncs_crop",
+    "usageTypes": [
+      "recognition",
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "7fb5e24768f6893ce61c7b66b15e36ae7cfba83f6be73a6ffe760a4bdddaf76b",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "ncs-bearing-heating",
@@ -96,7 +242,41 @@
     "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
     "examMatchStatus": "exact_source",
     "rightsStatus": "education_use_with_attribution",
-    "publicUseStatus": "public"
+    "publicUseStatus": "public",
+    "frames": [
+      {
+        "id": "ncs-bearing-heating--bearing-oil-bath-heating-diagram",
+        "path": "/practical/ncs/bearing-oil-bath-heating-diagram.png",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "오일 배스 가열장치와 가열된 대형 베어링을 조립하는 NCS 원문 사진 1",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "베어링을 균일하게 가열하고 온도를 관리한 뒤 축에 직각으로 조립하는 절차를 보여준다.",
+        "outputAssetHash": "a4f77b355b15fa467ee8ea4244950db4d3d37fdb23468a67524f229d9827ae0b"
+      },
+      {
+        "id": "ncs-bearing-heating--bearing-heated-assembly-photo",
+        "path": "/practical/ncs/bearing-heated-assembly-photo.png",
+        "promptAltText": "문제에 제시된 시각자료 2",
+        "learningAltText": "오일 배스 가열장치와 가열된 대형 베어링을 조립하는 NCS 원문 사진 2",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "베어링을 균일하게 가열하고 온도를 관리한 뒤 축에 직각으로 조립하는 절차를 보여준다.",
+        "outputAssetHash": "969cbcc8e0f56a3cf39127de40522db3323968e03d26ae3310137158e66b9bff"
+      }
+    ],
+    "originType": "ncs_crop",
+    "usageTypes": [
+      "sequence_step",
+      "concept_explanation",
+      "summary_diagram"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "5c6c1b19707e46ae26851954a9407a4bc48d442df04efdf4a9e8c406c0ae145e",
+    "technicalReviewStatus": "verified",
+    "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+    "technicalReviewer": "source-visual-audit",
+    "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
   },
   {
     "id": "ncs-tapered-bearing-disassembly",
@@ -114,7 +294,31 @@
     "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
     "examMatchStatus": "concept_source",
     "rightsStatus": "education_use_with_attribution",
-    "publicUseStatus": "public"
+    "publicUseStatus": "public",
+    "frames": [
+      {
+        "id": "ncs-tapered-bearing-disassembly--tapered-bearing-disassembly-photo",
+        "path": "/practical/ncs/tapered-bearing-disassembly-photo.png",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "베어링 조립부의 잠금부품을 공구로 분해하는 NCS 원문 연속 사진",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "회전체 정지와 에너지 차단 후 지정 공구로 잠금부품을 순서대로 분해한다.",
+        "outputAssetHash": "16f3cea5af42a06e37b3f13a40715a7502a5c40c52914d4755bc7ac6132c3047"
+      }
+    ],
+    "originType": "ncs_crop",
+    "usageTypes": [
+      "recognition",
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "16f3cea5af42a06e37b3f13a40715a7502a5c40c52914d4755bc7ac6132c3047",
+    "technicalReviewStatus": "verified",
+    "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+    "technicalReviewer": "source-visual-audit",
+    "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
   },
   {
     "id": "ncs-vernier-reading",
@@ -132,13 +336,37 @@
     "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
     "examMatchStatus": "exact_source",
     "rightsStatus": "education_use_with_attribution",
-    "publicUseStatus": "public"
+    "publicUseStatus": "public",
+    "frames": [
+      {
+        "id": "ncs-vernier-reading--vernier-scale-reading",
+        "path": "/practical/ncs/vernier-scale-reading.png",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "주척과 버니어 눈금이 겹쳐 보이는 아날로그 버니어캘리퍼스의 NCS 원문 확대 사진",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "주척 기준값에 버니어의 일치 눈금 값을 더해 측정값을 판독한다.",
+        "outputAssetHash": "3ff50419c349df3ecd75e0c1d725b0c465f57cb02441fae2b0c9d3275e3e919a"
+      }
+    ],
+    "originType": "ncs_crop",
+    "usageTypes": [
+      "recognition",
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "3ff50419c349df3ecd75e0c1d725b0c465f57cb02441fae2b0c9d3275e3e919a",
+    "technicalReviewStatus": "verified",
+    "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+    "technicalReviewer": "source-visual-audit",
+    "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
   },
   {
     "id": "ncs-accumulator-safety-circuit",
     "title": "어큐뮬레이터 안전회로",
     "imagePaths": [
-      "/practical/ncs/accumulator-safety-circuit.png"
+      "/practical/ncs/hydraulic-qh04.png"
     ],
     "promptAltTexts": [
       "축압기와 밸브류가 연결된 유압 안전회로의 NCS 원문 도해"
@@ -153,7 +381,158 @@
     "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
     "examMatchStatus": "exact_source",
     "rightsStatus": "education_use_with_attribution",
-    "publicUseStatus": "public"
+    "publicUseStatus": "public",
+    "frames": [
+      {
+        "id": "ncs-accumulator-safety-circuit--hydraulic-qh04",
+        "path": "/practical/ncs/hydraulic-qh04.png",
+        "promptAltText": "축압기와 밸브류가 연결된 유압 안전회로의 NCS 원문 도해",
+        "learningAltText": "압력용기, 차단밸브, 방출밸브, 안전밸브, 압력계로 구성된 NCS 어큐뮬레이터 안전회로",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "정비 전 차단과 잔압 방출이 가능한 어큐뮬레이터 회로 구성을 나타낸다.",
+        "outputAssetHash": "c001ee1eec2da3038e57a1cf536fbb98bebb27f888610a3e39b49f41476fdfb7"
+      }
+    ],
+    "originType": "ncs_crop",
+    "usageTypes": [
+      "variant_exam_prompt",
+      "concept_explanation"
+    ],
+    "answerCritical": true,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "c001ee1eec2da3038e57a1cf536fbb98bebb27f888610a3e39b49f41476fdfb7",
+    "technicalReviewStatus": "verified",
+    "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+    "technicalReviewer": "source-visual-audit",
+    "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
+  },
+  {
+    "id": "diagram-autonomous-maintenance-7-steps",
+    "title": "자주보전 7단계",
+    "imagePaths": [
+      "/practical/visuals/autonomous-maintenance-7-steps.svg"
+    ],
+    "altText": "초기청소, 발생원·곤란개소 대책, 청소·급유 기준, 총점검, 자주점검, 표준화, 자주관리 철저의 순서를 보여 주는 도식",
+    "caption": "청소에서 시작해 원인 제거와 기준화를 거쳐 작업자의 점검 능력과 자주관리 체계를 완성한다.",
+    "sourceLabel": "TPM 자주보전 7단계 학습내용 기반 자체 제작",
+    "ncsCode": "1503010201",
+    "pdfPage": 25,
+    "printedPage": 13,
+    "figureNumber": "학습용 자체 제작 흐름도",
+    "sourceFileHash": "34717f4b8c8df1db9e4681fd90985ce6293830d050f7d0dc44a9abcf66be2441",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "public",
+    "originType": "self_authored",
+    "usageTypes": [
+      "summary_diagram",
+      "sequence_step",
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "1d0777e598762033dba6a0a863e09fc5bbc582ebc397bac6ecbabdf1a16c8984",
+    "technicalReviewStatus": "verified",
+    "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+    "technicalReviewer": "source-visual-audit",
+    "visualReviewNote": "시험문제 원본이 아닌 과목 요약용 자체 제작 SVG로, 단계 명칭과 순서를 교재 데이터와 대조함.",
+    "frames": [
+      {
+        "id": "diagram-autonomous-maintenance-7-steps--autonomous-maintenance-7-steps",
+        "path": "/practical/visuals/autonomous-maintenance-7-steps.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "초기청소, 발생원·곤란개소 대책, 청소·급유 기준, 총점검, 자주점검, 표준화, 자주관리 철저의 순서를 보여 주는 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "청소에서 시작해 원인 제거와 기준화를 거쳐 작업자의 점검 능력과 자주관리 체계를 완성한다.",
+        "outputAssetHash": "1d0777e598762033dba6a0a863e09fc5bbc582ebc397bac6ecbabdf1a16c8984"
+      }
+    ]
+  },
+  {
+    "id": "diagram-oee-six-losses",
+    "title": "OEE와 설비 6대 로스",
+    "imagePaths": [
+      "/practical/visuals/oee-six-losses.svg"
+    ],
+    "altText": "시간가동률에는 고장·준비조정 로스, 성능가동률에는 공회전순간정지·속도저하 로스, 양품률에는 공정불량·초기수율 로스를 연결한 도식",
+    "caption": "OEE의 세 요소를 설비 6대 로스와 연결해 정지·속도·품질 손실을 구분한다.",
+    "sourceLabel": "OEE 및 설비 6대 로스 학습내용 기반 자체 제작",
+    "ncsCode": "1503010201",
+    "pdfPage": 25,
+    "printedPage": 13,
+    "figureNumber": "학습용 자체 제작 관계도",
+    "sourceFileHash": "34717f4b8c8df1db9e4681fd90985ce6293830d050f7d0dc44a9abcf66be2441",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "public",
+    "originType": "self_authored",
+    "usageTypes": [
+      "summary_diagram",
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "ba3964d31051b63dd5b9cb22181239f2b99192fa85ea37ec6992f6a24d5bdfed",
+    "technicalReviewStatus": "verified",
+    "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+    "technicalReviewer": "source-visual-audit",
+    "visualReviewNote": "시험문제 원본이 아닌 과목 요약용 자체 제작 SVG로, OEE 세 요소와 6대 로스의 대응을 검수함.",
+    "frames": [
+      {
+        "id": "diagram-oee-six-losses--oee-six-losses",
+        "path": "/practical/visuals/oee-six-losses.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "시간가동률에는 고장·준비조정 로스, 성능가동률에는 공회전순간정지·속도저하 로스, 양품률에는 공정불량·초기수율 로스를 연결한 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "OEE의 세 요소를 설비 6대 로스와 연결해 정지·속도·품질 손실을 구분한다.",
+        "outputAssetHash": "ba3964d31051b63dd5b9cb22181239f2b99192fa85ea37ec6992f6a24d5bdfed"
+      }
+    ]
+  },
+  {
+    "id": "diagram-vibration-hva-directions",
+    "title": "진동 H·V·A 측정방향",
+    "imagePaths": [
+      "/practical/visuals/vibration-hva-directions.svg"
+    ],
+    "altText": "회전축과 베어링 하우징에서 수평 H, 수직 V, 축방향 A의 측정방향을 표시한 도식",
+    "caption": "H와 V는 축에 수직인 반경방향이고 A는 회전축과 나란한 축방향이다.",
+    "sourceLabel": "회전기계 진동 측정방향 학습내용 기반 자체 제작",
+    "ncsCode": "1503010201",
+    "pdfPage": 25,
+    "printedPage": 13,
+    "figureNumber": "학습용 자체 제작 방향도",
+    "sourceFileHash": "34717f4b8c8df1db9e4681fd90985ce6293830d050f7d0dc44a9abcf66be2441",
+    "examMatchStatus": "self_authored",
+    "rightsStatus": "self_authored",
+    "publicUseStatus": "public",
+    "originType": "self_authored",
+    "usageTypes": [
+      "summary_diagram",
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "d0e59c6f540e162a7b79de8616e9fab5b35e3f282619160cade5894449625166",
+    "technicalReviewStatus": "verified",
+    "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+    "technicalReviewer": "source-visual-audit",
+    "visualReviewNote": "시험문제 원본이 아닌 과목 요약용 자체 제작 SVG로, H·V·A 방향 정의를 검수함.",
+    "frames": [
+      {
+        "id": "diagram-vibration-hva-directions--vibration-hva-directions",
+        "path": "/practical/visuals/vibration-hva-directions.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "회전축과 베어링 하우징에서 수평 H, 수직 V, 축방향 A의 측정방향을 표시한 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "H와 V는 축에 수직인 반경방향이고 A는 회전축과 나란한 축방향이다.",
+        "outputAssetHash": "d0e59c6f540e162a7b79de8616e9fab5b35e3f282619160cade5894449625166"
+      }
+    ]
   },
   {
     "id": "diagram-sensor-directions",
@@ -171,7 +550,30 @@
     "sourceFileHash": "34717f4b8c8df1db9e4681fd90985ce6293830d050f7d0dc44a9abcf66be2441",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-sensor-directions--sensor-directions-v2",
+        "path": "/practical/diagrams/sensor-directions-v2.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "축방향과 반경방향을 화살표로 표시한 센서 설치 방향 개념도",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "축방향과 반경방향의 차이를 구분하는 자체 제작 도식이다.",
+        "outputAssetHash": "34717f4b8c8df1db9e4681fd90985ce6293830d050f7d0dc44a9abcf66be2441"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "34717f4b8c8df1db9e4681fd90985ce6293830d050f7d0dc44a9abcf66be2441",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-maintenance-tools",
@@ -189,7 +591,30 @@
     "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-maintenance-tools--maintenance-tools-v2",
+        "path": "/practical/diagrams/maintenance-tools-v2.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "스패너, 체인블록, 풀러, 플라이어를 단순화한 정비 공구 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "작업 목적에 맞는 정비 공구를 식별하기 위한 자체 제작 도식이다.",
+        "outputAssetHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-gear-damage",
@@ -207,7 +632,30 @@
     "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-gear-damage--gear-damage-v2",
+        "path": "/practical/diagrams/gear-damage-v2.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "피팅, 스폴링, 스코어링의 치면 손상을 비교한 개념도",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "손상 크기와 방향을 비교해 기어 치면 결함을 판별한다.",
+        "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-thread-profiles",
@@ -225,7 +673,30 @@
     "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-thread-profiles--thread-profiles-v2",
+        "path": "/practical/diagrams/thread-profiles-v2.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "삼각나사, 사각나사, 사다리꼴나사, 톱니나사의 단면 형상",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "나사산 각도와 하중 전달면을 비교하는 자체 제작 도식이다.",
+        "outputAssetHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-shaft-misalignment",
@@ -243,7 +714,30 @@
     "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-shaft-misalignment--shaft-misalignment-v2",
+        "path": "/practical/diagrams/shaft-misalignment-v2.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "평행 오프셋과 각도 축정렬 불량을 비교한 두 축의 중심선 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "두 축 중심선의 위치와 각도를 비교해 정렬 불량 유형을 판별한다.",
+        "outputAssetHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-gear-tooth-curves",
@@ -261,7 +755,30 @@
     "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-gear-tooth-curves--gear-tooth-curves-v2",
+        "path": "/practical/diagrams/gear-tooth-curves-v2.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "인벌류트와 사이클로이드 계열 치형 곡선을 비교한 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "곡선 생성 원리의 차이를 구분하기 위한 자체 제작 개념도이다.",
+        "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-dial-vblock",
@@ -279,7 +796,30 @@
     "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-dial-vblock--dial-vblock-v2",
+        "path": "/practical/diagrams/dial-vblock-v2.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "V블록 위 축에 다이얼 게이지를 접촉시킨 흔들림 측정 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "축을 회전시키며 지시값 변화를 확인하는 측정 배치를 나타낸다.",
+        "outputAssetHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-bearing-components",
@@ -297,7 +837,30 @@
     "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-bearing-components--bearing-components-v2",
+        "path": "/practical/diagrams/bearing-components-v2.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "내륜, 외륜, 전동체, 케이지를 표시한 구름베어링 단면도",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "구름베어링의 네 기본 구성요소를 구분한다.",
+        "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-pascal-force",
@@ -315,7 +878,30 @@
     "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-pascal-force--pascal-force-v2",
+        "path": "/practical/diagrams/pascal-force-v2.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "서로 다른 단면적의 두 피스톤에 압력이 전달되는 유압 장치 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "동일 압력에서 피스톤 면적비에 따라 출력이 달라지는 원리를 나타낸다.",
+        "outputAssetHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-journal-clearance",
@@ -333,7 +919,30 @@
     "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-journal-clearance--journal-clearance-v2",
+        "path": "/practical/diagrams/journal-clearance-v2.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "저널과 베어링 사이 연선을 압착해 간극을 측정하는 단면 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "규정 토크로 캡을 체결한 뒤 압착된 연선 두께로 간극을 판정한다.",
+        "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-vernier-48-2",
@@ -351,7 +960,30 @@
     "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-vernier-48-2--vernier-48-2-v2",
+        "path": "/practical/diagrams/vernier-48-2-v2.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "주척 48 mm와 버니어 일치 눈금 0.2 mm를 나타낸 버니어 눈금도",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "주척값과 버니어 일치값을 더해 48.2 mm를 판독한다.",
+        "outputAssetHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-spherical-roller-bearing",
@@ -369,7 +1001,30 @@
     "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-spherical-roller-bearing--spherical-roller-bearing-v2",
+        "path": "/practical/diagrams/spherical-roller-bearing-v2.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "두 줄의 배럴형 롤러와 구면 외륜 궤도를 가진 자동조심 롤러베어링 단면도",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "복열 롤러와 구면 궤도로 각도 오차를 허용하는 구조를 나타낸다.",
+        "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-measurement-instruments",
@@ -387,7 +1042,30 @@
     "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-measurement-instruments--measurement-instruments-v2",
+        "path": "/practical/diagrams/measurement-instruments-v2.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "다이얼 게이지, 버니어캘리퍼스, 외측 마이크로미터를 나란히 표시한 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "형상과 측정 용도를 기준으로 세 측정기를 식별한다.",
+        "outputAssetHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-measurement-tools",
@@ -405,7 +1083,30 @@
     "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-measurement-tools--measurement-tools-v2",
+        "path": "/practical/diagrams/measurement-tools-v2.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "버니어캘리퍼스, 마이크로미터, 다이얼 게이지, V블록을 비교한 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "측정기와 보조기구의 형상 및 용도를 비교한다.",
+        "outputAssetHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-bearing-four-exam",
@@ -423,7 +1124,30 @@
     "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-bearing-four-exam--bearing-four-exam",
+        "path": "/practical/diagrams/bearing-four-exam.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "A부터 D까지 표시한 원통 롤러, 테이퍼 롤러, 스러스트 볼, 자동조심 롤러베어링 개념도",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "전동체와 궤도륜 구조를 기준으로 네 종류의 베어링을 구분한다.",
+        "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-tapered-endplay",
@@ -441,7 +1165,30 @@
     "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-tapered-endplay--tapered-endplay",
+        "path": "/practical/diagrams/tapered-endplay.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "마주 보는 테이퍼 롤러베어링의 축방향 간극을 다이얼 게이지로 측정하는 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "조정너트와 다이얼 게이지를 이용해 축방향 엔드플레이를 확인한다.",
+        "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-shaft-misalignment-three",
@@ -459,7 +1206,30 @@
     "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-shaft-misalignment-three--shaft-misalignment-three",
+        "path": "/practical/diagrams/shaft-misalignment-three.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "평행, 각도, 복합 축정렬 불량을 A부터 C까지 비교한 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "중심선의 오프셋과 각도를 기준으로 세 정렬 불량을 판별한다.",
+        "outputAssetHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-maintenance-tools-five",
@@ -477,7 +1247,30 @@
     "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-maintenance-tools-five--maintenance-tools-five",
+        "path": "/practical/diagrams/maintenance-tools-five.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "후크스패너, 소켓렌치, 기어풀러, 스냅링플라이어, 토크렌치를 A부터 E까지 표시한 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "공구 형상과 적용 작업을 연결해 다섯 정비 공구를 식별한다.",
+        "outputAssetHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-vernier-37-35",
@@ -495,7 +1288,30 @@
     "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-vernier-37-35--vernier-37-35",
+        "path": "/practical/diagrams/vernier-37-35.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "주척 37 mm를 지나 버니어 7번째 눈금이 일치하는 0.05 mm 버니어 눈금도",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "주척 37 mm와 버니어 0.35 mm를 더해 측정값을 판독한다.",
+        "outputAssetHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-micrometer-12-73",
@@ -513,7 +1329,30 @@
     "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-micrometer-12-73--micrometer-12-73",
+        "path": "/practical/diagrams/micrometer-12-73.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "슬리브 12.5 mm와 딤블 23눈금이 표시된 외측 마이크로미터 눈금도",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "슬리브값과 딤블값을 합산해 외측 마이크로미터 값을 판독한다.",
+        "outputAssetHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   },
   {
     "id": "diagram-double-acting-cylinder",
@@ -531,6 +1370,29 @@
     "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
     "examMatchStatus": "self_authored",
     "rightsStatus": "self_authored",
-    "publicUseStatus": "internal_only"
+    "publicUseStatus": "internal_only",
+    "frames": [
+      {
+        "id": "diagram-double-acting-cylinder--double-acting-cylinder",
+        "path": "/practical/diagrams/double-acting-cylinder.svg",
+        "promptAltText": "문제에 제시된 시각자료 1",
+        "learningAltText": "실린더 내경 D와 로드 지름 d에 따른 전진면적과 후진 환상면적 도식",
+        "captionBeforeAnswer": null,
+        "captionAfterAnswer": "전진은 피스톤 전면적, 후진은 로드 단면적을 제외한 환상면적을 사용한다.",
+        "outputAssetHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3"
+      }
+    ],
+    "originType": "self_authored",
+    "usageTypes": [
+      "concept_explanation"
+    ],
+    "answerCritical": false,
+    "derivedFromVisualAidId": null,
+    "sourcePageImageHash": null,
+    "outputAssetHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
+    "technicalReviewStatus": "held",
+    "technicalReviewedAt": null,
+    "technicalReviewer": null,
+    "visualReviewNote": "공개 전 원본 대응 또는 기술 검수가 더 필요함."
   }
 ]

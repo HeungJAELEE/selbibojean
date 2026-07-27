@@ -3,6 +3,8 @@ import "server-only";
 import rawPracticalContent from "@/data/generated/practical-content.json";
 import rawPracticalWrittenGovernance from "@/data/generated/practical-written-governance.json";
 import type { ExamSummaryEvidence } from "@/data/source/practical-exam-subject-summaries";
+import { PRACTICAL_VISUAL_AIDS } from "@/data/source/practical-source-registry";
+import { PRACTICAL_VISUAL_COVERAGE } from "@/data/source/practical-visual-coverage";
 import {
   PRACTICAL_WRITTEN_EXAM_CARD_SEEDS,
 } from "@/data/source/practical-written-exam-cards";
@@ -25,9 +27,14 @@ import type {
   PracticalQuestion,
   PracticalStudyCategoryId,
   PracticalVisualAid,
+  PracticalVisualUsage,
   PracticalWrittenExamCard,
   PracticalWrittenExamCardFormat,
 } from "@/lib/domain/practical-types";
+import {
+  canUsePracticalVisualAid,
+  learnerVisiblePracticalVisualAid,
+} from "@/lib/domain/practical-visual-policy";
 import type { PracticalWrittenGovernanceManifest } from "@/lib/domain/practical-execution-types";
 import {
   isPublishablePracticalQuestion,
@@ -44,7 +51,10 @@ export {
   toPublicPracticalQuestion,
 } from "@/lib/domain/practical";
 
-const content = rawPracticalContent as PracticalContent;
+const content = {
+  ...(rawPracticalContent as PracticalContent),
+  visualAids: PRACTICAL_VISUAL_AIDS,
+} satisfies PracticalContent;
 const writtenGovernance =
   rawPracticalWrittenGovernance as PracticalWrittenGovernanceManifest;
 
@@ -106,7 +116,7 @@ const seededPracticalWrittenExamCards: PracticalWrittenExamCard[] =
     ]
       .filter((visualAidId) => {
         const visual = content.visualAids.find((item) => item.id === visualAidId);
-        return visual?.publicUseStatus === "public";
+        return visual ? learnerVisiblePracticalVisualAid(visual) : false;
       });
 
     return {
@@ -230,6 +240,8 @@ const generatedPastExamCards: PracticalWrittenExamCard[] =
               id: `${question.id}-STEP-${index + 1}`,
               label: item.label,
               safetyCritical: /안전|차단|잠금|잔압/.test(item.label),
+              visualFrameIds: [],
+              answerPhrase: item.label,
             }))
           : [],
       contentStatus: "published",
@@ -468,7 +480,17 @@ export async function getPublicPracticalQuestion(questionId: string) {
 export async function getPracticalConcept(
   conceptId: string,
 ): Promise<PracticalConcept | undefined> {
-  return content.concepts.find((concept) => concept.id === conceptId);
+  const concept = content.concepts.find((item) => item.id === conceptId);
+  if (!concept) return undefined;
+  const coverageVisualAidIds = PRACTICAL_VISUAL_COVERAGE.filter(
+    (item) => item.status === "ready" && item.conceptIds.includes(conceptId),
+  ).flatMap((item) => item.visualAidIds);
+  return {
+    ...concept,
+    visualAidIds: [
+      ...new Set([...(concept.visualAidIds ?? []), ...coverageVisualAidIds]),
+    ],
+  };
 }
 
 export async function getPublicPracticalConcept(
@@ -500,14 +522,17 @@ export async function getPracticalVisualAid(
 
 export async function getPublicPracticalVisualAid(
   visualAidId: string | null,
-  use: "prompt" | "theory" = "theory",
+  use: "prompt" | "theory" | PracticalVisualUsage = "theory",
 ): Promise<PracticalVisualAid | undefined> {
   const visualAid = await getPracticalVisualAid(visualAidId);
-  if (!visualAid || visualAid.publicUseStatus !== "public") return undefined;
-  if (use === "prompt" && visualAid.examMatchStatus !== "exact_source") {
-    return undefined;
+  if (!visualAid) return undefined;
+  if (use === "theory") {
+    return learnerVisiblePracticalVisualAid(visualAid) ? visualAid : undefined;
   }
-  return visualAid;
+  const usage = use === "prompt" ? "past_exam_prompt" : use;
+  return canUsePracticalVisualAid(visualAid, usage)
+    ? visualAid
+    : undefined;
 }
 
 export function deriveExamEvidenceDisplayKinds(

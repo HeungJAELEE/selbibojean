@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { PRACTICAL_WRITTEN_EXAM_CARD_SEEDS } from "@/data/source/practical-written-exam-cards";
+import { PRACTICAL_VISUAL_AIDS } from "@/data/source/practical-source-registry";
 import type {
   PracticalContent,
   PracticalQuestion,
@@ -128,5 +129,36 @@ describe("practical written exam-first cards", () => {
     );
     expect(overlap?.pastQuestionIds).toEqual([]);
     expect(overlap?.evidenceIds).toContain("evidence:EXP-W01");
+  });
+
+  it("uses stable visual frame IDs for the bearing heating sequence", () => {
+    const card = PRACTICAL_WRITTEN_EXAM_CARD_SEEDS.find(
+      (item) => item.id === "PWEC-BEARING-INDUCTION-HEATING",
+    );
+    const visualAid = PRACTICAL_VISUAL_AIDS.find(
+      (item) => item.id === "ncs-bearing-heating",
+    );
+    const frameIds = new Set(visualAid?.frames.map((frame) => frame.id));
+
+    expect(card?.sequenceSteps).toHaveLength(3);
+    for (const step of card?.sequenceSteps ?? []) {
+      expect(step.visualFrameIds).toEqual(expect.any(Array));
+      for (const frameId of step.visualFrameIds) {
+        expect(frameIds.has(frameId), `${step.id}: ${frameId}`).toBe(true);
+      }
+    }
+  });
+
+  it("connects the subject 4 overview diagrams to their exam cards", () => {
+    expect(
+      PRACTICAL_WRITTEN_EXAM_CARD_SEEDS.find(
+        (card) => card.id === "PWEC-TPM-AUTONOMOUS-MAINTENANCE",
+      )?.visualAidIds,
+    ).toContain("diagram-autonomous-maintenance-7-steps");
+    expect(
+      PRACTICAL_WRITTEN_EXAM_CARD_SEEDS.find(
+        (card) => card.id === "PWEC-OEE-CALCULATION",
+      )?.visualAidIds,
+    ).toContain("diagram-oee-six-losses");
   });
 });

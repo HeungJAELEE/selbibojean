@@ -18,6 +18,7 @@ import {
   toPublicPracticalQuestion,
 } from "../src/lib/domain/practical";
 import type { PracticalContent } from "../src/lib/domain/practical-types";
+import { PRACTICAL_VISUAL_AIDS } from "../src/data/source/practical-source-registry";
 
 type VerificationScope = "source" | "build" | "all";
 type Finding = {
@@ -44,6 +45,17 @@ const unsafeCodePatterns = [
   { code: "dynamic_eval", value: "eval" + "(" },
   { code: "dynamic_function", value: "new " + "Function(" },
   { code: "dynamic_function", value: "Function" + "(" },
+];
+const answerRevealingFileTokens = [
+  "cylindrical",
+  "tapered",
+  "thrust",
+  "needle",
+  "accumulator",
+  "relief",
+  "counterbalance",
+  "overlap",
+  "undercut",
 ];
 
 async function exists(target: string) {
@@ -101,6 +113,57 @@ async function verifySourceContracts(content: PracticalContent) {
         file: `question:${question.id}`,
         detail: finding.field,
       });
+    }
+  }
+
+  for (const visualAid of PRACTICAL_VISUAL_AIDS.filter((item) =>
+    item.usageTypes.some((usage) => usage.endsWith("_exam_prompt")),
+  )) {
+    for (const frame of visualAid.frames) {
+      const normalizedPromptAlt = normalizeAnswerSentinel(
+        frame.promptAltText,
+      );
+      const normalizedLearningAlt = normalizeAnswerSentinel(
+        frame.learningAltText,
+      );
+      if (
+        normalizedPromptAlt.length > 0 &&
+        normalizedPromptAlt === normalizedLearningAlt
+      ) {
+        findings.push({
+          code: "prompt_alt_reveals_learning_answer",
+          file: frame.path,
+          detail: `visualAid=${visualAid.id}`,
+        });
+      }
+      const fileName = path.basename(frame.path).toLowerCase();
+      const revealingToken = answerRevealingFileTokens.find((token) =>
+        fileName.includes(token),
+      );
+      if (revealingToken) {
+        findings.push({
+          code: "answer_revealing_visual_filename",
+          file: frame.path,
+          detail: `token=${revealingToken}`,
+        });
+      }
+      if (path.extname(frame.path).toLowerCase() === ".svg") {
+        const svgFile = path.join(root, "public", frame.path.replace(/^\//, ""));
+        const svg = await readFile(svgFile, "utf8");
+        const titleAndDescription =
+          svg.match(/<(title|desc)\b[^>]*>[\s\S]*?<\/\1>/gi)?.join(" ") ?? "";
+        if (
+          normalizeAnswerSentinel(titleAndDescription).includes(
+            normalizeAnswerSentinel(visualAid.title),
+          )
+        ) {
+          findings.push({
+            code: "svg_metadata_reveals_prompt_answer",
+            file: frame.path,
+            detail: `visualAid=${visualAid.id}`,
+          });
+        }
+      }
     }
   }
 

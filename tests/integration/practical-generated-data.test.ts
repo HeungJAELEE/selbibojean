@@ -24,7 +24,7 @@ describe("NCS practical content import", () => {
       concepts: 46,
       supplementalConcepts: 43,
       ncsDocuments: 11,
-      visualAids: 28,
+      visualAids: 31,
     });
     expect(content.report.exactMatch).toBe(true);
     expect(content.report.publication.past).toBe(21);
@@ -351,13 +351,19 @@ describe("NCS practical content import", () => {
     const publicAids = content.visualAids.filter(
       (visualAid) => visualAid.publicUseStatus === "public",
     );
-    expect(publicAids).toHaveLength(6);
+    expect(publicAids).toHaveLength(9);
     expect(
       publicAids.every(
         (visualAid) =>
           Boolean(visualAid.altText) &&
           Boolean(visualAid.figureNumber) &&
-          visualAid.rightsStatus === "education_use_with_attribution",
+          [
+            "education_use_with_attribution",
+            "self_authored",
+          ].includes(visualAid.rightsStatus) &&
+          visualAid.technicalReviewStatus === "verified" &&
+          visualAid.frames.length > 0 &&
+          visualAid.usageTypes.length > 0,
       ),
     ).toBe(true);
   });
@@ -373,7 +379,6 @@ describe("NCS practical content import", () => {
       promptVisualAidIds.has(visualAid.id),
     );
     expect(promptAids.map((visualAid) => visualAid.id).sort()).toEqual([
-      "ncs-accumulator-safety-circuit",
       "ncs-bearing-four-types",
     ]);
     expect(

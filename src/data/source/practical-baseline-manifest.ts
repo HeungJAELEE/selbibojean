@@ -4,8 +4,8 @@
  * 변경이력과 함께 이 기준선을 명시적으로 갱신해야 한다.
  */
 export const PRACTICAL_BASELINE_MANIFEST = {
-  sourceCommit: "691ab4065b176e72932d67d8e248434d844e9dc1",
-  capturedAt: "2026-07-26T00:00:00+09:00",
+  sourceCommit: "0d5d2b7509cd7b7d1b86191f76b84665e7a23d89",
+  capturedAt: "2026-07-27T18:47:00+09:00",
   sets: {
     questions: {
       count: 128,
@@ -18,9 +18,9 @@ export const PRACTICAL_BASELINE_MANIFEST = {
         "f4ef818d5520a934949e3a18b16e3f58f4b88ca74ba8db6a48173da255249963",
     },
     visualAids: {
-      count: 28,
+      count: 31,
       sortedIdsSha256:
-        "99a40422783dd3cf64767790ca3e7a69ce8af84c2b2d5883e89d17fec02d8680",
+        "f4d9e32f1de0cc1fb4cc0ba0ac9408815c91902b0d4c30a74a3d6a2cd3b10f28",
     },
   },
 } as const;

@@ -105,10 +105,47 @@ export type PracticalWrittenVisualMapping = {
   role: PracticalWrittenVisualRole;
 };
 
+export type PracticalVisualUsage =
+  | "past_exam_prompt"
+  | "variant_exam_prompt"
+  | "recognition"
+  | "sequence_step"
+  | "normal_fault_compare"
+  | "concept_explanation"
+  | "summary_diagram";
+
+export type PracticalVisualOriginType =
+  | "ncs_original"
+  | "ncs_crop"
+  | "ncs_redraw"
+  | "official_external"
+  | "self_authored"
+  | "ai_generated";
+
+export type PracticalVisualTechnicalReviewStatus =
+  | "draft"
+  | "review_required"
+  | "verified"
+  | "held";
+
+export type PracticalVisualFrame = {
+  id: string;
+  path: string;
+  promptAltText: string;
+  learningAltText: string;
+  captionBeforeAnswer: string | null;
+  captionAfterAnswer: string | null;
+  outputAssetHash: string;
+};
+
 export type PracticalWrittenSequenceStep = {
   id: string;
   label: string;
   safetyCritical?: boolean;
+  visualFrameIds: string[];
+  checkpoint?: string;
+  wrongAction?: string;
+  answerPhrase?: string;
 };
 
 /**
@@ -198,6 +235,7 @@ export type PracticalVisualAid = {
   id: string;
   title: string;
   imagePaths: string[];
+  frames: PracticalVisualFrame[];
   promptLabels?: string[];
   promptAltTexts?: string[];
   altText: string;
@@ -211,6 +249,50 @@ export type PracticalVisualAid = {
   examMatchStatus: "exact_source" | "concept_source" | "self_authored";
   rightsStatus: PracticalAssetRights;
   publicUseStatus: "public" | "internal_only" | "held";
+  originType: PracticalVisualOriginType;
+  usageTypes: PracticalVisualUsage[];
+  answerCritical: boolean;
+  derivedFromVisualAidId: string | null;
+  sourcePageImageHash: string | null;
+  outputAssetHash: string;
+  technicalReviewStatus: PracticalVisualTechnicalReviewStatus;
+  technicalReviewedAt: string | null;
+  technicalReviewer: string | null;
+  visualReviewNote: string;
+};
+
+export type PracticalVisualCropSpec = {
+  id: string;
+  sourcePdfId: string;
+  sourcePdfSha256: string;
+  pdfPage: number;
+  printedPage: number | null;
+  figureNumber: string | null;
+  renderDpi: 300 | 600;
+  pageRotation: 0 | 90 | 180 | 270;
+  crop: {
+    unit: "normalized";
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+  };
+  outputVisualAidId: string;
+  outputFormat: "webp" | "png" | "svg";
+};
+
+export type PracticalVisualRequirement = "V0" | "V1" | "V2" | "V3";
+
+export type PracticalVisualCoverageItem = {
+  id: string;
+  conceptIds: string[];
+  examCardIds: string[];
+  questionIds: string[];
+  sequenceStepIds: string[];
+  visualRequirement: PracticalVisualRequirement;
+  visualAidIds: string[];
+  status: "ready" | "held" | "not_required";
+  rationale: string;
 };
 
 export type PracticalRubricItem = {

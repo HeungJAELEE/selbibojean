@@ -4,13 +4,21 @@ import type { PracticalVisualAid } from "@/lib/domain/practical-types";
 export function PracticalVisualAidFigure({
   visualAid,
   mode = "theory",
+  density = "default",
 }: {
   visualAid: PracticalVisualAid;
   mode?: "prompt" | "theory";
+  density?: "default" | "compact";
 }) {
-  if (visualAid.publicUseStatus !== "public") return null;
+  if (
+    visualAid.publicUseStatus !== "public" ||
+    visualAid.technicalReviewStatus !== "verified"
+  ) {
+    return null;
+  }
 
   const isPrompt = mode === "prompt";
+  const frames = visualAid.frames;
 
   return (
     <figure
@@ -26,16 +34,16 @@ export function PracticalVisualAidFigure({
       ) : null}
       <ol
         aria-label={isPrompt ? "문제 이미지 순서" : undefined}
-        className={`grid gap-4 p-4 ${
-          visualAid.imagePaths.length > 1
+        className={`grid gap-4 ${density === "compact" ? "p-3" : "p-4"} ${
+          frames.length > 1
             ? "grid-cols-1 sm:grid-cols-2 xl:grid-cols-4"
             : "grid-cols-1"
         }`}
       >
-        {visualAid.imagePaths.map((imagePath, index) => (
+        {frames.map((frame, index) => (
           <li
-            key={imagePath}
-            data-testid={`practical-visual-item-${index + 1}`}
+            key={frame.id}
+            data-testid={`practical-visual-frame-${frame.id}`}
             className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50"
           >
             {isPrompt && visualAid.promptLabels?.[index] ? (
@@ -46,21 +54,18 @@ export function PracticalVisualAidFigure({
                 ({visualAid.promptLabels[index]})
               </p>
             ) : null}
-            <div className="relative min-h-52">
+            <div
+              className={`relative ${
+                density === "compact" ? "min-h-44" : "min-h-52"
+              }`}
+            >
               <Image
-                src={imagePath}
-                alt={
-                  isPrompt
-                    ? visualAid.promptAltTexts?.[index] ??
-                      `문제 이미지 ${visualAid.promptLabels?.[index] ?? index + 1}`
-                    : `${visualAid.altText}${
-                        visualAid.imagePaths.length > 1 ? ` ${index + 1}` : ""
-                      }`
-                }
+                src={frame.path}
+                alt={isPrompt ? frame.promptAltText : frame.learningAltText}
                 fill
                 loading={index === 0 ? "eager" : "lazy"}
                 sizes={
-                  visualAid.imagePaths.length > 1
+                  frames.length > 1
                     ? "(max-width: 640px) 100vw, 50vw"
                     : "100vw"
                 }
@@ -70,7 +75,11 @@ export function PracticalVisualAidFigure({
           </li>
         ))}
       </ol>
-      <figcaption className="border-t border-slate-200 bg-slate-50 px-5 py-4">
+      <figcaption
+        className={`border-t border-slate-200 bg-slate-50 ${
+          density === "compact" ? "px-4 py-3" : "px-5 py-4"
+        }`}
+      >
         {!isPrompt ? (
           <>
             <p className="font-extrabold text-[#173957]">{visualAid.title}</p>
@@ -79,16 +88,18 @@ export function PracticalVisualAidFigure({
             </p>
           </>
         ) : null}
-        <p className="mt-2 text-xs leading-5 text-slate-500">
-          출처: {visualAid.sourceLabel}, PDF p.{visualAid.pdfPage} · 인쇄 p.
-          {visualAid.printedPage} · {visualAid.figureNumber}
-          {!isPrompt ? " · " : ""}
-          {!isPrompt
-            ? visualAid.rightsStatus === "self_authored"
-              ? "자체 제작 · NCS 원문 원리 대조"
-              : "교육 목적 출처 표시 사용"
-            : null}
-        </p>
+        {density === "default" ? (
+          <p className="mt-2 text-xs leading-5 text-slate-500">
+            출처: {visualAid.sourceLabel}, PDF p.{visualAid.pdfPage} · 인쇄 p.
+            {visualAid.printedPage} · {visualAid.figureNumber}
+            {!isPrompt ? " · " : ""}
+            {!isPrompt
+              ? visualAid.rightsStatus === "self_authored"
+                ? "자체 제작 · NCS 원문 원리 대조"
+                : "교육 목적 출처 표시 사용"
+              : null}
+          </p>
+        ) : null}
       </figcaption>
     </figure>
   );
