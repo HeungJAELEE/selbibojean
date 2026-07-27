@@ -40,15 +40,47 @@ export type PracticalWrittenExamCardFormat =
   | "matching"
   | "diagnosis";
 
+export type PracticalWrittenExamCardContentStatus =
+  | "published"
+  | "held"
+  | "draft";
+
+export type PracticalWrittenKeywordLink = {
+  slug: string;
+  label: string;
+};
+
+export type PracticalWrittenVisualRole =
+  | "recognition"
+  | "procedure"
+  | "formula"
+  | "comparison";
+
+export type PracticalWrittenVisualMapping = {
+  questionId: string;
+  visualAidId: string;
+  role: PracticalWrittenVisualRole;
+};
+
+export type PracticalWrittenSequenceStep = {
+  id: string;
+  label: string;
+  safetyCritical?: boolean;
+};
+
 /**
  * PracticalConcept를 그대로 노출하지 않고, 실제 필답 답안 작성에 필요한
  * 내용만 첫 화면에 재조립한 학습자용 시험카드다.
  */
 export type PracticalWrittenExamCard = {
   id: string;
+  slug: string;
   title: string;
   conceptIds: string[];
   evidenceIds: string[];
+  primaryFormat: PracticalWrittenExamCardFormat;
+  secondaryFormats: PracticalWrittenExamCardFormat[];
+  /** @deprecated primaryFormat을 사용한다. */
   format: PracticalWrittenExamCardFormat;
   questionPattern: string;
   directAnswer: string;
@@ -59,9 +91,16 @@ export type PracticalWrittenExamCard = {
   commonWrongAnswers: string[];
   variationAxes: string[];
   pastQuestionIds: string[];
+  variantQuestionIds: string[];
   predictedQuestionIds: string[];
   /** 중앙 문제은행에 아직 없는 안전한 카드 전용 예상문제 문장이다. */
   predictedExamples: string[];
+  keywordLinks: PracticalWrittenKeywordLink[];
+  visualAidIds: string[];
+  recognitionVisualAidIds: string[];
+  pastQuestionVisualMappings: PracticalWrittenVisualMapping[];
+  sequenceSteps: PracticalWrittenSequenceStep[];
+  contentStatus: PracticalWrittenExamCardContentStatus;
   supplementalConceptIds: string[];
   sourceRefs: PracticalSourceRef[];
 };
@@ -171,6 +210,16 @@ export type PracticalQuestion = {
     | null;
   predictedBasis: string | null;
   reviewNote: string;
+  examFormat?: PracticalWrittenExamCardFormat;
+  examCardIds?: string[];
+  visualAidIds?: string[];
+  sequenceItemIds?: string[];
+  variantOfQuestionId?: string | null;
+  examEvidenceStatus?:
+    | "past_reconstructed"
+    | "past_variant"
+    | "predicted_related"
+    | "ncs_supplement";
 };
 
 export type PracticalStudyCategory = {

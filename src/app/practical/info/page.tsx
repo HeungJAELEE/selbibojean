@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { PageHeading } from "@/components/page-heading";
 import { PracticalInfoTabs } from "@/components/practical-info-tabs";
 import { PRACTICAL_WORK_TASKS } from "@/data/source/practical-work-tasks";
+import { PRACTICAL_TEST_CENTERS } from "@/data/source/practical-test-centers";
+import { PRACTICAL_CANDIDATE_SUPPLIES } from "@/data/source/practical-candidate-supplies";
 
 export const metadata: Metadata = {
   title: "실기 관련 정보",
@@ -9,7 +11,21 @@ export const metadata: Metadata = {
     "설비보전기사 공압·유압·용접 수행과제와 수험 준비 체크리스트를 확인합니다.",
 };
 
-export default function PracticalInfoPage() {
+export default async function PracticalInfoPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ tab?: string }>;
+}) {
+  const { tab } = await searchParams;
+  const initialTab = [
+    "pneumatic",
+    "hydraulic",
+    "welding",
+    "prep",
+    "centers",
+  ].includes(tab ?? "")
+    ? (tab as "pneumatic" | "hydraulic" | "welding" | "prep" | "centers")
+    : "pneumatic";
   return (
     <div className="page-wrap">
       <PageHeading
@@ -23,6 +39,9 @@ export default function PracticalInfoPage() {
         weldingTasks={PRACTICAL_WORK_TASKS.filter((task) =>
           task.ncsCode.startsWith("160105"),
         ).map(toSummary)}
+        centers={PRACTICAL_TEST_CENTERS}
+        supplies={PRACTICAL_CANDIDATE_SUPPLIES}
+        initialTab={initialTab}
       />
     </div>
   );

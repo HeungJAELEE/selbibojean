@@ -20,6 +20,10 @@ import {
   type TheoryMode,
 } from "@/components/theory-mode-tabs";
 import { PageHeading } from "@/components/page-heading";
+import {
+  PracticalWrittenViewTabs,
+  type PracticalWrittenTheoryView,
+} from "@/components/practical-written-view-tabs";
 import { getContent } from "@/lib/content/repository";
 import {
   getPracticalContent,
@@ -41,10 +45,10 @@ export const metadata: Metadata = {
 export default async function UnifiedTheoryPage({
   searchParams,
 }: {
-  searchParams: Promise<{ mode?: string }>;
+  searchParams: Promise<{ mode?: string; view?: string }>;
 }) {
   const [
-    { mode: requestedMode },
+    { mode: requestedMode, view: requestedView },
     content,
     practical,
     practicalSubjects,
@@ -59,6 +63,8 @@ export default async function UnifiedTheoryPage({
     ]);
   const mode: TheoryMode =
     requestedMode === "practical" ? "practical" : "written";
+  const practicalView: PracticalWrittenTheoryView =
+    requestedView === "exam-type" ? "exam-type" : "concept";
 
   return (
     <div className="page-wrap pb-16">
@@ -77,6 +83,7 @@ export default async function UnifiedTheoryPage({
           practical={practical}
           subjects={practicalSubjects}
           examCards={practicalExamCards}
+          view={practicalView}
         />
       )}
     </div>
@@ -192,10 +199,12 @@ function PracticalTheoryMode({
   practical,
   subjects,
   examCards,
+  view,
 }: {
   practical: Awaited<ReturnType<typeof getPracticalContent>>;
   subjects: ReturnType<typeof getPracticalTextbookSubjects>;
   examCards: Awaited<ReturnType<typeof getPracticalWrittenExamCards>>;
+  view: PracticalWrittenTheoryView;
 }) {
   const questionById = new Map(
     practical.questions.map((question) => [question.id, question]),
@@ -266,17 +275,37 @@ function PracticalTheoryMode({
 
   return (
     <>
+      <PracticalWrittenViewTabs
+        view={view}
+        basePath="/theory"
+        mode
+      />
       <LearningFlow
-        eyebrow="필답형 시험카드"
-        title="실제 기출 유형에서 시작해 답안을 완성합니다"
-        steps={[
-          ["1", "기출 유형", "어떤 사진·문장·수치가 실제로 반복됐는지 먼저 봅니다."],
-          ["2", "판별 단서", "사진 형상, 요구동사, 공식 조건에서 정답 단서를 찾습니다."],
-          ["3", "바로 쓰는 답", "핵심어 5개 이내와 답안 골격으로 직접 써 봅니다."],
-          ["4", "변형·예상", "숫자·사진·표현이 바뀐 문제와 NCS 예상문제로 확장합니다."],
-        ]}
+        eyebrow={view === "concept" ? "개념별 학습" : "필답형 시험카드"}
+        title={
+          view === "concept"
+            ? "30초 이해 뒤 기출에서 어떻게 쓰는지 확인합니다"
+            : "실제 기출 유형에서 시작해 답안을 완성합니다"
+        }
+        steps={
+          view === "concept"
+            ? [
+                ["1", "30초 이해", "정의·원리와 헷갈리는 차이를 먼저 봅니다."],
+                ["2", "핵심어", "답안에 반드시 들어갈 용어와 적용조건을 찾습니다."],
+                ["3", "기출 적용", "같은 개념이 사진·계산·순서로 바뀌는 방식을 봅니다."],
+                ["4", "직접 풀이", "답을 가리고 작성한 뒤 제출 후 기준과 비교합니다."],
+              ]
+            : [
+                ["1", "기출 유형", "어떤 사진·문장·수치가 실제로 반복됐는지 먼저 봅니다."],
+                ["2", "판별 단서", "사진 형상, 요구동사, 공식 조건에서 정답 단서를 찾습니다."],
+                ["3", "직접 작성", "모범답안을 보기 전에 답안을 먼저 씁니다."],
+                ["4", "변형·예상", "숫자·사진·표현이 바뀐 문제와 NCS 예상문제로 확장합니다."],
+              ]
+        }
       />
 
+      {view === "exam-type" ? (
+        <>
       <section className="mt-12" aria-labelledby="recent-exam-card-title">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
@@ -285,7 +314,7 @@ function PracticalTheoryMode({
               id="recent-exam-card-title"
               className="mt-2 text-2xl font-extrabold"
             >
-              먼저 완성한 대표 필답 시험카드 10개
+              검증된 기출과 예상 필답 시험카드
             </h2>
           </div>
           <p className="text-sm font-bold text-slate-500">
@@ -301,7 +330,7 @@ function PracticalTheoryMode({
             <Link
               key={card.id}
               data-testid={`practical-written-exam-card-link-${card.id}`}
-              href={`/practical/written/theory/${card.conceptIds[0]}#exam-card-${card.id}`}
+              href={`/practical/written/card/${card.slug}`}
               className="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-[#16697a]"
             >
               <div className="flex flex-wrap items-center gap-2 text-xs font-extrabold">
@@ -322,7 +351,7 @@ function PracticalTheoryMode({
               </div>
               <h3 className="mt-4 text-lg font-extrabold">{card.title}</h3>
               <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">
-                {card.directAnswer}
+                {card.questionPattern}
               </p>
               <div className="mt-4 flex flex-wrap gap-1.5">
                 {card.studyKeywords.slice(0, 3).map((keyword) => (
@@ -375,7 +404,7 @@ function PracticalTheoryMode({
                     {matchingCards.slice(0, 3).map((card) => (
                       <Link
                         key={card.id}
-                        href={`/practical/written/theory/${card.conceptIds[0]}#exam-card-${card.id}`}
+                        href={`/practical/written/card/${card.slug}`}
                         className="rounded-full border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-700 hover:border-[#16697a] hover:text-[#16697a]"
                       >
                         {card.title}
@@ -392,6 +421,8 @@ function PracticalTheoryMode({
           })}
         </div>
       </section>
+        </>
+      ) : null}
 
       <section className="mt-12" aria-labelledby="practical-subjects-title">
         <div className="flex flex-wrap items-end justify-between gap-3">
@@ -401,7 +432,9 @@ function PracticalTheoryMode({
               id="practical-subjects-title"
               className="mt-2 text-2xl font-extrabold"
             >
-            시험카드 이후 필요한 NCS 보충이론
+            {view === "concept"
+              ? "개념을 이해하고 기출에 연결합니다"
+              : "시험카드 이후 필요한 NCS 보충이론"}
             </h2>
           </div>
           <p className="text-sm font-bold text-slate-500">

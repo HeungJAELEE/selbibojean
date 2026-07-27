@@ -66,6 +66,13 @@ export function PracticalWrittenQuestion({
     setFeedback({ ...feedback, selfRating });
   }
 
+  function retry() {
+    setAnswer("");
+    setFeedback(null);
+    setScore("");
+    setError("");
+  }
+
   return (
     <section
       className="card p-6 md:p-8"
@@ -212,6 +219,13 @@ export function PracticalWrittenQuestion({
               </Link>
             ))}
           </div>
+          <button
+            type="button"
+            onClick={retry}
+            className="rounded-xl border border-[#173957] px-5 py-3 text-sm font-extrabold text-[#173957]"
+          >
+            답안 지우고 다시 풀기
+          </button>
         </div>
       ) : null}
     </section>

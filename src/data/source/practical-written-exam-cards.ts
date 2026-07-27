@@ -8,9 +8,49 @@ export type PracticalWrittenExamCardSeed = Omit<
   "sourceRefs"
 >;
 
+type LegacyPracticalWrittenExamCardSeed = Omit<
+  PracticalWrittenExamCardSeed,
+  | "slug"
+  | "primaryFormat"
+  | "secondaryFormats"
+  | "variantQuestionIds"
+  | "keywordLinks"
+  | "visualAidIds"
+  | "recognitionVisualAidIds"
+  | "pastQuestionVisualMappings"
+  | "sequenceSteps"
+  | "contentStatus"
+>;
+
+const keywordSlug = (keyword: string) =>
+  encodeURIComponent(keyword.trim().replace(/\s+/g, "-"));
+
 const card = (
-  value: PracticalWrittenExamCardSeed,
-): PracticalWrittenExamCardSeed => value;
+  value: LegacyPracticalWrittenExamCardSeed,
+): PracticalWrittenExamCardSeed => ({
+  ...value,
+  slug: value.id.toLowerCase().replace(/^pwec-/, "").replace(/_/g, "-"),
+  primaryFormat: value.format,
+  secondaryFormats: [],
+  variantQuestionIds: value.predictedQuestionIds.slice(0, 1),
+  keywordLinks: value.studyKeywords.map((keyword) => ({
+    slug: keywordSlug(keyword),
+    label: keyword,
+  })),
+  visualAidIds: [],
+  recognitionVisualAidIds: [],
+  pastQuestionVisualMappings: [],
+  sequenceSteps:
+    value.format === "sequence"
+      ? value.answerSkeleton.map((label, index) => ({
+          id: `${value.id}-STEP-${index + 1}`,
+          label,
+          safetyCritical:
+            /안전|차단|잠금|잔압|보호구/.test(label),
+        }))
+      : [],
+  contentStatus: "published",
+});
 
 export const PRACTICAL_WRITTEN_EXAM_FORMAT_LABELS: Record<
   PracticalWrittenExamCardFormat,

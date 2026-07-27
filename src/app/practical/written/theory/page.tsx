@@ -1,11 +1,20 @@
 import Link from "next/link";
 import { PageHeading } from "@/components/page-heading";
 import { PracticalTextbookSubjectPanel } from "@/components/practical-textbook-index";
+import { PracticalWrittenExamTypeIndex } from "@/components/practical-written-exam-type-index";
+import { PracticalWrittenCardLink } from "@/components/practical-written-card-link";
+import { PracticalWrittenSectionNav } from "@/components/practical-written-section-nav";
+import {
+  PracticalWrittenViewTabs,
+  type PracticalWrittenTheoryView,
+} from "@/components/practical-written-view-tabs";
 import {
   getPracticalContent,
   getPracticalNcsCoverage,
   getPracticalTextbookStudyTypes,
   getPracticalTextbookSubjects,
+  getPracticalWrittenExamCards,
+  getPracticalWrittenEvidenceCoverage,
   practicalConceptsByTextbookSubject,
 } from "@/lib/content/practical-repository";
 import type {
@@ -13,13 +22,22 @@ import type {
   PracticalNcsCoverage,
 } from "@/lib/domain/practical-types";
 
-export default async function PracticalTheoryPage() {
-  const [subjects, studyTypes, ncsCoverage, practicalContent] = await Promise.all([
+export default async function PracticalTheoryPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ view?: string }>;
+}) {
+  const [{ view: requestedView }, subjects, studyTypes, ncsCoverage, practicalContent, examCards, evidenceCoverage] = await Promise.all([
+    searchParams,
     getPracticalTextbookSubjects(),
     getPracticalTextbookStudyTypes(),
     getPracticalNcsCoverage(),
     getPracticalContent(),
+    getPracticalWrittenExamCards(),
+    getPracticalWrittenEvidenceCoverage(),
   ]);
+  const view: PracticalWrittenTheoryView =
+    requestedView === "exam-type" ? "exam-type" : "concept";
   const conceptsById = new Map(
     practicalContent.concepts.map((concept) => [concept.id, concept]),
   );
@@ -27,11 +45,38 @@ export default async function PracticalTheoryPage() {
   return (
     <div className="page-wrap py-12">
       <PageHeading
-        eyebrow="실기 필답형 · NCS 기반 학습 목차"
-        title="실기 이론 목차"
-        description="필기 이론 목차처럼 과목과 세부 개념군을 먼저 고르고, 각 개념의 통합 학습에서 전체를 이해한 뒤 개념 정의·계산 공식·순서 맞추기·그림 맞추기·도면·기호 맞추기·기타 유형을 확인합니다. 빈 행은 아직 NCS 원문으로 확인해 등록한 학습 항목이 없는 유형입니다."
+        eyebrow="실기 필답형 · 기출풀이 교재"
+        title="이해하고, 답을 가리고, 실제로 씁니다"
+        description="개념별 학습에서는 30초 이해와 헷갈리는 차이를 먼저 보고, 기출 유형별 학습에서는 사진·계산·순서 등 8유형의 복원문제와 변형·예상문제를 직접 풉니다."
       />
+      <PracticalWrittenSectionNav />
+      <PracticalWrittenViewTabs view={view} />
 
+      {view === "exam-type" ? (
+        <>
+          <PracticalWrittenExamTypeIndex cards={examCards} />
+          <section className="mt-10" aria-labelledby="all-exam-cards-title">
+            <h2 id="all-exam-cards-title" className="text-2xl font-extrabold">
+              전체 기출풀이 카드
+            </h2>
+            <p className="mt-2 text-sm leading-7 text-slate-600">
+              검증된 기출은 모두 카드에 연결했습니다. 원그림이나 출처가
+              확인되지 않은 복원문제는 보류 사유만 남기고 풀이문제로
+              공개하지 않습니다.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {examCards.map((card) => (
+                <PracticalWrittenCardLink key={card.id} card={card} />
+              ))}
+            </div>
+          </section>
+          <HeldPastQuestionAudit
+            coverage={evidenceCoverage}
+            questions={practicalContent.questions}
+          />
+        </>
+      ) : (
+        <>
       <section
         data-testid="practical-textbook-learning-types"
         className="mt-8 rounded-2xl border border-teal-200 bg-teal-50 p-5 md:p-6"
@@ -69,9 +114,53 @@ export default async function PracticalTheoryPage() {
           />
         ))}
       </div>
+        </>
+      )}
 
       <NcsSourceAudit coverage={ncsCoverage} conceptsById={conceptsById} />
     </div>
+  );
+}
+
+function HeldPastQuestionAudit({
+  coverage,
+  questions,
+}: {
+  coverage: Awaited<ReturnType<typeof getPracticalWrittenEvidenceCoverage>>;
+  questions: Awaited<ReturnType<typeof getPracticalContent>>["questions"];
+}) {
+  const held = coverage.filter((item) => item.status === "held");
+  if (held.length === 0) return null;
+  const questionsById = new Map(
+    questions.map((question) => [question.id, question]),
+  );
+
+  return (
+    <details className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-5">
+      <summary className="cursor-pointer font-extrabold text-amber-950">
+        원문 확인 전 공개하지 않은 기출복원 {held.length}건
+      </summary>
+      <p className="mt-3 text-sm leading-7 text-amber-900">
+        복원 근거가 부족한 문항은 비슷한 문제를 지어내지 않고 보류합니다.
+        제목과 보류 사유를 확인할 수 있으며, 원문 근거가 확보되면 같은
+        Evidence ID에 연결합니다.
+      </p>
+      <ul className="mt-4 space-y-3">
+        {held.map((item) => (
+          <li
+            key={item.questionId}
+            className="rounded-xl border border-amber-200 bg-white p-4"
+          >
+            <p className="font-bold text-slate-950">
+              {questionsById.get(item.questionId)?.title ?? item.questionId}
+            </p>
+            <p className="mt-1 text-sm leading-6 text-slate-700">
+              {item.holdReason}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </details>
   );
 }
 

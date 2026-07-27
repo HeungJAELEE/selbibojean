@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   AlertTriangle,
   ArrowRight,
@@ -30,7 +31,22 @@ type PracticalInfoCategory =
   | "hydraulic"
   | "welding"
   | "prep"
-  | "venue";
+  | "centers";
+
+type PracticalInfoCenter = {
+  id: string;
+  region: string;
+  name: string;
+  parkingNote: string | null;
+  rawFacilityNote: string;
+};
+
+type PracticalInfoSupply = {
+  id: string;
+  label: string;
+  status: "held_until_round_notice" | "recommended";
+  note: string;
+};
 
 const tabs: Array<{
   id: PracticalInfoCategory;
@@ -41,7 +57,7 @@ const tabs: Array<{
   { id: "hydraulic", label: "유압", icon: Droplets },
   { id: "welding", label: "용접", icon: Flame },
   { id: "prep", label: "준비물·당일 팁", icon: ClipboardCheck },
-  { id: "venue", label: "시험장 적응", icon: MapPinned },
+  { id: "centers", label: "시험장·장비", icon: MapPinned },
 ];
 
 const categoryCopy = {
@@ -84,13 +100,20 @@ export function PracticalInfoTabs({
   pneumaticTasks,
   hydraulicTasks,
   weldingTasks,
+  centers,
+  supplies,
+  initialTab = "pneumatic",
 }: {
   pneumaticTasks: PracticalInfoTask[];
   hydraulicTasks: PracticalInfoTask[];
   weldingTasks: PracticalInfoTask[];
+  centers: PracticalInfoCenter[];
+  supplies: PracticalInfoSupply[];
+  initialTab?: PracticalInfoCategory;
 }) {
+  const router = useRouter();
   const [activeTab, setActiveTab] =
-    useState<PracticalInfoCategory>("pneumatic");
+    useState<PracticalInfoCategory>(initialTab);
 
   const taskMap = {
     pneumatic: pneumaticTasks,
@@ -116,7 +139,12 @@ export function PracticalInfoTabs({
               role="tab"
               aria-selected={active}
               aria-controls={`practical-info-panel-${tab.id}`}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => {
+                setActiveTab(tab.id);
+                router.replace(`/practical/info?tab=${tab.id}`, {
+                  scroll: false,
+                });
+              }}
               className={`flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-extrabold transition ${
                 active
                   ? "bg-[#173957] text-white"
@@ -131,9 +159,9 @@ export function PracticalInfoTabs({
       </div>
 
       {activeTab === "prep" ? (
-        <PrepPanel />
-      ) : activeTab === "venue" ? (
-        <ExamVenuePanel />
+        <PrepPanel supplies={supplies} />
+      ) : activeTab === "centers" ? (
+        <ExamVenuePanel centers={centers} />
       ) : (
         <TaskPanel
           category={activeTab}
@@ -148,7 +176,7 @@ function TaskPanel({
   category,
   tasks,
 }: {
-  category: Exclude<PracticalInfoCategory, "prep" | "venue">;
+  category: Exclude<PracticalInfoCategory, "prep" | "centers">;
   tasks: PracticalInfoTask[];
 }) {
   const copy = categoryCopy[category];
@@ -231,7 +259,7 @@ function TaskPanel({
   );
 }
 
-function PrepPanel() {
+function PrepPanel({ supplies }: { supplies: PracticalInfoSupply[] }) {
   return (
     <section
       id="practical-info-panel-prep"
@@ -262,6 +290,13 @@ function PrepPanel() {
       </div>
 
       <div className="grid gap-5 md:grid-cols-2">
+        <PrepCard
+          title="공식 지참물·학습 준비 구분"
+          items={supplies.map(
+            (item) =>
+              `${item.status === "held_until_round_notice" ? "[회차 공고 확인]" : "[연습 권장]"} ${item.label} — ${item.note}`,
+          )}
+        />
         <PrepCard
           title="시험 전 확인"
           items={[
@@ -323,12 +358,12 @@ function PrepPanel() {
   );
 }
 
-function ExamVenuePanel() {
+function ExamVenuePanel({ centers }: { centers: PracticalInfoCenter[] }) {
   return (
     <section
-      id="practical-info-panel-venue"
+      id="practical-info-panel-centers"
       role="tabpanel"
-      aria-labelledby="practical-info-tab-venue"
+      aria-labelledby="practical-info-tab-centers"
       className="mt-6 grid gap-6"
     >
       <div className="rounded-3xl bg-[#173957] p-6 text-white md:p-8">
@@ -344,6 +379,47 @@ function ExamVenuePanel() {
           확인한 뒤 작업하세요. 실제 시험 규칙은 해당 회차 공식 안내가
           최종 기준입니다.
         </p>
+      </div>
+
+      <div>
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <p className="eyebrow">2026 기사 제2회 공식 시설현황</p>
+            <h2 className="mt-2 text-2xl font-extrabold">
+              설비보전기사 작업형 시험장 {centers.length}곳
+            </h2>
+          </div>
+          <p className="text-xs font-bold text-slate-500">
+            시설현황 6.19. 18시 기준
+          </p>
+        </div>
+        <div className="mt-5 grid gap-3 md:grid-cols-2">
+          {centers.map((center) => (
+            <Link
+              key={center.id}
+              href={`/practical/info/centers/${center.id}`}
+              className="rounded-2xl border border-slate-200 bg-white p-5 hover:border-[#16697a]"
+            >
+              <div className="flex flex-wrap gap-2 text-xs font-extrabold">
+                <span className="rounded-full bg-[#eaf7f6] px-2.5 py-1 text-[#16697a]">
+                  {center.region}
+                </span>
+                {center.parkingNote ? (
+                  <span className="rounded-full bg-amber-100 px-2.5 py-1 text-amber-800">
+                    {center.parkingNote}
+                  </span>
+                ) : null}
+              </div>
+              <h3 className="mt-3 font-extrabold">{center.name}</h3>
+              <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">
+                {center.rawFacilityNote}
+              </p>
+              <span className="mt-3 inline-flex items-center gap-1 text-sm font-extrabold text-[#16697a]">
+                장비·적응 포인트 보기 <ArrowRight size={14} />
+              </span>
+            </Link>
+          ))}
+        </div>
       </div>
 
       <div className="grid gap-5 md:grid-cols-2">

@@ -222,7 +222,7 @@ test("each practical concept offers an integrated study sheet before the fixed s
     page.getByTestId("practical-textbook-concept-integrated-sheet"),
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "파스칼" }),
+    page.getByRole("heading", { name: "파스칼", exact: true }),
   ).toBeVisible();
   await expect(page.getByText("개념 이해", { exact: true })).toBeVisible();
   await expect(page.getByText("NCS 원문 근거", { exact: true })).toBeVisible();
@@ -236,9 +236,9 @@ test("Pascal keeps its confirmed reconstruction separate from NCS-grounded predi
   await expect(
     page.getByText("기출복원 · (실기 출제)", { exact: true }),
   ).toBeVisible();
-  const pastLink = page.locator(
-    'a[href="/practical/written/question/P-2026-1-Q07"]',
-  );
+  const pastLink = page
+    .getByTestId("practical-written-supplement")
+    .locator('a[href="/practical/written/question/P-2026-1-Q07"]');
   await expect(pastLink).toHaveCount(1);
   await expect(pastLink).toContainText("파스칼 원리");
   await expect(pastLink).toContainText("연결된 두 피스톤의 힘·면적 관계");
@@ -516,7 +516,6 @@ test("practical concept reads as a lesson and keeps source links at the end", as
   page,
 }) => {
   await page.goto("/practical/written/theory/PCON-040");
-  const supplement = page.getByTestId("practical-written-supplement");
   const supplementText = await page
     .getByTestId("practical-written-supplement-content")
     .innerText();
@@ -606,4 +605,74 @@ test("unsupported NCS links are not fabricated and OEE is separated from autonom
     "OEE=시간가동률×성능가동률×양품률",
   );
   await expect(page.locator("main")).not.toContainText("초기청소");
+});
+
+test("practical written theory switches between concept and eight exam-type paths", async ({
+  page,
+}) => {
+  await page.goto("/practical/written/theory?view=exam-type");
+  await expect(page.getByTestId("practical-written-view-tabs")).toBeVisible();
+  for (const format of [
+    "image",
+    "definition",
+    "calculation",
+    "sequence",
+    "drawing",
+    "symbol",
+    "matching",
+    "diagnosis",
+  ]) {
+    await expect(
+      page.getByTestId(`practical-written-format-${format}`),
+    ).toBeVisible();
+  }
+  await page.getByTestId("practical-written-format-calculation").click();
+  await expect(page).toHaveURL(
+    /\/practical\/written\/theory\/type\/calculation$/,
+  );
+  await expect(page.getByRole("heading", { name: "계산형" })).toBeVisible();
+
+  await page.goto("/practical/written/theory?view=concept");
+  await expect(
+    page.getByTestId("practical-textbook-learning-types"),
+  ).toBeVisible();
+});
+
+test("exam card starts with a hidden-answer solve path and supports retry", async ({
+  page,
+}) => {
+  await page.goto("/practical/written/card/bearing-identification");
+  await expect(
+    page.getByRole("link", { name: /답 가리고 직접 풀기/ }).first(),
+  ).toBeVisible();
+  await page
+    .getByRole("link", { name: /답 가리고 직접 풀기/ })
+    .first()
+    .click();
+  await expect(page.getByTestId("practical-answer-feedback")).toHaveCount(0);
+  await page.locator("#practical-answer").fill("원통 롤러, 테이퍼 롤러, 스러스트");
+  await page.getByRole("button", { name: "답안 제출" }).click();
+  await expect(page.getByTestId("practical-answer-feedback")).toBeVisible();
+  await page.getByRole("button", { name: "답안 지우고 다시 풀기" }).click();
+  await expect(page.getByTestId("practical-answer-feedback")).toHaveCount(0);
+  await expect(page.locator("#practical-answer")).toHaveValue("");
+});
+
+test("official facility catalog exposes 18 centers and a source-limited detail page", async ({
+  page,
+}) => {
+  await page.goto("/practical/info?tab=centers");
+  await expect(
+    page.getByRole("heading", { name: "설비보전기사 작업형 시험장 18곳" }),
+  ).toBeVisible();
+  await page
+    .getByRole("link", { name: /서울특별시 기술교육원 북부캠퍼스/ })
+    .click();
+  await expect(
+    page.getByRole("heading", {
+      name: "서울특별시 기술교육원 북부캠퍼스",
+    }),
+  ).toBeVisible();
+  await expect(page.locator("main")).toContainText("NSA-250PA");
+  await expect(page.locator("main")).toContainText("자료 한계");
 });

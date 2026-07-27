@@ -81,6 +81,13 @@ describe("practical written exam-first cards", () => {
 
       const pastQuestions = questionsFor(card.pastQuestionIds);
       const predictedQuestions = questionsFor(card.predictedQuestionIds);
+      expect(card.slug.length, card.id).toBeGreaterThan(0);
+      expect(card.primaryFormat, card.id).toBe(card.format);
+      expect(card.contentStatus, card.id).toBe("published");
+      expect(
+        new Set(card.keywordLinks.map((keyword) => keyword.slug)).size,
+        card.id,
+      ).toBe(card.keywordLinks.length);
       expect(
         pastQuestions.every((question) => question.kind === "past"),
         `${card.id} has a non-past question in pastQuestionIds`,

@@ -83,22 +83,27 @@ export function PracticalWrittenExamCardView({
       </header>
 
       <div className="grid gap-6 p-6 md:p-8">
-        <section
-          aria-labelledby={`${card.id}-direct-answer`}
-          className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 md:p-6"
-        >
+        <section className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 md:p-6">
           <p className="text-xs font-black uppercase tracking-[0.14em] text-emerald-700">
-            시험장에서 바로 쓰는 답
+            먼저 답을 가리고 씁니다
           </p>
-          <h3
-            id={`${card.id}-direct-answer`}
-            className="mt-2 text-xl font-extrabold text-emerald-950"
-          >
-            핵심 답안
+          <h3 className="mt-2 text-xl font-extrabold text-emerald-950">
+            이 카드의 기출·변형 문제를 직접 풀어 보세요
           </h3>
-          <p className="mt-3 text-base font-bold leading-8 text-emerald-950">
-            {card.directAnswer}
+          <p className="mt-3 text-sm leading-7 text-emerald-900">
+            제출 전에는 모범답안과 채점 키워드를 보여 주지 않습니다. 답안을
+            제출한 뒤 부분점수 기준과 오답 함정을 비교할 수 있습니다.
           </p>
+          {publicPastQuestions[0] ?? publicPredictedQuestions[0] ? (
+            <Link
+              href={`/practical/written/question/${
+                (publicPastQuestions[0] ?? publicPredictedQuestions[0]).id
+              }`}
+              className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#173957] px-5 py-3 text-sm font-extrabold text-white"
+            >
+              답 가리고 직접 풀기 <ArrowRight size={15} />
+            </Link>
+          ) : null}
         </section>
 
         <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
@@ -108,13 +113,14 @@ export function PracticalWrittenExamCardView({
             </p>
             <h3 className="mt-2 font-extrabold">핵심 키워드</h3>
             <div className="mt-4 flex flex-wrap gap-2">
-              {card.studyKeywords.slice(0, 5).map((keyword) => (
-                <span
-                  key={keyword}
+              {card.keywordLinks.slice(0, 5).map((keyword) => (
+                <Link
+                  key={keyword.slug}
+                  href={`/practical/written/keyword/${keyword.slug}`}
                   className="rounded-full border border-amber-300 bg-white px-3 py-1.5 text-xs font-extrabold text-amber-950"
                 >
-                  {keyword}
-                </span>
+                  {keyword.label}
+                </Link>
               ))}
             </div>
           </section>
@@ -143,7 +149,7 @@ export function PracticalWrittenExamCardView({
 
         {visualAids.length > 0 ? (
           <section aria-label="시험카드 판별 시각자료" className="grid gap-4">
-            {visualAids.slice(0, 1).map((visualAid) => (
+            {visualAids.map((visualAid) => (
               <PracticalVisualAidFigure
                 key={visualAid.id}
                 visualAid={visualAid}
@@ -216,10 +222,13 @@ export function PracticalWrittenExamCardView({
           )}
         </section>
 
-        <section className="rounded-2xl border border-indigo-200 bg-indigo-50 p-5 md:p-6">
+        <details className="rounded-2xl border border-indigo-200 bg-indigo-50 p-5 md:p-6">
+          <summary className="cursor-pointer text-lg font-extrabold text-indigo-950">
+            직접 푼 뒤 답안 작성 순서 보기
+          </summary>
           <div className="flex items-center gap-2">
             <ClipboardPenLine size={19} className="text-indigo-700" />
-            <h3 className="text-lg font-extrabold">답안은 이 순서로 씁니다</h3>
+            <h3 className="mt-4 text-lg font-extrabold">답안은 이 순서로 씁니다</h3>
           </div>
           <ol className="mt-4 space-y-3 pl-5 text-sm leading-7 text-slate-700">
             {card.answerSkeleton.map((line) => (
@@ -228,7 +237,7 @@ export function PracticalWrittenExamCardView({
               </li>
             ))}
           </ol>
-        </section>
+        </details>
 
         <div className="grid gap-5 lg:grid-cols-2">
           <section className="rounded-2xl border border-violet-200 bg-violet-50 p-5">
@@ -276,21 +285,23 @@ export function PracticalWrittenExamCardView({
                 </span>
               </Link>
             ))}
-            {card.predictedExamples
-              .slice(0, Math.max(0, 3 - publicPredictedQuestions.length))
-              .map((prompt) => (
-                <div
-                  key={prompt}
-                  className="rounded-xl border border-dashed border-violet-200 bg-white p-4 text-sm font-bold leading-6 text-slate-700"
-                >
-                  {prompt}
-                  <span className="mt-2 block text-xs font-extrabold text-violet-700">
-                    카드 전용 예상 · 실제 기출횟수에 포함하지 않음
-                  </span>
-                </div>
-              ))}
+            {publicPredictedQuestions.length === 0 ? (
+              <p className="rounded-xl border border-dashed border-violet-200 bg-white p-4 text-sm leading-6 text-slate-600">
+                연결된 공개 예상문제를 검수 중입니다. 문장 예시만으로 완료
+                처리하지 않습니다.
+              </p>
+            ) : null}
           </div>
         </section>
+
+        <details className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
+          <summary className="cursor-pointer font-extrabold text-emerald-950">
+            직접 푼 뒤 핵심 답안 요약 보기
+          </summary>
+          <p className="mt-4 text-sm font-bold leading-7 text-emerald-950">
+            {card.directAnswer}
+          </p>
+        </details>
 
         <details className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
           <summary className="cursor-pointer font-extrabold text-slate-800">

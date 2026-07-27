@@ -5,6 +5,7 @@ import { PracticalLabelBadges } from "@/components/practical-label-badges";
 import { PracticalQuestionList } from "@/components/practical-question-list";
 import { PracticalVisualAidFigure } from "@/components/practical-visual-aid";
 import { PracticalWrittenExamCardView } from "@/components/practical-written-exam-card";
+import { PracticalWrittenConceptSummary } from "@/components/practical-written-concept-summary";
 import { getPracticalWorkTasksForConcept } from "@/data/source/practical-work-tasks";
 import { conceptGroups, subjects } from "@/lib/domain/catalog";
 import type { PracticalConcept } from "@/lib/domain/practical-types";
@@ -61,10 +62,15 @@ export default async function PracticalConceptPage({
   );
   const examCardBundles = await Promise.all(
     examCards.map(async (card) => {
-      const [cardPastQuestions, cardPredictedQuestions] = await Promise.all([
+      const [cardPastQuestions, cardPredictedQuestions, cardVisualAids] = await Promise.all([
         Promise.all(card.pastQuestionIds.map((id) => getPracticalQuestion(id))),
         Promise.all(
           card.predictedQuestionIds.map((id) => getPracticalQuestion(id)),
+        ),
+        Promise.all(
+          card.visualAidIds.map((id) =>
+            getPublicPracticalVisualAid(id, "theory"),
+          ),
         ),
       ]);
       return {
@@ -76,6 +82,10 @@ export default async function PracticalConceptPage({
         predictedQuestions: cardPredictedQuestions.filter(
           (question): question is NonNullable<typeof question> =>
             Boolean(question),
+        ),
+        visualAids: cardVisualAids.filter(
+          (visualAid): visualAid is NonNullable<typeof visualAid> =>
+            Boolean(visualAid),
         ),
       };
     }),
@@ -132,19 +142,20 @@ export default async function PracticalConceptPage({
         pastQuestionCount={pastQuestions.length}
         predictedQuestionCount={predictedQuestions.length}
       />
-      {examCardBundles.map(({ card, pastQuestions: cardPast, predictedQuestions: cardPredicted }) => (
+      <PracticalWrittenConceptSummary concept={concept} />
+      {examCardBundles.map(({ card, pastQuestions: cardPast, predictedQuestions: cardPredicted, visualAids: cardVisualAids }) => (
         <PracticalWrittenExamCardView
           key={card.id}
           card={card}
           pastQuestions={cardPast}
           predictedQuestions={cardPredicted}
-          visualAids={publicVisualAids}
+          visualAids={cardVisualAids}
         />
       ))}
       <details
         data-testid="practical-written-supplement"
         className="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-4 md:p-6"
-        open={examCardBundles.length === 0}
+        open={examCardBundles.every(({ card }) => card.id.startsWith("PWEC-P-"))}
       >
         <summary className="cursor-pointer text-base font-extrabold text-slate-800">
           보충 개념·작업 적용·NCS 원문 근거
