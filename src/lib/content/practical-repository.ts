@@ -1,6 +1,8 @@
 import "server-only";
 
 import rawPracticalContent from "@/data/generated/practical-content.json";
+import rawPracticalWrittenGovernance from "@/data/generated/practical-written-governance.json";
+import type { ExamSummaryEvidence } from "@/data/source/practical-exam-subject-summaries";
 import {
   PRACTICAL_WRITTEN_EXAM_CARD_SEEDS,
 } from "@/data/source/practical-written-exam-cards";
@@ -17,6 +19,8 @@ import {
 import type {
   PracticalConcept,
   PracticalContent,
+  ExamEvidenceDisplayKind,
+  PracticalExamRepresentativeQuestion,
   PracticalNcsCoverage,
   PracticalQuestion,
   PracticalStudyCategoryId,
@@ -24,10 +28,16 @@ import type {
   PracticalWrittenExamCard,
   PracticalWrittenExamCardFormat,
 } from "@/lib/domain/practical-types";
+import type { PracticalWrittenGovernanceManifest } from "@/lib/domain/practical-execution-types";
 import {
   isPublishablePracticalQuestion,
   toPublicPracticalQuestion,
 } from "@/lib/domain/practical";
+import {
+  isLearnerVisiblePracticalConcept,
+  isLearnerVisiblePracticalQuestion,
+  isLearnerVisiblePracticalWrittenExamCard,
+} from "@/lib/content/learner-visibility";
 
 export {
   isPublishablePracticalQuestion,
@@ -35,6 +45,8 @@ export {
 } from "@/lib/domain/practical";
 
 const content = rawPracticalContent as PracticalContent;
+const writtenGovernance =
+  rawPracticalWrittenGovernance as PracticalWrittenGovernanceManifest;
 
 const keywordSlug = (keyword: string) =>
   encodeURIComponent(keyword.trim().replace(/\s+/g, "-"));
@@ -86,7 +98,12 @@ const seededPracticalWrittenExamCards: PracticalWrittenExamCard[] =
         visualAidId: question.visualAidId!,
         role: "recognition" as const,
       }));
-    const visualAidIds = [...new Set(mappedVisuals.map((item) => item.visualAidId))]
+    const visualAidIds = [
+      ...new Set([
+        ...seed.visualAidIds,
+        ...mappedVisuals.map((item) => item.visualAidId),
+      ]),
+    ]
       .filter((visualAidId) => {
         const visual = content.visualAids.find((item) => item.id === visualAidId);
         return visual?.publicUseStatus === "public";
@@ -95,7 +112,12 @@ const seededPracticalWrittenExamCards: PracticalWrittenExamCard[] =
     return {
       ...seed,
       visualAidIds,
-      recognitionVisualAidIds: visualAidIds,
+      recognitionVisualAidIds: [
+        ...new Set([
+          ...seed.recognitionVisualAidIds,
+          ...mappedVisuals.map((item) => item.visualAidId),
+        ]),
+      ].filter((visualAidId) => visualAidIds.includes(visualAidId)),
       pastQuestionVisualMappings: mappedVisuals.filter((mapping) =>
         seed.pastQuestionIds.includes(mapping.questionId),
       ),
@@ -361,11 +383,17 @@ export async function getPracticalNcsCoverage(): Promise<PracticalNcsCoverage> {
 }
 
 export async function getPracticalWrittenExamCards() {
-  return practicalWrittenExamCards;
+  return practicalWrittenExamCards.filter(
+    isLearnerVisiblePracticalWrittenExamCard,
+  );
 }
 
 export async function getPracticalWrittenExamCardBySlug(slug: string) {
-  return practicalWrittenExamCards.find((card) => card.slug === slug);
+  return practicalWrittenExamCards.find(
+    (card) =>
+      card.slug === slug &&
+      isLearnerVisiblePracticalWrittenExamCard(card),
+  );
 }
 
 export async function getPracticalWrittenExamCardsByFormat(
@@ -373,7 +401,8 @@ export async function getPracticalWrittenExamCardsByFormat(
 ) {
   return practicalWrittenExamCards.filter(
     (card) =>
-      card.primaryFormat === format || card.secondaryFormats.includes(format),
+      isLearnerVisiblePracticalWrittenExamCard(card) &&
+      (card.primaryFormat === format || card.secondaryFormats.includes(format)),
   );
 }
 
@@ -386,7 +415,9 @@ export async function getPracticalWrittenKeywordIndex() {
     string,
     { slug: string; label: string; cardIds: string[]; questionIds: string[] }
   >();
-  for (const card of practicalWrittenExamCards) {
+  for (const card of practicalWrittenExamCards.filter(
+    isLearnerVisiblePracticalWrittenExamCard,
+  )) {
     for (const keyword of card.keywordLinks) {
       const existing = keywords.get(keyword.slug) ?? {
         slug: keyword.slug,
@@ -413,8 +444,11 @@ export async function getPracticalWrittenKeywordIndex() {
 export async function getPracticalWrittenExamCardsForConcept(
   conceptId: string,
 ) {
-  return practicalWrittenExamCards.filter((card) =>
-    card.conceptIds.includes(conceptId),
+  if (!isLearnerVisiblePracticalConcept({ id: conceptId })) return [];
+  return practicalWrittenExamCards.filter(
+    (card) =>
+      isLearnerVisiblePracticalWrittenExamCard(card) &&
+      card.conceptIds.includes(conceptId),
   );
 }
 
@@ -424,7 +458,9 @@ export async function getPracticalQuestion(questionId: string) {
 
 export async function getPublicPracticalQuestion(questionId: string) {
   const question = await getPracticalQuestion(questionId);
-  return question && isPublishablePracticalQuestion(question)
+  return question &&
+    isPublishablePracticalQuestion(question) &&
+    isLearnerVisiblePracticalQuestion(question)
     ? toPublicPracticalQuestion(question)
     : undefined;
 }
@@ -433,6 +469,17 @@ export async function getPracticalConcept(
   conceptId: string,
 ): Promise<PracticalConcept | undefined> {
   return content.concepts.find((concept) => concept.id === conceptId);
+}
+
+export async function getPublicPracticalConcept(
+  conceptId: string,
+): Promise<PracticalConcept | undefined> {
+  const concept = await getPracticalConcept(conceptId);
+  return concept &&
+    concept.contentStatus === "published" &&
+    isLearnerVisiblePracticalConcept(concept)
+    ? concept
+    : undefined;
 }
 
 export async function getPracticalStudyCategory(
@@ -463,11 +510,138 @@ export async function getPublicPracticalVisualAid(
   return visualAid;
 }
 
+export function deriveExamEvidenceDisplayKinds(
+  evidence: ExamSummaryEvidence,
+): ExamEvidenceDisplayKind[] {
+  const kinds = new Set<ExamEvidenceDisplayKind>();
+  const practicalQuestionIds = new Set(evidence.practicalQuestionIds);
+  const explicitEvidenceIds = new Set(evidence.evidenceIds);
+  const evidenceItems = writtenGovernance.evidence.filter(
+    (item) =>
+      explicitEvidenceIds.has(item.id) ||
+      item.questionIds.some((questionId) =>
+        practicalQuestionIds.has(questionId),
+      ),
+  );
+
+  for (const item of evidenceItems) {
+    if (item.status === "past_reconstructed") kinds.add("practical_past");
+    if (item.status === "past_variant") kinds.add("practical_variant");
+    if (item.status === "predicted_related") kinds.add("practical_predicted");
+    if (item.status === "ncs_supplement") kinds.add("ncs_supplement");
+  }
+
+  if (evidence.writtenQuestionIds.length > 0) kinds.add("written_frequent");
+  if (evidence.ncsSourceRefs.length > 0) kinds.add("ncs_supplement");
+
+  return [...kinds];
+}
+
+function representativeQuestionPriority(
+  question: PracticalExamRepresentativeQuestion,
+) {
+  if (question.evidenceKinds.includes("practical_past")) return 0;
+  if (question.evidenceKinds.includes("practical_variant")) return 1;
+  if (question.evidenceKinds.includes("practical_predicted")) return 2;
+  if (question.evidenceKinds.includes("written_frequent")) return 3;
+  return 4;
+}
+
+/**
+ * 과목 요약용 문제는 공개 가능한 문항만 사용하며 최대 3개로 제한한다.
+ * 라벨은 저장된 한국어 문자열이 아니라 Evidence 관계에서 파생한다.
+ */
+export function getPublicPracticalExamRepresentativeQuestions(
+  questionIds: string[],
+): PracticalExamRepresentativeQuestion[] {
+  const requestedOrder = new Map(
+    questionIds.map((questionId, index) => [questionId, index]),
+  );
+
+  return content.questions
+    .filter(
+      (question) =>
+        requestedOrder.has(question.id) &&
+        isPublishablePracticalQuestion(question) &&
+        isLearnerVisiblePracticalQuestion(question),
+    )
+    .map((question) => {
+      const evidenceIds = writtenGovernance.evidence
+        .filter((item) => item.questionIds.includes(question.id))
+        .map((item) => item.id);
+      const evidenceKinds = deriveExamEvidenceDisplayKinds({
+        evidenceIds,
+        writtenQuestionIds: [],
+        practicalQuestionIds: [question.id],
+        ncsSourceRefs: [],
+      });
+      if (evidenceKinds.length === 0) {
+        evidenceKinds.push(
+          question.kind === "past"
+            ? "practical_past"
+            : "practical_predicted",
+        );
+      }
+      const visual = question.visualAidId
+        ? content.visualAids.find(
+            (item) =>
+              item.id === question.visualAidId &&
+              item.publicUseStatus === "public" &&
+              item.examMatchStatus === "exact_source",
+          )
+        : undefined;
+
+      return {
+        id: question.id,
+        title: question.title,
+        stem: question.stem,
+        evidenceKinds,
+        occurrence: question.occurrence
+          ? {
+              year: question.occurrence.year,
+              round: question.occurrence.round,
+            }
+          : null,
+        visual: visual
+          ? {
+              id: visual.id,
+              title: visual.title,
+              imagePaths: visual.imagePaths,
+              altText: visual.altText,
+            }
+          : null,
+      };
+    })
+    .sort((left, right) => {
+      const byEvidence =
+        representativeQuestionPriority(left) -
+        representativeQuestionPriority(right);
+      if (byEvidence !== 0) return byEvidence;
+      return (
+        (requestedOrder.get(left.id) ?? Number.MAX_SAFE_INTEGER) -
+        (requestedOrder.get(right.id) ?? Number.MAX_SAFE_INTEGER)
+      );
+    })
+    .slice(0, 3);
+}
+
 export function publicPracticalQuestions(kind?: "past" | "predicted") {
   return content.questions.filter(
     (question) =>
       isPublishablePracticalQuestion(question) &&
+      isLearnerVisiblePracticalQuestion(question) &&
       (!kind || question.kind === kind),
+  );
+}
+
+export function publicPracticalConcepts(
+  contentRole?: PracticalConcept["contentRole"],
+) {
+  return content.concepts.filter(
+    (concept) =>
+      concept.contentStatus === "published" &&
+      isLearnerVisiblePracticalConcept(concept) &&
+      (!contentRole || concept.contentRole === contentRole),
   );
 }
 
@@ -489,7 +663,9 @@ export function practicalConceptsByCategory(
   const conceptIds = new Set(category?.conceptIds ?? []);
   return content.concepts.filter(
     (concept) =>
-      concept.contentStatus === "published" && conceptIds.has(concept.id),
+      concept.contentStatus === "published" &&
+      isLearnerVisiblePracticalConcept(concept) &&
+      conceptIds.has(concept.id),
   );
 }
 
@@ -523,7 +699,11 @@ export function practicalConceptsByTextbookSubject(
 ) {
   return content.concepts.filter((concept) => {
     const placement = practicalTextbookPlacementByConceptId[concept.id];
-    return concept.contentStatus === "published" && placement?.subjectId === subjectId;
+    return (
+      concept.contentStatus === "published" &&
+      isLearnerVisiblePracticalConcept(concept) &&
+      placement?.subjectId === subjectId
+    );
   });
 }
 

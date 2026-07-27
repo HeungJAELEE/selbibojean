@@ -20,17 +20,24 @@ import {
   type TheoryMode,
 } from "@/components/theory-mode-tabs";
 import { PageHeading } from "@/components/page-heading";
+import { PracticalExamSubjectTabs } from "@/components/practical-exam-subject-tabs";
+import { PracticalExamSubjectCheatSheet } from "@/components/practical-exam-subject-cheat-sheet";
 import {
   PracticalWrittenViewTabs,
   type PracticalWrittenTheoryView,
 } from "@/components/practical-written-view-tabs";
+import { getExamSubjectCheatSheet } from "@/data/source/practical-exam-subject-summaries";
+import type { PracticalTextbookSubjectId } from "@/data/source/practical-textbook-taxonomy";
 import { getContent } from "@/lib/content/repository";
 import {
   getPracticalContent,
   getPracticalTextbookSubjects,
   getPracticalWrittenExamCards,
+  getPublicPracticalExamRepresentativeQuestions,
   practicalConceptsByTextbookSubject,
+  publicPracticalConcepts,
 } from "@/lib/content/practical-repository";
+import { isLearnerVisiblePracticalQuestion } from "@/lib/content/learner-visibility";
 import {
   isPublishableLesson,
   isPublishableQuestion,
@@ -45,26 +52,30 @@ export const metadata: Metadata = {
 export default async function UnifiedTheoryPage({
   searchParams,
 }: {
-  searchParams: Promise<{ mode?: string; view?: string }>;
+  searchParams: Promise<{ mode?: string; view?: string; subject?: string }>;
 }) {
-  const [
-    { mode: requestedMode, view: requestedView },
-    content,
-    practical,
-    practicalSubjects,
-    practicalExamCards,
-  ] =
-    await Promise.all([
-      searchParams,
-      getContent(),
-      getPracticalContent(),
-      getPracticalTextbookSubjects(),
-      getPracticalWrittenExamCards(),
-    ]);
+  const {
+    mode: requestedMode,
+    view: requestedView,
+    subject: requestedSubject,
+  } = await searchParams;
   const mode: TheoryMode =
     requestedMode === "practical" ? "practical" : "written";
   const practicalView: PracticalWrittenTheoryView =
-    requestedView === "exam-type" ? "exam-type" : "concept";
+    requestedView === "exam-type"
+      ? "exam-type"
+      : requestedView === "concept"
+        ? "concept"
+        : "subject-summary";
+  const content = mode === "written" ? await getContent() : null;
+  const practicalSubjects = getPracticalTextbookSubjects();
+  const [practical, practicalExamCards] =
+    mode === "practical" && practicalView !== "subject-summary"
+      ? await Promise.all([
+          getPracticalContent(),
+          getPracticalWrittenExamCards(),
+        ])
+      : [undefined, undefined];
 
   return (
     <div className="page-wrap pb-16">
@@ -77,13 +88,14 @@ export default async function UnifiedTheoryPage({
       <TheoryModeTabs mode={mode} />
 
       {mode === "written" ? (
-        <WrittenTheoryMode content={content} />
+        <WrittenTheoryMode content={content!} />
       ) : (
         <PracticalTheoryMode
           practical={practical}
           subjects={practicalSubjects}
           examCards={practicalExamCards}
           view={practicalView}
+          selectedSubjectId={requestedSubject}
         />
       )}
     </div>
@@ -200,12 +212,52 @@ function PracticalTheoryMode({
   subjects,
   examCards,
   view,
+  selectedSubjectId: requestedSubjectId,
 }: {
-  practical: Awaited<ReturnType<typeof getPracticalContent>>;
+  practical: Awaited<ReturnType<typeof getPracticalContent>> | undefined;
   subjects: ReturnType<typeof getPracticalTextbookSubjects>;
-  examCards: Awaited<ReturnType<typeof getPracticalWrittenExamCards>>;
+  examCards:
+    | Awaited<ReturnType<typeof getPracticalWrittenExamCards>>
+    | undefined;
   view: PracticalWrittenTheoryView;
+  selectedSubjectId?: string;
 }) {
+  if (view === "subject-summary") {
+    const selectedSubject =
+      subjects.find((subject) => subject.id === requestedSubjectId) ??
+      subjects[0];
+    const selectedSubjectId =
+      selectedSubject.id as PracticalTextbookSubjectId;
+    const summary = getExamSubjectCheatSheet(selectedSubjectId);
+    const representativeQuestions =
+      getPublicPracticalExamRepresentativeQuestions(
+        summary?.practicalWritten.representativeQuestionIds ?? [],
+      );
+
+    return (
+      <>
+        <PracticalWrittenViewTabs
+          view={view}
+          basePath="/theory"
+          mode
+        />
+        <PracticalExamSubjectTabs
+          subjects={subjects}
+          selectedSubjectId={selectedSubjectId}
+          basePath="/theory"
+          mode
+        />
+        <PracticalExamSubjectCheatSheet
+          subject={selectedSubject}
+          summary={summary}
+          questions={representativeQuestions}
+        />
+      </>
+    );
+  }
+
+  if (!practical || !examCards) return null;
+
   const questionById = new Map(
     practical.questions.map((question) => [question.id, question]),
   );
@@ -438,8 +490,8 @@ function PracticalTheoryMode({
             </h2>
           </div>
           <p className="text-sm font-bold text-slate-500">
-            공개 개념 {practical.report.publication.concepts} · NCS 보강{" "}
-            {practical.report.publication.supplementalConcepts}
+            공개 개념 {publicPracticalConcepts("exam_linked").length} · NCS 보강{" "}
+            {publicPracticalConcepts("supplemental").length}
           </p>
         </div>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -450,12 +502,14 @@ function PracticalTheoryMode({
               (question) =>
                 question.kind === "past" &&
                 question.contentStatus === "published" &&
+                isLearnerVisiblePracticalQuestion(question) &&
                 question.conceptIds.some((id) => conceptIds.has(id)),
             ).length;
             const predictedCount = practical.questions.filter(
               (question) =>
                 question.kind === "predicted" &&
                 question.contentStatus === "published" &&
+                isLearnerVisiblePracticalQuestion(question) &&
                 question.conceptIds.some((id) => conceptIds.has(id)),
             ).length;
             return (

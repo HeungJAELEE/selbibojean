@@ -4,14 +4,13 @@ import type { ReactNode } from "react";
 import { PracticalLabelBadges } from "@/components/practical-label-badges";
 import { PracticalQuestionList } from "@/components/practical-question-list";
 import { PracticalVisualAidFigure } from "@/components/practical-visual-aid";
-import { PracticalWrittenExamCardView } from "@/components/practical-written-exam-card";
 import { PracticalWrittenConceptSummary } from "@/components/practical-written-concept-summary";
+import { PracticalWrittenCardLink } from "@/components/practical-written-card-link";
 import { getPracticalWorkTasksForConcept } from "@/data/source/practical-work-tasks";
 import { conceptGroups, subjects } from "@/lib/domain/catalog";
 import type { PracticalConcept } from "@/lib/domain/practical-types";
 import {
-  getPracticalConcept,
-  getPracticalQuestion,
+  getPublicPracticalConcept,
   getPracticalTextbookPlacementForConcept,
   getPracticalTextbookSubject,
   getPracticalWrittenExamCardsForConcept,
@@ -26,8 +25,8 @@ export default async function PracticalConceptPage({
   params: Promise<{ conceptId: string }>;
 }) {
   const { conceptId } = await params;
-  const concept = await getPracticalConcept(conceptId);
-  if (!concept || concept.contentStatus !== "published") notFound();
+  const concept = await getPublicPracticalConcept(conceptId);
+  if (!concept) notFound();
   const examCards = await getPracticalWrittenExamCardsForConcept(concept.id);
   const relatedWorkTasks = getPracticalWorkTasksForConcept(concept.id);
   const publicVisualAids = (
@@ -59,36 +58,6 @@ export default async function PracticalConceptPage({
   );
   const predictedQuestions = publicRelatedQuestions.filter(
     (question) => question.kind === "predicted",
-  );
-  const examCardBundles = await Promise.all(
-    examCards.map(async (card) => {
-      const [cardPastQuestions, cardPredictedQuestions, cardVisualAids] = await Promise.all([
-        Promise.all(card.pastQuestionIds.map((id) => getPracticalQuestion(id))),
-        Promise.all(
-          card.predictedQuestionIds.map((id) => getPracticalQuestion(id)),
-        ),
-        Promise.all(
-          card.visualAidIds.map((id) =>
-            getPublicPracticalVisualAid(id, "theory"),
-          ),
-        ),
-      ]);
-      return {
-        card,
-        pastQuestions: cardPastQuestions.filter(
-          (question): question is NonNullable<typeof question> =>
-            Boolean(question),
-        ),
-        predictedQuestions: cardPredictedQuestions.filter(
-          (question): question is NonNullable<typeof question> =>
-            Boolean(question),
-        ),
-        visualAids: cardVisualAids.filter(
-          (visualAid): visualAid is NonNullable<typeof visualAid> =>
-            Boolean(visualAid),
-        ),
-      };
-    }),
   );
   const subject = subjects.find((item) => item.id === concept.subjectLabel);
   const group = conceptGroups.find((item) => item.id === concept.groupLabel);
@@ -143,19 +112,35 @@ export default async function PracticalConceptPage({
         predictedQuestionCount={predictedQuestions.length}
       />
       <PracticalWrittenConceptSummary concept={concept} />
-      {examCardBundles.map(({ card, pastQuestions: cardPast, predictedQuestions: cardPredicted, visualAids: cardVisualAids }) => (
-        <PracticalWrittenExamCardView
-          key={card.id}
-          card={card}
-          pastQuestions={cardPast}
-          predictedQuestions={cardPredicted}
-          visualAids={cardVisualAids}
-        />
-      ))}
+      {examCards.length > 0 ? (
+        <section className="mt-8" aria-labelledby="concept-exam-cards-title">
+          <div className="flex items-end justify-between gap-3">
+            <div>
+              <p className="text-xs font-black tracking-[.14em] text-[#16697a]">
+                관련 기출유형
+              </p>
+              <h2
+                id="concept-exam-cards-title"
+                className="mt-1 text-2xl font-extrabold"
+              >
+                문제를 골라 직접 풀기
+              </h2>
+            </div>
+            <span className="text-xs font-bold text-slate-500">
+              {examCards.length}개
+            </span>
+          </div>
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            {examCards.map((card) => (
+              <PracticalWrittenCardLink key={card.id} card={card} />
+            ))}
+          </div>
+        </section>
+      ) : null}
       <details
         data-testid="practical-written-supplement"
         className="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-4 md:p-6"
-        open={examCardBundles.every(({ card }) => card.id.startsWith("PWEC-P-"))}
+        open={examCards.length === 0}
       >
         <summary className="cursor-pointer text-base font-extrabold text-slate-800">
           보충 개념·작업 적용·NCS 원문 근거

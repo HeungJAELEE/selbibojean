@@ -20,7 +20,13 @@ type LegacyPracticalWrittenExamCardSeed = Omit<
   | "pastQuestionVisualMappings"
   | "sequenceSteps"
   | "contentStatus"
->;
+> &
+  Partial<
+    Pick<
+      PracticalWrittenExamCardSeed,
+      "visualAidIds" | "recognitionVisualAidIds"
+    >
+  >;
 
 const keywordSlug = (keyword: string) =>
   encodeURIComponent(keyword.trim().replace(/\s+/g, "-"));
@@ -37,8 +43,8 @@ const card = (
     slug: keywordSlug(keyword),
     label: keyword,
   })),
-  visualAidIds: [],
-  recognitionVisualAidIds: [],
+  visualAidIds: value.visualAidIds ?? [],
+  recognitionVisualAidIds: value.recognitionVisualAidIds ?? [],
   pastQuestionVisualMappings: [],
   sequenceSteps:
     value.format === "sequence"
@@ -171,6 +177,7 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
       "가열조립과 냉간 압입에서 힘을 가하는 링을 비교하시오.",
       "가열 후 축 어깨에 밀착되지 않았을 때 조치 순서를 쓰시오.",
     ],
+    visualAidIds: ["ncs-bearing-heating"],
     supplementalConceptIds: ["PCON-036"],
   }),
   card({
@@ -372,7 +379,7 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
     questionPattern:
       "버니어 0선 직전의 주척값과 일치눈금×최소눈금을 더해 측정값을 구한다.",
     directAnswer:
-      "측정값은 주척값 + (버니어 일치눈금 번호 × 최소눈금)이다. 예를 들어 주척 37 mm, 7번째 일치, 최소눈금 0.05 mm이면 37.35 mm이다.",
+      "측정값은 주척(본척)값 + (버니어 일치눈금 번호 × 최소눈금)이다. 예를 들어 주척 37 mm, 7번째 일치, 최소눈금 0.05 mm이면 37.35 mm이다.",
     studyKeywords: ["주척값", "0선", "일치눈금", "최소눈금", "mm"],
     answerSkeleton: [
       "주척: 버니어 0선이 지난 마지막 주척값을 읽는다.",
@@ -409,7 +416,7 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
   }),
   card({
     id: "PWEC-GEAR-SURFACE-DAMAGE",
-    title: "기어 피팅·스폴링·스코어링",
+    title: "기어 피팅(피칭)·스폴링·스코어링(스코링)",
     conceptIds: ["PCON-018"],
     evidenceIds: [
       "evidence:P-2025-2-Q10",
@@ -420,7 +427,7 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
     questionPattern:
       "치면 모양을 보고 손상명을 쓰고, 대표 원인과 대책을 연결한다.",
     directAnswer:
-      "피팅은 접촉피로에 의한 작은 점상공, 스폴링은 피로가 진행된 큰 조각 박리, 스코어링은 윤활막 파괴와 미끄럼으로 생긴 긁힘·용착 손상이다.",
+      "피팅(피칭)은 접촉피로에 의한 작은 점상공, 스폴링은 피로가 진행된 큰 조각 박리, 스코어링(스코링)은 윤활막 파괴와 미끄럼으로 생긴 긁힘·용착 손상이다.",
     studyKeywords: ["점상공", "큰 박리", "윤활막 파괴", "미끄럼", "용착"],
     answerSkeleton: [
       "피팅: 작은 점상공 — 반복 접촉피로",
@@ -464,7 +471,7 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
     questionPattern:
       "자주보전의 뜻과 초기청소부터 자주관리 정착까지 7단계를 순서대로 쓴다.",
     directAnswer:
-      "초기청소 → 발생원·곤란개소 대책 → 청소·급유 기준 작성 → 총점검 → 자주점검 → 표준화 → 자주관리 철저 순이다.",
+      "초기청소 → 발생원·곤란개소 대책 → 청소·급유 기준 작성 → 총점검 → 자주점검 → 표준화 → 자주관리 철저(자율관리) 순이다.",
     studyKeywords: ["초기청소", "발생원 대책", "청소·급유 기준", "총점검", "표준화"],
     answerSkeleton: [
       "1~2단계: 초기청소, 발생원·곤란개소 대책",

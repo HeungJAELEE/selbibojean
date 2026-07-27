@@ -84,7 +84,9 @@ type PracticalInfoSupply = {
 
 type PracticalInfoSupplyRecommendation = {
   id: string;
+  supplyId: PracticalInfoSupply["id"];
   label: string;
+  linkLabel: string;
   status: "safety_required" | "conditional" | "optional" | "personal_pick";
   statusLabel: string;
   note: string;
@@ -777,8 +779,18 @@ function PrepPanel({
                   <td className="px-5 py-4 font-extrabold text-[#16697a]">
                     {item.number}
                   </td>
-                  <td className="px-5 py-4 font-extrabold text-slate-900">
-                    {item.label}
+                  <td className="min-w-72 px-5 py-4">
+                    <span className="font-extrabold text-slate-900">
+                      {item.label}
+                    </span>
+                    <div className="mt-2">
+                      <SupplyPurchaseLinks
+                        recommendations={recommendations.filter(
+                          (recommendation) =>
+                            recommendation.supplyId === item.id,
+                        )}
+                      />
+                    </div>
                   </td>
                   <td className="px-5 py-4 text-slate-600">
                     {item.specification}
@@ -807,6 +819,14 @@ function PrepPanel({
                   <h3 className="mt-1 font-extrabold text-slate-900">
                     {item.label}
                   </h3>
+                  <div className="mt-2">
+                    <SupplyPurchaseLinks
+                      recommendations={recommendations.filter(
+                        (recommendation) =>
+                          recommendation.supplyId === item.id,
+                      )}
+                    />
+                  </div>
                 </div>
                 <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">
                   {item.quantity} {item.unit}
@@ -825,9 +845,12 @@ function PrepPanel({
             </article>
           ))}
         </div>
+        <p className="border-t border-slate-100 px-5 py-4 text-xs leading-5 text-slate-500">
+          선택사항은 시험장 구비 여부를 먼저 확인하세요. 품목 옆 추천 링크는
+          구매 참고용이며, 일부 링크를 통한 구매 시 운영자에게 수수료가
+          지급될 수 있습니다.
+        </p>
       </div>
-
-      <SupplyRecommendationSection recommendations={recommendations} />
 
       <div className="mt-6 grid gap-5 md:grid-cols-2">
         <PrepCard
@@ -872,67 +895,32 @@ function PrepPanel({
   );
 }
 
-function SupplyRecommendationSection({
+function SupplyPurchaseLinks({
   recommendations,
 }: {
   recommendations: PracticalInfoSupplyRecommendation[];
 }) {
   return (
-    <section className="mt-8" aria-labelledby="supply-recommendation-heading">
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <p className="eyebrow">준비물 추천 링크</p>
-          <h2
-            id="supply-recommendation-heading"
-            className="mt-2 text-2xl font-extrabold text-slate-900"
-          >
-            안전 보호구 우선 · 선택 공구는 시험장 확인 후
-          </h2>
-        </div>
-        <p className="max-w-xl text-xs leading-5 text-slate-500">
-          선택사항은 시험장에 구비된 경우가 많습니다. 시험장 안내를 먼저
-          확인하고 중복 구매를 피하세요.
-        </p>
-      </div>
-
-      <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {recommendations.map((item) => (
-          <article
-            key={item.id}
-            className="flex flex-col rounded-2xl border border-slate-200 bg-white p-5"
-          >
-            <div className="flex items-start justify-between gap-3">
-              <h3 className="font-extrabold text-slate-900">{item.label}</h3>
-              <RecommendationStatus item={item} />
-            </div>
-            <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
-              {item.note}
-            </p>
-            <a
-              href={item.commerceUrl}
-              target="_blank"
-              rel="sponsored noreferrer"
-              className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-[#173957] px-4 py-3 text-sm font-extrabold text-white"
-            >
-              <ShoppingCart size={15} aria-hidden="true" />
-              쿠팡에서 상품 보기
-              <ExternalLink size={13} aria-hidden="true" />
-            </a>
-          </article>
-        ))}
-      </div>
-
-      <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-7 text-amber-950">
-        <p className="font-extrabold">복장·구매 안내</p>
-        <p className="mt-1">
-          얇은 긴팔 작업복을 권장하며 안전화는 필수입니다. 반팔이라면 용접
-          토시를 반드시 준비하세요. 상품 가격·재고·사양은 변경될 수 있고,
-          실제 반입 가능 품목은 해당 회차 Q-Net 안내와 시험장 공지를
-          우선합니다. 위 링크는 상품 선택을 돕기 위한 참고 링크이며, 일부
-          링크를 통한 구매 시 운영자에게 수수료가 지급될 수 있습니다.
-        </p>
-      </div>
-    </section>
+    <div className="flex flex-wrap gap-2">
+      {recommendations.map((item) => (
+        <a
+          key={item.id}
+          href={item.commerceUrl}
+          target="_blank"
+          rel="sponsored noreferrer"
+          title={item.note}
+          className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-[#173957] shadow-sm transition hover:border-[#16697a] hover:text-[#16697a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16697a]"
+        >
+          <ShoppingCart size={14} aria-hidden="true" />
+          <span>{item.linkLabel}</span>
+          <RecommendationStatus item={item} />
+          <ExternalLink size={12} aria-hidden="true" />
+        </a>
+      ))}
+      {recommendations.length === 0 ? (
+        <span className="text-xs text-slate-400">추천 링크 준비 중</span>
+      ) : null}
+    </div>
   );
 }
 
@@ -952,7 +940,7 @@ function RecommendationStatus({
 
   return (
     <span
-      className={`shrink-0 rounded-full px-3 py-1 text-xs font-extrabold ${tone}`}
+      className={`shrink-0 rounded-full px-2 py-1 text-[10px] font-extrabold ${tone}`}
     >
       {item.statusLabel}
     </span>

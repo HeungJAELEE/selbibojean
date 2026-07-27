@@ -164,4 +164,28 @@ describe("written question audit manifest", () => {
         .some(isPublishableQuestion),
     ).toBe(false);
   });
+
+  it("keeps audit evidence internally while removing it from learner lesson copy", () => {
+    const overlaid = applyWrittenQuestionAuditManifest(content, manifest);
+    const lesson = overlaid.lessons.find(
+      (candidate) => candidate.id === "welding-safety-b33-st30-05",
+    );
+    const examPoint = lesson?.blocks.find(
+      (block) => block.kind === "exam_point",
+    );
+    const learnerCopy = lesson?.blocks
+      .map((block) => `${block.title}\n${block.body}`)
+      .join("\n");
+    const auditedQuestion = manifest.entries.find(
+      (entry) => entry.questionId === "welding-safety-b33-ws31-q001",
+    );
+
+    expect(examPoint?.body).toContain("**질문**");
+    expect(examPoint?.body).toContain("**판단 기준**");
+    expect(examPoint?.body).not.toContain("welding-safety-b33-ws31-q001");
+    expect(learnerCopy).not.toContain("감사 승인 근거");
+    expect(learnerCopy).not.toContain("최종 검수일");
+    expect(auditedQuestion?.evidenceUrls.length).toBeGreaterThan(0);
+    expect(auditedQuestion?.reviewedAt).toBeTruthy();
+  });
 });

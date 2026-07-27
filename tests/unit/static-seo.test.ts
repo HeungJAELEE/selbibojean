@@ -15,9 +15,13 @@ describe("static SEO artifacts", () => {
     questions: [{ id: "U-001", contentStatus: "published" }],
   };
   const practical = {
-    concepts: [{ id: "PCON-001", contentStatus: "published" }],
+    concepts: [
+      { id: "PCON-001", contentStatus: "published" },
+      { id: "PCON-SUP-018", contentStatus: "published" },
+    ],
     questions: [
       { id: "P-001", contentStatus: "published" },
+      { id: "EXP-SUP-018", contentStatus: "published" },
       { id: "P-draft", contentStatus: "review" },
     ],
     studyCategories: [{ id: "formula_calculation" }],
@@ -33,6 +37,12 @@ describe("static SEO artifacts", () => {
     expect(paths).toContain("/practical/written/question/P-001");
     expect(paths).not.toContain("/written/theory/draft-lesson");
     expect(paths).not.toContain("/practical/written/question/P-draft");
+    expect(paths).not.toContain(
+      "/practical/written/theory/PCON-SUP-018",
+    );
+    expect(paths).not.toContain(
+      "/practical/written/question/EXP-SUP-018",
+    );
     expect(paths.some((path) => path.startsWith("/admin") || path.startsWith("/login"))).toBe(false);
   });
 

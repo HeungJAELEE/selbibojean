@@ -49,6 +49,12 @@ describe("practical NCS textbook taxonomy", () => {
     }
   });
 
+  it("keeps gear surface damage with mechanical equipment in subject 3", () => {
+    expect(practicalTextbookPlacementByConceptId["PCON-018"]?.subjectId).toBe(
+      "subject-3",
+    );
+  });
+
   it("keeps missing NCS locations out of the source-confirmed path", () => {
     for (const conceptId of ["PCON-015", "PCON-021", "PCON-027", "PCON-034"]) {
       expect(

@@ -89,15 +89,18 @@ test("practical information has pneumatic hydraulic welding and prep tabs", asyn
     }),
   ).toBeVisible();
   await expect(
+    page.locator('table a[href^="https://link.coupang.com/a/"]'),
+  ).toHaveCount(13);
+  const weldingSupplyRow = page.getByRole("row", {
+    name: /용접용 보호기구 일체/,
+  });
+  await expect(weldingSupplyRow).toContainText("보호구(용접장갑)");
+  await expect(weldingSupplyRow).toContainText("보호구(자동용접면)");
+  await expect(
     page.getByRole("heading", {
       name: "안전 보호구 우선 · 선택 공구는 시험장 확인 후",
     }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("link", {
-      name: /쿠팡에서 상품 보기/,
-    }),
-  ).toHaveCount(13);
+  ).toHaveCount(0);
   await expect(page.locator("main")).toContainText("얇은 긴팔 작업복");
   await expect(page.locator("main")).toContainText("안전화는 필수");
 

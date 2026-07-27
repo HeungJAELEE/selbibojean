@@ -10,7 +10,9 @@ export type PracticalCandidateSupply = {
 
 export type PracticalSupplyRecommendation = {
   id: string;
+  supplyId: PracticalCandidateSupply["id"];
   label: string;
+  linkLabel: string;
   status: "safety_required" | "conditional" | "optional" | "personal_pick";
   statusLabel: string;
   note: string;
@@ -107,13 +109,15 @@ export const PRACTICAL_CANDIDATE_SUPPLIES: PracticalCandidateSupply[] = [
 
 /**
  * 사용자가 제공한 구매 참고 링크다.
- * 공식 지참물 여부와 구매 권고를 혼동하지 않도록 공식 표와 분리해 노출한다.
+ * 공식 지참물 여부와 구매 권고를 혼동하지 않도록 공식 항목에 참고 링크로 연결한다.
  */
 export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
   [
     {
       id: "welding-gloves",
+      supplyId: "welding-ppe",
       label: "용접 장갑",
+      linkLabel: "보호구(용접장갑)",
       status: "safety_required",
       statusLabel: "안전 필수",
       note: "용접용 보호기구의 기본 구성입니다.",
@@ -121,7 +125,9 @@ export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
     },
     {
       id: "welding-apron",
+      supplyId: "welding-ppe",
       label: "용접 앞치마",
+      linkLabel: "보호구(용접앞치마)",
       status: "safety_required",
       statusLabel: "안전 필수",
       note: "불티와 고온 비산물로부터 몸통을 보호합니다.",
@@ -129,7 +135,9 @@ export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
     },
     {
       id: "welding-leggings",
+      supplyId: "welding-ppe",
       label: "용접 각반",
+      linkLabel: "보호구(용접각반)",
       status: "optional",
       statusLabel: "선택사항",
       note: "시험장 구비 여부와 작업복·안전화의 보호 범위를 먼저 확인합니다.",
@@ -137,7 +145,9 @@ export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
     },
     {
       id: "welding-sleeves",
+      supplyId: "welding-ppe",
       label: "용접 토시",
+      linkLabel: "보호구(용접토시)",
       status: "conditional",
       statusLabel: "조건부 필수",
       note: "반팔을 피하고 얇은 긴팔을 권장합니다. 반팔로 응시한다면 반드시 준비합니다.",
@@ -145,7 +155,9 @@ export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
     },
     {
       id: "auto-darkening-helmet",
+      supplyId: "welding-ppe",
       label: "자동 용접면",
+      linkLabel: "보호구(자동용접면)",
       status: "personal_pick",
       statusLabel: "개인 추천",
       note: "최저가 기준이 아니라 사용 편의성과 시야를 고려한 개인 추천 제품입니다.",
@@ -153,7 +165,9 @@ export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
     },
     {
       id: "safety-glasses",
+      supplyId: "safety-glasses",
       label: "보안경",
+      linkLabel: "보안경",
       status: "safety_required",
       statusLabel: "안전 필수",
       note: "시험 통과에 필요한 기본 수준의 기계가공용 보안경 예시입니다.",
@@ -161,7 +175,9 @@ export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
     },
     {
       id: "steel-ruler",
+      supplyId: "steel-ruler",
       label: "강철자",
+      linkLabel: "강철자",
       status: "optional",
       statusLabel: "선택사항",
       note: "시험장 구비 여부를 확인한 뒤 필요할 때 준비합니다.",
@@ -169,7 +185,9 @@ export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
     },
     {
       id: "scriber",
+      supplyId: "scriber",
       label: "금긋기 바늘",
+      linkLabel: "금긋기 바늘",
       status: "optional",
       statusLabel: "선택사항",
       note: "시험장 구비 여부를 확인한 뒤 필요할 때 준비합니다.",
@@ -177,7 +195,9 @@ export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
     },
     {
       id: "welding-angle-magnet",
+      supplyId: "magnetic-base",
       label: "용접 각도 마그네트",
+      linkLabel: "용접 각도 마그네트",
       status: "optional",
       statusLabel: "선택사항",
       note: "시험장 구비와 반입 허용 여부를 확인합니다. 자가 제작·용접 지그는 사용할 수 없습니다.",
@@ -185,7 +205,9 @@ export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
     },
     {
       id: "soapstone",
+      supplyId: "soapstone",
       label: "석필",
+      linkLabel: "석필",
       status: "optional",
       statusLabel: "선택사항",
       note: "시험장 구비 여부를 확인한 뒤 필요할 때 준비합니다.",
@@ -193,7 +215,9 @@ export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
     },
     {
       id: "center-punch",
+      supplyId: "center-punch",
       label: "센터 펀치",
+      linkLabel: "센터 펀치",
       status: "optional",
       statusLabel: "선택사항",
       note: "시험장 구비 여부를 확인한 뒤 필요할 때 준비합니다.",
@@ -201,7 +225,9 @@ export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
     },
     {
       id: "files",
+      supplyId: "files",
       label: "줄",
+      linkLabel: "줄",
       status: "optional",
       statusLabel: "선택사항",
       note: "시험장 구비 규격을 확인한 뒤 필요할 때 준비합니다.",
@@ -209,7 +235,9 @@ export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
     },
     {
       id: "square",
+      supplyId: "square",
       label: "직각자",
+      linkLabel: "직각자",
       status: "optional",
       statusLabel: "선택사항",
       note: "시험장 구비 여부를 확인한 뒤 필요할 때 준비합니다.",

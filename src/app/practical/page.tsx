@@ -9,6 +9,7 @@ import {
 import { PageHeading } from "@/components/page-heading";
 import {
   getPracticalContent,
+  publicPracticalConcepts,
   publicPracticalQuestions,
 } from "@/lib/content/practical-repository";
 import {
@@ -20,8 +21,9 @@ export default async function PracticalPage() {
   const content = await getPracticalContent();
   const pastCount = publicPracticalQuestions("past").length;
   const predictedCount = publicPracticalQuestions("predicted").length;
-  const sourceConceptCount = content.report.publication.concepts;
-  const supplementalConceptCount = content.report.publication.supplementalConcepts;
+  const sourceConceptCount = publicPracticalConcepts("exam_linked").length;
+  const supplementalConceptCount =
+    publicPracticalConcepts("supplemental").length;
   return (
     <div className="page-wrap py-12">
       <PageHeading

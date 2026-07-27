@@ -16,13 +16,29 @@ describe("practical official exam reference", () => {
     ).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   });
 
-  it("keeps the provided recommendation links separate from the official list", () => {
+  it("maps every recommendation link to its official supply row", () => {
     expect(PRACTICAL_SUPPLY_RECOMMENDATIONS).toHaveLength(13);
     expect(
       PRACTICAL_SUPPLY_RECOMMENDATIONS.every((item) =>
         item.commerceUrl.startsWith("https://link.coupang.com/a/"),
       ),
     ).toBe(true);
+    expect(
+      new Set(
+        PRACTICAL_SUPPLY_RECOMMENDATIONS.map((item) => item.supplyId),
+      ),
+    ).toEqual(new Set(PRACTICAL_CANDIDATE_SUPPLIES.map((item) => item.id)));
+    expect(
+      PRACTICAL_SUPPLY_RECOMMENDATIONS.filter(
+        (item) => item.supplyId === "welding-ppe",
+      ).map((item) => item.linkLabel),
+    ).toEqual([
+      "보호구(용접장갑)",
+      "보호구(용접앞치마)",
+      "보호구(용접각반)",
+      "보호구(용접토시)",
+      "보호구(자동용접면)",
+    ]);
     expect(
       PRACTICAL_SUPPLY_RECOMMENDATIONS.filter(
         (item) => item.status === "safety_required",

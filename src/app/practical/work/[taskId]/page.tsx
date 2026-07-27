@@ -18,7 +18,7 @@ import {
   getPracticalWorkTask,
   PRACTICAL_WORK_TASKS,
 } from "@/data/source/practical-work-tasks";
-import { getPracticalConcept } from "@/lib/content/practical-repository";
+import { getPublicPracticalConcept } from "@/lib/content/practical-repository";
 
 export function generateStaticParams() {
   return PRACTICAL_WORK_TASKS.map((task) => ({ taskId: task.slug }));
@@ -33,7 +33,9 @@ export default async function PracticalWorkTaskPage({
   const task = getPracticalWorkTask(taskId);
   if (!task) notFound();
   const linkedConcepts = (
-    await Promise.all(task.conceptIds.map((conceptId) => getPracticalConcept(conceptId)))
+    await Promise.all(
+      task.conceptIds.map((conceptId) => getPublicPracticalConcept(conceptId)),
+    )
   ).filter((concept) => concept !== undefined);
 
   return (

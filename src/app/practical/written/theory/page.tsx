@@ -4,6 +4,10 @@ import { PracticalTextbookSubjectPanel } from "@/components/practical-textbook-i
 import { PracticalWrittenExamTypeIndex } from "@/components/practical-written-exam-type-index";
 import { PracticalWrittenCardLink } from "@/components/practical-written-card-link";
 import { PracticalWrittenSectionNav } from "@/components/practical-written-section-nav";
+import { PracticalExamSubjectTabs } from "@/components/practical-exam-subject-tabs";
+import { PracticalExamSubjectCheatSheet } from "@/components/practical-exam-subject-cheat-sheet";
+import { getExamSubjectCheatSheet } from "@/data/source/practical-exam-subject-summaries";
+import type { PracticalTextbookSubjectId } from "@/data/source/practical-textbook-taxonomy";
 import {
   PracticalWrittenViewTabs,
   type PracticalWrittenTheoryView,
@@ -15,29 +19,75 @@ import {
   getPracticalTextbookSubjects,
   getPracticalWrittenExamCards,
   getPracticalWrittenEvidenceCoverage,
+  getPublicPracticalExamRepresentativeQuestions,
   practicalConceptsByTextbookSubject,
 } from "@/lib/content/practical-repository";
 import type {
   PracticalConcept,
   PracticalNcsCoverage,
 } from "@/lib/domain/practical-types";
+import { isLearnerVisibleContentId } from "@/lib/content/learner-visibility";
 
 export default async function PracticalTheoryPage({
   searchParams,
 }: {
-  searchParams: Promise<{ view?: string }>;
+  searchParams: Promise<{ view?: string; subject?: string }>;
 }) {
-  const [{ view: requestedView }, subjects, studyTypes, ncsCoverage, practicalContent, examCards, evidenceCoverage] = await Promise.all([
+  const [{ view: requestedView, subject: requestedSubject }, subjects] = await Promise.all([
     searchParams,
     getPracticalTextbookSubjects(),
+  ]);
+  const view: PracticalWrittenTheoryView =
+    requestedView === "exam-type"
+      ? "exam-type"
+      : requestedView === "concept"
+        ? "concept"
+        : "subject-summary";
+  const selectedSubject =
+    subjects.find((subject) => subject.id === requestedSubject) ?? subjects[0];
+  const selectedSubjectId = selectedSubject.id as PracticalTextbookSubjectId;
+
+  if (view === "subject-summary") {
+    const subjectSummary = getExamSubjectCheatSheet(selectedSubjectId);
+    const representativeQuestions =
+      getPublicPracticalExamRepresentativeQuestions(
+        subjectSummary?.practicalWritten.representativeQuestionIds ?? [],
+      );
+
+    return (
+      <div className="page-wrap py-12">
+        <PageHeading
+          eyebrow="실기 필답형 · 시험요약"
+          title="과목별 핵심을 먼저 보고 문제로 확인합니다"
+          description="긴 원문보다 시험 방향, 한 줄 정답, 필수 암기와 대표 문제를 먼저 봅니다. 전체 개념과 NCS 근거는 필요한 경우에만 내려가 확인합니다."
+        />
+        <PracticalWrittenViewTabs view={view} />
+        <PracticalExamSubjectTabs
+          subjects={subjects}
+          selectedSubjectId={selectedSubjectId}
+        />
+        <PracticalExamSubjectCheatSheet
+          subject={selectedSubject}
+          summary={subjectSummary}
+          questions={representativeQuestions}
+        />
+      </div>
+    );
+  }
+
+  const [
+    studyTypes,
+    ncsCoverage,
+    practicalContent,
+    examCards,
+    evidenceCoverage,
+  ] = await Promise.all([
     getPracticalTextbookStudyTypes(),
     getPracticalNcsCoverage(),
     getPracticalContent(),
     getPracticalWrittenExamCards(),
     getPracticalWrittenEvidenceCoverage(),
   ]);
-  const view: PracticalWrittenTheoryView =
-    requestedView === "exam-type" ? "exam-type" : "concept";
   const conceptsById = new Map(
     practicalContent.concepts.map((concept) => [concept.id, concept]),
   );
@@ -45,9 +95,9 @@ export default async function PracticalTheoryPage({
   return (
     <div className="page-wrap py-12">
       <PageHeading
-        eyebrow="실기 필답형 · 기출풀이 교재"
-        title="이해하고, 답을 가리고, 실제로 씁니다"
-        description="개념별 학습에서는 30초 이해와 헷갈리는 차이를 먼저 보고, 기출 유형별 학습에서는 사진·계산·순서 등 8유형의 복원문제와 변형·예상문제를 직접 풉니다."
+        eyebrow="실기 필답형 · 시험요약"
+        title="과목별 핵심을 먼저 보고 문제로 확인합니다"
+        description="긴 원문보다 시험 방향, 한 줄 정답, 필수 암기와 대표 문제를 먼저 봅니다. 전체 개념과 NCS 근거는 필요한 경우에만 내려가 확인합니다."
       />
       <PracticalWrittenSectionNav />
       <PracticalWrittenViewTabs view={view} />
@@ -171,6 +221,12 @@ function NcsSourceAudit({
   coverage: PracticalNcsCoverage;
   conceptsById: Map<string, PracticalConcept>;
 }) {
+  const visibleLessonCount = new Set(
+    coverage.documents.flatMap((document) =>
+      document.conceptIds.filter(isLearnerVisibleContentId),
+    ),
+  ).size;
+
   return (
     <details
       data-testid="practical-ncs-source-audit"
@@ -197,7 +253,7 @@ function NcsSourceAudit({
           </div>
           <div className="rounded-xl bg-slate-100 px-3 py-2 font-bold text-slate-800">
             <span className="block text-lg">
-              {coverage.summary.uniqueLessonCount}
+              {visibleLessonCount}
             </span>
             연결 레슨
           </div>
@@ -205,8 +261,12 @@ function NcsSourceAudit({
       </summary>
 
       <div className="mt-5 grid gap-3 lg:grid-cols-2">
-        {coverage.documents.map((document) => (
-          <article
+        {coverage.documents.map((document) => {
+          const visibleConceptIds = document.conceptIds.filter(
+            isLearnerVisibleContentId,
+          );
+          return (
+            <article
             key={document.ncsCode}
             className="rounded-xl border border-slate-200 bg-slate-50 p-4"
           >
@@ -234,7 +294,7 @@ function NcsSourceAudit({
               </span>
             </div>
             <p className="mt-3 text-sm text-slate-700">
-              연결 레슨 <strong>{document.conceptIds.length}개</strong> · 원문 참조{" "}
+              연결 레슨 <strong>{visibleConceptIds.length}개</strong> · 원문 참조{" "}
               <strong>{document.sourceReferenceCount}건</strong>
             </p>
             <a
@@ -245,13 +305,13 @@ function NcsSourceAudit({
             >
               NCS 원문 위치 확인
             </a>
-            {document.conceptIds.length > 0 ? (
+            {visibleConceptIds.length > 0 ? (
               <details className="mt-3 rounded-lg border border-sky-200 bg-white px-3 py-2">
                 <summary className="cursor-pointer text-sm font-bold text-sky-950">
-                  이 문서에서 반영한 레슨 {document.conceptIds.length}개 보기
+                  이 문서에서 반영한 레슨 {visibleConceptIds.length}개 보기
                 </summary>
                 <ul className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
-                  {document.conceptIds.map((conceptId) => {
+                  {visibleConceptIds.map((conceptId) => {
                     const concept = conceptsById.get(conceptId);
                     if (!concept) return null;
                     return (
@@ -294,8 +354,9 @@ function NcsSourceAudit({
                 </ul>
               </details>
             ) : null}
-          </article>
-        ))}
+            </article>
+          );
+        })}
       </div>
     </details>
   );

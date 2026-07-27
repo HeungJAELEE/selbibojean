@@ -1,26 +1,35 @@
 import type { PracticalConcept } from "@/lib/domain/practical-types";
+import { getExamSummaryItemByConceptId } from "@/data/source/practical-exam-subject-summaries";
 
 export function PracticalWrittenConceptSummary({
   concept,
 }: {
   concept: PracticalConcept;
 }) {
+  const quickFact = getExamSummaryItemByConceptId(concept.id);
+
   return (
     <section
       data-testid="practical-written-concept-summary"
       className="mt-8 grid gap-5"
     >
-      <div className="rounded-3xl bg-[#173957] p-6 text-white md:p-8">
+      <div className="rounded-2xl bg-[#173957] p-6 text-white">
         <p className="text-xs font-black uppercase tracking-[.14em] text-teal-200">
-          30초 이해
+          {quickFact ? "30초 이해" : "상세 개념"}
         </p>
-        <h2 className="mt-2 text-2xl font-extrabold">30초 개념 요약</h2>
-        <p className="mt-4 max-w-4xl text-base font-bold leading-8 text-white">
-          {concept.definition}
-        </p>
-        <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-200">
-          {concept.principle}
-        </p>
+        <h2 className="mt-2 text-2xl font-extrabold">
+          {quickFact?.cue ?? "시험용 한 줄 요약 검수 중"}
+        </h2>
+        {quickFact ? (
+          <p className="mt-4 max-w-4xl text-base font-bold leading-8 text-white">
+            {quickFact.answer}
+          </p>
+        ) : (
+          <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-200">
+            긴 원문을 자동으로 줄여 30초 요약처럼 표시하지 않습니다. 아래의
+            기출카드와 상세 개념을 확인하세요.
+          </p>
+        )}
       </div>
 
       <div className="grid gap-5 lg:grid-cols-2">

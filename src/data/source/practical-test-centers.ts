@@ -1,3 +1,8 @@
+import {
+  practicalEquipmentModelsById,
+  type PracticalWeldingEquipmentInfo,
+} from "./practical-equipment-models";
+
 export type PracticalTestCenter = {
   id: string;
   officialNumber: number;
@@ -76,7 +81,7 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
     facilitySheetRow: 59,
     suppliedMaterialNote: "C-clamp",
     rawFacilityNote: "DC용접기 Koreana MIG-200PRO",
-    equipmentModelIds: [],
+    equipmentModelIds: ["koreana-mig-200pro"],
   },
   {
     id: "daegu-kopo-techno",
@@ -143,7 +148,7 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
     facilitySheetRow: 219,
     suppliedMaterialNote: null,
     rawFacilityNote: "포스테크 / 사용범위 교류(AC) 아크용접",
-    equipmentModelIds: [],
+    equipmentModelIds: ["postech-ac-arc-unspecified"],
   },
   {
     id: "jeonbuk-newtech-kopo",
@@ -154,7 +159,7 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
     facilitySheetRow: 267,
     suppliedMaterialNote: null,
     rawFacilityNote: "AC ARC 300A",
-    equipmentModelIds: [],
+    equipmentModelIds: ["generic-ac-arc-300a"],
   },
   {
     id: "jeonnam-suncheon-jeil",
@@ -187,7 +192,7 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
     facilitySheetRow: 278,
     suppliedMaterialNote: null,
     rawFacilityNote: "Postech 웰탑300A",
-    equipmentModelIds: ["postech-weltop-300"],
+    equipmentModelIds: ["postech-weltop-acdc300a"],
   },
   {
     id: "jeju-seogwipo-industry",
@@ -220,7 +225,7 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
     facilitySheetRow: 348,
     suppliedMaterialNote: null,
     rawFacilityNote: "SMAW(C&W 교류아크)",
-    equipmentModelIds: [],
+    equipmentModelIds: ["cnw-ac-arc-unspecified"],
   },
   {
     id: "gyeonggi-kcci",
@@ -232,7 +237,11 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
     suppliedMaterialNote: null,
     rawFacilityNote:
       "LK 30KVA 15KW, Daedae 20KVA 12KW, Kumho 20KVA 10KW",
-    equipmentModelIds: [],
+    equipmentModelIds: [
+      "lk-30kva-15kw",
+      "daedae-20kva-12kw",
+      "kumho-20kva-10kw",
+    ],
   },
   {
     id: "seongnam-kopo-nuri",
@@ -255,7 +264,7 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
     facilitySheetRow: 383,
     suppliedMaterialNote: null,
     rawFacilityNote: "Postech Weltop-ac arc 300A",
-    equipmentModelIds: ["postech-weltop-300"],
+    equipmentModelIds: ["postech-ac300a"],
   },
 ];
 
@@ -294,40 +303,76 @@ export function getPracticalCenterComparison(
 function getWeldingComparison(
   center: PracticalTestCenter,
 ): PracticalCenterComparison["welding"] {
-  const raw = center.rawFacilityNote.toLowerCase();
-  const ids = new Set(center.equipmentModelIds);
-  const isDc =
-    raw.includes("dc용접기") || ids.has("national-nsa-250pa");
-  const isAc =
-    raw.includes("교류") ||
-    raw.includes("ac arc") ||
-    raw.includes("weltop-ac") ||
-    ids.has("hanheung-haw-300") ||
-    ids.has("hanheung-haw-350") ||
-    ids.has("cnw-cw-wa300e") ||
-    ids.has("postech-weltop-300");
+  const weldingModels = center.equipmentModelIds
+    .map((id) => practicalEquipmentModelsById.get(id)?.welding)
+    .filter(
+      (item): item is PracticalWeldingEquipmentInfo => Boolean(item),
+    );
+  const confirmed = weldingModels.filter(
+    (item) => item.outputVerification === "confirmed",
+  );
+  const probable = weldingModels.filter(
+    (item) => item.outputVerification === "probable",
+  );
+  const confirmedTypes = new Set(
+    confirmed.map((item) => item.outputCurrentType),
+  );
+  const probableTypes = new Set(
+    probable.map((item) => item.outputCurrentType),
+  );
 
-  if (isAc && isDc) {
+  if (confirmedTypes.has("ac_dc")) {
     return {
       status: "ac_or_dc",
-      label: "교류·직류",
-      detail: "공식 시설표에 교류와 직류 용접 장비 정보가 함께 확인됩니다.",
+      label: "교류·직류 겸용",
+      detail: "확인된 장비 사양에서 AC·DC 출력을 모두 지원합니다.",
     };
   }
 
-  if (isDc) {
+  if (
+    confirmedTypes.has("ac") &&
+    confirmedTypes.has("dc")
+  ) {
+    return {
+      status: "ac_or_dc",
+      label: "교류·직류 장비",
+      detail: "시험장 시설표에서 교류와 직류 장비가 각각 확인됩니다.",
+    };
+  }
+
+  if (confirmedTypes.has("dc")) {
     return {
       status: "dc",
       label: "직류",
-      detail: "공식 시설표 또는 확인된 장비 사양에서 직류 용접기로 확인됩니다.",
+      detail: "시설표 또는 확인된 장비 사양에서 직류(DC) 용접기로 확인됩니다.",
     };
   }
 
-  if (isAc) {
+  if (confirmedTypes.has("ac")) {
+    const hasProbableAc =
+      probableTypes.has("ac") || probableTypes.has("ac_dc");
     return {
       status: "ac",
-      label: "교류",
-      detail: "공식 시설표 또는 동일 모델의 명시 정보에서 교류 용접기로 확인됩니다.",
+      label: hasProbableAc ? "교류 확인·일부 유력" : "교류",
+      detail: hasProbableAc
+        ? "교류(AC) 장비는 확인됐으며 일부 장비는 정확한 모델명·명판 확인이 남아 있습니다."
+        : "시설표 또는 확인된 장비 사양에서 교류(AC) 용접기로 확인됩니다.",
+    };
+  }
+
+  if (probableTypes.has("ac_dc")) {
+    return {
+      status: "needs_check",
+      label: "교류·직류 유력",
+      detail: "AC·DC 겸용 모델과 일치할 가능성이 높지만 시험장 명판의 ACDC 표기 확인이 필요합니다.",
+    };
+  }
+
+  if (probableTypes.has("ac")) {
+    return {
+      status: "needs_check",
+      label: "교류 유력",
+      detail: "교류(AC) 장비 사양과 일치하지만 정확한 모델명 또는 명판 확인이 필요합니다.",
     };
   }
 

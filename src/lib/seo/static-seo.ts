@@ -1,3 +1,5 @@
+import { isLearnerVisibleContentId } from "@/lib/content/learner-visibility";
+
 export type SitemapEntry = {
   path: string;
 };
@@ -38,7 +40,11 @@ function publishedPaths<T extends { id: string; contentStatus: string }>(
   prefix: string,
 ) {
   return items
-    .filter((item) => item.contentStatus === "published")
+    .filter(
+      (item) =>
+        item.contentStatus === "published" &&
+        isLearnerVisibleContentId(item.id),
+    )
     .map((item) => `${prefix}/${encodeURIComponent(item.id)}`);
 }
 

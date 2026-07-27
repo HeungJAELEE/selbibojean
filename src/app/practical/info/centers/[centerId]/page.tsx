@@ -5,7 +5,32 @@ import {
   PRACTICAL_TEST_CENTER_SOURCE,
   practicalTestCentersById,
 } from "@/data/source/practical-test-centers";
-import { practicalEquipmentModelsById } from "@/data/source/practical-equipment-models";
+import {
+  practicalEquipmentModelsById,
+  type PracticalEquipmentModel,
+} from "@/data/source/practical-equipment-models";
+
+const CURRENT_TYPE_LABELS = {
+  ac: "교류(AC)",
+  dc: "직류(DC)",
+  ac_dc: "교류·직류(AC/DC)",
+  unknown: "미확인",
+} as const;
+
+const VERIFICATION_LABELS = {
+  confirmed: "확정",
+  probable: "유력",
+  unknown: "미확인",
+} as const;
+
+function getEquipmentSourceLabel(
+  status: PracticalEquipmentModel["currentSourceStatus"],
+) {
+  if (status === "manufacturer_verified") return "제조사 자료 확인";
+  if (status === "technical_reference_verified") return "기술자료·재조사 확인";
+  if (status === "needs_manual_check") return "명판 확인 필요";
+  return "공식 시설표 기재";
+}
 
 export default async function PracticalTestCenterPage({
   params,
@@ -70,15 +95,44 @@ export default async function PracticalTestCenterPage({
             {models.map((model) => (
               <article key={model.id} className="rounded-2xl border border-slate-200 bg-white p-5">
                 <span className="text-xs font-extrabold text-[#16697a]">
-                  {model.currentSourceStatus === "manufacturer_verified"
-                    ? "제조사 페이지 확인"
-                    : "공식 시설표 기재"}
+                  {getEquipmentSourceLabel(model.currentSourceStatus)}
                 </span>
                 <h3 className="mt-2 text-lg font-extrabold">{model.label}</h3>
+                {model.welding ? (
+                  <div className="mt-3 grid gap-2 rounded-xl bg-slate-50 p-4 text-sm">
+                    <p>
+                      <span className="font-extrabold text-slate-900">출력 방식</span>{" "}
+                      <span className="text-slate-700">
+                        {CURRENT_TYPE_LABELS[model.welding.outputCurrentType]} ·{" "}
+                        {VERIFICATION_LABELS[model.welding.outputVerification]}
+                      </span>
+                    </p>
+                    {model.welding.normalizedModelName &&
+                    model.welding.normalizedModelName !==
+                      model.welding.rawModelName ? (
+                      <p>
+                        <span className="font-extrabold text-slate-900">
+                          정규화 모델
+                        </span>{" "}
+                        <span className="text-slate-700">
+                          {model.welding.normalizedModelName}
+                        </span>
+                      </p>
+                    ) : null}
+                    <p className="leading-6 text-slate-600">
+                      {model.welding.verificationBasis}
+                    </p>
+                  </div>
+                ) : null}
                 <p className="mt-2 text-sm leading-6 text-slate-600">{model.learnerNote}</p>
+                {model.welding?.remainingCheck ? (
+                  <p className="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-xs font-bold leading-5 text-amber-900">
+                    남은 확인: {model.welding.remainingCheck}
+                  </p>
+                ) : null}
                 {model.sourceUrl ? (
                   <a href={model.sourceUrl} target="_blank" rel="noreferrer" className="mt-3 inline-flex text-sm font-extrabold text-[#16697a] underline">
-                    제조사 정보 확인
+                    장비 정보 확인
                   </a>
                 ) : null}
               </article>

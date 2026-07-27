@@ -42,6 +42,24 @@ describe("33차 용접 안전 명시 승인 게이트", () => {
     expect(publicQuestion.choices[0]).not.toHaveProperty("feedback");
   });
 
+  it("학습자용 레슨에는 내부 문제 ID와 검수 메타데이터를 노출하지 않는다", () => {
+    const supplement = getApprovedWeldingSafetyContent();
+    const lesson = supplement.lessons.find(
+      (candidate) => candidate.id === "welding-safety-b33-st30-05",
+    );
+    const examPoint = lesson?.blocks.find(
+      (block) => block.kind === "exam_point",
+    );
+    const source = lesson?.blocks.find((block) => block.kind === "source");
+
+    expect(examPoint?.body).toContain("**질문**");
+    expect(examPoint?.body).toContain("**판단 기준**");
+    expect(examPoint?.body).not.toMatch(/welding-safety-b33-[\w-]+/);
+    expect(source?.title).toBe("공식 근거");
+    expect(source?.body).not.toContain("ST30-05");
+    expect(source?.body).not.toContain("검수일");
+  });
+
   it("기존 콘텐츠와 병합할 때 기존 ID를 덮어쓰지 않는다", () => {
     const supplement = getApprovedWeldingSafetyContent();
     const existing = {

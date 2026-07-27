@@ -7,6 +7,49 @@ export type PracticalLabel = "practical_exam" | "predicted_exam";
  */
 export type PracticalConceptContentRole = "exam_linked" | "supplemental";
 export type PracticalQuestionKind = "past" | "predicted";
+export type ExamContentTopic =
+  | "welding_theory"
+  | "welding_symbol"
+  | "welding_defect"
+  | "welding_safety"
+  | "welding_calculation"
+  | "nondestructive_testing"
+  | "general_safety"
+  | "other";
+export type LearnerVisibility =
+  | "learner_public"
+  | "internal_reference_only";
+export type LearnerContentPolicy = {
+  topic: ExamContentTopic;
+  visibility: LearnerVisibility;
+};
+export type ExamEvidenceDisplayKind =
+  | "practical_past"
+  | "practical_variant"
+  | "practical_predicted"
+  | "written_frequent"
+  | "ncs_supplement";
+
+export type PracticalExamRepresentativeQuestion = {
+  id: string;
+  title: string;
+  stem: string;
+  evidenceKinds: ExamEvidenceDisplayKind[];
+  occurrence:
+    | {
+        year: number;
+        round: number;
+      }
+    | null;
+  visual:
+    | {
+        id: string;
+        title: string;
+        imagePaths: string[];
+        altText: string;
+      }
+    | null;
+};
 export type PracticalStudyCategoryId =
   | "visual_identification"
   | "formula_calculation"

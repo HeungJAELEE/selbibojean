@@ -387,57 +387,22 @@ export function applyWrittenQuestionAuditManifest(
       (questionId) =>
         !auditedIds.has(questionId) || acceptedIds.has(questionId),
     );
-    const evidenceUrls = [
-      ...new Set(
-        acceptedQuestions.flatMap(
-          (question) => question.audit?.evidenceUrls ?? [],
-        ),
-      ),
-    ];
-    const sourceBody = [
-      "감사 승인 근거:",
-      ...evidenceUrls.map((url) => `- ${url}`),
-      `- 최종 검수일: ${acceptedQuestions[0].audit?.reviewedAt ?? lesson.reviewedAt}`,
-    ].join("\n");
-    const hasSourceBlock = lesson.blocks.some(
-      (block) => block.kind === "source",
-    );
-    const blocks = [
-      ...lesson.blocks.map((block) => {
-        if (block.kind === "exam_point") {
-          return {
-            ...block,
-            body: acceptedQuestions
-              .map(
-                (question) =>
-                  `- **${question.id}** ${question.stem}\n  - 판단 기준: ${
-                    question.audit?.reviewRationale ??
-                    question.explanation
-                  }`,
-              )
-              .join("\n"),
-          };
-        }
-        if (block.kind === "source") {
-          return {
-            ...block,
-            body: `${block.body}\n\n${sourceBody}`,
-          };
-        }
-        return block;
-      }),
-      ...(!hasSourceBlock
-        ? [
-            {
-              id: "audit-source",
-              kind: "source" as const,
-              title: "검증 근거",
-              body: sourceBody,
-              order: lesson.blocks.length + 1,
-            },
-          ]
-        : []),
-    ];
+    const blocks = lesson.blocks.map((block) => {
+      if (block.kind !== "exam_point") return block;
+
+      return {
+        ...block,
+        body: acceptedQuestions
+          .map(
+            (question) =>
+              `**질문**\n${question.stem}\n\n**판단 기준**\n${
+                question.audit?.reviewRationale ??
+                question.explanation
+              }`,
+          )
+          .join("\n\n---\n\n"),
+      };
+    });
 
     return {
       ...lesson,

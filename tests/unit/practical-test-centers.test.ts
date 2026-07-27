@@ -51,4 +51,70 @@ describe("practical test center source catalog", () => {
       "주차불가",
     );
   });
+
+  it("keeps raw facility labels while storing normalized welding models separately", () => {
+    const cw3m = practicalEquipmentModelsById.get("cnw-cw-3m");
+    const cat3m = practicalEquipmentModelsById.get("cnw-cw-cat3m");
+    const yeongju = practicalEquipmentModelsById.get(
+      "postech-weltop-acdc300a",
+    );
+    const gumi = practicalEquipmentModelsById.get("postech-ac300a");
+
+    expect(cw3m?.welding).toMatchObject({
+      rawModelName: "CW-3M",
+      normalizedModelName: "CW-CTA3M",
+      normalizationStatus: "probable_alias",
+      outputCurrentType: "ac",
+      outputVerification: "probable",
+    });
+    expect(cat3m?.welding).toMatchObject({
+      rawModelName: "CW-CAT3M",
+      normalizedModelName: "CW-CTA3M",
+      normalizationStatus: "probable_transcription_error",
+      outputCurrentType: "ac",
+      outputVerification: "confirmed",
+    });
+    expect(yeongju?.welding).toMatchObject({
+      normalizedModelName: "WELTOP-ACDC300A",
+      outputCurrentType: "ac_dc",
+      outputVerification: "probable",
+    });
+    expect(gumi?.welding).toMatchObject({
+      normalizedModelName: "AC300A",
+      outputCurrentType: "ac",
+      outputVerification: "confirmed",
+    });
+  });
+
+  it("does not overstate probable welding models as confirmed", () => {
+    const suncheon = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "jeonnam-suncheon-kopo",
+    );
+    const yeongju = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "gyeongbuk-yeongju-kopo",
+    );
+    const gumi = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "gumi-kopo-nuri",
+    );
+    const gyeonggi = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "gyeonggi-kcci",
+    );
+
+    expect(getPracticalCenterComparison(suncheon!).welding).toMatchObject({
+      status: "needs_check",
+      label: "교류 유력",
+    });
+    expect(getPracticalCenterComparison(yeongju!).welding).toMatchObject({
+      status: "needs_check",
+      label: "교류·직류 유력",
+    });
+    expect(getPracticalCenterComparison(gumi!).welding).toMatchObject({
+      status: "ac",
+      label: "교류",
+    });
+    expect(getPracticalCenterComparison(gyeonggi!).welding).toMatchObject({
+      status: "ac",
+      label: "교류 확인·일부 유력",
+    });
+  });
 });

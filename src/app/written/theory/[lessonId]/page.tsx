@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, BookOpenCheck, Layers3, RotateCcw } from "lucide-react";
 import { ContentRoleBadge } from "@/components/content-role-badge";
+import { LessonExamPointCards } from "@/components/lesson-exam-point-cards";
 import { LessonPracticeSet, type LessonPracticeItem } from "@/components/lesson-practice-set";
 import { MarkdownContent } from "@/components/markdown-content";
 import { PastExamExamples } from "@/components/past-exam-examples";
@@ -168,7 +169,11 @@ export default async function LessonPage({
               .map((block) => (
                 <section key={block.id}>
                   <h2 id={block.id}>{block.title}</h2>
-                  <MarkdownContent content={block.body} />
+                  {block.kind === "exam_point" ? (
+                    <LessonExamPointCards content={block.body} />
+                  ) : (
+                    <MarkdownContent content={block.body} />
+                  )}
                 </section>
               ))}
           </div>

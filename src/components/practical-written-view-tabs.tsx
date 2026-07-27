@@ -4,9 +4,12 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
-export type PracticalWrittenTheoryView = "concept" | "exam-type";
+export type PracticalWrittenTheoryView =
+  | "subject-summary"
+  | "concept"
+  | "exam-type";
 
-const STORAGE_KEY = "seolbi-practical-written-theory-view";
+const STORAGE_KEY = "seolbi-practical-written-theory-view-v2";
 const buildHref = (
   basePath: string,
   mode: boolean,
@@ -40,9 +43,23 @@ export function PracticalWrittenViewTabs({
   return (
     <nav
       aria-label="실기 필답형 학습 보기"
-      className="mt-6 grid gap-2 rounded-2xl border border-slate-200 bg-white p-2 sm:grid-cols-2"
+      className="mt-6 grid gap-2 rounded-2xl border border-slate-200 bg-white p-2 lg:grid-cols-3"
       data-testid="practical-written-view-tabs"
     >
+      <Link
+        href={buildHref(basePath, mode, "subject-summary")}
+        aria-current={view === "subject-summary" ? "page" : undefined}
+        className={`rounded-xl px-5 py-4 text-center text-sm font-extrabold ${
+          view === "subject-summary"
+            ? "bg-[#173957] text-white"
+            : "bg-slate-50 text-slate-700 hover:bg-slate-100"
+        }`}
+      >
+        과목별 핵심요약
+        <span className="mt-1 block text-xs font-medium opacity-80">
+          시험 방향 → 한 줄 정답 → 대표 문제
+        </span>
+      </Link>
       <Link
         href={buildHref(basePath, mode, "concept")}
         aria-current={view === "concept" ? "page" : undefined}
@@ -76,8 +93,9 @@ export function PracticalWrittenViewTabs({
 }
 
 export function readStoredPracticalWrittenView(): PracticalWrittenTheoryView {
-  if (typeof window === "undefined") return "concept";
-  return localStorage.getItem(STORAGE_KEY) === "exam-type"
-    ? "exam-type"
-    : "concept";
+  if (typeof window === "undefined") return "subject-summary";
+  const stored = localStorage.getItem(STORAGE_KEY);
+  return stored === "concept" || stored === "exam-type"
+    ? stored
+    : "subject-summary";
 }

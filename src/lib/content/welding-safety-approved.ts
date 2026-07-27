@@ -176,10 +176,10 @@ function buildLessonBlocks(
       ? questionExamples
           .map(
             (question) =>
-              `- **${question.sourceQuestionId}** ${question.stem}\n  - 판단 기준: ${question.rationale}`,
+              `**질문**\n${question.stem}\n\n**판단 기준**\n${question.rationale}`,
           )
-          .join("\n")
-      : "- 연결된 검수 완료 문제는 같은 안전분류에서 단계적으로 추가합니다.";
+          .join("\n\n---\n\n")
+      : "**질문**\n연결된 검수 완료 문제가 아직 없습니다.\n\n**판단 기준**\n같은 안전분류에서 검수가 끝난 문제부터 단계적으로 추가합니다.";
   const detailTable = details
     .map(
       (detail, index) =>
@@ -240,8 +240,8 @@ function buildLessonBlocks(
     {
       id: "source",
       kind: "source",
-      title: "공식 근거와 검수 상태",
-      body: `- 한국산업안전보건공단 용접·작업안전 자료: ${urls[0]}\n- 한국산업안전보건공단 현장 안전자료: ${urls[1]}\n- 33차 전용문제은행 레슨 ID: ${lesson.sourceLessonId}\n- 검수일: 2026-07-23\n\n이 레슨은 CBT 출제문장을 그대로 복제하지 않고, 문제은행의 안전 판단조건을 공식 자료와 대조해 학습용으로 재구성했습니다.`,
+      title: "공식 근거",
+      body: `- 한국산업안전보건공단 용접·작업안전 자료: ${urls[0]}\n- 한국산업안전보건공단 현장 안전자료: ${urls[1]}\n\n공식 안전자료와 문제은행의 판단조건을 대조해 학습용으로 재구성했습니다.`,
       order: 8,
     },
   ];
