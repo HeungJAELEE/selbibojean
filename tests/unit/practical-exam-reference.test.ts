@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { PRACTICAL_CANDIDATE_SUPPLIES } from "@/data/source/practical-candidate-supplies";
+import {
+  PRACTICAL_CANDIDATE_SUPPLIES,
+  PRACTICAL_SUPPLY_RECOMMENDATIONS,
+} from "@/data/source/practical-candidate-supplies";
 import {
   PRACTICAL_PUBLIC_PROBLEMS,
   PRACTICAL_QUALIFICATION_OVERVIEW,
@@ -11,11 +14,25 @@ describe("practical official exam reference", () => {
     expect(
       PRACTICAL_CANDIDATE_SUPPLIES.map((item) => item.number),
     ).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  });
+
+  it("keeps the provided recommendation links separate from the official list", () => {
+    expect(PRACTICAL_SUPPLY_RECOMMENDATIONS).toHaveLength(13);
     expect(
-      PRACTICAL_CANDIDATE_SUPPLIES.every(
-        (item) => item.commerceUrl === null,
+      PRACTICAL_SUPPLY_RECOMMENDATIONS.every((item) =>
+        item.commerceUrl.startsWith("https://link.coupang.com/a/"),
       ),
     ).toBe(true);
+    expect(
+      PRACTICAL_SUPPLY_RECOMMENDATIONS.filter(
+        (item) => item.status === "safety_required",
+      ).map((item) => item.label),
+    ).toEqual(["용접 장갑", "용접 앞치마", "보안경"]);
+    expect(
+      PRACTICAL_SUPPLY_RECOMMENDATIONS.find(
+        (item) => item.id === "welding-sleeves",
+      )?.status,
+    ).toBe("conditional");
   });
 
   it("separates engineer and industrial-engineer public problems", () => {

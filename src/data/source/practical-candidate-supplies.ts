@@ -6,7 +6,15 @@ export type PracticalCandidateSupply = {
   unit: string;
   quantity: number;
   purpose: string;
-  commerceUrl: string | null;
+};
+
+export type PracticalSupplyRecommendation = {
+  id: string;
+  label: string;
+  status: "safety_required" | "conditional" | "optional" | "personal_pick";
+  statusLabel: string;
+  note: string;
+  commerceUrl: string;
 };
 
 /**
@@ -22,7 +30,6 @@ export const PRACTICAL_CANDIDATE_SUPPLIES: PracticalCandidateSupply[] = [
     unit: "EA",
     quantity: 1,
     purpose: "치수 확인",
-    commerceUrl: null,
   },
   {
     id: "scriber",
@@ -32,7 +39,6 @@ export const PRACTICAL_CANDIDATE_SUPPLIES: PracticalCandidateSupply[] = [
     unit: "EA",
     quantity: 1,
     purpose: "마킹용",
-    commerceUrl: null,
   },
   {
     id: "magnetic-base",
@@ -42,7 +48,6 @@ export const PRACTICAL_CANDIDATE_SUPPLIES: PracticalCandidateSupply[] = [
     unit: "EA",
     quantity: 1,
     purpose: "모재 고정용",
-    commerceUrl: null,
   },
   {
     id: "safety-glasses",
@@ -52,7 +57,6 @@ export const PRACTICAL_CANDIDATE_SUPPLIES: PracticalCandidateSupply[] = [
     unit: "EA",
     quantity: 1,
     purpose: "비산물로부터 눈 보호",
-    commerceUrl: null,
   },
   {
     id: "soapstone",
@@ -62,7 +66,6 @@ export const PRACTICAL_CANDIDATE_SUPPLIES: PracticalCandidateSupply[] = [
     unit: "EA",
     quantity: 1,
     purpose: "마킹용",
-    commerceUrl: null,
   },
   {
     id: "center-punch",
@@ -72,7 +75,6 @@ export const PRACTICAL_CANDIDATE_SUPPLIES: PracticalCandidateSupply[] = [
     unit: "EA",
     quantity: 1,
     purpose: "구멍 위치 표시",
-    commerceUrl: null,
   },
   {
     id: "welding-ppe",
@@ -82,7 +84,6 @@ export const PRACTICAL_CANDIDATE_SUPPLIES: PracticalCandidateSupply[] = [
     unit: "조",
     quantity: 1,
     purpose: "용접 작업 보호",
-    commerceUrl: null,
   },
   {
     id: "files",
@@ -92,7 +93,6 @@ export const PRACTICAL_CANDIDATE_SUPPLIES: PracticalCandidateSupply[] = [
     unit: "조",
     quantity: 1,
     purpose: "모서리·표면 다듬기",
-    commerceUrl: null,
   },
   {
     id: "square",
@@ -102,6 +102,117 @@ export const PRACTICAL_CANDIDATE_SUPPLIES: PracticalCandidateSupply[] = [
     unit: "EA",
     quantity: 1,
     purpose: "직각·치수 확인",
-    commerceUrl: null,
   },
 ];
+
+/**
+ * 사용자가 제공한 구매 참고 링크다.
+ * 공식 지참물 여부와 구매 권고를 혼동하지 않도록 공식 표와 분리해 노출한다.
+ */
+export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
+  [
+    {
+      id: "welding-gloves",
+      label: "용접 장갑",
+      status: "safety_required",
+      statusLabel: "안전 필수",
+      note: "용접용 보호기구의 기본 구성입니다.",
+      commerceUrl: "https://link.coupang.com/a/fIuXBYAQzA",
+    },
+    {
+      id: "welding-apron",
+      label: "용접 앞치마",
+      status: "safety_required",
+      statusLabel: "안전 필수",
+      note: "불티와 고온 비산물로부터 몸통을 보호합니다.",
+      commerceUrl: "https://link.coupang.com/a/fIuUvNZ2I0",
+    },
+    {
+      id: "welding-leggings",
+      label: "용접 각반",
+      status: "optional",
+      statusLabel: "선택사항",
+      note: "시험장 구비 여부와 작업복·안전화의 보호 범위를 먼저 확인합니다.",
+      commerceUrl: "https://link.coupang.com/a/fIu1cOGBzg",
+    },
+    {
+      id: "welding-sleeves",
+      label: "용접 토시",
+      status: "conditional",
+      statusLabel: "조건부 필수",
+      note: "반팔을 피하고 얇은 긴팔을 권장합니다. 반팔로 응시한다면 반드시 준비합니다.",
+      commerceUrl: "https://link.coupang.com/a/fIu3oG52GW",
+    },
+    {
+      id: "auto-darkening-helmet",
+      label: "자동 용접면",
+      status: "personal_pick",
+      statusLabel: "개인 추천",
+      note: "최저가 기준이 아니라 사용 편의성과 시야를 고려한 개인 추천 제품입니다.",
+      commerceUrl: "https://link.coupang.com/a/fIvk3ZN6uO",
+    },
+    {
+      id: "safety-glasses",
+      label: "보안경",
+      status: "safety_required",
+      statusLabel: "안전 필수",
+      note: "시험 통과에 필요한 기본 수준의 기계가공용 보안경 예시입니다.",
+      commerceUrl: "https://link.coupang.com/a/fIvrTWbaO4",
+    },
+    {
+      id: "steel-ruler",
+      label: "강철자",
+      status: "optional",
+      statusLabel: "선택사항",
+      note: "시험장 구비 여부를 확인한 뒤 필요할 때 준비합니다.",
+      commerceUrl: "https://link.coupang.com/a/fIvx9Oe1zE",
+    },
+    {
+      id: "scriber",
+      label: "금긋기 바늘",
+      status: "optional",
+      statusLabel: "선택사항",
+      note: "시험장 구비 여부를 확인한 뒤 필요할 때 준비합니다.",
+      commerceUrl: "https://link.coupang.com/a/fIvAgY8vro",
+    },
+    {
+      id: "welding-angle-magnet",
+      label: "용접 각도 마그네트",
+      status: "optional",
+      statusLabel: "선택사항",
+      note: "시험장 구비와 반입 허용 여부를 확인합니다. 자가 제작·용접 지그는 사용할 수 없습니다.",
+      commerceUrl: "https://link.coupang.com/a/fIvFs2R3HE",
+    },
+    {
+      id: "soapstone",
+      label: "석필",
+      status: "optional",
+      statusLabel: "선택사항",
+      note: "시험장 구비 여부를 확인한 뒤 필요할 때 준비합니다.",
+      commerceUrl: "https://link.coupang.com/a/fIvJAnNsPY",
+    },
+    {
+      id: "center-punch",
+      label: "센터 펀치",
+      status: "optional",
+      statusLabel: "선택사항",
+      note: "시험장 구비 여부를 확인한 뒤 필요할 때 준비합니다.",
+      commerceUrl: "https://link.coupang.com/a/fIvK8KI01Q",
+    },
+    {
+      id: "files",
+      label: "줄",
+      status: "optional",
+      statusLabel: "선택사항",
+      note: "시험장 구비 규격을 확인한 뒤 필요할 때 준비합니다.",
+      commerceUrl: "https://link.coupang.com/a/fIvNCgOUj6",
+    },
+    {
+      id: "square",
+      label: "직각자",
+      status: "optional",
+      statusLabel: "선택사항",
+      note: "시험장 구비 여부를 확인한 뒤 필요할 때 준비합니다.",
+      commerceUrl: "https://link.coupang.com/a/fIvR3WnqKq",
+    },
+  ];

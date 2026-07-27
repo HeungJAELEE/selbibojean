@@ -6,7 +6,10 @@ import {
   getPracticalCenterComparison,
   PRACTICAL_TEST_CENTERS,
 } from "@/data/source/practical-test-centers";
-import { PRACTICAL_CANDIDATE_SUPPLIES } from "@/data/source/practical-candidate-supplies";
+import {
+  PRACTICAL_CANDIDATE_SUPPLIES,
+  PRACTICAL_SUPPLY_RECOMMENDATIONS,
+} from "@/data/source/practical-candidate-supplies";
 import {
   PRACTICAL_PUBLIC_PROBLEMS,
   PRACTICAL_QUALIFICATION_OVERVIEW,
@@ -63,6 +66,7 @@ export default async function PracticalInfoPage({
           comparison: getPracticalCenterComparison(center),
         }))}
         supplies={PRACTICAL_CANDIDATE_SUPPLIES}
+        supplyRecommendations={PRACTICAL_SUPPLY_RECOMMENDATIONS}
         suppliesOfficialUrl={PRACTICAL_SUPPLIES_OFFICIAL_URL}
         initialTab={initialTab}
       />

@@ -80,7 +80,15 @@ type PracticalInfoSupply = {
   unit: string;
   quantity: number;
   purpose: string;
-  commerceUrl: string | null;
+};
+
+type PracticalInfoSupplyRecommendation = {
+  id: string;
+  label: string;
+  status: "safety_required" | "conditional" | "optional" | "personal_pick";
+  statusLabel: string;
+  note: string;
+  commerceUrl: string;
 };
 
 type PracticalInfoPublicProblem = {
@@ -165,6 +173,7 @@ export function PracticalInfoTabs({
   publicProblems,
   centers,
   supplies,
+  supplyRecommendations,
   suppliesOfficialUrl,
   initialTab = "pneumatic",
 }: {
@@ -179,6 +188,7 @@ export function PracticalInfoTabs({
   publicProblems: readonly PracticalInfoPublicProblem[];
   centers: PracticalInfoCenter[];
   supplies: PracticalInfoSupply[];
+  supplyRecommendations: PracticalInfoSupplyRecommendation[];
   suppliesOfficialUrl: string;
   initialTab?: PracticalInfoCategory;
 }) {
@@ -233,6 +243,7 @@ export function PracticalInfoTabs({
       {activeTab === "prep" ? (
         <PrepPanel
           supplies={supplies}
+          recommendations={supplyRecommendations}
           suppliesOfficialUrl={suppliesOfficialUrl}
         />
       ) : activeTab === "centers" ? (
@@ -707,9 +718,11 @@ function ProblemCard({
 
 function PrepPanel({
   supplies,
+  recommendations,
   suppliesOfficialUrl,
 }: {
   supplies: PracticalInfoSupply[];
+  recommendations: PracticalInfoSupplyRecommendation[];
   suppliesOfficialUrl: string;
 }) {
   return (
@@ -756,7 +769,6 @@ function PrepPanel({
                 <th className="px-5 py-4">규격</th>
                 <th className="px-5 py-4">수량</th>
                 <th className="px-5 py-4">용도</th>
-                <th className="px-5 py-4">구매 링크</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -775,9 +787,6 @@ function PrepPanel({
                     {item.quantity} {item.unit}
                   </td>
                   <td className="px-5 py-4 text-slate-600">{item.purpose}</td>
-                  <td className="px-5 py-4">
-                    <CommercePlaceholder />
-                  </td>
                 </tr>
               ))}
             </tbody>
@@ -813,19 +822,19 @@ function PrepPanel({
                   <dd className="text-slate-700">{item.purpose}</dd>
                 </div>
               </dl>
-              <div className="mt-4">
-                <CommercePlaceholder />
-              </div>
             </article>
           ))}
         </div>
       </div>
 
+      <SupplyRecommendationSection recommendations={recommendations} />
+
       <div className="mt-6 grid gap-5 md:grid-cols-2">
         <PrepCard
           title="공식 안내의 주의사항"
           items={[
-            "작업에 적합한 복장과 보호구를 반드시 지참합니다.",
+            "복장은 불티가 피부에 직접 닿지 않도록 되도록 얇은 긴팔을 착용합니다.",
+            "안전화는 반드시 착용하고, 용접 장갑·앞치마·용접면·보안경 등 작업에 맞는 보호구를 준비합니다.",
             "예비품을 빌릴 수 있어도 준비 부족으로 생기는 불이익은 수험자 책임입니다.",
             "수험자 지참목록 외에도 작업에 필요한 공구는 허용범위 안에서 준비할 수 있습니다.",
             "자가 제작 지그와 용접 지그 사용은 금지됩니다.",
@@ -863,11 +872,89 @@ function PrepPanel({
   );
 }
 
-function CommercePlaceholder() {
+function SupplyRecommendationSection({
+  recommendations,
+}: {
+  recommendations: PracticalInfoSupplyRecommendation[];
+}) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-2 text-xs font-extrabold text-slate-500">
-      <ShoppingCart size={13} aria-hidden="true" />
-      쿠팡 최저가 링크 준비 중
+    <section className="mt-8" aria-labelledby="supply-recommendation-heading">
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <p className="eyebrow">준비물 추천 링크</p>
+          <h2
+            id="supply-recommendation-heading"
+            className="mt-2 text-2xl font-extrabold text-slate-900"
+          >
+            안전 보호구 우선 · 선택 공구는 시험장 확인 후
+          </h2>
+        </div>
+        <p className="max-w-xl text-xs leading-5 text-slate-500">
+          선택사항은 시험장에 구비된 경우가 많습니다. 시험장 안내를 먼저
+          확인하고 중복 구매를 피하세요.
+        </p>
+      </div>
+
+      <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {recommendations.map((item) => (
+          <article
+            key={item.id}
+            className="flex flex-col rounded-2xl border border-slate-200 bg-white p-5"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <h3 className="font-extrabold text-slate-900">{item.label}</h3>
+              <RecommendationStatus item={item} />
+            </div>
+            <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
+              {item.note}
+            </p>
+            <a
+              href={item.commerceUrl}
+              target="_blank"
+              rel="sponsored noreferrer"
+              className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-[#173957] px-4 py-3 text-sm font-extrabold text-white"
+            >
+              <ShoppingCart size={15} aria-hidden="true" />
+              쿠팡에서 상품 보기
+              <ExternalLink size={13} aria-hidden="true" />
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-7 text-amber-950">
+        <p className="font-extrabold">복장·구매 안내</p>
+        <p className="mt-1">
+          얇은 긴팔 작업복을 권장하며 안전화는 필수입니다. 반팔이라면 용접
+          토시를 반드시 준비하세요. 상품 가격·재고·사양은 변경될 수 있고,
+          실제 반입 가능 품목은 해당 회차 Q-Net 안내와 시험장 공지를
+          우선합니다. 위 링크는 상품 선택을 돕기 위한 참고 링크이며, 일부
+          링크를 통한 구매 시 운영자에게 수수료가 지급될 수 있습니다.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function RecommendationStatus({
+  item,
+}: {
+  item: PracticalInfoSupplyRecommendation;
+}) {
+  const tone =
+    item.status === "safety_required"
+      ? "bg-rose-100 text-rose-800"
+      : item.status === "conditional"
+        ? "bg-amber-100 text-amber-900"
+        : item.status === "personal_pick"
+          ? "bg-sky-100 text-sky-900"
+          : "bg-slate-100 text-slate-600";
+
+  return (
+    <span
+      className={`shrink-0 rounded-full px-3 py-1 text-xs font-extrabold ${tone}`}
+    >
+      {item.statusLabel}
     </span>
   );
 }
