@@ -10,6 +10,40 @@ export type PracticalTestCenter = {
   equipmentModelIds: string[];
 };
 
+export type PracticalCenterComparisonStatus =
+  | "same"
+  | "partially_different"
+  | "ac"
+  | "dc"
+  | "ac_or_dc"
+  | "not_published"
+  | "parking_unavailable"
+  | "parking_limited"
+  | "needs_check";
+
+export type PracticalCenterComparison = {
+  pneumatic: {
+    status: PracticalCenterComparisonStatus;
+    label: string;
+    detail: string;
+  };
+  hydraulic: {
+    status: PracticalCenterComparisonStatus;
+    label: string;
+    detail: string;
+  };
+  welding: {
+    status: PracticalCenterComparisonStatus;
+    label: string;
+    detail: string;
+  };
+  parking: {
+    status: PracticalCenterComparisonStatus;
+    label: string;
+    detail: string;
+  };
+};
+
 export const PRACTICAL_TEST_CENTER_SOURCE = {
   title: "2026년도 정기 기사 제2회 실기시험 작업형 시험장별 시설 현황",
   publishedLabel: "6.19. 18시 기준",
@@ -228,3 +262,104 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
 export const practicalTestCentersById = new Map(
   PRACTICAL_TEST_CENTERS.map((center) => [center.id, center]),
 );
+
+/**
+ * 공식 시설현황 XLSX에 적힌 범위만 V-AMT 학습환경과 비교한다.
+ * 공압·유압 장비가 시설표에 없는 경우 동일하다고 추정하지 않는다.
+ */
+export function getPracticalCenterComparison(
+  center: PracticalTestCenter,
+): PracticalCenterComparison {
+  const hasSNetTrainer = center.equipmentModelIds.includes("snet-fluid-power");
+  const fluidDetail = hasSNetTrainer
+    ? "공식 시설표에는 S-Net 장비로 기재되어 있어 V-AMT 화면·부품 배치와 일부 다를 수 있습니다."
+    : "공식 시설표에 공압·유압 장비 모델이 기재되지 않아 V-AMT와의 동일 여부를 확정할 수 없습니다.";
+
+  return {
+    pneumatic: {
+      status: hasSNetTrainer ? "partially_different" : "not_published",
+      label: hasSNetTrainer ? "일부 다름" : "공개표 미기재",
+      detail: fluidDetail,
+    },
+    hydraulic: {
+      status: hasSNetTrainer ? "partially_different" : "not_published",
+      label: hasSNetTrainer ? "일부 다름" : "공개표 미기재",
+      detail: fluidDetail,
+    },
+    welding: getWeldingComparison(center),
+    parking: getParkingComparison(center),
+  };
+}
+
+function getWeldingComparison(
+  center: PracticalTestCenter,
+): PracticalCenterComparison["welding"] {
+  const raw = center.rawFacilityNote.toLowerCase();
+  const ids = new Set(center.equipmentModelIds);
+  const isDc =
+    raw.includes("dc용접기") || ids.has("national-nsa-250pa");
+  const isAc =
+    raw.includes("교류") ||
+    raw.includes("ac arc") ||
+    raw.includes("weltop-ac") ||
+    ids.has("hanheung-haw-300") ||
+    ids.has("hanheung-haw-350") ||
+    ids.has("cnw-cw-wa300e") ||
+    ids.has("postech-weltop-300");
+
+  if (isAc && isDc) {
+    return {
+      status: "ac_or_dc",
+      label: "교류·직류",
+      detail: "공식 시설표에 교류와 직류 용접 장비 정보가 함께 확인됩니다.",
+    };
+  }
+
+  if (isDc) {
+    return {
+      status: "dc",
+      label: "직류",
+      detail: "공식 시설표 또는 확인된 장비 사양에서 직류 용접기로 확인됩니다.",
+    };
+  }
+
+  if (isAc) {
+    return {
+      status: "ac",
+      label: "교류",
+      detail: "공식 시설표 또는 동일 모델의 명시 정보에서 교류 용접기로 확인됩니다.",
+    };
+  }
+
+  return {
+    status: "needs_check",
+    label: "현장 확인",
+    detail: "공식 시설표만으로 교류·직류를 확정할 수 없어 장비 명판 확인이 필요합니다.",
+  };
+}
+
+function getParkingComparison(
+  center: PracticalTestCenter,
+): PracticalCenterComparison["parking"] {
+  if (center.parkingNote?.includes("주차불가")) {
+    return {
+      status: "parking_unavailable",
+      label: "주차불가",
+      detail: center.parkingNote,
+    };
+  }
+
+  if (center.parkingNote?.includes("주차협소")) {
+    return {
+      status: "parking_limited",
+      label: "주차협소",
+      detail: center.parkingNote,
+    };
+  }
+
+  return {
+    status: "needs_check",
+    label: "확인 필요",
+    detail: "공식 시설표에 주차 가능 여부가 명시되지 않았습니다.",
+  };
+}

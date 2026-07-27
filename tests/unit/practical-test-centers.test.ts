@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  getPracticalCenterComparison,
   PRACTICAL_TEST_CENTERS,
   PRACTICAL_TEST_CENTER_SOURCE,
 } from "@/data/source/practical-test-centers";
@@ -28,5 +29,26 @@ describe("practical test center source catalog", () => {
         ).toBe(true);
       }
     }
+  });
+
+  it("does not guess unpublished V-AMT equivalence and preserves explicit parking limits", () => {
+    const seongnam = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "seongnam-kopo-nuri",
+    );
+    const seoul = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "seoul-north-tech",
+    );
+
+    expect(seongnam).toBeDefined();
+    expect(seoul).toBeDefined();
+    expect(getPracticalCenterComparison(seongnam!).pneumatic.label).toBe(
+      "일부 다름",
+    );
+    expect(getPracticalCenterComparison(seoul!).pneumatic.label).toBe(
+      "공개표 미기재",
+    );
+    expect(getPracticalCenterComparison(seoul!).parking.label).toBe(
+      "주차불가",
+    );
   });
 });

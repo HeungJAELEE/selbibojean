@@ -2,8 +2,24 @@ import type { Metadata } from "next";
 import { PageHeading } from "@/components/page-heading";
 import { PracticalInfoTabs } from "@/components/practical-info-tabs";
 import { PRACTICAL_WORK_TASKS } from "@/data/source/practical-work-tasks";
-import { PRACTICAL_TEST_CENTERS } from "@/data/source/practical-test-centers";
+import {
+  getPracticalCenterComparison,
+  PRACTICAL_TEST_CENTERS,
+} from "@/data/source/practical-test-centers";
 import { PRACTICAL_CANDIDATE_SUPPLIES } from "@/data/source/practical-candidate-supplies";
+import {
+  PRACTICAL_PUBLIC_PROBLEMS,
+  PRACTICAL_QUALIFICATION_OVERVIEW,
+  PRACTICAL_SUPPLIES_OFFICIAL_URL,
+} from "@/data/source/practical-exam-reference";
+import {
+  getFluidPowerYouTubeEmbedUrl,
+  practicalFluidPowerVideoGroups,
+} from "@/data/source/practical-fluid-power-videos";
+import {
+  getYouTubeNoCookieEmbedUrl,
+  practicalRepairWeldingVideos,
+} from "@/data/source/practical-repair-welding-videos";
 
 export const metadata: Metadata = {
   title: "실기 관련 정보",
@@ -31,16 +47,23 @@ export default async function PracticalInfoPage({
       <PageHeading
         eyebrow="Practical information"
         title="실기 관련 정보"
-        description="실제 작업형 범위인 공압·유압·용접 수행과제와 준비물, 낯선 시험장 장비에 적응하는 확인 순서를 정리합니다. 필답 이론은 이 페이지에서 반복하지 않습니다."
+        description="시험 점수·시간·실격기준부터 공압·유압·용접 영상과 공식 공개문제, 지참준비물, 시험장 장비 차이까지 한곳에서 확인합니다."
       />
       <PracticalInfoTabs
+        overview={PRACTICAL_QUALIFICATION_OVERVIEW}
         pneumaticTasks={taskSummaries("1503010215")}
         hydraulicTasks={taskSummaries("1503010216")}
         weldingTasks={PRACTICAL_WORK_TASKS.filter((task) =>
           task.ncsCode.startsWith("160105"),
         ).map(toSummary)}
-        centers={PRACTICAL_TEST_CENTERS}
+        videos={practicalInfoVideos()}
+        publicProblems={PRACTICAL_PUBLIC_PROBLEMS}
+        centers={PRACTICAL_TEST_CENTERS.map((center) => ({
+          ...center,
+          comparison: getPracticalCenterComparison(center),
+        }))}
         supplies={PRACTICAL_CANDIDATE_SUPPLIES}
+        suppliesOfficialUrl={PRACTICAL_SUPPLIES_OFFICIAL_URL}
         initialTab={initialTab}
       />
     </div>
@@ -62,5 +85,79 @@ function toSummary(task: (typeof PRACTICAL_WORK_TASKS)[number]) {
     estimatedMinutes: task.estimatedMinutes,
     stepCount: task.steps.length,
     safetyCount: task.safetyChecks.length,
+  };
+}
+
+function practicalInfoVideos() {
+  const circuitGroup = practicalFluidPowerVideoGroups.find(
+    (group) => group.id === "circuit-memorization",
+  );
+  const pneumaticGroup = practicalFluidPowerVideoGroups.find(
+    (group) => group.id === "pneumatic-1-to-8",
+  );
+  const hydraulicGroup = practicalFluidPowerVideoGroups.find(
+    (group) => group.id === "hydraulic-1-to-8",
+  );
+  const circuitStrategy = circuitGroup?.videos.find(
+    (video) => video.id === "circuit-strategy",
+  );
+  const pneumaticOneSheet = circuitGroup?.videos.find(
+    (video) => video.id === "pneumatic-one-sheet",
+  );
+  const hydraulicOneSheet = circuitGroup?.videos.find(
+    (video) => video.id === "hydraulic-one-sheet",
+  );
+
+  if (
+    !pneumaticGroup ||
+    !hydraulicGroup ||
+    !circuitStrategy ||
+    !pneumaticOneSheet ||
+    !hydraulicOneSheet
+  ) {
+    throw new Error("실기 관련 정보용 종목별 영상이 누락되었습니다.");
+  }
+
+  return {
+    pneumatic: [
+      ...pneumaticGroup.videos.map(toFluidInfoVideo),
+      toFluidInfoVideo(circuitStrategy),
+      toFluidInfoVideo(pneumaticOneSheet),
+    ],
+    hydraulic: [
+      ...hydraulicGroup.videos.map(toFluidInfoVideo),
+      toFluidInfoVideo(circuitStrategy),
+      toFluidInfoVideo(hydraulicOneSheet),
+    ],
+    welding: practicalRepairWeldingVideos.map((video) => ({
+      id: video.id,
+      title: video.label,
+      sourceTitle: video.sourceTitle,
+      channel: video.channel,
+      sourceUrl: video.sourceUrl,
+      embedUrl: getYouTubeNoCookieEmbedUrl(video.videoId),
+      playback: "embed" as const,
+      learningFocus: video.learningFocus,
+      caution: video.caution,
+    })),
+  };
+}
+
+function toFluidInfoVideo(
+  video: (typeof practicalFluidPowerVideoGroups)[number]["videos"][number],
+) {
+  return {
+    id: video.id,
+    title: video.label,
+    sourceTitle: video.sourceTitle,
+    channel: video.channel,
+    sourceUrl: video.sourceUrl,
+    embedUrl: getFluidPowerYouTubeEmbedUrl(video.embed),
+    playback:
+      video.id === "pneumatic-one-sheet"
+        ? ("external" as const)
+        : ("embed" as const),
+    learningFocus: video.learningFocus,
+    caution: video.caution,
   };
 }

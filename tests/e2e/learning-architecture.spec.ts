@@ -69,8 +69,8 @@ test("practical information has pneumatic hydraulic welding and prep tabs", asyn
     "공압",
     "유압",
     "용접",
-    "준비물·당일 팁",
-    "시험장 적응",
+    "수험자 준비물·팁",
+    "시험장·장비",
   ]) {
     await expect(page.getByRole("tab", { name })).toBeVisible();
   }
@@ -82,18 +82,59 @@ test("practical information has pneumatic hydraulic welding and prep tabs", asyn
     }),
   ).toBeVisible();
 
-  await page.getByRole("tab", { name: "준비물·당일 팁" }).click();
+  await page.getByRole("tab", { name: "수험자 준비물·팁" }).click();
   await expect(
     page.getByRole("heading", {
       name: /Q-Net 공개과제·수험자 안내가 최종 기준/,
     }),
   ).toBeVisible();
 
-  await page.getByRole("tab", { name: "시험장 적응" }).click();
+  await page.getByRole("tab", { name: "시험장·장비" }).click();
   await expect(
     page.getByRole("heading", {
-      name: "낯선 장비에서도 확인 순서는 바꾸지 않습니다",
+      name: "V-AMT 학습환경과 시험장 장비를 구분해 확인",
     }),
+  ).toBeVisible();
+});
+
+test("practical information exposes every numbered and detailed task video", async ({
+  page,
+}) => {
+  await page.goto("/practical/info?tab=pneumatic");
+  await expect(
+    page.getByRole("heading", { name: "번호별·세부 학습 영상 10개" }),
+  ).toBeVisible();
+  for (let number = 1; number <= 8; number += 1) {
+    await expect(
+      page.getByRole("button", { name: new RegExp(`공압 ${number}번`) }),
+    ).toBeVisible();
+  }
+  await expect(
+    page.getByRole("button", { name: /공유압 회로도 단순암기법/ }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: /공압 회로도 한 장 정리/ }),
+  ).toBeVisible();
+
+  await page.getByRole("tab", { name: "유압" }).click();
+  await expect(
+    page.getByRole("heading", { name: "번호별·세부 학습 영상 10개" }),
+  ).toBeVisible();
+  for (let number = 1; number <= 8; number += 1) {
+    await expect(
+      page.getByRole("button", { name: new RegExp(`유압 ${number}번`) }),
+    ).toBeVisible();
+  }
+  await expect(
+    page.getByRole("button", { name: /유압 회로도 한 장 정리/ }),
+  ).toBeVisible();
+
+  await page.getByRole("tab", { name: "용접" }).click();
+  await expect(
+    page.getByRole("heading", { name: "번호별·세부 학습 영상 6개" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: /전체 실습/ }),
   ).toBeVisible();
 });
 

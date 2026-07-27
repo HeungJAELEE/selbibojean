@@ -1,57 +1,107 @@
 export type PracticalCandidateSupply = {
   id: string;
+  number: number;
   label: string;
-  category: "official_check_required" | "recommended_practice" | "ppe";
-  status: "held_until_round_notice" | "recommended";
-  note: string;
+  specification: string;
+  unit: string;
+  quantity: number;
+  purpose: string;
+  commerceUrl: string | null;
 };
 
 /**
- * 회차별 수험자 지참준비물은 Q-Net 수험자 안내가 최종 기준이다.
- * 현재 확보한 시설현황 XLSX는 시험장 장비 자료이며 지참물 공식표가 아니므로,
- * 공식 지참물로 단정하지 않고 연습·안전 준비 항목만 분리한다.
+ * Q-Net 설비보전기사 수험자 지참준비물 표의 공식 등록 항목만 수록한다.
+ * 회차별 변경 가능성이 있으므로 화면에서 공식 원문 링크와 기준 회차를 함께 표시한다.
  */
 export const PRACTICAL_CANDIDATE_SUPPLIES: PracticalCandidateSupply[] = [
   {
-    id: "official-round-notice",
-    label: "해당 회차 Q-Net 수험자 지참준비물 표",
-    category: "official_check_required",
-    status: "held_until_round_notice",
-    note: "접수 회차의 품목·규격·수량·반입 제한을 직접 확인해야 합니다.",
+    id: "steel-ruler",
+    number: 1,
+    label: "강철자",
+    specification: "300 mm",
+    unit: "EA",
+    quantity: 1,
+    purpose: "치수 확인",
+    commerceUrl: null,
   },
   {
-    id: "identity-and-writing",
-    label: "신분확인 수단·허용 필기구",
-    category: "official_check_required",
-    status: "held_until_round_notice",
-    note: "세부 허용 범위는 해당 회차 수험자 안내가 우선입니다.",
+    id: "scriber",
+    number: 2,
+    label: "금긋기바늘",
+    specification: "150 mm",
+    unit: "EA",
+    quantity: 1,
+    purpose: "마킹용",
+    commerceUrl: null,
+  },
+  {
+    id: "magnetic-base",
+    number: 3,
+    label: "마그네틱 베이스",
+    specification: "제품 고정용",
+    unit: "EA",
+    quantity: 1,
+    purpose: "모재 고정용",
+    commerceUrl: null,
   },
   {
     id: "safety-glasses",
-    label: "보안경·안면보호구",
-    category: "ppe",
-    status: "recommended",
-    note: "비산·연삭·용접 작업 연습에 맞는 보호구를 사용합니다.",
+    number: 4,
+    label: "보안경",
+    specification: "기계가공용",
+    unit: "EA",
+    quantity: 1,
+    purpose: "비산물로부터 눈 보호",
+    commerceUrl: null,
   },
   {
-    id: "work-gloves",
-    label: "작업에 맞는 보호장갑",
-    category: "ppe",
-    status: "recommended",
-    note: "회전체 근접작업 등 장갑 사용이 오히려 위험한 경우는 작업기준을 따릅니다.",
+    id: "soapstone",
+    number: 5,
+    label: "석필",
+    specification: "보통",
+    unit: "EA",
+    quantity: 1,
+    purpose: "마킹용",
+    commerceUrl: null,
   },
   {
-    id: "circuit-check-sheet",
-    label: "회로도·포트 연결표 연습지",
-    category: "recommended_practice",
-    status: "recommended",
-    note: "시험장 반입 허용을 뜻하지 않으며 학습용 체크자료입니다.",
+    id: "center-punch",
+    number: 6,
+    label: "센터펀치",
+    specification: "100 mm",
+    unit: "EA",
+    quantity: 1,
+    purpose: "구멍 위치 표시",
+    commerceUrl: null,
   },
   {
-    id: "measurement-record",
-    label: "측정·조정·재시험 기록 연습지",
-    category: "recommended_practice",
-    status: "recommended",
-    note: "측정값과 조치 전후 상태를 기록하는 습관을 연습합니다.",
+    id: "welding-ppe",
+    number: 7,
+    label: "용접용 보호기구 일체",
+    specification: "산업용 용접면·용접앞치마·용접장갑",
+    unit: "조",
+    quantity: 1,
+    purpose: "용접 작업 보호",
+    commerceUrl: null,
+  },
+  {
+    id: "files",
+    number: 8,
+    label: "줄",
+    specification: "세목·중목·황목 각 1개",
+    unit: "조",
+    quantity: 1,
+    purpose: "모서리·표면 다듬기",
+    commerceUrl: null,
+  },
+  {
+    id: "square",
+    number: 9,
+    label: "직각자",
+    specification: "200 × 300 mm",
+    unit: "EA",
+    quantity: 1,
+    purpose: "직각·치수 확인",
+    commerceUrl: null,
   },
 ];
