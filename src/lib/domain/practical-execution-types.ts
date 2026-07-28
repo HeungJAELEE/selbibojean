@@ -75,7 +75,7 @@ export type PracticalWrittenCoverageItem = {
 
 export type PracticalWrittenGovernanceHold = {
   id: string;
-  sourceKind: "question" | "ncs_coverage";
+  sourceKind: "question" | "ncs_coverage" | "question_recall";
   sourceId: string;
   disposition:
     | "held_asset_missing"

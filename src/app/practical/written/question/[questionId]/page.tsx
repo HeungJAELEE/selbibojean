@@ -95,6 +95,15 @@ export default async function PracticalQuestionPage({
         >
           같은 유형 학습
         </Link>
+        {question.writtenSourceQuestionIds?.map((writtenQuestionId) => (
+          <Link
+            key={writtenQuestionId}
+            href={`/written/practice/${writtenQuestionId}`}
+            className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-2 text-sm font-extrabold text-amber-900"
+          >
+            필기 문제은행 연결 · {writtenQuestionId}
+          </Link>
+        ))}
       </div>
       {visualAid && !isInteractiveSequence ? (
         <div className="mt-8">
@@ -123,9 +132,11 @@ export default async function PracticalQuestionPage({
                 rel="noreferrer"
                 className="font-bold text-[#16697a] underline"
               >
-                NCS {source.documentTitle}
+                {source.sourceKind === "official_reference" ? "" : "NCS "}
+                {source.documentTitle}
               </a>{" "}
-              · {source.ncsCode} · PDF p.{source.pdfPage}
+              · {source.ncsCode}
+              {source.pdfPage ? ` · PDF p.${source.pdfPage}` : ""}
               {source.printedPage ? ` / 인쇄 p.${source.printedPage}` : ""}
               {source.figureNumber ? ` · ${source.figureNumber}` : ""}
             </li>

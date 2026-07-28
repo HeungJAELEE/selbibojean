@@ -25,8 +25,12 @@ export default async function PracticalPredictedPage() {
       {content.report.rows.authoredPredicted > 0 ? (
         <div className="mt-4 rounded-xl border border-sky-200 bg-sky-50 p-4 text-sm leading-6 text-sky-900">
           이 목록에는 원본 준비 워크북 {content.report.rows.workbookPredicted}개와
-          NCS 원문 근거를 붙여 별도 구성한 {content.report.rows.authoredPredicted}개가
-          함께 있습니다. 별도 구성 문항도 실제 회차·기출빈도에는 포함하지 않습니다.
+          NCS 원문 근거를 붙여 별도 구성한 {content.report.rows.authoredPredicted}개,
+          필기 문제은행에서 선별한 {content.report.rows.balancedPredicted}개가
+          함께 있습니다. 선별 문항은 아베의 원리·보전방식·결함 정의와 서로
+          다른 계산식 계열을 우선하며, 같은 시각자료나 같은 공식의 숫자만 바꾼
+          문항은 추가하지 않습니다. 각 유형의 실제 공개 문항 수는 제목 아래에
+          표시하고, 별도 구성 문항은 실제 회차·기출빈도에 포함하지 않습니다.
         </div>
       ) : null}
       <PracticalQuestionSections

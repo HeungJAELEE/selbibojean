@@ -157,9 +157,9 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
           <label className="grid gap-2 text-sm font-bold">문제 수<select aria-label="문제 수" disabled={!isHydrated} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50" value={count} onChange={(event) => setCount(event.target.value as typeof count)}><option value="10">10문제</option><option value="20">20문제</option><option value="50">50문제</option><option value="all">가능한 문제 전체</option></select></label>
           <label className="grid gap-2 text-sm font-bold">실제 기출 비율<select aria-label="실제 기출 비율" disabled={!isHydrated} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50" value={originalRatio} onChange={(event) => setOriginalRatio(Number(event.target.value) as typeof originalRatio)}><option value="0">0% · 개념 문제만</option><option value="25">25% · 개념 중심</option><option value="50">50% · 균형 혼합</option><option value="75">75% · 기출 중심</option><option value="100">100% · 가능한 기출 전체</option></select></label>
         </div>
-        <p className="mt-4 rounded-xl bg-[#eaf7f6] p-3 text-sm leading-6 text-[#135c69]">{mode === "weak" ? "선택 과목의 오답 기록을 세부항목군별로 집계해 많이 틀린 최대 3개 영역의 다른 문제까지 출제합니다. 오답 기록이 없으면 선택 과목 전체에서 시작합니다." : "기출 비율을 직접 정할 수 있습니다."} 원문과 정답·보기가 정확히 대조되지 않은 문제는 실제 기출 출제에서 제외됩니다.</p>
+        <p className="mt-4 rounded-xl bg-[#eaf7f6] p-3 text-sm leading-6 text-[#135c69]">{mode === "weak" ? "선택 과목의 오답 기록을 세부항목군별로 집계해 많이 틀린 최대 3개 영역의 다른 문제까지 무작위로 출제합니다. 오답 기록이 없으면 선택 과목 전체에서 시작합니다." : "선택한 범위와 기출 비율에 맞춰 새 세션마다 문제 순서를 무작위로 섞습니다."} 원문과 정답·보기가 정확히 대조되지 않은 문제는 실제 기출 출제에서 제외됩니다.</p>
         {error && <p className="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-700" role="alert">{error}</p>}
-        <button onClick={startSession} disabled={!isHydrated || loading || (mode === "group" && !groupId)} className="mt-7 w-full rounded-xl bg-[#173957] px-5 py-4 font-extrabold text-white disabled:opacity-50">{loading ? "문제를 고르는 중…" : "중복 없이 시작하기"}</button>
+        <button onClick={startSession} disabled={!isHydrated || loading || (mode === "group" && !groupId)} className="mt-7 w-full rounded-xl bg-[#173957] px-5 py-4 font-extrabold text-white disabled:opacity-50">{loading ? "문제를 고르는 중…" : "중복 없이 랜덤 시작"}</button>
       </section>
     );
   }

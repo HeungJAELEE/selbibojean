@@ -32,11 +32,11 @@ export const PRACTICAL_TEST_CENTER_MEDIA_GROUPS: PracticalTestCenterMediaGroup[]
   [
     {
       centerId: "incheon-kopo-industry",
-      receivedAt: "2026-07-27",
+      receivedAt: "2026-07-28",
       sourceLabel: "사용자 제공 현장 사진",
       sourceUrl: INCHON_CAFE_SOURCE,
       summary:
-        "산학협력관 실습대의 전기제어 모듈과 공압 밸브·센서 배치를 확인할 수 있습니다.",
+        "산학협력관 실습대의 전기제어 모듈, 공압 밸브·센서 배치와 구형 다이얼식 KT-300AC 용접기를 확인할 수 있습니다.",
       items: [
         {
           id: "incheon-control-power-switch",
@@ -109,6 +109,17 @@ export const PRACTICAL_TEST_CENTER_MEDIA_GROUPS: PracticalTestCenterMediaGroup[]
           alt: "인천캠퍼스 공압 실습대 밸브의 두 번째 근접 사진",
           caption: "공압 밸브 포트·기호 근접 보기 2",
           category: "pneumatic",
+        },
+        {
+          id: "incheon-kt-300ac-welder",
+          src: "/practical/test-centers/incheon-kopo-industry/kt-300ac-welder.webp",
+          width: 1600,
+          height: 1578,
+          alt: "인천폴리텍 산학협력관의 KT-300AC 구형 다이얼식 교류 아크용접기 전면",
+          caption: "KT-300AC 구형 다이얼식 교류 아크용접기",
+          category: "welding",
+          evidenceNote:
+            "사용자 제공 사진에서 KT-300AC 명판, 전류 조절 다이얼과 디지털 A 표시창을 확인했습니다. 실제 출력 설정은 현장 감독관 안내와 시험편 상태를 기준으로 판단하세요.",
         },
       ],
     },

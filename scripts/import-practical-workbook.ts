@@ -21,6 +21,8 @@ import { PRACTICAL_NCS_COVERAGE_HOLDS } from "../src/data/source/practical-ncs-c
 import { PRACTICAL_SUPPLEMENTAL_CONCEPTS } from "../src/data/source/practical-supplemental-concepts";
 import { PRACTICAL_WRITTEN_AUDIT_DECISIONS } from "../src/data/source/practical-written-audit-decisions";
 import { applyPracticalTheoryReinforcement } from "../src/data/source/practical-theory-reinforcements";
+import { buildBalancedPracticalPredictedQuestions } from "../src/data/source/practical-balanced-predicted-questions";
+import writtenContent from "../src/data/generated/content.json";
 import type {
   PracticalConcept,
   PracticalContent,
@@ -33,6 +35,8 @@ import type {
   PracticalStudyCategoryId,
 } from "../src/lib/domain/practical-types";
 import type { AuditDisposition } from "../src/lib/domain/types";
+import { isPublishablePracticalQuestion } from "../src/lib/domain/practical";
+import { isLearnerVisiblePracticalQuestion } from "../src/lib/content/learner-visibility";
 
 const DEFAULT_SOURCE =
   "C:/Users/JaeheungLee/.codex/outputs/019f89fa-0297-7823-b778-dda466695604/설비보전기사_작업형실기_기출복원_출제예상40_개념통합_2차.xlsx";
@@ -1041,6 +1045,41 @@ async function main() {
     ...supplementalConcepts,
   ].map(applyPracticalTheoryReinforcement);
 
+  const balancedPredictedQuestions =
+    buildBalancedPracticalPredictedQuestions({
+      existingQuestions: questions,
+      concepts,
+      visualAids: PRACTICAL_VISUAL_AIDS,
+      writtenQuestions: writtenContent.questions,
+    });
+  const duplicateBalancedId = balancedPredictedQuestions.find(
+    (question) => questionById.has(question.id),
+  );
+  if (duplicateBalancedId) {
+    throw new Error(
+      `균형 예상문항 ID가 기존 문항과 중복되었습니다: ${duplicateBalancedId.id}`,
+    );
+  }
+  predictedQuestions.push(...balancedPredictedQuestions);
+  questions.push(...balancedPredictedQuestions);
+  for (const question of balancedPredictedQuestions) {
+    questionById.set(question.id, question);
+    for (const conceptId of question.conceptIds) {
+      const concept = concepts.find((candidate) => candidate.id === conceptId);
+      if (!concept) {
+        throw new Error(
+          `균형 예상문항의 연결 개념이 없습니다: ${question.id}/${conceptId}`,
+        );
+      }
+      concept.relatedPredictedQuestionIds = [
+        ...new Set([...concept.relatedPredictedQuestionIds, question.id]),
+      ];
+      if (!concept.labels.includes("predicted_exam")) {
+        concept.labels.push("predicted_exam");
+      }
+    }
+  }
+
   const studyCategories: PracticalStudyCategory[] =
     STUDY_CATEGORY_DEFINITIONS.map((category) => {
       const questionIds = questions
@@ -1060,13 +1099,12 @@ async function main() {
   const classifiedQuestionIds = new Set(
     studyCategories.flatMap((category) => category.questionIds),
   );
-  if (
-    classifiedQuestionIds.size !== questions.length ||
-    Object.keys(PRACTICAL_PRIMARY_CATEGORY_BY_QUESTION).length !==
-      questions.length
-  ) {
+  const unknownManifestIds = Object.keys(
+    PRACTICAL_PRIMARY_CATEGORY_BY_QUESTION,
+  ).filter((questionId) => !questionById.has(questionId));
+  if (classifiedQuestionIds.size !== questions.length || unknownManifestIds.length > 0) {
     throw new Error(
-      `실기 유형 분류 대사 실패: questions=${questions.length}, classified=${classifiedQuestionIds.size}, manifest=${Object.keys(PRACTICAL_PRIMARY_CATEGORY_BY_QUESTION).length}`,
+      `실기 유형 분류 대사 실패: questions=${questions.length}, classified=${classifiedQuestionIds.size}, unknownManifest=${unknownManifestIds.join(",")}`,
     );
   }
 
@@ -1093,14 +1131,23 @@ async function main() {
       predicted: predictedQuestions.length,
       workbookPredicted: expandedWorkbookPredictedQuestions.length,
       authoredPredicted: authoredPredictedQuestions.length,
+      balancedPredicted: balancedPredictedQuestions.length,
       concepts: workbookConcepts.length,
       supplementalConcepts: PRACTICAL_SUPPLEMENTAL_CONCEPTS.length,
       ncsDocuments: rowsToRecords(ncsRows).length,
       visualAids: PRACTICAL_VISUAL_AIDS.length,
     },
     publication: {
-      past: actualQuestions.filter((question) => question.contentStatus === "published").length,
-      predicted: predictedQuestions.filter((question) => question.contentStatus === "published").length,
+      past: actualQuestions.filter(
+        (question) =>
+          isPublishablePracticalQuestion(question) &&
+          isLearnerVisiblePracticalQuestion(question),
+      ).length,
+      predicted: predictedQuestions.filter(
+        (question) =>
+          isPublishablePracticalQuestion(question) &&
+          isLearnerVisiblePracticalQuestion(question),
+      ).length,
       concepts: workbookConcepts.filter((concept) => concept.contentStatus === "published").length,
       supplementalConcepts: PRACTICAL_SUPPLEMENTAL_CONCEPTS.filter(
         (concept) => concept.contentStatus === "published",
@@ -1113,7 +1160,8 @@ async function main() {
       actualQuestions.length === 42 &&
       expandedWorkbookPredictedQuestions.length === 41 &&
       authoredPredictedQuestions.length === 77 &&
-      predictedQuestions.length === 118 &&
+      balancedPredictedQuestions.length === 67 &&
+      predictedQuestions.length === 185 &&
       workbookConcepts.length === 46 &&
       rowsToRecords(ncsRows).length === 11 &&
       ncsCoverage.summary.totalDocuments === 11 &&

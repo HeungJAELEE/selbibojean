@@ -11,6 +11,7 @@ import {
   validatePracticalCoverageDeliverables,
   validatePracticalExamEvidenceGraph,
 } from "@/lib/validation/practical-execution";
+import { PRACTICAL_QUESTION_RECALL_AUDIT } from "@/data/source/practical-question-recall-audit";
 
 const [content, manifest] = await Promise.all([
   readFile(
@@ -33,7 +34,7 @@ describe("practical written governance manifest", () => {
     expect(manifest.report.evidence).toEqual({
       pastReconstructed: 42,
       pastVariant: 0,
-      predictedRelated: 118,
+      predictedRelated: 185,
       ncsSupplement: 43,
     });
     expect(validatePracticalExamEvidenceGraph(manifest.evidence)).toEqual([]);
@@ -91,6 +92,25 @@ describe("practical written governance manifest", () => {
       .sort();
     expect(recordedIds).toEqual(heldQuestionIds);
     expect(recordedIds).toHaveLength(21);
+  });
+
+  it("records recall conflicts and missing assets only as governance holds", () => {
+    const expected = PRACTICAL_QUESTION_RECALL_AUDIT.flatMap((item) =>
+      item.blockers.map((blocker) => `${item.id}:${blocker}`),
+    ).sort();
+    const recorded = manifest.holds
+      .filter((hold) => hold.sourceKind === "question_recall")
+      .map((hold) => `${hold.sourceId}:${hold.disposition}`)
+      .sort();
+
+    expect(recorded).toEqual(expected);
+    expect(
+      manifest.evidence.some((evidence) =>
+        PRACTICAL_QUESTION_RECALL_AUDIT.some((item) =>
+          evidence.questionIds.includes(item.id),
+        ),
+      ),
+    ).toBe(false);
   });
 
   it("keeps official and NCS source references for promoted corrections", () => {

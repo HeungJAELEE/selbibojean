@@ -87,6 +87,8 @@ export async function POST(request: Request) {
   const feedback: PracticalReveal = {
     questionId: question.id,
     modelAnswer: question.modelAnswer,
+    answerDefinition: question.answerDefinition,
+    memoryTip: question.memoryTip,
     requiredKeywords: question.requiredKeywords,
     acceptedAnswers: question.acceptedAnswers,
     calculation: question.calculation,
@@ -99,11 +101,20 @@ export async function POST(request: Request) {
       href: `/practical/written/theory/${concept!.id}`,
     })),
     sourceLinks: question.ncsSources.map((source) => ({
-      label: `NCS ${source.documentTitle}`,
+      label:
+        source.sourceKind === "official_reference" ||
+        source.sourceKind === "written_question_bank"
+          ? source.documentTitle
+          : `NCS ${source.documentTitle}`,
       href: source.sourceUrl,
-      page: `PDF p.${source.pdfPage ?? "확인 중"}${
-        source.figureNumber ? ` · ${source.figureNumber}` : ""
-      }`,
+      page:
+        source.sourceKind === "written_question_bank"
+          ? "필기 기출·해설 근거"
+          : `${
+              source.sourceKind === "official_reference" ? "공식 근거" : "PDF"
+            } p.${source.pdfPage ?? "확인 중"}${
+              source.figureNumber ? ` · ${source.figureNumber}` : ""
+            }`,
     })),
     selfRating: parsed.data.selfRating,
     sequenceResult,

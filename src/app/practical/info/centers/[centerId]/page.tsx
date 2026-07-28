@@ -137,19 +137,141 @@ export default async function PracticalTestCenterPage({
           </p>
         ) : null}
         {center.candidateSupplyGuidance ? (
-          <div className="mt-4 rounded-xl border border-teal-200 bg-teal-50 p-4">
-            <p className="text-xs font-extrabold text-teal-800">
-              사용자 제보 준비물 안내 · 접수{" "}
-              {center.candidateSupplyGuidance.reportedAt}
-            </p>
-            <p className="mt-2 text-sm font-bold leading-7 text-teal-950">
-              {center.candidateSupplyGuidance.summary}
-            </p>
-            <p className="mt-2 text-xs leading-5 text-teal-800">
+          <div
+            data-testid={`center-supply-guidance-${center.id}`}
+            className={`mt-4 rounded-xl p-4 ${
+              center.candidateSupplyGuidance.personalBringGuidance ===
+              "welding_ppe_and_tools_required"
+                ? "border-2 border-[#c2410c] bg-[#fff1e7] shadow-[0_0_0_3px_rgba(194,65,12,0.12)]"
+                : "border border-teal-200 bg-teal-50"
+            }`}
+          >
+            <div className="flex items-start gap-3">
+              <AlertTriangle
+                size={21}
+                className={
+                  center.candidateSupplyGuidance.personalBringGuidance ===
+                  "welding_ppe_and_tools_required"
+                    ? "mt-0.5 shrink-0 text-[#c2410c]"
+                    : "mt-0.5 shrink-0 text-teal-700"
+                }
+                aria-hidden="true"
+              />
+              <div>
+                <p
+                  className={`text-xs font-black ${
+                    center.candidateSupplyGuidance.personalBringGuidance ===
+                    "welding_ppe_and_tools_required"
+                      ? "text-[#9a3412]"
+                      : "text-teal-800"
+                  }`}
+                >
+                  {center.candidateSupplyGuidance.personalBringGuidance ===
+                  "welding_ppe_and_tools_required"
+                    ? "필수 지참 · 시험장 미제공 제보"
+                    : "사용자 제보 준비물 안내"}{" "}
+                  · 접수 {center.candidateSupplyGuidance.reportedAt}
+                </p>
+                <p
+                  className={`mt-2 text-sm font-extrabold leading-7 ${
+                    center.candidateSupplyGuidance.personalBringGuidance ===
+                    "welding_ppe_and_tools_required"
+                      ? "text-[#7c2d12]"
+                      : "text-teal-950"
+                  }`}
+                >
+                  {center.candidateSupplyGuidance.summary}
+                </p>
+              </div>
+            </div>
+            {center.candidateSupplyGuidance.requiredPersonalItems?.length ? (
+              <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+                {center.candidateSupplyGuidance.requiredPersonalItems.map(
+                  (item) => (
+                    <li
+                      key={item}
+                      className="rounded-lg bg-white px-3 py-2 text-xs font-extrabold text-[#7c2d12]"
+                    >
+                      반드시 지참 · {item}
+                    </li>
+                  ),
+                )}
+              </ul>
+            ) : null}
+            <p
+              className={`mt-3 text-xs leading-5 ${
+                center.candidateSupplyGuidance.personalBringGuidance ===
+                "welding_ppe_and_tools_required"
+                  ? "text-[#9a3412]"
+                  : "text-teal-800"
+              }`}
+            >
               회차와 현장 운영에 따라 달라질 수 있으므로 수험자 안내와 시험장
               지시를 최종 기준으로 확인하세요.
             </p>
+            {center.candidateSupplyGuidance.sourceUrl ? (
+              <a
+                href={center.candidateSupplyGuidance.sourceUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex items-center gap-1 text-xs font-extrabold text-[#9a3412] underline"
+              >
+                사용자 제공 현장 제보 원문
+                <ExternalLink size={13} aria-hidden="true" />
+              </a>
+            ) : null}
           </div>
+        ) : null}
+        {center.candidateFieldReport ? (
+          <section
+            aria-labelledby={`candidate-field-report-${center.id}`}
+            className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4 md:p-5"
+          >
+            <p className="text-xs font-black text-[#16697a]">
+              사용자 현장 제보 · {center.candidateFieldReport.reportedAt}
+            </p>
+            <h3
+              id={`candidate-field-report-${center.id}`}
+              className="mt-1 text-lg font-extrabold text-slate-900"
+            >
+              장비 상태와 당일 운영 참고
+            </h3>
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              {center.candidateFieldReport.summary}
+            </p>
+            <div className="mt-4 grid gap-4 md:grid-cols-2">
+              {center.candidateFieldReport.sections.map((section) => (
+                <article
+                  key={section.category}
+                  className="rounded-xl border border-slate-200 bg-white p-4"
+                >
+                  <p className="text-xs font-black text-[#16697a]">
+                    {MEDIA_CATEGORY_LABELS[section.category]}
+                  </p>
+                  <h4 className="mt-1 font-extrabold text-slate-900">
+                    {section.title}
+                  </h4>
+                  <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-700">
+                    {section.notes.map((note) => (
+                      <li key={note} className="flex gap-2">
+                        <CheckCircle2
+                          size={15}
+                          className="mt-1.5 shrink-0 text-[#16697a]"
+                          aria-hidden="true"
+                        />
+                        <span>{note}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {section.caution ? (
+                    <p className="mt-3 rounded-lg bg-amber-50 p-3 text-xs font-bold leading-5 text-amber-900">
+                      {section.caution}
+                    </p>
+                  ) : null}
+                </article>
+              ))}
+            </div>
+          </section>
         ) : null}
         {center.evidenceSourceUrl ? (
           <a

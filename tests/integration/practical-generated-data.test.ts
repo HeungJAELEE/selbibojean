@@ -18,9 +18,10 @@ describe("NCS practical content import", () => {
   it("reconciles all source rows", () => {
     expect(content.report.rows).toEqual({
       past: 42,
-      predicted: 118,
+      predicted: 185,
       workbookPredicted: 41,
       authoredPredicted: 77,
+      balancedPredicted: 67,
       concepts: 46,
       supplementalConcepts: 43,
       ncsDocuments: 11,
@@ -28,7 +29,7 @@ describe("NCS practical content import", () => {
     });
     expect(content.report.exactMatch).toBe(true);
     expect(content.report.publication.past).toBe(22);
-    expect(content.report.publication.predicted).toBe(117);
+    expect(content.report.publication.predicted).toBe(182);
     expect(content.report.publication.concepts).toBe(46);
     expect(content.report.publication.supplementalConcepts).toBe(43);
     expect(content.report.publication.held).toBe(21);
@@ -151,6 +152,8 @@ describe("NCS practical content import", () => {
     )) {
       const publicQuestion = toPublicPracticalQuestion(question);
       expect(publicQuestion).not.toHaveProperty("modelAnswer");
+      expect(publicQuestion).not.toHaveProperty("answerDefinition");
+      expect(publicQuestion).not.toHaveProperty("memoryTip");
       expect(publicQuestion).not.toHaveProperty("requiredKeywords");
       expect(publicQuestion).not.toHaveProperty("acceptedAnswers");
       expect(publicQuestion).not.toHaveProperty("calculation");
@@ -176,15 +179,15 @@ describe("NCS practical content import", () => {
       ),
     ).toEqual({
       visual_identification: 37,
-      formula_calculation: 22,
-      theory_concept: 39,
-      work_procedure: 62,
+      formula_calculation: 54,
+      theory_concept: 73,
+      work_procedure: 63,
     });
     const primaryIds = content.studyCategories.flatMap(
       (category) => category.questionIds,
     );
-    expect(primaryIds).toHaveLength(160);
-    expect(new Set(primaryIds).size).toBe(160);
+    expect(primaryIds).toHaveLength(227);
+    expect(new Set(primaryIds).size).toBe(227);
     expect(
       content.questions.every(
         (question) =>
@@ -222,9 +225,10 @@ describe("NCS practical content import", () => {
     const predicted = content.questions.filter(
       (question) => question.kind === "predicted",
     );
-    expect(predicted).toHaveLength(118);
+    expect(predicted).toHaveLength(185);
     expect(content.report.rows.workbookPredicted).toBe(41);
     expect(content.report.rows.authoredPredicted).toBe(77);
+    expect(content.report.rows.balancedPredicted).toBe(67);
     expect(predicted.every((question) => question.occurrence === null)).toBe(
       true,
     );

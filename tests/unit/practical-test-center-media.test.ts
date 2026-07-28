@@ -8,10 +8,10 @@ import {
 import { practicalTestCentersById } from "@/data/source/practical-test-centers";
 
 describe("practical test center media catalog", () => {
-  it("maps all 16 user-provided photos to three known test centers", () => {
+  it("maps all 17 user-provided photos to three known test centers", () => {
     expect(PRACTICAL_TEST_CENTER_MEDIA_GROUPS).toHaveLength(3);
     expect(practicalTestCenterMediaByCenter.get("incheon-kopo-industry")?.items).toHaveLength(
-      8,
+      9,
     );
     expect(practicalTestCenterMediaByCenter.get("jeonnam-suncheon-kopo")?.items).toHaveLength(
       7,
@@ -25,8 +25,11 @@ describe("practical test center media catalog", () => {
         true,
       );
       expect(group.sourceLabel).toBe("사용자 제공 현장 사진");
-      expect(group.receivedAt).toBe("2026-07-27");
+      expect(group.receivedAt).toMatch(/^2026-07-(27|28)$/);
     }
+    expect(
+      practicalTestCenterMediaByCenter.get("incheon-kopo-industry")?.receivedAt,
+    ).toBe("2026-07-28");
   });
 
   it("keeps IDs and public media paths unique and backed by real files", () => {
@@ -61,6 +64,12 @@ describe("practical test center media catalog", () => {
       "cafe.naver.com/f-e/cafes/29094056/articles/14301",
     );
     expect(incheon?.sourceLabel).toBe("사용자 제공 현장 사진");
+    expect(incheon?.items.at(-1)).toMatchObject({
+      id: "incheon-kt-300ac-welder",
+      width: 1600,
+      height: 1578,
+      category: "welding",
+    });
   });
 
   it("preserves the Ulsan photo and facility-sheet model conflict", () => {

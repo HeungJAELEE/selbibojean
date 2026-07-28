@@ -105,12 +105,24 @@ test("weak-area practice expands repeated mistakes within the selected subject",
 
 test("random practice lets users choose a past-exam ratio and weak subject", async ({ page }) => {
   await page.goto("/written/practice/random");
+  await expect(page.getByText(/새 세션마다 선택 범위의 공개 문제를 무작위 순서로 출제/)).toBeVisible();
   await page.getByLabel("범위", { exact: true }).selectOption("weak");
   await expect(page.getByLabel("과목", { exact: true })).toBeVisible();
   await page.getByLabel("과목", { exact: true }).selectOption("subject-3");
   await page.getByLabel("실제 기출 비율", { exact: true }).selectOption("75");
   await expect(page.getByLabel("실제 기출 비율", { exact: true })).toHaveValue("75");
   await expect(page.getByText(/많이 틀린 최대 3개 영역/)).toBeVisible();
+});
+
+test("login explains the seven-day inactivity deletion policy", async ({
+  page,
+}) => {
+  await page.goto("/login");
+  await expect(
+    page.getByText(
+      /마지막 로그인 또는 인증된 학습 활동 후 7일이 지나면 계정이 자동 삭제/,
+    ),
+  ).toBeVisible();
 });
 
 test("written mock preserves subject quotas without repeating or exposing unverified questions", async ({ request }) => {

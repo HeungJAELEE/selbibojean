@@ -13,6 +13,7 @@ import type {
   PracticalStudyCategoryId,
 } from "../src/lib/domain/practical-types";
 import { PRACTICAL_WRITTEN_AUDIT_DECISIONS } from "../src/data/source/practical-written-audit-decisions";
+import { PRACTICAL_QUESTION_RECALL_AUDIT } from "../src/data/source/practical-question-recall-audit";
 import { isPublishablePracticalQuestion } from "../src/lib/domain/practical";
 
 const root = process.cwd();
@@ -340,6 +341,16 @@ const holds: PracticalWrittenGovernanceHold[] = [
         rationale: item.rationale,
         nextAction: item.nextAction,
       })),
+  ),
+  ...PRACTICAL_QUESTION_RECALL_AUDIT.flatMap((item) =>
+    item.blockers.map((blocker) => ({
+      id: `hold:question-recall:${item.id}:${blocker}`,
+      sourceKind: "question_recall" as const,
+      sourceId: item.id,
+      disposition: blocker,
+      rationale: `${item.topic} 출제 이력은 복원 기출 등록부에 공개하며, ${item.classification} 경계 때문에 답안형 문제로는 승격하지 않는다.`,
+      nextAction: item.nextEvidence.join(", "),
+    })),
   ),
 ];
 

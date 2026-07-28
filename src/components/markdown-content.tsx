@@ -350,7 +350,12 @@ function MarkdownBlocks({ content }: { content: string }) {
 
 export function MarkdownContent({ content, compact = false }: { content: string; compact?: boolean }) {
   return (
-    <div className={cn("markdown-content", compact && "text-sm [&_p]:leading-7")}>
+    <div
+      className={cn(
+        "markdown-content min-w-0 max-w-full",
+        compact && "text-sm [&_p]:leading-7",
+      )}
+    >
       <MarkdownBlocks content={content} />
     </div>
   );

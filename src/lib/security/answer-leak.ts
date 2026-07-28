@@ -1,5 +1,7 @@
 export const FORBIDDEN_PRE_SUBMIT_FIELDS = [
   "modelAnswer",
+  "answerDefinition",
+  "memoryTip",
   "correctAnswer",
   "correctChoiceId",
   "answerText",

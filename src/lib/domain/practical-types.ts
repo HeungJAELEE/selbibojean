@@ -62,6 +62,7 @@ export type PracticalAssetRights =
   | "unknown";
 
 export type PracticalSourceRef = {
+  sourceKind?: "ncs" | "official_reference" | "written_question_bank";
   ncsCode: string;
   documentTitle: string;
   version: string;
@@ -326,7 +327,13 @@ export type PracticalQuestion = {
   /** 문제를 풀기 전에 보이는 학습·출제 형태 요약이다. 정답은 포함하지 않는다. */
   formatLabel: string;
   stem: string;
+  /** 문제를 풀기 전에 공개해도 되는 텍스트 보기다. 정답 순서는 포함하지 않는다. */
+  promptOptions?: string[];
   modelAnswer: string;
+  /** 제출 뒤에만 공개하는 한 문장 핵심 정의다. */
+  answerDefinition?: string;
+  /** 제출 뒤에만 공개하는 짧은 암기 연결어다. */
+  memoryTip?: string;
   requiredKeywords: string[];
   acceptedAnswers: string[];
   calculation: string[];
@@ -352,6 +359,8 @@ export type PracticalQuestion = {
       }
     | null;
   predictedBasis: string | null;
+  /** 동일 개념·공식·판독 기준을 검증한 필기 문제은행 문항 ID다. */
+  writtenSourceQuestionIds?: string[];
   reviewNote: string;
   examFormat?: PracticalWrittenExamCardFormat;
   examCardIds?: string[];
@@ -378,7 +387,15 @@ export type PracticalStudyCategory = {
 
 export type PublicPracticalQuestion = Omit<
   PracticalQuestion,
-  "modelAnswer" | "requiredKeywords" | "acceptedAnswers" | "calculation" | "rubric" | "traps" | "reviewNote"
+  | "modelAnswer"
+  | "answerDefinition"
+  | "memoryTip"
+  | "requiredKeywords"
+  | "acceptedAnswers"
+  | "calculation"
+  | "rubric"
+  | "traps"
+  | "reviewNote"
 >;
 
 export type PracticalConcept = {
@@ -413,6 +430,8 @@ export type PracticalConcept = {
 export type PracticalReveal = {
   questionId: string;
   modelAnswer: string;
+  answerDefinition?: string;
+  memoryTip?: string;
   requiredKeywords: string[];
   acceptedAnswers: string[];
   calculation: string[];
@@ -448,6 +467,8 @@ export type PracticalImportReport = {
     workbookPredicted: number;
     /** NCS 원문 근거를 붙여 별도 매니페스트로 보강한 자체 예상문항 수 */
     authoredPredicted: number;
+    /** 필기 문제은행에서 정의·공식·순서를 중복 없이 선별해 만든 예상문항 수 */
+    balancedPredicted: number;
     concepts: number;
     supplementalConcepts: number;
     ncsDocuments: number;

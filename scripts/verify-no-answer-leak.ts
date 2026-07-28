@@ -298,6 +298,8 @@ async function verifyClientBuild(content: PracticalContent) {
     [
       ...content.questions.flatMap((question) => [
         question.modelAnswer,
+        question.answerDefinition ?? "",
+        question.memoryTip ?? "",
         ...question.acceptedAnswers,
         ...question.calculation,
       ]),

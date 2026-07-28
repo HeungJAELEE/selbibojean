@@ -85,6 +85,32 @@ describe("practical test center source catalog", () => {
     });
   });
 
+  it("flags the Incheon welding PPE and finishing tools as personally required", () => {
+    const incheon = PRACTICAL_2025_HISTORY_CENTERS.find(
+      (center) => center.id === "incheon-kopo-industry",
+    );
+
+    expect(incheon?.candidateSupplyGuidance).toMatchObject({
+      weldingPpeProvision: "not_provided",
+      otherSuppliesProvision: "partially_not_provided",
+      personalBringGuidance: "welding_ppe_and_tools_required",
+      sourceKind: "user_report",
+      reportedAt: "2026-07-28",
+      requiredPersonalItems: expect.arrayContaining([
+        "용접 장갑",
+        "용접 앞치마",
+        "슬래그망치",
+        "와이어브러시",
+      ]),
+    });
+    expect(incheon?.candidateFieldReport?.sections).toHaveLength(4);
+    expect(
+      incheon?.candidateFieldReport?.sections.find(
+        (section) => section.category === "welding",
+      )?.notes.join(" "),
+    ).toContain("구형 다이얼식");
+  });
+
   it("does not guess unpublished V-AMT equivalence and preserves explicit parking limits", () => {
     const seongnam = PRACTICAL_TEST_CENTERS.find(
       (center) => center.id === "seongnam-kopo-nuri",
@@ -92,9 +118,13 @@ describe("practical test center source catalog", () => {
     const seoul = PRACTICAL_TEST_CENTERS.find(
       (center) => center.id === "seoul-north-tech",
     );
+    const busan = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "busan-technical-high",
+    );
 
     expect(seongnam).toBeDefined();
     expect(seoul).toBeDefined();
+    expect(busan).toBeDefined();
     expect(getPracticalCenterComparison(seongnam!).pneumatic.label).toBe(
       "일부 다름",
     );
@@ -104,6 +134,11 @@ describe("practical test center source catalog", () => {
     expect(getPracticalCenterComparison(seoul!).parking.label).toBe(
       "주차불가",
     );
+    expect(getPracticalCenterComparison(busan!).parking).toMatchObject({
+      status: "parking_unavailable",
+      label: "주차불가",
+      detail: "주차불가 · 사용자 제보(2026-07-28)",
+    });
   });
 
   it("keeps raw facility labels while storing normalized welding models separately", () => {

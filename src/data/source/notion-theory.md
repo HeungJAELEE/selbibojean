@@ -18,7 +18,7 @@
 **2026년 응시자 복원 빠른 지도**
 - **1회(2026-04-18) 복원:** 랙과 피니언, 파스칼 원리와 힘 계산, 구동장치 단면의 베어링·오일실·키, 설비종합효율/생산로스 계산, 측정기 3종, 점검 종류, 기어 커플링, 끼워맞춤·기하공차, 안전표지·보호구, 저널베어링 간극 측정.
 - **2회(2026-07-19) 복원:** 개회로·폐회로 제어계, M18×2.0 도면 판독, 서징, 아베 원리, 적하급유법, 송풍기 동력 상사법칙, SEMS 볼트, 브레이크 라이닝 교체, 연삭숫돌 1분·3분과 덮개, 타이어 커플링 조립순서.
-- **복원 불확실:** M18×2.0 문제의 작은 지름·반지름 값과 적하급유 선택지의 정확한 구성은 대화에서 회상이 엇갈렸다. 본문에는 확정값처럼 쓰지 않고 **문제 푸는 기준과 NCS 분류**를 넣었다.
+- **복원 경계:** M18×2.0은 남아 있는 보기와 ISO 기본치수를 대조해 8 mm·9 mm로, 송풍기 동력은 같은 팬에서 회전수만 바뀌는 복원 조건을 적용해 약 12.53 hp로 교정했다. 이는 공식 Q-Net 답안이 아니라 **복원 보기·조건에 맞춘 교정 답**이다. 적하급유 선택지와 SEMS 볼트·브레이크 라이닝·연삭숫돌은 실제 시험 사진 또는 문제·보기가 빠진 범위를 계속 구분한다.
 1. **비전공자 첫 회독**에서는 모르는 용어를 한꺼번에 암기하려 하지 말고, 각 장의 `무엇인가(정의) → 왜 필요한가(목적) → 무엇으로 이루어졌나(구성) → 어떻게 움직이나(작동) → 무엇이 고장 나나(진단)` 흐름을 먼저 따라간다.
 2. 두 번째에는 공식과 단위, 비교 항목, 기호와 회로를 직접 써 본다.
 3. 세 번째에는 ⭐ 시험 포인트와 ⚠ 오답 함정, 🔧 고장 원인·대책만 반복한다.
@@ -2850,8 +2850,8 @@ UT의 고전적 분류에서 **펄스반사법**은 송신한 펄스가 결함·
 - 귀마개·귀덮개는 소음 수준과 통신·경보 인지 필요를 함께 고려하며, 추락·인양·연삭 위험이 겹치면 각각의 보호구 호환성을 확인한다.
 안전표지는 글을 읽기 전에 **형상·색·그림기호**로 의도를 전달한다. 일반적인 국제·KS 체계에서 빨강은 금지·정지·소방, 노랑은 경고, 파랑은 지시, 초록은 안전상태·피난·응급을 나타내는 데 쓰인다. 그러나 배관 식별색·가스용기 도색·사업장 자체표준과 혼동하지 말고 해당 법령·규격과 범례를 확인한다. 표지가 있다는 사실은 방호·격리·교육을 대신하지 않는다.
 #### 4.5 밀폐공간·연삭·운반 안전
-**★ 2026-07-19 응시자 복원(비공식)｜연삭숫돌 1분·3분과 덮개**
-현행 「산업안전보건기준에 관한 규칙」 제122조를 기준으로 다음 세 줄을 세트로 외운다.
+**★ 법령 근거 학습｜연삭숫돌 1분·3분과 덮개**
+2026-07-19 복원에서는 실제 문제 전체 문장과 보기가 확보되지 않았다. 따라서 아래 내용은 복원 정답이 아니라 [현행 「산업안전보건기준에 관한 규칙」 제122조](https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0122&lsiSeq=273603&urlMode=lsScJoRltInfoR)를 직접 확인한 안전 학습 기준이다.
 - **작업을 시작하기 전:** 1분 이상 시험운전
 - **연삭숫돌을 교체한 후:** 3분 이상 시험운전
 - 회전 중인 지름 **5 cm 이상**의 연삭숫돌 위험부: **덮개 설치**. 시험 답안에서는 법령 용어인 덮개 또는 문맥이 분명한 방호덮개로 쓴다.
@@ -4313,8 +4313,9 @@ NCS 예제 구동장치는 다음 부품을 직접 번호로 제시한다. **명
 ⚠ 조립 중 가열은 부품의 열처리·실·윤활제를 손상할 수 있다. 베어링을 가열할 때 제조사가 정한 온도와 방법을 따르고 화염으로 국부 가열하지 않는다.
 #### 1.2 나사 체결과 풀림 방지
 #### ★ 기출 예상｜볼트·나사·와셔 실물·도면 판별
-**★ 2026-07-19 응시자 복원(비공식)｜SEMS 볼트와 M18×2.0 판독**
+**★ 복원 단서 검토｜SEMS 볼트와 M18×2.0 판독**
 ![](https://prod-files-secure.s3.us-west-2.amazonaws.com/5a8d89d9-9f0e-4e38-be47-fa9029f2492c/e7a727b8-b513-4809-9f5d-487ff8dc0996/2026_exam_identification_board.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XJUDPYDV%2F20260722%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260722T150106Z&X-Amz-Expires=300&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA4aCXVzLXdlc3QtMiJGMEQCICXBbl1YDH7g%2BEl0hf6bWdQ1NDYCdpo3AzBlBxJHFU5xAiBn69VzdvPGoY2M0an%2BKGAbVAutfZL3OARJPSoqveobWCqIBAjX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMi3eTf0MpVFeZSqBUKtwDxg6KRokgRxjHCJPNHUPRGPqqVO8CafMmnOZU6IUHqZyY%2FjnI81uemYq%2Bbo8tQkXIBQQZ%2FUeTX49Yg5O9rSVONWzrLXnUZgv4BxLV4SrKluOgDnRsFdPtjz2sAKbY40DrIMndXHkzN3vzLlpuBR9YOSKzQ65TKG57pyEnJXyFWEIEAEtq9jT9LPZZWjuiqGxp1%2Fc7EyzBWcQ9GMXAhN6hK%2FYCSVekbK9G09oSbkq1ZJINdwkUGmjMwjP3cnxFm4D7%2F0y4wkPYAEy3i69FbMMdZ%2BnuoHEZRb4jnVdhVUvRG7wraGdDUhuN%2FaIQRf4P%2FjYXgk1%2FdSwH%2BaZHOm%2BvCAOu0BUjyr8jE1LiW86y%2FIxM%2BgW3fb1lYsAuH%2BtNDj3WtOY%2FDX%2FleGxYgUrBDwOcvyN0k7ziRKCwr6eDw78TGruxwm780I%2B6ui%2Fbb55VarxZ7ytSUYzXmUXwc4VsOozXFpn5uOOUt1JZdAhR%2FfvA8KCn7DaEJ2Vul0BVzaMi%2F2YZ3K%2BJ%2BdrZrPjuJPuOZCoVqDcDwXGSZg2CesY4lhENVaQes64mImglSUQjF1Z9ic1vTaF3gVMdVCOm8vCtcN9j9FL59y%2BuuYFgPMADHp3VplGOOII8FSXyj60S15u9wZIwzZSD0wY6pgFunng9LJowqVsJ4XWp9FeF37QiLqwSHlgll0FqfjwZg8lN%2BTtPcsLE6AKV%2BNxV%2FmLbfzkw2jikq8Plj6MpZ37WL9JFu0Gs6gDEoqavhqrKJCG%2BX7W3sNe1Uj0HZ%2BwyIyEh6Q%2FWkmf1NdBjmzTCS43QwHBophiJ9m7OJ5FwNsrVBjvg56f%2BxcdiCDlC9U1OHvkzlQ%2FNl0729OFU%2Fbws1uxa1NikN3bk&X-Amz-Signature=f5f3e6e36c5fa711bc41be1eb8d404d88192413143081efa0aace991c7b50792&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+실제 시험 사진과 보기 전체는 확보되지 않았다. SEMS 설명은 용어 학습용으로 유지한다. M18×2.0의 출제 사실은 복원 기출 등록부에 공개하되, 아래 숫자는 남아 있는 보기와 기본치수를 대조한 **복원 교정 답**이며 공식 Q-Net 답안으로 표시하지 않는다.
 **SEMS 볼트·나사(샘스/셈스, screw-and-washer assembly)**
 - 나사 또는 볼트 머리 아래에 **평와셔·스프링와셔·톱니와셔 중 하나 이상을 빠지지 않도록 미리 조립한 체결품**이다.
 - 일반적으로 와셔를 나사 소재에 먼저 끼우고 나사산을 전조하여, 나사산 바깥지름이 와셔 구멍보다 커지게 만들기 때문에 와셔가 축 방향으로 빠지지 않는다. 와셔는 체결 전 자유롭게 회전하거나 일부 움직일 수 있다.
@@ -4353,8 +4354,9 @@ NCS 예제 구동장치는 다음 부품을 직접 번호로 제시한다. **명
 - **18:** 호칭 바깥지름 18 mm
 - **2.0:** 피치 2.0 mm, 즉 인접 나사산의 축 방향 거리
 - 도면이 지름이 아니라 **반지름을 묻는다면 바깥 반지름은 18÷2=9 mm**이다.
-- 작은 원의 값은 문제 그림이 무엇을 뜻하는지 먼저 확인한다. 나사의 골지름, 유효지름, 실제 가공지름, 단순화한 도면선, 모따기 치수는 서로 다르며 **M18×2.0 표기만 보고 작은 반지름을 임의로 7 또는 8 mm로 확정하면 안 된다.**
-- 응시자 대화에서 7·9, 8·9, 16·18 mm 등 회상이 엇갈렸고 공식 문제 그림이 확보되지 않았으므로, 이 숫자 조합은 정답으로 단정하지 않았다.
+- M18×2.0 기본 암나사의 골지름은 약 15.835 mm이므로 반지름은 약 7.92 mm이다. 남아 있는 보기 `7·9`, `8·9`, `16·18` 중 작은 원과 바깥 원의 **반지름**을 묻는 복원 조건에는 **8 mm, 9 mm**가 맞는다.
+- 따라서 이 복원 조건에서의 교정 답은 **8 mm, 9 mm**이다. 다만 원본 도면이 없어 A·B 지시선이 각각 암나사 골 반지름과 바깥 반지름을 가리켰다는 전제를 붙이며, 원그림을 사용하는 상호작용형 문항은 계속 보류한다.
+- 치수 대조: [MachiningDoctor M18×2 기본치수 표](https://www.machiningdoctor.com/threadinfo/?tid=2033)
 **인접 변형 예상**
 - M4×8 = 호칭지름 4 mm, 길이 8 mm
 - 3-M4 DP10 = M4 암나사를 3곳에, 나사 깊이 10 mm로 가공
@@ -5125,18 +5127,18 @@ NCS의 전체 작업순서는 다음과 같다.
 *원문 실제 점검사진 — 브레이크오일 수분 측정 → 패드 마모 확인 → 오일 레벨 변화 확인 → 드럼 라이닝 두께 측정 순서다.*
 - **★기출 예상:** 측정기·캘리퍼스의 명칭뿐 아니라 오염·편마모·좌우 차이와 제작사 교환한계를 함께 판정한다.
 - **출처:** [운반하역기계 구동장치 정비 NCS](https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view), PDF 156\~157쪽.
-**★ 2026-07-19 응시자 복원(비공식)｜브레이크 라이닝 교체 순서**
+**★ 복원 단서 검토(HOLD)｜브레이크 라이닝 교체 순서**
 ![](https://prod-files-secure.s3.us-west-2.amazonaws.com/5a8d89d9-9f0e-4e38-be47-fa9029f2492c/6af5ebeb-f107-4a4e-9c70-4b84008a307c/ncs_lining_disc_service.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XJUDPYDV%2F20260722%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260722T150107Z&X-Amz-Expires=300&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA4aCXVzLXdlc3QtMiJGMEQCICXBbl1YDH7g%2BEl0hf6bWdQ1NDYCdpo3AzBlBxJHFU5xAiBn69VzdvPGoY2M0an%2BKGAbVAutfZL3OARJPSoqveobWCqIBAjX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMi3eTf0MpVFeZSqBUKtwDxg6KRokgRxjHCJPNHUPRGPqqVO8CafMmnOZU6IUHqZyY%2FjnI81uemYq%2Bbo8tQkXIBQQZ%2FUeTX49Yg5O9rSVONWzrLXnUZgv4BxLV4SrKluOgDnRsFdPtjz2sAKbY40DrIMndXHkzN3vzLlpuBR9YOSKzQ65TKG57pyEnJXyFWEIEAEtq9jT9LPZZWjuiqGxp1%2Fc7EyzBWcQ9GMXAhN6hK%2FYCSVekbK9G09oSbkq1ZJINdwkUGmjMwjP3cnxFm4D7%2F0y4wkPYAEy3i69FbMMdZ%2BnuoHEZRb4jnVdhVUvRG7wraGdDUhuN%2FaIQRf4P%2FjYXgk1%2FdSwH%2BaZHOm%2BvCAOu0BUjyr8jE1LiW86y%2FIxM%2BgW3fb1lYsAuH%2BtNDj3WtOY%2FDX%2FleGxYgUrBDwOcvyN0k7ziRKCwr6eDw78TGruxwm780I%2B6ui%2Fbb55VarxZ7ytSUYzXmUXwc4VsOozXFpn5uOOUt1JZdAhR%2FfvA8KCn7DaEJ2Vul0BVzaMi%2F2YZ3K%2BJ%2BdrZrPjuJPuOZCoVqDcDwXGSZg2CesY4lhENVaQes64mImglSUQjF1Z9ic1vTaF3gVMdVCOm8vCtcN9j9FL59y%2BuuYFgPMADHp3VplGOOII8FSXyj60S15u9wZIwzZSD0wY6pgFunng9LJowqVsJ4XWp9FeF37QiLqwSHlgll0FqfjwZg8lN%2BTtPcsLE6AKV%2BNxV%2FmLbfzkw2jikq8Plj6MpZ37WL9JFu0Gs6gDEoqavhqrKJCG%2BX7W3sNe1Uj0HZ%2BwyIyEh6Q%2FWkmf1NdBjmzTCS43QwHBophiJ9m7OJ5FwNsrVBjvg56f%2BxcdiCDlC9U1OHvkzlQ%2FNl0729OFU%2Fbws1uxa1NikN3bk&X-Amz-Signature=cb59984791c9eb547d092075cbbf17885466ad04886d36b071d33e4bbc2064d3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 *원문 작업도해·실사 — 드럼 라이닝의 압력해제 너트·조정 굴대·프레셔 백·배플 구조와 디스크 표면의 정상·마모 상태를 함께 판독한다.*
 - **출처:** [운반하역기계 구동장치 정비 NCS](https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view), PDF 163·166쪽.
-시험지의 보기 번호는 바뀔 수 있으므로 5-1-4-2-3 같은 숫자열만 외우지 말고, NCS 작업의 인과관계를 기억한다.
+실제 시험 사진과 단계별 보기 전체가 확보되지 않았다. 아래는 **NCS 학습 흐름**이며 실제 기출 사진의 정답 순서로 단정하지 않는다.
 1. **브레이크를 완전히 해제**하여 잔류 체결력과 작동력을 제거한다.
 2. 라이닝 위의 **압력 해제 너트**를 풀고 **조정 굴대(spindle)**를 꺼낸다.
 3. 기존 라이닝을 붙잡고 **브레이크 드럼을 따라 빼낸다.**
 4. 설치 위치에 **새 라이닝을 정확히 끼운다.**
 5. **프레셔 백(pressure back)과 배플(baffle)**을 재설정하고 연결 볼트를 조인다.
 6. 라이닝이 브레이크 슈에 완전히 밀착되는지, 표면 어느 지점에서도 간격이 0.5 mm를 넘지 않는지 확인하고 러닝인·작동검사를 한다.
-**사진 4장 순서형의 핵심:** 해제·압력제거 → 기존 라이닝 탈거 → 새 라이닝 설치 → 재설정·조정·검사. 새 라이닝을 먼저 넣거나, 조정장치를 해제하지 않은 채 억지로 빼는 순서는 아니다.
+**NCS 학습 흐름의 핵심:** 해제·압력제거 → 기존 라이닝 탈거 → 새 라이닝 설치 → 재설정·조정·검사. 실제 시험 사진이 확보되기 전에는 이 흐름을 공개 문항의 사진 순서 정답으로 사용하지 않는다.
 **기구물 명칭까지 같이 암기**
 - 브레이크 드럼, 브레이크 슈, 라이닝
 - 압력 해제 너트, 조정 굴대
@@ -5333,7 +5335,7 @@ $$
 </tr>
 </table>
 #### 2.7 팬·송풍기
-**★ 2026-07-19 응시자 복원(비공식)｜서징과 송풍기 동력 계산**
+**★ 복원 단서 검토｜서징과 송풍기 동력 계산**
 **서징(surging, 맥동) 정답 문장:** 원심 압축기·송풍기가 저유량 불안정 영역에서 운전될 때 압력과 유량이 주기적으로 크게 변동하고 경우에 따라 순간 역류가 생겨 소음·진동이 발생하는 현상이다. 장시간 지속되면 임펠러·베어링·배관·밸브에 반복하중을 주므로 운전점을 안정영역으로 옮기고 바이패스·재순환, 가이드베인·속도·토출조건을 점검한다.
 <table header-row="true">
 <tr>
@@ -5371,10 +5373,12 @@ $$
 - 풍량: Q₂ = Q₁(N₂/N₁)
 - 풍압: Δp₂ = Δp₁(N₂/N₁)²
 - 축동력: P₂ = P₁(N₂/N₁)³
-**복원 계산 예:** 380 rpm에서 5.5 hp인 송풍기를 500 rpm으로 운전하면
+**조건부 학습 예:** 같은 팬·같은 유체밀도·효율 변화가 작다는 조건에서 380 rpm의 축동력이 5.5 hp이고 회전수만 500 rpm으로 바뀐다면
 P₂ = 5.5×(500/380)³ = **12.529… hp ≈ 12.53 hp**이다.
-**함정**
-- 동력을 회전수에 단순 비례시키면 약 7.24 hp가 되어 오답이다. 동력은 **세제곱**이다.
+복원된 문제는 같은 송풍기에서 회전수만 380 rpm에서 500 rpm으로 바꾸는 조건이므로, 이 복원 조건에서 교정한 계산값은 **약 12.53 hp**이다. 7.24 hp는 토크 일정 조건이 명시된 별도 변형에서만 나오는 값이며, 남아 있는 복원 조건에는 적용하지 않는다. 이 값 역시 공식 Q-Net 답안이 아니라 복원 조건과 팬 상사법칙을 대조한 교정 답이다.
+**조건 확인**
+- 팬 상사법칙 문제라면 동력은 회전수비의 **세제곱**이다.
+- 일정 토크 등 다른 조건이 주어지면 그 조건에 맞는 동력 관계를 적용한다.
 - 풍압은 제곱, 풍량은 1제곱이다.
 - 팬의 지름·유체밀도·효율이 달라지거나 운전점이 서징영역으로 이동하면 단순 상사식만으로 실제 성능을 단정하지 않는다.
 - 숫자와 단위가 rpm·kW·hp로 섞이면 비율에는 동일 회전수 단위를 쓰고, 최종 요구 단위만 변환한다.
@@ -5948,8 +5952,8 @@ TPM의 6대 로스는 단순히 “멈춘 시간”만 뜻하지 않는다. **�
 ## 제5장 윤활 방법과 시험
 ### 1. 윤활 급유법
 #### 1.1 오일 급유법
-**★ 2026-07-19 응시자 복원(비공식)｜적하급유법 모두 고르기**
-응시자들은 선택지 구성이 어렵고 정확한 항목 수가 불명확했다고 회상했다. 따라서 알파벳 조합을 외우지 않고, NCS의 급유 원리를 기준으로 사진과 설명을 분류한다.
+**★ 복원 단서 검토(HOLD)｜적하급유법 모두 고르기**
+실제 시험 사진·선택지 전체와 선택 개수가 확보되지 않았다. 따라서 이 항목은 공개 문항으로 승격하지 않고, 알파벳 조합 대신 NCS 급유 원리를 기준으로 사진과 설명을 분류한다.
 <table header-row="true">
 <tr>
 <td>급유법</td>

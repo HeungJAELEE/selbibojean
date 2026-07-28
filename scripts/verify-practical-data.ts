@@ -3,6 +3,7 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import type { PracticalContent } from "../src/lib/domain/practical-types";
 import { isPublishablePracticalQuestion } from "../src/lib/domain/practical";
+import { isLearnerVisiblePracticalQuestion } from "../src/lib/content/learner-visibility";
 import {
   practicalTextbookPlacementByConceptId,
   practicalTextbookStudyTypes,
@@ -46,12 +47,14 @@ async function main() {
   }
 
   if (content.report.rows.past !== 42) errors.push("기출복원 42개가 아닙니다.");
-  if (content.report.rows.predicted !== 118)
-    errors.push("출제예상 전체 118개가 아닙니다.");
+  if (content.report.rows.predicted !== 185)
+    errors.push("출제예상 전체 185개가 아닙니다.");
   if (content.report.rows.workbookPredicted !== 41)
     errors.push("원본 워크북 기반 출제예상 41개가 아닙니다.");
   if (content.report.rows.authoredPredicted !== 77)
     errors.push("NCS 원문 기반 자체 예상문항 77개가 아닙니다.");
+  if (content.report.rows.balancedPredicted !== 67)
+    errors.push("필기 발췌·선별 예상문항 67개가 아닙니다.");
   if (content.report.rows.concepts !== 46)
     errors.push("실기 개념 46개가 아닙니다.");
   if (
@@ -96,9 +99,15 @@ async function main() {
 
   const expectedCategoryCounts = new Map([
     ["visual_identification", 37],
-    ["formula_calculation", 22],
-    ["theory_concept", 39],
-    ["work_procedure", 62],
+    ["formula_calculation", 54],
+    ["theory_concept", 73],
+    ["work_procedure", 63],
+  ]);
+  const expectedPublicPredictedCounts = new Map([
+    ["visual_identification", 19],
+    ["formula_calculation", 45],
+    ["theory_concept", 60],
+    ["work_procedure", 58],
   ]);
   if (content.studyCategories.length !== expectedCategoryCounts.size) {
     errors.push(`실기 학습유형은 ${expectedCategoryCounts.size}개여야 합니다.`);
@@ -134,8 +143,25 @@ async function main() {
   }
 
   const publicQuestions = content.questions.filter(
-    isPublishablePracticalQuestion,
+    (question) =>
+      isPublishablePracticalQuestion(question) &&
+      isLearnerVisiblePracticalQuestion(question),
   );
+  for (const [
+    categoryId,
+    expectedPublicCount,
+  ] of expectedPublicPredictedCounts) {
+    const publicPredictedCount = publicQuestions.filter(
+      (question) =>
+        question.kind === "predicted" &&
+        question.primaryStudyCategoryId === categoryId,
+    ).length;
+    if (publicPredictedCount !== expectedPublicCount) {
+      errors.push(
+        `실기 유형별 공개 예상문제 수량 불일치: ${categoryId} ${publicPredictedCount}/${expectedPublicCount}`,
+      );
+    }
+  }
   const leakedHeld = content.questions.filter(
     (question) =>
       question.auditDisposition.startsWith("held_") &&
@@ -262,9 +288,9 @@ async function main() {
     return;
   }
   console.log(
-    `PASS: 실기 기출 ${content.report.publication.past}/42, 예상 ${content.report.publication.predicted}/${content.report.rows.predicted} (워크북 ${content.report.rows.workbookPredicted} + 자체 ${content.report.rows.authoredPredicted}), ` +
+    `PASS: 실기 기출 ${content.report.publication.past}/42, 예상 ${content.report.publication.predicted}/${content.report.rows.predicted} (워크북 ${content.report.rows.workbookPredicted} + 자체 ${content.report.rows.authoredPredicted} + 필기선별 ${content.report.rows.balancedPredicted}), ` +
       `출제연결 ${content.report.publication.concepts}/46 + NCS 보강 ${content.report.publication.supplementalConcepts}/${PRACTICAL_SUPPLEMENTAL_CONCEPTS.length}, 보류 ${content.report.publication.held}, ` +
-      `NCS 시각자료 ${publicVisualAids.length}묶음, 학습유형 4개/160문제`,
+      `NCS 시각자료 ${publicVisualAids.length}묶음, 학습유형 4개/227문제`,
   );
 }
 

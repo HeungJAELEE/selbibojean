@@ -60,6 +60,14 @@ describe("random practice", () => {
     expect(first).toEqual(second);
   });
 
+  it("changes the randomized order when a new session uses a different seed", () => {
+    const questions = Array.from({ length: 20 }, (_, index) => makeQuestion(index + 1));
+    const first = selectPracticeQuestions(questions, {}, 20, 2026).questions.map((question) => question.id);
+    const second = selectPracticeQuestions(questions, {}, 20, 2027).questions.map((question) => question.id);
+    expect(first).not.toEqual(second);
+    expect(new Set(first)).toEqual(new Set(second));
+  });
+
   it("expands repeated mistakes into related questions from the weakest groups", () => {
     const questions = Array.from({ length: 12 }, (_, index) => {
       const question = makeQuestion(index + 1);

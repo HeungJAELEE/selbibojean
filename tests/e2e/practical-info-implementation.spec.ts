@@ -206,7 +206,7 @@ test("shows every center photo without horizontal clipping on a 390px viewport",
   await page.setViewportSize({ width: 390, height: 844 });
 
   for (const [centerId, expectedCount] of [
-    ["incheon-kopo-industry", 8],
+    ["incheon-kopo-industry", 9],
     ["jeonnam-suncheon-kopo", 7],
     ["ulsan-kopo", 1],
   ] as const) {
@@ -246,4 +246,45 @@ test("shows every center photo without horizontal clipping on a 390px viewport",
   }
 
   await expect(page.getByText(/CW-WA300E.*KT-300AC/)).toBeVisible();
+});
+
+test("highlights the Incheon welding PPE and finishing tools as required personal items", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/practical/info/centers/incheon-kopo-industry");
+
+  const guidance = page.getByTestId(
+    "center-supply-guidance-incheon-kopo-industry",
+  );
+  await expect(guidance).toBeVisible();
+  await expect(guidance).toContainText("필수 지참 · 시험장 미제공 제보");
+  await expect(guidance).toContainText("슬래그망치");
+  await expect(guidance).toContainText("와이어브러시");
+  await expect(
+    page.getByRole("heading", { name: "장비 상태와 당일 운영 참고" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", {
+      name: "KT-300AC 구형 다이얼식 교류 아크용접기",
+    }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth,
+    ),
+  ).toBe(true);
+});
+
+test("shows the user-reported Busan parking restriction", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/practical/info/centers/busan-technical-high");
+  await expect(
+    page.getByRole("heading", {
+      name: "부산공고(남구 대연동) 기계·건축토목과 실습동",
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("주차불가 · 사용자 제보(2026-07-28)", { exact: true }),
+  ).toBeVisible();
 });

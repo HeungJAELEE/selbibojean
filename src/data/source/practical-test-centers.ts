@@ -18,6 +18,7 @@ export type PracticalTestCenter = {
   evidenceSourceUrl?: string | null;
   evidenceNote?: string;
   candidateSupplyGuidance?: PracticalCenterCandidateSupplyGuidance;
+  candidateFieldReport?: PracticalCenterCandidateFieldReport;
 };
 
 export type PracticalCenterEvidenceKind =
@@ -27,13 +28,29 @@ export type PracticalCenterEvidenceKind =
 
 export type PracticalCenterCandidateSupplyGuidance = {
   weldingPpeProvision: "not_provided";
-  otherSuppliesProvision: "provided";
+  otherSuppliesProvision: "provided" | "partially_not_provided";
   personalBringGuidance:
     | "welding_ppe_required"
-    | "welding_ppe_required_other_items_recommended";
+    | "welding_ppe_required_other_items_recommended"
+    | "welding_ppe_and_tools_required";
   sourceKind: "user_report";
   reportedAt: string;
+  sourceUrl?: string;
   summary: string;
+  requiredPersonalItems?: string[];
+};
+
+export type PracticalCenterCandidateFieldReport = {
+  sourceKind: "user_report";
+  reportedAt: string;
+  sourceUrl?: string;
+  summary: string;
+  sections: Array<{
+    category: "electrical_control" | "pneumatic" | "hydraulic" | "welding";
+    title: string;
+    notes: string[];
+    caution?: string;
+  }>;
 };
 
 export type PracticalCenterComparisonStatus =
@@ -231,7 +248,7 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
     officialNumber: 327,
     region: "부산",
     name: "부산공고(남구 대연동) 기계·건축토목과 실습동",
-    parkingNote: null,
+    parkingNote: "주차불가 · 사용자 제보(2026-07-28)",
     facilitySheetRow: 330,
     suppliedMaterialNote: null,
     rawFacilityNote: "CW-WA300E",
@@ -423,6 +440,74 @@ export const PRACTICAL_2025_HISTORY_CENTERS: PracticalTestCenter[] = [
     equipmentModelIds: [],
     evidenceKind: "exam_history_2025",
     evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+    candidateSupplyGuidance: {
+      weldingPpeProvision: "not_provided",
+      otherSuppliesProvision: "partially_not_provided",
+      personalBringGuidance: "welding_ppe_and_tools_required",
+      sourceKind: "user_report",
+      reportedAt: "2026-07-28",
+      sourceUrl:
+        "https://m.cafe.naver.com/ca-fe/web/cafes/29094056/articles/17545?tc=cafe_member_profile",
+      summary:
+        "용접 보호구와 슬래그망치·와이어브러시는 제공되지 않는다는 현장 제보가 있습니다. 누락 시 시험이 어렵다는 안내를 받았으므로 반드시 개인 지참하고, 미보유 품목은 시험 전에 구매·준비하세요.",
+      requiredPersonalItems: [
+        "용접면·보안경 등 용접 보호구",
+        "용접 장갑",
+        "용접 앞치마",
+        "슬래그망치",
+        "와이어브러시",
+      ],
+    },
+    candidateFieldReport: {
+      sourceKind: "user_report",
+      reportedAt: "2026-07-28",
+      sourceUrl:
+        "https://m.cafe.naver.com/ca-fe/web/cafes/29094056/articles/17545?tc=cafe_member_profile",
+      summary:
+        "인천폴리텍 산학협력관의 전기제어·공압·유압·용접 장비 상태와 당일 운영을 정리한 사용자 현장 제보입니다.",
+      sections: [
+        {
+          category: "electrical_control",
+          title: "유공압 전기장비",
+          notes: [
+            "전기 패널은 전반적으로 신품에 가까운 상태로 제보됐습니다.",
+            "바나나 배선 중 헐거운 것이 있어 작업 전 결속 상태를 확인하고, 지나치게 헐거운 배선은 감독관에게 알려 교체하는 편이 안전합니다.",
+            "제보 기준으로 COM 단자와 A·B 접점의 위아래 배치가 익숙한 연습 장비와 반대였습니다. 기억에 의존하지 말고 현장 단자 표기를 먼저 확인하세요.",
+          ],
+        },
+        {
+          category: "pneumatic",
+          title: "공압장비",
+          notes: [
+            "장비 상태는 전반적으로 양호하다고 제보됐습니다.",
+            "한 자리에서 에어 컴프레서가 작동하지 않았으나 감독관이 현장 조치했고, 지연 시간만큼 보상받았다는 사례가 있습니다.",
+          ],
+          caution:
+            "장비가 작동하지 않으면 임의로 수리하지 말고 즉시 감독관에게 알려 조치 시간과 보상 여부를 확인하세요.",
+        },
+        {
+          category: "hydraulic",
+          title: "유압장비",
+          notes: [
+            "제품에 유압 기호가 이미지로 잘 표시되어 있고 전반적인 상태는 양호하다고 제보됐습니다.",
+            "유압유가 예상보다 많이 흐를 수 있어 작업용 장갑을 준비하는 것이 도움이 됩니다.",
+            "유압모터 회전 방향은 시험 전에 감독관이 설명했다는 제보가 있습니다.",
+          ],
+        },
+        {
+          category: "welding",
+          title: "용접기와 평가",
+          notes: [
+            "구형 다이얼식 교류 아크용접기이며 전류(A)는 디지털 표시창에서 확인할 수 있습니다.",
+            "여러 용접기를 동시에 사용할 때 표시 전류와 체감 출력이 달랐다는 제보가 있으나, 일률적으로 전류를 올리지 말고 시험편 상태와 감독관 안내를 기준으로 조정해야 합니다.",
+            "언더컷·오버랩·비드 형상을 꼼꼼히 확인하고, 덧방이나 2차 온둘레 용접을 하지 말라는 사전 안내가 있었다고 제보됐습니다.",
+            "에어건 가압 없이 물을 부어 누수 시험을 진행했다는 해당 회차 제보가 있습니다.",
+          ],
+          caution:
+            "장비 설정과 누수 시험 방식은 회차별로 달라질 수 있습니다. 현장 설명을 최종 기준으로 따르세요.",
+        },
+      ],
+    },
   },
   {
     id: "incheon-kcci-engineering",

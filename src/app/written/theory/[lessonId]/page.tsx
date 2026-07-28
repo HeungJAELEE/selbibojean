@@ -10,6 +10,7 @@ import { MarkdownContent } from "@/components/markdown-content";
 import { PastExamExamples } from "@/components/past-exam-examples";
 import { QuestionTrapReview } from "@/components/question-trap-review";
 import { SupplementalVisualAid } from "@/components/supplemental-visual-aid";
+import { WrittenLessonVisuals } from "@/components/written-lesson-visuals";
 import {
   getLessonFamilyForLesson,
   getLessonFamilyHref,
@@ -151,7 +152,10 @@ export default async function LessonPage({
           </section>
         )}
 
-        <section id="concept" className="scroll-mt-28">
+        <section
+          id="concept"
+          className="min-w-0 max-w-full overflow-hidden scroll-mt-28"
+        >
           <p className="mt-9 text-xs font-black uppercase tracking-[.14em] text-[#16697a]">Step 1 · Concept</p>
           <h2 className="mt-1 text-xl font-extrabold text-[#173957]">개념부터 이해하기</h2>
           <div className="mt-4 grid gap-3 rounded-2xl bg-[#eaf7f6] p-5">
@@ -164,6 +168,7 @@ export default async function LessonPage({
               </p>
             ))}
           </div>
+          <WrittenLessonVisuals lesson={lesson} family={family} />
           <div className="prose-learning">
             {visibleBlocks
               .map((block) => (

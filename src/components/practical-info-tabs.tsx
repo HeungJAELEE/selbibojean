@@ -277,12 +277,12 @@ export function PracticalInfoTabs({
           faqs={faqs.filter((faq) => faq.relatedTab === "prep")}
         />
       ) : activeTab === "centers" ? (
-          <ExamVenuePanel
-            centers={centers}
-            candidateCenters={candidateCenters}
-            faqs={faqs.filter((faq) => faq.relatedTab === "centers")}
-            trainingResources={trainingResources}
-          />
+        <ExamVenuePanel
+          centers={centers}
+          candidateCenters={candidateCenters}
+          faqs={faqs.filter((faq) => faq.relatedTab === "centers")}
+          trainingResources={trainingResources}
+        />
       ) : (
         <TaskPanel
           key={activeTab}
@@ -1635,8 +1635,20 @@ function VenueGroup({
                       {center.rawFacilityNote}
                     </p>
                     {center.candidateSupplyGuidance ? (
-                      <p className="mt-2 max-w-md rounded-lg bg-teal-50 px-3 py-2 text-xs font-bold leading-5 text-teal-900">
-                        준비물 제보: {center.candidateSupplyGuidance.summary}
+                      <p
+                        className={`mt-2 max-w-md rounded-lg px-3 py-2 text-xs font-bold leading-5 ${
+                          center.candidateSupplyGuidance
+                            .personalBringGuidance ===
+                          "welding_ppe_and_tools_required"
+                            ? "border border-[#c2410c] bg-[#fff1e7] text-[#7c2d12]"
+                            : "bg-teal-50 text-teal-900"
+                        }`}
+                      >
+                        {center.candidateSupplyGuidance.personalBringGuidance ===
+                        "welding_ppe_and_tools_required"
+                          ? "필수 지참 · 미제공 제보: "
+                          : "준비물 제보: "}
+                        {center.candidateSupplyGuidance.summary}
                       </p>
                     ) : null}
                   </td>
@@ -1694,8 +1706,19 @@ function VenueGroup({
                 {center.rawFacilityNote}
               </p>
               {center.candidateSupplyGuidance ? (
-                <p className="mt-3 rounded-lg bg-teal-50 px-3 py-2 text-xs font-bold leading-5 text-teal-900">
-                  준비물 제보: {center.candidateSupplyGuidance.summary}
+                <p
+                  className={`mt-3 rounded-lg px-3 py-2 text-xs font-bold leading-5 ${
+                    center.candidateSupplyGuidance.personalBringGuidance ===
+                    "welding_ppe_and_tools_required"
+                      ? "border border-[#c2410c] bg-[#fff1e7] text-[#7c2d12]"
+                      : "bg-teal-50 text-teal-900"
+                  }`}
+                >
+                  {center.candidateSupplyGuidance.personalBringGuidance ===
+                  "welding_ppe_and_tools_required"
+                    ? "필수 지참 · 미제공 제보: "
+                    : "준비물 제보: "}
+                  {center.candidateSupplyGuidance.summary}
                 </p>
               ) : null}
             </article>
