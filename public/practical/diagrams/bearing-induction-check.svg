@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">베어링과 축 치수 및 가열기 상태 확인</title>
+  <desc id="desc">베어링과 축 옆에서 버니어캘리퍼스와 유도가열기 점검표를 확인하는 장면</desc>
+  <rect width="640" height="360" rx="24" fill="#f8fafc"/>
+  <rect x="40" y="42" width="560" height="276" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="4"/>
+  <circle cx="176" cy="174" r="72" fill="#c7eef1" stroke="#163b5c" stroke-width="16"/>
+  <circle cx="176" cy="174" r="31" fill="#ffffff" stroke="#163b5c" stroke-width="10"/>
+  <rect x="270" y="134" width="150" height="48" rx="10" fill="#d8e6ef" stroke="#163b5c" stroke-width="6"/>
+  <rect x="292" y="148" width="86" height="20" rx="4" fill="#ffffff"/>
+  <path d="M278 204h137M300 190v28M332 190v28M364 190v28M396 190v28" stroke="#d45a3a" stroke-width="5"/>
+  <rect x="466" y="88" width="86" height="150" rx="8" fill="#e8f4f6" stroke="#163b5c" stroke-width="6"/>
+  <path d="M484 120l10 10 18-24M484 162l10 10 18-24M484 204l10 10 18-24" fill="none" stroke="#188b73" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M222 263h220" stroke="#163b5c" stroke-width="8" stroke-linecap="round"/>
+  <path d="M246 244v38M278 250v26M310 244v38M342 250v26M374 244v38M406 250v26" stroke="#163b5c" stroke-width="5"/>
+</svg>

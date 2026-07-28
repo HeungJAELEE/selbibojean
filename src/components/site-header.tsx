@@ -52,6 +52,15 @@ export function SiteHeader() {
           >
             <Search size={18} />
           </Link>
+          <a
+            href="https://blog.naver.com/heung891025/224357527404"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-xl bg-red-600 px-3 py-2.5 text-xs font-extrabold text-white shadow-sm transition hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 sm:px-4 sm:text-sm"
+            aria-label="네이버 블로그로 문의하기"
+          >
+            문의하기
+          </a>
           <Link
             href="/login"
             className="rounded-xl bg-[#173957] px-3 py-2.5 text-xs font-bold text-white sm:px-4 sm:text-sm"

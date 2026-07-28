@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   PRACTICAL_CANDIDATE_SUPPLIES,
   PRACTICAL_SUPPLY_RECOMMENDATIONS,
+  PRACTICAL_WELDING_TOOL_RECOMMENDATIONS,
 } from "@/data/source/practical-candidate-supplies";
 import {
   PRACTICAL_PUBLIC_PROBLEMS,
@@ -17,7 +18,7 @@ describe("practical official exam reference", () => {
   });
 
   it("maps every recommendation link to its official supply row", () => {
-    expect(PRACTICAL_SUPPLY_RECOMMENDATIONS).toHaveLength(13);
+    expect(PRACTICAL_SUPPLY_RECOMMENDATIONS).toHaveLength(14);
     expect(
       PRACTICAL_SUPPLY_RECOMMENDATIONS.every((item) =>
         item.commerceUrl.startsWith("https://link.coupang.com/a/"),
@@ -38,17 +39,39 @@ describe("practical official exam reference", () => {
       "보호구(용접각반)",
       "보호구(용접토시)",
       "보호구(자동용접면)",
+      "보호구(안전화)",
     ]);
     expect(
       PRACTICAL_SUPPLY_RECOMMENDATIONS.filter(
         (item) => item.status === "safety_required",
       ).map((item) => item.label),
-    ).toEqual(["용접 장갑", "용접 앞치마", "보안경"]);
+    ).toEqual(["용접 장갑", "용접 앞치마", "안전화", "보안경"]);
     expect(
       PRACTICAL_SUPPLY_RECOMMENDATIONS.find(
         (item) => item.id === "welding-sleeves",
       )?.status,
     ).toBe("conditional");
+  });
+
+  it("keeps conditional welding tools separate from the official nine rows", () => {
+    expect(PRACTICAL_WELDING_TOOL_RECOMMENDATIONS).toHaveLength(3);
+    expect(
+      PRACTICAL_WELDING_TOOL_RECOMMENDATIONS.map((item) => [
+        item.label,
+        item.commerceUrl,
+      ]),
+    ).toEqual([
+      ["용접해머", "https://link.coupang.com/a/fJo7m3EVRA"],
+      ["용접 브러쉬", "https://link.coupang.com/a/fJphjpvNLg"],
+      ["플라이어", "https://link.coupang.com/a/fJppaQcwGy"],
+    ]);
+    expect(
+      PRACTICAL_WELDING_TOOL_RECOMMENDATIONS.every(
+        (item) =>
+          item.status === "conditional" &&
+          item.note === "시험장 제공 여부 확인 후 미제공 시 준비/구매",
+      ),
+    ).toBe(true);
   });
 
   it("separates engineer and industrial-engineer public problems", () => {

@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-07-27T09:45:47.585Z",
+  "generatedAt": "2026-07-28T03:33:34.661Z",
   "sourceFile": "설비보전기사_작업형실기_기출복원_출제예상40_개념통합_2차.xlsx",
   "sourceSha256": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
   "rows": {
-    "past": 41,
-    "predicted": 87,
+    "past": 42,
+    "predicted": 118,
     "workbookPredicted": 41,
-    "authoredPredicted": 46,
+    "authoredPredicted": 77,
     "concepts": 46,
     "supplementalConcepts": 43,
     "ncsDocuments": 11,
-    "visualAids": 31
+    "visualAids": 70
   },
   "publication": {
-    "past": 21,
-    "predicted": 86,
+    "past": 22,
+    "predicted": 117,
     "concepts": 46,
     "supplementalConcepts": 43,
     "held": 21,
@@ -28,7 +28,7 @@
     "accountedDocuments": 11,
     "uniqueLessonCount": 84,
     "sourceReferenceCount": 105,
-    "heldItems": 13
+    "heldItems": 8
   },
   "exactMatch": true,
   "warnings": [

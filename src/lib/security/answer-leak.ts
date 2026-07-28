@@ -12,6 +12,12 @@ export const FORBIDDEN_PRE_SUBMIT_FIELDS = [
   "traps",
   "choiceFeedback",
   "reviewNote",
+  "learningAltText",
+  "captionAfterAnswer",
+  "promptFrameIds",
+  "imagePaths",
+  "outputAssetHash",
+  "correctFrameIds",
 ] as const;
 
 const forbiddenFields = new Set<string>(FORBIDDEN_PRE_SUBMIT_FIELDS);

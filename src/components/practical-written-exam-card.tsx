@@ -9,9 +9,7 @@ import {
   Lightbulb,
   Repeat2,
 } from "lucide-react";
-import {
-  PRACTICAL_WRITTEN_EXAM_FORMAT_LABELS,
-} from "@/data/source/practical-written-exam-cards";
+import { PRACTICAL_WRITTEN_EXAM_FORMAT_LABELS } from "@/data/source/practical-written-exam-cards";
 import type {
   PracticalQuestion,
   PracticalVisualAid,
@@ -37,9 +35,7 @@ export function PracticalWrittenExamCardView({
       (left, right) =>
         right.year - left.year ||
         right.round - left.round ||
-        (right.questionNumber ?? "").localeCompare(
-          left.questionNumber ?? "",
-        ),
+        (right.questionNumber ?? "").localeCompare(left.questionNumber ?? ""),
     );
   const publicPastQuestions = pastQuestions.filter(
     (question) => question.contentStatus === "published",
@@ -52,6 +48,8 @@ export function PracticalWrittenExamCardView({
       visualAid.frames.map((frame) => [frame.id, frame] as const),
     ),
   );
+  const useHorizontalPortraitStrip =
+    card.id === "PWEC-DRIVE-UNIT-ASSEMBLY-PROCESS";
 
   return (
     <article
@@ -100,7 +98,7 @@ export function PracticalWrittenExamCardView({
             제출 전에는 모범답안과 채점 키워드를 보여 주지 않습니다. 답안을
             제출한 뒤 부분점수 기준과 오답 함정을 비교할 수 있습니다.
           </p>
-          {publicPastQuestions[0] ?? publicPredictedQuestions[0] ? (
+          {(publicPastQuestions[0] ?? publicPredictedQuestions[0]) ? (
             <Link
               href={`/practical/written/question/${
                 (publicPastQuestions[0] ?? publicPredictedQuestions[0]).id
@@ -188,12 +186,14 @@ export function PracticalWrittenExamCardView({
                   <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-slate-500">
                     {question.occurrence ? (
                       <span>
-                        {question.occurrence.year}년{" "}
-                        {question.occurrence.round}회{" "}
-                        {question.occurrence.questionNumber}
+                        {question.occurrence.year}년 {question.occurrence.round}
+                        회 {question.occurrence.questionNumber}
                       </span>
                     ) : null}
-                    <span>복원 신뢰도 {question.occurrence?.reconstructionConfidence ?? "검수"}</span>
+                    <span>
+                      복원 신뢰도{" "}
+                      {question.occurrence?.reconstructionConfidence ?? "검수"}
+                    </span>
                     {question.contentStatus !== "published" ? (
                       <span className="rounded-full bg-amber-100 px-2 py-0.5 text-amber-800">
                         원문·자산 보류
@@ -234,7 +234,9 @@ export function PracticalWrittenExamCardView({
           </summary>
           <div className="flex items-center gap-2">
             <ClipboardPenLine size={19} className="text-indigo-700" />
-            <h3 className="mt-4 text-lg font-extrabold">답안은 이 순서로 씁니다</h3>
+            <h3 className="mt-4 text-lg font-extrabold">
+              답안은 이 순서로 씁니다
+            </h3>
           </div>
           <ol className="mt-4 space-y-3 pl-5 text-sm leading-7 text-slate-700">
             {card.answerSkeleton.map((line) => (
@@ -243,50 +245,79 @@ export function PracticalWrittenExamCardView({
               </li>
             ))}
           </ol>
-          {card.sequenceSteps.some(
-            (step) => step.visualFrameIds.length > 0,
-          ) ? (
-            <ol className="mt-5 grid gap-3 md:grid-cols-3">
-              {card.sequenceSteps.map((step, index) => {
-                const frames = step.visualFrameIds
-                  .map((frameId) => visualFramesById.get(frameId))
-                  .filter((frame) => frame !== undefined);
-                return (
-                  <li
-                    key={step.id}
-                    className="overflow-hidden rounded-xl border border-indigo-200 bg-white"
-                  >
-                    {frames.map((frame) => (
-                      <div
-                        key={frame.id}
-                        className="relative min-h-40 border-b border-indigo-100 bg-slate-50"
-                      >
-                        <Image
-                          src={frame.path}
-                          alt={frame.learningAltText}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-contain p-3"
-                        />
-                      </div>
-                    ))}
-                    <div className="p-4">
-                      <p className="text-xs font-black text-indigo-700">
-                        STEP {index + 1}
-                      </p>
-                      <p className="mt-1 text-sm font-extrabold leading-6 text-slate-900">
-                        {step.answerPhrase ?? step.label}
-                      </p>
-                      {step.checkpoint ? (
-                        <p className="mt-2 text-xs leading-5 text-slate-600">
-                          확인: {step.checkpoint}
+          {card.sequenceSteps.some((step) => step.visualFrameIds.length > 0) ? (
+            <>
+              {useHorizontalPortraitStrip ? (
+                <p className="mt-4 text-sm font-bold text-indigo-800">
+                  옆으로 넘겨 5단계의 세로형 부품 그림을 크게 확인하세요.
+                </p>
+              ) : null}
+              <ol
+                data-layout={
+                  useHorizontalPortraitStrip
+                    ? "horizontal-portrait-strip"
+                    : "grid"
+                }
+                className={
+                  useHorizontalPortraitStrip
+                    ? "mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4"
+                    : "mt-5 grid gap-3 md:grid-cols-3"
+                }
+              >
+                {card.sequenceSteps.map((step, index) => {
+                  const frames = step.visualFrameIds
+                    .map((frameId) => visualFramesById.get(frameId))
+                    .filter((frame) => frame !== undefined);
+                  return (
+                    <li
+                      key={step.id}
+                      className={`overflow-hidden rounded-xl border border-indigo-200 bg-white ${
+                        useHorizontalPortraitStrip
+                          ? "w-[min(78vw,20rem)] flex-none snap-start md:w-72"
+                          : ""
+                      }`}
+                    >
+                      {frames.map((frame) => (
+                        <div
+                          key={frame.id}
+                          className={`relative w-full border-b border-indigo-100 bg-white ${
+                            useHorizontalPortraitStrip
+                              ? "aspect-[3/4]"
+                              : "aspect-[5/2]"
+                          }`}
+                        >
+                          <Image
+                            src={frame.path}
+                            alt={frame.learningAltText}
+                            fill
+                            sizes={
+                              useHorizontalPortraitStrip
+                                ? "(max-width: 768px) 78vw, 18rem"
+                                : "(max-width: 768px) 100vw, 33vw"
+                            }
+                            className="object-contain p-2"
+                            style={{ objectFit: "contain" }}
+                          />
+                        </div>
+                      ))}
+                      <div className="p-4">
+                        <p className="text-xs font-black text-indigo-700">
+                          STEP {index + 1}
                         </p>
-                      ) : null}
-                    </div>
-                  </li>
-                );
-              })}
-            </ol>
+                        <p className="mt-1 text-sm font-extrabold leading-6 text-slate-900">
+                          {step.answerPhrase ?? step.label}
+                        </p>
+                        {step.checkpoint ? (
+                          <p className="mt-2 text-xs leading-5 text-slate-600">
+                            확인: {step.checkpoint}
+                          </p>
+                        ) : null}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ol>
+            </>
           ) : null}
         </details>
 
@@ -321,7 +352,9 @@ export function PracticalWrittenExamCardView({
         <section className="rounded-2xl border border-violet-200 p-5 md:p-6">
           <div className="flex items-center gap-2">
             <Lightbulb size={19} className="text-violet-700" />
-            <h3 className="text-lg font-extrabold">이렇게 바뀌어 나올 수 있습니다</h3>
+            <h3 className="text-lg font-extrabold">
+              이렇게 바뀌어 나올 수 있습니다
+            </h3>
           </div>
           <div className="mt-4 grid gap-3">
             {publicPredictedQuestions.slice(0, 3).map((question) => (
@@ -387,8 +420,8 @@ export function PracticalWrittenExamCardView({
 
         {publicPastQuestions.length === 0 && pastQuestions.length > 0 ? (
           <p className="text-xs leading-5 text-slate-500">
-            이 카드의 복원 회차는 Evidence에는 남아 있지만 원문·시각자료
-            보류로 공개 문제 수에는 포함되지 않습니다.
+            이 카드의 복원 회차는 Evidence에는 남아 있지만 원문·시각자료 보류로
+            공개 문제 수에는 포함되지 않습니다.
           </p>
         ) : null}
       </div>

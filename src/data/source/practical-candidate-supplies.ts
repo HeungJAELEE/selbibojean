@@ -19,6 +19,13 @@ export type PracticalSupplyRecommendation = {
   commerceUrl: string;
 };
 
+export type PracticalWeldingToolRecommendation = Omit<
+  PracticalSupplyRecommendation,
+  "supplyId" | "status"
+> & {
+  status: "conditional";
+};
+
 /**
  * Q-Net 설비보전기사 수험자 지참준비물 표의 공식 등록 항목만 수록한다.
  * 회차별 변경 가능성이 있으므로 화면에서 공식 원문 링크와 기준 회차를 함께 표시한다.
@@ -164,6 +171,16 @@ export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
       commerceUrl: "https://link.coupang.com/a/fIvk3ZN6uO",
     },
     {
+      id: "safety-shoes",
+      supplyId: "welding-ppe",
+      label: "안전화",
+      linkLabel: "보호구(안전화)",
+      status: "safety_required",
+      statusLabel: "안전 필수",
+      note: "용접·기계 작업 중 발을 보호하기 위한 안전화 구매 참고 제품입니다.",
+      commerceUrl: "https://link.coupang.com/a/fKgVdg1sxo",
+    },
+    {
       id: "safety-glasses",
       supplyId: "safety-glasses",
       label: "보안경",
@@ -242,5 +259,40 @@ export const PRACTICAL_SUPPLY_RECOMMENDATIONS: PracticalSupplyRecommendation[] =
       statusLabel: "선택사항",
       note: "시험장 구비 여부를 확인한 뒤 필요할 때 준비합니다.",
       commerceUrl: "https://link.coupang.com/a/fIvR3WnqKq",
+    },
+  ];
+
+/**
+ * Q-Net 공식 지참준비물 9종과 분리해 표시하는 사용자 제공 구매 참고 링크다.
+ * 시험장 제공 여부를 먼저 확인하고, 미제공일 때만 준비·구매하도록 안내한다.
+ */
+export const PRACTICAL_WELDING_TOOL_RECOMMENDATIONS: PracticalWeldingToolRecommendation[] =
+  [
+    {
+      id: "welding-chipping-hammer",
+      label: "용접해머",
+      linkLabel: "용접해머",
+      status: "conditional",
+      statusLabel: "미제공 시 준비",
+      note: "시험장 제공 여부 확인 후 미제공 시 준비/구매",
+      commerceUrl: "https://link.coupang.com/a/fJo7m3EVRA",
+    },
+    {
+      id: "welding-wire-brush",
+      label: "용접 브러쉬",
+      linkLabel: "용접 브러쉬",
+      status: "conditional",
+      statusLabel: "미제공 시 준비",
+      note: "시험장 제공 여부 확인 후 미제공 시 준비/구매",
+      commerceUrl: "https://link.coupang.com/a/fJphjpvNLg",
+    },
+    {
+      id: "pliers",
+      label: "플라이어",
+      linkLabel: "플라이어",
+      status: "conditional",
+      statusLabel: "미제공 시 준비",
+      note: "시험장 제공 여부 확인 후 미제공 시 준비/구매",
+      commerceUrl: "https://link.coupang.com/a/fJppaQcwGy",
     },
   ];

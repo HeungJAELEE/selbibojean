@@ -5,14 +5,35 @@ import {
 
 export type PracticalTestCenter = {
   id: string;
-  officialNumber: number;
+  officialNumber?: number;
   region: string;
   name: string;
+  buildingNote?: string | null;
   parkingNote: string | null;
-  facilitySheetRow: number;
+  facilitySheetRow?: number;
   suppliedMaterialNote: string | null;
   rawFacilityNote: string;
   equipmentModelIds: string[];
+  evidenceKind?: PracticalCenterEvidenceKind;
+  evidenceSourceUrl?: string | null;
+  evidenceNote?: string;
+  candidateSupplyGuidance?: PracticalCenterCandidateSupplyGuidance;
+};
+
+export type PracticalCenterEvidenceKind =
+  | "facility_sheet_2026"
+  | "exam_history_2025"
+  | "historical_candidate";
+
+export type PracticalCenterCandidateSupplyGuidance = {
+  weldingPpeProvision: "not_provided";
+  otherSuppliesProvision: "provided";
+  personalBringGuidance:
+    | "welding_ppe_required"
+    | "welding_ppe_required_other_items_recommended";
+  sourceKind: "user_report";
+  reportedAt: string;
+  summary: string;
 };
 
 export type PracticalCenterComparisonStatus =
@@ -192,7 +213,7 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
     facilitySheetRow: 278,
     suppliedMaterialNote: null,
     rawFacilityNote: "Postech 웰탑300A",
-    equipmentModelIds: ["postech-weltop-acdc300a"],
+    equipmentModelIds: ["postech-weltop-unknown-300a"],
   },
   {
     id: "jeju-seogwipo-industry",
@@ -215,6 +236,15 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
     suppliedMaterialNote: null,
     rawFacilityNote: "CW-WA300E",
     equipmentModelIds: ["cnw-cw-wa300e"],
+    candidateSupplyGuidance: {
+      weldingPpeProvision: "not_provided",
+      otherSuppliesProvision: "provided",
+      personalBringGuidance: "welding_ppe_required",
+      sourceKind: "user_report",
+      reportedAt: "2026-07-28",
+      summary:
+        "용접 보호구는 개인 지참하고, 그 외 준비물은 시험장에서 모두 제공합니다.",
+    },
   },
   {
     id: "pohang-kopo-techno2",
@@ -242,6 +272,15 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
       "daedae-20kva-12kw",
       "kumho-20kva-10kw",
     ],
+    candidateSupplyGuidance: {
+      weldingPpeProvision: "not_provided",
+      otherSuppliesProvision: "provided",
+      personalBringGuidance: "welding_ppe_required",
+      sourceKind: "user_report",
+      reportedAt: "2026-07-28",
+      summary:
+        "용접 보호구는 개인 지참하고, 그 외 준비물은 시험장에서 모두 제공합니다.",
+    },
   },
   {
     id: "seongnam-kopo-nuri",
@@ -254,6 +293,16 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
     rawFacilityNote:
       "공압/유압실습장비(S-Net), 전기아크용접기(내쇼날 NSA-250PA)",
     equipmentModelIds: ["snet-fluid-power", "national-nsa-250pa"],
+    candidateSupplyGuidance: {
+      weldingPpeProvision: "not_provided",
+      otherSuppliesProvision: "provided",
+      personalBringGuidance:
+        "welding_ppe_required_other_items_recommended",
+      sourceKind: "user_report",
+      reportedAt: "2026-07-28",
+      summary:
+        "용접 보호구는 개인 지참해야 합니다. 그 외 준비물은 시험장에서 제공하지만 개인 지참을 권장합니다.",
+    },
   },
   {
     id: "gumi-kopo-nuri",
@@ -268,8 +317,251 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
   },
 ];
 
+export const PRACTICAL_2026_FACILITY_CENTERS = PRACTICAL_TEST_CENTERS;
+
+export const PRACTICAL_2025_HISTORY_SOURCE = {
+  title: "2025년 설비보전기사 실기 작업형 시험장 목록",
+  sourceUrl:
+    "https://bjs2236.tistory.com/entry/2025%EB%85%84-%EC%84%A4%EB%B9%84%EB%B3%B4%EC%A0%84%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-%EC%9E%91%EC%97%85%ED%98%95-%EC%8B%9C%ED%97%98%EC%9E%A5-%EB%AA%A9%EB%A1%9D",
+  note: "2025년 실제 원서접수 화면의 작업형 시험 이력 기준",
+} as const;
+
+export const PRACTICAL_2025_HISTORY_CENTERS: PracticalTestCenter[] = [
+  {
+    id: "gangwon-wonju-kopo",
+    region: "강원",
+    name: "한국폴리텍대학 원주캠퍼스",
+    buildingNote: null,
+    parkingNote: null,
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+  },
+  {
+    id: "gangwon-gangneung-kopo",
+    region: "강원",
+    name: "한국폴리텍대학 강릉캠퍼스",
+    buildingNote: null,
+    parkingNote: null,
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+  },
+  {
+    id: "gyeongnam-jinju-kopo",
+    region: "경남",
+    name: "한국폴리텍대학 진주캠퍼스",
+    buildingNote: "교육1관",
+    parkingNote: null,
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 교육1관 · 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+  },
+  {
+    id: "gyeongbuk-geumo-tech-high",
+    region: "경북",
+    name: "금오공업고등학교",
+    buildingNote: null,
+    parkingNote: "주차협소",
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+  },
+  {
+    id: "daejeon-woosong-west",
+    region: "대전",
+    name: "우송대학교 서캠퍼스",
+    buildingNote: "철도물류관 201호",
+    parkingNote: null,
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 철도물류관 201호 · 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+  },
+  {
+    id: "daejeon-kopo-narae",
+    region: "대전",
+    name: "한국폴리텍대학 대전캠퍼스",
+    buildingNote: "나래관 6층 반도체공유압실",
+    parkingNote: null,
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 공유압 실습실 확인 · 세부 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+    evidenceNote: "공유압 실습실 위치는 확인됐지만 제조사·모델·실습대 수량은 미확인",
+  },
+  {
+    id: "seoul-asea-yongsan",
+    region: "서울",
+    name: "아세아직업전문학교 용산캠퍼스",
+    buildingNote: null,
+    parkingNote: "주차불가",
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+  },
+  {
+    id: "incheon-kopo-industry",
+    region: "인천",
+    name: "한국폴리텍대학 인천캠퍼스",
+    buildingNote: "산학협력관",
+    parkingNote: null,
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 산학협력관 · 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+  },
+  {
+    id: "incheon-kcci-engineering",
+    region: "인천",
+    name: "대한상공회의소 인천인력개발원",
+    buildingNote: "공학관",
+    parkingNote: "유료주차",
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 공학관 · 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+  },
+  {
+    id: "jeonnam-kopo-muan",
+    region: "전남",
+    name: "한국폴리텍대학 전남캠퍼스",
+    buildingNote: "무안 제1공학관 3층",
+    parkingNote: null,
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 무안 제1공학관 3층 · 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+  },
+  {
+    id: "jeonbuk-kcci",
+    region: "전북",
+    name: "대한상공회의소 전북인력개발원",
+    buildingNote: null,
+    parkingNote: null,
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+  },
+  {
+    id: "chungnam-kopo-dream",
+    region: "충남",
+    name: "한국폴리텍Ⅳ대학 충남캠퍼스",
+    buildingNote: "꿈드림공작소",
+    parkingNote: null,
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 꿈드림공작소 · 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+  },
+  {
+    id: "chungnam-kcci",
+    region: "충남",
+    name: "대한상공회의소 충남인력개발원",
+    buildingNote: null,
+    parkingNote: null,
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+  },
+  {
+    id: "chungbuk-cheongju-kopo",
+    region: "충북",
+    name: "한국폴리텍대학 청주캠퍼스",
+    buildingNote: "제1공학관",
+    parkingNote: null,
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 제1공학관 · 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+  },
+  {
+    id: "chungbuk-health-science",
+    region: "충북",
+    name: "충북보건과학대학교",
+    buildingNote: "창의관",
+    parkingNote: null,
+    suppliedMaterialNote: null,
+    rawFacilityNote: "2025 작업형 시험 이력 확인 · 창의관 · 장비 모델 미확인",
+    equipmentModelIds: [],
+    evidenceKind: "exam_history_2025",
+    evidenceSourceUrl: PRACTICAL_2025_HISTORY_SOURCE.sourceUrl,
+  },
+];
+
+const PRACTICAL_HISTORICAL_CANDIDATE_SEEDS: Array<
+  [id: string, region: string, name: string, buildingNote: string | null]
+> = [
+  ["incheon-nam-kopo-candidate", "인천", "한국폴리텍대학 남인천캠퍼스", null],
+  ["jeonbuk-iksan-kopo-candidate", "전북", "한국폴리텍대학 익산캠퍼스", null],
+  ["jeju-kopo-candidate", "제주", "한국폴리텍대학 제주캠퍼스", null],
+  ["chungbuk-chungju-kopo-candidate", "충북", "한국폴리텍대학 충주캠퍼스", null],
+  ["chungbuk-cheongju-tech-high-candidate", "충북", "청주공업고등학교", "발전관"],
+  ["gyeongbuk-gumi-kopo-engineering-candidate", "경북", "한국폴리텍대학 구미캠퍼스", "공학관"],
+];
+
+export const PRACTICAL_HISTORICAL_CANDIDATE_CENTERS: PracticalTestCenter[] =
+  PRACTICAL_HISTORICAL_CANDIDATE_SEEDS.map(([id, region, name, buildingNote]) => ({
+    id,
+    region,
+    name,
+    buildingNote,
+    parkingNote: null,
+    suppliedMaterialNote: null,
+    rawFacilityNote:
+      "과거 또는 사용자 제보 후보 · 실제 시행 회차와 장비 정보 확인 필요",
+    equipmentModelIds: [],
+    evidenceKind: "historical_candidate" as const,
+    evidenceSourceUrl: null,
+    evidenceNote:
+      "공식 시행 회차 증거가 확보되기 전에는 현재 시험장 목록과 분리",
+  }));
+
+export const PRACTICAL_MAIN_TEST_CENTERS: PracticalTestCenter[] = [
+  ...PRACTICAL_2026_FACILITY_CENTERS,
+  ...PRACTICAL_2025_HISTORY_CENTERS,
+];
+
+export function getPracticalCenterEvidenceKind(
+  center: PracticalTestCenter,
+): PracticalCenterEvidenceKind {
+  return center.evidenceKind ?? "facility_sheet_2026";
+}
+
+export function getPracticalCenterEvidenceLabel(
+  center: PracticalTestCenter,
+) {
+  const kind = getPracticalCenterEvidenceKind(center);
+  if (kind === "exam_history_2025") return "2025 시험 이력";
+  if (kind === "historical_candidate") return "과거 후보";
+  return "2026 시설표";
+}
+
 export const practicalTestCentersById = new Map(
-  PRACTICAL_TEST_CENTERS.map((center) => [center.id, center]),
+  [...PRACTICAL_MAIN_TEST_CENTERS, ...PRACTICAL_HISTORICAL_CANDIDATE_CENTERS].map(
+    (center) => [center.id, center],
+  ),
 );
 
 /**
@@ -279,15 +571,20 @@ export const practicalTestCentersById = new Map(
 export function getPracticalCenterComparison(
   center: PracticalTestCenter,
 ): PracticalCenterComparison {
+  const evidenceKind = getPracticalCenterEvidenceKind(center);
   const hasSNetTrainer = center.equipmentModelIds.includes("snet-fluid-power");
   const fluidDetail = hasSNetTrainer
     ? "공식 시설표에는 S-Net 장비로 기재되어 있어 V-AMT 화면·부품 배치와 일부 다를 수 있습니다."
-    : "공식 시설표에 공압·유압 장비 모델이 기재되지 않아 V-AMT와의 동일 여부를 확정할 수 없습니다.";
+    : evidenceKind === "exam_history_2025"
+      ? "2025 시험 이력은 확인됐지만 공압·유압 장비 모델과 실습대 수량은 미확인입니다."
+      : evidenceKind === "historical_candidate"
+        ? "과거 후보 정보만 있어 실제 시행 회차와 공압·유압 장비를 모두 확인해야 합니다."
+        : "공식 시설표에 공압·유압 장비 모델이 기재되지 않아 V-AMT와의 동일 여부를 확정할 수 없습니다.";
 
   return {
     pneumatic: {
       status: hasSNetTrainer ? "partially_different" : "not_published",
-      label: hasSNetTrainer ? "일부 다름" : "공개표 미기재",
+      label: hasSNetTrainer ? "일부 다름" : "미확인",
       detail: fluidDetail,
     },
     hydraulic: {
@@ -398,6 +695,14 @@ function getParkingComparison(
     return {
       status: "parking_limited",
       label: "주차협소",
+      detail: center.parkingNote,
+    };
+  }
+
+  if (center.parkingNote?.includes("유료주차")) {
+    return {
+      status: "parking_limited",
+      label: "유료주차",
       detail: center.parkingNote,
     };
   }

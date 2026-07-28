@@ -18,6 +18,7 @@ import {
   toPublicPracticalQuestion,
 } from "../src/lib/domain/practical";
 import type { PracticalContent } from "../src/lib/domain/practical-types";
+import { toPublicPracticalSequenceVisualAid } from "../src/lib/practical-sequence-server";
 import { PRACTICAL_VISUAL_AIDS } from "../src/data/source/practical-source-registry";
 
 type VerificationScope = "source" | "build" | "all";
@@ -112,6 +113,60 @@ async function verifySourceContracts(content: PracticalContent) {
         code: "pre_submit_dto_leak",
         file: `question:${question.id}`,
         detail: finding.field,
+      });
+    }
+
+    if (question.examFormat !== "sequence" || !question.visualAidId) continue;
+    const visualAid = content.visualAids.find(
+      (candidate) => candidate.id === question.visualAidId,
+    );
+    if (!visualAid || visualAid.frames.length < 2) continue;
+
+    const frameIds =
+      visualAid.promptFrameIds ??
+      [...visualAid.frames].reverse().map((frame) => frame.id);
+    try {
+      const publicVisualAid = toPublicPracticalSequenceVisualAid({
+        questionId: question.id,
+        visualAid,
+        frameIds,
+      });
+      for (const finding of findForbiddenPreSubmitFields(publicVisualAid)) {
+        findings.push({
+          code: "pre_submit_visual_dto_leak",
+          file: `question:${question.id}`,
+          detail: finding.field,
+        });
+      }
+
+      const serialized = JSON.stringify(publicVisualAid);
+      const serverOnlyValues = [
+        visualAid.altText,
+        visualAid.caption,
+        visualAid.sourceFileHash,
+        visualAid.outputAssetHash,
+        ...visualAid.frames.flatMap((frame) => [
+          frame.id,
+          frame.path,
+          frame.learningAltText,
+          frame.captionAfterAnswer,
+          frame.outputAssetHash,
+        ]),
+      ].filter((value): value is string => Boolean(value));
+      for (const value of serverOnlyValues) {
+        if (serialized.includes(value)) {
+          findings.push({
+            code: "pre_submit_visual_value_leak",
+            file: `question:${question.id}`,
+            detail: `sentinel=${sentinelId(value)}`,
+          });
+        }
+      }
+    } catch (error) {
+      findings.push({
+        code: "invalid_sequence_prompt_projection",
+        file: `question:${question.id}`,
+        detail: error instanceof Error ? error.message : String(error),
       });
     }
   }

@@ -135,6 +135,18 @@ export default async function HomePage() {
             </Link>
           </span>
         </div>
+        <p className="mt-5 text-center text-sm text-slate-600">
+          건의사항은{" "}
+          <a
+            href="https://blog.naver.com/heung891025/224357527404"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-[#16697a] underline decoration-[#16697a]/40 underline-offset-4 hover:decoration-[#16697a] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16697a] focus-visible:ring-offset-2"
+          >
+            여기에 댓글로 남겨주세요
+          </a>
+          .
+        </p>
       </section>
     </>
   );

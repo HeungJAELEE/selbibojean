@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">가열 베어링을 축 어깨까지 신속 장착</title>
+  <desc id="desc">내열장갑을 낀 양손이 가열된 베어링을 축에 직각으로 끼워 어깨부에 밀착하는 장면</desc>
+  <rect width="640" height="360" rx="24" fill="#f8fafc"/>
+  <rect x="280" y="138" width="300" height="82" rx="40" fill="#d8e6ef" stroke="#163b5c" stroke-width="8"/>
+  <rect x="490" y="113" width="62" height="132" rx="12" fill="#9eb7c8" stroke="#163b5c" stroke-width="7"/>
+  <circle cx="300" cy="179" r="82" fill="#c7eef1" stroke="#163b5c" stroke-width="15"/>
+  <circle cx="300" cy="179" r="40" fill="#ffffff" stroke="#163b5c" stroke-width="9"/>
+  <path d="M90 92c43 2 78 29 105 69l40 58-66 44-45-59c-24-31-47-52-77-65z" fill="#f4b942" stroke="#163b5c" stroke-width="8"/>
+  <path d="M91 268c43-2 78-29 105-69l40-58-66-44-45 59c-24 31-47 52-77 65z" fill="#f4b942" stroke="#163b5c" stroke-width="8"/>
+  <path d="M391 76v50M391 234v50M419 91l-18 43M419 269l-18-43" stroke="#d45a3a" stroke-width="8" stroke-linecap="round"/>
+  <path d="M542 81l22 22 39-48" fill="none" stroke="#188b73" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

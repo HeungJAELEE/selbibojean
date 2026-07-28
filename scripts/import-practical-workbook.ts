@@ -6,11 +6,15 @@ import {
   NCS_SOURCE_REGISTRY,
   PRACTICAL_PDF_PAGE_BY_TOPIC,
   PRACTICAL_VISUAL_AID_BY_QUESTION,
+  PRACTICAL_VISUAL_AIDS_BY_CONCEPT,
   PRACTICAL_VISUAL_AIDS,
 } from "../src/data/source/practical-source-registry";
 import { PRACTICAL_PRIMARY_CATEGORY_BY_QUESTION } from "../src/data/source/practical-question-categories";
 import { practicalQuestionFormatLabel } from "../src/data/source/practical-question-format-labels";
-import { PRACTICAL_AUTHORED_PREDICTED_QUESTIONS } from "../src/data/source/practical-authored-predicted-questions";
+import {
+  PRACTICAL_AUTHORED_PAST_QUESTIONS,
+  PRACTICAL_AUTHORED_PREDICTED_QUESTIONS,
+} from "../src/data/source/practical-authored-predicted-questions";
 import { PRACTICAL_SUPPLEMENTAL_PREDICTED_QUESTIONS } from "../src/data/source/practical-supplemental-predicted-questions";
 import { PRACTICAL_CONCEPT_EDITORIAL } from "../src/data/source/practical-concept-editorial";
 import { PRACTICAL_NCS_COVERAGE_HOLDS } from "../src/data/source/practical-ncs-coverage-audit";
@@ -764,6 +768,7 @@ async function main() {
       };
     },
   );
+  actualQuestions.push(...PRACTICAL_AUTHORED_PAST_QUESTIONS);
 
   const workbookPredictedQuestions: PracticalQuestion[] = rowsToRecords(
     predictedRows,
@@ -949,9 +954,14 @@ async function main() {
     const ncsCode = text(row["NCS문서"]);
     const visualAidIds = [
       ...new Set(
-        [...relatedPastQuestionIds, ...relatedPredictedQuestionIds]
-          .map((questionId) => questionById.get(questionId)?.visualAidId)
-          .filter((visualAidId): visualAidId is string => Boolean(visualAidId)),
+        [
+          ...[...relatedPastQuestionIds, ...relatedPredictedQuestionIds]
+            .map((questionId) => questionById.get(questionId)?.visualAidId)
+            .filter((visualAidId): visualAidId is string =>
+              Boolean(visualAidId),
+            ),
+          ...(PRACTICAL_VISUAL_AIDS_BY_CONCEPT[id] ?? []),
+        ],
       ),
     ];
     return {
@@ -998,11 +1008,14 @@ async function main() {
         .map((question) => question.id);
       const visualAidIds = [
         ...new Set(
-          [...relatedPastQuestionIds, ...relatedPredictedQuestionIds]
-            .map((questionId) => questionById.get(questionId)?.visualAidId)
-            .filter((visualAidId): visualAidId is string =>
-              Boolean(visualAidId),
-            ),
+          [
+            ...[...relatedPastQuestionIds, ...relatedPredictedQuestionIds]
+              .map((questionId) => questionById.get(questionId)?.visualAidId)
+              .filter((visualAidId): visualAidId is string =>
+                Boolean(visualAidId),
+              ),
+            ...(PRACTICAL_VISUAL_AIDS_BY_CONCEPT[concept.id] ?? []),
+          ],
         ),
       ];
 
@@ -1097,10 +1110,10 @@ async function main() {
     },
     ncsCoverage: ncsCoverage.summary,
     exactMatch:
-      actualQuestions.length === 41 &&
+      actualQuestions.length === 42 &&
       expandedWorkbookPredictedQuestions.length === 41 &&
-      authoredPredictedQuestions.length === 46 &&
-      predictedQuestions.length === 87 &&
+      authoredPredictedQuestions.length === 77 &&
+      predictedQuestions.length === 118 &&
       workbookConcepts.length === 46 &&
       rowsToRecords(ncsRows).length === 11 &&
       ncsCoverage.summary.totalDocuments === 11 &&

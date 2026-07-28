@@ -45,13 +45,13 @@ async function main() {
     }
   }
 
-  if (content.report.rows.past !== 41) errors.push("기출복원 41개가 아닙니다.");
-  if (content.report.rows.predicted !== 87)
-    errors.push("출제예상 전체 87개가 아닙니다.");
+  if (content.report.rows.past !== 42) errors.push("기출복원 42개가 아닙니다.");
+  if (content.report.rows.predicted !== 118)
+    errors.push("출제예상 전체 118개가 아닙니다.");
   if (content.report.rows.workbookPredicted !== 41)
     errors.push("원본 워크북 기반 출제예상 41개가 아닙니다.");
-  if (content.report.rows.authoredPredicted !== 46)
-    errors.push("NCS 원문 기반 자체 예상문항 46개가 아닙니다.");
+  if (content.report.rows.authoredPredicted !== 77)
+    errors.push("NCS 원문 기반 자체 예상문항 77개가 아닙니다.");
   if (content.report.rows.concepts !== 46)
     errors.push("실기 개념 46개가 아닙니다.");
   if (
@@ -95,10 +95,10 @@ async function main() {
   if (!content.report.exactMatch) errors.push("원본 행 수 대사가 실패했습니다.");
 
   const expectedCategoryCounts = new Map([
-    ["visual_identification", 34],
+    ["visual_identification", 37],
     ["formula_calculation", 22],
     ["theory_concept", 39],
-    ["work_procedure", 33],
+    ["work_procedure", 62],
   ]);
   if (content.studyCategories.length !== expectedCategoryCounts.size) {
     errors.push(`실기 학습유형은 ${expectedCategoryCounts.size}개여야 합니다.`);
@@ -262,9 +262,9 @@ async function main() {
     return;
   }
   console.log(
-    `PASS: 실기 기출 ${content.report.publication.past}/41, 예상 ${content.report.publication.predicted}/${content.report.rows.predicted} (워크북 ${content.report.rows.workbookPredicted} + 자체 ${content.report.rows.authoredPredicted}), ` +
+    `PASS: 실기 기출 ${content.report.publication.past}/42, 예상 ${content.report.publication.predicted}/${content.report.rows.predicted} (워크북 ${content.report.rows.workbookPredicted} + 자체 ${content.report.rows.authoredPredicted}), ` +
       `출제연결 ${content.report.publication.concepts}/46 + NCS 보강 ${content.report.publication.supplementalConcepts}/${PRACTICAL_SUPPLEMENTAL_CONCEPTS.length}, 보류 ${content.report.publication.held}, ` +
-      `NCS 시각자료 ${publicVisualAids.length}묶음, 학습유형 4개/128문제`,
+      `NCS 시각자료 ${publicVisualAids.length}묶음, 학습유형 4개/160문제`,
   );
 }
 

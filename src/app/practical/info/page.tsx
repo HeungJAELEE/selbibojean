@@ -4,11 +4,14 @@ import { PracticalInfoTabs } from "@/components/practical-info-tabs";
 import { PRACTICAL_WORK_TASKS } from "@/data/source/practical-work-tasks";
 import {
   getPracticalCenterComparison,
-  PRACTICAL_TEST_CENTERS,
+  getPracticalCenterEvidenceLabel,
+  PRACTICAL_HISTORICAL_CANDIDATE_CENTERS,
+  PRACTICAL_MAIN_TEST_CENTERS,
 } from "@/data/source/practical-test-centers";
 import {
   PRACTICAL_CANDIDATE_SUPPLIES,
   PRACTICAL_SUPPLY_RECOMMENDATIONS,
+  PRACTICAL_WELDING_TOOL_RECOMMENDATIONS,
 } from "@/data/source/practical-candidate-supplies";
 import {
   PRACTICAL_PUBLIC_PROBLEMS,
@@ -23,6 +26,13 @@ import {
   getYouTubeNoCookieEmbedUrl,
   practicalRepairWeldingVideos,
 } from "@/data/source/practical-repair-welding-videos";
+import {
+  getHistoricalPracticalTrainingResources,
+  getPublicPracticalTrainingResources,
+} from "@/data/source/practical-training-resources";
+import { getPracticalFaqsForTab } from "@/data/source/practical-faqs";
+
+const PRACTICAL_TRAINING_RESOURCES_AS_OF = "2026-07-28";
 
 export const metadata: Metadata = {
   title: "실기 관련 정보",
@@ -61,13 +71,33 @@ export default async function PracticalInfoPage({
         ).map(toSummary)}
         videos={practicalInfoVideos()}
         publicProblems={PRACTICAL_PUBLIC_PROBLEMS}
-        centers={PRACTICAL_TEST_CENTERS.map((center) => ({
+        centers={PRACTICAL_MAIN_TEST_CENTERS.map((center) => ({
           ...center,
+          evidenceLabel: getPracticalCenterEvidenceLabel(center),
           comparison: getPracticalCenterComparison(center),
         }))}
+        candidateCenters={PRACTICAL_HISTORICAL_CANDIDATE_CENTERS.map(
+          (center) => ({
+            ...center,
+            evidenceLabel: getPracticalCenterEvidenceLabel(center),
+            comparison: getPracticalCenterComparison(center),
+          }),
+        )}
         supplies={PRACTICAL_CANDIDATE_SUPPLIES}
         supplyRecommendations={PRACTICAL_SUPPLY_RECOMMENDATIONS}
+        weldingToolRecommendations={PRACTICAL_WELDING_TOOL_RECOMMENDATIONS}
         suppliesOfficialUrl={PRACTICAL_SUPPLIES_OFFICIAL_URL}
+        trainingResources={getPublicPracticalTrainingResources(
+          PRACTICAL_TRAINING_RESOURCES_AS_OF,
+        )}
+        historicalTrainingResources={getHistoricalPracticalTrainingResources(
+          PRACTICAL_TRAINING_RESOURCES_AS_OF,
+        )}
+        trainingResourcesAsOf={PRACTICAL_TRAINING_RESOURCES_AS_OF}
+        faqs={[
+          ...getPracticalFaqsForTab("prep"),
+          ...getPracticalFaqsForTab("centers"),
+        ]}
         initialTab={initialTab}
       />
     </div>

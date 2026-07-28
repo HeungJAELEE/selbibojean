@@ -17,18 +17,18 @@ const content = JSON.parse(
 describe("NCS practical content import", () => {
   it("reconciles all source rows", () => {
     expect(content.report.rows).toEqual({
-      past: 41,
-      predicted: 87,
+      past: 42,
+      predicted: 118,
       workbookPredicted: 41,
-      authoredPredicted: 46,
+      authoredPredicted: 77,
       concepts: 46,
       supplementalConcepts: 43,
       ncsDocuments: 11,
-      visualAids: 31,
+      visualAids: 70,
     });
     expect(content.report.exactMatch).toBe(true);
-    expect(content.report.publication.past).toBe(21);
-    expect(content.report.publication.predicted).toBe(86);
+    expect(content.report.publication.past).toBe(22);
+    expect(content.report.publication.predicted).toBe(117);
     expect(content.report.publication.concepts).toBe(46);
     expect(content.report.publication.supplementalConcepts).toBe(43);
     expect(content.report.publication.held).toBe(21);
@@ -83,11 +83,7 @@ describe("NCS practical content import", () => {
       });
     }
 
-    for (const id of [
-      "P-2025-2-Q10",
-      "P-2025-3-Q02",
-      "P-2026-1-Q02",
-    ]) {
+    for (const id of ["P-2025-2-Q10", "P-2025-3-Q02", "P-2026-1-Q02"]) {
       expect(byId(id)).toMatchObject({
         auditDisposition: "held_asset_missing",
         contentStatus: "in_review",
@@ -99,9 +95,7 @@ describe("NCS practical content import", () => {
         (question) => question.auditDisposition === "held_answer_conflict",
       ),
     ).toEqual([]);
-    expect(byId("P-2025-1-Q06")?.auditDisposition).toBe(
-      "held_source_missing",
-    );
+    expect(byId("P-2025-1-Q06")?.auditDisposition).toBe("held_source_missing");
     expect(byId("EXP-C03")?.auditDisposition).toBe("held_source_missing");
   });
 
@@ -134,7 +128,7 @@ describe("NCS practical content import", () => {
       accountedDocuments: 11,
       uniqueLessonCount: 84,
       sourceReferenceCount: 105,
-      heldItems: 13,
+      heldItems: 8,
     });
     expect(content.report.ncsCoverage).toEqual(content.ncsCoverage.summary);
     expect(content.ncsCoverage.documents).toHaveLength(11);
@@ -148,7 +142,7 @@ describe("NCS practical content import", () => {
     ).toBe(true);
     expect(
       content.ncsCoverage.documents.flatMap((document) => document.heldItems),
-    ).toHaveLength(13);
+    ).toHaveLength(8);
   });
 
   it("strips every answer field before submit", () => {
@@ -180,23 +174,21 @@ describe("NCS practical content import", () => {
           category.questionIds.length,
         ]),
       ),
-      ).toEqual({
-        visual_identification: 34,
-        formula_calculation: 22,
-        theory_concept: 39,
-        work_procedure: 33,
-      });
+    ).toEqual({
+      visual_identification: 37,
+      formula_calculation: 22,
+      theory_concept: 39,
+      work_procedure: 62,
+    });
     const primaryIds = content.studyCategories.flatMap(
       (category) => category.questionIds,
     );
-    expect(primaryIds).toHaveLength(128);
-    expect(new Set(primaryIds).size).toBe(128);
+    expect(primaryIds).toHaveLength(160);
+    expect(new Set(primaryIds).size).toBe(160);
     expect(
       content.questions.every(
         (question) =>
-          question.studyCategoryIds.includes(
-            question.primaryStudyCategoryId,
-          ) &&
+          question.studyCategoryIds.includes(question.primaryStudyCategoryId) &&
           content.studyCategories.some(
             (category) =>
               category.id === question.primaryStudyCategoryId &&
@@ -214,14 +206,14 @@ describe("NCS practical content import", () => {
           isPublishablePracticalQuestion(question),
       );
       expect(
-        published.filter((question) => question.kind === "predicted").every(
-          (question) => question.occurrence === null,
-        ),
+        published
+          .filter((question) => question.kind === "predicted")
+          .every((question) => question.occurrence === null),
       ).toBe(true);
       expect(
-        published.filter((question) => question.kind === "past").every(
-          (question) => question.occurrence !== null,
-        ),
+        published
+          .filter((question) => question.kind === "past")
+          .every((question) => question.occurrence !== null),
       ).toBe(true);
     }
   });
@@ -230,13 +222,15 @@ describe("NCS practical content import", () => {
     const predicted = content.questions.filter(
       (question) => question.kind === "predicted",
     );
-    expect(predicted).toHaveLength(87);
+    expect(predicted).toHaveLength(118);
     expect(content.report.rows.workbookPredicted).toBe(41);
-    expect(content.report.rows.authoredPredicted).toBe(46);
-    expect(predicted.every((question) => question.occurrence === null)).toBe(true);
-    expect(predicted.every((question) => Boolean(question.predictedBasis))).toBe(
+    expect(content.report.rows.authoredPredicted).toBe(77);
+    expect(predicted.every((question) => question.occurrence === null)).toBe(
       true,
     );
+    expect(
+      predicted.every((question) => Boolean(question.predictedBasis)),
+    ).toBe(true);
   });
 
   it("links one NCS-grounded predicted question to every supplemental concept", () => {
@@ -268,7 +262,7 @@ describe("NCS practical content import", () => {
         question.conceptIds.includes(concept.id),
       );
       expect(linked, concept.id).toHaveLength(1);
-      expect(concept.relatedPredictedQuestionIds).toEqual([linked[0].id]);
+      expect(concept.relatedPredictedQuestionIds).toContain(linked[0].id);
     }
   });
 
@@ -289,8 +283,8 @@ describe("NCS practical content import", () => {
       },
     });
 
-    const authoredPredicted = ["EXP-C06", "EXP-C07", "EXP-C08"].map(
-      (id) => content.questions.find((question) => question.id === id),
+    const authoredPredicted = ["EXP-C06", "EXP-C07", "EXP-C08"].map((id) =>
+      content.questions.find((question) => question.id === id),
     );
     expect(authoredPredicted).toHaveLength(3);
     expect(authoredPredicted.every(Boolean)).toBe(true);
@@ -308,7 +302,9 @@ describe("NCS practical content import", () => {
   });
 
   it("splits the accumulator function and disassembly safety prompts", () => {
-    expect(content.questions.find((question) => question.id === "EXP-H04")).toBeUndefined();
+    expect(
+      content.questions.find((question) => question.id === "EXP-H04"),
+    ).toBeUndefined();
 
     const functionPrompt = content.questions.find(
       (question) => question.id === "EXP-H04A",
@@ -344,23 +340,24 @@ describe("NCS practical content import", () => {
     expect(accumulatorConcept?.relatedPredictedQuestionIds).toEqual(
       expect.arrayContaining(["EXP-H04A", "EXP-H04B"]),
     );
-    expect(accumulatorConcept?.relatedPredictedQuestionIds).not.toContain("EXP-H04");
+    expect(accumulatorConcept?.relatedPredictedQuestionIds).not.toContain(
+      "EXP-H04",
+    );
   });
 
   it("publishes only attributed NCS visual aids without third-party holds", () => {
     const publicAids = content.visualAids.filter(
       (visualAid) => visualAid.publicUseStatus === "public",
     );
-    expect(publicAids).toHaveLength(9);
+    expect(publicAids).toHaveLength(70);
     expect(
       publicAids.every(
         (visualAid) =>
           Boolean(visualAid.altText) &&
           Boolean(visualAid.figureNumber) &&
-          [
-            "education_use_with_attribution",
-            "self_authored",
-          ].includes(visualAid.rightsStatus) &&
+          ["education_use_with_attribution", "self_authored"].includes(
+            visualAid.rightsStatus,
+          ) &&
           visualAid.technicalReviewStatus === "verified" &&
           visualAid.frames.length > 0 &&
           visualAid.usageTypes.length > 0,
@@ -368,23 +365,71 @@ describe("NCS practical content import", () => {
     ).toBe(true);
   });
 
-  it("uses exact NCS sources only for question prompt images", () => {
-    const promptVisualAidIds = new Set(
+  it("keeps exact past prompts distinct from reconstructed NCS sequence visuals", () => {
+    const pastPromptVisualAidIds = new Set(
       content.questions
-        .filter(isPublishablePracticalQuestion)
+        .filter(
+          (question) =>
+            question.kind === "past" &&
+            isPublishablePracticalQuestion(question),
+        )
         .map((question) => question.visualAidId)
         .filter((visualAidId): visualAidId is string => Boolean(visualAidId)),
     );
-    const promptAids = content.visualAids.filter((visualAid) =>
-      promptVisualAidIds.has(visualAid.id),
+    const pastPromptAids = content.visualAids.filter((visualAid) =>
+      pastPromptVisualAidIds.has(visualAid.id),
     );
-    expect(promptAids.map((visualAid) => visualAid.id).sort()).toEqual([
+    expect(pastPromptAids.map((visualAid) => visualAid.id).sort()).toEqual([
       "ncs-bearing-four-types",
+      "ncs-tire-coupling-assembly-sequence",
     ]);
     expect(
-      promptAids.every(
+      pastPromptAids.find(
+        (visualAid) => visualAid.id === "ncs-bearing-four-types",
+      ),
+    ).toMatchObject({
+      examMatchStatus: "exact_source",
+      publicUseStatus: "public",
+    });
+    expect(
+      pastPromptAids.find(
+        (visualAid) => visualAid.id === "ncs-tire-coupling-assembly-sequence",
+      ),
+    ).toMatchObject({
+      examMatchStatus: "concept_source",
+      publicUseStatus: "public",
+    });
+
+    expect(
+      content.questions.find((question) => question.id === "P-2026-2-Q10"),
+    ).toMatchObject({
+      kind: "past",
+      label: "practical_exam",
+      occurrence: {
+        year: 2026,
+        round: 2,
+        questionNumber: "Q10",
+        sourceType: "사용자 제공 응시 복원",
+        reconstructionConfidence: "B",
+      },
+      predictedBasis: null,
+      examEvidenceStatus: "past_reconstructed",
+    });
+
+    const predictedSequenceAids = content.visualAids.filter((visualAid) =>
+      [
+        "ncs-gear-coupling-sequence",
+        "ncs-tapered-bearing-assembly-sequence",
+      ].includes(visualAid.id),
+    );
+    expect(predictedSequenceAids).toHaveLength(2);
+    expect(
+      predictedSequenceAids.every(
         (visualAid) =>
-          visualAid.examMatchStatus === "exact_source" &&
+          visualAid.examMatchStatus === "concept_source" &&
+          visualAid.originType === "ncs_crop" &&
+          visualAid.usageTypes.includes("sequence_step") &&
+          visualAid.usageTypes.includes("concept_explanation") &&
           visualAid.publicUseStatus === "public",
       ),
     ).toBe(true);

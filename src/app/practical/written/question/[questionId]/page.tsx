@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { PracticalLabelBadges } from "@/components/practical-label-badges";
 import { PracticalVisualAidFigure } from "@/components/practical-visual-aid";
 import { PracticalWrittenQuestion } from "@/components/practical-written-question";
+import { PracticalSequenceQuestion } from "@/components/practical-sequence-question";
 import { PracticalMockNavigator } from "@/components/practical-mock-navigator";
 import { PracticalStudyCategoryBadge } from "@/components/practical-study-category-badge";
 import Link from "next/link";
@@ -9,6 +10,11 @@ import {
   getPublicPracticalVisualAid,
   getPublicPracticalQuestion,
 } from "@/lib/content/practical-repository";
+import { shuffleSequence } from "@/lib/practical-sequence";
+import {
+  getPracticalPromptVisualUsage,
+  toPublicPracticalSequenceVisualAid,
+} from "@/lib/practical-sequence-server";
 
 export default async function PracticalQuestionPage({
   params,
@@ -20,10 +26,27 @@ export default async function PracticalQuestionPage({
   const [{ questionId }, query] = await Promise.all([params, searchParams]);
   const question = await getPublicPracticalQuestion(questionId);
   if (!question) notFound();
+  const visualUsage = getPracticalPromptVisualUsage(question);
   const visualAid = await getPublicPracticalVisualAid(
     question.visualAidId,
-    "prompt",
+    visualUsage,
   );
+  const isInteractiveSequence =
+    question.examFormat === "sequence" &&
+    Boolean(visualAid?.frames && visualAid.frames.length > 1);
+  const initialCanonicalFrameIds = isInteractiveSequence
+    ? shuffleSequence(visualAid?.frames?.map((frame) => frame.id) ?? [])
+    : [];
+  const sequenceVisualAid =
+    visualAid && isInteractiveSequence
+      ? toPublicPracticalSequenceVisualAid({
+          questionId: question.id,
+          visualAid,
+          frameIds: initialCanonicalFrameIds,
+        })
+      : undefined;
+  const initialFrameIds =
+    sequenceVisualAid?.frames.map((frame) => frame.id) ?? [];
 
   return (
     <div className="page-wrap max-w-4xl py-12">
@@ -73,13 +96,21 @@ export default async function PracticalQuestionPage({
           같은 유형 학습
         </Link>
       </div>
-      {visualAid ? (
+      {visualAid && !isInteractiveSequence ? (
         <div className="mt-8">
           <PracticalVisualAidFigure visualAid={visualAid} mode="prompt" />
         </div>
       ) : null}
       <div className="mt-8">
-        <PracticalWrittenQuestion question={question} />
+        {sequenceVisualAid ? (
+          <PracticalSequenceQuestion
+            question={question}
+            visualAid={sequenceVisualAid}
+            initialFrameIds={initialFrameIds}
+          />
+        ) : (
+          <PracticalWrittenQuestion question={question} />
+        )}
       </div>
       <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5">
         <p className="font-extrabold">원문 근거</p>
@@ -99,7 +130,8 @@ export default async function PracticalQuestionPage({
               {source.figureNumber ? ` · ${source.figureNumber}` : ""}
             </li>
           ))}
-          {question.ncsSources.length === 0 && question.occurrence?.sourceUrl ? (
+          {question.ncsSources.length === 0 &&
+          question.occurrence?.sourceUrl ? (
             <li>
               <a
                 href={question.occurrence.sourceUrl}

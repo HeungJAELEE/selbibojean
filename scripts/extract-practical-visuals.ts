@@ -8,6 +8,16 @@ import { PRACTICAL_VISUAL_CROP_SPECS } from "../src/data/source/practical-visual
 const repoRoot = resolve(import.meta.dirname, "..");
 const stagingRoot = join(repoRoot, "work", "visual-staging");
 const sourceRoot = process.env.NCS_VISUAL_SOURCE_DIR;
+const requestedIds = new Set(
+  (process.env.PRACTICAL_VISUAL_CROP_IDS ?? "")
+    .split(",")
+    .map((id) => id.trim())
+    .filter(Boolean),
+);
+const cropSpecs =
+  requestedIds.size === 0
+    ? PRACTICAL_VISUAL_CROP_SPECS
+    : PRACTICAL_VISUAL_CROP_SPECS.filter((spec) => requestedIds.has(spec.id));
 
 const sha256 = (buffer: Buffer) =>
   createHash("sha256").update(buffer).digest("hex");
@@ -24,7 +34,7 @@ const run = (command: string, args: string[]) => {
 
 await mkdir(stagingRoot, { recursive: true });
 
-if (PRACTICAL_VISUAL_CROP_SPECS.length === 0) {
+if (cropSpecs.length === 0) {
   console.log("등록된 신규 PDF 크롭 명세가 없습니다. public/ 변경 없음.");
   process.exit(0);
 }
@@ -36,7 +46,7 @@ if (!sourceRoot) {
 }
 
 const ids = new Set<string>();
-for (const spec of PRACTICAL_VISUAL_CROP_SPECS) {
+for (const spec of cropSpecs) {
   if (ids.has(spec.id)) throw new Error(`중복 크롭 ID: ${spec.id}`);
   ids.add(spec.id);
   if (spec.outputFormat === "svg") {
@@ -127,5 +137,5 @@ for (const spec of PRACTICAL_VISUAL_CROP_SPECS) {
 }
 
 console.log(
-  `${PRACTICAL_VISUAL_CROP_SPECS.length}개 후보를 work/visual-staging에 추출했습니다.`,
+  `${cropSpecs.length}개 후보를 work/visual-staging에 추출했습니다.`,
 );

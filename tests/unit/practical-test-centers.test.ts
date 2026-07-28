@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
   getPracticalCenterComparison,
+  PRACTICAL_2025_HISTORY_CENTERS,
+  PRACTICAL_HISTORICAL_CANDIDATE_CENTERS,
+  PRACTICAL_MAIN_TEST_CENTERS,
   PRACTICAL_TEST_CENTERS,
   PRACTICAL_TEST_CENTER_SOURCE,
 } from "@/data/source/practical-test-centers";
@@ -19,6 +22,20 @@ describe("practical test center source catalog", () => {
     expect(PRACTICAL_TEST_CENTER_SOURCE.sourceFileSha256).toMatch(/^[A-F0-9]{64}$/);
   });
 
+  it("adds 15 verified 2025 venue histories and keeps six candidates separate", () => {
+    expect(PRACTICAL_2025_HISTORY_CENTERS).toHaveLength(15);
+    expect(PRACTICAL_MAIN_TEST_CENTERS).toHaveLength(33);
+    expect(PRACTICAL_HISTORICAL_CANDIDATE_CENTERS).toHaveLength(6);
+    expect(new Set(PRACTICAL_MAIN_TEST_CENTERS.map((center) => center.id)).size).toBe(
+      33,
+    );
+    expect(
+      PRACTICAL_2025_HISTORY_CENTERS.every(
+        (center) => center.evidenceKind === "exam_history_2025",
+      ),
+    ).toBe(true);
+  });
+
   it("resolves only explicitly normalized equipment models", () => {
     for (const center of PRACTICAL_TEST_CENTERS) {
       expect(center.rawFacilityNote.trim().length, center.id).toBeGreaterThan(0);
@@ -29,6 +46,43 @@ describe("practical test center source catalog", () => {
         ).toBe(true);
       }
     }
+  });
+
+  it("keeps user-reported supply guidance separate from official facility-sheet notes", () => {
+    const busan = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "busan-technical-high",
+    );
+    const paju = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "gyeonggi-kcci",
+    );
+    const seongnam = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "seongnam-kopo-nuri",
+    );
+
+    expect(
+      PRACTICAL_TEST_CENTERS.filter((center) => center.candidateSupplyGuidance),
+    ).toHaveLength(3);
+    expect(busan?.suppliedMaterialNote).toBeNull();
+    expect(paju?.suppliedMaterialNote).toBeNull();
+    expect(seongnam?.suppliedMaterialNote).toBeNull();
+    expect(busan?.candidateSupplyGuidance).toMatchObject({
+      weldingPpeProvision: "not_provided",
+      otherSuppliesProvision: "provided",
+      personalBringGuidance: "welding_ppe_required",
+      sourceKind: "user_report",
+      reportedAt: "2026-07-28",
+    });
+    expect(paju?.candidateSupplyGuidance).toEqual(
+      busan?.candidateSupplyGuidance,
+    );
+    expect(seongnam?.candidateSupplyGuidance).toMatchObject({
+      weldingPpeProvision: "not_provided",
+      otherSuppliesProvision: "provided",
+      personalBringGuidance:
+        "welding_ppe_required_other_items_recommended",
+      sourceKind: "user_report",
+      reportedAt: "2026-07-28",
+    });
   });
 
   it("does not guess unpublished V-AMT equivalence and preserves explicit parking limits", () => {
@@ -45,7 +99,7 @@ describe("practical test center source catalog", () => {
       "일부 다름",
     );
     expect(getPracticalCenterComparison(seoul!).pneumatic.label).toBe(
-      "공개표 미기재",
+      "미확인",
     );
     expect(getPracticalCenterComparison(seoul!).parking.label).toBe(
       "주차불가",
@@ -56,7 +110,7 @@ describe("practical test center source catalog", () => {
     const cw3m = practicalEquipmentModelsById.get("cnw-cw-3m");
     const cat3m = practicalEquipmentModelsById.get("cnw-cw-cat3m");
     const yeongju = practicalEquipmentModelsById.get(
-      "postech-weltop-acdc300a",
+      "postech-weltop-unknown-300a",
     );
     const gumi = practicalEquipmentModelsById.get("postech-ac300a");
 
@@ -72,12 +126,12 @@ describe("practical test center source catalog", () => {
       normalizedModelName: "CW-CTA3M",
       normalizationStatus: "probable_transcription_error",
       outputCurrentType: "ac",
-      outputVerification: "confirmed",
+      outputVerification: "probable",
     });
     expect(yeongju?.welding).toMatchObject({
-      normalizedModelName: "WELTOP-ACDC300A",
-      outputCurrentType: "ac_dc",
-      outputVerification: "probable",
+      normalizedModelName: null,
+      outputCurrentType: "unknown",
+      outputVerification: "unknown",
     });
     expect(gumi?.welding).toMatchObject({
       normalizedModelName: "AC300A",
@@ -106,7 +160,7 @@ describe("practical test center source catalog", () => {
     });
     expect(getPracticalCenterComparison(yeongju!).welding).toMatchObject({
       status: "needs_check",
-      label: "교류·직류 유력",
+      label: "현장 확인",
     });
     expect(getPracticalCenterComparison(gumi!).welding).toMatchObject({
       status: "ac",

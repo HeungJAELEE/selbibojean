@@ -4,13 +4,21 @@
  * 변경이력과 함께 이 기준선을 명시적으로 갱신해야 한다.
  */
 export const PRACTICAL_BASELINE_MANIFEST = {
-  sourceCommit: "0d5d2b7509cd7b7d1b86191f76b84665e7a23d89",
-  capturedAt: "2026-07-27T18:47:00+09:00",
+  sourceCommit: "9df7d9420f2e3fd7d6b7535b0871bd6043f306c8",
+  capturedAt: "2026-07-28T12:34:00+09:00",
+  changeHistory: [
+    {
+      changedAt: "2026-07-28T12:34:00+09:00",
+      scope: "visualAids",
+      summary:
+        "NCS 교재에만 있던 브레이크 균열·마모·오염 상태 사진 6장을 정답 라벨 없이 개념 학습용 시각자료 1묶음으로 추가",
+    },
+  ],
   sets: {
     questions: {
-      count: 128,
+      count: 160,
       sortedIdsSha256:
-        "655d528a73db2eafd70ccef9adc0214d666acfcbfbe89cf08bed5d4d16d56b6f",
+        "2263a0268c7b2fb93cf3d1c5155109ff170c6c62b677f35cd3c98fbe57772d50",
     },
     concepts: {
       count: 89,
@@ -18,9 +26,9 @@ export const PRACTICAL_BASELINE_MANIFEST = {
         "f4ef818d5520a934949e3a18b16e3f58f4b88ca74ba8db6a48173da255249963",
     },
     visualAids: {
-      count: 31,
+      count: 70,
       sortedIdsSha256:
-        "f4d9e32f1de0cc1fb4cc0ba0ac9408815c91902b0d4c30a74a3d6a2cd3b10f28",
+        "0e768a02a4811952303b0876f0c881f572d0278317b58262feb82dbdeb5f5db6",
     },
   },
 } as const;

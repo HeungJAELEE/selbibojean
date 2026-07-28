@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">유도가열기에 베어링과 온도센서 설치</title>
+  <desc id="desc">유도가열기 요크에 베어링을 걸고 내륜에 온도센서를 접촉한 뒤 목표온도를 설정하는 장면</desc>
+  <rect width="640" height="360" rx="24" fill="#f8fafc"/>
+  <rect x="48" y="245" width="544" height="54" rx="14" fill="#163b5c"/>
+  <rect x="84" y="72" width="126" height="180" rx="18" fill="#d8e6ef" stroke="#163b5c" stroke-width="7"/>
+  <rect x="108" y="104" width="78" height="54" rx="8" fill="#102f49"/>
+  <text x="147" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#f4b942">110</text>
+  <path d="M210 116h272v66H210" fill="none" stroke="#163b5c" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="352" cy="149" r="77" fill="#c7eef1" stroke="#163b5c" stroke-width="14"/>
+  <circle cx="352" cy="149" r="33" fill="#ffffff" stroke="#163b5c" stroke-width="9"/>
+  <circle cx="322" cy="113" r="10" fill="#d45a3a"/>
+  <path d="M322 113C260 71 232 82 194 94" fill="none" stroke="#d45a3a" stroke-width="7" stroke-linecap="round"/>
+  <path d="M310 217c-18 12-28 26-28 42M352 226c0 14 0 22 0 34M394 217c18 12 28 26 28 42" fill="none" stroke="#f4b942" stroke-width="8" stroke-linecap="round"/>
+</svg>

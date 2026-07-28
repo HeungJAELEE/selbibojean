@@ -31,18 +31,6 @@ export const PRACTICAL_NCS_COVERAGE_HOLDS: PracticalNcsCoverageHold[] = [
     nextAction: "단위와 효율 조건이 명시된 독립 문제 또는 공식 기준을 확보한다.",
   },
   {
-    id: "NCS-HOLD-SEN-PHOTOELECTRIC",
-    ncsCode: "1503010204",
-    title: "광전스위치 세부 작동방식의 그림 판독",
-    pdfPages: "53",
-    printedPages: "41",
-    figureNumbers: ["광전스위치 예시 그림"],
-    disposition: "held_visual_asset",
-    rationale:
-      "원문 예시 그림만으로는 시험에서 요구할 수 있는 설치·광축·반사형 세부 판정을 동일하게 복원할 수 없다.",
-    nextAction: "원본 그림번호와 정답 결정요소가 대조되면 그림 맞추기 항목으로 별도 승격한다.",
-  },
-  {
     id: "NCS-HOLD-SEN-LOADCELL",
     ncsCode: "1503010204",
     title: "로드셀 형식·원리의 세부 분류",
@@ -91,18 +79,6 @@ export const PRACTICAL_NCS_COVERAGE_HOLDS: PracticalNcsCoverageHold[] = [
     nextAction: "원리는 현재 레슨으로 유지하고 수치는 WPS·제조사 조건이 확인된 경우에만 제시한다.",
   },
   {
-    id: "NCS-HOLD-WELD-REPAIR-VISUAL",
-    ncsCode: "1601050108",
-    title: "보수용접 결함 사진·검사 판정 이미지",
-    pdfPages: "35, 61",
-    printedPages: "23, 49",
-    figureNumbers: ["결함부 보수·비파괴검사 도해"],
-    disposition: "held_visual_asset",
-    rationale:
-      "결함 판정은 사진의 확대방향·표시·검사 조건에 좌우되므로 원본과 동일성 검증 없이 그림 문제로 공개하지 않는다.",
-    nextAction: "NCS 그림번호와 공개 이용조건을 확인한 뒤 원본 또는 독립 재도식으로 재검수한다.",
-  },
-  {
     id: "NCS-HOLD-SAFE-LEGAL",
     ncsCode: "1503010122",
     title: "조립안전관리의 법정 수치·현장별 통제조건",
@@ -125,41 +101,5 @@ export const PRACTICAL_NCS_COVERAGE_HOLDS: PracticalNcsCoverageHold[] = [
     rationale:
       "표준 기호와 수치표는 적용판·도면 조건이 있어 표 일부만 분리해 정답화하지 않는다.",
     nextAction: "개념 정의는 유지하고 표준표·도면 이미지는 최신판 및 원본 이용조건 확인 후 추가한다.",
-  },
-  {
-    id: "NCS-HOLD-MEASURING-VISUAL",
-    ncsCode: "1502010504",
-    title: "사인바·V블록·나사 유효경의 원본 측정 배치",
-    pdfPages: "59-62, 67-68, 84-87",
-    printedPages: "47-50, 55-56, 72-75",
-    figureNumbers: ["그림 3-14-3-20", "그림 3-46"],
-    disposition: "held_visual_asset",
-    rationale:
-      "측정값을 판정하는 핵심은 기구 배치와 눈금이므로, 원문 그림을 정확히 대조하기 전에는 그림 맞추기 문제로 공개하지 않는다.",
-    nextAction: "원문 그림의 페이지·번호·정답 결정요소를 대조한 뒤 이미지를 별도 등록한다.",
-  },
-  {
-    id: "NCS-HOLD-DRIVE-VISUAL",
-    ncsCode: "1503010120",
-    title: "구동장치 조립공구·축정렬 원본 사진",
-    pdfPages: "19, 21, 42, 44-46",
-    printedPages: "7, 9, 30, 32-34",
-    figureNumbers: ["그림 2-7-2-10"],
-    disposition: "held_visual_asset",
-    rationale:
-      "공구·정렬 상태는 촬영 방향과 부품 형상에 따라 답이 달라질 수 있어 원문 사진을 추정해 붙이지 않는다.",
-    nextAction: "NCS 원본 사진의 공개 이용조건과 답안 판정요소를 확인한 후 이미지 학습으로 승격한다.",
-  },
-  {
-    id: "NCS-HOLD-DRIVE-MAINTENANCE-VISUAL",
-    ncsCode: "1505010108",
-    title: "구동장치 정비의 원본 사진·간극 수치표",
-    pdfPages: "96-100, 105, 116, 122, 156-168",
-    printedPages: "84-88, 93, 104, 110, 144-156",
-    figureNumbers: ["그림 3-6-3-42", "그림 4-23-4-36"],
-    disposition: "held_visual_asset",
-    rationale:
-      "베어링·브레이크·윤활의 실사 사진과 간극 수치는 기종·도면·정비기준을 확인해야 하므로 원문 그대로 복제하거나 임의 도식으로 대체하지 않는다.",
-    nextAction: "원본 사진·표의 이용조건과 실제 출제 캡처 일치 여부를 대조한 뒤 항목별로 승격한다.",
   },
 ];

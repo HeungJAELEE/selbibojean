@@ -14,18 +14,29 @@ const sequenceStepIds = new Set(
 );
 
 describe("representative practical visual coverage", () => {
-  it("tracks five ready items and the held gear-damage item", () => {
-    expect(PRACTICAL_VISUAL_COVERAGE).toHaveLength(6);
+  it("tracks every curated visual coverage item as ready", () => {
+    expect(PRACTICAL_VISUAL_COVERAGE).toHaveLength(49);
     expect(
       PRACTICAL_VISUAL_COVERAGE.filter((item) => item.status === "ready"),
-    ).toHaveLength(5);
+    ).toHaveLength(49);
+    expect(
+      PRACTICAL_VISUAL_COVERAGE.filter((item) => item.status === "held"),
+    ).toEqual([]);
     expect(
       PRACTICAL_VISUAL_COVERAGE.find(
         (item) => item.id === "visual-coverage-gear-damage",
       ),
     ).toMatchObject({
-      status: "held",
-      visualAidIds: [],
+      status: "ready",
+      visualAidIds: ["diagram-gear-damage"],
+    });
+    expect(
+      PRACTICAL_VISUAL_COVERAGE.find(
+        (item) => item.id === "visual-coverage-bearing-heating",
+      ),
+    ).toMatchObject({
+      status: "ready",
+      visualAidIds: ["diagram-bearing-induction-heating-sequence"],
     });
   });
 
@@ -47,12 +58,105 @@ describe("representative practical visual coverage", () => {
   });
 
   it("limits subject summary visuals to the curated low-density set", () => {
-    expect(visualAidIdsForSubjectSummary("subject-3")).toHaveLength(2);
+    expect(visualAidIdsForSubjectSummary("subject-2")).toHaveLength(1);
+    expect(visualAidIdsForSubjectSummary("subject-3")).toHaveLength(3);
     expect(visualAidIdsForSubjectSummary("subject-4")).toHaveLength(3);
     expect(visualAidIdsForSubjectSummary("subject-1")).toEqual([]);
   });
 
+  it("places reviewed NCS reference images on their learner concepts and cards", () => {
+    expect(
+      PRACTICAL_VISUAL_COVERAGE.find(
+        (item) => item.id === "visual-coverage-spherical-roller-bearing",
+      ),
+    ).toMatchObject({
+      conceptIds: ["PCON-004"],
+      examCardIds: ["PWEC-BEARING-IDENTIFICATION"],
+      visualAidIds: ["ncs-spherical-roller-bearing"],
+      status: "ready",
+    });
+    expect(
+      PRACTICAL_VISUAL_COVERAGE.find(
+        (item) => item.id === "visual-coverage-accumulator-safety-circuit",
+      ),
+    ).toMatchObject({
+      conceptIds: ["PCON-040"],
+      visualAidIds: ["ncs-accumulator-safety-circuit"],
+      status: "ready",
+    });
+    expect(
+      PRACTICAL_VISUAL_COVERAGE.find(
+        (item) => item.id === "visual-coverage-brake-condition-examples",
+      ),
+    ).toMatchObject({
+      conceptIds: ["PCON-SUP-030"],
+      examCardIds: [],
+      questionIds: [],
+      sequenceStepIds: [],
+      visualAidIds: ["ncs-brake-condition-examples"],
+      status: "ready",
+    });
+    expect(
+      PRACTICAL_VISUAL_COVERAGE.find(
+        (item) =>
+          item.id === "visual-coverage-brake-pad-lining-inspection",
+      ),
+    ).toMatchObject({
+      examCardIds: ["PWEC-BRAKE-PAD-LINING-INSPECTION"],
+      questionIds: ["EXP-VIS-BRAKE-PAD-LINING-01"],
+      sequenceStepIds: [],
+      visualAidIds: ["ncs-brake-pad-lining-inspection"],
+      status: "ready",
+    });
+  });
+
+  it("keeps brake condition examples out of exam prompts and sequences", () => {
+    const visualAid = aidsById.get("ncs-brake-condition-examples");
+    const publicIdentifiers = [
+      ...(visualAid?.imagePaths ?? []),
+      ...(visualAid?.frames.map((frame) => frame.id) ?? []),
+    ].join(" ");
+
+    expect(visualAid).toMatchObject({
+      technicalReviewStatus: "verified",
+      usageTypes: ["concept_explanation"],
+      answerCritical: false,
+    });
+    expect(visualAid?.usageTypes).not.toContain("past_exam_prompt");
+    expect(visualAid?.usageTypes).not.toContain("variant_exam_prompt");
+    expect(visualAid?.usageTypes).not.toContain("sequence_step");
+    expect(publicIdentifiers).not.toMatch(
+      /crack|wear|fluid|contaminated|overheat/,
+    );
+  });
+
+  it("uses neutral public frame identifiers for the brake inspection prompt", () => {
+    const visualAid = aidsById.get("ncs-brake-pad-lining-inspection");
+    const publicIdentifiers = [
+      ...(visualAid?.imagePaths ?? []),
+      ...(visualAid?.frames.map((frame) => frame.id) ?? []),
+    ].join(" ");
+
+    expect(visualAid).toMatchObject({
+      technicalReviewStatus: "verified",
+      usageTypes: [
+        "recognition",
+        "concept_explanation",
+        "variant_exam_prompt",
+      ],
+    });
+    expect(visualAid?.usageTypes).not.toContain("sequence_step");
+    expect(publicIdentifiers).not.toMatch(
+      /fluid|surface|thickness|lining-dimension/,
+    );
+  });
+
   it("contains no learner-public AI-generated asset", () => {
+    expect(
+      PRACTICAL_VISUAL_AIDS.filter(
+        (aid) => aid.publicUseStatus !== "public",
+      ),
+    ).toEqual([]);
     expect(
       PRACTICAL_VISUAL_AIDS.filter(
         (aid) =>

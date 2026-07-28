@@ -31,13 +31,13 @@ describe("practical written governance manifest", () => {
     expect(manifest.scope).toBe("practical_written_only");
     expect(manifest.sourceSha256).toBe(content.report.sourceSha256);
     expect(manifest.report.evidence).toEqual({
-      pastReconstructed: 41,
+      pastReconstructed: 42,
       pastVariant: 0,
-      predictedRelated: 87,
+      predictedRelated: 118,
       ncsSupplement: 43,
     });
     expect(validatePracticalExamEvidenceGraph(manifest.evidence)).toEqual([]);
-    expect(countPracticalActualOccurrences(manifest.evidence)).toBe(41);
+    expect(countPracticalActualOccurrences(manifest.evidence)).toBe(42);
   });
 
   it("keeps all work-task links and records outside the written-only scope", () => {

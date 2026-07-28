@@ -20,9 +20,7 @@ const [content, governance] = await Promise.all([
       "src/data/generated/practical-written-governance.json",
     ),
     "utf8",
-  ).then(
-    (value) => JSON.parse(value) as PracticalWrittenGovernanceManifest,
-  ),
+  ).then((value) => JSON.parse(value) as PracticalWrittenGovernanceManifest),
 ]);
 
 const conceptsById = new Map(
@@ -41,14 +39,12 @@ const questionsFor = (ids: string[]): PracticalQuestion[] =>
   });
 
 describe("practical written exam-first cards", () => {
-  it("defines the ten representative exam cards exactly once", () => {
-    expect(PRACTICAL_WRITTEN_EXAM_CARD_SEEDS).toHaveLength(10);
+  it("defines the forty representative exam cards exactly once", () => {
+    expect(PRACTICAL_WRITTEN_EXAM_CARD_SEEDS).toHaveLength(42);
     expect(
       new Set(PRACTICAL_WRITTEN_EXAM_CARD_SEEDS.map((card) => card.id)).size,
-    ).toBe(10);
-    expect(
-      PRACTICAL_WRITTEN_EXAM_CARD_SEEDS.map((card) => card.id),
-    ).toEqual([
+    ).toBe(42);
+    expect(PRACTICAL_WRITTEN_EXAM_CARD_SEEDS.map((card) => card.id)).toEqual([
       "PWEC-BEARING-IDENTIFICATION",
       "PWEC-BEARING-INDUCTION-HEATING",
       "PWEC-SENSOR-HYSTERESIS",
@@ -59,6 +55,38 @@ describe("practical written exam-first cards", () => {
       "PWEC-GEAR-SURFACE-DAMAGE",
       "PWEC-TPM-AUTONOMOUS-MAINTENANCE",
       "PWEC-OEE-CALCULATION",
+      "PWEC-GEAR-COUPLING-SEQUENCE",
+      "PWEC-TAPERED-BEARING-ASSEMBLY",
+      "PWEC-BEARING-DAMAGE-IDENTIFICATION",
+      "PWEC-RT-FILM-DEFECT-IDENTIFICATION",
+      "PWEC-BRAKE-PAD-LINING-INSPECTION",
+      "PWEC-UNIVERSAL-JOINT-OVERHAUL",
+      "PWEC-SHAFT-ALIGNMENT-SEQUENCE",
+      "PWEC-GEARBOX-DISASSEMBLY",
+      "PWEC-BEARING-PULLER-SEQUENCE",
+      "PWEC-BUTT-WELDING-1G",
+      "PWEC-BUTT-WELDING-3G",
+      "PWEC-BUTT-WELDING-2G",
+      "PWEC-BUTT-WELDING-4G",
+      "PWEC-CYLINDER-GAUGE-MEASUREMENT",
+      "PWEC-SINE-CENTER-TAPER-MEASUREMENT",
+      "PWEC-BEARING-PRESS-ASSEMBLY",
+      "PWEC-AIR-ARC-GOUGING-SEQUENCE",
+      "PWEC-CRACK-REPAIR-SEQUENCE",
+      "PWEC-BRAKE-ALIGNMENT-SEQUENCE",
+      "PWEC-BRAKE-FIXING-SEQUENCE",
+      "PWEC-BRAKE-AIR-GAP-ADJUSTMENT",
+      "PWEC-GAUGE-BLOCK-THIN-WRINGING",
+      "PWEC-GAUGE-BLOCK-THICK-WRINGING",
+      "PWEC-VERNIER-MEASUREMENT-SEQUENCE",
+      "PWEC-THREE-WIRE-HOLDER-PREPARATION",
+      "PWEC-DOVETAIL-ROLLER-MEASUREMENT",
+      "PWEC-INTERNAL-TAPER-BALL-MEASUREMENT",
+      "PWEC-TIRE-COUPLING-ASSEMBLY",
+      "PWEC-MAGNETIC-COUPLING-ASSEMBLY",
+      "PWEC-GRID-COUPLING-ASSEMBLY",
+      "PWEC-OUTSIDE-MICROMETER-ZERO-ADJUSTMENT",
+      "PWEC-DRIVE-UNIT-ASSEMBLY-PROCESS",
     ]);
   });
 
@@ -94,9 +122,7 @@ describe("practical written exam-first cards", () => {
         `${card.id} has a non-past question in pastQuestionIds`,
       ).toBe(true);
       expect(
-        predictedQuestions.every(
-          (question) => question.kind === "predicted",
-        ),
+        predictedQuestions.every((question) => question.kind === "predicted"),
         `${card.id} has a non-predicted question in predictedQuestionIds`,
       ).toBe(true);
     }
@@ -131,22 +157,99 @@ describe("practical written exam-first cards", () => {
     expect(overlap?.evidenceIds).toContain("evidence:EXP-W01");
   });
 
-  it("uses stable visual frame IDs for the bearing heating sequence", () => {
+  it("uses reviewed self-authored frames for induction-heating steps", () => {
     const card = PRACTICAL_WRITTEN_EXAM_CARD_SEEDS.find(
       (item) => item.id === "PWEC-BEARING-INDUCTION-HEATING",
     );
-    const visualAid = PRACTICAL_VISUAL_AIDS.find(
-      (item) => item.id === "ncs-bearing-heating",
-    );
-    const frameIds = new Set(visualAid?.frames.map((frame) => frame.id));
 
     expect(card?.sequenceSteps).toHaveLength(3);
-    for (const step of card?.sequenceSteps ?? []) {
-      expect(step.visualFrameIds).toEqual(expect.any(Array));
-      for (const frameId of step.visualFrameIds) {
-        expect(frameIds.has(frameId), `${step.id}: ${frameId}`).toBe(true);
+    expect(card?.visualAidIds).toEqual([
+      "diagram-bearing-induction-heating-sequence",
+    ]);
+    expect(card?.sequenceSteps.map((step) => step.visualFrameIds)).toEqual([
+      ["diagram-bearing-induction-heating-sequence--check"],
+      ["diagram-bearing-induction-heating-sequence--heat"],
+      ["diagram-bearing-induction-heating-sequence--fit"],
+    ]);
+  });
+
+  it("connects reviewed recognition images to bearing and vernier cards", () => {
+    expect(
+      PRACTICAL_WRITTEN_EXAM_CARD_SEEDS.find(
+        (card) => card.id === "PWEC-BEARING-IDENTIFICATION",
+      )?.visualAidIds,
+    ).toEqual(["ncs-bearing-four-types", "ncs-spherical-roller-bearing"]);
+    expect(
+      PRACTICAL_WRITTEN_EXAM_CARD_SEEDS.find(
+        (card) => card.id === "PWEC-VERNIER-READING",
+      )?.visualAidIds,
+    ).toEqual(["ncs-vernier-reading"]);
+  });
+
+  it("promotes brake pad and lining visuals as inspection images, not an invented sequence", () => {
+    const card = PRACTICAL_WRITTEN_EXAM_CARD_SEEDS.find(
+      (item) => item.id === "PWEC-BRAKE-PAD-LINING-INSPECTION",
+    );
+
+    expect(card).toMatchObject({
+      format: "image",
+      visualAidIds: ["ncs-brake-pad-lining-inspection"],
+      sequenceSteps: [],
+    });
+    expect(card?.questionPattern).not.toMatch(/순서로 배열/);
+  });
+
+  it("maps every new sequence step to a verified frame and shuffles only the prompt", () => {
+    for (const cardId of [
+      "PWEC-GEAR-COUPLING-SEQUENCE",
+      "PWEC-TAPERED-BEARING-ASSEMBLY",
+      "PWEC-UNIVERSAL-JOINT-OVERHAUL",
+      "PWEC-SHAFT-ALIGNMENT-SEQUENCE",
+      "PWEC-GEARBOX-DISASSEMBLY",
+      "PWEC-BEARING-PULLER-SEQUENCE",
+      "PWEC-BUTT-WELDING-1G",
+      "PWEC-BUTT-WELDING-3G",
+      "PWEC-BUTT-WELDING-2G",
+      "PWEC-BUTT-WELDING-4G",
+      "PWEC-BRAKE-ALIGNMENT-SEQUENCE",
+      "PWEC-BRAKE-FIXING-SEQUENCE",
+      "PWEC-BRAKE-AIR-GAP-ADJUSTMENT",
+      "PWEC-GAUGE-BLOCK-THIN-WRINGING",
+      "PWEC-GAUGE-BLOCK-THICK-WRINGING",
+      "PWEC-VERNIER-MEASUREMENT-SEQUENCE",
+      "PWEC-THREE-WIRE-HOLDER-PREPARATION",
+      "PWEC-DOVETAIL-ROLLER-MEASUREMENT",
+    ]) {
+      const card = PRACTICAL_WRITTEN_EXAM_CARD_SEEDS.find(
+        (item) => item.id === cardId,
+      );
+      const visualAid = PRACTICAL_VISUAL_AIDS.find(
+        (item) => item.id === card?.visualAidIds[0],
+      );
+      const frameIds = visualAid?.frames.map((frame) => frame.id) ?? [];
+
+      expect(visualAid?.technicalReviewStatus).toBe("verified");
+      expect(visualAid?.promptFrameIds).toHaveLength(frameIds.length);
+      expect(visualAid?.promptFrameIds).not.toEqual(frameIds);
+      expect(new Set(visualAid?.promptFrameIds)).toEqual(new Set(frameIds));
+      for (const step of card?.sequenceSteps ?? []) {
+        expect(step.visualFrameIds).toHaveLength(1);
+        expect(frameIds).toContain(step.visualFrameIds[0]);
       }
     }
+  });
+
+  it("records the tire-coupling ordering item as 2026 round 2 question 10", () => {
+    const card = PRACTICAL_WRITTEN_EXAM_CARD_SEEDS.find(
+      (item) => item.id === "PWEC-TIRE-COUPLING-ASSEMBLY",
+    );
+
+    expect(card?.pastQuestionIds).toEqual(["P-2026-2-Q10"]);
+    expect(card?.predictedQuestionIds).toEqual([]);
+    expect(card?.sequenceSteps).toHaveLength(4);
+    expect(
+      card?.sequenceSteps.every((step) => step.visualFrameIds.length === 1),
+    ).toBe(true);
   });
 
   it("connects the subject 4 overview diagrams to their exam cards", () => {

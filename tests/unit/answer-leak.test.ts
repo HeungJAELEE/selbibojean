@@ -33,6 +33,26 @@ describe("answer leak guard", () => {
     ).toEqual([]);
   });
 
+  it("rejects canonical sequence metadata from pre-submit visual DTOs", () => {
+    expect(
+      findForbiddenPreSubmitFields({
+        frames: [
+          {
+            learningAltText: "answer-bearing action",
+            captionAfterAnswer: "final step",
+            outputAssetHash: "internal-hash",
+          },
+        ],
+        promptFrameIds: ["canonical-frame-id"],
+      }).map((finding) => finding.field),
+    ).toEqual([
+      "learningAltText",
+      "captionAfterAnswer",
+      "outputAssetHash",
+      "promptFrameIds",
+    ]);
+  });
+
   it("normalizes and deduplicates only long unique answer sentinels", () => {
     const longAnswer =
       "  축압기는 압력 에너지를 저장하고 맥동을 흡수하며 비상 동력원으로 사용한다.  ";

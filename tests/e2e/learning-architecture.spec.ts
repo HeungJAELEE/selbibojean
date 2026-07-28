@@ -2,6 +2,23 @@ import { expect, test } from "@playwright/test";
 
 test("header exposes the four requested learning areas", async ({ page }) => {
   await page.goto("/");
+  const contactLink = page.getByRole("link", {
+    name: "네이버 블로그로 문의하기",
+  });
+
+  await expect(contactLink).toBeVisible();
+  await expect(contactLink).toHaveAttribute(
+    "href",
+    "https://blog.naver.com/heung891025/224357527404",
+  );
+  await expect(contactLink).toHaveAttribute("target", "_blank");
+  await expect(contactLink).toHaveAttribute("rel", "noreferrer");
+  await expect(
+    contactLink.evaluate(
+      (element) => element.nextElementSibling?.textContent?.trim(),
+    ),
+  ).resolves.toBe("로그인");
+
   const mobile = (page.viewportSize()?.width ?? 1280) < 768;
   if (mobile) {
     await page.getByRole("button", { name: "메뉴 열기" }).click();
@@ -85,24 +102,32 @@ test("practical information has pneumatic hydraulic welding and prep tabs", asyn
   await page.getByRole("tab", { name: "수험자 준비물·팁" }).click();
   await expect(
     page.getByRole("heading", {
-      name: /Q-Net 공개과제·수험자 안내가 최종 기준/,
+      name: "Q-Net 공식 지참준비물 9종",
     }),
   ).toBeVisible();
   await expect(
     page.locator('table a[href^="https://link.coupang.com/a/"]'),
-  ).toHaveCount(13);
+  ).toHaveCount(14);
   const weldingSupplyRow = page.getByRole("row", {
     name: /용접용 보호기구 일체/,
   });
-  await expect(weldingSupplyRow).toContainText("보호구(용접장갑)");
-  await expect(weldingSupplyRow).toContainText("보호구(자동용접면)");
+  if ((page.viewportSize()?.width ?? 1280) >= 1024) {
+    await expect(weldingSupplyRow).toContainText("보호구(용접장갑)");
+    await expect(weldingSupplyRow).toContainText("보호구(자동용접면)");
+  }
+  const safetyShoeLink = page.locator(
+    'a[href="https://link.coupang.com/a/fKgVdg1sxo"]:visible',
+  );
+  await expect(safetyShoeLink).toHaveCount(1);
+  await expect(safetyShoeLink).toContainText("보호구(안전화)");
+  await expect(safetyShoeLink).toHaveAttribute("rel", /sponsored/);
   await expect(
     page.getByRole("heading", {
       name: "안전 보호구 우선 · 선택 공구는 시험장 확인 후",
     }),
   ).toHaveCount(0);
-  await expect(page.locator("main")).toContainText("얇은 긴팔 작업복");
-  await expect(page.locator("main")).toContainText("안전화는 필수");
+  await expect(page.locator("main")).toContainText("얇은 긴팔");
+  await expect(page.locator("main")).toContainText("안전화는 반드시 착용");
 
   await page.getByRole("tab", { name: "시험장·장비" }).click();
   await expect(

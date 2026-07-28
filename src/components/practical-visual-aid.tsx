@@ -18,7 +18,18 @@ export function PracticalVisualAidFigure({
   }
 
   const isPrompt = mode === "prompt";
-  const frames = visualAid.frames;
+  const frameById = new Map(
+    visualAid.frames.map((frame) => [frame.id, frame] as const),
+  );
+  const promptFrames = visualAid.promptFrameIds
+    ?.map((frameId) => frameById.get(frameId))
+    .filter((frame) => frame !== undefined);
+  const frames =
+    isPrompt && promptFrames?.length === visualAid.frames.length
+      ? promptFrames
+      : visualAid.frames;
+  const useHorizontalPortraitStrip =
+    visualAid.id === "ncs-drive-unit-assembly-process-sequence";
 
   return (
     <figure
@@ -34,17 +45,28 @@ export function PracticalVisualAidFigure({
       ) : null}
       <ol
         aria-label={isPrompt ? "문제 이미지 순서" : undefined}
-        className={`grid gap-4 ${density === "compact" ? "p-3" : "p-4"} ${
-          frames.length > 1
-            ? "grid-cols-1 sm:grid-cols-2 xl:grid-cols-4"
-            : "grid-cols-1"
+        data-layout={
+          useHorizontalPortraitStrip ? "horizontal-portrait-strip" : "grid"
+        }
+        className={`gap-4 ${density === "compact" ? "p-3" : "p-4"} ${
+          useHorizontalPortraitStrip
+            ? "flex snap-x snap-mandatory overflow-x-auto"
+            : `grid ${
+                frames.length > 1
+                  ? "grid-cols-1 sm:grid-cols-2 xl:grid-cols-4"
+                  : "grid-cols-1"
+              }`
         }`}
       >
         {frames.map((frame, index) => (
           <li
             key={frame.id}
             data-testid={`practical-visual-frame-${frame.id}`}
-            className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50"
+            className={`overflow-hidden rounded-xl border border-slate-200 bg-slate-50 ${
+              useHorizontalPortraitStrip
+                ? "w-[min(78vw,20rem)] flex-none snap-start md:w-72"
+                : ""
+            }`}
           >
             {isPrompt && visualAid.promptLabels?.[index] ? (
               <p
@@ -56,7 +78,13 @@ export function PracticalVisualAidFigure({
             ) : null}
             <div
               className={`relative ${
-                density === "compact" ? "min-h-44" : "min-h-52"
+                useHorizontalPortraitStrip
+                  ? "aspect-[3/4] w-full"
+                  : frames.length > 1
+                    ? "aspect-[5/2] w-full"
+                    : density === "compact"
+                      ? "min-h-44"
+                      : "min-h-52"
               }`}
             >
               <Image
@@ -65,11 +93,14 @@ export function PracticalVisualAidFigure({
                 fill
                 loading={index === 0 ? "eager" : "lazy"}
                 sizes={
-                  frames.length > 1
-                    ? "(max-width: 640px) 100vw, 50vw"
-                    : "100vw"
+                  useHorizontalPortraitStrip
+                    ? "(max-width: 768px) 78vw, 18rem"
+                    : frames.length > 1
+                      ? "(max-width: 640px) 100vw, 50vw"
+                      : "100vw"
                 }
-                className="object-contain p-3"
+                className="object-contain p-2"
+                style={{ objectFit: "contain" }}
               />
             </div>
           </li>

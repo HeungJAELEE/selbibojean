@@ -138,6 +138,19 @@ export type PracticalVisualFrame = {
   outputAssetHash: string;
 };
 
+export type PublicPracticalSequenceFrame = {
+  /** Opaque token used only for one question's public solve flow. */
+  id: string;
+  imageUrl: string;
+  promptAltText: string;
+  captionBeforeAnswer: string | null;
+};
+
+export type PublicPracticalSequenceVisualAid = {
+  layout: "grid" | "horizontal-portrait-strip";
+  frames: PublicPracticalSequenceFrame[];
+};
+
 export type PracticalWrittenSequenceStep = {
   id: string;
   label: string;
@@ -236,6 +249,11 @@ export type PracticalVisualAid = {
   title: string;
   imagePaths: string[];
   frames: PracticalVisualFrame[];
+  /**
+   * 문제 화면에서만 사용하는 프레임 순서다.
+   * 학습 화면은 `frames`의 정순서를 유지한다.
+   */
+  promptFrameIds?: string[];
   promptLabels?: string[];
   promptAltTexts?: string[];
   altText: string;
@@ -408,6 +426,15 @@ export type PracticalReveal = {
     page: string;
   }>;
   selfRating: SelfRating;
+  sequenceResult?: {
+    isCorrect: boolean;
+    correctFrameIds: string[];
+    frameFeedback: Array<{
+      frameId: string;
+      learningAltText: string;
+      captionAfterAnswer: string | null;
+    }>;
+  };
 };
 
 export type PracticalImportReport = {

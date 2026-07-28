@@ -2,6 +2,7 @@ import type {
   PracticalWrittenExamCard,
   PracticalWrittenExamCardFormat,
 } from "@/lib/domain/practical-types";
+import { PRACTICAL_TASK_SEQUENCE_SEEDS } from "./practical-task-sequences";
 
 export type PracticalWrittenExamCardSeed = Omit<
   PracticalWrittenExamCard,
@@ -132,6 +133,14 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
       "사진 4종의 명칭과 주로 받는 하중 방향을 함께 쓰시오.",
       "자동조심 롤러베어링의 식별 단서 2가지를 쓰시오.",
     ],
+    visualAidIds: [
+      "ncs-bearing-four-types",
+      "ncs-spherical-roller-bearing",
+    ],
+    recognitionVisualAidIds: [
+      "ncs-bearing-four-types",
+      "ncs-spherical-roller-bearing",
+    ],
     supplementalConceptIds: ["PCON-036", "PCON-SUP-035"],
   }),
   card({
@@ -180,12 +189,14 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
       "가열조립과 냉간 압입에서 힘을 가하는 링을 비교하시오.",
       "가열 후 축 어깨에 밀착되지 않았을 때 조치 순서를 쓰시오.",
     ],
-    visualAidIds: ["ncs-bearing-heating"],
+    visualAidIds: ["diagram-bearing-induction-heating-sequence"],
     sequenceSteps: [
       {
         id: "PWEC-BEARING-INDUCTION-HEATING-STEP-1",
         label: "베어링·축 치수와 가열기 상태를 확인한다.",
-        visualFrameIds: [],
+        visualFrameIds: [
+          "diagram-bearing-induction-heating-sequence--check",
+        ],
         checkpoint: "끼워맞춤 대상과 가열 가능 베어링인지 확인",
         wrongAction: "밀봉형·그리스 봉입형 베어링을 조건 확인 없이 가열",
         answerPhrase: "치수·상태 확인",
@@ -194,7 +205,7 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
         id: "PWEC-BEARING-INDUCTION-HEATING-STEP-2",
         label: "온도센서를 설치하고 지정 목표온도까지 균일하게 가열한다.",
         visualFrameIds: [
-          "ncs-bearing-heating--bearing-oil-bath-heating-diagram",
+          "diagram-bearing-induction-heating-sequence--heat",
         ],
         checkpoint: "온도센서 접촉과 균일 가열 확인",
         wrongAction: "직화로 한쪽만 가열",
@@ -206,7 +217,7 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
           "보호구를 착용해 신속히 삽입하고 어깨부 밀착·냉각 상태를 확인한다.",
         safetyCritical: true,
         visualFrameIds: [
-          "ncs-bearing-heating--bearing-heated-assembly-photo",
+          "diagram-bearing-induction-heating-sequence--fit",
         ],
         checkpoint: "축 어깨부 밀착과 냉각 후 고정 상태 확인",
         wrongAction: "가열 후 방치하거나 전동체를 타격",
@@ -447,6 +458,8 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
       "최소눈금 0.02 mm인 버니어의 눈금을 판독하시오.",
       "영점오차 +0.03 mm가 있을 때 보정 측정값을 구하시오.",
     ],
+    visualAidIds: ["ncs-vernier-reading"],
+    recognitionVisualAidIds: ["ncs-vernier-reading"],
     supplementalConceptIds: ["PCON-SUP-001"],
   }),
   card({
@@ -495,6 +508,8 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
       "세 손상의 표면모양·주원인·대책을 표로 비교하시오.",
       "윤활막 파괴와 과도한 미끄럼으로 생기는 손상명과 대책을 쓰시오.",
     ],
+    visualAidIds: ["diagram-gear-damage"],
+    recognitionVisualAidIds: ["diagram-gear-damage"],
     supplementalConceptIds: ["PCON-SUP-035"],
   }),
   card({
@@ -590,4 +605,396 @@ export const PRACTICAL_WRITTEN_EXAM_CARD_SEEDS: PracticalWrittenExamCardSeed[] =
     visualAidIds: ["diagram-oee-six-losses"],
     supplementalConceptIds: ["PCON-029"],
   }),
+  card({
+    id: "PWEC-GEAR-COUPLING-SEQUENCE",
+    title: "기어 커플링 측정·조립 4단계",
+    conceptIds: ["PCON-033"],
+    evidenceIds: ["evidence:EXP-VIS-GEAR-COUPLING-01"],
+    format: "sequence",
+    questionPattern:
+      "섞여 있는 네 작업 장면을 측정·위치 맞춤·조립·그리스 주입 순서로 배열한다.",
+    directAnswer:
+      "같은 조건으로 간격 측정 → 허브 위치 일치 → 슬리브·플랜지 조립 → 그리스 주입 순이다.",
+    studyKeywords: ["간격 측정", "위치 일치", "슬리브 조립", "볼트 체결", "그리스 주입"],
+    answerSkeleton: [
+      "양쪽 허브의 간격을 같은 조건으로 측정한다.",
+      "측정값과 축 중심에 맞춰 허브 위치를 일치시킨다.",
+      "슬리브와 플랜지를 조립·체결한다.",
+      "지정 그리스를 주입하고 플러그를 체결한다.",
+    ],
+    recognitionPoints: [
+      "간격 측정 장면에는 허브 사이에 측정공구와 GAP 표시가 보인다.",
+      "조립 장면은 슬리브가 닫히고 플랜지 볼트가 체결된 상태다.",
+      "그리스 주입은 기계적 조립이 끝난 뒤 마지막에 실시한다.",
+    ],
+    reasoningSummary: [
+      "측정과 정렬로 조립 위치를 먼저 확정한 뒤 체결과 윤활을 완료한다.",
+      "문제 사진의 번호가 바뀌어도 장면의 작업 목적을 보면 순서를 복원할 수 있다.",
+    ],
+    commonWrongAnswers: [
+      "간격 측정 전에 슬리브를 완전히 체결하기",
+      "그리스 주입을 위치 맞춤보다 먼저 실시하기",
+      "조립 후 플러그 재체결을 빼기",
+    ],
+    variationAxes: [
+      "사진 순서 변경",
+      "단계명 연결",
+      "그리스 주입 시점",
+      "측정·정렬 이유",
+    ],
+    pastQuestionIds: [],
+    predictedQuestionIds: ["EXP-VIS-GEAR-COUPLING-01"],
+    predictedExamples: [
+      "사진 4장을 조립 순서대로 배열하고 각 단계의 목적을 쓰시오.",
+    ],
+    visualAidIds: ["ncs-gear-coupling-sequence"],
+    sequenceSteps: [
+      {
+        id: "PWEC-GEAR-COUPLING-SEQUENCE-STEP-1",
+        label: "양쪽 허브의 간격을 같은 조건에서 측정한다.",
+        visualFrameIds: [
+          "ncs-gear-coupling-sequence--gear-coupling-measure",
+        ],
+        checkpoint: "양쪽 측정 기준과 허브 간격이 동일한지 확인",
+        wrongAction: "측정값 없이 슬리브를 먼저 체결",
+        answerPhrase: "동일 조건 간격 측정",
+      },
+      {
+        id: "PWEC-GEAR-COUPLING-SEQUENCE-STEP-2",
+        label: "측정값과 축 중심에 맞춰 허브 위치를 일치시킨다.",
+        visualFrameIds: [
+          "ncs-gear-coupling-sequence--gear-coupling-align",
+        ],
+        checkpoint: "편심·편각과 축간거리가 허용범위인지 확인",
+        wrongAction: "억지로 볼트를 조여 오정렬을 보정",
+        answerPhrase: "허브 위치 일치",
+      },
+      {
+        id: "PWEC-GEAR-COUPLING-SEQUENCE-STEP-3",
+        label: "슬리브와 플랜지를 맞추고 볼트를 체결한다.",
+        visualFrameIds: [
+          "ncs-gear-coupling-sequence--gear-coupling-assemble",
+        ],
+        checkpoint: "치형 물림과 볼트 구멍 정렬 확인",
+        wrongAction: "치형이 어긋난 상태에서 볼트를 강제 체결",
+        answerPhrase: "슬리브·플랜지 조립",
+      },
+      {
+        id: "PWEC-GEAR-COUPLING-SEQUENCE-STEP-4",
+        label: "지정 그리스를 주입하고 플러그를 재체결한다.",
+        visualFrameIds: [
+          "ncs-gear-coupling-sequence--gear-coupling-grease",
+        ],
+        checkpoint: "반대쪽 구멍으로 그리스가 나오는지와 플러그 체결 확인",
+        wrongAction: "윤활 없이 시운전하거나 플러그를 열린 채 둠",
+        answerPhrase: "그리스 주입·플러그 체결",
+      },
+    ],
+    supplementalConceptIds: ["PCON-022"],
+  }),
+  card({
+    id: "PWEC-TAPERED-BEARING-ASSEMBLY",
+    title: "테이퍼 롤러베어링 조립·간극조정 5단계",
+    conceptIds: ["PCON-036"],
+    evidenceIds: ["evidence:EXP-VIS-TAPERED-BEARING-01"],
+    format: "sequence",
+    questionPattern:
+      "섞여 있는 사진을 콘 삽입부터 다이얼 게이지 측정·간극조정·잠금 순서로 배열한다.",
+    directAnswer:
+      "안쪽 콘 삽입 → 허브·커버 조립 → 다이얼 게이지 설치·영점 → 간극 측정·조정 → 로크 와셔 고정·커버 복구 순이다.",
+    studyKeywords: ["콘 삽입", "허브 조립", "다이얼 게이지", "축방향 간극", "로크 와셔"],
+    answerSkeleton: [
+      "안쪽 콘을 삽입하고 허브 커버와 축을 조립한다.",
+      "다이얼 게이지를 설치하고 영점을 맞춘다.",
+      "허브를 앞뒤로 흔들어 축방향 간극을 읽는다.",
+      "제작사 규정값에 맞게 조정 너트를 조이거나 푼다.",
+      "로크 와셔로 고정하고 그리스·커버를 복구한 뒤 재확인한다.",
+    ],
+    recognitionPoints: [
+      "콘 삽입은 측정 전에 완료되는 조립 단계다.",
+      "다이얼 게이지 설치 뒤 허브를 흔들어 최대 이동량을 읽는다.",
+      "규정 간극에 맞춘 뒤에만 로크 와셔와 커버로 최종 고정한다.",
+    ],
+    reasoningSummary: [
+      "측정 가능한 상태로 먼저 조립하고, 영점·측정·조정·고정 순서로 마무리한다.",
+      "특정 간극값은 장비마다 다르므로 문제 조건이나 제작사 기준을 우선한다.",
+    ],
+    commonWrongAnswers: [
+      "게이지를 설치하기 전에 조정 너트를 최종 고정하기",
+      "허브를 흔들지 않고 한 지점 눈금만 읽기",
+      "간극 조정 뒤 로크 와셔 고정과 재측정을 빼기",
+    ],
+    variationAxes: [
+      "사진 순서 변경",
+      "영점 설정 단계",
+      "간극 과소·과대 결과",
+      "잠금·재확인 절차",
+    ],
+    pastQuestionIds: [],
+    predictedQuestionIds: ["EXP-VIS-TAPERED-BEARING-01"],
+    predictedExamples: [
+      "사진 5장을 순서대로 배열하고 간극이 너무 좁을 때의 결과를 쓰시오.",
+    ],
+    visualAidIds: ["ncs-tapered-bearing-assembly-sequence"],
+    sequenceSteps: [
+      {
+        id: "PWEC-TAPERED-BEARING-ASSEMBLY-STEP-1",
+        label: "규정 그리스를 도포한 안쪽 콘을 허브에 삽입한다.",
+        visualFrameIds: [
+          "ncs-tapered-bearing-assembly-sequence--tapered-bearing-inner-cone",
+        ],
+        checkpoint: "콘 방향, 청결, 그리스 도포 상태 확인",
+        wrongAction: "오염된 콘을 반대 방향으로 강제 삽입",
+        answerPhrase: "안쪽 콘 삽입",
+      },
+      {
+        id: "PWEC-TAPERED-BEARING-ASSEMBLY-STEP-2",
+        label: "허브 커버를 체결하고 허브를 축에 삽입한다.",
+        visualFrameIds: [
+          "ncs-tapered-bearing-assembly-sequence--tapered-bearing-hub-cover",
+        ],
+        checkpoint: "커버 볼트 대각선 토크와 허브 삽입 상태 확인",
+        wrongAction: "커버 볼트를 한쪽부터 완전히 조임",
+        answerPhrase: "허브·커버 조립",
+      },
+      {
+        id: "PWEC-TAPERED-BEARING-ASSEMBLY-STEP-3",
+        label: "다이얼 게이지를 설치하고 영점을 맞춘다.",
+        visualFrameIds: [
+          "ncs-tapered-bearing-assembly-sequence--tapered-bearing-dial-gauge",
+        ],
+        checkpoint: "게이지 고정, 측정자 접촉, 영점 복귀 확인",
+        wrongAction: "게이지가 흔들리는 상태에서 영점을 맞춤",
+        answerPhrase: "다이얼 게이지 설치·영점",
+      },
+      {
+        id: "PWEC-TAPERED-BEARING-ASSEMBLY-STEP-4",
+        label: "허브를 앞뒤로 흔들어 간극을 측정하고 규정값으로 조정한다.",
+        visualFrameIds: [
+          "ncs-tapered-bearing-assembly-sequence--tapered-bearing-clearance-adjust",
+        ],
+        checkpoint: "최대 이동량과 제작사 규정 간극 비교",
+        wrongAction: "규정값 확인 없이 조정 너트를 과도하게 조임",
+        answerPhrase: "축방향 간극 측정·조정",
+      },
+      {
+        id: "PWEC-TAPERED-BEARING-ASSEMBLY-STEP-5",
+        label: "로크 와셔로 너트를 고정하고 그리스·커버를 복구한다.",
+        visualFrameIds: [
+          "ncs-tapered-bearing-assembly-sequence--tapered-bearing-lock-cover",
+        ],
+        checkpoint: "잠금 상태, 커버 대각선 체결, 간극 재확인",
+        wrongAction: "너트 잠금 없이 커버만 조립",
+        answerPhrase: "로크 와셔 고정·커버 복구",
+      },
+    ],
+    supplementalConceptIds: ["PCON-004"],
+  }),
+  card({
+    id: "PWEC-BEARING-DAMAGE-IDENTIFICATION",
+    title: "베어링 손상 사진 8종 판별",
+    conceptIds: ["PCON-SUP-035"],
+    evidenceIds: ["evidence:EXP-VIS-BEARING-DAMAGE-01"],
+    format: "image",
+    questionPattern:
+      "사진의 표면 형상과 손상 위치를 보고 각 베어링 손상명을 쓰시오.",
+    directAnswer:
+      "(가) 파손, (나) 폴스 브리넬링·프레팅, (다) 녹·부식, (라) 플레이킹, (마) 전식, (바) 눌린 자국, (사) 용착, (아) 긁힘",
+    studyKeywords: [
+      "박리·긁힘",
+      "파손·압흔",
+      "폴스 브리넬링",
+      "용착·전식",
+      "녹·부식",
+    ],
+    answerSkeleton: [
+      "(가) 파손",
+      "(나) 폴스 브리넬링·프레팅",
+      "(다) 녹·부식",
+      "(라) 플레이킹",
+      "(마) 전식",
+      "(바) 눌린 자국",
+      "(사) 용착",
+      "(아) 긁힘",
+    ],
+    recognitionPoints: [
+      "표면 박리·길게 난 홈·국부 압흔처럼 결정적인 손상 형상을 먼저 본다.",
+      "전동체 간격을 따라 반복되는 자국은 폴스 브리넬링·프레팅을 의심한다.",
+      "전류 흔적, 접촉면 용착, 갈색 산화 변색을 서로 구분한다.",
+    ],
+    reasoningSummary: [
+      "손상 위치를 확인한 뒤 박리, 선형 홈, 압흔, 변색의 순서로 외형을 좁혀 간다.",
+      "명칭을 쓴 뒤 원인이나 대책을 묻는 변형에서는 윤활·설치·전류·수분 조건을 연결한다.",
+    ],
+    commonWrongAnswers: [
+      "플레이킹과 눌린 자국을 모두 표면 파손으로만 적는 답",
+      "폴스 브리넬링을 전식으로 적는 답",
+      "용착과 녹·부식을 변색만 보고 구분하지 않는 답",
+    ],
+    variationAxes: [
+      "사진 배열 순서 변경",
+      "손상명 대신 원인 쓰기",
+      "손상명과 방지대책 연결",
+      "비슷한 손상 사진 2개 비교",
+    ],
+    pastQuestionIds: [],
+    predictedQuestionIds: ["EXP-VIS-BEARING-DAMAGE-01"],
+    predictedExamples: [
+      "사진의 베어링 손상명을 쓰고 각 손상의 대표 원인을 한 가지씩 쓰시오.",
+    ],
+    visualAidIds: ["ncs-bearing-damage-identification"],
+    recognitionVisualAidIds: ["ncs-bearing-damage-identification"],
+    supplementalConceptIds: ["PCON-004"],
+  }),
+  card({
+    id: "PWEC-RT-FILM-DEFECT-IDENTIFICATION",
+    title: "RT 필름 용접결함 6종 판독",
+    conceptIds: ["PCON-044", "PCON-045"],
+    evidenceIds: ["evidence:EXP-VIS-RT-FILM-01"],
+    format: "image",
+    questionPattern:
+      "방사선투과 필름의 지시 모양과 위치를 보고 용접결함명을 쓰시오.",
+    directAnswer:
+      "(가) 균열, (나) 융합 불량, (다) 기공, (라) 언더컷, (마) 슬래그 섞임, (바) 용입 부족",
+    studyKeywords: [
+      "선형 지시",
+      "원형 지시",
+      "중심선 결함",
+      "경계부 결함",
+      "지시 위치",
+    ],
+    answerSkeleton: [
+      "(가) 균열",
+      "(나) 융합 불량",
+      "(다) 기공",
+      "(라) 언더컷",
+      "(마) 슬래그 섞임",
+      "(바) 용입 부족",
+    ],
+    recognitionPoints: [
+      "둥근 점, 불규칙 선, 중심선, 비드 경계 중 어디에 지시가 있는지 본다.",
+      "균열은 가늘고 방향성이 있는 불규칙 선형 지시로 판별한다.",
+      "용입 부족은 중심선, 융합 불량은 모재·패스 경계의 선형 지시를 본다.",
+    ],
+    reasoningSummary: [
+      "먼저 지시가 점인지 선인지 구분하고, 다음으로 중심선·경계부·분산 위치를 확인한다.",
+      "결함명을 쓴 뒤 원인·보수방법을 묻는 변형에서는 용접조건과 제거·재검사 절차를 연결한다.",
+    ],
+    commonWrongAnswers: [
+      "용입 부족과 융합 불량을 모두 용입 불량으로 적는 답",
+      "둥근 기공과 불규칙한 슬래그 지시를 구분하지 않는 답",
+      "비드 경계의 언더컷을 중심선 결함으로 판독하는 답",
+    ],
+    variationAxes: [
+      "필름 배열 순서 변경",
+      "결함명과 발생 원인 연결",
+      "표면·내부 결함 구분",
+      "적절한 비파괴검사법 선택",
+    ],
+    pastQuestionIds: [],
+    predictedQuestionIds: ["EXP-VIS-RT-FILM-01"],
+    predictedExamples: [
+      "RT 필름에서 선형 지시와 원형 지시를 구분하고 해당 결함명을 쓰시오.",
+    ],
+    visualAidIds: ["ncs-rt-film-defect-identification"],
+    recognitionVisualAidIds: ["ncs-rt-film-defect-identification"],
+    supplementalConceptIds: [],
+  }),
+  card({
+    id: "PWEC-BRAKE-PAD-LINING-INSPECTION",
+    title: "브레이크 패드·라이닝 점검 사진 4종",
+    conceptIds: ["PCON-SUP-030"],
+    evidenceIds: ["evidence:EXP-VIS-BRAKE-PAD-LINING-01"],
+    format: "image",
+    questionPattern:
+      "사진의 점검 위치와 측정 도구를 보고 브레이크액, 패드 표면, 패드 두께, 라이닝 슈 치수 점검을 구분한다.",
+    directAnswer:
+      "(가) 패드 잔여 두께 측정, (나) 라이닝 슈 두께·폭 측정, (다) 브레이크액 수위·오염 확인, (라) 패드 표면·웨어 인디케이터 확인이다.",
+    studyKeywords: [
+      "브레이크액",
+      "웨어 인디케이터",
+      "패드 잔여 두께",
+      "라이닝 슈",
+      "제조사 기준",
+    ],
+    answerSkeleton: [
+      "(가) 패드 잔여 두께 측정",
+      "(나) 라이닝 슈 두께·폭 측정",
+      "(다) 브레이크액 수위·오염 확인",
+      "(라) 패드 표면·웨어 인디케이터 확인",
+    ],
+    recognitionPoints: [
+      "캘리퍼나 두께 측정 위치가 보이면 패드 잔여 두께 점검으로 판단한다.",
+      "곡면 라이닝 슈의 두께와 폭을 재는 장면은 드럼 브레이크 점검이다.",
+      "리저버 수위·오일 색과 패드 마찰면의 균열·편마모를 구분한다.",
+    ],
+    reasoningSummary: [
+      "사진에서 먼저 부품 형상과 측정 도구를 찾고 점검 대상을 좁힌다.",
+      "이 네 사진은 고정 작업순서가 아니라 서로 다른 상태·치수 점검 항목이다.",
+    ],
+    commonWrongAnswers: [
+      "브레이크액 확인을 패드 마모 측정이라고 쓰는 답",
+      "패드 두께와 라이닝 슈 폭을 구분하지 않는 답",
+      "사진을 근거 없이 고정 작업순서로 배열하는 답",
+    ],
+    variationAxes: [
+      "사진 배열 순서 변경",
+      "점검 항목과 판정 기준 연결",
+      "디스크·드럼 브레이크 구분",
+      "이상 상태와 후속 조치 연결",
+    ],
+    pastQuestionIds: [],
+    predictedQuestionIds: ["EXP-VIS-BRAKE-PAD-LINING-01"],
+    predictedExamples: [
+      "사진별 점검 항목을 쓰고 교체 판단 시 확인할 기준을 한 가지씩 쓰시오.",
+    ],
+    visualAidIds: ["ncs-brake-pad-lining-inspection"],
+    recognitionVisualAidIds: ["ncs-brake-pad-lining-inspection"],
+    supplementalConceptIds: [],
+  }),
+  ...PRACTICAL_TASK_SEQUENCE_SEEDS.map((sequence) =>
+    card({
+      id: sequence.examCardId,
+      title: sequence.title,
+      conceptIds: sequence.conceptIds,
+      evidenceIds: [`evidence:${sequence.questionId}`],
+      format: "sequence",
+      questionPattern: sequence.questionPattern,
+      directAnswer: sequence.directAnswer,
+      studyKeywords: sequence.studyKeywords,
+      answerSkeleton: sequence.frames.map((frame) => frame.caption),
+      recognitionPoints: sequence.frames.slice(0, 3).map(
+        (frame) => `${frame.answerPhrase}: ${frame.checkpoint}`,
+      ),
+      reasoningSummary: [
+        "앞 단계가 다음 단계의 작업조건을 만든다는 흐름으로 순서를 복원한다.",
+        "사진의 공구·고정상태·측정장치를 보고 준비, 작업, 검사 단계를 구분한다.",
+      ],
+      commonWrongAnswers: sequence.frames
+        .slice(0, 3)
+        .map((frame) => frame.wrongAction),
+      variationAxes: [
+        "사진 제시 순서 변경",
+        "일부 단계명 가림",
+        "중간 점검 단계 선택",
+        "잘못된 작업 장면 판별",
+      ],
+      pastQuestionIds: sequence.pastOccurrence ? [sequence.questionId] : [],
+      predictedQuestionIds: sequence.pastOccurrence ? [] : [sequence.questionId],
+      predictedExamples: [
+        `${sequence.title} 사진을 올바른 작업 순서로 배열하고 마지막 확인사항을 쓰시오.`,
+      ],
+      visualAidIds: [sequence.id],
+      sequenceSteps: sequence.frames.map((frame, index) => ({
+        id: `${sequence.examCardId}-STEP-${index + 1}`,
+        label: frame.caption,
+        safetyCritical: /안전|차단|잠금|고정|보호/.test(frame.caption),
+        visualFrameIds: [`${sequence.id}--${frame.id}`],
+        checkpoint: frame.checkpoint,
+        wrongAction: frame.wrongAction,
+        answerPhrase: frame.answerPhrase,
+      })),
+      supplementalConceptIds: [],
+    }),
+  ),
 ];
