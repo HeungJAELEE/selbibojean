@@ -21,6 +21,7 @@ import {
 import {
   getFluidPowerYouTubeEmbedUrl,
   practicalFluidPowerVideoGroups,
+  type PracticalFluidPowerVideoGroup,
 } from "@/data/source/practical-fluid-power-videos";
 import {
   getYouTubeNoCookieEmbedUrl,
@@ -132,6 +133,9 @@ function practicalInfoVideos() {
   const hydraulicGroup = practicalFluidPowerVideoGroups.find(
     (group) => group.id === "hydraulic-1-to-8",
   );
+  const hydraulicBeginnerGroup = practicalFluidPowerVideoGroups.find(
+    (group) => group.id === "hydraulic-beginner-review",
+  );
   const circuitStrategy = circuitGroup?.videos.find(
     (video) => video.id === "circuit-strategy",
   );
@@ -145,6 +149,7 @@ function practicalInfoVideos() {
   if (
     !pneumaticGroup ||
     !hydraulicGroup ||
+    !hydraulicBeginnerGroup ||
     !circuitStrategy ||
     !pneumaticOneSheet ||
     !hydraulicOneSheet
@@ -154,14 +159,17 @@ function practicalInfoVideos() {
 
   return {
     pneumatic: [
-      ...pneumaticGroup.videos.map(toFluidInfoVideo),
+      ...pneumaticGroup.videos.map((video) => toFluidInfoVideo(video)),
       toFluidInfoVideo(circuitStrategy),
       toFluidInfoVideo(pneumaticOneSheet),
     ],
     hydraulic: [
-      ...hydraulicGroup.videos.map(toFluidInfoVideo),
+      ...hydraulicGroup.videos.map((video) => toFluidInfoVideo(video)),
       toFluidInfoVideo(circuitStrategy),
       toFluidInfoVideo(hydraulicOneSheet),
+      ...hydraulicBeginnerGroup.videos.map((video) =>
+        toFluidInfoVideo(video, hydraulicBeginnerGroup),
+      ),
     ],
     welding: practicalRepairWeldingVideos.map((video) => ({
       id: video.id,
@@ -179,6 +187,7 @@ function practicalInfoVideos() {
 
 function toFluidInfoVideo(
   video: (typeof practicalFluidPowerVideoGroups)[number]["videos"][number],
+  series?: PracticalFluidPowerVideoGroup,
 ) {
   return {
     id: video.id,
@@ -193,5 +202,9 @@ function toFluidInfoVideo(
         : ("embed" as const),
     learningFocus: video.learningFocus,
     caution: video.caution,
+    seriesId: series?.id,
+    seriesEyebrow: series?.eyebrow,
+    seriesTitle: series?.title,
+    seriesDescription: series?.description,
   };
 }

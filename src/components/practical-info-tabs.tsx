@@ -53,6 +53,10 @@ type PracticalInfoVideo = {
   playback: "embed" | "external";
   learningFocus: string;
   caution: string;
+  seriesId?: string;
+  seriesEyebrow?: string;
+  seriesTitle?: string;
+  seriesDescription?: string;
 };
 
 type ComparisonValue = {
@@ -576,9 +580,14 @@ function TaskVideoLibrary({ videos }: { videos: PracticalInfoVideo[] }) {
               </div>
             </div>
           )}
+          {video.seriesEyebrow ? (
+            <p className="mt-5 inline-flex rounded-full bg-violet-100 px-3 py-1 text-xs font-extrabold text-violet-900">
+              {video.seriesEyebrow}
+            </p>
+          ) : null}
           <h3
             id={`practical-info-video-heading-${video.id}`}
-            className="mt-5 text-2xl font-extrabold text-slate-900"
+            className={`${video.seriesEyebrow ? "mt-2" : "mt-5"} text-2xl font-extrabold text-slate-900`}
           >
             {video.title}
           </h3>
@@ -609,36 +618,58 @@ function TaskVideoLibrary({ videos }: { videos: PracticalInfoVideo[] }) {
           <div className="max-h-[720px] space-y-2 overflow-y-auto pr-1">
             {videos.map((candidate, index) => {
               const active = candidate.id === video.id;
+              const previous = videos[index - 1];
+              const startsSeries =
+                candidate.seriesId &&
+                candidate.seriesId !== previous?.seriesId;
+
               return (
-                <button
-                  key={candidate.id}
-                  type="button"
-                  aria-pressed={active}
-                  onClick={() => setActiveVideoId(candidate.id)}
-                  className={`flex w-full items-start gap-3 rounded-xl border p-3 text-left transition ${
-                    active
-                      ? "border-[#16697a] bg-white shadow-sm"
-                      : "border-transparent bg-transparent hover:border-slate-200 hover:bg-white"
-                  }`}
-                >
-                  <span
-                    className={`grid size-8 shrink-0 place-items-center rounded-lg text-xs font-black ${
+                <div key={candidate.id}>
+                  {startsSeries ? (
+                    <div
+                      data-testid={`practical-info-video-series-${candidate.seriesId}`}
+                      className="mb-3 mt-5 rounded-2xl border border-violet-200 bg-violet-50 p-4"
+                    >
+                      <p className="text-xs font-black uppercase tracking-[.12em] text-violet-800">
+                        {candidate.seriesEyebrow}
+                      </p>
+                      <h4 className="mt-1 font-extrabold text-slate-900">
+                        {candidate.seriesTitle}
+                      </h4>
+                      <p className="mt-2 text-xs leading-5 text-slate-600">
+                        {candidate.seriesDescription}
+                      </p>
+                    </div>
+                  ) : null}
+                  <button
+                    type="button"
+                    aria-pressed={active}
+                    onClick={() => setActiveVideoId(candidate.id)}
+                    className={`flex w-full items-start gap-3 rounded-xl border p-3 text-left transition ${
                       active
-                        ? "bg-[#16697a] text-white"
-                        : "bg-slate-200 text-slate-600"
+                        ? "border-[#16697a] bg-white shadow-sm"
+                        : "border-transparent bg-transparent hover:border-slate-200 hover:bg-white"
                     }`}
                   >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block font-extrabold text-slate-900">
-                      {candidate.title}
+                    <span
+                      className={`grid size-8 shrink-0 place-items-center rounded-lg text-xs font-black ${
+                        active
+                          ? "bg-[#16697a] text-white"
+                          : "bg-slate-200 text-slate-600"
+                      }`}
+                    >
+                      {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="mt-1 line-clamp-2 block text-xs leading-5 text-slate-500">
-                      {candidate.sourceTitle}
+                    <span className="min-w-0">
+                      <span className="block font-extrabold text-slate-900">
+                        {candidate.title}
+                      </span>
+                      <span className="mt-1 line-clamp-2 block text-xs leading-5 text-slate-500">
+                        {candidate.sourceTitle}
+                      </span>
                     </span>
-                  </span>
-                </button>
+                  </button>
+                </div>
               );
             })}
           </div>

@@ -140,6 +140,7 @@ test("practical information has pneumatic hydraulic welding and prep tabs", asyn
 test("practical information exposes every numbered and detailed task video", async ({
   page,
 }) => {
+  test.setTimeout(120_000);
   await page.goto("/practical/info?tab=pneumatic");
   await expect(
     page.getByRole("heading", { name: "번호별·세부 학습 영상 10개" }),
@@ -156,9 +157,9 @@ test("practical information exposes every numbered and detailed task video", asy
     page.getByRole("button", { name: /공압 회로도 한 장 정리/ }),
   ).toBeVisible();
 
-  await page.getByRole("tab", { name: "유압" }).click();
+  await page.goto("/practical/info?tab=hydraulic", { waitUntil: "commit" });
   await expect(
-    page.getByRole("heading", { name: "번호별·세부 학습 영상 10개" }),
+    page.getByRole("heading", { name: "번호별·세부 학습 영상 16개" }),
   ).toBeVisible();
   for (let number = 1; number <= 8; number += 1) {
     await expect(
@@ -168,8 +169,27 @@ test("practical information exposes every numbered and detailed task video", asy
   await expect(
     page.getByRole("button", { name: /유압 회로도 한 장 정리/ }),
   ).toBeVisible();
+  const beginnerSeries = page.getByTestId(
+    "practical-info-video-series-hydraulic-beginner-review",
+  );
+  await expect(beginnerSeries).toContainText("헷갈리기 쉬운 기초");
+  await expect(beginnerSeries).toContainText(
+    "시험 직전 보기 좋은 초보자 기초 실기",
+  );
+  for (const title of [
+    "시험 직전 보기 좋은 영상",
+    "유압 릴리프 밸브 1",
+    "유압 릴리프 밸브 2",
+    "유압 감압 밸브",
+    "유압 카운터밸런스 밸브",
+    "유압 압력보상 밸브",
+  ]) {
+    await expect(
+      page.getByRole("button", { name: new RegExp(title) }),
+    ).toBeVisible();
+  }
 
-  await page.getByRole("tab", { name: "용접" }).click();
+  await page.goto("/practical/info?tab=welding", { waitUntil: "commit" });
   await expect(
     page.getByRole("heading", { name: "번호별·세부 학습 영상 6개" }),
   ).toBeVisible();

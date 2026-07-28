@@ -12,19 +12,48 @@ describe("practical fluid power video resources", () => {
       "hydraulic-1-to-8",
       "industrial-engineer-busan",
       "paid-course",
+      "hydraulic-beginner-review",
     ]);
 
     const counts = practicalFluidPowerVideoGroups.map(
       (group) => group.videos.length,
     );
-    expect(counts).toEqual([3, 8, 8, 8, 1]);
+    expect(counts).toEqual([3, 8, 8, 8, 1, 6]);
 
     const videos = practicalFluidPowerVideoGroups.flatMap(
       (group) => group.videos,
     );
-    expect(videos).toHaveLength(28);
-    expect(new Set(videos.map((video) => video.id)).size).toBe(28);
+    expect(videos).toHaveLength(34);
+    expect(new Set(videos.map((video) => video.id)).size).toBe(34);
     expect(videos.every((video) => video.relatedLessons.length > 0)).toBe(true);
+  });
+
+  it("keeps the beginner hydraulic review series last and in the supplied order", () => {
+    const beginner = practicalFluidPowerVideoGroups.at(-1);
+
+    expect(beginner?.id).toBe("hydraulic-beginner-review");
+    expect(beginner?.eyebrow).toBe("헷갈리기 쉬운 기초");
+    expect(beginner?.title).toBe("시험 직전 보기 좋은 초보자 기초 실기");
+    expect(
+      beginner?.videos.map((video) =>
+        video.embed.type === "video" ? video.embed.videoId : null,
+      ),
+    ).toEqual([
+      "Wy83q8tOIMY",
+      "2cfRnrg2XMU",
+      "DbTVGZi6XYA",
+      "cXvjBAN96BM",
+      "JaqbOmTLNWk",
+      "JwTt-oBo02g",
+    ]);
+    expect(beginner?.videos.map((video) => video.sourceUrl)).toEqual([
+      "https://youtu.be/Wy83q8tOIMY?si=gAA_rNcwrP-Xb7HP",
+      "https://youtu.be/2cfRnrg2XMU?si=zvB-BBklOliBTvjS",
+      "https://youtu.be/DbTVGZi6XYA?si=nvRMhJVneQmr5kSo",
+      "https://youtu.be/cXvjBAN96BM?si=Jpziptitpa0jn3Wv",
+      "https://youtu.be/JaqbOmTLNWk?si=-_bMwuPqcY5UNHHT",
+      "https://youtu.be/JwTt-oBo02g?si=Isw15tF42NdJTMw6",
+    ]);
   });
 
   it("uses privacy-enhanced video and playlist embeds", () => {
