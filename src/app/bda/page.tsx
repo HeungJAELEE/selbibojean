@@ -8,6 +8,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { bdaCodeLabs } from "@/data/source/bda-practical-content";
+import { getBdaCourseLibrary } from "@/lib/content/bda-course-library-repository";
 import { getBdaContent } from "@/lib/content/bda-repository";
 import { getBdaNotionMigrationStats } from "@/lib/content/bda-notion-snapshot-repository";
 import { getBdaQbank } from "@/lib/content/bda-qbank-repository";
@@ -16,11 +17,11 @@ export default function BdaHomePage() {
   const content = getBdaContent();
   const qbank = getBdaQbank();
   const migration = getBdaNotionMigrationStats();
+  const courseLibrary = getBdaCourseLibrary();
 
   return (
     <main className="pb-16">
       <section className="relative overflow-hidden bg-[#102d47] text-white">
-        <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_20%_20%,#5eead4_0,transparent_28%),radial-gradient(circle_at_80%_10%,#60a5fa_0,transparent_25%)]" />
         <div className="page-wrap relative grid gap-10 py-14 lg:grid-cols-[1.3fr_.7fr] lg:items-center lg:py-20">
           <div>
             <div className="flex flex-wrap gap-2">
@@ -38,11 +39,12 @@ export default function BdaHomePage() {
               공식 정답으로 표시하지 않고, 출처와 신뢰등급을 보존한 학습용 재구성으로 관리합니다.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:flex lg:flex-wrap">
-              <Cta href="/bda/concepts" label="40개 개념 지도" primary />
+              <Cta href="/bda/written" label="필기 총정리" primary />
+              <Cta href="/bda/practical" label="실기 코딩" />
+              <Cta href="/bda/concepts" label="40개 개념 지도" />
               <Cta href="/bda/textbook" label={`통합 개념서 ${migration.pageCount}개 원천`} />
               <Cta href="/bda/bank" label="183개 학습 문제은행" />
               <Cta href="/bda/practical/bank" label="58개 실기 과제" />
-              <Cta href="/bda/sources" label="출처·검수 현황" />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-3">
@@ -69,7 +71,7 @@ export default function BdaHomePage() {
             const lessonCount = content.lessons.filter((item) => item.subjectId === subject.id).length;
             const conceptCount = qbank.concepts.filter((item) => item.subjectNo === subject.order).length;
             return (
-              <Link key={subject.id} href={`/bda/concepts#subject-${subject.order}`} className="card group p-6 transition hover:-translate-y-1 hover:shadow-lg">
+              <Link key={subject.id} href={`/bda/written#subject-${subject.order}`} className="card group p-6 transition hover:-translate-y-1 hover:shadow-lg">
                 <div className="flex items-start justify-between gap-4">
                   <span className="grid size-12 place-items-center rounded-xl text-xl font-black text-white" style={{ backgroundColor: subject.accent }}>{subject.order}</span>
                   <ArrowRight className="text-slate-300 transition group-hover:translate-x-1 group-hover:text-[#0f766e]" />
@@ -103,7 +105,7 @@ export default function BdaHomePage() {
 
       <section className="page-wrap mt-10">
         <Link href="/bda/practical" className="flex items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition hover:shadow-md">
-          <span className="flex items-center gap-3"><Code2 className="text-[#0f766e]" /><span><strong className="block text-[#142f4b]">기초 Python 코드 실습</strong><span className="text-sm text-slate-600">별도 검증 코드 레슨 {bdaCodeLabs.length}개도 계속 이용할 수 있습니다.</span></span></span>
+          <span className="flex items-center gap-3"><Code2 className="text-[#0f766e]" /><span><strong className="block text-[#142f4b]">실기 유형 1·2·3 코딩 교재</strong><span className="text-sm text-slate-600">코드 레슨 {bdaCodeLabs.length}개와 로컬 원본 자료 {courseLibrary.stats.totalFiles}개를 시험 직접성 기준으로 연결했습니다.</span></span></span>
           <ArrowRight className="text-slate-400" />
         </Link>
       </section>

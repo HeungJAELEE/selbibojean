@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   BarChart3,
+  BookMarked,
   BookOpenText,
   BrainCircuit,
   Code2,
@@ -11,10 +12,11 @@ import {
 
 const links = [
   { href: "/bda", label: "학습 홈", icon: Home },
+  { href: "/bda/written", label: "필기 총정리", icon: BookMarked },
+  { href: "/bda/practical", label: "실기 코딩", icon: Code2 },
   { href: "/bda/textbook", label: "통합 개념서", icon: Library },
   { href: "/bda/concepts", label: "개념 지도", icon: BookOpenText },
   { href: "/bda/bank", label: "문제은행", icon: BrainCircuit },
-  { href: "/bda/practical", label: "실기 코드", icon: Code2 },
   { href: "/bda/sources", label: "수집 현황", icon: Database },
 ] as const;
 

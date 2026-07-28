@@ -4,7 +4,9 @@ import { notFound } from "next/navigation";
 import {
   ArrowLeft,
   ArrowRight,
+  BadgeCheck,
   CheckCircle2,
+  Clock3,
   ClipboardCheck,
   Code2,
   ListChecks,
@@ -40,7 +42,7 @@ export default async function BdaCodeLabPage({ params }: Props) {
     <main className="page-wrap pb-16">
       <div className="py-8">
         <Link
-          href="/bda/practical"
+          href={`/bda/practical?tab=${lab.track}`}
           className="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-[#0f766e]"
         >
           <ArrowLeft size={16} /> 실기 코드 목차
@@ -57,6 +59,12 @@ export default async function BdaCodeLabPage({ params }: Props) {
               </span>
               <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-600">
                 {lab.category}
+              </span>
+              <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-800">
+                {lab.difficulty}
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-600">
+                <Clock3 size={13} /> 약 {lab.estimatedMinutes}분
               </span>
             </div>
             <h1 className="mt-4 text-3xl font-black leading-tight text-[#142f4b] sm:text-4xl">
@@ -93,6 +101,10 @@ export default async function BdaCodeLabPage({ params }: Props) {
           <p className="mt-5 rounded-2xl bg-[#edf8f5] p-5 font-bold leading-8 text-[#142f4b]">
             {lab.task}
           </p>
+          <div className="mt-4 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm leading-6 text-blue-950">
+            <strong className="block">출력 계약</strong>
+            <span className="mt-1 block">{lab.outputContract}</span>
+          </div>
         </section>
 
         <section className="mt-6 card p-6 sm:p-8">
@@ -162,6 +174,23 @@ export default async function BdaCodeLabPage({ params }: Props) {
             </ul>
           </section>
         </div>
+
+        <section className="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
+          <div className="flex items-start gap-3">
+            <BadgeCheck className="mt-0.5 shrink-0 text-emerald-700" />
+            <div>
+              <h2 className="text-lg font-black text-emerald-950">
+                코드 검토 상태
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-emerald-950">
+                {lab.validation.note}
+              </p>
+              <p className="mt-2 text-xs font-bold leading-5 text-emerald-800">
+                근거: {lab.validation.basis.join(" · ")}
+              </p>
+            </div>
+          </div>
+        </section>
 
         <nav className="mt-8 grid gap-3 sm:grid-cols-2" aria-label="코드 랩 이동">
           {previous ? (

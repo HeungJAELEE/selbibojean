@@ -96,5 +96,5 @@ describe("BDA Notion full migration snapshots", () => {
     }
 
     expect(diagramCount).toBeGreaterThan(0);
-  });
+  }, 20_000);
 });

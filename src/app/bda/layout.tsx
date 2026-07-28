@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     template: "%s | 빅데이터분석기사 학습실",
   },
   description:
-    "사용자 제공 이론을 바탕으로 구성한 빅데이터분석기사 필기 학습 베타입니다.",
+    "통합 이론, 문제은행, 실기 유형 1·2·3 Python 코드를 연결한 빅데이터분석기사 학습 플랫폼입니다.",
 };
 
 export default function BdaLayout({

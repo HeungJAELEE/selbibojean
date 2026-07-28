@@ -9,17 +9,17 @@ export const metadata: Metadata = {
     template: "%s | 빅데이터분석기사 통합 개념서",
   },
   description:
-    "이론·개념지도·문제은행·실기 Python 코드를 한 흐름으로 학습하는 빅데이터분석기사 통합 개념서입니다.",
+    "이론·개념지도·문제은행·실기 유형 1·2·3 Python 코드를 한 흐름으로 학습하는 빅데이터분석기사 통합 플랫폼입니다.",
   openGraph: {
     title: "빅데이터분석기사 통합 개념서",
-    description: "이론 · 개념지도 · 문제은행 · 실기 코드",
+    description: "이론 · 개념지도 · 문제은행 · 실기 유형 1·2·3 코드",
     type: "website",
     images: [{ url: "/og.png", alt: "빅데이터분석기사 통합 개념서" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "빅데이터분석기사 통합 개념서",
-    description: "이론 · 개념지도 · 문제은행 · 실기 코드",
+    description: "이론 · 개념지도 · 문제은행 · 실기 유형 1·2·3 코드",
     images: ["/og.png"],
   },
 };

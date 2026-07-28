@@ -176,21 +176,21 @@ export const bdaIntegratedConceptTheories = [
     "가설검정은 귀무가설과 대립가설을 정한 뒤 검정통계량·p값·유의수준을 근거로 의사결정하는 절차다. 비교 대상의 수와 변수 형태가 검정 선택의 기준이다.",
     ["1종 오류는 참인 귀무가설 기각, 2종 오류는 거짓 귀무가설을 기각하지 못하는 오류다.", "두 집단 평균은 t 검정, 여러 집단 평균은 ANOVA, 범주형 변수의 독립성은 카이제곱 검정을 우선 검토한다.", "ANOVA가 유의하면 어느 집단이 다른지 확인하기 위한 사후검정을 별도로 본다."],
     ["p값은 귀무가설이 참일 확률이 아니다.", "ANOVA 유의 결과만으로 모든 집단쌍의 차이를 확정하지 않는다."],
-    ["bda-q015"], ["statistical-tests"],
+    ["bda-q015"], ["mean-tests", "anova-tests", "chi-square-tests"],
   ),
   notion(
     "C020", "s3-final", ["model selection/design/variables", "모형 설계"],
     "모형 설계는 정답을 예측하는 알고리즘을 먼저 고르는 일이 아니라, 목표변수·관측 단위·분할 규칙·평가 기준·해석 가능성을 함께 정하는 작업이다.",
     ["지도학습은 타깃이 있고 비지도학습은 타깃 없이 구조를 찾는다.", "훈련 세트는 파라미터 학습, 검증 세트는 선택·조정, 테스트 세트는 최종 일반화 평가에 쓴다.", "변수 선택과 변수 추출, 예측 성능과 설명 가능성의 목표를 구분한다."],
     ["테스트 세트로 반복 조정하면 최종 평가의 독립성이 사라진다.", "관측 단위가 다른 데이터를 무심코 결합하면 중복·누수가 생길 수 있다."],
-    ["bda-q017"], ["classification-pipeline", "regression-rmse"],
+    ["bda-q017"], ["classification-pipeline", "regression-pipeline"],
   ),
   notion(
     "C021", "s3-current", ["선형회귀", "회귀가정·잔차"],
     "선형회귀는 설명변수와 연속형 반응변수의 평균 관계를 선형식으로 표현한다. 계수의 부호·크기뿐 아니라 잔차 가정과 영향점을 같이 점검해야 해석이 가능하다.",
     ["LINE 관점에서 선형성·독립성·정규성·등분산성을 점검한다.", "잔차 산점도의 부채꼴은 이분산성 신호가 될 수 있고 Durbin-Watson은 잔차 자기상관 점검에 쓴다.", "R²는 설명된 분산 비율이며, 예측오차와 같은 개념이 아니다."],
     ["높은 R²만으로 좋은 일반화 성능이나 인과관계를 주장하지 않는다.", "레버리지와 잔차·Cook's distance는 같은 지표가 아니다."],
-    [], ["regression-rmse", "statistical-tests"],
+    [], ["regression-pipeline", "linear-regression-inference"],
   ),
   notion(
     "C022", "s3-final", ["logistic regression", "분류 모형"],
@@ -257,7 +257,7 @@ export const bdaIntegratedConceptTheories = [
     "평가 지표는 모델의 절대적 등급표가 아니라 업무 오류 비용을 반영하는 선택지다. 회귀와 분류, 확률과 임계값 예측을 나눈 뒤 지표를 고른다.",
     ["MAE는 절대오차, RMSE는 큰 오차에 더 민감한 제곱오차 기반 지표다.", "정확도·정밀도·재현율·F1은 혼동행렬의 서로 다른 관점이다.", "ROC-AUC는 임계값 전반의 순위 성능을, gain/lift는 타깃팅 효율을 해석하는 데 활용한다."],
     ["불균형 데이터에서 정확도 하나로 모델을 비교하지 않는다.", "RMSE가 크다고 항상 나쁜 것이 아니라 큰 오차의 비용과 단위를 같이 본다."],
-    ["bda-q021"], ["classification-pipeline", "regression-rmse"],
+    ["bda-q021"], ["classification-pipeline", "regression-pipeline", "model-metric-audit"],
   ),
   notion(
     "C032", "s4-final", ["cross-validation", "overfit"],
@@ -271,7 +271,7 @@ export const bdaIntegratedConceptTheories = [
     "규제와 하이퍼파라미터 조정은 모델 복잡도를 관리하는 도구다. 파라미터는 학습으로 추정되고, 하이퍼파라미터는 검증 절차를 통해 정한다.",
     ["L1(Lasso)은 일부 계수를 정확히 0으로 만들어 변수 선택 효과를 낼 수 있다.", "L2(Ridge)는 계수를 0 근처로 축소해 다중공선성을 완화한다.", "그리드·랜덤·베이지안 탐색은 검증 범위 안에서 수행하며 탐색 공간과 재현 시드를 기록한다."],
     ["L2가 일반적으로 계수를 정확히 0으로 만드는 것은 아니다.", "테스트 세트 성능으로 하이퍼파라미터를 반복 조정하면 테스트 누수다."],
-    [], ["classification-pipeline", "regression-rmse"],
+    [], ["classification-pipeline", "regression-pipeline"],
   ),
   notion(
     "C034", "s4-final", ["XAI", "분석결과 해석 및 활용"],
@@ -291,7 +291,7 @@ export const bdaIntegratedConceptTheories = [
     "배포는 분석의 끝이 아니라 입력·예측·성능·공정성·운영 오류를 계속 감시하는 시작점이다. 라벨이 늦게 도착하는 상황에서는 성능만 기다리지 말고 데이터·개념 드리프트 신호를 먼저 본다.",
     ["데이터 드리프트는 입력 분포 변화, 개념 드리프트는 입력-타깃 관계 변화와 연결된다.", "모니터링에는 데이터 품질, 예측 분포, 지연된 성능, 오류·재현성 지표를 포함한다.", "재학습·롤백 기준과 책임자·승인 절차를 운영 설계에 남긴다."],
     ["정확도 하락은 라벨이 있어야 직접 계산할 수 있으므로, 무라벨 운영에서는 입력분포도 함께 감시한다.", "재학습을 자동화해도 개인정보·편향·승인 검토가 사라지지 않는다."],
-    ["bda-q023"], ["submission-leakage-audit"],
+    ["bda-q023"], ["model-metric-audit"],
   ),
   practical(
     "C037",
@@ -305,21 +305,21 @@ export const bdaIntegratedConceptTheories = [
     "유형 2는 훈련 데이터로 모델을 만들고 별도 테스트 데이터 예측을 제출하는 흐름이다. 스키마 차이, 파이프라인의 fit 범위, 제출 파일 열·행 수가 핵심 검수 지점이다.",
     ["train/test의 공통 입력 열과 타깃·식별자 열을 분리한다.", "대치·인코딩·스케일링·모델을 Pipeline으로 묶어 검증 데이터에 fit하지 않는다.", "result.csv는 요구된 열 이름·행 수·순서·index=False 조건으로 재읽어 검증한다."],
     ["테스트 데이터에 타깃이 없다는 사실을 전처리 오류로 오해하지 않는다.", "전체 데이터에 fit한 뒤 분할하거나 제출 index를 포함하지 않는다."],
-    ["classification-pipeline", "regression-rmse", "submission-leakage-audit"],
+    ["classification-pipeline", "regression-pipeline", "submission-single-column-audit"],
   ),
   practical(
     "C039",
     "유형 3은 통계 검정·추정·회귀 결과를 조건에 맞게 계산·해석하는 문제다. 질문의 변수형태와 집단 수를 먼저 읽고, 통계량·p값·자유도·반올림 규칙을 분리해 확인한다.",
     ["평균 비교인지, 범주형 독립성인지, 회귀 계수 해석인지에 따라 검정을 고른다.", "귀무/대립가설과 양측/단측 방향을 코드 실행 전 문장으로 쓴다.", "통계량과 p값을 바꾸어 쓰지 않고, 유의수준과 반올림 지시를 함께 적용한다."],
     ["p값이 작다는 사실을 효과 크기나 실무적 중요성과 동일시하지 않는다.", "등분산 가정·결측 제외·독립성 같은 검정 전제를 생략하지 않는다."],
-    ["statistical-tests"],
+    ["mean-tests", "anova-tests", "chi-square-tests", "linear-regression-inference", "logistic-regression-odds"],
   ),
   practical(
     "C040",
     "데이터 누수·개인정보·제출 검수는 실기 풀이의 마지막 장식이 아니라 전체 작업을 통과시키는 공통 제약이다. 정보가 예측 시점에 실제로 존재했는지와 코드가 어떤 데이터에 fit했는지를 추적한다.",
     ["시간·그룹·중복·타깃·전처리 누수를 각각 점검한다.", "식별자·민감정보·준식별자 조합은 모델 입력과 저장·공유 범위를 분리해 검토한다.", "원천, 변환, 모델 버전, 시드, 출력 파일을 기록해 재현 가능성을 확보한다."],
     ["검증/테스트 통계량으로 대치·인코딩·표준화를 fit하면 누수다.", "이름을 지운 데이터도 결합 가능성이 있으면 개인정보 위험이 남을 수 있다."],
-    ["submission-leakage-audit", "classification-pipeline"],
+    ["submission-single-column-audit", "classification-pipeline"],
   ),
 ] as const satisfies readonly BdaIntegratedConceptTheory[];
 

@@ -1,87 +1,96 @@
-# 설비보전기사 마스터북
+# 빅데이터분석기사 통합 학습 플랫폼
 
-설비보전기사 이론, 랜덤 문제, 오답 이해, 복습과 진도를 한 흐름으로 연결하는 신규 Next.js 플랫폼입니다. 기존 사이트 코드는 재사용하지 않았습니다.
+빅데이터분석기사 필기 개념, 학습용 재구성 문제, 실기 과제, 검증 코드,
+출처·신뢰등급을 한 흐름으로 연결하는 독립 Next.js 플랫폼입니다.
 
-## 현재 구현
+설비보전기사 사이트와 저장소·경로·콘텐츠를 분리하며, 설비·용접·안전 콘텐츠를
+빅데이터 학습 원천으로 사용하지 않습니다.
 
-- 27차 원본 엑셀 ETL과 체크섬·수량 대사
-- 현행 4과목 → 44개 세부항목군 → 정규 개념 레슨 1,258개(공개 1,190개)
-- 대표문제 1,396개, 원문 변형 2,384개, 잔여 백로그 276개 보존
-- 용접 안전 33차 전용자료 283문제·30레슨·25회차를 관리자 검수 큐로 별도 이관
-- 33차 우선 검수 150건과 권위 출처 누락 33건을 공개 차단 상태로 관리
-- 공개 검증을 통과한 문제만 사용하는 전체·과목·세부항목군·오답·복습 랜덤 세션과 실제 기출·개념 문제 혼합 출제
-- 실제 기출 비율 0·25·50·75·100% 선택과 과목별 반복 오답 세부항목군 집중 출제
-- 필기 4과목×20문제(총 80문제) 실전 형식과 과목별 체크·문제 수 커스텀 모의고사(현재 검수 공개 범위 최대 78문제)
-- 실기 10문제형 모의고사를 위한 필답형·작업형 준비 화면
-- 세션 내 중복 방지와 제출 전 정답·해설 비노출
-- 오답 원인, 선택지별 설명, 이론 앵커 이동, 복귀·재도전
-- 게스트 브라우저 기록과 아이디·비밀번호 계정 API
-- 168시간 비활동 삭제 Edge Function과 03:00 KST 예약 예시
-- 관리자 Magic Link·allowlist, import staging, RLS, 검수·승인 데이터 모델
-- 필답형·작업형 확장 경로
-- Cloudflare 런타임 정답 자산을 `public/`에서 분리하고 외부 `/data/*` 요청 차단
+## 현재 BDA 범위
+
+- 필기 4과목, C001~C040 개념 지도와 통합 이론
+- 587개 필기 출처 인벤토리와 183개 학습용 재구성
+- 58개 실기 과제와 유형별 Python 코드 레슨 16개
+- 제출 전 정답·해설·선택지 피드백 비노출
+- 개념 ↔ 문제 ↔ 실기 과제 ↔ 출처 메타데이터 연결
+- Notion 이론 스냅샷의 로컬 이관본
+- 로컬 교육자료 539개 전수 메타데이터와 실기 직접성 분류
+
+공식 시험문제·답안·채점기준을 확보했다고 주장하지 않습니다. 회차 복원자료와
+제3자 학습자료는 출처·신뢰등급·검수상태를 유지합니다.
+
+## 실기 원본 자료 이관
+
+원본 교육자료 바이너리는 저장소에 복제하지 않습니다. 아래 명령은 로컬 폴더를
+스트리밍으로 읽어 SHA-256, 상대경로, 주차, 학습영역, 파일 역할, 중복,
+개인정보·데이터누수·권리 검수 플래그를 생성합니다.
+
+```powershell
+npm run import:bda-course-library -- "C:\path\to\course-files"
+```
+
+생성 파일:
+
+```text
+src/data/generated/bda-course-library.json
+```
+
+생성 JSON에는 절대경로, 원본 바이너리, 원문 강의자료가 포함되지 않습니다.
+CSV는 열 메타데이터와 대략적 행 수, Jupyter Notebook은 셀 수와 첫 제목만
+저장합니다. 데이터셋과 DB는 검수 전 실행 자산으로 사용하지 않습니다.
+
+## 주요 화면
+
+```text
+/bda
+/bda/written
+/bda/textbook
+/bda/concepts
+/bda/bank
+/bda/practical?tab=overview
+/bda/practical?tab=foundations
+/bda/practical?tab=type1
+/bda/practical?tab=type2
+/bda/practical?tab=type3
+/bda/practical?tab=submission
+/bda/practical?tab=course-library
+/bda/sources
+```
+
+실기 허브는 Python 기초 → 유형 1 → 유형 2 → 유형 3 → 제출 감사 순서로
+구성합니다. SQL·딥러닝·생성형 AI·미니프로젝트는 시험 핵심과 구분한
+보충자료입니다.
 
 ## 요구 환경
 
 - Node.js 22 이상
 - npm 10 이상
-- 선택: Supabase CLI와 실행 중인 Docker Desktop(RLS 로컬 테스트)
+- 선택: Supabase CLI와 Docker Desktop
 
 ## 로컬 실행
 
-```bash
+```powershell
 npm install
-npm run import:workbook -- "C:/path/to/27차_웹앱설계.xlsx"
-npm run import:welding-safety -- "C:/path/to/33차_전회차완료.xlsx" "C:/path/to/33차_보고서.md"
 npm run dev
 ```
 
-원본 기본 경로는 실행 사용자의 `Downloads` 폴더입니다. 다른 환경에서는 인자 또는
-`SOURCE_WORKBOOK_PATH`, `WELDING_SAFETY_WORKBOOK_PATH`, `WELDING_SAFETY_REPORT_PATH`를
-사용하세요. 원본 엑셀·HWP와 자격 증명은 커밋하지 않습니다.
-
 ## 검증
 
-```bash
+```powershell
 npm run verify:data
 npm run typecheck
 npm run lint
 npm run test
-npm run test:e2e
 npm run build
-npm run verify:deploy
 ```
 
-배포 직전 전체 검증은 `npm run preflight:deploy` 한 번으로 실행합니다. 이 명령은 배포하지 않습니다.
-Node.js 22 미만에서는 `node:fs/promises.glob` 오류가 발생하므로 반드시 요구 버전을 사용하세요.
+전체 검증은 `npm run check`로 실행합니다. 외부 배포, Supabase 마이그레이션,
+Git push는 별도 승인 전 수행하지 않습니다.
 
-Supabase CLI와 Docker가 준비되면 `npm run test:rls`로 정책 테스트를 실행합니다.
+## 공개·보안 기준
 
-## Supabase 연결
-
-1. `.env.example`을 기준으로 로컬 환경 변수를 설정합니다.
-2. `supabase/migrations`를 새 프로젝트에 적용합니다.
-3. `npm run stage:supabase`로 생성 스냅샷을 비공개 staging 배치에 올립니다.
-4. 관리자 검수·승인 후 materialization/발행 단계를 수행합니다.
-5. `purge-inactive-accounts` Edge Function을 배포하고 `supabase/cron.sql.example`의 자리표시자를 Vault 비밀로 교체합니다.
-
-Supabase가 없으면 공개 이론·문제풀이와 게스트 브라우저 기록은 동작하지만 계정 동기화는
-503으로 안전하게 비활성화됩니다. 운영 환경에서 관리자 인증 변수가 완전하지 않으면 `/admin`은
-차단됩니다.
-
-현재 Sites 프로젝트는 기존 `설비보전 마스터북` 프로젝트를 재사용하며, 이 저장소에서는 새
-버전 저장·배포·외부 Supabase 생성·마이그레이션 적용을 실행하지 않습니다. 모두 사용자 승인과
-운영 자격 증명이 필요한 별도 단계입니다. 배포 절차와 점검표는
-[`docs/deployment-readiness.md`](docs/deployment-readiness.md)를 참고하세요.
-
-## 콘텐츠 출처와 공개 기준
-
-- 원본 데이터: `설비보전기사_전회차_중복제거_마스터_27차_웹앱설계.xlsx`
-- 2025–2028 출제기준: [Q-Net](https://www.q-net.or.kr/cst006.do?artlSeq=5212779&brdId=Q006&code=1202&id=cst00602)
-- 2026 작업형 공개문제: [Q-Net](https://www.q-net.or.kr/cst006.do?artlSeq=5209398&brdId=Q006&gSite=Q&id=cst00602)
-
-자동 분류 또는 근거가 부족한 문제와 레슨은 `in_review`로 유지됩니다. 법령·안전·KS/ISO·제조사 조건은 권위 있는 출처 검수 전 공개하지 않습니다.
-
-33차 용접 안전 자료는 현재 283문제 전부 `blocked`이며 공개 문제 수 1,314개에 포함되지
-않습니다. 정답 검증, 선택지별 해설, 정확한 이론 연결, 권위 출처가 모두 채워진 항목만 기존
-공개 절차를 거쳐 발행할 수 있습니다.
+- 제출 전 API/클라이언트 응답에 정답·해설·선택지 피드백을 넣지 않습니다.
+- 개인정보·가명정보·데이터 누수 후보는 검수 전 자동 발행하지 않습니다.
+- 외부 PDF·슬라이드·이미지는 권리 검토 전 공개하지 않습니다.
+- 원본 엑셀, 교육자료 바이너리, 데이터셋, 자격 증명을 커밋하지 않습니다.
+- 생성 인벤토리는 로컬 외부 원본의 존재를 설명할 뿐 다운로드 경로를 제공하지 않습니다.

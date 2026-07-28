@@ -1,5 +1,5 @@
 {
-  "name": "seolbi-learning-platform",
+  "name": "bda-learning-platform",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
     "import:workbook": "tsx scripts/import-workbook.ts",
     "import:welding-safety": "tsx scripts/import-welding-safety-workbook.ts",
     "import:practical": "tsx scripts/import-practical-workbook.ts",
+    "import:bda-course-library": "tsx scripts/import-bda-course-library.ts",
     "audit:bda-concepts": "tsx scripts/audit-bda-concept-coverage.ts",
     "stage:supabase": "tsx scripts/stage-supabase-import.ts",
     "audit:publication": "tsx scripts/audit-publication-scope.ts",
