@@ -3,17 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "tsx scripts/prepare-runtime-assets.ts",
+    "verify:node-runtime": "node scripts/verify-node-runtime.mjs",
+    "prebuild": "npm run verify:node-runtime && tsx scripts/prepare-runtime-assets.ts",
+    "predev": "npm run verify:node-runtime",
     "dev": "vinext dev",
     "build": "vinext build",
     "deploy:cloudflare": "npm run build && wrangler deploy --config dist/server/wrangler.json",
     "preview:cloudflare": "npm run build && wrangler dev --config dist/server/wrangler.json",
     "build:next": "next build",
     "start": "vinext start",
+    "prelint": "npm run verify:node-runtime",
     "lint": "eslint .",
+    "pretypecheck": "npm run verify:node-runtime",
     "typecheck": "tsc --noEmit",
+    "pretest": "npm run verify:node-runtime",
     "test": "vitest run",
     "test:watch": "vitest",
+    "pretest:e2e": "npm run verify:node-runtime",
     "test:e2e": "playwright test",
     "test:rls": "supabase test db",
     "import:workbook": "tsx scripts/import-workbook.ts",
@@ -75,7 +81,7 @@
     "wrangler": "4.113.0"
   },
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=24.0.0 <25"
   },
   "overrides": {
     "esbuild": "0.28.1",
