@@ -172,7 +172,7 @@ function isBlockStart(lines: string[], index: number) {
   const line = lines[index] ?? "";
   return (
     !line.trim() ||
-    /^#{1,3}\s+/.test(line) ||
+    /^#{1,4}\s+/.test(line) ||
     /^\s*([-*+]|\d+\.)\s+/.test(line) ||
     /^\s*>\s?/.test(line) ||
     /^\s*```/.test(line) ||
@@ -221,20 +221,28 @@ function MarkdownBlocks({ content }: { content: string }) {
       continue;
     }
 
-    const heading = line.match(/^(#{1,3})\s+(.+)$/);
+    const heading = line.match(/^(#{1,4})\s+(.+)$/);
     if (heading) {
       const children = renderInline(heading[2], `heading-${index}`);
-      blocks.push(
-        heading[1].length === 1 ? (
+      if (heading[1].length === 1) {
+        blocks.push(
           <h2 key={`heading-${index}`} className="mt-7 text-xl font-extrabold text-[#173957]">
             {children}
-          </h2>
-        ) : (
+          </h2>,
+        );
+      } else if (heading[1].length === 4) {
+        blocks.push(
+          <h4 key={`heading-${index}`} className="mt-5 text-base font-extrabold text-[#173957]">
+            {children}
+          </h4>,
+        );
+      } else {
+        blocks.push(
           <h3 key={`heading-${index}`} className="mt-6 text-lg font-extrabold text-[#173957]">
             {children}
-          </h3>
-        ),
-      );
+          </h3>,
+        );
+      }
       index += 1;
       continue;
     }

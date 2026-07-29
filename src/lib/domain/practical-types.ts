@@ -260,12 +260,21 @@ export type PracticalVisualAid = {
   altText: string;
   caption: string;
   sourceLabel: string;
+  sourceLinks?: Array<{
+    label: string;
+    href: string;
+    license: string;
+  }>;
   ncsCode: string;
   pdfPage: number;
   printedPage: number;
   figureNumber: string;
   sourceFileHash: string;
-  examMatchStatus: "exact_source" | "concept_source" | "self_authored";
+  examMatchStatus:
+    | "exact_source"
+    | "licensed_equivalent"
+    | "concept_source"
+    | "self_authored";
   rightsStatus: PracticalAssetRights;
   publicUseStatus: "public" | "internal_only" | "held";
   originType: PracticalVisualOriginType;

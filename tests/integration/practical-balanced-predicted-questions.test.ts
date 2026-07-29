@@ -40,7 +40,7 @@ describe("curated practical predicted question bank", () => {
       work_procedure: countFor("work_procedure"),
     }).toEqual({
       visual_identification: 19,
-      formula_calculation: 45,
+      formula_calculation: 46,
       theory_concept: 60,
       work_procedure: 58,
     });

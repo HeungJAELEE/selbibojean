@@ -4,7 +4,10 @@ import rawPracticalContent from "@/data/generated/practical-content.json";
 import rawPracticalWrittenGovernance from "@/data/generated/practical-written-governance.json";
 import type { ExamSummaryEvidence } from "@/data/source/practical-exam-subject-summaries";
 import { PRACTICAL_VISUAL_AIDS } from "@/data/source/practical-source-registry";
-import { PRACTICAL_VISUAL_COVERAGE } from "@/data/source/practical-visual-coverage";
+import {
+  PRACTICAL_VISUAL_COVERAGE,
+  visualAidIdsForQuestion,
+} from "@/data/source/practical-visual-coverage";
 import {
   PRACTICAL_WRITTEN_EXAM_CARD_SEEDS,
 } from "@/data/source/practical-written-exam-cards";
@@ -25,6 +28,7 @@ import type {
   PracticalExamRepresentativeQuestion,
   PracticalNcsCoverage,
   PracticalQuestion,
+  PublicPracticalQuestion,
   PracticalStudyCategoryId,
   PracticalVisualAid,
   PracticalVisualUsage,
@@ -533,6 +537,28 @@ export async function getPublicPracticalVisualAid(
   return canUsePracticalVisualAid(visualAid, usage)
     ? visualAid
     : undefined;
+}
+
+export async function getPublicPracticalQuestionVisualAids(
+  question: Pick<
+    PublicPracticalQuestion,
+    "id" | "visualAidId" | "visualAidIds"
+  >,
+  use: "prompt" | PracticalVisualUsage,
+): Promise<PracticalVisualAid[]> {
+  const visualAidIds = visualAidIdsForQuestion(question.id, [
+    question.visualAidId,
+    ...(question.visualAidIds ?? []),
+  ]);
+  const visualAids = await Promise.all(
+    visualAidIds.map((visualAidId) =>
+      getPublicPracticalVisualAid(visualAidId, use),
+    ),
+  );
+
+  return visualAids.filter(
+    (visualAid): visualAid is PracticalVisualAid => Boolean(visualAid),
+  );
 }
 
 export function deriveExamEvidenceDisplayKinds(

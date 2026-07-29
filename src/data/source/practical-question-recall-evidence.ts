@@ -12,6 +12,7 @@ export type PracticalRecallEvidenceSource = {
     | "official_safety"
     | "official_standard"
     | "manufacturer"
+    | "open_media_repository"
     | "technical";
   url: string;
   supports: string;
@@ -49,6 +50,16 @@ export const PRACTICAL_RECALL_EVIDENCE_REVIEWS: PracticalRecallEvidenceReview[] 
           url: "https://www.nord-lock.com/nl-nl/insights/bolting-tips/2012/the-experts-sems-overview/",
           supports: "와셔를 나사산 전조 전에 조립해 빠지지 않도록 만든 포획 와셔형 나사 구조",
           limitation: "실제 시험 사진 속 부품과 동일한 제품인지는 판정할 수 없다.",
+        },
+        {
+          id: "COMMONS-BOLT-WITH-WASHER",
+          title: "Wikimedia Commons — Bolt with washer",
+          authority: "open_media_repository",
+          url: "https://commons.wikimedia.org/wiki/File:Bolt_with_washer.jpg",
+          supports:
+            "평와셔와 스프링와셔가 볼트에 미리 조립된 SEMS형 구조를 실사로 판독",
+          limitation:
+            "CC BY-SA 동등 식별자료이며 원시험 사진과 동일한 제품·촬영각도는 아니다.",
         },
       ],
       localSearchSummary: LOCAL_PDF_SEARCH,
@@ -1108,6 +1119,7 @@ const evidenceAuthorityLabels: Record<
   official_safety: "공식 안전자료",
   official_standard: "공식 기술기준",
   manufacturer: "제조사 기술자료",
+  open_media_repository: "공개 미디어 저장소",
   technical: "전문 기술자료",
 };
 

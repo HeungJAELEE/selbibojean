@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 420" role="img" aria-labelledby="title desc">
+  <title id="title">M18 암나사 a·b 치수 판독</title>
+  <desc id="desc">암나사 단면의 골지름 반지름 a와 바깥지름 반지름 b를 화살표로 표시한 자체 제작 도면</desc>
+  <defs><pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line y2="14" stroke="#94a3b8" stroke-width="3"/></pattern></defs>
+  <rect width="1080" height="420" rx="28" fill="#f8fafc"/>
+  <path d="M50 55h690v115H280l-42 40 42 40h460v115H50z" fill="url(#hatch)" stroke="#183b56" stroke-width="6"/>
+  <path d="M280 170h460M280 250h460M130 210h770" stroke="#183b56" stroke-width="5"/>
+  <path d="M740 170h165M740 250h165M740 145h215M740 275h215" stroke="#64748b" stroke-width="4"/>
+  <path d="M850 210V170m0 40v40M940 210v-65m0 65v65" stroke="#d44c3f" stroke-width="7"/>
+  <path d="m850 170-10 18h20zm0 80-10-18h20zM940 145l-10 18h20zm0 130-10-18h20z" fill="#d44c3f"/>
+  <g font-family="sans-serif" font-size="34" font-weight="800" fill="#d44c3f"><text x="815" y="222">a</text><text x="965" y="222">b</text></g>
+  <text x="85" y="398" font-family="sans-serif" font-size="28" font-weight="700" fill="#183b56">M18×2 암나사 단면</text>
+</svg>

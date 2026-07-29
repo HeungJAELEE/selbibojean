@@ -23,7 +23,7 @@
 
 ## 요구 환경
 
-- Node.js 22 이상
+- Node.js 24.x
 - npm 10 이상
 - 선택: Supabase CLI와 실행 중인 Docker Desktop(RLS 로컬 테스트)
 
@@ -53,7 +53,8 @@ npm run verify:deploy
 ```
 
 배포 직전 전체 검증은 `npm run preflight:deploy` 한 번으로 실행합니다. 이 명령은 배포하지 않습니다.
-Node.js 22 미만에서는 `node:fs/promises.glob` 오류가 발생하므로 반드시 요구 버전을 사용하세요.
+Node.js 24 이외의 런타임에서는 테스트·빌드를 진행하지 않습니다. `.nvmrc` 또는
+`.node-version`을 사용해 Node.js 24를 선택한 뒤 검증 명령을 실행하세요.
 
 Supabase CLI와 Docker가 준비되면 `npm run test:rls`로 정책 테스트를 실행합니다.
 

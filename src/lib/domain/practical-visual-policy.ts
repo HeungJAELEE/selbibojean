@@ -3,8 +3,17 @@ import type {
   PracticalVisualUsage,
 } from "@/lib/domain/practical-types";
 
-const PAST_PROMPT_ORIGINS = new Set(["ncs_original", "ncs_crop"]);
-const VARIANT_PROMPT_ORIGINS = new Set(["ncs_redraw", "self_authored"]);
+const PAST_PROMPT_ORIGINS = new Set([
+  "ncs_original",
+  "ncs_crop",
+  "official_external",
+]);
+const VARIANT_PROMPT_ORIGINS = new Set([
+  "ncs_original",
+  "ncs_crop",
+  "ncs_redraw",
+  "self_authored",
+]);
 
 export function canUsePracticalVisualAid(
   visualAid: PracticalVisualAid,
@@ -20,7 +29,8 @@ export function canUsePracticalVisualAid(
 
   if (usage === "past_exam_prompt") {
     return (
-      visualAid.examMatchStatus === "exact_source" &&
+      (visualAid.examMatchStatus === "exact_source" ||
+        visualAid.examMatchStatus === "licensed_equivalent") &&
       PAST_PROMPT_ORIGINS.has(visualAid.originType)
     );
   }

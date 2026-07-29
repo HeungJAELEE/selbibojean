@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+  <title id="title">아베의 원리 비교 도식</title>
+  <desc id="desc">기준 눈금축과 측정축이 일치한 경우와 떨어진 경우를 가와 나로 비교한 자체 제작 도식</desc>
+  <rect width="1000" height="420" rx="28" fill="#f8fafc"/>
+  <g font-family="sans-serif" font-size="34" font-weight="800" fill="#183b56"><text x="225" y="52">(가)</text><text x="720" y="52">(나)</text></g>
+  <g stroke="#183b56" stroke-width="9" stroke-linecap="round">
+    <path d="M75 250h390M560 290h365"/>
+    <path d="M110 205v90m45-90v90m45-90v90m45-90v90m45-90v90m45-90v90m45-90v90m45-90v90"/>
+    <path d="M595 245v90m45-90v90m45-90v90m45-90v90m45-90v90m45-90v90m45-90v90"/>
+  </g>
+  <path d="M95 145h350m-350 0 20-12m-20 12 20 12m330-12-20-12m20 12-20 12" stroke="#d44c3f" stroke-width="7" fill="none"/>
+  <path d="M580 125h330m-330 0 20-12m-20 12 20 12m310-12-20-12m20 12-20 12" stroke="#d44c3f" stroke-width="7" fill="none"/>
+  <path d="M580 125v165m330-165v165" stroke="#d44c3f" stroke-width="4" stroke-dasharray="9 8"/>
+  <path d="M745 125v165" stroke="#f59e0b" stroke-width="6" stroke-dasharray="10 8"/>
+  <path d="M95 145v105m350-105v105" stroke="#d44c3f" stroke-width="4"/>
+  <g font-family="sans-serif" font-size="24" font-weight="700" fill="#64748b"><text x="175" y="330">두 축이 같은 직선</text><text x="655" y="365">두 축 사이에 오프셋</text></g>
+</svg>

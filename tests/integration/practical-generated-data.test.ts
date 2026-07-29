@@ -17,7 +17,7 @@ const content = JSON.parse(
 describe("NCS practical content import", () => {
   it("reconciles all source rows", () => {
     expect(content.report.rows).toEqual({
-      past: 42,
+      past: 51,
       predicted: 185,
       workbookPredicted: 41,
       authoredPredicted: 77,
@@ -25,14 +25,14 @@ describe("NCS practical content import", () => {
       concepts: 46,
       supplementalConcepts: 43,
       ncsDocuments: 11,
-      visualAids: 70,
+      visualAids: 88,
     });
     expect(content.report.exactMatch).toBe(true);
-    expect(content.report.publication.past).toBe(22);
-    expect(content.report.publication.predicted).toBe(182);
+    expect(content.report.publication.past).toBe(51);
+    expect(content.report.publication.predicted).toBe(183);
     expect(content.report.publication.concepts).toBe(46);
     expect(content.report.publication.supplementalConcepts).toBe(43);
-    expect(content.report.publication.held).toBe(21);
+    expect(content.report.publication.held).toBe(0);
   });
 
   it("never publishes held questions", () => {
@@ -45,7 +45,7 @@ describe("NCS practical content import", () => {
     ).toEqual([]);
   });
 
-  it("publishes source-verified corrections and keeps image-dependent prompts held", () => {
+  it("publishes verified reconstructions and holds answer-critical missing visuals", () => {
     const byId = (id: string) =>
       content.questions.find((question) => question.id === id);
 
@@ -55,10 +55,10 @@ describe("NCS practical content import", () => {
     });
     expect(byId("P-2025-2-Q08")?.requiredKeywords).toEqual(
       expect.arrayContaining([
-        "방진마스크-입자상 물질",
-        "방독마스크-가스·증기",
-        "송기마스크-외부 공기 공급",
-        "전동식 호흡보호구-송풍기와 필터·정화통",
+        "(가)-b",
+        "(나)-a",
+        "(다)-d",
+        "(라)-c",
       ]),
     );
 
@@ -68,12 +68,11 @@ describe("NCS practical content import", () => {
     });
     expect(byId("P-2025-3-Q09")?.requiredKeywords).toEqual(
       expect.arrayContaining([
-        "적정 점도",
-        "온도 변화에 따른 점도 변화가 작음",
-        "윤활성",
-        "높은 비점",
-        "낮은 빙점",
-        "높은 인화점",
+        "b",
+        "c",
+        "f",
+        "g",
+        "h",
       ]),
     );
 
@@ -86,18 +85,66 @@ describe("NCS practical content import", () => {
 
     for (const id of ["P-2025-2-Q10", "P-2025-3-Q02", "P-2026-1-Q02"]) {
       expect(byId(id)).toMatchObject({
-        auditDisposition: "held_asset_missing",
-        contentStatus: "in_review",
+        auditDisposition: "verified",
+        contentStatus: "published",
       });
     }
 
     expect(
-      content.questions.filter(
-        (question) => question.auditDisposition === "held_answer_conflict",
+      content.questions.filter((question) =>
+        question.auditDisposition.startsWith("held_"),
       ),
     ).toEqual([]);
-    expect(byId("P-2025-1-Q06")?.auditDisposition).toBe("held_source_missing");
-    expect(byId("EXP-C03")?.auditDisposition).toBe("held_source_missing");
+    expect(byId("P-2025-1-Q06")?.auditDisposition).toBe("verified");
+    expect(byId("EXP-C03")).toMatchObject({
+      auditDisposition: "verified",
+      contentStatus: "published",
+      visualAidId: null,
+      writtenSourceQuestionIds: ["U-1203"],
+    });
+    expect(byId("EXP-C03")?.ncsSources[0]).toMatchObject({
+      sourceKind: "written_question_bank",
+      ncsCode: "WRITTEN-U-1203",
+    });
+    for (const id of [
+      "P-2025-2-Q01-1",
+      "P-2025-2-Q04",
+      "P-2026-2-Q02",
+      "P-2026-2-Q03",
+      "P-2026-2-Q04",
+      "P-2026-2-Q10",
+    ]) {
+      expect(byId(id)).toMatchObject({
+        auditDisposition: "verified",
+        contentStatus: "published",
+      });
+    }
+
+    const publishedPast = content.questions.filter(
+      (question) =>
+        question.kind === "past" && question.contentStatus === "published",
+    );
+    expect(publishedPast).toHaveLength(51);
+    expect(
+      Object.fromEntries(
+        ["2025-1", "2025-2", "2025-3", "2026-1", "2026-2"].map(
+          (occurrence) => [
+            occurrence,
+            publishedPast.filter(
+              (question) =>
+                `${question.occurrence?.year}-${question.occurrence?.round}` ===
+                occurrence,
+            ).length,
+          ],
+        ),
+      ),
+    ).toEqual({
+      "2025-1": 10,
+      "2025-2": 11,
+      "2025-3": 10,
+      "2026-1": 10,
+      "2026-2": 10,
+    });
   });
 
   it("keeps component roles separate from ordered practical procedures", () => {
@@ -178,16 +225,16 @@ describe("NCS practical content import", () => {
         ]),
       ),
     ).toEqual({
-      visual_identification: 37,
-      formula_calculation: 54,
-      theory_concept: 73,
-      work_procedure: 63,
+      visual_identification: 38,
+      formula_calculation: 56,
+      theory_concept: 77,
+      work_procedure: 65,
     });
     const primaryIds = content.studyCategories.flatMap(
       (category) => category.questionIds,
     );
-    expect(primaryIds).toHaveLength(227);
-    expect(new Set(primaryIds).size).toBe(227);
+    expect(primaryIds).toHaveLength(236);
+    expect(new Set(primaryIds).size).toBe(236);
     expect(
       content.questions.every(
         (question) =>
@@ -353,7 +400,7 @@ describe("NCS practical content import", () => {
     const publicAids = content.visualAids.filter(
       (visualAid) => visualAid.publicUseStatus === "public",
     );
-    expect(publicAids).toHaveLength(70);
+    expect(publicAids).toHaveLength(88);
     expect(
       publicAids.every(
         (visualAid) =>
@@ -384,6 +431,10 @@ describe("NCS practical content import", () => {
       pastPromptVisualAidIds.has(visualAid.id),
     );
     expect(pastPromptAids.map((visualAid) => visualAid.id).sort()).toEqual([
+      "diagram-abbe-principle-exam",
+      "diagram-drip-lubrication",
+      "diagram-grinding-wheel-safety",
+      "licensed-sems-bolt",
       "ncs-bearing-four-types",
       "ncs-tire-coupling-assembly-sequence",
     ]);
@@ -396,12 +447,41 @@ describe("NCS practical content import", () => {
       publicUseStatus: "public",
     });
     expect(
-      pastPromptAids.find(
-        (visualAid) => visualAid.id === "ncs-tire-coupling-assembly-sequence",
+      content.visualAids.find(
+        (visualAid) =>
+          visualAid.id === "licensed-measurement-instruments-three",
       ),
     ).toMatchObject({
-      examMatchStatus: "concept_source",
+      examMatchStatus: "licensed_equivalent",
+      originType: "official_external",
       publicUseStatus: "public",
+    });
+    for (const visualAidId of [
+      "licensed-maintenance-tools-four",
+      "licensed-respirators-four",
+      "licensed-sems-bolt",
+      "official-safety-signs-four",
+      "official-safety-signs-six",
+    ]) {
+      expect(
+        content.visualAids.find((visualAid) => visualAid.id === visualAidId),
+      ).toMatchObject({
+        examMatchStatus: "licensed_equivalent",
+        originType: "official_external",
+        publicUseStatus: "public",
+        answerCritical: true,
+      });
+    }
+    expect(
+      content.visualAids.find(
+        (visualAid) =>
+          visualAid.id === "ncs-spherical-roller-bearing-four-choice",
+      ),
+    ).toMatchObject({
+      examMatchStatus: "licensed_equivalent",
+      originType: "ncs_crop",
+      publicUseStatus: "public",
+      answerCritical: true,
     });
 
     expect(
@@ -418,6 +498,23 @@ describe("NCS practical content import", () => {
       },
       predictedBasis: null,
       examEvidenceStatus: "past_reconstructed",
+      auditDisposition: "verified",
+      contentStatus: "published",
+    });
+    expect(
+      content.visualAids.find(
+        (visualAid) =>
+          visualAid.id === "ncs-tire-coupling-assembly-sequence",
+      ),
+    ).toMatchObject({
+      examMatchStatus: "licensed_equivalent",
+      originType: "ncs_crop",
+      publicUseStatus: "public",
+      answerCritical: true,
+      usageTypes: expect.arrayContaining([
+        "sequence_step",
+        "past_exam_prompt",
+      ]),
     });
 
     const predictedSequenceAids = content.visualAids.filter((visualAid) =>

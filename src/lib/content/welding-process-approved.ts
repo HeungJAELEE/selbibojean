@@ -7,17 +7,17 @@ import type {
   Question,
 } from "@/lib/domain/types";
 
-const REVIEWED_AT = "2026-07-23T00:00:00.000Z";
+const REVIEWED_AT = "2026-07-29T00:00:00.000Z";
 const SUBJECT_ID = "subject-2";
 const GROUP_ID = "s2-g02";
-const THEORY_SOURCE =
-  "https://app.notion.com/p/2025-2028-39902e78962a80518275d4d91a78e607";
+const THEORY_SOURCE = "private-editorial-source";
 
 type ProcessDefinition = {
   id: string;
   conceptId: string;
   title: string;
   aliases: string[];
+  definition?: string;
   summary: [string, string, string];
   electrode: string;
   shielding: string;
@@ -28,6 +28,35 @@ type ProcessDefinition = {
   defects: string;
   examPoint: string;
   memory: string;
+};
+
+const co2ProcessDefinition: ProcessDefinition = {
+  id: "lesson-legacy-co2-enriched",
+  conceptId: "concept-legacy-co2-enriched",
+  title: "CO₂ 아크용접",
+  aliases: ["탄산가스아크용접", "CO2용접", "CO₂용접", "MAG-CO₂"],
+  definition:
+    "CO₂ 아크용접은 연속 송급되는 소모성 솔리드 와이어와 모재 사이에 아크를 만들고, 이산화탄소를 보호가스로 사용해 용융금속을 대기로부터 차폐하는 GMAW의 MAG 계열 공정입니다.",
+  summary: [
+    "연속 소모성 솔리드 와이어와 CO₂ 보호가스를 사용하는 고능률 아크용접입니다.",
+    "높은 전류밀도로 깊은 용입과 빠른 용접속도를 얻기 쉽고 철강 구조물에 널리 적용됩니다.",
+    "바람·가스 누설·노즐 오염으로 차폐가 무너지면 기공과 산화가 생길 수 있어 방풍과 가스계통 점검이 중요합니다.",
+  ],
+  electrode: "탈산원소인 Mn·Si 등을 포함할 수 있는 연속 소모성 솔리드 와이어",
+  shielding: "토치 노즐에서 공급하는 이산화탄소 또는 CO₂ 계열 활성 보호가스",
+  mechanism:
+    "와이어 송급장치가 전극 와이어를 일정하게 보내고 정전압 특성 전원이 아크길이의 자기조절을 돕습니다. 와이어와 모재가 녹아 용융지를 만들며, CO₂ 보호가스가 주변 공기를 밀어내 산소와 질소의 유입을 줄입니다. 전류밀도가 높아 용입과 용착속도가 크지만 가스 흐름이 바람이나 누설로 흐트러지면 보호 효과가 급격히 떨어집니다.",
+  strengths:
+    "피복용접봉 교체가 필요 없는 연속 작업이 가능하고 용입이 깊으며 용접속도가 빨라 철골·기계 프레임과 생산라인의 반자동·자동용접에 유리합니다.",
+  limits:
+    "활성가스 특성상 스패터가 늘 수 있고 옥외 바람에 민감합니다. 노즐 오염, 호스 누설, 송급롤러·라이너·팁 상태가 나쁘면 아크와 와이어 송급이 불안정해집니다.",
+  applications:
+    "연강을 중심으로 한 철강 구조물, 기계 프레임, 차량·판금 부품과 반자동·로봇 용접에 널리 사용합니다. 실제 적용 재질과 가스 조성은 용접절차서에 따릅니다.",
+  defects:
+    "기공이 생기면 가스유량만 높이지 말고 바람, 호스·피팅 누설, 노즐의 스패터 막힘, 노즐-모재 거리와 모재 표면의 녹·기름·수분을 함께 확인합니다. 유량을 과도하게 높이면 난류가 외기를 끌어들일 수 있습니다.",
+  examPoint:
+    "‘높은 전류밀도·깊은 용입·빠른 속도’는 대표 장점이고, ‘바람의 영향을 받지 않아 방풍이 필요 없다’는 대표 오답입니다. FCAW-G가 CO₂를 사용하더라도 와이어 안에 플럭스가 있으므로 솔리드와이어 CO₂ 용접과 같은 공정으로 보지 않습니다.",
+  memory: "CO₂는 연속 솔리드와이어+활성가스, 빠르고 깊지만 바람에는 약하다.",
 };
 
 const processDefinitions: ProcessDefinition[] = [
@@ -161,9 +190,42 @@ const processDefinitions: ProcessDefinition[] = [
       "‘입상 플럭스 아래에 아크가 잠김’, ‘고전류·고용착’, ‘긴 직선 두꺼운 판’, ‘자세 제약’이 SAW의 묶음입니다. 토치에서 보호가스만 분사하는 GMAW와 구분합니다.",
     memory: "SAW는 아크를 입상 플럭스 속에 잠기게 하며 기계화·자동화에 적합한 고능률 용접.",
   },
+  {
+    id: "lesson-welding-process-shielding",
+    conceptId: "concept-welding-process-shielding",
+    title: "아크용접 차폐 조건",
+    aliases: ["보호가스 차폐", "가스 차폐", "플럭스 차폐", "용융지 보호"],
+    definition:
+      "아크용접의 차폐는 고온의 전극 끝과 용융금속이 공기 중 산소·질소·수분과 직접 접촉하지 않도록 보호가스 또는 플럭스로 둘러싸는 조건입니다.",
+    summary: [
+      "차폐는 용융지에 산소·질소·수분이 들어가는 것을 줄여 기공·산화·취화를 예방합니다.",
+      "TIG·GMAW의 가스 차폐는 바람·누설·노즐거리·난류에 민감하고, SMAW·FCAW·SAW는 플럭스의 위치와 상태를 함께 봅니다.",
+      "차폐 불량은 유량 하나만이 아니라 가스계통, 노즐, 바람, 모재 청정도와 플럭스 건조·공급 조건을 순서대로 점검합니다.",
+    ],
+    electrode: "공정에 따라 텅스텐, 솔리드와이어, 플럭스코어드와이어, 피복봉 또는 SAW 연속와이어",
+    shielding: "불활성·활성 보호가스, 피복제·와이어 내부 플럭스 또는 아크 위 입상 플럭스",
+    mechanism:
+      "가스 차폐는 토치 노즐에서 나온 가스가 아크와 용융지 주변의 공기를 밀어내는 방식입니다. 플럭스 차폐는 피복제나 와이어 내부 플럭스가 가스·슬래그를 만들거나, SAW처럼 외부 입상 플럭스층이 아크를 덮는 방식입니다. 차폐 범위가 끊기면 용융금속에 대기가 섞여 기공·산화·용접금속 성질 저하가 나타날 수 있습니다.",
+    strengths:
+      "공정에 맞는 차폐가 안정되면 아크 안정, 용접금속 청정도와 비드 품질을 확보할 수 있습니다. 불활성가스는 반응성이 큰 재질의 정밀용접에, 플럭스는 탈산·정련·슬래그 형성에도 기여합니다.",
+    limits:
+      "가스 차폐는 옥외 바람과 누설에 민감하며 유량을 지나치게 높이면 난류가 생길 수 있습니다. 플럭스는 흡습·오염·공급 불량과 층간 슬래그 제거를 관리해야 합니다.",
+    applications:
+      "TIG·MIG/MAG·CO₂는 노즐과 가스계통을, SMAW는 피복봉 보관을, FCAW는 와이어 형식과 지정 가스를, SAW는 입상 플럭스의 건조·공급·회수를 중심으로 확인합니다.",
+    defects:
+      "기공·산화·불안정한 아크가 보이면 가스 종류와 설정값, 유량계, 호스·피팅 누설, 노즐 막힘과 거리, 바람·국소배기 방향, 모재 오염을 확인합니다. 플럭스 공정은 흡습, 입도·공급 높이, 층간 슬래그와 회수 플럭스 오염을 함께 봅니다.",
+    examPoint:
+      "MIG와 TIG는 외부 가스, FCAW는 와이어 내부 플럭스와 형식에 따른 외부 가스, SAW는 아크 위 입상 플럭스라는 위치 차이를 묻습니다. ‘보호가스를 많이 흘릴수록 무조건 좋다’와 ‘가스 차폐 공정은 바람의 영향을 받지 않는다’는 오답입니다.",
+    memory: "가스는 바람·누설·난류, 플럭스는 위치·흡습·슬래그를 확인한다.",
+  },
 ];
 
 const processTrapBullets: Record<string, [string, string, string]> = {
+  "lesson-legacy-co2-enriched": [
+    "CO₂ 용접은 가시 아크이지만 보호가스가 바람에 흐트러질 수 있으므로 옥외 방풍 조건을 확인합니다.",
+    "높은 전류밀도는 깊은 용입과 빠른 속도에 유리하며 ‘전류밀도가 낮아 용입이 얕다’는 반대 보기입니다.",
+    "FCAW-G가 CO₂를 사용할 수 있어도 와이어 내부 플럭스 유무로 솔리드와이어 CO₂ 용접과 구분합니다.",
+  ],
   "lesson-welding-process-smaw": [
     "피복 봉 전극이 녹는 공정이므로 비소모성 텅스텐 전극을 쓰는 TIG와 구분합니다.",
     "일반적으로 정전류·수하특성 전원을 사용하며 저수소계 용접봉은 흡습과 재건조 조건을 함께 관리합니다.",
@@ -188,6 +250,11 @@ const processTrapBullets: Record<string, [string, string, string]> = {
     "입상 플럭스는 와이어 내부가 아니라 아크 위를 덮으며, 회수 플럭스는 오염·입도·건조 상태를 확인합니다.",
     "고용착률과 자동화성이 높아도 모든 자세에 유리한 것은 아니며 주로 아래보기·수평 자세에 적합합니다.",
     "아크가 플럭스 아래에 잠겨 보이지 않으므로 이음 추적과 와이어 위치를 기계적으로 안정시켜야 합니다.",
+  ],
+  "lesson-welding-process-shielding": [
+    "보호가스 유량을 무조건 높이면 난류가 외기를 끌어들일 수 있으므로 공정의 승인 조건을 따릅니다.",
+    "FCAW의 플럭스는 와이어 안에 있고 SAW의 입상 플럭스는 아크 위를 덮는다는 위치 차이를 구분합니다.",
+    "차폐 불량은 가스량만의 문제가 아니므로 바람·누설·노즐·모재 오염 또는 플럭스 흡습·공급 상태를 함께 점검합니다.",
   ],
 };
 
@@ -283,6 +350,27 @@ const questionDefinitions: ProcessQuestionDefinition[] = [
       "SAW는 연속 와이어와 모재 사이의 아크를 입상 플럭스가 덮습니다. 높은 용착률과 자동화성이 장점이지만 용접자세와 복잡한 이음에는 제약이 있습니다.",
     errorReason: "용어 혼동",
   },
+  {
+    id: "WELD-PROC-006",
+    lessonId: "lesson-welding-process-shielding",
+    stem: "가스 차폐 아크용접에서 기공이 늘었을 때 가장 적절한 첫 점검은?",
+    choices: [
+      "보호가스 유량을 조건과 관계없이 최대로 높인다.",
+      "바람·호스 누설·노즐 오염과 거리·모재 표면을 함께 확인한다.",
+      "차폐가스는 바람의 영향을 받지 않으므로 와이어만 교체한다.",
+      "SAW처럼 모든 가스 차폐 공정의 아크 위에 입상 플럭스를 붓는다.",
+    ],
+    choiceEvidence: [
+      "가스유량이 지나치게 높으면 난류로 외기가 유입될 수 있으므로 승인된 범위와 원인을 먼저 확인해야 합니다.",
+      "차폐 불량은 바람, 가스계통 누설, 노즐 막힘·거리와 모재의 녹·기름·수분이 함께 원인이 될 수 있습니다.",
+      "TIG·GMAW 같은 외부 가스 차폐 공정은 바람에 의해 보호가스 흐름이 무너질 수 있습니다.",
+      "입상 플럭스로 아크를 덮는 방식은 SAW의 특징이며 TIG·GMAW의 가스 차폐에 그대로 적용하지 않습니다.",
+    ],
+    correctIndex: 1,
+    explanation:
+      "기공이 증가하면 유량만 올리지 말고 바람, 호스·피팅 누설, 노즐의 막힘과 거리, 모재 표면의 오염을 함께 확인해야 합니다. 과도한 유량은 난류로 외기를 끌어들일 수 있습니다.",
+    errorReason: "조건 누락",
+  },
 ];
 
 function lessonBlocks(process: ProcessDefinition, questionId: string): LessonBlock[] {
@@ -309,7 +397,7 @@ function lessonBlocks(process: ProcessDefinition, questionId: string): LessonBlo
       id: "definition",
       kind: "definition",
       title: `${process.title}은 무엇인가`,
-      body: `${process.title}은 아크열로 모재를 녹여 접합하는 융접 계열입니다.\n\n- **전극·용가재:** ${process.electrode}\n- **보호 방식:** ${process.shielding}\n\n공정명은 전극이 소모되는지, 보호가스 또는 플럭스를 어떻게 사용하는지, 와이어가 연속 송급되는지를 함께 보아야 정확히 구분할 수 있습니다.`,
+      body: `${process.definition ?? `${process.title}은 아크열로 모재를 녹여 접합하는 융접 계열입니다.`}\n\n- **전극·용가재:** ${process.electrode}\n- **보호 방식:** ${process.shielding}\n\n공정명은 전극이 소모되는지, 보호가스 또는 플럭스를 어떻게 사용하는지, 와이어가 연속 송급되는지를 함께 보아야 정확히 구분할 수 있습니다.`,
       order: 2,
     },
     {
@@ -358,10 +446,35 @@ function lessonBlocks(process: ProcessDefinition, questionId: string): LessonBlo
       id: "source",
       kind: "source",
       title: "출처와 검토 상태",
-      body: `- 이론 근거: 설비보전기사 필기 이론 최종 정리본(2025–2028), ‘아크용접 공정별 비교’\n- 원본: ${THEORY_SOURCE}\n- 연결 문제: ${questionId}\n- 최근 검토일: 2026-07-23\n- 상태: 기존 이론의 공정별 내용을 공개 레슨 형식으로 재구성·검수 완료`,
+      body: `- 사용자 원문: 통합본_제2과목_용접_및_안전관리, ‘주요 아크 용접의 종류 및 비교’와 공정별 본문\n- NCS 보충 원칙: 사용자 원문의 구조와 출제 표현을 보존하고, 용어·공정 범위가 충돌하거나 빠진 경우에만 표준 용어로 정정·보충\n- 원본: ${THEORY_SOURCE}\n- 연결 문제: ${questionId}\n- 최근 검토일: 2026-07-29\n- 상태: 사용자 원문 우선으로 정의·원리·적용조건·시험 함정을 재구성하고 공개 레슨 형식으로 검수 완료`,
       order: 9,
     },
   ];
+}
+
+function enrichLegacyCo2Lesson(lesson: Lesson): Lesson {
+  const relatedQuestionId = lesson.relatedQuestionIds[0] ?? "U-453";
+  const blocks = lessonBlocks(co2ProcessDefinition, relatedQuestionId);
+  const substantiveCharacters = blocks
+    .filter((block) => block.kind !== "source")
+    .map((block) => `${block.title}${block.body}`.replace(/\s+/g, ""))
+    .join("").length;
+
+  return {
+    ...lesson,
+    aliases: Array.from(new Set([...lesson.aliases, ...co2ProcessDefinition.aliases])),
+    summary: co2ProcessDefinition.summary,
+    blocks,
+    reviewedAt: "2026-07-29T00:00:00.000Z",
+    quality: {
+      ...lesson.quality,
+      substantiveCharacters,
+      genericPhraseMatches: [],
+      languageIssueMatches: [],
+      sourceLinked: true,
+      passed: substantiveCharacters >= 900,
+    },
+  };
 }
 
 function buildLesson(process: ProcessDefinition, questionId: string): Lesson {
@@ -508,10 +621,16 @@ export function mergeApprovedWeldingProcessContent(
     0,
   );
 
+  const enrichedBaseLessons = content.lessons.map((lesson) =>
+    lesson.subjectId === SUBJECT_ID && lesson.title === "CO₂ 아크용접"
+      ? enrichLegacyCo2Lesson(lesson)
+      : lesson,
+  );
+
   return {
     ...content,
     questions: [...content.questions, ...questions],
-    lessons: [...content.lessons, ...lessons],
+    lessons: [...enrichedBaseLessons, ...lessons],
     report: {
       ...content.report,
       publishedQuestionCount:

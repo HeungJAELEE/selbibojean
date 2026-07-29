@@ -2121,9 +2121,7 @@ P&ID 태그는 일반적으로 첫 문자가 측정변수, 뒤 문자가 지시�
 **★ 시험 포인트**: 액위 정수압은 밀도와 높이에 비례, 차압식 유량은 $`Q\propto\sqrt{\Delta p}`$, 열전대는 냉접점 보상, RTD 3·4선은 리드선 저항 보상과 연결한다.
 **⚠ 함정**: 계기가 정확해도 취출배관의 기포·응축·막힘, 잘못된 설치 위치, 단위·스케일 오류 때문에 공정값은 틀릴 수 있다. 표시기 한 대만 보고 공정을 단정하지 않는다.
 ## 출처
-- <mention-page url="https://app.notion.com/p/2df02e78962a805c98fbedca75ade9ab"/>
-- <mention-page url="https://app.notion.com/p/2e702e78962a80369934d9714b7914c0"/>
-- <mention-page url="https://app.notion.com/p/30f02e78962a80f58e74fa115c541117"/>
+- 비공개 편집 근거(주소 비공개)
 - [Q-Net 설비보전기사 출제기준(2025.1.1.\~2028.12.31.)](https://www.q-net.or.kr/cst006.do?artlSeq=5212779&brdId=Q006&code=1202&id=cst00602)
 > 본문은 사용자가 정리한 Notion 학습 메모를 바탕으로 용어·공식·장치 기능을 교재형으로 재구성하고 보전·안전 관점을 보완한 비공식 수험 자료이다. 실제 설비의 정격, 시험전압, 허용오차, 보호등급, 오염도, 배관·배선 치수 및 안전성능은 해당 설비 제조사 문서와 현행 법령·규격을 우선한다.
 ---
@@ -2882,7 +2880,7 @@ UT의 고전적 분류에서 **펄스반사법**은 송신한 펄스가 결함·
 8. 자동전격방지기는 특정 감전위험 장소의 교류아크용접기에 적용하며 다른 감전대책을 대신하지 않는다.
 ---
 **출처 및 확인 기준**
-- 사용자 제공 Notion 원문 학습 메모: [설비보전기사 정리](https://app.notion.com/p/2df02e78962a805c98fbedca75ade9ab), [통합 대상 페이지](https://app.notion.com/p/2e702e78962a80369934d9714b7914c0)
+- 비공개 편집 근거의 주소와 전문은 공개하지 않는다.
 - [Q-Net 설비보전기사 출제기준(2025.1.1.\~2028.12.31.)](https://www.q-net.or.kr/cst006.do?artlSeq=5212779&brdId=Q006&code=1202&id=cst00602)
 - [국가법령정보센터: 산업안전보건법](https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%82%B0%EC%97%85%EC%95%88%EC%A0%84%EB%B3%B4%EA%B1%B4%EB%B2%95), [산업안전보건법 시행규칙](https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%82%B0%EC%97%85%EC%95%88%EC%A0%84%EB%B3%B4%EA%B1%B4%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99)
 - [국가법령정보센터: 산업안전보건기준에 관한 규칙](https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%82%B0%EC%97%85%EC%95%88%EC%A0%84%EB%B3%B4%EA%B1%B4%EA%B8%B0%EC%A4%80%EC%97%90%EA%B4%80%ED%95%9C%EA%B7%9C%EC%B9%99) — 제234조, 제241조·제241조의2, 제306조, 제618조 등
@@ -5450,8 +5448,7 @@ P₂ = 5.5×(500/380)³ = **12.529… hp ≈ 12.53 hp**이다.
 9. 고장 문제는 `증상 → 하중·속도·정렬·윤활·오염·체결·온도 → 계측 → 조치` 순으로 좁힌다.
 10. 정비의 시작은 안전정지와 에너지 격리, 끝은 시운전·기준값 확인·이력 기록이다.
 ## 출처 및 참고 기준
-- <mention-page url="https://app.notion.com/p/2df02e78962a805c98fbedca75ade9ab"/>
-- <mention-page url="https://app.notion.com/p/30f02e78962a801c85c2eb9792c10a54"/>
+- 비공개 편집 근거(주소 비공개)
 - [한국산업인력공단 Q-Net 설비보전기사 출제기준(2025.1.1.\~2028.12.31.)](https://www.q-net.or.kr/cst006.do?artlSeq=5212779&brdId=Q006&code=1202&id=cst00602)
 - KS B ISO 128 계열(제도 일반원칙), KS B ISO 129 계열(치수기입), KS B ISO 286 계열(공차와 끼워맞춤), KS B ISO 1101(기하공차), KS B ISO 1302(표면성상 표시). 실제 적용 시 최신판 확인.
 - ISO 1(길이측정 표준 기준온도), ISO 281(구름베어링 동정격하중 및 정격수명), ISO 20816 계열(기계 진동 평가) 및 해당 설비 제조사 설치·정비 매뉴얼.
@@ -6151,9 +6148,7 @@ TPM의 6대 로스는 단순히 “멈춘 시간”만 뜻하지 않는다. **�
 14. 그리스 주도는 굳기, 적점은 고온에서 구조가 무너지는 지표다.
 15. SOAP는 원소·농도, 페로그래피는 입자 크기·형상, PQ는 철계 입자 총량의 상대지수다.
 ## 출처 및 추가 확인
-- <mention-page url="https://app.notion.com/p/2df02e78962a805c98fbedca75ade9ab"/>
-- <mention-page url="https://app.notion.com/p/30e02e78962a80d9874fd796c9387044"/>
-- <mention-page url="https://app.notion.com/p/2ec02e78962a8077ac92ff6baa7726d1"/>
+- 비공개 편집 근거(주소 비공개)
 - [Q-Net 설비보전기사 출제기준(2025.1.1.\~2028.12.31.)](https://www.q-net.or.kr/cst006.do?artlSeq=5212779&brdId=Q006&code=1202&id=cst00602)
 > 이 문서는 수험용 비공식 해설서다. 진동 허용값, 소음 노출 기준, 윤활유 교환 한계와 급유량은 최신 법령, KS/ISO, 제조사 매뉴얼과 설비별 관리기준을 우선한다.
 ---
@@ -6336,11 +6331,7 @@ TPM의 6대 로스는 단순히 “멈춘 시간”만 뜻하지 않는다. **�
 6. 모르는 문제도 과목별 과락 위험을 고려해 끝까지 답을 남긴다.
 7. 마지막에는 답 변경 근거가 명확할 때만 바꾼다.
 ## 출처
-- <mention-page url="https://app.notion.com/p/2df02e78962a805c98fbedca75ade9ab"/>
-- <mention-page url="https://app.notion.com/p/2eb02e78962a80498e5acc9322a9696b"/>
-- <mention-page url="https://app.notion.com/p/2ec02e78962a807bbcf8e8fa1d4bbc25"/>
-- <mention-page url="https://app.notion.com/p/2ec02e78962a80548580c3fcc986237f"/>
-- <mention-page url="https://app.notion.com/p/2ec02e78962a8077ac92ff6baa7726d1"/>
+- 비공개 편집 근거(주소 비공개)
 - [Q-Net 설비보전기사 출제기준(2025.1.1.\~2028.12.31.)](https://www.q-net.or.kr/cst006.do?artlSeq=5212779&brdId=Q006&code=1202&id=cst00602)
 - [산업안전보건법](https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=283449)
 - [산업안전보건법 시행규칙 — 현행 본문](https://www.law.go.kr/LSW/lsInfoP.do?lsId=007364)

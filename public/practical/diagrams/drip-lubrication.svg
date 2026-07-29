@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">적하급유 장치 구조</title>
+  <desc id="desc">오일 저장통, 조절침, 투시창과 낙하하는 기름방울을 표시한 자체 제작 도식</desc>
+  <rect width="900" height="420" rx="28" fill="#f8fafc"/>
+  <path d="M260 45h380l-35 175H295z" fill="#dbeafe" stroke="#183b56" stroke-width="9"/>
+  <path d="M330 95h240v75H330z" fill="#f59e0b" opacity=".65"/>
+  <path d="M450 15v175m-45-145h90" stroke="#183b56" stroke-width="10"/>
+  <path d="M400 220h100v92H400z" fill="#fff" stroke="#183b56" stroke-width="9"/>
+  <path d="M450 205v75" stroke="#d44c3f" stroke-width="8"/>
+  <path d="M450 308c-24 30-24 48 0 48s24-18 0-48z" fill="#2563eb"/>
+  <path d="M450 357v34M255 390h390" stroke="#183b56" stroke-width="10" stroke-linecap="round"/>
+  <g font-family="sans-serif" font-size="27" font-weight="800" fill="#183b56">
+    <text x="95" y="112">저장통</text><path d="M188 105h90" stroke="#183b56" stroke-width="4"/>
+    <text x="610" y="274">투시창</text><path d="M585 266h-80" stroke="#183b56" stroke-width="4"/>
+    <text x="585" y="45">유량 조절부</text>
+  </g>
+</svg>

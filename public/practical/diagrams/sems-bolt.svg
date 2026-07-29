@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+  <title id="title">와셔가 조립된 볼트 식별 문제</title>
+  <desc id="desc">볼트 머리 아래 평와셔와 스프링와셔가 빠지지 않게 조립된 자체 제작 구조도</desc>
+  <rect width="900" height="360" rx="28" fill="#f8fafc"/>
+  <path d="M120 112h175v136H120l-55-68z" fill="#dbeafe" stroke="#183b56" stroke-width="8"/>
+  <path d="M295 145h95v70h-95z" fill="#e2e8f0" stroke="#183b56" stroke-width="8"/>
+  <ellipse cx="390" cy="180" rx="58" ry="92" fill="#fff" stroke="#183b56" stroke-width="10"/>
+  <path d="M392 91c-32 20-42 53-27 80 14 26 45 28 54 53 7 19-3 37-22 51" fill="none" stroke="#d44c3f" stroke-width="14" stroke-linecap="round"/>
+  <path d="M430 145h370v70H430z" fill="#cbd5e1" stroke="#183b56" stroke-width="8"/>
+  <g stroke="#64748b" stroke-width="4"><path d="m458 215 45-70m5 70 45-70m5 70 45-70m5 70 45-70m5 70 45-70m5 70 45-70"/></g>
+  <path d="M322 68v64m-35-64h105" stroke="#d44c3f" stroke-width="5"/>
+  <path d="M390 292v-64m-60 64h120" stroke="#d44c3f" stroke-width="5"/>
+  <g font-family="sans-serif" font-size="30" font-weight="800" fill="#d44c3f"><text x="250" y="55">①</text><text x="455" y="320">②</text></g>
+</svg>

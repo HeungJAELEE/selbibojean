@@ -72,3 +72,134 @@ for (const lesson of representativeLessons) {
     expect(browserErrors).toEqual([]);
   });
 }
+
+test("a lesson without a dedicated asset does not receive another topic's visual", async ({
+  page,
+}) => {
+  await page.goto("/written/theory/lesson-1qi34a4");
+
+  const visualSection = page.getByTestId("written-lesson-visuals");
+  await expect(visualSection).toHaveCount(0);
+});
+
+test("compressor lesson shows its classification, subtypes, and operating sequence", async ({
+  page,
+}) => {
+  if (test.info().project.name === "mobile") {
+    await page.setViewportSize({ width: 390, height: 844 });
+  }
+  await page.goto("/written/theory/lesson-1jbssv6");
+
+  const diagram = page.getByTestId(
+    "written-special-diagram-compressor-classification",
+  );
+  await expect(diagram).toBeVisible();
+  await expect(diagram).toContainText("용적형");
+  await expect(diagram).toContainText("스크루 · 베인 · 루츠/로브 · 스크롤 · 액봉식");
+  await expect(diagram).toContainText("동력형");
+  await expect(diagram).toContainText("흡입");
+  await expect(diagram).toContainText("체적 감소");
+  await expect(diagram).toContainText("압력 변환");
+  await expect(
+    page.getByRole("heading", { name: "1. 용적형 압축기" }),
+  ).toBeVisible();
+  await expect(
+    page.locator("blockquote").filter({
+      hasText: "기어형은 이 압축기 분류의 대표 형식이 아니라",
+    }),
+  ).toBeVisible();
+
+  const layout = await page.evaluate(() => ({
+    clientWidth: document.documentElement.clientWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+  }));
+  expect(layout.scrollWidth).toBeLessThanOrEqual(layout.clientWidth);
+});
+
+test("water hammer uses sourced external visuals and preserves the diagnosis anchor", async ({
+  page,
+}) => {
+  if (test.info().project.name === "mobile") {
+    await page.setViewportSize({ width: 390, height: 844 });
+  }
+  await page.goto("/written/theory/lesson-10oupjp#diagnosis");
+
+  const visualSection = page.getByTestId("written-lesson-visuals");
+  await expect(visualSection).toBeVisible();
+  await expect(
+    page.getByTestId("written-external-visual-wikimedia-water-hammer-pressure"),
+  ).toContainText("밸브 폐쇄 뒤 나타나는 수격 압력파");
+  await expect(
+    page.getByTestId("written-external-visual-wikimedia-water-hammer-damage"),
+  ).toContainText("수격 압력 충격으로 파손된 플로트 게이지");
+  await expect(page.locator("#diagnosis")).toBeVisible();
+  await expect(visualSection).toContainText("Public domain");
+  await expect(visualSection).toContainText("CC BY-SA 3.0");
+  await expect(
+    visualSection.getByTestId(
+      "practical-visual-aid-diagram-maintenance-tools",
+    ),
+  ).toHaveCount(0);
+
+  const layout = await page.evaluate(() => ({
+    clientWidth: document.documentElement.clientWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+    brokenImages: Array.from(document.images)
+      .filter((image) => !image.complete || image.naturalWidth === 0)
+      .map((image) => image.currentSrc || image.src),
+  }));
+  expect(layout.scrollWidth).toBeLessThanOrEqual(layout.clientWidth);
+  expect(layout.brokenImages).toEqual([]);
+});
+
+test("component lessons add source-governed real photos without mobile overflow", async ({
+  page,
+}) => {
+  if (test.info().project.name === "mobile") {
+    await page.setViewportSize({ width: 390, height: 844 });
+  }
+
+  const cases = [
+    {
+      route: "/written/theory/lesson-sttpqh",
+      testId:
+        "written-external-visual-wikimedia-hydraulic-gas-accumulator",
+      title: "유압 장치에 설치된 블래더형 어큐뮬레이터",
+      credit: "Ingvald Straume · CC0 1.0",
+    },
+    {
+      route: "/written/theory/lesson-1y9qr6c",
+      testId:
+        "written-external-visual-wikimedia-inductive-proximity-sensor",
+      title: "원통형 유도형 근접센서 실물",
+      credit: "Ekbsensor · CC BY-SA 4.0",
+    },
+  ] as const;
+
+  for (const visualCase of cases) {
+    await page.goto(visualCase.route);
+
+    const figure = page.getByTestId(visualCase.testId);
+    await expect(figure).toContainText(visualCase.title);
+    await expect(figure).toContainText(visualCase.credit);
+    await expect
+      .poll(
+        () =>
+          figure.locator("img").evaluateAll((images) =>
+            images.every(
+              (image) =>
+                (image as HTMLImageElement).complete &&
+                (image as HTMLImageElement).naturalWidth > 0,
+            ),
+          ),
+        { timeout: 10_000 },
+      )
+      .toBe(true);
+
+    const layout = await page.evaluate(() => ({
+      clientWidth: document.documentElement.clientWidth,
+      scrollWidth: document.documentElement.scrollWidth,
+    }));
+    expect(layout.scrollWidth).toBeLessThanOrEqual(layout.clientWidth);
+  }
+});

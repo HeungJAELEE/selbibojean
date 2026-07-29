@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { PRACTICAL_VISUAL_AIDS } from "@/data/source/practical-source-registry";
 import {
   PRACTICAL_VISUAL_COVERAGE,
+  visualAidIdsForQuestion,
   visualAidIdsForSubjectSummary,
 } from "@/data/source/practical-visual-coverage";
 import { PRACTICAL_WRITTEN_EXAM_CARD_SEEDS } from "@/data/source/practical-written-exam-cards";
@@ -15,10 +16,10 @@ const sequenceStepIds = new Set(
 
 describe("representative practical visual coverage", () => {
   it("tracks every curated visual coverage item as ready", () => {
-    expect(PRACTICAL_VISUAL_COVERAGE).toHaveLength(49);
+    expect(PRACTICAL_VISUAL_COVERAGE).toHaveLength(71);
     expect(
       PRACTICAL_VISUAL_COVERAGE.filter((item) => item.status === "ready"),
-    ).toHaveLength(49);
+    ).toHaveLength(71);
     expect(
       PRACTICAL_VISUAL_COVERAGE.filter((item) => item.status === "held"),
     ).toEqual([]);
@@ -64,6 +65,56 @@ describe("representative practical visual coverage", () => {
     expect(visualAidIdsForSubjectSummary("subject-1")).toEqual([]);
   });
 
+  it("resolves every explicit question mapping, including questions without a direct visualAidId", () => {
+    expect(visualAidIdsForQuestion("P-2025-2-Q01-1")).toEqual([
+      "ncs-spherical-roller-bearing-four-choice",
+    ]);
+    expect(visualAidIdsForQuestion("P-2025-2-Q01-2")).toEqual([
+      "ncs-spherical-roller-bearing-four-choice",
+    ]);
+    expect(visualAidIdsForQuestion("P-2025-2-Q04")).toEqual([
+      "licensed-maintenance-tools-four",
+    ]);
+    expect(visualAidIdsForQuestion("P-2026-1-Q06")).toEqual([
+      "licensed-measurement-instruments-three",
+    ]);
+    expect(visualAidIdsForQuestion("P-2025-2-Q08")).toEqual([
+      "licensed-respirators-four",
+    ]);
+    expect(visualAidIdsForQuestion("P-2025-3-Q02")).toEqual([
+      "official-safety-signs-four",
+    ]);
+    expect(visualAidIdsForQuestion("P-2026-1-Q02")).toEqual([
+      "official-safety-signs-six",
+    ]);
+    expect(visualAidIdsForQuestion("P-2026-2-Q02")).toEqual([]);
+    expect(visualAidIdsForQuestion("P-2026-2-Q04")).toEqual([
+      "licensed-sems-bolt",
+    ]);
+    expect(visualAidIdsForQuestion("EXP-B03")).toEqual([
+      "diagram-bearing-induction-heating-sequence",
+    ]);
+    expect(visualAidIdsForQuestion("EXP-D01")).toEqual([
+      "diagram-bearing-induction-heating-sequence",
+    ]);
+    expect(visualAidIdsForQuestion("EXP-SUP-011")).toEqual([
+      "ncs-proximity-sensor-installation-spacing",
+    ]);
+    expect(visualAidIdsForQuestion("EXP-SUP-012")).toEqual([
+      "ncs-photoelectric-switch-example",
+    ]);
+    expect(visualAidIdsForQuestion("EXP-SUP-027")).toEqual([
+      "ncs-three-wire-holder-preparation-sequence",
+    ]);
+    expect(visualAidIdsForQuestion("EXP-SUP-029")).toEqual([
+      "ncs-drive-unit-exploded-assembly-order",
+    ]);
+    expect(visualAidIdsForQuestion("EXP-SUP-035")).toEqual([
+      "ncs-bearing-damage-identification",
+    ]);
+    expect(visualAidIdsForQuestion("EXP-S01")).toEqual([]);
+  });
+
   it("places reviewed NCS reference images on their learner concepts and cards", () => {
     expect(
       PRACTICAL_VISUAL_COVERAGE.find(
@@ -72,7 +123,7 @@ describe("representative practical visual coverage", () => {
     ).toMatchObject({
       conceptIds: ["PCON-004"],
       examCardIds: ["PWEC-BEARING-IDENTIFICATION"],
-      visualAidIds: ["ncs-spherical-roller-bearing"],
+      visualAidIds: ["ncs-spherical-roller-bearing-four-choice"],
       status: "ready",
     });
     expect(

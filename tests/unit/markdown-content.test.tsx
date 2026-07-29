@@ -20,4 +20,15 @@ $$`} />);
     expect(container.querySelector(".katex-display")).toBeInTheDocument();
     expect(container.querySelector(".katex-display .katex-mathml math")).not.toBeNull();
   });
+
+  it("renders fourth-level source headings without exposing Markdown hashes", () => {
+    const { getByRole, queryByText } = render(
+      <MarkdownContent content={"#### 속도 제어 회로 3가지\n\n1. **미터 인**"} />,
+    );
+
+    expect(
+      getByRole("heading", { level: 4, name: "속도 제어 회로 3가지" }),
+    ).toBeInTheDocument();
+    expect(queryByText("#### 속도 제어 회로 3가지")).not.toBeInTheDocument();
+  });
 });

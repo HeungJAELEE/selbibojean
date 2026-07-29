@@ -8,6 +8,30 @@ export const PRACTICAL_BASELINE_MANIFEST = {
   capturedAt: "2026-07-28T12:34:00+09:00",
   changeHistory: [
     {
+      changedAt: "2026-07-29T22:30:00+09:00",
+      scope: "visualAids+publication",
+      summary:
+        "원시험 사진을 복제하지 않고 NCS 원문 실사를 우선 재배열해 자동조심 롤러베어링 식별문항을 보강했다. 정비 공구는 NCS 풀러·스냅링 플라이어와 퍼블릭도메인 후크 스패너·소켓 렌치를 조합하고, SEMS 볼트는 CC BY-SA 동등 실사를 연결해 3문항을 검증 공개로 승격했다. 모든 동등 자료에는 원시험 이미지와 동일하지 않다는 고지를 표시한다.",
+    },
+    {
+      changedAt: "2026-07-29T21:00:00+09:00",
+      scope: "visualAids+publication",
+      summary:
+        "안전표지 자체 SVG 2묶음을 산업안전보건법 시행규칙 별표 6 공식 표지로 교체하고, 호흡보호구 4종의 권리 확인된 실사를 연결해 2025년 2회 Q08을 HOLD에서 검증 공개로 승격했다.",
+    },
+    {
+      changedAt: "2026-07-29T19:00:00+09:00",
+      scope: "visualAids+publication",
+      summary:
+        "측정기 3종 자작 SVG를 CC0·퍼블릭도메인 실사 묶음으로 교체했다. 원문·보기·정답 또는 재사용권이 충족되지 않은 공구·호흡보호구·M18·송풍기·SEMS·타이어커플링 6문항은 공개에서 HOLD 처리했다.",
+    },
+    {
+      changedAt: "2026-07-28T23:49:00+09:00",
+      scope: "questions+visualAids",
+      summary:
+        "사용자 지정 2025년 1·2·3회 및 2026년 1·2회 복원 글을 문항 기준으로 대조해 2026년 2회 Q1~Q9를 추가하고, 공개 기출을 회차별 10개씩 총 50개로 맞췄다. 제3자 이미지는 복제하지 않고 그림 의존 문항용 자체 SVG 13종을 추가했다.",
+    },
+    {
       changedAt: "2026-07-28T18:22:00+09:00",
       scope: "questions",
       summary:
@@ -28,9 +52,9 @@ export const PRACTICAL_BASELINE_MANIFEST = {
   ],
   sets: {
     questions: {
-      count: 227,
+      count: 236,
       sortedIdsSha256:
-        "289c5c60c4e33244f31f20f7a2553ee5eba7dad381cc21ba38ed76140ca321ac",
+        "c1bbc2b86a32751313f6eae15180136a52fe748b03f8326dd923c91d4a308897",
     },
     concepts: {
       count: 89,
@@ -38,9 +62,9 @@ export const PRACTICAL_BASELINE_MANIFEST = {
         "f4ef818d5520a934949e3a18b16e3f58f4b88ca74ba8db6a48173da255249963",
     },
     visualAids: {
-      count: 70,
+      count: 88,
       sortedIdsSha256:
-        "0e768a02a4811952303b0876f0c881f572d0278317b58262feb82dbdeb5f5db6",
+        "708f54504185b93b6e89a6029537d3eb0d655d7f2beb1eb08d5eea89128f30c8",
     },
   },
 } as const;

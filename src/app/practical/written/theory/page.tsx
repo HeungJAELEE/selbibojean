@@ -70,6 +70,7 @@ export default async function PracticalTheoryPage({
           title="과목별 핵심을 먼저 보고 문제로 확인합니다"
           description="긴 원문보다 시험 방향, 한 줄 정답, 필수 암기와 대표 문제를 먼저 봅니다. 전체 개념과 NCS 근거는 필요한 경우에만 내려가 확인합니다."
         />
+        <PracticalWrittenSectionNav activeSection="subjects" />
         <PracticalWrittenViewTabs view={view} />
         <PracticalExamSubjectTabs
           subjects={subjects}
@@ -109,7 +110,9 @@ export default async function PracticalTheoryPage({
         title="과목별 핵심을 먼저 보고 문제로 확인합니다"
         description="긴 원문보다 시험 방향, 한 줄 정답, 필수 암기와 대표 문제를 먼저 봅니다. 전체 개념과 NCS 근거는 필요한 경우에만 내려가 확인합니다."
       />
-      <PracticalWrittenSectionNav />
+      <PracticalWrittenSectionNav
+        activeSection={view === "exam-type" ? "exam-types" : "subjects"}
+      />
       <PracticalWrittenViewTabs view={view} />
 
       {view === "exam-type" ? (

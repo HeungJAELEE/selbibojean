@@ -4,6 +4,7 @@ import type { Lesson } from "@/lib/domain/types";
 
 export type WrittenSpecialDiagramId =
   | "abbe-principle"
+  | "compressor-classification"
   | "magneto-bearing-comparison"
   | "pintle-chain-construction"
   | "screw-load-brake"
@@ -13,18 +14,146 @@ type KeywordVisualRule = {
   terms: string[];
   visualAidIds?: string[];
   diagramIds?: WrittenSpecialDiagramId[];
+  externalVisualIds?: string[];
+};
+
+export type WrittenExternalVisual = {
+  id: string;
+  anchorId?: string;
+  title: string;
+  imagePath: string;
+  width: number;
+  height: number;
+  altText: string;
+  caption: string;
+  sourcePageUrl: string;
+  assetDownloadUrl: string;
+  originalFileUrl: string;
+  author: string;
+  licenseLabel: string;
+  licenseUrl: string;
+  assetSha256: string;
+  technicalReviewedAt: string;
 };
 
 export type WrittenVisualSelection = {
   visualAids: PracticalVisualAid[];
   diagramIds: WrittenSpecialDiagramId[];
+  externalVisuals: WrittenExternalVisual[];
 };
 
 const VISUAL_AID_BY_ID = new Map(
   PRACTICAL_VISUAL_AIDS.map((visualAid) => [visualAid.id, visualAid] as const),
 );
 
+const EXTERNAL_VISUALS: WrittenExternalVisual[] = [
+  {
+    id: "wikimedia-water-hammer-pressure",
+    anchorId: "diagnosis",
+    title: "밸브 폐쇄 뒤 나타나는 수격 압력파",
+    imagePath: "/images/written-external/water-hammer-pressure.jpg",
+    width: 629,
+    height: 450,
+    altText:
+      "밸브 폐쇄 직후 정규화 압력이 급격히 변한 뒤 양과 음 방향으로 오가며 감쇠하는 압력파 그래프",
+    caption:
+      "밸브를 급히 닫으면 한 번의 충격으로 끝나는 것이 아니라 압력파가 왕복하며 감쇠할 수 있습니다. 충격음·배관 진동과 밸브 조작 시점이 함께 나타나는지 확인하세요.",
+    sourcePageUrl:
+      "https://commons.wikimedia.org/wiki/File:Water_hammer_pressure.jpg",
+    assetDownloadUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/e/e8/Water_hammer_pressure.jpg",
+    originalFileUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/e/e8/Water_hammer_pressure.jpg",
+    author: "Donebythesecondlaw",
+    licenseLabel: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+    assetSha256:
+      "45103BE8D95BFB4A4CA048C355DAFB6D9696CA7EF46A749E04EDBDEE1A11FC41",
+    technicalReviewedAt: "2026-07-29",
+  },
+  {
+    id: "wikimedia-water-hammer-damage",
+    title: "수격 압력 충격으로 파손된 플로트 게이지",
+    imagePath: "/images/written-external/water-hammer-damage.jpg",
+    width: 960,
+    height: 742,
+    altText:
+      "배관의 수격 압력 충격으로 외부 압력에 눌려 찌그러지고 중앙이 파열된 금속 플로트 게이지",
+    caption:
+      "수격은 단순한 소음 문제가 아닙니다. 반복되거나 큰 압력 충격은 배관 부속과 계기에 변형·파열을 일으킬 수 있으므로 급폐쇄·펌프 급정지 이력과 손상 위치를 함께 봅니다.",
+    sourcePageUrl:
+      "https://commons.wikimedia.org/wiki/File:Joukowsky-Pressure-Shock-01.jpg",
+    assetDownloadUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Joukowsky-Pressure-Shock-01.jpg/960px-Joukowsky-Pressure-Shock-01.jpg",
+    originalFileUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/8/8e/Joukowsky-Pressure-Shock-01.jpg",
+    author: "CEphoto, Uwe Aranas",
+    licenseLabel: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    assetSha256:
+      "408FF097F6ADB79293F0322672CD650E15FD2D1F924C0BD685985E807DBFDA51",
+    technicalReviewedAt: "2026-07-29",
+  },
+  {
+    id: "wikimedia-hydraulic-gas-accumulator",
+    title: "유압 장치에 설치된 블래더형 어큐뮬레이터",
+    imagePath: "/images/written-external/hydraulic-gas-accumulator.jpg",
+    width: 960,
+    height: 1159,
+    altText:
+      "유압 호스와 피팅 사이에 연결된 검은색 구형 블래더형 가스 어큐뮬레이터 실물",
+    caption:
+      "사진 중앙의 검은 압력용기가 어큐뮬레이터입니다. 가스의 압축성을 이용해 유압 에너지를 저장하고 압력 맥동·충격을 완화하지만, 분해 전에는 유압과 가스 예압이 모두 제거됐는지 확인해야 합니다.",
+    sourcePageUrl:
+      "https://commons.wikimedia.org/wiki/File:Hydraulic_gas_accumulator.JPG",
+    assetDownloadUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Hydraulic_gas_accumulator.JPG/960px-Hydraulic_gas_accumulator.JPG",
+    originalFileUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/0/09/Hydraulic_gas_accumulator.JPG",
+    author: "Ingvald Straume",
+    licenseLabel: "CC0 1.0",
+    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    assetSha256:
+      "CF53A50E2867749365A1F3F6F2FBFB3BB84FD3D9DEBEB6E9A26A1B8D7C57D66A",
+    technicalReviewedAt: "2026-07-29",
+  },
+  {
+    id: "wikimedia-inductive-proximity-sensor",
+    title: "원통형 유도형 근접센서 실물",
+    imagePath: "/images/written-external/inductive-proximity-sensor.jpg",
+    width: 960,
+    height: 1550,
+    altText:
+      "금속 나사 몸체와 고정 너트 두 개, 감지면, 케이블을 갖춘 원통형 유도형 근접센서",
+    caption:
+      "나사형 몸체와 두 고정너트로 설치 위치를 맞추고, 끝의 감지면을 금속 검출물 쪽으로 향하게 합니다. 유도형은 금속 검출에 적합하며 정격 검출거리와 주변 금속 간격을 함께 확인합니다.",
+    sourcePageUrl:
+      "https://commons.wikimedia.org/wiki/File:Inductive_proximity_sensor.jpg",
+    assetDownloadUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Inductive_proximity_sensor.jpg/960px-Inductive_proximity_sensor.jpg",
+    originalFileUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c8/Inductive_proximity_sensor.jpg",
+    author: "Ekbsensor",
+    licenseLabel: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    assetSha256:
+      "E15FBA63BDFB5DC34F36FE85DC6B0FE1462350FDCFC58920EB108CE92A0D1869",
+    technicalReviewedAt: "2026-07-29",
+  },
+];
+
+const EXTERNAL_VISUAL_BY_ID = new Map(
+  EXTERNAL_VISUALS.map((visual) => [visual.id, visual] as const),
+);
+
 const KEYWORD_VISUAL_RULES: KeywordVisualRule[] = [
+  {
+    terms: ["수격작용", "수격현상"],
+    externalVisualIds: [
+      "wikimedia-water-hammer-pressure",
+      "wikimedia-water-hammer-damage",
+    ],
+  },
   {
     terms: ["마그네토", "마그네틱 볼베어링"],
     visualAidIds: ["ncs-bearing-types"],
@@ -71,6 +200,20 @@ const KEYWORD_VISUAL_RULES: KeywordVisualRule[] = [
   {
     terms: ["어큐뮬레이터", "축압기"],
     visualAidIds: ["ncs-accumulator-safety-circuit"],
+    externalVisualIds: ["wikimedia-hydraulic-gas-accumulator"],
+  },
+  {
+    terms: [
+      "공기압축기 분류",
+      "압축기 작동원리",
+      "왕복압축기",
+      "왕복식 압축기",
+      "스크루 압축기",
+      "베인 압축기",
+      "원심 압축기",
+      "축류 압축기",
+    ],
+    diagramIds: ["compressor-classification"],
   },
   {
     terms: ["파스칼"],
@@ -90,6 +233,7 @@ const KEYWORD_VISUAL_RULES: KeywordVisualRule[] = [
       "ncs-proximity-sensor-installation-spacing",
       "diagram-sensor-directions",
     ],
+    externalVisualIds: ["wikimedia-inductive-proximity-sensor"],
   },
   {
     terms: ["버니어"],
@@ -175,6 +319,9 @@ const KEYWORD_VISUAL_RULES: KeywordVisualRule[] = [
   },
 ];
 
+// Audit-only registry of assets available somewhere inside each concept group.
+// Never use this pool as a lesson fallback: a neighboring lesson's image can
+// look authoritative while explaining a different definition.
 const GROUP_VISUAL_POOLS: Record<string, string[]> = {
   "s1-g01": ["diagram-pascal-force"],
   "s1-g02": ["ncs-accumulator-safety-circuit"],
@@ -292,12 +439,15 @@ export function getWrittenVisualSelection(lesson: Lesson): WrittenVisualSelectio
   );
   const matchedVisualAidIds = matchedRules.flatMap((rule) => rule.visualAidIds ?? []);
   const matchedDiagramIds = matchedRules.flatMap((rule) => rule.diagramIds ?? []);
-
+  const matchedExternalVisualIds = matchedRules.flatMap(
+    (rule) => rule.externalVisualIds ?? [],
+  );
   return {
-    visualAids: resolveVisualAids(
-      [...new Set(matchedVisualAidIds)].slice(0, 2),
-    ),
+    visualAids: resolveVisualAids([...new Set(matchedVisualAidIds)].slice(0, 2)),
     diagramIds: [...new Set(matchedDiagramIds)],
+    externalVisuals: [...new Set(matchedExternalVisualIds)]
+      .map((id) => EXTERNAL_VISUAL_BY_ID.get(id))
+      .filter((visual): visual is WrittenExternalVisual => visual !== undefined),
   };
 }
 

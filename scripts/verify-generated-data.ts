@@ -8,6 +8,7 @@ import {
 import { weldingSafetyReviewDatasetSchema } from "../src/lib/content/welding-safety-supplement";
 import { getApprovedWeldingSafetyContent } from "../src/lib/content/welding-safety-approved";
 import { buildRuntimeContent } from "../src/lib/content/runtime-content";
+import { notionGapWrittenLessons } from "../src/lib/content/notion-gap-written-lessons";
 import { supplementalWrittenLessons } from "../src/lib/content/supplemental-written-lessons";
 import { parseWrittenQuestionAuditManifest } from "../src/lib/content/written-question-audit";
 import rawWrittenQuestionAudit from "../src/data/generated/written-question-audit.json";
@@ -273,12 +274,15 @@ async function main() {
   const supplementalRuntimeLessons = runtimeData.lessons.filter(
     (lesson) => lesson.contentRole === "supplemental",
   );
+  const expectedSupplementalLessons = [
+    ...supplementalWrittenLessons,
+    ...notionGapWrittenLessons,
+  ];
   if (
-    supplementalWrittenLessons.length !== 14 ||
-    supplementalRuntimeLessons.length !== 14
+    supplementalRuntimeLessons.length !== expectedSupplementalLessons.length
   ) {
     errors.push(
-      `보강용 레슨 수량 불일치: 정의 ${supplementalWrittenLessons.length}, 런타임 ${supplementalRuntimeLessons.length}`,
+      `보강용 레슨 수량 불일치: 정의 ${expectedSupplementalLessons.length}, 런타임 ${supplementalRuntimeLessons.length}`,
     );
   }
   const invalidSupplementalLessons = supplementalRuntimeLessons.filter(

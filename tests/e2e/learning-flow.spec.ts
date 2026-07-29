@@ -210,7 +210,7 @@ test("supplemental theory is searchable, badged, and visually responsive", async
 });
 
 test("theory index groups lessons into semantic category disclosures", async ({ page }) => {
-  await page.goto("/written/theory");
+  await page.goto("/written/theory/subject/subject-4");
   await page.waitForLoadState("networkidle");
 
   const lubricantCategories = page.getByTestId("lesson-categories-s4-g14");
@@ -229,6 +229,314 @@ test("theory index groups lessons into semantic category disclosures", async ({ 
   await degradation.getByText(/세부 개념 \d+개 바로가기/).click();
   await expect(degradation.locator("ul")).toBeVisible();
   await expect(degradation.getByRole("link", { name: "윤활유 열화판정", exact: true })).toBeVisible();
+});
+
+test("subject one starts with an integrated memory guide and keeps every detail route", async ({ page }) => {
+  await page.goto("/written/theory/subject/subject-1");
+  await page.waitForLoadState("networkidle");
+
+  const guide = page.getByTestId("written-subject-one-memory-guide");
+  await expect(guide.getByRole("heading", { name: "공유압 및 자동제어를 10개 흐름으로 묶어보기" })).toBeVisible();
+  await expect(guide.getByTestId("subject-one-bundle-fluid-foundation")).toContainText("단위·유체 물성·압력");
+  await expect(guide.getByTestId("subject-one-bundle-automatic-control")).toContainText("개회로·피드백·PID·응답");
+  await expect(guide.getByRole("link", { name: /보일 법칙/ })).toHaveAttribute(
+    "href",
+    "/written/theory/lesson-m8noqg",
+  );
+
+  const traps = guide.getByTestId("subject-one-traps-pneumatic-foundation");
+  await expect(traps).not.toHaveAttribute("open", "");
+  await traps.locator(":scope > summary").focus();
+  await traps.locator(":scope > summary").press("Enter");
+  await expect(traps).toHaveAttribute("open", "");
+  await expect(traps).toContainText("원심식과 축류식 압축기는 용적형이다.");
+  await expect(traps).toContainText("둘 다 동력형(터보형)입니다.");
+  const pneumaticCbt = guide.getByTestId(
+    "subject-one-cbt-pneumatic-foundation",
+  );
+  await expect(pneumaticCbt).toContainText("관련 실제 CBT 원문");
+  await expect(pneumaticCbt).toContainText("원문 확인");
+  const pneumaticQuestion = pneumaticCbt
+    .locator('[data-testid^="inline-cbt-question-"]')
+    .first();
+  await pneumaticQuestion.locator(":scope > summary").click();
+  await expect(pneumaticQuestion.getByRole("button").first()).toBeVisible();
+  await expect(pneumaticQuestion).toContainText("원문 기출");
+  await expect(pneumaticQuestion).not.toContainText("원문 근거 학습용 재구성");
+  await expect(pneumaticQuestion.getByRole("link", { name: "기출 근거 확인" })).toBeVisible();
+  await expect(page).toHaveURL(/\/written\/theory/);
+  await expect(
+    guide.locator('a[href*="notion.site"]'),
+  ).toHaveCount(0);
+  await expect(guide.getByText("과목 전체 종합정리 원문 펼쳐보기")).toHaveCount(0);
+
+  const fullIndex = page.getByTestId("written-subject-one-full-index");
+  await expect(fullIndex).not.toHaveAttribute("open", "");
+  await fullIndex.locator(":scope > summary").click();
+  await expect(fullIndex).toHaveAttribute("open", "");
+  await expect(page.getByTestId("lesson-categories-s1-g01")).toBeVisible();
+});
+
+test("integrated CBT cards use only direct original exam text", async ({ page }) => {
+  await page.goto("/written/theory/subject/subject-1");
+  await page.waitForLoadState("networkidle");
+
+  const cbt = page.getByTestId("subject-one-cbt-fluid-foundation");
+  await expect(cbt).toContainText("관련 실제 CBT 원문", {
+    timeout: 30_000,
+  });
+  await expect(cbt).toContainText("원문 확인 5문제");
+  await cbt.locator(":scope > summary").click();
+
+  const questions = cbt.locator('[data-testid^="inline-cbt-question-"]');
+  await expect(questions).toHaveCount(5);
+  const firstQuestion = questions.first();
+  await firstQuestion.locator(":scope > summary").click();
+
+  await expect(firstQuestion).toContainText("원문 기출");
+  await expect(firstQuestion).not.toContainText("원문 근거 학습용 재구성");
+  await expect(
+    firstQuestion.getByRole("link", { name: "기출 근거 확인" }),
+  ).toHaveAttribute("href", /comcbt|cbtbank/i);
+
+  const mock = page.getByTestId("subject-one-mock-fluid-foundation");
+  await expect(mock).toContainText("관련 모의고사");
+  await expect(mock).toContainText(/모의 확인 [1-5]문제/);
+  await mock.locator(":scope > summary").click();
+  await expect(
+    mock.locator('[data-testid^="inline-cbt-question-"]'),
+  ).toHaveCount(5);
+  await expect(mock).not.toContainText("원문 기출");
+});
+
+test("subject two follows the integrated source and preserves its detail routes", async ({ page }) => {
+  await page.goto("/written/theory/subject/subject-2");
+  await page.waitForLoadState("networkidle");
+
+  const guide = page.getByTestId("written-subject-two-memory-guide");
+  await expect(
+    guide.getByRole("heading", {
+      name: "용접 및 안전관리를 11개 흐름으로 묶어보기",
+    }),
+  ).toBeVisible();
+  await expect(
+    guide.getByTestId("subject-two-bundle-classification-joints"),
+  ).toContainText("융접·압접·납땜과 이음의 기본");
+  await expect(
+    guide.getByTestId("subject-two-bundle-inspection"),
+  ).toContainText("VT·PT·MT·ET·UT·RT와 파괴검사");
+  await expect(
+    guide.getByRole("link", { name: /용접 분류/ }),
+  ).toHaveAttribute("href", "/written/theory/lesson-1ec09vl");
+  const arcProcesses = guide.getByTestId(
+    "subject-two-bundle-shielded-high-efficiency",
+  );
+  const arcPart = guide.locator("#subject-two-arc-special-welding");
+  await arcPart.locator(":scope > summary").click();
+  await expect(arcPart).toHaveAttribute("open", "");
+  if ((await arcProcesses.getAttribute("open")) === null) {
+    await arcProcesses.locator(":scope > summary").click();
+  }
+  await expect(arcProcesses).toHaveAttribute("open", "");
+  const arcProcessLinks = arcProcesses
+    .getByTestId("subject-two-subtopics-shielded-high-efficiency")
+    .locator("a");
+  await expect(arcProcessLinks).toHaveCount(6);
+  await expect(arcProcessLinks.nth(0)).toContainText("TIG용접");
+  await expect(arcProcessLinks.nth(1)).toContainText("MIG·MAG·CO₂용접");
+  await expect(arcProcessLinks.nth(2)).toContainText("CO₂ 아크용접");
+  await expect(arcProcessLinks.nth(3)).toContainText("플럭스코어드아크용접");
+  await expect(arcProcessLinks.nth(4)).toContainText("서브머지드아크용접");
+  await expect(arcProcessLinks.nth(5)).toContainText("아크용접 차폐 조건");
+  await expect(guide).toContainText(
+    "법령·안전·표준의 세부 수치와 작업 절차는 통합본의 암기 흐름만 참고합니다.",
+  );
+
+  const traps = guide.getByTestId("subject-two-traps-weld-defects");
+  const defectPart = guide.locator("#subject-two-defect-inspection-joint");
+  await defectPart.locator(":scope > summary").click();
+  await expect(defectPart).toHaveAttribute("open", "");
+  await expect(traps).not.toHaveAttribute("open", "");
+  await traps.locator(":scope > summary").focus();
+  await traps.locator(":scope > summary").press("Enter");
+  await expect(traps).toHaveAttribute("open", "");
+  await expect(traps).toContainText(
+    "언더컷은 전류가 너무 낮고 용접속도가 너무 느릴 때만 생긴다.",
+  );
+  await expect(traps).toContainText(
+    "언더컷은 과대 전류·긴 아크·빠른 진행과 연결해 판단합니다.",
+  );
+  const weldDefectCbt = guide.getByTestId(
+    "subject-two-cbt-weld-defects",
+  );
+  await expect(weldDefectCbt).toContainText("관련 실제 CBT 원문");
+  await weldDefectCbt.locator(":scope > summary").click();
+  await expect(weldDefectCbt).toHaveAttribute("open", "");
+  const weldDefectQuestion = weldDefectCbt
+    .locator('[data-testid^="inline-cbt-question-"]')
+    .first();
+  await weldDefectQuestion.locator(":scope > summary").click();
+  await expect(weldDefectQuestion.getByRole("button").first()).toBeVisible();
+  await expect(page).toHaveURL(/\/written\/theory/);
+  await expect(
+    guide.getByTestId("subject-two-cbt-pending-grooves-symbols"),
+  ).toContainText("관계없는 용접 문항을 대신 붙이지 않고");
+
+  const fullIndex = page.getByTestId("written-subject-two-full-index");
+  await expect(fullIndex).not.toHaveAttribute("open", "");
+  await fullIndex.locator(":scope > summary").click();
+  await expect(fullIndex).toHaveAttribute("open", "");
+  await expect(page.getByTestId("lesson-categories-s2-g01")).toBeVisible();
+});
+
+test("arc-welding shielding subtopic keeps the focused lesson structure", async ({ page }) => {
+  await page.goto("/written/theory/lesson-welding-process-shielding");
+
+  await expect(
+    page.getByRole("heading", { name: "아크용접 차폐 조건", level: 1 }),
+  ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "정의", exact: true })).toBeVisible();
+  await expect(page.getByText("산소·질소·수분", { exact: false }).first()).toBeVisible();
+  await expect(page.getByRole("heading", { name: "작동원리" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "전극·차폐·적용조건" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "선정할 때 보는 조건" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "품질·고장 진단" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "시험에 자주 출제되는 유형" })).toBeVisible();
+  await expect(page.getByTestId("lesson-practice-set")).toContainText("모의고사 1문제 풀기");
+  await expect(page.locator("main")).not.toContainText("정답입니다");
+});
+
+test("arc-welding subtopics fit a 390px study screen", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/written/theory/lesson-welding-process-shielding");
+
+  await expect(
+    page.getByRole("heading", { name: "아크용접 차폐 조건", level: 1 }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "그림·표로 공정 차이 먼저 이해하기" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "GTAW", level: 3, exact: true }),
+  ).toBeVisible();
+  const viewport = await page.evaluate(() => ({
+    width: document.documentElement.clientWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+  }));
+  expect(viewport.scrollWidth).toBeLessThanOrEqual(viewport.width);
+});
+
+test("subject three follows the integrated source and preserves its detail routes", async ({ page }) => {
+  await page.goto("/written/theory/subject/subject-3");
+  await page.waitForLoadState("networkidle");
+
+  const guide = page.getByTestId("written-subject-three-memory-guide");
+  await expect(
+    guide.getByRole("heading", {
+      name: "기계설비 일반을 13개 흐름으로 묶어보기",
+    }),
+  ).toBeVisible();
+  await expect(
+    guide.getByTestId("subject-three-bundle-drawing-lines-tolerance"),
+  ).toContainText("치수공차");
+  await expect(
+    guide.getByTestId("subject-three-bundle-heat-treatment-testing"),
+  ).toContainText("열처리");
+  await expect(
+    guide.getByTestId("subject-three-bundle-fluid-machinery-troubles"),
+  ).toContainText("캐비테이션");
+  await expect(
+    guide.getByRole("link", { name: /아베 원리/ }),
+  ).toHaveAttribute("href", "/written/theory/lesson-psovio");
+  await expect(guide).toContainText("공식 규격");
+  await expect(guide).toContainText("장비 매뉴얼");
+
+  const traps = guide.getByTestId(
+    "subject-three-traps-heat-treatment-testing",
+  );
+  await expect(traps).not.toHaveAttribute("open", "");
+  await traps.locator(":scope > summary").focus();
+  await traps.locator(":scope > summary").press("Enter");
+  await expect(traps).toHaveAttribute("open", "");
+  await expect(traps).toContainText("뜨임은 소려 또는 템퍼링");
+  const heatTreatmentCbt = guide.getByTestId(
+    "subject-three-cbt-heat-treatment-testing",
+  );
+  await expect(heatTreatmentCbt).toContainText("관련 실제 CBT 원문");
+  const heatTreatmentQuestion = heatTreatmentCbt
+    .locator('[data-testid^="inline-cbt-question-"]')
+    .first();
+  await heatTreatmentQuestion.locator(":scope > summary").click();
+  await expect(heatTreatmentQuestion.getByRole("button").first()).toBeVisible();
+  await expect(page).toHaveURL(/\/written\/theory/);
+
+  const fullIndex = page.getByTestId("written-subject-three-full-index");
+  await expect(fullIndex).not.toHaveAttribute("open", "");
+  await fullIndex.locator(":scope > summary").click();
+  await expect(fullIndex).toHaveAttribute("open", "");
+  await expect(page.getByTestId("lesson-categories-s3-g01")).toBeVisible();
+});
+
+test("subject four keeps a fast memory guide without exposing the private source body", async ({ page }) => {
+  await page.goto("/written/theory/subject/subject-4#subject-4");
+  await page.waitForLoadState("networkidle");
+
+  const guide = page.getByTestId("written-subject-four-memory-guide");
+  await expect(
+    guide.getByRole("heading", {
+      name: "설비진단 및 관리를 15개 흐름으로 묶어보기",
+    }),
+  ).toBeVisible();
+  await expect(
+    guide.getByTestId("subject-four-bundle-vibration-foundation"),
+  ).toContainText("진동 3요소");
+  await expect(
+    guide.getByTestId("subject-four-bundle-maintenance-methods"),
+  ).toContainText("사후·예방·예지·개량·보전예방");
+  await expect(
+    guide.getByTestId("subject-four-bundle-oil-supply-management"),
+  ).toContainText("전손식·유욕·비말·강제순환·집중급유");
+  await expect(
+    guide.getByRole("link", { name: "MTBF", exact: true }),
+  ).toHaveAttribute("href", /\/written\/theory\/lesson-/);
+  const vibrationCbt = guide.getByTestId(
+    "subject-four-cbt-vibration-foundation",
+  );
+  await expect(vibrationCbt).toContainText("관련 실제 CBT 원문");
+  const vibrationQuestion = vibrationCbt
+    .locator('[data-testid^="inline-cbt-question-"]')
+    .first();
+  await vibrationQuestion.locator(":scope > summary").click();
+  const firstChoice = vibrationQuestion.getByRole("button").first();
+  await expect(firstChoice).toBeVisible();
+  await firstChoice.click();
+  await vibrationQuestion.getByRole("button", { name: "답안 제출" }).click();
+  await expect(
+    vibrationQuestion.locator('[data-testid^="inline-cbt-feedback-"]'),
+  ).toBeVisible();
+  await expect(page).toHaveURL(/\/written\/theory/);
+  await expect(vibrationCbt).toContainText(
+    "정답과 해설은 선택지를 제출한 뒤에만 표시됩니다.",
+  );
+  await expect(guide).toContainText("Fast·Slow");
+  await expect(guide.locator('a[href*="notion.site"]')).toHaveCount(0);
+  await expect(guide.getByText("과목 전체 종합정리 원문 펼쳐보기")).toHaveCount(0);
+
+  const fullIndex = page.getByTestId("written-subject-four-full-index");
+  await expect(fullIndex).not.toHaveAttribute("open", "");
+  await fullIndex.locator(":scope > summary").click();
+  await expect(fullIndex).toHaveAttribute("open", "");
+  await expect(page.getByTestId("lesson-categories-s4-g01")).toBeVisible();
+});
+
+test("private source routes are not published", async ({ page }) => {
+  const response = await page.goto("/written/theory/source/4");
+
+  expect(response?.status()).toBe(404);
+  await expect(page.locator("body")).not.toContainText(
+    "설비 관리 \"절대 수치\" 한계선 암기 노트",
+  );
+  await expect(page.locator('a[href*="notion.site"]')).toHaveCount(0);
 });
 
 test("PID is taught as one family with issue-based application and question-specific traps", async ({ page }) => {
@@ -348,15 +656,13 @@ test("five arc-welding processes are compared before answer-safe practice", asyn
   await expect(page.locator("main")).not.toContainText("전체 해설");
 });
 
-test("an individual PID lesson starts with its related family and replaces the generic trap copy", async ({ page }) => {
+test("an individual PID lesson uses the focused lesson structure and replaces the generic trap copy", async ({ page }) => {
   await page.goto("/written/theory/lesson-bx3sdi");
 
-  const family = page.getByTestId("lesson-family-overview");
-  await expect(family).toContainText("먼저 함께 구분할 용어");
-  await expect(family.getByRole("link", { name: /P·I·D 제어동작 전체를 묶어서 비교/ })).toHaveAttribute(
-    "href",
-    "/written/theory/family/s1-g11/action",
-  );
+  await expect(page.getByTestId("lesson-family-overview")).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "정의", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "원리", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "시험에 자주 출제되는 유형" })).toBeVisible();
   await expect(page.getByTestId("trap-question-U-556")).toContainText("제어편차의 변화율");
   await expect(page.getByTestId("trap-question-U-556")).not.toContainText("정답 판단 기준");
   await expect(page.getByText("같은 세부항목군에서 함께 학습하는 용어이므로", { exact: false })).toHaveCount(0);
@@ -374,19 +680,56 @@ test("lesson formulas render as readable math instead of raw LaTeX", async ({ pa
 test("lesson explains the concept before actual past exams and similar practice", async ({ page }) => {
   await page.goto("/written/theory/lesson-tcxwqa");
 
-  await expect(page.getByRole("heading", { name: "개념부터 이해하기" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "기출 문제 풀기" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "정의", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "원리", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "시험에 자주 출제되는 유형" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "실제 CBT 기출 1문제 풀기" })).toBeVisible();
   await expect(page.getByTestId("past-exam-2018-2-Q88")).toBeVisible();
   await expect(page.getByText("2018년 2회 · 88번", { exact: true })).toBeVisible();
 
   const pastExamsBox = await page.locator("#past-exams").boundingBox();
-  const conceptBox = await page.locator("#concept").boundingBox();
-  expect(conceptBox?.y ?? Number.MAX_SAFE_INTEGER).toBeLessThan(pastExamsBox?.y ?? 0);
+  const definitionBox = await page.locator("#definition").boundingBox();
+  expect(definitionBox?.y ?? Number.MAX_SAFE_INTEGER).toBeLessThan(pastExamsBox?.y ?? 0);
 
   const practiceSet = page.getByTestId("lesson-practice-set");
-  await expect(practiceSet.getByRole("heading", { name: "실전 유사 문제 풀기" })).toBeVisible();
-  await expect(practiceSet.getByRole("link").first()).toHaveAttribute("href", "/written/practice/U-748");
+  await expect(practiceSet.getByRole("heading", { name: "모의고사 1문제 풀기" })).toBeVisible();
+  const firstMockQuestion = practiceSet
+    .locator('[data-testid^="inline-cbt-question-"]')
+    .first();
+  await firstMockQuestion.locator(":scope > summary").click();
+  await expect(firstMockQuestion.getByRole("button").first()).toBeVisible();
+  await expect(page).toHaveURL(/\/written\/theory\/lesson-tcxwqa$/);
   await expect(practiceSet).toContainText("답을 제출하기 전에는 정답과 해설을 전송하지 않습니다.");
+});
+
+test("lesson exam patterns combine authored notes with direct past-exam frequency", async ({ page }) => {
+  await page.goto("/written/theory/lesson-1ec09vl");
+
+  const patterns = page.getByTestId("lesson-exam-types");
+  await expect(patterns).toContainText("미리 정리한 시험 포인트");
+  await expect(patterns).toContainText("피복아크·TIG·MIG/MAG");
+  await expect(patterns).toContainText("검증 기출 2건");
+  await expect(patterns).toContainText("2건 · 100%");
+  await expect(patterns).toContainText("저항용접");
+
+  const practiceSet = page.getByTestId("lesson-practice-set");
+  await expect(
+    practiceSet.locator('[data-testid^="inline-cbt-question-"]'),
+  ).toHaveCount(1);
+  const urlBefore = page.url();
+  await practiceSet
+    .locator('[data-testid^="inline-cbt-question-"]')
+    .first()
+    .locator(":scope > summary")
+    .click();
+  await expect(
+    practiceSet
+      .locator('[data-testid^="inline-cbt-question-"]')
+      .first()
+      .getByRole("button")
+      .first(),
+  ).toBeVisible();
+  expect(page.url()).toBe(urlBefore);
 });
 
 test("family study explains concepts before more actual exams and concrete adhesive choices", async ({ page }) => {
@@ -396,7 +739,7 @@ test("family study explains concepts before more actual exams and concrete adhes
   const traps = page.locator("#question-traps");
   const relatedTerms = page.locator("#related-terms");
   await expect(pastExams.locator("details")).toHaveCount(3);
-  await expect(page.getByRole("heading", { name: "기출 문제 풀기" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /실제 CBT 기출 \d+문제 풀기/ })).toBeVisible();
 
   const pastExamsBox = await pastExams.boundingBox();
   const trapsBox = await traps.boundingBox();
@@ -428,11 +771,33 @@ test("actual past exam grades inline and reveals the explanation without navigat
   expect(page.url()).toBe(originalUrl);
 });
 
-test("family comparison rows use distinct actual exam effects and cautions", async ({ page }) => {
-  await page.goto("/written/theory/family/s4-g14/application");
+test("tolerance family replaces the generic concept map with fit and symbol tables", async ({ page }) => {
+  if (test.info().project.name === "mobile") {
+    await page.setViewportSize({ width: 390, height: 844 });
+  }
+  await page.goto("/written/theory/family/s3-g01/tolerance");
 
-  await expect(page.getByRole("heading", { name: "용도별 윤활유 기출 판단 지도" })).toBeVisible();
-  await expect(page.getByTestId("family-decision-map").locator(":scope > article")).toHaveCount(3);
+  const reference = page.getByTestId("tolerance-fit-reference");
+  await expect(reference).toBeVisible();
+  await expect(page.getByText("Concept map", { exact: true })).toHaveCount(0);
+  await expect(page.getByRole("region", { name: "끼워맞춤 판정 기준표" })).toContainText(
+    "Smin = Dmin − dmax > 0",
+  );
+  await expect(page.getByRole("region", { name: "끼워맞춤 판정 기준표" })).toContainText(
+    "Smin ≤ 0 ≤ Smax",
+  );
+  await expect(page.getByRole("region", { name: "끼워맞춤 판정 기준표" })).toContainText(
+    "Smax = Dmax − dmin < 0",
+  );
+  await expect(page.getByRole("region", { name: "기하공차 기호와 데이텀 기준표" })).toContainText(
+    "모양 공차",
+  );
+  await expect(page.getByRole("region", { name: "기하공차 기호와 데이텀 기준표" })).toContainText(
+    "온 흔들림",
+  );
+  const viewportWidth = page.viewportSize()?.width ?? 1280;
+  const pageWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+  expect(pageWidth).toBeLessThanOrEqual(viewportWidth);
   await expect(page.getByText("명칭만으로 판단하지 말고 대상·조건·기능이 모두 맞는지 확인한다.", { exact: true })).toHaveCount(0);
   await expect(page.getByRole("columnheader", { name: "기출 유형" })).toBeVisible();
   await expect(page.getByRole("columnheader", { name: "실제 함정" })).toBeVisible();

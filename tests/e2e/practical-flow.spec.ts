@@ -426,6 +426,150 @@ test("NCS bearing question shows exactly the four source images used by the prom
   expect(documentWidth).toBeLessThanOrEqual(viewportWidth);
 });
 
+test("question-level visual coverage mappings render every reviewed prompt aid", async ({
+  page,
+}) => {
+  await page.goto("/practical/written/question/P-2025-2-Q01-2");
+
+  await expect(
+    page.getByTestId(
+      "practical-visual-aid-ncs-spherical-roller-bearing-four-choice",
+    ),
+  ).toBeVisible();
+
+  await page.goto("/practical/written/question/EXP-B03");
+  const sequenceItems = page.getByTestId("sequence-order-item");
+  await expect(sequenceItems).toHaveCount(3);
+  await expect(sequenceItems.first().getByRole("img")).toBeVisible();
+
+  await page.goto("/practical/written/question/EXP-SUP-011");
+  await expect(
+    page.getByTestId(
+      "practical-visual-aid-ncs-proximity-sensor-installation-spacing",
+    ),
+  ).toBeVisible();
+});
+
+test("past page exposes only verified reconstructions and licensed prompt visuals", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/practical/written/past");
+  await expect(
+    page.locator('a[href^="/practical/written/question/P-"]'),
+  ).toHaveCount(51);
+  for (const round of [
+    "2025년 1회",
+    "2025년 2회",
+    "2025년 3회",
+    "2026년 1회",
+    "2026년 2회",
+  ]) {
+    await expect(page.getByText(new RegExp(`^${round}`)).first()).toBeVisible();
+  }
+
+  await page.goto("/practical/written/question/P-2026-1-Q06");
+  await expect(
+    page.getByTestId(
+      "practical-visual-aid-licensed-measurement-instruments-three",
+    ),
+  ).toBeVisible();
+  await expect(
+    page.getByTestId(
+      "practical-visual-aid-licensed-measurement-instruments-three",
+    ).getByRole("img"),
+  ).toHaveCount(3);
+
+  await page.goto("/practical/written/question/P-2025-2-Q08");
+  await expect(
+    page.getByTestId("practical-visual-aid-licensed-respirators-four"),
+  ).toBeVisible();
+  await expect(
+    page
+      .getByTestId("practical-visual-aid-licensed-respirators-four")
+      .getByRole("img"),
+  ).toHaveCount(4);
+  await expect(
+    page
+      .getByTestId("practical-visual-aid-licensed-respirators-four")
+      .getByRole("link"),
+  ).toHaveCount(0);
+  await expect(
+    page.getByText("세부 파일·라이선스는 제출 후 공개"),
+  ).toBeVisible();
+  await expect(
+    page.getByText(
+      "저작권 문제로 NCS·외부 공개 자료를 활용하였으며, 원시험 이미지와 동일하지 않습니다.",
+    ),
+  ).toBeVisible();
+
+  await page.goto("/practical/written/question/P-2025-2-Q01-1");
+  await expect(
+    page.getByTestId(
+      "practical-visual-aid-ncs-spherical-roller-bearing-four-choice",
+    ),
+  ).toBeVisible();
+  await expect(
+    page
+      .getByTestId(
+        "practical-visual-aid-ncs-spherical-roller-bearing-four-choice",
+      )
+      .getByRole("img"),
+  ).toHaveCount(4);
+
+  await page.goto("/practical/written/question/P-2025-2-Q04");
+  await expect(
+    page.getByTestId("practical-visual-aid-licensed-maintenance-tools-four"),
+  ).toBeVisible();
+  await expect(
+    page
+      .getByTestId("practical-visual-aid-licensed-maintenance-tools-four")
+      .getByRole("img"),
+  ).toHaveCount(4);
+
+  await page.goto("/practical/written/question/P-2026-2-Q04");
+  await expect(
+    page.getByTestId("practical-visual-aid-licensed-sems-bolt"),
+  ).toBeVisible();
+  await expect(
+    page
+      .getByTestId("practical-visual-aid-licensed-sems-bolt")
+      .getByRole("img"),
+  ).toHaveCount(1);
+
+  await page.goto("/practical/written/question/P-2025-3-Q02");
+  await expect(
+    page.getByTestId("practical-visual-aid-official-safety-signs-four"),
+  ).toBeVisible();
+  await expect(
+    page
+      .getByTestId("practical-visual-aid-official-safety-signs-four")
+      .getByRole("img"),
+  ).toHaveCount(4);
+
+  await page.goto("/practical/written/question/P-2026-1-Q02");
+  await expect(
+    page.getByTestId("practical-visual-aid-official-safety-signs-six"),
+  ).toBeVisible();
+  await expect(
+    page
+      .getByTestId("practical-visual-aid-official-safety-signs-six")
+      .getByRole("img"),
+  ).toHaveCount(6);
+
+  await page.goto("/practical/written/question/P-2026-2-Q02");
+  await expect(
+    page.getByRole("heading", { name: "M18×2 암나사 반지름 계산" }),
+  ).toBeVisible();
+  await expect(page.getByText("공식·계산", { exact: true })).toBeVisible();
+  await expect(
+    page.getByTestId("practical-visual-aid-diagram-m18-thread-reconstruction"),
+  ).toHaveCount(0);
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth),
+  ).toBeLessThanOrEqual(390);
+});
+
 test("practical answer and rubric remain hidden until the learner submits", async ({
   page,
 }) => {
@@ -439,23 +583,31 @@ test("practical answer and rubric remain hidden until the learner submits", asyn
   await expect(page.getByTestId("practical-answer-feedback")).toBeVisible();
 });
 
-test("held practical questions stay unavailable and do not leak through the submit API", async ({
+test("promoted text and sequence questions stay answer-safe before submit", async ({
+  page,
   request,
 }) => {
-  const route = await request.get(
-    "/practical/written/question/P-2025-1-Q05",
-  );
-  expect(route.status()).toBe(404);
+  for (const questionId of [
+    "P-2026-2-Q02",
+    "P-2026-2-Q03",
+    "P-2026-2-Q10",
+    "EXP-C03",
+  ]) {
+    const route = await request.get(
+      `/practical/written/question/${questionId}`,
+    );
+    expect(route.status(), questionId).toBe(200);
+    const body = await route.text();
+    expect(body).not.toContain("modelAnswer");
+    expect(body).not.toContain("requiredKeywords");
+    expect(body).not.toContain("acceptedAnswers");
+  }
 
-  const submit = await request.post("/api/practical/submit", {
-    data: {
-      questionId: "P-2025-1-Q05",
-      answer: "사용자 답안",
-      selfRating: "unknown",
-    },
-  });
-  expect(submit.status()).toBe(404);
-  expect(await submit.text()).not.toContain("modelAnswer");
+  await page.goto("/practical/written/question/P-2026-2-Q10");
+  await expect(page.getByTestId("sequence-order-item")).toHaveCount(4);
+  await expect(
+    page.getByTestId("practical-equivalent-visual-notice"),
+  ).toContainText("원시험 이미지와 동일하지 않습니다");
 });
 
 test("practical submit API rejects an empty answer", async ({ request }) => {
@@ -466,15 +618,20 @@ test("practical submit API rejects an empty answer", async ({ request }) => {
   expect(await submit.text()).not.toContain("modelAnswer");
 });
 
-test("image-dependent reconstructions without the exact NCS original stay held", async ({
-  request,
+test("problem-reference reconstructions use reviewed prompt visuals", async ({
+  page,
 }) => {
-  for (const questionId of ["P-2025-1-Q10", "P-2025-2-Q01-1"]) {
-    const route = await request.get(
-      `/practical/written/question/${questionId}`,
-    );
-    expect(route.status()).toBe(404);
-  }
+  await page.goto("/practical/written/question/P-2025-1-Q10");
+  await expect(
+    page.getByTestId("practical-visual-aid-diagram-vibration-hva-directions"),
+  ).toBeVisible();
+
+  await page.goto("/practical/written/question/P-2025-2-Q01-1");
+  await expect(
+    page.getByTestId(
+      "practical-visual-aid-ncs-spherical-roller-bearing-four-choice",
+    ),
+  ).toBeVisible();
 });
 
 test("predicted questions are labelled without a fabricated occurrence", async ({

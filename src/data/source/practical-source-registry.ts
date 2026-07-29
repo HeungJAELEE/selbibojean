@@ -33,6 +33,74 @@ type PracticalVisualAidInput = Omit<
   >;
 
 const OUTPUT_HASH_BY_PATH: Record<string, string> = {
+  "/practical/official/safety-signs/dust-mask.png":
+    "f370054d09664af41097777c4c22a069d87e25d2f9cbcc936e4eae1f132a62ee",
+  "/practical/official/safety-signs/entry-prohibited.png":
+    "ffa48e9fd300d5baabbc6698817370cbc69dcb7dae2cae3d9933c079afe83905",
+  "/practical/official/safety-signs/eye-protection.png":
+    "a42092fd4ebc8e2c0fb545951a544274b275dd559a0e56a96347fa058c2fbd22",
+  "/practical/official/safety-signs/face-shield.png":
+    "cee660002e18b3816f0108e4e6c2887837591d52d039a497729b25b7bb540c70",
+  "/practical/official/safety-signs/flammable-warning.png":
+    "c7444805bb59b2b45381801dba45f1e68433350a0589c5bb436d4289ea91f087",
+  "/practical/official/safety-signs/hearing-protection.png":
+    "6568847c18dcfffedb9dce1a450f15e4cfaf5326e09b0e5b40d3d02cf2a59141",
+  "/practical/official/safety-signs/high-voltage-warning.png":
+    "fe44215c39aa5e149b4c5f6233a8e1fc27495f10b72fc33f364b31d270687b50",
+  "/practical/official/safety-signs/pedestrian-prohibited.png":
+    "b2cb57a4c2ec7ecb4de810b1293d52514b116b01151138bd56bd7fa277bfa325",
+  "/practical/official/safety-signs/suspended-load-warning.png":
+    "f05db7c447a1a0ebf3fc080d69960a318fec225c3b108ad38f53eb30cdb66b19",
+  "/practical/photos/respirators/dust-mask.jpg":
+    "b476415ba6465a9b5b087da9bc899ee206d81119794f50c1307f9f96236f646a",
+  "/practical/photos/respirators/gas-respirator.jpg":
+    "3b565f5ddb1c73349649ab7e21dba389767d9665bb22a54bd9b5838b514ca528",
+  "/practical/photos/respirators/powered-air-purifying-respirator.jpg":
+    "bbcadf9f36ebcd1f8c3b13758bc4b6901d33ef35b9e55bb9d924d240bbd203d0",
+  "/practical/photos/respirators/supplied-air-respirator.jpg":
+    "128970b15b3acb026eb31afcd0ad129bb932f7b349b89aa15ccbaa4aed1542d7",
+  "/practical/photos/measurement/dial-indicator.jpg":
+    "4a47f57d4f6d160c257aa9aeec244a0d9e6565ac59409296852ba7664c1b718d",
+  "/practical/photos/measurement/depth-micrometer.jpg":
+    "e51918c3ba9ff9b987779d3f49c903beea33cd702f3731642d793d7aad45e85f",
+  "/practical/photos/measurement/inside-micrometer.jpg":
+    "67e7261c6a4598bb1752ed790cd107fb044e2cd1b9269a646a44920a8274a90b",
+  "/practical/photos/maintenance-tools/hook-spanner.jpg":
+    "e39a14f74f1d674dce65475eae9c92f3508b34d85b7816c875886bb1b3d07a2b",
+  "/practical/photos/maintenance-tools/socket-wrench-set.jpg":
+    "eb97d5ffaa04d534b72c62ff4fed2ea816b1efb5d24ab2bebd8ea429c4579b55",
+  "/practical/ncs/bearing-puller.jpg":
+    "38ee6d0ef1f3c38ab73a5ba84b33b486c366bcdc93c607c934af58a4b0e575d9",
+  "/practical/ncs/snap-ring-pliers.jpg":
+    "8cfffb2065df9195f74e328150765073969f8cafd38c7778da92d6741c896232",
+  "/practical/photos/fasteners/sems-bolt.jpg":
+    "006df484396e6199626ee047251a374f1b7cab6679740630be4477cde4d84a8d",
+  "/practical/diagrams/abbe-principle-exam.svg":
+    "2dae99ee9edd2133dfb4e7108e5f8ccba635077334b826b9e17f493f59fcd26b",
+  "/practical/diagrams/bracket-drawing-annotations.svg":
+    "23a71c9a245a76770a39a68af70cc48c478f87dbab38d3f06a239a93695168ab",
+  "/practical/diagrams/drip-lubrication.svg":
+    "a6436df54c5b6c07b0cdc009305b93f82070ea932b902565e270c80f502fc146",
+  "/practical/diagrams/drive-unit-section-labels.svg":
+    "e6b3f34b37aac349525d4f7d6a532a86d91a2c4af64a6c62dfa481a57074bfd2",
+  "/practical/diagrams/external-gear-pump-drawing.svg":
+    "457e373ff493d7ea92600aa5a7c8621581593a83214fcb5ec370551f15a5008e",
+  "/practical/diagrams/ghs-pictograms-problem.svg":
+    "2f2f3d7705e87dd403e3d74320a9bb6da3105899094f9d4a09cc997a1aa2e0bb",
+  "/practical/diagrams/grinding-wheel-safety.svg":
+    "8a0c116041def4c0215796e7d8dd26b18da1c290a348c8476a393302113685e7",
+  "/practical/diagrams/m18-thread-reconstruction.svg":
+    "2429dfee2d3eab8900ef011dc14238027d8afcf33c34cbbe4600f361329de191",
+  "/practical/diagrams/measurement-instruments-exact.svg":
+    "696bcf037c950b75a518bca58c915e2961c0e9cddddf4d2f29818aaf9552d7c6",
+  "/practical/diagrams/safety-signs-six.svg":
+    "fde27b7101c0b71e609175c2487b146aacd26ceafea4bc2598a32a26dd7ea951",
+  "/practical/diagrams/safety-signs-four.svg":
+    "11fea1f7c8c9b328ee2d5af981afb4ca935e9a46a16758c658c5b806c7dc7685",
+  "/practical/diagrams/sems-bolt.svg":
+    "e79474fa0af886d9b31c52723c1fed9b053df7f54f5e56acdf9d0214f85b81a1",
+  "/practical/diagrams/third-angle-projection-problem.svg":
+    "cfd648b4eca888743226ebf9e35309579ed8709ddaf983daa205e3ac43ff46f7",
   "/practical/ncs/bearing-q04-a.png":
     "7fb5e24768f6893ce61c7b66b15e36ae7cfba83f6be73a6ffe760a4bdddaf76b",
   "/practical/ncs/bearing-q04-b.png":
@@ -213,6 +281,7 @@ const defaultUsageTypes = (
   if (aid.id === "ncs-bearing-four-types") {
     return [
       "past_exam_prompt",
+      "variant_exam_prompt",
       "recognition",
       "concept_explanation",
       "summary_diagram",
@@ -366,6 +435,7 @@ const promptFrameOrder = (frameCount: number) =>
 const PRACTICAL_TASK_VISUAL_AIDS: PracticalVisualAidInput[] =
   PRACTICAL_TASK_VISUAL_SEEDS.map((sequence) => {
     const isInspection = sequence.assessmentFormat === "inspection";
+    const isPastReconstruction = Boolean(sequence.pastOccurrence);
     const registry = NCS_SOURCE_REGISTRY[sequence.sourcePdfId];
     const frames: PracticalVisualFrame[] = sequence.frames.map(
       (sequenceFrame) => ({
@@ -411,13 +481,20 @@ const PRACTICAL_TASK_VISUAL_AIDS: PracticalVisualAidInput[] =
       printedPage: firstFrame.printedPage,
       figureNumber: `${firstFrame.figureNumber} 외`,
       sourceFileHash: registry.hash,
-      examMatchStatus: "concept_source",
+      examMatchStatus: isPastReconstruction
+        ? "licensed_equivalent"
+        : "concept_source",
       rightsStatus: "education_use_with_attribution",
       publicUseStatus: "public",
       originType: "ncs_crop",
       usageTypes: isInspection
         ? ["recognition", "concept_explanation", "variant_exam_prompt"]
-        : ["sequence_step", "concept_explanation", "variant_exam_prompt"],
+        : [
+            "sequence_step",
+            "concept_explanation",
+            "variant_exam_prompt",
+            ...(isPastReconstruction ? (["past_exam_prompt"] as const) : []),
+          ],
       answerCritical: true,
       technicalReviewStatus: "verified",
       technicalReviewedAt: "2026-07-27T00:00:00.000Z",
@@ -425,11 +502,376 @@ const PRACTICAL_TASK_VISUAL_AIDS: PracticalVisualAidInput[] =
       visualReviewNote:
         isInspection
           ? "NCS 원문의 서로 다른 점검 사진을 대조하고, 고정 작업순서로 오인하지 않도록 사진 식별·점검형으로 분리했다."
-          : "NCS 원문 페이지와 단계 순서를 대조하고, 문제용 중립 대체텍스트와 학습용 설명을 분리했다.",
+          : isPastReconstruction
+            ? "원시험 원본 사진이 아닌 NCS 동등 재구성이다. NCS 원문 4단계와 기존 문제·정답을 대조하고, 문제용 중립 대체텍스트와 학습용 설명을 분리했다."
+            : "NCS 원문 페이지와 단계 순서를 대조하고, 문제용 중립 대체텍스트와 학습용 설명을 분리했다.",
     };
   });
 
 export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = ([
+  {
+    id: "licensed-respirators-four",
+    title: "호흡보호구 4종 실사 판독",
+    imagePaths: [
+      "/practical/photos/respirators/dust-mask.jpg",
+      "/practical/photos/respirators/gas-respirator.jpg",
+      "/practical/photos/respirators/supplied-air-respirator.jpg",
+      "/practical/photos/respirators/powered-air-purifying-respirator.jpg",
+    ],
+    promptLabels: ["가", "나", "다", "라"],
+    promptAltTexts: [
+      "(가) 코와 입을 덮는 여과식 안면부 실사",
+      "(나) 좌우 정화통이 결합된 반면형 안면부 실사",
+      "(다) 외부 공기 호스가 연결된 전면형 보호구 실사",
+      "(라) 후드와 전동 송풍장치가 연결된 보호구 실사",
+    ],
+    altText:
+      "방진마스크, 방독마스크, 송기마스크, 전동식 호흡보호구를 차례로 보여 주는 실사",
+    caption:
+      "(가) 방진마스크, (나) 방독마스크, (다) 송기마스크, (라) 전동식 호흡보호구의 공기 공급 방식과 외형을 비교한다.",
+    sourceLabel:
+      "Wikimedia Commons · Public domain 및 CC BY 2.0 공개 실사",
+    sourceLinks: [
+      {
+        label: "방진마스크 실사 원본",
+        href: "https://commons.wikimedia.org/wiki/File:Dust_mask.jpg",
+        license: "Public domain",
+      },
+      {
+        label: "방독마스크 실사 원본",
+        href: "https://commons.wikimedia.org/wiki/File:Air-Purifying_Respirator.jpg",
+        license: "Public domain (CDC/NIOSH)",
+      },
+      {
+        label: "송기마스크 실사 원본",
+        href: "https://commons.wikimedia.org/wiki/File:%D0%A8%D0%BB%D0%B0%D0%BD%D0%B3%D0%BE%D0%B2%D1%8B%D0%B9_%D1%80%D0%B5%D1%81%D0%BF%D0%B8%D1%80%D0%B0%D1%82%D0%BE%D1%80_%D1%81_%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%BB%D0%B8%D1%86%D0%B5%D0%B2%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%BE%D0%B9.JPG",
+        license: "Public domain (NIOSH)",
+      },
+      {
+        label: "전동식 호흡보호구 실사 원본",
+        href: "https://commons.wikimedia.org/wiki/File:Portable_powered_HEPA_respirator.jpg",
+        license: "CC BY 2.0",
+      },
+    ],
+    ncsCode: "external-commons",
+    pdfPage: 0,
+    printedPage: 0,
+    figureNumber:
+      "Dust mask.jpg / Air-Purifying Respirator.jpg / supplied-air respirator / Portable powered HEPA respirator.jpg",
+    sourceFileHash:
+      "b476415ba6465a9b5b087da9bc899ee206d81119794f50c1307f9f96236f646a",
+    examMatchStatus: "licensed_equivalent",
+    rightsStatus: "education_use_with_attribution",
+    publicUseStatus: "public",
+    originType: "official_external",
+    usageTypes: ["past_exam_prompt", "recognition", "concept_explanation"],
+    answerCritical: true,
+    technicalReviewStatus: "verified",
+    technicalReviewedAt: "2026-07-29T00:00:00.000Z",
+    technicalReviewer: "licensed-photo-audit",
+    visualReviewNote:
+      "복원 글의 원사진을 복제하지 않고 권리가 확인된 공개 실사를 사용해 (가) 방진, (나) 방독, (다) 송기, (라) 전동식 순서를 보존한 동등 식별자료다.",
+  },
+  {
+    id: "official-safety-signs-four",
+    title: "산업안전보건법 공식 안전표지 4종",
+    imagePaths: [
+      "/practical/official/safety-signs/eye-protection.png",
+      "/practical/official/safety-signs/face-shield.png",
+      "/practical/official/safety-signs/dust-mask.png",
+      "/practical/official/safety-signs/suspended-load-warning.png",
+    ],
+    promptLabels: ["가", "나", "다", "라"],
+    promptAltTexts: [
+      "(가) 파란색 원형 지시표지",
+      "(나) 파란색 원형 지시표지",
+      "(다) 파란색 원형 지시표지",
+      "(라) 노란색 삼각형 경고표지",
+    ],
+    altText:
+      "보안경 착용, 보안면 착용, 방진마스크 착용, 매달린 물체 경고의 공식 안전표지",
+    caption:
+      "(가) 보안경 착용, (나) 보안면 착용, (다) 방진마스크 착용, (라) 매달린 물체 경고 표지다.",
+    sourceLabel:
+      "국가법령정보센터 · 산업안전보건법 시행규칙 별표 6 안전·보건표지",
+    sourceLinks: [
+      {
+        label: "산업안전보건법 시행규칙 별표 6",
+        href: "https://www.law.go.kr/LSW/flDownload.do?flSeq=131883527",
+        license: "대한민국 법령정보",
+      },
+    ],
+    ncsCode: "official-law-safety-signs",
+    pdfPage: 1,
+    printedPage: 1,
+    figureNumber: "301·304·303·208",
+    sourceFileHash:
+      "63dafe819b2c2bd78b93751f9ce3b3705cfcc0bc26f1477760ffdbf41adc3cb1",
+    examMatchStatus: "licensed_equivalent",
+    rightsStatus: "education_use_with_attribution",
+    publicUseStatus: "public",
+    originType: "official_external",
+    usageTypes: ["past_exam_prompt", "recognition", "concept_explanation"],
+    answerCritical: true,
+    technicalReviewStatus: "verified",
+    technicalReviewedAt: "2026-07-29T00:00:00.000Z",
+    technicalReviewer: "official-safety-sign-audit",
+    visualReviewNote:
+      "복원 글의 배열을 보존하되 임의 제작 도식 대신 현행 산업안전보건법 시행규칙 별표 6의 공식 표지를 사용했다.",
+  },
+  {
+    id: "official-safety-signs-six",
+    title: "산업안전보건법 공식 안전표지 6종",
+    imagePaths: [
+      "/practical/official/safety-signs/entry-prohibited.png",
+      "/practical/official/safety-signs/flammable-warning.png",
+      "/practical/official/safety-signs/pedestrian-prohibited.png",
+      "/practical/official/safety-signs/face-shield.png",
+      "/practical/official/safety-signs/high-voltage-warning.png",
+      "/practical/official/safety-signs/hearing-protection.png",
+    ],
+    promptLabels: ["a", "b", "c", "d", "e", "f"],
+    promptAltTexts: [
+      "표지 a",
+      "표지 b",
+      "표지 c",
+      "표지 d",
+      "표지 e",
+      "표지 f",
+    ],
+    altText:
+      "출입금지, 인화성물질 경고, 보행금지, 보안면 착용, 고압전기 경고, 귀마개 착용의 공식 안전표지",
+    caption:
+      "금지·경고·지시 표지를 색상과 형상, 내부 기호로 구분한다.",
+    sourceLabel:
+      "국가법령정보센터 · 산업안전보건법 시행규칙 별표 6 안전·보건표지",
+    sourceLinks: [
+      {
+        label: "산업안전보건법 시행규칙 별표 6",
+        href: "https://www.law.go.kr/LSW/flDownload.do?flSeq=131883527",
+        license: "대한민국 법령정보",
+      },
+    ],
+    ncsCode: "official-law-safety-signs",
+    pdfPage: 1,
+    printedPage: 1,
+    figureNumber: "101·201·102·304·207·306",
+    sourceFileHash:
+      "63dafe819b2c2bd78b93751f9ce3b3705cfcc0bc26f1477760ffdbf41adc3cb1",
+    examMatchStatus: "licensed_equivalent",
+    rightsStatus: "education_use_with_attribution",
+    publicUseStatus: "public",
+    originType: "official_external",
+    usageTypes: ["past_exam_prompt", "recognition", "concept_explanation"],
+    answerCritical: true,
+    technicalReviewStatus: "verified",
+    technicalReviewedAt: "2026-07-29T00:00:00.000Z",
+    technicalReviewer: "official-safety-sign-audit",
+    visualReviewNote:
+      "복원 글의 a~f 배열을 보존하되 임의 제작 도식 대신 현행 산업안전보건법 시행규칙 별표 6의 공식 표지를 사용했다.",
+  },
+  {
+    id: "licensed-measurement-instruments-three",
+    title: "측정기 3종 실사 판독",
+    imagePaths: [
+      "/practical/photos/measurement/dial-indicator.jpg",
+      "/practical/photos/measurement/depth-micrometer.jpg",
+      "/practical/photos/measurement/inside-micrometer.jpg",
+    ],
+    promptLabels: ["1", "2", "3"],
+    promptAltTexts: [
+      "(1) 원형 눈금판과 접촉자가 있는 측정기 실사",
+      "(2) 넓은 기준면과 깊이 측정봉이 있는 측정기 실사",
+      "(3) 구멍 안지름을 재는 봉형 측정기 실사",
+    ],
+    altText:
+      "다이얼 게이지, 깊이 마이크로미터, 내측 마이크로미터를 차례로 보여 주는 실사",
+    caption:
+      "(1) 다이얼 게이지, (2) 깊이 마이크로미터, (3) 내측 마이크로미터의 외형과 접촉부를 비교한다.",
+    sourceLabel:
+      "Wikimedia Commons · GrahamDavies(CC0), Splarka(Public domain)",
+    sourceLinks: [
+      {
+        label: "다이얼 게이지 원본",
+        href: "https://commons.wikimedia.org/wiki/File:Planer_Snipe_Measured_with_Dial_Indicator_000.jpg",
+        license: "CC0 1.0",
+      },
+      {
+        label: "마이크로미터 3종 원본",
+        href: "https://commons.wikimedia.org/wiki/File:Micrometers.jpg",
+        license: "Public domain",
+      },
+    ],
+    ncsCode: "external-commons",
+    pdfPage: 0,
+    printedPage: 0,
+    figureNumber:
+      "Planer Snipe Measured with Dial Indicator 000.jpg / Micrometers.jpg",
+    sourceFileHash:
+      "73cc8097caa32aadc85c8bd7ccee3aa1a5aeba4daff4b0bb001f33eb846da7da",
+    examMatchStatus: "licensed_equivalent",
+    rightsStatus: "education_use_with_attribution",
+    publicUseStatus: "public",
+    originType: "official_external",
+    usageTypes: [
+      "past_exam_prompt",
+      "recognition",
+      "concept_explanation",
+    ],
+    answerCritical: true,
+    technicalReviewStatus: "verified",
+    technicalReviewedAt: "2026-07-29T00:00:00.000Z",
+    technicalReviewer: "licensed-photo-audit",
+    visualReviewNote:
+      "복원 글의 원사진을 복제하지 않고, CC0·퍼블릭도메인 실사를 사용해 (1) 다이얼 게이지, (2) 깊이 마이크로미터, (3) 내측 마이크로미터 순서를 보존한 동등 식별자료다.",
+  },
+  {
+    id: "ncs-spherical-roller-bearing-four-choice",
+    title: "자동조심 롤러베어링 4지 식별",
+    imagePaths: [
+      "/practical/ncs/bearing-q04-a.png",
+      "/practical/ncs/bearing-q04-b.png",
+      "/practical/ncs/bearing-self-aligning-ball.png",
+      "/practical/ncs/bearing-q04-c.png",
+    ],
+    promptLabels: ["가", "나", "다", "라"],
+    promptAltTexts: [
+      "(가) 롤러가 평행하게 배열된 베어링 실사",
+      "(나) 롤러와 궤도륜이 경사진 베어링 실사",
+      "(다) 두 줄의 굽은 롤러가 배열된 베어링 실사",
+      "(라) 두 와셔 사이에 구형 전동체가 배열된 베어링 실사",
+    ],
+    altText:
+      "원통 롤러, 테이퍼 롤러, 자동조심 롤러, 스러스트 볼 베어링을 차례로 보여 주는 NCS 원문 사진",
+    caption:
+      "(가) 원통 롤러, (나) 테이퍼 롤러, (다) 자동조심 롤러, (라) 스러스트 볼 베어링이다.",
+    sourceLabel:
+      "NCS 학습모듈 「운반하역기계 구동장치 정비」 원문 사진 재배열",
+    sourceLinks: [
+      {
+        label: "NCS 학습모듈 원문",
+        href: NCS_SOURCE_REGISTRY["1505010108"].sourceUrl,
+        license: "교육 목적 출처 표시",
+      },
+    ],
+    ncsCode: "1505010108",
+    pdfPage: 96,
+    printedPage: 84,
+    figureNumber: "그림 3-6·3-7·3-12·3-8 재배열",
+    sourceFileHash:
+      "532832df67e7ba4ff0162629cd655c0122c6db15b95a45dc455e088907885dab",
+    examMatchStatus: "licensed_equivalent",
+    rightsStatus: "education_use_with_attribution",
+    publicUseStatus: "public",
+    originType: "ncs_crop",
+    usageTypes: ["past_exam_prompt", "recognition", "concept_explanation"],
+    answerCritical: true,
+    technicalReviewStatus: "verified",
+    technicalReviewedAt: "2026-07-29T00:00:00.000Z",
+    technicalReviewer: "ncs-original-visual-audit",
+    visualReviewNote:
+      "복원 정답의 배열을 유지하되 원시험 사진을 복제하지 않고 NCS 원문 실사를 재배열했다. 네 선택 모두 같은 NCS 모듈에서 가져온 동등 식별자료다.",
+  },
+  {
+    id: "licensed-maintenance-tools-four",
+    title: "정비 공구 4종 실사 판독",
+    imagePaths: [
+      "/practical/photos/maintenance-tools/hook-spanner.jpg",
+      "/practical/photos/maintenance-tools/socket-wrench-set.jpg",
+      "/practical/ncs/bearing-puller.jpg",
+      "/practical/ncs/snap-ring-pliers.jpg",
+    ],
+    promptLabels: ["1", "2", "3", "4"],
+    promptAltTexts: [
+      "(1) 끝부분이 갈고리 모양인 손 공구 실사",
+      "(2) 교환식 원통형 부품과 핸들이 함께 놓인 손 공구 실사",
+      "(3) 여러 개의 갈고리와 중앙 나사로 구성된 분해 공구 실사",
+      "(4) 끝에 작은 핀이 달린 플라이어 실사",
+    ],
+    altText:
+      "후크 스패너, 소켓 렌치 세트, 베어링 풀러, 스냅링 플라이어를 차례로 보여 주는 실사",
+    caption:
+      "(1) 후크 스패너, (2) 소켓 렌치 세트, (3) 베어링 풀러, (4) 스냅링 플라이어의 형상과 용도를 비교한다.",
+    sourceLabel:
+      "NCS 학습모듈 원문 사진 · Wikimedia Commons 공개 실사",
+    sourceLinks: [
+      {
+        label: "후크 스패너 원본",
+        href: "https://commons.wikimedia.org/wiki/File:Cl%C3%A9_%C3%A0_ergot.jpg",
+        license: "Public domain",
+      },
+      {
+        label: "소켓 렌치 세트 원본",
+        href: "https://commons.wikimedia.org/wiki/File:Socket_wrench_set.jpg",
+        license: "Public domain",
+      },
+      {
+        label: "NCS 스냅링 플라이어 원문",
+        href: NCS_SOURCE_REGISTRY["1503010120"].sourceUrl,
+        license: "교육 목적 출처 표시",
+      },
+      {
+        label: "NCS 베어링 풀러 원문",
+        href: NCS_SOURCE_REGISTRY["1505010108"].sourceUrl,
+        license: "교육 목적 출처 표시",
+      },
+    ],
+    ncsCode: "external-commons",
+    pdfPage: 128,
+    printedPage: 116,
+    figureNumber: "NCS PDF p.42·128 / Clé à ergot.jpg / Socket wrench set.jpg",
+    sourceFileHash:
+      "0502df53e1f6e0e83e77054c54334376b8d83807045fdffab47d9a6c49c5f15a",
+    examMatchStatus: "licensed_equivalent",
+    rightsStatus: "education_use_with_attribution",
+    publicUseStatus: "public",
+    originType: "official_external",
+    usageTypes: ["past_exam_prompt", "recognition", "concept_explanation"],
+    answerCritical: true,
+    technicalReviewStatus: "verified",
+    technicalReviewedAt: "2026-07-29T00:00:00.000Z",
+    technicalReviewer: "ncs-and-licensed-photo-audit",
+    visualReviewNote:
+      "복원 배열 (1) 후크 스패너, (2) 소켓 렌치, (3) 풀러, (4) 스냅링 플라이어를 유지했다. NCS에 식별 가능한 원문 사진이 있는 풀러·스냅링 플라이어를 우선 사용하고, 나머지 두 공구만 퍼블릭도메인 실사로 보완했다.",
+  },
+  {
+    id: "licensed-sems-bolt",
+    title: "SEMS 볼트 실사 판독",
+    imagePaths: ["/practical/photos/fasteners/sems-bolt.jpg"],
+    promptLabels: ["가"],
+    promptAltTexts: [
+      "볼트 머리 아래에 평와셔와 절개된 와셔가 함께 끼워진 체결품 실사",
+    ],
+    altText:
+      "평와셔와 스프링와셔가 나사부에서 빠지지 않도록 미리 조립된 육각머리 SEMS 볼트 실사",
+    caption:
+      "평와셔와 스프링와셔가 볼트에 포획되어 한 세트로 취급되는 SEMS 볼트다.",
+    sourceLabel: "Wikimedia Commons · 在原ヶ谷戸(CC BY-SA 3.0)",
+    sourceLinks: [
+      {
+        label: "SEMS 볼트 동등 실사 원본",
+        href: "https://commons.wikimedia.org/wiki/File:Bolt_with_washer.jpg",
+        license: "CC BY-SA 3.0",
+      },
+    ],
+    ncsCode: "external-commons",
+    pdfPage: 0,
+    printedPage: 0,
+    figureNumber: "Bolt with washer.jpg",
+    sourceFileHash:
+      "006df484396e6199626ee047251a374f1b7cab6679740630be4477cde4d84a8d",
+    examMatchStatus: "licensed_equivalent",
+    rightsStatus: "education_use_with_attribution",
+    publicUseStatus: "public",
+    originType: "official_external",
+    usageTypes: ["past_exam_prompt", "recognition", "concept_explanation"],
+    answerCritical: true,
+    technicalReviewStatus: "verified",
+    technicalReviewedAt: "2026-07-29T00:00:00.000Z",
+    technicalReviewer: "licensed-photo-audit",
+    visualReviewNote:
+      "일본어 원문 설명이 ‘座金組込み六角ボルト’인 CC BY-SA 실사로, 평와셔·스프링와셔가 볼트에 미리 조립된 구조를 판독할 수 있다. 원시험 사진과 동일하다고 주장하지 않는 동등 식별자료다.",
+  },
   {
     id: "ncs-bearing-four-types",
     title: "구름베어링 4종 실사 비교",
@@ -577,7 +1019,11 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = ([
     rightsStatus: "education_use_with_attribution",
     publicUseStatus: "public",
     originType: "ncs_crop",
-    usageTypes: ["sequence_step", "concept_explanation"],
+    usageTypes: [
+      "sequence_step",
+      "concept_explanation",
+      "variant_exam_prompt",
+    ],
     answerCritical: true,
     derivedFromVisualAidId: null,
     sourcePageImageHash: null,
@@ -593,16 +1039,16 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = ([
     id: "ncs-tapered-bearing-assembly-sequence",
     title: "테이퍼 롤러베어링 조립·간극조정 5단계",
     imagePaths: [
-      "/practical/visuals/tapered-bearing-inner-cone.png",
-      "/practical/visuals/tapered-bearing-hub-cover.png",
-      "/practical/visuals/tapered-bearing-dial-gauge.png",
-      "/practical/visuals/tapered-bearing-clearance-adjust.png",
-      "/practical/visuals/tapered-bearing-lock-cover.png",
+      "/practical/visuals/ncs-sequence-legacy-01-frame-01.png",
+      "/practical/visuals/ncs-sequence-legacy-01-frame-02.png",
+      "/practical/visuals/ncs-sequence-legacy-01-frame-03.png",
+      "/practical/visuals/ncs-sequence-legacy-01-frame-04.png",
+      "/practical/visuals/ncs-sequence-legacy-01-frame-05.png",
     ],
     frames: [
       {
         id: "ncs-tapered-bearing-assembly-sequence--tapered-bearing-inner-cone",
-        path: "/practical/visuals/tapered-bearing-inner-cone.png",
+        path: "/practical/visuals/ncs-sequence-legacy-01-frame-01.png",
         promptAltText: "테이퍼 롤러베어링 작업 장면",
         learningAltText: "안쪽 콘을 허브에 삽입하는 장면",
         captionBeforeAnswer: null,
@@ -612,7 +1058,7 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = ([
       },
       {
         id: "ncs-tapered-bearing-assembly-sequence--tapered-bearing-hub-cover",
-        path: "/practical/visuals/tapered-bearing-hub-cover.png",
+        path: "/practical/visuals/ncs-sequence-legacy-01-frame-02.png",
         promptAltText: "테이퍼 롤러베어링 작업 장면",
         learningAltText: "허브 커버를 체결하고 허브를 축에 삽입하는 장면",
         captionBeforeAnswer: null,
@@ -622,7 +1068,7 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = ([
       },
       {
         id: "ncs-tapered-bearing-assembly-sequence--tapered-bearing-dial-gauge",
-        path: "/practical/visuals/tapered-bearing-dial-gauge.png",
+        path: "/practical/visuals/ncs-sequence-legacy-01-frame-03.png",
         promptAltText: "테이퍼 롤러베어링 작업 장면",
         learningAltText: "허브에 다이얼 게이지를 설치하고 영점을 맞추는 장면",
         captionBeforeAnswer: null,
@@ -632,7 +1078,7 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = ([
       },
       {
         id: "ncs-tapered-bearing-assembly-sequence--tapered-bearing-clearance-adjust",
-        path: "/practical/visuals/tapered-bearing-clearance-adjust.png",
+        path: "/practical/visuals/ncs-sequence-legacy-01-frame-04.png",
         promptAltText: "테이퍼 롤러베어링 작업 장면",
         learningAltText: "허브를 흔들며 축방향 간극을 측정·조정하는 장면",
         captionBeforeAnswer: null,
@@ -642,7 +1088,7 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = ([
       },
       {
         id: "ncs-tapered-bearing-assembly-sequence--tapered-bearing-lock-cover",
-        path: "/practical/visuals/tapered-bearing-lock-cover.png",
+        path: "/practical/visuals/ncs-sequence-legacy-01-frame-05.png",
         promptAltText: "테이퍼 롤러베어링 작업 장면",
         learningAltText: "로크 와셔를 고정하고 커버를 조립하는 장면",
         captionBeforeAnswer: null,
@@ -673,7 +1119,11 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = ([
     rightsStatus: "education_use_with_attribution",
     publicUseStatus: "public",
     originType: "ncs_crop",
-    usageTypes: ["sequence_step", "concept_explanation"],
+    usageTypes: [
+      "sequence_step",
+      "concept_explanation",
+      "variant_exam_prompt",
+    ],
     answerCritical: true,
     derivedFromVisualAidId: null,
     sourcePageImageHash: null,
@@ -876,6 +1326,11 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = ([
     examMatchStatus: "exact_source",
     rightsStatus: "education_use_with_attribution",
     publicUseStatus: "public",
+    usageTypes: [
+      "variant_exam_prompt",
+      "recognition",
+      "concept_explanation",
+    ],
   },
   {
     id: "ncs-rt-film-defect-identification",
@@ -1014,7 +1469,11 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = ([
     rightsStatus: "education_use_with_attribution",
     publicUseStatus: "public",
     originType: "ncs_crop",
-    usageTypes: ["recognition", "concept_explanation"],
+    usageTypes: [
+      "variant_exam_prompt",
+      "recognition",
+      "concept_explanation",
+    ],
     answerCritical: false,
     technicalReviewStatus: "verified",
     technicalReviewedAt: "2026-07-28T00:00:00.000Z",
@@ -1120,7 +1579,12 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = ([
     rightsStatus: "education_use_with_attribution",
     publicUseStatus: "public",
     originType: "ncs_crop",
-    usageTypes: ["recognition", "concept_explanation", "summary_diagram"],
+    usageTypes: [
+      "variant_exam_prompt",
+      "recognition",
+      "concept_explanation",
+      "summary_diagram",
+    ],
     answerCritical: false,
     technicalReviewStatus: "verified",
     technicalReviewedAt: "2026-07-28T00:00:00.000Z",
@@ -1149,7 +1613,12 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = ([
     rightsStatus: "education_use_with_attribution",
     publicUseStatus: "public",
     originType: "ncs_crop",
-    usageTypes: ["recognition", "concept_explanation", "summary_diagram"],
+    usageTypes: [
+      "variant_exam_prompt",
+      "recognition",
+      "concept_explanation",
+      "summary_diagram",
+    ],
     answerCritical: false,
     technicalReviewStatus: "verified",
     technicalReviewedAt: "2026-07-28T00:00:00.000Z",
@@ -1768,6 +2237,116 @@ export const PRACTICAL_VISUAL_AIDS: PracticalVisualAid[] = ([
       code: "1503010216",
       page: 49,
       printed: 37,
+    },
+    {
+      id: "diagram-third-angle-projection-problem",
+      title: "제3각법 투상도 복원 문제",
+      file: "third-angle-projection-problem.svg",
+      alt: "화살표 방향의 입체와 정면도, 빈 평면도·우측면도 칸을 배치한 제3각법 문제 도식",
+      caption: "입체의 모서리와 정면도를 기준으로 평면도와 우측면도를 완성한다.",
+      code: "1502010511",
+      page: 75,
+      printed: 63,
+    },
+    {
+      id: "diagram-bracket-drawing-annotations",
+      title: "브래킷 도면 A·B 판독",
+      file: "bracket-drawing-annotations.svg",
+      alt: "나사 구멍과 리브 위치를 A·B로 표시한 브래킷 단면도",
+      caption: "A와 B의 수량·치수·가공 또는 형상 지시를 도면에서 판독한다.",
+      code: "1502010511",
+      page: 75,
+      printed: 63,
+    },
+    {
+      id: "diagram-measurement-instruments-exact",
+      title: "측정기 3종 판독",
+      file: "measurement-instruments-exact.svg",
+      alt: "1부터 3까지 다이얼형·깊이형·내측형 측정기를 배열한 자체 제작 도식",
+      caption: "측정자와 기준면, 접촉부의 형상으로 세 측정기의 명칭을 구분한다.",
+      code: "1502010504",
+      page: 39,
+      printed: 27,
+    },
+    {
+      id: "diagram-external-gear-pump-drawing",
+      title: "펌프·공차기호 판독 도면",
+      file: "external-gear-pump-drawing.svg",
+      alt: "맞물린 두 기어와 축 단면, 세 기하공차 프레임을 표시한 자체 제작 도면",
+      caption: "장치·기어 종류와 가·나·다 공차기호, 끼워맞춤 조건을 각각 판독한다.",
+      code: "1503010216",
+      page: 49,
+      printed: 37,
+    },
+    {
+      id: "diagram-m18-thread-reconstruction",
+      title: "M18 암나사 a·b 판독",
+      file: "m18-thread-reconstruction.svg",
+      alt: "M18 암나사 단면에서 두 반지름을 a와 b로 표시한 자체 제작 도면",
+      caption: "a와 b가 가리키는 지름 경계를 구분한 뒤 반지름 값을 계산한다.",
+      code: "1502010511",
+      page: 75,
+      printed: 63,
+    },
+    {
+      id: "diagram-sems-bolt",
+      title: "와셔 조립 볼트 구조 판독",
+      file: "sems-bolt.svg",
+      alt: "볼트 머리 아래 두 종류의 와셔가 이탈하지 않게 조립된 자체 제작 구조도",
+      caption: "볼트와 와셔의 결합 관계를 보고 체결품 명칭을 판별한다.",
+      code: "1503010120",
+      page: 42,
+      printed: 30,
+    },
+    {
+      id: "diagram-grinding-wheel-safety",
+      title: "연삭숫돌 시운전·방호 문제",
+      file: "grinding-wheel-safety.svg",
+      alt: "연삭숫돌과 덮개, 두 시운전 시간 빈칸을 표시한 자체 제작 도식",
+      caption: "작업 시작 전과 교체 후의 시운전 시간, 파편 방호장치를 구분한다.",
+      code: "1503010122",
+      page: 25,
+      printed: 13,
+    },
+    {
+      id: "diagram-drip-lubrication",
+      title: "윤활유 방울 공급 구조",
+      file: "drip-lubrication.svg",
+      alt: "오일 저장통과 유량 조절부, 투시창, 낙하하는 기름방울을 표시한 자체 제작 도식",
+      caption: "유량을 조절해 방울 단위로 윤활유를 공급하는 구조를 확인한다.",
+      code: "1505010108",
+      page: 71,
+      printed: 59,
+    },
+    {
+      id: "diagram-abbe-principle-exam",
+      title: "측정축·기준축 배치 비교",
+      file: "abbe-principle-exam.svg",
+      alt: "측정축과 기준 눈금축이 같은 직선인 경우와 떨어진 경우를 비교한 자체 제작 도식",
+      caption: "두 축의 상대 위치가 각도 오차의 확대에 미치는 영향을 비교한다.",
+      code: "1502010504",
+      page: 87,
+      printed: 75,
+    },
+    {
+      id: "diagram-ghs-pictograms-problem",
+      title: "화학물질 경고 그림문자 판독",
+      file: "ghs-pictograms-problem.svg",
+      alt: "가부터 아까지 여덟 개의 화학물질 경고 그림문자를 배열한 자체 제작 도식",
+      caption: "마름모 안의 기호 형상을 보고 경고 종류와 의미를 구분한다.",
+      code: "1503010122",
+      page: 25,
+      printed: 13,
+    },
+    {
+      id: "diagram-drive-unit-section-labels",
+      title: "구동장치 단면 ⑥·⑦·⑧ 판독",
+      file: "drive-unit-section-labels.svg",
+      alt: "구동장치 단면의 세 부품 위치를 6, 7, 8로 표시한 자체 제작 도식",
+      caption: "축과 하우징·풀리의 결합 위치를 보고 세 부품의 명칭을 판별한다.",
+      code: "1505010108",
+      page: 96,
+      printed: 84,
     },
   ].map(
     (aid): PracticalVisualAidInput => ({

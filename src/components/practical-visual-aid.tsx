@@ -18,6 +18,8 @@ export function PracticalVisualAidFigure({
   }
 
   const isPrompt = mode === "prompt";
+  const isLicensedEquivalent =
+    visualAid.examMatchStatus === "licensed_equivalent";
   const frameById = new Map(
     visualAid.frames.map((frame) => [frame.id, frame] as const),
   );
@@ -37,9 +39,17 @@ export function PracticalVisualAidFigure({
       className="overflow-hidden rounded-2xl border border-slate-200 bg-white"
     >
       {isPrompt ? (
-        <div className="border-b border-slate-200 bg-slate-50 px-5 py-3">
+        <div
+          className={`border-b px-5 py-3 ${
+            isLicensedEquivalent
+              ? "border-amber-200 bg-amber-50"
+              : "border-slate-200 bg-slate-50"
+          }`}
+        >
           <p className="text-sm font-extrabold text-[#173957]">
-            NCS 원문 이미지
+            {isLicensedEquivalent
+              ? "저작권 문제로 NCS·외부 공개 자료를 활용하였으며, 원시험 이미지와 동일하지 않습니다."
+              : "NCS 원문 이미지"}
           </p>
         </div>
       ) : null}
@@ -120,16 +130,40 @@ export function PracticalVisualAidFigure({
           </>
         ) : null}
         {density === "default" ? (
-          <p className="mt-2 text-xs leading-5 text-slate-500">
-            출처: {visualAid.sourceLabel}, PDF p.{visualAid.pdfPage} · 인쇄 p.
-            {visualAid.printedPage} · {visualAid.figureNumber}
-            {!isPrompt ? " · " : ""}
-            {!isPrompt
-              ? visualAid.rightsStatus === "self_authored"
-                ? "자체 제작 · NCS 원문 원리 대조"
-                : "교육 목적 출처 표시 사용"
-              : null}
-          </p>
+          <div className="mt-2 text-xs leading-5 text-slate-500">
+            {isPrompt ? (
+              <p>
+                출처: {visualAid.sourceLabel} · 세부 파일·라이선스는 제출 후
+                공개
+              </p>
+            ) : (
+              <p>
+                출처: {visualAid.sourceLabel}
+                {isLicensedEquivalent
+                  ? ` · ${visualAid.figureNumber}`
+                  : `, PDF p.${visualAid.pdfPage} · 인쇄 p.${visualAid.printedPage} · ${visualAid.figureNumber}`}
+                {" · "}
+                {visualAid.rightsStatus === "self_authored"
+                  ? "자체 제작 · NCS 원문 원리 대조"
+                  : "교육 목적 출처 표시 사용"}
+              </p>
+            )}
+            {!isPrompt && visualAid.sourceLinks?.length ? (
+              <p className="mt-1 flex flex-wrap gap-x-3 gap-y-1">
+                {visualAid.sourceLinks.map((source) => (
+                  <a
+                    key={source.href}
+                    href={source.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-bold text-[#16697a] underline underline-offset-2"
+                  >
+                    {source.label} ({source.license})
+                  </a>
+                ))}
+              </p>
+            ) : null}
+          </div>
         ) : null}
       </figcaption>
     </figure>

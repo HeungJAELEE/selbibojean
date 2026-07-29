@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 480" role="img" aria-labelledby="title desc">
+  <title id="title">브래킷 도면 A·B 지시사항</title>
+  <desc id="desc">나사 구멍 지시 A와 리브 지시 B를 판독하는 자체 제작 브래킷 단면도</desc>
+  <defs><pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="12" stroke="#94a3b8" stroke-width="3"/></pattern></defs>
+  <rect width="1080" height="480" rx="28" fill="#f8fafc"/>
+  <path d="M170 85h95v70h185l110 70v145H170zM265 155v215M450 155v215" fill="url(#hatch)" stroke="#183b56" stroke-width="6"/>
+  <path d="M265 155h185v215H265z" fill="#fff" stroke="#183b56" stroke-width="6"/>
+  <path d="M450 155 560 225v145H450z" fill="#fff" stroke="#183b56" stroke-width="6"/>
+  <circle cx="215" cy="122" r="20" fill="#fff" stroke="#183b56" stroke-width="6"/>
+  <path d="M215 102V74m-22 48h44M168 122H82" stroke="#183b56" stroke-width="4"/>
+  <path d="M500 245 545 275 500 305z" fill="url(#hatch)" stroke="#183b56" stroke-width="5"/>
+  <path d="M110 62h105M110 62v45M590 275h110" stroke="#d44c3f" stroke-width="5"/>
+  <g font-family="sans-serif" font-size="42" font-weight="800" fill="#d44c3f">
+    <text x="55" y="76">A</text><text x="720" y="291">B</text>
+  </g>
+  <g fill="#fff" stroke="#183b56" stroke-width="5">
+    <circle cx="820" cy="230" r="135"/><circle cx="820" cy="230" r="66"/>
+  </g>
+  <path d="M820 95v270m-135-135h270M820 164l108-62M820 164l108 62M820 164V39" stroke="#183b56" stroke-width="5"/>
+  <text x="760" y="430" font-family="sans-serif" font-size="27" font-weight="700" fill="#183b56">정면·단면 조합도</text>
+</svg>

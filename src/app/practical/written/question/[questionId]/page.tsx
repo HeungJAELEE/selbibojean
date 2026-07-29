@@ -7,8 +7,8 @@ import { PracticalMockNavigator } from "@/components/practical-mock-navigator";
 import { PracticalStudyCategoryBadge } from "@/components/practical-study-category-badge";
 import Link from "next/link";
 import {
-  getPublicPracticalVisualAid,
   getPublicPracticalQuestion,
+  getPublicPracticalQuestionVisualAids,
 } from "@/lib/content/practical-repository";
 import { shuffleSequence } from "@/lib/practical-sequence";
 import {
@@ -27,21 +27,27 @@ export default async function PracticalQuestionPage({
   const question = await getPublicPracticalQuestion(questionId);
   if (!question) notFound();
   const visualUsage = getPracticalPromptVisualUsage(question);
-  const visualAid = await getPublicPracticalVisualAid(
-    question.visualAidId,
+  const visualAids = await getPublicPracticalQuestionVisualAids(
+    question,
     visualUsage,
+  );
+  const sequenceVisual = visualAids.find(
+    (visualAid) => visualAid.frames.length > 1,
+  );
+  const supportingVisualAids = visualAids.filter(
+    (visualAid) => visualAid.id !== sequenceVisual?.id,
   );
   const isInteractiveSequence =
     question.examFormat === "sequence" &&
-    Boolean(visualAid?.frames && visualAid.frames.length > 1);
+    Boolean(sequenceVisual);
   const initialCanonicalFrameIds = isInteractiveSequence
-    ? shuffleSequence(visualAid?.frames?.map((frame) => frame.id) ?? [])
+    ? shuffleSequence(sequenceVisual?.frames.map((frame) => frame.id) ?? [])
     : [];
   const sequenceVisualAid =
-    visualAid && isInteractiveSequence
+    sequenceVisual && isInteractiveSequence
       ? toPublicPracticalSequenceVisualAid({
           questionId: question.id,
-          visualAid,
+          visualAid: sequenceVisual,
           frameIds: initialCanonicalFrameIds,
         })
       : undefined;
@@ -105,18 +111,40 @@ export default async function PracticalQuestionPage({
           </Link>
         ))}
       </div>
-      {visualAid && !isInteractiveSequence ? (
-        <div className="mt-8">
-          <PracticalVisualAidFigure visualAid={visualAid} mode="prompt" />
+      {visualAids.length > 0 ? (
+        <div
+          className="mt-8 grid gap-5"
+          data-testid="practical-question-visuals"
+        >
+          {(isInteractiveSequence ? supportingVisualAids : visualAids).map(
+            (visualAid) => (
+              <PracticalVisualAidFigure
+                key={visualAid.id}
+                visualAid={visualAid}
+                mode="prompt"
+              />
+            ),
+          )}
         </div>
       ) : null}
       <div className="mt-8">
         {sequenceVisualAid ? (
-          <PracticalSequenceQuestion
-            question={question}
-            visualAid={sequenceVisualAid}
-            initialFrameIds={initialFrameIds}
-          />
+          <>
+            {sequenceVisual?.examMatchStatus === "licensed_equivalent" ? (
+              <p
+                className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm font-bold leading-6 text-amber-900"
+                data-testid="practical-equivalent-visual-notice"
+              >
+                저작권 문제로 NCS·외부 공개 자료를 활용하였으며, 원시험
+                이미지와 동일하지 않습니다.
+              </p>
+            ) : null}
+            <PracticalSequenceQuestion
+              question={question}
+              visualAid={sequenceVisualAid}
+              initialFrameIds={initialFrameIds}
+            />
+          </>
         ) : (
           <PracticalWrittenQuestion question={question} />
         )}

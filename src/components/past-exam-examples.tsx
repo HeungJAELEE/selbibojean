@@ -51,7 +51,9 @@ export function PastExamExamples({
           <p className="text-xs font-black uppercase tracking-[.14em] text-[#16697a]">
             {examFirst ? "Step 1 · Past exam practice" : "Past exam practice"}
           </p>
-          <h2 className="mt-1 text-xl font-extrabold text-[#173957]">기출 문제 풀기</h2>
+          <h2 className="mt-1 text-xl font-extrabold text-[#173957]">
+            실제 CBT 기출 {examples.length}문제 풀기
+          </h2>
           <p className="mt-2 text-sm leading-6 text-slate-600">
             {examFirst
               ? `실제 CBT 문장을 읽고 보기를 선택하세요. 답안을 제출하면 정오답과 풀이가 같은 화면에 바로 열립니다. 처음 ${Math.min(initialCount, examples.length)}개부터 보여주며 정답은 제출 전까지 전송하지 않습니다.`

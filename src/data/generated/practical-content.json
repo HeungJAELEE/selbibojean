@@ -1,13 +1,13 @@
 {
   "formatVersion": 1,
-  "generatedAt": "2026-07-28T09:17:50.577Z",
+  "generatedAt": "2026-07-29T11:47:39.792Z",
   "questions": [
     {
       "id": "P-2025-1-Q01",
       "kind": "past",
       "title": "플랜지 커플링 전달토크",
       "formatLabel": "플랜지 커플링 전달토크",
-      "stem": "볼트 4개 중 1개가 파단된 플랜지 커플링의 전달토크 계산",
+      "stem": "플랜지 커플링의 체결볼트 4개 중 1개가 절단된 상태이다. 볼트지름 10 mm, PCD 100 mm, 허용전단응력 50 MPa일 때 전달 가능한 회전토크를 구하시오.",
       "modelAnswer": "약 589.05 N·m",
       "requiredKeywords": [
         "약 589.05 N·m"
@@ -67,13 +67,15 @@
       "kind": "past",
       "title": "기어 백래시 측정",
       "formatLabel": "기어 백래시 측정",
-      "stem": "다이얼게이지를 사용한 기어 백래시 측정방법과 정의",
-      "modelAnswer": "한 기어를 고정하고 다른 기어를 양방향으로 흔들어 다이얼게이지 변위차를 읽는다.",
+      "stem": "맞물린 두 기어 중 작은 기어를 고정하고 큰 기어의 잇면에 측정기를 설치해 틈새만큼 움직여 값을 읽는다. 측정항목 ①과 사용하는 측정기 ②를 쓰시오.",
+      "modelAnswer": "① 백래시, ② 다이얼 게이지",
       "requiredKeywords": [
-        "한 기어를 고정하고 다른 기어를 양방향으로 흔들어 다이얼게이지 변위차를 읽는다."
+        "백래시",
+        "다이얼 게이지"
       ],
       "acceptedAnswers": [
-        "한 기어를 고정하고 다른 기어를 양방향으로 흔들어 다이얼게이지 변위차를 읽는다."
+        "① 백래시, ② 다이얼 게이지",
+        "백래시 / 다이얼게이지"
       ],
       "calculation": [],
       "unit": null,
@@ -84,14 +86,16 @@
           "points": 5
         }
       ],
-      "traps": [],
+      "traps": [
+        "측정 절차만 쓰고 측정항목과 측정기 명칭을 빠뜨림"
+      ],
       "conceptIds": [
         "PCON-002"
       ],
       "primaryStudyCategoryId": "work_procedure",
       "studyCategoryIds": [
         "work_procedure",
-        "theory_concept"
+        "visual_identification"
       ],
       "ncsSources": [
         {
@@ -119,14 +123,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": ""
+      "reviewNote": "복원 원문은 측정방법의 서술이 아니라 빈칸 ① 측정항목과 ② 측정기를 요구한다. 응답 형식을 원문 요구에 맞췄다."
     },
     {
       "id": "P-2025-1-Q03",
       "kind": "past",
       "title": "센서 요구성능",
       "formatLabel": "센서 요구성능",
-      "stem": "설비용 센서가 갖추어야 할 요구성능을 쓰는 문제",
+      "stem": "자동화 시스템에서 센서가 기능을 충분히 발휘하기 위해 기본적으로 요구되는 성능 4가지를 쓰시오.",
       "modelAnswer": "안정성, 신뢰성, 내구성, 장수명",
       "requiredKeywords": [
         "안정성",
@@ -187,7 +191,7 @@
       "kind": "past",
       "title": "구름베어링 사진 식별",
       "formatLabel": "구름베어링 사진 식별",
-      "stem": "사진 4종의 베어링 명칭 쓰기",
+      "stem": "그림 (가)~(라)를 보고 각 구름베어링의 명칭을 순서대로 쓰시오.",
       "modelAnswer": "원통 롤러베어링, 테이퍼 롤러베어링, 스러스트 볼베어링, 스러스트 니들 롤러베어링",
       "requiredKeywords": [
         "원통 롤러베어링",
@@ -213,7 +217,8 @@
       ],
       "primaryStudyCategoryId": "visual_identification",
       "studyCategoryIds": [
-        "visual_identification"
+        "visual_identification",
+        "work_procedure"
       ],
       "ncsSources": [
         {
@@ -248,13 +253,14 @@
       "kind": "past",
       "title": "제3각법 투상도",
       "formatLabel": "제3각법 투상도",
-      "stem": "주어진 입체를 제3각법으로 완성하는 문제",
-      "modelAnswer": "원본 도형 없이는 투상배치와 가시선·숨은선을 확정할 수 없음",
+      "stem": "주어진 입체를 화살표 방향에서 정면으로 보았을 때, 제시된 정면도를 기준으로 평면도와 우측면도를 제3각법으로 완성하시오.",
+      "modelAnswer": "정면도 위에 평면도를, 정면도 오른쪽에 우측면도를 배치하고 입체의 가시 모서리와 경사면을 제3각법으로 정확히 투상한다.",
       "requiredKeywords": [
-        "원본 도형 없이는 투상배치와 가시선·숨은선을 확정할 수 없음"
+        "정면도 위에 평면도를",
+        "정면도 오른쪽에 우측면도를 배치하고 입체의 가시 모서리와 경사면을 제3각법으로 정확히 투상한다."
       ],
       "acceptedAnswers": [
-        "원본 도형 없이는 투상배치와 가시선·숨은선을 확정할 수 없음"
+        "정면도 위에 평면도를, 정면도 오른쪽에 우측면도를 배치하고 입체의 가시 모서리와 경사면을 제3각법으로 정확히 투상한다."
       ],
       "calculation": [],
       "unit": null,
@@ -290,8 +296,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 1,
@@ -301,26 +307,39 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "시험 캡처의 원도형과 NCS 원본 그림번호 확인 필요"
+      "reviewNote": "2025년 1회 복원 글의 입체·정면도·제3각법 배치를 기준으로 같은 모서리 정보를 갖춘 자체 SVG를 제작했다."
     },
     {
       "id": "P-2025-1-Q06",
       "kind": "past",
       "title": "베어링 유도가열 장착순서",
       "formatLabel": "베어링 유도가열 장착순서",
-      "stem": "유도가열기를 이용한 베어링 장착순서 배열",
-      "modelAnswer": "점검·치수확인 → 요크선택 → 센서부착 → 베어링설치 → 목표온도설정 → 가열·탈자 → 보호구착용 후 신속 장착·밀착",
+      "stem": "보기 a~i의 베어링 유도가열기 작업을 올바른 순서로 배열하시오.",
+      "promptOptions": [
+        "a. 온도센서를 베어링 내륜에 부착",
+        "b. 언더바에 베어링을 끼워 가열기에 설치",
+        "c. 가열온도 설정",
+        "d. 설정온도 도달 후 가열 정지·탈자",
+        "e. 베어링 내경에 맞는 언더바 선택",
+        "f. 가열된 베어링을 축에 삽입해 자연냉각",
+        "g. 가열 시작",
+        "h. 전원을 끄고 언더바에서 베어링 분리",
+        "i. 방열장갑 착용"
+      ],
+      "modelAnswer": "e → b → a → c → g → d → i → h → f",
       "requiredKeywords": [
-        "점검·치수확인",
-        "요크선택",
-        "센서부착",
-        "베어링설치",
-        "목표온도설정",
-        "가열·탈자",
-        "보호구착용 후 신속 장착·밀착"
+        "e",
+        "b",
+        "a",
+        "c",
+        "g",
+        "d",
+        "i",
+        "h",
+        "f"
       ],
       "acceptedAnswers": [
-        "점검·치수확인 → 요크선택 → 센서부착 → 베어링설치 → 목표온도설정 → 가열·탈자 → 보호구착용 후 신속 장착·밀착"
+        "e → b → a → c → g → d → i → h → f"
       ],
       "calculation": [],
       "unit": null,
@@ -356,8 +375,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_source_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 1,
@@ -367,14 +386,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "복원문제는 유도가열기 작업순서를 요구하지만 확보한 NCS 그림은 오일 배스 가열·가열 후 조립 장면이다. 동일 작업순서 원문을 확보하기 전까지 공개하지 않는다."
+      "reviewNote": "2025년 1회 복원 글의 e-b-a-c-g-d-i-h-f 순서를 확인하고 NCS 열간조립 원리와 대조한 자체 절차 도식을 사용한다."
     },
     {
       "id": "P-2025-1-Q07",
       "kind": "past",
       "title": "오버홀 정의와 목적",
       "formatLabel": "오버홀 정의와 목적",
-      "stem": "오버홀의 정의와 목적을 쓰는 문제",
+      "stem": "오버홀(overhaul)의 의미와 목적을 각각 쓰시오.",
       "modelAnswer": "설비를 전면 분해·점검·수리·교체·재조립하여 성능과 신뢰성을 회복하는 계획정비",
       "requiredKeywords": [
         "설비를 전면 분해·점검·수리·교체·재조립하여 성능과 신뢰성을 회복하는 계획정비"
@@ -433,18 +452,30 @@
       "kind": "past",
       "title": "O링 요구성능",
       "formatLabel": "O링 요구성능",
-      "stem": "O링의 요구성능 복수선택",
-      "modelAnswer": "내열성, 내유성, 내마모성, 내약품성, 낮은 압축영구변형, 충분한 탄성",
+      "stem": "다음 보기에서 O링의 구비조건으로 적합한 것을 모두 고르시오.",
+      "promptOptions": [
+        "A 내열성이 좋다",
+        "B 마찰계수가 낮다",
+        "C 내마멸성이 낮다",
+        "D 내유성이 좋다",
+        "E 압축저항성이 낮다",
+        "F 유연성이 좋다",
+        "G 장시간 사용해도 탄성을 유지한다",
+        "H 영구변형이 되어야 한다",
+        "I 온도변화에도 안정성을 유지한다"
+      ],
+      "modelAnswer": "A, B, D, F, G, I",
       "requiredKeywords": [
-        "내열성",
-        "내유성",
-        "내마모성",
-        "내약품성",
-        "낮은 압축영구변형",
-        "충분한 탄성"
+        "A",
+        "B",
+        "D",
+        "F",
+        "G",
+        "I"
       ],
       "acceptedAnswers": [
-        "내열성, 내유성, 내마모성, 내약품성, 낮은 압축영구변형, 충분한 탄성"
+        "A, B, D, F, G, I",
+        "A·B·D·F·G·I"
       ],
       "calculation": [],
       "unit": null,
@@ -456,7 +487,7 @@
         }
       ],
       "traps": [
-        "복원 표현 '압축저항'은 '압축영구변형이 작음'으로 기술 보정"
+        "선택 기호 대신 임의로 재작성한 특징 문장만 제출"
       ],
       "conceptIds": [
         "PCON-008"
@@ -491,14 +522,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "복원 표현 '압축저항'은 '압축영구변형이 작음'으로 기술 보정"
+      "reviewNote": "복원 원문의 A~I 선택지를 보존하고, 문항이 요구한 선택 기호로 답하도록 응답 형식을 맞췄다."
     },
     {
       "id": "P-2025-1-Q09",
       "kind": "past",
       "title": "GHS 유해성 그림문자",
       "formatLabel": "GHS 유해성 그림문자",
-      "stem": "그림문자의 명칭과 의미를 쓰는 문제",
+      "stem": "다음 화학물질 경고 그림문자의 명칭과 의미를 쓰시오.",
       "modelAnswer": "GHS 유해성·위험성 그림문자. 폭발성·인화성·산화성·독성·부식성 등 위험을 표시",
       "requiredKeywords": [
         "GHS 유해성·위험성 그림문자. 폭발성·인화성·산화성·독성·부식성 등 위험을 표시"
@@ -540,8 +571,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 1,
@@ -551,14 +582,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "안전표지의 모양·색상 식별에 원그림이 필요하나 현재 저장소에 시험 원그림 또는 동일 NCS 원본이 없다."
+      "reviewNote": "2025년 1회 복원 글의 GHS 그림문자 배열을 기준으로 같은 판독조건의 자체 도식을 제작했다."
     },
     {
       "id": "P-2025-1-Q10",
       "kind": "past",
       "title": "진동센서 측정방향",
       "formatLabel": "진동센서 측정방향",
-      "stem": "축·베어링에서 H/V/A 센서방향 식별",
+      "stem": "감속기의 부하측과 반부하측 베어링 부위에 가속도 센서를 부착할 때 측정방향 3가지를 쓰시오.",
       "modelAnswer": "H: 수평방향, V: 수직방향, A: 축방향",
       "requiredKeywords": [
         "H: 수평방향",
@@ -583,7 +614,8 @@
       ],
       "primaryStudyCategoryId": "visual_identification",
       "studyCategoryIds": [
-        "visual_identification"
+        "visual_identification",
+        "theory_concept"
       ],
       "ncsSources": [
         {
@@ -600,8 +632,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 1,
@@ -611,20 +643,21 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "H·V·A 측정방향을 판단할 시험 원그림과 동일 NCS 원본을 찾지 못했다. 자체 제작 도식은 기출 문제 자료로 사용하지 않는다."
+      "reviewNote": "2025년 1회 복원 글의 수평·수직·축방향 답과 회전기계 진동 측정 기준을 대조한 자체 방향도를 사용한다."
     },
     {
       "id": "P-2025-2-Q01-1",
       "kind": "past",
       "title": "자동조심 롤러베어링 식별",
       "formatLabel": "자동조심 롤러베어링 식별",
-      "stem": "사진 중 자동조심 롤러베어링을 고르는 문제",
+      "stem": "다음 네 베어링 그림 중 자동조심 롤러베어링을 골라 기호를 쓰시오.",
       "modelAnswer": "다",
       "requiredKeywords": [
         "다"
       ],
       "acceptedAnswers": [
-        "다"
+        "다",
+        "(다)"
       ],
       "calculation": [],
       "unit": null,
@@ -658,8 +691,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 2,
@@ -669,22 +702,32 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "정답 후보인 복열 자동조심 롤러베어링과 일치하는 NCS 사진은 확인했지만, 복원문제의 네 선택 사진 전체와 순서를 재현할 동일 원문 묶음은 확보하지 못했다."
+      "reviewNote": "복원 정답의 (다) 배열을 유지하고 NCS 원문에 있는 원통 롤러·테이퍼 롤러·자동조심 롤러·스러스트 볼 베어링 실사를 같은 4지 형식으로 재배열했다. 원시험 사진과 동일하지 않은 NCS 동등 식별자료임을 문제 화면에 표시한다."
     },
     {
       "id": "P-2025-2-Q01-2",
       "kind": "past",
       "title": "자동조심 롤러베어링 특징",
       "formatLabel": "자동조심 롤러베어링 특징",
-      "stem": "자동조심 롤러베어링의 특징 복수선택",
-      "modelAnswer": "조심성이 있으며 큰 방사하중과 일부 축하중을 받을 수 있고, 축과 하우징의 약간의 정렬오차를 허용한다.",
+      "stem": "그림에서 자동조심 롤러베어링을 고르고, 보기에서 그 특징에 해당하는 항목을 모두 고르시오.",
+      "promptOptions": [
+        "a. 고속회전에 적합하다",
+        "b. 외륜 궤도면이 구면이다",
+        "c. 자동으로 중심이 조절된다",
+        "d. 진동·충격하중에 약하다",
+        "e. 일반적으로 가장 많이 사용되는 베어링이다",
+        "f. 중심축 조절이 가능하다"
+      ],
+      "modelAnswer": "자동조심 롤러베어링은 (다)이다. 특징은 b 외륜 궤도면이 구면, c 자동조심, f 중심축 조절·정렬오차 허용이다.",
       "requiredKeywords": [
+        "(다)",
+        "외륜 궤도면이 구면",
         "조심성",
-        "큰 방사하중·일부 축하중",
         "약간의 정렬오차 허용"
       ],
       "acceptedAnswers": [
-        "조심성이 있으며 큰 방사하중과 일부 축하중을 받을 수 있고, 축과 하우징의 약간의 정렬오차를 허용한다."
+        "(다), 외륜 궤도면이 구면이고 자동조심성이 있어 정렬오차를 허용한다.",
+        "다 / b, c, f"
       ],
       "calculation": [],
       "unit": null,
@@ -703,7 +746,8 @@
       ],
       "primaryStudyCategoryId": "theory_concept",
       "studyCategoryIds": [
-        "theory_concept"
+        "theory_concept",
+        "visual_identification"
       ],
       "ncsSources": [
         {
@@ -738,7 +782,7 @@
       "kind": "past",
       "title": "센서 히스테리시스",
       "formatLabel": "센서 히스테리시스",
-      "stem": "입력 증가·감소 시 동일 입력에서 출력이 다른 현상의 명칭",
+      "stem": "센서의 히스테리시스(hysteresis)를 설명하시오.",
       "modelAnswer": "히스테리시스",
       "requiredKeywords": [
         "히스테리시스"
@@ -761,8 +805,7 @@
       ],
       "primaryStudyCategoryId": "theory_concept",
       "studyCategoryIds": [
-        "theory_concept",
-        "formula_calculation"
+        "theory_concept"
       ],
       "ncsSources": [
         {
@@ -797,7 +840,7 @@
       "kind": "past",
       "title": "도면 주석 판독",
       "formatLabel": "도면 주석 판독",
-      "stem": "도면의 A, B 지시사항 판독",
+      "stem": "브래킷 도면에서 A와 B로 지시한 가공·형상 조건의 의미를 각각 설명하시오.",
       "modelAnswer": "A: 3-M4 깊이 10, B: 두께 10 mm의 리브 3개소",
       "requiredKeywords": [
         "A: 3-M4 깊이 10",
@@ -840,8 +883,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 2,
@@ -851,23 +894,29 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "원도면의 화살표·기호 위치가 정답 결정에 필수"
+      "reviewNote": "2025년 2회 복원 글의 브래킷 A·B 지시 위치와 3-M4 깊이 10, 3-10 리브 조건을 자체 도면으로 재구성했다."
     },
     {
       "id": "P-2025-2-Q04",
       "kind": "past",
       "title": "정비 공구 식별",
       "formatLabel": "정비 공구 식별",
-      "stem": "후크스패너·소켓렌치·기어풀러·스냅링플라이어와 용도 연결",
-      "modelAnswer": "후크스패너-홈붙이너트, 소켓렌치-육각체결, 기어풀러-축부품분리, 스냅링플라이어-스냅링착탈",
+      "stem": "그림 (1)~(4)의 공구와 보기 a~d의 설명을 알맞게 연결하시오.",
+      "promptOptions": [
+        "a. 기어·풀리·베어링 등을 축에서 분리할 때 사용하는 공구",
+        "b. 원형 너트나 베어링 잠금너트의 홈 또는 걸고리에 걸어 조이거나 푸는 공구",
+        "c. 스냅링을 벌리거나 오므려 축 또는 구멍에 설치하거나 빼는 공구",
+        "d. 육각머리 볼트·너트를 조이거나 풀 때 사용하는 핸들과 여러 크기의 소켓으로 구성된 공구"
+      ],
+      "modelAnswer": "(1)-b, (2)-d, (3)-a, (4)-c",
       "requiredKeywords": [
-        "후크스패너-홈붙이너트",
-        "소켓렌치-육각체결",
-        "기어풀러-축부품분리",
-        "스냅링플라이어-스냅링착탈"
+        "(1)-b",
+        "(2)-d",
+        "(3)-a",
+        "(4)-c"
       ],
       "acceptedAnswers": [
-        "후크스패너-홈붙이너트, 소켓렌치-육각체결, 기어풀러-축부품분리, 스냅링플라이어-스냅링착탈"
+        "1-b, 2-d, 3-a, 4-c"
       ],
       "calculation": [],
       "unit": null,
@@ -878,7 +927,10 @@
           "points": 5
         }
       ],
-      "traps": [],
+      "traps": [
+        "공구 명칭을 문제 본문에 먼저 노출",
+        "실사 대신 식별하기 어려운 자체 도식 사용"
+      ],
       "conceptIds": [
         "PCON-013"
       ],
@@ -902,8 +954,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 2,
@@ -913,14 +965,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "복원문제의 네 정비 공구를 모두 포함하는 동일 NCS 원사진을 확인하지 못했다."
+      "reviewNote": "복원 원문의 (1)~(4) 배열과 설명 a~d를 유지했다. NCS 원문에서 스냅링 플라이어와 베어링 풀러 실사를 확인하고, NCS에 같은 판독 사진이 없는 후크 스패너와 소켓 렌치만 퍼블릭도메인 실사로 보완했다. 원시험 사진과 동일하지 않은 동등 식별자료임을 문제 화면에 표시한다."
     },
     {
       "id": "P-2025-2-Q05",
       "kind": "past",
       "title": "버니어캘리퍼스 판독",
       "formatLabel": "버니어캘리퍼스 판독",
-      "stem": "버니어캘리퍼스 눈금 판독",
+      "stem": "그림의 측정기 명칭을 쓰고 눈금을 판독하여 측정값을 mm로 쓰시오.",
       "modelAnswer": "48.2 mm",
       "requiredKeywords": [
         "48.2 mm"
@@ -960,8 +1012,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 2,
@@ -971,14 +1023,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "확보한 NCS 버니어캘리퍼스 원문 예시는 21.60 mm이며 복원문제의 48.2 mm 눈금과 다르다."
+      "reviewNote": "2025년 2회 복원 글의 48.2 mm 판독값이 나오도록 주척 48 mm와 버니어 0.2 mm 일치눈금을 자체 제작했다."
     },
     {
       "id": "P-2025-2-Q06",
       "kind": "past",
       "title": "플랜지 커플링 전달토크",
       "formatLabel": "플랜지 커플링 전달토크",
-      "stem": "리머볼트 4개, d=10 mm, τ=12 MPa, PCD=200 mm의 전달토크",
+      "stem": "전단응력 12 MPa인 M10 리머볼트 4개로 체결되고 PCD가 200 mm인 플랜지 커플링의 최대 전달토크를 구하시오.",
       "modelAnswer": "약 377 N·m",
       "requiredKeywords": [
         "약 377 N·m"
@@ -1038,13 +1090,17 @@
       "kind": "past",
       "title": "베이퍼 록",
       "formatLabel": "베이퍼 록",
-      "stem": "베어링 급유장치의 기포 때문에 오일 공급이 끊기는 현상의 명칭",
-      "modelAnswer": "베이퍼 록(vapor lock)",
+      "stem": "브레이크를 지나치게 사용해 마찰열로 브레이크 오일이 기화하고 배관에 기포가 생겨 제동력이 급격히 저하되는 현상의 명칭을 쓰시오.",
+      "modelAnswer": "베이퍼 로크(vapor lock): 브레이크 오일이 마찰열로 기화해 배관에 기포가 생기고 압력 전달이 끊겨 제동력이 급격히 저하되는 현상",
       "requiredKeywords": [
-        "베이퍼 록(vapor lock)"
+        "베이퍼 로크",
+        "브레이크 오일 기화",
+        "기포",
+        "제동력 저하"
       ],
       "acceptedAnswers": [
-        "베이퍼 록(vapor lock)"
+        "베이퍼 로크",
+        "브레이크액이 기화해 기포가 생기고 제동력이 저하되는 베이퍼 로크 현상"
       ],
       "calculation": [],
       "unit": null,
@@ -1055,14 +1111,16 @@
           "points": 5
         }
       ],
-      "traps": [],
+      "traps": [
+        "윤활유 공급이 끊기는 베어링 급유 현상으로 설명",
+        "캐비테이션과 혼동"
+      ],
       "conceptIds": [
         "PCON-015"
       ],
       "primaryStudyCategoryId": "theory_concept",
       "studyCategoryIds": [
-        "theory_concept",
-        "work_procedure"
+        "theory_concept"
       ],
       "ncsSources": [
         {
@@ -1090,23 +1148,30 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": ""
+      "reviewNote": "복원 글의 Q7은 베어링 급유 문제가 아니라 브레이크 오일이 과열·기화되어 제동력이 저하되는 현상을 묻는다. 문항과 답안을 베이퍼 로크로 바로잡았다."
     },
     {
       "id": "P-2025-2-Q08",
       "kind": "past",
       "title": "호흡보호구 종류와 용도",
       "formatLabel": "호흡보호구 종류와 용도",
-      "stem": "방진·방독·송기·전동식 호흡보호구와 용도 연결",
-      "modelAnswer": "방진마스크는 분진·흄·미스트 등 입자상 물질에, 방독마스크는 해당 정화통이 제거할 수 있는 가스·증기에 사용한다. 송기마스크는 외부의 깨끗한 공기를 공급하고, 전동식 호흡보호구는 송풍기로 필터 또는 정화통을 통과시킨 공기를 공급한다.",
+      "stem": "그림 (가)~(라)의 호흡보호구와 보기 a~d의 설명을 알맞게 연결하시오.",
+      "promptOptions": [
+        "a. 정화통을 통해 화학적 흡착으로 유기용제·산성 또는 염기성 가스에 대응한다.",
+        "b. 입자상 오염물질을 차단하며 특급·1급·2급으로 구분한다.",
+        "c. 산소가 충분하고 고농도 분진이나 유해물질이 있는 장소에서 작업시간이 길거나 작업강도가 클 때 송풍기로 여과공기를 공급한다.",
+        "d. 외부 공기를 공급하며 산소 부족 또는 고농도 유해물질 장소에서 사용할 수 있으나 호스 때문에 이동이 제한된다."
+      ],
+      "modelAnswer": "(가)-b, (나)-a, (다)-d, (라)-c",
       "requiredKeywords": [
-        "방진마스크-입자상 물질",
-        "방독마스크-가스·증기",
-        "송기마스크-외부 공기 공급",
-        "전동식 호흡보호구-송풍기와 필터·정화통"
+        "(가)-b",
+        "(나)-a",
+        "(다)-d",
+        "(라)-c"
       ],
       "acceptedAnswers": [
-        "방진마스크는 분진·흄·미스트 등 입자상 물질에, 방독마스크는 해당 정화통이 제거할 수 있는 가스·증기에 사용한다. 송기마스크는 외부의 깨끗한 공기를 공급하고, 전동식 호흡보호구는 송풍기로 필터 또는 정화통을 통과시킨 공기를 공급한다."
+        "가-b, 나-a, 다-d, 라-c",
+        "방진-b, 방독-a, 송기-d, 전동식-c"
       ],
       "calculation": [],
       "unit": null,
@@ -1126,7 +1191,8 @@
       ],
       "primaryStudyCategoryId": "theory_concept",
       "studyCategoryIds": [
-        "theory_concept"
+        "theory_concept",
+        "visual_identification"
       ],
       "ncsSources": [
         {
@@ -1154,14 +1220,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "NCS 조립안전관리와 한국산업안전보건공단 보호구 자료를 대조해 보호구별 대상 유해인자와 공기 공급 방식을 확인했다."
+      "reviewNote": "복원 원문의 네 호흡보호구와 설명 a~d 연결 구조를 보존했다. 원시험 사진을 복제하지 않고 권리가 확인된 방진·방독·송기·전동식 호흡보호구 실사를 같은 순서의 동등 식별자료로 연결했다."
     },
     {
       "id": "P-2025-2-Q09",
       "kind": "past",
       "title": "LOTO",
       "formatLabel": "LOTO",
-      "stem": "LOTO의 명칭과 목적을 쓰는 문제",
+      "stem": "산업재해 예방을 위한 LOTO의 의미와 목적을 쓰시오.",
       "modelAnswer": "Lockout-Tagout. 에너지원을 차단·잠금·표지하고 잔류에너지를 제거·검증해 예기치 않은 재가동을 방지",
       "requiredKeywords": [
         "Lockout-Tagout. 에너지원을 차단·잠금·표지하고 잔류에너지를 제거·검증해 예기치 않은 재가동을 방지"
@@ -1222,15 +1288,15 @@
       "kind": "past",
       "title": "기어 손상 식별",
       "formatLabel": "기어 손상 식별",
-      "stem": "피팅·스폴링·스코어링의 명칭과 특징",
-      "modelAnswer": "피팅: 점상피로, 스폴링: 큰 조각 박리, 스코어링: 윤활막 파괴와 미끄럼에 의한 긁힘·용착",
+      "stem": "기어 치면 손상에 관한 (가)~(다)의 설명을 읽고 각각의 명칭을 쓰시오.",
+      "modelAnswer": "(가) 피팅: 반복 접촉피로로 작은 점상 홈이 생기는 손상, (나) 스폴링: 표면이 비교적 넓고 깊게 조각나 박리되는 손상, (다) 스코어링: 윤활막 파괴와 미끄럼으로 긁힘·융착·뜯김이 생기는 손상",
       "requiredKeywords": [
-        "피팅: 점상피로",
-        "스폴링: 큰 조각 박리",
-        "스코어링: 윤활막 파괴와 미끄럼에 의한 긁힘·용착"
+        "피팅-점상 홈",
+        "스폴링-넓고 깊은 박리",
+        "스코어링-긁힘·융착"
       ],
       "acceptedAnswers": [
-        "피팅: 점상피로, 스폴링: 큰 조각 박리, 스코어링: 윤활막 파괴와 미끄럼에 의한 긁힘·용착"
+        "피팅: 점상 홈, 스폴링: 넓고 깊은 박리, 스코어링: 윤활막 파괴에 따른 긁힘·융착"
       ],
       "calculation": [],
       "unit": null,
@@ -1241,7 +1307,10 @@
           "points": 5
         }
       ],
-      "traps": [],
+      "traps": [
+        "피팅과 스폴링을 모두 같은 크기의 박리로 설명",
+        "스코어링을 단순 부식으로 설명"
+      ],
       "conceptIds": [
         "PCON-018"
       ],
@@ -1265,8 +1334,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 2,
@@ -1276,14 +1345,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "피팅·스폴링·스코어링의 일반 정의만으로는 복원문제의 세 사진 순서와 정답을 확정할 수 없다. 동일 시험 원그림 또는 출처가 확인된 동일 사진 묶음이 필요하다."
+      "reviewNote": "2025년 2회 복원 글의 Q10 문장형 정의와 NCS 기어 손상 근거를 대조했다. 블로그 이미지를 복제하지 않고 점상공·넓은 박리·미끄럼 긁힘을 자체 도식으로 재구성했다."
     },
     {
       "id": "P-2025-3-Q01",
       "kind": "past",
       "title": "끼워맞춤과 틈새",
       "formatLabel": "끼워맞춤과 틈새",
-      "stem": "구멍 Ø60 +0.030/0, 축 Ø60 -0.005/-0.010의 끼워맞춤·최대·최소틈새",
+      "stem": "구멍 Ø60(+0.030/0), 축 Ø60(-0.005/-0.010)의 끼워맞춤 명칭과 최대틈새·최소틈새를 구하시오.",
       "modelAnswer": "틈새끼워맞춤, 최대 0.040 mm, 최소 0.005 mm",
       "requiredKeywords": [
         "틈새끼워맞춤",
@@ -1345,16 +1414,16 @@
       "kind": "past",
       "title": "안전표지 식별",
       "formatLabel": "안전표지 식별",
-      "stem": "보안경·안면보호구·방진마스크·낙하물경고 표지 식별",
-      "modelAnswer": "보안경 착용, 안면보호구 착용, 방진마스크 착용, 낙하물 경고",
+      "stem": "다음 산업안전표지 (가)~(라)의 의미를 각각 쓰시오.",
+      "modelAnswer": "(가) 보안경 착용, (나) 보안면 착용, (다) 방진마스크 착용, (라) 매달린 물체 경고",
       "requiredKeywords": [
         "보안경 착용",
-        "안면보호구 착용",
+        "보안면 착용",
         "방진마스크 착용",
-        "낙하물 경고"
+        "매달린 물체 경고"
       ],
       "acceptedAnswers": [
-        "보안경 착용, 안면보호구 착용, 방진마스크 착용, 낙하물 경고"
+        "보안경 착용, 보안면 착용, 방진마스크 착용, 매달린 물체 경고"
       ],
       "calculation": [],
       "unit": null,
@@ -1366,7 +1435,8 @@
         }
       ],
       "traps": [
-        "현행 산업안전보건표지 도안·명칭 확인 필요"
+        "청력보호구 착용과 혼동",
+        "낙하물 경고라고만 쓰고 매달린 물체 도안을 구분하지 않음"
       ],
       "conceptIds": [
         "PCON-009"
@@ -1390,8 +1460,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 3,
@@ -1401,26 +1471,33 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "현행 안전표지 분류 근거는 확인했지만 복원문제의 네 도안과 순서를 확인할 원그림이 없다. 도안이 정답을 결정하므로 원그림 확보 전에는 공개하지 않는다."
+      "reviewNote": "2025년 3회 복원 글에서 네 도안의 순서와 명칭을 확인했다. 현행 산업안전보건법 시행규칙 별표 6과 대조하고 같은 순서의 공식 안전표지를 사용한다."
     },
     {
       "id": "P-2025-3-Q03",
       "kind": "past",
       "title": "자주보전 정의와 7스텝",
       "formatLabel": "자주보전 정의와 7스텝",
-      "stem": "TPM 자주보전의 정의와 단계 배열",
-      "modelAnswer": "초기청소 → 발생원·곤란개소 대책 → 청소·급유 가기준 → 총점검 → 자주점검 → 표준화 → 자율관리",
+      "stem": "TPM의 자주보전을 정의하고, 보기 a~e를 이용해 자주보전 7단계의 빈칸을 올바른 순서로 완성하시오.",
+      "promptOptions": [
+        "a. 총점검",
+        "b. 표준화",
+        "c. 자주점검",
+        "d. 자주보전 기준서 작성",
+        "e. 발생원·곤란개소 대책"
+      ],
+      "modelAnswer": "초기청소 → 발생원·곤란개소 대책 → 자주보전 기준서 작성 → 총점검 → 자주점검 → 표준화 → 자주관리",
       "requiredKeywords": [
         "초기청소",
         "발생원·곤란개소 대책",
-        "청소·급유 가기준",
+        "자주보전 기준서 작성",
         "총점검",
         "자주점검",
         "표준화",
-        "자율관리"
+        "자주관리"
       ],
       "acceptedAnswers": [
-        "초기청소 → 발생원·곤란개소 대책 → 청소·급유 가기준 → 총점검 → 자주점검 → 표준화 → 자율관리"
+        "초기청소 → 발생원·곤란개소 대책 → 자주보전 기준서 작성 → 총점검 → 자주점검 → 표준화 → 자주관리"
       ],
       "calculation": [],
       "unit": null,
@@ -1461,7 +1538,7 @@
       "kind": "past",
       "title": "나사산 형상 식별",
       "formatLabel": "나사산 형상 식별",
-      "stem": "사각·사다리꼴·톱니·둥근나사 형상 식별",
+      "stem": "그림 (가)~(라)의 나사산 모양을 보고 각 나사의 명칭을 쓰시오.",
       "modelAnswer": "사각나사, 사다리꼴나사, 톱니나사, 둥근나사",
       "requiredKeywords": [
         "사각나사",
@@ -1504,8 +1581,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 3,
@@ -1515,14 +1592,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "나사산 형상 식별에 필요한 시험 원그림과 동일 NCS 원본이 없다."
+      "reviewNote": "2025년 3회 복원 글의 사각·사다리꼴·톱니·둥근나사 순서를 자체 형상도로 재구성했다."
     },
     {
       "id": "P-2025-3-Q05",
       "kind": "past",
       "title": "축정렬 불량 식별",
       "formatLabel": "축정렬 불량 식별",
-      "stem": "평행·각도 미스얼라인먼트 그림 식별",
+      "stem": "플랜지로 연결한 두 축의 정렬불량 그림 (가), (나)의 명칭을 쓰시오.",
       "modelAnswer": "평행(옵셋) 미스얼라인먼트, 각(앵귤러) 미스얼라인먼트",
       "requiredKeywords": [
         "평행(옵셋) 미스얼라인먼트",
@@ -1563,8 +1640,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 3,
@@ -1574,14 +1651,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "축정렬 불량 유형을 판별할 시험 원그림과 동일 NCS 원본이 없다."
+      "reviewNote": "2025년 3회 복원 글의 편심·편각 두 축 중심선 관계를 자체 도식으로 재구성했다."
     },
     {
       "id": "P-2025-3-Q06",
       "kind": "past",
       "title": "기어 치형 곡선",
       "formatLabel": "기어 치형 곡선",
-      "stem": "인벌류트·사이클로이드 치형곡선 식별",
+      "stem": "실을 원기둥에서 풀 때 생기는 궤적과 구름원이 피치원 안팎을 구를 때 생기는 궤적에 해당하는 기어 치형곡선의 명칭을 각각 쓰시오.",
       "modelAnswer": "인벌류트 치형, 사이클로이드 치형",
       "requiredKeywords": [
         "인벌류트 치형",
@@ -1622,8 +1699,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 3,
@@ -1633,14 +1710,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "기어 치형 곡선을 판별할 시험 원그림과 동일 NCS 원본이 없다."
+      "reviewNote": "2025년 3회 복원 글의 인벌류트·사이클로이드 생성 설명을 자체 곡선 도식과 연결했다."
     },
     {
       "id": "P-2025-3-Q07",
       "kind": "past",
       "title": "축 휨 측정도구",
       "formatLabel": "축 휨 측정도구",
-      "stem": "축의 휨을 측정하는 공구 A·B 식별",
+      "stem": "그림과 같이 축의 휨을 측정할 때 사용하는 주 공구 A와 보조 공구 B의 명칭을 쓰시오.",
       "modelAnswer": "다이얼게이지, V블록",
       "requiredKeywords": [
         "다이얼게이지",
@@ -1681,8 +1758,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 3,
@@ -1692,14 +1769,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "다이얼 게이지·V블록의 정확한 측정 배치를 보여 주는 시험 원그림과 동일 NCS 원본이 없다."
+      "reviewNote": "2025년 3회 복원 글의 축 휨 측정 배치를 다이얼게이지와 V블록 자체 도식으로 재구성했다."
     },
     {
       "id": "P-2025-3-Q08",
       "kind": "past",
       "title": "복동실린더 전진·후진 추력",
       "formatLabel": "복동실린더 전진·후진 추력",
-      "stem": "D=32 mm, d=12 mm, P=0.5 MPa, 효율 80%의 추력",
+      "stem": "복동실린더의 내경 32 mm, 로드지름 12 mm, 압력 0.5 MPa, 전·후진 추력효율 80%일 때 전진 및 후진 출력을 구하시오.",
       "modelAnswer": "전진 약 321.70 N, 후진 약 276.46 N",
       "requiredKeywords": [
         "전진 약 321.70 N",
@@ -1762,18 +1839,28 @@
       "kind": "past",
       "title": "브레이크액 요구성능",
       "formatLabel": "브레이크액 요구성능",
-      "stem": "브레이크액의 요구성능 복수선택",
-      "modelAnswer": "적정한 점도를 가지며 온도 변화에 따른 점도 변화가 작고 윤활성이 좋아야 한다. 또한 비점과 인화점은 높고 빙점은 낮아야 한다.",
+      "stem": "유압식 브레이크 오일이 갖추어야 할 특성을 보기에서 모두 고르시오.",
+      "promptOptions": [
+        "a. 비등점이 낮다",
+        "b. 점도지수가 높다",
+        "c. 내열성이 있다",
+        "d. 인화점이 낮다",
+        "e. 빙점이 높다",
+        "f. 윤활성이 좋다",
+        "g. 비압축성 유체이다",
+        "h. 고무·금속 부품을 부식시키지 않는다"
+      ],
+      "modelAnswer": "b, c, f, g, h",
       "requiredKeywords": [
-        "적정 점도",
-        "온도 변화에 따른 점도 변화가 작음",
-        "윤활성",
-        "높은 비점",
-        "낮은 빙점",
-        "높은 인화점"
+        "b",
+        "c",
+        "f",
+        "g",
+        "h"
       ],
       "acceptedAnswers": [
-        "적정한 점도를 가지며 온도 변화에 따른 점도 변화가 작고 윤활성이 좋아야 한다. 또한 비점과 인화점은 높고 빙점은 낮아야 한다."
+        "b, c, f, g, h",
+        "b·c·f·g·h"
       ],
       "calculation": [],
       "unit": null,
@@ -1828,7 +1915,7 @@
       "kind": "past",
       "title": "구름베어링 구성요소",
       "formatLabel": "구름베어링 구성요소",
-      "stem": "베어링 단면의 구성요소 명칭",
+      "stem": "구름베어링의 기본 구성요소 4가지를 쓰시오.",
       "modelAnswer": "외륜, 내륜, 전동체, 케이지",
       "requiredKeywords": [
         "외륜",
@@ -1871,8 +1958,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2025,
         "round": 3,
@@ -1882,14 +1969,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "번호가 붙은 베어링 구성요소 원그림과 동일 NCS 원본이 없다."
+      "reviewNote": "2025년 3회 복원 글의 네 구성요소를 자체 베어링 단면도와 연결했다."
     },
     {
       "id": "P-2026-1-Q01",
       "kind": "past",
       "title": "랙과 피니언",
       "formatLabel": "랙과 피니언",
-      "stem": "회전운동과 직선운동을 상호 변환하는 기구의 명칭",
+      "stem": "회전운동을 직선운동으로 바꾸거나 직선운동을 회전운동으로 바꿀 때 사용하는 기어의 명칭을 쓰시오.",
       "modelAnswer": "랙과 피니언",
       "requiredKeywords": [
         "랙과 피니언"
@@ -1947,15 +2034,18 @@
       "kind": "past",
       "title": "금지·경고·지시 안전표지",
       "formatLabel": "금지·경고·지시 안전표지",
-      "stem": "출입·보행 금지, 인화성·고압전기 경고, 안면·청력보호구 지시 표지 분류",
-      "modelAnswer": "금지표지, 경고표지, 지시표지",
+      "stem": "보기 a~f의 안전표지에서 금지표지와 경고표지를 골라 기호·명칭을 쓰고, 지시표지에 따라 착용할 보호구를 쓰시오.",
+      "modelAnswer": "금지표지: a 출입금지, c 보행금지. 경고표지: b 인화성물질 경고, e 고압전기 경고. 지시표지: d 보안면 착용, f 귀마개 등 청력보호구 착용.",
       "requiredKeywords": [
-        "금지표지",
-        "경고표지",
-        "지시표지"
+        "a-출입금지",
+        "c-보행금지",
+        "b-인화성물질 경고",
+        "e-고압전기 경고",
+        "d-보안면 착용",
+        "f-청력보호구 착용"
       ],
       "acceptedAnswers": [
-        "금지표지, 경고표지, 지시표지"
+        "a 출입금지, c 보행금지, b 인화성물질 경고, e 고압전기 경고, d 보안면 착용, f 청력보호구 착용"
       ],
       "calculation": [],
       "unit": null,
@@ -1967,15 +2057,14 @@
         }
       ],
       "traps": [
-        "도안과 공식 명칭 현행 확인 필요"
+        "금지·경고·지시 분류만 쓰고 각 기호와 명칭을 빠뜨림"
       ],
       "conceptIds": [
         "PCON-009"
       ],
       "primaryStudyCategoryId": "visual_identification",
       "studyCategoryIds": [
-        "visual_identification",
-        "theory_concept"
+        "visual_identification"
       ],
       "ncsSources": [
         {
@@ -1992,8 +2081,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2026,
         "round": 1,
@@ -2003,14 +2092,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "금지·경고·지시표지의 현행 분류 근거는 확인했지만 복원문제의 도안과 배열을 확인할 원그림이 없다. 도안 식별 문제이므로 원그림 확보 전에는 공개하지 않는다."
+      "reviewNote": "2026년 1회 복원 글의 a~f 도안 배열을 확인하고 현행 산업안전보건법 시행규칙 별표 6과 대조했다. 동일 순서의 공식 안전표지를 사용한다."
     },
     {
       "id": "P-2026-1-Q03",
       "kind": "past",
       "title": "구동장치 단면 부품 식별",
       "formatLabel": "구동장치 단면 부품 식별",
-      "stem": "단면도의 ⑥·⑦·⑧ 부품 명칭",
+      "stem": "기계 구동장치 단면도에서 ⑥, ⑦, ⑧로 지시한 부품의 명칭을 쓰시오.",
       "modelAnswer": "⑥ 베어링, ⑦ 오일실, ⑧ 평행키(묻힘키)",
       "requiredKeywords": [
         "⑥ 베어링",
@@ -2054,8 +2143,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2026,
         "round": 1,
@@ -2065,14 +2154,14 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "번호·지시선이 있는 원도면과 NCS 그림번호 확인 필요"
+      "reviewNote": "2026년 1회 복원 글의 구동장치 단면과 ⑥·⑦·⑧ 위치 관계를 자체 단면도로 재구성했다."
     },
     {
       "id": "P-2026-1-Q04",
       "kind": "past",
       "title": "일상점검·정기점검",
       "formatLabel": "일상점검·정기점검",
-      "stem": "일상점검과 정기점검의 의미를 설명",
+      "stem": "작업 시작 전·중·후 매일 실시하는 점검과, 일정 주기로 정비원을 중심으로 실시하는 점검의 명칭을 각각 쓰시오.",
       "modelAnswer": "일상점검은 운전 전·중·후 반복하는 상태확인, 정기점검은 정해진 주기에 계획적으로 분해·측정·시험하는 점검",
       "requiredKeywords": [
         "일상점검은 운전 전·중·후 반복하는 상태확인",
@@ -2132,7 +2221,7 @@
       "kind": "past",
       "title": "OEE 계산",
       "formatLabel": "OEE 계산",
-      "stem": "총시간 480, 부하시간 460, 정지 60, 생산 400, 이상CT 0.5, 실제CT 0.8, 양품392의 OEE",
+      "stem": "부하시간 460분, 정지시간 60분, 생산량 400개, 기준사이클 0.5분/개, 실제사이클 0.8분/개, 양품률 98%일 때 설비종합효율을 구하시오.",
       "modelAnswer": "시간가동률 86.96%, 성능가동률 50%, 양품률 98%, OEE 약 42.61%",
       "requiredKeywords": [
         "시간가동률 86.96%",
@@ -2183,7 +2272,7 @@
       "kind": "past",
       "title": "측정기 식별",
       "formatLabel": "측정기 식별",
-      "stem": "사진의 측정기 3종 명칭",
+      "stem": "그림 (1)~(3)의 측정기 명칭을 각각 쓰시오.",
       "modelAnswer": "다이얼게이지, 깊이마이크로미터, 내측마이크로미터",
       "requiredKeywords": [
         "다이얼게이지",
@@ -2225,8 +2314,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2026,
         "round": 1,
@@ -2236,20 +2325,21 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "세 측정기의 시험 실사와 동일한 NCS 원사진을 확인하지 못했다."
+      "reviewNote": "2026년 1회 복원 글에서 다이얼게이지·깊이 마이크로미터·내측 마이크로미터 순서를 확인하고, CC0·퍼블릭도메인 실사로 같은 식별 순서를 구성했다."
     },
     {
       "id": "P-2026-1-Q07",
       "kind": "past",
       "title": "파스칼 원리",
       "formatLabel": "두 피스톤의 힘·면적 관계식 완성",
-      "stem": "연결된 두 피스톤의 힘·면적 관계",
-      "modelAnswer": "F₂=F₁×A₂/A₁",
+      "stem": "비압축성 유체를 사용하는 유압기기에 적용되는 파스칼의 원리를 설명하고 힘·면적 관계식을 완성하시오.",
+      "modelAnswer": "밀폐된 비압축성 정지유체에 가한 압력은 모든 방향으로 동일하게 전달된다. P₁=P₂, 즉 F₁/A₁=F₂/A₂이다.",
       "requiredKeywords": [
-        "F₂=F₁×A₂/A₁"
+        "밀폐된 비압축성 정지유체에 가한 압력은 모든 방향으로 동일하게 전달된다. P₁=P₂",
+        "즉 F₁/A₁=F₂/A₂이다."
       ],
       "acceptedAnswers": [
-        "F₂=F₁×A₂/A₁"
+        "밀폐된 비압축성 정지유체에 가한 압력은 모든 방향으로 동일하게 전달된다. P₁=P₂, 즉 F₁/A₁=F₂/A₂이다."
       ],
       "calculation": [
         "P=F/A, P₁=P₂"
@@ -2304,16 +2394,16 @@
       "kind": "past",
       "title": "기어 커플링 특징",
       "formatLabel": "기어 커플링 특징",
-      "stem": "기어 커플링의 명칭과 특징을 쓰는 문제",
-      "modelAnswer": "기어 커플링은 큰 토크를 전달하며 약간의 편심과 편각을 허용한다. 정비 시에는 윤활상태, 씰과 기어 치면을 점검한다.",
+      "stem": "슬리브의 내치와 크라우닝된 허브 외치가 맞물리는 커플링의 명칭과 특징 3가지를 쓰시오.",
+      "modelAnswer": "기어 커플링이다. 특징은 ① 큰 토크를 전달한다. ② 약간의 편심과 편각을 허용한다. ③ 축방향 이동을 허용한다.",
       "requiredKeywords": [
         "기어 커플링",
         "큰 토크 전달",
         "편심·편각 허용",
-        "윤활·씰·치면 점검"
+        "축방향 이동 허용"
       ],
       "acceptedAnswers": [
-        "기어 커플링은 큰 토크를 전달하며 약간의 편심과 편각을 허용한다. 정비 시에는 윤활상태, 씰과 기어 치면을 점검한다."
+        "기어 커플링 / 큰 토크 전달 / 편심·편각 허용 / 축방향 이동 허용"
       ],
       "calculation": [],
       "unit": null,
@@ -2367,14 +2457,18 @@
       "kind": "past",
       "title": "외접기어펌프·기어·공차기호",
       "formatLabel": "외접기어펌프·기어·공차기호",
-      "stem": "펌프와 기어의 명칭, 기하공차·끼워맞춤 기호 판독",
-      "modelAnswer": "외접기어펌프, 평기어. 세부 공차기호는 원도면 확인 필요",
+      "stem": "도면을 보고 구동장치와 기어의 명칭, 표시된 기하공차 종류, Ø44G7/h6의 끼워맞춤 종류를 쓰시오.",
+      "modelAnswer": "외접기어펌프, 평기어, (가) 평행도, (나) 원통도, (다) 동심도, Ø44G7/h6는 헐거운 끼워맞춤",
       "requiredKeywords": [
         "외접기어펌프",
-        "평기어. 세부 공차기호는 원도면 확인 필요"
+        "평기어",
+        "평행도",
+        "원통도",
+        "동심도",
+        "헐거운 끼워맞춤"
       ],
       "acceptedAnswers": [
-        "외접기어펌프, 평기어. 세부 공차기호는 원도면 확인 필요"
+        "외접기어펌프 / 평기어 / 평행도·원통도·동심도 / 헐거운 끼워맞춤"
       ],
       "calculation": [],
       "unit": null,
@@ -2386,14 +2480,16 @@
         }
       ],
       "traps": [
-        "기하공차 프레임의 기호가 정답 결정에 필수"
+        "내접기어펌프로 판독",
+        "G7/h6를 억지 끼워맞춤으로 판정"
       ],
       "conceptIds": [
         "PCON-034"
       ],
       "primaryStudyCategoryId": "visual_identification",
       "studyCategoryIds": [
-        "visual_identification"
+        "visual_identification",
+        "theory_concept"
       ],
       "ncsSources": [
         {
@@ -2410,8 +2506,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2026,
         "round": 1,
@@ -2421,24 +2517,22 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "기하공차 프레임의 기호가 정답 결정에 필수"
+      "reviewNote": "2026년 1회 복원 글의 외접기어펌프 도면과 표시된 공차 프레임을 판독했다. 장치·기어·세 기하공차·Ø44G7/h6 끼워맞춤을 자체 도면에 재구성했다."
     },
     {
       "id": "P-2026-1-Q10",
       "kind": "past",
       "title": "저널베어링 간극 측정",
       "formatLabel": "저널베어링 간극 측정",
-      "stem": "연선을 이용한 분할형 저널베어링 간극 측정방법",
-      "modelAnswer": "청소 → 연선 배치 → 캡을 규정토크로 체결 → 재분해 → 눌린 연선 두께 측정·판정",
+      "stem": "저널베어링 위에 연선을 놓고 캡을 규정토크로 조인 뒤 다시 분해해 눌린 연선 두께를 측정하는 작업의 명칭을 쓰시오.",
+      "modelAnswer": "저널베어링 간극 측정",
       "requiredKeywords": [
-        "청소",
-        "연선 배치",
-        "캡을 규정토크로 체결",
-        "재분해",
-        "눌린 연선 두께 측정·판정"
+        "저널베어링",
+        "간극 측정"
       ],
       "acceptedAnswers": [
-        "청소 → 연선 배치 → 캡을 규정토크로 체결 → 재분해 → 눌린 연선 두께 측정·판정"
+        "저널베어링 간극 측정",
+        "플라스틱 게이지를 이용한 저널베어링 간극 측정"
       ],
       "calculation": [],
       "unit": null,
@@ -2449,7 +2543,9 @@
           "points": 5
         }
       ],
-      "traps": [],
+      "traps": [
+        "연선 압착 절차만 길게 쓰고 작업명 누락"
+      ],
       "conceptIds": [
         "PCON-035"
       ],
@@ -2472,8 +2568,8 @@
       ],
       "visualAidId": null,
       "label": "practical_exam",
-      "auditDisposition": "held_asset_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": {
         "year": 2026,
         "round": 1,
@@ -2483,7 +2579,7 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "저널베어링 납선 간극 측정의 시험 단면도와 동일한 NCS 원본을 확인하지 못했다."
+      "reviewNote": "원문은 절차 전체가 아니라 제시한 작업의 명칭을 요구한다. 절차 설명을 답안에서 분리하고 작업명으로 맞췄다."
     },
     {
       "id": "P-2026-2-Q10",
@@ -2573,6 +2669,802 @@
         "PWEC-TIRE-COUPLING-ASSEMBLY-STEP-3",
         "PWEC-TIRE-COUPLING-ASSEMBLY-STEP-4"
       ],
+      "variantOfQuestionId": null,
+      "examEvidenceStatus": "past_reconstructed"
+    },
+    {
+      "id": "P-2026-2-Q01",
+      "kind": "past",
+      "title": "개회로·폐회로 제어",
+      "formatLabel": "제어방식 2종 쓰기",
+      "stem": "자동제어 시스템을 작동시키는 핵심적인 두 가지 제어방식의 명칭을 쓰시오.",
+      "modelAnswer": "개회로 제어(Open-loop), 폐회로 제어(Closed-loop)",
+      "answerDefinition": "개회로 제어는 출력 피드백 없이 정해진 입력에 따라 작동하고, 폐회로 제어는 출력 피드백으로 목표값과의 오차를 보정한다.",
+      "memoryTip": "개회로는 되돌아오는 신호가 없고, 폐회로는 출력이 입력 쪽으로 돌아온다.",
+      "requiredKeywords": [
+        "개회로 제어",
+        "폐회로 제어"
+      ],
+      "acceptedAnswers": [
+        "개회로 제어와 폐회로 제어",
+        "Open-loop control, Closed-loop control",
+        "시퀀스 제어와 피드백 제어"
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "P-2026-2-Q01-r1",
+          "label": "개회로 제어",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q01-r2",
+          "label": "폐회로 제어",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "개회로와 폐회로 중 하나만 쓰지 않는다.",
+        "시퀀스 제어와 피드백 제어라는 복원 표현을 쓸 때 각각 개회로·폐회로와 연결한다."
+      ],
+      "conceptIds": [
+        "PCON-SUP-004"
+      ],
+      "primaryStudyCategoryId": "theory_concept",
+      "studyCategoryIds": [
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "ncsCode": "1503010204",
+          "documentTitle": "센서 활용 기술",
+          "version": "14v3",
+          "pdfPage": 42,
+          "printedPage": 30,
+          "figureNumber": null,
+          "performanceCriteria": "자동제어 방식과 피드백의 기본 관계",
+          "sourceFileHash": "4154bc962df85fb8f9b2b0a5cf48687ba8553d28f301c902959cac4acf30767a",
+          "sourceUrl": "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "practical_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": {
+        "year": 2026,
+        "round": 2,
+        "questionNumber": "Q1",
+        "sourceType": "응시자 복원 블로그",
+        "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+        "reconstructionConfidence": "B"
+      },
+      "predictedBasis": null,
+      "reviewNote": "복원 글의 Q1 번호와 ‘시퀀스제어·피드백제어’ 표현을 보존하되, 답안은 개회로·폐회로 명칭과 연결해 제시했다.",
+      "examFormat": "definition",
+      "examCardIds": [],
+      "visualAidIds": [],
+      "sequenceItemIds": [],
+      "variantOfQuestionId": null,
+      "examEvidenceStatus": "past_reconstructed"
+    },
+    {
+      "id": "P-2026-2-Q02",
+      "kind": "past",
+      "title": "M18×2 암나사 반지름 계산",
+      "formatLabel": "지문 조건에 따른 a·b 반지름 계산",
+      "stem": "호칭이 M18×2인 암나사에서 a는 암나사 골지름의 반지름, b는 바깥지름의 반지름을 나타낸다. a와 b에 들어갈 값을 쓰시오.",
+      "promptOptions": [
+        "7 mm, 9 mm",
+        "8 mm, 9 mm",
+        "16 mm, 18 mm"
+      ],
+      "modelAnswer": "a=8 mm, b=9 mm",
+      "answerDefinition": "M18의 바깥지름 반지름은 18÷2=9 mm이고, M18×2 기본 암나사 골지름 15.835 mm의 반지름은 약 7.92 mm이므로 정수 보기에서는 8 mm이다.",
+      "memoryTip": "M18 바깥지름의 반은 9, 암나사 골지름의 반은 약 8이다.",
+      "requiredKeywords": [
+        "a=8 mm",
+        "b=9 mm"
+      ],
+      "acceptedAnswers": [
+        "8 mm, 9 mm",
+        "a 8, b 9",
+        "a=8 mm, b=9 mm"
+      ],
+      "calculation": [
+        "b=18÷2=9 mm",
+        "a=15.835÷2=7.9175 mm≈8 mm"
+      ],
+      "unit": "mm",
+      "rubric": [
+        {
+          "id": "P-2026-2-Q02-r1",
+          "label": "a=8 mm",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q02-r2",
+          "label": "b=9 mm",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "지름값 16·18을 반지름 답란에 그대로 쓰지 않는다.",
+        "피치 2 mm를 바깥지름에서 단순히 한 번만 빼 골지름으로 확정하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-012",
+        "PCON-021"
+      ],
+      "primaryStudyCategoryId": "formula_calculation",
+      "studyCategoryIds": [
+        "formula_calculation",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "ncsCode": "1502010511",
+          "documentTitle": "측정 도면 해독",
+          "version": "20v4",
+          "pdfPage": 75,
+          "printedPage": 63,
+          "figureNumber": null,
+          "performanceCriteria": "미터 암나사 도면의 지름과 반지름 판독",
+          "sourceFileHash": "07194561e122faedd5991d54852b9305f127c0acf852f7c463f686eba0e9198b",
+          "sourceUrl": "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "practical_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": {
+        "year": 2026,
+        "round": 2,
+        "questionNumber": "Q2",
+        "sourceType": "응시자 복원 블로그",
+        "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+        "reconstructionConfidence": "B"
+      },
+      "predictedBasis": null,
+      "reviewNote": "원시험 도면 없이도 풀 수 있도록 a와 b가 가리키는 지름 경계를 지문에 명시했다. 16·18은 지름값이고, 문제에서 요구하는 반지름 정답은 8·9로 확정했다.",
+      "examFormat": "calculation",
+      "examCardIds": [],
+      "visualAidIds": [],
+      "sequenceItemIds": [],
+      "variantOfQuestionId": null,
+      "examEvidenceStatus": "past_reconstructed"
+    },
+    {
+      "id": "P-2026-2-Q03",
+      "kind": "past",
+      "title": "송풍기 동력 상사법칙",
+      "formatLabel": "회전수 변화에 따른 동력 계산",
+      "stem": "같은 송풍기가 동일 유체·효율 조건에서 380 rpm일 때 5.5 hp를 소비한다. 회전수를 500 rpm으로 높일 때 필요한 동력을 송풍기 상사법칙으로 구하시오.",
+      "modelAnswer": "약 12.53 hp",
+      "answerDefinition": "같은 송풍기의 동력은 회전수의 세제곱에 비례한다.",
+      "memoryTip": "송풍기 상사법칙은 풍량 1제곱, 압력 2제곱, 동력 3제곱이다.",
+      "requiredKeywords": [
+        "동력은 회전수의 세제곱에 비례",
+        "500/380",
+        "12.53 hp"
+      ],
+      "acceptedAnswers": [
+        "12.53 hp",
+        "약 12.53마력",
+        "12.5 hp"
+      ],
+      "calculation": [
+        "P₂/P₁=(N₂/N₁)³",
+        "P₂=5.5×(500/380)³=12.53 hp"
+      ],
+      "unit": "hp",
+      "rubric": [
+        {
+          "id": "P-2026-2-Q03-r1",
+          "label": "동력은 회전수의 세제곱에 비례",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q03-r2",
+          "label": "500/380",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q03-r3",
+          "label": "12.53 hp",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "토크 일정이라는 별도 조건을 임의로 붙여 회전수의 1제곱 비례식으로 계산하지 않는다.",
+        "7.24 hp는 송풍기 상사법칙이 아니라 토크 일정 가정의 결과다."
+      ],
+      "conceptIds": [
+        "PCON-SUP-003"
+      ],
+      "primaryStudyCategoryId": "formula_calculation",
+      "studyCategoryIds": [
+        "formula_calculation"
+      ],
+      "ncsSources": [
+        {
+          "ncsCode": "1503010201",
+          "documentTitle": "기계시스템 분석",
+          "version": "14v3",
+          "pdfPage": 25,
+          "printedPage": 13,
+          "figureNumber": null,
+          "performanceCriteria": "회전기계 운전조건 변화와 송풍기 동력 상사법칙",
+          "sourceFileHash": "34717f4b8c8df1db9e4681fd90985ce6293830d050f7d0dc44a9abcf66be2441",
+          "sourceUrl": "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "practical_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": {
+        "year": 2026,
+        "round": 2,
+        "questionNumber": "Q3",
+        "sourceType": "응시자 복원 블로그",
+        "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+        "reconstructionConfidence": "A"
+      },
+      "predictedBasis": null,
+      "reviewNote": "지문에 같은 송풍기·동일 유체·동일 효율 조건과 회전수 변화를 명시했다. 이 조건에서는 송풍기 상사법칙의 동력 세제곱 비례를 적용해 12.53 hp로 확정한다.",
+      "examFormat": "calculation",
+      "examCardIds": [],
+      "visualAidIds": [],
+      "sequenceItemIds": [],
+      "variantOfQuestionId": null,
+      "examEvidenceStatus": "past_reconstructed"
+    },
+    {
+      "id": "P-2026-2-Q04",
+      "kind": "past",
+      "title": "SEMS 볼트 식별",
+      "formatLabel": "사진·구조를 보고 명칭 쓰기",
+      "stem": "평와셔와 스프링와셔가 볼트에서 빠지지 않도록 미리 조립된 체결품의 명칭을 쓰시오.",
+      "modelAnswer": "SEMS 볼트(와셔 조립 볼트)",
+      "answerDefinition": "SEMS 볼트는 볼트에 평와셔·스프링와셔 등을 이탈하지 않게 미리 조립한 체결품이다.",
+      "memoryTip": "SEMS는 볼트와 와셔가 한 세트로 붙어 다닌다.",
+      "requiredKeywords": [
+        "SEMS 볼트",
+        "와셔 사전 조립",
+        "와셔 이탈 방지"
+      ],
+      "acceptedAnswers": [
+        "SEMS 볼트",
+        "샘스 볼트",
+        "와셔 조립 볼트"
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "P-2026-2-Q04-r1",
+          "label": "SEMS 볼트",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q04-r2",
+          "label": "와셔 사전 조립",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q04-r3",
+          "label": "와셔 이탈 방지",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "와셔를 현장에서 따로 끼운 일반 볼트와 혼동하지 않는다.",
+        "플랜지 볼트처럼 머리 형상만 보고 판단하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-021"
+      ],
+      "primaryStudyCategoryId": "visual_identification",
+      "studyCategoryIds": [
+        "visual_identification"
+      ],
+      "ncsSources": [
+        {
+          "ncsCode": "1503010120",
+          "documentTitle": "기계구동장치 조립",
+          "version": "16v1",
+          "pdfPage": 42,
+          "printedPage": 30,
+          "figureNumber": null,
+          "performanceCriteria": "볼트·와셔 체결부품의 구조와 조립",
+          "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+          "sourceUrl": "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+        }
+      ],
+      "visualAidId": "licensed-sems-bolt",
+      "label": "practical_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": {
+        "year": 2026,
+        "round": 2,
+        "questionNumber": "Q4",
+        "sourceType": "응시자 복원 블로그",
+        "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+        "reconstructionConfidence": "B"
+      },
+      "predictedBasis": null,
+      "reviewNote": "복원 글의 Q4에는 실제 SEMS 볼트 사진이 제시된다. 원시험 사진을 복제하지 않고, 평와셔·스프링와셔가 미리 조립된 구조를 판독할 수 있는 CC BY-SA 동등 실사를 사용한다. 문제 화면에 원시험 이미지와 동일하지 않음을 표시한다.",
+      "examFormat": "image",
+      "examCardIds": [],
+      "visualAidIds": [
+        "licensed-sems-bolt"
+      ],
+      "sequenceItemIds": [],
+      "variantOfQuestionId": null,
+      "examEvidenceStatus": "past_reconstructed"
+    },
+    {
+      "id": "P-2026-2-Q05",
+      "kind": "past",
+      "title": "적하급유법 분류",
+      "formatLabel": "보기에서 적하급유법 모두 고르기",
+      "stem": "다음 보기에서 적하급유법에 해당하는 것을 모두 고르시오.",
+      "promptOptions": [
+        "강제순환급유법",
+        "패드급유법",
+        "사이펀급유법",
+        "유환급유법",
+        "바늘급유법",
+        "비말급유법",
+        "가시적하급유법",
+        "손급유법",
+        "심지급유법",
+        "유욕급유법"
+      ],
+      "modelAnswer": "사이펀급유법, 바늘급유법, 가시적하급유법",
+      "answerDefinition": "적하급유는 기름을 방울 단위로 떨어뜨려 마찰면에 공급하며, 보기에서는 사이펀·바늘·가시적하 방식이 해당한다.",
+      "memoryTip": "적하는 ‘방울이 보이거나, 바늘로 조절하거나, 사이펀으로 떨어뜨리는’ 방식이다.",
+      "requiredKeywords": [
+        "사이펀급유법",
+        "바늘급유법",
+        "가시적하급유법"
+      ],
+      "acceptedAnswers": [
+        "사이펀급유법, 바늘급유법, 가시적하급유법",
+        "사이펀·바늘·가시적하"
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "P-2026-2-Q05-r1",
+          "label": "사이펀급유법",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q05-r2",
+          "label": "바늘급유법",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q05-r3",
+          "label": "가시적하급유법",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "유욕·비말·유환처럼 회전부가 기름을 퍼 올리는 방식을 포함하지 않는다.",
+        "보기의 선택지 순서를 바꿔도 세 방식이 모두 있어야 한다."
+      ],
+      "conceptIds": [
+        "PCON-SUP-039"
+      ],
+      "primaryStudyCategoryId": "theory_concept",
+      "studyCategoryIds": [
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "ncsCode": "1505010108",
+          "documentTitle": "운반하역기계 구동장치 정비",
+          "version": "17v3",
+          "pdfPage": 71,
+          "printedPage": 59,
+          "figureNumber": null,
+          "performanceCriteria": "구동장치 윤활과 적하급유 방식 분류",
+          "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+          "sourceUrl": "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+        }
+      ],
+      "visualAidId": "diagram-drip-lubrication",
+      "label": "practical_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": {
+        "year": 2026,
+        "round": 2,
+        "questionNumber": "Q5",
+        "sourceType": "응시자 복원 블로그",
+        "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+        "reconstructionConfidence": "B"
+      },
+      "predictedBasis": null,
+      "reviewNote": "복원 글의 Q5 보기 10개와 복수선택 형식을 그대로 반영했다. 도식은 적하 구조를 이해시키는 보조자료이며 선택지 정답을 노출하지 않는다.",
+      "examFormat": "matching",
+      "examCardIds": [],
+      "visualAidIds": [
+        "diagram-drip-lubrication"
+      ],
+      "sequenceItemIds": [],
+      "variantOfQuestionId": null,
+      "examEvidenceStatus": "past_reconstructed"
+    },
+    {
+      "id": "P-2026-2-Q06",
+      "kind": "past",
+      "title": "연삭숫돌 시운전과 덮개",
+      "formatLabel": "빈칸 3개 쓰기",
+      "stem": "연삭기 안전관리에서 작업 시작 전 연삭숫돌의 시운전 시간 ①, 숫돌 교체 후 시운전 시간 ②, 숫돌 파편의 비산을 막는 안전장치 ③을 각각 쓰시오.",
+      "modelAnswer": "① 1분 이상, ② 3분 이상, ③ 덮개",
+      "answerDefinition": "연삭숫돌은 작업 시작 전 1분 이상, 교체 후 3분 이상 시운전하고 파편 비산을 막는 덮개를 갖춘다.",
+      "memoryTip": "연삭 안전 숫자는 시작 1, 교체 3, 파편은 덮개다.",
+      "requiredKeywords": [
+        "1분 이상",
+        "3분 이상",
+        "덮개"
+      ],
+      "acceptedAnswers": [
+        "1분, 3분, 덮개",
+        "① 1분 이상 ② 3분 이상 ③ 덮개"
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "P-2026-2-Q06-r1",
+          "label": "1분 이상",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q06-r2",
+          "label": "3분 이상",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q06-r3",
+          "label": "덮개",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "작업 시작 전과 숫돌 교체 후 시간을 바꾸지 않는다.",
+        "보호안경은 개인보호구이고, 문항이 묻는 기계 안전장치는 덮개다."
+      ],
+      "conceptIds": [
+        "PCON-SUP-031"
+      ],
+      "primaryStudyCategoryId": "work_procedure",
+      "studyCategoryIds": [
+        "work_procedure"
+      ],
+      "ncsSources": [
+        {
+          "ncsCode": "1503010122",
+          "documentTitle": "조립안전관리",
+          "version": "16v1",
+          "pdfPage": 25,
+          "printedPage": 13,
+          "figureNumber": null,
+          "performanceCriteria": "회전공구 사용 전 시운전과 방호조치",
+          "sourceFileHash": "5eb5b16dd51a25d7814d054c89e0266eee4378d1200e74a2e9f0ae124d84e750",
+          "sourceUrl": "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+        }
+      ],
+      "visualAidId": "diagram-grinding-wheel-safety",
+      "label": "practical_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": {
+        "year": 2026,
+        "round": 2,
+        "questionNumber": "Q6",
+        "sourceType": "응시자 복원 블로그",
+        "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+        "reconstructionConfidence": "A"
+      },
+      "predictedBasis": null,
+      "reviewNote": "복원 글의 Q6 빈칸 ①~③을 그대로 반영했다. 기존 초안에 있던 지름 5 cm 조건은 이 문항 기준에 없으므로 제거했다.",
+      "examFormat": "definition",
+      "examCardIds": [],
+      "visualAidIds": [
+        "diagram-grinding-wheel-safety"
+      ],
+      "sequenceItemIds": [],
+      "variantOfQuestionId": null,
+      "examEvidenceStatus": "past_reconstructed"
+    },
+    {
+      "id": "P-2026-2-Q07",
+      "kind": "past",
+      "title": "아베의 원리",
+      "formatLabel": "측정원리 정의",
+      "stem": "아베의 원리를 설명하시오.",
+      "modelAnswer": "정밀한 길이 측정에서는 측정하려는 길이의 축과 기준 눈금의 축을 측정방향과 같은 직선 위에 배치해야 한다.",
+      "answerDefinition": "측정축과 기준 눈금축의 오프셋을 없애 각도 오차가 길이 오차로 확대되는 것을 줄이는 원리다.",
+      "memoryTip": "재는 축과 읽는 축을 한 줄로 맞춘다.",
+      "requiredKeywords": [
+        "측정 대상의 축",
+        "기준 눈금의 축",
+        "같은 직선",
+        "측정방향"
+      ],
+      "acceptedAnswers": [
+        "측정 대상과 기준 눈금을 측정방향의 동일선상에 배치한다.",
+        "측정축과 표준자의 눈금축을 일직선상에 둔다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "P-2026-2-Q07-r1",
+          "label": "측정 대상의 축",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q07-r2",
+          "label": "기준 눈금의 축",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q07-r3",
+          "label": "같은 직선",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q07-r4",
+          "label": "측정방향",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "두 축이 단순히 평행하기만 하면 된다고 쓰지 않는다.",
+        "시차오차의 일반 정의로 대신하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-037"
+      ],
+      "primaryStudyCategoryId": "theory_concept",
+      "studyCategoryIds": [
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "ncsCode": "1502010504",
+          "documentTitle": "기본측정기 사용",
+          "version": "20v3",
+          "pdfPage": 87,
+          "printedPage": 75,
+          "figureNumber": null,
+          "performanceCriteria": "정밀 길이측정에서 측정축과 기준축의 배치",
+          "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+          "sourceUrl": "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+        }
+      ],
+      "visualAidId": "diagram-abbe-principle-exam",
+      "label": "practical_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": {
+        "year": 2026,
+        "round": 2,
+        "questionNumber": "Q7",
+        "sourceType": "응시자 복원 블로그",
+        "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+        "reconstructionConfidence": "A"
+      },
+      "predictedBasis": null,
+      "writtenSourceQuestionIds": [
+        "U-073"
+      ],
+      "reviewNote": "복원 글에서 Q7로 확인된 정의형 문항이다. 도식은 동일선 배치와 오프셋 배치를 비교하는 자체 제작 개념도다.",
+      "examFormat": "definition",
+      "examCardIds": [],
+      "visualAidIds": [
+        "diagram-abbe-principle-exam"
+      ],
+      "sequenceItemIds": [],
+      "variantOfQuestionId": null,
+      "examEvidenceStatus": "past_reconstructed"
+    },
+    {
+      "id": "P-2026-2-Q08",
+      "kind": "past",
+      "title": "서징 현상",
+      "formatLabel": "현상 정의",
+      "stem": "서징 현상(Surging)을 간단히 설명하시오.",
+      "modelAnswer": "펌프·송풍기·압축기가 불안정 운전영역에서 작동할 때 압력과 유량이 주기적으로 변동하고 역류·진동·소음이 나타나는 현상이다.",
+      "answerDefinition": "유량과 압력이 주기적으로 맥동하며 장치가 불안정해지는 운전 현상이다.",
+      "memoryTip": "저유량 불안정 영역에서 압력·유량이 맥동한다.",
+      "requiredKeywords": [
+        "불안정 운전영역",
+        "압력·유량의 주기적 변동",
+        "진동·소음 또는 역류"
+      ],
+      "acceptedAnswers": [
+        "압력과 유량이 주기적으로 변동하는 맥동 현상",
+        "저유량 영역에서 압력·유량이 맥동하며 진동과 소음이 생기는 현상"
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "P-2026-2-Q08-r1",
+          "label": "불안정 운전영역",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q08-r2",
+          "label": "압력·유량의 주기적 변동",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q08-r3",
+          "label": "진동·소음 또는 역류",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "기포가 생겨 붕괴하는 캐비테이션과 혼동하지 않는다.",
+        "진동만 언급하고 압력·유량의 주기적 변동을 빠뜨리지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-SUP-003"
+      ],
+      "primaryStudyCategoryId": "theory_concept",
+      "studyCategoryIds": [
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "ncsCode": "1503010215",
+          "documentTitle": "공기압제어",
+          "version": "16v4",
+          "pdfPage": 16,
+          "printedPage": 4,
+          "figureNumber": null,
+          "performanceCriteria": "펌프·송풍기·압축기의 불안정 운전과 서징",
+          "sourceFileHash": "672b3ecfb646c601e5c040fcda8c51ccb8d0c657c9ec1b41080c7f6405aa811c",
+          "sourceUrl": "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "practical_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": {
+        "year": 2026,
+        "round": 2,
+        "questionNumber": "Q8",
+        "sourceType": "응시자 복원 블로그",
+        "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+        "reconstructionConfidence": "A"
+      },
+      "predictedBasis": null,
+      "writtenSourceQuestionIds": [
+        "U-1324"
+      ],
+      "reviewNote": "복원 글에서 Q8로 확인된 정의형 문항이다. 필기 이론의 정의와 회전기계 운전 근거를 대조해 답안을 보완했다.",
+      "examFormat": "definition",
+      "examCardIds": [],
+      "visualAidIds": [],
+      "sequenceItemIds": [],
+      "variantOfQuestionId": null,
+      "examEvidenceStatus": "past_reconstructed"
+    },
+    {
+      "id": "P-2026-2-Q09",
+      "kind": "past",
+      "title": "브레이크 라이닝 교체순서",
+      "formatLabel": "글로 제시된 작업순서 배열",
+      "stem": "다음 보기의 브레이크 라이닝 교체 작업을 올바른 순서로 배열하시오.",
+      "promptOptions": [
+        "① 라이닝 위의 압력 해제 너트를 풀고 조정 굴대를 꺼낸다.",
+        "② 설치 위치에 새 라이닝을 정확히 끼운다.",
+        "③ 프레셔 백과 배플을 재설정하고 연결 볼트를 조인다.",
+        "④ 라이닝을 붙잡고 브레이크 드럼을 따라 꺼낸다.",
+        "⑤ 브레이크를 완전히 해제한다."
+      ],
+      "modelAnswer": "⑤ → ① → ④ → ② → ③",
+      "answerDefinition": "브레이크를 완전히 해제한 뒤 조정부를 풀어 기존 라이닝을 제거하고, 새 라이닝 장착 후 프레셔 백·배플과 연결 볼트를 복구한다.",
+      "memoryTip": "해제 → 조정부 분리 → 구품 제거 → 신품 장착 → 재설정·체결.",
+      "requiredKeywords": [
+        "⑤-①-④-②-③",
+        "완전 해제",
+        "기존 라이닝 제거",
+        "새 라이닝 장착",
+        "재설정·체결"
+      ],
+      "acceptedAnswers": [
+        "5-1-4-2-3",
+        "⑤ → ① → ④ → ② → ③",
+        "완전 해제-조정부 분리-라이닝 제거-새 라이닝 장착-재설정·체결"
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "P-2026-2-Q09-r1",
+          "label": "⑤-①-④-②-③",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q09-r2",
+          "label": "완전 해제",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q09-r3",
+          "label": "기존 라이닝 제거",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q09-r4",
+          "label": "새 라이닝 장착",
+          "points": 1
+        },
+        {
+          "id": "P-2026-2-Q09-r5",
+          "label": "재설정·체결",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "사진 순서문제로 바꾸지 않는다. 이 복원문항은 글 보기의 순서를 맞추는 문제다.",
+        "새 라이닝을 끼운 뒤 기존 라이닝을 제거하는 순서로 쓰지 않는다.",
+        "재설정·연결 볼트 체결을 새 라이닝 장착보다 먼저 하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-SUP-030"
+      ],
+      "primaryStudyCategoryId": "work_procedure",
+      "studyCategoryIds": [
+        "work_procedure"
+      ],
+      "ncsSources": [
+        {
+          "ncsCode": "1505010108",
+          "documentTitle": "운반하역기계 구동장치 정비",
+          "version": "17v3",
+          "pdfPage": 153,
+          "printedPage": 141,
+          "figureNumber": null,
+          "performanceCriteria": "브레이크 라이닝 분해·교체·복구 절차",
+          "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+          "sourceUrl": "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "practical_exam",
+      "auditDisposition": "cbt_corrected",
+      "contentStatus": "published",
+      "occurrence": {
+        "year": 2026,
+        "round": 2,
+        "questionNumber": "Q9",
+        "sourceType": "응시자 복원 블로그",
+        "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+        "reconstructionConfidence": "B"
+      },
+      "predictedBasis": null,
+      "reviewNote": "사용자 제보와 복원 글을 따라 사진형이 아닌 글 순서형으로 구성했다. 복원 글의 공개답 ②-④-⑤-③-①은 보기의 작업 논리와 충돌하므로 보기 문장을 기준으로 ⑤-①-④-②-③으로 교정했다.",
+      "examFormat": "sequence",
+      "examCardIds": [],
+      "visualAidIds": [],
+      "sequenceItemIds": [],
       "variantOfQuestionId": null,
       "examEvidenceStatus": "past_reconstructed"
     },
@@ -4387,14 +5279,30 @@
       "studyCategoryIds": [
         "formula_calculation"
       ],
-      "ncsSources": [],
+      "ncsSources": [
+        {
+          "sourceKind": "written_question_bank",
+          "ncsCode": "WRITTEN-U-1203",
+          "documentTitle": "필기 문제은행 검증 근거 U-1203",
+          "version": "2026-07-23",
+          "pdfPage": null,
+          "printedPage": null,
+          "figureNumber": null,
+          "performanceCriteria": "U-1203 정답·해설과 연결 원문 URL 검증",
+          "sourceFileHash": "3d514de2485fb6ac96aba0617bbda8a714f7bb0855300993d30bec57e1db65a4",
+          "sourceUrl": "https://cbtbank.kr/exam/de20100905"
+        }
+      ],
       "visualAidId": null,
       "label": "predicted_exam",
-      "auditDisposition": "held_source_missing",
-      "contentStatus": "in_review",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
       "occurrence": null,
       "predictedBasis": "2026-1 OEE 계산",
-      "reviewNote": "OEE 계산 근거가 현재 확보한 NCS 11종에 없어 추가 원문 확보 전까지 공개하지 않는다."
+      "reviewNote": "2026년 1회 OEE 계산 복원문제의 공식과 조건을 바탕으로 이미지 없이 풀 수 있는 지문형 예상문제로 공개한다.",
+      "writtenSourceQuestionIds": [
+        "U-1203"
+      ]
     },
     {
       "id": "EXP-C04",
@@ -18876,7 +19784,8 @@
         "가공면을 임의로 데이텀으로 정하지 않음"
       ],
       "relatedPastQuestionIds": [
-        "P-2025-2-Q03"
+        "P-2025-2-Q03",
+        "P-2026-2-Q02"
       ],
       "relatedPredictedQuestionIds": [
         "EXP-M04"
@@ -19714,12 +20623,15 @@
         "현재 로컬 NCS에 직접 비교표가 있다고 표시하지 않음"
       ],
       "relatedPastQuestionIds": [
-        "P-2025-3-Q04"
+        "P-2025-3-Q04",
+        "P-2026-2-Q02",
+        "P-2026-2-Q04"
       ],
       "relatedPredictedQuestionIds": [],
       "existingLessonId": null,
       "theoryTreatment": "신규 실기 보강 후보",
       "visualAidIds": [
+        "licensed-sems-bolt",
         "diagram-thread-profiles"
       ],
       "ncsSources": [],
@@ -21169,6 +22081,7 @@
       "title": "마이크로미터",
       "contentRole": "exam_linked",
       "labels": [
+        "practical_exam",
         "predicted_exam"
       ],
       "subjectLabel": "제3과목 기계설비 일반",
@@ -21228,7 +22141,9 @@
         "기기 최소눈금을 먼저 확인함",
         "원본 눈금 없이 특정 답을 만들지 않음"
       ],
-      "relatedPastQuestionIds": [],
+      "relatedPastQuestionIds": [
+        "P-2026-2-Q07"
+      ],
       "relatedPredictedQuestionIds": [
         "EXP-M02",
         "EXP-BAL-DEF-ABBE"
@@ -21236,6 +22151,7 @@
       "existingLessonId": null,
       "theoryTreatment": "신규 실기 보강 후보",
       "visualAidIds": [
+        "diagram-abbe-principle-exam",
         "diagram-micrometer-12-73"
       ],
       "ncsSources": [
@@ -22294,6 +23210,7 @@
     {
       "contentRole": "supplemental",
       "labels": [
+        "practical_exam",
         "predicted_exam"
       ],
       "components": [
@@ -22334,7 +23251,10 @@
         "FRL만으로 수분·오염 문제가 모두 해결된다고 쓰지 않음",
         "드레인 작업 전 잔압을 확인함"
       ],
-      "relatedPastQuestionIds": [],
+      "relatedPastQuestionIds": [
+        "P-2026-2-Q03",
+        "P-2026-2-Q08"
+      ],
       "relatedPredictedQuestionIds": [
         "EXP-SUP-003",
         "EXP-BAL-DEF-SURGING",
@@ -22390,6 +23310,7 @@
     {
       "contentRole": "supplemental",
       "labels": [
+        "practical_exam",
         "predicted_exam"
       ],
       "components": [
@@ -22431,7 +23352,9 @@
         "미터인과 미터아웃을 밸브 명칭만으로 외우지 않음",
         "Q=A×v 식은 이 NCS 원문에서 단위체계가 직접 완결되지 않아 계산공식으로 공개하지 않음"
       ],
-      "relatedPastQuestionIds": [],
+      "relatedPastQuestionIds": [
+        "P-2026-2-Q01"
+      ],
       "relatedPredictedQuestionIds": [
         "EXP-SUP-004"
       ],
@@ -24719,6 +25642,7 @@
     {
       "contentRole": "supplemental",
       "labels": [
+        "practical_exam",
         "predicted_exam"
       ],
       "components": [
@@ -24776,7 +25700,9 @@
         "마찰재만 교체하고 누유·링크·작동 상태를 생략하지 않음",
         "교재 예시값을 모든 브레이크의 공통값으로 사용하지 않음"
       ],
-      "relatedPastQuestionIds": [],
+      "relatedPastQuestionIds": [
+        "P-2026-2-Q09"
+      ],
       "relatedPredictedQuestionIds": [
         "EXP-VIS-BRAKE-PAD-LINING-01",
         "EXP-VIS-BRAKE-ALIGNMENT-01",
@@ -24839,6 +25765,7 @@
     {
       "contentRole": "supplemental",
       "labels": [
+        "practical_exam",
         "predicted_exam"
       ],
       "components": [
@@ -24882,7 +25809,9 @@
         "벨트 장력은 클수록 항상 좋다고 쓰지 않음",
         "벨트 선정표의 kW·속도 수치는 제조사·규격 검증 없이 계산 답으로 쓰지 않음"
       ],
-      "relatedPastQuestionIds": [],
+      "relatedPastQuestionIds": [
+        "P-2026-2-Q06"
+      ],
       "relatedPredictedQuestionIds": [
         "EXP-VIS-DRIVE-UNIT-ASSEMBLY-01",
         "EXP-SUP-031"
@@ -24890,6 +25819,7 @@
       "existingLessonId": null,
       "theoryTreatment": "NCS 원문 기반 실기 보강 레슨 (+보강용)",
       "visualAidIds": [
+        "diagram-grinding-wheel-safety",
         "ncs-drive-unit-assembly-process-sequence"
       ],
       "contentStatus": "published",
@@ -25567,6 +26497,7 @@
     {
       "contentRole": "supplemental",
       "labels": [
+        "practical_exam",
         "predicted_exam"
       ],
       "components": [
@@ -25608,13 +26539,17 @@
         "리미트스위치를 비접촉 근접센서로 설명하지 않음",
         "정격·보호등급은 제조사 사양 없이 임의로 단정하지 않음"
       ],
-      "relatedPastQuestionIds": [],
+      "relatedPastQuestionIds": [
+        "P-2026-2-Q05"
+      ],
       "relatedPredictedQuestionIds": [
         "EXP-SUP-039"
       ],
       "existingLessonId": null,
       "theoryTreatment": "NCS 원문 기반 실기 보강 레슨 (+보강용)",
-      "visualAidIds": [],
+      "visualAidIds": [
+        "diagram-drip-lubrication"
+      ],
       "contentStatus": "published",
       "id": "PCON-SUP-039",
       "title": "리미트스위치와 기계식 위치검출",
@@ -26009,6 +26944,7 @@
         "P-2026-1-Q03",
         "P-2026-1-Q06",
         "P-2026-1-Q09",
+        "P-2026-2-Q04",
         "EXP-B01",
         "EXP-M05",
         "EXP-VIS-BEARING-DAMAGE-01",
@@ -26087,6 +27023,8 @@
         "P-2025-3-Q08",
         "P-2026-1-Q05",
         "P-2026-1-Q07",
+        "P-2026-2-Q02",
+        "P-2026-2-Q03",
         "EXP-G01",
         "EXP-M01",
         "EXP-M02",
@@ -26139,8 +27077,10 @@
       "conceptIds": [
         "PCON-001",
         "PCON-010",
+        "PCON-012",
         "PCON-014",
         "PCON-019",
+        "PCON-021",
         "PCON-024",
         "PCON-025",
         "PCON-029",
@@ -26192,6 +27132,10 @@
         "P-2026-1-Q01",
         "P-2026-1-Q04",
         "P-2026-1-Q08",
+        "P-2026-2-Q01",
+        "P-2026-2-Q05",
+        "P-2026-2-Q07",
+        "P-2026-2-Q08",
         "EXP-B02",
         "EXP-B04",
         "EXP-G03",
@@ -26291,6 +27235,7 @@
         "PCON-SUP-016",
         "PCON-SUP-035",
         "PCON-SUP-036",
+        "PCON-SUP-039",
         "PCON-SUP-040"
       ]
     },
@@ -26317,6 +27262,8 @@
         "P-2025-3-Q03",
         "P-2026-1-Q10",
         "P-2026-2-Q10",
+        "P-2026-2-Q06",
+        "P-2026-2-Q09",
         "EXP-B03",
         "EXP-B05",
         "EXP-B06",
@@ -26421,6 +27368,661 @@
     }
   ],
   "visualAids": [
+    {
+      "id": "licensed-respirators-four",
+      "title": "호흡보호구 4종 실사 판독",
+      "imagePaths": [
+        "/practical/photos/respirators/dust-mask.jpg",
+        "/practical/photos/respirators/gas-respirator.jpg",
+        "/practical/photos/respirators/supplied-air-respirator.jpg",
+        "/practical/photos/respirators/powered-air-purifying-respirator.jpg"
+      ],
+      "promptLabels": [
+        "가",
+        "나",
+        "다",
+        "라"
+      ],
+      "promptAltTexts": [
+        "(가) 코와 입을 덮는 여과식 안면부 실사",
+        "(나) 좌우 정화통이 결합된 반면형 안면부 실사",
+        "(다) 외부 공기 호스가 연결된 전면형 보호구 실사",
+        "(라) 후드와 전동 송풍장치가 연결된 보호구 실사"
+      ],
+      "altText": "방진마스크, 방독마스크, 송기마스크, 전동식 호흡보호구를 차례로 보여 주는 실사",
+      "caption": "(가) 방진마스크, (나) 방독마스크, (다) 송기마스크, (라) 전동식 호흡보호구의 공기 공급 방식과 외형을 비교한다.",
+      "sourceLabel": "Wikimedia Commons · Public domain 및 CC BY 2.0 공개 실사",
+      "sourceLinks": [
+        {
+          "label": "방진마스크 실사 원본",
+          "href": "https://commons.wikimedia.org/wiki/File:Dust_mask.jpg",
+          "license": "Public domain"
+        },
+        {
+          "label": "방독마스크 실사 원본",
+          "href": "https://commons.wikimedia.org/wiki/File:Air-Purifying_Respirator.jpg",
+          "license": "Public domain (CDC/NIOSH)"
+        },
+        {
+          "label": "송기마스크 실사 원본",
+          "href": "https://commons.wikimedia.org/wiki/File:%D0%A8%D0%BB%D0%B0%D0%BD%D0%B3%D0%BE%D0%B2%D1%8B%D0%B9_%D1%80%D0%B5%D1%81%D0%BF%D0%B8%D1%80%D0%B0%D1%82%D0%BE%D1%80_%D1%81_%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%BB%D0%B8%D1%86%D0%B5%D0%B2%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%BE%D0%B9.JPG",
+          "license": "Public domain (NIOSH)"
+        },
+        {
+          "label": "전동식 호흡보호구 실사 원본",
+          "href": "https://commons.wikimedia.org/wiki/File:Portable_powered_HEPA_respirator.jpg",
+          "license": "CC BY 2.0"
+        }
+      ],
+      "ncsCode": "external-commons",
+      "pdfPage": 0,
+      "printedPage": 0,
+      "figureNumber": "Dust mask.jpg / Air-Purifying Respirator.jpg / supplied-air respirator / Portable powered HEPA respirator.jpg",
+      "sourceFileHash": "b476415ba6465a9b5b087da9bc899ee206d81119794f50c1307f9f96236f646a",
+      "examMatchStatus": "licensed_equivalent",
+      "rightsStatus": "education_use_with_attribution",
+      "publicUseStatus": "public",
+      "originType": "official_external",
+      "usageTypes": [
+        "past_exam_prompt",
+        "recognition",
+        "concept_explanation"
+      ],
+      "answerCritical": true,
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-29T00:00:00.000Z",
+      "technicalReviewer": "licensed-photo-audit",
+      "visualReviewNote": "복원 글의 원사진을 복제하지 않고 권리가 확인된 공개 실사를 사용해 (가) 방진, (나) 방독, (다) 송기, (라) 전동식 순서를 보존한 동등 식별자료다.",
+      "frames": [
+        {
+          "id": "licensed-respirators-four--dust-mask",
+          "path": "/practical/photos/respirators/dust-mask.jpg",
+          "promptAltText": "(가) 코와 입을 덮는 여과식 안면부 실사",
+          "learningAltText": "방진마스크, 방독마스크, 송기마스크, 전동식 호흡보호구를 차례로 보여 주는 실사 1",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(가) 방진마스크, (나) 방독마스크, (다) 송기마스크, (라) 전동식 호흡보호구의 공기 공급 방식과 외형을 비교한다.",
+          "outputAssetHash": "b476415ba6465a9b5b087da9bc899ee206d81119794f50c1307f9f96236f646a"
+        },
+        {
+          "id": "licensed-respirators-four--gas-respirator",
+          "path": "/practical/photos/respirators/gas-respirator.jpg",
+          "promptAltText": "(나) 좌우 정화통이 결합된 반면형 안면부 실사",
+          "learningAltText": "방진마스크, 방독마스크, 송기마스크, 전동식 호흡보호구를 차례로 보여 주는 실사 2",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(가) 방진마스크, (나) 방독마스크, (다) 송기마스크, (라) 전동식 호흡보호구의 공기 공급 방식과 외형을 비교한다.",
+          "outputAssetHash": "3b565f5ddb1c73349649ab7e21dba389767d9665bb22a54bd9b5838b514ca528"
+        },
+        {
+          "id": "licensed-respirators-four--supplied-air-respirator",
+          "path": "/practical/photos/respirators/supplied-air-respirator.jpg",
+          "promptAltText": "(다) 외부 공기 호스가 연결된 전면형 보호구 실사",
+          "learningAltText": "방진마스크, 방독마스크, 송기마스크, 전동식 호흡보호구를 차례로 보여 주는 실사 3",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(가) 방진마스크, (나) 방독마스크, (다) 송기마스크, (라) 전동식 호흡보호구의 공기 공급 방식과 외형을 비교한다.",
+          "outputAssetHash": "128970b15b3acb026eb31afcd0ad129bb932f7b349b89aa15ccbaa4aed1542d7"
+        },
+        {
+          "id": "licensed-respirators-four--powered-air-purifying-respirator",
+          "path": "/practical/photos/respirators/powered-air-purifying-respirator.jpg",
+          "promptAltText": "(라) 후드와 전동 송풍장치가 연결된 보호구 실사",
+          "learningAltText": "방진마스크, 방독마스크, 송기마스크, 전동식 호흡보호구를 차례로 보여 주는 실사 4",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(가) 방진마스크, (나) 방독마스크, (다) 송기마스크, (라) 전동식 호흡보호구의 공기 공급 방식과 외형을 비교한다.",
+          "outputAssetHash": "bbcadf9f36ebcd1f8c3b13758bc4b6901d33ef35b9e55bb9d924d240bbd203d0"
+        }
+      ],
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "b476415ba6465a9b5b087da9bc899ee206d81119794f50c1307f9f96236f646a"
+    },
+    {
+      "id": "official-safety-signs-four",
+      "title": "산업안전보건법 공식 안전표지 4종",
+      "imagePaths": [
+        "/practical/official/safety-signs/eye-protection.png",
+        "/practical/official/safety-signs/face-shield.png",
+        "/practical/official/safety-signs/dust-mask.png",
+        "/practical/official/safety-signs/suspended-load-warning.png"
+      ],
+      "promptLabels": [
+        "가",
+        "나",
+        "다",
+        "라"
+      ],
+      "promptAltTexts": [
+        "(가) 파란색 원형 지시표지",
+        "(나) 파란색 원형 지시표지",
+        "(다) 파란색 원형 지시표지",
+        "(라) 노란색 삼각형 경고표지"
+      ],
+      "altText": "보안경 착용, 보안면 착용, 방진마스크 착용, 매달린 물체 경고의 공식 안전표지",
+      "caption": "(가) 보안경 착용, (나) 보안면 착용, (다) 방진마스크 착용, (라) 매달린 물체 경고 표지다.",
+      "sourceLabel": "국가법령정보센터 · 산업안전보건법 시행규칙 별표 6 안전·보건표지",
+      "sourceLinks": [
+        {
+          "label": "산업안전보건법 시행규칙 별표 6",
+          "href": "https://www.law.go.kr/LSW/flDownload.do?flSeq=131883527",
+          "license": "대한민국 법령정보"
+        }
+      ],
+      "ncsCode": "official-law-safety-signs",
+      "pdfPage": 1,
+      "printedPage": 1,
+      "figureNumber": "301·304·303·208",
+      "sourceFileHash": "63dafe819b2c2bd78b93751f9ce3b3705cfcc0bc26f1477760ffdbf41adc3cb1",
+      "examMatchStatus": "licensed_equivalent",
+      "rightsStatus": "education_use_with_attribution",
+      "publicUseStatus": "public",
+      "originType": "official_external",
+      "usageTypes": [
+        "past_exam_prompt",
+        "recognition",
+        "concept_explanation"
+      ],
+      "answerCritical": true,
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-29T00:00:00.000Z",
+      "technicalReviewer": "official-safety-sign-audit",
+      "visualReviewNote": "복원 글의 배열을 보존하되 임의 제작 도식 대신 현행 산업안전보건법 시행규칙 별표 6의 공식 표지를 사용했다.",
+      "frames": [
+        {
+          "id": "official-safety-signs-four--eye-protection",
+          "path": "/practical/official/safety-signs/eye-protection.png",
+          "promptAltText": "(가) 파란색 원형 지시표지",
+          "learningAltText": "보안경 착용, 보안면 착용, 방진마스크 착용, 매달린 물체 경고의 공식 안전표지 1",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(가) 보안경 착용, (나) 보안면 착용, (다) 방진마스크 착용, (라) 매달린 물체 경고 표지다.",
+          "outputAssetHash": "a42092fd4ebc8e2c0fb545951a544274b275dd559a0e56a96347fa058c2fbd22"
+        },
+        {
+          "id": "official-safety-signs-four--face-shield",
+          "path": "/practical/official/safety-signs/face-shield.png",
+          "promptAltText": "(나) 파란색 원형 지시표지",
+          "learningAltText": "보안경 착용, 보안면 착용, 방진마스크 착용, 매달린 물체 경고의 공식 안전표지 2",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(가) 보안경 착용, (나) 보안면 착용, (다) 방진마스크 착용, (라) 매달린 물체 경고 표지다.",
+          "outputAssetHash": "cee660002e18b3816f0108e4e6c2887837591d52d039a497729b25b7bb540c70"
+        },
+        {
+          "id": "official-safety-signs-four--dust-mask",
+          "path": "/practical/official/safety-signs/dust-mask.png",
+          "promptAltText": "(다) 파란색 원형 지시표지",
+          "learningAltText": "보안경 착용, 보안면 착용, 방진마스크 착용, 매달린 물체 경고의 공식 안전표지 3",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(가) 보안경 착용, (나) 보안면 착용, (다) 방진마스크 착용, (라) 매달린 물체 경고 표지다.",
+          "outputAssetHash": "f370054d09664af41097777c4c22a069d87e25d2f9cbcc936e4eae1f132a62ee"
+        },
+        {
+          "id": "official-safety-signs-four--suspended-load-warning",
+          "path": "/practical/official/safety-signs/suspended-load-warning.png",
+          "promptAltText": "(라) 노란색 삼각형 경고표지",
+          "learningAltText": "보안경 착용, 보안면 착용, 방진마스크 착용, 매달린 물체 경고의 공식 안전표지 4",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(가) 보안경 착용, (나) 보안면 착용, (다) 방진마스크 착용, (라) 매달린 물체 경고 표지다.",
+          "outputAssetHash": "f05db7c447a1a0ebf3fc080d69960a318fec225c3b108ad38f53eb30cdb66b19"
+        }
+      ],
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "a42092fd4ebc8e2c0fb545951a544274b275dd559a0e56a96347fa058c2fbd22"
+    },
+    {
+      "id": "official-safety-signs-six",
+      "title": "산업안전보건법 공식 안전표지 6종",
+      "imagePaths": [
+        "/practical/official/safety-signs/entry-prohibited.png",
+        "/practical/official/safety-signs/flammable-warning.png",
+        "/practical/official/safety-signs/pedestrian-prohibited.png",
+        "/practical/official/safety-signs/face-shield.png",
+        "/practical/official/safety-signs/high-voltage-warning.png",
+        "/practical/official/safety-signs/hearing-protection.png"
+      ],
+      "promptLabels": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ],
+      "promptAltTexts": [
+        "표지 a",
+        "표지 b",
+        "표지 c",
+        "표지 d",
+        "표지 e",
+        "표지 f"
+      ],
+      "altText": "출입금지, 인화성물질 경고, 보행금지, 보안면 착용, 고압전기 경고, 귀마개 착용의 공식 안전표지",
+      "caption": "금지·경고·지시 표지를 색상과 형상, 내부 기호로 구분한다.",
+      "sourceLabel": "국가법령정보센터 · 산업안전보건법 시행규칙 별표 6 안전·보건표지",
+      "sourceLinks": [
+        {
+          "label": "산업안전보건법 시행규칙 별표 6",
+          "href": "https://www.law.go.kr/LSW/flDownload.do?flSeq=131883527",
+          "license": "대한민국 법령정보"
+        }
+      ],
+      "ncsCode": "official-law-safety-signs",
+      "pdfPage": 1,
+      "printedPage": 1,
+      "figureNumber": "101·201·102·304·207·306",
+      "sourceFileHash": "63dafe819b2c2bd78b93751f9ce3b3705cfcc0bc26f1477760ffdbf41adc3cb1",
+      "examMatchStatus": "licensed_equivalent",
+      "rightsStatus": "education_use_with_attribution",
+      "publicUseStatus": "public",
+      "originType": "official_external",
+      "usageTypes": [
+        "past_exam_prompt",
+        "recognition",
+        "concept_explanation"
+      ],
+      "answerCritical": true,
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-29T00:00:00.000Z",
+      "technicalReviewer": "official-safety-sign-audit",
+      "visualReviewNote": "복원 글의 a~f 배열을 보존하되 임의 제작 도식 대신 현행 산업안전보건법 시행규칙 별표 6의 공식 표지를 사용했다.",
+      "frames": [
+        {
+          "id": "official-safety-signs-six--entry-prohibited",
+          "path": "/practical/official/safety-signs/entry-prohibited.png",
+          "promptAltText": "표지 a",
+          "learningAltText": "출입금지, 인화성물질 경고, 보행금지, 보안면 착용, 고압전기 경고, 귀마개 착용의 공식 안전표지 1",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "금지·경고·지시 표지를 색상과 형상, 내부 기호로 구분한다.",
+          "outputAssetHash": "ffa48e9fd300d5baabbc6698817370cbc69dcb7dae2cae3d9933c079afe83905"
+        },
+        {
+          "id": "official-safety-signs-six--flammable-warning",
+          "path": "/practical/official/safety-signs/flammable-warning.png",
+          "promptAltText": "표지 b",
+          "learningAltText": "출입금지, 인화성물질 경고, 보행금지, 보안면 착용, 고압전기 경고, 귀마개 착용의 공식 안전표지 2",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "금지·경고·지시 표지를 색상과 형상, 내부 기호로 구분한다.",
+          "outputAssetHash": "c7444805bb59b2b45381801dba45f1e68433350a0589c5bb436d4289ea91f087"
+        },
+        {
+          "id": "official-safety-signs-six--pedestrian-prohibited",
+          "path": "/practical/official/safety-signs/pedestrian-prohibited.png",
+          "promptAltText": "표지 c",
+          "learningAltText": "출입금지, 인화성물질 경고, 보행금지, 보안면 착용, 고압전기 경고, 귀마개 착용의 공식 안전표지 3",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "금지·경고·지시 표지를 색상과 형상, 내부 기호로 구분한다.",
+          "outputAssetHash": "b2cb57a4c2ec7ecb4de810b1293d52514b116b01151138bd56bd7fa277bfa325"
+        },
+        {
+          "id": "official-safety-signs-six--face-shield",
+          "path": "/practical/official/safety-signs/face-shield.png",
+          "promptAltText": "표지 d",
+          "learningAltText": "출입금지, 인화성물질 경고, 보행금지, 보안면 착용, 고압전기 경고, 귀마개 착용의 공식 안전표지 4",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "금지·경고·지시 표지를 색상과 형상, 내부 기호로 구분한다.",
+          "outputAssetHash": "cee660002e18b3816f0108e4e6c2887837591d52d039a497729b25b7bb540c70"
+        },
+        {
+          "id": "official-safety-signs-six--high-voltage-warning",
+          "path": "/practical/official/safety-signs/high-voltage-warning.png",
+          "promptAltText": "표지 e",
+          "learningAltText": "출입금지, 인화성물질 경고, 보행금지, 보안면 착용, 고압전기 경고, 귀마개 착용의 공식 안전표지 5",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "금지·경고·지시 표지를 색상과 형상, 내부 기호로 구분한다.",
+          "outputAssetHash": "fe44215c39aa5e149b4c5f6233a8e1fc27495f10b72fc33f364b31d270687b50"
+        },
+        {
+          "id": "official-safety-signs-six--hearing-protection",
+          "path": "/practical/official/safety-signs/hearing-protection.png",
+          "promptAltText": "표지 f",
+          "learningAltText": "출입금지, 인화성물질 경고, 보행금지, 보안면 착용, 고압전기 경고, 귀마개 착용의 공식 안전표지 6",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "금지·경고·지시 표지를 색상과 형상, 내부 기호로 구분한다.",
+          "outputAssetHash": "6568847c18dcfffedb9dce1a450f15e4cfaf5326e09b0e5b40d3d02cf2a59141"
+        }
+      ],
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "ffa48e9fd300d5baabbc6698817370cbc69dcb7dae2cae3d9933c079afe83905"
+    },
+    {
+      "id": "licensed-measurement-instruments-three",
+      "title": "측정기 3종 실사 판독",
+      "imagePaths": [
+        "/practical/photos/measurement/dial-indicator.jpg",
+        "/practical/photos/measurement/depth-micrometer.jpg",
+        "/practical/photos/measurement/inside-micrometer.jpg"
+      ],
+      "promptLabels": [
+        "1",
+        "2",
+        "3"
+      ],
+      "promptAltTexts": [
+        "(1) 원형 눈금판과 접촉자가 있는 측정기 실사",
+        "(2) 넓은 기준면과 깊이 측정봉이 있는 측정기 실사",
+        "(3) 구멍 안지름을 재는 봉형 측정기 실사"
+      ],
+      "altText": "다이얼 게이지, 깊이 마이크로미터, 내측 마이크로미터를 차례로 보여 주는 실사",
+      "caption": "(1) 다이얼 게이지, (2) 깊이 마이크로미터, (3) 내측 마이크로미터의 외형과 접촉부를 비교한다.",
+      "sourceLabel": "Wikimedia Commons · GrahamDavies(CC0), Splarka(Public domain)",
+      "sourceLinks": [
+        {
+          "label": "다이얼 게이지 원본",
+          "href": "https://commons.wikimedia.org/wiki/File:Planer_Snipe_Measured_with_Dial_Indicator_000.jpg",
+          "license": "CC0 1.0"
+        },
+        {
+          "label": "마이크로미터 3종 원본",
+          "href": "https://commons.wikimedia.org/wiki/File:Micrometers.jpg",
+          "license": "Public domain"
+        }
+      ],
+      "ncsCode": "external-commons",
+      "pdfPage": 0,
+      "printedPage": 0,
+      "figureNumber": "Planer Snipe Measured with Dial Indicator 000.jpg / Micrometers.jpg",
+      "sourceFileHash": "73cc8097caa32aadc85c8bd7ccee3aa1a5aeba4daff4b0bb001f33eb846da7da",
+      "examMatchStatus": "licensed_equivalent",
+      "rightsStatus": "education_use_with_attribution",
+      "publicUseStatus": "public",
+      "originType": "official_external",
+      "usageTypes": [
+        "past_exam_prompt",
+        "recognition",
+        "concept_explanation"
+      ],
+      "answerCritical": true,
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-29T00:00:00.000Z",
+      "technicalReviewer": "licensed-photo-audit",
+      "visualReviewNote": "복원 글의 원사진을 복제하지 않고, CC0·퍼블릭도메인 실사를 사용해 (1) 다이얼 게이지, (2) 깊이 마이크로미터, (3) 내측 마이크로미터 순서를 보존한 동등 식별자료다.",
+      "frames": [
+        {
+          "id": "licensed-measurement-instruments-three--dial-indicator",
+          "path": "/practical/photos/measurement/dial-indicator.jpg",
+          "promptAltText": "(1) 원형 눈금판과 접촉자가 있는 측정기 실사",
+          "learningAltText": "다이얼 게이지, 깊이 마이크로미터, 내측 마이크로미터를 차례로 보여 주는 실사 1",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(1) 다이얼 게이지, (2) 깊이 마이크로미터, (3) 내측 마이크로미터의 외형과 접촉부를 비교한다.",
+          "outputAssetHash": "4a47f57d4f6d160c257aa9aeec244a0d9e6565ac59409296852ba7664c1b718d"
+        },
+        {
+          "id": "licensed-measurement-instruments-three--depth-micrometer",
+          "path": "/practical/photos/measurement/depth-micrometer.jpg",
+          "promptAltText": "(2) 넓은 기준면과 깊이 측정봉이 있는 측정기 실사",
+          "learningAltText": "다이얼 게이지, 깊이 마이크로미터, 내측 마이크로미터를 차례로 보여 주는 실사 2",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(1) 다이얼 게이지, (2) 깊이 마이크로미터, (3) 내측 마이크로미터의 외형과 접촉부를 비교한다.",
+          "outputAssetHash": "e51918c3ba9ff9b987779d3f49c903beea33cd702f3731642d793d7aad45e85f"
+        },
+        {
+          "id": "licensed-measurement-instruments-three--inside-micrometer",
+          "path": "/practical/photos/measurement/inside-micrometer.jpg",
+          "promptAltText": "(3) 구멍 안지름을 재는 봉형 측정기 실사",
+          "learningAltText": "다이얼 게이지, 깊이 마이크로미터, 내측 마이크로미터를 차례로 보여 주는 실사 3",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(1) 다이얼 게이지, (2) 깊이 마이크로미터, (3) 내측 마이크로미터의 외형과 접촉부를 비교한다.",
+          "outputAssetHash": "67e7261c6a4598bb1752ed790cd107fb044e2cd1b9269a646a44920a8274a90b"
+        }
+      ],
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "4a47f57d4f6d160c257aa9aeec244a0d9e6565ac59409296852ba7664c1b718d"
+    },
+    {
+      "id": "ncs-spherical-roller-bearing-four-choice",
+      "title": "자동조심 롤러베어링 4지 식별",
+      "imagePaths": [
+        "/practical/ncs/bearing-q04-a.png",
+        "/practical/ncs/bearing-q04-b.png",
+        "/practical/ncs/bearing-self-aligning-ball.png",
+        "/practical/ncs/bearing-q04-c.png"
+      ],
+      "promptLabels": [
+        "가",
+        "나",
+        "다",
+        "라"
+      ],
+      "promptAltTexts": [
+        "(가) 롤러가 평행하게 배열된 베어링 실사",
+        "(나) 롤러와 궤도륜이 경사진 베어링 실사",
+        "(다) 두 줄의 굽은 롤러가 배열된 베어링 실사",
+        "(라) 두 와셔 사이에 구형 전동체가 배열된 베어링 실사"
+      ],
+      "altText": "원통 롤러, 테이퍼 롤러, 자동조심 롤러, 스러스트 볼 베어링을 차례로 보여 주는 NCS 원문 사진",
+      "caption": "(가) 원통 롤러, (나) 테이퍼 롤러, (다) 자동조심 롤러, (라) 스러스트 볼 베어링이다.",
+      "sourceLabel": "NCS 학습모듈 「운반하역기계 구동장치 정비」 원문 사진 재배열",
+      "sourceLinks": [
+        {
+          "label": "NCS 학습모듈 원문",
+          "href": "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view",
+          "license": "교육 목적 출처 표시"
+        }
+      ],
+      "ncsCode": "1505010108",
+      "pdfPage": 96,
+      "printedPage": 84,
+      "figureNumber": "그림 3-6·3-7·3-12·3-8 재배열",
+      "sourceFileHash": "532832df67e7ba4ff0162629cd655c0122c6db15b95a45dc455e088907885dab",
+      "examMatchStatus": "licensed_equivalent",
+      "rightsStatus": "education_use_with_attribution",
+      "publicUseStatus": "public",
+      "originType": "ncs_crop",
+      "usageTypes": [
+        "past_exam_prompt",
+        "recognition",
+        "concept_explanation"
+      ],
+      "answerCritical": true,
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-29T00:00:00.000Z",
+      "technicalReviewer": "ncs-original-visual-audit",
+      "visualReviewNote": "복원 정답의 배열을 유지하되 원시험 사진을 복제하지 않고 NCS 원문 실사를 재배열했다. 네 선택 모두 같은 NCS 모듈에서 가져온 동등 식별자료다.",
+      "frames": [
+        {
+          "id": "ncs-spherical-roller-bearing-four-choice--bearing-q04-a",
+          "path": "/practical/ncs/bearing-q04-a.png",
+          "promptAltText": "(가) 롤러가 평행하게 배열된 베어링 실사",
+          "learningAltText": "원통 롤러, 테이퍼 롤러, 자동조심 롤러, 스러스트 볼 베어링을 차례로 보여 주는 NCS 원문 사진 1",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(가) 원통 롤러, (나) 테이퍼 롤러, (다) 자동조심 롤러, (라) 스러스트 볼 베어링이다.",
+          "outputAssetHash": "7fb5e24768f6893ce61c7b66b15e36ae7cfba83f6be73a6ffe760a4bdddaf76b"
+        },
+        {
+          "id": "ncs-spherical-roller-bearing-four-choice--bearing-q04-b",
+          "path": "/practical/ncs/bearing-q04-b.png",
+          "promptAltText": "(나) 롤러와 궤도륜이 경사진 베어링 실사",
+          "learningAltText": "원통 롤러, 테이퍼 롤러, 자동조심 롤러, 스러스트 볼 베어링을 차례로 보여 주는 NCS 원문 사진 2",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(가) 원통 롤러, (나) 테이퍼 롤러, (다) 자동조심 롤러, (라) 스러스트 볼 베어링이다.",
+          "outputAssetHash": "1c17a1886492f6e17ac2ceeebed1991cb6b95c373e53c6bb59aee574d499f3c5"
+        },
+        {
+          "id": "ncs-spherical-roller-bearing-four-choice--bearing-self-aligning-ball",
+          "path": "/practical/ncs/bearing-self-aligning-ball.png",
+          "promptAltText": "(다) 두 줄의 굽은 롤러가 배열된 베어링 실사",
+          "learningAltText": "원통 롤러, 테이퍼 롤러, 자동조심 롤러, 스러스트 볼 베어링을 차례로 보여 주는 NCS 원문 사진 3",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(가) 원통 롤러, (나) 테이퍼 롤러, (다) 자동조심 롤러, (라) 스러스트 볼 베어링이다.",
+          "outputAssetHash": "be48ba3d41f68c0be3831dfd1c7f33203cda8979d2f2be29b41be0e984256414"
+        },
+        {
+          "id": "ncs-spherical-roller-bearing-four-choice--bearing-q04-c",
+          "path": "/practical/ncs/bearing-q04-c.png",
+          "promptAltText": "(라) 두 와셔 사이에 구형 전동체가 배열된 베어링 실사",
+          "learningAltText": "원통 롤러, 테이퍼 롤러, 자동조심 롤러, 스러스트 볼 베어링을 차례로 보여 주는 NCS 원문 사진 4",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(가) 원통 롤러, (나) 테이퍼 롤러, (다) 자동조심 롤러, (라) 스러스트 볼 베어링이다.",
+          "outputAssetHash": "1b8a41dab5e67fdaf0423b3d474fcf4315950e346ec844b06f7a627195435122"
+        }
+      ],
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "7fb5e24768f6893ce61c7b66b15e36ae7cfba83f6be73a6ffe760a4bdddaf76b"
+    },
+    {
+      "id": "licensed-maintenance-tools-four",
+      "title": "정비 공구 4종 실사 판독",
+      "imagePaths": [
+        "/practical/photos/maintenance-tools/hook-spanner.jpg",
+        "/practical/photos/maintenance-tools/socket-wrench-set.jpg",
+        "/practical/ncs/bearing-puller.jpg",
+        "/practical/ncs/snap-ring-pliers.jpg"
+      ],
+      "promptLabels": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "promptAltTexts": [
+        "(1) 끝부분이 갈고리 모양인 손 공구 실사",
+        "(2) 교환식 원통형 부품과 핸들이 함께 놓인 손 공구 실사",
+        "(3) 여러 개의 갈고리와 중앙 나사로 구성된 분해 공구 실사",
+        "(4) 끝에 작은 핀이 달린 플라이어 실사"
+      ],
+      "altText": "후크 스패너, 소켓 렌치 세트, 베어링 풀러, 스냅링 플라이어를 차례로 보여 주는 실사",
+      "caption": "(1) 후크 스패너, (2) 소켓 렌치 세트, (3) 베어링 풀러, (4) 스냅링 플라이어의 형상과 용도를 비교한다.",
+      "sourceLabel": "NCS 학습모듈 원문 사진 · Wikimedia Commons 공개 실사",
+      "sourceLinks": [
+        {
+          "label": "후크 스패너 원본",
+          "href": "https://commons.wikimedia.org/wiki/File:Cl%C3%A9_%C3%A0_ergot.jpg",
+          "license": "Public domain"
+        },
+        {
+          "label": "소켓 렌치 세트 원본",
+          "href": "https://commons.wikimedia.org/wiki/File:Socket_wrench_set.jpg",
+          "license": "Public domain"
+        },
+        {
+          "label": "NCS 스냅링 플라이어 원문",
+          "href": "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view",
+          "license": "교육 목적 출처 표시"
+        },
+        {
+          "label": "NCS 베어링 풀러 원문",
+          "href": "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view",
+          "license": "교육 목적 출처 표시"
+        }
+      ],
+      "ncsCode": "external-commons",
+      "pdfPage": 128,
+      "printedPage": 116,
+      "figureNumber": "NCS PDF p.42·128 / Clé à ergot.jpg / Socket wrench set.jpg",
+      "sourceFileHash": "0502df53e1f6e0e83e77054c54334376b8d83807045fdffab47d9a6c49c5f15a",
+      "examMatchStatus": "licensed_equivalent",
+      "rightsStatus": "education_use_with_attribution",
+      "publicUseStatus": "public",
+      "originType": "official_external",
+      "usageTypes": [
+        "past_exam_prompt",
+        "recognition",
+        "concept_explanation"
+      ],
+      "answerCritical": true,
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-29T00:00:00.000Z",
+      "technicalReviewer": "ncs-and-licensed-photo-audit",
+      "visualReviewNote": "복원 배열 (1) 후크 스패너, (2) 소켓 렌치, (3) 풀러, (4) 스냅링 플라이어를 유지했다. NCS에 식별 가능한 원문 사진이 있는 풀러·스냅링 플라이어를 우선 사용하고, 나머지 두 공구만 퍼블릭도메인 실사로 보완했다.",
+      "frames": [
+        {
+          "id": "licensed-maintenance-tools-four--hook-spanner",
+          "path": "/practical/photos/maintenance-tools/hook-spanner.jpg",
+          "promptAltText": "(1) 끝부분이 갈고리 모양인 손 공구 실사",
+          "learningAltText": "후크 스패너, 소켓 렌치 세트, 베어링 풀러, 스냅링 플라이어를 차례로 보여 주는 실사 1",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(1) 후크 스패너, (2) 소켓 렌치 세트, (3) 베어링 풀러, (4) 스냅링 플라이어의 형상과 용도를 비교한다.",
+          "outputAssetHash": "e39a14f74f1d674dce65475eae9c92f3508b34d85b7816c875886bb1b3d07a2b"
+        },
+        {
+          "id": "licensed-maintenance-tools-four--socket-wrench-set",
+          "path": "/practical/photos/maintenance-tools/socket-wrench-set.jpg",
+          "promptAltText": "(2) 교환식 원통형 부품과 핸들이 함께 놓인 손 공구 실사",
+          "learningAltText": "후크 스패너, 소켓 렌치 세트, 베어링 풀러, 스냅링 플라이어를 차례로 보여 주는 실사 2",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(1) 후크 스패너, (2) 소켓 렌치 세트, (3) 베어링 풀러, (4) 스냅링 플라이어의 형상과 용도를 비교한다.",
+          "outputAssetHash": "eb97d5ffaa04d534b72c62ff4fed2ea816b1efb5d24ab2bebd8ea429c4579b55"
+        },
+        {
+          "id": "licensed-maintenance-tools-four--bearing-puller",
+          "path": "/practical/ncs/bearing-puller.jpg",
+          "promptAltText": "(3) 여러 개의 갈고리와 중앙 나사로 구성된 분해 공구 실사",
+          "learningAltText": "후크 스패너, 소켓 렌치 세트, 베어링 풀러, 스냅링 플라이어를 차례로 보여 주는 실사 3",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(1) 후크 스패너, (2) 소켓 렌치 세트, (3) 베어링 풀러, (4) 스냅링 플라이어의 형상과 용도를 비교한다.",
+          "outputAssetHash": "38ee6d0ef1f3c38ab73a5ba84b33b486c366bcdc93c607c934af58a4b0e575d9"
+        },
+        {
+          "id": "licensed-maintenance-tools-four--snap-ring-pliers",
+          "path": "/practical/ncs/snap-ring-pliers.jpg",
+          "promptAltText": "(4) 끝에 작은 핀이 달린 플라이어 실사",
+          "learningAltText": "후크 스패너, 소켓 렌치 세트, 베어링 풀러, 스냅링 플라이어를 차례로 보여 주는 실사 4",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "(1) 후크 스패너, (2) 소켓 렌치 세트, (3) 베어링 풀러, (4) 스냅링 플라이어의 형상과 용도를 비교한다.",
+          "outputAssetHash": "8cfffb2065df9195f74e328150765073969f8cafd38c7778da92d6741c896232"
+        }
+      ],
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "e39a14f74f1d674dce65475eae9c92f3508b34d85b7816c875886bb1b3d07a2b"
+    },
+    {
+      "id": "licensed-sems-bolt",
+      "title": "SEMS 볼트 실사 판독",
+      "imagePaths": [
+        "/practical/photos/fasteners/sems-bolt.jpg"
+      ],
+      "promptLabels": [
+        "가"
+      ],
+      "promptAltTexts": [
+        "볼트 머리 아래에 평와셔와 절개된 와셔가 함께 끼워진 체결품 실사"
+      ],
+      "altText": "평와셔와 스프링와셔가 나사부에서 빠지지 않도록 미리 조립된 육각머리 SEMS 볼트 실사",
+      "caption": "평와셔와 스프링와셔가 볼트에 포획되어 한 세트로 취급되는 SEMS 볼트다.",
+      "sourceLabel": "Wikimedia Commons · 在原ヶ谷戸(CC BY-SA 3.0)",
+      "sourceLinks": [
+        {
+          "label": "SEMS 볼트 동등 실사 원본",
+          "href": "https://commons.wikimedia.org/wiki/File:Bolt_with_washer.jpg",
+          "license": "CC BY-SA 3.0"
+        }
+      ],
+      "ncsCode": "external-commons",
+      "pdfPage": 0,
+      "printedPage": 0,
+      "figureNumber": "Bolt with washer.jpg",
+      "sourceFileHash": "006df484396e6199626ee047251a374f1b7cab6679740630be4477cde4d84a8d",
+      "examMatchStatus": "licensed_equivalent",
+      "rightsStatus": "education_use_with_attribution",
+      "publicUseStatus": "public",
+      "originType": "official_external",
+      "usageTypes": [
+        "past_exam_prompt",
+        "recognition",
+        "concept_explanation"
+      ],
+      "answerCritical": true,
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-29T00:00:00.000Z",
+      "technicalReviewer": "licensed-photo-audit",
+      "visualReviewNote": "일본어 원문 설명이 ‘座金組込み六角ボルト’인 CC BY-SA 실사로, 평와셔·스프링와셔가 볼트에 미리 조립된 구조를 판독할 수 있다. 원시험 사진과 동일하다고 주장하지 않는 동등 식별자료다.",
+      "frames": [
+        {
+          "id": "licensed-sems-bolt--sems-bolt",
+          "path": "/practical/photos/fasteners/sems-bolt.jpg",
+          "promptAltText": "볼트 머리 아래에 평와셔와 절개된 와셔가 함께 끼워진 체결품 실사",
+          "learningAltText": "평와셔와 스프링와셔가 나사부에서 빠지지 않도록 미리 조립된 육각머리 SEMS 볼트 실사",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "평와셔와 스프링와셔가 볼트에 포획되어 한 세트로 취급되는 SEMS 볼트다.",
+          "outputAssetHash": "006df484396e6199626ee047251a374f1b7cab6679740630be4477cde4d84a8d"
+        }
+      ],
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "006df484396e6199626ee047251a374f1b7cab6679740630be4477cde4d84a8d"
+    },
     {
       "id": "ncs-bearing-four-types",
       "title": "구름베어링 4종 실사 비교",
@@ -29893,20 +31495,21 @@
       "printedPage": 37,
       "figureNumber": "그림 1-47 (우) 외",
       "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
-      "examMatchStatus": "concept_source",
+      "examMatchStatus": "licensed_equivalent",
       "rightsStatus": "education_use_with_attribution",
       "publicUseStatus": "public",
       "originType": "ncs_crop",
       "usageTypes": [
         "sequence_step",
         "concept_explanation",
-        "variant_exam_prompt"
+        "variant_exam_prompt",
+        "past_exam_prompt"
       ],
       "answerCritical": true,
       "technicalReviewStatus": "verified",
       "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
       "technicalReviewer": "source-visual-audit",
-      "visualReviewNote": "NCS 원문 페이지와 단계 순서를 대조하고, 문제용 중립 대체텍스트와 학습용 설명을 분리했다.",
+      "visualReviewNote": "원시험 원본 사진이 아닌 NCS 동등 재구성이다. NCS 원문 4단계와 기존 문제·정답을 대조하고, 문제용 중립 대체텍스트와 학습용 설명을 분리했다.",
       "derivedFromVisualAidId": null,
       "sourcePageImageHash": null,
       "outputAssetHash": "246336a6112a1cf5dc2d84ddd150934222085b4d6f891a6cad0074f8ed80e634"
@@ -31148,6 +32751,457 @@
       "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
       "technicalReviewer": "source-visual-audit",
       "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
+    },
+    {
+      "id": "diagram-third-angle-projection-problem",
+      "title": "제3각법 투상도 복원 문제",
+      "imagePaths": [
+        "/practical/diagrams/third-angle-projection-problem.svg"
+      ],
+      "altText": "화살표 방향의 입체와 정면도, 빈 평면도·우측면도 칸을 배치한 제3각법 문제 도식",
+      "caption": "입체의 모서리와 정면도를 기준으로 평면도와 우측면도를 완성한다.",
+      "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 측정 도면 해독",
+      "ncsCode": "1502010511",
+      "pdfPage": 75,
+      "printedPage": 63,
+      "figureNumber": "NCS 원문 기반 자체 제작",
+      "sourceFileHash": "07194561e122faedd5991d54852b9305f127c0acf852f7c463f686eba0e9198b",
+      "examMatchStatus": "self_authored",
+      "rightsStatus": "self_authored",
+      "publicUseStatus": "public",
+      "frames": [
+        {
+          "id": "diagram-third-angle-projection-problem--third-angle-projection-problem",
+          "path": "/practical/diagrams/third-angle-projection-problem.svg",
+          "promptAltText": "문제에 제시된 시각자료 1",
+          "learningAltText": "화살표 방향의 입체와 정면도, 빈 평면도·우측면도 칸을 배치한 제3각법 문제 도식",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "입체의 모서리와 정면도를 기준으로 평면도와 우측면도를 완성한다.",
+          "outputAssetHash": "cfd648b4eca888743226ebf9e35309579ed8709ddaf983daa205e3ac43ff46f7"
+        }
+      ],
+      "originType": "self_authored",
+      "usageTypes": [
+        "concept_explanation"
+      ],
+      "answerCritical": false,
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "cfd648b4eca888743226ebf9e35309579ed8709ddaf983daa205e3ac43ff46f7",
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+      "technicalReviewer": "source-visual-audit",
+      "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
+    },
+    {
+      "id": "diagram-bracket-drawing-annotations",
+      "title": "브래킷 도면 A·B 판독",
+      "imagePaths": [
+        "/practical/diagrams/bracket-drawing-annotations.svg"
+      ],
+      "altText": "나사 구멍과 리브 위치를 A·B로 표시한 브래킷 단면도",
+      "caption": "A와 B의 수량·치수·가공 또는 형상 지시를 도면에서 판독한다.",
+      "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 측정 도면 해독",
+      "ncsCode": "1502010511",
+      "pdfPage": 75,
+      "printedPage": 63,
+      "figureNumber": "NCS 원문 기반 자체 제작",
+      "sourceFileHash": "07194561e122faedd5991d54852b9305f127c0acf852f7c463f686eba0e9198b",
+      "examMatchStatus": "self_authored",
+      "rightsStatus": "self_authored",
+      "publicUseStatus": "public",
+      "frames": [
+        {
+          "id": "diagram-bracket-drawing-annotations--bracket-drawing-annotations",
+          "path": "/practical/diagrams/bracket-drawing-annotations.svg",
+          "promptAltText": "문제에 제시된 시각자료 1",
+          "learningAltText": "나사 구멍과 리브 위치를 A·B로 표시한 브래킷 단면도",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "A와 B의 수량·치수·가공 또는 형상 지시를 도면에서 판독한다.",
+          "outputAssetHash": "23a71c9a245a76770a39a68af70cc48c478f87dbab38d3f06a239a93695168ab"
+        }
+      ],
+      "originType": "self_authored",
+      "usageTypes": [
+        "concept_explanation"
+      ],
+      "answerCritical": false,
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "23a71c9a245a76770a39a68af70cc48c478f87dbab38d3f06a239a93695168ab",
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+      "technicalReviewer": "source-visual-audit",
+      "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
+    },
+    {
+      "id": "diagram-measurement-instruments-exact",
+      "title": "측정기 3종 판독",
+      "imagePaths": [
+        "/practical/diagrams/measurement-instruments-exact.svg"
+      ],
+      "altText": "1부터 3까지 다이얼형·깊이형·내측형 측정기를 배열한 자체 제작 도식",
+      "caption": "측정자와 기준면, 접촉부의 형상으로 세 측정기의 명칭을 구분한다.",
+      "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기본측정기 사용",
+      "ncsCode": "1502010504",
+      "pdfPage": 39,
+      "printedPage": 27,
+      "figureNumber": "NCS 원문 기반 자체 제작",
+      "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+      "examMatchStatus": "self_authored",
+      "rightsStatus": "self_authored",
+      "publicUseStatus": "public",
+      "frames": [
+        {
+          "id": "diagram-measurement-instruments-exact--measurement-instruments-exact",
+          "path": "/practical/diagrams/measurement-instruments-exact.svg",
+          "promptAltText": "문제에 제시된 시각자료 1",
+          "learningAltText": "1부터 3까지 다이얼형·깊이형·내측형 측정기를 배열한 자체 제작 도식",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "측정자와 기준면, 접촉부의 형상으로 세 측정기의 명칭을 구분한다.",
+          "outputAssetHash": "696bcf037c950b75a518bca58c915e2961c0e9cddddf4d2f29818aaf9552d7c6"
+        }
+      ],
+      "originType": "self_authored",
+      "usageTypes": [
+        "concept_explanation"
+      ],
+      "answerCritical": false,
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "696bcf037c950b75a518bca58c915e2961c0e9cddddf4d2f29818aaf9552d7c6",
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+      "technicalReviewer": "source-visual-audit",
+      "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
+    },
+    {
+      "id": "diagram-external-gear-pump-drawing",
+      "title": "펌프·공차기호 판독 도면",
+      "imagePaths": [
+        "/practical/diagrams/external-gear-pump-drawing.svg"
+      ],
+      "altText": "맞물린 두 기어와 축 단면, 세 기하공차 프레임을 표시한 자체 제작 도면",
+      "caption": "장치·기어 종류와 가·나·다 공차기호, 끼워맞춤 조건을 각각 판독한다.",
+      "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 유압제어",
+      "ncsCode": "1503010216",
+      "pdfPage": 49,
+      "printedPage": 37,
+      "figureNumber": "NCS 원문 기반 자체 제작",
+      "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
+      "examMatchStatus": "self_authored",
+      "rightsStatus": "self_authored",
+      "publicUseStatus": "public",
+      "frames": [
+        {
+          "id": "diagram-external-gear-pump-drawing--external-gear-pump-drawing",
+          "path": "/practical/diagrams/external-gear-pump-drawing.svg",
+          "promptAltText": "문제에 제시된 시각자료 1",
+          "learningAltText": "맞물린 두 기어와 축 단면, 세 기하공차 프레임을 표시한 자체 제작 도면",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "장치·기어 종류와 가·나·다 공차기호, 끼워맞춤 조건을 각각 판독한다.",
+          "outputAssetHash": "457e373ff493d7ea92600aa5a7c8621581593a83214fcb5ec370551f15a5008e"
+        }
+      ],
+      "originType": "self_authored",
+      "usageTypes": [
+        "concept_explanation"
+      ],
+      "answerCritical": false,
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "457e373ff493d7ea92600aa5a7c8621581593a83214fcb5ec370551f15a5008e",
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+      "technicalReviewer": "source-visual-audit",
+      "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
+    },
+    {
+      "id": "diagram-m18-thread-reconstruction",
+      "title": "M18 암나사 a·b 판독",
+      "imagePaths": [
+        "/practical/diagrams/m18-thread-reconstruction.svg"
+      ],
+      "altText": "M18 암나사 단면에서 두 반지름을 a와 b로 표시한 자체 제작 도면",
+      "caption": "a와 b가 가리키는 지름 경계를 구분한 뒤 반지름 값을 계산한다.",
+      "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 측정 도면 해독",
+      "ncsCode": "1502010511",
+      "pdfPage": 75,
+      "printedPage": 63,
+      "figureNumber": "NCS 원문 기반 자체 제작",
+      "sourceFileHash": "07194561e122faedd5991d54852b9305f127c0acf852f7c463f686eba0e9198b",
+      "examMatchStatus": "self_authored",
+      "rightsStatus": "self_authored",
+      "publicUseStatus": "public",
+      "frames": [
+        {
+          "id": "diagram-m18-thread-reconstruction--m18-thread-reconstruction",
+          "path": "/practical/diagrams/m18-thread-reconstruction.svg",
+          "promptAltText": "문제에 제시된 시각자료 1",
+          "learningAltText": "M18 암나사 단면에서 두 반지름을 a와 b로 표시한 자체 제작 도면",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "a와 b가 가리키는 지름 경계를 구분한 뒤 반지름 값을 계산한다.",
+          "outputAssetHash": "2429dfee2d3eab8900ef011dc14238027d8afcf33c34cbbe4600f361329de191"
+        }
+      ],
+      "originType": "self_authored",
+      "usageTypes": [
+        "concept_explanation"
+      ],
+      "answerCritical": false,
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "2429dfee2d3eab8900ef011dc14238027d8afcf33c34cbbe4600f361329de191",
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+      "technicalReviewer": "source-visual-audit",
+      "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
+    },
+    {
+      "id": "diagram-sems-bolt",
+      "title": "와셔 조립 볼트 구조 판독",
+      "imagePaths": [
+        "/practical/diagrams/sems-bolt.svg"
+      ],
+      "altText": "볼트 머리 아래 두 종류의 와셔가 이탈하지 않게 조립된 자체 제작 구조도",
+      "caption": "볼트와 와셔의 결합 관계를 보고 체결품 명칭을 판별한다.",
+      "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기계구동장치 조립",
+      "ncsCode": "1503010120",
+      "pdfPage": 42,
+      "printedPage": 30,
+      "figureNumber": "NCS 원문 기반 자체 제작",
+      "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+      "examMatchStatus": "self_authored",
+      "rightsStatus": "self_authored",
+      "publicUseStatus": "public",
+      "frames": [
+        {
+          "id": "diagram-sems-bolt--sems-bolt",
+          "path": "/practical/diagrams/sems-bolt.svg",
+          "promptAltText": "문제에 제시된 시각자료 1",
+          "learningAltText": "볼트 머리 아래 두 종류의 와셔가 이탈하지 않게 조립된 자체 제작 구조도",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "볼트와 와셔의 결합 관계를 보고 체결품 명칭을 판별한다.",
+          "outputAssetHash": "e79474fa0af886d9b31c52723c1fed9b053df7f54f5e56acdf9d0214f85b81a1"
+        }
+      ],
+      "originType": "self_authored",
+      "usageTypes": [
+        "concept_explanation"
+      ],
+      "answerCritical": false,
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "e79474fa0af886d9b31c52723c1fed9b053df7f54f5e56acdf9d0214f85b81a1",
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+      "technicalReviewer": "source-visual-audit",
+      "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
+    },
+    {
+      "id": "diagram-grinding-wheel-safety",
+      "title": "연삭숫돌 시운전·방호 문제",
+      "imagePaths": [
+        "/practical/diagrams/grinding-wheel-safety.svg"
+      ],
+      "altText": "연삭숫돌과 덮개, 두 시운전 시간 빈칸을 표시한 자체 제작 도식",
+      "caption": "작업 시작 전과 교체 후의 시운전 시간, 파편 방호장치를 구분한다.",
+      "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 조립안전관리",
+      "ncsCode": "1503010122",
+      "pdfPage": 25,
+      "printedPage": 13,
+      "figureNumber": "NCS 원문 기반 자체 제작",
+      "sourceFileHash": "5eb5b16dd51a25d7814d054c89e0266eee4378d1200e74a2e9f0ae124d84e750",
+      "examMatchStatus": "self_authored",
+      "rightsStatus": "self_authored",
+      "publicUseStatus": "public",
+      "frames": [
+        {
+          "id": "diagram-grinding-wheel-safety--grinding-wheel-safety",
+          "path": "/practical/diagrams/grinding-wheel-safety.svg",
+          "promptAltText": "문제에 제시된 시각자료 1",
+          "learningAltText": "연삭숫돌과 덮개, 두 시운전 시간 빈칸을 표시한 자체 제작 도식",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "작업 시작 전과 교체 후의 시운전 시간, 파편 방호장치를 구분한다.",
+          "outputAssetHash": "8a0c116041def4c0215796e7d8dd26b18da1c290a348c8476a393302113685e7"
+        }
+      ],
+      "originType": "self_authored",
+      "usageTypes": [
+        "concept_explanation"
+      ],
+      "answerCritical": false,
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "8a0c116041def4c0215796e7d8dd26b18da1c290a348c8476a393302113685e7",
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+      "technicalReviewer": "source-visual-audit",
+      "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
+    },
+    {
+      "id": "diagram-drip-lubrication",
+      "title": "윤활유 방울 공급 구조",
+      "imagePaths": [
+        "/practical/diagrams/drip-lubrication.svg"
+      ],
+      "altText": "오일 저장통과 유량 조절부, 투시창, 낙하하는 기름방울을 표시한 자체 제작 도식",
+      "caption": "유량을 조절해 방울 단위로 윤활유를 공급하는 구조를 확인한다.",
+      "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 운반하역기계 구동장치 정비",
+      "ncsCode": "1505010108",
+      "pdfPage": 71,
+      "printedPage": 59,
+      "figureNumber": "NCS 원문 기반 자체 제작",
+      "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+      "examMatchStatus": "self_authored",
+      "rightsStatus": "self_authored",
+      "publicUseStatus": "public",
+      "frames": [
+        {
+          "id": "diagram-drip-lubrication--drip-lubrication",
+          "path": "/practical/diagrams/drip-lubrication.svg",
+          "promptAltText": "문제에 제시된 시각자료 1",
+          "learningAltText": "오일 저장통과 유량 조절부, 투시창, 낙하하는 기름방울을 표시한 자체 제작 도식",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "유량을 조절해 방울 단위로 윤활유를 공급하는 구조를 확인한다.",
+          "outputAssetHash": "a6436df54c5b6c07b0cdc009305b93f82070ea932b902565e270c80f502fc146"
+        }
+      ],
+      "originType": "self_authored",
+      "usageTypes": [
+        "concept_explanation"
+      ],
+      "answerCritical": false,
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "a6436df54c5b6c07b0cdc009305b93f82070ea932b902565e270c80f502fc146",
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+      "technicalReviewer": "source-visual-audit",
+      "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
+    },
+    {
+      "id": "diagram-abbe-principle-exam",
+      "title": "측정축·기준축 배치 비교",
+      "imagePaths": [
+        "/practical/diagrams/abbe-principle-exam.svg"
+      ],
+      "altText": "측정축과 기준 눈금축이 같은 직선인 경우와 떨어진 경우를 비교한 자체 제작 도식",
+      "caption": "두 축의 상대 위치가 각도 오차의 확대에 미치는 영향을 비교한다.",
+      "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 기본측정기 사용",
+      "ncsCode": "1502010504",
+      "pdfPage": 87,
+      "printedPage": 75,
+      "figureNumber": "NCS 원문 기반 자체 제작",
+      "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+      "examMatchStatus": "self_authored",
+      "rightsStatus": "self_authored",
+      "publicUseStatus": "public",
+      "frames": [
+        {
+          "id": "diagram-abbe-principle-exam--abbe-principle-exam",
+          "path": "/practical/diagrams/abbe-principle-exam.svg",
+          "promptAltText": "문제에 제시된 시각자료 1",
+          "learningAltText": "측정축과 기준 눈금축이 같은 직선인 경우와 떨어진 경우를 비교한 자체 제작 도식",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "두 축의 상대 위치가 각도 오차의 확대에 미치는 영향을 비교한다.",
+          "outputAssetHash": "2dae99ee9edd2133dfb4e7108e5f8ccba635077334b826b9e17f493f59fcd26b"
+        }
+      ],
+      "originType": "self_authored",
+      "usageTypes": [
+        "concept_explanation"
+      ],
+      "answerCritical": false,
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "2dae99ee9edd2133dfb4e7108e5f8ccba635077334b826b9e17f493f59fcd26b",
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+      "technicalReviewer": "source-visual-audit",
+      "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
+    },
+    {
+      "id": "diagram-ghs-pictograms-problem",
+      "title": "화학물질 경고 그림문자 판독",
+      "imagePaths": [
+        "/practical/diagrams/ghs-pictograms-problem.svg"
+      ],
+      "altText": "가부터 아까지 여덟 개의 화학물질 경고 그림문자를 배열한 자체 제작 도식",
+      "caption": "마름모 안의 기호 형상을 보고 경고 종류와 의미를 구분한다.",
+      "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 조립안전관리",
+      "ncsCode": "1503010122",
+      "pdfPage": 25,
+      "printedPage": 13,
+      "figureNumber": "NCS 원문 기반 자체 제작",
+      "sourceFileHash": "5eb5b16dd51a25d7814d054c89e0266eee4378d1200e74a2e9f0ae124d84e750",
+      "examMatchStatus": "self_authored",
+      "rightsStatus": "self_authored",
+      "publicUseStatus": "public",
+      "frames": [
+        {
+          "id": "diagram-ghs-pictograms-problem--ghs-pictograms-problem",
+          "path": "/practical/diagrams/ghs-pictograms-problem.svg",
+          "promptAltText": "문제에 제시된 시각자료 1",
+          "learningAltText": "가부터 아까지 여덟 개의 화학물질 경고 그림문자를 배열한 자체 제작 도식",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "마름모 안의 기호 형상을 보고 경고 종류와 의미를 구분한다.",
+          "outputAssetHash": "2f2f3d7705e87dd403e3d74320a9bb6da3105899094f9d4a09cc997a1aa2e0bb"
+        }
+      ],
+      "originType": "self_authored",
+      "usageTypes": [
+        "concept_explanation"
+      ],
+      "answerCritical": false,
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "2f2f3d7705e87dd403e3d74320a9bb6da3105899094f9d4a09cc997a1aa2e0bb",
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+      "technicalReviewer": "source-visual-audit",
+      "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
+    },
+    {
+      "id": "diagram-drive-unit-section-labels",
+      "title": "구동장치 단면 ⑥·⑦·⑧ 판독",
+      "imagePaths": [
+        "/practical/diagrams/drive-unit-section-labels.svg"
+      ],
+      "altText": "구동장치 단면의 세 부품 위치를 6, 7, 8로 표시한 자체 제작 도식",
+      "caption": "축과 하우징·풀리의 결합 위치를 보고 세 부품의 명칭을 판별한다.",
+      "sourceLabel": "NCS 학습모듈 원리 기반 자체 제작 · 운반하역기계 구동장치 정비",
+      "ncsCode": "1505010108",
+      "pdfPage": 96,
+      "printedPage": 84,
+      "figureNumber": "NCS 원문 기반 자체 제작",
+      "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+      "examMatchStatus": "self_authored",
+      "rightsStatus": "self_authored",
+      "publicUseStatus": "public",
+      "frames": [
+        {
+          "id": "diagram-drive-unit-section-labels--drive-unit-section-labels",
+          "path": "/practical/diagrams/drive-unit-section-labels.svg",
+          "promptAltText": "문제에 제시된 시각자료 1",
+          "learningAltText": "구동장치 단면의 세 부품 위치를 6, 7, 8로 표시한 자체 제작 도식",
+          "captionBeforeAnswer": null,
+          "captionAfterAnswer": "축과 하우징·풀리의 결합 위치를 보고 세 부품의 명칭을 판별한다.",
+          "outputAssetHash": "e6b3f34b37aac349525d4f7d6a532a86d91a2c4af64a6c62dfa481a57074bfd2"
+        }
+      ],
+      "originType": "self_authored",
+      "usageTypes": [
+        "concept_explanation"
+      ],
+      "answerCritical": false,
+      "derivedFromVisualAidId": null,
+      "sourcePageImageHash": null,
+      "outputAssetHash": "e6b3f34b37aac349525d4f7d6a532a86d91a2c4af64a6c62dfa481a57074bfd2",
+      "technicalReviewStatus": "verified",
+      "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
+      "technicalReviewer": "source-visual-audit",
+      "visualReviewNote": "출처·권리·파일 해시·대체텍스트와 학습 연결을 확인함."
     }
   ],
   "ncsCoverage": {
@@ -31494,11 +33548,11 @@
     ]
   },
   "report": {
-    "generatedAt": "2026-07-28T09:17:50.577Z",
+    "generatedAt": "2026-07-29T11:47:39.792Z",
     "sourceFile": "설비보전기사_작업형실기_기출복원_출제예상40_개념통합_2차.xlsx",
     "sourceSha256": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
     "rows": {
-      "past": 42,
+      "past": 51,
       "predicted": 185,
       "workbookPredicted": 41,
       "authoredPredicted": 77,
@@ -31506,18 +33560,15 @@
       "concepts": 46,
       "supplementalConcepts": 43,
       "ncsDocuments": 11,
-      "visualAids": 70
+      "visualAids": 88
     },
     "publication": {
-      "past": 22,
-      "predicted": 182,
+      "past": 51,
+      "predicted": 183,
       "concepts": 46,
       "supplementalConcepts": 43,
-      "held": 21,
-      "heldByDisposition": {
-        "held_asset_missing": 19,
-        "held_source_missing": 2
-      }
+      "held": 0,
+      "heldByDisposition": {}
     },
     "ncsCoverage": {
       "totalDocuments": 11,
@@ -31528,9 +33579,9 @@
     },
     "exactMatch": true,
     "warnings": [
-      "EXP-C03 OEE 계산은 현재 확보한 NCS 11종 밖의 원문이 필요하여 공개 보류했다.",
-      "제3각법 등 제3자 표준 출처가 표시된 원도형은 공개 자산으로 복제하지 않았다.",
-      "응시자 복원 캡처는 출제 이력 대조에만 사용하고 공개 이미지로 복제하지 않았다."
+      "EXP-C03 OEE 계산은 2026년 1회 복원문제의 공식과 조건을 바탕으로 이미지 없는 지문형 예상문제로 공개했다.",
+      "제3각법 등 제3자 원도형은 공개 자산으로 복제하지 않고 같은 판독조건의 자체 SVG로 재구성했다.",
+      "응시자 복원 캡처와 블로그 이미지는 문항 대조에만 사용하고 공개 이미지로 복제하지 않았다."
     ]
   }
 }

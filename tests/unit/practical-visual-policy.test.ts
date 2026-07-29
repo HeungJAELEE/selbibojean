@@ -13,10 +13,16 @@ const aid = (id: string) => {
 };
 
 describe("practical visual publication policy", () => {
-  it("allows only exact NCS-origin assets in reconstructed past prompts", () => {
+  it("allows exact NCS assets or reviewed licensed real-photo equivalents in past prompts", () => {
     expect(
       canUsePracticalVisualAid(
         aid("ncs-bearing-four-types"),
+        "past_exam_prompt",
+      ),
+    ).toBe(true);
+    expect(
+      canUsePracticalVisualAid(
+        aid("licensed-measurement-instruments-three"),
         "past_exam_prompt",
       ),
     ).toBe(true);
@@ -36,6 +42,24 @@ describe("practical visual publication policy", () => {
 
     expect(canUsePracticalVisualAid(variant, "variant_exam_prompt")).toBe(true);
     expect(canUsePracticalVisualAid(variant, "past_exam_prompt")).toBe(false);
+  });
+
+  it("allows verified NCS crops in predicted prompts only when explicitly declared", () => {
+    const declared = aid("ncs-brake-pad-lining-inspection");
+    const undeclared = {
+      ...declared,
+      usageTypes: declared.usageTypes.filter(
+        (usage) => usage !== "variant_exam_prompt",
+      ),
+    } satisfies PracticalVisualAid;
+
+    expect(
+      canUsePracticalVisualAid(declared, "variant_exam_prompt"),
+    ).toBe(true);
+    expect(
+      canUsePracticalVisualAid(undeclared, "variant_exam_prompt"),
+    ).toBe(false);
+    expect(canUsePracticalVisualAid(declared, "past_exam_prompt")).toBe(false);
   });
 
   it("never exposes AI-generated assets to learners", () => {

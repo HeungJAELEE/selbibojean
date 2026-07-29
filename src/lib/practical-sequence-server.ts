@@ -40,10 +40,14 @@ export function getPracticalPromptVisualUsage(
     "kind" | "examEvidenceStatus"
   >,
 ): PracticalVisualUsage {
-  return question.kind === "past" &&
-    question.examEvidenceStatus !== "past_reconstructed"
+  // A reconstructed past question is still a past-exam prompt.  Returning
+  // `concept_explanation` here allowed self-authored teaching diagrams to be
+  // rendered before submission as though they were the recalled stimulus.
+  // The visual policy must therefore decide whether an exact, source-governed
+  // past prompt is available; otherwise the learner sees no prompt visual.
+  return question.kind === "past"
     ? "past_exam_prompt"
-    : "concept_explanation";
+    : "variant_exam_prompt";
 }
 
 export function toPracticalSequenceFrameTokens(

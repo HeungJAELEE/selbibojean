@@ -46,7 +46,11 @@ async function main() {
     }
   }
 
-  if (content.report.rows.past !== 42) errors.push("기출복원 42개가 아닙니다.");
+  if (content.report.rows.past !== 51) errors.push("기출복원 원시 레코드 51개가 아닙니다.");
+  if (content.report.publication.past !== 51)
+    errors.push(
+      "학습자 공개 기출복원은 검증 완료 51개여야 합니다.",
+    );
   if (content.report.rows.predicted !== 185)
     errors.push("출제예상 전체 185개가 아닙니다.");
   if (content.report.rows.workbookPredicted !== 41)
@@ -98,14 +102,14 @@ async function main() {
   if (!content.report.exactMatch) errors.push("원본 행 수 대사가 실패했습니다.");
 
   const expectedCategoryCounts = new Map([
-    ["visual_identification", 37],
-    ["formula_calculation", 54],
-    ["theory_concept", 73],
-    ["work_procedure", 63],
+    ["visual_identification", 38],
+    ["formula_calculation", 56],
+    ["theory_concept", 77],
+    ["work_procedure", 65],
   ]);
   const expectedPublicPredictedCounts = new Map([
     ["visual_identification", 19],
-    ["formula_calculation", 45],
+    ["formula_calculation", 46],
     ["theory_concept", 60],
     ["work_procedure", 58],
   ]);
@@ -288,9 +292,9 @@ async function main() {
     return;
   }
   console.log(
-    `PASS: 실기 기출 ${content.report.publication.past}/42, 예상 ${content.report.publication.predicted}/${content.report.rows.predicted} (워크북 ${content.report.rows.workbookPredicted} + 자체 ${content.report.rows.authoredPredicted} + 필기선별 ${content.report.rows.balancedPredicted}), ` +
+    `PASS: 실기 기출 ${content.report.publication.past}/${content.report.rows.past}, 예상 ${content.report.publication.predicted}/${content.report.rows.predicted} (워크북 ${content.report.rows.workbookPredicted} + 자체 ${content.report.rows.authoredPredicted} + 필기선별 ${content.report.rows.balancedPredicted}), ` +
       `출제연결 ${content.report.publication.concepts}/46 + NCS 보강 ${content.report.publication.supplementalConcepts}/${PRACTICAL_SUPPLEMENTAL_CONCEPTS.length}, 보류 ${content.report.publication.held}, ` +
-      `NCS 시각자료 ${publicVisualAids.length}묶음, 학습유형 4개/227문제`,
+      `NCS 시각자료 ${publicVisualAids.length}묶음, 학습유형 4개/236문제`,
   );
 }
 

@@ -15,6 +15,7 @@ import {
   PRACTICAL_AUTHORED_PAST_QUESTIONS,
   PRACTICAL_AUTHORED_PREDICTED_QUESTIONS,
 } from "../src/data/source/practical-authored-predicted-questions";
+import { PRACTICAL_ROUND2_RECONSTRUCTED_QUESTIONS } from "../src/data/source/practical-round2-reconstructed-questions";
 import { PRACTICAL_SUPPLEMENTAL_PREDICTED_QUESTIONS } from "../src/data/source/practical-supplemental-predicted-questions";
 import { PRACTICAL_CONCEPT_EDITORIAL } from "../src/data/source/practical-concept-editorial";
 import { PRACTICAL_NCS_COVERAGE_HOLDS } from "../src/data/source/practical-ncs-coverage-audit";
@@ -361,25 +362,35 @@ const ACTUAL_AUDIT_OVERRIDES: Record<
   string,
   { disposition: AuditDisposition; note: string }
 > = {
-  "P-2025-1-Q06": {
-    disposition: "held_source_missing",
+  "P-2025-1-Q05": {
+    disposition: "verified",
     note:
-      "복원문제는 유도가열기 작업순서를 요구하지만 확보한 NCS 그림은 오일 배스 가열·가열 후 조립 장면이다. 동일 작업순서 원문을 확보하기 전까지 공개하지 않는다.",
+      "2025년 1회 복원 글의 입체·정면도·제3각법 배치를 기준으로 같은 모서리 정보를 갖춘 자체 SVG를 제작했다.",
+  },
+  "P-2025-1-Q06": {
+    disposition: "verified",
+    note:
+      "2025년 1회 복원 글의 e-b-a-c-g-d-i-h-f 순서를 확인하고 NCS 열간조립 원리와 대조한 자체 절차 도식을 사용한다.",
   },
   "P-2025-1-Q09": {
-    disposition: "held_asset_missing",
+    disposition: "verified",
     note:
-      "안전표지의 모양·색상 식별에 원그림이 필요하나 현재 저장소에 시험 원그림 또는 동일 NCS 원본이 없다.",
+      "2025년 1회 복원 글의 GHS 그림문자 배열을 기준으로 같은 판독조건의 자체 도식을 제작했다.",
   },
   "P-2025-1-Q10": {
-    disposition: "held_asset_missing",
+    disposition: "verified",
     note:
-      "H·V·A 측정방향을 판단할 시험 원그림과 동일 NCS 원본을 찾지 못했다. 자체 제작 도식은 기출 문제 자료로 사용하지 않는다.",
+      "2025년 1회 복원 글의 수평·수직·축방향 답과 회전기계 진동 측정 기준을 대조한 자체 방향도를 사용한다.",
+  },
+  "P-2025-2-Q03": {
+    disposition: "verified",
+    note:
+      "2025년 2회 복원 글의 브래킷 A·B 지시 위치와 3-M4 깊이 10, 3-10 리브 조건을 자체 도면으로 재구성했다.",
   },
   "P-2025-2-Q04": {
-    disposition: "held_asset_missing",
+    disposition: "verified",
     note:
-      "복원문제의 네 정비 공구를 모두 포함하는 동일 NCS 원사진을 확인하지 못했다.",
+      "2025년 2회 복원 글에서 네 공구의 명칭과 연결형 형식을 확인하고 자체 공구 도식을 사용한다.",
   },
   "P-2025-2-Q01-1": {
     disposition: "held_asset_missing",
@@ -387,9 +398,9 @@ const ACTUAL_AUDIT_OVERRIDES: Record<
       "정답 후보인 복열 자동조심 롤러베어링과 일치하는 NCS 사진은 확인했지만, 복원문제의 네 선택 사진 전체와 순서를 재현할 동일 원문 묶음은 확보하지 못했다.",
   },
   "P-2025-2-Q05": {
-    disposition: "held_asset_missing",
+    disposition: "verified",
     note:
-      "확보한 NCS 버니어캘리퍼스 원문 예시는 21.60 mm이며 복원문제의 48.2 mm 눈금과 다르다.",
+      "2025년 2회 복원 글의 48.2 mm 판독값이 나오도록 주척 48 mm와 버니어 0.2 mm 일치눈금을 자체 제작했다.",
   },
   "P-2025-2-Q10": {
     disposition: "held_source_missing",
@@ -397,35 +408,200 @@ const ACTUAL_AUDIT_OVERRIDES: Record<
       "기어 손상 사진과 공개답을 함께 확정할 동일 NCS 원문 또는 독립 기술근거를 확보하지 못했다.",
   },
   "P-2025-3-Q04": {
-    disposition: "held_asset_missing",
-    note: "나사산 형상 식별에 필요한 시험 원그림과 동일 NCS 원본이 없다.",
+    disposition: "verified",
+    note: "2025년 3회 복원 글의 사각·사다리꼴·톱니·둥근나사 순서를 자체 형상도로 재구성했다.",
   },
   "P-2025-3-Q05": {
-    disposition: "held_asset_missing",
-    note: "축정렬 불량 유형을 판별할 시험 원그림과 동일 NCS 원본이 없다.",
+    disposition: "verified",
+    note: "2025년 3회 복원 글의 편심·편각 두 축 중심선 관계를 자체 도식으로 재구성했다.",
   },
   "P-2025-3-Q06": {
-    disposition: "held_asset_missing",
-    note: "기어 치형 곡선을 판별할 시험 원그림과 동일 NCS 원본이 없다.",
+    disposition: "verified",
+    note: "2025년 3회 복원 글의 인벌류트·사이클로이드 생성 설명을 자체 곡선 도식과 연결했다.",
   },
   "P-2025-3-Q07": {
-    disposition: "held_asset_missing",
+    disposition: "verified",
     note:
-      "다이얼 게이지·V블록의 정확한 측정 배치를 보여 주는 시험 원그림과 동일 NCS 원본이 없다.",
+      "2025년 3회 복원 글의 축 휨 측정 배치를 다이얼게이지와 V블록 자체 도식으로 재구성했다.",
   },
   "P-2025-3-Q10": {
-    disposition: "held_asset_missing",
-    note: "번호가 붙은 베어링 구성요소 원그림과 동일 NCS 원본이 없다.",
+    disposition: "verified",
+    note: "2025년 3회 복원 글의 네 구성요소를 자체 베어링 단면도와 연결했다.",
+  },
+  "P-2026-1-Q03": {
+    disposition: "verified",
+    note:
+      "2026년 1회 복원 글의 구동장치 단면과 ⑥·⑦·⑧ 위치 관계를 자체 단면도로 재구성했다.",
   },
   "P-2026-1-Q06": {
-    disposition: "held_asset_missing",
-    note: "세 측정기의 시험 실사와 동일한 NCS 원사진을 확인하지 못했다.",
+    disposition: "verified",
+    note:
+      "2026년 1회 복원 글에서 다이얼게이지·깊이 마이크로미터·내측 마이크로미터 순서를 확인하고, CC0·퍼블릭도메인 실사로 같은 식별 순서를 구성했다.",
   },
   "P-2026-1-Q10": {
-    disposition: "held_asset_missing",
+    disposition: "verified",
     note:
-      "저널베어링 납선 간극 측정의 시험 단면도와 동일한 NCS 원본을 확인하지 못했다.",
+      "2026년 1회 복원 글의 연선 압착 측정 설명과 NCS 저널베어링 점검 원리를 대조한 자체 단면도를 사용한다.",
   },
+};
+
+const ACTUAL_STEM_OVERRIDES: Record<string, string> = {
+  "P-2025-1-Q01":
+    "플랜지 커플링의 체결볼트 4개 중 1개가 절단된 상태이다. 볼트지름 10 mm, PCD 100 mm, 허용전단응력 50 MPa일 때 전달 가능한 회전토크를 구하시오.",
+  "P-2025-1-Q02":
+    "맞물린 두 기어 중 작은 기어를 고정하고 큰 기어의 잇면에 측정기를 설치해 틈새만큼 움직여 값을 읽는다. 측정항목 ①과 사용하는 측정기 ②를 쓰시오.",
+  "P-2025-1-Q03":
+    "자동화 시스템에서 센서가 기능을 충분히 발휘하기 위해 기본적으로 요구되는 성능 4가지를 쓰시오.",
+  "P-2025-1-Q04":
+    "그림 (가)~(라)를 보고 각 구름베어링의 명칭을 순서대로 쓰시오.",
+  "P-2025-1-Q05":
+    "주어진 입체를 화살표 방향에서 정면으로 보았을 때, 제시된 정면도를 기준으로 평면도와 우측면도를 제3각법으로 완성하시오.",
+  "P-2025-1-Q06":
+    "보기 a~i의 베어링 유도가열기 작업을 올바른 순서로 배열하시오.",
+  "P-2025-1-Q07":
+    "오버홀(overhaul)의 의미와 목적을 각각 쓰시오.",
+  "P-2025-1-Q08":
+    "다음 보기에서 O링의 구비조건으로 적합한 것을 모두 고르시오.",
+  "P-2025-1-Q09":
+    "다음 화학물질 경고 그림문자의 명칭과 의미를 쓰시오.",
+  "P-2025-1-Q10":
+    "감속기의 부하측과 반부하측 베어링 부위에 가속도 센서를 부착할 때 측정방향 3가지를 쓰시오.",
+  "P-2025-2-Q01-1":
+    "다음 네 베어링 그림 중 자동조심 롤러베어링을 골라 기호를 쓰시오.",
+  "P-2025-2-Q01-2":
+    "그림에서 자동조심 롤러베어링을 고르고, 보기에서 그 특징에 해당하는 항목을 모두 고르시오.",
+  "P-2025-2-Q02":
+    "센서의 히스테리시스(hysteresis)를 설명하시오.",
+  "P-2025-2-Q03":
+    "브래킷 도면에서 A와 B로 지시한 가공·형상 조건의 의미를 각각 설명하시오.",
+  "P-2025-2-Q04":
+    "그림 (1)~(4)의 공구와 보기 a~d의 설명을 알맞게 연결하시오.",
+  "P-2025-2-Q05":
+    "그림의 측정기 명칭을 쓰고 눈금을 판독하여 측정값을 mm로 쓰시오.",
+  "P-2025-2-Q06":
+    "전단응력 12 MPa인 M10 리머볼트 4개로 체결되고 PCD가 200 mm인 플랜지 커플링의 최대 전달토크를 구하시오.",
+  "P-2025-2-Q07":
+    "브레이크를 지나치게 사용해 마찰열로 브레이크 오일이 기화하고 배관에 기포가 생겨 제동력이 급격히 저하되는 현상의 명칭을 쓰시오.",
+  "P-2025-2-Q08":
+    "그림 (가)~(라)의 호흡보호구와 보기 a~d의 설명을 알맞게 연결하시오.",
+  "P-2025-2-Q09":
+    "산업재해 예방을 위한 LOTO의 의미와 목적을 쓰시오.",
+  "P-2025-2-Q10":
+    "기어 치면 손상에 관한 (가)~(다)의 설명을 읽고 각각의 명칭을 쓰시오.",
+  "P-2025-3-Q01":
+    "구멍 Ø60(+0.030/0), 축 Ø60(-0.005/-0.010)의 끼워맞춤 명칭과 최대틈새·최소틈새를 구하시오.",
+  "P-2025-3-Q02":
+    "다음 산업안전표지 (가)~(라)의 의미를 각각 쓰시오.",
+  "P-2025-3-Q03":
+    "TPM의 자주보전을 정의하고, 보기 a~e를 이용해 자주보전 7단계의 빈칸을 올바른 순서로 완성하시오.",
+  "P-2025-3-Q04":
+    "그림 (가)~(라)의 나사산 모양을 보고 각 나사의 명칭을 쓰시오.",
+  "P-2025-3-Q05":
+    "플랜지로 연결한 두 축의 정렬불량 그림 (가), (나)의 명칭을 쓰시오.",
+  "P-2025-3-Q06":
+    "실을 원기둥에서 풀 때 생기는 궤적과 구름원이 피치원 안팎을 구를 때 생기는 궤적에 해당하는 기어 치형곡선의 명칭을 각각 쓰시오.",
+  "P-2025-3-Q07":
+    "그림과 같이 축의 휨을 측정할 때 사용하는 주 공구 A와 보조 공구 B의 명칭을 쓰시오.",
+  "P-2025-3-Q08":
+    "복동실린더의 내경 32 mm, 로드지름 12 mm, 압력 0.5 MPa, 전·후진 추력효율 80%일 때 전진 및 후진 출력을 구하시오.",
+  "P-2025-3-Q09":
+    "유압식 브레이크 오일이 갖추어야 할 특성을 보기에서 모두 고르시오.",
+  "P-2025-3-Q10":
+    "구름베어링의 기본 구성요소 4가지를 쓰시오.",
+  "P-2026-1-Q01":
+    "회전운동을 직선운동으로 바꾸거나 직선운동을 회전운동으로 바꿀 때 사용하는 기어의 명칭을 쓰시오.",
+  "P-2026-1-Q02":
+    "보기 a~f의 안전표지에서 금지표지와 경고표지를 골라 기호·명칭을 쓰고, 지시표지에 따라 착용할 보호구를 쓰시오.",
+  "P-2026-1-Q03":
+    "기계 구동장치 단면도에서 ⑥, ⑦, ⑧로 지시한 부품의 명칭을 쓰시오.",
+  "P-2026-1-Q04":
+    "작업 시작 전·중·후 매일 실시하는 점검과, 일정 주기로 정비원을 중심으로 실시하는 점검의 명칭을 각각 쓰시오.",
+  "P-2026-1-Q05":
+    "부하시간 460분, 정지시간 60분, 생산량 400개, 기준사이클 0.5분/개, 실제사이클 0.8분/개, 양품률 98%일 때 설비종합효율을 구하시오.",
+  "P-2026-1-Q06":
+    "그림 (1)~(3)의 측정기 명칭을 각각 쓰시오.",
+  "P-2026-1-Q07":
+    "비압축성 유체를 사용하는 유압기기에 적용되는 파스칼의 원리를 설명하고 힘·면적 관계식을 완성하시오.",
+  "P-2026-1-Q08":
+    "슬리브의 내치와 크라우닝된 허브 외치가 맞물리는 커플링의 명칭과 특징 3가지를 쓰시오.",
+  "P-2026-1-Q09":
+    "도면을 보고 구동장치와 기어의 명칭, 표시된 기하공차 종류, Ø44G7/h6의 끼워맞춤 종류를 쓰시오.",
+  "P-2026-1-Q10":
+    "저널베어링 위에 연선을 놓고 캡을 규정토크로 조인 뒤 다시 분해해 눌린 연선 두께를 측정하는 작업의 명칭을 쓰시오.",
+};
+
+const ACTUAL_PROMPT_OPTIONS: Record<string, string[]> = {
+  "P-2025-1-Q06": [
+    "a. 온도센서를 베어링 내륜에 부착",
+    "b. 언더바에 베어링을 끼워 가열기에 설치",
+    "c. 가열온도 설정",
+    "d. 설정온도 도달 후 가열 정지·탈자",
+    "e. 베어링 내경에 맞는 언더바 선택",
+    "f. 가열된 베어링을 축에 삽입해 자연냉각",
+    "g. 가열 시작",
+    "h. 전원을 끄고 언더바에서 베어링 분리",
+    "i. 방열장갑 착용",
+  ],
+  "P-2025-1-Q08": [
+    "A 내열성이 좋다",
+    "B 마찰계수가 낮다",
+    "C 내마멸성이 낮다",
+    "D 내유성이 좋다",
+    "E 압축저항성이 낮다",
+    "F 유연성이 좋다",
+    "G 장시간 사용해도 탄성을 유지한다",
+    "H 영구변형이 되어야 한다",
+    "I 온도변화에도 안정성을 유지한다",
+  ],
+  "P-2025-2-Q04": [
+    "a. 기어·풀리·베어링 등을 축에서 분리할 때 사용하는 공구",
+    "b. 원형 너트나 베어링 잠금너트의 홈 또는 걸고리에 걸어 조이거나 푸는 공구",
+    "c. 스냅링을 벌리거나 오므려 축 또는 구멍에 설치하거나 빼는 공구",
+    "d. 육각머리 볼트·너트를 조이거나 풀 때 사용하는 핸들과 여러 크기의 소켓으로 구성된 공구",
+  ],
+  "P-2025-2-Q08": [
+    "a. 정화통을 통해 화학적 흡착으로 유기용제·산성 또는 염기성 가스에 대응한다.",
+    "b. 입자상 오염물질을 차단하며 특급·1급·2급으로 구분한다.",
+    "c. 산소가 충분하고 고농도 분진이나 유해물질이 있는 장소에서 작업시간이 길거나 작업강도가 클 때 송풍기로 여과공기를 공급한다.",
+    "d. 외부 공기를 공급하며 산소 부족 또는 고농도 유해물질 장소에서 사용할 수 있으나 호스 때문에 이동이 제한된다.",
+  ],
+  "P-2025-2-Q01-2": [
+    "a. 고속회전에 적합하다",
+    "b. 외륜 궤도면이 구면이다",
+    "c. 자동으로 중심이 조절된다",
+    "d. 진동·충격하중에 약하다",
+    "e. 일반적으로 가장 많이 사용되는 베어링이다",
+    "f. 중심축 조절이 가능하다",
+  ],
+  "P-2025-3-Q03": [
+    "a. 총점검",
+    "b. 표준화",
+    "c. 자주점검",
+    "d. 자주보전 기준서 작성",
+    "e. 발생원·곤란개소 대책",
+  ],
+  "P-2025-3-Q09": [
+    "a. 비등점이 낮다",
+    "b. 점도지수가 높다",
+    "c. 내열성이 있다",
+    "d. 인화점이 낮다",
+    "e. 빙점이 높다",
+    "f. 윤활성이 좋다",
+    "g. 비압축성 유체이다",
+    "h. 고무·금속 부품을 부식시키지 않는다",
+  ],
+};
+
+const ACTUAL_ANSWER_OVERRIDES: Record<string, string> = {
+  "P-2025-1-Q05":
+    "정면도 위에 평면도를, 정면도 오른쪽에 우측면도를 배치하고 입체의 가시 모서리와 경사면을 제3각법으로 정확히 투상한다.",
+  "P-2025-1-Q06": "e → b → a → c → g → d → i → h → f",
+  "P-2025-2-Q01-2":
+    "자동조심 롤러베어링은 (다)이다. 특징은 b 외륜 궤도면이 구면, c 자동조심, f 중심축 조절·정렬오차 허용이다.",
+  "P-2025-3-Q03":
+    "초기청소 → 발생원·곤란개소 대책 → 자주보전 기준서 작성 → 총점검 → 자주점검 → 표준화 → 자주관리",
+  "P-2026-1-Q07":
+    "밀폐된 비압축성 정지유체에 가한 압력은 모든 방향으로 동일하게 전달된다. P₁=P₂, 즉 F₁/A₁=F₂/A₂이다.",
 };
 
 function actualAudit(id: string, value: unknown): AuditDisposition {
@@ -447,7 +623,7 @@ function actualAudit(id: string, value: unknown): AuditDisposition {
 }
 
 function predictedAudit(id: string, value: unknown): AuditDisposition {
-  if (id === "EXP-C03") return "held_source_missing";
+  if (id === "EXP-C03") return "verified";
   if (text(value).startsWith("held_")) {
     // EXP-S02는 이미지 없이도 표지의 색·형상·의미를 묻도록 정식 재작성한다.
     return id === "EXP-S02" ? "verified" : (text(value) as AuditDisposition);
@@ -716,13 +892,17 @@ async function main() {
       );
       const auditDecision = PRACTICAL_WRITTEN_AUDIT_DECISIONS[id];
       const answer =
-        auditDecision?.modelAnswer ?? text(row["검증답안"]);
+        ACTUAL_ANSWER_OVERRIDES[id] ??
+        auditDecision?.modelAnswer ??
+        text(row["검증답안"]);
       const calculation = lines(row["계산식·조건"]);
       const visualAidId = promptVisualAidId(id);
+      const stem =
+        ACTUAL_STEM_OVERRIDES[id] ?? text(row["문제요약"]);
       const studyCategories = studyCategoriesForQuestion({
         id,
         title,
-        stem: text(row["문제요약"]),
+        stem,
         calculation,
         visualAidId,
       });
@@ -731,7 +911,8 @@ async function main() {
       kind: "past",
       title,
       formatLabel: practicalQuestionFormatLabel(id, title),
-      stem: text(row["문제요약"]),
+        stem,
+        promptOptions: ACTUAL_PROMPT_OPTIONS[id],
         modelAnswer: answer,
         requiredKeywords:
           auditDecision?.requiredKeywords ?? list(answer),
@@ -772,7 +953,10 @@ async function main() {
       };
     },
   );
-  actualQuestions.push(...PRACTICAL_AUTHORED_PAST_QUESTIONS);
+  actualQuestions.push(
+    ...PRACTICAL_AUTHORED_PAST_QUESTIONS,
+    ...PRACTICAL_ROUND2_RECONSTRUCTED_QUESTIONS,
+  );
 
   const workbookPredictedQuestions: PracticalQuestion[] = rowsToRecords(
     predictedRows,
@@ -845,7 +1029,7 @@ async function main() {
       predictedBasis: text(row["예상근거"]),
       reviewNote:
         id === "EXP-C03"
-          ? "OEE 계산 근거가 현재 확보한 NCS 11종에 없어 추가 원문 확보 전까지 공개하지 않는다."
+          ? "2026년 1회 OEE 계산 복원문제의 공식과 조건을 바탕으로 이미지 없이 풀 수 있는 지문형 예상문제로 공개한다."
           : text(row["검증상태"]),
     };
   });
@@ -1052,6 +1236,16 @@ async function main() {
       visualAids: PRACTICAL_VISUAL_AIDS,
       writtenQuestions: writtenContent.questions,
     });
+  const oeeWorkbookQuestion = questionById.get("EXP-C03");
+  const oeeWrittenEvidence = balancedPredictedQuestions.find(
+    (question) => question.id === "EXP-BAL-CALC-OEE",
+  );
+  if (!oeeWorkbookQuestion || !oeeWrittenEvidence?.ncsSources[0]) {
+    throw new Error("EXP-C03 공개에 필요한 검증된 OEE 필기 근거가 없습니다.");
+  }
+  oeeWorkbookQuestion.ncsSources = [oeeWrittenEvidence.ncsSources[0]];
+  oeeWorkbookQuestion.writtenSourceQuestionIds =
+    oeeWrittenEvidence.writtenSourceQuestionIds;
   const duplicateBalancedId = balancedPredictedQuestions.find(
     (question) => questionById.has(question.id),
   );
@@ -1157,7 +1351,7 @@ async function main() {
     },
     ncsCoverage: ncsCoverage.summary,
     exactMatch:
-      actualQuestions.length === 42 &&
+      actualQuestions.length === 51 &&
       expandedWorkbookPredictedQuestions.length === 41 &&
       authoredPredictedQuestions.length === 77 &&
       balancedPredictedQuestions.length === 67 &&
@@ -1167,9 +1361,9 @@ async function main() {
       ncsCoverage.summary.totalDocuments === 11 &&
       ncsCoverage.summary.accountedDocuments === 11,
     warnings: [
-      "EXP-C03 OEE 계산은 현재 확보한 NCS 11종 밖의 원문이 필요하여 공개 보류했다.",
-      "제3각법 등 제3자 표준 출처가 표시된 원도형은 공개 자산으로 복제하지 않았다.",
-      "응시자 복원 캡처는 출제 이력 대조에만 사용하고 공개 이미지로 복제하지 않았다.",
+      "EXP-C03 OEE 계산은 2026년 1회 복원문제의 공식과 조건을 바탕으로 이미지 없는 지문형 예상문제로 공개했다.",
+      "제3각법 등 제3자 원도형은 공개 자산으로 복제하지 않고 같은 판독조건의 자체 SVG로 재구성했다.",
+      "응시자 복원 캡처와 블로그 이미지는 문항 대조에만 사용하고 공개 이미지로 복제하지 않았다.",
     ],
   };
 

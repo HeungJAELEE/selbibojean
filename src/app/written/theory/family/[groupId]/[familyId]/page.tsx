@@ -27,7 +27,7 @@ import {
 import { getPastExamExamplesForLessons } from "@/lib/content/past-exam-examples";
 import { getContent } from "@/lib/content/repository";
 import { getTextbookActivity } from "@/lib/content/textbook-activities";
-import { isPublishableQuestion } from "@/lib/domain/practice";
+import { isPublishableQuestion, toPublicQuestion } from "@/lib/domain/practice";
 
 type FamilyParams = {
   groupId: string;
@@ -307,9 +307,7 @@ function selectFamilyPracticeQuestions(
       && !preferred.some((candidate) => candidate.id === question.id),
   );
 
-  return [...preferred, ...remaining].slice(0, limit).map((question) => ({
-    id: question.id,
-    stem: question.stem,
-    scope: "lesson",
-  }));
+  return [...preferred, ...remaining]
+    .slice(0, limit)
+    .map(toPublicQuestion);
 }

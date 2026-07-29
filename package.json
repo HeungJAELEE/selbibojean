@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "tsx scripts/prepare-runtime-assets.ts",
-    "predev": "tsx scripts/prepare-runtime-assets.ts",
+    "verify:node-runtime": "node scripts/verify-node-runtime.mjs",
+    "prebuild": "npm run verify:node-runtime && tsx scripts/prepare-runtime-assets.ts",
+    "predev": "npm run verify:node-runtime && tsx scripts/prepare-runtime-assets.ts",
     "dev": "vinext dev",
     "build": "tsx scripts/run-vinext-build.ts",
     "generate:static-seo": "tsx scripts/generate-static-seo.ts",
@@ -16,9 +17,13 @@
     "build:next": "next build",
     "start": "vinext start",
     "lint": "eslint .",
+    "prelint": "npm run verify:node-runtime",
     "typecheck": "tsc --noEmit",
+    "pretypecheck": "npm run verify:node-runtime",
     "test": "vitest run",
+    "pretest": "npm run verify:node-runtime",
     "test:watch": "vitest",
+    "pretest:e2e": "npm run verify:node-runtime",
     "test:e2e": "playwright test",
     "posttest:e2e": "npm run cleanup:runtime-public",
     "test:rls": "supabase test db",
@@ -88,7 +93,7 @@
     "wrangler": "4.113.0"
   },
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=24.0.0 <25"
   },
   "overrides": {
     "esbuild": "0.28.1",

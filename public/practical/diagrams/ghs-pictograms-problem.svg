@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 520" role="img" aria-labelledby="title desc">
+  <title id="title">화학물질 경고 그림문자 식별</title>
+  <desc id="desc">가부터 아까지 GHS 그림문자를 붉은 마름모 안에 단순화해 배열한 자체 제작 도식</desc>
+  <rect width="1060" height="520" rx="28" fill="#f8fafc"/>
+  <g fill="#fff" stroke="#dc2626" stroke-width="10">
+    <path d="m130 55 80 80-80 80-80-80z"/><path d="m390 55 80 80-80 80-80-80z"/><path d="m650 55 80 80-80 80-80-80z"/><path d="m910 55 80 80-80 80-80-80z"/>
+    <path d="m130 300 80 80-80 80-80-80z"/><path d="m390 300 80 80-80 80-80-80z"/><path d="m650 300 80 80-80 80-80-80z"/><path d="m910 300 80 80-80 80-80-80z"/>
+  </g>
+  <g fill="#111827" stroke="#111827" stroke-width="7" stroke-linecap="round">
+    <path d="m130 92-13 31-27 10 27 9 13 35 13-35 28-9-28-10z"/>
+    <path d="M365 172c-18-25 13-38 4-72 28 16 20 35 39 42 9-25 25-36 17-59 38 30 29 84-8 98-18 7-40 3-52-9z"/>
+    <circle cx="650" cy="155" r="31" fill="none"/><path d="M650 92v28m-42 34h84m-74-46 18 25m46-25-18 25"/>
+    <path d="M880 122h62v25h-62z"/>
+    <path d="M105 350h50m-25-26v62m-35-13 70 25m-64 24 59-34"/>
+    <path d="M365 337h50l-8 62h-34z"/><path d="M377 331l26 73m-13-91v26"/>
+    <circle cx="650" cy="350" r="22"/><path d="M650 373v48m-36-33h72m-55 27 19-18 19 18"/>
+    <path d="M877 420h70m-58-10 30-42 14 32m-53-28 27-28"/>
+  </g>
+  <g font-family="sans-serif" font-size="25" font-weight="800" text-anchor="middle" fill="#183b56">
+    <text x="130" y="35">가</text><text x="390" y="35">나</text><text x="650" y="35">다</text><text x="910" y="35">라</text>
+    <text x="130" y="280">마</text><text x="390" y="280">바</text><text x="650" y="280">사</text><text x="910" y="280">아</text>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 330" role="img" aria-labelledby="title desc">
+  <title id="title">안전표지 여섯 종 식별 문제</title>
+  <desc id="desc">a부터 f까지 금지, 경고, 지시 표지를 단순화해 배열한 자체 제작 도식</desc>
+  <rect width="1080" height="330" rx="28" fill="#f8fafc"/>
+  <g font-family="sans-serif" font-size="26" font-weight="700" text-anchor="middle" fill="#183b56">
+    <text x="90" y="40">a</text><text x="270" y="40">b</text><text x="450" y="40">c</text>
+    <text x="630" y="40">d</text><text x="810" y="40">e</text><text x="990" y="40">f</text>
+  </g>
+  <g stroke="#dc2626" stroke-width="14" fill="#fff">
+    <circle cx="90" cy="165" r="72"/><circle cx="450" cy="165" r="72"/>
+    <path d="m270 82 82 83-82 83-82-83z"/>
+  </g>
+  <path d="M39 114l102 102M90 215V104m0 0-22 26m22-26 22 26" stroke="#dc2626" stroke-width="13" fill="none"/>
+  <path d="M245 205c-25-28 12-40 0-75 33 15 19 34 42 43 10-30 35-36 16-68 46 31 42 92-3 111-20 8-42 4-55-11z" fill="#111827"/>
+  <path d="M403 216l94-102M437 128c6-17 30-17 37 0s-4 30-4 30l22 51m-56-45-19 42m22-43 33 20" stroke="#111827" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <circle cx="630" cy="165" r="77" fill="#2563eb"/>
+  <path d="M588 132h84v64h-84zM604 118h52v18m-58 60 10 20m54-20-10 20" fill="#fff" stroke="#fff" stroke-width="8"/>
+  <path d="m810 79 84 146H726z" fill="#facc15" stroke="#111827" stroke-width="12"/>
+  <path d="m823 113-35 62h26l-16 43 51-67h-29z" fill="#111827"/>
+  <circle cx="990" cy="165" r="77" fill="#2563eb"/>
+  <path d="M958 135c0-44 64-44 64 0v68h-64zM940 153v45m100-45v45M950 182h80" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round"/>
+</svg>

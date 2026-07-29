@@ -8,8 +8,9 @@ import { useHydrated } from "@/lib/use-hydrated";
 const navItems = [
   ["이론", "/theory"],
   ["필기 모의고사", "/written/mock"],
+  ["필답 학습", "/practical/written"],
   ["필답 모의고사", "/practical/mock"],
-  ["실기 관련 정보", "/practical/info"],
+  ["실기 정보", "/practical/info"],
 ] as const;
 
 export function SiteHeader() {
@@ -35,7 +36,7 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav
-          className="hidden items-center gap-4 text-xs font-semibold text-slate-600 md:flex lg:gap-7 lg:text-sm"
+          className="hidden items-center gap-4 text-xs font-semibold text-slate-600 lg:flex xl:gap-7 xl:text-sm"
           aria-label="주 메뉴"
         >
           {navItems.map(([label, href]) => (
@@ -69,7 +70,7 @@ export function SiteHeader() {
           </Link>
           <button
             type="button"
-            className="grid size-10 place-items-center rounded-xl border border-slate-200 md:hidden"
+            className="grid size-10 place-items-center rounded-xl border border-slate-200 lg:hidden"
             aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
@@ -83,7 +84,7 @@ export function SiteHeader() {
       {menuOpen ? (
         <nav
           id="mobile-navigation"
-          className="border-t border-slate-200 bg-white px-4 py-4 md:hidden"
+          className="border-t border-slate-200 bg-white px-4 py-4 lg:hidden"
           aria-label="모바일 주 메뉴"
         >
           <div className="mx-auto grid max-w-6xl grid-cols-2 gap-2">

@@ -60,7 +60,7 @@ describe("practical question recall audit", () => {
     ).toBe(false);
   });
 
-  it("keeps missing-asset boundaries while removing resolved answer conflicts", () => {
+  it("keeps unresolved asset boundaries while reflecting resolved visual equivalents", () => {
     const byId = (id: string) =>
       PRACTICAL_PRIORITY_RECALL_AUDIT.find((item) => item.id === id);
 
@@ -74,8 +74,9 @@ describe("practical question recall audit", () => {
     expect(byId("recall:2026-round2:blower-power")?.classification).toBe(
       "answer_resolved_reconstructed",
     );
-    expect(byId("recall:2026-round2:sems-bolt")?.blockers).toContain(
-      "held_asset_missing",
+    expect(byId("recall:2026-round2:sems-bolt")?.blockers).toEqual([]);
+    expect(byId("recall:2026-round2:sems-bolt")?.classification).toBe(
+      "answer_resolved_reconstructed",
     );
     expect(byId("recall:2026-round2:brake-lining")?.blockers).toEqual([]);
     expect(byId("recall:2026-round2:drip-lubrication")?.blockers).toContain(
@@ -109,11 +110,11 @@ describe("public reconstructed-question registry", () => {
     expect(
       registry.find((item) => item.id === "recall:2026-round2:sems-bolt")
         ?.status,
-    ).toBe("learning_verified");
+    ).toBe("answer_resolved");
     expect(
       registry.find((item) => item.id === "recall:2026-round2:sems-bolt")
         ?.limitation,
-    ).toContain("실제 시험 원사진");
+    ).toContain("공식 원문 정답");
     expect(
       registry.find((item) => item.id === "recall:2026-05-10:11")?.status,
     ).toBe("learning_verified");
@@ -129,8 +130,8 @@ describe("public reconstructed-question registry", () => {
         return counts;
       }, {}),
     ).toEqual({
-      answer_resolved: 5,
-      learning_verified: 29,
+      answer_resolved: 6,
+      learning_verified: 28,
     });
   });
 
@@ -145,7 +146,7 @@ describe("public reconstructed-question registry", () => {
       (item) => item.classification === "linked_learning_verified",
     );
 
-    expect(learningVerified).toHaveLength(12);
+    expect(learningVerified).toHaveLength(11);
     expect(
       learningVerified.every(
         (item) =>

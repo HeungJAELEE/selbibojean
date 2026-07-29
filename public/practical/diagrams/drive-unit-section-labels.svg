@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 430" role="img" aria-labelledby="title desc">
+  <title id="title">기계 구동장치 단면 부품 식별</title>
+  <desc id="desc">축, 하우징, 풀리와 세 부품 위치를 6, 7, 8로 표시한 자체 제작 단면도</desc>
+  <defs><pattern id="hatch" width="13" height="13" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line y2="13" stroke="#94a3b8" stroke-width="3"/></pattern></defs>
+  <rect width="1060" height="430" rx="28" fill="#f8fafc"/>
+  <path d="M80 95h600v245H80z" fill="url(#hatch)" stroke="#183b56" stroke-width="7"/>
+  <path d="M130 170h500v95H130z" fill="#fff" stroke="#183b56" stroke-width="7"/>
+  <path d="M220 140h85v155h-85zM470 140h85v155h-85z" fill="#dbeafe" stroke="#183b56" stroke-width="7"/>
+  <path d="M315 150h38v135h-38zM585 150h38v135h-38z" fill="#f59e0b" stroke="#183b56" stroke-width="6"/>
+  <path d="M630 185h300v65H630z" fill="#cbd5e1" stroke="#183b56" stroke-width="7"/>
+  <circle cx="860" cy="218" r="115" fill="none" stroke="#183b56" stroke-width="18"/>
+  <path d="M805 184h105v30H805z" fill="#d44c3f" stroke="#183b56" stroke-width="5"/>
+  <g stroke="#d44c3f" stroke-width="5"><path d="M260 110V55h-25M605 120V55h25M855 172V55h30"/></g>
+  <g font-family="sans-serif" font-size="34" font-weight="800" fill="#d44c3f"><text x="205" y="65">⑥</text><text x="640" y="65">⑦</text><text x="895" y="65">⑧</text></g>
+</svg>

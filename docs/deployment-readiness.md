@@ -32,9 +32,9 @@
 
 ## 필요한 런타임
 
-- Node.js 22 이상
+- Node.js 24.x
 - npm 10 이상
-- 현재 안정적인 검증 런타임: Node.js 24
+- 개발·테스트·빌드 표준 런타임: Node.js 24
 
 Node.js 20에서는 `vinext`가 사용하는 `node:fs/promises.glob`을 제공하지 않아 빌드할 수 없다.
 

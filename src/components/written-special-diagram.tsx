@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { CompressorClassificationDiagram } from "@/components/compressor-classification-diagram";
 import type { WrittenSpecialDiagramId } from "@/data/source/written-visual-coverage";
 
 type DiagramMetadata = {
@@ -14,6 +15,14 @@ const DIAGRAM_METADATA: Record<WrittenSpecialDiagramId, DiagramMetadata> = {
     description:
       "측정축과 기준 눈금축이 어긋난 상태에서 각도 오차가 생기면, 두 축 사이 거리만큼 확대된 측정오차가 발생합니다.",
     sourceLabel: "자체 제작 · 아베의 원리 계측학 정의 대조",
+  },
+  "compressor-classification": {
+    title: "공기압축기 분류와 형식별 압축 순서",
+    description:
+      "용적형은 일정량의 기체를 가둬 체적을 줄이고, 동력형은 회전차가 준 속도에너지를 압력으로 바꿉니다. 각 분류의 하위 형식과 작동 순서를 함께 비교합니다.",
+    sourceLabel: "자체 제작 · 미국 에너지부 압축공기 시스템 Sourcebook 분류 대조",
+    sourceUrl:
+      "https://www.energy.gov/sites/default/files/2016/03/f30/Improving%20Compressed%20Air%20Sourcebook%20version%203.pdf",
   },
   "magneto-bearing-comparison": {
     title: "마그네토 볼베어링과 깊은 홈 볼베어링 비교",
@@ -52,6 +61,7 @@ export function WrittenSpecialDiagram({
   const metadata = DIAGRAM_METADATA[diagramId];
   const diagram = {
     "abbe-principle": <AbbePrincipleDiagram />,
+    "compressor-classification": <CompressorClassificationDiagram />,
     "magneto-bearing-comparison": <MagnetoBearingDiagram />,
     "pintle-chain-construction": <PintleChainDiagram />,
     "screw-load-brake": <ScrewLoadBrakeDiagram />,

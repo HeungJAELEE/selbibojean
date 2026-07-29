@@ -3,7 +3,9 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
+import { notionGapWrittenLessons } from "@/lib/content/notion-gap-written-lessons";
 import { buildRuntimeContent } from "@/lib/content/runtime-content";
+import { supplementalWrittenLessons } from "@/lib/content/supplemental-written-lessons";
 import {
   isPublishableLesson,
   isPublishableQuestion,
@@ -95,7 +97,9 @@ describe("runtime merged content gates", () => {
       (lesson) => lesson.contentRole === "supplemental",
     );
 
-    expect(supplemental).toHaveLength(14);
+    expect(supplemental).toHaveLength(
+      supplementalWrittenLessons.length + notionGapWrittenLessons.length,
+    );
     expect(supplemental.every(isPublishableLesson)).toBe(true);
     expect(
       supplemental.every((lesson) => lesson.relatedQuestionIds.length === 0),
