@@ -46,7 +46,10 @@ export default async function BdaQuestionPage({ params }: Props) {
         <p className="mb-3 text-sm font-black text-[#0f766e]">
           제{subject?.order}과목 · {subject?.title}
         </p>
-        <BdaPracticeQuestion question={toPublicBdaQuestion(question)} />
+        <BdaPracticeQuestion
+          question={toPublicBdaQuestion(question)}
+          headingAs="h1"
+        />
       </div>
     </main>
   );

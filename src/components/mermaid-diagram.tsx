@@ -36,11 +36,8 @@ export function MermaidDiagram({ code }: { code: string }) {
       })
       .catch(() => {
         if (active && containerRef.current) {
-          containerRef.current.textContent = "원천 도식을 렌더링하지 못했습니다. 아래 원문 코드를 확인하세요.";
-          const pre = document.createElement("pre");
-          pre.textContent = code;
-          pre.className = "mt-3 overflow-x-auto whitespace-pre-wrap text-left text-xs";
-          containerRef.current.appendChild(pre);
+          containerRef.current.textContent =
+            "개념 도식을 불러오지 못했습니다. 같은 단원의 비교표와 본문 설명을 확인하세요.";
         }
       });
 
@@ -54,7 +51,7 @@ export function MermaidDiagram({ code }: { code: string }) {
       ref={containerRef}
       className="my-6 overflow-x-auto rounded-2xl border border-teal-100 bg-white p-4 text-center text-sm text-slate-500 [&_svg]:mx-auto [&_svg]:h-auto [&_svg]:max-w-full"
       role="img"
-      aria-label="Notion 원천에서 이관한 개념 도식"
+      aria-label="통합 교재의 개념 도식"
     />
   );
 }

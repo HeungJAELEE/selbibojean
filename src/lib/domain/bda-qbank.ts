@@ -121,6 +121,12 @@ export type BdaQbankLearningFeedback = {
   isCorrect: boolean;
   selectedChoice: BdaQbankLearningChoice;
   correctChoice: BdaQbankLearningChoice;
+  choiceFeedback: Array<{
+    choice: BdaQbankLearningChoice;
+    isCorrect: boolean;
+    isSelected: boolean;
+    rationale: string;
+  }>;
   answerCore: string;
   independentExplanation?: string;
   technicalValidationStatus?: string;

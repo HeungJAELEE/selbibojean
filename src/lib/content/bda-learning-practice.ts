@@ -8,6 +8,7 @@ export type BdaGeneratedLearningPractice = {
   publicItem: PublicBdaQbankLearningItem;
   correctChoiceId: string;
   explanationOverride?: string;
+  choiceRationales: Record<string, string>;
 };
 
 const UNVERIFIED_ANSWER_PATTERN = /미확정|그림 미확보|확인 필요/;
@@ -399,6 +400,41 @@ export function generateBdaLearningPractice(
     order: index + 1,
     text,
   }));
+  const correctExplanation =
+    PRACTICE_OVERRIDES[item.id]?.explanation ??
+    item.independentExplanation?.trim() ??
+    `${item.topicSummary ?? "이 개념"}의 검수된 정답 핵심입니다.`;
+  const correctAnswer = choices[correctIndex].text;
+  const choiceRationales = Object.fromEntries(
+    choices.map((choice, index) => {
+      if (index === correctIndex) {
+        return [choice.id, correctExplanation];
+      }
+
+      const matchedItem = allItems.find(
+        (candidate) =>
+          candidate.id !== item.id &&
+          normalizeChoice(candidate.answerCore ?? "") ===
+            normalizeChoice(choice.text),
+      );
+      if (matchedItem) {
+        return [
+          choice.id,
+          `이 보기는 ‘${matchedItem.topicSummary ?? "다른 분석 개념"}’에서 쓰는 핵심입니다. 현재 문항의 ‘${item.topicSummary ?? "출제 개념"}’을 판단하는 답과는 적용 대상이 다릅니다.`,
+        ];
+      }
+      if (choice.text.includes("→") && correctAnswer.includes("→")) {
+        return [
+          choice.id,
+          `정답 핵심의 단계인 ‘${correctAnswer}’에서 선후 관계를 바꾼 보기입니다. 절차 문제는 시작 조건과 다음 단계의 순서를 함께 확인해야 합니다.`,
+        ];
+      }
+      return [
+        choice.id,
+        `이 보기는 ‘${item.topicSummary ?? "현재 개념"}’의 검수된 핵심인 ‘${correctAnswer}’와 다른 판단 기준을 적용했습니다.`,
+      ];
+    }),
+  );
 
   return {
     publicItem: {
@@ -424,5 +460,6 @@ export function generateBdaLearningPractice(
     },
     correctChoiceId: choices[correctIndex].id,
     explanationOverride: PRACTICE_OVERRIDES[item.id]?.explanation,
+    choiceRationales,
   };
 }

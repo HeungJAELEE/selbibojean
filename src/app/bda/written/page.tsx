@@ -33,7 +33,7 @@ export default function BdaWrittenOverviewPage() {
             이론·개념·문제를 4과목 기준으로 다시 묶었습니다.
           </h1>
           <p className="mt-4 max-w-3xl leading-8 text-slate-600">
-            Notion 이관 이론과 문제은행 v0.4를 같은 과목·개념 ID로 연결했습니다.
+            통합 이관 이론과 문제은행 v0.4를 같은 과목·개념 ID로 연결했습니다.
             공식 시험은 과목별 20문항, 총 {blueprint.totalQuestions}문항이며
             시험 시간은 {blueprint.durationMinutes}분입니다.
           </p>
@@ -50,7 +50,7 @@ export default function BdaWrittenOverviewPage() {
           href="/bda/textbook"
           icon={Library}
           title="통합 개념서"
-          description="Notion 이론·표·도식·보강 설명을 과목별 교재로 읽습니다."
+          description="이관한 이론·표·도식·보강 설명을 과목별 교재로 읽습니다."
         />
         <StudyRoute
           href="/bda/concepts"

@@ -63,6 +63,12 @@ describe("BDA reconstructed learning item answer gate", () => {
     expect(response.status).toBe(200);
     expect(body.answerCore).toBeTruthy();
     expect(body.correctChoice).toBeTruthy();
+    expect(body.choiceFeedback).toHaveLength(4);
+    expect(
+      body.choiceFeedback.every(
+        (choice: { rationale?: string }) => choice.rationale,
+      ),
+    ).toBe(true);
     expect(typeof body.isCorrect).toBe("boolean");
     expect(body.notice).toContain("공식 정답이 아니라");
   });

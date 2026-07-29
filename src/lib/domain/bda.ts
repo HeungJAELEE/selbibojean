@@ -105,6 +105,7 @@ export type PublicBdaQuestion = Omit<
   | "reviewStatus"
   | "contentStatus"
   | "evidenceGrade"
+  | "sourceLabel"
   | "choices"
 > & {
   choices: Array<Pick<BdaChoice, "id" | "order" | "text">>;
@@ -142,6 +143,7 @@ export function toPublicBdaQuestion(
     reviewStatus,
     contentStatus,
     evidenceGrade,
+    sourceLabel,
     choices,
     ...safe
   } = question;
@@ -150,6 +152,7 @@ export function toPublicBdaQuestion(
   void reviewStatus;
   void contentStatus;
   void evidenceGrade;
+  void sourceLabel;
 
   return {
     ...safe,

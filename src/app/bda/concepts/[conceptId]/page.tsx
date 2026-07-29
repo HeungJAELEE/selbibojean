@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import { notFound } from "next/navigation";
 import { BdaLearningItemPractice } from "@/components/bda-learning-item-practice";
+import { BdaPracticeQuestion } from "@/components/bda-practice-question";
+import { getBdaConceptMockQuestions } from "@/data/source/bda-concept-mock-questions";
 import { bdaCodeLabs } from "@/data/source/bda-practical-content";
 import {
   bdaNotionSourcePages,
@@ -23,6 +25,7 @@ import {
   toPublicBdaQbankLearningItem,
 } from "@/lib/content/bda-qbank-repository";
 import { getBdaLearningItemPublicationDecision } from "@/lib/content/bda-learning-practice";
+import { toPublicBdaQuestion } from "@/lib/domain/bda";
 
 export function generateStaticParams() {
   return getBdaQbank().concepts.map((concept) => ({ conceptId: concept.id }));
@@ -75,6 +78,10 @@ export default async function BdaConceptDetailPage({
   const publicRelatedItems = gradeableRelatedItems.map(
     toPublicBdaQbankLearningItem,
   );
+  const verifiedMockQuestions =
+    getBdaConceptMockQuestions(conceptId).map(toPublicBdaQuestion);
+  const totalGradeableProblems =
+    verifiedMockQuestions.length + publicRelatedItems.length;
 
   return (
     <main className="page-wrap pb-16 pt-8">
@@ -88,7 +95,11 @@ export default async function BdaConceptDetailPage({
       <article className="mt-5 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_12px_36px_rgb(18_38_58_/_0.08)]">
         <header className="bg-[#173957] p-7 text-white sm:p-10">
           <p className="text-xs font-black tracking-[.16em] text-teal-200">
-            {concept.id} · {concept.subjectNo}과목 · {concept.majorArea}
+            {concept.id} ·{" "}
+            {concept.subjectNo
+              ? `${concept.subjectNo}과목`
+              : concept.subjectName}{" "}
+            · {concept.majorArea}
           </p>
           <h1 className="mt-3 text-3xl font-black sm:text-5xl">{concept.name}</h1>
           <p className="mt-5 max-w-3xl text-base leading-8 text-slate-100">{enrichment.overview}</p>
@@ -158,11 +169,12 @@ export default async function BdaConceptDetailPage({
                   ) : (
                     <span className="inline-flex items-center rounded-xl border border-blue-200 bg-blue-50 px-3 py-2 text-sm font-black text-blue-900">실기 확장: 유형별 코드·검수 보강</span>
                   )}
-                  {integratedTheory.practiceQuestionIds.map((questionId) => (
-                    <Link key={questionId} href={`/bda/written/practice/${questionId}`} className="inline-flex items-center gap-2 rounded-xl bg-[#173957] px-3 py-2 text-sm font-black text-white hover:bg-[#0f766e]">
-                      확인문제 {questionId} <ArrowRight size={15} />
-                    </Link>
-                  ))}
+                  {verifiedMockQuestions.length ? (
+                    <a href="#concept-practice" className="inline-flex items-center gap-2 rounded-xl bg-[#173957] px-3 py-2 text-sm font-black text-white hover:bg-[#0f766e]">
+                      자체 제작 확인문제 {verifiedMockQuestions.length}개를 아래에서 풀기
+                      <ArrowRight size={15} />
+                    </a>
+                  ) : null}
                   {codeLabs.map((lab) => (
                     <Link key={lab.id} href={`/bda/practical/${lab.id}`} className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-black text-[#173957] hover:bg-slate-50">
                       <Code2 size={15} /> 코드 레슨: {lab.title}
@@ -277,18 +289,30 @@ export default async function BdaConceptDetailPage({
           </aside>
         </div>
 
-        <section className="border-t border-slate-200 p-6 sm:p-10">
+        <section
+          id="concept-practice"
+          className="scroll-mt-28 border-t border-slate-200 p-6 sm:p-10"
+        >
           <div>
             <p className="eyebrow">Learning bank</p>
             <h2 className="mt-2 text-2xl font-black text-[#142f4b]">
-              검수 통과 연결 문제 {publicRelatedItems.length}개
+              검수 통과 연결 문제 {totalGradeableProblems}개
             </h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">
               이동하지 않고 각 문제를 펼쳐 질문과 보기 4개를 확인한 뒤 바로
-              제출할 수 있습니다.
+              제출할 수 있습니다. 제출 후에는 같은 위치에서 정답과 선택지별
+              근거를 확인합니다.
             </p>
           </div>
-          <div className="mt-5 grid gap-3">
+          <div className="mt-7">
+            <h3 className="text-lg font-black text-[#142f4b]">
+              공개 복원·교재 기반 학습문제 {publicRelatedItems.length}개
+            </h3>
+            <p className="mt-1 text-sm leading-6 text-slate-600">
+              출처와 검수 상태를 보존한 학습용 재구성입니다.
+            </p>
+          </div>
+          <div className="mt-4 grid gap-3">
             {publicRelatedItems.map((item, index) => (
               <details
                 key={item.id}
@@ -296,7 +320,7 @@ export default async function BdaConceptDetailPage({
               >
                 <summary className="cursor-pointer list-none p-4 transition hover:bg-teal-50 [&::-webkit-details-marker]:hidden sm:p-5">
                   <p className="text-xs font-black text-[#0f766e]">
-                    문제 {index + 1} · {item.id} · {item.platform} ·{" "}
+                    공개 복원·교재 기반 {index + 1} · {item.id} · {item.platform} ·{" "}
                     {item.technicalValidationStatus}
                   </p>
                   <h3 className="mt-1 font-black leading-7 text-[#142f4b]">
@@ -305,6 +329,44 @@ export default async function BdaConceptDetailPage({
                 </summary>
                 <div className="border-t border-slate-200 p-4 sm:p-5">
                   <BdaLearningItemPractice item={item} />
+                </div>
+              </details>
+            ))}
+            {!publicRelatedItems.length ? (
+              <p className="rounded-2xl border border-blue-200 bg-blue-50 p-5 text-sm leading-7 text-blue-950">
+                이 개념에 연결된 공개 복원·교재 기반 문항은 현재 재검수
+                대기입니다. 아래의 자체 제작 모의문제와 코드랩으로 먼저
+                학습하세요.
+              </p>
+            ) : null}
+          </div>
+          <div className="mt-8">
+            <h3 className="text-lg font-black text-[#142f4b]">
+              자체 제작 모의문제 {verifiedMockQuestions.length}개
+            </h3>
+            <p className="mt-1 text-sm leading-6 text-slate-600">
+              통합 개념서의 핵심 규칙 3개와 시험 함정 2개를 직접 확인합니다.
+            </p>
+          </div>
+          <div className="mt-4 grid gap-3">
+            {verifiedMockQuestions.map((question, index) => (
+              <details
+                key={question.id}
+                className="rounded-2xl border border-emerald-200 bg-emerald-50/40"
+              >
+                <summary className="cursor-pointer list-none p-4 transition hover:bg-emerald-50 [&::-webkit-details-marker]:hidden sm:p-5">
+                  <p className="text-xs font-black text-emerald-800">
+                    자체 제작 모의문제 {index + 1} · {question.id}
+                  </p>
+                  <h4 className="mt-1 font-black leading-7 text-[#142f4b]">
+                    {question.stem}
+                  </h4>
+                </summary>
+                <div className="border-t border-emerald-200 p-4 sm:p-5">
+                  <BdaPracticeQuestion
+                    question={question}
+                    headingAs="h4"
+                  />
                 </div>
               </details>
             ))}

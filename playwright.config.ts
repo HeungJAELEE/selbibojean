@@ -1,5 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const useProductionServer =
+  process.env.PLAYWRIGHT_SERVER_MODE !== "development";
+
 export default defineConfig({
   testDir: "./tests/e2e",
   fullyParallel: false,
@@ -8,7 +11,9 @@ export default defineConfig({
   reporter: "html",
   use: { baseURL: "http://127.0.0.1:3000", trace: "on-first-retry" },
   webServer: {
-    command: `"${process.execPath}" node_modules/vinext/dist/cli.js dev --port 3000`,
+    command: useProductionServer
+      ? `"${process.execPath}" node_modules/wrangler/bin/wrangler.js dev --config dist/server/wrangler.json --port 3000`
+      : `"${process.execPath}" node_modules/vinext/dist/cli.js dev --port 3000`,
     url: "http://127.0.0.1:3000",
     reuseExistingServer: true,
     timeout: 120_000,

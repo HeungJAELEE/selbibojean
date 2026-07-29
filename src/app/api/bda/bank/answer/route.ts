@@ -54,6 +54,14 @@ export async function POST(request: Request) {
     isCorrect: selectedChoice.id === correctChoice.id,
     selectedChoice,
     correctChoice,
+    choiceFeedback: practice.publicItem.choices.map((choice) => ({
+      choice,
+      isCorrect: choice.id === correctChoice.id,
+      isSelected: choice.id === selectedChoice.id,
+      rationale:
+        practice.choiceRationales[choice.id] ??
+        "이 보기의 적용 범위를 정답 핵심과 다시 비교하세요.",
+    })),
     answerCore: correctChoice.text,
     independentExplanation:
       practice.explanationOverride ||

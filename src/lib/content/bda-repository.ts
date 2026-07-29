@@ -1,4 +1,5 @@
 import "server-only";
+import { bdaGeneratedConceptMockQuestions } from "@/data/source/bda-concept-mock-questions";
 import { bdaContent } from "@/data/source/bda-content";
 import { bdaNotionPracticeQuestions } from "@/data/source/bda-notion-library";
 import {
@@ -13,7 +14,11 @@ let parsedContent: ReturnType<typeof bdaContentSchema.parse> | null = null;
 
 const contentWithNotionPractice = {
   ...bdaContent,
-  questions: [...bdaContent.questions, ...bdaNotionPracticeQuestions],
+  questions: [
+    ...bdaContent.questions,
+    ...bdaNotionPracticeQuestions,
+    ...bdaGeneratedConceptMockQuestions,
+  ],
 };
 
 export function getBdaContent() {

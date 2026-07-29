@@ -751,6 +751,45 @@ export const bdaNotionPracticeQuestions: BdaQuestion[] = [
     correctChoiceId: "b",
     explanation: "SHAP·LIME 등은 개별 예측의 특성 기여를 설명하는 데 활용할 수 있습니다. 다만 설명값을 인과효과로 해석해서는 안 됩니다.",
   }),
+  question({
+    id: "bda-q025",
+    subjectId: "bda-s3",
+    lessonId: "bda-s3-cluster-timeseries",
+    stem: "베이즈 정리로 P(A|B)를 구할 때 필요한 식으로 가장 적절한 것은?",
+    choices: [
+      {
+        id: "a",
+        order: 1,
+        text: "P(A|B)=P(B|A)P(A)/P(B)",
+        feedback:
+          "사전확률 P(A)에 우도 P(B|A)를 곱하고 증거확률 P(B)로 나누는 베이즈 정리입니다.",
+      },
+      {
+        id: "b",
+        order: 2,
+        text: "P(A|B)=P(A|B)P(B)/P(A)",
+        feedback:
+          "구하려는 P(A|B)가 식의 오른쪽에도 그대로 있어 사후확률을 계산하는 식이 아닙니다.",
+      },
+      {
+        id: "c",
+        order: 3,
+        text: "P(A|B)=P(A)+P(B)",
+        feedback:
+          "조건부확률은 두 사건의 확률을 단순히 더해 계산하지 않습니다.",
+      },
+      {
+        id: "d",
+        order: 4,
+        text: "P(A|B)=P(B|A)",
+        feedback:
+          "두 조건부확률은 일반적으로 같지 않으며 조건의 방향을 구분해야 합니다.",
+      },
+    ],
+    correctChoiceId: "a",
+    explanation:
+      "베이즈 정리는 새 증거 B를 관찰한 뒤 사전확률 P(A)를 사후확률 P(A|B)로 갱신합니다. P(B|A)와 P(A|B)의 조건 방향을 바꾸어 읽지 않는 것이 핵심입니다.",
+  }),
 ];
 
 export function getBdaNotionModule(moduleId: string) {

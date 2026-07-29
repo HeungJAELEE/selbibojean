@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { ArrowRight, CheckCircle2, RotateCcw, XCircle } from "lucide-react";
 import type {
   BdaPracticeFeedback,
@@ -9,15 +9,24 @@ import type {
 } from "@/lib/domain/bda";
 import { cn } from "@/lib/utils";
 
+const subscribeToHydration = () => () => {};
+
 export function BdaPracticeQuestion({
   question,
+  headingAs: QuestionHeading = "h3",
 }: {
   question: PublicBdaQuestion;
+  headingAs?: "h1" | "h3" | "h4";
 }) {
   const [choiceId, setChoiceId] = useState("");
   const [feedback, setFeedback] = useState<BdaPracticeFeedback | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const hydrated = useSyncExternalStore(
+    subscribeToHydration,
+    () => true,
+    () => false,
+  );
 
   async function submit() {
     setLoading(true);
@@ -61,9 +70,9 @@ export function BdaPracticeQuestion({
             개념 확인문제
           </span>
         </div>
-        <h1 className="mt-5 text-xl font-black leading-relaxed text-[#142f4b] sm:text-2xl">
+        <QuestionHeading className="mt-5 text-xl font-black leading-relaxed text-[#142f4b] sm:text-2xl">
           {question.stem}
-        </h1>
+        </QuestionHeading>
       </header>
 
       <div className="p-5 sm:p-7">
@@ -80,7 +89,7 @@ export function BdaPracticeQuestion({
               <button
                 key={choice.id}
                 type="button"
-                disabled={Boolean(feedback)}
+                disabled={!hydrated || Boolean(feedback)}
                 aria-pressed={choiceId === choice.id}
                 onClick={() => setChoiceId(choice.id)}
                 className={cn(
@@ -104,7 +113,7 @@ export function BdaPracticeQuestion({
         {!feedback ? (
           <button
             type="button"
-            disabled={!choiceId || loading}
+            disabled={!hydrated || !choiceId || loading}
             onClick={submit}
             className="mt-6 w-full rounded-xl bg-[#142f4b] p-4 font-black text-white transition hover:bg-[#0f766e] disabled:cursor-not-allowed disabled:opacity-40"
           >
@@ -138,6 +147,40 @@ export function BdaPracticeQuestion({
               <p className="mt-2 leading-7 text-slate-700">
                 {feedback.explanation}
               </p>
+            </div>
+            <div className="mt-4 rounded-xl border border-slate-200 bg-white/85 p-4">
+              <p className="text-sm font-black text-[#0f766e]">
+                선택지별 근거
+              </p>
+              <ol className="mt-3 grid gap-3">
+                {question.choices.map((choice) => {
+                  const detail =
+                    choice.id === feedback.selectedChoice.id
+                      ? feedback.selectedChoice
+                      : feedback.otherChoices.find(
+                          (candidate) => candidate.id === choice.id,
+                        );
+                  const isCorrect =
+                    choice.id === feedback.correctChoice.id;
+                  return (
+                    <li
+                      key={choice.id}
+                      className="rounded-lg bg-slate-50 p-3 text-sm leading-6 text-slate-700"
+                    >
+                      <p className="font-black text-[#142f4b]">
+                        {choice.order}번 · {isCorrect ? "정답 근거" : "오답 근거"}
+                        {choice.id === feedback.selectedChoice.id
+                          ? " · 내가 선택"
+                          : ""}
+                      </p>
+                      <p className="mt-1">
+                        {detail?.feedback ??
+                          "이 보기의 적용 범위를 정답 해설과 비교하세요."}
+                      </p>
+                    </li>
+                  );
+                })}
+              </ol>
             </div>
             <div className="mt-5 flex flex-col gap-2 sm:flex-row">
               <Link

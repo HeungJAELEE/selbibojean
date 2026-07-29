@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { CheckCircle2, RotateCcw, XCircle } from "lucide-react";
 import type {
   BdaQbankLearningFeedback,
   PublicBdaQbankLearningItem,
 } from "@/lib/domain/bda-qbank";
 import { cn } from "@/lib/utils";
+
+const subscribeToHydration = () => () => {};
 
 export function BdaLearningItemPractice({
   item,
@@ -18,6 +20,11 @@ export function BdaLearningItemPractice({
     useState<BdaQbankLearningFeedback | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const hydrated = useSyncExternalStore(
+    subscribeToHydration,
+    () => true,
+    () => false,
+  );
 
   async function submit() {
     setLoading(true);
@@ -82,7 +89,7 @@ export function BdaLearningItemPractice({
               type="button"
               role="radio"
               aria-checked={isSelected}
-              disabled={Boolean(feedback)}
+              disabled={!hydrated || Boolean(feedback)}
               onClick={() => setChoiceId(choice.id)}
               className={cn(
                 "flex items-start gap-3 rounded-xl border p-4 text-left transition",
@@ -110,7 +117,7 @@ export function BdaLearningItemPractice({
       {!feedback ? (
         <button
           type="button"
-          disabled={!choiceId || loading}
+          disabled={!hydrated || !choiceId || loading}
           onClick={submit}
           className="mt-3 w-full rounded-xl bg-[#142f4b] px-4 py-3 text-sm font-black text-white transition hover:bg-[#0f766e] disabled:cursor-not-allowed disabled:opacity-40"
         >
@@ -150,6 +157,29 @@ export function BdaLearningItemPractice({
               </p>
             </div>
           ) : null}
+          <div className="mt-3 rounded-xl border border-slate-200 bg-white/85 p-4">
+            <p className="text-xs font-black uppercase tracking-[.12em] text-[#0f766e]">
+              선택지별 근거
+            </p>
+            <ol className="mt-3 grid gap-3">
+              {feedback.choiceFeedback
+                .slice()
+                .sort((left, right) => left.choice.order - right.choice.order)
+                .map((choiceFeedback) => (
+                  <li
+                    key={choiceFeedback.choice.id}
+                    className="rounded-lg bg-slate-50 p-3 text-sm leading-6 text-slate-700"
+                  >
+                    <p className="font-black text-[#142f4b]">
+                      {choiceFeedback.choice.order}번 ·{" "}
+                      {choiceFeedback.isCorrect ? "정답 근거" : "오답 근거"}
+                      {choiceFeedback.isSelected ? " · 내가 선택" : ""}
+                    </p>
+                    <p className="mt-1">{choiceFeedback.rationale}</p>
+                  </li>
+                ))}
+            </ol>
+          </div>
           <p className="mt-3 text-xs leading-5 text-slate-600">
             {feedback.notice}
           </p>

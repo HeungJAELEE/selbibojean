@@ -9,7 +9,7 @@ import {
 
 export const metadata: Metadata = {
   title: "통합 개념서",
-  description: "Notion 하위 이론 전체를 사이트 내부로 이관한 빅데이터분석기사 통합 개념서입니다.",
+  description: "사용자 제공 이론 전체를 사이트 내부 학습 구조로 통합한 빅데이터분석기사 개념서입니다.",
 };
 
 export default function BdaTextbookPage() {
@@ -19,7 +19,7 @@ export default function BdaTextbookPage() {
     <main className="page-wrap pb-16 pt-10">
       <header className="overflow-hidden rounded-3xl bg-[#102d47] p-7 text-white sm:p-10">
         <p className="text-xs font-black uppercase tracking-[.2em] text-teal-200">Complete textbook migration</p>
-        <h1 className="mt-3 text-4xl font-black leading-tight sm:text-5xl">Notion 없이도 학습 가능한<br /><span className="text-teal-200">통합 개념서</span></h1>
+        <h1 className="mt-3 text-4xl font-black leading-tight sm:text-5xl">외부 원문 없이 학습 가능한<br /><span className="text-teal-200">통합 개념서</span></h1>
         <p className="mt-5 max-w-3xl leading-8 text-slate-200">
           하위 17개 페이지의 이론·표·도식을 사이트 내부에 보존했습니다. 최종본은 과목별 대표 교재로,
           정리본·통합본은 누락 확인과 심화 학습을 위한 원천 스냅샷으로 구분했습니다.
@@ -36,7 +36,9 @@ export default function BdaTextbookPage() {
       <aside className="mt-7 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-7 text-amber-950">
         <strong>이관 판정:</strong> 원천 페이지에는 별도 업로드 이미지 블록이 없었습니다. 화면에서 그림처럼 보이던
         자료는 표 280개와 Mermaid 도식 55개였으며, 이를 표와 실제 다이어그램으로 재구성했습니다.
-        연습문제·정답 토글 100개는 원천 스냅샷에 보존하되 검수 전 정답 노출을 막기 위해 교재 본문에서는 제외합니다.
+        연습문제·정답 토글 100개는 모두 문제 구조와 답안을 재검수해 교재
+        본문에 인라인 문제로 연결했습니다. 정답과 해설은 제출 뒤에만
+        표시합니다.
       </aside>
 
       <section className="mt-10">

@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
 import rawQbank from "@/data/source/bda-qbank-v04.json";
+import {
+  bdaGeneratedConceptMockQuestions,
+  getBdaConceptMockQuestions,
+} from "@/data/source/bda-concept-mock-questions";
 import { bdaContent } from "@/data/source/bda-content";
 import { bdaIntegratedConceptTheories } from "@/data/source/bda-integrated-concept-theory";
 import {
@@ -39,13 +43,62 @@ describe("BDA Notion child-page learning map", () => {
   });
 
   it("keeps added practice as self-authored, answer-bearing server content", () => {
-    expect(bdaNotionPracticeQuestions).toHaveLength(16);
+    expect(bdaNotionPracticeQuestions).toHaveLength(17);
     for (const question of bdaNotionPracticeQuestions) {
       expect(question.sourceType).toBe("self_authored");
       expect(question.reviewStatus).toBe("verified");
       expect(question.contentStatus).toBe("published");
       expect(question.choices).toHaveLength(4);
       expect(question.choices.some((choice) => choice.id === question.correctChoiceId)).toBe(true);
+    }
+  });
+
+  it("gives every normalized concept exactly five verified mock questions", () => {
+    expect(bdaGeneratedConceptMockQuestions.length).toBeGreaterThan(0);
+    expect(
+      new Set(bdaGeneratedConceptMockQuestions.map((question) => question.id))
+        .size,
+    ).toBe(bdaGeneratedConceptMockQuestions.length);
+    for (const concept of qbank.concepts) {
+      const questions = getBdaConceptMockQuestions(concept.id);
+      expect(questions).toHaveLength(5);
+      expect(new Set(questions.map((question) => question.id)).size).toBe(5);
+      for (const question of questions) {
+        expect(question.sourceType).toBe("self_authored");
+        expect(question.reviewStatus).toBe("verified");
+        expect(question.contentStatus).toBe("published");
+        expect(question.choices).toHaveLength(4);
+        expect(new Set(question.choices.map((choice) => choice.text)).size).toBe(
+          4,
+        );
+        expect(
+          question.choices.some(
+            (choice) => choice.id === question.correctChoiceId,
+          ),
+        ).toBe(true);
+      }
+    }
+  });
+
+  it("keeps SVM, Bayesian, and practical mock answers inside their normalized scope", () => {
+    const expectedTerms: Record<string, RegExp> = {
+      C024: /서포트 벡터|커널|마진|gamma|스케일/,
+      C028: /베이즈|P\(A\|B\)|P\(B\)|조건부 독립/,
+      C037:
+        /shape|필터|groupby|반올림|동점|결측 문자열|DataFrame|산출물/,
+      C038:
+        /train\/test|Pipeline|result\.csv|타깃|index|테스트 데이터|전체 데이터/,
+      C039: /검정|가설|통계량|p값|등분산|효과 크기|독립성/,
+      C040: /누수|민감정보|재현|개인정보|이름을 지운/,
+    };
+
+    for (const [conceptId, expectedTerm] of Object.entries(expectedTerms)) {
+      for (const question of getBdaConceptMockQuestions(conceptId)) {
+        const correctChoice = question.choices.find(
+          (choice) => choice.id === question.correctChoiceId,
+        );
+        expect(correctChoice?.text).toMatch(expectedTerm);
+      }
     }
   });
 

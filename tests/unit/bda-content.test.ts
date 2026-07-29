@@ -54,6 +54,8 @@ describe("빅데이터분석기사 MVP 콘텐츠", () => {
     expect(serialized).not.toContain("feedback");
     expect(serialized).not.toContain("reviewStatus");
     expect(serialized).not.toContain("evidenceGrade");
+    expect(serialized).not.toContain("sourceLabel");
+    expect(serialized).not.toMatch(/notion\.(?:site|so)/i);
     expect(safe.choices).toHaveLength(4);
   });
 
