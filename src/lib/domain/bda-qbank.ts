@@ -109,6 +109,12 @@ export type BdaQbankLearningFeedback = {
   notice: string;
 };
 
+export type BdaQbankInventoryStatus =
+  | "linked_learning_item"
+  | "held_topic_unavailable";
+
+export type BdaQbankInventoryPublicationStatus = "metadata_only" | "held";
+
 export type BdaQbankInventoryItem = {
   id: string;
   platform?: string;
@@ -145,6 +151,10 @@ export type BdaQbankInventoryItem = {
   validationNote?: string;
   topicExtractedAt?: string;
   transformTargetId?: string;
+  inventoryStatus: BdaQbankInventoryStatus;
+  publicationStatus: BdaQbankInventoryPublicationStatus;
+  holdReason?: string;
+  rightsStatus: "metadata_only";
 };
 
 export type BdaQbankPracticalTask = {
@@ -284,6 +294,8 @@ export type BdaQbank = {
     practicalTaskCount: number;
     reviewPriorityCount: number;
     sourceCount: number;
+    linkedInventoryCount: number;
+    heldInventoryCount: number;
   };
   sources: BdaQbankSource[];
   concepts: BdaQbankConcept[];

@@ -328,6 +328,29 @@ const conceptLinks = requireSheet(sheets, "이론_문제연결").map((row) =>
   }),
 );
 
+const governedInventory = inventory.map((item) => {
+  const isLinked =
+    Boolean(item.transformTargetId) &&
+    Array.isArray(item.conceptIds) &&
+    item.conceptIds.length > 0;
+
+  return {
+    ...compact({
+      ...item,
+      inventoryStatus: isLinked
+        ? "linked_learning_item"
+        : "held_topic_unavailable",
+      publicationStatus: isLinked ? "metadata_only" : "held",
+      holdReason: isLinked
+        ? null
+        : "원문·주제 미확보로 개념·정답·중복 판정 불가",
+      dedupStatus: isLinked ? item.dedupStatus : "원문미확보·대조보류",
+      rightsStatus: "metadata_only",
+    }),
+    conceptIds: item.conceptIds ?? [],
+  };
+});
+
 const output = {
   formatVersion: "BDA_QBank_v0.4",
   sourceSnapshotDate: "2026-07-24",
@@ -339,17 +362,23 @@ const output = {
   safetyNotice:
     "This site stores source metadata and paraphrased learning material. It does not label reconstructed material as official exam questions or official answers.",
   stats: {
-    sourceInventoryCount: inventory.length,
+    sourceInventoryCount: governedInventory.length,
     learningItemCount: learningItems.length,
     conceptCount: concepts.length,
     practicalTaskCount: practicalTasks.length,
     reviewPriorityCount: reviewQueue.length,
     sourceCount: sources.length,
+    linkedInventoryCount: governedInventory.filter(
+      (item) => item.inventoryStatus === "linked_learning_item",
+    ).length,
+    heldInventoryCount: governedInventory.filter(
+      (item) => item.inventoryStatus === "held_topic_unavailable",
+    ).length,
   },
   sources,
   concepts,
   learningItems,
-  inventory,
+  inventory: governedInventory,
   practicalTasks,
   practicalMetadata,
   codeSnippets,
@@ -365,6 +394,8 @@ const expectedCounts = {
   conceptCount: 40,
   practicalTaskCount: 58,
   reviewPriorityCount: 68,
+  linkedInventoryCount: 183,
+  heldInventoryCount: 404,
 };
 
 for (const [key, expected] of Object.entries(expectedCounts)) {

@@ -31,7 +31,7 @@
     "audit:publication": "tsx scripts/audit-publication-scope.ts",
     "audit:merge-decisions": "tsx scripts/merge-written-audit-decisions.ts",
     "audit:report": "tsx scripts/generate-written-audit-report.ts",
-    "verify:data": "tsx scripts/verify-generated-data.ts && tsx scripts/verify-practical-data.ts",
+    "verify:data": "tsx scripts/verify-generated-data.ts && tsx scripts/verify-practical-data.ts && tsx scripts/audit-bda-concept-coverage.ts",
     "verify:deploy": "tsx scripts/verify-deployment-readiness.ts",
     "preflight:deploy": "npm run check && npm run test:e2e && npm run verify:deploy",
     "check": "npm run verify:data && npm run typecheck && npm run lint && npm run test && npm run build"

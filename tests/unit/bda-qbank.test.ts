@@ -16,7 +16,41 @@ describe("BDA QBank v0.4 import", () => {
       conceptCount: 40,
       practicalTaskCount: 58,
       reviewPriorityCount: 68,
+      linkedInventoryCount: 183,
+      heldInventoryCount: 404,
     });
+  });
+
+  it("classifies all 587 inventory rows as linked metadata or an explicit HOLD", () => {
+    const linked = qbank.inventory.filter(
+      (item) => item.inventoryStatus === "linked_learning_item",
+    );
+    const held = qbank.inventory.filter(
+      (item) => item.inventoryStatus === "held_topic_unavailable",
+    );
+
+    expect(linked).toHaveLength(183);
+    expect(held).toHaveLength(404);
+    expect(
+      linked.every(
+        (item) =>
+          item.publicationStatus === "metadata_only" &&
+          item.rightsStatus === "metadata_only" &&
+          item.transformTargetId &&
+          item.conceptIds.length > 0 &&
+          !item.holdReason,
+      ),
+    ).toBe(true);
+    expect(
+      held.every(
+        (item) =>
+          item.publicationStatus === "held" &&
+          item.rightsStatus === "metadata_only" &&
+          item.holdReason &&
+          item.conceptIds.length === 0 &&
+          !item.transformTargetId,
+      ),
+    ).toBe(true);
   });
 
   it("keeps reconstructed learning items separate from the source inventory", () => {

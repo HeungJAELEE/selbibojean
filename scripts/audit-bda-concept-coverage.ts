@@ -4,10 +4,46 @@ import { bdaConceptEnrichments } from "../src/data/source/bda-concept-enrichment
 const conceptIds = new Set(qbank.concepts.map((concept) => concept.id));
 const enrichmentIds = new Set(bdaConceptEnrichments.map((concept) => concept.conceptId));
 const errors: string[] = [];
+const linkedInventory = qbank.inventory.filter(
+  (item) => item.inventoryStatus === "linked_learning_item",
+);
+const heldInventory = qbank.inventory.filter(
+  (item) => item.inventoryStatus === "held_topic_unavailable",
+);
 
 if (qbank.concepts.length !== 40) errors.push(`Expected 40 concepts, got ${qbank.concepts.length}.`);
 if (bdaConceptEnrichments.length !== 40)
   errors.push(`Expected 40 enrichments, got ${bdaConceptEnrichments.length}.`);
+if (qbank.inventory.length !== 587)
+  errors.push(`Expected 587 inventory rows, got ${qbank.inventory.length}.`);
+if (linkedInventory.length !== 183)
+  errors.push(`Expected 183 linked inventory rows, got ${linkedInventory.length}.`);
+if (heldInventory.length !== 404)
+  errors.push(`Expected 404 held inventory rows, got ${heldInventory.length}.`);
+
+for (const item of linkedInventory) {
+  if (
+    item.publicationStatus !== "metadata_only" ||
+    item.rightsStatus !== "metadata_only" ||
+    !item.transformTargetId ||
+    !item.conceptIds.length ||
+    item.holdReason
+  ) {
+    errors.push(`Invalid linked inventory governance: ${item.id}`);
+  }
+}
+
+for (const item of heldInventory) {
+  if (
+    item.publicationStatus !== "held" ||
+    item.rightsStatus !== "metadata_only" ||
+    !item.holdReason ||
+    item.transformTargetId ||
+    item.conceptIds.length
+  ) {
+    errors.push(`Invalid held inventory governance: ${item.id}`);
+  }
+}
 
 for (const concept of qbank.concepts) {
   const enrichment = bdaConceptEnrichments.find((item) => item.conceptId === concept.id);
@@ -47,5 +83,5 @@ if (errors.length) {
 }
 
 console.log(
-  `BDA concept coverage PASS: ${qbank.learningItems.length} learning items → ${qbank.concepts.length} concepts → ${bdaConceptEnrichments.length} expanded modules.`,
+  `BDA coverage PASS: ${qbank.inventory.length} inventory (${linkedInventory.length} linked, ${heldInventory.length} held), ${qbank.learningItems.length} learning items, ${qbank.concepts.length} concepts, ${bdaConceptEnrichments.length} expanded modules.`,
 );
