@@ -96,6 +96,26 @@ export type PublicBdaQbankLearningItem = Pick<
   practiceNotice: string;
 };
 
+export type PublicBdaQbankLearningSummary = Pick<
+  BdaQbankLearningItem,
+  | "id"
+  | "platform"
+  | "sourceSetType"
+  | "examRound"
+  | "sourceItemNo"
+  | "subjectNo"
+  | "subjectName"
+  | "topicSummary"
+  | "paraphrasedLearningPrompt"
+  | "conceptIds"
+  | "questionMode"
+  | "technicalValidationStatus"
+  | "evidenceGrade"
+> & {
+  publicationStatus: "gradeable" | "hold";
+  publicationReason: string;
+};
+
 export type BdaQbankLearningFeedback = {
   itemId: string;
   isCorrect: boolean;

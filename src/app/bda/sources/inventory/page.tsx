@@ -34,6 +34,7 @@ export default function BdaInventoryPage() {
                 <th className="px-4 py-4">문항 위치</th>
                 <th className="px-4 py-4">학습 주제</th>
                 <th className="px-4 py-4">재구성·검수</th>
+                <th className="px-4 py-4">판정</th>
                 <th className="px-4 py-4">출처</th>
               </tr>
             </thead>
@@ -45,6 +46,24 @@ export default function BdaInventoryPage() {
                   <td className="px-4 py-3">{item.sourceItemNo}<br /><span className="text-xs text-slate-500">{item.subjectNameInferred}</span></td>
                   <td className="max-w-sm px-4 py-3 leading-6">{item.topicSummary ?? "주제 추출 대기"}</td>
                   <td className="px-4 py-3 text-xs leading-5">{item.reconstructionStatus}<br />{item.technicalValidationStatus ?? item.answerStatus}</td>
+                  <td className="max-w-xs px-4 py-3 text-xs leading-5">
+                    <strong
+                      className={
+                        item.publicationStatus === "held"
+                          ? "text-amber-800"
+                          : "text-emerald-800"
+                      }
+                    >
+                      {item.publicationStatus === "held"
+                        ? "HOLD"
+                        : "학습항목 연결"}
+                    </strong>
+                    {item.holdReason ? (
+                      <span className="mt-1 block text-slate-500">
+                        {item.holdReason}
+                      </span>
+                    ) : null}
+                  </td>
                   <td className="px-4 py-3">
                     {item.sourcePageUrl ? <a href={item.sourcePageUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 font-bold text-[#0f766e] hover:underline">위치 열기 <ExternalLink size={13} /></a> : "-"}
                   </td>

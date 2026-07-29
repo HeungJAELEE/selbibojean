@@ -7,16 +7,20 @@ import type { PublicBdaQbankLearningItem } from "@/lib/domain/bda-qbank";
 export function BdaLinkedPracticeSet({
   verifiedQuestions,
   learningItems,
+  heldLearningCount = 0,
 }: {
   verifiedQuestions: PublicBdaQuestion[];
   learningItems: PublicBdaQbankLearningItem[];
+  heldLearningCount?: number;
 }) {
   const totalCount = verifiedQuestions.length + learningItems.length;
 
   if (totalCount === 0) {
     return (
       <p className="mt-6 rounded-xl bg-white/10 p-5 text-sm text-slate-200">
-        이 레슨의 연결 문제는 검수 후 순차적으로 공개됩니다.
+        {heldLearningCount
+          ? `연결 항목 ${heldLearningCount}건은 재검수 HOLD 상태입니다. 정답 검수가 끝난 문제만 이 위치에 공개됩니다.`
+          : "이 레슨의 연결 문제는 검수 후 순차적으로 공개됩니다."}
       </p>
     );
   }
@@ -107,6 +111,13 @@ export function BdaLinkedPracticeSet({
               ))}
             </div>
           </section>
+        ) : null}
+        {heldLearningCount ? (
+          <p className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-950">
+            재검수 대기 {heldLearningCount}건은 출처·개념 연결만 보존하고
+            있습니다. 정답·선택지 검수가 끝나기 전에는 채점형 문제로
+            공개하지 않습니다.
+          </p>
         ) : null}
       </div>
     </details>

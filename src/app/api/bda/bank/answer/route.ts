@@ -24,10 +24,16 @@ export async function POST(request: Request) {
 
   const item = getBdaQbankLearningItem(parsed.data.itemId);
   const practice = getBdaLearningPractice(parsed.data.itemId);
-  if (!item || !practice) {
+  if (!item) {
     return NextResponse.json(
       { error: "연결된 학습문제를 찾지 못했습니다." },
       { status: 404 },
+    );
+  }
+  if (!practice) {
+    return NextResponse.json(
+      { error: "이 항목은 정답 재검수 중이라 현재 채점할 수 없습니다." },
+      { status: 409 },
     );
   }
   const selectedChoice = practice.publicItem.choices.find(

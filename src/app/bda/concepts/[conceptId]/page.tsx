@@ -22,6 +22,7 @@ import {
   getBdaQbankConceptDetail,
   toPublicBdaQbankLearningItem,
 } from "@/lib/content/bda-qbank-repository";
+import { getBdaLearningItemPublicationDecision } from "@/lib/content/bda-learning-practice";
 
 export function generateStaticParams() {
   return getBdaQbank().concepts.map((concept) => ({ conceptId: concept.id }));
@@ -57,6 +58,8 @@ export default async function BdaConceptDetailPage({
     enrichment,
     integratedTheory,
     relatedItems,
+    gradeableRelatedItems,
+    heldRelatedItems,
     relatedTopics,
     relatedPracticalTasks,
   } = detail;
@@ -65,7 +68,9 @@ export default async function BdaConceptDetailPage({
     ? bdaNotionSourcePages.find((page) => page.id === integratedTheory.sourcePageId)
     : undefined;
   const codeLabs = bdaCodeLabs.filter((lab) => integratedTheory.codeLabIds.includes(lab.id));
-  const publicRelatedItems = relatedItems.map(toPublicBdaQbankLearningItem);
+  const publicRelatedItems = gradeableRelatedItems.map(
+    toPublicBdaQbankLearningItem,
+  );
 
   return (
     <main className="page-wrap pb-16 pt-8">
@@ -84,7 +89,17 @@ export default async function BdaConceptDetailPage({
           <h1 className="mt-3 text-3xl font-black sm:text-5xl">{concept.name}</h1>
           <p className="mt-5 max-w-3xl text-base leading-8 text-slate-100">{enrichment.overview}</p>
           <div className="mt-6 flex flex-wrap gap-2 text-xs font-bold">
-            <span className="rounded-full bg-white/10 px-3 py-1.5">연결 학습 항목 {relatedItems.length}개</span>
+            <span className="rounded-full bg-white/10 px-3 py-1.5">
+              연결 학습 항목 {relatedItems.length}개
+            </span>
+            <span className="rounded-full bg-emerald-400/20 px-3 py-1.5">
+              채점 가능 {gradeableRelatedItems.length}개
+            </span>
+            {heldRelatedItems.length ? (
+              <span className="rounded-full bg-amber-300/20 px-3 py-1.5">
+                재검수 HOLD {heldRelatedItems.length}개
+              </span>
+            ) : null}
             <span className="rounded-full bg-white/10 px-3 py-1.5">출제 주제 {relatedTopics.length}개</span>
             <span className="rounded-full bg-white/10 px-3 py-1.5">검증 상태 {concept.validationStatus}</span>
           </div>
@@ -262,7 +277,7 @@ export default async function BdaConceptDetailPage({
           <div>
             <p className="eyebrow">Learning bank</p>
             <h2 className="mt-2 text-2xl font-black text-[#142f4b]">
-              연결 실전형 문제 {publicRelatedItems.length}개
+              검수 통과 연결 문제 {publicRelatedItems.length}개
             </h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">
               이동하지 않고 각 문제를 펼쳐 질문과 보기 4개를 확인한 뒤 바로
@@ -290,6 +305,40 @@ export default async function BdaConceptDetailPage({
               </details>
             ))}
           </div>
+          {heldRelatedItems.length ? (
+            <details className="mt-6 rounded-2xl border border-amber-200 bg-amber-50">
+              <summary className="cursor-pointer list-none p-4 font-black text-amber-950 [&::-webkit-details-marker]:hidden sm:p-5">
+                재검수 대기 항목 {heldRelatedItems.length}개 확인
+                <span className="mt-1 block text-xs font-medium leading-5 text-amber-800">
+                  출처·주제 연결은 보존하지만 정답 검수가 끝나기 전에는
+                  선택지와 채점 기능을 제공하지 않습니다.
+                </span>
+              </summary>
+              <div className="grid gap-2 border-t border-amber-200 p-4 sm:p-5">
+                {heldRelatedItems.map((item) => {
+                  const decision =
+                    getBdaLearningItemPublicationDecision(item);
+                  return (
+                    <article
+                      key={item.id}
+                      className="rounded-xl border border-amber-200 bg-white p-4"
+                    >
+                      <p className="text-xs font-black text-amber-800">
+                        {item.id} · {item.platform} ·{" "}
+                        {item.technicalValidationStatus ?? "미검수"}
+                      </p>
+                      <h3 className="mt-1 font-black text-[#142f4b]">
+                        {item.topicSummary}
+                      </h3>
+                      <p className="mt-2 text-sm leading-6 text-slate-600">
+                        {decision.reason}
+                      </p>
+                    </article>
+                  );
+                })}
+              </div>
+            </details>
+          ) : null}
         </section>
       </article>
     </main>

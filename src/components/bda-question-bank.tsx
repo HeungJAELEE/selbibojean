@@ -5,11 +5,11 @@ import { useMemo, useState } from "react";
 import { ArrowRight, Filter, SearchX } from "lucide-react";
 import type {
   BdaQbankConcept,
-  BdaQbankLearningItem,
+  PublicBdaQbankLearningSummary,
 } from "@/lib/domain/bda-qbank";
 
 type Props = {
-  items: BdaQbankLearningItem[];
+  items: PublicBdaQbankLearningSummary[];
   concepts: BdaQbankConcept[];
   initialConceptId?: string;
 };
@@ -19,6 +19,7 @@ export function BdaQuestionBank({ items, concepts, initialConceptId }: Props) {
   const [conceptId, setConceptId] = useState(initialConceptId ?? "all");
   const [platform, setPlatform] = useState("all");
   const [validation, setValidation] = useState("all");
+  const [publication, setPublication] = useState("all");
 
   const filtered = useMemo(
     () =>
@@ -26,9 +27,18 @@ export function BdaQuestionBank({ items, concepts, initialConceptId }: Props) {
         if (subjectNo !== "all" && item.subjectNo !== Number(subjectNo)) return false;
         if (conceptId !== "all" && !item.conceptIds.includes(conceptId)) return false;
         if (platform !== "all" && item.platform !== platform) return false;
-        return validation === "all" || item.technicalValidationStatus === validation;
+        if (
+          validation !== "all" &&
+          item.technicalValidationStatus !== validation
+        ) {
+          return false;
+        }
+        return (
+          publication === "all" ||
+          item.publicationStatus === publication
+        );
       }),
-    [conceptId, items, platform, subjectNo, validation],
+    [conceptId, items, platform, publication, subjectNo, validation],
   );
 
   const subjectOptions = [...new Set(items.map((item) => item.subjectNo).filter(Boolean))].sort();
@@ -44,7 +54,7 @@ export function BdaQuestionBank({ items, concepts, initialConceptId }: Props) {
         <div className="flex items-center gap-2 text-sm font-black text-[#142f4b]">
           <Filter size={17} className="text-[#0f766e]" /> 탐색 필터
         </div>
-        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           <FilterSelect label="과목" value={subjectNo} onChange={setSubjectNo}>
             <option value="all">전체 과목</option>
             {subjectOptions.map((value) => (
@@ -67,6 +77,15 @@ export function BdaQuestionBank({ items, concepts, initialConceptId }: Props) {
             <option value="all">전체 상태</option>
             {validationOptions.map((value) => <option key={value} value={value}>{value}</option>)}
           </FilterSelect>
+          <FilterSelect
+            label="공개 판정"
+            value={publication}
+            onChange={setPublication}
+          >
+            <option value="all">전체 판정</option>
+            <option value="gradeable">채점 가능</option>
+            <option value="hold">재검수 HOLD</option>
+          </FilterSelect>
         </div>
       </section>
 
@@ -79,8 +98,9 @@ export function BdaQuestionBank({ items, concepts, initialConceptId }: Props) {
 
       {filtered.length ? (
         <div className="mt-4 grid gap-4 md:grid-cols-2">
-          {filtered.map((item) => (
-            <Link
+          {filtered.map((item) => {
+            return (
+              <Link
               key={item.id}
               href={`/bda/bank/${item.id}`}
               className="card group p-5 transition hover:-translate-y-0.5 hover:shadow-lg"
@@ -111,9 +131,21 @@ export function BdaQuestionBank({ items, concepts, initialConceptId }: Props) {
                 <span className="rounded-full bg-amber-50 px-2.5 py-1 text-amber-800">
                   {item.technicalValidationStatus}
                 </span>
+                <span
+                  className={
+                    item.publicationStatus === "gradeable"
+                      ? "rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800"
+                      : "rounded-full bg-rose-50 px-2.5 py-1 text-rose-800"
+                  }
+                >
+                  {item.publicationStatus === "gradeable"
+                    ? "채점 가능"
+                    : "재검수 HOLD"}
+                </span>
               </div>
             </Link>
-          ))}
+            );
+          })}
         </div>
       ) : (
         <div className="mt-4 flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-600">

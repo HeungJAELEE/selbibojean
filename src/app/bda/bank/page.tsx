@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { BrainCircuit, ShieldAlert } from "lucide-react";
 import { BdaQuestionBank } from "@/components/bda-question-bank";
-import { getBdaQbank } from "@/lib/content/bda-qbank-repository";
+import {
+  getBdaQbank,
+  toPublicBdaQbankLearningSummary,
+} from "@/lib/content/bda-qbank-repository";
+import { isBdaLearningItemGradeable } from "@/lib/content/bda-learning-practice";
 
 export const metadata: Metadata = {
   title: "학습 문제은행",
@@ -14,6 +18,10 @@ export default async function BdaBankPage({
   searchParams: Promise<{ concept?: string }>;
 }) {
   const qbank = getBdaQbank();
+  const gradeableCount = qbank.learningItems.filter(
+    isBdaLearningItemGradeable,
+  ).length;
+  const heldCount = qbank.learningItems.length - gradeableCount;
   const { concept } = await searchParams;
   const initialConceptId = qbank.concepts.some((item) => item.id === concept)
     ? concept
@@ -27,8 +35,10 @@ export default async function BdaBankPage({
           <BrainCircuit className="text-[#0f766e]" /> 학습 문제은행
         </h1>
         <p className="mt-4 max-w-3xl leading-7 text-slate-600">
-          v0.4에서 상세 확인된 183개 항목입니다. 원문·선지를 복제하지 않고, 출처를 유지한 학습용 질문과
-          독립 해설을 분리해 관리합니다.
+          v0.4에서 상세 확인된 183개 항목입니다. 원문·선지를 복제하지
+          않고, 출처를 유지한 학습용 질문과 독립 해설을 분리해
+          관리합니다. 현재 채점 가능 {gradeableCount}건, 재검수 HOLD{" "}
+          {heldCount}건입니다.
         </p>
       </header>
 
@@ -42,7 +52,7 @@ export default async function BdaBankPage({
 
       <section className="mt-8">
         <BdaQuestionBank
-          items={qbank.learningItems}
+          items={qbank.learningItems.map(toPublicBdaQbankLearningSummary)}
           concepts={qbank.concepts}
           initialConceptId={initialConceptId}
         />

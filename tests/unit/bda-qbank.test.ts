@@ -3,7 +3,11 @@ import rawQbank from "@/data/source/bda-qbank-v04.json";
 import { bdaConceptEnrichments } from "@/data/source/bda-concept-enrichment";
 import { bdaLessonConceptMap } from "@/data/source/bda-lesson-concept-map";
 import { bdaContent } from "@/data/source/bda-content";
-import { generateBdaLearningPractice } from "@/lib/content/bda-learning-practice";
+import {
+  generateBdaLearningPractice,
+  getBdaLearningItemPublicationDecision,
+  isBdaLearningItemGradeable,
+} from "@/lib/content/bda-learning-practice";
 import type { BdaQbank } from "@/lib/domain/bda-qbank";
 
 describe("BDA QBank v0.4 import", () => {
@@ -117,8 +121,18 @@ describe("BDA QBank v0.4 import", () => {
     }
   });
 
-  it("turns all 183 learning items into complete four-choice practice questions", () => {
-    for (const item of qbank.learningItems) {
+  it("publishes only reviewed learning items as complete four-choice questions", () => {
+    const gradeable = qbank.learningItems.filter(
+      isBdaLearningItemGradeable,
+    );
+    const held = qbank.learningItems.filter(
+      (item) => !isBdaLearningItemGradeable(item),
+    );
+
+    expect(gradeable).toHaveLength(115);
+    expect(held).toHaveLength(68);
+
+    for (const item of gradeable) {
       const practice = generateBdaLearningPractice(item, qbank.learningItems);
       expect(practice.publicItem.questionStem).toBeTruthy();
       expect(practice.publicItem.choices).toHaveLength(4);
@@ -131,6 +145,13 @@ describe("BDA QBank v0.4 import", () => {
         ),
       ).toBe(true);
       expect(practice.publicItem).not.toHaveProperty("correctChoiceId");
+    }
+
+    for (const item of held) {
+      expect(getBdaLearningItemPublicationDecision(item).reason).toBeTruthy();
+      expect(() =>
+        generateBdaLearningPractice(item, qbank.learningItems),
+      ).toThrow(/HOLD/);
     }
   });
 });

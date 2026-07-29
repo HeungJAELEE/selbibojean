@@ -30,8 +30,14 @@ export default function BdaSourcesPage() {
         </p>
       </header>
 
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-7">
         <Stat value={qbank.stats.sourceInventoryCount} label="출처 인벤토리" />
+        <Stat value={qbank.stats.linkedInventoryCount} label="학습항목 연결" />
+        <Stat
+          value={qbank.stats.heldInventoryCount}
+          label="주제 미확보 HOLD"
+          tone="amber"
+        />
         <Stat value={qbank.stats.learningItemCount} label="학습 재구성" />
         <Stat value={qbank.stats.conceptCount} label="정규화 개념" />
         <Stat value={qbank.stats.practicalTaskCount} label="실기 과제" />
@@ -45,6 +51,8 @@ export default function BdaSourcesPage() {
           <p className="mt-3 leading-7 text-slate-600">
             NewBT 제2~8회 등록 위치와 영진 CBT 모의69의 위치를 회차·문항번호·출처 URL 중심으로 보관합니다.
             원문과 선지를 복제하지 않았으며, 상세 주제·학습 재구성 여부는 개별 행의 상태로 분리했습니다.
+            183건은 학습항목과 연결했고, 404건은 원문·주제가 없어 임의 분류하지
+            않고 HOLD 사유를 기록했습니다.
           </p>
           <Link href="/bda/sources/inventory" className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[#173957] px-4 py-3 text-sm font-black text-white">
             인벤토리 열기 <ArrowRight size={16} />

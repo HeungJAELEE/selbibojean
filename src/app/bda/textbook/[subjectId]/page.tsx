@@ -139,9 +139,15 @@ export default async function BdaTextbookSubjectPage({
             <p className="mt-2 text-xs leading-5 text-slate-500">최종본과 겹치더라도 누락 없이 이관한 정리본·통합본입니다.</p>
             <div className="mt-4 grid gap-2">
               {supplements.map((snapshot) => (
-                <Link key={snapshot.id} href={`/bda/textbook/source/${snapshot.id}`} className="rounded-xl bg-slate-50 px-3 py-2.5 text-sm font-bold text-slate-700 hover:bg-teal-50 hover:text-teal-900">
+                <div
+                  key={snapshot.id}
+                  className="rounded-xl bg-slate-50 px-3 py-2.5 text-sm font-bold text-slate-700"
+                >
                   {snapshot.title}
-                </Link>
+                  <span className="mt-1 block text-xs font-medium text-slate-500">
+                    중복·누락 대조용 내부 메타데이터
+                  </span>
+                </div>
               ))}
             </div>
           </section>

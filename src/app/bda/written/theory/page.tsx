@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, ExternalLink } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2 } from "lucide-react";
 import { getBdaContent } from "@/lib/content/bda-repository";
 
 export const metadata: Metadata = { title: "필기 이론" };
@@ -14,8 +14,9 @@ export default function BdaTheoryPage() {
         <p className="eyebrow">Theory map</p>
         <h1 className="mt-3 text-4xl font-black text-[#142f4b]">필기 이론</h1>
         <p className="mt-4 max-w-3xl leading-7 text-slate-600">
-          Notion 최종본의 큰 흐름을 20개 핵심 레슨으로 압축했습니다. 각
-          레슨에는 학습목표, 핵심정리, 시험 함정과 원자료 링크가 있습니다.
+          이관한 이론의 큰 흐름을 20개 핵심 레슨으로 압축했습니다. 각
+          레슨에는 학습목표, 핵심정리, 시험 함정과 검수 메타데이터가
+          있습니다.
         </p>
       </header>
 
@@ -44,14 +45,9 @@ export default function BdaTheoryPage() {
                       {subject.description}
                     </p>
                   </div>
-                  <a
-                    href={subject.sourceRefs[0].url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex shrink-0 items-center gap-2 rounded-xl bg-white/15 px-4 py-2 text-sm font-bold"
-                  >
-                    Notion 원자료 <ExternalLink size={15} />
-                  </a>
+                  <span className="flex shrink-0 items-center gap-2 rounded-xl bg-white/15 px-4 py-2 text-sm font-bold">
+                    <CheckCircle2 size={15} /> 내부 이관·검수 메타데이터 보존
+                  </span>
                 </div>
               </header>
               <ol className="divide-y divide-slate-200">

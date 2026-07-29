@@ -11,6 +11,52 @@ export type BdaGeneratedLearningPractice = {
 };
 
 const UNVERIFIED_ANSWER_PATTERN = /미확정|그림 미확보|확인 필요/;
+const GRADEABLE_TECHNICAL_STATUSES = new Set(["개념일치", "수치검산완료"]);
+
+export type BdaLearningItemPublicationDecision =
+  | {
+      status: "gradeable";
+      reason: "개념·정답 핵심·독립 해설 검토 통과";
+    }
+  | {
+      status: "hold";
+      reason: string;
+    };
+
+export function getBdaLearningItemPublicationDecision(
+  item: BdaQbankLearningItem,
+): BdaLearningItemPublicationDecision {
+  if (
+    !item.paraphrasedLearningPrompt?.trim() ||
+    !item.answerCore?.trim() ||
+    !item.independentExplanation?.trim()
+  ) {
+    return {
+      status: "hold",
+      reason: "질문·정답 핵심·독립 해설 중 누락된 항목이 있습니다.",
+    };
+  }
+  if (UNVERIFIED_ANSWER_PATTERN.test(item.answerCore)) {
+    return {
+      status: "hold",
+      reason: "정답 핵심에 미확정 또는 원자료 누락 표시가 남아 있습니다.",
+    };
+  }
+  if (!GRADEABLE_TECHNICAL_STATUSES.has(item.technicalValidationStatus ?? "")) {
+    return {
+      status: "hold",
+      reason: `${item.technicalValidationStatus ?? "미검수"} 상태의 추가 검수가 필요합니다.`,
+    };
+  }
+  return {
+    status: "gradeable",
+    reason: "개념·정답 핵심·독립 해설 검토 통과",
+  };
+}
+
+export function isBdaLearningItemGradeable(item: BdaQbankLearningItem) {
+  return getBdaLearningItemPublicationDecision(item).status === "gradeable";
+}
 
 type PracticeOverride = {
   stem: string;
@@ -343,6 +389,10 @@ export function generateBdaLearningPractice(
   item: BdaQbankLearningItem,
   allItems: BdaQbankLearningItem[],
 ): BdaGeneratedLearningPractice {
+  const publication = getBdaLearningItemPublicationDecision(item);
+  if (publication.status !== "gradeable") {
+    throw new Error(`Learning item ${item.id} is HOLD: ${publication.reason}`);
+  }
   const { ordered, correctIndex } = buildChoiceTexts(item, allItems);
   const choices: BdaQbankLearningChoice[] = ordered.map((text, index) => ({
     id: `${item.id}-choice-${index + 1}`,

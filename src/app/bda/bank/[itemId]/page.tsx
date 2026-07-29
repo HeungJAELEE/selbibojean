@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, ShieldCheck } from "lucide-react";
+import { ArrowLeft, ShieldCheck } from "lucide-react";
 import { notFound } from "next/navigation";
 import { BdaLearningItemPractice } from "@/components/bda-learning-item-practice";
 import {
@@ -8,6 +8,7 @@ import {
   getBdaQbankLearningItem,
   toPublicBdaQbankLearningItem,
 } from "@/lib/content/bda-qbank-repository";
+import { getBdaLearningItemPublicationDecision } from "@/lib/content/bda-learning-practice";
 
 export function generateStaticParams() {
   return getBdaQbank().learningItems.map((item) => ({ itemId: item.id }));
@@ -24,7 +25,11 @@ export default async function BdaBankItemPage({ params }: { params: Promise<{ it
   const { itemId } = await params;
   const item = getBdaQbankLearningItem(itemId);
   if (!item) notFound();
-  const publicItem = toPublicBdaQbankLearningItem(item);
+  const publication = getBdaLearningItemPublicationDecision(item);
+  const publicItem =
+    publication.status === "gradeable"
+      ? toPublicBdaQbankLearningItem(item)
+      : undefined;
   const qbank = getBdaQbank();
   const concepts = item.conceptIds
     .map((id) => qbank.concepts.find((concept) => concept.id === id))
@@ -51,11 +56,29 @@ export default async function BdaBankItemPage({ params }: { params: Promise<{ it
         <div className="grid gap-6 p-6 sm:p-9 lg:grid-cols-[1.2fr_.8fr]">
           <div>
             <section>
-              <p className="eyebrow">Practice question</p>
+              <p className="eyebrow">
+                {publicItem ? "Practice question" : "Review hold"}
+              </p>
               <h2 className="mt-2 text-xl font-black text-[#142f4b]">
-                질문·보기·채점이 포함된 실전형 재구성
+                {publicItem
+                  ? "질문·보기·채점이 포함된 실전형 재구성"
+                  : "정답 재검수 후 공개할 학습 항목"}
               </h2>
-              <BdaLearningItemPractice item={publicItem} />
+              {publicItem ? (
+                <BdaLearningItemPractice item={publicItem} />
+              ) : (
+                <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-5">
+                  <p className="font-black text-amber-950">
+                    현재 채점형 공개가 보류되었습니다.
+                  </p>
+                  <p className="mt-2 text-sm leading-7 text-amber-900">
+                    {publication.reason}
+                  </p>
+                  <p className="mt-3 text-sm leading-7 text-slate-700">
+                    학습 주제: {item.paraphrasedLearningPrompt}
+                  </p>
+                </div>
+              )}
             </section>
           </div>
           <aside className="space-y-4">
@@ -78,11 +101,10 @@ export default async function BdaBankItemPage({ params }: { params: Promise<{ it
                 {item.validationNote ? <div><dt className="font-bold text-slate-800">검수 메모</dt><dd>{item.validationNote}</dd></div> : null}
               </dl>
             </section>
-            {item.sourceUrl ? (
-              <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-slate-300 px-4 py-3 text-sm font-black text-[#142f4b] hover:bg-slate-50">
-                출처 위치 열기 <ExternalLink size={15} />
-              </a>
-            ) : null}
+            <p className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs leading-5 text-slate-600">
+              출처 ID {item.sourceId ?? "미등록"} · 원천 URL은 공개 화면에
+              노출하지 않고 내부 검수 메타데이터로만 보존합니다.
+            </p>
             <p className="flex gap-2 rounded-xl bg-emerald-50 p-3 text-xs leading-5 text-emerald-900"><ShieldCheck size={15} className="shrink-0" />질문과 보기 4개는 학습 목표·정답 핵심을 바탕으로 새로 구성했으며 원 출처의 공식 문제·정답을 뜻하지 않습니다.</p>
           </aside>
         </div>

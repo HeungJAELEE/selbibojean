@@ -7,7 +7,6 @@ import {
   BookOpenCheck,
   BrainCircuit,
   CheckCircle2,
-  ExternalLink,
   Lightbulb,
   ListChecks,
   Scale,
@@ -25,6 +24,7 @@ import {
   getBdaLessonLearningItems,
   toPublicBdaQbankLearningItem,
 } from "@/lib/content/bda-qbank-repository";
+import { isBdaLearningItemGradeable } from "@/lib/content/bda-learning-practice";
 import { toPublicBdaQuestion } from "@/lib/domain/bda";
 import { BdaLinkedPracticeSet } from "@/components/bda-linked-practice-set";
 
@@ -56,9 +56,12 @@ export default async function BdaLessonPage({ params }: Props) {
   const verifiedQuestions = getPublishedBdaQuestions()
     .filter((question) => question.lessonId === lesson.id)
     .map(toPublicBdaQuestion);
-  const learningItems = getBdaLessonLearningItems(lesson.id).map(
-    toPublicBdaQbankLearningItem,
-  );
+  const lessonLearningItems = getBdaLessonLearningItems(lesson.id);
+  const learningItems = lessonLearningItems
+    .filter(isBdaLearningItemGradeable)
+    .map(toPublicBdaQbankLearningItem);
+  const heldLearningCount =
+    lessonLearningItems.length - learningItems.length;
 
   return (
     <main className="page-wrap pb-16">
@@ -301,6 +304,7 @@ export default async function BdaLessonPage({ params }: Props) {
           <BdaLinkedPracticeSet
             verifiedQuestions={verifiedQuestions}
             learningItems={learningItems}
+            heldLearningCount={heldLearningCount}
           />
         </section>
 
@@ -318,14 +322,9 @@ export default async function BdaLessonPage({ params }: Props) {
                 검토 {lesson.sourceRefs[0].reviewedAt}
               </p>
             </div>
-            <a
-              href={lesson.sourceRefs[0].url}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-bold text-[#0f766e]"
-            >
-              Notion 원자료 <ExternalLink size={15} />
-            </a>
+            <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-600">
+              원천 URL 비공개 · 사이트 이관본 기준
+            </span>
           </div>
         </section>
 
