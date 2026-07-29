@@ -8,14 +8,22 @@ export type BdaCodeLab = {
   title: string;
   summary: string;
   task: string;
+  inputSchema: string[];
   outputContract: string;
+  preCodeChecks: string[];
+  conceptIds: string[];
   concepts: string[];
   steps: string[];
   code: string;
   expected: string[];
   traps: string[];
   validation: {
-    status: "pattern-reviewed";
+    status:
+      | "draft"
+      | "pattern-reviewed"
+      | "syntax-verified"
+      | "runtime-verified"
+      | "round-reproduced";
     basis: string[];
     note: string;
   };
@@ -25,12 +33,17 @@ const reviewed = (
   note: string,
   basis = ["공식 체험환경 제출 규칙", "독립 작성 Python 패턴"],
 ): BdaCodeLab["validation"] => ({
-  status: "pattern-reviewed",
+  status: "syntax-verified",
   basis,
   note,
 });
 
-export const bdaCodeLabs: BdaCodeLab[] = [
+type BdaCodeLabDraft = Omit<
+  BdaCodeLab,
+  "inputSchema" | "preCodeChecks" | "conceptIds"
+>;
+
+const rawBdaCodeLabs: BdaCodeLabDraft[] = [
   {
     id: "exam-runtime-check",
     order: 1,
@@ -565,6 +578,13 @@ print(round(float(rmse), 4))`,
     roc_auc_score,
 )
 
+# 지표별 입력 형태를 확인하기 위한 최소 실행 예시입니다.
+y_valid_cls = [0, 1, 1, 0, 1, 0]
+valid_proba = [0.10, 0.82, 0.67, 0.35, 0.91, 0.22]
+valid_label = [0, 1, 1, 0, 1, 0]
+y_valid_reg = [10.0, 20.0, 30.0, 40.0]
+valid_value = [12.0, 18.0, 33.0, 37.0]
+
 auc = roc_auc_score(y_valid_cls, valid_proba)
 f1 = f1_score(y_valid_cls, valid_label)
 
@@ -862,11 +882,34 @@ print(round(float(probability), 4))`,
       "저장 파일을 다시 읽어 열·행·결측을 검사합니다.",
     ],
     code: String.raw`import pandas as pd
+from sklearn.compose import ColumnTransformer
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder
 
+train = pd.read_csv("train.csv")
 test = pd.read_csv("test.csv")
+
+X_train = train.drop(columns=["id", "target"])
+y_train = train["target"]
 X_test = test.drop(columns=["id"])
 
-# model은 train 데이터로 fit을 끝낸 Pipeline이라고 가정합니다.
+numeric = X_train.select_dtypes(include="number").columns
+categorical = X_train.select_dtypes(exclude="number").columns
+preprocess = ColumnTransformer([
+    ("num", SimpleImputer(strategy="median"), numeric),
+    ("cat", Pipeline([
+        ("imputer", SimpleImputer(strategy="most_frequent")),
+        ("onehot", OneHotEncoder(handle_unknown="ignore")),
+    ]), categorical),
+])
+model = Pipeline([
+    ("preprocess", preprocess),
+    ("model", LogisticRegression(max_iter=1000, random_state=42)),
+])
+model.fit(X_train, y_train)
+
 target_prediction = model.predict_proba(X_test)[:, 1]
 
 submission = pd.DataFrame({
@@ -896,6 +939,243 @@ print(check.head())`,
   },
 ];
 
+type BdaCodeLabContract = Pick<
+  BdaCodeLab,
+  "inputSchema" | "preCodeChecks" | "conceptIds"
+>;
+
+const commonChecks = {
+  overview: [
+    "제공 파일명과 확장자를 먼저 확인합니다.",
+    "설치된 패키지와 실제 버전을 확인합니다.",
+    "추가 설치 없이 제공 환경에서 실행합니다.",
+  ],
+  type1: [
+    "열 이름·자료형·결측·원본 행 수를 먼저 기록합니다.",
+    "경계 포함 여부와 정렬 동률 기준을 문항에서 확인합니다.",
+    "중간값이 아니라 최종 답에서만 반올림합니다.",
+  ],
+  type2: [
+    "타깃·ID·타깃을 암시하는 누수 후보 열을 입력에서 분리합니다.",
+    "대치·인코딩·스케일링은 학습 데이터 안에서만 적합합니다.",
+    "문항이 요구하는 값이 확률·라벨·연속 예측 중 무엇인지 확인합니다.",
+  ],
+  type3: [
+    "모집단 모수와 귀무·대립가설을 먼저 적습니다.",
+    "단측·양측, 독립·대응 표본, 변수 척도를 확인합니다.",
+    "함수 반환 순서와 요구값이 통계량·p값·계수 중 무엇인지 확인합니다.",
+  ],
+  submission: [
+    "테스트 행 순서를 바꾸지 않습니다.",
+    "지정 파일명·예측 열 하나·index=False를 확인합니다.",
+    "저장한 CSV를 다시 열어 열·행 수·결측을 검사합니다.",
+  ],
+} as const;
+
+const labContracts: Record<string, BdaCodeLabContract> = {
+  "exam-runtime-check": {
+    inputSchema: [
+      "현재 Python 실행환경",
+      "선택: 작업 폴더의 CSV 파일",
+    ],
+    preCodeChecks: [...commonChecks.overview],
+    conceptIds: ["C001", "C003", "C005", "C006", "C038", "C040"],
+  },
+  "python-pandas-basics": {
+    inputSchema: ["data.csv: name(문자열), score(수치)"],
+    preCodeChecks: [...commonChecks.overview],
+    conceptIds: ["C007", "C009", "C010", "C037"],
+  },
+  "pandas-eda-quality": {
+    inputSchema: ["train.csv: amount(수치), 그 밖의 분석 열"],
+    preCodeChecks: [...commonChecks.type1],
+    conceptIds: [
+      "C004",
+      "C008",
+      "C010",
+      "C011",
+      "C015",
+      "C016",
+      "C026",
+      "C035",
+      "C037",
+    ],
+  },
+  "pandas-filter-sort": {
+    inputSchema: [
+      "data.csv: id(식별자), age(수치), status(문자열), score(수치)",
+    ],
+    preCodeChecks: [...commonChecks.type1],
+    conceptIds: ["C010", "C037"],
+  },
+  "groupby-date-string": {
+    inputSchema: [
+      "data.csv: order_date(날짜 문자열), city(문자열), sales(수치)",
+    ],
+    preCodeChecks: [...commonChecks.type1],
+    conceptIds: ["C010", "C025", "C027", "C037"],
+  },
+  "merge-pivot-reshape": {
+    inputSchema: [
+      "orders.csv: customer_id, month, sales",
+      "customers.csv: customer_id(유일), region",
+    ],
+    preCodeChecks: [...commonChecks.type1],
+    conceptIds: ["C010", "C037"],
+  },
+  "classification-pipeline": {
+    inputSchema: [
+      "train.csv: id, target(0/1), 수치형·범주형 설명변수",
+    ],
+    preCodeChecks: [...commonChecks.type2],
+    conceptIds: [
+      "C012",
+      "C013",
+      "C014",
+      "C020",
+      "C022",
+      "C023",
+      "C024",
+      "C029",
+      "C031",
+      "C032",
+      "C033",
+      "C030",
+      "C038",
+      "C040",
+    ],
+  },
+  "multiclass-classification": {
+    inputSchema: [
+      "train.csv: id, grade(3개 이상 클래스), 수치형·범주형 설명변수",
+    ],
+    preCodeChecks: [...commonChecks.type2],
+    conceptIds: ["C022", "C024", "C031", "C033", "C038"],
+  },
+  "regression-pipeline": {
+    inputSchema: [
+      "train.csv: id, price(연속형 타깃), 수치형·범주형 설명변수",
+    ],
+    preCodeChecks: [...commonChecks.type2],
+    conceptIds: ["C020", "C021", "C030", "C031", "C033", "C034", "C038"],
+  },
+  "model-metric-audit": {
+    inputSchema: [
+      "분류: 실제 라벨, 양성 확률, 예측 라벨",
+      "회귀: 실제 연속값, 예측 연속값",
+    ],
+    preCodeChecks: [...commonChecks.type2],
+    conceptIds: ["C002", "C031", "C034", "C035", "C036", "C040"],
+  },
+  "mean-tests": {
+    inputSchema: [
+      "data.csv: score, before, after, group(A/B)",
+    ],
+    preCodeChecks: [...commonChecks.type3],
+    conceptIds: ["C017", "C018", "C019", "C039"],
+  },
+  "anova-tests": {
+    inputSchema: [
+      "data.csv: score(연속형), group, method, region(범주형)",
+    ],
+    preCodeChecks: [...commonChecks.type3],
+    conceptIds: ["C019", "C039"],
+  },
+  "chi-square-tests": {
+    inputSchema: [
+      "data.csv: category(A/B/C), segment, purchased(범주형)",
+    ],
+    preCodeChecks: [...commonChecks.type3],
+    conceptIds: ["C019", "C039"],
+  },
+  "linear-regression-inference": {
+    inputSchema: ["data.csv: sales, price, ad_cost(수치형)"],
+    preCodeChecks: [...commonChecks.type3],
+    conceptIds: ["C021", "C039"],
+  },
+  "logistic-regression-odds": {
+    inputSchema: ["data.csv: purchased(0/1), age, income"],
+    preCodeChecks: [...commonChecks.type3],
+    conceptIds: ["C022", "C028", "C039"],
+  },
+  "submission-single-column-audit": {
+    inputSchema: [
+      "train.csv: id, target(0/1), 설명변수",
+      "test.csv: id, train과 같은 설명변수",
+    ],
+    preCodeChecks: [
+      ...commonChecks.type2,
+      ...commonChecks.submission,
+    ],
+    conceptIds: ["C038", "C040"],
+  },
+};
+
+const runtimeVerifiedLabIds = new Set([
+  "exam-runtime-check",
+  "pandas-filter-sort",
+  "merge-pivot-reshape",
+  "classification-pipeline",
+  "model-metric-audit",
+  "mean-tests",
+  "submission-single-column-audit",
+]);
+
+export const bdaCodeLabs: BdaCodeLab[] = rawBdaCodeLabs.map((lab) => {
+  const contract = labContracts[lab.id];
+  if (!contract) {
+    throw new Error(`Missing practical code-lab contract: ${lab.id}`);
+  }
+  return {
+    ...lab,
+    ...contract,
+    validation: {
+      ...lab.validation,
+      status: runtimeVerifiedLabIds.has(lab.id)
+        ? "runtime-verified"
+        : "syntax-verified",
+    },
+  };
+});
+
 export function getBdaCodeLab(labId: string) {
   return bdaCodeLabs.find((lab) => lab.id === labId);
+}
+
+export function getBdaCodeLabsForTask(
+  practicalType: string | undefined,
+  conceptIds: string[],
+) {
+  const allowedTracks =
+    practicalType === "유형1"
+      ? new Set<BdaCodeLab["track"]>(["type1"])
+      : practicalType === "유형2"
+        ? new Set<BdaCodeLab["track"]>(["type2", "submission"])
+        : practicalType === "유형3"
+          ? new Set<BdaCodeLab["track"]>(["type3"])
+          : new Set<BdaCodeLab["track"]>([
+              "overview",
+              "foundations",
+              "type1",
+              "type2",
+              "type3",
+              "submission",
+            ]);
+
+  const candidates = bdaCodeLabs
+    .filter((lab) => allowedTracks.has(lab.track))
+    .map((lab) => ({
+      lab,
+      overlap: lab.conceptIds.filter((conceptId) =>
+        conceptIds.includes(conceptId),
+      ).length,
+    }))
+    .sort(
+      (left, right) =>
+        right.overlap - left.overlap || left.lab.order - right.lab.order,
+    );
+  const linked = candidates.filter((candidate) => candidate.overlap > 0);
+  return (linked.length ? linked : candidates.slice(0, 1)).map(
+    (candidate) => candidate.lab,
+  );
 }

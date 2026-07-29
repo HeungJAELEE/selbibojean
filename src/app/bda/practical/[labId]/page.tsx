@@ -101,9 +101,19 @@ export default async function BdaCodeLabPage({ params }: Props) {
           <p className="mt-5 rounded-2xl bg-[#edf8f5] p-5 font-bold leading-8 text-[#142f4b]">
             {lab.task}
           </p>
-          <div className="mt-4 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm leading-6 text-blue-950">
-            <strong className="block">출력 계약</strong>
-            <span className="mt-1 block">{lab.outputContract}</span>
+          <div className="mt-4 grid gap-4 lg:grid-cols-2">
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm leading-6 text-slate-800">
+              <strong className="block text-[#142f4b]">입력 스키마</strong>
+              <ul className="mt-2 grid gap-1.5">
+                {lab.inputSchema.map((item) => (
+                  <li key={item}>· {item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm leading-6 text-blue-950">
+              <strong className="block">출력 계약</strong>
+              <span className="mt-1 block">{lab.outputContract}</span>
+            </div>
           </div>
         </section>
 
@@ -113,6 +123,20 @@ export default async function BdaCodeLabPage({ params }: Props) {
             <h2 className="text-xl font-black text-[#142f4b]">
               코드를 작성하는 순서
             </h2>
+          </div>
+          <div className="mt-5 rounded-2xl border border-teal-200 bg-teal-50 p-5">
+            <h3 className="font-black text-teal-950">코드 작성 전 판단</h3>
+            <ul className="mt-3 grid gap-2 text-sm leading-6 text-teal-950">
+              {lab.preCodeChecks.map((check) => (
+                <li key={check} className="flex gap-2">
+                  <CheckCircle2
+                    size={16}
+                    className="mt-1 shrink-0 text-teal-700"
+                  />
+                  {check}
+                </li>
+              ))}
+            </ul>
           </div>
           <ol className="mt-6 grid gap-3">
             {lab.steps.map((step, stepIndex) => (
@@ -182,6 +206,9 @@ export default async function BdaCodeLabPage({ params }: Props) {
               <h2 className="text-lg font-black text-emerald-950">
                 코드 검토 상태
               </h2>
+              <p className="mt-2 inline-flex rounded-full bg-emerald-100 px-3 py-1 text-xs font-black text-emerald-900">
+                {lab.validation.status}
+              </p>
               <p className="mt-2 text-sm leading-6 text-emerald-950">
                 {lab.validation.note}
               </p>

@@ -67,7 +67,11 @@ export default async function BdaConceptDetailPage({
   const sourcePage = integratedTheory.sourcePageId
     ? bdaNotionSourcePages.find((page) => page.id === integratedTheory.sourcePageId)
     : undefined;
-  const codeLabs = bdaCodeLabs.filter((lab) => integratedTheory.codeLabIds.includes(lab.id));
+  const codeLabs = bdaCodeLabs.filter(
+    (lab) =>
+      integratedTheory.codeLabIds.includes(lab.id) ||
+      lab.conceptIds.includes(conceptId),
+  );
   const publicRelatedItems = gradeableRelatedItems.map(
     toPublicBdaQbankLearningItem,
   );
