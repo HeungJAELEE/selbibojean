@@ -103,7 +103,9 @@ export default async function PracticalTestCenterPage({
           <p className="mt-4 text-sm leading-7 text-slate-200">
             {evidenceKind === "exam_history_2025"
               ? "2025 작업형 시험 이력에서 확인"
-              : "과거 또는 사용자 제보 후보 · 시행 회차 추가 확인 필요"}
+              : evidenceKind === "verified_user_report"
+                ? "현장 사진·수험자 제보로 시험장 사용 확인 · 공식 시행 회차 추가 확인 필요"
+                : "과거 후보 · 시행 회차 추가 확인 필요"}
             {center.buildingNote ? ` · ${center.buildingNote}` : ""}
           </p>
         )}
@@ -477,7 +479,9 @@ export default async function PracticalTestCenterPage({
               ? `${PRACTICAL_TEST_CENTER_SOURCE.publishedLabel} 시설현황`
               : evidenceKind === "exam_history_2025"
                 ? PRACTICAL_2025_HISTORY_SOURCE.title
-                : "과거·사용자 제보 후보 정보"}
+                : evidenceKind === "verified_user_report"
+                  ? "현장 사진·수험자 제보로 확인된 시험장 정보"
+                  : "과거 후보 정보"}
             를 반영합니다. 실제 배정 시험장, 장비 교체, 준비물과 사용 가능
             공구는 해당 회차 수험자 안내와 현장 감독 지시가 최종 기준입니다.
           </p>

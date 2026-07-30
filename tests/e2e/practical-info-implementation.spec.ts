@@ -268,6 +268,7 @@ test("shows reported task scoring and keeps venue reports qualified", async ({
   await expect(page.getByText(/배선을 모두 제거한 뒤/)).toBeVisible();
   await expect(page.getByText("현장 사진·수험자 제보 확인")).toBeVisible();
   await expect(page.getByText(/시험장 사용을 확인.*추가 확인/)).toBeVisible();
+  await expect(page.getByText(/사용자 제보 후보/)).toHaveCount(0);
 
   await page.goto("/practical/info/centers/seongnam-kopo-nuri");
   await expect(page.getByText(/미지참 시 시험장에서 제공받을 수 있으나/)).toBeVisible();
