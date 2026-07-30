@@ -210,7 +210,7 @@ test("shows every center photo without horizontal clipping on a 390px viewport",
     ["jeonnam-suncheon-kopo", 7],
     ["ulsan-kopo", 1],
     ["busan-technical-high", 3],
-    ["gyeongnam-changwon-kopo-candidate", 2],
+    ["gyeongnam-changwon-kopo", 2],
   ] as const) {
     await page.goto(`/practical/info/centers/${centerId}`);
     await expect(
@@ -262,11 +262,12 @@ test("shows reported task scoring and keeps venue reports qualified", async ({
   await expect(page.getByText("유지보수 1번").first()).toBeVisible();
 
   await page.goto(
-    "/practical/info/centers/gyeongnam-changwon-kopo-candidate",
+    "/practical/info/centers/gyeongnam-changwon-kopo",
   );
   await expect(page.getByText("수험자 24학번군바리 · 2026-07-30")).toBeVisible();
   await expect(page.getByText(/배선을 모두 제거한 뒤/)).toBeVisible();
-  await expect(page.getByText(/공식 시행 회차.*추가 확인/)).toBeVisible();
+  await expect(page.getByText("현장 사진·수험자 제보 확인")).toBeVisible();
+  await expect(page.getByText(/시험장 사용을 확인.*추가 확인/)).toBeVisible();
 
   await page.goto("/practical/info/centers/seongnam-kopo-nuri");
   await expect(page.getByText(/미지참 시 시험장에서 제공받을 수 있으나/)).toBeVisible();

@@ -73,7 +73,11 @@ type PracticalInfoCenter = {
   parkingNote: string | null;
   rawFacilityNote: string;
   evidenceLabel: string;
-  evidenceKind?: "facility_sheet_2026" | "exam_history_2025" | "historical_candidate";
+  evidenceKind?:
+    | "facility_sheet_2026"
+    | "exam_history_2025"
+    | "verified_user_report"
+    | "historical_candidate";
   candidateSupplyGuidance?: PracticalCenterCandidateSupplyGuidance;
   comparison: {
     pneumatic: ComparisonValue;
@@ -1410,6 +1414,9 @@ function ExamVenuePanel({
   const historyCenters = centers.filter(
     (center) => center.evidenceKind === "exam_history_2025",
   );
+  const reportedCenters = centers.filter(
+    (center) => center.evidenceKind === "verified_user_report",
+  );
   const faqsForPlacement = (placement: PracticalFaq["placement"]) =>
     faqs.filter((faq) => faq.placement === placement);
 
@@ -1431,10 +1438,10 @@ function ExamVenuePanel({
           확인된 메인 시험장 이력 {centers.length}곳
         </p>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-200">
-          2026 시설표와 2025 실제 시험 이력을 합쳐 시험장 이력을
-          확인합니다. 시험 이력이 있어도 매 회차 운영되거나 모든 작업형
-          장비가 동일하다는 뜻은 아닙니다. 장비 모델이 없으면
-          &lsquo;미확인&rsquo;으로 표시합니다.
+          2026 시설표, 2025 실제 시험 이력, 현장 사진과 구체적인 수험자
+          제보로 확인된 시험장을 합쳐 봅니다. 확인된 시험장이어도 매 회차
+          운영되거나 모든 작업형 장비가 동일하다는 뜻은 아닙니다. 장비
+          모델이 없으면 &lsquo;미확인&rsquo;으로 표시합니다.
         </p>
       </div>
 
@@ -1446,7 +1453,7 @@ function ExamVenuePanel({
         trainingResources={trainingResources}
       />
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <VenueCountCard
           value={facilityCenters.length}
           label="2026 시설표"
@@ -1456,6 +1463,11 @@ function ExamVenuePanel({
           value={historyCenters.length}
           label="2025 시험 이력"
           note="실제 작업형 접수 이력이 확인된 시험장"
+        />
+        <VenueCountCard
+          value={reportedCenters.length}
+          label="현장 사진·제보 확인"
+          note="사진과 구체적인 수험 경험이 확인된 시험장"
         />
         <VenueCountCard
           value={candidateCenters.length}
@@ -1476,6 +1488,13 @@ function ExamVenuePanel({
         title={`추가 확인된 시험장 ${historyCenters.length}곳`}
         note="시험 이력은 확인 · 장비 모델은 별도 확인"
         centers={historyCenters}
+      />
+
+      <VenueGroup
+        eyebrow="사용자 제공 현장 사진·수험자 제보"
+        title={`현장 확인 시험장 ${reportedCenters.length}곳`}
+        note="시험장 사용 확인 · 공식 회차와 장비 모델은 별도 확인"
+        centers={reportedCenters}
       />
 
       <PracticalFaqSection

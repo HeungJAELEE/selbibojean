@@ -21,7 +21,7 @@ describe("practical test center media catalog", () => {
     );
     expect(
       practicalTestCenterMediaByCenter.get(
-        "gyeongnam-changwon-kopo-candidate",
+        "gyeongnam-changwon-kopo",
       )?.items,
     ).toHaveLength(2);
     expect(
@@ -57,7 +57,7 @@ describe("practical test center media catalog", () => {
 
   it("publishes only cropped Changwon equipment photos without identifiable people", () => {
     const changwon = practicalTestCenterMediaByCenter.get(
-      "gyeongnam-changwon-kopo-candidate",
+      "gyeongnam-changwon-kopo",
     );
 
     expect(changwon?.items).toEqual([

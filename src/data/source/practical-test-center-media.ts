@@ -262,7 +262,7 @@ export const PRACTICAL_TEST_CENTER_MEDIA_GROUPS: PracticalTestCenterMediaGroup[]
       ],
     },
     {
-      centerId: "gyeongnam-changwon-kopo-candidate",
+      centerId: "gyeongnam-changwon-kopo",
       receivedAt: "2026-07-30",
       sourceLabel: "사용자 제공 현장 사진",
       summary:

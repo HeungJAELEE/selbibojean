@@ -6,6 +6,7 @@ import {
   PRACTICAL_MAIN_TEST_CENTERS,
   PRACTICAL_TEST_CENTERS,
   PRACTICAL_TEST_CENTER_SOURCE,
+  practicalTestCentersById,
 } from "@/data/source/practical-test-centers";
 import { practicalEquipmentModelsById } from "@/data/source/practical-equipment-models";
 
@@ -22,12 +23,12 @@ describe("practical test center source catalog", () => {
     expect(PRACTICAL_TEST_CENTER_SOURCE.sourceFileSha256).toMatch(/^[A-F0-9]{64}$/);
   });
 
-  it("adds 15 verified 2025 venue histories and keeps seven candidates separate", () => {
+  it("adds 15 verified 2025 venue histories, promotes Changwon, and keeps six candidates separate", () => {
     expect(PRACTICAL_2025_HISTORY_CENTERS).toHaveLength(15);
-    expect(PRACTICAL_MAIN_TEST_CENTERS).toHaveLength(33);
-    expect(PRACTICAL_HISTORICAL_CANDIDATE_CENTERS).toHaveLength(7);
+    expect(PRACTICAL_MAIN_TEST_CENTERS).toHaveLength(34);
+    expect(PRACTICAL_HISTORICAL_CANDIDATE_CENTERS).toHaveLength(6);
     expect(new Set(PRACTICAL_MAIN_TEST_CENTERS.map((center) => center.id)).size).toBe(
-      33,
+      34,
     );
     expect(
       PRACTICAL_2025_HISTORY_CENTERS.every(
@@ -36,14 +37,14 @@ describe("practical test center source catalog", () => {
     ).toBe(true);
   });
 
-  it("keeps the Changwon report in the candidate lane with attribution and uncertainty", () => {
-    const changwon = PRACTICAL_HISTORICAL_CANDIDATE_CENTERS.find(
-      (center) => center.id === "gyeongnam-changwon-kopo-candidate",
+  it("promotes the photographed Changwon venue while preserving attribution and bounded uncertainty", () => {
+    const changwon = PRACTICAL_MAIN_TEST_CENTERS.find(
+      (center) => center.id === "gyeongnam-changwon-kopo",
     );
 
     expect(changwon).toMatchObject({
       region: "경남",
-      evidenceKind: "historical_candidate",
+      evidenceKind: "verified_user_report",
       equipmentModelIds: [],
       candidateFieldReport: {
         sourceKind: "user_report",
@@ -54,7 +55,15 @@ describe("practical test center source catalog", () => {
     expect(changwon?.candidateFieldReport?.sections[0]?.notes.join(" ")).toContain(
       "배선을 모두 제거한 뒤",
     );
-    expect(changwon?.evidenceNote).toContain("추가 확인");
+    expect(changwon?.evidenceNote).toContain("시험장 사용을 확인");
+    expect(
+      PRACTICAL_HISTORICAL_CANDIDATE_CENTERS.some(
+        (center) => center.name === "한국폴리텍대학 창원캠퍼스",
+      ),
+    ).toBe(false);
+    expect(
+      practicalTestCentersById.get("gyeongnam-changwon-kopo-candidate")?.id,
+    ).toBe("gyeongnam-changwon-kopo");
   });
 
   it("resolves only explicitly normalized equipment models", () => {

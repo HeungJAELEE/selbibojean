@@ -24,6 +24,7 @@ export type PracticalTestCenter = {
 export type PracticalCenterEvidenceKind =
   | "facility_sheet_2026"
   | "exam_history_2025"
+  | "verified_user_report"
   | "historical_candidate";
 
 export type PracticalCenterCandidateSupplyGuidance = {
@@ -607,64 +608,64 @@ const PRACTICAL_HISTORICAL_CANDIDATE_SEEDS: Array<
   ["gyeongbuk-gumi-kopo-engineering-candidate", "경북", "한국폴리텍대학 구미캠퍼스", "공학관"],
 ];
 
+const CHANGWON_KOPO_REPORTED_CENTER: PracticalTestCenter = {
+  id: "gyeongnam-changwon-kopo",
+  region: "경남",
+  name: "한국폴리텍대학 창원캠퍼스",
+  buildingNote: "공유압 실습장",
+  parkingNote: null,
+  suppliedMaterialNote: null,
+  rawFacilityNote:
+    "사용자 제공 현장 사진과 수험자 제보로 공유압 전기제어 모듈과 유압 기초 실습장비 사용을 확인 · 세부 장비 모델 미확인",
+  equipmentModelIds: [],
+  evidenceKind: "verified_user_report",
+  evidenceSourceUrl: null,
+  evidenceNote:
+    "사용자 제공 현장 사진과 구체적인 수험 경험으로 시험장 사용을 확인했습니다. 공식 시행 회차·건물의 정확한 명칭·장비 모델은 추가 확인이 필요합니다.",
+  candidateFieldReport: {
+    sourceKind: "user_report",
+    reportedAt: "2026-07-30",
+    reporterLabel: "수험자 24학번군바리",
+    summary:
+      "창원 폴리텍 공유압 실습장비의 배선 상태와 현장 대응 방법에 관한 수험자 제보입니다.",
+    sections: [
+      {
+        category: "electrical_control",
+        title: "공유압 전기제어 배선",
+        notes: [
+          "수험자 제보에 따르면 단선으로 의심되는 배선이 섞여 있어 회로가 작동하지 않는 경우가 있었습니다.",
+          "작동 불량 원인을 오래 추적하기보다 연결한 배선을 모두 제거한 뒤 빠르게 다시 설치하는 편이 더 빨랐다는 후기입니다.",
+        ],
+        caution:
+          "배선 이상이 의심되면 무리하게 수리하지 말고 감독관에게 알린 뒤 교체 가능 여부와 재작업 시간을 확인하세요. 장비 상태는 회차와 좌석마다 달라질 수 있습니다.",
+      },
+    ],
+  },
+};
+
 export const PRACTICAL_HISTORICAL_CANDIDATE_CENTERS: PracticalTestCenter[] =
-  [
-    ...PRACTICAL_HISTORICAL_CANDIDATE_SEEDS.map(
-      ([id, region, name, buildingNote]) => ({
-        id,
-        region,
-        name,
-        buildingNote,
-        parkingNote: null,
-        suppliedMaterialNote: null,
-        rawFacilityNote:
-          "과거 또는 사용자 제보 후보 · 실제 시행 회차와 장비 정보 확인 필요",
-        equipmentModelIds: [],
-        evidenceKind: "historical_candidate" as const,
-        evidenceSourceUrl: null,
-        evidenceNote:
-          "공식 시행 회차 증거가 확보되기 전에는 현재 시험장 목록과 분리",
-      }),
-    ),
-    {
-      id: "gyeongnam-changwon-kopo-candidate",
-      region: "경남",
-      name: "한국폴리텍대학 창원캠퍼스",
-      buildingNote: "공유압 실습장",
+  PRACTICAL_HISTORICAL_CANDIDATE_SEEDS.map(
+    ([id, region, name, buildingNote]) => ({
+      id,
+      region,
+      name,
+      buildingNote,
       parkingNote: null,
       suppliedMaterialNote: null,
       rawFacilityNote:
-        "사용자 제공 현장 사진에서 공유압 전기제어 모듈과 유압 기초 실습장비 확인 · 시행 회차와 세부 장비 모델 미확인",
+        "과거 또는 사용자 제보 후보 · 실제 시행 회차와 장비 정보 확인 필요",
       equipmentModelIds: [],
       evidenceKind: "historical_candidate" as const,
       evidenceSourceUrl: null,
       evidenceNote:
-        "사용자 제공 사진과 수험자 후기를 근거로 한 후보 정보입니다. 공식 시행 회차·건물·장비 모델은 추가 확인이 필요합니다.",
-      candidateFieldReport: {
-        sourceKind: "user_report" as const,
-        reportedAt: "2026-07-30",
-        reporterLabel: "수험자 24학번군바리",
-        summary:
-          "창원 폴리텍 공유압 실습장비의 배선 상태와 현장 대응 방법에 관한 수험자 제보입니다.",
-        sections: [
-          {
-            category: "electrical_control" as const,
-            title: "공유압 전기제어 배선",
-            notes: [
-              "수험자 제보에 따르면 단선으로 의심되는 배선이 섞여 있어 회로가 작동하지 않는 경우가 있었습니다.",
-              "작동 불량 원인을 오래 추적하기보다 연결한 배선을 모두 제거한 뒤 빠르게 다시 설치하는 편이 더 빨랐다는 후기입니다.",
-            ],
-            caution:
-              "배선 이상이 의심되면 무리하게 수리하지 말고 감독관에게 알린 뒤 교체 가능 여부와 재작업 시간을 확인하세요. 장비 상태는 회차와 좌석마다 달라질 수 있습니다.",
-          },
-        ],
-      },
-    },
-  ];
+        "공식 시행 회차 증거가 확보되기 전에는 현재 시험장 목록과 분리",
+    }),
+  );
 
 export const PRACTICAL_MAIN_TEST_CENTERS: PracticalTestCenter[] = [
   ...PRACTICAL_2026_FACILITY_CENTERS,
   ...PRACTICAL_2025_HISTORY_CENTERS,
+  CHANGWON_KOPO_REPORTED_CENTER,
 ];
 
 export function getPracticalCenterEvidenceKind(
@@ -678,6 +679,7 @@ export function getPracticalCenterEvidenceLabel(
 ) {
   const kind = getPracticalCenterEvidenceKind(center);
   if (kind === "exam_history_2025") return "2025 시험 이력";
+  if (kind === "verified_user_report") return "현장 사진·수험자 제보 확인";
   if (kind === "historical_candidate") return "과거 후보";
   return "2026 시설표";
 }
@@ -686,6 +688,10 @@ export const practicalTestCentersById = new Map(
   [...PRACTICAL_MAIN_TEST_CENTERS, ...PRACTICAL_HISTORICAL_CANDIDATE_CENTERS].map(
     (center) => [center.id, center],
   ),
+);
+practicalTestCentersById.set(
+  "gyeongnam-changwon-kopo-candidate",
+  CHANGWON_KOPO_REPORTED_CENTER,
 );
 
 /**
@@ -701,6 +707,8 @@ export function getPracticalCenterComparison(
     ? "공식 시설표에는 S-Net 장비로 기재되어 있어 V-AMT 화면·부품 배치와 일부 다를 수 있습니다."
     : evidenceKind === "exam_history_2025"
       ? "2025 시험 이력은 확인됐지만 공압·유압 장비 모델과 실습대 수량은 미확인입니다."
+      : evidenceKind === "verified_user_report"
+        ? "현장 사진과 수험자 제보로 공유압 실습대 사용을 확인했지만 제조사·모델·좌석별 상태는 미확인입니다."
       : evidenceKind === "historical_candidate"
         ? "과거 후보 정보만 있어 실제 시행 회차와 공압·유압 장비를 모두 확인해야 합니다."
         : "공식 시설표에 공압·유압 장비 모델이 기재되지 않아 V-AMT와의 동일 여부를 확정할 수 없습니다.";
