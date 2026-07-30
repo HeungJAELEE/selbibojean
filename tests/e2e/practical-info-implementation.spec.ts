@@ -209,6 +209,8 @@ test("shows every center photo without horizontal clipping on a 390px viewport",
     ["incheon-kopo-industry", 9],
     ["jeonnam-suncheon-kopo", 7],
     ["ulsan-kopo", 1],
+    ["busan-technical-high", 3],
+    ["gyeongnam-changwon-kopo-candidate", 2],
   ] as const) {
     await page.goto(`/practical/info/centers/${centerId}`);
     await expect(
@@ -245,7 +247,29 @@ test("shows every center photo without horizontal clipping on a 390px viewport",
     ).toBe(true);
   }
 
+  await page.goto("/practical/info/centers/ulsan-kopo");
   await expect(page.getByText(/CW-WA300E.*KT-300AC/)).toBeVisible();
+});
+
+test("shows reported task scoring and keeps venue reports qualified", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/practical/info");
+
+  await expect(page.getByText("수험자 제공 세부 배점 · 2026-07-30")).toBeVisible();
+  await expect(page.getByText("공압 20점", { exact: true })).toBeVisible();
+  await expect(page.getByText("유지보수 1번").first()).toBeVisible();
+
+  await page.goto(
+    "/practical/info/centers/gyeongnam-changwon-kopo-candidate",
+  );
+  await expect(page.getByText("수험자 24학번군바리 · 2026-07-30")).toBeVisible();
+  await expect(page.getByText(/배선을 모두 제거한 뒤/)).toBeVisible();
+  await expect(page.getByText(/공식 시행 회차.*추가 확인/)).toBeVisible();
+
+  await page.goto("/practical/info/centers/seongnam-kopo-nuri");
+  await expect(page.getByText(/미지참 시 시험장에서 제공받을 수 있으나/)).toBeVisible();
 });
 
 test("highlights the Incheon welding PPE and finishing tools as required personal items", async ({
@@ -287,4 +311,8 @@ test("shows the user-reported Busan parking restriction", async ({ page }) => {
   await expect(
     page.getByText("주차불가 · 사용자 제보(2026-07-28)", { exact: true }),
   ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "CW-WC 350·CW-WT350A 용접기" }),
+  ).toBeVisible();
+  await expect(page.getByText(/공식 시설표의 CW-WA300E 표기와 다르므로/)).toBeVisible();
 });

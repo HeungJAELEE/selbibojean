@@ -219,6 +219,79 @@ export const PRACTICAL_TEST_CENTER_MEDIA_GROUPS: PracticalTestCenterMediaGroup[]
         },
       ],
     },
+    {
+      centerId: "busan-technical-high",
+      receivedAt: "2026-07-30",
+      sourceLabel: "사용자 제공 현장 사진",
+      summary:
+        "용접실의 인버터 용접기, 보수용접 구멍 가공용 드릴프레스와 제공 공구 작업대를 확인할 수 있습니다.",
+      items: [
+        {
+          id: "busan-welding-machines",
+          src: "/practical/test-centers/busan-technical-high/welding-machines.webp",
+          width: 1050,
+          height: 1400,
+          alt: "부산공고 용접실의 CW-WC 350과 CW-WT350A 용접기",
+          caption: "CW-WC 350·CW-WT350A 용접기",
+          category: "welding",
+          evidenceNote:
+            "사용자 제공 사진에서는 CW-WC 350과 CW-WT350A 표기가 확인됩니다. 공식 시설표의 CW-WA300E 표기와 다르므로 장비 교체·복수 장비·촬영시점 차이 가능성을 열어 두고 각각의 근거를 분리해 표시합니다.",
+        },
+        {
+          id: "busan-drill-press",
+          src: "/practical/test-centers/busan-technical-high/drill-press.webp",
+          width: 1050,
+          height: 1400,
+          alt: "부산공고 용접실의 삼천리 드릴프레스와 바이스",
+          caption: "보수용접 구멍 가공용 드릴프레스·바이스",
+          category: "welding",
+          evidenceNote:
+            "사진에서 삼천리 드릴프레스와 테이블 바이스를 확인했습니다. 실제 시험에서 사용하는 공구·드릴 규격은 공개문제와 감독관 안내를 최종 기준으로 확인하세요.",
+        },
+        {
+          id: "busan-provided-tools-table",
+          src: "/practical/test-centers/busan-technical-high/provided-tools-table-cropped.webp",
+          width: 1050,
+          height: 1220,
+          alt: "부산공고 용접실의 제공 공구와 소모품이 정리된 작업대",
+          caption: "제공 공구·소모품 작업대",
+          category: "welding",
+          evidenceNote:
+            "사용자 제공 원본에서 식별 가능한 사람이 보이는 상단 배경을 제외하고 공구 작업대 영역만 크롭했습니다. 사진에는 탭·줄·브러시·플라이어·장갑 등이 보이지만, 회차별 제공 여부는 수험자 안내와 시험장 지시를 최종 기준으로 확인하세요.",
+        },
+      ],
+    },
+    {
+      centerId: "gyeongnam-changwon-kopo-candidate",
+      receivedAt: "2026-07-30",
+      sourceLabel: "사용자 제공 현장 사진",
+      summary:
+        "공유압 실습대의 전기제어 패널, 유압 액추에이터·호스와 압력계를 함께 확인할 수 있습니다.",
+      items: [
+        {
+          id: "changwon-fluid-power-training-bench",
+          src: "/practical/test-centers/gyeongnam-changwon-kopo/fluid-power-training-bench.webp",
+          width: 2000,
+          height: 1126,
+          alt: "창원 폴리텍 공유압 실습장의 전기제어 모듈과 유압 기초 실습장비 전경",
+          caption: "공유압 전기제어·유압 기초 실습대 전경",
+          category: "hydraulic",
+          evidenceNote:
+            "사진 상단의 ‘유압기초실습장비’ 표기와 실습대 구성을 확인했습니다. 제조사·모델과 실제 시험 시행 회차는 확인 전이므로 단정하지 않습니다.",
+        },
+        {
+          id: "changwon-electrical-control-panel",
+          src: "/practical/test-centers/gyeongnam-changwon-kopo/electrical-control-panel-cropped.webp",
+          width: 1300,
+          height: 290,
+          alt: "창원 폴리텍 공유압 실습장의 전기제어 패널과 바나나 배선",
+          caption: "공유압 전기제어 패널·배선",
+          category: "electrical_control",
+          evidenceNote:
+            "사용자 제공 원본에서 식별 가능한 사람과 반사가 있는 하단을 제외하고 전기제어 패널만 크롭했습니다. 제보된 배선 단선 여부는 사진만으로 판정하지 않으며, 작동하지 않을 때에는 감독관에게 알린 뒤 배선을 처음부터 재구성하는 현장 대응 팁으로만 안내합니다.",
+        },
+      ],
+    },
   ];
 
 export const practicalTestCenterMediaByCenter = new Map(

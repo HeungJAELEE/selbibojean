@@ -228,7 +228,9 @@ export default async function PracticalTestCenterPage({
             className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4 md:p-5"
           >
             <p className="text-xs font-black text-[#16697a]">
-              사용자 현장 제보 · {center.candidateFieldReport.reportedAt}
+              {center.candidateFieldReport.reporterLabel ??
+                "사용자 현장 제보"}{" "}
+              · {center.candidateFieldReport.reportedAt}
             </p>
             <h3
               id={`candidate-field-report-${center.id}`}

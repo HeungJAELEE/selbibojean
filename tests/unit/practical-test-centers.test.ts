@@ -22,10 +22,10 @@ describe("practical test center source catalog", () => {
     expect(PRACTICAL_TEST_CENTER_SOURCE.sourceFileSha256).toMatch(/^[A-F0-9]{64}$/);
   });
 
-  it("adds 15 verified 2025 venue histories and keeps six candidates separate", () => {
+  it("adds 15 verified 2025 venue histories and keeps seven candidates separate", () => {
     expect(PRACTICAL_2025_HISTORY_CENTERS).toHaveLength(15);
     expect(PRACTICAL_MAIN_TEST_CENTERS).toHaveLength(33);
-    expect(PRACTICAL_HISTORICAL_CANDIDATE_CENTERS).toHaveLength(6);
+    expect(PRACTICAL_HISTORICAL_CANDIDATE_CENTERS).toHaveLength(7);
     expect(new Set(PRACTICAL_MAIN_TEST_CENTERS.map((center) => center.id)).size).toBe(
       33,
     );
@@ -34,6 +34,27 @@ describe("practical test center source catalog", () => {
         (center) => center.evidenceKind === "exam_history_2025",
       ),
     ).toBe(true);
+  });
+
+  it("keeps the Changwon report in the candidate lane with attribution and uncertainty", () => {
+    const changwon = PRACTICAL_HISTORICAL_CANDIDATE_CENTERS.find(
+      (center) => center.id === "gyeongnam-changwon-kopo-candidate",
+    );
+
+    expect(changwon).toMatchObject({
+      region: "경남",
+      evidenceKind: "historical_candidate",
+      equipmentModelIds: [],
+      candidateFieldReport: {
+        sourceKind: "user_report",
+        reportedAt: "2026-07-30",
+        reporterLabel: "수험자 24학번군바리",
+      },
+    });
+    expect(changwon?.candidateFieldReport?.sections[0]?.notes.join(" ")).toContain(
+      "배선을 모두 제거한 뒤",
+    );
+    expect(changwon?.evidenceNote).toContain("추가 확인");
   });
 
   it("resolves only explicitly normalized equipment models", () => {
@@ -81,8 +102,14 @@ describe("practical test center source catalog", () => {
       personalBringGuidance:
         "welding_ppe_required_other_items_recommended",
       sourceKind: "user_report",
-      reportedAt: "2026-07-28",
+      reportedAt: "2026-07-30",
     });
+    expect(seongnam?.candidateSupplyGuidance?.summary).toContain(
+      "미지참 시 시험장에서 제공",
+    );
+    expect(seongnam?.candidateSupplyGuidance?.summary).toContain(
+      "직접 구비해 지참",
+    );
   });
 
   it("flags the Incheon welding PPE and finishing tools as personally required", () => {

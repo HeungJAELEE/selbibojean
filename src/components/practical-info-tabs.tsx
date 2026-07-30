@@ -128,6 +128,19 @@ type PracticalInfoOverview = {
   practicalSubject: string;
   writtenMethod: string;
   practicalMethod: string;
+  reportedTaskScoring: {
+    sourceKind: "user_report";
+    reportedAt: string;
+    notice: string;
+    categories: readonly {
+      label: string;
+      totalPoints: number;
+      breakdown: readonly {
+        label: string;
+        points: number;
+      }[];
+    }[];
+  };
   writtenPass: string;
   practicalPass: string;
   qualificationUrl: string;
@@ -387,6 +400,37 @@ function ExamOverview({ overview }: { overview: PracticalInfoOverview }) {
             한 과제라도 실격조건에 해당하면 전체 실격될 수 있으므로 각 탭의
             안전·완료조건을 먼저 확인하세요.
           </p>
+          <div className="mt-4 rounded-xl border border-teal-200 bg-white p-4">
+            <p className="text-xs font-black text-[#16697a]">
+              수험자 제공 세부 배점 · {overview.reportedTaskScoring.reportedAt}
+            </p>
+            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+              {overview.reportedTaskScoring.categories.map((category) => (
+                <div
+                  key={category.label}
+                  className="rounded-xl bg-slate-50 p-3"
+                >
+                  <p className="font-extrabold text-slate-900">
+                    {category.label} {category.totalPoints}점
+                  </p>
+                  <ul className="mt-2 grid gap-1 text-xs leading-5 text-slate-700">
+                    {category.breakdown.map((item) => (
+                      <li
+                        key={item.label}
+                        className="flex items-center justify-between gap-3"
+                      >
+                        <span>{item.label}</span>
+                        <strong className="shrink-0">{item.points}점</strong>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 text-xs leading-5 text-slate-600">
+              {overview.reportedTaskScoring.notice}
+            </p>
+          </div>
         </div>
       </div>
     </section>

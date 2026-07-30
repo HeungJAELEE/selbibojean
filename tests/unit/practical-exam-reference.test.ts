@@ -105,5 +105,26 @@ describe("practical official exam reference", () => {
     expect(PRACTICAL_QUALIFICATION_OVERVIEW.practicalPass).toContain(
       "전체 실격",
     );
+    expect(
+      PRACTICAL_QUALIFICATION_OVERVIEW.reportedTaskScoring.categories,
+    ).toEqual([
+      expect.objectContaining({
+        label: "공압",
+        totalPoints: 20,
+        breakdown: [
+          { label: "기본 작업·정리정돈", points: 10 },
+          { label: "유지보수 1번", points: 5 },
+          { label: "유지보수 2번", points: 3 },
+          { label: "유지보수 3번", points: 2 },
+        ],
+      }),
+      expect.objectContaining({
+        label: "유압",
+        totalPoints: 20,
+      }),
+    ]);
+    expect(PRACTICAL_QUALIFICATION_OVERVIEW.reportedTaskScoring.notice).toContain(
+      "수험자 제공",
+    );
   });
 });

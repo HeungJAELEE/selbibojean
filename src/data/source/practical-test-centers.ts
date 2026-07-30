@@ -43,6 +43,7 @@ export type PracticalCenterCandidateSupplyGuidance = {
 export type PracticalCenterCandidateFieldReport = {
   sourceKind: "user_report";
   reportedAt: string;
+  reporterLabel?: string;
   sourceUrl?: string;
   summary: string;
   sections: Array<{
@@ -316,9 +317,9 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
       personalBringGuidance:
         "welding_ppe_required_other_items_recommended",
       sourceKind: "user_report",
-      reportedAt: "2026-07-28",
+      reportedAt: "2026-07-30",
       summary:
-        "용접 보호구는 개인 지참해야 합니다. 그 외 준비물은 시험장에서 제공하지만 개인 지참을 권장합니다.",
+        "용접 보호구는 개인 지참해야 합니다. 그 외 용접 도구는 미지참 시 시험장에서 제공받을 수 있으나, 본인 도구를 직접 구비해 지참하는 편이 더 낫다는 현장 권장 제보가 있습니다.",
     },
   },
   {
@@ -607,21 +608,59 @@ const PRACTICAL_HISTORICAL_CANDIDATE_SEEDS: Array<
 ];
 
 export const PRACTICAL_HISTORICAL_CANDIDATE_CENTERS: PracticalTestCenter[] =
-  PRACTICAL_HISTORICAL_CANDIDATE_SEEDS.map(([id, region, name, buildingNote]) => ({
-    id,
-    region,
-    name,
-    buildingNote,
-    parkingNote: null,
-    suppliedMaterialNote: null,
-    rawFacilityNote:
-      "과거 또는 사용자 제보 후보 · 실제 시행 회차와 장비 정보 확인 필요",
-    equipmentModelIds: [],
-    evidenceKind: "historical_candidate" as const,
-    evidenceSourceUrl: null,
-    evidenceNote:
-      "공식 시행 회차 증거가 확보되기 전에는 현재 시험장 목록과 분리",
-  }));
+  [
+    ...PRACTICAL_HISTORICAL_CANDIDATE_SEEDS.map(
+      ([id, region, name, buildingNote]) => ({
+        id,
+        region,
+        name,
+        buildingNote,
+        parkingNote: null,
+        suppliedMaterialNote: null,
+        rawFacilityNote:
+          "과거 또는 사용자 제보 후보 · 실제 시행 회차와 장비 정보 확인 필요",
+        equipmentModelIds: [],
+        evidenceKind: "historical_candidate" as const,
+        evidenceSourceUrl: null,
+        evidenceNote:
+          "공식 시행 회차 증거가 확보되기 전에는 현재 시험장 목록과 분리",
+      }),
+    ),
+    {
+      id: "gyeongnam-changwon-kopo-candidate",
+      region: "경남",
+      name: "한국폴리텍대학 창원캠퍼스",
+      buildingNote: "공유압 실습장",
+      parkingNote: null,
+      suppliedMaterialNote: null,
+      rawFacilityNote:
+        "사용자 제공 현장 사진에서 공유압 전기제어 모듈과 유압 기초 실습장비 확인 · 시행 회차와 세부 장비 모델 미확인",
+      equipmentModelIds: [],
+      evidenceKind: "historical_candidate" as const,
+      evidenceSourceUrl: null,
+      evidenceNote:
+        "사용자 제공 사진과 수험자 후기를 근거로 한 후보 정보입니다. 공식 시행 회차·건물·장비 모델은 추가 확인이 필요합니다.",
+      candidateFieldReport: {
+        sourceKind: "user_report" as const,
+        reportedAt: "2026-07-30",
+        reporterLabel: "수험자 24학번군바리",
+        summary:
+          "창원 폴리텍 공유압 실습장비의 배선 상태와 현장 대응 방법에 관한 수험자 제보입니다.",
+        sections: [
+          {
+            category: "electrical_control" as const,
+            title: "공유압 전기제어 배선",
+            notes: [
+              "수험자 제보에 따르면 단선으로 의심되는 배선이 섞여 있어 회로가 작동하지 않는 경우가 있었습니다.",
+              "작동 불량 원인을 오래 추적하기보다 연결한 배선을 모두 제거한 뒤 빠르게 다시 설치하는 편이 더 빨랐다는 후기입니다.",
+            ],
+            caution:
+              "배선 이상이 의심되면 무리하게 수리하지 말고 감독관에게 알린 뒤 교체 가능 여부와 재작업 시간을 확인하세요. 장비 상태는 회차와 좌석마다 달라질 수 있습니다.",
+          },
+        ],
+      },
+    },
+  ];
 
 export const PRACTICAL_MAIN_TEST_CENTERS: PracticalTestCenter[] = [
   ...PRACTICAL_2026_FACILITY_CENTERS,

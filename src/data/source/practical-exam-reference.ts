@@ -11,6 +11,34 @@ export const PRACTICAL_QUALIFICATION_OVERVIEW = {
   writtenMethod: "객관식 4지 택일형 · 과목당 20문항 · 과목당 30분",
   practicalMethod:
     "필답형 40점(1시간) + 작업형 공압 20점·유압 20점·용접 20점(총 2시간 40분)",
+  reportedTaskScoring: {
+    sourceKind: "user_report",
+    reportedAt: "2026-07-30",
+    notice:
+      "수험자 제공 배점 정보입니다. 회차별 공개문제와 현장 채점 안내가 다르면 해당 안내를 최종 기준으로 확인하세요.",
+    categories: [
+      {
+        label: "공압",
+        totalPoints: 20,
+        breakdown: [
+          { label: "기본 작업·정리정돈", points: 10 },
+          { label: "유지보수 1번", points: 5 },
+          { label: "유지보수 2번", points: 3 },
+          { label: "유지보수 3번", points: 2 },
+        ],
+      },
+      {
+        label: "유압",
+        totalPoints: 20,
+        breakdown: [
+          { label: "기본 작업·정리정돈", points: 10 },
+          { label: "유지보수 1번", points: 5 },
+          { label: "유지보수 2번", points: 3 },
+          { label: "유지보수 3번", points: 2 },
+        ],
+      },
+    ],
+  },
   writtenPass:
     "과목당 40점 이상이며 전 과목 평균 60점 이상",
   practicalPass:
