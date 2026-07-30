@@ -1,4 +1,7 @@
+import { WRITTEN_SUBJECT_TWO_MEMORY_GUIDE_SUPPLEMENT } from "@/data/source/written-subject-two-memory-guide-supplement";
+
 export type SubjectTwoMemoryFact = {
+  id?: string;
   cue: string;
   answer: string;
   detailLessonTitles?: string[];
@@ -274,10 +277,15 @@ export const WRITTEN_SUBJECT_TWO_MEMORY_GUIDE: SubjectTwoMemoryBundle[] = [
     ],
     detailLessonTitles: ["산소계통 청정과 조정기", "아세틸렌 누설·동결·재질적합성", "가스호스·연결부·누설", "자동전격방지장치", "보호접지와 귀환경로", "연삭·자동화설비·작업장 관리", "원형톱 안전장치", "보일러 안전밸브"],
   },
+  ...WRITTEN_SUBJECT_TWO_MEMORY_GUIDE_SUPPLEMENT,
 ];
 
 export function getSubjectTwoMemoryGuideLessonTitles() {
-  return WRITTEN_SUBJECT_TWO_MEMORY_GUIDE.flatMap(
-    (bundle) => bundle.detailLessonTitles,
-  );
+  return [
+    ...new Set(
+      WRITTEN_SUBJECT_TWO_MEMORY_GUIDE.flatMap(
+        (bundle) => bundle.detailLessonTitles,
+      ),
+    ),
+  ];
 }

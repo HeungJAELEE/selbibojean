@@ -25,8 +25,8 @@ export function WrittenSubjectOneMemoryGuide({
   return (
     <WrittenSubjectMemoryGuide
       subjectCode={1}
-      heading="공유압 및 자동제어를 10개 흐름으로 묶어보기"
-      description="기출 주제를 같은 학습 흐름으로 묶고, 공유압·전기·PLC의 정확한 NCS 용어와 검수된 상세 레슨은 오류 교정과 이해 보충에 사용합니다."
+      heading="공유압 및 자동제어를 23개 흐름으로 묶어보기"
+      description="원문에서 다룬 공유압·전기·PLC 주제를 표 안 항목까지 소주제로 연결하고, NCS 용어와 검수된 상세 레슨으로 오류를 교정해 이해를 보충합니다."
       parts={SUBJECT_ONE_PARTS}
       bundles={WRITTEN_SUBJECT_ONE_MEMORY_GUIDE}
       lessons={lessons}

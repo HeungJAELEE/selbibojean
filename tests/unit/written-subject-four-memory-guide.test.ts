@@ -15,12 +15,12 @@ import type { GeneratedContent } from "@/lib/domain/types";
 const content = buildRuntimeContent(generatedContent as GeneratedContent);
 
 describe("written subject four memory guide", () => {
-  it("keeps sixteen bundles across the five source flows", () => {
-    expect(WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE).toHaveLength(16);
+  it("keeps twenty-four bundles across the five source flows", () => {
+    expect(WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE).toHaveLength(24);
     expect(
       new Set(WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE.map((bundle) => bundle.id))
         .size,
-    ).toBe(16);
+    ).toBe(24);
     expect(
       new Set(WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE.map((bundle) => bundle.part)),
     ).toEqual(

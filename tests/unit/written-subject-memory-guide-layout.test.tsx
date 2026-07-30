@@ -75,4 +75,100 @@ describe("WrittenSubjectMemoryGuide hierarchy", () => {
       guide.querySelector('a[href*="notion.site"]'),
     ).not.toBeInTheDocument();
   });
+
+  it("routes reviewed fact links to their exact public evidence sections", () => {
+    const { unmount } = render(
+      <WrittenSubjectMemoryGuide
+        subjectCode={3}
+        heading="결정격자 연결 시험"
+        description="근거 앵커 확인"
+        parts={[{ id: "materials", label: "가공·재료" }]}
+        bundles={[
+          {
+            id: "casting-plastic-materials",
+            part: "가공·재료",
+            title: "주조·소성가공·금속의 성질",
+            memoryLine: "결정구조와 변형성",
+            facts: [
+              {
+                id: "s3-casting-plastic-materials-crystal-lattices",
+                cue: "결정격자",
+                answer:
+                  "FCC는 조밀충진 슬립면에서 전위 이동이 비교적 쉬워 전연성이 좋습니다.",
+                detailLessonTitles: ["금속 결정격자와 변형"],
+              },
+            ],
+            traps: [],
+            detailLessonTitles: ["금속 결정격자와 변형"],
+            cbtStatusNote: "연결 검수 중",
+          },
+        ]}
+        lessons={[
+          {
+            id: "notion-gap-metal-crystal-lattices-deformation",
+            title: "금속 결정격자와 변형 개정",
+          },
+        ]}
+        questions={[]}
+      />,
+    );
+
+    const latticeLinks = screen.getAllByRole("link", {
+      name: /금속 결정격자와 변형 개정/,
+    });
+    expect(latticeLinks).toHaveLength(2);
+    expect(latticeLinks[0]).toHaveAttribute(
+      "href",
+      "/written/theory/notion-gap-metal-crystal-lattices-deformation#principle",
+    );
+    expect(latticeLinks[1]).toHaveAttribute(
+      "href",
+      "/written/theory/notion-gap-metal-crystal-lattices-deformation",
+    );
+
+    unmount();
+
+    render(
+      <WrittenSubjectMemoryGuide
+        subjectCode={4}
+        heading="개량보전 연결 시험"
+        description="근거 앵커 확인"
+        parts={[{ id: "maintenance", label: "보전·신뢰성" }]}
+        bundles={[
+          {
+            id: "maintenance-methods",
+            part: "보전·신뢰성",
+            title: "사후·예방·예지·개량·보전예방",
+            memoryLine: "보전 방식 구분",
+            facts: [
+              {
+                id: "s4-maintenance-methods-improvement-maintenance-cm",
+                cue: "개량보전 CM",
+                answer: "기존 설비의 약점을 고쳐 재발을 막습니다.",
+                detailLessonTitles: ["상태기준보전"],
+              },
+            ],
+            traps: [],
+            detailLessonTitles: ["상태기준보전"],
+            cbtStatusNote: "연결 검수 중",
+          },
+        ]}
+        lessons={[{ id: "lesson-1d16t6u", title: "상태기준보전" }]}
+        questions={[]}
+      />,
+    );
+
+    const maintenanceLinks = screen.getAllByRole("link", {
+      name: /상태기준보전/,
+    });
+    expect(maintenanceLinks).toHaveLength(2);
+    expect(maintenanceLinks[0]).toHaveAttribute(
+      "href",
+      "/written/theory/lesson-1d16t6u#definition",
+    );
+    expect(maintenanceLinks[1]).toHaveAttribute(
+      "href",
+      "/written/theory/lesson-1d16t6u",
+    );
+  });
 });

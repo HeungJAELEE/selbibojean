@@ -3,10 +3,14 @@ import generatedContent from "@/data/generated/content.json";
 import { WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE } from "@/data/source/written-subject-four-memory-guide";
 import { WRITTEN_SUBJECT_ONE_MEMORY_GUIDE } from "@/data/source/written-subject-one-memory-guide";
 import { WRITTEN_SUBJECT_THREE_MEMORY_GUIDE } from "@/data/source/written-subject-three-memory-guide";
+import { getSubjectThreeBundleCbtSelection } from "@/data/source/written-subject-three-cbt-links";
 import { WRITTEN_SUBJECT_TWO_MEMORY_GUIDE } from "@/data/source/written-subject-two-memory-guide";
 import {
   getWrittenSubjectBundleLessonTitles,
+  getWrittenSubjectFactEvidenceBinding,
+  getWrittenSubjectFactId,
   getWrittenSubjectFactLessonTitles,
+  SUBJECT_THREE_REQUIRED_EVIDENCE_FACT_IDS,
 } from "@/data/source/written-subject-fact-lesson-links";
 import {
   isPublishableLesson,
@@ -42,6 +46,204 @@ const GUIDES = [
 ] as const;
 
 describe("written subject memory guide CBT links", () => {
+  it("binds reviewed decision-lattice and corrective-maintenance facts to their exact evidence", () => {
+    const latticeBundle = WRITTEN_SUBJECT_THREE_MEMORY_GUIDE.find(
+      (bundle) => bundle.id === "casting-plastic-materials",
+    )!;
+    const latticeFact = latticeBundle.facts.find(
+      (fact) => fact.cue === "결정격자",
+    )!;
+    const latticeBinding = getWrittenSubjectFactEvidenceBinding(
+      3,
+      latticeBundle,
+      latticeFact,
+    );
+
+    expect(latticeBinding.status).toBe("verified_assertion");
+    expect(latticeBinding.lessonTitles).toEqual(["금속 결정격자와 변형"]);
+    expect(latticeBinding.evidenceTargets).toEqual([
+      expect.objectContaining({
+        lessonId: "notion-gap-metal-crystal-lattices-deformation",
+        lessonTitle: "금속 결정격자와 변형",
+        sectionId: "principle",
+        assertionId:
+          "notion-gap-metal-crystal-lattices-deformation-principle-2",
+      }),
+    ]);
+
+    const maintenanceBundle = WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE.find(
+      (bundle) => bundle.id === "maintenance-methods",
+    )!;
+    const correctiveMaintenanceFact = maintenanceBundle.facts.find(
+      (fact) => fact.cue === "개량보전 CM",
+    )!;
+    const maintenanceBinding = getWrittenSubjectFactEvidenceBinding(
+      4,
+      maintenanceBundle,
+      correctiveMaintenanceFact,
+    );
+
+    expect(maintenanceBinding.status).toBe("verified_assertion");
+    expect(maintenanceBinding.lessonTitles).toEqual(["상태기준보전"]);
+    expect(maintenanceBinding.lessonTitles).not.toContain("개수공사");
+    expect(maintenanceBinding.evidenceTargets).toEqual([
+      expect.objectContaining({
+        lessonId: "lesson-1d16t6u",
+        lessonTitle: "상태기준보전",
+        sectionId: "definition",
+        assertionId: "definition",
+      }),
+    ]);
+  });
+
+  it("classifies all memory facts without presenting title-only links as verified evidence", () => {
+    const factIds = new Set<string>();
+    const errors: string[] = [];
+
+    for (const guide of GUIDES) {
+      for (const bundle of guide.bundles) {
+        for (const fact of bundle.facts) {
+          const factId = getWrittenSubjectFactId(
+            guide.subjectCode,
+            bundle,
+            fact,
+          );
+          const binding = getWrittenSubjectFactEvidenceBinding(
+            guide.subjectCode,
+            bundle,
+            fact,
+          );
+
+          if (factIds.has(factId)) errors.push(`${factId}:duplicate`);
+          factIds.add(factId);
+
+          if (binding.factId !== factId) {
+            errors.push(`${factId}:binding-id-mismatch`);
+          }
+          if (binding.publicationPolicy !== "inherit") {
+            errors.push(`${factId}:publication-policy-changed`);
+          }
+          if (
+            ![
+              "verified_assertion",
+              "linked_title_only",
+              "unlinked",
+            ].includes(binding.status)
+          ) {
+            errors.push(`${factId}:unknown-status:${binding.status}`);
+          }
+          if (
+            binding.status === "verified_assertion" &&
+            binding.evidenceTargets.length === 0
+          ) {
+            errors.push(`${factId}:verified-without-evidence`);
+          }
+          if (
+            binding.status !== "verified_assertion" &&
+            binding.evidenceTargets.length > 0
+          ) {
+            errors.push(`${factId}:unverified-with-evidence`);
+          }
+        }
+      }
+    }
+
+    const authoredFactCount = GUIDES.reduce(
+      (guideTotal, guide) =>
+        guideTotal +
+        guide.bundles.reduce(
+          (bundleTotal, bundle) => bundleTotal + bundle.facts.length,
+          0,
+        ),
+      0,
+    );
+    expect(factIds.size).toBe(authoredFactCount);
+    expect(errors).toEqual([]);
+  });
+
+  it("keeps every verified assertion inside its published lesson and public section", () => {
+    const errors: string[] = [];
+    const publicSectionIds = new Set(["definition", "principle"]);
+
+    for (const guide of GUIDES) {
+      for (const bundle of guide.bundles) {
+        for (const fact of bundle.facts) {
+          const binding = getWrittenSubjectFactEvidenceBinding(
+            guide.subjectCode,
+            bundle,
+            fact,
+          );
+          if (binding.status !== "verified_assertion") continue;
+
+          for (const target of binding.evidenceTargets) {
+            const lesson = content.lessons.find(
+              (candidate) =>
+                candidate.id === target.lessonId &&
+                candidate.title === target.lessonTitle &&
+                candidate.subjectId === guide.subjectId &&
+                isPublishableLesson(candidate),
+            );
+            if (!lesson) {
+              errors.push(`${binding.factId}:missing:${target.lessonTitle}`);
+              continue;
+            }
+            if (!publicSectionIds.has(target.sectionId)) {
+              errors.push(
+                `${binding.factId}:private-section:${target.sectionId}`,
+              );
+            }
+
+            const expectedKinds =
+              target.sectionId === "definition"
+                ? new Set(["definition"])
+                : new Set([
+                    "principle",
+                    "selection",
+                    "formula",
+                    "pros_cons",
+                    "safety",
+                  ]);
+            const evidenceBlock = lesson.blocks.find(
+              (block) =>
+                block.id === target.assertionId &&
+                expectedKinds.has(block.kind) &&
+                block.body.includes(target.evidenceText),
+            );
+            if (!evidenceBlock) {
+              errors.push(
+                `${binding.factId}:missing-assertion:${target.assertionId}`,
+              );
+            }
+          }
+        }
+      }
+    }
+
+    expect(errors).toEqual([]);
+  });
+
+  it("keeps the independently verified assertion set explicit and bounded", () => {
+    const verifiedFactIds = GUIDES.flatMap((guide) =>
+      guide.bundles.flatMap((bundle) =>
+        bundle.facts.map((fact) =>
+          getWrittenSubjectFactEvidenceBinding(
+            guide.subjectCode,
+            bundle,
+            fact,
+          ),
+        ),
+      ),
+    )
+      .filter((binding) => binding.status === "verified_assertion")
+      .map((binding) => binding.factId)
+      .sort();
+
+    expect(verifiedFactIds).toEqual([
+      ...SUBJECT_THREE_REQUIRED_EVIDENCE_FACT_IDS,
+      "s4-maintenance-methods-improvement-maintenance-cm",
+    ].sort());
+  });
+
   it("uses reviewed semantic links instead of positional fact-to-lesson pairing", () => {
     const compressorBundle = WRITTEN_SUBJECT_ONE_MEMORY_GUIDE.find(
       (bundle) => bundle.id === "pneumatic-foundation",
@@ -168,6 +370,20 @@ describe("written subject memory guide CBT links", () => {
       );
 
       for (const bundle of guide.bundles) {
+        if (guide.subjectCode === 3) {
+          const reviewedSelection = getSubjectThreeBundleCbtSelection(
+            bundle,
+            [],
+          );
+          if (
+            reviewedSelection.questions.length === 0 &&
+            !reviewedSelection.statusNote
+          ) {
+            unaccountedBundles.push(`${guide.subjectId}:${bundle.id}`);
+          }
+          continue;
+        }
+
         const bundleLessonTitles = getWrittenSubjectBundleLessonTitles(
           guide.subjectCode,
           bundle,

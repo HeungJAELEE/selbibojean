@@ -38,10 +38,20 @@ if (!["source", "build", "all"].includes(scope)) {
 }
 
 const findings: Finding[] = [];
-const textExtensions = new Set([".js", ".mjs", ".cjs", ".json"]);
+const textExtensions = new Set([
+  ".js",
+  ".mjs",
+  ".cjs",
+  ".json",
+  ".html",
+  ".map",
+  ".txt",
+]);
 const manifestNamePattern = /(answer|solution|rubric|grading).*\.(json|js)$/i;
 const forbiddenImportPattern =
   /from\s+["'][^"']*(practical-repository|generated\/practical-content\.json|generated\/practical-written-governance\.json|server-answer)[^"']*["']/;
+const privateSourceUrlPattern =
+  /https?:\/\/(?:(?:(?:www\.)?notion\.(?:so|site))|app\.notion\.com)\//iu;
 const unsafeCodePatterns = [
   { code: "dynamic_eval", value: "eval" + "(" },
   { code: "dynamic_function", value: "new " + "Function(" },
@@ -248,6 +258,13 @@ async function verifySourceContracts(content: PracticalContent) {
   for (const file of sourceFiles) {
     if (relative(file) === "scripts/verify-no-answer-leak.ts") continue;
     const source = await readFile(file, "utf8");
+    if (privateSourceUrlPattern.test(source)) {
+      findings.push({
+        code: "private_source_url_in_runtime",
+        file: relative(file),
+        detail: "learner-facing runtime source must not expose private Notion URLs",
+      });
+    }
     if (
       source.includes('"use client"') &&
       forbiddenImportPattern.test(source)
@@ -271,6 +288,7 @@ async function verifySourceContracts(content: PracticalContent) {
 }
 
 async function verifyClientBuild(content: PracticalContent) {
+  const buildDirectory = path.join(root, "dist");
   const clientDirectory = path.join(root, "dist", "client");
   if (!(await exists(clientDirectory))) {
     findings.push({
@@ -279,6 +297,21 @@ async function verifyClientBuild(content: PracticalContent) {
       detail: "run npm run build before full answer-leak verification",
     });
     return;
+  }
+  const buildFiles = (await walk(buildDirectory)).filter((file) =>
+    textExtensions.has(path.extname(file)),
+  );
+  for (const file of buildFiles) {
+    const fileStats = await stat(file);
+    if (fileStats.size > 25_000_000) continue;
+    if (privateSourceUrlPattern.test(await readFile(file, "utf8"))) {
+      findings.push({
+        code: "private_source_url_in_build",
+        file: relative(file),
+        detail:
+          "production build artifact must not expose private Notion URLs",
+      });
+    }
   }
   const clientFiles = (await walk(clientDirectory)).filter((file) =>
     textExtensions.has(path.extname(file)),
@@ -312,7 +345,8 @@ async function verifyClientBuild(content: PracticalContent) {
   for (const file of clientFiles) {
     const fileStats = await stat(file);
     if (fileStats.size > 25_000_000) continue;
-    const normalized = normalizeAnswerSentinel(await readFile(file, "utf8"));
+    const fileText = await readFile(file, "utf8");
+    const normalized = normalizeAnswerSentinel(fileText);
     for (const sentinel of sentinels) {
       if (normalized.includes(sentinel)) {
         findings.push({

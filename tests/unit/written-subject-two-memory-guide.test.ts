@@ -12,11 +12,11 @@ import type { GeneratedContent } from "@/lib/domain/types";
 const content = buildRuntimeContent(generatedContent as GeneratedContent);
 
 describe("written subject two memory guide", () => {
-  it("keeps the integrated guide at eleven distinct memory bundles", () => {
-    expect(WRITTEN_SUBJECT_TWO_MEMORY_GUIDE).toHaveLength(11);
+  it("keeps the integrated guide at eighteen distinct memory bundles", () => {
+    expect(WRITTEN_SUBJECT_TWO_MEMORY_GUIDE).toHaveLength(18);
     expect(
       new Set(WRITTEN_SUBJECT_TWO_MEMORY_GUIDE.map((bundle) => bundle.id)).size,
-    ).toBe(11);
+    ).toBe(18);
     expect(
       new Set(WRITTEN_SUBJECT_TWO_MEMORY_GUIDE.map((bundle) => bundle.part)),
     ).toEqual(

@@ -236,18 +236,27 @@ test("subject one starts with an integrated memory guide and keeps every detail 
   await page.waitForLoadState("networkidle");
 
   const guide = page.getByTestId("written-subject-one-memory-guide");
-  await expect(guide.getByRole("heading", { name: "공유압 및 자동제어를 10개 흐름으로 묶어보기" })).toBeVisible();
+  await expect(guide.getByRole("heading", { name: "공유압 및 자동제어를 23개 흐름으로 묶어보기" })).toBeVisible();
   await expect(guide.getByTestId("subject-one-bundle-fluid-foundation")).toContainText("단위·유체 물성·압력");
   await expect(guide.getByTestId("subject-one-bundle-automatic-control")).toContainText("개회로·피드백·PID·응답");
-  await expect(guide.getByRole("link", { name: /보일 법칙/ })).toHaveAttribute(
+  await expect(
+    guide.getByTestId("subject-one-bundle-measurement-sampling-errors"),
+  ).toContainText("센서 원리·4–20 mA·샘플링·오차");
+  const lawsBundle = guide.getByTestId("subject-one-bundle-fluid-laws");
+  await lawsBundle.locator(":scope > summary").click();
+  await expect(guide.getByRole("link", { name: "보일 법칙", exact: true })).toHaveAttribute(
     "href",
     "/written/theory/lesson-m8noqg",
   );
 
+  await guide.locator("#subject-one-fluid-equipment > summary").click();
+  const pneumaticBundle = guide.getByTestId(
+    "subject-one-bundle-pneumatic-foundation",
+  );
+  await expect(pneumaticBundle).toHaveAttribute("open", "");
   const traps = guide.getByTestId("subject-one-traps-pneumatic-foundation");
   await expect(traps).not.toHaveAttribute("open", "");
-  await traps.locator(":scope > summary").focus();
-  await traps.locator(":scope > summary").press("Enter");
+  await traps.locator(":scope > summary").click();
   await expect(traps).toHaveAttribute("open", "");
   await expect(traps).toContainText("원심식과 축류식 압축기는 용적형이다.");
   await expect(traps).toContainText("둘 다 동력형(터보형)입니다.");
@@ -256,6 +265,7 @@ test("subject one starts with an integrated memory guide and keeps every detail 
   );
   await expect(pneumaticCbt).toContainText("관련 실제 CBT 원문");
   await expect(pneumaticCbt).toContainText("원문 확인");
+  await pneumaticCbt.locator(":scope > summary").click();
   const pneumaticQuestion = pneumaticCbt
     .locator('[data-testid^="inline-cbt-question-"]')
     .first();
@@ -316,7 +326,7 @@ test("subject two follows the integrated source and preserves its detail routes"
   const guide = page.getByTestId("written-subject-two-memory-guide");
   await expect(
     guide.getByRole("heading", {
-      name: "용접 및 안전관리를 11개 흐름으로 묶어보기",
+      name: "용접 및 안전관리를 18개 흐름으로 묶어보기",
     }),
   ).toBeVisible();
   await expect(
@@ -326,7 +336,10 @@ test("subject two follows the integrated source and preserves its detail routes"
     guide.getByTestId("subject-two-bundle-inspection"),
   ).toContainText("VT·PT·MT·ET·UT·RT와 파괴검사");
   await expect(
-    guide.getByRole("link", { name: /용접 분류/ }),
+    guide.getByTestId("subject-two-bundle-ppe-classification-details"),
+  ).toContainText("안전모·안전화·호흡·눈·청력 보호구");
+  await expect(
+    guide.getByRole("link", { name: "용접 분류", exact: true }).first(),
   ).toHaveAttribute("href", "/written/theory/lesson-1ec09vl");
   const arcProcesses = guide.getByTestId(
     "subject-two-bundle-shielded-high-efficiency",
@@ -357,8 +370,7 @@ test("subject two follows the integrated source and preserves its detail routes"
   await defectPart.locator(":scope > summary").click();
   await expect(defectPart).toHaveAttribute("open", "");
   await expect(traps).not.toHaveAttribute("open", "");
-  await traps.locator(":scope > summary").focus();
-  await traps.locator(":scope > summary").press("Enter");
+  await traps.locator(":scope > summary").click();
   await expect(traps).toHaveAttribute("open", "");
   await expect(traps).toContainText(
     "언더컷은 전류가 너무 낮고 용접속도가 너무 느릴 때만 생긴다.",
@@ -433,7 +445,7 @@ test("subject three follows the integrated source and preserves its detail route
   const guide = page.getByTestId("written-subject-three-memory-guide");
   await expect(
     guide.getByRole("heading", {
-      name: "기계설비 일반을 13개 흐름으로 묶어보기",
+      name: "기계설비 일반을 14개 흐름으로 묶어보기",
     }),
   ).toBeVisible();
   await expect(
@@ -446,11 +458,30 @@ test("subject three follows the integrated source and preserves its detail route
     guide.getByTestId("subject-three-bundle-fluid-machinery-troubles"),
   ).toContainText("캐비테이션");
   await expect(
-    guide.getByRole("link", { name: /아베 원리/ }),
+    guide.getByTestId("subject-three-bundle-maintenance-tools-lubrication"),
+  ).toContainText("윤활유 5대 기능");
+  const measurementBundle = guide.getByTestId(
+    "subject-three-bundle-measurement-principles",
+  );
+  await measurementBundle.locator(":scope > summary").focus();
+  await measurementBundle.locator(":scope > summary").press("Enter");
+  await expect(measurementBundle).toHaveAttribute("open", "");
+  await expect(
+    guide.getByRole("link", { name: "아베 원리", exact: true }),
   ).toHaveAttribute("href", "/written/theory/lesson-psovio");
   await expect(guide).toContainText("공식 규격");
   await expect(guide).toContainText("장비 매뉴얼");
 
+  const materialsPart = guide.locator("#subject-three-machining-materials");
+  await materialsPart.locator(":scope > summary").focus();
+  await materialsPart.locator(":scope > summary").press("Enter");
+  await expect(materialsPart).toHaveAttribute("open", "");
+  const heatTreatmentBundle = guide.getByTestId(
+    "subject-three-bundle-heat-treatment-testing",
+  );
+  await heatTreatmentBundle.locator(":scope > summary").focus();
+  await heatTreatmentBundle.locator(":scope > summary").press("Enter");
+  await expect(heatTreatmentBundle).toHaveAttribute("open", "");
   const traps = guide.getByTestId(
     "subject-three-traps-heat-treatment-testing",
   );
@@ -463,6 +494,12 @@ test("subject three follows the integrated source and preserves its detail route
     "subject-three-cbt-heat-treatment-testing",
   );
   await expect(heatTreatmentCbt).toContainText("관련 실제 CBT 원문");
+  await expect(
+    heatTreatmentCbt.locator('[data-testid^="inline-cbt-question-"]'),
+  ).toHaveCount(5);
+  await heatTreatmentCbt.locator(":scope > summary").focus();
+  await heatTreatmentCbt.locator(":scope > summary").press("Enter");
+  await expect(heatTreatmentCbt).toHaveAttribute("open", "");
   const heatTreatmentQuestion = heatTreatmentCbt
     .locator('[data-testid^="inline-cbt-question-"]')
     .first();
@@ -475,6 +512,11 @@ test("subject three follows the integrated source and preserves its detail route
   await fullIndex.locator(":scope > summary").click();
   await expect(fullIndex).toHaveAttribute("open", "");
   await expect(page.getByTestId("lesson-categories-s3-g01")).toBeVisible();
+  await expect(
+    page.locator(
+      'a[href^="https://notion.site"], a[href^="https://app.notion.com"], a[href^="https://www.notion.so"]',
+    ),
+  ).toHaveCount(0);
 });
 
 test("subject four keeps a fast memory guide without exposing the private source body", async ({ page }) => {
@@ -484,7 +526,7 @@ test("subject four keeps a fast memory guide without exposing the private source
   const guide = page.getByTestId("written-subject-four-memory-guide");
   await expect(
     guide.getByRole("heading", {
-      name: "설비진단 및 관리를 15개 흐름으로 묶어보기",
+      name: "설비진단 및 관리를 24개 흐름으로 묶어보기",
     }),
   ).toBeVisible();
   await expect(
@@ -497,12 +539,38 @@ test("subject four keeps a fast memory guide without exposing the private source
     guide.getByTestId("subject-four-bundle-oil-supply-management"),
   ).toContainText("전손식·유욕·비말·강제순환·집중급유");
   await expect(
-    guide.getByRole("link", { name: "MTBF", exact: true }),
+    guide.getByTestId("subject-four-bundle-diagnosis-methods-sensors"),
+  ).toContainText("진단기법·회전수·진동센서");
+  await expect(
+    guide.getByTestId("subject-four-bundle-noise-calculation-control"),
+  ).toContainText("소음레벨 합성");
+  await expect(
+    guide.getByTestId("subject-four-bundle-reliability-oee-calculation"),
+  ).toContainText("OEE");
+  await expect(
+    guide.getByTestId("subject-four-bundle-gear-damage-types"),
+  ).toContainText("기어 손상");
+  await expect(
+    guide
+      .locator('a[href*="/written/theory/lesson-"]')
+      .filter({ hasText: "MTBF" })
+      .first(),
   ).toHaveAttribute("href", /\/written\/theory\/lesson-/);
   const vibrationCbt = guide.getByTestId(
     "subject-four-cbt-vibration-foundation",
   );
   await expect(vibrationCbt).toContainText("관련 실제 CBT 원문");
+  const vibrationPart = guide.locator("#subject-four-vibration-noise");
+  if ((await vibrationPart.getAttribute("open")) === null) {
+    await vibrationPart.locator(":scope > summary").click();
+  }
+  const vibrationBundle = guide.getByTestId(
+    "subject-four-bundle-vibration-foundation",
+  );
+  if ((await vibrationBundle.getAttribute("open")) === null) {
+    await vibrationBundle.locator(":scope > summary").click();
+  }
+  await vibrationCbt.locator(":scope > summary").click();
   const vibrationQuestion = vibrationCbt
     .locator('[data-testid^="inline-cbt-question-"]')
     .first();
@@ -519,6 +587,13 @@ test("subject four keeps a fast memory guide without exposing the private source
     "정답과 해설은 선택지를 제출한 뒤에만 표시됩니다.",
   );
   await expect(guide).toContainText("Fast·Slow");
+  expect(
+    await page.evaluate(
+      () =>
+        document.documentElement.scrollWidth <=
+        document.documentElement.clientWidth,
+    ),
+  ).toBe(true);
   await expect(guide.locator('a[href*="notion.site"]')).toHaveCount(0);
   await expect(guide.getByText("과목 전체 종합정리 원문 펼쳐보기")).toHaveCount(0);
 
@@ -527,6 +602,66 @@ test("subject four keeps a fast memory guide without exposing the private source
   await fullIndex.locator(":scope > summary").click();
   await expect(fullIndex).toHaveAttribute("open", "");
   await expect(page.getByTestId("lesson-categories-s4-g01")).toBeVisible();
+});
+
+test("all subject memory guides fit 390, 1024, and 1440px and keep keyboard disclosures", async ({
+  page,
+}) => {
+  test.setTimeout(120_000);
+  test.skip(
+    test.info().project.name !== "chromium",
+    "The chromium project covers the three explicit viewport contracts.",
+  );
+
+  const subjects = [
+    {
+      path: "/written/theory/subject/subject-1",
+      guideId: "written-subject-one-memory-guide",
+      heading: "공유압 및 자동제어를 23개 흐름으로 묶어보기",
+    },
+    {
+      path: "/written/theory/subject/subject-2",
+      guideId: "written-subject-two-memory-guide",
+      heading: "용접 및 안전관리를 18개 흐름으로 묶어보기",
+    },
+    {
+      path: "/written/theory/subject/subject-3",
+      guideId: "written-subject-three-memory-guide",
+      heading: "기계설비 일반을 14개 흐름으로 묶어보기",
+    },
+    {
+      path: "/written/theory/subject/subject-4",
+      guideId: "written-subject-four-memory-guide",
+      heading: "설비진단 및 관리를 24개 흐름으로 묶어보기",
+    },
+  ] as const;
+
+  for (const width of [390, 1024, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+
+    for (const subject of subjects) {
+      await page.goto(subject.path);
+
+      const guide = page.getByTestId(subject.guideId);
+      await expect(
+        guide.getByRole("heading", { name: subject.heading }),
+      ).toBeVisible();
+      expect(
+        await page.evaluate(
+          () =>
+            document.documentElement.scrollWidth <=
+            document.documentElement.clientWidth,
+        ),
+      ).toBe(true);
+
+      const disclosure = guide.locator("details:visible").first();
+      const summary = disclosure.locator(":scope > summary");
+      const wasOpen = (await disclosure.getAttribute("open")) !== null;
+      await summary.focus();
+      await summary.press("Enter");
+      await expect(disclosure).toHaveJSProperty("open", !wasOpen);
+    }
+  }
 });
 
 test("private source routes are not published", async ({ page }) => {

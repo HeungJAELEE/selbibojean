@@ -1,4 +1,5 @@
 type FactLike = {
+  id?: string;
   cue: string;
   detailLessonTitles?: string[];
 };
@@ -10,6 +11,28 @@ type BundleLike = {
 };
 
 type SubjectCode = 1 | 2 | 3 | 4;
+
+export type WrittenSubjectFactEvidenceStatus =
+  | "verified_assertion"
+  | "linked_title_only"
+  | "unlinked";
+
+export type WrittenSubjectFactEvidenceTarget = {
+  lessonId: string;
+  lessonTitle: string;
+  sectionId: "definition" | "principle";
+  assertionId: string;
+  evidenceText: string;
+};
+
+export type WrittenSubjectFactEvidenceBinding = {
+  factId: string;
+  status: WrittenSubjectFactEvidenceStatus;
+  publicationPolicy: "inherit";
+  lessonTitles: string[];
+  evidenceTargets: WrittenSubjectFactEvidenceTarget[];
+  reviewReason?: string;
+};
 
 const FACT_LESSON_LINKS: Record<string, readonly string[]> = {
   "1:fluid-foundation:점도와 동점도": [
@@ -202,6 +225,7 @@ const FACT_LESSON_LINKS: Record<string, readonly string[]> = {
   "3:gauges-drawing-rules:재료기호": ["KS 재료기호"],
   "3:casting-plastic-materials:주조 여유": ["주조 여유와 특수주조"],
   "3:casting-plastic-materials:특수주조": ["주조 여유와 특수주조"],
+  "3:casting-plastic-materials:결정격자": ["금속 결정격자와 변형"],
   "3:piping-valves-seals:유니언·플랜지": [
     "배관 이음·밸브·씰 비교",
     "유니언 이음",
@@ -284,6 +308,7 @@ const FACT_LESSON_LINKS: Record<string, readonly string[]> = {
   "4:condition-diagnosis:정밀진단": ["정밀진단"],
   "4:condition-diagnosis:페로그래피": ["SOAP와 페로그래피"],
   "4:condition-diagnosis:SOAP·ICP": ["SOAP 오일분석", "ICP 오일분석"],
+  "4:maintenance-methods:개량보전 CM": ["상태기준보전"],
   "4:reliability-life-cycle:초기고장기": ["고장률 욕조곡선", "초기고장기"],
   "4:reliability-life-cycle:우발고장기": [
     "고장률 욕조곡선",
@@ -328,8 +353,479 @@ const FACT_LESSON_LINKS: Record<string, readonly string[]> = {
   "4:lubrication-foundation:기어손상": ["기어 스코어링"],
 };
 
-function factKey(subjectCode: SubjectCode, bundleId: string, cue: string) {
-  return `${subjectCode}:${bundleId}:${cue}`;
+const FACT_EVIDENCE_TARGETS: Record<
+  string,
+  readonly WrittenSubjectFactEvidenceTarget[]
+> = {
+  "s3-drawing-lines-tolerance-dimensional-tolerance": [
+    {
+      lessonId: "notion-gap-dimensional-tolerance-fit-calculation",
+      lessonTitle: "치수공차와 끼워맞춤 계산",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-dimensional-tolerance-fit-calculation-principle-2",
+      evidenceText:
+        "최대 틈새 Cmax=Dmax-dmin, 최소 틈새 Cmin=Dmin-dmax다.",
+    },
+  ],
+  "s3-drawing-lines-tolerance-hole-basis-system": [
+    {
+      lessonId: "notion-gap-dimensional-tolerance-fit-calculation",
+      lessonTitle: "치수공차와 끼워맞춤 계산",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-dimensional-tolerance-fit-calculation-principle-2",
+      evidenceText:
+        "중간 끼워맞춤은 이 부호가 조합에 따라 바뀔 수 있다.",
+    },
+  ],
+  "s3-drawing-lines-tolerance-fit-types": [
+    {
+      lessonId: "notion-gap-dimensional-tolerance-fit-calculation",
+      lessonTitle: "치수공차와 끼워맞춤 계산",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-dimensional-tolerance-fit-calculation-principle-2",
+      evidenceText:
+        "Cmin이 음수이면 그 조합에서는 틈새 대신 죔새가 생기고",
+    },
+  ],
+  "s3-machine-tools-cutting-up-milling": [
+    {
+      lessonId: "notion-gap-milling-directions-chip-types",
+      lessonTitle: "상향·하향절삭과 칩 형상",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-milling-directions-chip-types-principle-2",
+      evidenceText:
+        "상향절삭은 날이 미끄러지며 물리기 시작해 점차 두꺼운 칩을 만들고",
+    },
+  ],
+  "s3-machine-tools-cutting-down-milling": [
+    {
+      lessonId: "notion-gap-milling-directions-chip-types",
+      lessonTitle: "상향·하향절삭과 칩 형상",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-milling-directions-chip-types-principle-2",
+      evidenceText:
+        "하향절삭은 처음부터 두꺼운 칩을 깎아 공작물을 테이블 쪽으로 누른다.",
+    },
+  ],
+  "s3-chips-tools-finishing-continuous-chip": [
+    {
+      lessonId: "notion-gap-milling-directions-chip-types",
+      lessonTitle: "상향·하향절삭과 칩 형상",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-milling-directions-chip-types-principle-2",
+      evidenceText:
+        "유동형 칩은 연속성이 높아 표면은 좋지만 길게 이어지면 안전한 칩 처리가 필요하다.",
+    },
+  ],
+  "s3-casting-plastic-materials-hot-working": [
+    {
+      lessonId: "notion-gap-metal-working-properties-elements",
+      lessonTitle: "금속의 가공온도·성질·5대 원소",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-metal-working-properties-elements-principle-2",
+      evidenceText:
+        "열간가공은 재결정온도 이상에서 이루어져 큰 변형에 유리하지만 산화와 치수정밀도에 불리하다.",
+    },
+  ],
+  "s3-casting-plastic-materials-cold-working": [
+    {
+      lessonId: "notion-gap-metal-working-properties-elements",
+      lessonTitle: "금속의 가공온도·성질·5대 원소",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-metal-working-properties-elements-principle-2",
+      evidenceText:
+        "냉간가공은 재결정온도 이하에서 가공경화가 생기며 표면과 치수정밀도가 좋다.",
+    },
+  ],
+  "s3-casting-plastic-materials-malleability": [
+    {
+      lessonId: "notion-gap-metal-working-properties-elements",
+      lessonTitle: "금속의 가공온도·성질·5대 원소",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-metal-working-properties-elements-principle-2",
+      evidenceText:
+        "전성은 압축·타격으로 판이 되는 성질",
+    },
+  ],
+  "s3-casting-plastic-materials-ductility": [
+    {
+      lessonId: "notion-gap-metal-working-properties-elements",
+      lessonTitle: "금속의 가공온도·성질·5대 원소",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-metal-working-properties-elements-principle-2",
+      evidenceText:
+        "연성은 인장으로 선이 되는 성질이다.",
+    },
+  ],
+  "s3-casting-plastic-materials-specific-gravity": [
+    {
+      lessonId: "notion-gap-metal-working-properties-elements",
+      lessonTitle: "금속의 가공온도·성질·5대 원소",
+      sectionId: "definition",
+      assertionId:
+        "notion-gap-metal-working-properties-elements-definition-1",
+      evidenceText:
+        "시험상의 관용 분류에서는 비중 4.5를 경계로 경금속과 중금속을 나누며",
+    },
+  ],
+  "s3-casting-plastic-materials-steel-five-elements": [
+    {
+      lessonId: "notion-gap-metal-working-properties-elements",
+      lessonTitle: "금속의 가공온도·성질·5대 원소",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-metal-working-properties-elements-principle-2",
+      evidenceText:
+        "강의 5대 원소는 C·Si·Mn·P·S이며 Fe는 바탕 금속이지 이 다섯 원소에 포함하지 않는다.",
+    },
+  ],
+  "s3-casting-plastic-materials-phosphorus-shortness": [
+    {
+      lessonId: "notion-gap-metal-working-properties-elements",
+      lessonTitle: "금속의 가공온도·성질·5대 원소",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-metal-working-properties-elements-selection-3",
+      evidenceText:
+        "| P | 상온취성(냉간취성) 증가 |",
+    },
+  ],
+  "s3-casting-plastic-materials-sulfur-shortness": [
+    {
+      lessonId: "notion-gap-metal-working-properties-elements",
+      lessonTitle: "금속의 가공온도·성질·5대 원소",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-metal-working-properties-elements-selection-3",
+      evidenceText:
+        "| S | 적열취성(열간취성) 증가 |",
+    },
+  ],
+  "s3-assembly-fasteners-jig": [
+    {
+      lessonId: "notion-gap-jigs-fixtures-maintenance-tools",
+      lessonTitle: "지그·고정구와 보전 수공구",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-jigs-fixtures-maintenance-tools-principle-2",
+      evidenceText:
+        "지그는 드릴 부시처럼 공구를 안내하는 요소가 있지만",
+    },
+  ],
+  "s3-assembly-fasteners-fixture": [
+    {
+      lessonId: "notion-gap-jigs-fixtures-maintenance-tools",
+      lessonTitle: "지그·고정구와 보전 수공구",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-jigs-fixtures-maintenance-tools-principle-2",
+      evidenceText:
+        "고정구는 공작물을 지지·고정하는 데 중심이 있다.",
+    },
+  ],
+  "s3-assembly-fasteners-screw-self-locking": [
+    {
+      lessonId: "notion-gap-screw-self-locking",
+      lessonTitle: "나사 자립 조건",
+      sectionId: "principle",
+      assertionId: "notion-gap-screw-self-locking-principle-2",
+      evidenceText:
+        "λ<φ, 즉 tanλ<μ이면 하중이 내리는 방향으로 만들어내는 회전효과보다 마찰저항이 커서 자립한다.",
+    },
+  ],
+  "s3-shaft-coupling-bearing-oldham-coupling": [
+    {
+      lessonId: "notion-gap-oldham-coupling",
+      lessonTitle: "올덤 커플링",
+      sectionId: "principle",
+      assertionId: "notion-gap-oldham-coupling-principle-2",
+      evidenceText:
+        "중간 원판의 양면 돌기가 각 홈에서 왕복 미끄럼하면서 두 축 중심의 평행 오프셋을 흡수하고 회전을 전달한다.",
+    },
+  ],
+  "s3-power-transmission-brake-fade": [
+    {
+      lessonId: "notion-gap-brake-fade-vapor-lock",
+      lessonTitle: "브레이크 페이드와 베이퍼록",
+      sectionId: "principle",
+      assertionId: "notion-gap-brake-fade-vapor-lock-principle-2",
+      evidenceText:
+        "마찰계수가 낮아져 페이드가 생길 수 있다.",
+    },
+  ],
+  "s3-power-transmission-brake-vapor-lock": [
+    {
+      lessonId: "notion-gap-brake-fade-vapor-lock",
+      lessonTitle: "브레이크 페이드와 베이퍼록",
+      sectionId: "principle",
+      assertionId: "notion-gap-brake-fade-vapor-lock-principle-2",
+      evidenceText:
+        "브레이크액이 과열되어 증기 기포가 생기면",
+    },
+  ],
+  "s3-piping-valves-seals-union": [
+    {
+      lessonId: "notion-gap-pipe-joints-valves-seals",
+      lessonTitle: "배관 이음·밸브·씰 비교",
+      sectionId: "principle",
+      assertionId: "notion-gap-pipe-joints-valves-seals-principle-2",
+      evidenceText:
+        "유니언은 관을 돌리지 않고 분해하기 쉽고",
+    },
+  ],
+  "s3-piping-valves-seals-flange": [
+    {
+      lessonId: "notion-gap-pipe-joints-valves-seals",
+      lessonTitle: "배관 이음·밸브·씰 비교",
+      sectionId: "principle",
+      assertionId: "notion-gap-pipe-joints-valves-seals-principle-2",
+      evidenceText:
+        "플랜지는 큰 관경과 반복 정비에 유리하다.",
+    },
+  ],
+  "s3-piping-valves-seals-expansion-joint": [
+    {
+      lessonId: "notion-gap-pipe-joints-valves-seals",
+      lessonTitle: "배관 이음·밸브·씰 비교",
+      sectionId: "principle",
+      assertionId: "notion-gap-pipe-joints-valves-seals-principle-2",
+      evidenceText:
+        "신축이음은 벨로즈·슬리브·스위블·루프형 구조로 열팽창과 변위를 흡수한다.",
+    },
+  ],
+  "s3-piping-valves-seals-gate-valve": [
+    {
+      lessonId: "notion-gap-pipe-joints-valves-seals",
+      lessonTitle: "배관 이음·밸브·씰 비교",
+      sectionId: "principle",
+      assertionId: "notion-gap-pipe-joints-valves-seals-principle-2",
+      evidenceText:
+        "게이트밸브는 완전 개방 때 유로가 비교적 곧지만 중간 개도로 조절하면 시트가 손상될 수 있다.",
+    },
+  ],
+  "s3-piping-valves-seals-globe-valve": [
+    {
+      lessonId: "notion-gap-pipe-joints-valves-seals",
+      lessonTitle: "배관 이음·밸브·씰 비교",
+      sectionId: "principle",
+      assertionId: "notion-gap-pipe-joints-valves-seals-principle-2",
+      evidenceText:
+        "글로브밸브는 흐름이 꺾여 손실은 크지만 조절성이 좋다.",
+    },
+  ],
+  "s3-piping-valves-seals-check-valve": [
+    {
+      lessonId: "notion-gap-pipe-joints-valves-seals",
+      lessonTitle: "배관 이음·밸브·씰 비교",
+      sectionId: "principle",
+      assertionId: "notion-gap-pipe-joints-valves-seals-principle-2",
+      evidenceText:
+        "체크밸브는 압력차로 자동 작동해 역류를 막는다.",
+    },
+  ],
+  "s3-piping-valves-seals-butterfly-valve": [
+    {
+      lessonId: "notion-gap-pipe-joints-valves-seals",
+      lessonTitle: "배관 이음·밸브·씰 비교",
+      sectionId: "principle",
+      assertionId: "notion-gap-pipe-joints-valves-seals-principle-2",
+      evidenceText:
+        "버터플라이밸브는 원판을 약 90도 회전시켜 대구경 관로를 빠르게 개폐·조절한다.",
+    },
+  ],
+  "s3-piping-valves-seals-mechanical-seal": [
+    {
+      lessonId: "notion-gap-pipe-joints-valves-seals",
+      lessonTitle: "배관 이음·밸브·씰 비교",
+      sectionId: "principle",
+      assertionId: "notion-gap-pipe-joints-valves-seals-principle-2",
+      evidenceText:
+        "메커니컬실은 회전축과 고정부의 정밀한 접촉면으로 누설을 줄이고",
+    },
+  ],
+  "s3-piping-valves-seals-labyrinth-seal": [
+    {
+      lessonId: "notion-gap-pipe-joints-valves-seals",
+      lessonTitle: "배관 이음·밸브·씰 비교",
+      sectionId: "principle",
+      assertionId: "notion-gap-pipe-joints-valves-seals-selection-3",
+      evidenceText:
+        "| 래버린스실 | 비접촉 누설 억제 |",
+    },
+  ],
+  "s3-piping-valves-seals-anaerobic-adhesive": [
+    {
+      lessonId: "notion-gap-pipe-joints-valves-seals",
+      lessonTitle: "배관 이음·밸브·씰 비교",
+      sectionId: "principle",
+      assertionId: "notion-gap-pipe-joints-valves-seals-principle-2",
+      evidenceText:
+        "혐기성 접착제는 금속 틈에서 공기가 차단되면 경화한다.",
+    },
+  ],
+  "s3-fluid-machinery-troubles-positive-displacement-compressor": [
+    {
+      lessonId:
+        "notion-gap-fluid-machinery-classification-troubles",
+      lessonTitle: "펌프·송풍기·압축기 분류와 이상현상",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-fluid-machinery-classification-troubles-principle-2",
+      evidenceText:
+        "왕복·스크루·루츠형은 일정 체적의 기체를 가두어 이동하거나 체적을 줄인다.",
+    },
+  ],
+  "s3-fluid-machinery-troubles-turbo-compressor": [
+    {
+      lessonId:
+        "notion-gap-fluid-machinery-classification-troubles",
+      lessonTitle: "펌프·송풍기·압축기 분류와 이상현상",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-fluid-machinery-classification-troubles-principle-2",
+      evidenceText:
+        "원심·축류형은 연속 흐름에 속도에너지를 주고 디퓨저 등에서 압력으로 바꾼다.",
+    },
+  ],
+  "s3-maintenance-tools-lubrication-five-functions": [
+    {
+      lessonId: "notion-gap-lubricant-five-functions",
+      lessonTitle: "윤활유 5대 기능",
+      sectionId: "principle",
+      assertionId: "notion-gap-lubricant-five-functions-principle-2",
+      evidenceText:
+        "유막은 금속 직접접촉을 줄여 마모를 낮춘다.",
+    },
+  ],
+  "s3-maintenance-tools-lubrication-spanner": [
+    {
+      lessonId: "notion-gap-jigs-fixtures-maintenance-tools",
+      lessonTitle: "지그·고정구와 보전 수공구",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-jigs-fixtures-maintenance-tools-principle-2",
+      evidenceText:
+        "스패너는 미끄러졌을 때 몸의 균형을 잃지 않도록 맞는 치수를 사용해 몸 쪽으로 당긴다.",
+    },
+  ],
+  "s3-maintenance-tools-lubrication-hammer": [
+    {
+      lessonId: "notion-gap-jigs-fixtures-maintenance-tools",
+      lessonTitle: "지그·고정구와 보전 수공구",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-jigs-fixtures-maintenance-tools-principle-2",
+      evidenceText:
+        "해머는 자루와 쐐기, 머리 균열을 확인하고 타격면을 깨끗하고 건조하게 유지한다.",
+    },
+  ],
+  "s3-maintenance-tools-lubrication-chisel": [
+    {
+      lessonId: "notion-gap-jigs-fixtures-maintenance-tools",
+      lessonTitle: "지그·고정구와 보전 수공구",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-jigs-fixtures-maintenance-tools-principle-2",
+      evidenceText:
+        "정은 퍼진 머리를 다듬고 보안경 등 필요한 보호구를 착용한다.",
+    },
+  ],
+  "s3-maintenance-tools-lubrication-file": [
+    {
+      lessonId: "notion-gap-jigs-fixtures-maintenance-tools",
+      lessonTitle: "지그·고정구와 보전 수공구",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-jigs-fixtures-maintenance-tools-principle-2",
+      evidenceText:
+        "줄은 손잡이를 단단히 끼우고 거친 눈에서 고운 눈 순으로 사용하며, 쇳가루를 입으로 불지 않고 줄솔로 제거한다.",
+    },
+  ],
+  "s3-casting-plastic-materials-crystal-lattices": [
+    {
+      lessonId: "notion-gap-metal-crystal-lattices-deformation",
+      lessonTitle: "금속 결정격자와 변형",
+      sectionId: "principle",
+      assertionId:
+        "notion-gap-metal-crystal-lattices-deformation-principle-2",
+      evidenceText:
+        "FCC는 조밀충진된 {111}면의 슬립이 비교적 쉽게 활성화되어 일반적으로 전연성이 좋은 편이다.",
+    },
+  ],
+  "s4-maintenance-methods-improvement-maintenance-cm": [
+    {
+      lessonId: "lesson-1d16t6u",
+      lessonTitle: "상태기준보전",
+      sectionId: "definition",
+      assertionId: "definition",
+      evidenceText:
+        "개량보전(CM): 구조와 부품을 개선해 신뢰성·보전성·안전성을 높임.",
+    },
+  ],
+};
+
+/**
+ * Subject 3 facts whose wording or scope was explicitly corrected against the
+ * reviewed source boundary. Keep this list separate from title-only lesson
+ * links so tests can fail closed when a correction loses its exact assertion.
+ */
+export const SUBJECT_THREE_REQUIRED_EVIDENCE_FACT_IDS = [
+  "s3-drawing-lines-tolerance-dimensional-tolerance",
+  "s3-drawing-lines-tolerance-hole-basis-system",
+  "s3-drawing-lines-tolerance-fit-types",
+  "s3-machine-tools-cutting-up-milling",
+  "s3-machine-tools-cutting-down-milling",
+  "s3-chips-tools-finishing-continuous-chip",
+  "s3-casting-plastic-materials-hot-working",
+  "s3-casting-plastic-materials-cold-working",
+  "s3-casting-plastic-materials-malleability",
+  "s3-casting-plastic-materials-ductility",
+  "s3-casting-plastic-materials-specific-gravity",
+  "s3-casting-plastic-materials-steel-five-elements",
+  "s3-casting-plastic-materials-phosphorus-shortness",
+  "s3-casting-plastic-materials-sulfur-shortness",
+  "s3-assembly-fasteners-jig",
+  "s3-assembly-fasteners-fixture",
+  "s3-assembly-fasteners-screw-self-locking",
+  "s3-shaft-coupling-bearing-oldham-coupling",
+  "s3-power-transmission-brake-fade",
+  "s3-power-transmission-brake-vapor-lock",
+  "s3-piping-valves-seals-union",
+  "s3-piping-valves-seals-flange",
+  "s3-piping-valves-seals-expansion-joint",
+  "s3-piping-valves-seals-gate-valve",
+  "s3-piping-valves-seals-globe-valve",
+  "s3-piping-valves-seals-check-valve",
+  "s3-piping-valves-seals-butterfly-valve",
+  "s3-piping-valves-seals-mechanical-seal",
+  "s3-piping-valves-seals-labyrinth-seal",
+  "s3-piping-valves-seals-anaerobic-adhesive",
+  "s3-fluid-machinery-troubles-positive-displacement-compressor",
+  "s3-fluid-machinery-troubles-turbo-compressor",
+  "s3-maintenance-tools-lubrication-five-functions",
+  "s3-maintenance-tools-lubrication-spanner",
+  "s3-maintenance-tools-lubrication-hammer",
+  "s3-maintenance-tools-lubrication-chisel",
+  "s3-maintenance-tools-lubrication-file",
+  "s3-casting-plastic-materials-crystal-lattices",
+] as const;
+
+export function getWrittenSubjectFactId(
+  subjectCode: SubjectCode,
+  bundle: BundleLike,
+  fact: FactLike,
+) {
+  return fact.id ?? `legacy:${subjectCode}:${bundle.id}:${fact.cue}`;
 }
 
 export function getWrittenSubjectFactLessonTitles(
@@ -338,10 +834,57 @@ export function getWrittenSubjectFactLessonTitles(
   fact: FactLike,
 ) {
   const reviewedTitles =
-    FACT_LESSON_LINKS[factKey(subjectCode, bundle.id, fact.cue)];
+    FACT_LESSON_LINKS[
+      `${subjectCode}:${bundle.id}:${fact.cue}`
+    ];
   if (reviewedTitles?.length) return [...reviewedTitles];
   if (fact.detailLessonTitles?.length) return [...fact.detailLessonTitles];
   return [];
+}
+
+export function getWrittenSubjectFactEvidenceBinding(
+  subjectCode: SubjectCode,
+  bundle: BundleLike,
+  fact: FactLike,
+): WrittenSubjectFactEvidenceBinding {
+  const factId = getWrittenSubjectFactId(
+    subjectCode,
+    bundle,
+    fact,
+  );
+  const lessonTitles = getWrittenSubjectFactLessonTitles(
+    subjectCode,
+    bundle,
+    fact,
+  );
+  const evidenceTargets = FACT_EVIDENCE_TARGETS[factId] ?? [];
+
+  if (evidenceTargets.length > 0) {
+    return {
+      factId,
+      status: "verified_assertion",
+      publicationPolicy: "inherit",
+      lessonTitles,
+      evidenceTargets: [...evidenceTargets],
+    };
+  }
+  if (lessonTitles.length > 0) {
+    return {
+      factId,
+      status: "linked_title_only",
+      publicationPolicy: "inherit",
+      lessonTitles,
+      evidenceTargets: [],
+    };
+  }
+  return {
+    factId,
+    status: "unlinked",
+    publicationPolicy: "inherit",
+    lessonTitles: [],
+    evidenceTargets: [],
+    reviewReason: "학습자 공개 레슨의 직접 근거 연결 검수 전",
+  };
 }
 
 export function getWrittenSubjectBundleLessonTitles(

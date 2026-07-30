@@ -1,4 +1,7 @@
+import { WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE_SUPPLEMENT } from "@/data/source/written-subject-four-memory-guide-supplement";
+
 export type SubjectFourMemoryFact = {
+  id?: string;
   cue: string;
   answer: string;
   detailLessonTitles?: string[];
@@ -171,7 +174,7 @@ export const WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE: SubjectFourMemoryBundle[] = [
       { cue: "사후보전 BM", answer: "고장이나 성능 저하가 발생한 뒤 기능을 회복시키는 보전입니다.", detailLessonTitles: ["사후보전"] },
       { cue: "예방보전 PM", answer: "고장 전에 정해진 기준과 주기에 따라 점검·교환하는 시간기준 활동을 포함합니다.", detailLessonTitles: ["예방보전"] },
       { cue: "예지보전 PdM", answer: "진동·온도·오일 등 상태의 경향을 감시해 필요한 시점을 예측합니다.", detailLessonTitles: ["상태기준보전"] },
-      { cue: "개량보전 CM", answer: "기존 설비의 약점을 고쳐 신뢰성·보전성을 높이고 재발을 막습니다.", detailLessonTitles: ["개수공사"] },
+      { id: "s4-maintenance-methods-improvement-maintenance-cm", cue: "개량보전 CM", answer: "기존 설비의 약점을 고쳐 신뢰성·보전성을 높이고 재발을 막습니다.", detailLessonTitles: ["상태기준보전"] },
       { cue: "보전예방 MP", answer: "설계·제작 단계부터 고장이 적고 점검·수리가 쉬운 설비를 만들려는 활동입니다.", detailLessonTitles: ["보전예방"] },
     ],
     traps: [
@@ -363,10 +366,15 @@ export const WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE: SubjectFourMemoryBundle[] = [
     ],
     detailLessonTitles: ["급유법 분류", "급유법·장치 연결", "전손식 급유", "유욕식 급유", "비말급유", "강제순환급유", "중앙집중급유"],
   },
+  ...WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE_SUPPLEMENT,
 ];
 
 export function getSubjectFourMemoryGuideLessonTitles() {
-  return WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE.flatMap(
-    (bundle) => bundle.detailLessonTitles,
+  return Array.from(
+    new Set(
+      WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE.flatMap(
+        (bundle) => bundle.detailLessonTitles,
+      ),
+    ),
   );
 }

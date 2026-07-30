@@ -29,7 +29,7 @@ export function WrittenSubjectThreeMemoryGuide({
   return (
     <WrittenSubjectMemoryGuide
       subjectCode={3}
-      heading="기계설비 일반을 13개 흐름으로 묶어보기"
+      heading="기계설비 일반을 14개 흐름으로 묶어보기"
       description="도면·측정·기계요소·유체기계 기출 주제를 학습 흐름에 맞게 엮었습니다. NCS와 상세 레슨은 부품명·작동원리·고장 원인을 정확히 교정하고 보충하는 층으로 연결합니다."
       parts={SUBJECT_THREE_PARTS}
       bundles={WRITTEN_SUBJECT_THREE_MEMORY_GUIDE}

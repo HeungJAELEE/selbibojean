@@ -29,8 +29,8 @@ export function WrittenSubjectFourMemoryGuide({
   return (
     <WrittenSubjectMemoryGuide
       subjectCode={4}
-      heading="설비진단 및 관리를 15개 흐름으로 묶어보기"
-      description="계측·진단·보전·TPM·윤활 기출 주제를 본문·표·공식 중심의 학습 흐름으로 엮었습니다. NCS 용어와 검수 레슨은 정의·분류·계산 조건을 바로잡고 보충하는 기준으로 사용합니다."
+      heading="설비진단 및 관리를 24개 흐름으로 묶어보기"
+      description="계측·진단·보전·TPM·윤활의 원문 주제를 본문·표·공식 중심으로 빠짐없이 엮었습니다. NCS 용어와 검수 레슨은 정의·분류·계산 조건을 교정하고, 장비별 절대 수치는 근거가 확인된 범위에서만 보충합니다."
       parts={SUBJECT_FOUR_PARTS}
       bundles={WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE}
       lessons={lessons}

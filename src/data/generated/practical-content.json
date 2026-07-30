@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "generatedAt": "2026-07-29T11:47:39.792Z",
+  "generatedAt": "2026-07-30T11:43:14.861Z",
   "questions": [
     {
       "id": "P-2025-1-Q01",
@@ -28096,6 +28096,7 @@
       "originType": "ncs_crop",
       "usageTypes": [
         "past_exam_prompt",
+        "variant_exam_prompt",
         "recognition",
         "concept_explanation",
         "summary_diagram"
@@ -28322,7 +28323,8 @@
       "originType": "ncs_crop",
       "usageTypes": [
         "sequence_step",
-        "concept_explanation"
+        "concept_explanation",
+        "variant_exam_prompt"
       ],
       "answerCritical": true,
       "derivedFromVisualAidId": null,
@@ -28337,16 +28339,16 @@
       "id": "ncs-tapered-bearing-assembly-sequence",
       "title": "테이퍼 롤러베어링 조립·간극조정 5단계",
       "imagePaths": [
-        "/practical/visuals/tapered-bearing-inner-cone.png",
-        "/practical/visuals/tapered-bearing-hub-cover.png",
-        "/practical/visuals/tapered-bearing-dial-gauge.png",
-        "/practical/visuals/tapered-bearing-clearance-adjust.png",
-        "/practical/visuals/tapered-bearing-lock-cover.png"
+        "/practical/visuals/ncs-sequence-legacy-01-frame-01.png",
+        "/practical/visuals/ncs-sequence-legacy-01-frame-02.png",
+        "/practical/visuals/ncs-sequence-legacy-01-frame-03.png",
+        "/practical/visuals/ncs-sequence-legacy-01-frame-04.png",
+        "/practical/visuals/ncs-sequence-legacy-01-frame-05.png"
       ],
       "frames": [
         {
           "id": "ncs-tapered-bearing-assembly-sequence--tapered-bearing-inner-cone",
-          "path": "/practical/visuals/tapered-bearing-inner-cone.png",
+          "path": "/practical/visuals/ncs-sequence-legacy-01-frame-01.png",
           "promptAltText": "테이퍼 롤러베어링 작업 장면",
           "learningAltText": "안쪽 콘을 허브에 삽입하는 장면",
           "captionBeforeAnswer": null,
@@ -28355,7 +28357,7 @@
         },
         {
           "id": "ncs-tapered-bearing-assembly-sequence--tapered-bearing-hub-cover",
-          "path": "/practical/visuals/tapered-bearing-hub-cover.png",
+          "path": "/practical/visuals/ncs-sequence-legacy-01-frame-02.png",
           "promptAltText": "테이퍼 롤러베어링 작업 장면",
           "learningAltText": "허브 커버를 체결하고 허브를 축에 삽입하는 장면",
           "captionBeforeAnswer": null,
@@ -28364,7 +28366,7 @@
         },
         {
           "id": "ncs-tapered-bearing-assembly-sequence--tapered-bearing-dial-gauge",
-          "path": "/practical/visuals/tapered-bearing-dial-gauge.png",
+          "path": "/practical/visuals/ncs-sequence-legacy-01-frame-03.png",
           "promptAltText": "테이퍼 롤러베어링 작업 장면",
           "learningAltText": "허브에 다이얼 게이지를 설치하고 영점을 맞추는 장면",
           "captionBeforeAnswer": null,
@@ -28373,7 +28375,7 @@
         },
         {
           "id": "ncs-tapered-bearing-assembly-sequence--tapered-bearing-clearance-adjust",
-          "path": "/practical/visuals/tapered-bearing-clearance-adjust.png",
+          "path": "/practical/visuals/ncs-sequence-legacy-01-frame-04.png",
           "promptAltText": "테이퍼 롤러베어링 작업 장면",
           "learningAltText": "허브를 흔들며 축방향 간극을 측정·조정하는 장면",
           "captionBeforeAnswer": null,
@@ -28382,7 +28384,7 @@
         },
         {
           "id": "ncs-tapered-bearing-assembly-sequence--tapered-bearing-lock-cover",
-          "path": "/practical/visuals/tapered-bearing-lock-cover.png",
+          "path": "/practical/visuals/ncs-sequence-legacy-01-frame-05.png",
           "promptAltText": "테이퍼 롤러베어링 작업 장면",
           "learningAltText": "로크 와셔를 고정하고 커버를 조립하는 장면",
           "captionBeforeAnswer": null,
@@ -28418,7 +28420,8 @@
       "originType": "ncs_crop",
       "usageTypes": [
         "sequence_step",
-        "concept_explanation"
+        "concept_explanation",
+        "variant_exam_prompt"
       ],
       "answerCritical": true,
       "derivedFromVisualAidId": null,
@@ -28674,6 +28677,11 @@
       "examMatchStatus": "exact_source",
       "rightsStatus": "education_use_with_attribution",
       "publicUseStatus": "public",
+      "usageTypes": [
+        "variant_exam_prompt",
+        "recognition",
+        "concept_explanation"
+      ],
       "frames": [
         {
           "id": "ncs-vernier-reading--vernier-scale-reading",
@@ -28686,11 +28694,7 @@
         }
       ],
       "originType": "ncs_crop",
-      "usageTypes": [
-        "recognition",
-        "concept_explanation"
-      ],
-      "answerCritical": false,
+      "answerCritical": true,
       "derivedFromVisualAidId": null,
       "sourcePageImageHash": null,
       "outputAssetHash": "3ff50419c349df3ecd75e0c1d725b0c465f57cb02441fae2b0c9d3275e3e919a",
@@ -28830,6 +28834,7 @@
       "publicUseStatus": "public",
       "originType": "ncs_crop",
       "usageTypes": [
+        "variant_exam_prompt",
         "recognition",
         "concept_explanation"
       ],
@@ -28930,6 +28935,7 @@
       "publicUseStatus": "public",
       "originType": "ncs_crop",
       "usageTypes": [
+        "variant_exam_prompt",
         "recognition",
         "concept_explanation",
         "summary_diagram"
@@ -28965,6 +28971,7 @@
       "publicUseStatus": "public",
       "originType": "ncs_crop",
       "usageTypes": [
+        "variant_exam_prompt",
         "recognition",
         "concept_explanation",
         "summary_diagram"
@@ -33548,7 +33555,7 @@
     ]
   },
   "report": {
-    "generatedAt": "2026-07-29T11:47:39.792Z",
+    "generatedAt": "2026-07-30T11:43:14.861Z",
     "sourceFile": "설비보전기사_작업형실기_기출복원_출제예상40_개념통합_2차.xlsx",
     "sourceSha256": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
     "rows": {

@@ -1,4 +1,7 @@
+import { WRITTEN_SUBJECT_ONE_MEMORY_GUIDE_SUPPLEMENT } from "@/data/source/written-subject-one-memory-guide-supplement";
+
 export type SubjectOneMemoryFact = {
+  id?: string;
   cue: string;
   answer: string;
   detailLessonTitles?: string[];
@@ -290,8 +293,15 @@ export const WRITTEN_SUBJECT_ONE_MEMORY_GUIDE: SubjectOneMemoryBundle[] = [
     ],
     detailLessonTitles: ["산업용 네트워크 토폴로지", "링형 네트워크", "환형 네트워크", "자동화 핸들링", "핸들링 이송기능", "핸들링 자세변경", "서보제어 로봇", "로봇 운용용어"],
   },
+  ...WRITTEN_SUBJECT_ONE_MEMORY_GUIDE_SUPPLEMENT,
 ];
 
 export function getSubjectOneMemoryGuideLessonTitles() {
-  return WRITTEN_SUBJECT_ONE_MEMORY_GUIDE.flatMap((bundle) => bundle.detailLessonTitles);
+  return Array.from(
+    new Set(
+      WRITTEN_SUBJECT_ONE_MEMORY_GUIDE.flatMap(
+        (bundle) => bundle.detailLessonTitles,
+      ),
+    ),
+  );
 }

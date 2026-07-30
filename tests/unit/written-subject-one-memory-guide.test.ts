@@ -11,9 +11,9 @@ import type { GeneratedContent } from "@/lib/domain/types";
 const content = buildRuntimeContent(generatedContent as GeneratedContent);
 
 describe("written subject one memory guide", () => {
-  it("keeps the integrated guide at twelve distinct memory bundles", () => {
-    expect(WRITTEN_SUBJECT_ONE_MEMORY_GUIDE).toHaveLength(12);
-    expect(new Set(WRITTEN_SUBJECT_ONE_MEMORY_GUIDE.map((bundle) => bundle.id)).size).toBe(12);
+  it("keeps the integrated guide at twenty-three distinct memory bundles", () => {
+    expect(WRITTEN_SUBJECT_ONE_MEMORY_GUIDE).toHaveLength(23);
+    expect(new Set(WRITTEN_SUBJECT_ONE_MEMORY_GUIDE.map((bundle) => bundle.id)).size).toBe(23);
     expect(new Set(WRITTEN_SUBJECT_ONE_MEMORY_GUIDE.map((bundle) => bundle.part))).toEqual(
       new Set(["공유압 기초", "공유압 기기·회로", "전기·전자", "PLC·자동제어"]),
     );

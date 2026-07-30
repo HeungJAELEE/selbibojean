@@ -53,7 +53,19 @@ const SUBJECTS = [
       { sourceText: "측정 방식의 분류", bundleId: "measurement-principles", cue: "비교·간접측정" },
       { sourceText: "표면 거칠기", bundleId: "gauges-drawing-rules", cue: "표면거칠기" },
       { sourceText: "기어(Gear)의 손상", bundleId: "power-transmission", cue: "기어 손상" },
-      { sourceText: "밸브 (Valve)", bundleId: "piping-valves-seals", cue: "게이트·글로브" },
+      { sourceText: "비중에 따른 분류", bundleId: "casting-plastic-materials", cue: "비중에 따른 재료 분류" },
+      { sourceText: "철강을 이루는 기본 5대 원소", bundleId: "casting-plastic-materials", cue: "강의 5대 원소" },
+      { sourceText: "상온 취성", bundleId: "casting-plastic-materials", cue: "P의 취성 영향" },
+      { sourceText: "적열 취성", bundleId: "casting-plastic-materials", cue: "S의 취성 영향" },
+      { sourceText: "셀프 록킹", bundleId: "assembly-fasteners", cue: "나사 자립 조건" },
+      { sourceText: "올덤 커플링", bundleId: "shaft-coupling-bearing", cue: "올덤 커플링" },
+      { sourceText: "글로브 밸브", bundleId: "piping-valves-seals", cue: "글로브밸브" },
+      { sourceText: "나비형 밸브", bundleId: "piping-valves-seals", cue: "버터플라이밸브" },
+      { sourceText: "용적형(체적형)", bundleId: "fluid-machinery-troubles", cue: "용적형 압축기" },
+      { sourceText: "터보형(원심형)", bundleId: "fluid-machinery-troubles", cue: "터보형 압축기" },
+      { sourceText: "윤활유 5대 기능", bundleId: "maintenance-tools-lubrication", cue: "윤활유 5대 기능" },
+      { sourceText: "스패너 (Spanner)", bundleId: "maintenance-tools-lubrication", cue: "스패너" },
+      { sourceText: "줄 (File)", bundleId: "maintenance-tools-lubrication", cue: "줄" },
     ] satisfies CoverageAnchor[],
   },
   {
@@ -71,9 +83,13 @@ const SUBJECTS = [
   },
 ];
 
-describe("Notion original topic to subtopic coverage", () => {
+describe("selected Notion structural anchors to subtopic coverage", () => {
+  it("keeps the audit scope explicit at 37 selected structural anchors", () => {
+    expect(SUBJECTS.flatMap((subject) => subject.anchors)).toHaveLength(37);
+  });
+
   it.each(SUBJECTS)(
-    "keeps subject $code source anchors as linked small-topic facts",
+    "keeps subject $code selected source anchors as linked small-topic facts",
     ({ code, body, bundles, anchors }) => {
       for (const anchor of anchors) {
         expect(body, anchor.sourceText).toContain(anchor.sourceText);

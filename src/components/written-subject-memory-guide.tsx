@@ -9,8 +9,25 @@ import {
 import { InlineQuestionToggle } from "@/components/single-question";
 import {
   getWrittenSubjectBundleLessonTitles,
+  getWrittenSubjectFactEvidenceBinding,
   getWrittenSubjectFactLessonTitles,
 } from "@/data/source/written-subject-fact-lesson-links";
+import {
+  getSubjectOneBundleCbtSelection,
+  SUBJECT_ONE_NO_DIRECT_CBT_NOTE,
+} from "@/data/source/written-subject-one-cbt-links";
+import {
+  getSubjectTwoBundleCbtSelection,
+  SUBJECT_TWO_NO_DIRECT_CBT_NOTE,
+} from "@/data/source/written-subject-two-cbt-links";
+import {
+  getSubjectThreeBundleCbtSelection,
+  SUBJECT_THREE_NO_DIRECT_CBT_NOTE,
+} from "@/data/source/written-subject-three-cbt-links";
+import {
+  getSubjectFourBundleCbtSelection,
+  SUBJECT_FOUR_NO_DIRECT_CBT_NOTE,
+} from "@/data/source/written-subject-four-cbt-links";
 import type { PublicQuestion } from "@/lib/domain/types";
 
 type LessonLink = {
@@ -31,6 +48,7 @@ type MemoryBundle = {
   title: string;
   memoryLine: string;
   facts: Array<{
+    id?: string;
     cue: string;
     answer: string;
     detailLessonTitles?: string[];
@@ -198,9 +216,30 @@ export function WrittenSubjectMemoryGuide({
                 {partBundles.map((bundle, bundleIndex) => {
                   const bundleLessonTitles =
                     getWrittenSubjectBundleLessonTitles(subjectCode, bundle);
-                  const detailLessons = bundleLessonTitles
-                    .map((title) => lessonsByTitle.get(title))
-                    .filter((lesson): lesson is LessonLink => Boolean(lesson));
+                  const bundleEvidenceLessonIds = bundle.facts.flatMap(
+                    (fact) =>
+                      getWrittenSubjectFactEvidenceBinding(
+                        subjectCode,
+                        bundle,
+                        fact,
+                      ).evidenceTargets.map((target) => target.lessonId),
+                  );
+                  const detailLessons = [
+                    ...new Map(
+                      [
+                        ...bundleLessonTitles.map((title) =>
+                          lessonsByTitle.get(title),
+                        ),
+                        ...bundleEvidenceLessonIds.map((lessonId) =>
+                          lessonsById.get(lessonId),
+                        ),
+                      ]
+                        .filter(
+                          (lesson): lesson is LessonLink => Boolean(lesson),
+                        )
+                        .map((lesson) => [lesson.id, lesson]),
+                    ).values(),
+                  ];
                   const detailLessonIds = new Set(
                     detailLessons.map((lesson) => lesson.id),
                   );
@@ -215,16 +254,54 @@ export function WrittenSubjectMemoryGuide({
                   const directOriginalQuestions = directQuestions.filter(
                     (question) => question.provenance.original,
                   );
+                  const reviewedCbtSelection =
+                    subjectCode === 1
+                      ? getSubjectOneBundleCbtSelection(
+                          bundle as Parameters<
+                            typeof getSubjectOneBundleCbtSelection
+                          >[0],
+                          questions,
+                        )
+                      : subjectCode === 2
+                        ? getSubjectTwoBundleCbtSelection(
+                            bundle as Parameters<
+                              typeof getSubjectTwoBundleCbtSelection
+                            >[0],
+                            questions,
+                          )
+                      : subjectCode === 3
+                        ? getSubjectThreeBundleCbtSelection(bundle, questions)
+                      : subjectCode === 4
+                        ? getSubjectFourBundleCbtSelection(
+                            bundle as Parameters<
+                              typeof getSubjectFourBundleCbtSelection
+                            >[0],
+                            questions,
+                          )
+                        : undefined;
+                  const practiceQuestions =
+                    reviewedCbtSelection?.questions ??
+                    directOriginalQuestions
+                      .sort((left, right) => {
+                        const leftYear = left.provenance.exam?.year ?? 0;
+                        const rightYear = right.provenance.exam?.year ?? 0;
+                        return rightYear - leftYear;
+                      })
+                      .slice(0, 5);
                   const originalQuestionIds = new Set(
-                    directOriginalQuestions.map((question) => question.id),
+                    practiceQuestions.map((question) => question.id),
                   );
-                  const practiceQuestions = directOriginalQuestions
-                    .sort((left, right) => {
-                      const leftYear = left.provenance.exam?.year ?? 0;
-                      const rightYear = right.provenance.exam?.year ?? 0;
-                      return rightYear - leftYear;
-                    })
-                    .slice(0, 5);
+                  const effectiveCbtStatusNote =
+                    reviewedCbtSelection?.statusNote ??
+                    (subjectCode === 1
+                      ? SUBJECT_ONE_NO_DIRECT_CBT_NOTE
+                      : subjectCode === 2
+                        ? SUBJECT_TWO_NO_DIRECT_CBT_NOTE
+                      : subjectCode === 3
+                        ? SUBJECT_THREE_NO_DIRECT_CBT_NOTE
+                      : subjectCode === 4
+                        ? SUBJECT_FOUR_NO_DIRECT_CBT_NOTE
+                        : bundle.cbtStatusNote);
                   const mockMatchTokens = getMockMatchTokens(bundle);
                   const mockQuestions = questions
                     .filter(
@@ -252,16 +329,23 @@ export function WrittenSubjectMemoryGuide({
                         left.question.id.localeCompare(right.question.id),
                     )
                     .slice(0, 5);
-                  const hasFactLessonLinks = bundle.facts.some(
-                    (fact) =>
+                  const hasFactLessonLinks = bundle.facts.some((fact) => {
+                    const binding = getWrittenSubjectFactEvidenceBinding(
+                      subjectCode,
+                      bundle,
+                      fact,
+                    );
+                    return (
+                      binding.evidenceTargets.some((target) =>
+                        lessonsById.has(target.lessonId),
+                      ) ||
                       getWrittenSubjectFactLessonTitles(
                         subjectCode,
                         bundle,
                         fact,
-                      ).some((title) =>
-                        lessonsByTitle.has(title),
-                      ),
-                  );
+                      ).some((title) => lessonsByTitle.has(title))
+                    );
+                  });
 
                   return (
                     <details
@@ -320,17 +404,34 @@ export function WrittenSubjectMemoryGuide({
                             </thead>
                             <tbody className="divide-y divide-slate-200">
                               {bundle.facts.map((fact) => {
-                                const factLessons =
-                                  getWrittenSubjectFactLessonTitles(
-                                  subjectCode,
-                                  bundle,
-                                  fact,
-                                )
-                                  .map((title) => lessonsByTitle.get(title))
-                                  .filter(
-                                    (lesson): lesson is LessonLink =>
-                                      Boolean(lesson),
+                                const factEvidence =
+                                  getWrittenSubjectFactEvidenceBinding(
+                                    subjectCode,
+                                    bundle,
+                                    fact,
                                   );
+                                const factLessons =
+                                  factEvidence.status === "verified_assertion"
+                                    ? factEvidence.evidenceTargets
+                                        .map((target) =>
+                                          lessonsById.get(target.lessonId),
+                                        )
+                                        .filter(
+                                          (lesson): lesson is LessonLink =>
+                                            Boolean(lesson),
+                                        )
+                                    : getWrittenSubjectFactLessonTitles(
+                                        subjectCode,
+                                        bundle,
+                                        fact,
+                                      )
+                                        .map((title) =>
+                                          lessonsByTitle.get(title),
+                                        )
+                                        .filter(
+                                          (lesson): lesson is LessonLink =>
+                                            Boolean(lesson),
+                                        );
 
                                 return (
                                 <tr key={fact.cue}>
@@ -347,20 +448,33 @@ export function WrittenSubjectMemoryGuide({
                                     <td className="px-4 py-3 align-top text-center">
                                       {factLessons.length ? (
                                         <div className="flex flex-wrap justify-center gap-1.5">
-                                          {factLessons.map((lesson) => (
-                                            <Link
-                                              key={lesson.id}
-                                              href={`/written/theory/${lesson.id}`}
-                                              className="inline-flex min-h-9 max-w-44 items-center justify-center gap-1 rounded-lg border border-[#16697a]/30 bg-[#f2fbfa] px-2.5 py-1.5 text-center text-xs font-extrabold leading-5 text-[#145f69] transition hover:border-[#16697a] hover:bg-[#dff4f1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16697a]"
-                                            >
-                                              {lesson.title}
-                                              <ArrowRight
-                                                size={12}
-                                                className="shrink-0"
-                                                aria-hidden="true"
-                                              />
-                                            </Link>
-                                          ))}
+                                          {factLessons.map((lesson) => {
+                                            const evidenceTarget =
+                                              factEvidence.evidenceTargets.find(
+                                                (target) =>
+                                                  target.lessonId ===
+                                                  lesson.id,
+                                              );
+
+                                            return (
+                                              <Link
+                                                key={lesson.id}
+                                                href={`/written/theory/${lesson.id}${
+                                                  evidenceTarget
+                                                    ? `#${evidenceTarget.sectionId}`
+                                                    : ""
+                                                }`}
+                                                className="inline-flex min-h-9 max-w-44 items-center justify-center gap-1 rounded-lg border border-[#16697a]/30 bg-[#f2fbfa] px-2.5 py-1.5 text-center text-xs font-extrabold leading-5 text-[#145f69] transition hover:border-[#16697a] hover:bg-[#dff4f1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16697a]"
+                                              >
+                                                {lesson.title}
+                                                <ArrowRight
+                                                  size={12}
+                                                  className="shrink-0"
+                                                  aria-hidden="true"
+                                                />
+                                              </Link>
+                                            );
+                                          })}
                                         </div>
                                       ) : (
                                         <span className="text-xs font-semibold text-slate-400">
@@ -507,16 +621,21 @@ export function WrittenSubjectMemoryGuide({
                             </p>
                           </div>
                         </details>
-                      ) : bundle.cbtStatusNote ? (
+                      ) : effectiveCbtStatusNote ? (
                         <section
                           data-testid={`subject-${subjectSlug}-cbt-pending-${bundle.id}`}
                           className="mt-4 border-l-4 border-slate-400 bg-slate-100 px-4 py-4"
                         >
                           <p className="text-xs font-black tracking-[.12em] text-slate-600">
-                            실제 CBT 연결 검수 중
+                            {subjectCode === 1 ||
+                            subjectCode === 2 ||
+                            subjectCode === 3 ||
+                            subjectCode === 4
+                              ? "실제 CBT 직접 연결 결과"
+                              : "실제 CBT 연결 검수 중"}
                           </p>
                           <p className="mt-2 text-sm font-semibold leading-6 text-slate-700">
-                            {bundle.cbtStatusNote}
+                            {effectiveCbtStatusNote}
                           </p>
                         </section>
                       ) : null}

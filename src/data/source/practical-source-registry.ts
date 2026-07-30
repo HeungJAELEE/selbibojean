@@ -131,15 +131,15 @@ const OUTPUT_HASH_BY_PATH: Record<string, string> = {
     "afebc1a9fd40901788823289dd93b52a4003d1880b31a89a39bb6b2cfb1982e5",
   "/practical/visuals/gear-coupling-grease.png":
     "04c3a03519816f85628b783295487863ddda73cc4b912632c0d084d6e1aa8d8d",
-  "/practical/visuals/tapered-bearing-inner-cone.png":
+  "/practical/visuals/ncs-sequence-legacy-01-frame-01.png":
     "87c4fdad7ea02c2c53f14617facb5432271c559bd1efa5c2d8153799661b1533",
-  "/practical/visuals/tapered-bearing-hub-cover.png":
+  "/practical/visuals/ncs-sequence-legacy-01-frame-02.png":
     "d775e61e90c94b6bc0bc34899900a30d88fd65a1228008f1a1b9459ecac2f2c2",
-  "/practical/visuals/tapered-bearing-dial-gauge.png":
+  "/practical/visuals/ncs-sequence-legacy-01-frame-03.png":
     "1575cb7555c2577c6988c4e2bf58e835091409e2df9b59e5eaf1e1067cc70865",
-  "/practical/visuals/tapered-bearing-clearance-adjust.png":
+  "/practical/visuals/ncs-sequence-legacy-01-frame-04.png":
     "ff7dab9508f406736a2faa89b070ee7a95b80cf4e59c83b8db1df62521d68338",
-  "/practical/visuals/tapered-bearing-lock-cover.png":
+  "/practical/visuals/ncs-sequence-legacy-01-frame-05.png":
     "9841ca8376118d340874179a4f25aed3b287230d2bdf9d8aefd33b21e9de21c1",
   "/practical/visuals/autonomous-maintenance-7-steps.svg":
     "1d0777e598762033dba6a0a863e09fc5bbc582ebc397bac6ecbabdf1a16c8984",
