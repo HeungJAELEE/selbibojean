@@ -8,8 +8,8 @@ import {
 import { practicalTestCentersById } from "@/data/source/practical-test-centers";
 
 describe("practical test center media catalog", () => {
-  it("maps all 20 public user-provided photos to five known test centers", () => {
-    expect(PRACTICAL_TEST_CENTER_MEDIA_GROUPS).toHaveLength(5);
+  it("maps all 29 public user-provided derivatives to six known test centers", () => {
+    expect(PRACTICAL_TEST_CENTER_MEDIA_GROUPS).toHaveLength(6);
     expect(practicalTestCenterMediaByCenter.get("incheon-kopo-industry")?.items).toHaveLength(
       9,
     );
@@ -27,13 +27,18 @@ describe("practical test center media catalog", () => {
     expect(
       practicalTestCenterMediaByCenter.get("busan-technical-high")?.items,
     ).toHaveLength(3);
+    expect(
+      practicalTestCenterMediaByCenter.get(
+        "busan-kopo-facility-energy-lab",
+      )?.items,
+    ).toHaveLength(7);
 
     for (const group of PRACTICAL_TEST_CENTER_MEDIA_GROUPS) {
       expect(practicalTestCentersById.has(group.centerId), group.centerId).toBe(
         true,
       );
       expect(group.sourceLabel).toBe("사용자 제공 현장 사진");
-      expect(group.receivedAt).toMatch(/^2026-07-(27|28|30)$/);
+      expect(group.receivedAt).toMatch(/^2026-(07-(27|28|30)|08-01)$/);
     }
     expect(
       practicalTestCenterMediaByCenter.get("incheon-kopo-industry")?.receivedAt,
@@ -92,10 +97,16 @@ describe("practical test center media catalog", () => {
 
     for (const publicPath of paths) {
       expect(publicPath).toMatch(/^\/practical\/test-centers\//);
+      const relativePath = publicPath.replace(/^\//, "");
+      const isGatedBusanMedia = relativePath.startsWith(
+        "practical/test-centers/busan-kopo/",
+      );
       expect(
-        fs.existsSync(
-          path.join(process.cwd(), "public", publicPath.replace(/^\//, "")),
-        ),
+        fs.existsSync(path.join(process.cwd(), "public", relativePath)) ||
+          (isGatedBusanMedia &&
+            fs.existsSync(
+              path.join(process.cwd(), "assets", "private", relativePath),
+            )),
         publicPath,
       ).toBe(true);
     }

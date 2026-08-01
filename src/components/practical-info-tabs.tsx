@@ -76,6 +76,7 @@ type PracticalInfoCenter = {
   evidenceKind?:
     | "facility_sheet_2026"
     | "exam_history_2025"
+    | "field_verified"
     | "verified_user_report"
     | "historical_candidate";
   candidateSupplyGuidance?: PracticalCenterCandidateSupplyGuidance;
@@ -1415,7 +1416,9 @@ function ExamVenuePanel({
     (center) => center.evidenceKind === "exam_history_2025",
   );
   const reportedCenters = centers.filter(
-    (center) => center.evidenceKind === "verified_user_report",
+    (center) =>
+      center.evidenceKind === "verified_user_report" ||
+      center.evidenceKind === "field_verified",
   );
   const faqsForPlacement = (placement: PracticalFaq["placement"]) =>
     faqs.filter((faq) => faq.placement === placement);

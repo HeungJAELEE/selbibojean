@@ -214,7 +214,10 @@ function ConceptGroup({
   const subcategories = getLessonSubcategories(group.id, lessons);
 
   return (
-    <div className="border-b border-slate-200 p-6 md:border-r">
+    <div
+      id={group.id}
+      className="scroll-mt-28 border-b border-slate-200 p-6 md:border-r"
+    >
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-xs font-black text-[#16697a]">

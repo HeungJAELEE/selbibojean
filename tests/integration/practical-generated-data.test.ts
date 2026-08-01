@@ -45,6 +45,69 @@ describe("NCS practical content import", () => {
     ).toEqual([]);
   });
 
+  it("publishes the safety-sign prediction only after replacing the full answer contract", () => {
+    const question = content.questions.find(
+      (item) => item.id === "EXP-S02",
+    );
+
+    expect(question).toMatchObject({
+      title: "안전보건표지 4분류 판독",
+      auditDisposition: "verified",
+      contentStatus: "published",
+      modelAnswer:
+        "(가) 금지표지-출입금지, (나) 경고표지-고압전기 경고, (다) 지시표지-보안경 착용, (라) 안내표지-비상구",
+      requiredKeywords: [
+        "금지표지-출입금지",
+        "경고표지-고압전기 경고",
+        "지시표지-보안경 착용",
+        "안내표지-비상구",
+      ],
+      conceptIds: ["PCON-009"],
+    });
+    expect(question?.rubric).toHaveLength(4);
+    expect(question?.ncsSources).toEqual([
+      expect.objectContaining({
+        sourceKind: "official_reference",
+        ncsCode: "OSH-RULE-ANNEX-6",
+        sourceFileHash:
+          "63DAFE819B2C2BD78B93751F9CE3B3705CFCC0BC26F1477760FFDBF41ADC3CB1",
+      }),
+    ]);
+    expect(JSON.stringify(question)).not.toContain("held_source_missing");
+    expect(question?.requiredKeywords).not.toEqual(
+      expect.arrayContaining(["눈", "얼굴", "호흡", "청력 보호"]),
+    );
+  });
+
+  it("links the grinding-wheel reconstruction to power-tool safety, not V-belt inspection", () => {
+    const question = content.questions.find(
+      (item) => item.id === "P-2026-2-Q06",
+    );
+
+    expect(question).toMatchObject({
+      title: "연삭숫돌 시운전과 덮개",
+      conceptIds: ["PCON-SUP-043"],
+      auditDisposition: "verified",
+      contentStatus: "published",
+    });
+    expect(question?.conceptIds).not.toContain("PCON-SUP-031");
+  });
+
+  it("uses the sine relation for sine-bar height and distinguishes full taper angle", () => {
+    const concept = content.concepts.find(
+      (item) => item.id === "PCON-SUP-025",
+    );
+
+    expect(concept?.formula).toEqual(
+      expect.arrayContaining([
+        "직접 경사각 φ: H = L × sin φ",
+        "테이퍼 전체 끼인각 α: H = L × sin(α / 2)",
+      ]),
+    );
+    expect(concept?.formula.join(" ")).not.toContain("tan");
+    expect(concept?.sourceReviewNote).toContain("기본 기하관계와 충돌");
+  });
+
   it("publishes verified reconstructions and holds answer-critical missing visuals", () => {
     const byId = (id: string) =>
       content.questions.find((question) => question.id === id);

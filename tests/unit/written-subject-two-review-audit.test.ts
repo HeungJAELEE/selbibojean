@@ -88,7 +88,7 @@ describe("subject 2 source and reverse-link audit", () => {
       }
     }
 
-    expect(audits).toHaveLength(106);
+    expect(audits).toHaveLength(107);
     expect(new Set(audits.map((audit) => audit.factId)).size).toBe(
       audits.length,
     );

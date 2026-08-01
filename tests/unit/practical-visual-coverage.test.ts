@@ -159,6 +159,16 @@ describe("representative practical visual coverage", () => {
       visualAidIds: ["ncs-brake-pad-lining-inspection"],
       status: "ready",
     });
+    expect(
+      PRACTICAL_VISUAL_COVERAGE.find(
+        (item) => item.id === "visual-coverage-grinding-wheel-safety",
+      ),
+    ).toMatchObject({
+      conceptIds: ["PCON-SUP-043"],
+      questionIds: ["P-2026-2-Q06"],
+      visualAidIds: ["diagram-grinding-wheel-safety"],
+      status: "ready",
+    });
   });
 
   it("keeps brake condition examples out of exam prompts and sequences", () => {

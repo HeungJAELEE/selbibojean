@@ -526,7 +526,7 @@ export const PRACTICAL_VISUAL_COVERAGE: PracticalVisualCoverageItem[] = [
   },
   {
     id: "visual-coverage-grinding-wheel-safety",
-    conceptIds: ["PCON-SUP-031"],
+    conceptIds: ["PCON-SUP-043"],
     examCardIds: [],
     questionIds: ["P-2026-2-Q06"],
     sequenceStepIds: [],

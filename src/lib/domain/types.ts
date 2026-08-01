@@ -153,6 +153,7 @@ export type Question = {
   explanation: string;
   errorReason: ErrorReason;
   sourceLabel: string;
+  shufflePolicy?: "all" | "none" | "except_fixed";
   reviewStatus: string;
   contentStatus: ContentStatus;
   publication?: PublicationAssessment;
@@ -337,6 +338,7 @@ export type GeneratedContent = {
     sourceUrl: string;
     reviewStatus: string;
     verificationNote: string;
+    shufflePolicy?: "all" | "none" | "except_fixed";
   }>;
   backlog: Array<Record<string, string | number | null>>;
   report: ImportReport;

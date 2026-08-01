@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { isReleaseFeatureEnabled } from "@/lib/release-features";
 import {
   AlertTriangle,
   Camera,
@@ -62,11 +63,21 @@ export default async function PracticalTestCenterPage({
   params: Promise<{ centerId: string }>;
 }) {
   const { centerId } = await params;
+  const busanKopoEnabled = isReleaseFeatureEnabled("busan_kopo_media");
+  if (
+    centerId === "busan-kopo-facility-energy-lab" &&
+    !busanKopoEnabled
+  ) {
+    notFound();
+  }
   const center = practicalTestCentersById.get(centerId);
   if (!center) notFound();
   const evidenceKind = getPracticalCenterEvidenceKind(center);
   const evidenceLabel = getPracticalCenterEvidenceLabel(center);
-  const mediaGroup = practicalTestCenterMediaByCenter.get(center.id);
+  const mediaGroup =
+    center.id !== "busan-kopo-facility-energy-lab" || busanKopoEnabled
+      ? practicalTestCenterMediaByCenter.get(center.id)
+      : undefined;
   const models = center.equipmentModelIds
     .map((id) => practicalEquipmentModelsById.get(id))
     .filter((model): model is NonNullable<typeof model> => Boolean(model));
@@ -105,7 +116,9 @@ export default async function PracticalTestCenterPage({
               ? "2025 작업형 시험 이력에서 확인"
               : evidenceKind === "verified_user_report"
                 ? "현장 사진·수험자 제보로 시험장 사용 확인 · 공식 시행 회차 추가 확인 필요"
-                : "과거 후보 · 시행 회차 추가 확인 필요"}
+                : evidenceKind === "field_verified"
+                  ? "현장 사진의 시험장 표지로 시험장 사용 확인 · 최신 회차 공식 지정 여부 재확인 필요"
+                  : "과거 후보 · 시행 회차 추가 확인 필요"}
             {center.buildingNote ? ` · ${center.buildingNote}` : ""}
           </p>
         )}
@@ -481,7 +494,9 @@ export default async function PracticalTestCenterPage({
                 ? PRACTICAL_2025_HISTORY_SOURCE.title
                 : evidenceKind === "verified_user_report"
                   ? "현장 사진·수험자 제보로 확인된 시험장 정보"
-                  : "과거 후보 정보"}
+                  : evidenceKind === "field_verified"
+                    ? "현장 사진에서 시험장 표지와 장비 배치를 확인한 시험장 정보"
+                    : "과거 후보 정보"}
             를 반영합니다. 실제 배정 시험장, 장비 교체, 준비물과 사용 가능
             공구는 해당 회차 수험자 안내와 현장 감독 지시가 최종 기준입니다.
           </p>

@@ -202,13 +202,13 @@ const subject2Core: ExamSummaryItem[] = [
     cue: "안전표지",
     answer: "금지·경고·지시·안내의 의미와 작업자가 해야 할 행동을 함께 쓴다.",
     conceptId: "PCON-009",
-    evidence: evidence(["EXP-S01"]),
+    evidence: evidence(["P-2025-3-Q02", "P-2026-1-Q02", "EXP-S02"]),
   },
   {
     cue: "호흡보호구",
     answer: "유해물질과 산소농도를 먼저 확인하고 산소결핍에는 공기정화식을 쓰지 않는다.",
     conceptId: "PCON-016",
-    evidence: evidence(["EXP-S02"]),
+    evidence: evidence(["P-2025-2-Q08"]),
   },
 ];
 

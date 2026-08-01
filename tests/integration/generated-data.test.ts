@@ -7,7 +7,11 @@ import { isPublishableLesson, isPublishableQuestion } from "@/lib/domain/practic
 import { getLessonFamilies, getLessonFamily } from "@/lib/content/lesson-families";
 import { getLessonSubcategories } from "@/lib/content/lesson-subcategories";
 import { getPastExamExamples, getPastExamExamplesForLessons } from "@/lib/content/past-exam-examples";
-import { createPracticePresentations, getSafeOriginalsByQuestion } from "@/lib/content/practice-presentations";
+import {
+  createPracticePresentations,
+  filterPracticeContentByYearRange,
+  getSafeOriginalsByQuestion,
+} from "@/lib/content/practice-presentations";
 
 const data = JSON.parse(await readFile(path.join(process.cwd(), "src/data/generated/content.json"), "utf8")) as GeneratedContent;
 
@@ -317,5 +321,28 @@ describe("27th workbook reconciliation", () => {
       expect(JSON.stringify(presented)).not.toContain("answerText");
       expect(JSON.stringify(presented)).not.toContain("explanation");
     }
+  });
+
+  it("limits the mock pool to answer-safe originals inside the chosen years", () => {
+    const result = filterPracticeContentByYearRange(
+      data.questions.filter(isPublishableQuestion),
+      data.variants,
+      2020,
+      2021,
+    );
+    const safe = getSafeOriginalsByQuestion(result.questions, result.variants);
+
+    expect(result.questions.length).toBeGreaterThan(0);
+    expect(
+      result.variants.every(
+        (variant) =>
+          variant.year !== null &&
+          variant.year >= 2020 &&
+          variant.year <= 2021,
+      ),
+    ).toBe(true);
+    expect(
+      result.questions.every((question) => safe.has(question.id)),
+    ).toBe(true);
   });
 });

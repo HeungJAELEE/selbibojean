@@ -32,6 +32,7 @@ import {
   getPublicPracticalTrainingResources,
 } from "@/data/source/practical-training-resources";
 import { getPracticalFaqsForTab } from "@/data/source/practical-faqs";
+import { isReleaseFeatureEnabled } from "@/lib/release-features";
 
 const PRACTICAL_TRAINING_RESOURCES_AS_OF = "2026-07-28";
 
@@ -47,6 +48,11 @@ export default async function PracticalInfoPage({
   searchParams: Promise<{ tab?: string }>;
 }) {
   const { tab } = await searchParams;
+  const busanKopoEnabled = isReleaseFeatureEnabled("busan_kopo_media");
+  const publicMainCenters = PRACTICAL_MAIN_TEST_CENTERS.filter(
+    (center) =>
+      center.id !== "busan-kopo-facility-energy-lab" || busanKopoEnabled,
+  );
   const initialTab = [
     "pneumatic",
     "hydraulic",
@@ -72,7 +78,7 @@ export default async function PracticalInfoPage({
         ).map(toSummary)}
         videos={practicalInfoVideos()}
         publicProblems={PRACTICAL_PUBLIC_PROBLEMS}
-        centers={PRACTICAL_MAIN_TEST_CENTERS.map((center) => ({
+        centers={publicMainCenters.map((center) => ({
           ...center,
           evidenceLabel: getPracticalCenterEvidenceLabel(center),
           comparison: getPracticalCenterComparison(center),

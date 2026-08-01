@@ -1,5 +1,6 @@
 import type { GeneratedContent, PublicQuestion, Question } from "@/lib/domain/types";
 import { isUsablePastExamVariant } from "@/lib/content/past-exam-examples";
+import { orderPracticeChoices } from "@/lib/content/practice-choice-order";
 import { shuffleQuestionIds, toPublicQuestion } from "@/lib/domain/practice";
 
 export type OriginalPracticeRatio = 0 | 25 | 50 | 75 | 100;
@@ -11,6 +12,7 @@ export function createPracticePresentations(
   variants: Variant[],
   originalRatio: OriginalPracticeRatio,
   seed: number,
+  shuffleChoices = true,
 ): PublicQuestion[] {
   const originalsByQuestion = getSafeOriginalsByQuestion(questions, variants);
   const eligibleIds = questions.filter((question) => originalsByQuestion.has(question.id)).map((question) => question.id);
@@ -18,10 +20,12 @@ export function createPracticePresentations(
   const originalIds = new Set(shuffleQuestionIds(eligibleIds, seed ^ 0x51f15e).slice(0, targetCount));
 
   return questions.map((question) => {
-    if (!originalIds.has(question.id)) return toPublicQuestion(question);
+    if (!originalIds.has(question.id)) return toPracticePresentation(question, question.id, seed, shuffleChoices);
     const candidates = originalsByQuestion.get(question.id) ?? [];
     const variant = candidates[stableIndex(`${seed}:${question.id}`, candidates.length)];
-    return variant ? toOriginalPublicQuestion(question, variant) : toPublicQuestion(question);
+    return variant
+      ? toOriginalPublicQuestion(question, variant, seed, shuffleChoices)
+      : toPracticePresentation(question, question.id, seed, shuffleChoices);
   });
 }
 
@@ -49,6 +53,32 @@ export function getSafeOriginalsByQuestion(questions: Question[], variants: Vari
   return result;
 }
 
+export function filterPracticeContentByYearRange(
+  questions: Question[],
+  variants: Variant[],
+  yearFrom?: number,
+  yearTo?: number,
+) {
+  if (yearFrom === undefined || yearTo === undefined) {
+    return { questions, variants };
+  }
+  const filteredVariants = variants.filter(
+    (variant) =>
+      variant.year !== null &&
+      variant.year >= yearFrom &&
+      variant.year <= yearTo,
+  );
+  const eligibleQuestionIds = new Set(
+    getSafeOriginalsByQuestion(questions, filteredVariants).keys(),
+  );
+  return {
+    questions: questions.filter((question) =>
+      eligibleQuestionIds.has(question.id),
+    ),
+    variants: filteredVariants,
+  };
+}
+
 export function isSafeOriginalPracticeVariant(question: Question, variant: Variant) {
   if (!isUsablePastExamVariant(variant)) return false;
   const mappedChoices = mapVariantChoices(question, variant);
@@ -61,15 +91,45 @@ export function isSafeOriginalPracticeVariant(question: Question, variant: Varia
   );
 }
 
-function toOriginalPublicQuestion(question: Question, variant: Variant): PublicQuestion {
+function toPracticePresentation(
+  question: Question,
+  questionVariantId: string,
+  seed: number,
+  shuffleChoices: boolean,
+): PublicQuestion {
+  const publicQuestion = toPublicQuestion(question);
+  const shouldShuffle =
+    shuffleChoices && (question.shufflePolicy ?? "all") === "all";
+  if (!shouldShuffle) return publicQuestion;
+  const choices = orderPracticeChoices(publicQuestion.choices, seed, questionVariantId, shouldShuffle)
+    .map((choice, index) => ({ ...choice, order: index + 1 }));
+  return { ...publicQuestion, choices };
+}
+
+function toOriginalPublicQuestion(
+  question: Question,
+  variant: Variant,
+  seed: number,
+  shuffleChoices: boolean,
+): PublicQuestion {
   const publicQuestion = toPublicQuestion(question);
   const mappedChoices = mapVariantChoices(question, variant);
-  if (!mappedChoices || variant.year === null) return publicQuestion;
+  if (!mappedChoices || variant.year === null) return toPracticePresentation(question, question.id, seed, shuffleChoices);
+
+  const shouldShuffle =
+    shuffleChoices &&
+    (variant.shufflePolicy ?? question.shufflePolicy ?? "all") === "all";
+  const choices = orderPracticeChoices(
+    mappedChoices.map((choice, index) => ({ id: choice.id, text: variant.choices[index].trim() })),
+    seed,
+    variant.externalId,
+    shouldShuffle,
+  ).map((choice, index) => ({ ...choice, order: index + 1 }));
 
   return {
     ...publicQuestion,
     stem: variant.stem.trim(),
-    choices: mappedChoices.map((choice, index) => ({ id: choice.id, order: index + 1, text: variant.choices[index].trim() })),
+    choices,
     sourceLabel: variant.sourceUrl,
     provenance: {
       reconstructed: false,

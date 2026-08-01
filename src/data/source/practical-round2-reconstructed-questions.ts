@@ -331,7 +331,7 @@ export const PRACTICAL_ROUND2_RECONSTRUCTED_QUESTIONS: PracticalQuestion[] = [
       "작업 시작 전과 숫돌 교체 후 시간을 바꾸지 않는다.",
       "보호안경은 개인보호구이고, 문항이 묻는 기계 안전장치는 덮개다.",
     ],
-    conceptIds: ["PCON-SUP-031"],
+    conceptIds: ["PCON-SUP-043"],
     category: "work_procedure",
     source: ncsSource(
       "1503010122",

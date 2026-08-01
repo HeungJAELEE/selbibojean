@@ -1,16 +1,72 @@
 import { PageHeading } from "@/components/page-heading";
+import { DeviceLearningStorage } from "@/components/device-learning-storage";
 import { WrittenMockSetup } from "@/components/written-mock-setup";
 import { getContent } from "@/lib/content/repository";
+import { getSafeOriginalsByQuestion } from "@/lib/content/practice-presentations";
 import { isPublishableQuestion } from "@/lib/domain/practice";
+import { isReleaseFeatureEnabled } from "@/lib/release-features";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
 
 export default async function WrittenMockPage() {
+  const supabase = await createSupabaseServerClient();
+  const { data: auth } = supabase
+    ? await supabase.auth.getUser()
+    : { data: { user: null } };
   const content = await getContent();
+  const choiceShuffleEnabled = isReleaseFeatureEnabled(
+    "mock_choice_shuffle",
+  );
   const availableBySubject = Object.fromEntries(
     content.subjects.map((subject) => [
       subject.id,
       new Set(content.questions.filter((question) => question.subjectId === subject.id && isPublishableQuestion(question)).map((question) => question.id)).size,
     ]),
   );
+  const safeOriginals = getSafeOriginalsByQuestion(
+    content.questions.filter(isPublishableQuestion),
+    content.variants,
+  );
+  const availableYears = [
+    ...new Set(
+      [...safeOriginals.values()]
+        .flat()
+        .map((variant) => variant.year)
+        .filter((year): year is number => year !== null),
+    ),
+  ].sort((left, right) => left - right);
+  const questionById = new Map(
+    content.questions.map((question) => [question.id, question]),
+  );
+  const availableByYearRange: Record<string, Record<string, number>> = {};
+  for (const from of availableYears) {
+    for (const to of availableYears) {
+      if (from > to) continue;
+      const idsBySubject = new Map<string, Set<string>>();
+      for (const [questionId, variants] of safeOriginals) {
+        if (
+          !variants.some(
+            (variant) =>
+              variant.year !== null &&
+              variant.year >= from &&
+              variant.year <= to,
+          )
+        ) {
+          continue;
+        }
+        const subjectId = questionById.get(questionId)?.subjectId;
+        if (!subjectId) continue;
+        const ids = idsBySubject.get(subjectId) ?? new Set<string>();
+        ids.add(questionId);
+        idsBySubject.set(subjectId, ids);
+      }
+      availableByYearRange[`${from}-${to}`] = Object.fromEntries(
+        content.subjects.map((subject) => [
+          subject.id,
+          idsBySubject.get(subject.id)?.size ?? 0,
+        ]),
+      );
+    }
+  }
   return (
     <div className="page-wrap">
       <PageHeading
@@ -18,6 +74,9 @@ export default async function WrittenMockPage() {
         title="필기 모의고사"
         description="실전형은 4과목에서 각각 20문제씩 총 80문제를 출제합니다. 커스텀 모드에서는 과목·문제 수·실제 기출 비율을 바꿀 수 있습니다."
       />
+      <div className="mb-6">
+        <DeviceLearningStorage authenticated={Boolean(auth.user)} />
+      </div>
       <section className="mb-6 grid gap-4 md:grid-cols-2">
         <div className="rounded-2xl border border-[#173957] bg-[#173957] p-6 text-white">
           <ClipboardList size={21} className="text-teal-200" />
@@ -41,7 +100,13 @@ export default async function WrittenMockPage() {
           </span>
         </Link>
       </section>
-      <WrittenMockSetup subjects={content.subjects} availableBySubject={availableBySubject} />
+      <WrittenMockSetup
+        subjects={content.subjects}
+        availableBySubject={availableBySubject}
+        availableYears={availableYears}
+        availableByYearRange={availableByYearRange}
+        choiceShuffleEnabled={choiceShuffleEnabled}
+      />
     </div>
   );
 }

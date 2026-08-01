@@ -297,6 +297,13 @@ export const WRITTEN_SUBJECT_TWO_MEMORY_GUIDE_SUPPLEMENT: SubjectTwoMemoryBundle
           detailLessonTitles: ["안전표지"],
         },
         {
+          id: "s2-safety-sign-fire-details-four-categories",
+          cue: "금지·경고·지시·안내",
+          answer:
+            "금지는 하지 말아야 할 행동, 경고는 주의할 위험, 지시는 반드시 해야 할 행동, 안내는 비상구·구호설비 같은 위치 정보를 뜻합니다. 색·형상으로 분류한 뒤 그림문자로 구체 명칭을 판독합니다.",
+          detailLessonTitles: ["안전표지"],
+        },
+        {
           id: "s2-safety-sign-fire-details-combustion",
           cue: "연소 3요소",
           answer:
@@ -323,6 +330,11 @@ export const WRITTEN_SUBJECT_TWO_MEMORY_GUIDE_SUPPLEMENT: SubjectTwoMemoryBundle
           statement: "노란색 안전표지는 보호구를 반드시 착용하라는 지시만 뜻한다.",
           correction:
             "노랑은 경고, 파랑은 지시 의미를 중심으로 구분합니다.",
+        },
+        {
+          statement: "비상구 위치를 알리는 녹색 표지는 작업자가 반드시 해야 할 행동을 지시하는 표지다.",
+          correction:
+            "비상구·응급구호·세안장치 위치는 안내표지이며, 보호구 착용처럼 반드시 해야 할 행동은 지시표지로 구분합니다.",
         },
         {
           statement: "통전 중 전기설비 화재는 냉각 효과가 큰 물을 먼저 분사한다.",

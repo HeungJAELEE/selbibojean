@@ -13,7 +13,7 @@ const navItems = [
   ["실기 정보", "/practical/info"],
 ] as const;
 
-export function SiteHeader() {
+export function SiteHeader({ isAuthenticated }: { isAuthenticated: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const isHydrated = useHydrated();
   return (
@@ -63,10 +63,10 @@ export function SiteHeader() {
             문의하기
           </a>
           <Link
-            href="/login"
+            href={isAuthenticated ? "/settings/account" : "/login"}
             className="rounded-xl bg-[#173957] px-3 py-2.5 text-xs font-bold text-white sm:px-4 sm:text-sm"
           >
-            로그인
+            {isAuthenticated ? "계정" : "로그인"}
           </Link>
           <button
             type="button"

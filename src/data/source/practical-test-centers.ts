@@ -24,6 +24,7 @@ export type PracticalTestCenter = {
 export type PracticalCenterEvidenceKind =
   | "facility_sheet_2026"
   | "exam_history_2025"
+  | "field_verified"
   | "verified_user_report"
   | "historical_candidate";
 
@@ -299,6 +300,36 @@ export const PRACTICAL_TEST_CENTERS: PracticalTestCenter[] = [
       reportedAt: "2026-07-28",
       summary:
         "용접 보호구는 개인 지참하고, 그 외 준비물은 시험장에서 모두 제공합니다.",
+    },
+    candidateFieldReport: {
+      sourceKind: "user_report",
+      reportedAt: "2024-08-13",
+      summary:
+        "공압·유압 실습장비의 장비점검과 현장 이상 대응에 관한 수험자 제보입니다.",
+      sections: [
+        {
+          category: "pneumatic",
+          title: "공압 장비점검",
+          notes: [
+            "공압과 유압 시험이 나뉘어 운영됐다는 제보가 있습니다.",
+            "공압 배기구와 호스 체결이 느슨하면 압력이 형성되지 않을 수 있어 장비점검 때 연결 상태를 확인하는 편이 좋습니다.",
+            "리미트스위치 위치, 실린더 움직임, 솔레노이드밸브 동작을 시험 시작 전에 확인했다는 후기입니다.",
+          ],
+          caution:
+            "압력이 형성되지 않거나 밸브가 작동하지 않으면 임의 수리하지 말고 즉시 감독관에게 알리세요.",
+        },
+        {
+          category: "hydraulic",
+          title: "유압 장비점검",
+          notes: [
+            "릴리프밸브로 시험장 지시 압력을 맞춘 뒤 회로를 진행했다는 제보가 있습니다.",
+            "배선 또는 밸브 이상으로 출력이 나오지 않는 사례가 있었고, 같은 장비에서도 상태 차이가 있었다는 후기입니다.",
+            "장비점검 시간을 활용해 호스·배선·밸브의 기본 동작을 확인하는 편이 좋다는 조언입니다.",
+          ],
+          caution:
+            "압력 설정과 이상 대응은 해당 회차 감독관 안내를 우선하세요.",
+        },
+      ],
     },
   },
   {
@@ -643,6 +674,22 @@ const CHANGWON_KOPO_REPORTED_CENTER: PracticalTestCenter = {
   },
 };
 
+const BUSAN_KOPO_FIELD_VERIFIED_CENTER: PracticalTestCenter = {
+  id: "busan-kopo-facility-energy-lab",
+  region: "부산",
+  name: "한국폴리텍대학 부산캠퍼스 설비에너지보전실",
+  buildingNote: "2216 설비에너지보전실 공·유압실",
+  parkingNote: null,
+  suppliedMaterialNote: null,
+  rawFacilityNote:
+    "사용자 제공 현장 사진에서 설비보전기사 시험장 표지와 공·유압 실습대, 전기 릴레이·버튼·타이머 모듈, 호스·부품 수납 상태를 확인 · 제조사·모델·정확한 수량은 미확인",
+  equipmentModelIds: [],
+  evidenceKind: "field_verified",
+  evidenceSourceUrl: null,
+  evidenceNote:
+    "현장 사진에서 설비보전기사 시험장 표지를 확인했습니다. 최신 회차의 공식 지정 여부는 원서접수에서 다시 확인하세요.",
+};
+
 export const PRACTICAL_HISTORICAL_CANDIDATE_CENTERS: PracticalTestCenter[] =
   PRACTICAL_HISTORICAL_CANDIDATE_SEEDS.map(
     ([id, region, name, buildingNote]) => ({
@@ -666,6 +713,7 @@ export const PRACTICAL_MAIN_TEST_CENTERS: PracticalTestCenter[] = [
   ...PRACTICAL_2026_FACILITY_CENTERS,
   ...PRACTICAL_2025_HISTORY_CENTERS,
   CHANGWON_KOPO_REPORTED_CENTER,
+  BUSAN_KOPO_FIELD_VERIFIED_CENTER,
 ];
 
 export function getPracticalCenterEvidenceKind(
@@ -679,6 +727,7 @@ export function getPracticalCenterEvidenceLabel(
 ) {
   const kind = getPracticalCenterEvidenceKind(center);
   if (kind === "exam_history_2025") return "2025 시험 이력";
+  if (kind === "field_verified") return "현장 사진 시험장 표지 확인";
   if (kind === "verified_user_report") return "현장 사진·수험자 제보 확인";
   if (kind === "historical_candidate") return "과거 후보";
   return "2026 시설표";
@@ -709,6 +758,8 @@ export function getPracticalCenterComparison(
       ? "2025 시험 이력은 확인됐지만 공압·유압 장비 모델과 실습대 수량은 미확인입니다."
       : evidenceKind === "verified_user_report"
         ? "현장 사진과 수험자 제보로 공유압 실습대 사용을 확인했지만 제조사·모델·좌석별 상태는 미확인입니다."
+      : evidenceKind === "field_verified"
+        ? "현장 사진에서 공·유압 실습대와 전기제어 모듈을 확인했지만 제조사·모델·정확한 수량은 미확인입니다."
       : evidenceKind === "historical_candidate"
         ? "과거 후보 정보만 있어 실제 시행 회차와 공압·유압 장비를 모두 확인해야 합니다."
         : "공식 시설표에 공압·유압 장비 모델이 기재되지 않아 V-AMT와의 동일 여부를 확정할 수 없습니다.";

@@ -7,6 +7,10 @@ import type { ConceptGroup, PracticeFeedback, PublicQuestion, Subject } from "@/
 import { cn } from "@/lib/utils";
 import { PracticeFeedbackPanel } from "@/components/practice-feedback";
 import { useHydrated } from "@/lib/use-hydrated";
+import {
+  GUEST_ATTEMPTS_KEY,
+  notifyGuestAttemptsChanged,
+} from "@/lib/learning/guest-attempt-storage";
 
 type Session = {
   sessionId: string;
@@ -23,7 +27,6 @@ type Session = {
 };
 
 const SESSION_PREFIX = "seolbi:practice:";
-const ATTEMPTS_KEY = "seolbi:guest-attempts";
 
 export function RandomPractice({ subjects, groups }: { subjects: Subject[]; groups: ConceptGroup[] }) {
   const searchParams = useSearchParams();
@@ -69,7 +72,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
   async function startSession() {
     setLoading(true);
     setError("");
-    const guestAttempts = JSON.parse(localStorage.getItem(ATTEMPTS_KEY) ?? "[]") as Array<{ questionId: string; isCorrect: boolean; dueAt: string }>;
+    const guestAttempts = JSON.parse(localStorage.getItem(GUEST_ATTEMPTS_KEY) ?? "[]") as Array<{ questionId: string; isCorrect: boolean; dueAt: string }>;
     const guestQuestionIds =
       mode === "wrong" || mode === "weak"
         ? guestAttempts.filter((attempt) => !attempt.isCorrect).map((attempt) => attempt.questionId)
@@ -113,11 +116,12 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
       setFeedback(result);
       setResults((current) => ({ ...current, [question.id]: result.isCorrect }));
       if (session.storage === "guest") {
-        const attempts = JSON.parse(localStorage.getItem(ATTEMPTS_KEY) ?? "[]") as unknown[];
+        const attempts = JSON.parse(localStorage.getItem(GUEST_ATTEMPTS_KEY) ?? "[]") as unknown[];
         const dueAt = new Date();
         dueAt.setMinutes(dueAt.getMinutes() + (result.isCorrect ? selfRating === "known" ? 7 * 1440 : selfRating === "unsure" ? 3 * 1440 : 1440 : 10));
         attempts.push({ questionId: question.id, selectedChoiceId, isCorrect: result.isCorrect, selfRating, dueAt: dueAt.toISOString(), attemptKind, attemptedAt: new Date().toISOString() });
-        localStorage.setItem(ATTEMPTS_KEY, JSON.stringify(attempts));
+        localStorage.setItem(GUEST_ATTEMPTS_KEY, JSON.stringify(attempts));
+        notifyGuestAttemptsChanged();
       }
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "채점하지 못했습니다.");

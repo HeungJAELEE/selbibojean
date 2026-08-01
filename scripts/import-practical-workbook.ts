@@ -42,6 +42,63 @@ import { isLearnerVisiblePracticalQuestion } from "../src/lib/content/learner-vi
 const DEFAULT_SOURCE =
   "C:/Users/JaeheungLee/.codex/outputs/019f89fa-0297-7823-b778-dda466695604/설비보전기사_작업형실기_기출복원_출제예상40_개념통합_2차.xlsx";
 const OUTPUT_DIR = path.join(process.cwd(), "src", "data", "generated");
+const SAFETY_SIGN_OFFICIAL_SOURCE: PracticalSourceRef = {
+  sourceKind: "official_reference",
+  ncsCode: "OSH-RULE-ANNEX-6",
+  documentTitle: "산업안전보건법 시행규칙 별표 6 안전보건표지의 종류와 형태",
+  version: "시행 2026-06-26",
+  pdfPage: 1,
+  printedPage: null,
+  figureNumber: "별표 6",
+  performanceCriteria:
+    "금지·경고·지시·안내 표지의 분류와 대표 표지 판독",
+  sourceFileHash:
+    "63DAFE819B2C2BD78B93751F9CE3B3705CFCC0BC26F1477760FFDBF41ADC3CB1",
+  sourceUrl:
+    "https://www.law.go.kr/LSW/flDownload.do?flSeq=131883527",
+};
+
+const SAFETY_SIGN_STEM =
+  "다음 작업 상황에 알맞은 안전보건표지의 분류와 대표 표지명을 각각 쓰시오. (가) 관계자 외 출입을 막는다. (나) 고압전기 위험을 알린다. (다) 보안경 착용을 의무화한다. (라) 비상구 위치를 알린다.";
+const SAFETY_SIGN_ANSWER =
+  "(가) 금지표지-출입금지, (나) 경고표지-고압전기 경고, (다) 지시표지-보안경 착용, (라) 안내표지-비상구";
+const SAFETY_SIGN_KEYWORDS = [
+  "금지표지-출입금지",
+  "경고표지-고압전기 경고",
+  "지시표지-보안경 착용",
+  "안내표지-비상구",
+];
+const SAFETY_SIGN_ACCEPTED_ANSWERS = [
+  SAFETY_SIGN_ANSWER,
+  "(가) 금지-출입금지, (나) 경고-고압전기, (다) 지시-보안경 착용, (라) 안내-비상구",
+];
+const SAFETY_SIGN_RUBRIC: PracticalRubricItem[] = [
+  {
+    id: "EXP-S02-r1",
+    label: "(가) 금지표지와 출입금지 연결",
+    points: 1,
+  },
+  {
+    id: "EXP-S02-r2",
+    label: "(나) 경고표지와 고압전기 경고 연결",
+    points: 1,
+  },
+  {
+    id: "EXP-S02-r3",
+    label: "(다) 지시표지와 보안경 착용 연결",
+    points: 1,
+  },
+  {
+    id: "EXP-S02-r4",
+    label: "(라) 안내표지와 비상구 연결",
+    points: 1,
+  },
+];
+const SAFETY_SIGN_TRAPS = [
+  "위험한 행동을 막는 금지표지와 위험 존재를 알리는 경고표지를 바꾸지 않는다.",
+  "보호구 착용을 요구하는 지시표지와 피난·구호 위치를 알리는 안내표지를 바꾸지 않는다.",
+  "GHS 화학물질 그림문자를 산업안전보건표지의 네 분류와 같은 체계로 쓰지 않는다.",
+];
 
 type ConceptSourcePage = {
   code: keyof typeof NCS_SOURCE_REGISTRY;
@@ -625,7 +682,7 @@ function actualAudit(id: string, value: unknown): AuditDisposition {
 function predictedAudit(id: string, value: unknown): AuditDisposition {
   if (id === "EXP-C03") return "verified";
   if (text(value).startsWith("held_")) {
-    // EXP-S02는 이미지 없이도 표지의 색·형상·의미를 묻도록 정식 재작성한다.
+    // EXP-S02는 현행 시행규칙 별표 6을 근거로 문제·정답·채점계약 전체를 재작성한다.
     return id === "EXP-S02" ? "verified" : (text(value) as AuditDisposition);
   }
   return "verified";
@@ -642,7 +699,7 @@ function predictedStem(id: string, original: string) {
     return "축정렬 불량 중 평행 오프셋과 각도 불량을 중심선의 위치 및 각도 관계로 비교하시오.";
   }
   if (id === "EXP-S02") {
-    return "안전표지에서 금지·경고·지시 표지를 구분하는 색상과 기본 형상, 작업자가 따라야 할 행동을 각각 쓰시오.";
+    return SAFETY_SIGN_STEM;
   }
   if (id === "EXP-W03") {
     return `${original} 단, 모재·용접절차·제조사 기준을 확인해야 하는 항목을 답안에 포함하시오.`;
@@ -653,6 +710,9 @@ function predictedStem(id: string, original: string) {
 function predictedAnswer(id: string, original: string) {
   if (id === "EXP-B01") {
     return "(가) 원통 롤러 베어링, (나) 테이퍼 롤러 베어링, (다) 스러스트 볼 베어링, (라) 스러스트 니들 베어링";
+  }
+  if (id === "EXP-S02") {
+    return SAFETY_SIGN_ANSWER;
   }
   return original;
 }
@@ -811,6 +871,9 @@ function questionSourceRefs(
   codeValue: unknown,
   topic: string,
 ): PracticalSourceRef[] {
+  if (questionId === "EXP-S02") {
+    return [SAFETY_SIGN_OFFICIAL_SOURCE];
+  }
   const visualAidId = promptVisualAidId(questionId);
   const visualAid = PRACTICAL_VISUAL_AIDS.find(
     (aid) => aid.id === visualAidId,
@@ -962,7 +1025,12 @@ async function main() {
     predictedRows,
   ).map((row) => {
     const id = text(row["예상문제ID"]);
-    const title = text(row["문제명"]).replace(/\s*\(출제 예상\)\s*$/g, "");
+    const workbookTitle = text(row["문제명"]).replace(
+      /\s*\(출제 예상\)\s*$/g,
+      "",
+    );
+    const title =
+      id === "EXP-S02" ? "안전보건표지 4분류 판독" : workbookTitle;
     const auditDisposition = predictedAudit(id, row["검증상태"]);
     const calculation = lines(row["계산과정"]);
     const visualAidId = promptVisualAidId(id);
@@ -984,6 +1052,8 @@ async function main() {
       requiredKeywords:
         id === "EXP-B01"
           ? ["원통 롤러", "테이퍼 롤러", "스러스트 볼", "스러스트 니들"]
+          : id === "EXP-S02"
+            ? SAFETY_SIGN_KEYWORDS
           : list(row["필수키워드"]),
       acceptedAnswers:
         id === "EXP-B01"
@@ -993,6 +1063,8 @@ async function main() {
               "추력 볼 베어링",
               "추력 니들 롤러 베어링",
             ]
+          : id === "EXP-S02"
+            ? SAFETY_SIGN_ACCEPTED_ANSWERS
           : list(row["허용표현"]),
       calculation,
       unit: text(row["단위"]) || null,
@@ -1006,10 +1078,14 @@ async function main() {
                 points: 2,
               },
             ]
+          : id === "EXP-S02"
+            ? SAFETY_SIGN_RUBRIC
           : rubric(row["부분점수"], id),
       traps:
         id === "EXP-B01"
           ? ["스러스트 볼과 스러스트 니들 혼동", "사진 순서를 답안 순서와 다르게 작성"]
+          : id === "EXP-S02"
+            ? SAFETY_SIGN_TRAPS
           : list(row["오답함정"]),
       conceptIds: conceptForQuestion(id, null, title, conceptIndex),
       ...studyCategories,
@@ -1026,10 +1102,15 @@ async function main() {
           ? "published"
           : "in_review",
       occurrence: null,
-      predictedBasis: text(row["예상근거"]),
+      predictedBasis:
+        id === "EXP-S02"
+          ? "2025년 3회·2026년 1회 안전보건표지 복원 흐름과 현행 산업안전보건법 시행규칙 별표 6의 네 분류를 바탕으로 자체 구성했다."
+          : text(row["예상근거"]),
       reviewNote:
         id === "EXP-C03"
           ? "2026년 1회 OEE 계산 복원문제의 공식과 조건을 바탕으로 이미지 없이 풀 수 있는 지문형 예상문제로 공개한다."
+          : id === "EXP-S02"
+            ? "현행 산업안전보건법 시행규칙 별표 6(시행 2026-06-26)을 2026-07-31에 재확인했다. 실제 기출 원문이 아닌 자체 예상 시나리오이며 네 분류와 대표 표지명을 함께 채점한다."
           : text(row["검증상태"]),
     };
   });

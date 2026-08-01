@@ -106,6 +106,24 @@ describe("written subject two memory guide", () => {
     ]);
   });
 
+  it("keeps the four safety-sign categories and representative actions together", () => {
+    const bundle = WRITTEN_SUBJECT_TWO_MEMORY_GUIDE.find(
+      (item) => item.id === "safety-sign-fire-details",
+    );
+    const fourCategories = bundle?.facts.find(
+      (fact) =>
+        fact.id === "s2-safety-sign-fire-details-four-categories",
+    );
+
+    expect(fourCategories?.answer).toContain("금지는 하지 말아야 할 행동");
+    expect(fourCategories?.answer).toContain("경고는 주의할 위험");
+    expect(fourCategories?.answer).toContain("지시는 반드시 해야 할 행동");
+    expect(fourCategories?.answer).toContain("안내는 비상구·구호설비");
+    expect(
+      bundle?.traps.some((trap) => trap.statement.includes("비상구 위치")),
+    ).toBe(true);
+  });
+
   it("keeps the private source URL and unverified statutory numbers out of the guide", () => {
     const serializedGuide = JSON.stringify(WRITTEN_SUBJECT_TWO_MEMORY_GUIDE);
 

@@ -292,6 +292,82 @@ export const PRACTICAL_TEST_CENTER_MEDIA_GROUPS: PracticalTestCenterMediaGroup[]
         },
       ],
     },
+    {
+      centerId: "busan-kopo-facility-energy-lab",
+      receivedAt: "2026-08-01",
+      sourceLabel: "사용자 제공 현장 사진",
+      summary:
+        "설비에너지실 공·유압실의 시험장 표지와 공압·전기제어 실습대 배치를 사용자 제공 사진에서 확인할 수 있습니다.",
+      items: [
+        {
+          id: "busan-kopo-facility-room-sign",
+          src: "/practical/test-centers/busan-kopo/facility-room-sign.webp",
+          width: 165,
+          height: 190,
+          alt: "부산 폴리텍 설비에너지실 공·유압실 문패",
+          caption: "설비에너지 보전실 공·유압실",
+          category: "pneumatic",
+          evidenceNote:
+            "사용자 제공 원본에 사람과 응시자 명단이 있어, 문패만 남긴 파생 crop을 공개합니다.",
+        },
+        {
+          id: "busan-kopo-practical-test-site-sign",
+          src: "/practical/test-centers/busan-kopo/practical-test-site-sign.webp",
+          width: 370,
+          height: 330,
+          alt: "부산 폴리텍 설비보전기사 통제구역 시험장 표지",
+          caption: "설비보전기사 통제구역 시험장",
+          category: "pneumatic",
+          evidenceNote:
+            "사용자 제공 원본에 사람과 응시자 명단이 있어, 시험장 표지만 남긴 파생 crop을 공개합니다.",
+        },
+        {
+          id: "busan-kopo-pneumatic-training-room-overview",
+          src: "/practical/test-centers/busan-kopo/pneumatic-training-room-overview.webp",
+          width: 1440,
+          height: 1081,
+          alt: "부산 폴리텍 공압·전기제어 실습실 전경",
+          caption: "공압·전기제어 실습대 전경",
+          category: "pneumatic",
+        },
+        {
+          id: "busan-kopo-electropneumatic-training-bench-front",
+          src: "/practical/test-centers/busan-kopo/electropneumatic-training-bench-front.webp",
+          width: 1440,
+          height: 1081,
+          alt: "부산 폴리텍 공압·전기제어 실습대 전면",
+          caption: "공압·전기제어 실습대 전면",
+          category: "electrical_control",
+        },
+        {
+          id: "busan-kopo-electropneumatic-training-bench-angle",
+          src: "/practical/test-centers/busan-kopo/electropneumatic-training-bench-angle.webp",
+          width: 1080,
+          height: 1440,
+          alt: "부산 폴리텍 공압·전기제어 실습대 사선 전경",
+          caption: "공압·전기제어 실습대 사선 전경",
+          category: "electrical_control",
+        },
+        {
+          id: "busan-kopo-electropneumatic-training-benches-overview",
+          src: "/practical/test-centers/busan-kopo/electropneumatic-training-benches-overview.webp",
+          width: 1440,
+          height: 1081,
+          alt: "부산 폴리텍 공압·전기제어 실습대 여러 대의 전경",
+          caption: "공압·전기제어 실습대 배치",
+          category: "electrical_control",
+        },
+        {
+          id: "busan-kopo-electropneumatic-training-bench-wide",
+          src: "/practical/test-centers/busan-kopo/electropneumatic-training-bench-wide.webp",
+          width: 1440,
+          height: 1081,
+          alt: "부산 폴리텍 공압·전기제어 실습대와 배선 리드 전경",
+          caption: "공압·전기제어 실습대와 배선 리드",
+          category: "electrical_control",
+        },
+      ],
+    },
   ];
 
 export const practicalTestCenterMediaByCenter = new Map(

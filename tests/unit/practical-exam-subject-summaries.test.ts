@@ -58,6 +58,25 @@ describe("practical exam subject cheat sheets", () => {
     expect(body).toContain("기어 록(물림 고착)");
   });
 
+  it("connects safety signs and respirators to their matching practical evidence", () => {
+    const summary = getExamSubjectCheatSheet("subject-2");
+    const safetySign = summary?.sharedCore.find(
+      (item) => item.conceptId === "PCON-009",
+    );
+    const respirator = summary?.sharedCore.find(
+      (item) => item.conceptId === "PCON-016",
+    );
+
+    expect(safetySign?.evidence.practicalQuestionIds).toEqual([
+      "P-2025-3-Q02",
+      "P-2026-1-Q02",
+      "EXP-S02",
+    ]);
+    expect(respirator?.evidence.practicalQuestionIds).toEqual([
+      "P-2025-2-Q08",
+    ]);
+  });
+
   it("uses the official six-loss names in subject 4", () => {
     const summary = getExamSubjectCheatSheet("subject-4");
     const body = summary?.sharedCore

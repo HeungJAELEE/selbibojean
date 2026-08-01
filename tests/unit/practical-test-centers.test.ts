@@ -23,12 +23,12 @@ describe("practical test center source catalog", () => {
     expect(PRACTICAL_TEST_CENTER_SOURCE.sourceFileSha256).toMatch(/^[A-F0-9]{64}$/);
   });
 
-  it("adds 15 verified 2025 venue histories, promotes Changwon, and keeps six candidates separate", () => {
+  it("adds 15 verified 2025 venue histories, promotes photographed centers, and keeps six candidates separate", () => {
     expect(PRACTICAL_2025_HISTORY_CENTERS).toHaveLength(15);
-    expect(PRACTICAL_MAIN_TEST_CENTERS).toHaveLength(34);
+    expect(PRACTICAL_MAIN_TEST_CENTERS).toHaveLength(35);
     expect(PRACTICAL_HISTORICAL_CANDIDATE_CENTERS).toHaveLength(6);
     expect(new Set(PRACTICAL_MAIN_TEST_CENTERS.map((center) => center.id)).size).toBe(
-      34,
+      35,
     );
     expect(
       PRACTICAL_2025_HISTORY_CENTERS.every(
@@ -118,6 +118,31 @@ describe("practical test center source catalog", () => {
     );
     expect(seongnam?.candidateSupplyGuidance?.summary).toContain(
       "직접 구비해 지참",
+    );
+  });
+
+  it("keeps the Gyeonggi KCCI pneumatic and hydraulic field report bounded as user evidence", () => {
+    const center = PRACTICAL_TEST_CENTERS.find(
+      (item) => item.id === "gyeonggi-kcci",
+    );
+
+    expect(center?.candidateFieldReport).toMatchObject({
+      sourceKind: "user_report",
+      reportedAt: "2024-08-13",
+      summary: expect.stringContaining("수험자 제보"),
+    });
+    expect(center?.candidateFieldReport?.sections.map((section) => section.category))
+      .toEqual(["pneumatic", "hydraulic"]);
+    expect(
+      center?.candidateFieldReport?.sections
+        .map(
+          (section) =>
+            `${section.notes.join(" ")} ${section.caution ?? ""}`,
+        )
+        .join(" "),
+    ).toContain("임의 수리");
+    expect(center?.rawFacilityNote).toBe(
+      "LK 30KVA 15KW, Daedae 20KVA 12KW, Kumho 20KVA 10KW",
     );
   });
 

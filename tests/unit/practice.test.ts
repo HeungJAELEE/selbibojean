@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { orderPracticeChoices } from "@/lib/content/practice-choice-order";
 import { buildWeakFocus, gradeQuestion, isPublishableQuestion, selectAllocatedPracticeQuestions, selectPracticeQuestions, toPublicQuestion } from "@/lib/domain/practice";
 import type { Lesson, Question } from "@/lib/domain/types";
 
@@ -66,6 +67,17 @@ describe("random practice", () => {
     const second = selectPracticeQuestions(questions, {}, 20, 2027).questions.map((question) => question.id);
     expect(first).not.toEqual(second);
     expect(new Set(first)).toEqual(new Set(second));
+  });
+
+  it("shuffles choice IDs deterministically by session and variant while preserving fixed order", () => {
+    const choices = ["choice-a", "choice-b", "choice-c", "choice-d"].map((id) => ({ id }));
+    const first = orderPracticeChoices(choices, 20260801, "variant-1", true).map((choice) => choice.id);
+    const repeated = orderPracticeChoices(choices, 20260801, "variant-1", true).map((choice) => choice.id);
+    const nextSession = orderPracticeChoices(choices, 20260802, "variant-1", true).map((choice) => choice.id);
+
+    expect(repeated).toEqual(first);
+    expect(nextSession).not.toEqual(first);
+    expect(orderPracticeChoices(choices, 20260801, "variant-1", false)).toEqual(choices);
   });
 
   it("expands repeated mistakes into related questions from the weakest groups", () => {

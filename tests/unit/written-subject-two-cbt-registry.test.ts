@@ -62,7 +62,7 @@ describe("subject 2 reviewed CBT registry", () => {
       }
     }
 
-    expect(factIds.size).toBe(106);
+    expect(factIds.size).toBe(107);
     expect(errors).toEqual([]);
   });
 
