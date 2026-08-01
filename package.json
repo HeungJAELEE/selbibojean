@@ -26,6 +26,9 @@
     "pretest:e2e": "npm run verify:node-runtime",
     "test:e2e": "playwright test",
     "posttest:e2e": "npm run cleanup:runtime-public",
+    "pretest:e2e:predeploy": "npm run verify:node-runtime",
+    "test:e2e:predeploy": "playwright test --config playwright.predeploy.config.ts",
+    "posttest:e2e:predeploy": "npm run cleanup:runtime-public",
     "test:rls": "supabase test db",
     "import:workbook": "tsx scripts/import-workbook.ts",
     "import:welding-safety": "tsx scripts/import-welding-safety-workbook.ts",
@@ -37,6 +40,8 @@
     "verify:gated-media-cleanup": "tsx scripts/verify-gated-media-cleanup.ts",
     "verify:practical-written-governance": "tsx scripts/verify-practical-written-governance.ts",
     "stage:supabase": "tsx scripts/stage-supabase-import.ts",
+    "materialize:supabase": "tsx scripts/materialize-supabase-content.ts --apply",
+    "verify:supabase-content": "tsx scripts/materialize-supabase-content.ts --verify-public",
     "audit:publication": "tsx scripts/audit-publication-scope.ts",
     "audit:merge-decisions": "tsx scripts/merge-written-audit-decisions.ts",
     "audit:report": "tsx scripts/generate-written-audit-report.ts",
@@ -50,7 +55,7 @@
     "visuals:promote": "tsx scripts/promote-practical-visuals.ts",
     "cleanup:runtime-public": "tsx scripts/cleanup-runtime-public.ts",
     "verify:deploy": "tsx scripts/verify-deployment-readiness.ts",
-    "preflight:deploy": "npm run check && npm run test:e2e && npm run verify:deploy",
+    "preflight:deploy": "npm run check && npm run test:e2e:predeploy && npm run verify:supabase-content && npm run verify:deploy",
     "check": "npm run verify:data && npm run typecheck && npm run lint && npm run test && npm run build && npm run verify:no-answer-leak"
   },
   "dependencies": {

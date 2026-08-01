@@ -16,6 +16,7 @@ const gatedBusanMedia = path.join(
   "test-centers",
   "busan-kopo",
 );
+const vinextArgs = process.argv.slice(2);
 
 let exitCode = 1;
 
@@ -33,7 +34,7 @@ try {
   if (prepared.stderr) process.stderr.write(prepared.stderr);
 
   exitCode = await new Promise<number>((resolve, reject) => {
-    const child = spawn(process.execPath, [vinextCli, "dev"], {
+    const child = spawn(process.execPath, [vinextCli, "dev", ...vinextArgs], {
       cwd: root,
       env: process.env,
       stdio: "inherit",
