@@ -1,0 +1,722 @@
+[
+  {
+    "questionId": "U-117",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-117-c1",
+    "directSolution": "온도가 일정한 기체에서는 절대압력과 체적의 곱이 일정하여 p₁V₁=p₂V₂가 성립합니다. 따라서 압력이 증가할 때 체적이 반비례해 감소하는 관계는 보일 법칙입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-117-c1",
+        "verdict": "correct",
+        "rationale": "보일 법칙은 일정 온도·일정 질량의 기체에서 절대압력과 체적의 곱이 일정하다는 관계입니다."
+      },
+      {
+        "choiceId": "U-117-c2",
+        "verdict": "incorrect",
+        "rationale": "샤를 법칙은 압력을 일정하게 둔 기체의 체적이 절대온도에 비례하는 관계이므로 등온 압력-체적 관계가 아닙니다."
+      },
+      {
+        "choiceId": "U-117-c3",
+        "verdict": "incorrect",
+        "rationale": "베르누이 법칙은 정상 유동에서 압력·속도·높이에 따른 유체의 기계적 에너지 관계를 다룹니다."
+      },
+      {
+        "choiceId": "U-117-c4",
+        "verdict": "incorrect",
+        "rationale": "보일-샤를 법칙은 압력·체적·절대온도가 함께 변하는 일반 기체 관계이며, 등온 조건만의 명칭은 보일 법칙입니다."
+      }
+    ],
+    "misconception": "압력·체적·온도 중 무엇을 일정하게 두는지 확인하지 않고 기체 법칙의 이름만 맞추는 혼동입니다.",
+    "existingLessonId": "lesson-aoad17",
+    "existingBlockId": "definition",
+    "assertionText": "- 보일 법칙: 일정 온도의 일정 질량 기체에서, 압력은 절대압력으로 두어 $p_1V_1=p_2V_2$로 계산한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928",
+      "https://cbtbank.kr/exam/de20190427",
+      "https://cbtbank.kr/exam/de20150531"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-133",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-133-c2",
+    "directSolution": "정상 유동하는 이상유체의 한 유선에서 압력수두·속도수두·위치수두의 합을 일정하게 두는 에너지 관계는 베르누이 정리입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-133-c1",
+        "verdict": "incorrect",
+        "rationale": "파스칼 원리는 밀폐 유체에 가한 압력이 모든 방향으로 동일하게 전달된다는 정지유체의 원리입니다."
+      },
+      {
+        "choiceId": "U-133-c2",
+        "verdict": "correct",
+        "rationale": "베르누이 정리는 이상적인 정상 유동의 한 유선에서 압력수두·속도수두·위치수두의 합이 일정하다고 봅니다."
+      },
+      {
+        "choiceId": "U-133-c3",
+        "verdict": "incorrect",
+        "rationale": "보일 법칙은 일정 온도의 기체에서 절대압력과 체적의 곱이 일정한 압축성 기체 관계입니다."
+      },
+      {
+        "choiceId": "U-133-c4",
+        "verdict": "incorrect",
+        "rationale": "연속방정식은 질량 보존에 따라 정상 비압축성 유동에서 단면적과 평균유속의 곱이 일정하다는 관계입니다."
+      }
+    ],
+    "misconception": "유체 법칙을 적용 상태와 보존량으로 구분하지 않고 압력이라는 공통어만으로 선택하는 혼동입니다.",
+    "existingLessonId": "lesson-m8noqg",
+    "existingBlockId": "definition",
+    "assertionText": "- 베르누이 정리: 이상적인 정상 유동에서 압력수두·속도수두·위치수두의 합이 일정하다. 실제 배관에는 마찰, 굴곡, 밸브 등 손실수두를 더한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9659405",
+      "https://www.comcbt.com/xe/webhaesul/9620121",
+      "https://cbtbank.kr/exam/de20150919"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-402",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-402-c3",
+    "directSolution": "배관 유동의 층류·천이·난류를 판별하려면 관성력과 점성력의 비인 레이놀즈수를 사용합니다. 점도 자체나 압축성 계수와 달리 유동상태를 가르는 무차원수입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-402-c1",
+        "verdict": "incorrect",
+        "rationale": "점도지수는 온도 변화에 따라 윤활유 점도가 얼마나 변하는지를 나타내는 지표이며 유동상태 판별수가 아닙니다."
+      },
+      {
+        "choiceId": "U-402-c2",
+        "verdict": "incorrect",
+        "rationale": "동점도계수는 점성계수를 밀도로 나눈 유체 물성으로 차원을 가지며, 층류와 난류를 직접 구분하는 무차원수가 아닙니다."
+      },
+      {
+        "choiceId": "U-402-c3",
+        "verdict": "correct",
+        "rationale": "레이놀즈수는 관성력과 점성력의 비를 나타내며 관내 유동의 층류·천이·난류 판별에 사용합니다."
+      },
+      {
+        "choiceId": "U-402-c4",
+        "verdict": "incorrect",
+        "rationale": "체적탄성계수는 압력 변화에 대한 유체 체적변형의 저항을 나타내며 흐름 양상을 구분하는 수가 아닙니다."
+      }
+    ],
+    "misconception": "점성과 관련된 물성값이면 모두 층류·난류 판별에 직접 쓰인다고 보는 혼동입니다.",
+    "existingLessonId": "lesson-m8noqg",
+    "existingBlockId": "definition",
+    "assertionText": "- 레이놀즈수 $Re=\\rho vD/\\mu=vD/\\nu$: 관성력과 점성력의 비이다. 층류·천이·난류의 경계 수치는 관 형상과 유입 조건 등에 따라 달라지므로 문제에서 제시한 기준을 따른다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20200822",
+      "https://cbtbank.kr/exam/de20120915"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-410",
+    "subjectId": "subject-1",
+    "decision": "hold",
+    "holdReason": "현재 독립 이론은 b접점을 논리 반전과 연결하면서 실제 스위치의 물리적 NO/NC는 별도로 해석하라고만 합니다. 조작 전 닫힘·조작 중 열림이라는 물리 접점 정의를 직접 확인할 비자기참조 assertion이 없어 HOLD합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20200822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-488",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-488-c4",
+    "directSolution": "단위 질량당 체적은 V/m으로 정의하며 밀도의 역수 1/ρ와 같습니다. 이 물리량의 명칭은 비체적입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-488-c1",
+        "verdict": "incorrect",
+        "rationale": "밀도는 단위 체적당 질량인 m/V이므로 단위 질량당 체적 V/m과 서로 역수 관계입니다."
+      },
+      {
+        "choiceId": "U-488-c2",
+        "verdict": "incorrect",
+        "rationale": "비중은 물질의 밀도를 기준물질의 밀도로 나눈 무차원 밀도비이며 체적을 질량으로 나눈 값이 아닙니다."
+      },
+      {
+        "choiceId": "U-488-c3",
+        "verdict": "incorrect",
+        "rationale": "비중량은 단위 체적당 중량 W/V로 정의하며 단위가 N/m³인 물리량입니다."
+      },
+      {
+        "choiceId": "U-488-c4",
+        "verdict": "correct",
+        "rationale": "비체적은 V/m=1/ρ로 정의되는 단위 질량당 체적이며 단위는 m³/kg입니다."
+      }
+    ],
+    "misconception": "밀도·비중·비중량·비체적의 분자와 분모, 단위 유무를 구분하지 않는 혼동입니다.",
+    "existingLessonId": "lesson-1ag5h06",
+    "existingBlockId": "definition",
+    "assertionText": "- 비체적 $v=V/m=1/\\rho$: 단위 질량당 체적, 단위 $m^3/kg$.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20200606",
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20161001"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-551",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-551-c2",
+    "directSolution": "궤환·폐루프·피드백 제어는 출력정보를 되먹여 오차 수정에 사용합니다. 결과를 측정해 되먹이지 않는 개루프제어만 의미가 다른 분류입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-551-c1",
+        "verdict": "incorrect",
+        "rationale": "궤환제어는 출력정보를 입력 측으로 되돌려 목표값과의 차이를 수정하는 피드백 제어를 뜻합니다."
+      },
+      {
+        "choiceId": "U-551-c2",
+        "verdict": "correct",
+        "rationale": "개루프제어는 출력 결과를 측정해 입력으로 되먹이지 않으므로 궤환·폐루프·피드백 제어와 구별됩니다."
+      },
+      {
+        "choiceId": "U-551-c3",
+        "verdict": "incorrect",
+        "rationale": "폐루프제어는 출력 검출과 피드백 경로를 포함하여 오차를 수정하는 제어 구조입니다."
+      },
+      {
+        "choiceId": "U-551-c4",
+        "verdict": "incorrect",
+        "rationale": "피드백제어는 출력 상태를 되먹여 제어 입력을 조정하는 방식으로 궤환제어와 같은 의미입니다."
+      }
+    ],
+    "misconception": "개루프와 폐루프를 단순한 회로 모양으로만 외워 피드백 경로의 유무를 확인하지 않는 혼동입니다.",
+    "existingLessonId": "lesson-wpknga",
+    "existingBlockId": "summary",
+    "assertionText": "1. 개루프 제어는 입력명령에 따라 동작하지만 결과를 측정해 수정하지 않는다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-562",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-562-c3",
+    "directSolution": "입력 논리값을 그대로 결합하지 않고 0은 1로, 1은 0으로 반전하는 단항 연산은 NOT입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-562-c1",
+        "verdict": "incorrect",
+        "rationale": "AND는 여러 입력이 모두 1일 때만 1을 출력하는 결합 연산이며 한 입력을 반전하지 않습니다."
+      },
+      {
+        "choiceId": "U-562-c2",
+        "verdict": "incorrect",
+        "rationale": "OR는 여러 입력 중 하나 이상이 1이면 1을 출력하는 결합 연산이며 입력의 반대값을 만들지 않습니다."
+      },
+      {
+        "choiceId": "U-562-c3",
+        "verdict": "correct",
+        "rationale": "NOT은 Y=Ā로 나타내며 입력이 1이면 0, 입력이 0이면 1을 출력하는 반전 연산입니다."
+      },
+      {
+        "choiceId": "U-562-c4",
+        "verdict": "incorrect",
+        "rationale": "XOR는 두 입력이 서로 다를 때 1을 출력하는 불일치 연산으로 단일 입력의 반전과 다릅니다."
+      }
+    ],
+    "misconception": "논리게이트를 출력이 0 또는 1이라는 공통점만으로 묶고 입력 수와 출력 조건을 확인하지 않는 혼동입니다.",
+    "existingLessonId": "lesson-1viyswi",
+    "existingBlockId": "definition",
+    "assertionText": " · NOT\n · $Y=\\overline A$\n · 입력의 반대\n · b접점·신호 반전",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427",
+      "https://cbtbank.kr/exam/de20150531"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-565",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-565-c4",
+    "directSolution": "200 bar를 넘는 고압 조건에서는 밀봉성과 압력효율이 높고 고압 운전에 유리한 피스톤펌프를 선택합니다. 기어·나사·일반 베인펌프의 대표 적용보다 고압 적합성이 큽니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-565-c1",
+        "verdict": "incorrect",
+        "rationale": "기어펌프는 단순하고 견고하지만 맥동·소음과 간극 누설의 영향을 받아 200 bar 초과 고압의 대표 선택이 아닙니다."
+      },
+      {
+        "choiceId": "U-565-c2",
+        "verdict": "incorrect",
+        "rationale": "나사펌프는 유량이 부드럽고 맥동과 소음이 작은 특성이 중심이며 초고압 운전의 대표 펌프로 분류하지 않습니다."
+      },
+      {
+        "choiceId": "U-565-c3",
+        "verdict": "incorrect",
+        "rationale": "일반 베인펌프는 토출이 균일하고 소음이 작지만 오염과 흡입조건에 민감하며 고압 대표 선택은 아닙니다."
+      },
+      {
+        "choiceId": "U-565-c4",
+        "verdict": "correct",
+        "rationale": "피스톤펌프는 밀봉성과 압력효율이 높아 높은 압력의 유압시스템에 적합합니다."
+      }
+    ],
+    "misconception": "펌프 형식을 모두 용적식이라는 이유로 같은 압력 범위에 사용할 수 있다고 보는 혼동입니다.",
+    "existingLessonId": "lesson-1buj9ja",
+    "existingBlockId": "definition",
+    "assertionText": "- 피스톤펌프: 축방향·반경방향형. 높은 압력과 효율, 가변용량에 유리하지만 정밀하고 비싸며 오염 관리가 중요하다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427",
+      "https://cbtbank.kr/exam/de20111002"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-630",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-630-c3",
+    "directSolution": "출력상태를 검출해 입력 측으로 되먹이는 경로가 없으면 외란으로 생긴 출력오차를 스스로 수정할 수 없습니다. 이 구조는 개루프 제어입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-630-c1",
+        "verdict": "incorrect",
+        "rationale": "디지털제어는 신호 표현과 연산 방식의 분류이며 피드백 경로가 있는지 없는지를 단독으로 정하지 않습니다."
+      },
+      {
+        "choiceId": "U-630-c2",
+        "verdict": "incorrect",
+        "rationale": "아날로그제어도 연속 신호를 다루는 방식의 분류이므로 개루프 또는 폐루프로 구성할 수 있습니다."
+      },
+      {
+        "choiceId": "U-630-c3",
+        "verdict": "correct",
+        "rationale": "개루프 제어는 출력 피드백이 없어 외란이나 부하 변화가 만든 출력오차를 스스로 보정하지 못합니다."
+      },
+      {
+        "choiceId": "U-630-c4",
+        "verdict": "incorrect",
+        "rationale": "폐루프제어는 출력을 검출해 목표값과 비교하고 그 오차를 제어 입력에 반영합니다."
+      }
+    ],
+    "misconception": "신호가 디지털인지 아날로그인지와 출력 피드백 경로의 유무를 같은 분류축으로 보는 혼동입니다.",
+    "existingLessonId": "lesson-1vxu6ik",
+    "existingBlockId": "summary",
+    "assertionText": "1. 피드백센서 없이 정해진 순서와 시간으로 밸브를 전환하면 출력오차를 스스로 보정하지 못하는 개루프계다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303",
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20080907",
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-693",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-693-c3",
+    "directSolution": "시퀀스밸브는 설정압력에 도달했을 때 다음 회로를 작동시키므로 순서를 만들지만, 동작 기준으로 제어하는 물리량은 압력입니다. 따라서 압력제어밸브로 분류합니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-693-c1",
+        "verdict": "incorrect",
+        "rationale": "방향제어밸브는 포트 연결을 바꾸어 유체의 흐름 방향을 전환하며 설정압력으로 순서를 시작하는 분류가 아닙니다."
+      },
+      {
+        "choiceId": "U-693-c2",
+        "verdict": "incorrect",
+        "rationale": "유량제어밸브는 액추에이터 속도와 관련된 유량을 조절하며 설정압력 도달을 개방 기준으로 삼지 않습니다."
+      },
+      {
+        "choiceId": "U-693-c3",
+        "verdict": "correct",
+        "rationale": "시퀀스밸브는 설정압력을 감지해 다음 회로를 열기 때문에 기능상 압력제어밸브에 포함됩니다."
+      },
+      {
+        "choiceId": "U-693-c4",
+        "verdict": "incorrect",
+        "rationale": "온도제어밸브는 온도 변화에 따라 유로를 조절하는 별도 기능이며 시퀀스밸브의 압력 작동 기준과 다릅니다."
+      }
+    ],
+    "misconception": "밸브 이름에 순서 기능이 드러난다는 이유로 실제 감지·제어 물리량인 압력을 놓치는 혼동입니다.",
+    "existingLessonId": "lesson-osztt8",
+    "existingBlockId": "definition",
+    "assertionText": "- 압력제어밸브: 감압, 릴리프, 시퀀스 기능을 공압 회로 조건에 맞게 사용한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180915"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-852",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-852-c4",
+    "directSolution": "릴리프·언로드·카운터밸런스밸브는 압력을 제한하거나 무부하 전환·배압 유지에 사용합니다. 체크밸브의 기준 기능은 역류 방지이므로 압력제어밸브 분류가 아닙니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-852-c1",
+        "verdict": "incorrect",
+        "rationale": "릴리프밸브는 설정압력 부근에서 유량을 탱크로 우회시켜 회로 최고압을 제한하는 압력제어밸브입니다."
+      },
+      {
+        "choiceId": "U-852-c2",
+        "verdict": "incorrect",
+        "rationale": "언로드밸브는 설정 조건에서 펌프 유량을 저압으로 탱크에 보내 회로를 무부하 운전시키는 압력제어 기능을 합니다."
+      },
+      {
+        "choiceId": "U-852-c3",
+        "verdict": "incorrect",
+        "rationale": "카운터밸런스밸브는 중력 부하가 폭주하지 않도록 배압을 유지하는 압력제어밸브입니다."
+      },
+      {
+        "choiceId": "U-852-c4",
+        "verdict": "correct",
+        "rationale": "체크밸브는 한 방향 흐름을 허용하고 반대 방향의 역류를 막는 밸브로 압력제어 분류가 아닙니다."
+      }
+    ],
+    "misconception": "유압회로에 쓰이는 모든 밸브를 압력과 관계된다는 이유만으로 압력제어밸브에 포함하는 혼동입니다.",
+    "existingLessonId": "lesson-8jo4gu",
+    "existingBlockId": "definition",
+    "assertionText": "- 체크밸브: 역류 방지. 스윙·리프트·웨이퍼 등은 설치 방향과 최소유속을 고려한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20161001",
+      "https://cbtbank.kr/exam/de20100905"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-948",
+    "subjectId": "subject-1",
+    "decision": "hold",
+    "holdReason": "현재 독립 이론은 직류전동기에 브러시·정류자 유지보수가 필요하다는 사실만 확인합니다. 브러시가 회전 정류자에 전류를 공급하는 소모성 접촉부품이라는 기능을 직접 뒷받침하는 비자기참조 assertion이 없어 HOLD합니다.",
+    "evidenceUrls": [
+      "https://www1.eere.energy.gov/femp/pdfs/om_9.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1040",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1040-c3",
+    "directSolution": "방향제어밸브 스풀을 사람의 힘이나 롤러·직접 솔레노이드가 아니라 공기압·유압 보조신호로 전환하는 방식은 파일럿 조작입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1040-c1",
+        "verdict": "incorrect",
+        "rationale": "수동버튼 조작은 작업자가 버튼에 직접 힘을 가해 스풀을 전환하며 유체 보조신호를 이용하지 않습니다."
+      },
+      {
+        "choiceId": "U-1040-c2",
+        "verdict": "incorrect",
+        "rationale": "기계식 롤러 조작은 캠이나 이동부가 롤러를 밀어 밸브를 전환하는 기계 입력 방식입니다."
+      },
+      {
+        "choiceId": "U-1040-c3",
+        "verdict": "correct",
+        "rationale": "파일럿 조작은 공기압 또는 유압의 보조 제어신호를 사용해 주 스풀을 전환합니다."
+      },
+      {
+        "choiceId": "U-1040-c4",
+        "verdict": "incorrect",
+        "rationale": "직접 솔레노이드 조작은 전자석의 힘이 스풀이나 포핏에 직접 작용하며 유체 파일럿 압력과 구별됩니다."
+      }
+    ],
+    "misconception": "스풀을 직접 움직이는 입력원과 보조 유체압으로 주밸브를 움직이는 파일럿 단계를 구분하지 않는 혼동입니다.",
+    "existingLessonId": "lesson-1yhs4sb",
+    "existingBlockId": "definition",
+    "assertionText": "- 방향제어밸브: 스풀·포핏 구조와 수동·전자·기계·유압 파일럿 조작 방식이 있다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20140525"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1046",
+    "subjectId": "subject-1",
+    "decision": "hold",
+    "holdReason": "현재 독립 이론은 kgf/cm²의 압력 환산과 압력·힘을 구분해야 한다는 주의만 제공합니다. kgf가 과거 중력단위계의 힘 단위라는 정의를 직접 확인할 비자기참조 assertion이 없어 HOLD합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20140525"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1134",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1134-c2",
+    "directSolution": "하나의 유압원으로 여러 액추에이터를 압력·위치 신호에 따라 정해진 순서로 작동시키는 구성은 시퀀스 회로입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1134-c1",
+        "verdict": "incorrect",
+        "rationale": "카운터밸런스 회로는 수직 하중이 자중으로 낙하하거나 폭주하지 않도록 배압을 유지하는 회로입니다."
+      },
+      {
+        "choiceId": "U-1134-c2",
+        "verdict": "correct",
+        "rationale": "시퀀스 회로는 압력 또는 위치 신호를 이용해 복수 액추에이터를 미리 정한 순서로 작동시킵니다."
+      },
+      {
+        "choiceId": "U-1134-c3",
+        "verdict": "incorrect",
+        "rationale": "언로드 회로는 작업 대기 중 펌프 유량을 저압으로 탱크에 보내 동력손실과 발열을 줄이는 회로입니다."
+      },
+      {
+        "choiceId": "U-1134-c4",
+        "verdict": "incorrect",
+        "rationale": "증압 회로는 일부 회로에서 더 높은 압력을 얻는 것이 목적이며 복수 액추에이터의 작동순서가 주기능이 아닙니다."
+      }
+    ],
+    "misconception": "여러 밸브와 액추에이터가 들어간 회로를 모두 순차회로로 보고 회로의 직접 목적을 확인하지 않는 혼동입니다.",
+    "existingLessonId": "lesson-187lrch",
+    "existingBlockId": "summary",
+    "assertionText": "1. 시퀀스회로는 압력·위치신호 등을 이용해 복수 액추에이터를 순차 동작시킨다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20120915"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1164",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1164-c1",
+    "directSolution": "과거 전동기 기술의 비교에서는 전기자전압과 계자 조정으로 속도를 넓게 바꾸기 쉬운 직류전동기가 정밀 가변속 제어의 대표 선택이었습니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1164-c1",
+        "verdict": "correct",
+        "rationale": "직류전동기는 전기자전압과 계자 조정으로 속도제어가 용이하여 과거의 넓은 범위 가변속 용도에 적합했습니다."
+      },
+      {
+        "choiceId": "U-1164-c2",
+        "verdict": "incorrect",
+        "rationale": "농형 유도전동기는 견고하고 보수가 쉽지만 ‘만’으로 제한하면 과거 정밀 가변속 제어의 대표 답이 되지 않습니다."
+      },
+      {
+        "choiceId": "U-1164-c3",
+        "verdict": "incorrect",
+        "rationale": "동기전동기는 동기속도로 운전하는 특성이 중심이며 ‘만’으로 제한한 보기는 과거의 광범위 가변속 대표 분류가 아닙니다."
+      },
+      {
+        "choiceId": "U-1164-c4",
+        "verdict": "incorrect",
+        "rationale": "단상 유도전동기는 소용량 구동에 널리 쓰이지만 과거 정밀한 광범위 가변속의 대표 전동기로 보지 않습니다."
+      }
+    ],
+    "misconception": "현대 인버터·서보 기술의 일반적 인상을 과거 기술 비교 문맥에 그대로 적용하는 혼동입니다.",
+    "existingLessonId": "lesson-1n7phfg",
+    "existingBlockId": "definition",
+    "assertionText": "- 직류전동기: 전기자전압과 계자에 의한 속도제어가 용이하나 브러시·정류자 유지보수가 필요하다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20111002"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1233",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1233-c2",
+    "directSolution": "피스톤펌프는 고정된 행정용적으로 운전할 수도 있고 사판·사축 기구의 경사각을 바꾸어 1회전당 변위를 조절할 수도 있어 정용량형과 가변용량형으로 제작됩니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1233-c1",
+        "verdict": "incorrect",
+        "rationale": "외접기어펌프는 맞물린 기어의 기하학적 체적이 정해져 있어 일반적으로 정용량형으로 사용합니다."
+      },
+      {
+        "choiceId": "U-1233-c2",
+        "verdict": "correct",
+        "rationale": "피스톤펌프는 사판각이나 사축각을 조절해 행정용적을 바꿀 수 있어 정용량형과 가변용량형 제작이 가능합니다."
+      },
+      {
+        "choiceId": "U-1233-c3",
+        "verdict": "incorrect",
+        "rationale": "트로코이드펌프는 내·외측 로터의 편심 체적변화로 토출하며 일반적으로 고정된 회전당 변위를 갖습니다."
+      },
+      {
+        "choiceId": "U-1233-c4",
+        "verdict": "incorrect",
+        "rationale": "로브펌프는 로브 회전에 따른 고정된 체적 이송이 중심이며 피스톤펌프처럼 경사각으로 변위를 조절하지 않습니다."
+      }
+    ],
+    "misconception": "회전수로 유량을 바꾸는 것과 펌프의 1회전당 변위를 바꾸는 가변용량을 같은 것으로 보는 혼동입니다.",
+    "existingLessonId": "lesson-m9z3tu",
+    "existingBlockId": "summary",
+    "assertionText": "1. 피스톤펌프는 밀봉성과 압력효율이 높아 고압·가변용량 시스템에 적합하다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20100905",
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1268",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1268-c3",
+    "directSolution": "유압 동력원은 밀폐공간의 체적변화로 일정 체적의 작동유를 흡입·토출하는 용적식 펌프를 기본으로 사용합니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1268-c1",
+        "verdict": "incorrect",
+        "rationale": "원심펌프는 임펠러의 동압을 이용하는 비용적식 펌프이며 유압시스템의 기본 펌프 분류를 ‘원심펌프만’으로 제한할 수 없습니다."
+      },
+      {
+        "choiceId": "U-1268-c2",
+        "verdict": "incorrect",
+        "rationale": "축류팬은 기체를 축 방향으로 이송하는 송풍기 계열이며 작동유에 유압에너지를 공급하는 펌프가 아닙니다."
+      },
+      {
+        "choiceId": "U-1268-c3",
+        "verdict": "correct",
+        "rationale": "용적식 펌프는 밀폐공간의 체적변화로 작동유를 흡입·토출하며 기어·베인·피스톤형이 대표적입니다."
+      },
+      {
+        "choiceId": "U-1268-c4",
+        "verdict": "incorrect",
+        "rationale": "진공계는 압력 상태를 측정하는 계기이며 기계에너지를 작동유의 유압에너지로 바꾸는 동력원이 아닙니다."
+      }
+    ],
+    "misconception": "유체를 다루는 펌프·팬·계기를 모두 유압 동력원의 같은 장치군으로 보는 혼동입니다.",
+    "existingLessonId": "lesson-16zpkgt",
+    "existingBlockId": "summary",
+    "assertionText": "1. 피스톤펌프는 밀폐공간의 체적변화로 토출하는 용적식 펌프다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1269",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1269-c4",
+    "directSolution": "설정압력에 도달한 뒤 다음 액추에이터 회로를 열어 작동순서를 만드는 기능은 시퀀스밸브의 기능입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1269-c1",
+        "verdict": "incorrect",
+        "rationale": "셔틀밸브는 두 입력 중 압력이 들어온 한쪽을 출력으로 보내는 OR 논리 밸브이며 순차 개방 밸브가 아닙니다."
+      },
+      {
+        "choiceId": "U-1269-c2",
+        "verdict": "incorrect",
+        "rationale": "유량조절밸브는 통과 유량을 조절해 액추에이터 속도를 바꾸며 설정압력 도달 후 다음 회로를 여는 기능이 아닙니다."
+      },
+      {
+        "choiceId": "U-1269-c3",
+        "verdict": "incorrect",
+        "rationale": "급속배기밸브는 실린더 가까이에서 공기를 빠르게 배출해 배기저항을 줄이는 공압 밸브입니다."
+      },
+      {
+        "choiceId": "U-1269-c4",
+        "verdict": "correct",
+        "rationale": "시퀀스밸브는 입구 압력이 설정값에 도달하면 다음 액추에이터 회로를 작동시켜 순서를 만듭니다."
+      }
+    ],
+    "misconception": "유로를 열거나 선택하는 모든 밸브를 순차제어용으로 보고 개방 조건과 목적을 구분하지 않는 혼동입니다.",
+    "existingLessonId": "lesson-6jatm",
+    "existingBlockId": "definition",
+    "assertionText": "- 시퀀스밸브: 설정압력에 도달한 뒤 다음 액추에이터 회로를 작동시킨다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1270",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1270-c4",
+    "directSolution": "압력은 단위면적당 힘이므로 실린더의 이론 출력힘은 압력에 유효면적을 곱한 F=pA입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1270-c1",
+        "verdict": "incorrect",
+        "rationale": "p/A는 압력을 면적으로 다시 나눈 값으로 힘의 차원이 되지 않으며 압력 정의 F/A를 잘못 변형한 식입니다."
+      },
+      {
+        "choiceId": "U-1270-c2",
+        "verdict": "incorrect",
+        "rationale": "A/p는 면적을 압력으로 나눈 값이라 출력힘의 차원과 맞지 않고 압력이 증가할수록 힘이 감소한다는 잘못된 관계가 됩니다."
+      },
+      {
+        "choiceId": "U-1270-c3",
+        "verdict": "incorrect",
+        "rationale": "p와 A는 차원이 서로 다른 물리량이므로 더할 수 없으며 압력에 면적을 곱해야 힘의 단위가 됩니다."
+      },
+      {
+        "choiceId": "U-1270-c4",
+        "verdict": "correct",
+        "rationale": "압력 p에 유효면적 A를 곱한 pA는 압력×면적=힘이 되어 실린더의 이론 출력힘을 나타냅니다."
+      }
+    ],
+    "misconception": "압력 정의 p=F/A를 F에 대해 정리하지 않고 분자·분모를 임의로 바꾸는 혼동입니다.",
+    "existingLessonId": "lesson-wuir00",
+    "existingBlockId": "definition",
+    "assertionText": "실린더 속도는 $v=Q/A$, 힘은 $F=pA$이다. 속도와 힘을 독립적으로 생각하되, 실제 회로에서는 유량조절로 생긴 압력손실과 배압이 유효 힘을 줄인다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1271",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1271-c3",
+    "directSolution": "타코제너레이터·인코더·리졸버는 회전속도 또는 회전각 피드백에 사용할 수 있습니다. 로드셀은 힘에 따른 탄성체 변형을 전기신호로 바꾸는 센서이므로 회전속도 검출 장치로 가장 부적절합니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1271-c1",
+        "verdict": "incorrect",
+        "rationale": "타코제너레이터는 회전속도에 비례하는 전압을 발생시켜 모터 속도 피드백에 사용할 수 있습니다."
+      },
+      {
+        "choiceId": "U-1271-c2",
+        "verdict": "incorrect",
+        "rationale": "인코더는 회전 펄스나 절대 위치 코드를 이용해 회전각과 속도를 계산하는 피드백 장치입니다."
+      },
+      {
+        "choiceId": "U-1271-c3",
+        "verdict": "correct",
+        "rationale": "로드셀은 힘 또는 하중이 만든 탄성체 변형을 전기신호로 변환하므로 회전속도 검출용 센서가 아닙니다."
+      },
+      {
+        "choiceId": "U-1271-c4",
+        "verdict": "incorrect",
+        "rationale": "리졸버는 회전자의 각 위치를 전기신호로 검출하며 시간에 따른 각도 변화로 속도 피드백을 얻을 수 있습니다."
+      }
+    ],
+    "misconception": "모든 전기식 센서를 모터 피드백에 쓸 수 있다고 보고 센서가 직접 변환하는 물리량을 확인하지 않는 혼동입니다.",
+    "existingLessonId": "supplemental-written-load-cell",
+    "existingBlockId": "supplemental-written-load-cell-definition-1",
+    "assertionText": "로드셀은 작용하는 힘에 의해 생긴 탄성체 변형을 측정 가능한 전기신호로 변환하는 센서다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1390",
+    "subjectId": "subject-1",
+    "decision": "hold",
+    "holdReason": "같은 과목의 독립 이론은 부궤환계 전달함수 G/(1+GH)만 설명합니다. 초기조건 0에서 시스템 전달함수가 출력 라플라스변환과 입력 라플라스변환의 비라는 정의는 현재 문항 자체의 lesson에만 있어 자기참조 없이 승인할 수 없으므로 HOLD합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+]

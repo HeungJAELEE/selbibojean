@@ -1,0 +1,134 @@
+[
+  {
+    "questionId": "U-008", "subjectId": "subject-4", "decision": "approve", "correctChoiceId": "U-008-c2",
+    "directSolution": "압전소자는 힘·압력·가속도 같은 동적량 측정에 주로 쓰이며 정적 변위센서의 대표 형식은 아니다.",
+    "choiceRationales": [
+      { "choiceId": "U-008-c1", "verdict": "incorrect", "rationale": "와전류식은 도전성 축과 프로브 사이의 상대변위를 재는 방식이므로, 문항의 비대표 형식이 아니다." },
+      { "choiceId": "U-008-c2", "verdict": "correct", "rationale": "압전식은 힘·압력·가속도 같은 동적량 측정에 주로 쓰여 정적 변위센서의 대표 형식이 아니다." },
+      { "choiceId": "U-008-c3", "verdict": "incorrect", "rationale": "전자광학식은 광학 원리로 변위를 검출할 수 있어 압전식과 달리 문항의 제외 대상이 아니다." },
+      { "choiceId": "U-008-c4", "verdict": "incorrect", "rationale": "정전용량식은 전극 간격 변화로 비접촉 변위를 측정할 수 있으므로 제외할 형식이 아니다." }
+    ],
+    "misconception": "동적량용 압전식과 정적 변위 측정용 센서를 같은 분류로 보는 오류.", "existingLessonId": "lesson-5yr4el", "existingBlockId": "definition", "assertionText": "압전형 가속도계: 가속도 변화에 따른 전하·전압을 이용한다. 넓은 주파수 범위와 순회 측정에 적합하지만 정적인 DC 성분은 측정하지 못한다.", "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9635925"], "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-009", "subjectId": "subject-4", "decision": "approve", "correctChoiceId": "U-009-c3",
+    "directSolution": "페로그래피는 강자성 마모입자를 자기장으로 침착시켜 입자 형태와 분포를 분석한다.",
+    "choiceRationales": [
+      { "choiceId": "U-009-c1", "verdict": "incorrect", "rationale": "원자흡광법은 용액 속 원소의 흡광을 분석하는 방법이며 자석 침착 후 입자 형상을 관찰하지 않는다." },
+      { "choiceId": "U-009-c2", "verdict": "incorrect", "rationale": "회전전극법은 방출분광으로 금속 성분 농도를 보는 방법이라 마모입자의 형태·분포 분석과 다르다." },
+      { "choiceId": "U-009-c3", "verdict": "correct", "rationale": "페로그래피법은 강자성 마모입자를 자기장으로 침착시켜 크기·형상·분포를 관찰하는 방법이다." },
+      { "choiceId": "U-009-c4", "verdict": "incorrect", "rationale": "SOAP법은 오일 속 금속 원소 농도 추세를 분석하는 분광 분석 계열로 입자 형상 관찰법이 아니다." }
+    ],
+    "misconception": "오일 속 금속 성분 농도 분석과 자기장으로 마모입자를 분리하는 형태 분석을 혼동하는 오류.", "existingLessonId": "lesson-6hpexa", "existingBlockId": "summary", "assertionText": "페로그래피는 강자성 마모입자를 자기장으로 침착시켜 입자 형태와 분포를 분석한다.", "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9635925"], "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-011", "subjectId": "subject-4", "decision": "approve", "correctChoiceId": "U-011-c2",
+    "directSolution": "기어 맞물림주파수 GMF=잇수×회전주파수이므로 회전수가 같다면 잇수가 가장 많은 기어가 가장 높다.",
+    "choiceRationales": [
+      { "choiceId": "U-011-c1", "verdict": "incorrect", "rationale": "잇수 30개는 같은 회전주파수에서 60개보다 GMF가 작으므로 가장 높은 맞물림주파수가 아니다." },
+      { "choiceId": "U-011-c2", "verdict": "correct", "rationale": "GMF는 잇수와 회전주파수의 곱이므로 회전수가 같을 때 잇수 60개가 가장 높은 값이다." },
+      { "choiceId": "U-011-c3", "verdict": "incorrect", "rationale": "잇수 50개는 높은 편이지만 동일 회전수에서 60개 기어보다 맞물림주파수가 낮다." },
+      { "choiceId": "U-011-c4", "verdict": "incorrect", "rationale": "잇수 40개는 동일 회전수의 60개 기어보다 GMF가 작아 최대값을 만들지 않는다." }
+    ],
+    "misconception": "회전수가 같다는 조건을 빼고 기어 맞물림주파수와 잇수의 비례 관계를 판단하는 오류.", "existingLessonId": "lesson-1w8jgqb", "existingBlockId": "summary", "assertionText": "기어 맞물림주파수 GMF=잇수×회전주파수이므로 회전수가 같다면 잇수가 가장 많은 기어가 가장 높다.", "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9635925"], "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-028", "subjectId": "subject-4", "decision": "approve", "correctChoiceId": "U-028-c2",
+    "directSolution": "샘플링 주파수의 절반을 넘는 성분이 낮은 주파수로 접혀 보이는 현상이다.",
+    "choiceRationales": [
+      { "choiceId": "U-028-c1", "verdict": "incorrect", "rationale": "주파수 확대는 측정 대역을 확대해 보이는 표현일 뿐 고주파 성분이 낮게 접히는 현상이 아니다." },
+      { "choiceId": "U-028-c2", "verdict": "correct", "rationale": "엘리어싱은 나이퀴스트 한계를 넘은 성분이 낮은 주파수 성분으로 잘못 나타나는 현상이다." },
+      { "choiceId": "U-028-c3", "verdict": "incorrect", "rationale": "필터링은 특정 주파수 성분을 통과 또는 감쇠시키는 처리이며 주파수 접힘 자체의 명칭은 아니다." },
+      { "choiceId": "U-028-c4", "verdict": "incorrect", "rationale": "시간창은 유한 길이 신호를 잘라 분석할 때 쓰는 함수로 표본화 부족으로 인한 접힘과 다르다." }
+    ],
+    "misconception": "표본화 주파수 부족으로 생기는 엘리어싱과 시간창·필터 처리의 목적을 혼동하는 오류.", "existingLessonId": "lesson-hw4xxr", "existingBlockId": "definition", "assertionText": "앨리어싱: 표본화 한계를 넘는 고주파가 낮은 가짜 주파수로 나타나는 현상.", "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/8162917"], "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-050", "subjectId": "subject-4", "decision": "approve", "correctChoiceId": "U-050-c3",
+    "directSolution": "소음계는 A·C 등의 주파수 가중회로를 이용해 청감 특성을 반영한다.",
+    "choiceRationales": [
+      { "choiceId": "U-050-c1", "verdict": "incorrect", "rationale": "기록계는 계측 신호를 시간에 따라 기록하는 장치이며 인간 청감 보정 레벨을 재는 계기가 아니다." },
+      { "choiceId": "U-050-c2", "verdict": "incorrect", "rationale": "녹음기는 음을 저장하는 장치로 A·C 가중회로로 소음 레벨을 측정하는 계기가 아니다." },
+      { "choiceId": "U-050-c3", "verdict": "correct", "rationale": "소음계는 A·C 등의 주파수 가중회로로 청감 특성을 반영한 소리 크기 레벨을 측정한다." },
+      { "choiceId": "U-050-c4", "verdict": "incorrect", "rationale": "주파수 분석기는 성분별 주파수 분포를 분석하지만 청감 보정 소음 레벨의 직접 측정계는 아니다." }
+    ],
+    "misconception": "소리를 기록하거나 주파수 성분을 분석하는 기기와 청감 보정 소음 레벨 측정계를 혼동하는 오류.", "existingLessonId": "lesson-xnxust", "existingBlockId": "definition", "assertionText": "주파수 가중: A 가중은 일반적인 사람의 청감 보정, C 가중은 저주파와 높은 피크 수준 평가 등에 활용한다. Z는 거의 평탄한 특성이다.", "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928"], "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-061", "subjectId": "subject-4", "decision": "approve", "correctChoiceId": "U-061-c2",
+    "directSolution": "기능별 배치는 같은 기능의 기계를 모아 배치해 제품별로 다른 공정경로를 허용한다.",
+    "choiceRationales": [
+      { "choiceId": "U-061-c1", "verdict": "incorrect", "rationale": "제품별 배치는 제품의 작업 순서에 맞춰 설비를 배치하므로 다품종 소량의 공정별 배치와 다르다." },
+      { "choiceId": "U-061-c2", "verdict": "correct", "rationale": "기능별 배치는 같은 기능의 기계를 모아 제품마다 다른 공정경로를 허용하므로 다품종 소량에 적합하다." },
+      { "choiceId": "U-061-c3", "verdict": "incorrect", "rationale": "혼합형 배치는 제품별·기능별 배치의 일부를 결합한 형태로 공정별 배치라는 직접 명칭이 아니다." },
+      { "choiceId": "U-061-c4", "verdict": "incorrect", "rationale": "제품고정형 배치는 대형 제품을 고정하고 설비·작업자가 이동하는 방식이라 공정별 배치와 다르다." }
+    ],
+    "misconception": "다품종 소량 주문생산의 유연한 공정경로와 제품별 일관 흐름 배치를 혼동하는 오류.", "existingLessonId": "lesson-cd7x17", "existingBlockId": "definition", "assertionText": "공정별 배치: 같은 기능의 설비를 모은다. 다품종 소량생산에 유연하지만 운반과 일정관리가 복잡하다.", "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928"], "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-065", "subjectId": "subject-4", "decision": "approve", "correctChoiceId": "U-065-c1",
+    "directSolution": "PM분석은 만성로스를 물리적 원리·원칙으로 해석해 메커니즘과 모든 요인을 찾는다.",
+    "choiceRationales": [
+      { "choiceId": "U-065-c1", "verdict": "correct", "rationale": "PM분석의 P는 현상을 물리적으로 해석하여 만성로스가 생기는 메커니즘과 요인을 찾는다는 뜻이다." },
+      { "choiceId": "U-065-c2", "verdict": "incorrect", "rationale": "현상과 메커니즘을 단순 기록하는 것만으로는 물리적 원리·원칙에 따른 원인 해석 단계가 빠진다." },
+      { "choiceId": "U-065-c3", "verdict": "incorrect", "rationale": "설비구조만 분석하면 작업조건·재료·방법을 포함한 만성로스의 모든 요인을 찾을 수 없다." },
+      { "choiceId": "U-065-c4", "verdict": "incorrect", "rationale": "작업방법만 요인분석하면 설비와 현상의 물리적 메커니즘을 통합적으로 해석하지 못한다." }
+    ],
+    "misconception": "PM분석을 단순 현상 기록이나 일부 요인 점검으로 축소해 이해하는 오류.", "existingLessonId": "lesson-1jt6plj", "existingBlockId": "definition", "assertionText": "PM 분석: 만성로스를 물리적 현상과 원리·원칙으로 해석해 성립조건을 찾는다.", "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928"], "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-097", "subjectId": "subject-4", "decision": "approve", "correctChoiceId": "U-097-c1",
+    "directSolution": "그리스는 누설이 적고 외부 이물 유입을 막는 밀봉성이 좋지만 냉각·순환에는 불리하다.",
+    "choiceRationales": [
+      { "choiceId": "U-097-c1", "verdict": "correct", "rationale": "그리스윤활은 누설이 적고 외부 이물 유입을 막는 밀봉성이 좋아 오일윤활 대비 일반적 장점이다." },
+      { "choiceId": "U-097-c2", "verdict": "incorrect", "rationale": "그리스는 순환으로 열을 빼기 어려워 오일윤활보다 냉각효과가 크다는 설명은 맞지 않는다." },
+      { "choiceId": "U-097-c3", "verdict": "incorrect", "rationale": "그리스는 점조성과 교반저항 때문에 고속 회전에서 오일보다 회전저항이 작다고 일반화할 수 없다." },
+      { "choiceId": "U-097-c4", "verdict": "incorrect", "rationale": "순환급유는 오일을 공급·회수하는 방식에 적합하며 그리스윤활의 일반적 장점이 아니다." }
+    ],
+    "misconception": "그리스의 밀봉 장점과 오일 순환윤활의 냉각·순환 장점을 바꾸어 이해하는 오류.", "existingLessonId": "lesson-1izd4kb", "existingBlockId": "summary", "assertionText": "그리스는 누설이 적고 외부 이물 유입을 막는 밀봉성이 좋지만 냉각·순환에는 불리하다.", "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928"], "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-139", "subjectId": "subject-4", "decision": "approve", "correctChoiceId": "U-139-c2",
+    "directSolution": "음향파워는 음원 자체가 방사하는 에너지율이며 단위는 W이다.",
+    "choiceRationales": [
+      { "choiceId": "U-139-c1", "verdict": "incorrect", "rationale": "음압은 특정 위치에서의 압력 변동량이며 음원이 단위시간에 방사하는 에너지율이 아니다." },
+      { "choiceId": "U-139-c2", "verdict": "correct", "rationale": "음향파워는 음원 자체가 단위시간 동안 방사하는 음에너지의 양이며 단위는 W이다." },
+      { "choiceId": "U-139-c3", "verdict": "incorrect", "rationale": "음의 세기는 단위면적을 통과하는 음향에너지 흐름으로 음원 전체의 방사 에너지율과 다르다." },
+      { "choiceId": "U-139-c4", "verdict": "incorrect", "rationale": "흡음률은 재료가 입사 음에너지를 흡수하는 비율로 음원이 방사하는 에너지율의 명칭이 아니다." }
+    ],
+    "misconception": "음압·음의 세기·흡음률처럼 측정 위치나 재료에 따른 양을 음원 방사량과 혼동하는 오류.", "existingLessonId": "lesson-6xn9wo", "existingBlockId": "definition", "assertionText": "음향파워 W: 음원이 단위 시간에 방출하는 총 음향에너지, 단위 W.", "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9659405"], "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-147", "subjectId": "subject-4", "decision": "approve", "correctChoiceId": "U-147-c4",
+    "directSolution": "히스토그램은 연속형 데이터를 계급으로 나누어 빈도분포를 시각화한다.",
+    "choiceRationales": [
+      { "choiceId": "U-147-c1", "verdict": "incorrect", "rationale": "파레토도는 항목을 크기순으로 정렬해 중요한 소수를 찾는 도구로 분포 막대그래프와 다르다." },
+      { "choiceId": "U-147-c2", "verdict": "incorrect", "rationale": "특성요인도는 결과와 원인의 관계를 생선뼈 모양으로 정리하는 도구로 빈도분포를 나타내지 않는다." },
+      { "choiceId": "U-147-c3", "verdict": "incorrect", "rationale": "관리도는 시간순 품질 변동과 관리한계를 보는 도구로 계급별 분포형태를 나타내지 않는다." },
+      { "choiceId": "U-147-c4", "verdict": "correct", "rationale": "히스토그램은 연속형 데이터를 계급별 막대로 나타내어 분포형태·중심·산포를 시각화한다." }
+    ],
+    "misconception": "품질관리 도구의 목적을 구분하지 않고 막대그래프 모양만으로 히스토그램을 선택하는 오류.", "existingLessonId": "lesson-1lxi2tp", "existingBlockId": "summary", "assertionText": "히스토그램은 연속형 데이터를 계급으로 나누어 빈도분포를 시각화한다.", "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9659405"], "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-150", "subjectId": "subject-4", "decision": "approve", "correctChoiceId": "U-150-c3",
+    "directSolution": "집중보전은 전문기술과 인력을 중앙에서 통합 운영하여 특수작업에 효율적이다.",
+    "choiceRationales": [
+      { "choiceId": "U-150-c1", "verdict": "incorrect", "rationale": "지역보전 조직은 각 현장 가까이 인력을 분산해 대응하는 형태라 공장 전체 인력을 한 부서에 모은 조직이 아니다." },
+      { "choiceId": "U-150-c2", "verdict": "incorrect", "rationale": "절충보전 조직은 중앙 전문작업과 지역 일상작업을 결합한 형태라 완전한 중앙집중 운영과 다르다." },
+      { "choiceId": "U-150-c3", "verdict": "correct", "rationale": "집중보전 조직은 공장 전체의 전문 보전인력을 중앙 부서에 통합해 특수작업을 효율적으로 수행한다." },
+      { "choiceId": "U-150-c4", "verdict": "incorrect", "rationale": "자주보전 소집단은 운전자가 일상 점검·개선을 수행하는 활동으로 전문 보전인력의 중앙 조직형태가 아니다." }
+    ],
+    "misconception": "전문 보전인력의 조직 형태와 운전자 자주보전 활동을 같은 개념으로 보는 오류.", "existingLessonId": "lesson-gjbzsg", "existingBlockId": "definition", "assertionText": "집중보전: 전문기술과 장비를 중앙에 모은다. 기술 축적과 표준화에 유리하나 현장 대응이 느릴 수 있다.", "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9659405"], "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-163", "subjectId": "subject-4", "decision": "approve", "correctChoiceId": "U-163-c2",
+    "directSolution": "보전예방은 설비의 생애초기 단계에서 신뢰성·보전성 정보를 설계에 반영한다.",
+    "choiceRationales": [
+      { "choiceId": "U-163-c1", "verdict": "incorrect", "rationale": "사후보전은 고장이 난 뒤 수리하는 방식이므로 설계·도입 단계에서 구조를 반영하는 활동이 아니다." },
+      { "choiceId": "U-163-c2", "verdict": "correct", "rationale": "보전예방은 설계·도입 단계에서 신뢰성·보전성 정보를 반영해 고장이 적고 정비하기 쉬운 설비를 만든다." },
+      { "choiceId": "U-163-c3", "verdict": "incorrect", "rationale": "시간기준보전은 운전시간·횟수 등에 따라 정비하는 방식으로 설계 단계의 보전성 반영과 다르다." },
+      { "choiceId": "U-163-c4", "verdict": "incorrect", "rationale": "고장 후 개조만 하는 활동은 사후 개선에 머물며 생애초기 설계에 정보를 반영하는 보전예방이 아니다." }
+    ],
+    "misconception": "설계 단계의 보전예방과 운전 이후의 사후보전·시간기준보전을 혼동하는 오류.", "existingLessonId": "lesson-1qcwgps", "existingBlockId": "definition", "assertionText": "보전예방(MP): 설계·도입 단계부터 고장이 적고 정비하기 쉬운 설비를 만든다.", "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9659405"], "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+]

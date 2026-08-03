@@ -1,0 +1,227 @@
+[
+  {
+    "questionId": "U-081",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-081-c2",
+    "directSolution": "융접은 모재를 녹여 접합하는 분류이고, 저항용접은 접촉저항열과 가압력을 주된 수단으로 쓰는 압접 계열입니다. 따라서 일반적인 융접이 아닌 보기는 저항용접입니다.",
+    "choiceRationales": [
+      { "choiceId": "U-081-c1", "verdict": "incorrect", "rationale": "TIG용접은 아크열로 모재를 녹여 접합하는 융접 계열이므로, 융접이 아닌 공정을 찾는 조건에는 맞지 않습니다." },
+      { "choiceId": "U-081-c2", "verdict": "correct", "rationale": "저항용접은 접촉저항열과 전극 가압으로 접합하는 압접 계열입니다. 압력이 주된 수단이므로 일반적인 융접 분류와 구별됩니다." },
+      { "choiceId": "U-081-c3", "verdict": "incorrect", "rationale": "피복아크용접은 전극과 모재 사이의 아크열로 접합부를 녹여 응고시키는 융접이므로 제외 대상이 아닙니다." },
+      { "choiceId": "U-081-c4", "verdict": "incorrect", "rationale": "서브머지드아크용접도 아크열로 모재를 녹여 접합하는 융접 계열입니다. 플럭스 사용 여부가 압접으로 바꾸지는 않습니다." }
+    ],
+    "misconception": "전기를 쓰는 공정이라는 공통점만 보고 저항용접을 아크 융접과 같은 분류로 묶는 혼동입니다.",
+    "existingLessonId": "lesson-1ec09vl",
+    "existingBlockId": "principle",
+    "assertionText": "모재가 녹는지, 압력이 주된 수단인지, 용가재만 녹는지",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-223",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-223-c2",
+    "directSolution": "침투탐상검사(PT)는 침투액이 표면에 열린 미세한 틈으로 들어가는 모세관 현상을 이용합니다. 따라서 표면 개구 균열에는 맞지만 내부결함에는 맞지 않는 검사는 PT입니다.",
+    "choiceRationales": [
+      { "choiceId": "U-223-c1", "verdict": "incorrect", "rationale": "방사선투과검사는 투과 영상으로 내부 불연속을 확인하는 방법이므로, 내부결함 검출에 부적합하다는 조건과 맞지 않습니다." },
+      { "choiceId": "U-223-c2", "verdict": "correct", "rationale": "침투탐상검사는 침투액이 표면에 열린 틈으로 들어가야 지시가 나타납니다. 표면 개구 결함용이므로 내부결함 검출에는 부적합합니다." },
+      { "choiceId": "U-223-c3", "verdict": "incorrect", "rationale": "초음파탐상검사는 재료 내부에서 반사되는 초음파를 이용해 내부 결함을 평가할 수 있으므로 문제의 조건과 반대입니다." },
+      { "choiceId": "U-223-c4", "verdict": "incorrect", "rationale": "누설자속검사는 강자성체의 표면·근표면 불연속을 찾는 방법입니다. PT처럼 침투액이 표면 틈으로 스며드는 원리는 아닙니다." }
+    ],
+    "misconception": "표면 결함을 찾는 검사라는 공통점만 보고 침투액의 모세관 작용과 내부결함 검출 가능 여부를 구분하지 않는 혼동입니다.",
+    "existingLessonId": "lesson-lae1rz",
+    "existingBlockId": "definition",
+    "assertionText": "PT는 낮은 표면장력의 침투액이 표면에 열린 미세 틈으로 들어가는 모세관 현상을 이용한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620123"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-224",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-224-c4",
+    "directSolution": "와전류탐상은 도전성 재료에 유도된 와전류 변화를 측정하므로 비전도성 재료에는 적용하기 어렵고, 형상 변화와 리프트오프의 영향도 받습니다. 따라서 복잡한 형상과 비전도성 재료의 검사가 어렵다는 보기가 단점입니다.",
+    "choiceRationales": [
+      { "choiceId": "U-224-c1", "verdict": "incorrect", "rationale": "와전류탐상은 코일과 재료를 직접 접촉시키지 않고도 빠르게 검사할 수 있으므로, 비접촉 고속검사가 불가능하다는 설명은 맞지 않습니다." },
+      { "choiceId": "U-224-c2", "verdict": "incorrect", "rationale": "와전류탐상은 표면과 근표면의 균열에 유리한 방법입니다. 해당 감도가 없다는 설명은 장점과 반대입니다." },
+      { "choiceId": "U-224-c3", "verdict": "incorrect", "rationale": "와전류탐상은 교류자계를 만드는 코일과 전자장치를 사용해 유도전류 변화를 측정하므로, 장비를 사용할 수 없다는 설명은 틀립니다." },
+      { "choiceId": "U-224-c4", "verdict": "correct", "rationale": "와전류탐상은 도전성 재료에 한하고 형상·리프트오프 변화의 영향을 받습니다. 그래서 복잡한 형상과 비전도성 재료에는 검사가 어렵습니다." }
+    ],
+    "misconception": "표면결함에 유리하다는 장점만 기억하고 도전성 재료 제한과 형상·리프트오프 영향을 놓치는 혼동입니다.",
+    "existingLessonId": "lesson-1q1s70o",
+    "existingBlockId": "definition",
+    "assertionText": "비접촉·고속 검사와 열교환기 튜브, 표면·근표면 균열에 유리하지만 도전성 재료에 한하며 리프트오프, 형상과 투자율 변화의 영향을 받는다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620123"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-235",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-235-c2",
+    "directSolution": "테르밋용접은 알루미늄 분말과 금속산화물의 발열반응으로 만든 용융금속을 이용합니다. 아크나 전기저항이 아니라 화학반응열이 핵심이므로 정답은 테르밋용접입니다.",
+    "choiceRationales": [
+      { "choiceId": "U-235-c1", "verdict": "incorrect", "rationale": "TIG용접은 텅스텐 전극의 아크열을 이용하는 공정입니다. 알루미늄 분말과 금속산화물의 발열반응을 열원으로 쓰지 않습니다." },
+      { "choiceId": "U-235-c2", "verdict": "correct", "rationale": "테르밋용접은 알루미늄과 금속산화물의 발열반응으로 용융금속을 만들어 접합합니다. 지문의 반응 조건과 직접 일치합니다." },
+      { "choiceId": "U-235-c3", "verdict": "incorrect", "rationale": "저항점용접은 접촉부 저항열과 전극 가압으로 접합합니다. 화학반응으로 용융금속을 만드는 테르밋 공정과 다릅니다." },
+      { "choiceId": "U-235-c4", "verdict": "incorrect", "rationale": "가스압접은 가열과 가압을 주된 수단으로 쓰는 압접입니다. 알루미늄 분말의 발열반응을 이용하는 공정은 아닙니다." }
+    ],
+    "misconception": "용접이라는 명칭만 보고 아크열·저항열·가스열과 화학반응열을 같은 열원으로 취급하는 혼동입니다.",
+    "existingLessonId": "supplemental-written-resistance-gas-special-welding",
+    "existingBlockId": "supplemental-written-resistance-gas-special-welding-exam_point-5",
+    "assertionText": "테르밋은 알루미늄과 금속산화물 반응, 레이저·전자빔은 고에너지밀도 공정으로 구분한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620123"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-248",
+    "subjectId": "subject-2",
+    "decision": "hold",
+    "holdReason": "현재 연결 블록은 지시표지가 반드시 해야 할 행동을 나타낸다는 뜻만 직접 뒷받침합니다. 파란색 원형 바탕과 흰색 그림이라는 시각 규격까지 확인할 독립 근거가 이 배치에는 없습니다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620123"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-453",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-453-c2",
+    "directSolution": "탄산가스 아크용접은 보호가스 흐름이 바람이나 누설로 흐트러지면 보호 효과가 떨어집니다. 그러므로 방풍장치가 필요 없다는 보기가 틀린 설명입니다.",
+    "choiceRationales": [
+      { "choiceId": "U-453-c1", "verdict": "incorrect", "rationale": "가시아크는 용접 중 아크와 용융지를 눈으로 확인할 수 있다는 특징을 말합니다. 보호가스가 바람에 영향을 받는지와는 다른 판단 항목입니다." },
+      { "choiceId": "U-453-c2", "verdict": "correct", "rationale": "CO₂ 보호가스의 흐름이 바람이나 누설로 흐트러지면 산소·질소 차단 효과가 감소합니다. 따라서 방풍장치가 필요 없다는 설명이 틀립니다." },
+      { "choiceId": "U-453-c3", "verdict": "incorrect", "rationale": "CO₂ 아크용접은 전류밀도가 높아 용입과 용착속도가 큰 편입니다. 이 보기는 바람 영향과 무관한 공정 특성을 말합니다." },
+      { "choiceId": "U-453-c4", "verdict": "incorrect", "rationale": "용제를 쓰지 않는 연속 와이어 공정은 슬래그 처리가 적을 수 있습니다. 이 설명은 방풍 필요성의 반대 근거가 되지 않습니다." }
+    ],
+    "misconception": "가시 아크나 높은 용입처럼 다른 장점만 기억하고 보호가스가 바람에 흐트러지는 조건을 놓치는 혼동입니다.",
+    "existingLessonId": "lesson-1x9ijqv",
+    "existingBlockId": "principle",
+    "assertionText": "전류밀도가 높아 용입과 용착속도가 크지만 가스 흐름이 바람이나 누설로 흐트러지면 보호 효과가 급격히 떨어집니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20200606"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-520",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-520-c3",
+    "directSolution": "저항용접은 접촉부에 큰 전류를 흘려 생긴 저항열과 전극 가압으로 접합합니다. 큰 전류용 전원과 가압장치가 함께 필요하므로 설비가 복잡해질 수 있다는 보기가 맞습니다.",
+    "choiceRationales": [
+      { "choiceId": "U-520-c1", "verdict": "incorrect", "rationale": "저항용접은 접촉부의 저항열을 얻기 위해 큰 전류를 사용합니다. 용접전류가 매우 작다는 설명은 공정 원리와 반대입니다." },
+      { "choiceId": "U-520-c2", "verdict": "incorrect", "rationale": "저항용접의 접합 원리는 전류와 전극 가압입니다. 용가재 사용이 모든 저항용접의 필수 조건은 아닙니다." },
+      { "choiceId": "U-520-c3", "verdict": "correct", "rationale": "큰 전류를 공급하는 전원과 전극 가압장치를 함께 갖춰야 하므로, 저항용접 설비는 복잡해질 수 있습니다." },
+      { "choiceId": "U-520-c4", "verdict": "incorrect", "rationale": "저항용접은 전류·가압·통전시간을 제어하는 공정이므로 모든 작업을 수동으로만 해야 한다는 단정은 맞지 않습니다." }
+    ],
+    "misconception": "용가재를 쓰는 아크용접의 특성을 저항열과 전극 가압으로 접합하는 저항용접에 그대로 적용하는 혼동입니다.",
+    "existingLessonId": "supplemental-written-resistance-gas-special-welding",
+    "existingBlockId": "supplemental-written-resistance-gas-special-welding-definition-1",
+    "assertionText": "저항용접은 접촉부에 큰 전류를 흘려 발생하는 저항열과 전극 가압으로 접합하는 공정군이다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20190427"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-779",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-779-c3",
+    "directSolution": "직류는 전류방향이 일정하여 저전류에서도 아크가 안정적인 편입니다. 그러므로 교류용접기가 직류용접기보다 항상 아크 안정성이 우수하다는 보기는 옳지 않습니다.",
+    "choiceRationales": [
+      { "choiceId": "U-779-c1", "verdict": "incorrect", "rationale": "직류용접기는 전류 방향과 극성을 정할 수 있어 전극극성과 모재극성의 조합을 선택할 수 있습니다. 이 설명은 비교 특성과 어긋나지 않습니다." },
+      { "choiceId": "U-779-c2", "verdict": "incorrect", "rationale": "교류용접기는 정류장치가 없는 단순한 구조로 구성될 수 있습니다. 구조 단순성은 아크 안정성의 절대 우열을 뜻하지 않습니다." },
+      { "choiceId": "U-779-c3", "verdict": "correct", "rationale": "직류는 전류 방향이 일정하여 저전류에서도 아크가 안정적인 편입니다. 따라서 교류가 직류보다 항상 우수하다고 단정한 보기가 틀립니다." },
+      { "choiceId": "U-779-c4", "verdict": "incorrect", "rationale": "직류는 전류 방향이 일정해 아크 안정성이 좋은 편이라는 설명입니다. 문제에서 찾는 틀린 비교가 아닙니다." }
+    ],
+    "misconception": "교류와 직류의 구조·극성 선택·아크 안정성을 한 가지 기준으로 섞어, ‘항상’이라는 과도한 단정을 확인하지 않는 혼동입니다.",
+    "existingLessonId": "lesson-1di2sn1",
+    "existingBlockId": "principle",
+    "assertionText": "직류는 전류방향이 일정하여 저전류에서도 아크가 안정적인 편이다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20170507"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-835",
+    "subjectId": "subject-2",
+    "decision": "hold",
+    "holdReason": "현재 이론은 플라즈마가 수축된 고온 아크 제트를 이용한다는 원리는 확인하지만, 보기의 설비비와 무부하전압 수치·비교까지 직접 뒷받침하지 못합니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20161001"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-884",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-884-c4",
+    "directSolution": "피복아크·저항·플라즈마 아크용접은 전기에너지를 열원으로 사용합니다. 테르밋은 화학반응열로 용융금속을 만드는 공정이므로 전기에너지를 직접 열원으로 쓰지 않는 보기입니다.",
+    "choiceRationales": [
+      { "choiceId": "U-884-c1", "verdict": "incorrect", "rationale": "피복아크용접은 전극과 모재 사이의 전기 아크열을 열원으로 사용하므로, 전기에너지를 직접 열원으로 쓰지 않는 공정이 아닙니다." },
+      { "choiceId": "U-884-c2", "verdict": "incorrect", "rationale": "저항용접은 전류가 접촉부를 지날 때 생기는 저항열을 이용합니다. 전기에너지가 열원으로 바뀌는 공정입니다." },
+      { "choiceId": "U-884-c3", "verdict": "incorrect", "rationale": "플라즈마 아크용접은 수축된 고온 아크 제트를 이용하는 전기 아크 공정이므로, 전기에너지를 직접 열원으로 사용합니다." },
+      { "choiceId": "U-884-c4", "verdict": "correct", "rationale": "테르밋용접은 금속산화물과 환원제의 화학반응열로 용융금속을 만듭니다. 전기에너지를 직접 열원으로 쓰는 공정과 구별됩니다." }
+    ],
+    "misconception": "열을 쓰는 모든 용접을 전기에너지 열원으로 묶어 화학반응열을 쓰는 테르밋 공정을 놓치는 혼동입니다.",
+    "existingLessonId": "supplemental-written-resistance-gas-special-welding",
+    "existingBlockId": "supplemental-written-resistance-gas-special-welding-selection-4",
+    "assertionText": "테르밋은 화학반응열, 플라즈마·레이저·전자빔은 고에너지밀도 열원을 사용한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20150919"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-931",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-931-c4",
+    "directSolution": "스패터의 대표 원인은 고전류와 긴 아크, 봉 건조불량입니다. 저전류와 지나치게 짧은 아크를 연결한 보기는 스패터 원인과 맞지 않으므로 정답입니다.",
+    "choiceRationales": [
+      { "choiceId": "U-931-c1", "verdict": "incorrect", "rationale": "오버랩은 저전류와 부적절한 봉각·운봉 조건에서 생길 수 있습니다. 제시된 원인 연결은 대표 원인과 맞습니다." },
+      { "choiceId": "U-931-c2", "verdict": "incorrect", "rationale": "언더컷은 고전류, 긴 아크, 빠른 속도와 연결됩니다. 전류가 높고 아크가 긴 조건은 언더컷의 대표 원인입니다." },
+      { "choiceId": "U-931-c3", "verdict": "incorrect", "rationale": "용입불량은 저전류와 빠른 속도에서 생길 수 있습니다. 충분한 입열이 전달되지 않는 조건과 연결한 보기는 맞습니다." },
+      { "choiceId": "U-931-c4", "verdict": "correct", "rationale": "스패터는 고전류와 긴 아크가 대표 원인입니다. 저전류와 지나치게 짧은 아크를 연결한 보기는 원인 관계가 맞지 않습니다." }
+    ],
+    "misconception": "결함 이름만 외우고 전류·아크길이·운봉속도의 증가 또는 감소 방향을 함께 기억하지 않는 혼동입니다.",
+    "existingLessonId": "lesson-j8vt90",
+    "existingBlockId": "definition",
+    "assertionText": "고전류, 긴 아크, 봉 건조불량",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20150531"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1114",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-1114-c3",
+    "directSolution": "가동철심형·가동코일형·탭전환형은 교류 아크용접기의 전압조정 구조에 따른 분류입니다. 엔진구동형은 전원을 만드는 구동원 분류이므로 전압조정 구조 형식이 아닙니다.",
+    "choiceRationales": [
+      { "choiceId": "U-1114-c1", "verdict": "incorrect", "rationale": "가동철심형은 철심 위치를 바꿔 누설자속과 출력 특성을 조정하는 방식으로, 전압조정 구조에 따른 교류용접기 형식입니다." },
+      { "choiceId": "U-1114-c2", "verdict": "incorrect", "rationale": "가동코일형은 코일 위치나 결합 상태를 바꿔 출력 전압을 조정하는 방식이므로, 전압조정 구조 분류에 들어갑니다." },
+      { "choiceId": "U-1114-c3", "verdict": "correct", "rationale": "엔진구동형은 전원을 공급하는 구동원을 기준으로 한 분류입니다. 교류용접기의 전압조정 구조와는 다른 기준입니다." },
+      { "choiceId": "U-1114-c4", "verdict": "incorrect", "rationale": "탭전환형은 변압기 탭을 바꿔 출력 전압을 단계적으로 조절하는 방식이므로, 전압조정 구조에 따른 형식입니다." }
+    ],
+    "misconception": "전원을 만드는 구동원 분류와 변압기 출력 전압을 조정하는 구조 분류를 같은 기준으로 보는 혼동입니다.",
+    "existingLessonId": "lesson-2xbi8q",
+    "existingBlockId": "principle",
+    "assertionText": "엔진구동형은 전원의 구동원에 따른 분류이고 교류용접기의 전압조정 구조와는 다르다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20120915"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1163",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-1163-c1",
+    "directSolution": "테르밋용접은 금속산화물과 환원제의 발열반응으로 용융금속을 만들기 때문에 외부 전원 없이도 현장에서 큰 단면을 접합할 수 있습니다. 따라서 첫 번째 보기가 옳습니다.",
+    "choiceRationales": [
+      { "choiceId": "U-1163-c1", "verdict": "correct", "rationale": "테르밋용접은 화학반응열로 용융금속을 만들므로 외부 전원에 의존하지 않고 현장에서 큰 단면 접합에 활용할 수 있습니다." },
+      { "choiceId": "U-1163-c2", "verdict": "incorrect", "rationale": "용접변형은 재질·단면·구속·입열 조건에 따라 달라집니다. 테르밋용접에서 항상 매우 크다고 단정할 수 없습니다." },
+      { "choiceId": "U-1163-c3", "verdict": "incorrect", "rationale": "테르밋용접의 열원은 금속산화물과 환원제의 발열반응입니다. 복잡한 대형 전기용접기가 반드시 필요하다는 설명은 맞지 않습니다." },
+      { "choiceId": "U-1163-c4", "verdict": "incorrect", "rationale": "테르밋용접은 화학반응으로 용융금속을 만드는 공정이며, 얇은 판의 정밀 자동용접에만 한정된 공정이 아닙니다." }
+    ],
+    "misconception": "테르밋용접도 전기 아크 장비가 있어야 한다고 생각해 화학반응열과 현장 적용 특성을 놓치는 혼동입니다.",
+    "existingLessonId": "lesson-welding-special-processes",
+    "existingBlockId": "principle",
+    "assertionText": "테르밋은 금속산화물과 환원제의 발열반응으로 용융금속을 만듭니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20111002"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+]

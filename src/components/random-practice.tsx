@@ -4,21 +4,32 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, RotateCcw } from "lucide-react";
 import type { ConceptGroup, PracticeFeedback, PublicQuestion, Subject } from "@/lib/domain/types";
+import { buildLessonReturnHref } from "@/lib/domain/practice";
 import { cn } from "@/lib/utils";
 import { PracticeFeedbackPanel } from "@/components/practice-feedback";
 import { useHydrated } from "@/lib/use-hydrated";
 import {
+  appendGuestLearningAttempt,
   GUEST_ATTEMPTS_KEY,
   notifyGuestAttemptsChanged,
+  parseGuestLearningAttempts,
 } from "@/lib/learning/guest-attempt-storage";
+import {
+  loadPracticeSession,
+  preparePracticeSessionStorage,
+  removePracticeSession,
+  savePracticeSession,
+} from "@/lib/learning/practice-session-storage";
 
 type Session = {
   sessionId: string;
   storage: "guest" | "account";
+  storageNotice?: string | null;
   availableCount: number;
   limited: boolean;
   originalRatio?: number;
   actualOriginalCount?: number;
+  shuffleChoices?: boolean;
   focus?: {
     fallback: boolean;
     groups: Array<{ id: string; title: string; mistakes: number }>;
@@ -26,9 +37,15 @@ type Session = {
   questions: PublicQuestion[];
 };
 
-const SESSION_PREFIX = "seolbi:practice:";
-
-export function RandomPractice({ subjects, groups }: { subjects: Subject[]; groups: ConceptGroup[] }) {
+export function RandomPractice({
+  subjects,
+  groups,
+  choiceShuffleEnabled,
+}: {
+  subjects: Subject[];
+  groups: ConceptGroup[];
+  choiceShuffleEnabled: boolean;
+}) {
   const searchParams = useSearchParams();
   const isHydrated = useHydrated();
   const [mode, setMode] = useState(searchParams.get("mode") ?? "all");
@@ -36,6 +53,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
   const [groupId, setGroupId] = useState("");
   const [count, setCount] = useState<"10" | "20" | "50" | "all">("20");
   const [originalRatio, setOriginalRatio] = useState<0 | 25 | 50 | 75 | 100>(50);
+  const [shuffleChoices, setShuffleChoices] = useState(choiceShuffleEnabled);
   const [session, setSession] = useState<Session | null>(null);
   const [index, setIndex] = useState(() => Number(searchParams.get("index") ?? 0));
   const [selectedChoiceId, setSelectedChoiceId] = useState("");
@@ -50,13 +68,16 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
   useEffect(() => {
     const resume = searchParams.get("resume");
     if (!resume) return;
-    const raw = localStorage.getItem(`${SESSION_PREFIX}${resume}`);
-    if (!raw) return;
     const timer = window.setTimeout(() => {
       try {
-        setSession(JSON.parse(raw) as Session);
+        const stored = loadPracticeSession<Session>(localStorage, resume);
+        if (!stored) return;
+        setSession(stored);
+        setShuffleChoices(
+          choiceShuffleEnabled && Boolean(stored.shuffleChoices),
+        );
       } catch {
-        localStorage.removeItem(`${SESSION_PREFIX}${resume}`);
+        removePracticeSession(localStorage, resume);
         setError(
           "저장된 문제 세션을 불러오지 못했습니다. 새 세션을 시작해 주세요.",
         );
@@ -64,7 +85,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
     }, 0);
 
     return () => window.clearTimeout(timer);
-  }, [searchParams]);
+  }, [choiceShuffleEnabled, searchParams]);
 
   const availableGroups = useMemo(() => groups.filter((group) => group.subjectId === subjectId), [groups, subjectId]);
   const question = session?.questions[index];
@@ -72,18 +93,35 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
   async function startSession() {
     setLoading(true);
     setError("");
-    const guestAttempts = JSON.parse(localStorage.getItem(GUEST_ATTEMPTS_KEY) ?? "[]") as Array<{ questionId: string; isCorrect: boolean; dueAt: string }>;
+    const guestAttempts = parseGuestLearningAttempts(
+      localStorage.getItem(GUEST_ATTEMPTS_KEY),
+    );
     const guestQuestionIds =
       mode === "wrong" || mode === "weak"
         ? guestAttempts.filter((attempt) => !attempt.isCorrect).map((attempt) => attempt.questionId)
         : mode === "due"
-          ? guestAttempts.filter((attempt) => new Date(attempt.dueAt) <= new Date()).map((attempt) => attempt.questionId)
+          ? guestAttempts
+              .filter(
+                (attempt) =>
+                  attempt.dueAt !== undefined &&
+                  new Date(attempt.dueAt) <= new Date(),
+              )
+              .map((attempt) => attempt.questionId)
           : undefined;
     try {
+      preparePracticeSessionStorage(localStorage);
       const response = await fetch("/api/practice/session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ mode, subjectId, conceptGroupId: groupId, count: count === "all" ? "all" : Number(count), originalRatio, guestQuestionIds }),
+        body: JSON.stringify({
+          mode,
+          subjectId,
+          conceptGroupId: groupId,
+          count: count === "all" ? "all" : Number(count),
+          originalRatio,
+          shuffleChoices: choiceShuffleEnabled && shuffleChoices,
+          guestQuestionIds,
+        }),
       });
       const result = await response.json() as Session & { error?: string };
       if (!response.ok) throw new Error(result.error);
@@ -93,7 +131,10 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
       setSelectedChoiceId("");
       setResults({});
       setCompleted(false);
-      localStorage.setItem(`${SESSION_PREFIX}${result.sessionId}`, JSON.stringify({ ...result, index: 0 }));
+      savePracticeSession(localStorage, result.sessionId, {
+        ...result,
+        index: 0,
+      });
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "문제 세션을 만들지 못했습니다.");
     } finally {
@@ -116,11 +157,17 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
       setFeedback(result);
       setResults((current) => ({ ...current, [question.id]: result.isCorrect }));
       if (session.storage === "guest") {
-        const attempts = JSON.parse(localStorage.getItem(GUEST_ATTEMPTS_KEY) ?? "[]") as unknown[];
         const dueAt = new Date();
         dueAt.setMinutes(dueAt.getMinutes() + (result.isCorrect ? selfRating === "known" ? 7 * 1440 : selfRating === "unsure" ? 3 * 1440 : 1440 : 10));
-        attempts.push({ questionId: question.id, selectedChoiceId, isCorrect: result.isCorrect, selfRating, dueAt: dueAt.toISOString(), attemptKind, attemptedAt: new Date().toISOString() });
-        localStorage.setItem(GUEST_ATTEMPTS_KEY, JSON.stringify(attempts));
+        appendGuestLearningAttempt(localStorage, {
+          questionId: question.id,
+          selectedChoiceId,
+          isCorrect: result.isCorrect,
+          selfRating,
+          dueAt: dueAt.toISOString(),
+          attemptKind,
+          attemptedAt: new Date().toISOString(),
+        });
         notifyGuestAttemptsChanged();
       }
     } catch (caught) {
@@ -137,7 +184,18 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
     setFeedback(null);
     setIsRetry(false);
     setCompleted(false);
-    localStorage.setItem(`${SESSION_PREFIX}${session.sessionId}`, JSON.stringify({ ...session, index: nextIndex }));
+    try {
+      savePracticeSession(localStorage, session.sessionId, {
+        ...session,
+        index: nextIndex,
+      });
+    } catch (caught) {
+      setError(
+        caught instanceof Error
+          ? caught.message
+          : "기기 저장 공간이 부족해 문제 세션을 저장하지 못했습니다.",
+      );
+    }
   }
 
   function retry() {
@@ -161,6 +219,26 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
           <label className="grid gap-2 text-sm font-bold">문제 수<select aria-label="문제 수" disabled={!isHydrated} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50" value={count} onChange={(event) => setCount(event.target.value as typeof count)}><option value="10">10문제</option><option value="20">20문제</option><option value="50">50문제</option><option value="all">가능한 문제 전체</option></select></label>
           <label className="grid gap-2 text-sm font-bold">실제 기출 비율<select aria-label="실제 기출 비율" disabled={!isHydrated} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50" value={originalRatio} onChange={(event) => setOriginalRatio(Number(event.target.value) as typeof originalRatio)}><option value="0">0% · 개념 문제만</option><option value="25">25% · 개념 중심</option><option value="50">50% · 균형 혼합</option><option value="75">75% · 기출 중심</option><option value="100">100% · 가능한 기출 전체</option></select></label>
         </div>
+        {choiceShuffleEnabled && (
+          <label className="mt-5 flex cursor-pointer items-start gap-3 rounded-2xl border border-slate-200 p-4">
+            <input
+              type="checkbox"
+              checked={shuffleChoices}
+              disabled={!isHydrated}
+              onChange={(event) => setShuffleChoices(event.target.checked)}
+              className="mt-0.5 size-5 accent-[#16697a]"
+            />
+            <span>
+              <strong className="block text-sm text-[#173957]">
+                보기 순서 섞기
+              </strong>
+              <span className="mt-1 block text-sm text-slate-600">
+                같은 세션에서는 새로고침하거나 다시 들어와도 같은 보기
+                순서를 유지합니다.
+              </span>
+            </span>
+          </label>
+        )}
         <p className="mt-4 rounded-xl bg-[#eaf7f6] p-3 text-sm leading-6 text-[#135c69]">{mode === "weak" ? "선택 과목의 오답 기록을 세부항목군별로 집계해 많이 틀린 최대 3개 영역의 다른 문제까지 무작위로 출제합니다. 오답 기록이 없으면 선택 과목 전체에서 시작합니다." : "선택한 범위와 기출 비율에 맞춰 새 세션마다 문제 순서를 무작위로 섞습니다."} 원문과 정답·보기가 정확히 대조되지 않은 문제는 실제 기출 출제에서 제외됩니다.</p>
         {error && <p className="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-700" role="alert">{error}</p>}
         <button onClick={startSession} disabled={!isHydrated || loading || (mode === "group" && !groupId)} className="mt-7 w-full rounded-xl bg-[#173957] px-5 py-4 font-extrabold text-white disabled:opacity-50">{loading ? "문제를 고르는 중…" : "중복 없이 랜덤 시작"}</button>
@@ -211,6 +289,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
         <div className="text-sm text-slate-500">문제 {index + 1} / {session.questions.length}</div>
         <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-slate-100"><div className="h-full bg-[#16697a]" style={{ width: `${((index + 1) / session.questions.length) * 100}%` }} /></div>
         {session.limited && index === 0 && <p className="mt-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-800">요청한 수보다 공개 가능 문제가 적어 {session.questions.length}문제를 한 번씩 출제합니다.</p>}
+        {session.storageNotice && index === 0 && <p className="mt-4 rounded-xl bg-sky-50 p-3 text-sm leading-6 text-sky-900">{session.storageNotice} 로그인 기록으로 합치려면 계정 저장소 동기화 후 새 모의고사를 시작해 주세요.</p>}
         {session.focus && index === 0 && <div className="mt-4 rounded-xl bg-violet-50 p-4 text-sm leading-6 text-violet-900"><strong className="block">취약 영역 집중 결과</strong>{session.focus.fallback ? <span>저장된 오답이 없어 선택 과목 전체 문제로 시작합니다.</span> : <span>{session.focus.groups.map((group) => `${group.title} ${group.mistakes}회`).join(" · ")} 오답을 기준으로 관련 문제를 우선 출제합니다.</span>}</div>}
         {(question.provenance.original || question.provenance.reconstructed || question.provenance.historical) && <div className="mt-5 flex flex-wrap items-center gap-2 text-xs font-bold">{question.provenance.original && question.provenance.exam && <><span className="rounded-full bg-emerald-50 px-3 py-1 text-emerald-800">실제 기출 원문</span><span className="rounded-full bg-slate-100 px-3 py-1 text-slate-600">{formatExamLabel(question.provenance.exam)}</span><a href={question.provenance.exam.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1 text-slate-600">원문 출처 <ArrowUpRight size={12} /></a></>}{question.provenance.reconstructed && <span className="rounded-full bg-sky-50 px-3 py-1 text-sky-800">원문 근거 학습용 재구성</span>}{question.provenance.historical && <span className="rounded-full bg-amber-50 px-3 py-1 text-amber-800">과거 시험 맥락</span>}</div>}
         <h2 className="mt-8 text-xl font-extrabold leading-relaxed md:text-2xl">{question.stem}</h2>
@@ -218,7 +297,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
           {question.choices.map((choice) => <button key={choice.id} disabled={Boolean(feedback)} aria-pressed={selectedChoiceId === choice.id} onClick={() => setSelectedChoiceId(choice.id)} className={cn("flex gap-4 rounded-2xl border p-4 text-left transition", selectedChoiceId === choice.id ? "border-[#16697a] bg-[#eaf7f6] ring-1 ring-[#16697a]" : "border-slate-200 hover:border-slate-400", feedback && choice.id === feedback.correctChoice.id && "border-emerald-500 bg-emerald-50")}><span className="grid size-7 shrink-0 place-items-center rounded-full border border-current text-sm font-extrabold">{choice.order}</span><span>{choice.text}</span></button>)}
         </div>
         {!feedback && <div className="mt-7 flex flex-col gap-4 border-t border-slate-200 pt-6 md:flex-row md:items-end md:justify-between"><fieldset><legend className="text-sm font-bold">지금 이 개념은?</legend><div className="mt-2 flex gap-2">{([['unknown','모름'],['unsure','헷갈림'],['known','앎']] as const).map(([value,label]) => <label key={value} className={cn("cursor-pointer rounded-lg border px-3 py-2 text-sm",selfRating===value&&"border-[#16697a] bg-[#eaf7f6]")}><input type="radio" className="sr-only" checked={selfRating===value} onChange={() => setSelfRating(value)} />{label}</label>)}</div></fieldset><button onClick={() => submitAnswer(isRetry ? "retry" : "initial")} disabled={!selectedChoiceId || loading} className="rounded-xl bg-[#173957] px-8 py-3.5 font-extrabold text-white disabled:opacity-40">{loading ? "채점 중…" : "답안 제출"}</button></div>}
-        {feedback && <PracticeFeedbackPanel feedback={feedback} lessonHref={`/written/theory/${feedback.lesson.id}?returnTo=${encodeURIComponent(returnTo)}#${feedback.lesson.anchor}`} />}
+        {feedback && <PracticeFeedbackPanel feedback={feedback} lessonHref={buildLessonReturnHref(feedback.lesson.href, returnTo)} />}
         {error && <p className="mt-4 text-sm text-red-700" role="alert">{error}</p>}
         {feedback && <div className="mt-6 flex flex-wrap justify-between gap-3"><button onClick={retry} className="flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-3 font-bold"><RotateCcw size={17} />정답 숨기고 재도전</button><button onClick={() => index + 1 === session.questions.length ? setCompleted(true) : move(index + 1)} className="flex items-center gap-2 rounded-xl bg-[#16697a] px-5 py-3 font-bold text-white">{index + 1 === session.questions.length ? "결과 보기" : "다음 문제"}<ArrowRight size={17} /></button></div>}
       </div>

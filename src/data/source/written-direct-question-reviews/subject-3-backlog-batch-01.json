@@ -1,0 +1,283 @@
+[
+  {
+    "questionId": "U-204",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답 637 rpm은 확인되지만, 현재 기존 독립 이론 블록에는 n=1000V/(πD) 회전수 식과 단위 대입을 직접 뒷받침하는 assertion이 없습니다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620121"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-243",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답 셸 리머는 확인되지만, 현재 기존 독립 이론 블록에는 교환식 절삭부를 아버에 끼우는 셸 리머의 구조를 직접 설명하는 assertion이 없습니다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620123", "https://cbtbank.kr/exam/de20170507"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-287",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답 단동척은 확인되지만, 현재 기존 독립 이론 블록에는 네 조를 각각 조절해 편심·불규칙 공작물을 고정하는 독립척의 기능을 직접 설명하는 assertion이 없습니다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9658829"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-316",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답 서피스 게이지는 확인되지만, 현재 기존 독립 이론 블록에는 정반을 기준으로 평행선을 긋고 평행면을 검사하는 기능을 직접 설명하는 assertion이 없습니다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9658829"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-374",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답은 확인되지만, 현재 기존 독립 이론 블록에는 공작기계가 절삭력과 진동에도 변형되지 않도록 충분한 강성을 갖추어야 한다는 직접 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20200822", "https://cbtbank.kr/exam/de20170507", "https://cbtbank.kr/exam/de20140525", "https://cbtbank.co.kr/exam/de20060910"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-377",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답은 확인되지만, 현재 기존 독립 이론 블록에는 탭 기울어짐·작은 밑구멍·막힌 구멍 바닥 접촉은 파손 원인이고 3번 탭 최종 다듬질은 정상 순서라는 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20200822", "https://cbtbank.kr/exam/de20100905", "https://cbtbank.kr/exam/de20070902"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-440",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답은 확인되지만, 현재 독립 이론은 경사각과 칩 형상의 관계만 다루며 큰 경사각·높은 절삭속도·날카로운 인선이 구성인선을 줄인다는 직접 assertion은 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20200606", "https://cbtbank.kr/exam/de20111002"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-449",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답은 확인되지만, 현재 기존 독립 이론 블록에는 래핑의 정밀도·접촉성능과 미세 연마입자에 따른 분진·랩제 잔류 가능성을 함께 설명하는 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20200606"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-523",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답 스크레이퍼 작업은 확인되지만, 현재 기존 독립 이론 블록에는 높은 점을 긁어내 맞춤면의 평면도와 접촉률을 높이는 수작업을 직접 설명하는 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20190427", "https://cbtbank.kr/exam/de20161001", "https://cbtbank.kr/exam/de20140920", "https://www.comcbt.com/xe/cet/5708822", "https://cbtbank.kr/exam/de20080907"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-533",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답은 확인되지만, 현재 기존 독립 이론 블록에는 리머가 기존 구멍에서 소량을 절삭해 치수정밀도와 표면거칠기를 개선한다는 직접 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20190427", "https://www.comcbt.com/xe/cet/5708822"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-580",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답 공구는 확인되지만, 현재 기존 독립 이론 블록에는 주조·단조·절삭에서 소재에 직접 가공작용을 하는 공구와 측정기·검사구·보호구를 구분하는 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20190303"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-594",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-594-c2",
+    "directSolution": "이미 뚫린 구멍에 절삭공구를 넣어 내경을 확대하고 정확한 치수로 다듬는 작업은 보링입니다. 기존 구멍의 정밀가공이라는 조건에 맞는 c2가 정답입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-594-c1",
+        "verdict": "incorrect",
+        "rationale": "탭가공은 미리 뚫은 구멍의 안쪽에 암나사를 만드는 작업입니다. 구멍 내부를 확대해 정확한 내경으로 다듬는 보링과는 가공 목적과 공구가 다릅니다."
+      },
+      {
+        "choiceId": "U-594-c2",
+        "verdict": "correct",
+        "rationale": "보링은 이미 존재하는 구멍에 절삭공구를 적용하여 지름을 넓히고 치수와 형상을 정밀하게 다듬는 가공이므로 문제의 두 조건을 모두 충족합니다."
+      },
+      {
+        "choiceId": "U-594-c3",
+        "verdict": "incorrect",
+        "rationale": "셰이퍼가공은 공구의 왕복운동으로 주로 평면이나 홈을 깎는 방식입니다. 기존 구멍의 내경을 확대·정밀가공하는 작업을 가리키지 않습니다."
+      },
+      {
+        "choiceId": "U-594-c4",
+        "verdict": "incorrect",
+        "rationale": "플레이너가공은 큰 공작물을 왕복시키며 주로 넓은 평면을 가공하는 방식입니다. 이미 뚫린 구멍의 내부 치수를 다듬는 보링과 구별됩니다."
+      }
+    ],
+    "misconception": "구멍과 관련된 탭가공을 보링과 혼동하거나 왕복 절삭가공을 모두 내경 정밀가공으로 잘못 묶는 경우",
+    "existingLessonId": "lesson-18puptq",
+    "existingBlockId": "summary",
+    "assertionText": "보링은 이미 뚫린 구멍을 절삭공구로 확대·정밀가공하는 절삭가공이며 호닝·버핑·래핑은 연마계열이다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20190303", "https://cbtbank.kr/exam/de20150919"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-596",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-596-c1",
+    "directSolution": "줄 작업은 큰 절삭량을 내는 거친 눈에서 시작해 표면을 다듬는 고운 눈으로 진행합니다. 황목에서 중목·세목을 거쳐 유목으로 가는 c1만 이 순서를 지키므로 정답입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-596-c1",
+        "verdict": "correct",
+        "rationale": "황목은 거친 가공, 중목과 세목은 중간 다듬질, 유목은 가장 고운 마무리에 사용합니다. 재료 제거량을 줄여 가며 표면을 정리하는 올바른 순서입니다."
+      },
+      {
+        "choiceId": "U-596-c2",
+        "verdict": "incorrect",
+        "rationale": "중목으로 가공한 뒤 더 거친 황목으로 되돌아가면 앞 단계에서 정리한 표면을 다시 거칠게 만듭니다. 거친 눈에서 고운 눈으로 진행하는 원칙에 어긋납니다."
+      },
+      {
+        "choiceId": "U-596-c3",
+        "verdict": "incorrect",
+        "rationale": "세목으로 먼저 만든 고운 표면에 황목을 사용하면 깊은 줄눈이 다시 생깁니다. 정삭용 줄에서 황삭용 줄로 역행하므로 일반적인 사용순서가 아닙니다."
+      },
+      {
+        "choiceId": "U-596-c4",
+        "verdict": "incorrect",
+        "rationale": "유목에서 시작해 황목으로 끝내는 것은 전체 순서를 완전히 거꾸로 적용한 것입니다. 마지막 단계일수록 더 고운 줄을 써야 하므로 마무리 표면도 얻을 수 없습니다."
+      }
+    ],
+    "misconception": "줄 이름을 단순 암기해 황삭에서 정삭으로 절삭량과 눈의 거칠기를 단계적으로 줄이는 작업 목적을 놓치는 경우",
+    "existingLessonId": "notion-gap-jigs-fixtures-maintenance-tools",
+    "existingBlockId": "notion-gap-jigs-fixtures-maintenance-tools-principle-2",
+    "assertionText": "줄은 손잡이를 단단히 끼우고 거친 눈에서 고운 눈 순으로 사용하며, 쇳가루를 입으로 불지 않고 줄솔로 제거한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20190303", "https://cbtbank.kr/exam/de20140525"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-653",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답 피닝은 확인되지만, 현재 기존 독립 이론 블록에는 직진법·사진법·병진법은 줄 작업이고 피닝은 표면 타격가공이라는 분류를 직접 제시한 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-655",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답 드레싱은 확인되지만, 현재 기존 독립 이론 블록에는 숫돌의 막힘과 무뎌진 입자를 제거해 새 절삭날과 칩포켓을 드러내는 작업을 직접 설명하는 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915", "https://cbtbank.kr/exam/de20130928"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-721",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답은 확인되지만, 현재 독립 이론 블록은 상향·하향절삭의 방향 관계만 설명하며 밀링커터의 회전 주운동과 공작물·테이블의 이송운동을 직접 확정하는 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180428"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-723",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-723-c1",
+    "directSolution": "금긋기는 기준을 확인한 뒤 정확한 선 하나를 긋는 작업입니다. 같은 선을 여러 번 반복하면 선이 겹치고 위치오차가 커지므로 옳지 않은 방법인 c1이 정답입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-723-c1",
+        "verdict": "correct",
+        "rationale": "선을 깊게 하려고 같은 위치를 여러 번 그으면 이중선이 생기고 실제 가공 기준이 흔들릴 수 있습니다. 정확한 한 줄을 긋는 원칙에 반하므로 옳지 않은 방법입니다."
+      },
+      {
+        "choiceId": "U-723-c2",
+        "verdict": "incorrect",
+        "rationale": "정반과 공작물의 기준면을 깨끗하게 하면 이물질 때문에 공작물이 들뜨거나 기준 위치가 달라지는 일을 줄일 수 있으므로 올바른 준비 작업입니다."
+      },
+      {
+        "choiceId": "U-723-c3",
+        "verdict": "incorrect",
+        "rationale": "스크라이버를 진행방향으로 약간 기울이면 끝점이 공작물 표면을 따라 안정적으로 이동하여 선을 이어 갈 수 있으므로 올바른 사용방법입니다."
+      },
+      {
+        "choiceId": "U-723-c4",
+        "verdict": "incorrect",
+        "rationale": "도면치수와 기준면을 먼저 확인하고 한 번에 선명하게 긋는 것은 중복선과 치수 착오를 줄이는 금긋기의 기본 절차이므로 옳은 설명입니다."
+      }
+    ],
+    "misconception": "금긋기 선은 깊고 진할수록 정확하다고 생각해 반복 횟수를 늘리고 이중선과 위치오차 위험을 놓치는 경우",
+    "existingLessonId": "lesson-169yzdf",
+    "existingBlockId": "summary",
+    "assertionText": "반복해서 긋으면 선이 겹치고 위치오차가 커질 수 있으므로 정확한 한 줄을 긋는 것이 원칙이다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180428"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-727",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답 윤활성은 확인되지만, 현재 독립 이론은 혐기성 접착제의 경화조건만 다루며 구조용 접착제의 접착강도·내열성·내약품성·경화안정성을 직접 설명하는 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180428", "https://cbtbank.kr/exam/de20080907"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-833",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답은 확인되지만, 현재 기존 독립 이론 블록에는 도금액 농도와 전류밀도가 석출속도·피막품질에 미치는 영향을 직접 설명하는 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20161001"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-869",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답은 확인되지만, 현재 기존 독립 이론 블록에는 선반 바이트·밀링커터·호브가 절삭날로 재료를 제거하는 절삭공구라는 분류를 직접 제시한 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20150919", "https://cbtbank.kr/exam/de20111002", "https://cbtbank.kr/exam/de20080907"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-882",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답은 확인되지만, 현재 기존 독립 이론 블록에는 탭·다이스의 암나사·수나사 용도, 손탭 1~3번 순서와 수작업 적용 지름 약 25 mm를 함께 확정하는 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20150919", "https://cbtbank.kr/exam/de20111002"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-924",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답 GC는 확인되지만, 현재 기존 독립 이론 블록에는 녹색 탄화규소 입자가 초경합금·세라믹·유리 같은 경질 취성재료의 연삭에 적합하다는 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20150531", "https://cbtbank.kr/exam/de20120915"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-968",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답 절삭너트 방식은 확인되지만, 현재 기존 독립 이론 블록에는 너트 일부의 절삭·변형과 탄성압착력으로 나사면 마찰을 높이는 풀림방지 원리를 직접 설명하는 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20140920"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-972",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답 슬로팅은 확인되지만, 현재 기존 독립 이론 블록에는 스폿페이싱·카운터보링·리밍은 드릴링머신 작업이고 슬로팅은 슬로터의 왕복가공이라는 직접 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20140920", "https://www.comcbt.com/xe/cet/5708822"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1018",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "원문과 정답 보링은 확인되지만, 현재 기존 독립 이론 블록에는 호닝·버핑·래핑은 연마계열이고 보링은 기존 구멍을 확대하는 절삭가공이라는 직접 assertion이 없습니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20140525"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+]

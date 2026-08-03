@@ -2,9 +2,11 @@ import { execFile, spawn } from "node:child_process";
 import { rm } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
+import nextEnv from "@next/env";
 
 const execFileAsync = promisify(execFile);
 const root = process.cwd();
+nextEnv.loadEnvConfig(root);
 const vinextCli = path.join(root, "node_modules", "vinext", "dist", "cli.js");
 const tsxCli = path.join(root, "node_modules", "tsx", "dist", "cli.mjs");
 const prepareScript = path.join(root, "scripts", "prepare-runtime-assets.ts");

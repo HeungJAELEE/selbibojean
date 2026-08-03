@@ -10,7 +10,10 @@ import {
 } from "@/data/source/written-subject-one-cbt-links";
 import { WRITTEN_SUBJECT_ONE_MEMORY_GUIDE } from "@/data/source/written-subject-one-memory-guide";
 import { getWrittenSubjectFactId } from "@/data/source/written-subject-fact-lesson-links";
-import { createPracticePresentations } from "@/lib/content/practice-presentations";
+import {
+  createPracticePresentations,
+  getSafeOriginalsByQuestion,
+} from "@/lib/content/practice-presentations";
 import { buildRuntimeContent } from "@/lib/content/runtime-content";
 import { isPublishableQuestion } from "@/lib/domain/practice";
 import type { GeneratedContent } from "@/lib/domain/types";
@@ -25,8 +28,30 @@ const originalQuestions = createPracticePresentations(
   100,
   20260730,
 ).filter((question) => question.provenance.original);
+const approvedOriginalQuestionIds = new Set(
+  originalQuestions.map((question) => question.id),
+);
 
 describe("subject 1 reviewed CBT registry", () => {
+  it("uses the runtime public gate's directly reviewed exact set", () => {
+    const runtimeApprovedQuestions = content.questions.filter(
+      (question) =>
+        question.subjectId === "subject-1" &&
+        isPublishableQuestion(question) &&
+        Boolean(question.approvedReview),
+    );
+    const runtimeApprovedOriginalIds = new Set(
+      getSafeOriginalsByQuestion(
+        runtimeApprovedQuestions,
+        content.variants,
+      ).keys(),
+    );
+
+    expect(new Set(originalQuestions.map((question) => question.id))).toEqual(
+      runtimeApprovedOriginalIds,
+    );
+  });
+
   it("gives every displayed fact one stable fail-closed binding", () => {
     const factIds = new Set<string>();
     const errors: string[] = [];
@@ -81,8 +106,14 @@ describe("subject 1 reviewed CBT registry", () => {
 
         for (const questionId of binding.questionIds) {
           const question = originalsById.get(questionId);
+          if (!approvedOriginalQuestionIds.has(questionId)) {
+            if (question) {
+              errors.push(`${factId}:${questionId}:held-question-leaked`);
+            }
+            continue;
+          }
           if (!question) {
-            errors.push(`${factId}:${questionId}:not-public-original`);
+            errors.push(`${factId}:${questionId}:approved-original-missing`);
             continue;
           }
           if (
@@ -102,7 +133,7 @@ describe("subject 1 reviewed CBT registry", () => {
 
   it("selects no more than five reviewed originals deterministically", () => {
     const bundle = WRITTEN_SUBJECT_ONE_MEMORY_GUIDE.find(
-      (candidate) => candidate.id === "pneumatic-foundation",
+      (candidate) => candidate.id === "fluid-laws",
     )!;
     const first = getSubjectOneBundleCbtSelection(bundle, originalQuestions);
     const second = getSubjectOneBundleCbtSelection(
@@ -110,13 +141,19 @@ describe("subject 1 reviewed CBT registry", () => {
       [...originalQuestions].reverse(),
     );
 
-    expect(first.questions).toHaveLength(5);
+    expect(first.questions.length).toBeGreaterThan(0);
+    expect(first.questions.length).toBeLessThanOrEqual(5);
     expect(first.questions.map((question) => question.id)).toEqual(
       second.questions.map((question) => question.id),
     );
     expect(new Set(first.questions.map((question) => question.id)).size).toBe(
       first.questions.length,
     );
+    expect(
+      first.questions.every((question) =>
+        approvedOriginalQuestionIds.has(question.id),
+      ),
+    ).toBe(true);
   });
 
   it("does not fall back to title matching without registered direct IDs", () => {

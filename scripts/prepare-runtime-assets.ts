@@ -11,7 +11,13 @@ import {
 import type { GeneratedContent } from "../src/lib/domain/types";
 
 const privateOutputDirectory = path.join(process.cwd(), ".runtime-assets", "data");
-const workerAssetDirectory = path.join(process.cwd(), "public", "data");
+const legacyPublicOutputDirectory = path.join(process.cwd(), "public", "data");
+const legacyClientOutputDirectory = path.join(
+  process.cwd(),
+  "dist",
+  "client",
+  "data",
+);
 const privateBusanMediaDirectory = path.join(
   process.cwd(),
   "assets",
@@ -28,15 +34,14 @@ const publicBusanMediaDirectory = path.join(
   "busan-kopo",
 );
 const sourceFile = path.join(process.cwd(), "src", "data", "generated", "content.json");
-const outputDirectories = [privateOutputDirectory, workerAssetDirectory];
 const subjectIds = ["subject-1", "subject-2", "subject-3", "subject-4"] as const;
 
-await Promise.all(
-  outputDirectories.map(async (outputDirectory) => {
-    await rm(outputDirectory, { recursive: true, force: true });
-    await mkdir(outputDirectory, { recursive: true });
-  }),
-);
+await Promise.all([
+  rm(privateOutputDirectory, { recursive: true, force: true }),
+  rm(legacyPublicOutputDirectory, { recursive: true, force: true }),
+  rm(legacyClientOutputDirectory, { recursive: true, force: true }),
+]);
+await mkdir(privateOutputDirectory, { recursive: true });
 
 const source = await readFile(sourceFile);
 
@@ -44,26 +49,25 @@ const source = await readFile(sourceFile);
 const generatedContent = JSON.parse(source.toString("utf8")) as GeneratedContent;
 const runtimeContent = buildRuntimeContent(generatedContent);
 
-const compressed = gzipSync(source, { level: 9 });
-const sourceSha256 = createHash("sha256").update(source).digest("hex");
+const runtimeSource = Buffer.from(JSON.stringify(runtimeContent));
+const compressed = gzipSync(runtimeSource, { level: 9 });
+const sourceSha256 = createHash("sha256").update(runtimeSource).digest("hex");
 const metadata = {
   formatVersion: 1,
   encoding: "gzip",
   sourceSha256,
-  uncompressedBytes: source.byteLength,
+  uncompressedBytes: runtimeSource.byteLength,
   compressedBytes: compressed.byteLength,
 } as const;
 
-await Promise.all(
-  outputDirectories.flatMap((outputDirectory) => [
-    writeFile(path.join(outputDirectory, "content.bin"), compressed),
-    writeFile(
-      path.join(outputDirectory, "content.meta.json"),
-      `${JSON.stringify(metadata)}\n`,
-      "utf8",
-    ),
-  ]),
-);
+await Promise.all([
+  writeFile(path.join(privateOutputDirectory, "content.bin"), compressed),
+  writeFile(
+    path.join(privateOutputDirectory, "content.meta.json"),
+    `${JSON.stringify(metadata)}\n`,
+    "utf8",
+  ),
+]);
 
 for (const subjectId of subjectIds) {
   const subjectQuestions = runtimeContent.questions.filter(
@@ -110,20 +114,25 @@ for (const subjectId of subjectIds) {
   } as const;
   const baseName = `content-${subjectId}`;
 
-  await Promise.all(
-    outputDirectories.flatMap((outputDirectory) => [
-      writeFile(
-        path.join(outputDirectory, `${baseName}.bin`),
-        subjectCompressed,
-      ),
-      writeFile(
-        path.join(outputDirectory, `${baseName}.meta.json`),
-        `${JSON.stringify(subjectMetadata)}\n`,
-        "utf8",
-      ),
-    ]),
-  );
+  await Promise.all([
+    writeFile(
+      path.join(privateOutputDirectory, `${baseName}.bin`),
+      subjectCompressed,
+    ),
+    writeFile(
+      path.join(privateOutputDirectory, `${baseName}.meta.json`),
+      `${JSON.stringify(subjectMetadata)}\n`,
+      "utf8",
+    ),
+  ]);
 }
+
+// Vite/Wrangler development reads these opaque files through the ASSETS
+// binding. The build wrapper removes public/data after copying the same files
+// into the Worker-routed Pages asset namespace.
+await cp(privateOutputDirectory, legacyPublicOutputDirectory, {
+  recursive: true,
+});
 
 // Stage gated public media only after every other preparation step succeeds.
 // The owning build/dev wrapper removes this directory in a finally block.
@@ -138,10 +147,10 @@ if (process.env.ENABLE_BUSAN_KOPO_MEDIA === "true") {
   console.log("Busan KOPO media remains private (release flag is off).");
 }
 
-const ratio = ((compressed.byteLength / source.byteLength) * 100).toFixed(1);
+const ratio = ((compressed.byteLength / runtimeSource.byteLength) * 100).toFixed(1);
 console.log(
-  `Prepared server-only learning content: ${source.byteLength} bytes -> ${compressed.byteLength} gzip bytes (${ratio}%).`,
+  `Prepared finalized runtime content: ${runtimeSource.byteLength} bytes -> ${compressed.byteLength} gzip bytes (${ratio}%).`,
 );
 console.log(
-  "Runtime content staged for the internal ASSETS binding; the Worker blocks external /data requests.",
+  "Runtime content is staged transiently and packaged as Worker-routed opaque Pages assets.",
 );

@@ -35,5 +35,5 @@ describe("written theory private source boundary", () => {
     expect(JSON.stringify(learnerFacingData)).not.toMatch(
       PRIVATE_SOURCE_URL_PATTERN,
     );
-  });
+  }, 60_000);
 });

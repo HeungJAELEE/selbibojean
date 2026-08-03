@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 
 import { LessonExamTypes } from "@/components/lesson-exam-types";
@@ -31,21 +32,27 @@ const pastExam: PastExamExample = {
 };
 const content = generatedContent as GeneratedContent;
 const runtimeContent = buildRuntimeContent(content);
+const ANSWER_SENTINEL = "SSR_ANSWER_SENTINEL";
+const EXPLANATION_SENTINEL = "SSR_EXPLANATION_SENTINEL";
+const REPRESENTATIVE_QUESTION_ID = "U-992";
 
 describe("lesson learning structure", () => {
   it("counts every verified direct variant when calculating lesson frequency", () => {
     const specificGravity = getPastExamPatternSummary(
-      content,
-      "lesson-1o82821",
+      runtimeContent,
+      "lesson-m8noqg",
     );
     const weldingClassification = getPastExamPatternSummary(
-      content,
+      runtimeContent,
       "lesson-1ec09vl",
     );
 
     expect(specificGravity).toMatchObject({
-      total: 1,
-      patterns: [{ format: "concept", count: 1, percentage: 100 }],
+      total: 3,
+      patterns: [
+        { format: "concept", count: 2, percentage: 67 },
+        { format: "calculation", count: 1, percentage: 33 },
+      ],
     });
     expect(weldingClassification).toMatchObject({
       total: 2,
@@ -54,23 +61,20 @@ describe("lesson learning structure", () => {
       ],
     });
     expect(
-      getPastExamPatternSummary(content, "lesson-1pa2qba"),
-    ).toMatchObject({
-      total: 2,
+      getPastExamPatternSummary(runtimeContent, "lesson-1ffd4xt"),
+    ).toEqual({
+      total: 1,
       patterns: [
         {
           format: "calculation",
-          count: 2,
+          count: 1,
           percentage: 100,
-          representativeAnswer: "te=(a+4m+b)/6",
-          representativeExplanation:
-            "PERT는 최빈시간에 4의 가중치를 주어 베타분포의 기대시간을 계산한다.",
         },
       ],
     });
   });
 
-  it("combines authored exam points with direct past-exam frequency", () => {
+  it("combines authored exam points with answer-free exam type metadata", () => {
     const summary: PastExamPatternSummary = {
       total: 3,
       patterns: [
@@ -78,17 +82,11 @@ describe("lesson learning structure", () => {
           format: "negative",
           count: 2,
           percentage: 67,
-          representative: { ...pastExam, format: "negative" },
-          representativeAnswer: "대표 정답 A",
-          representativeExplanation: "대표 해설 A",
         },
         {
           format: "concept",
           count: 1,
           percentage: 33,
-          representative: pastExam,
-          representativeAnswer: "대표 정답 B",
-          representativeExplanation: "대표 해설 B",
         },
       ],
     };
@@ -111,10 +109,48 @@ describe("lesson learning structure", () => {
     ).toBeVisible();
     expect(screen.getByText("미리 정리한 시험 포인트")).toBeVisible();
     expect(screen.getByText(/모재를 녹이면 융접/)).toBeVisible();
+    expect(
+      screen.getByRole("heading", { name: "부정형 판별" }),
+    ).toBeVisible();
     expect(screen.getByText("2건 · 67%")).toBeVisible();
-    expect(screen.getByText("대표 정답 A")).toBeVisible();
-    expect(screen.getByText("대표 해설 A")).toBeVisible();
-    expect(screen.getAllByText(/공압장치의 일반적인 장점/)).toHaveLength(2);
+    expect(
+      screen.getByRole("heading", { name: "개념·구분형" }),
+    ).toBeVisible();
+    expect(screen.getByText("1건 · 33%")).toBeVisible();
+    expect(screen.getAllByText("판단 대상")).toHaveLength(2);
+    expect(
+      screen.getByText(
+        "옳지 않은 것, 해당하지 않는 것처럼 반대 조건을 찾는 유형",
+      ),
+    ).toBeVisible();
+  });
+
+  it("keeps representative answer sentinels out of lesson exam type SSR", () => {
+    const unsafeContent: GeneratedContent = {
+      ...runtimeContent,
+      questions: runtimeContent.questions.map((question) =>
+        question.id === REPRESENTATIVE_QUESTION_ID
+          ? {
+              ...question,
+              answerText: ANSWER_SENTINEL,
+              explanation: EXPLANATION_SENTINEL,
+            }
+          : question),
+    };
+    const summary = getPastExamPatternSummary(
+      unsafeContent,
+      "lesson-1ffd4xt",
+    );
+    const html = renderToStaticMarkup(
+      <LessonExamTypes summary={summary} authoredPoints={[]} />,
+    );
+
+    expect(JSON.stringify(summary)).not.toContain(ANSWER_SENTINEL);
+    expect(JSON.stringify(summary)).not.toContain(EXPLANATION_SENTINEL);
+    expect(html).not.toContain(ANSWER_SENTINEL);
+    expect(html).not.toContain(EXPLANATION_SENTINEL);
+    expect(html).toContain("계산·적용형");
+    expect(html).toContain("판단 대상");
   });
 
   it("separates actual CBT questions from five mock questions", () => {
@@ -126,7 +162,7 @@ describe("lesson learning structure", () => {
           questionNumber: index + 1,
         }))} initialCount={5} />
         <LessonPracticeSet
-          questions={content.questions
+          questions={runtimeContent.questions
             .filter(isPublishableQuestion)
             .slice(0, 5)
             .map(toPublicQuestion)}

@@ -1,0 +1,154 @@
+[
+  {
+    "questionId": "U-054",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-054-c3",
+    "directSolution": "문항은 한계게이지의 특징 가운데 틀린 설명을 묻는다. 한계게이지는 실제 수치를 읽는 기구가 아니라 규격 안에 드는지를 빠르게 판정하는 전용 게이지이므로, 대량생산의 합격·불합격 판정에는 유리하다. 따라서 소량생산용이고 판정시간이 오래 걸린다는 c3가 반대 설명이어서 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-054-c1", "verdict": "incorrect", "rationale": "한계게이지는 통과·불통과로 판정하는 비교용 게이지이므로 실제 치수값을 눈금으로 읽어 내지 못한다. 이 문항은 옳지 않은 특징을 찾으므로, 맞는 설명인 c1은 고를 수 없다." },
+      { "choiceId": "U-054-c2", "verdict": "incorrect", "rationale": "합격·불합격만 신속히 확인하는 사용법이라 측정값을 해석하는 숙련 부담이 비교적 작다. 그러므로 c2는 한계게이지의 실용적 장점에 해당하며 부정형 문항의 정답이 아니다." },
+      { "choiceId": "U-054-c3", "verdict": "correct", "rationale": "한계게이지의 목적은 대량생산품을 빠르게 선별하는 것이므로 소량생산에 맞고 판정시간이 길다는 설명은 반대다. 따라서 ‘옳지 않은 것’을 묻는 문항의 정답은 c3다." },
+      { "choiceId": "U-054-c4", "verdict": "incorrect", "rationale": "한계게이지는 공차와 기준치수별로 제작해 사용하는 전용 게이지라 하나의 게이지가 모든 치수를 직접 재는 방식이 아니다. 따라서 c4는 특징에 맞는 설명이다." }
+    ],
+    "misconception": "한계게이지를 마이크로미터처럼 수치를 읽는 측정기로 생각해 대량 선별용 판정 기능을 놓치는 오개념이다.",
+    "existingLessonId": "lesson-19v6bnc",
+    "existingBlockId": "summary",
+    "assertionText": "한계게이지는 대량생산품을 합격·불합격으로 신속 판정하는 데 적합하다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://www.comcbt.com/xe/webhaesul/9659405", "https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-085",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-085-c2",
+    "directSolution": "판단 기준은 ‘분해정비를 고려한’ 풀림방지인가이다. 록너트·와셔·분할핀은 해체 후 다시 체결할 수 있지만, 실용접은 접합부를 영구 고정해 분해 자체를 어렵게 한다. 따라서 분해정비용 방법으로 부적절한 c2가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-085-c1", "verdict": "incorrect", "rationale": "록너트는 두 너트의 체결 또는 특수 형상으로 풀림을 막고, 정비 때 풀어 다시 조립할 수 있다. 분해정비 조건과 양립하므로 c1은 부적절한 방법이 아니다." },
+      { "choiceId": "U-085-c2", "verdict": "correct", "rationale": "실용접은 너트와 볼트를 영구적으로 붙여 진동 풀림은 막지만 재사용·분해정비를 위해서는 용접부를 제거해야 한다. 그래서 분해정비를 전제한 풀림방지법으로는 c2가 부적절하다." },
+      { "choiceId": "U-085-c3", "verdict": "incorrect", "rationale": "스프링와셔와 이붙이 와셔는 체결부의 마찰 또는 기계적 걸림을 이용해 풀림을 억제하면서도 분해할 수 있다. 따라서 c3은 문제의 조건에 맞는 방법이다." },
+      { "choiceId": "U-085-c4", "verdict": "incorrect", "rationale": "홈붙이너트와 분할핀은 핀을 제거하면 너트를 풀 수 있어 정비성을 유지한다. 회전 방지를 위한 대표적인 기계식 풀림방지이므로 c4는 제외 대상이 아니다." }
+    ],
+    "misconception": "풀림을 가장 강하게 막는 방법이면 분해정비 조건도 자동으로 만족한다고 보는 오개념이다.",
+    "existingLessonId": "lesson-1lwfv4p",
+    "existingBlockId": "summary",
+    "assertionText": "용접은 영구고정이 되어 일반적인 분해정비용 풀림방지법으로 부적절하다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-078",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-078-c2",
+    "directSolution": "센터링 불량은 축과 결합부에 추가 방사·축방향 하중을 만들어 진동, 베어링 마모, 전달 효율 저하로 이어진다. 이미 있는 축의 재료강도나 단면강도를 높이는 작용은 하지 않는다. 따라서 옳지 않은 현상은 c2다.",
+    "choiceRationales": [
+      { "choiceId": "U-078-c1", "verdict": "incorrect", "rationale": "평행 또는 각도 오정렬은 회전마다 불균형 하중을 만들어 진동을 키운다. 센터링 불량에서 실제로 나타날 수 있는 현상이므로 c1은 제외한다." },
+      { "choiceId": "U-078-c2", "verdict": "correct", "rationale": "오정렬은 축에 추가 굽힘하중을 더할 뿐 축의 강도 자체를 향상시키지 않는다. 문항이 묻는 옳지 않은 현상이므로 c2가 정답이다." },
+      { "choiceId": "U-078-c3", "verdict": "incorrect", "rationale": "정렬불량으로 베어링에 비정상 하중이 걸리면 발열과 마모가 증가할 수 있다. 따라서 c3은 센터링 불량의 가능한 결과다." },
+      { "choiceId": "U-078-c4", "verdict": "incorrect", "rationale": "축 중심이 어긋나면 커플링과 축에서 손실과 변동 하중이 생겨 동력전달이 불량해질 수 있다. 그러므로 c4는 틀린 설명이 아니다." }
+    ],
+    "misconception": "정렬을 맞추는 작업의 효과와 정렬불량이 이미 일으키는 손상을 뒤바꾸어, 오정렬이 강도를 높인다고 생각하는 오개념이다.",
+    "existingLessonId": "lesson-10st53o",
+    "existingBlockId": "summary",
+    "assertionText": "정렬불량은 추가하중·진동·마모를 유발하며 축 강도를 향상시키지 않는다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://cbtbank.kr/exam/de20150531"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-088",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-088-c1",
+    "directSolution": "유성기어감속기도 기어 치면의 접촉으로 동력을 전달한다. 맞물린 치면은 구름 접촉 성분만이 아니라 상대 미끄럼도 함께 가지므로 ‘구름마찰만’이라는 단정은 성립하지 않는다. 따라서 옳지 않은 c1을 고른다.",
+    "choiceRationales": [
+      { "choiceId": "U-088-c1", "verdict": "correct", "rationale": "기어 치면의 운동에는 구름 성분과 미끄럼 성분이 함께 있어 윤활과 마찰손상을 고려해야 한다. 순수 구름마찰만 발생한다는 c1은 단정이므로 옳지 않다." },
+      { "choiceId": "U-088-c2", "verdict": "incorrect", "rationale": "감속기 윤활은 크기와 운전조건에 따라 달라지며, 소형에 그리스·대형에 유욕윤활을 적용하는 것은 가능한 방식이다. 따라서 c2는 틀린 설명이 아니다." },
+      { "choiceId": "U-088-c3", "verdict": "incorrect", "rationale": "유성기어감속기는 선기어·유성기어·내접기어의 맞물림과 캐리어 운동을 이용해 감속비를 만든다. 그러므로 c3은 구조 설명으로 맞다." },
+      { "choiceId": "U-088-c4", "verdict": "incorrect", "rationale": "유성기어 장치는 다른 기어단 또는 변속기와 조합하여 더 큰 전체 감속비를 구성할 수 있다. c4는 유성기어감속기의 적용 방식에 어긋나지 않는다." }
+    ],
+    "misconception": "유성기어를 베어링처럼 순수 구름 접촉만 하는 요소로 보고 기어 치면의 미끄럼과 윤활 필요성을 빠뜨리는 오개념이다.",
+    "existingLessonId": "lesson-sab8sw",
+    "existingBlockId": "summary",
+    "assertionText": "기어 치면에서는 주로 구름과 미끄럼이 함께 발생하므로 순수 구름마찰로만 볼 수 없다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-089",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-089-c2",
+    "directSolution": "드릴의 주 절삭날은 양쪽 립이며, 사심은 그 두 절삭날이 만나는 중심부다. 사심은 중심부 형상이지 주 절삭을 담당하는 날의 명칭이 아니다. 따라서 연결이 옳지 않은 c2가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-089-c1", "verdict": "incorrect", "rationale": "생크는 드릴 척이나 주축에 물려 드릴을 고정하고 회전력을 전달하는 부분이다. c1의 명칭과 역할 연결은 맞다." },
+      { "choiceId": "U-089-c2", "verdict": "correct", "rationale": "사심은 드릴 끝 중앙에서 두 립이 만나는 부분이며 주 절삭날 자체가 아니다. 따라서 사심을 주 절삭날이라고 연결한 c2가 옳지 않다." },
+      { "choiceId": "U-089-c3", "verdict": "incorrect", "rationale": "홈 나선각은 드릴 축에 대해 홈이 비틀어진 각으로, 칩 배출과 절삭 특성에 관계한다. 그러므로 c3은 올바른 연결이다." },
+      { "choiceId": "U-089-c4", "verdict": "incorrect", "rationale": "마진은 드릴 외주에서 구멍 벽을 안내하는 좁은 띠 모양 부분이라 흔들림을 줄이는 역할을 한다. c4는 맞는 설명이다." }
+    ],
+    "misconception": "드릴 끝의 모든 명칭을 절삭날로 뭉뚱그려 사심과 주 절삭날의 위치·기능을 구분하지 못하는 오개념이다.",
+    "existingLessonId": "lesson-4ne44x",
+    "existingBlockId": "summary",
+    "assertionText": "사심은 드릴 끝에서 두 절삭날이 만나는 중심부이며 주 절삭날 자체가 아니다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://cbtbank.kr/exam/de20100905"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-079",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-079-c4",
+    "directSolution": "대구경·고압 배관에서 문제의 핵심은 분해조립성이다. 플랜지이음은 두 플랜지를 볼트로 체결하므로 볼트를 풀어 가스켓을 교환하거나 배관을 분리할 수 있다. 용접·납땜은 영구 접합이고 신축이음은 열팽창 흡수용이므로 c4가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-079-c1", "verdict": "incorrect", "rationale": "용접이음은 강도와 기밀성에는 유리하지만 절단 없이는 분리할 수 없는 영구 접합이다. 따라서 분해조립이 가장 쉬운 이음으로 c1을 고를 수 없다." },
+      { "choiceId": "U-079-c2", "verdict": "incorrect", "rationale": "신축이음은 온도 변화에 따른 배관의 팽창·수축을 흡수하기 위한 장치다. 분해정비 편의가 주기능이 아니므로 c2는 정답이 아니다." },
+      { "choiceId": "U-079-c3", "verdict": "incorrect", "rationale": "납땜이음도 가열해 접합하는 방식이라 일반적으로 현장에서 볼트만 풀어 분리하는 이음이 아니다. 대구경·고압 배관의 반복 분해조립 조건에는 c3보다 플랜지가 맞다." },
+      { "choiceId": "U-079-c4", "verdict": "correct", "rationale": "플랜지이음은 볼트 체결부를 풀면 배관을 분리하고 가스켓을 교환한 뒤 다시 조립할 수 있다. 그래서 대구경·고압 배관에서 분해조립성이 필요한 경우 c4가 가장 적절하다." }
+    ],
+    "misconception": "고압 배관에 쓰인다는 사실만으로 영구 접합과 정비를 위해 풀 수 있는 체결이음을 구분하지 못하는 오개념이다.",
+    "existingLessonId": "lesson-1y9vg8w",
+    "existingBlockId": "summary",
+    "assertionText": "플랜지이음은 볼트로 체결하므로 대구경·고압 배관의 분해와 재조립에 유리하다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://cbtbank.kr/exam/de20140525", "https://cbtbank.kr/exam/de20130928", "https://cbtbank.kr/exam/de20100905", "https://cbtbank.kr/exam/de20070902"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-087",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-087-c4",
+    "directSolution": "왕복식 압축기는 피스톤이 기체 체적을 줄이는 용적식이라 비교적 적은 유량에서도 높은 압력을 만들 수 있다. 반면 대용량 연속 운전과 낮은 맥동은 일반적으로 원심식의 장점 쪽이다. 따라서 원심식 대비 왕복식의 장점은 c4다.",
+    "choiceRationales": [
+      { "choiceId": "U-087-c1", "verdict": "incorrect", "rationale": "대용량의 연속 유량 운전은 보통 원심식 압축기가 유리한 조건이다. 왕복식의 대표 장점으로 보기 어려우므로 c1은 답이 아니다." },
+      { "choiceId": "U-087-c2", "verdict": "incorrect", "rationale": "왕복식은 피스톤·실린더·밸브 등 왕복 기구와 윤활 관리가 필요해 윤활이 매우 단순하다고 보기 어렵다. 따라서 c2는 장점이 아니다." },
+      { "choiceId": "U-087-c3", "verdict": "incorrect", "rationale": "왕복운동으로 흡입과 압축이 반복되므로 토출 압력과 유량에 맥동이 생길 수 있다. 압력맥동이 없다는 c3은 왕복식의 장점이 아니다." },
+      { "choiceId": "U-087-c4", "verdict": "correct", "rationale": "왕복식은 용적을 강제로 줄여 압축하므로 비교적 적은 유량에서도 높은 압력을 만들 수 있다. 원심식과 비교할 때 c4가 왕복식의 장점이다." }
+    ],
+    "misconception": "원심식의 대용량·연속 유동 특성과 왕복식의 고압 용적압축 특성을 서로 바꾸어 기억하는 오개념이다.",
+    "existingLessonId": "lesson-37xkxo",
+    "existingBlockId": "summary",
+    "assertionText": "작동 순서는 흡입 → 압축 → 토출이며 비교적 소유량·고압에 유리합니다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://www.comcbt.com/xe/webhaesul/9658829", "https://cbtbank.kr/exam/de20190427", "https://cbtbank.kr/exam/de20170507", "https://cbtbank.kr/exam/de20150531", "https://cbtbank.kr/exam/de20111002"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-092",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-092-c1",
+    "directSolution": "물이 처음 나오다가 곧 끊기는 증상은 흡입측에 물기둥을 유지하지 못하는 조건과 직접 연결된다. 마중물 부족, 과대한 흡입양정, 흡입관 에어포켓은 모두 흡입 지속을 방해한다. 웨어링 마모는 성능 저하 원인이 될 수 있어도 이 세 원인과 같은 직접 흡입 단절 원인으로 보기 어려우므로 c1이 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-092-c1", "verdict": "correct", "rationale": "웨어링 마모는 임펠러 내부 누설과 성능 저하에는 관련될 수 있지만, 마중물·흡입양정·에어포켓처럼 흡입이 곧 끊기는 직접 원인으로 분류하기 어렵다. 따라서 c1이 정답이다." },
+      { "choiceId": "U-092-c2", "verdict": "incorrect", "rationale": "원심펌프에 마중물이 부족하면 임펠러가 충분한 액체를 끌어올리는 상태를 만들기 어렵다. 흡입이 지속되지 않는 직접 원인이므로 c2는 제외한다." },
+      { "choiceId": "U-092-c3", "verdict": "incorrect", "rationale": "흡입양정이 펌프가 감당할 수 있는 범위를 넘으면 흡입압력이 낮아져 물기둥을 유지하기 어렵다. 따라서 c3은 증상을 설명하는 직접 원인이다." },
+      { "choiceId": "U-092-c4", "verdict": "incorrect", "rationale": "흡입관의 에어포켓은 공기 체류와 흡입 불연속을 만들어 물의 연속 흐름을 끊을 수 있다. 그러므로 c4는 원인으로 보기 어려운 보기가 아니다." }
+    ],
+    "misconception": "펌프의 모든 마모 원인을 흡입이 즉시 끊기는 현상의 직접 원인과 동일시하는 오개념이다.",
+    "existingLessonId": "lesson-ctgzb1",
+    "existingBlockId": "summary",
+    "assertionText": "마중물 부족·흡입양정 과대·에어포켓은 흡입이 지속되지 않는 직접 원인이다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://cbtbank.kr/exam/de20190303", "https://cbtbank.kr/exam/de20150919"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+]

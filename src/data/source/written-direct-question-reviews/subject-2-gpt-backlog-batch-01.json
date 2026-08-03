@@ -1,0 +1,2731 @@
+[
+  {
+    "questionId": "U-200",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-200-c1",
+    "directSolution": "문항 0의 판단 대상은 \"원형톱 작업에서 재료가 작업자 방향으로 튀는 반발을 방지하는 장치는?\"이다. 정답은 \"반발예방장치\"이며, 현행 산업안전보건기준은 목재가공용 둥근톱에 분할날 등 반발예방장치를 요구합니다. 날접촉예방장치는 별도의 접촉방호 기능입니다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-200-c1",
+        "verdict": "correct",
+        "rationale": "\"반발예방장치\"은(는) \"원형톱 작업에서 재료가 작업자 방향으로 튀는 반발을 방지하는 장치는?\"에 대해 현행 산업안전보건기준은 목재가공용 둥근톱에 분할날 등 반발예방장치를 요구합니다. 날접촉예방장치는 별도의 접촉방호 기능입니다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "U-200-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"원형톱 작업에서 재료가 작업자 방향으로 튀는 반발을 방지하는 장치는?\"에서 \"날접촉예방 덮개만\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"반발예방장치\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "U-200-c3",
+        "verdict": "incorrect",
+        "rationale": "\"집진후드\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"반발예방장치\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "U-200-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"반발예방장치\"이(가) 필요한 이유와 비교하면, \"비상조명\"은(는) \"원형톱 작업에서 재료가 작업자 방향으로 튀는 반발을 방지하는 장치는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 0에서 보기의 표현만 보고 고르지 말고, \"원형톱 작업에서 재료가 작업자 방향으로 튀는 반발을 방지하는 장치는?\"이 요구하는 조건과 정답 \"반발예방장치\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "lesson-5t8r1q",
+    "existingBlockId": "principle",
+    "assertionText": "**무엇이 어떻게 작동하는가**\n\n분할날·반발방지기구 등은 절단재가 톱날에 물려 되튀는 킥백을 방지한다.\n\n**언제 이 원리를 쓰는가**\n\n원형톱 안전장치 문제에서는 입력·에너지가 어떤 부품과 경로를 거쳐 출력·운동·측정값으로 바뀌는지 확인합니다. 용접·작업안전 안에서 구조, 작동조건과",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=633&callmode=normal&catimage=&eclang=ko&start=58&um=s",
+      "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2360"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-244",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-244-c3",
+    "directSolution": "문항 1의 판단 대상은 \"보일러 안전밸브에 관한 설명으로 옳은 것은?\"이다. 정답은 \"허용압력을 넘기기 전에 자동 개방해 과압을 방출해야 한다.\"이며, 현행 산업안전보건기준과 안전밸브 정의는 설정압력 도달 시 자동 작동해 과압을 방출하도록 합니다. 임의 폐쇄·설정 변경·배출구 폐쇄는 기능을 훼손합니다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-244-c1",
+        "verdict": "incorrect",
+        "rationale": "\"운전 중 임의로 폐쇄한다.\"은(는) 정답 \"허용압력을 넘기기 전에 자동 개방해 과압을 방출해야 한다.\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-244-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"보일러 안전밸브에 관한 설명으로 옳은 것은?\"에서 \"설정압력을 검사 없이 높인다.\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"허용압력을 넘기기 전에 자동 개방해 과압을 방출해야 한다.\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "U-244-c3",
+        "verdict": "correct",
+        "rationale": "\"허용압력을 넘기기 전에 자동 개방해 과압을 방출해야 한다.\"은(는) \"보일러 안전밸브에 관한 설명으로 옳은 것은?\"에 대해 현행 산업안전보건기준과 안전밸브 정의는 설정압력 도달 시 자동 작동해 과압을 방출하도록 합니다. 임의 폐쇄·설정 변경·배출구 폐쇄는 기능을 훼손합니다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "U-244-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"허용압력을 넘기기 전에 자동 개방해 과압을 방출해야 한다.\"이(가) 필요한 이유와 비교하면, \"배출구를 막아 소음을 줄인다.\"은(는) \"보일러 안전밸브에 관한 설명으로 옳은 것은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 1에서 보기의 표현만 보고 고르지 말고, \"보일러 안전밸브에 관한 설명으로 옳은 것은?\"이 요구하는 조건과 정답 \"허용압력을 넘기기 전에 자동 개방해 과압을 방출해야 한다.\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "lesson-hqa1xl",
+    "existingBlockId": "source",
+    "assertionText": "- 문제 근거: 27차 정규화 대표문제 U-244\n- 이론 상태: 문제 근거에서 도출한 보강안이며 독립 이론 출처 대조가 추가로 필요합니다.\n- 원문 출처 1: https://www.comcbt.com/xe/webhaesul/9620123\n- 공개 상태: 출처·기술 검수 전까지 검토 대",
+    "evidenceUrls": [
+      "https://www.law.go.kr/LSW/lsInfoP.do?efYd=20230701&lsiSeq=245059",
+      "https://www.law.go.kr/LSW/admRulSideInfoP.do?admRulSeq=2000000068484&chrClsCd=010202&docCls=jo&joBrNo=00&joChgYn=N&joNo=0007&langType=Ko&urlMode=admRulScJoRltInfoR",
+      "https://kosha.or.kr/kosha/data/seriousAccident.do?articleNo=424997&attachNo=240006&mode=download"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-248",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-248-c4",
+    "directSolution": "문항 2의 판단 대상은 \"파란색 원형 바탕에 흰색 그림으로 보호구 착용 등 특정 행동을 지시하는 표지는?\"이다. 정답은 \"지시표지\"이며, 지시표지는 안전모·보안경 착용처럼 반드시 해야 할 행동을 나타낸다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-248-c1",
+        "verdict": "incorrect",
+        "rationale": "\"금지표지\"은(는) 정답 \"지시표지\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-248-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"파란색 원형 바탕에 흰색 그림으로 보호구 착용 등 특정 행동을 지시하는 표지는?\"에서 \"경고표지\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"지시표지\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "U-248-c3",
+        "verdict": "incorrect",
+        "rationale": "\"안내표지\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"지시표지\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "U-248-c4",
+        "verdict": "correct",
+        "rationale": "\"지시표지\"은(는) \"파란색 원형 바탕에 흰색 그림으로 보호구 착용 등 특정 행동을 지시하는 표지는?\"에 대해 지시표지는 안전모·보안경 착용처럼 반드시 해야 할 행동을 나타낸다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 2에서 보기의 표현만 보고 고르지 말고, \"파란색 원형 바탕에 흰색 그림으로 보호구 착용 등 특정 행동을 지시하는 표지는?\"이 요구하는 조건과 정답 \"지시표지\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "lesson-1ctkzud",
+    "existingBlockId": "principle",
+    "assertionText": "**핵심 의미**\n\n지시표지는 안전모·보안경 착용처럼 반드시 해야 할 행동을 나타낸다.\n\n**어디에 연결되는가**\n\n안전표지은 용접·작업안전에서 대상의 특징·용도·적용조건을 구분하는 기준입니다. 정의만 외우지 말고 어떤 대상에 언제 쓰는지, 비슷한 용어와 무엇이 다른지를 함께 확인합니다",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-364",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-364-c1",
+    "directSolution": "문항 3의 판단 대상은 \"일반적인 용접의 특징으로 옳지 않은 것은?\"이다. 정답은 \"저온취성이 생길 우려가 없다.\"이며, 용접 열영향과 조직변화로 저온취성·잔류응력·변형이 발생할 수 있다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-364-c1",
+        "verdict": "correct",
+        "rationale": "\"저온취성이 생길 우려가 없다.\"은(는) \"일반적인 용접의 특징으로 옳지 않은 것은?\"에 대해 용접 열영향과 조직변화로 저온취성·잔류응력·변형이 발생할 수 있다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "U-364-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"일반적인 용접의 특징으로 옳지 않은 것은?\"에서 \"열변형과 잔류응력이 발생할 수 있다.\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"저온취성이 생길 우려가 없다.\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "U-364-c3",
+        "verdict": "incorrect",
+        "rationale": "\"품질검사가 어렵고 수축·변형이 생길 수 있다.\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"저온취성이 생길 우려가 없다.\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "U-364-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"저온취성이 생길 우려가 없다.\"이(가) 필요한 이유와 비교하면, \"용접사 기량이 품질에 영향을 준다.\"은(는) \"일반적인 용접의 특징으로 옳지 않은 것은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 3에서 보기의 표현만 보고 고르지 말고, \"일반적인 용접의 특징으로 옳지 않은 것은?\"이 요구하는 조건과 정답 \"저온취성이 생길 우려가 없다.\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "lesson-8czxhf",
+    "existingBlockId": "trap",
+    "assertionText": "아래 문장은 이 레슨에 연결된 문제에서 실제로 사용된 오답 보기입니다. 문장 자체만 외우지 말고, 왜 그럴듯하며 어느 조건에서 틀리는지 함께 확인합니다.\n\n### 함정 보기 1\n> **“열변형과 잔류응력이 발생할 수 있다.”**\n\n- **문항 맥락:** 일반적인 용접의 특징으로 옳지 않",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20200822",
+      "https://cbtbank.kr/exam/de20190303",
+      "https://cbtbank.kr/exam/de20180428"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-835",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-835-c2",
+    "directSolution": "문항 4의 판단 대상은 \"플라즈마 아크용접의 특징으로 옳지 않은 것은?\"이다. 정답은 \"설비비가 적고 무부하전압이 낮다.\"이며, 고온 플라즈마 제트를 만들기 위한 전용전원과 토치가 필요해 설비비와 무부하전압이 높은 편이다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-835-c1",
+        "verdict": "incorrect",
+        "rationale": "\"아크의 집중성과 방향성이 좋다.\"은(는) 정답 \"설비비가 적고 무부하전압이 낮다.\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-835-c2",
+        "verdict": "correct",
+        "rationale": "\"설비비가 적고 무부하전압이 낮다.\"은(는) \"플라즈마 아크용접의 특징으로 옳지 않은 것은?\"에 대해 고온 플라즈마 제트를 만들기 위한 전용전원과 토치가 필요해 설비비와 무부하전압이 높은 편이다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "U-835-c3",
+        "verdict": "incorrect",
+        "rationale": "\"키홀용접으로 단층용접이 가능하다.\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"설비비가 적고 무부하전압이 낮다.\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "U-835-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"설비비가 적고 무부하전압이 낮다.\"이(가) 필요한 이유와 비교하면, \"열영향과 변형을 줄일 수 있다.\"은(는) \"플라즈마 아크용접의 특징으로 옳지 않은 것은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 4에서 보기의 표현만 보고 고르지 말고, \"플라즈마 아크용접의 특징으로 옳지 않은 것은?\"이 요구하는 조건과 정답 \"설비비가 적고 무부하전압이 낮다.\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "lesson-18nu869",
+    "existingBlockId": "trap",
+    "assertionText": "아래 문장은 이 레슨에 연결된 문제에서 실제로 사용된 오답 보기입니다. 문장 자체만 외우지 말고, 왜 그럴듯하며 어느 조건에서 틀리는지 함께 확인합니다.\n\n### 함정 보기 1\n> **“아크의 집중성과 방향성이 좋다.”**\n\n- **문항 맥락:** 플라즈마 아크용접의 특징으로 옳지 않은",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20161001"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-977",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-977-c4",
+    "directSolution": "문항 5의 판단 대상은 \"직류 아크용접의 자기쏠림을 줄이는 방법으로 적절한 것은?\"이다. 정답은 \"받침쇠·긴 가접부·엔드탭을 이용해 자속과 전류경로를 안정시킨다.\"이며, 엔드탭과 적절한 접지배치는 자기장의 비대칭을 완화한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-977-c1",
+        "verdict": "incorrect",
+        "rationale": "\"아크길이를 의도적으로 길게 한다.\"은(는) 정답 \"받침쇠·긴 가접부·엔드탭을 이용해 자속과 전류경로를 안정시킨다.\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-977-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"직류 아크용접의 자기쏠림을 줄이는 방법으로 적절한 것은?\"에서 \"접지점을 용접부 한쪽 끝에만 집중한다.\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"받침쇠·긴 가접부·엔드탭을 이용해 자속과 전류경로를 안정시킨다.\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "U-977-c3",
+        "verdict": "incorrect",
+        "rationale": "\"항상 교류 대신 직류만 사용한다.\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"받침쇠·긴 가접부·엔드탭을 이용해 자속과 전류경로를 안정시킨다.\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "U-977-c4",
+        "verdict": "correct",
+        "rationale": "\"받침쇠·긴 가접부·엔드탭을 이용해 자속과 전류경로를 안정시킨다.\"은(는) \"직류 아크용접의 자기쏠림을 줄이는 방법으로 적절한 것은?\"에 대해 엔드탭과 적절한 접지배치는 자기장의 비대칭을 완화한다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 5에서 보기의 표현만 보고 고르지 말고, \"직류 아크용접의 자기쏠림을 줄이는 방법으로 적절한 것은?\"이 요구하는 조건과 정답 \"받침쇠·긴 가접부·엔드탭을 이용해 자속과 전류경로를 안정시킨다.\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "lesson-k8nrjm",
+    "existingBlockId": "principle",
+    "assertionText": "**핵심 의미**\n\n엔드탭과 적절한 접지배치는 자기장의 비대칭을 완화한다.\n\n**어디에 연결되는가**\n\n아크쏠림 방지은 아크용접에서 대상의 특징·용도·적용조건을 구분하는 기준입니다. 정의만 외우지 말고 어떤 대상에 언제 쓰는지, 비슷한 용어와 무엇이 다른지를 함께 확인합니다.\n\n**특징",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20140920",
+      "https://www.comcbt.com/xe/cet/5708822",
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1022",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-1022-c2",
+    "directSolution": "문항 6의 판단 대상은 \"용접 후 발생한 잔류응력을 제거하는 대표적인 열처리는?\"이다. 정답은 \"응력제거 풀림\"이며, 적정온도로 가열·유지한 뒤 서서히 냉각하여 잔류응력과 취성을 완화한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1022-c1",
+        "verdict": "incorrect",
+        "rationale": "\"담금질\"은(는) 정답 \"응력제거 풀림\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-1022-c2",
+        "verdict": "correct",
+        "rationale": "\"응력제거 풀림\"은(는) \"용접 후 발생한 잔류응력을 제거하는 대표적인 열처리는?\"에 대해 적정온도로 가열·유지한 뒤 서서히 냉각하여 잔류응력과 취성을 완화한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "U-1022-c3",
+        "verdict": "incorrect",
+        "rationale": "\"불림\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"응력제거 풀림\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "U-1022-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"응력제거 풀림\"이(가) 필요한 이유와 비교하면, \"표면경화\"은(는) \"용접 후 발생한 잔류응력을 제거하는 대표적인 열처리는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 6에서 보기의 표현만 보고 고르지 말고, \"용접 후 발생한 잔류응력을 제거하는 대표적인 열처리는?\"이 요구하는 조건과 정답 \"응력제거 풀림\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "lesson-1ibmn61",
+    "existingBlockId": "principle",
+    "assertionText": "**무엇이 어떻게 작동하는가**\n\n적정온도로 가열·유지한 뒤 서서히 냉각하여 잔류응력과 취성을 완화한다.\n\n**언제 이 원리를 쓰는가**\n\n용접 잔류응력 제거 문제에서는 입력·에너지가 어떤 부품과 경로를 거쳐 출력·운동·측정값으로 바뀌는지 확인합니다. 용접 기초 안에서 구조, 작동조건과",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20140525"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q001",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q001-c1",
+    "directSolution": "문항 7의 판단 대상은 \"용접기의 냉각팬과 회전부를 점검할 때 가장 적절한 방법은?\"이다. 정답은 \"주전원을 차단하고 회전이 완전히 멈춘 뒤 점검한다\"이며, 냉각팬은 끼임과 감전 위험이 있으므로 전원격리 후 정지상태에서 점검한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q001-c1",
+        "verdict": "correct",
+        "rationale": "\"주전원을 차단하고 회전이 완전히 멈춘 뒤 점검한다\"은(는) \"용접기의 냉각팬과 회전부를 점검할 때 가장 적절한 방법은?\"에 대해 냉각팬은 끼임과 감전 위험이 있으므로 전원격리 후 정지상태에서 점검한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q001-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"용접기의 냉각팬과 회전부를 점검할 때 가장 적절한 방법은?\"에서 \"운전 중 손으로 팬을 멈춘다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"주전원을 차단하고 회전이 완전히 멈춘 뒤 점검한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q001-c3",
+        "verdict": "incorrect",
+        "rationale": "\"덮개를 연 채 계속 운전한다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"주전원을 차단하고 회전이 완전히 멈춘 뒤 점검한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q001-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"주전원을 차단하고 회전이 완전히 멈춘 뒤 점검한다\"이(가) 필요한 이유와 비교하면, \"젖은 천으로 회전부를 닦는다\"은(는) \"용접기의 냉각팬과 회전부를 점검할 때 가장 적절한 방법은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 7에서 보기의 표현만 보고 고르지 말고, \"용접기의 냉각팬과 회전부를 점검할 때 가장 적절한 방법은?\"이 요구하는 조건과 정답 \"주전원을 차단하고 회전이 완전히 멈춘 뒤 점검한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-05",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 설치환경 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 분전반 접근 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634506",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q002",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q002-c2",
+    "directSolution": "문항 8의 판단 대상은 \"용접기 탭전환 접점의 오염이나 탄화를 정비할 때 옳은 것은?\"이다. 정답은 \"전원격리 후 제조사 절차에 따라 접점을 점검·정비한다\"이며, 전원 접점 정비에는 충전부 접촉과 아크 위험이 있어 전원격리와 승인된 정비절차가 필요하다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q002-c1",
+        "verdict": "incorrect",
+        "rationale": "\"아크 발생 중 사포로 닦는다\"은(는) 정답 \"전원격리 후 제조사 절차에 따라 접점을 점검·정비한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q002-c2",
+        "verdict": "correct",
+        "rationale": "\"전원격리 후 제조사 절차에 따라 접점을 점검·정비한다\"은(는) \"용접기 탭전환 접점의 오염이나 탄화를 정비할 때 옳은 것은?\"에 대해 전원 접점 정비에는 충전부 접촉과 아크 위험이 있어 전원격리와 승인된 정비절차가 필요하다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q002-c3",
+        "verdict": "incorrect",
+        "rationale": "\"전원을 켠 채 접점에 윤활유를 뿌린다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"전원격리 후 제조사 절차에 따라 접점을 점검·정비한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q002-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"전원격리 후 제조사 절차에 따라 접점을 점검·정비한다\"이(가) 필요한 이유와 비교하면, \"보호덮개 없이 운전하며 상태를 본다\"은(는) \"용접기 탭전환 접점의 오염이나 탄화를 정비할 때 옳은 것은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 8에서 보기의 표현만 보고 고르지 말고, \"용접기 탭전환 접점의 오염이나 탄화를 정비할 때 옳은 것은?\"이 요구하는 조건과 정답 \"전원격리 후 제조사 절차에 따라 접점을 점검·정비한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-05",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 설치환경 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 분전반 접근 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634506",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q003",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q003-c3",
+    "directSolution": "문항 9의 판단 대상은 \"도체가 노출되거나 피복이 넓게 손상된 용접케이블의 처리로 적절한 것은?\"이다. 정답은 \"사용을 중지하고 정격에 맞는 케이블로 교체하거나 승인된 방법으로 수리한다\"이며, 심한 손상은 단순 테이프 보수가 충분하지 않을 수 있어 교체 또는 규정된 수리가 필요하다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q003-c1",
+        "verdict": "incorrect",
+        "rationale": "\"절연테이프 한 겹만 감아 영구 사용한다\"은(는) 정답 \"사용을 중지하고 정격에 맞는 케이블로 교체하거나 승인된 방법으로 수리한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q003-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"도체가 노출되거나 피복이 넓게 손상된 용접케이블의 처리로 적절한 것은?\"에서 \"금속선으로 묶어 사용한다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"사용을 중지하고 정격에 맞는 케이블로 교체하거나 승인된 방법으로 수리한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q003-c3",
+        "verdict": "correct",
+        "rationale": "\"사용을 중지하고 정격에 맞는 케이블로 교체하거나 승인된 방법으로 수리한다\"은(는) \"도체가 노출되거나 피복이 넓게 손상된 용접케이블의 처리로 적절한 것은?\"에 대해 심한 손상은 단순 테이프 보수가 충분하지 않을 수 있어 교체 또는 규정된 수리가 필요하다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q003-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"사용을 중지하고 정격에 맞는 케이블로 교체하거나 승인된 방법으로 수리한다\"이(가) 필요한 이유와 비교하면, \"손상부를 물속에 넣어 냉각한다\"은(는) \"도체가 노출되거나 피복이 넓게 손상된 용접케이블의 처리로 적절한 것은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 9에서 보기의 표현만 보고 고르지 말고, \"도체가 노출되거나 피복이 넓게 손상된 용접케이블의 처리로 적절한 것은?\"이 요구하는 조건과 정답 \"사용을 중지하고 정격에 맞는 케이블로 교체하거나 승인된 방법으로 수리한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-04",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 전압강하 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 과열 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | 접속",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634506",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+,
+{
+    "questionId": "welding-safety-b33-ws31-q004",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q004-c4",
+    "directSolution": "문항 10의 판단 대상은 \"아크를 발생시키지 않는 대기상태에서 2차측 전압을 낮추는 장치의 주된 목적은?\"이다. 정답은 \"홀더와 전극 접촉에 의한 감전위험을 줄이는 것\"이며, 비용접 중 높은 무부하전압 노출을 줄이는 것이 자동전격방지장치의 핵심 목적이다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q004-c1",
+        "verdict": "incorrect",
+        "rationale": "\"용접흄을 제거하는 것\"은(는) 정답 \"홀더와 전극 접촉에 의한 감전위험을 줄이는 것\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q004-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"아크를 발생시키지 않는 대기상태에서 2차측 전압을 낮추는 장치의 주된 목적은?\"에서 \"용접봉을 자동 건조하는 것\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"홀더와 전극 접촉에 의한 감전위험을 줄이는 것\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q004-c3",
+        "verdict": "incorrect",
+        "rationale": "\"가스압력을 조절하는 것\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"홀더와 전극 접촉에 의한 감전위험을 줄이는 것\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q004-c4",
+        "verdict": "correct",
+        "rationale": "\"홀더와 전극 접촉에 의한 감전위험을 줄이는 것\"은(는) \"아크를 발생시키지 않는 대기상태에서 2차측 전압을 낮추는 장치의 주된 목적은?\"에 대해 비용접 중 높은 무부하전압 노출을 줄이는 것이 자동전격방지장치의 핵심 목적이다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 10에서 보기의 표현만 보고 고르지 말고, \"아크를 발생시키지 않는 대기상태에서 2차측 전압을 낮추는 장치의 주된 목적은?\"이 요구하는 조건과 정답 \"홀더와 전극 접촉에 의한 감전위험을 줄이는 것\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-02",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 작동원리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 설치대상 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634506",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q005",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q005-c1",
+    "directSolution": "문항 11의 판단 대상은 \"보호구 착용과 같이 특정 행동을 지시하는 안전표지를 해석할 때 중요한 것은?\"이다. 정답은 \"표지의 색상·기호·문구가 요구하는 행동을 작업 전에 이행하는 것\"이며, 안전표지는 위험정보와 필수 행동을 전달하므로 사업장 표준에 따라 정확히 이행해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q005-c1",
+        "verdict": "correct",
+        "rationale": "\"표지의 색상·기호·문구가 요구하는 행동을 작업 전에 이행하는 것\"은(는) \"보호구 착용과 같이 특정 행동을 지시하는 안전표지를 해석할 때 중요한 것은?\"에 대해 안전표지는 위험정보와 필수 행동을 전달하므로 사업장 표준에 따라 정확히 이행해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q005-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"보호구 착용과 같이 특정 행동을 지시하는 안전표지를 해석할 때 중요한 것은?\"에서 \"표지를 장식물로만 보는 것\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"표지의 색상·기호·문구가 요구하는 행동을 작업 전에 이행하는 것\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q005-c3",
+        "verdict": "incorrect",
+        "rationale": "\"작업자마다 다른 의미로 해석하는 것\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"표지의 색상·기호·문구가 요구하는 행동을 작업 전에 이행하는 것\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q005-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"표지의 색상·기호·문구가 요구하는 행동을 작업 전에 이행하는 것\"이(가) 필요한 이유와 비교하면, \"표지를 가려 장비접근을 쉽게 하는 것\"은(는) \"보호구 착용과 같이 특정 행동을 지시하는 안전표지를 해석할 때 중요한 것은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 11에서 보기의 표현만 보고 고르지 말고, \"보호구 착용과 같이 특정 행동을 지시하는 안전표지를 해석할 때 중요한 것은?\"이 요구하는 조건과 정답 \"표지의 색상·기호·문구가 요구하는 행동을 작업 전에 이행하는 것\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-24",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 작업발판 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 용기운반 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634506",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=562&callmode=normal&catimage=&eclang=ko&start=40&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=446&callmode=normal&catimage=&eclang=ko&start=144&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q006",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q006-c2",
+    "directSolution": "문항 12의 판단 대상은 \"용접기 보수 후 재가동 전에 수행할 내용으로 가장 적절한 것은?\"이다. 정답은 \"덮개·접지·배선·팬·절연상태를 확인하고 무부하 시험을 실시한다\"이며, 정비 후에는 조립상태와 안전기능을 확인하고 이상이 없을 때만 운전해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q006-c1",
+        "verdict": "incorrect",
+        "rationale": "\"공구를 내부에 둔 채 가동한다\"은(는) 정답 \"덮개·접지·배선·팬·절연상태를 확인하고 무부하 시험을 실시한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q006-c2",
+        "verdict": "correct",
+        "rationale": "\"덮개·접지·배선·팬·절연상태를 확인하고 무부하 시험을 실시한다\"은(는) \"용접기 보수 후 재가동 전에 수행할 내용으로 가장 적절한 것은?\"에 대해 정비 후에는 조립상태와 안전기능을 확인하고 이상이 없을 때만 운전해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q006-c3",
+        "verdict": "incorrect",
+        "rationale": "\"접지를 제거한 뒤 시험한다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"덮개·접지·배선·팬·절연상태를 확인하고 무부하 시험을 실시한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q006-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"덮개·접지·배선·팬·절연상태를 확인하고 무부하 시험을 실시한다\"이(가) 필요한 이유와 비교하면, \"정비기록 없이 바로 작업자에게 인계한다\"은(는) \"용접기 보수 후 재가동 전에 수행할 내용으로 가장 적절한 것은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 12에서 보기의 표현만 보고 고르지 말고, \"용접기 보수 후 재가동 전에 수행할 내용으로 가장 적절한 것은?\"이 요구하는 조건과 정답 \"덮개·접지·배선·팬·절연상태를 확인하고 무부하 시험을 실시한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-24",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 작업발판 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 용기운반 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634506",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q007",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q007-c3",
+    "directSolution": "문항 13의 판단 대상은 \"용접기 입력측 퓨즈나 차단기를 선정할 때 옳은 것은?\"이다. 정답은 \"용접기 정격입력과 제조사 지정값을 기준으로 선정한다\"이며, 과대 보호장치는 배선과 장비의 과열·단락 보호를 약화시킬 수 있다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q007-c1",
+        "verdict": "incorrect",
+        "rationale": "\"반복 차단을 막기 위해 무조건 가장 큰 용량을 사용한다\"은(는) 정답 \"용접기 정격입력과 제조사 지정값을 기준으로 선정한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q007-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"용접기 입력측 퓨즈나 차단기를 선정할 때 옳은 것은?\"에서 \"도체 굵기와 무관하게 선정한다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"용접기 정격입력과 제조사 지정값을 기준으로 선정한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q007-c3",
+        "verdict": "correct",
+        "rationale": "\"용접기 정격입력과 제조사 지정값을 기준으로 선정한다\"은(는) \"용접기 입력측 퓨즈나 차단기를 선정할 때 옳은 것은?\"에 대해 과대 보호장치는 배선과 장비의 과열·단락 보호를 약화시킬 수 있다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q007-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"용접기 정격입력과 제조사 지정값을 기준으로 선정한다\"이(가) 필요한 이유와 비교하면, \"보호장치를 제거한다\"은(는) \"용접기 입력측 퓨즈나 차단기를 선정할 때 옳은 것은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 13에서 보기의 표현만 보고 고르지 말고, \"용접기 입력측 퓨즈나 차단기를 선정할 때 옳은 것은?\"이 요구하는 조건과 정답 \"용접기 정격입력과 제조사 지정값을 기준으로 선정한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-05",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 설치환경 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 분전반 접근 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634512",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q008",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q008-c4",
+    "directSolution": "문항 14의 판단 대상은 \"교류아크용접기의 무부하전압에 대한 설명으로 옳은 것은?\"이다. 정답은 \"아크 점화에는 필요하지만 작업자 노출 시 감전위험이 있어 저감장치와 절연관리가 필요하다\"이며, 무부하전압은 아크가 없을 때 홀더와 귀환측 사이에 나타날 수 있어 감전관리가 중요하다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q008-c1",
+        "verdict": "incorrect",
+        "rationale": "\"높을수록 항상 안전하다\"은(는) 정답 \"아크 점화에는 필요하지만 작업자 노출 시 감전위험이 있어 저감장치와 절연관리가 필요하다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q008-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"교류아크용접기의 무부하전압에 대한 설명으로 옳은 것은?\"에서 \"용접 중 전류와 무관하다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"아크 점화에는 필요하지만 작업자 노출 시 감전위험이 있어 저감장치와 절연관리가 필요하다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q008-c3",
+        "verdict": "incorrect",
+        "rationale": "\"접지와 보호구가 모두 불필요해진다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"아크 점화에는 필요하지만 작업자 노출 시 감전위험이 있어 저감장치와 절연관리가 필요하다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q008-c4",
+        "verdict": "correct",
+        "rationale": "\"아크 점화에는 필요하지만 작업자 노출 시 감전위험이 있어 저감장치와 절연관리가 필요하다\"은(는) \"교류아크용접기의 무부하전압에 대한 설명으로 옳은 것은?\"에 대해 무부하전압은 아크가 없을 때 홀더와 귀환측 사이에 나타날 수 있어 감전관리가 중요하다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 14에서 보기의 표현만 보고 고르지 말고, \"교류아크용접기의 무부하전압에 대한 설명으로 옳은 것은?\"이 요구하는 조건과 정답 \"아크 점화에는 필요하지만 작업자 노출 시 감전위험이 있어 저감장치와 절연관리가 필요하다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-02",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 작동원리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 설치대상 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634512",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q009",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q009-c1",
+    "directSolution": "문항 15의 판단 대상은 \"아크광선 노출 후 눈의 통증·충혈·눈부심이 나타날 때 적절한 조치는?\"이다. 정답은 \"작업을 중지하고 눈을 쉬게 하며 의료기관의 평가를 받는다\"이며, 아크광선에 의한 눈 손상은 지연되어 나타날 수 있으므로 추가노출을 막고 전문평가를 받아야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q009-c1",
+        "verdict": "correct",
+        "rationale": "\"작업을 중지하고 눈을 쉬게 하며 의료기관의 평가를 받는다\"은(는) \"아크광선 노출 후 눈의 통증·충혈·눈부심이 나타날 때 적절한 조치는?\"에 대해 아크광선에 의한 눈 손상은 지연되어 나타날 수 있으므로 추가노출을 막고 전문평가를 받아야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q009-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"아크광선 노출 후 눈의 통증·충혈·눈부심이 나타날 때 적절한 조치는?\"에서 \"눈을 강하게 비빈다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"작업을 중지하고 눈을 쉬게 하며 의료기관의 평가를 받는다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q009-c3",
+        "verdict": "incorrect",
+        "rationale": "\"소금물을 임의로 넣고 계속 작업한다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"작업을 중지하고 눈을 쉬게 하며 의료기관의 평가를 받는다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q009-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"작업을 중지하고 눈을 쉬게 하며 의료기관의 평가를 받는다\"이(가) 필요한 이유와 비교하면, \"차광필터 없이 밝은 빛을 본다\"은(는) \"아크광선 노출 후 눈의 통증·충혈·눈부심이 나타날 때 적절한 조치는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 15에서 보기의 표현만 보고 고르지 말고, \"아크광선 노출 후 눈의 통증·충혈·눈부심이 나타날 때 적절한 조치는?\"이 요구하는 조건과 정답 \"작업을 중지하고 눈을 쉬게 하며 의료기관의 평가를 받는다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-06",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 필터 점검 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 투명 안면보호구와 차광필터 구분 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634512",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=562&callmode=normal&catimage=&eclang=ko&start=40&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=446&callmode=normal&catimage=&eclang=ko&start=144&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q010",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q010-c2",
+    "directSolution": "문항 16의 판단 대상은 \"아크안 예방에 가장 효과적인 조합은?\"이다. 정답은 \"적정 차광도의 용접면과 주변 차광막을 함께 사용하는 것\"이며, 직접광과 주변 반사광을 모두 차단해야 작업자와 주변인의 눈을 보호할 수 있다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q010-c1",
+        "verdict": "incorrect",
+        "rationale": "\"투명 보안경만 착용하는 것\"은(는) 정답 \"적정 차광도의 용접면과 주변 차광막을 함께 사용하는 것\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q010-c2",
+        "verdict": "correct",
+        "rationale": "\"적정 차광도의 용접면과 주변 차광막을 함께 사용하는 것\"은(는) \"아크안 예방에 가장 효과적인 조합은?\"에 대해 직접광과 주변 반사광을 모두 차단해야 작업자와 주변인의 눈을 보호할 수 있다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q010-c3",
+        "verdict": "incorrect",
+        "rationale": "\"작업시간만 줄이고 차광하지 않는 것\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"적정 차광도의 용접면과 주변 차광막을 함께 사용하는 것\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q010-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"적정 차광도의 용접면과 주변 차광막을 함께 사용하는 것\"이(가) 필요한 이유와 비교하면, \"아크를 곁눈질로 확인하는 것\"은(는) \"아크안 예방에 가장 효과적인 조합은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 16에서 보기의 표현만 보고 고르지 말고, \"아크안 예방에 가장 효과적인 조합은?\"이 요구하는 조건과 정답 \"적정 차광도의 용접면과 주변 차광막을 함께 사용하는 것\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-06",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 필터 점검 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 투명 안면보호구와 차광필터 구분 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634512",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=562&callmode=normal&catimage=&eclang=ko&start=40&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=446&callmode=normal&catimage=&eclang=ko&start=144&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q011",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q011-c3",
+    "directSolution": "문항 17의 판단 대상은 \"감전 시 인체에 흐르는 전류가 증가할수록 일반적으로 나타나는 경향은?\"이다. 정답은 \"통증·근육경련과 자발적 이탈 곤란 등 위험이 커진다\"이며, 인체 영향은 전류크기·통전시간·경로·피부상태에 따라 심각해진다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q011-c1",
+        "verdict": "incorrect",
+        "rationale": "\"항상 감각이 줄어 안전해진다\"은(는) 정답 \"통증·근육경련과 자발적 이탈 곤란 등 위험이 커진다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q011-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"감전 시 인체에 흐르는 전류가 증가할수록 일반적으로 나타나는 경향은?\"에서 \"피부저항과 무관하다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"통증·근육경련과 자발적 이탈 곤란 등 위험이 커진다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q011-c3",
+        "verdict": "correct",
+        "rationale": "\"통증·근육경련과 자발적 이탈 곤란 등 위험이 커진다\"은(는) \"감전 시 인체에 흐르는 전류가 증가할수록 일반적으로 나타나는 경향은?\"에 대해 인체 영향은 전류크기·통전시간·경로·피부상태에 따라 심각해진다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q011-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"통증·근육경련과 자발적 이탈 곤란 등 위험이 커진다\"이(가) 필요한 이유와 비교하면, \"습윤상태에서 위험이 감소한다\"은(는) \"감전 시 인체에 흐르는 전류가 증가할수록 일반적으로 나타나는 경향은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 17에서 보기의 표현만 보고 고르지 말고, \"감전 시 인체에 흐르는 전류가 증가할수록 일반적으로 나타나는 경향은?\"이 요구하는 조건과 정답 \"통증·근육경련과 자발적 이탈 곤란 등 위험이 커진다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-05",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 설치환경 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 분전반 접근 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634516",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q012",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q012-c4",
+    "directSolution": "문항 18의 판단 대상은 \"가스호스 내부를 청소할 때 부적절한 것은?\"이다. 정답은 \"수소와 같은 가연성 고압가스를 사용한다\"이며, 가연성가스를 고압으로 사용하면 정전기·누출·혼합가스에 의한 화재·폭발 위험이 있다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q012-c1",
+        "verdict": "incorrect",
+        "rationale": "\"제조사 절차를 확인한다\"은(는) 정답 \"수소와 같은 가연성 고압가스를 사용한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q012-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"가스호스 내부를 청소할 때 부적절한 것은?\"에서 \"점화원과 가연물을 통제한다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"수소와 같은 가연성 고압가스를 사용한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q012-c3",
+        "verdict": "incorrect",
+        "rationale": "\"승인된 비가연성 방법을 사용한다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"수소와 같은 가연성 고압가스를 사용한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q012-c4",
+        "verdict": "correct",
+        "rationale": "\"수소와 같은 가연성 고압가스를 사용한다\"은(는) \"가스호스 내부를 청소할 때 부적절한 것은?\"에 대해 가연성가스를 고압으로 사용하면 정전기·누출·혼합가스에 의한 화재·폭발 위험이 있다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 18에서 보기의 표현만 보고 고르지 말고, \"가스호스 내부를 청소할 때 부적절한 것은?\"이 요구하는 조건과 정답 \"수소와 같은 가연성 고압가스를 사용한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-18",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 균열·마모 교체 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 승인된 누설검지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634516",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q013",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q013-c1",
+    "directSolution": "문항 19의 판단 대상은 \"추운 날 가스호스가 얼었을 때 적절한 조치는?\"이다. 정답은 \"가스공급을 차단하고 제조사 절차에 따른 온수 등 안전한 방법으로 서서히 해빙한다\"이며, 직접 화염과 충격은 호스 손상·가스누출·화재를 일으킬 수 있다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q013-c1",
+        "verdict": "correct",
+        "rationale": "\"가스공급을 차단하고 제조사 절차에 따른 온수 등 안전한 방법으로 서서히 해빙한다\"은(는) \"추운 날 가스호스가 얼었을 때 적절한 조치는?\"에 대해 직접 화염과 충격은 호스 손상·가스누출·화재를 일으킬 수 있다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q013-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"추운 날 가스호스가 얼었을 때 적절한 조치는?\"에서 \"토치 불꽃으로 직접 가열한다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"가스공급을 차단하고 제조사 절차에 따른 온수 등 안전한 방법으로 서서히 해빙한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q013-c3",
+        "verdict": "incorrect",
+        "rationale": "\"호스를 강하게 두드린다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"가스공급을 차단하고 제조사 절차에 따른 온수 등 안전한 방법으로 서서히 해빙한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q013-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"가스공급을 차단하고 제조사 절차에 따른 온수 등 안전한 방법으로 서서히 해빙한다\"이(가) 필요한 이유와 비교하면, \"가압상태에서 꺾어 편다\"은(는) \"추운 날 가스호스가 얼었을 때 적절한 조치는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 19에서 보기의 표현만 보고 고르지 말고, \"추운 날 가스호스가 얼었을 때 적절한 조치는?\"이 요구하는 조건과 정답 \"가스공급을 차단하고 제조사 절차에 따른 온수 등 안전한 방법으로 서서히 해빙한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-18",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 균열·마모 교체 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 승인된 누설검지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634516",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+,
+{
+    "questionId": "welding-safety-b33-ws31-q014",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q014-c2",
+    "directSolution": "문항 20의 판단 대상은 \"가스호스 이음부를 안전하게 고정하는 방법은?\"이다. 정답은 \"가스와 호스 규격에 맞는 연결구와 전용 밴드를 사용한다\"이며, 전용 연결구와 밴드는 이탈과 누출을 줄이고 점검 가능한 접속을 만든다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q014-c1",
+        "verdict": "incorrect",
+        "rationale": "\"철사 한 가닥으로 묶는다\"은(는) 정답 \"가스와 호스 규격에 맞는 연결구와 전용 밴드를 사용한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q014-c2",
+        "verdict": "correct",
+        "rationale": "\"가스와 호스 규격에 맞는 연결구와 전용 밴드를 사용한다\"은(는) \"가스호스 이음부를 안전하게 고정하는 방법은?\"에 대해 전용 연결구와 밴드는 이탈과 누출을 줄이고 점검 가능한 접속을 만든다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q014-c3",
+        "verdict": "incorrect",
+        "rationale": "\"접착제로만 고정한다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"가스와 호스 규격에 맞는 연결구와 전용 밴드를 사용한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q014-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"가스와 호스 규격에 맞는 연결구와 전용 밴드를 사용한다\"이(가) 필요한 이유와 비교하면, \"규격이 다른 호스를 억지로 끼운다\"은(는) \"가스호스 이음부를 안전하게 고정하는 방법은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 20에서 보기의 표현만 보고 고르지 말고, \"가스호스 이음부를 안전하게 고정하는 방법은?\"이 요구하는 조건과 정답 \"가스와 호스 규격에 맞는 연결구와 전용 밴드를 사용한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-18",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 균열·마모 교체 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 승인된 누설검지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634516",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q015",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q015-c3",
+    "directSolution": "문항 21의 판단 대상은 \"아크용접용 차광필터를 하나의 번호로 모든 작업에 공통 사용하면 안 되는 이유는?\"이다. 정답은 \"공정과 전류에 따라 발생 광선의 강도가 달라지기 때문이다\"이며, 차광도는 공정·전류와 시야를 함께 고려해 선택해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q015-c1",
+        "verdict": "incorrect",
+        "rationale": "\"작업장 온도만으로 차광도가 결정되기 때문이다\"은(는) 정답 \"공정과 전류에 따라 발생 광선의 강도가 달라지기 때문이다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q015-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"아크용접용 차광필터를 하나의 번호로 모든 작업에 공통 사용하면 안 되는 이유는?\"에서 \"용접봉 길이가 차광도를 결정하기 때문이다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"공정과 전류에 따라 발생 광선의 강도가 달라지기 때문이다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q015-c3",
+        "verdict": "correct",
+        "rationale": "\"공정과 전류에 따라 발생 광선의 강도가 달라지기 때문이다\"은(는) \"아크용접용 차광필터를 하나의 번호로 모든 작업에 공통 사용하면 안 되는 이유는?\"에 대해 차광도는 공정·전류와 시야를 함께 고려해 선택해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q015-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"공정과 전류에 따라 발생 광선의 강도가 달라지기 때문이다\"이(가) 필요한 이유와 비교하면, \"차광필터는 광선과 무관하기 때문이다\"은(는) \"아크용접용 차광필터를 하나의 번호로 모든 작업에 공통 사용하면 안 되는 이유는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 21에서 보기의 표현만 보고 고르지 말고, \"아크용접용 차광필터를 하나의 번호로 모든 작업에 공통 사용하면 안 되는 이유는?\"이 요구하는 조건과 정답 \"공정과 전류에 따라 발생 광선의 강도가 달라지기 때문이다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-06",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 필터 점검 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 투명 안면보호구와 차광필터 구분 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634516",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=562&callmode=normal&catimage=&eclang=ko&start=40&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=446&callmode=normal&catimage=&eclang=ko&start=144&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q016",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q016-c4",
+    "directSolution": "문항 22의 판단 대상은 \"땀·습기·젖은 장갑이 감전위험을 높이는 주된 이유는?\"이다. 정답은 \"피부와 보호구의 전기저항이 낮아질 수 있기 때문이다\"이며, 습윤상태는 인체와 바닥의 절연성능을 저하시켜 전류가 흐르기 쉬워진다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q016-c1",
+        "verdict": "incorrect",
+        "rationale": "\"용접기의 주파수가 바뀌기 때문이다\"은(는) 정답 \"피부와 보호구의 전기저항이 낮아질 수 있기 때문이다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q016-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"땀·습기·젖은 장갑이 감전위험을 높이는 주된 이유는?\"에서 \"차광도가 낮아지기 때문이다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"피부와 보호구의 전기저항이 낮아질 수 있기 때문이다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q016-c3",
+        "verdict": "incorrect",
+        "rationale": "\"용접봉이 자동 건조되기 때문이다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"피부와 보호구의 전기저항이 낮아질 수 있기 때문이다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q016-c4",
+        "verdict": "correct",
+        "rationale": "\"피부와 보호구의 전기저항이 낮아질 수 있기 때문이다\"은(는) \"땀·습기·젖은 장갑이 감전위험을 높이는 주된 이유는?\"에 대해 습윤상태는 인체와 바닥의 절연성능을 저하시켜 전류가 흐르기 쉬워진다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 22에서 보기의 표현만 보고 고르지 말고, \"땀·습기·젖은 장갑이 감전위험을 높이는 주된 이유는?\"이 요구하는 조건과 정답 \"피부와 보호구의 전기저항이 낮아질 수 있기 때문이다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st32-02",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 이동 후 접지확인 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 접지연속성 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634516",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q017",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q017-c1",
+    "directSolution": "문항 23의 판단 대상은 \"산소용기와 연료가스용기를 함께 밀착 보관하면 안 되는 이유는?\"이다. 정답은 \"누출·화재 시 산소가 연소를 급격히 확대할 수 있기 때문이다\"이며, 산소는 가연성은 아니지만 연소를 강하게 촉진하므로 연료가스와 분리해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q017-c1",
+        "verdict": "correct",
+        "rationale": "\"누출·화재 시 산소가 연소를 급격히 확대할 수 있기 때문이다\"은(는) \"산소용기와 연료가스용기를 함께 밀착 보관하면 안 되는 이유는?\"에 대해 산소는 가연성은 아니지만 연소를 강하게 촉진하므로 연료가스와 분리해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q017-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"산소용기와 연료가스용기를 함께 밀착 보관하면 안 되는 이유는?\"에서 \"두 용기의 무게가 같아지기 때문이다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"누출·화재 시 산소가 연소를 급격히 확대할 수 있기 때문이다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q017-c3",
+        "verdict": "incorrect",
+        "rationale": "\"압력계가 보이지 않기 때문이다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"누출·화재 시 산소가 연소를 급격히 확대할 수 있기 때문이다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q017-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"누출·화재 시 산소가 연소를 급격히 확대할 수 있기 때문이다\"이(가) 필요한 이유와 비교하면, \"용접전류가 감소하기 때문이다\"은(는) \"산소용기와 연료가스용기를 함께 밀착 보관하면 안 되는 이유는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 23에서 보기의 표현만 보고 고르지 말고, \"산소용기와 연료가스용기를 함께 밀착 보관하면 안 되는 이유는?\"이 요구하는 조건과 정답 \"누출·화재 시 산소가 연소를 급격히 확대할 수 있기 때문이다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-16",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 산소·연료가스 분리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 직사광선·열·가연물·전도 방지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634528",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q018",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q018-c2",
+    "directSolution": "문항 24의 판단 대상은 \"기름이 묻은 장갑으로 산소용기 밸브를 취급하면 안 되는 이유는?\"이다. 정답은 \"고농도 산소에서 유류가 급격히 연소할 수 있기 때문이다\"이며, 산소계통은 유기물·기름·그리스 오염을 엄격히 피해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q018-c1",
+        "verdict": "incorrect",
+        "rationale": "\"용기색이 변하기 때문이다\"은(는) 정답 \"고농도 산소에서 유류가 급격히 연소할 수 있기 때문이다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q018-c2",
+        "verdict": "correct",
+        "rationale": "\"고농도 산소에서 유류가 급격히 연소할 수 있기 때문이다\"은(는) \"기름이 묻은 장갑으로 산소용기 밸브를 취급하면 안 되는 이유는?\"에 대해 산소계통은 유기물·기름·그리스 오염을 엄격히 피해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q018-c3",
+        "verdict": "incorrect",
+        "rationale": "\"가스가 액화되기 때문이다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"고농도 산소에서 유류가 급격히 연소할 수 있기 때문이다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q018-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"고농도 산소에서 유류가 급격히 연소할 수 있기 때문이다\"이(가) 필요한 이유와 비교하면, \"호스 길이가 짧아지기 때문이다\"은(는) \"기름이 묻은 장갑으로 산소용기 밸브를 취급하면 안 되는 이유는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 24에서 보기의 표현만 보고 고르지 말고, \"기름이 묻은 장갑으로 산소용기 밸브를 취급하면 안 되는 이유는?\"이 요구하는 조건과 정답 \"고농도 산소에서 유류가 급격히 연소할 수 있기 때문이다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-16",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 산소·연료가스 분리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 직사광선·열·가연물·전도 방지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634528",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q019",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q019-c3",
+    "directSolution": "문항 25의 판단 대상은 \"산소용기를 작업장으로 이동할 때 가장 적절한 방법은?\"이다. 정답은 \"보호캡을 씌우고 전용 대차에 고정해 운반한다\"이며, 밸브 파손과 전도·충격을 막기 위해 보호캡과 전용운반구를 사용한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q019-c1",
+        "verdict": "incorrect",
+        "rationale": "\"밸브를 손잡이로 들어 올린다\"은(는) 정답 \"보호캡을 씌우고 전용 대차에 고정해 운반한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q019-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"산소용기를 작업장으로 이동할 때 가장 적절한 방법은?\"에서 \"바닥에 눕혀 발로 굴린다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"보호캡을 씌우고 전용 대차에 고정해 운반한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q019-c3",
+        "verdict": "correct",
+        "rationale": "\"보호캡을 씌우고 전용 대차에 고정해 운반한다\"은(는) \"산소용기를 작업장으로 이동할 때 가장 적절한 방법은?\"에 대해 밸브 파손과 전도·충격을 막기 위해 보호캡과 전용운반구를 사용한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q019-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"보호캡을 씌우고 전용 대차에 고정해 운반한다\"이(가) 필요한 이유와 비교하면, \"조정기를 연결한 채 끌고 간다\"은(는) \"산소용기를 작업장으로 이동할 때 가장 적절한 방법은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 25에서 보기의 표현만 보고 고르지 말고, \"산소용기를 작업장으로 이동할 때 가장 적절한 방법은?\"이 요구하는 조건과 정답 \"보호캡을 씌우고 전용 대차에 고정해 운반한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-16",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 산소·연료가스 분리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 직사광선·열·가연물·전도 방지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634528",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q020",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q020-c4",
+    "directSolution": "문항 26의 판단 대상은 \"가스 연결부의 누설을 확인하는 방법으로 적절한 것은?\"이다. 정답은 \"승인된 누설검지액이나 검지기를 사용한다\"이며, 불꽃검사는 누출가스를 점화시킬 수 있으므로 사용하면 안 된다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q020-c1",
+        "verdict": "incorrect",
+        "rationale": "\"불꽃을 가까이 댄다\"은(는) 정답 \"승인된 누설검지액이나 검지기를 사용한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q020-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"가스 연결부의 누설을 확인하는 방법으로 적절한 것은?\"에서 \"담배연기로 확인한다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"승인된 누설검지액이나 검지기를 사용한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q020-c3",
+        "verdict": "incorrect",
+        "rationale": "\"손으로 밸브를 가열한다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"승인된 누설검지액이나 검지기를 사용한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q020-c4",
+        "verdict": "correct",
+        "rationale": "\"승인된 누설검지액이나 검지기를 사용한다\"은(는) \"가스 연결부의 누설을 확인하는 방법으로 적절한 것은?\"에 대해 불꽃검사는 누출가스를 점화시킬 수 있으므로 사용하면 안 된다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 26에서 보기의 표현만 보고 고르지 말고, \"가스 연결부의 누설을 확인하는 방법으로 적절한 것은?\"이 요구하는 조건과 정답 \"승인된 누설검지액이나 검지기를 사용한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-18",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 균열·마모 교체 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 승인된 누설검지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634528",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q021",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q021-c1",
+    "directSolution": "문항 27의 판단 대상은 \"가스용접 토치를 망치처럼 사용하면 안 되는 이유는?\"이다. 정답은 \"밸브·혼합부·노즐이 손상되어 누설과 역화가 발생할 수 있기 때문이다\"이며, 토치는 정밀한 가스장치이므로 충격과 임의 분해를 피해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q021-c1",
+        "verdict": "correct",
+        "rationale": "\"밸브·혼합부·노즐이 손상되어 누설과 역화가 발생할 수 있기 때문이다\"은(는) \"가스용접 토치를 망치처럼 사용하면 안 되는 이유는?\"에 대해 토치는 정밀한 가스장치이므로 충격과 임의 분해를 피해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q021-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"가스용접 토치를 망치처럼 사용하면 안 되는 이유는?\"에서 \"토치 무게가 줄기 때문이다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"밸브·혼합부·노즐이 손상되어 누설과 역화가 발생할 수 있기 때문이다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q021-c3",
+        "verdict": "incorrect",
+        "rationale": "\"차광렌즈가 어두워지기 때문이다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"밸브·혼합부·노즐이 손상되어 누설과 역화가 발생할 수 있기 때문이다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q021-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"밸브·혼합부·노즐이 손상되어 누설과 역화가 발생할 수 있기 때문이다\"이(가) 필요한 이유와 비교하면, \"용접전류가 증가하기 때문이다\"은(는) \"가스용접 토치를 망치처럼 사용하면 안 되는 이유는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 27에서 보기의 표현만 보고 고르지 말고, \"가스용접 토치를 망치처럼 사용하면 안 되는 이유는?\"이 요구하는 조건과 정답 \"밸브·혼합부·노즐이 손상되어 누설과 역화가 발생할 수 있기 때문이다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-18",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 균열·마모 교체 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 승인된 누설검지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634530",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q022",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q022-c2",
+    "directSolution": "문항 28의 판단 대상은 \"토치 팁을 교환하기 전 필요한 조치는?\"이다. 정답은 \"양쪽 토치밸브를 닫고 가스공급이 차단됐는지 확인한다\"이며, 가스가 흐르는 상태에서 팁을 분리하면 누출과 점화·화상 위험이 있다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q022-c1",
+        "verdict": "incorrect",
+        "rationale": "\"두 밸브를 모두 연다\"은(는) 정답 \"양쪽 토치밸브를 닫고 가스공급이 차단됐는지 확인한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q022-c2",
+        "verdict": "correct",
+        "rationale": "\"양쪽 토치밸브를 닫고 가스공급이 차단됐는지 확인한다\"은(는) \"토치 팁을 교환하기 전 필요한 조치는?\"에 대해 가스가 흐르는 상태에서 팁을 분리하면 누출과 점화·화상 위험이 있다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q022-c3",
+        "verdict": "incorrect",
+        "rationale": "\"점화상태에서 교환한다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"양쪽 토치밸브를 닫고 가스공급이 차단됐는지 확인한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q022-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"양쪽 토치밸브를 닫고 가스공급이 차단됐는지 확인한다\"이(가) 필요한 이유와 비교하면, \"기름을 바른 뒤 교환한다\"은(는) \"토치 팁을 교환하기 전 필요한 조치는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 28에서 보기의 표현만 보고 고르지 말고, \"토치 팁을 교환하기 전 필요한 조치는?\"이 요구하는 조건과 정답 \"양쪽 토치밸브를 닫고 가스공급이 차단됐는지 확인한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-16",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 산소·연료가스 분리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 직사광선·열·가연물·전도 방지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634530",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q023",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q023-c3",
+    "directSolution": "문항 29의 판단 대상은 \"사용하지 않는 토치 팁의 보관방법으로 적절한 것은?\"이다. 정답은 \"먼지·모래가 들어가지 않도록 깨끗한 전용 보관함에 둔다\"이며, 팁 구멍의 오염과 변형은 불꽃불안정·역화·가스혼합 이상을 일으킬 수 있다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q023-c1",
+        "verdict": "incorrect",
+        "rationale": "\"작업장 바닥에 둔다\"은(는) 정답 \"먼지·모래가 들어가지 않도록 깨끗한 전용 보관함에 둔다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q023-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"사용하지 않는 토치 팁의 보관방법으로 적절한 것은?\"에서 \"기름통에 담근다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"먼지·모래가 들어가지 않도록 깨끗한 전용 보관함에 둔다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q023-c3",
+        "verdict": "correct",
+        "rationale": "\"먼지·모래가 들어가지 않도록 깨끗한 전용 보관함에 둔다\"은(는) \"사용하지 않는 토치 팁의 보관방법으로 적절한 것은?\"에 대해 팁 구멍의 오염과 변형은 불꽃불안정·역화·가스혼합 이상을 일으킬 수 있다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q023-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"먼지·모래가 들어가지 않도록 깨끗한 전용 보관함에 둔다\"이(가) 필요한 이유와 비교하면, \"망치 대용으로 사용한다\"은(는) \"사용하지 않는 토치 팁의 보관방법으로 적절한 것은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 29에서 보기의 표현만 보고 고르지 말고, \"사용하지 않는 토치 팁의 보관방법으로 적절한 것은?\"이 요구하는 조건과 정답 \"먼지·모래가 들어가지 않도록 깨끗한 전용 보관함에 둔다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-16",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 산소·연료가스 분리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 직사광선·열·가연물·전도 방지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634530",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+,
+{
+    "questionId": "welding-safety-b33-ws31-q024",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q024-c4",
+    "directSolution": "문항 30의 판단 대상은 \"산소용기 저장장소에 가연성 가스용기를 무질서하게 함께 두는 것이 부적절한 이유는?\"이다. 정답은 \"누출·화재 시 연소 확대와 비상대응 혼선을 일으킬 수 있기 때문이다\"이며, 용기 종류·상태를 구분하고 기준에 따라 분리·고정·환기해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q024-c1",
+        "verdict": "incorrect",
+        "rationale": "\"용기 높이가 달라지기 때문이다\"은(는) 정답 \"누출·화재 시 연소 확대와 비상대응 혼선을 일으킬 수 있기 때문이다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q024-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"산소용기 저장장소에 가연성 가스용기를 무질서하게 함께 두는 것이 부적절한 이유는?\"에서 \"압력계 눈금이 지워지기 때문이다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"누출·화재 시 연소 확대와 비상대응 혼선을 일으킬 수 있기 때문이다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q024-c3",
+        "verdict": "incorrect",
+        "rationale": "\"용접비드가 변하기 때문이다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"누출·화재 시 연소 확대와 비상대응 혼선을 일으킬 수 있기 때문이다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q024-c4",
+        "verdict": "correct",
+        "rationale": "\"누출·화재 시 연소 확대와 비상대응 혼선을 일으킬 수 있기 때문이다\"은(는) \"산소용기 저장장소에 가연성 가스용기를 무질서하게 함께 두는 것이 부적절한 이유는?\"에 대해 용기 종류·상태를 구분하고 기준에 따라 분리·고정·환기해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 30에서 보기의 표현만 보고 고르지 말고, \"산소용기 저장장소에 가연성 가스용기를 무질서하게 함께 두는 것이 부적절한 이유는?\"이 요구하는 조건과 정답 \"누출·화재 시 연소 확대와 비상대응 혼선을 일으킬 수 있기 때문이다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-16",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 산소·연료가스 분리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 직사광선·열·가연물·전도 방지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634530",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q025",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q025-c1",
+    "directSolution": "문항 31의 판단 대상은 \"아세틸렌 용기를 세워 사용하는 이유는?\"이다. 정답은 \"내부 용제의 유출과 불안정한 가스공급을 줄이기 위해서\"이며, 아세틸렌은 다공성 물질과 용제에 저장되므로 직립·고정해 사용한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q025-c1",
+        "verdict": "correct",
+        "rationale": "\"내부 용제의 유출과 불안정한 가스공급을 줄이기 위해서\"은(는) \"아세틸렌 용기를 세워 사용하는 이유는?\"에 대해 아세틸렌은 다공성 물질과 용제에 저장되므로 직립·고정해 사용한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q025-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"아세틸렌 용기를 세워 사용하는 이유는?\"에서 \"압력을 무한히 높이기 위해서\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"내부 용제의 유출과 불안정한 가스공급을 줄이기 위해서\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q025-c3",
+        "verdict": "incorrect",
+        "rationale": "\"산소와 자동 혼합하기 위해서\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"내부 용제의 유출과 불안정한 가스공급을 줄이기 위해서\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q025-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"내부 용제의 유출과 불안정한 가스공급을 줄이기 위해서\"이(가) 필요한 이유와 비교하면, \"밸브를 아래로 향하게 하기 위해서\"은(는) \"아세틸렌 용기를 세워 사용하는 이유는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 31에서 보기의 표현만 보고 고르지 말고, \"아세틸렌 용기를 세워 사용하는 이유는?\"이 요구하는 조건과 정답 \"내부 용제의 유출과 불안정한 가스공급을 줄이기 위해서\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st32-04",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 누설검지액 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 밸브동결 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 |",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634530",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q026",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q026-c2",
+    "directSolution": "문항 32의 판단 대상은 \"용기 밸브나 조정기가 얼었을 때 적절한 조치는?\"이다. 정답은 \"가스공급을 차단하고 승인된 온수 등 제조사 절차로 서서히 해빙한다\"이며, 직접 화염과 충격은 고압부품 파손과 화재·폭발 위험을 만든다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q026-c1",
+        "verdict": "incorrect",
+        "rationale": "\"토치로 직접 가열한다\"은(는) 정답 \"가스공급을 차단하고 승인된 온수 등 제조사 절차로 서서히 해빙한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q026-c2",
+        "verdict": "correct",
+        "rationale": "\"가스공급을 차단하고 승인된 온수 등 제조사 절차로 서서히 해빙한다\"은(는) \"용기 밸브나 조정기가 얼었을 때 적절한 조치는?\"에 대해 직접 화염과 충격은 고압부품 파손과 화재·폭발 위험을 만든다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q026-c3",
+        "verdict": "incorrect",
+        "rationale": "\"해머로 충격을 준다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"가스공급을 차단하고 승인된 온수 등 제조사 절차로 서서히 해빙한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q026-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"가스공급을 차단하고 승인된 온수 등 제조사 절차로 서서히 해빙한다\"이(가) 필요한 이유와 비교하면, \"기름을 주입한다\"은(는) \"용기 밸브나 조정기가 얼었을 때 적절한 조치는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 32에서 보기의 표현만 보고 고르지 말고, \"용기 밸브나 조정기가 얼었을 때 적절한 조치는?\"이 요구하는 조건과 정답 \"가스공급을 차단하고 승인된 온수 등 제조사 절차로 서서히 해빙한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-16",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 산소·연료가스 분리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 직사광선·열·가연물·전도 방지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634530",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q027",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q027-c3",
+    "directSolution": "문항 33의 판단 대상은 \"TIG·MIG·CO₂ 용접처럼 광선이 강한 공정에서 차광필터를 선택하는 방법은?\"이다. 정답은 \"공정과 실제 전류범위에 맞는 충분한 차광등급을 사용한다\"이며, 고광도 아크는 눈과 피부를 손상시킬 수 있어 적정 차광과 차광막이 필요하다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q027-c1",
+        "verdict": "incorrect",
+        "rationale": "\"항상 가장 밝은 필터를 사용한다\"은(는) 정답 \"공정과 실제 전류범위에 맞는 충분한 차광등급을 사용한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q027-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"TIG·MIG·CO₂ 용접처럼 광선이 강한 공정에서 차광필터를 선택하는 방법은?\"에서 \"투명 보안경만 사용한다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"공정과 실제 전류범위에 맞는 충분한 차광등급을 사용한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q027-c3",
+        "verdict": "correct",
+        "rationale": "\"공정과 실제 전류범위에 맞는 충분한 차광등급을 사용한다\"은(는) \"TIG·MIG·CO₂ 용접처럼 광선이 강한 공정에서 차광필터를 선택하는 방법은?\"에 대해 고광도 아크는 눈과 피부를 손상시킬 수 있어 적정 차광과 차광막이 필요하다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q027-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"공정과 실제 전류범위에 맞는 충분한 차광등급을 사용한다\"이(가) 필요한 이유와 비교하면, \"작업자마다 임의 번호를 고른다\"은(는) \"TIG·MIG·CO₂ 용접처럼 광선이 강한 공정에서 차광필터를 선택하는 방법은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 33에서 보기의 표현만 보고 고르지 말고, \"TIG·MIG·CO₂ 용접처럼 광선이 강한 공정에서 차광필터를 선택하는 방법은?\"이 요구하는 조건과 정답 \"공정과 실제 전류범위에 맞는 충분한 차광등급을 사용한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-06",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 필터 점검 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 투명 안면보호구와 차광필터 구분 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634532",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=562&callmode=normal&catimage=&eclang=ko&start=40&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=446&callmode=normal&catimage=&eclang=ko&start=144&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q028",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q028-c4",
+    "directSolution": "문항 34의 판단 대상은 \"피복아크용접에서 절연상태가 양호한 안전홀더를 사용하는 주된 이유는?\"이다. 정답은 \"통전부 접촉과 전격위험을 줄이기 위해서\"이며, 홀더는 전극을 고정하는 동시에 작업자가 통전부와 접촉하지 않도록 절연해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q028-c1",
+        "verdict": "incorrect",
+        "rationale": "\"용접흄을 포집하기 위해서\"은(는) 정답 \"통전부 접촉과 전격위험을 줄이기 위해서\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q028-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"피복아크용접에서 절연상태가 양호한 안전홀더를 사용하는 주된 이유는?\"에서 \"차광도를 높이기 위해서\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"통전부 접촉과 전격위험을 줄이기 위해서\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q028-c3",
+        "verdict": "incorrect",
+        "rationale": "\"가스용기를 고정하기 위해서\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"통전부 접촉과 전격위험을 줄이기 위해서\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q028-c4",
+        "verdict": "correct",
+        "rationale": "\"통전부 접촉과 전격위험을 줄이기 위해서\"은(는) \"피복아크용접에서 절연상태가 양호한 안전홀더를 사용하는 주된 이유는?\"에 대해 홀더는 전극을 고정하는 동시에 작업자가 통전부와 접촉하지 않도록 절연해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 34에서 보기의 표현만 보고 고르지 말고, \"피복아크용접에서 절연상태가 양호한 안전홀더를 사용하는 주된 이유는?\"이 요구하는 조건과 정답 \"통전부 접촉과 전격위험을 줄이기 위해서\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-04",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 전압강하 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 과열 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | 접속",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634532",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q029",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q029-c1",
+    "directSolution": "문항 35의 판단 대상은 \"땀이 많이 나는 좁은 장소에서 아크용접할 때 적절한 조치는?\"이다. 정답은 \"신체노출을 줄이고 절연·환기·감시 등 추가대책을 적용한다\"이며, 다습하고 전도성인 협소공간은 감전·질식 위험이 함께 증가한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q029-c1",
+        "verdict": "correct",
+        "rationale": "\"신체노출을 줄이고 절연·환기·감시 등 추가대책을 적용한다\"은(는) \"땀이 많이 나는 좁은 장소에서 아크용접할 때 적절한 조치는?\"에 대해 다습하고 전도성인 협소공간은 감전·질식 위험이 함께 증가한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q029-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"땀이 많이 나는 좁은 장소에서 아크용접할 때 적절한 조치는?\"에서 \"상의를 벗어 피부를 노출한다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"신체노출을 줄이고 절연·환기·감시 등 추가대책을 적용한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q029-c3",
+        "verdict": "incorrect",
+        "rationale": "\"젖은 바닥에 직접 앉는다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"신체노출을 줄이고 절연·환기·감시 등 추가대책을 적용한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q029-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"신체노출을 줄이고 절연·환기·감시 등 추가대책을 적용한다\"이(가) 필요한 이유와 비교하면, \"전격방지장치를 우회한다\"은(는) \"땀이 많이 나는 좁은 장소에서 아크용접할 때 적절한 조치는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 35에서 보기의 표현만 보고 고르지 말고, \"땀이 많이 나는 좁은 장소에서 아크용접할 때 적절한 조치는?\"이 요구하는 조건과 정답 \"신체노출을 줄이고 절연·환기·감시 등 추가대책을 적용한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-05",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 설치환경 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 분전반 접근 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634532",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q030",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q030-c2",
+    "directSolution": "문항 36의 판단 대상은 \"용접작업을 장시간 중지할 때 적절한 조치는?\"이다. 정답은 \"용접기 전원을 차단하고 홀더와 케이블을 안전하게 정리한다\"이며, 장시간 무인상태의 통전설비는 우발적 아크·감전·화재 위험을 만든다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q030-c1",
+        "verdict": "incorrect",
+        "rationale": "\"홀더를 모재 위에 둔다\"은(는) 정답 \"용접기 전원을 차단하고 홀더와 케이블을 안전하게 정리한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q030-c2",
+        "verdict": "correct",
+        "rationale": "\"용접기 전원을 차단하고 홀더와 케이블을 안전하게 정리한다\"은(는) \"용접작업을 장시간 중지할 때 적절한 조치는?\"에 대해 장시간 무인상태의 통전설비는 우발적 아크·감전·화재 위험을 만든다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q030-c3",
+        "verdict": "incorrect",
+        "rationale": "\"전극을 끼운 채 전원을 켜 둔다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"용접기 전원을 차단하고 홀더와 케이블을 안전하게 정리한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q030-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"용접기 전원을 차단하고 홀더와 케이블을 안전하게 정리한다\"이(가) 필요한 이유와 비교하면, \"손상 케이블을 통로에 둔다\"은(는) \"용접작업을 장시간 중지할 때 적절한 조치는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 36에서 보기의 표현만 보고 고르지 말고, \"용접작업을 장시간 중지할 때 적절한 조치는?\"이 요구하는 조건과 정답 \"용접기 전원을 차단하고 홀더와 케이블을 안전하게 정리한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-05",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 설치환경 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 분전반 접근 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634532",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q031",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q031-c3",
+    "directSolution": "문항 37의 판단 대상은 \"같은 작업성능을 만족한다면 불필요하게 높은 무부하전압의 용접기를 피해야 하는 이유는?\"이다. 정답은 \"아크가 없을 때 작업자에게 노출될 수 있는 전격위험이 커지기 때문이다\"이며, 점화성능과 안전을 함께 고려해 규정에 맞는 전원과 방호장치를 사용한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q031-c1",
+        "verdict": "incorrect",
+        "rationale": "\"용접흄이 감소하기 때문이다\"은(는) 정답 \"아크가 없을 때 작업자에게 노출될 수 있는 전격위험이 커지기 때문이다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q031-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"같은 작업성능을 만족한다면 불필요하게 높은 무부하전압의 용접기를 피해야 하는 이유는?\"에서 \"용접봉이 건조되기 때문이다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"아크가 없을 때 작업자에게 노출될 수 있는 전격위험이 커지기 때문이다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q031-c3",
+        "verdict": "correct",
+        "rationale": "\"아크가 없을 때 작업자에게 노출될 수 있는 전격위험이 커지기 때문이다\"은(는) \"같은 작업성능을 만족한다면 불필요하게 높은 무부하전압의 용접기를 피해야 하는 이유는?\"에 대해 점화성능과 안전을 함께 고려해 규정에 맞는 전원과 방호장치를 사용한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q031-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"아크가 없을 때 작업자에게 노출될 수 있는 전격위험이 커지기 때문이다\"이(가) 필요한 이유와 비교하면, \"가스압력이 낮아지기 때문이다\"은(는) \"같은 작업성능을 만족한다면 불필요하게 높은 무부하전압의 용접기를 피해야 하는 이유는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 37에서 보기의 표현만 보고 고르지 말고, \"같은 작업성능을 만족한다면 불필요하게 높은 무부하전압의 용접기를 피해야 하는 이유는?\"이 요구하는 조건과 정답 \"아크가 없을 때 작업자에게 노출될 수 있는 전격위험이 커지기 때문이다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-02",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 작동원리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 설치대상 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634532",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q032",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q032-c4",
+    "directSolution": "문항 38의 판단 대상은 \"스테인리스 판이나 밝은 금속면 주변에서 아크용접할 때 추가로 고려할 위험은?\"이다. 정답은 \"반사된 아크광선이 작업자와 주변인의 눈·피부에 도달하는 것\"이며, 밝은 금속면과 벽은 유해광선을 반사할 수 있어 구획과 차광막 배치가 중요하다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q032-c1",
+        "verdict": "incorrect",
+        "rationale": "\"금속이 전기를 통하지 않는 것\"은(는) 정답 \"반사된 아크광선이 작업자와 주변인의 눈·피부에 도달하는 것\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q032-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"스테인리스 판이나 밝은 금속면 주변에서 아크용접할 때 추가로 고려할 위험은?\"에서 \"차폐가스가 고체로 변하는 것\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"반사된 아크광선이 작업자와 주변인의 눈·피부에 도달하는 것\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q032-c3",
+        "verdict": "incorrect",
+        "rationale": "\"용접봉이 길어지는 것\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"반사된 아크광선이 작업자와 주변인의 눈·피부에 도달하는 것\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q032-c4",
+        "verdict": "correct",
+        "rationale": "\"반사된 아크광선이 작업자와 주변인의 눈·피부에 도달하는 것\"은(는) \"스테인리스 판이나 밝은 금속면 주변에서 아크용접할 때 추가로 고려할 위험은?\"에 대해 밝은 금속면과 벽은 유해광선을 반사할 수 있어 구획과 차광막 배치가 중요하다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 38에서 보기의 표현만 보고 고르지 말고, \"스테인리스 판이나 밝은 금속면 주변에서 아크용접할 때 추가로 고려할 위험은?\"이 요구하는 조건과 정답 \"반사된 아크광선이 작업자와 주변인의 눈·피부에 도달하는 것\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-06",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 필터 점검 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 투명 안면보호구와 차광필터 구분 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634532",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=562&callmode=normal&catimage=&eclang=ko&start=40&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=446&callmode=normal&catimage=&eclang=ko&start=144&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q033",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q033-c1",
+    "directSolution": "문항 39의 판단 대상은 \"가스 압력조정기를 설치할 때 압력계가 잘 보이도록 해야 하는 이유는?\"이다. 정답은 \"공급압력 이상과 밸브 조작상태를 안전한 위치에서 확인하기 위해서\"이며, 작업자는 정면을 피하면서도 게이지를 판독할 수 있어야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q033-c1",
+        "verdict": "correct",
+        "rationale": "\"공급압력 이상과 밸브 조작상태를 안전한 위치에서 확인하기 위해서\"은(는) \"가스 압력조정기를 설치할 때 압력계가 잘 보이도록 해야 하는 이유는?\"에 대해 작업자는 정면을 피하면서도 게이지를 판독할 수 있어야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q033-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"가스 압력조정기를 설치할 때 압력계가 잘 보이도록 해야 하는 이유는?\"에서 \"압력계를 장식하기 위해서\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"공급압력 이상과 밸브 조작상태를 안전한 위치에서 확인하기 위해서\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q033-c3",
+        "verdict": "incorrect",
+        "rationale": "\"가스를 자동 혼합하기 위해서\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"공급압력 이상과 밸브 조작상태를 안전한 위치에서 확인하기 위해서\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q033-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"공급압력 이상과 밸브 조작상태를 안전한 위치에서 확인하기 위해서\"이(가) 필요한 이유와 비교하면, \"호스 길이를 줄이기 위해서\"은(는) \"가스 압력조정기를 설치할 때 압력계가 잘 보이도록 해야 하는 이유는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 39에서 보기의 표현만 보고 고르지 말고, \"가스 압력조정기를 설치할 때 압력계가 잘 보이도록 해야 하는 이유는?\"이 요구하는 조건과 정답 \"공급압력 이상과 밸브 조작상태를 안전한 위치에서 확인하기 위해서\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-17",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 조정나사 해제 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 측면개방 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634542",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+,
+{
+    "questionId": "welding-safety-b33-ws31-q034",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q034-c2",
+    "directSolution": "문항 40의 판단 대상은 \"조정기와 안전밸브의 분출방향에 사람이나 장애물을 두지 않는 이유는?\"이다. 정답은 \"부품파손이나 가스분출 시 직접 충격·질식·화재위험을 줄이기 위해서\"이며, 고압가스의 예상 분출경로를 사람과 점화원에서 피해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q034-c1",
+        "verdict": "incorrect",
+        "rationale": "\"가스압력을 높이기 위해서\"은(는) 정답 \"부품파손이나 가스분출 시 직접 충격·질식·화재위험을 줄이기 위해서\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q034-c2",
+        "verdict": "correct",
+        "rationale": "\"부품파손이나 가스분출 시 직접 충격·질식·화재위험을 줄이기 위해서\"은(는) \"조정기와 안전밸브의 분출방향에 사람이나 장애물을 두지 않는 이유는?\"에 대해 고압가스의 예상 분출경로를 사람과 점화원에서 피해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q034-c3",
+        "verdict": "incorrect",
+        "rationale": "\"차광도를 높이기 위해서\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"부품파손이나 가스분출 시 직접 충격·질식·화재위험을 줄이기 위해서\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q034-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"부품파손이나 가스분출 시 직접 충격·질식·화재위험을 줄이기 위해서\"이(가) 필요한 이유와 비교하면, \"용접봉을 예열하기 위해서\"은(는) \"조정기와 안전밸브의 분출방향에 사람이나 장애물을 두지 않는 이유는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 40에서 보기의 표현만 보고 고르지 말고, \"조정기와 안전밸브의 분출방향에 사람이나 장애물을 두지 않는 이유는?\"이 요구하는 조건과 정답 \"부품파손이나 가스분출 시 직접 충격·질식·화재위험을 줄이기 위해서\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-17",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 조정나사 해제 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 측면개방 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634542",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q035",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q035-c3",
+    "directSolution": "문항 41의 판단 대상은 \"산소용 압력조정기를 취급할 때 기름 묻은 장갑을 사용하면 안 되는 이유는?\"이다. 정답은 \"산소와 유류가 접촉하면 급격한 연소가 발생할 수 있기 때문이다\"이며, 산소장비는 청정한 손·공구·부품으로 취급해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q035-c1",
+        "verdict": "incorrect",
+        "rationale": "\"압력계가 어두워지기 때문이다\"은(는) 정답 \"산소와 유류가 접촉하면 급격한 연소가 발생할 수 있기 때문이다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q035-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"산소용 압력조정기를 취급할 때 기름 묻은 장갑을 사용하면 안 되는 이유는?\"에서 \"가스가 물로 변하기 때문이다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"산소와 유류가 접촉하면 급격한 연소가 발생할 수 있기 때문이다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q035-c3",
+        "verdict": "correct",
+        "rationale": "\"산소와 유류가 접촉하면 급격한 연소가 발생할 수 있기 때문이다\"은(는) \"산소용 압력조정기를 취급할 때 기름 묻은 장갑을 사용하면 안 되는 이유는?\"에 대해 산소장비는 청정한 손·공구·부품으로 취급해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q035-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"산소와 유류가 접촉하면 급격한 연소가 발생할 수 있기 때문이다\"이(가) 필요한 이유와 비교하면, \"호스가 길어지기 때문이다\"은(는) \"산소용 압력조정기를 취급할 때 기름 묻은 장갑을 사용하면 안 되는 이유는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 41에서 보기의 표현만 보고 고르지 말고, \"산소용 압력조정기를 취급할 때 기름 묻은 장갑을 사용하면 안 되는 이유는?\"이 요구하는 조건과 정답 \"산소와 유류가 접촉하면 급격한 연소가 발생할 수 있기 때문이다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-17",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 조정나사 해제 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 측면개방 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634542",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q036",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q036-c4",
+    "directSolution": "문항 42의 판단 대상은 \"용기밸브를 열기 전에 조정기의 압력조정나사를 풀어 두는 이유는?\"이다. 정답은 \"2차측으로 고압이 갑자기 전달되는 것을 방지하기 위해서\"이며, 무부하 상태에서 조정나사를 해제하고 밸브를 서서히 열어야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q036-c1",
+        "verdict": "incorrect",
+        "rationale": "\"가스를 혼합하기 위해서\"은(는) 정답 \"2차측으로 고압이 갑자기 전달되는 것을 방지하기 위해서\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q036-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"용기밸브를 열기 전에 조정기의 압력조정나사를 풀어 두는 이유는?\"에서 \"용기 무게를 줄이기 위해서\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"2차측으로 고압이 갑자기 전달되는 것을 방지하기 위해서\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q036-c3",
+        "verdict": "incorrect",
+        "rationale": "\"게이지 눈금을 지우기 위해서\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"2차측으로 고압이 갑자기 전달되는 것을 방지하기 위해서\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q036-c4",
+        "verdict": "correct",
+        "rationale": "\"2차측으로 고압이 갑자기 전달되는 것을 방지하기 위해서\"은(는) \"용기밸브를 열기 전에 조정기의 압력조정나사를 풀어 두는 이유는?\"에 대해 무부하 상태에서 조정나사를 해제하고 밸브를 서서히 열어야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 42에서 보기의 표현만 보고 고르지 말고, \"용기밸브를 열기 전에 조정기의 압력조정나사를 풀어 두는 이유는?\"이 요구하는 조건과 정답 \"2차측으로 고압이 갑자기 전달되는 것을 방지하기 위해서\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-16",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 산소·연료가스 분리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 직사광선·열·가연물·전도 방지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634542",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q037",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q037-c1",
+    "directSolution": "문항 43의 판단 대상은 \"조정기 설치 후 용기밸브를 서서히 연 다음 해야 할 일은?\"이다. 정답은 \"연결부와 밸브를 승인된 누설검지액으로 점검한다\"이며, 가스누설은 점화원 없이 검지하고 이상 시 즉시 공급을 차단해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q037-c1",
+        "verdict": "correct",
+        "rationale": "\"연결부와 밸브를 승인된 누설검지액으로 점검한다\"은(는) \"조정기 설치 후 용기밸브를 서서히 연 다음 해야 할 일은?\"에 대해 가스누설은 점화원 없이 검지하고 이상 시 즉시 공급을 차단해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q037-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"조정기 설치 후 용기밸브를 서서히 연 다음 해야 할 일은?\"에서 \"불꽃으로 누설을 찾는다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"연결부와 밸브를 승인된 누설검지액으로 점검한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q037-c3",
+        "verdict": "incorrect",
+        "rationale": "\"기름을 연결부에 바른다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"연결부와 밸브를 승인된 누설검지액으로 점검한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q037-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"연결부와 밸브를 승인된 누설검지액으로 점검한다\"이(가) 필요한 이유와 비교하면, \"호스를 꺾어 압력을 높인다\"은(는) \"조정기 설치 후 용기밸브를 서서히 연 다음 해야 할 일은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 43에서 보기의 표현만 보고 고르지 말고, \"조정기 설치 후 용기밸브를 서서히 연 다음 해야 할 일은?\"이 요구하는 조건과 정답 \"연결부와 밸브를 승인된 누설검지액으로 점검한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-16",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 산소·연료가스 분리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 직사광선·열·가연물·전도 방지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634542",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q038",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q038-c2",
+    "directSolution": "문항 44의 판단 대상은 \"가스용접 토치에 기름이나 그리스를 임의로 바르면 안 되는 이유는?\"이다. 정답은 \"산소계통 오염과 내부 유로·밸브 이상을 유발할 수 있기 때문이다\"이며, 토치는 제조사 지정 정비방법으로 관리하고 산소와 접촉하는 부분의 유류오염을 피한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q038-c1",
+        "verdict": "incorrect",
+        "rationale": "\"불꽃이 항상 중성불꽃이 되기 때문이다\"은(는) 정답 \"산소계통 오염과 내부 유로·밸브 이상을 유발할 수 있기 때문이다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q038-c2",
+        "verdict": "correct",
+        "rationale": "\"산소계통 오염과 내부 유로·밸브 이상을 유발할 수 있기 때문이다\"은(는) \"가스용접 토치에 기름이나 그리스를 임의로 바르면 안 되는 이유는?\"에 대해 토치는 제조사 지정 정비방법으로 관리하고 산소와 접촉하는 부분의 유류오염을 피한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q038-c3",
+        "verdict": "incorrect",
+        "rationale": "\"용접속도가 느려지기 때문이다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"산소계통 오염과 내부 유로·밸브 이상을 유발할 수 있기 때문이다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q038-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"산소계통 오염과 내부 유로·밸브 이상을 유발할 수 있기 때문이다\"이(가) 필요한 이유와 비교하면, \"용접봉이 녹지 않기 때문이다\"은(는) \"가스용접 토치에 기름이나 그리스를 임의로 바르면 안 되는 이유는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 44에서 보기의 표현만 보고 고르지 말고, \"가스용접 토치에 기름이나 그리스를 임의로 바르면 안 되는 이유는?\"이 요구하는 조건과 정답 \"산소계통 오염과 내부 유로·밸브 이상을 유발할 수 있기 때문이다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-17",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 조정나사 해제 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 측면개방 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634542",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q039",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q039-c3",
+    "directSolution": "문항 45의 판단 대상은 \"용접 자동화의 안전상 장점으로 옳은 것은?\"이다. 정답은 \"위험구역에서 작업자의 직접 노출을 줄일 수 있다\"이며, 자동화는 노출을 줄일 수 있지만 인터록·구획·LOTO와 유지관리가 계속 필요하다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q039-c1",
+        "verdict": "incorrect",
+        "rationale": "\"자동화하면 사고가 절대 발생하지 않는다\"은(는) 정답 \"위험구역에서 작업자의 직접 노출을 줄일 수 있다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q039-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"용접 자동화의 안전상 장점으로 옳은 것은?\"에서 \"인터록과 방호장치가 필요 없다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"위험구역에서 작업자의 직접 노출을 줄일 수 있다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q039-c3",
+        "verdict": "correct",
+        "rationale": "\"위험구역에서 작업자의 직접 노출을 줄일 수 있다\"은(는) \"용접 자동화의 안전상 장점으로 옳은 것은?\"에 대해 자동화는 노출을 줄일 수 있지만 인터록·구획·LOTO와 유지관리가 계속 필요하다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q039-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"위험구역에서 작업자의 직접 노출을 줄일 수 있다\"이(가) 필요한 이유와 비교하면, \"정비 중에도 로봇을 가동한다\"은(는) \"용접 자동화의 안전상 장점으로 옳은 것은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 45에서 보기의 표현만 보고 고르지 말고, \"용접 자동화의 안전상 장점으로 옳은 것은?\"이 요구하는 조건과 정답 \"위험구역에서 작업자의 직접 노출을 줄일 수 있다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-24",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 작업발판 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 용기운반 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634538",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=562&callmode=normal&catimage=&eclang=ko&start=40&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=446&callmode=normal&catimage=&eclang=ko&start=144&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q040",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q040-c4",
+    "directSolution": "문항 46의 판단 대상은 \"아르곤 누출 시 피트나 탱크 하부를 특히 확인해야 하는 이유는?\"이다. 정답은 \"공기보다 무거워 낮은 곳에 체류하며 산소를 치환할 수 있기 때문이다\"이며, 불활성가스는 무색·무취이고 낮은 곳에 축적될 수 있어 가스측정과 환기가 필요하다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q040-c1",
+        "verdict": "incorrect",
+        "rationale": "\"강한 냄새가 위로만 올라가기 때문이다\"은(는) 정답 \"공기보다 무거워 낮은 곳에 체류하며 산소를 치환할 수 있기 때문이다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q040-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"아르곤 누출 시 피트나 탱크 하부를 특히 확인해야 하는 이유는?\"에서 \"아르곤이 산소를 생성하기 때문이다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"공기보다 무거워 낮은 곳에 체류하며 산소를 치환할 수 있기 때문이다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q040-c3",
+        "verdict": "incorrect",
+        "rationale": "\"용접전류를 차단하기 때문이다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"공기보다 무거워 낮은 곳에 체류하며 산소를 치환할 수 있기 때문이다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q040-c4",
+        "verdict": "correct",
+        "rationale": "\"공기보다 무거워 낮은 곳에 체류하며 산소를 치환할 수 있기 때문이다\"은(는) \"아르곤 누출 시 피트나 탱크 하부를 특히 확인해야 하는 이유는?\"에 대해 불활성가스는 무색·무취이고 낮은 곳에 축적될 수 있어 가스측정과 환기가 필요하다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 46에서 보기의 표현만 보고 고르지 말고, \"아르곤 누출 시 피트나 탱크 하부를 특히 확인해야 하는 이유는?\"이 요구하는 조건과 정답 \"공기보다 무거워 낮은 곳에 체류하며 산소를 치환할 수 있기 때문이다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-22",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 감시인 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 연속감시 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | 불",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634538",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=554&callmode=normal&catimage=&eclang=ko&start=28&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=446&callmode=normal&catimage=&eclang=ko&start=144&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q041",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q041-c1",
+    "directSolution": "문항 47의 판단 대상은 \"가스용접이 아크용접보다 추가로 요구하는 대표 안전관리는?\"이다. 정답은 \"연료가스 누출·혼합가스·역화와 용기 계통 관리\"이며, 가스용접은 화염·가연성가스·고압용기·역화 위험을 함께 관리해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q041-c1",
+        "verdict": "correct",
+        "rationale": "\"연료가스 누출·혼합가스·역화와 용기 계통 관리\"은(는) \"가스용접이 아크용접보다 추가로 요구하는 대표 안전관리는?\"에 대해 가스용접은 화염·가연성가스·고압용기·역화 위험을 함께 관리해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q041-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"가스용접이 아크용접보다 추가로 요구하는 대표 안전관리는?\"에서 \"전기설비 확인이 전혀 필요 없다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"연료가스 누출·혼합가스·역화와 용기 계통 관리\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q041-c3",
+        "verdict": "incorrect",
+        "rationale": "\"보호구가 필요 없다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"연료가스 누출·혼합가스·역화와 용기 계통 관리\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q041-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"연료가스 누출·혼합가스·역화와 용기 계통 관리\"이(가) 필요한 이유와 비교하면, \"환기를 중지해야 한다\"은(는) \"가스용접이 아크용접보다 추가로 요구하는 대표 안전관리는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 47에서 보기의 표현만 보고 고르지 말고, \"가스용접이 아크용접보다 추가로 요구하는 대표 안전관리는?\"이 요구하는 조건과 정답 \"연료가스 누출·혼합가스·역화와 용기 계통 관리\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-15",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 전기화재 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 감지기 일시격리·복구 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634540",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=474&callmode=normal&catimage=&eclang=ko&start=216&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=516&callmode=normal&catimage=&eclang=ko&start=204&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q042",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q042-c2",
+    "directSolution": "문항 48의 판단 대상은 \"전격 위험이 상대적으로 낮아지는 조건은?\"이다. 정답은 \"건조한 보호구와 건전한 절연을 유지하고 무부하전압이 낮은 적합한 장비를 사용하는 경우\"이며, 건조·절연·전압저감은 감전위험을 낮추지만 안전절차를 대체하지는 않는다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q042-c1",
+        "verdict": "incorrect",
+        "rationale": "\"젖은 몸으로 홀더를 잡는 경우\"은(는) 정답 \"건조한 보호구와 건전한 절연을 유지하고 무부하전압이 낮은 적합한 장비를 사용하는 경우\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q042-c2",
+        "verdict": "correct",
+        "rationale": "\"건조한 보호구와 건전한 절연을 유지하고 무부하전압이 낮은 적합한 장비를 사용하는 경우\"은(는) \"전격 위험이 상대적으로 낮아지는 조건은?\"에 대해 건조·절연·전압저감은 감전위험을 낮추지만 안전절차를 대체하지는 않는다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q042-c3",
+        "verdict": "incorrect",
+        "rationale": "\"피복이 손상된 케이블을 쓰는 경우\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"건조한 보호구와 건전한 절연을 유지하고 무부하전압이 낮은 적합한 장비를 사용하는 경우\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q042-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"건조한 보호구와 건전한 절연을 유지하고 무부하전압이 낮은 적합한 장비를 사용하는 경우\"이(가) 필요한 이유와 비교하면, \"땀을 흘리며 금속바닥에 직접 앉는 경우\"은(는) \"전격 위험이 상대적으로 낮아지는 조건은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 48에서 보기의 표현만 보고 고르지 말고, \"전격 위험이 상대적으로 낮아지는 조건은?\"이 요구하는 조건과 정답 \"건조한 보호구와 건전한 절연을 유지하고 무부하전압이 낮은 적합한 장비를 사용하는 경우\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-05",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 설치환경 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 분전반 접근 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634542",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q043",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q043-c3",
+    "directSolution": "문항 49의 판단 대상은 \"가스용접 중 역화음과 토치 내부 화염이 의심될 때 가장 적절한 대응은?\"이다. 정답은 \"즉시 작업을 중지하고 승인된 순서로 토치와 공급가스를 차단한 뒤 장비를 점검한다\"이며, 역화 시에는 장비별 절차에 따라 공급을 차단하고 토치·팁·호스·안전기를 점검해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q043-c1",
+        "verdict": "incorrect",
+        "rationale": "\"연료가스를 더 열어 화염을 밀어낸다\"은(는) 정답 \"즉시 작업을 중지하고 승인된 순서로 토치와 공급가스를 차단한 뒤 장비를 점검한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q043-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"가스용접 중 역화음과 토치 내부 화염이 의심될 때 가장 적절한 대응은?\"에서 \"호스를 손으로 꺾어 막는다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"즉시 작업을 중지하고 승인된 순서로 토치와 공급가스를 차단한 뒤 장비를 점검한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q043-c3",
+        "verdict": "correct",
+        "rationale": "\"즉시 작업을 중지하고 승인된 순서로 토치와 공급가스를 차단한 뒤 장비를 점검한다\"은(는) \"가스용접 중 역화음과 토치 내부 화염이 의심될 때 가장 적절한 대응은?\"에 대해 역화 시에는 장비별 절차에 따라 공급을 차단하고 토치·팁·호스·안전기를 점검해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q043-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"즉시 작업을 중지하고 승인된 순서로 토치와 공급가스를 차단한 뒤 장비를 점검한다\"이(가) 필요한 이유와 비교하면, \"토치를 바닥에 던진다\"은(는) \"가스용접 중 역화음과 토치 내부 화염이 의심될 때 가장 적절한 대응은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 49에서 보기의 표현만 보고 고르지 말고, \"가스용접 중 역화음과 토치 내부 화염이 의심될 때 가장 적절한 대응은?\"이 요구하는 조건과 정답 \"즉시 작업을 중지하고 승인된 순서로 토치와 공급가스를 차단한 뒤 장비를 점검한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-18",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 균열·마모 교체 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 승인된 누설검지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8142425",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+,
+{
+    "questionId": "welding-safety-b33-ws31-q044",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q044-c4",
+    "directSolution": "문항 50의 판단 대상은 \"밀폐공간 용접작업 교육에 반드시 포함해야 할 내용은?\"이다. 정답은 \"공기측정·환기·보호구·비상연락과 구조절차\"이며, 밀폐공간에서는 산소결핍·유해가스·화재와 구조위험을 사전에 교육해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q044-c1",
+        "verdict": "incorrect",
+        "rationale": "\"용접봉 상품명만\"은(는) 정답 \"공기측정·환기·보호구·비상연락과 구조절차\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q044-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"밀폐공간 용접작업 교육에 반드시 포함해야 할 내용은?\"에서 \"작업자의 개인 취미\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"공기측정·환기·보호구·비상연락과 구조절차\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q044-c3",
+        "verdict": "incorrect",
+        "rationale": "\"도면 색상 선택\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"공기측정·환기·보호구·비상연락과 구조절차\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q044-c4",
+        "verdict": "correct",
+        "rationale": "\"공기측정·환기·보호구·비상연락과 구조절차\"은(는) \"밀폐공간 용접작업 교육에 반드시 포함해야 할 내용은?\"에 대해 밀폐공간에서는 산소결핍·유해가스·화재와 구조위험을 사전에 교육해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 50에서 보기의 표현만 보고 고르지 말고, \"밀폐공간 용접작업 교육에 반드시 포함해야 할 내용은?\"이 요구하는 조건과 정답 \"공기측정·환기·보호구·비상연락과 구조절차\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-22",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 감시인 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 연속감시 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | 불",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8096063",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=554&callmode=normal&catimage=&eclang=ko&start=28&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=446&callmode=normal&catimage=&eclang=ko&start=144&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q045",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q045-c1",
+    "directSolution": "문항 51의 판단 대상은 \"교류아크용접기의 자동전격방지장치를 정상 유지할 때 기대되는 효과는?\"이다. 정답은 \"감전위험과 불필요한 무부하 상태 노출을 줄이는 것\"이며, 장치는 비용접 시 전압을 낮춰 작업자 노출과 무부하 손실을 줄이는 데 사용된다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q045-c1",
+        "verdict": "correct",
+        "rationale": "\"감전위험과 불필요한 무부하 상태 노출을 줄이는 것\"은(는) \"교류아크용접기의 자동전격방지장치를 정상 유지할 때 기대되는 효과는?\"에 대해 장치는 비용접 시 전압을 낮춰 작업자 노출과 무부하 손실을 줄이는 데 사용된다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q045-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"교류아크용접기의 자동전격방지장치를 정상 유지할 때 기대되는 효과는?\"에서 \"차폐가스를 공급하는 것\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"감전위험과 불필요한 무부하 상태 노출을 줄이는 것\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q045-c3",
+        "verdict": "incorrect",
+        "rationale": "\"용접봉의 인장강도를 높이는 것\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"감전위험과 불필요한 무부하 상태 노출을 줄이는 것\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q045-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"감전위험과 불필요한 무부하 상태 노출을 줄이는 것\"이(가) 필요한 이유와 비교하면, \"화재감시자를 대신하는 것\"은(는) \"교류아크용접기의 자동전격방지장치를 정상 유지할 때 기대되는 효과는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 51에서 보기의 표현만 보고 고르지 말고, \"교류아크용접기의 자동전격방지장치를 정상 유지할 때 기대되는 효과는?\"이 요구하는 조건과 정답 \"감전위험과 불필요한 무부하 상태 노출을 줄이는 것\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-02",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 작동원리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 설치대상 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8096063",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q046",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q046-c2",
+    "directSolution": "문항 52의 판단 대상은 \"화재감시자가 가연물 틈새에서 연기를 발견했을 때 가장 적절한 조치는?\"이다. 정답은 \"즉시 용접을 중지시키고 경보·소화·대피절차를 시행한다\"이며, 화재감시자는 이상을 발견하면 즉시 작업중지와 초기대응을 할 수 있어야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q046-c1",
+        "verdict": "incorrect",
+        "rationale": "\"작업이 끝날 때까지 기다린다\"은(는) 정답 \"즉시 용접을 중지시키고 경보·소화·대피절차를 시행한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q046-c2",
+        "verdict": "correct",
+        "rationale": "\"즉시 용접을 중지시키고 경보·소화·대피절차를 시행한다\"은(는) \"화재감시자가 가연물 틈새에서 연기를 발견했을 때 가장 적절한 조치는?\"에 대해 화재감시자는 이상을 발견하면 즉시 작업중지와 초기대응을 할 수 있어야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q046-c3",
+        "verdict": "incorrect",
+        "rationale": "\"연기를 차광막으로 가린다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"즉시 용접을 중지시키고 경보·소화·대피절차를 시행한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q046-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"즉시 용접을 중지시키고 경보·소화·대피절차를 시행한다\"이(가) 필요한 이유와 비교하면, \"용접전류를 높인다\"은(는) \"화재감시자가 가연물 틈새에서 연기를 발견했을 때 가장 적절한 조치는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 52에서 보기의 표현만 보고 고르지 말고, \"화재감시자가 가연물 틈새에서 연기를 발견했을 때 가장 적절한 조치는?\"이 요구하는 조건과 정답 \"즉시 용접을 중지시키고 경보·소화·대피절차를 시행한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-11",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 작업 중 전담 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 종료 후 지연발화 확인 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8142425",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=474&callmode=normal&catimage=&eclang=ko&start=216&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=516&callmode=normal&catimage=&eclang=ko&start=204&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q047",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q047-c3",
+    "directSolution": "문항 53의 판단 대상은 \"용접구역 입구의 보호구 착용 지시표지가 훼손돼 식별하기 어려울 때 적절한 조치는?\"이다. 정답은 \"표지를 즉시 복구하고 출입자에게 필요한 보호구를 확인시킨다\"이며, 안전표지는 필수 행동과 출입조건을 명확히 전달해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q047-c1",
+        "verdict": "incorrect",
+        "rationale": "\"표지가 없어도 작업자가 알아서 판단하게 한다\"은(는) 정답 \"표지를 즉시 복구하고 출입자에게 필요한 보호구를 확인시킨다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q047-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"용접구역 입구의 보호구 착용 지시표지가 훼손돼 식별하기 어려울 때 적절한 조치는?\"에서 \"표지를 가연성 종이로 임시 덮는다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"표지를 즉시 복구하고 출입자에게 필요한 보호구를 확인시킨다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q047-c3",
+        "verdict": "correct",
+        "rationale": "\"표지를 즉시 복구하고 출입자에게 필요한 보호구를 확인시킨다\"은(는) \"용접구역 입구의 보호구 착용 지시표지가 훼손돼 식별하기 어려울 때 적절한 조치는?\"에 대해 안전표지는 필수 행동과 출입조건을 명확히 전달해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q047-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"표지를 즉시 복구하고 출입자에게 필요한 보호구를 확인시킨다\"이(가) 필요한 이유와 비교하면, \"보호구 기준을 없앤다\"은(는) \"용접구역 입구의 보호구 착용 지시표지가 훼손돼 식별하기 어려울 때 적절한 조치는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 53에서 보기의 표현만 보고 고르지 말고, \"용접구역 입구의 보호구 착용 지시표지가 훼손돼 식별하기 어려울 때 적절한 조치는?\"이 요구하는 조건과 정답 \"표지를 즉시 복구하고 출입자에게 필요한 보호구를 확인시킨다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-24",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 작업발판 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 용기운반 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8096063",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=562&callmode=normal&catimage=&eclang=ko&start=40&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=446&callmode=normal&catimage=&eclang=ko&start=144&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q048",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q048-c4",
+    "directSolution": "문항 54의 판단 대상은 \"압력계 유리가 깨지거나 지침이 영점으로 돌아오지 않는 조정기를 발견했을 때 조치는?\"이다. 정답은 \"사용을 중지하고 압력을 안전하게 제거한 뒤 전문점검·교체한다\"이며, 손상된 압력계는 공급압력 이상을 감지하지 못해 과압·누출 위험을 키울 수 있다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q048-c1",
+        "verdict": "incorrect",
+        "rationale": "\"게이지를 두드려 계속 사용한다\"은(는) 정답 \"사용을 중지하고 압력을 안전하게 제거한 뒤 전문점검·교체한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q048-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"압력계 유리가 깨지거나 지침이 영점으로 돌아오지 않는 조정기를 발견했을 때 조치는?\"에서 \"눈금에 임의 표시해 사용한다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"사용을 중지하고 압력을 안전하게 제거한 뒤 전문점검·교체한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q048-c3",
+        "verdict": "incorrect",
+        "rationale": "\"안전밸브를 막는다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"사용을 중지하고 압력을 안전하게 제거한 뒤 전문점검·교체한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q048-c4",
+        "verdict": "correct",
+        "rationale": "\"사용을 중지하고 압력을 안전하게 제거한 뒤 전문점검·교체한다\"은(는) \"압력계 유리가 깨지거나 지침이 영점으로 돌아오지 않는 조정기를 발견했을 때 조치는?\"에 대해 손상된 압력계는 공급압력 이상을 감지하지 못해 과압·누출 위험을 키울 수 있다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 54에서 보기의 표현만 보고 고르지 말고, \"압력계 유리가 깨지거나 지침이 영점으로 돌아오지 않는 조정기를 발견했을 때 조치는?\"이 요구하는 조건과 정답 \"사용을 중지하고 압력을 안전하게 제거한 뒤 전문점검·교체한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-17",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 조정나사 해제 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 측면개방 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634542",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q049",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q049-c1",
+    "directSolution": "문항 55의 판단 대상은 \"운반 중 가스용기의 보호캡이 없거나 밸브가 손상된 경우 적절한 조치는?\"이다. 정답은 \"운반·사용을 중지하고 공급자 또는 안전담당자에게 조치받는다\"이며, 밸브는 고압가스 분출을 막는 핵심부품이므로 손상 상태에서 이동·사용하면 안 된다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q049-c1",
+        "verdict": "correct",
+        "rationale": "\"운반·사용을 중지하고 공급자 또는 안전담당자에게 조치받는다\"은(는) \"운반 중 가스용기의 보호캡이 없거나 밸브가 손상된 경우 적절한 조치는?\"에 대해 밸브는 고압가스 분출을 막는 핵심부품이므로 손상 상태에서 이동·사용하면 안 된다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q049-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"운반 중 가스용기의 보호캡이 없거나 밸브가 손상된 경우 적절한 조치는?\"에서 \"밸브를 밧줄 손잡이로 사용한다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"운반·사용을 중지하고 공급자 또는 안전담당자에게 조치받는다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q049-c3",
+        "verdict": "incorrect",
+        "rationale": "\"조정기를 연결해 보호캡 대신 쓴다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"운반·사용을 중지하고 공급자 또는 안전담당자에게 조치받는다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q049-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"운반·사용을 중지하고 공급자 또는 안전담당자에게 조치받는다\"이(가) 필요한 이유와 비교하면, \"밸브를 해머로 바로잡는다\"은(는) \"운반 중 가스용기의 보호캡이 없거나 밸브가 손상된 경우 적절한 조치는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 55에서 보기의 표현만 보고 고르지 말고, \"운반 중 가스용기의 보호캡이 없거나 밸브가 손상된 경우 적절한 조치는?\"이 요구하는 조건과 정답 \"운반·사용을 중지하고 공급자 또는 안전담당자에게 조치받는다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-16",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 산소·연료가스 분리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 직사광선·열·가연물·전도 방지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634528",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws31-q050",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws31-q050-c2",
+    "directSolution": "문항 56의 판단 대상은 \"라벨이 떨어져 내용물을 확인할 수 없는 가스용기의 처리로 적절한 것은?\"이다. 정답은 \"사용하지 않고 격리·표시한 뒤 공급자에게 식별과 조치를 요청한다\"이며, 미식별 용기는 오접속·화재·폭발·질식 위험이 있어 임의 사용하면 안 된다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws31-q050-c1",
+        "verdict": "incorrect",
+        "rationale": "\"용기 색상만 보고 연결한다\"은(는) 정답 \"사용하지 않고 격리·표시한 뒤 공급자에게 식별과 조치를 요청한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q050-c2",
+        "verdict": "correct",
+        "rationale": "\"사용하지 않고 격리·표시한 뒤 공급자에게 식별과 조치를 요청한다\"은(는) \"라벨이 떨어져 내용물을 확인할 수 없는 가스용기의 처리로 적절한 것은?\"에 대해 미식별 용기는 오접속·화재·폭발·질식 위험이 있어 임의 사용하면 안 된다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q050-c3",
+        "verdict": "incorrect",
+        "rationale": "\"밸브를 열어 냄새로 확인한다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"사용하지 않고 격리·표시한 뒤 공급자에게 식별과 조치를 요청한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws31-q050-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"사용하지 않고 격리·표시한 뒤 공급자에게 식별과 조치를 요청한다\"이(가) 필요한 이유와 비교하면, \"불꽃을 대어 확인한다\"은(는) \"라벨이 떨어져 내용물을 확인할 수 없는 가스용기의 처리로 적절한 것은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 56에서 보기의 표현만 보고 고르지 말고, \"라벨이 떨어져 내용물을 확인할 수 없는 가스용기의 처리로 적절한 것은?\"이 요구하는 조건과 정답 \"사용하지 않고 격리·표시한 뒤 공급자에게 식별과 조치를 요청한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-16",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 산소·연료가스 분리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 직사광선·열·가연물·전도 방지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634530",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws32-q001",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws32-q001-c1",
+    "directSolution": "문항 57의 판단 대상은 \"용접 중 장갑 안쪽이 땀과 물에 젖은 것을 확인했을 때 적절한 조치는?\"이다. 정답은 \"작업을 중지하고 마른 적합 보호구로 교체한다\"이며, 습윤 보호구는 절연성능을 저하시켜 감전과 열화상 위험을 높일 수 있다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws32-q001-c1",
+        "verdict": "correct",
+        "rationale": "\"작업을 중지하고 마른 적합 보호구로 교체한다\"은(는) \"용접 중 장갑 안쪽이 땀과 물에 젖은 것을 확인했을 때 적절한 조치는?\"에 대해 습윤 보호구는 절연성능을 저하시켜 감전과 열화상 위험을 높일 수 있다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q001-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"용접 중 장갑 안쪽이 땀과 물에 젖은 것을 확인했을 때 적절한 조치는?\"에서 \"장갑 위에 금속판을 덧댄다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"작업을 중지하고 마른 적합 보호구로 교체한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q001-c3",
+        "verdict": "incorrect",
+        "rationale": "\"전류를 낮추고 계속 사용한다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"작업을 중지하고 마른 적합 보호구로 교체한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q001-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"작업을 중지하고 마른 적합 보호구로 교체한다\"이(가) 필요한 이유와 비교하면, \"홀더를 맨손으로 잡는다\"은(는) \"용접 중 장갑 안쪽이 땀과 물에 젖은 것을 확인했을 때 적절한 조치는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 57에서 보기의 표현만 보고 고르지 말고, \"용접 중 장갑 안쪽이 땀과 물에 젖은 것을 확인했을 때 적절한 조치는?\"이 요구하는 조건과 정답 \"작업을 중지하고 마른 적합 보호구로 교체한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st32-01",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 마른 가죽장갑 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 난연성 앞치마 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9670313",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=562&callmode=normal&catimage=&eclang=ko&start=40&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=446&callmode=normal&catimage=&eclang=ko&start=144&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws32-q002",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws32-q002-c2",
+    "directSolution": "문항 58의 판단 대상은 \"용접 앞치마로 가장 적절한 것은?\"이다. 정답은 \"불티와 열에 견디는 가죽 또는 승인된 난연성 재질\"이며, 용접 보호복은 스패터·열·아크광선에 견디고 쉽게 녹거나 타지 않아야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws32-q002-c1",
+        "verdict": "incorrect",
+        "rationale": "\"얇은 비닐 우의\"은(는) 정답 \"불티와 열에 견디는 가죽 또는 승인된 난연성 재질\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q002-c2",
+        "verdict": "correct",
+        "rationale": "\"불티와 열에 견디는 가죽 또는 승인된 난연성 재질\"은(는) \"용접 앞치마로 가장 적절한 것은?\"에 대해 용접 보호복은 스패터·열·아크광선에 견디고 쉽게 녹거나 타지 않아야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q002-c3",
+        "verdict": "incorrect",
+        "rationale": "\"기름이 밴 합성섬유 천\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"불티와 열에 견디는 가죽 또는 승인된 난연성 재질\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q002-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"불티와 열에 견디는 가죽 또는 승인된 난연성 재질\"이(가) 필요한 이유와 비교하면, \"종이 앞치마\"은(는) \"용접 앞치마로 가장 적절한 것은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 58에서 보기의 표현만 보고 고르지 말고, \"용접 앞치마로 가장 적절한 것은?\"이 요구하는 조건과 정답 \"불티와 열에 견디는 가죽 또는 승인된 난연성 재질\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st32-01",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 마른 가죽장갑 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 난연성 앞치마 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9670313",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=562&callmode=normal&catimage=&eclang=ko&start=40&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=446&callmode=normal&catimage=&eclang=ko&start=144&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws32-q003",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws32-q003-c3",
+    "directSolution": "문항 59의 판단 대상은 \"이동식 용접기를 다른 작업장에 설치한 뒤 가장 먼저 확인할 전기안전 항목은?\"이다. 정답은 \"외함 보호접지와 전원·케이블의 건전성\"이며, 장비 이동 후 접지와 케이블 접속이 풀리거나 손상될 수 있으므로 재확인이 필요하다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws32-q003-c1",
+        "verdict": "incorrect",
+        "rationale": "\"용접봉 포장색\"은(는) 정답 \"외함 보호접지와 전원·케이블의 건전성\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q003-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"이동식 용접기를 다른 작업장에 설치한 뒤 가장 먼저 확인할 전기안전 항목은?\"에서 \"비드 폭\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"외함 보호접지와 전원·케이블의 건전성\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q003-c3",
+        "verdict": "correct",
+        "rationale": "\"외함 보호접지와 전원·케이블의 건전성\"은(는) \"이동식 용접기를 다른 작업장에 설치한 뒤 가장 먼저 확인할 전기안전 항목은?\"에 대해 장비 이동 후 접지와 케이블 접속이 풀리거나 손상될 수 있으므로 재확인이 필요하다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q003-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"외함 보호접지와 전원·케이블의 건전성\"이(가) 필요한 이유와 비교하면, \"작업자의 신장\"은(는) \"이동식 용접기를 다른 작업장에 설치한 뒤 가장 먼저 확인할 전기안전 항목은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 59에서 보기의 표현만 보고 고르지 말고, \"이동식 용접기를 다른 작업장에 설치한 뒤 가장 먼저 확인할 전기안전 항목은?\"이 요구하는 조건과 정답 \"외함 보호접지와 전원·케이블의 건전성\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st32-02",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 이동 후 접지확인 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 접지연속성 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9670313",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+,
+{
+    "questionId": "welding-safety-b33-ws32-q004",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws32-q004-c4",
+    "directSolution": "문항 60의 판단 대상은 \"용접기 외함의 접지선이 끊어진 것으로 의심될 때 적절한 조치는?\"이다. 정답은 \"사용을 중지하고 접지 연속성을 확인·복구한다\"이며, 보호접지는 누전 시 위험전압을 낮추는 별도 보호수단이며 귀환선으로 대체할 수 없다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws32-q004-c1",
+        "verdict": "incorrect",
+        "rationale": "\"귀환클램프만 연결하고 계속 사용한다\"은(는) 정답 \"사용을 중지하고 접지 연속성을 확인·복구한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q004-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"용접기 외함의 접지선이 끊어진 것으로 의심될 때 적절한 조치는?\"에서 \"외함을 나무판 위에 놓고 사용한다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"사용을 중지하고 접지 연속성을 확인·복구한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q004-c3",
+        "verdict": "incorrect",
+        "rationale": "\"전격방지장치를 우회한다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"사용을 중지하고 접지 연속성을 확인·복구한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q004-c4",
+        "verdict": "correct",
+        "rationale": "\"사용을 중지하고 접지 연속성을 확인·복구한다\"은(는) \"용접기 외함의 접지선이 끊어진 것으로 의심될 때 적절한 조치는?\"에 대해 보호접지는 누전 시 위험전압을 낮추는 별도 보호수단이며 귀환선으로 대체할 수 없다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 60에서 보기의 표현만 보고 고르지 말고, \"용접기 외함의 접지선이 끊어진 것으로 의심될 때 적절한 조치는?\"이 요구하는 조건과 정답 \"사용을 중지하고 접지 연속성을 확인·복구한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st32-02",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 이동 후 접지확인 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 접지연속성 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9670313",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws32-q005",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws32-q005-c1",
+    "directSolution": "문항 61의 판단 대상은 \"용접구역의 보호구 착용 표지가 오염돼 알아보기 어려울 때 적절한 조치는?\"이다. 정답은 \"표지를 청소·교체하고 출입자에게 요구 보호구를 확인시킨다\"이며, 안전표지는 출입조건과 필수 행동을 명확히 전달할 수 있어야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws32-q005-c1",
+        "verdict": "correct",
+        "rationale": "\"표지를 청소·교체하고 출입자에게 요구 보호구를 확인시킨다\"은(는) \"용접구역의 보호구 착용 표지가 오염돼 알아보기 어려울 때 적절한 조치는?\"에 대해 안전표지는 출입조건과 필수 행동을 명확히 전달할 수 있어야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q005-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"용접구역의 보호구 착용 표지가 오염돼 알아보기 어려울 때 적절한 조치는?\"에서 \"표지를 제거한다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"표지를 청소·교체하고 출입자에게 요구 보호구를 확인시킨다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q005-c3",
+        "verdict": "incorrect",
+        "rationale": "\"작업자마다 임의로 판단하게 한다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"표지를 청소·교체하고 출입자에게 요구 보호구를 확인시킨다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q005-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"표지를 청소·교체하고 출입자에게 요구 보호구를 확인시킨다\"이(가) 필요한 이유와 비교하면, \"가연성 종이로 임시 덮는다\"은(는) \"용접구역의 보호구 착용 표지가 오염돼 알아보기 어려울 때 적절한 조치는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 61에서 보기의 표현만 보고 고르지 말고, \"용접구역의 보호구 착용 표지가 오염돼 알아보기 어려울 때 적절한 조치는?\"이 요구하는 조건과 정답 \"표지를 청소·교체하고 출입자에게 요구 보호구를 확인시킨다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-24",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 작업발판 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 용기운반 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9670313",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=562&callmode=normal&catimage=&eclang=ko&start=40&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=446&callmode=normal&catimage=&eclang=ko&start=144&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws32-q006",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws32-q006-c2",
+    "directSolution": "문항 62의 판단 대상은 \"산소용기를 사용하기 전에 라벨 외에 각인과 검사표시를 확인하는 이유는?\"이다. 정답은 \"용기의 식별·내용적·검사상태 등 안전정보를 확인하기 위해서\"이며, 고압가스용기는 공식 표시와 검사상태가 확인되는 용기만 사용해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws32-q006-c1",
+        "verdict": "incorrect",
+        "rationale": "\"용접전류를 계산하기 위해서\"은(는) 정답 \"용기의 식별·내용적·검사상태 등 안전정보를 확인하기 위해서\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q006-c2",
+        "verdict": "correct",
+        "rationale": "\"용기의 식별·내용적·검사상태 등 안전정보를 확인하기 위해서\"은(는) \"산소용기를 사용하기 전에 라벨 외에 각인과 검사표시를 확인하는 이유는?\"에 대해 고압가스용기는 공식 표시와 검사상태가 확인되는 용기만 사용해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q006-c3",
+        "verdict": "incorrect",
+        "rationale": "\"차광번호를 결정하기 위해서\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"용기의 식별·내용적·검사상태 등 안전정보를 확인하기 위해서\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q006-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"용기의 식별·내용적·검사상태 등 안전정보를 확인하기 위해서\"이(가) 필요한 이유와 비교하면, \"비드 길이를 측정하기 위해서\"은(는) \"산소용기를 사용하기 전에 라벨 외에 각인과 검사표시를 확인하는 이유는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 62에서 보기의 표현만 보고 고르지 말고, \"산소용기를 사용하기 전에 라벨 외에 각인과 검사표시를 확인하는 이유는?\"이 요구하는 조건과 정답 \"용기의 식별·내용적·검사상태 등 안전정보를 확인하기 위해서\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-16",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 산소·연료가스 분리 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 직사광선·열·가연물·전도 방지 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9670313",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws32-q007",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws32-q007-c3",
+    "directSolution": "문항 63의 판단 대상은 \"같은 전류라도 손에서 손 또는 손에서 발로 흐르는 감전이 특히 위험한 이유는?\"이다. 정답은 \"전류가 흉부와 심장 부근을 통과할 가능성이 크기 때문이다\"이며, 감전위험은 전류크기뿐 아니라 통전시간과 인체 내 경로에 크게 좌우된다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws32-q007-c1",
+        "verdict": "incorrect",
+        "rationale": "\"용접봉이 빨리 녹기 때문이다\"은(는) 정답 \"전류가 흉부와 심장 부근을 통과할 가능성이 크기 때문이다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q007-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"같은 전류라도 손에서 손 또는 손에서 발로 흐르는 감전이 특히 위험한 이유는?\"에서 \"차광필터가 밝아지기 때문이다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"전류가 흉부와 심장 부근을 통과할 가능성이 크기 때문이다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q007-c3",
+        "verdict": "correct",
+        "rationale": "\"전류가 흉부와 심장 부근을 통과할 가능성이 크기 때문이다\"은(는) \"같은 전류라도 손에서 손 또는 손에서 발로 흐르는 감전이 특히 위험한 이유는?\"에 대해 감전위험은 전류크기뿐 아니라 통전시간과 인체 내 경로에 크게 좌우된다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q007-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"전류가 흉부와 심장 부근을 통과할 가능성이 크기 때문이다\"이(가) 필요한 이유와 비교하면, \"가스압력이 낮아지기 때문이다\"은(는) \"같은 전류라도 손에서 손 또는 손에서 발로 흐르는 감전이 특히 위험한 이유는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 63에서 보기의 표현만 보고 고르지 말고, \"같은 전류라도 손에서 손 또는 손에서 발로 흐르는 감전이 특히 위험한 이유는?\"이 요구하는 조건과 정답 \"전류가 흉부와 심장 부근을 통과할 가능성이 크기 때문이다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st32-02",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 이동 후 접지확인 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 접지연속성 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9670313",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws32-q008",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws32-q008-c4",
+    "directSolution": "문항 64의 판단 대상은 \"감전위험을 평가할 때 과거의 단일 전류값만 외우는 것보다 함께 확인해야 할 요소는?\"이다. 정답은 \"전류크기·통전시간·경로·습윤상태\"이며, 인체영향은 복수 조건에 의해 달라지므로 단일 수치만으로 안전을 판단하면 안 된다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws32-q008-c1",
+        "verdict": "incorrect",
+        "rationale": "\"용접봉 색상만\"은(는) 정답 \"전류크기·통전시간·경로·습윤상태\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q008-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"감전위험을 평가할 때 과거의 단일 전류값만 외우는 것보다 함께 확인해야 할 요소는?\"에서 \"작업장 벽의 재질만\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"전류크기·통전시간·경로·습윤상태\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q008-c3",
+        "verdict": "incorrect",
+        "rationale": "\"용접기의 제조연도만\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"전류크기·통전시간·경로·습윤상태\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q008-c4",
+        "verdict": "correct",
+        "rationale": "\"전류크기·통전시간·경로·습윤상태\"은(는) \"감전위험을 평가할 때 과거의 단일 전류값만 외우는 것보다 함께 확인해야 할 요소는?\"에 대해 인체영향은 복수 조건에 의해 달라지므로 단일 수치만으로 안전을 판단하면 안 된다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 64에서 보기의 표현만 보고 고르지 말고, \"감전위험을 평가할 때 과거의 단일 전류값만 외우는 것보다 함께 확인해야 할 요소는?\"이 요구하는 조건과 정답 \"전류크기·통전시간·경로·습윤상태\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-05",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 설치환경 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 분전반 접근 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9670313",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=154&um=s",
+      "https://m.kosha.or.kr/resources/1111.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws32-q009",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws32-q009-c1",
+    "directSolution": "문항 65의 판단 대상은 \"인화성 물질을 담았던 용기를 증기세척한 후 보수용접하려면 추가로 필요한 조치는?\"이다. 정답은 \"격리·환기 후 산소와 가연성·유해가스를 측정한다\"이며, 세정만으로 잔류증기와 산소상태가 안전하다고 보장할 수 없어 계측 확인이 필요하다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws32-q009-c1",
+        "verdict": "correct",
+        "rationale": "\"격리·환기 후 산소와 가연성·유해가스를 측정한다\"은(는) \"인화성 물질을 담았던 용기를 증기세척한 후 보수용접하려면 추가로 필요한 조치는?\"에 대해 세정만으로 잔류증기와 산소상태가 안전하다고 보장할 수 없어 계측 확인이 필요하다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q009-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"인화성 물질을 담았던 용기를 증기세척한 후 보수용접하려면 추가로 필요한 조치는?\"에서 \"냄새가 없으면 바로 용접한다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"격리·환기 후 산소와 가연성·유해가스를 측정한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q009-c3",
+        "verdict": "incorrect",
+        "rationale": "\"산소로 내부를 환기한다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"격리·환기 후 산소와 가연성·유해가스를 측정한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q009-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"격리·환기 후 산소와 가연성·유해가스를 측정한다\"이(가) 필요한 이유와 비교하면, \"용기를 밀폐한 채 예열한다\"은(는) \"인화성 물질을 담았던 용기를 증기세척한 후 보수용접하려면 추가로 필요한 조치는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 65에서 보기의 표현만 보고 고르지 말고, \"인화성 물질을 담았던 용기를 증기세척한 후 보수용접하려면 추가로 필요한 조치는?\"이 요구하는 조건과 정답 \"격리·환기 후 산소와 가연성·유해가스를 측정한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st32-03",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 잔류증기 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 연결배관 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9670313",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=474&callmode=normal&catimage=&eclang=ko&start=216&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=516&callmode=normal&catimage=&eclang=ko&start=204&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws32-q010",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws32-q010-c2",
+    "directSolution": "문항 66의 판단 대상은 \"밀폐용기의 환기에 고압산소를 사용하면 안 되는 이유는?\"이다. 정답은 \"산소농도를 높여 가연물의 연소·폭발 위험을 크게 할 수 있기 때문이다\"이며, 환기는 깨끗한 공기와 승인된 환기설비를 사용해야 하며 산소를 대체 환기용으로 쓰면 안 된다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws32-q010-c1",
+        "verdict": "incorrect",
+        "rationale": "\"산소가 항상 독성가스로 변하기 때문이다\"은(는) 정답 \"산소농도를 높여 가연물의 연소·폭발 위험을 크게 할 수 있기 때문이다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q010-c2",
+        "verdict": "correct",
+        "rationale": "\"산소농도를 높여 가연물의 연소·폭발 위험을 크게 할 수 있기 때문이다\"은(는) \"밀폐용기의 환기에 고압산소를 사용하면 안 되는 이유는?\"에 대해 환기는 깨끗한 공기와 승인된 환기설비를 사용해야 하며 산소를 대체 환기용으로 쓰면 안 된다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q010-c3",
+        "verdict": "incorrect",
+        "rationale": "\"용접기가 정지하기 때문이다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"산소농도를 높여 가연물의 연소·폭발 위험을 크게 할 수 있기 때문이다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q010-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"산소농도를 높여 가연물의 연소·폭발 위험을 크게 할 수 있기 때문이다\"이(가) 필요한 이유와 비교하면, \"용기 체적이 줄기 때문이다\"은(는) \"밀폐용기의 환기에 고압산소를 사용하면 안 되는 이유는?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 66에서 보기의 표현만 보고 고르지 말고, \"밀폐용기의 환기에 고압산소를 사용하면 안 되는 이유는?\"이 요구하는 조건과 정답 \"산소농도를 높여 가연물의 연소·폭발 위험을 크게 할 수 있기 때문이다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st32-03",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 잔류증기 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 연결배관 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9670313",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=474&callmode=normal&catimage=&eclang=ko&start=216&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=516&callmode=normal&catimage=&eclang=ko&start=204&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws32-q011",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws32-q011-c3",
+    "directSolution": "문항 67의 판단 대상은 \"용접 전 모재를 예열할 때 화재예방 조치로 적절한 것은?\"이다. 정답은 \"주변 단열재·도료·기름을 확인하고 제거·차폐하며 화재감시를 적용한다\"이며, 예열도 화기작업이므로 복사열·전도열·불꽃에 의한 착화를 관리해야 한다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws32-q011-c1",
+        "verdict": "incorrect",
+        "rationale": "\"가연물 위에서 토치 예열한다\"은(는) 정답 \"주변 단열재·도료·기름을 확인하고 제거·차폐하며 화재감시를 적용한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q011-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"용접 전 모재를 예열할 때 화재예방 조치로 적절한 것은?\"에서 \"누출검사를 불꽃으로 한다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"주변 단열재·도료·기름을 확인하고 제거·차폐하며 화재감시를 적용한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q011-c3",
+        "verdict": "correct",
+        "rationale": "\"주변 단열재·도료·기름을 확인하고 제거·차폐하며 화재감시를 적용한다\"은(는) \"용접 전 모재를 예열할 때 화재예방 조치로 적절한 것은?\"에 대해 예열도 화기작업이므로 복사열·전도열·불꽃에 의한 착화를 관리해야 한다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q011-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"주변 단열재·도료·기름을 확인하고 제거·차폐하며 화재감시를 적용한다\"이(가) 필요한 이유와 비교하면, \"예열부를 무인 상태로 둔다\"은(는) \"용접 전 모재를 예열할 때 화재예방 조치로 적절한 것은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 67에서 보기의 표현만 보고 고르지 말고, \"용접 전 모재를 예열할 때 화재예방 조치로 적절한 것은?\"이 요구하는 조건과 정답 \"주변 단열재·도료·기름을 확인하고 제거·차폐하며 화재감시를 적용한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st32-03",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 잔류증기 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 연결배관 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 | ",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9670313",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=474&callmode=normal&catimage=&eclang=ko&start=216&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=516&callmode=normal&catimage=&eclang=ko&start=204&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws32-q012",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws32-q012-c4",
+    "directSolution": "문항 68의 판단 대상은 \"과거 내용물을 알 수 없는 탱크를 보수용접할 때 적절한 절차는?\"이다. 정답은 \"내용물 확인·격리·세정·가스측정·화기허가 후 작업한다\"이며, 미확인 용기는 잔류물과 연결배관 때문에 폭발·중독 위험이 있으므로 체계적 허가절차가 필요하다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws32-q012-c1",
+        "verdict": "incorrect",
+        "rationale": "\"외관이 깨끗하면 바로 작업한다\"은(는) 정답 \"내용물 확인·격리·세정·가스측정·화기허가 후 작업한다\"과 달리 문항에서 요구한 안전한 조치·원인·조건을 충족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q012-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"과거 내용물을 알 수 없는 탱크를 보수용접할 때 적절한 절차는?\"에서 \"밸브 하나만 닫고 작업한다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"내용물 확인·격리·세정·가스측정·화기허가 후 작업한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q012-c3",
+        "verdict": "incorrect",
+        "rationale": "\"용기 안에서 먼저 아크를 시험한다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"내용물 확인·격리·세정·가스측정·화기허가 후 작업한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q012-c4",
+        "verdict": "correct",
+        "rationale": "\"내용물 확인·격리·세정·가스측정·화기허가 후 작업한다\"은(는) \"과거 내용물을 알 수 없는 탱크를 보수용접할 때 적절한 절차는?\"에 대해 미확인 용기는 잔류물과 연결배관 때문에 폭발·중독 위험이 있으므로 체계적 허가절차가 필요하다. 그러므로 문항의 정답 조건과 일치한다."
+      }
+    ],
+    "misconception": "문항 68에서 보기의 표현만 보고 고르지 말고, \"과거 내용물을 알 수 없는 탱크를 보수용접할 때 적절한 절차는?\"이 요구하는 조건과 정답 \"내용물 확인·격리·세정·가스측정·화기허가 후 작업한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st30-10",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 허가 유효범위 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 공정변경 시 재평가 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9670313",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=474&callmode=normal&catimage=&eclang=ko&start=216&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=516&callmode=normal&catimage=&eclang=ko&start=204&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws32-q013",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws32-q013-c1",
+    "directSolution": "문항 69의 판단 대상은 \"아세틸렌 연결부의 누설을 확인하는 적절한 방법은?\"이다. 정답은 \"승인된 누설검지액이나 가스검지기를 사용한다\"이며, 불꽃검사는 누출가스를 점화해 화재·폭발을 일으킬 수 있다. 따라서 다른 보기는 이 문항의 위험·조건 또는 절차를 충족하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws32-q013-c1",
+        "verdict": "correct",
+        "rationale": "\"승인된 누설검지액이나 가스검지기를 사용한다\"은(는) \"아세틸렌 연결부의 누설을 확인하는 적절한 방법은?\"에 대해 불꽃검사는 누출가스를 점화해 화재·폭발을 일으킬 수 있다. 그러므로 문항의 정답 조건과 일치한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q013-c2",
+        "verdict": "incorrect",
+        "rationale": "문항 \"아세틸렌 연결부의 누설을 확인하는 적절한 방법은?\"에서 \"점화라이터를 가까이 댄다\"은(는) 위험을 줄이거나 원인을 설명하는 정답 \"승인된 누설검지액이나 가스검지기를 사용한다\"의 기능을 대신하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q013-c3",
+        "verdict": "incorrect",
+        "rationale": "\"담배연기로 확인한다\"은(는) 이 문항의 판단기준과 다른 행동 또는 결과이므로 \"승인된 누설검지액이나 가스검지기를 사용한다\"처럼 요구 조건을 만족하지 못한다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws32-q013-c4",
+        "verdict": "incorrect",
+        "rationale": "정답 \"승인된 누설검지액이나 가스검지기를 사용한다\"이(가) 필요한 이유와 비교하면, \"손으로 밸브를 가열한다\"은(는) \"아세틸렌 연결부의 누설을 확인하는 적절한 방법은?\"의 핵심 위험·절차에 맞지 않는다."
+      }
+    ],
+    "misconception": "문항 69에서 보기의 표현만 보고 고르지 말고, \"아세틸렌 연결부의 누설을 확인하는 적절한 방법은?\"이 요구하는 조건과 정답 \"승인된 누설검지액이나 가스검지기를 사용한다\"이 실제로 통제하는 위험 또는 절차를 연결해야 한다.",
+    "existingLessonId": "welding-safety-b33-st32-04",
+    "existingBlockId": "safety",
+    "assertionText": "| 순서 | 확인 항목 | 안전 판단 |\n|---:|---|---|\n| 1 | 누설검지액 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 2 | 밸브동결 | 작업 전 상태를 확인하고 이상 시 사용·작업을 중지한 뒤 승인된 절차로 조치 |\n| 3 |",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9634520",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=158&um=s",
+      "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=483&callmode=normal&catimage=&eclang=ko&start=162&um=s"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+]

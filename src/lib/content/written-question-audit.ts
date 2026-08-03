@@ -1,6 +1,9 @@
 import { z } from "zod";
 
-import type { GeneratedContent, Question } from "@/lib/domain/types";
+import type {
+  GeneratedContent,
+  Question,
+} from "@/lib/domain/types";
 
 export const AUDIT_DISPOSITIONS = [
   "verified",
@@ -295,7 +298,6 @@ export function applyWrittenQuestionAuditManifest(
         `${question.id}의 감사 선택지 해설이 현재 선택지 네 개와 일치하지 않습니다.`,
       );
     }
-
     return {
       ...question,
       choices: question.choices.map((choice) => {
@@ -321,6 +323,8 @@ export function applyWrittenQuestionAuditManifest(
       correctChoiceId: verifiedChoice.id,
       answerText: verifiedChoice.text,
       explanation: audit.reviewRationale ?? question.explanation,
+      lessonAnchor: question.lessonAnchor,
+      approvedReview: question.approvedReview,
       contentStatus: "published" as const,
       publication: {
         readiness: "ready" as const,
@@ -381,18 +385,38 @@ export function applyWrittenQuestionAuditManifest(
     const auditedIds = new Set(
       auditedQuestions.map((question) => question.id),
     );
+    const preservesCuratedWeldingLinks = lesson.id.startsWith("lesson-welding-");
     const relatedQuestionIds = [
-      ...new Set([...lesson.relatedQuestionIds, ...linkedQuestionIds]),
+      ...new Set(
+        preservesCuratedWeldingLinks
+          ? lesson.relatedQuestionIds
+          : [...lesson.relatedQuestionIds, ...linkedQuestionIds],
+      ),
     ].filter(
       (questionId) =>
         !auditedIds.has(questionId) || acceptedIds.has(questionId),
     );
-    const blocks = lesson.blocks.map((block) => {
+    const acceptedQuestionsForLesson = preservesCuratedWeldingLinks
+      ? relatedQuestionIds
+          .map((questionId) => questionById.get(questionId))
+          .filter(
+            (question): question is Question =>
+              Boolean(
+                question
+                && (
+                  question.audit?.auditDisposition === "verified"
+                  || question.audit?.auditDisposition === "cbt_corrected"
+                ),
+              ),
+          )
+      : acceptedQuestions;
+    const transformedBlocks = lesson.blocks.map((block) => {
       if (block.kind !== "exam_point") return block;
 
       return {
         ...block,
-        body: acceptedQuestions
+        body: acceptedQuestionsForLesson
+          .slice(0, 5)
           .map(
             (question) =>
               `**질문**\n${question.stem}\n\n**판단 기준**\n${
@@ -403,6 +427,7 @@ export function applyWrittenQuestionAuditManifest(
           .join("\n\n---\n\n"),
       };
     });
+    const blocks = transformedBlocks;
 
     return {
       ...lesson,

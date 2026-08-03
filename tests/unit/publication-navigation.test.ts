@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -14,6 +16,20 @@ describe("practice-to-theory navigation", () => {
       ),
     ).toBe(
       "/written/theory/lesson-1?returnTo=%2Fwritten%2Fpractice%2FU-001#formula",
+    );
+  });
+
+  it("keeps the server-returned canonical lesson href in random practice", async () => {
+    const source = await readFile(
+      path.join(process.cwd(), "src/components/random-practice.tsx"),
+      "utf8",
+    );
+
+    expect(source).toContain(
+      "buildLessonReturnHref(feedback.lesson.href, returnTo)",
+    );
+    expect(source).not.toContain(
+      "`/written/theory/${feedback.lesson.id}?returnTo=",
     );
   });
 

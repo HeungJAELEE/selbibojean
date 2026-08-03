@@ -24,6 +24,9 @@ const originalQuestions = createPracticePresentations(
   100,
   20260730,
 ).filter((question) => question.provenance.original);
+const approvedOriginalQuestionIds = new Set(
+  originalQuestions.map((question) => question.id),
+);
 
 describe("subject 1 source and reverse-link audit", () => {
   it("classifies every non-empty private-source occurrence without gaps", () => {
@@ -115,7 +118,7 @@ describe("subject 1 source and reverse-link audit", () => {
     expect(leakedFactIds).toEqual([]);
   });
 
-  it("reviews every public original in the reverse direction exactly once", () => {
+  it("reviews every gate-approved original in the reverse direction exactly once", () => {
     const audits = getSubjectOneQuestionAudit(originalQuestions);
     const auditIds = audits.map((audit) => audit.questionId);
     const errors: string[] = [];
@@ -129,6 +132,7 @@ describe("subject 1 source and reverse-link audit", () => {
       (candidate) => candidate.status === "direct_original",
     )) {
       for (const questionId of binding.questionIds) {
+        if (!approvedOriginalQuestionIds.has(questionId)) continue;
         const reverse = audits.find((audit) => audit.questionId === questionId);
         if (
           reverse?.disposition !== "direct_to_fact" ||
@@ -140,5 +144,10 @@ describe("subject 1 source and reverse-link audit", () => {
     }
 
     expect(errors).toEqual([]);
+    expect(
+      audits.every((audit) =>
+        approvedOriginalQuestionIds.has(audit.questionId),
+      ),
+    ).toBe(true);
   });
 });

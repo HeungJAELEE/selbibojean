@@ -1,8 +1,12 @@
+import Link from "next/link";
+import { ArrowRight, ClipboardList, Shuffle } from "lucide-react";
+
 import { PageHeading } from "@/components/page-heading";
 import { DeviceLearningStorage } from "@/components/device-learning-storage";
 import { WrittenMockSetup } from "@/components/written-mock-setup";
 import { getContent } from "@/lib/content/repository";
 import { getSafeOriginalsByQuestion } from "@/lib/content/practice-presentations";
+import { getWeldingCbtProjectionCandidates } from "@/lib/content/welding-cbt-approved";
 import { isPublishableQuestion } from "@/lib/domain/practice";
 import { isReleaseFeatureEnabled } from "@/lib/release-features";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
@@ -20,6 +24,18 @@ export default async function WrittenMockPage() {
     content.subjects.map((subject) => [
       subject.id,
       new Set(content.questions.filter((question) => question.subjectId === subject.id && isPublishableQuestion(question)).map((question) => question.id)).size,
+    ]),
+  );
+  const sourceBankBySubject = Object.fromEntries(
+    content.subjects.map((subject) => [
+      subject.id,
+      content.questions.filter(
+        (question) =>
+          question.subjectId === subject.id && question.id.startsWith("U-"),
+      ).length +
+        (subject.id === "subject-2"
+          ? getWeldingCbtProjectionCandidates().length
+          : 0),
     ]),
   );
   const safeOriginals = getSafeOriginalsByQuestion(
@@ -103,6 +119,7 @@ export default async function WrittenMockPage() {
       <WrittenMockSetup
         subjects={content.subjects}
         availableBySubject={availableBySubject}
+        sourceBankBySubject={sourceBankBySubject}
         availableYears={availableYears}
         availableByYearRange={availableByYearRange}
         choiceShuffleEnabled={choiceShuffleEnabled}
@@ -110,5 +127,3 @@ export default async function WrittenMockPage() {
     </div>
   );
 }
-import Link from "next/link";
-import { ArrowRight, ClipboardList, Shuffle } from "lucide-react";

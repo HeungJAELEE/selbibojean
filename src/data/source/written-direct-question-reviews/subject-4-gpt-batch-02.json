@@ -1,0 +1,1782 @@
+[
+  {
+    "questionId": "U-001",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-001-c1",
+    "directSolution": "고유진동수 fn=(1/2π)√(k/m)이므로 강성 k를 무조건 키우면 고유진동수가 올라가 절연에 불리할 수 있다. 따라서 '강성이 충분히 커야 차단능력이 좋아진다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-001-c1",
+        "verdict": "correct",
+        "rationale": "'강성이 충분히 커야 차단능력이 좋아진다.'는 고유진동수 fn=(1/2π)√(k/m)이므로 강성 k를 무조건 키우면 고유진동수가 올라가 절연에 불리할 수 있다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-001-c2",
+        "verdict": "incorrect",
+        "rationale": "'지지 하중을 견딜 수 있어야 한다.'는 고유진동수 fn=(1/2π)√(k/m)이므로 강성 k를 무조건 키우면 고유진동수가 올라가 절연에 불리할 수 있다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-001-c3",
+        "verdict": "incorrect",
+        "rationale": "'온도·습도·화학적 환경을 견뎌야 한다.'는 고유진동수 fn=(1/2π)√(k/m)이므로 강성 k를 무조건 키우면 고유진동수가 올라가 절연에 불리할 수 있다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-001-c4",
+        "verdict": "incorrect",
+        "rationale": "'차단 대상의 최저 가진주파수보다 낮은 고유진동수를 가져야 한다.'는 고유진동수 fn=(1/2π)√(k/m)이므로 강성 k를 무조건 키우면 고유진동수가 올라가 절연에 불리할 수 있다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "고유진동수 fn=(1/2π)√(k/m)이므로 강성 k를 무조건 키우면 고유진동수가 올라가 절연에 불리할 수 있다.의 판단 기준을 빼고 '강성이 충분히 커야 차단능력이 좋아진다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1qi34a4",
+    "existingBlockId": "trap",
+    "assertionText": "고유진동수 fn=(1/2π)√(k/m)이므로 강성 k를 무조건 키우면 고유진동수가 올라가 절연에 불리할 수 있다. 이 원리를 lesson-1qi34a4의 trap 블록과 연결하면 '강성이 충분히 커야 차단능력이 좋아진다.'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9635925"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-005",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-005-c3",
+    "directSolution": "질량 m, 감쇠 c, 강성 k가 기본요소이고 고유진동수는 이 요소들로부터 정해지는 계의 특성값이다. 따라서 '고유진동수'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-005-c1",
+        "verdict": "incorrect",
+        "rationale": "'감쇠'는 질량 m, 감쇠 c, 강성 k가 기본요소이고 고유진동수는 이 요소들로부터 정해지는 계의 특성값이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-005-c2",
+        "verdict": "incorrect",
+        "rationale": "'질량'는 질량 m, 감쇠 c, 강성 k가 기본요소이고 고유진동수는 이 요소들로부터 정해지는 계의 특성값이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-005-c3",
+        "verdict": "correct",
+        "rationale": "'고유진동수'는 질량 m, 감쇠 c, 강성 k가 기본요소이고 고유진동수는 이 요소들로부터 정해지는 계의 특성값이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-005-c4",
+        "verdict": "incorrect",
+        "rationale": "'스프링 강성'는 질량 m, 감쇠 c, 강성 k가 기본요소이고 고유진동수는 이 요소들로부터 정해지는 계의 특성값이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "질량 m, 감쇠 c, 강성 k가 기본요소이고 고유진동수는 이 요소들로부터 정해지는 계의 특성값이다.의 판단 기준을 빼고 '고유진동수'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1b2rnqw",
+    "existingBlockId": "trap",
+    "assertionText": "질량 m, 감쇠 c, 강성 k가 기본요소이고 고유진동수는 이 요소들로부터 정해지는 계의 특성값이다. 이 원리를 lesson-1b2rnqw의 trap 블록과 연결하면 '고유진동수'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9635925"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-IMB-001",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-IMB-001-c3",
+    "directSolution": "언밸런스는 1× 회전주파수와 방사방향 진동이 핵심이다. 포락선 분석은 충격성 베어링 결함에 더 적합하다. 따라서 '대표 진단법은 베어링 포락선 분석뿐이다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-IMB-001-c1",
+        "verdict": "incorrect",
+        "rationale": "'회전주파수 1× 성분이 우세하다.'는 언밸런스는 1× 회전주파수와 방사방향 진동이 핵심이다. 포락선 분석은 충격성 베어링 결함에 더 적합하다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-IMB-001-c2",
+        "verdict": "incorrect",
+        "rationale": "'방사방향 진동이 크게 나타날 수 있다.'는 언밸런스는 1× 회전주파수와 방사방향 진동이 핵심이다. 포락선 분석은 충격성 베어링 결함에 더 적합하다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-IMB-001-c3",
+        "verdict": "correct",
+        "rationale": "'대표 진단법은 베어링 포락선 분석뿐이다.'는 언밸런스는 1× 회전주파수와 방사방향 진동이 핵심이다. 포락선 분석은 충격성 베어링 결함에 더 적합하다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-IMB-001-c4",
+        "verdict": "incorrect",
+        "rationale": "'불평형량과 회전수가 커지면 진동이 증가한다.'는 언밸런스는 1× 회전주파수와 방사방향 진동이 핵심이다. 포락선 분석은 충격성 베어링 결함에 더 적합하다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "언밸런스는 1× 회전주파수와 방사방향 진동이 핵심이다. 포락선 분석은 충격성 베어링 결함에 더 적합하다.의 판단 기준을 빼고 '대표 진단법은 베어링 포락선 분석뿐이다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1slh68j",
+    "existingBlockId": "trap",
+    "assertionText": "언밸런스는 1× 회전주파수와 방사방향 진동이 핵심이다. 포락선 분석은 충격성 베어링 결함에 더 적합하다. 이 원리를 lesson-1slh68j의 trap 블록과 연결하면 '대표 진단법은 베어링 포락선 분석뿐이다.'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9635925"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-007",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-007-c1",
+    "directSolution": "음선은 음의 진행방향을 나타내며 파면에 수직이다. 따라서 '음선은 파면에 평행하다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-007-c1",
+        "verdict": "correct",
+        "rationale": "'음선은 파면에 평행하다.'는 음선은 음의 진행방향을 나타내며 파면에 수직이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-007-c2",
+        "verdict": "incorrect",
+        "rationale": "'같은 위상의 점을 연결한 면을 파면이라 한다.'는 음선은 음의 진행방향을 나타내며 파면에 수직이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-007-c3",
+        "verdict": "incorrect",
+        "rationale": "'공기 중 음파는 입자가 진행방향 앞뒤로 진동하는 종파이다.'는 음선은 음의 진행방향을 나타내며 파면에 수직이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-007-c4",
+        "verdict": "incorrect",
+        "rationale": "'파동은 매질 자체의 이동보다 변형을 통해 에너지가 전달되는 현상이다.'는 음선은 음의 진행방향을 나타내며 파면에 수직이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "음선은 음의 진행방향을 나타내며 파면에 수직이다.의 판단 기준을 빼고 '음선은 파면에 평행하다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-8bl4z5",
+    "existingBlockId": "trap",
+    "assertionText": "음선은 음의 진행방향을 나타내며 파면에 수직이다. 이 원리를 lesson-8bl4z5의 trap 블록과 연결하면 '음선은 파면에 평행하다.'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9635925"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-RES-001",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-RES-001-c4",
+    "directSolution": "가진주파수가 고유진동수와 일치하면 주기마다 에너지가 누적되어 진폭이 크게 증가한다. 따라서 '공진'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-RES-001-c1",
+        "verdict": "incorrect",
+        "rationale": "'맥동'는 가진주파수가 고유진동수와 일치하면 주기마다 에너지가 누적되어 진폭이 크게 증가한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-RES-001-c2",
+        "verdict": "incorrect",
+        "rationale": "'회절'는 가진주파수가 고유진동수와 일치하면 주기마다 에너지가 누적되어 진폭이 크게 증가한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-RES-001-c3",
+        "verdict": "incorrect",
+        "rationale": "'캐비테이션'는 가진주파수가 고유진동수와 일치하면 주기마다 에너지가 누적되어 진폭이 크게 증가한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-RES-001-c4",
+        "verdict": "correct",
+        "rationale": "'공진'는 가진주파수가 고유진동수와 일치하면 주기마다 에너지가 누적되어 진폭이 크게 증가한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "가진주파수가 고유진동수와 일치하면 주기마다 에너지가 누적되어 진폭이 크게 증가한다.의 판단 기준을 빼고 '공진'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1s6ajoq",
+    "existingBlockId": "principle",
+    "assertionText": "가진주파수가 고유진동수와 일치하면 주기마다 에너지가 누적되어 진폭이 크게 증가한다. 이 원리를 lesson-1s6ajoq의 principle 블록과 연결하면 '공진'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9635925"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-014",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-014-c2",
+    "directSolution": "강철 스프링은 방진 요소로 쓰일 수 있지만 패드 재료와는 구분된다. 패드는 코르크·고무·섬유계 재료가 대표적이다. 따라서 '강철 스프링'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-014-c1",
+        "verdict": "incorrect",
+        "rationale": "'코르크'는 강철 스프링은 방진 요소로 쓰일 수 있지만 패드 재료와는 구분된다. 패드는 코르크·고무·섬유계 재료가 대표적이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-014-c2",
+        "verdict": "correct",
+        "rationale": "'강철 스프링'는 강철 스프링은 방진 요소로 쓰일 수 있지만 패드 재료와는 구분된다. 패드는 코르크·고무·섬유계 재료가 대표적이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-014-c3",
+        "verdict": "incorrect",
+        "rationale": "'스펀지 고무'는 강철 스프링은 방진 요소로 쓰일 수 있지만 패드 재료와는 구분된다. 패드는 코르크·고무·섬유계 재료가 대표적이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-014-c4",
+        "verdict": "incorrect",
+        "rationale": "'파이버글라스'는 강철 스프링은 방진 요소로 쓰일 수 있지만 패드 재료와는 구분된다. 패드는 코르크·고무·섬유계 재료가 대표적이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "강철 스프링은 방진 요소로 쓰일 수 있지만 패드 재료와는 구분된다. 패드는 코르크·고무·섬유계 재료가 대표적이다.의 판단 기준을 빼고 '강철 스프링'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1csprsi",
+    "existingBlockId": "principle",
+    "assertionText": "강철 스프링은 방진 요소로 쓰일 수 있지만 패드 재료와는 구분된다. 패드는 코르크·고무·섬유계 재료가 대표적이다. 이 원리를 lesson-1csprsi의 principle 블록과 연결하면 '강철 스프링'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9635925"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-015",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-015-c1",
+    "directSolution": "기출 기준에서는 동전형 속도센서의 대표 범위를 10~1000 Hz로 보아 1~100 Hz 진술을 오답 처리했다. 실제 범위는 모델 사양을 우선한다. 따라서 '동전형 속도센서의 측정범위는 보통 1~100 Hz이다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-015-c1",
+        "verdict": "correct",
+        "rationale": "'동전형 속도센서의 측정범위는 보통 1~100 Hz이다.'는 기출 기준에서는 동전형 속도센서의 대표 범위를 10~1000 Hz로 보아 1~100 Hz 진술을 오답 처리했다. 실제 범위는 모델 사양을 우선한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-015-c2",
+        "verdict": "incorrect",
+        "rationale": "'변위 검출형 픽업은 비접촉식으로 사용할 수 있다.'는 기출 기준에서는 동전형 속도센서의 대표 범위를 10~1000 Hz로 보아 1~100 Hz 진술을 오답 처리했다. 실제 범위는 모델 사양을 우선한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-015-c3",
+        "verdict": "incorrect",
+        "rationale": "'압전형 가속도센서는 광대역·소형·경량의 장점이 있다.'는 기출 기준에서는 동전형 속도센서의 대표 범위를 10~1000 Hz로 보아 1~100 Hz 진술을 오답 처리했다. 실제 범위는 모델 사양을 우선한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-015-c4",
+        "verdict": "incorrect",
+        "rationale": "'와전류형은 축의 상대변위 측정에 적합하다.'는 기출 기준에서는 동전형 속도센서의 대표 범위를 10~1000 Hz로 보아 1~100 Hz 진술을 오답 처리했다. 실제 범위는 모델 사양을 우선한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "기출 기준에서는 동전형 속도센서의 대표 범위를 10~1000 Hz로 보아 1~100 Hz 진술을 오답 처리했다. 실제 범위는 모델 사양을 우선한다.의 판단 기준을 빼고 '동전형 속도센서의 측정범위는 보통 1~100 Hz이다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1ckjgj0",
+    "existingBlockId": "trap",
+    "assertionText": "기출 기준에서는 동전형 속도센서의 대표 범위를 10~1000 Hz로 보아 1~100 Hz 진술을 오답 처리했다. 실제 범위는 모델 사양을 우선한다. 이 원리를 lesson-1ckjgj0의 trap 블록과 연결하면 '동전형 속도센서의 측정범위는 보통 1~100 Hz이다.'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9635925"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-016",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-016-c1",
+    "directSolution": "패러데이 전자유도 법칙을 이용하며 전기전도성이 있는 유체에 적용한다. 따라서 '전자유량계'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-016-c1",
+        "verdict": "correct",
+        "rationale": "'전자유량계'는 패러데이 전자유도 법칙을 이용하며 전기전도성이 있는 유체에 적용한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-016-c2",
+        "verdict": "incorrect",
+        "rationale": "'와류식 유량계'는 패러데이 전자유도 법칙을 이용하며 전기전도성이 있는 유체에 적용한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-016-c3",
+        "verdict": "incorrect",
+        "rationale": "'초음파식 유량계'는 패러데이 전자유도 법칙을 이용하며 전기전도성이 있는 유체에 적용한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-016-c4",
+        "verdict": "incorrect",
+        "rationale": "'정전용량식 유량계'는 패러데이 전자유도 법칙을 이용하며 전기전도성이 있는 유체에 적용한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "패러데이 전자유도 법칙을 이용하며 전기전도성이 있는 유체에 적용한다.의 판단 기준을 빼고 '전자유량계'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1par6no",
+    "existingBlockId": "principle",
+    "assertionText": "패러데이 전자유도 법칙을 이용하며 전기전도성이 있는 유체에 적용한다. 이 원리를 lesson-1par6no의 principle 블록과 연결하면 '전자유량계'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9635925"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-018",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-018-c1",
+    "directSolution": "다단 방진계는 공진점이 추가되어 저주파 전달률이 커질 수 있다. 강성 증가는 고유진동수를 높이며 질량 증가는 낮춘다. 따라서 '2단계 진동제어는 저주파에서 역효과를 줄 수 있다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-018-c1",
+        "verdict": "correct",
+        "rationale": "'2단계 진동제어는 저주파에서 역효과를 줄 수 있다.'는 다단 방진계는 공진점이 추가되어 저주파 전달률이 커질 수 있다. 강성 증가는 고유진동수를 높이며 질량 증가는 낮춘다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-018-c2",
+        "verdict": "incorrect",
+        "rationale": "'스프링 방진기는 강성이 높을수록 항상 좋다.'는 다단 방진계는 공진점이 추가되어 저주파 전달률이 커질 수 있다. 강성 증가는 고유진동수를 높이며 질량 증가는 낮춘다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-018-c3",
+        "verdict": "incorrect",
+        "rationale": "'질량을 더하면 고유진동수가 높아진다.'는 다단 방진계는 공진점이 추가되어 저주파 전달률이 커질 수 있다. 강성 증가는 고유진동수를 높이며 질량 증가는 낮춘다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-018-c4",
+        "verdict": "incorrect",
+        "rationale": "'방진 스프링의 고유진동수는 높을수록 좋다.'는 다단 방진계는 공진점이 추가되어 저주파 전달률이 커질 수 있다. 강성 증가는 고유진동수를 높이며 질량 증가는 낮춘다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "다단 방진계는 공진점이 추가되어 저주파 전달률이 커질 수 있다. 강성 증가는 고유진동수를 높이며 질량 증가는 낮춘다.의 판단 기준을 빼고 '2단계 진동제어는 저주파에서 역효과를 줄 수 있다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1qi34a4",
+    "existingBlockId": "principle",
+    "assertionText": "다단 방진계는 공진점이 추가되어 저주파 전달률이 커질 수 있다. 강성 증가는 고유진동수를 높이며 질량 증가는 낮춘다. 이 원리를 lesson-1qi34a4의 principle 블록과 연결하면 '2단계 진동제어는 저주파에서 역효과를 줄 수 있다.'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8162917"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-021",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-021-c4",
+    "directSolution": "변위·속도·가속도의 차원은 각각 L, L/T, L/T²이다. 따라서 'm²/s²'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-021-c1",
+        "verdict": "incorrect",
+        "rationale": "'m'는 변위·속도·가속도의 차원은 각각 L, L/T, L/T²이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-021-c2",
+        "verdict": "incorrect",
+        "rationale": "'m/s'는 변위·속도·가속도의 차원은 각각 L, L/T, L/T²이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-021-c3",
+        "verdict": "incorrect",
+        "rationale": "'m/s²'는 변위·속도·가속도의 차원은 각각 L, L/T, L/T²이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-021-c4",
+        "verdict": "correct",
+        "rationale": "'m²/s²'는 변위·속도·가속도의 차원은 각각 L, L/T, L/T²이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "변위·속도·가속도의 차원은 각각 L, L/T, L/T²이다.의 판단 기준을 빼고 'm²/s²'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-p97jbk",
+    "existingBlockId": "formula",
+    "assertionText": "변위·속도·가속도의 차원은 각각 L, L/T, L/T²이다. 이 원리를 lesson-p97jbk의 formula 블록과 연결하면 'm²/s²'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8162917"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-023",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-023-c3",
+    "directSolution": "벤투리관은 단면 변화에 따른 차압으로 유량을 측정하며 탄성변형식 요소가 아니다. 따라서 '벤투리관'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-023-c1",
+        "verdict": "incorrect",
+        "rationale": "'벨로스'는 벤투리관은 단면 변화에 따른 차압으로 유량을 측정하며 탄성변형식 요소가 아니다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-023-c2",
+        "verdict": "incorrect",
+        "rationale": "'스프링'는 벤투리관은 단면 변화에 따른 차압으로 유량을 측정하며 탄성변형식 요소가 아니다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-023-c3",
+        "verdict": "correct",
+        "rationale": "'벤투리관'는 벤투리관은 단면 변화에 따른 차압으로 유량을 측정하며 탄성변형식 요소가 아니다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-023-c4",
+        "verdict": "incorrect",
+        "rationale": "'부르동관'는 벤투리관은 단면 변화에 따른 차압으로 유량을 측정하며 탄성변형식 요소가 아니다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "벤투리관은 단면 변화에 따른 차압으로 유량을 측정하며 탄성변형식 요소가 아니다.의 판단 기준을 빼고 '벤투리관'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-6e09q9",
+    "existingBlockId": "trap",
+    "assertionText": "벤투리관은 단면 변화에 따른 차압으로 유량을 측정하며 탄성변형식 요소가 아니다. 이 원리를 lesson-6e09q9의 trap 블록과 연결하면 '벤투리관'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8162917"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-024",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-024-c4",
+    "directSolution": "섬유계 재료는 흡습 방지를 위해 밀폐·피복하여 사용하는 경우가 있다. 따라서 '파이버글라스'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-024-c1",
+        "verdict": "incorrect",
+        "rationale": "'강철'는 섬유계 재료는 흡습 방지를 위해 밀폐·피복하여 사용하는 경우가 있다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-024-c2",
+        "verdict": "incorrect",
+        "rationale": "'코르크'는 섬유계 재료는 흡습 방지를 위해 밀폐·피복하여 사용하는 경우가 있다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-024-c3",
+        "verdict": "incorrect",
+        "rationale": "'스펀지 고무'는 섬유계 재료는 흡습 방지를 위해 밀폐·피복하여 사용하는 경우가 있다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-024-c4",
+        "verdict": "correct",
+        "rationale": "'파이버글라스'는 섬유계 재료는 흡습 방지를 위해 밀폐·피복하여 사용하는 경우가 있다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "섬유계 재료는 흡습 방지를 위해 밀폐·피복하여 사용하는 경우가 있다.의 판단 기준을 빼고 '파이버글라스'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1csprsi",
+    "existingBlockId": "principle",
+    "assertionText": "섬유계 재료는 흡습 방지를 위해 밀폐·피복하여 사용하는 경우가 있다. 이 원리를 lesson-1csprsi의 principle 블록과 연결하면 '파이버글라스'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8162917"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-025",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-025-c4",
+    "directSolution": "변동이 빠른 소음은 Fast, 비교적 안정된 소음은 Slow 시간가중을 주로 사용한다. 따라서 '변동이 적으면 Fast, 심하면 Slow로 측정한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-025-c1",
+        "verdict": "incorrect",
+        "rationale": "'청감보정회로를 선택한다.'는 변동이 빠른 소음은 Fast, 비교적 안정된 소음은 Slow 시간가중을 주로 사용한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-025-c2",
+        "verdict": "incorrect",
+        "rationale": "'반사음 영향을 줄인다.'는 변동이 빠른 소음은 Fast, 비교적 안정된 소음은 Slow 시간가중을 주로 사용한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-025-c3",
+        "verdict": "incorrect",
+        "rationale": "'암소음 보정 여부를 검토한다.'는 변동이 빠른 소음은 Fast, 비교적 안정된 소음은 Slow 시간가중을 주로 사용한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-025-c4",
+        "verdict": "correct",
+        "rationale": "'변동이 적으면 Fast, 심하면 Slow로 측정한다.'는 변동이 빠른 소음은 Fast, 비교적 안정된 소음은 Slow 시간가중을 주로 사용한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "변동이 빠른 소음은 Fast, 비교적 안정된 소음은 Slow 시간가중을 주로 사용한다.의 판단 기준을 빼고 '변동이 적으면 Fast, 심하면 Slow로 측정한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1fqtg7p",
+    "existingBlockId": "trap",
+    "assertionText": "변동이 빠른 소음은 Fast, 비교적 안정된 소음은 Slow 시간가중을 주로 사용한다. 이 원리를 lesson-1fqtg7p의 trap 블록과 연결하면 '변동이 적으면 Fast, 심하면 Slow로 측정한다.'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8162917"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-026",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-026-c2",
+    "directSolution": "노즐·오리피스·벤투리는 차압식 유량요소이고 부르동관은 압력을 변위로 바꾸는 탄성요소다. 따라서 '부르동관'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-026-c1",
+        "verdict": "incorrect",
+        "rationale": "'노즐'는 노즐·오리피스·벤투리는 차압식 유량요소이고 부르동관은 압력을 변위로 바꾸는 탄성요소다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-026-c2",
+        "verdict": "correct",
+        "rationale": "'부르동관'는 노즐·오리피스·벤투리는 차압식 유량요소이고 부르동관은 압력을 변위로 바꾸는 탄성요소다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-026-c3",
+        "verdict": "incorrect",
+        "rationale": "'오리피스'는 노즐·오리피스·벤투리는 차압식 유량요소이고 부르동관은 압력을 변위로 바꾸는 탄성요소다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-026-c4",
+        "verdict": "incorrect",
+        "rationale": "'벤투리관'는 노즐·오리피스·벤투리는 차압식 유량요소이고 부르동관은 압력을 변위로 바꾸는 탄성요소다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "노즐·오리피스·벤투리는 차압식 유량요소이고 부르동관은 압력을 변위로 바꾸는 탄성요소다.의 판단 기준을 빼고 '부르동관'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-jxu87m",
+    "existingBlockId": "trap",
+    "assertionText": "노즐·오리피스·벤투리는 차압식 유량요소이고 부르동관은 압력을 변위로 바꾸는 탄성요소다. 이 원리를 lesson-jxu87m의 trap 블록과 연결하면 '부르동관'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8162917"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-027",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-027-c2",
+    "directSolution": "와전류형은 금속축과 센서 사이 상대변위를 측정한다. 가속도는 압전형 가속도센서 등이 적합하다. 따라서 '가속도 진동'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-027-c1",
+        "verdict": "incorrect",
+        "rationale": "'회전수'는 와전류형은 금속축과 센서 사이 상대변위를 측정한다. 가속도는 압전형 가속도센서 등이 적합하다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-027-c2",
+        "verdict": "correct",
+        "rationale": "'가속도 진동'는 와전류형은 금속축과 센서 사이 상대변위를 측정한다. 가속도는 압전형 가속도센서 등이 적합하다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-027-c3",
+        "verdict": "incorrect",
+        "rationale": "'축의 열팽창량'는 와전류형은 금속축과 센서 사이 상대변위를 측정한다. 가속도는 압전형 가속도센서 등이 적합하다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-027-c4",
+        "verdict": "incorrect",
+        "rationale": "'축 중심의 변화'는 와전류형은 금속축과 센서 사이 상대변위를 측정한다. 가속도는 압전형 가속도센서 등이 적합하다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "와전류형은 금속축과 센서 사이 상대변위를 측정한다. 가속도는 압전형 가속도센서 등이 적합하다.의 판단 기준을 빼고 '가속도 진동'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-5yr4el",
+    "existingBlockId": "principle",
+    "assertionText": "와전류형은 금속축과 센서 사이 상대변위를 측정한다. 가속도는 압전형 가속도센서 등이 적합하다. 이 원리를 lesson-5yr4el의 principle 블록과 연결하면 '가속도 진동'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8162917"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-029",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-029-c1",
+    "directSolution": "선형진동은 질량·감쇠·강성 등 요소가 선형 관계를 따르는 진동을 말한다. 따라서 '선형진동은 진폭이 증가하면 모든 진동계가 같은 방식으로 움직이는 진동이다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-029-c1",
+        "verdict": "correct",
+        "rationale": "'선형진동은 진폭이 증가하면 모든 진동계가 같은 방식으로 움직이는 진동이다.'는 선형진동은 질량·감쇠·강성 등 요소가 선형 관계를 따르는 진동을 말한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-029-c2",
+        "verdict": "incorrect",
+        "rationale": "'자유진동은 외란 후 계가 스스로 진동하는 상태다.'는 선형진동은 질량·감쇠·강성 등 요소가 선형 관계를 따르는 진동을 말한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-029-c3",
+        "verdict": "incorrect",
+        "rationale": "'비감쇠진동은 감쇠를 무시한 이상화 모델이다.'는 선형진동은 질량·감쇠·강성 등 요소가 선형 관계를 따르는 진동을 말한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-029-c4",
+        "verdict": "incorrect",
+        "rationale": "'규칙진동은 불평형·축정렬 불량 등 주기적 원인에서 나타날 수 있다.'는 선형진동은 질량·감쇠·강성 등 요소가 선형 관계를 따르는 진동을 말한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "선형진동은 질량·감쇠·강성 등 요소가 선형 관계를 따르는 진동을 말한다.의 판단 기준을 빼고 '선형진동은 진폭이 증가하면 모든 진동계가 같은 방식으로 움직이는 진동이다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-16jebp4",
+    "existingBlockId": "trap",
+    "assertionText": "선형진동은 질량·감쇠·강성 등 요소가 선형 관계를 따르는 진동을 말한다. 이 원리를 lesson-16jebp4의 trap 블록과 연결하면 '선형진동은 진폭이 증가하면 모든 진동계가 같은 방식으로 움직이는 진동이다.'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8162917"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-031",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-031-c2",
+    "directSolution": "로터미터 등 면적식 유량계는 액체뿐 아니라 기체 유량 측정에도 사용된다. 따라서 '기체 유량은 측정할 수 없다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-031-c1",
+        "verdict": "incorrect",
+        "rationale": "'압력손실이 비교적 작다.'는 로터미터 등 면적식 유량계는 액체뿐 아니라 기체 유량 측정에도 사용된다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-031-c2",
+        "verdict": "correct",
+        "rationale": "'기체 유량은 측정할 수 없다.'는 로터미터 등 면적식 유량계는 액체뿐 아니라 기체 유량 측정에도 사용된다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-031-c3",
+        "verdict": "incorrect",
+        "rationale": "'재질 선택에 따라 부식성 액체도 측정할 수 있다.'는 로터미터 등 면적식 유량계는 액체뿐 아니라 기체 유량 측정에도 사용된다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-031-c4",
+        "verdict": "incorrect",
+        "rationale": "'액체에 기포가 섞이면 오차가 생길 수 있다.'는 로터미터 등 면적식 유량계는 액체뿐 아니라 기체 유량 측정에도 사용된다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "로터미터 등 면적식 유량계는 액체뿐 아니라 기체 유량 측정에도 사용된다.의 판단 기준을 빼고 '기체 유량은 측정할 수 없다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1ibtpfy",
+    "existingBlockId": "trap",
+    "assertionText": "로터미터 등 면적식 유량계는 액체뿐 아니라 기체 유량 측정에도 사용된다. 이 원리를 lesson-1ibtpfy의 trap 블록과 연결하면 '기체 유량은 측정할 수 없다.'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8162917"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-033",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-033-c4",
+    "directSolution": "기류음은 유체 압력변동·난류 등 유체역학적 원인으로도 발생한다. 따라서 '기류음은 물체의 고체진동이라는 기계적 원인만으로 발생한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-033-c1",
+        "verdict": "incorrect",
+        "rationale": "'기계 본체 진동에 의한 소리는 구조전달음이 될 수 있다.'는 기류음은 유체 압력변동·난류 등 유체역학적 원인으로도 발생한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-033-c2",
+        "verdict": "incorrect",
+        "rationale": "'음원은 크게 고체음과 기체음으로 나눌 수 있다.'는 기류음은 유체 압력변동·난류 등 유체역학적 원인으로도 발생한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-033-c3",
+        "verdict": "incorrect",
+        "rationale": "'선풍기·송풍기의 소음에는 난류음이 포함된다.'는 기류음은 유체 압력변동·난류 등 유체역학적 원인으로도 발생한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-033-c4",
+        "verdict": "correct",
+        "rationale": "'기류음은 물체의 고체진동이라는 기계적 원인만으로 발생한다.'는 기류음은 유체 압력변동·난류 등 유체역학적 원인으로도 발생한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "기류음은 유체 압력변동·난류 등 유체역학적 원인으로도 발생한다.의 판단 기준을 빼고 '기류음은 물체의 고체진동이라는 기계적 원인만으로 발생한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-q317sq",
+    "existingBlockId": "trap",
+    "assertionText": "기류음은 유체 압력변동·난류 등 유체역학적 원인으로도 발생한다. 이 원리를 lesson-q317sq의 trap 블록과 연결하면 '기류음은 물체의 고체진동이라는 기계적 원인만으로 발생한다.'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8162917"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-034",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-034-c4",
+    "directSolution": "다공성·섬유성 흡음재에서 음에너지가 마찰열로 소산된다. 따라서 '흡음형'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-034-c1",
+        "verdict": "incorrect",
+        "rationale": "'팽창형'는 다공성·섬유성 흡음재에서 음에너지가 마찰열로 소산된다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-034-c2",
+        "verdict": "incorrect",
+        "rationale": "'간섭형'는 다공성·섬유성 흡음재에서 음에너지가 마찰열로 소산된다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-034-c3",
+        "verdict": "incorrect",
+        "rationale": "'공명형'는 다공성·섬유성 흡음재에서 음에너지가 마찰열로 소산된다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-034-c4",
+        "verdict": "correct",
+        "rationale": "'흡음형'는 다공성·섬유성 흡음재에서 음에너지가 마찰열로 소산된다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "다공성·섬유성 흡음재에서 음에너지가 마찰열로 소산된다.의 판단 기준을 빼고 '흡음형'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1h5qq9",
+    "existingBlockId": "principle",
+    "assertionText": "다공성·섬유성 흡음재에서 음에너지가 마찰열로 소산된다. 이 원리를 lesson-1h5qq9의 principle 블록과 연결하면 '흡음형'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8162917"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-035",
+    "subjectId": "subject-4",
+    "decision": "hold",
+    "holdReason": "SOURCE_IMAGE_MISSING: 진동 변위 D[μm], 주파수 f[Hz], 속도 V[mm/s]의 관계로 옳은 것은?의 원문 보기 또는 수식 이미지가 누락되어 선택지와 답안을 독립적으로 대조할 수 없다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-036",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-036-c1",
+    "directSolution": "주파수는 1초 동안 반복되는 주기의 수이며 Hz=cycle/s이다. 따라서 'cycle/s'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-036-c1",
+        "verdict": "correct",
+        "rationale": "'cycle/s'는 주파수는 1초 동안 반복되는 주기의 수이며 Hz=cycle/s이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-036-c2",
+        "verdict": "incorrect",
+        "rationale": "'m/s'는 주파수는 1초 동안 반복되는 주기의 수이며 Hz=cycle/s이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-036-c3",
+        "verdict": "incorrect",
+        "rationale": "'rad/s'는 주파수는 1초 동안 반복되는 주기의 수이며 Hz=cycle/s이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-036-c4",
+        "verdict": "incorrect",
+        "rationale": "'m/s²'는 주파수는 1초 동안 반복되는 주기의 수이며 Hz=cycle/s이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "주파수는 1초 동안 반복되는 주기의 수이며 Hz=cycle/s이다.의 판단 기준을 빼고 'cycle/s'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1f7cqh3",
+    "existingBlockId": "formula",
+    "assertionText": "주파수는 1초 동안 반복되는 주기의 수이며 Hz=cycle/s이다. 이 원리를 lesson-1f7cqh3의 formula 블록과 연결하면 'cycle/s'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-038",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-038-c3",
+    "directSolution": "언밸런스·정렬불량은 주로 저주파, 압력맥동은 중간주파, 공동현상은 고주파 성분과 연관된다. 따라서 '압력 맥동'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-038-c1",
+        "verdict": "incorrect",
+        "rationale": "'공동현상'는 언밸런스·정렬불량은 주로 저주파, 압력맥동은 중간주파, 공동현상은 고주파 성분과 연관된다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-038-c2",
+        "verdict": "incorrect",
+        "rationale": "'언밸런스'는 언밸런스·정렬불량은 주로 저주파, 압력맥동은 중간주파, 공동현상은 고주파 성분과 연관된다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-038-c3",
+        "verdict": "correct",
+        "rationale": "'압력 맥동'는 언밸런스·정렬불량은 주로 저주파, 압력맥동은 중간주파, 공동현상은 고주파 성분과 연관된다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-038-c4",
+        "verdict": "incorrect",
+        "rationale": "'미스얼라인먼트'는 언밸런스·정렬불량은 주로 저주파, 압력맥동은 중간주파, 공동현상은 고주파 성분과 연관된다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "언밸런스·정렬불량은 주로 저주파, 압력맥동은 중간주파, 공동현상은 고주파 성분과 연관된다.의 판단 기준을 빼고 '압력 맥동'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1ojm6ec",
+    "existingBlockId": "diagnosis",
+    "assertionText": "언밸런스·정렬불량은 주로 저주파, 압력맥동은 중간주파, 공동현상은 고주파 성분과 연관된다. 이 원리를 lesson-1ojm6ec의 diagnosis 블록과 연결하면 '압력 맥동'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-039",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-039-c1",
+    "directSolution": "터빈 유량계는 유체가 회전자를 돌리는 속도식 유량계이며 나머지는 일정 체적을 계량한다. 따라서 '터빈 유량계'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-039-c1",
+        "verdict": "correct",
+        "rationale": "'터빈 유량계'는 터빈 유량계는 유체가 회전자를 돌리는 속도식 유량계이며 나머지는 일정 체적을 계량한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-039-c2",
+        "verdict": "incorrect",
+        "rationale": "'회전 디스크 유량계'는 터빈 유량계는 유체가 회전자를 돌리는 속도식 유량계이며 나머지는 일정 체적을 계량한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-039-c3",
+        "verdict": "incorrect",
+        "rationale": "'회전 날개 유량계'는 터빈 유량계는 유체가 회전자를 돌리는 속도식 유량계이며 나머지는 일정 체적을 계량한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-039-c4",
+        "verdict": "incorrect",
+        "rationale": "'로브 임펠러 유량계'는 터빈 유량계는 유체가 회전자를 돌리는 속도식 유량계이며 나머지는 일정 체적을 계량한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "터빈 유량계는 유체가 회전자를 돌리는 속도식 유량계이며 나머지는 일정 체적을 계량한다.의 판단 기준을 빼고 '터빈 유량계'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-169eeit",
+    "existingBlockId": "principle",
+    "assertionText": "터빈 유량계는 유체가 회전자를 돌리는 속도식 유량계이며 나머지는 일정 체적을 계량한다. 이 원리를 lesson-169eeit의 principle 블록과 연결하면 '터빈 유량계'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-040",
+    "subjectId": "subject-4",
+    "decision": "hold",
+    "holdReason": "SOURCE_IMAGE_MISSING: 구름베어링의 소음·결함 특성주파수 관계식 중 옳지 않은 것은?의 원문 보기 또는 수식 이미지가 누락되어 선택지와 답안을 독립적으로 대조할 수 없다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-041",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-041-c1",
+    "directSolution": "설비진단은 계측값을 통해 이상 원인·상태·수명과 조치방법을 판단하는 활동이며 단순 계기화보다 범위가 넓다. 따라서 '단순 점검의 계기화'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-041-c1",
+        "verdict": "correct",
+        "rationale": "'단순 점검의 계기화'는 설비진단은 계측값을 통해 이상 원인·상태·수명과 조치방법을 판단하는 활동이며 단순 계기화보다 범위가 넓다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-041-c2",
+        "verdict": "incorrect",
+        "rationale": "'수리·개량 방법의 결정'는 설비진단은 계측값을 통해 이상 원인·상태·수명과 조치방법을 판단하는 활동이며 단순 계기화보다 범위가 넓다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-041-c3",
+        "verdict": "incorrect",
+        "rationale": "'신뢰성과 수명의 예측'는 설비진단은 계측값을 통해 이상 원인·상태·수명과 조치방법을 판단하는 활동이며 단순 계기화보다 범위가 넓다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-041-c4",
+        "verdict": "incorrect",
+        "rationale": "'이상·결함 원인의 파악'는 설비진단은 계측값을 통해 이상 원인·상태·수명과 조치방법을 판단하는 활동이며 단순 계기화보다 범위가 넓다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "설비진단은 계측값을 통해 이상 원인·상태·수명과 조치방법을 판단하는 활동이며 단순 계기화보다 범위가 넓다.의 판단 기준을 빼고 '단순 점검의 계기화'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-3gaux",
+    "existingBlockId": "diagnosis",
+    "assertionText": "설비진단은 계측값을 통해 이상 원인·상태·수명과 조치방법을 판단하는 활동이며 단순 계기화보다 범위가 넓다. 이 원리를 lesson-3gaux의 diagnosis 블록과 연결하면 '단순 점검의 계기화'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-042",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-042-c3",
+    "directSolution": "v=fλ이므로 f=v/λ이며 주파수는 음속에 비례하고 파장에 반비례한다. 따라서 '주파수는 음속에 반비례하고 파장에 비례한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-042-c1",
+        "verdict": "incorrect",
+        "rationale": "'파장은 음파 1주기의 진행거리이다.'는 v=fλ이므로 f=v/λ이며 주파수는 음속에 비례하고 파장에 반비례한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-042-c2",
+        "verdict": "incorrect",
+        "rationale": "'주파수는 1초 동안의 진동횟수이다.'는 v=fλ이므로 f=v/λ이며 주파수는 음속에 비례하고 파장에 반비례한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-042-c3",
+        "verdict": "correct",
+        "rationale": "'주파수는 음속에 반비례하고 파장에 비례한다.'는 v=fλ이므로 f=v/λ이며 주파수는 음속에 비례하고 파장에 반비례한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-042-c4",
+        "verdict": "incorrect",
+        "rationale": "'파장은 음속에 비례하고 주파수에 반비례한다.'는 v=fλ이므로 f=v/λ이며 주파수는 음속에 비례하고 파장에 반비례한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "v=fλ이므로 f=v/λ이며 주파수는 음속에 비례하고 파장에 반비례한다.의 판단 기준을 빼고 '주파수는 음속에 반비례하고 파장에 비례한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-vngo8n",
+    "existingBlockId": "trap",
+    "assertionText": "v=fλ이므로 f=v/λ이며 주파수는 음속에 비례하고 파장에 반비례한다. 이 원리를 lesson-vngo8n의 trap 블록과 연결하면 '주파수는 음속에 반비례하고 파장에 비례한다.'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-044",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-044-c3",
+    "directSolution": "가동코일형은 감도가 높고 직류 전압·전류의 정밀 계측에 적합하다. 따라서 '가동코일형'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-044-c1",
+        "verdict": "incorrect",
+        "rationale": "'유도형'는 가동코일형은 감도가 높고 직류 전압·전류의 정밀 계측에 적합하다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-044-c2",
+        "verdict": "incorrect",
+        "rationale": "'전류력계형'는 가동코일형은 감도가 높고 직류 전압·전류의 정밀 계측에 적합하다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-044-c3",
+        "verdict": "correct",
+        "rationale": "'가동코일형'는 가동코일형은 감도가 높고 직류 전압·전류의 정밀 계측에 적합하다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-044-c4",
+        "verdict": "incorrect",
+        "rationale": "'가동철편형'는 가동코일형은 감도가 높고 직류 전압·전류의 정밀 계측에 적합하다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "가동코일형은 감도가 높고 직류 전압·전류의 정밀 계측에 적합하다.의 판단 기준을 빼고 '가동코일형'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-n9cfag",
+    "existingBlockId": "principle",
+    "assertionText": "가동코일형은 감도가 높고 직류 전압·전류의 정밀 계측에 적합하다. 이 원리를 lesson-n9cfag의 principle 블록과 연결하면 '가동코일형'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-045",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-045-c1",
+    "directSolution": "반사테이프에 광원을 비추고 되돌아오는 빛을 센서가 검출하는 방식은 광전식 검출입니다. 회전수는 그 광펄스의 반복으로 구하지만, 문항이 묻는 검출 방식의 명칭은 ① 광전식 검출법입니다.",
+    "choiceRationales": [
+      { "choiceId": "U-045-c1", "verdict": "correct", "rationale": "반사테이프에서 돌아온 빛의 유무를 광센서가 전기 신호로 바꾸어 회전을 검출하므로, 이 방식의 명칭은 광전식 검출법입니다." },
+      { "choiceId": "U-045-c2", "verdict": "incorrect", "rationale": "주파수로 회전수를 환산할 수는 있지만 이는 검출된 펄스를 계산하는 절차입니다. 반사광을 감지하는 센서 방식 자체의 명칭은 아닙니다." },
+      { "choiceId": "U-045-c3", "verdict": "incorrect", "rationale": "전자식 검출법은 전기적 신호 처리를 넓게 부르는 말일 뿐, 반사테이프와 광원을 이용해 반사광을 감지한다는 광학적 원리를 특정하지 못합니다." },
+      { "choiceId": "U-045-c4", "verdict": "incorrect", "rationale": "회전주기는 인접 펄스 사이의 시간을 재는 계산 변수입니다. 이 보기에는 반사광을 검출하는 광전식 센서 원리가 나타나지 않습니다." }
+    ],
+    "misconception": "반사광을 감지하는 센서의 검출 원리와, 검출 뒤 회전수·주파수·회전주기를 계산하는 후속 처리 단계를 같은 명칭으로 보는 오류.",
+    "existingLessonId": "lesson-17d4b9t",
+    "existingBlockId": "principle",
+    "assertionText": "반사광 검출은 광전식이며, 광펄스의 반복을 이용해 회전수를 구한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-048",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-048-c2",
+    "directSolution": "공명은 특정 주파수에서 진폭을 키우는 현상이며 차음·흡음·소음기는 소음 저감수단이다. 따라서 '공명'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-048-c1",
+        "verdict": "incorrect",
+        "rationale": "'차음'는 공명은 특정 주파수에서 진폭을 키우는 현상이며 차음·흡음·소음기는 소음 저감수단이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-048-c2",
+        "verdict": "correct",
+        "rationale": "'공명'는 공명은 특정 주파수에서 진폭을 키우는 현상이며 차음·흡음·소음기는 소음 저감수단이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-048-c3",
+        "verdict": "incorrect",
+        "rationale": "'흡음'는 공명은 특정 주파수에서 진폭을 키우는 현상이며 차음·흡음·소음기는 소음 저감수단이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-048-c4",
+        "verdict": "incorrect",
+        "rationale": "'소음기 사용'는 공명은 특정 주파수에서 진폭을 키우는 현상이며 차음·흡음·소음기는 소음 저감수단이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "공명은 특정 주파수에서 진폭을 키우는 현상이며 차음·흡음·소음기는 소음 저감수단이다.의 판단 기준을 빼고 '공명'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1vpmv6w",
+    "existingBlockId": "principle",
+    "assertionText": "공명은 특정 주파수에서 진폭을 키우는 현상이며 차음·흡음·소음기는 소음 저감수단이다. 이 원리를 lesson-1vpmv6w의 principle 블록과 연결하면 '공명'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-053",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-053-c1",
+    "directSolution": "설비대장은 설비 자체의 식별·사양·취득·설치·가격·상태 정보를 관리하며 작성자 개인은 핵심 설비정보가 아니다. 따라서 '설비 품목별 사양 작성자'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-053-c1",
+        "verdict": "correct",
+        "rationale": "'설비 품목별 사양 작성자'는 설비대장은 설비 자체의 식별·사양·취득·설치·가격·상태 정보를 관리하며 작성자 개인은 핵심 설비정보가 아니다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-053-c2",
+        "verdict": "incorrect",
+        "rationale": "'설비 입수시기와 가격'는 설비대장은 설비 자체의 식별·사양·취득·설치·가격·상태 정보를 관리하며 작성자 개인은 핵심 설비정보가 아니다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-053-c3",
+        "verdict": "incorrect",
+        "rationale": "'설비의 개략적 기능'는 설비대장은 설비 자체의 식별·사양·취득·설치·가격·상태 정보를 관리하며 작성자 개인은 핵심 설비정보가 아니다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-053-c4",
+        "verdict": "incorrect",
+        "rationale": "'설비의 개략적 크기'는 설비대장은 설비 자체의 식별·사양·취득·설치·가격·상태 정보를 관리하며 작성자 개인은 핵심 설비정보가 아니다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "설비대장은 설비 자체의 식별·사양·취득·설치·가격·상태 정보를 관리하며 작성자 개인은 핵심 설비정보가 아니다.의 판단 기준을 빼고 '설비 품목별 사양 작성자'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-pi0sik",
+    "existingBlockId": "principle",
+    "assertionText": "설비대장은 설비 자체의 식별·사양·취득·설치·가격·상태 정보를 관리하며 작성자 개인은 핵심 설비정보가 아니다. 이 원리를 lesson-pi0sik의 principle 블록과 연결하면 '설비 품목별 사양 작성자'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-055",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-055-c4",
+    "directSolution": "기계화 공정은 기계 사용이 원가발생의 주요 동인이므로 기계가동시간을 기준으로 배부한다. 따라서 '기계가동시간법'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-055-c1",
+        "verdict": "incorrect",
+        "rationale": "'직접재료비법'는 기계화 공정은 기계 사용이 원가발생의 주요 동인이므로 기계가동시간을 기준으로 배부한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-055-c2",
+        "verdict": "incorrect",
+        "rationale": "'직접제조비법'는 기계화 공정은 기계 사용이 원가발생의 주요 동인이므로 기계가동시간을 기준으로 배부한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-055-c3",
+        "verdict": "incorrect",
+        "rationale": "'직접노무시간법'는 기계화 공정은 기계 사용이 원가발생의 주요 동인이므로 기계가동시간을 기준으로 배부한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-055-c4",
+        "verdict": "correct",
+        "rationale": "'기계가동시간법'는 기계화 공정은 기계 사용이 원가발생의 주요 동인이므로 기계가동시간을 기준으로 배부한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "기계화 공정은 기계 사용이 원가발생의 주요 동인이므로 기계가동시간을 기준으로 배부한다.의 판단 기준을 빼고 '기계가동시간법'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1jnempg",
+    "existingBlockId": "principle",
+    "assertionText": "기계화 공정은 기계 사용이 원가발생의 주요 동인이므로 기계가동시간을 기준으로 배부한다. 이 원리를 lesson-1jnempg의 principle 블록과 연결하면 '기계가동시간법'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-056",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-056-c1",
+    "directSolution": "기출 기준에서는 생산변경·계획변경·타 공사 지연·공수와 재료 손실을 완급도 판단요소로 본다. 따라서 '지연에 따른 만성로스 비용'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-056-c1",
+        "verdict": "correct",
+        "rationale": "'지연에 따른 만성로스 비용'는 기출 기준에서는 생산변경·계획변경·타 공사 지연·공수와 재료 손실을 완급도 판단요소로 본다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-056-c2",
+        "verdict": "incorrect",
+        "rationale": "'지연에 따른 생산변경 비용'는 기출 기준에서는 생산변경·계획변경·타 공사 지연·공수와 재료 손실을 완급도 판단요소로 본다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-056-c3",
+        "verdict": "incorrect",
+        "rationale": "'긴급진행에 따른 공수·재료 손실'는 기출 기준에서는 생산변경·계획변경·타 공사 지연·공수와 재료 손실을 완급도 판단요소로 본다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-056-c4",
+        "verdict": "incorrect",
+        "rationale": "'긴급진행으로 다른 공사가 지연되는 손실'는 기출 기준에서는 생산변경·계획변경·타 공사 지연·공수와 재료 손실을 완급도 판단요소로 본다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "기출 기준에서는 생산변경·계획변경·타 공사 지연·공수와 재료 손실을 완급도 판단요소로 본다.의 판단 기준을 빼고 '지연에 따른 만성로스 비용'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1xjyw4r",
+    "existingBlockId": "trap",
+    "assertionText": "기출 기준에서는 생산변경·계획변경·타 공사 지연·공수와 재료 손실을 완급도 판단요소로 본다. 이 원리를 lesson-1xjyw4r의 trap 블록과 연결하면 '지연에 따른 만성로스 비용'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-057",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-057-c4",
+    "directSolution": "서비스숍과 서비스스테이션은 판매·서비스 활동을 지원하는 설비다. 따라서 '서비스숍·서비스스테이션'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-057-c1",
+        "verdict": "incorrect",
+        "rationale": "'전기장치·운반장치'는 서비스숍과 서비스스테이션은 판매·서비스 활동을 지원하는 설비다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-057-c2",
+        "verdict": "incorrect",
+        "rationale": "'발전설비·수처리시설'는 서비스숍과 서비스스테이션은 판매·서비스 활동을 지원하는 설비다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-057-c3",
+        "verdict": "incorrect",
+        "rationale": "'항만설비·공장연구설비'는 서비스숍과 서비스스테이션은 판매·서비스 활동을 지원하는 설비다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-057-c4",
+        "verdict": "correct",
+        "rationale": "'서비스숍·서비스스테이션'는 서비스숍과 서비스스테이션은 판매·서비스 활동을 지원하는 설비다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "서비스숍과 서비스스테이션은 판매·서비스 활동을 지원하는 설비다.의 판단 기준을 빼고 '서비스숍·서비스스테이션'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-vfz5cl",
+    "existingBlockId": "principle",
+    "assertionText": "서비스숍과 서비스스테이션은 판매·서비스 활동을 지원하는 설비다. 이 원리를 lesson-vfz5cl의 principle 블록과 연결하면 '서비스숍·서비스스테이션'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-059",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-059-c3",
+    "directSolution": "지역별 시장 접근성과 수요 대응을 중시하는 설비망은 시장 중심 설비망이다. 따라서 '시장 중심 설비망'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-059-c1",
+        "verdict": "incorrect",
+        "rationale": "'제품 중심 설비망'는 지역별 시장 접근성과 수요 대응을 중시하는 설비망은 시장 중심 설비망이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-059-c2",
+        "verdict": "incorrect",
+        "rationale": "'공정 중심 설비망'는 지역별 시장 접근성과 수요 대응을 중시하는 설비망은 시장 중심 설비망이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-059-c3",
+        "verdict": "correct",
+        "rationale": "'시장 중심 설비망'는 지역별 시장 접근성과 수요 대응을 중시하는 설비망은 시장 중심 설비망이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-059-c4",
+        "verdict": "incorrect",
+        "rationale": "'프로젝트 중심 설비망'는 지역별 시장 접근성과 수요 대응을 중시하는 설비망은 시장 중심 설비망이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "지역별 시장 접근성과 수요 대응을 중시하는 설비망은 시장 중심 설비망이다.의 판단 기준을 빼고 '시장 중심 설비망'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1w5g4yq",
+    "existingBlockId": "principle",
+    "assertionText": "지역별 시장 접근성과 수요 대응을 중시하는 설비망은 시장 중심 설비망이다. 이 원리를 lesson-1w5g4yq의 principle 블록과 연결하면 '시장 중심 설비망'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-060",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-060-c2",
+    "directSolution": "기준·설계속도보다 느리게 운전해 생기는 손실을 속도 로스라 한다. 따라서 '속도 로스'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-060-c1",
+        "verdict": "incorrect",
+        "rationale": "'초기 로스'는 기준·설계속도보다 느리게 운전해 생기는 손실을 속도 로스라 한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-060-c2",
+        "verdict": "correct",
+        "rationale": "'속도 로스'는 기준·설계속도보다 느리게 운전해 생기는 손실을 속도 로스라 한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-060-c3",
+        "verdict": "incorrect",
+        "rationale": "'고장 로스'는 기준·설계속도보다 느리게 운전해 생기는 손실을 속도 로스라 한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-060-c4",
+        "verdict": "incorrect",
+        "rationale": "'불량 로스'는 기준·설계속도보다 느리게 운전해 생기는 손실을 속도 로스라 한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "기준·설계속도보다 느리게 운전해 생기는 손실을 속도 로스라 한다.의 판단 기준을 빼고 '속도 로스'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-3b2d55",
+    "existingBlockId": "principle",
+    "assertionText": "기준·설계속도보다 느리게 운전해 생기는 손실을 속도 로스라 한다. 이 원리를 lesson-3b2d55의 principle 블록과 연결하면 '속도 로스'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-062",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-062-c4",
+    "directSolution": "재설계와 성능·수명 개선은 설비의 보전도 향상 연구에 해당한다. 따라서 '보전도 향상 연구'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-062-c1",
+        "verdict": "incorrect",
+        "rationale": "'고장분석 개발'는 재설계와 성능·수명 개선은 설비의 보전도 향상 연구에 해당한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-062-c2",
+        "verdict": "incorrect",
+        "rationale": "'보전업무 분석'는 재설계와 성능·수명 개선은 설비의 보전도 향상 연구에 해당한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-062-c3",
+        "verdict": "incorrect",
+        "rationale": "'부품대체 분석'는 재설계와 성능·수명 개선은 설비의 보전도 향상 연구에 해당한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-062-c4",
+        "verdict": "correct",
+        "rationale": "'보전도 향상 연구'는 재설계와 성능·수명 개선은 설비의 보전도 향상 연구에 해당한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "재설계와 성능·수명 개선은 설비의 보전도 향상 연구에 해당한다.의 판단 기준을 빼고 '보전도 향상 연구'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-s5j3xx",
+    "existingBlockId": "principle",
+    "assertionText": "재설계와 성능·수명 개선은 설비의 보전도 향상 연구에 해당한다. 이 원리를 lesson-s5j3xx의 principle 블록과 연결하면 '보전도 향상 연구'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-067",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-067-c3",
+    "directSolution": "강도·내력을 낮추면 허용능력이 감소하여 고장 위험이 커진다. 따라서 '강도와 내력을 낮춘다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-067-c1",
+        "verdict": "incorrect",
+        "rationale": "'안전율을 높인다.'는 강도·내력을 낮추면 허용능력이 감소하여 고장 위험이 커진다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-067-c2",
+        "verdict": "incorrect",
+        "rationale": "'응력을 분산한다.'는 강도·내력을 낮추면 허용능력이 감소하여 고장 위험이 커진다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-067-c3",
+        "verdict": "correct",
+        "rationale": "'강도와 내력을 낮춘다.'는 강도·내력을 낮추면 허용능력이 감소하여 고장 위험이 커진다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-067-c4",
+        "verdict": "incorrect",
+        "rationale": "'온도·습도 등 작업환경을 개선한다.'는 강도·내력을 낮추면 허용능력이 감소하여 고장 위험이 커진다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "강도·내력을 낮추면 허용능력이 감소하여 고장 위험이 커진다.의 판단 기준을 빼고 '강도와 내력을 낮춘다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-13jc8mr",
+    "existingBlockId": "trap",
+    "assertionText": "강도·내력을 낮추면 허용능력이 감소하여 고장 위험이 커진다. 이 원리를 lesson-13jc8mr의 trap 블록과 연결하면 '강도와 내력을 낮춘다.'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-068",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-068-c2",
+    "directSolution": "제품품질 개선은 설비와 연계될 수 있지만 분류상 품질관리의 직접 영역으로 본다. 따라서 '제품품질 개선'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-068-c1",
+        "verdict": "incorrect",
+        "rationale": "'보전도 향상'는 제품품질 개선은 설비와 연계될 수 있지만 분류상 품질관리의 직접 영역으로 본다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-068-c2",
+        "verdict": "correct",
+        "rationale": "'제품품질 개선'는 제품품질 개선은 설비와 연계될 수 있지만 분류상 품질관리의 직접 영역으로 본다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-068-c3",
+        "verdict": "incorrect",
+        "rationale": "'생산보전 활동'는 제품품질 개선은 설비와 연계될 수 있지만 분류상 품질관리의 직접 영역으로 본다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-068-c4",
+        "verdict": "incorrect",
+        "rationale": "'설비자산 관리'는 제품품질 개선은 설비와 연계될 수 있지만 분류상 품질관리의 직접 영역으로 본다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "제품품질 개선은 설비와 연계될 수 있지만 분류상 품질관리의 직접 영역으로 본다.의 판단 기준을 빼고 '제품품질 개선'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1cmn4j",
+    "existingBlockId": "principle",
+    "assertionText": "제품품질 개선은 설비와 연계될 수 있지만 분류상 품질관리의 직접 영역으로 본다. 이 원리를 lesson-1cmn4j의 principle 블록과 연결하면 '제품품질 개선'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-071",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-071-c1",
+    "directSolution": "공구검사는 보전·검사 실행단계이고 연구·설계·표준화·소요계획은 계획기능이다. 따라서 '공구검사'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-071-c1",
+        "verdict": "correct",
+        "rationale": "'공구검사'는 공구검사는 보전·검사 실행단계이고 연구·설계·표준화·소요계획은 계획기능이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-071-c2",
+        "verdict": "incorrect",
+        "rationale": "'공구 연구·시험'는 공구검사는 보전·검사 실행단계이고 연구·설계·표준화·소요계획은 계획기능이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-071-c3",
+        "verdict": "incorrect",
+        "rationale": "'공구 설계·표준화'는 공구검사는 보전·검사 실행단계이고 연구·설계·표준화·소요계획은 계획기능이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-071-c4",
+        "verdict": "incorrect",
+        "rationale": "'공구 소요량 계획·보충'는 공구검사는 보전·검사 실행단계이고 연구·설계·표준화·소요계획은 계획기능이다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "공구검사는 보전·검사 실행단계이고 연구·설계·표준화·소요계획은 계획기능이다.의 판단 기준을 빼고 '공구검사'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-up31do",
+    "existingBlockId": "trap",
+    "assertionText": "공구검사는 보전·검사 실행단계이고 연구·설계·표준화·소요계획은 계획기능이다. 이 원리를 lesson-up31do의 trap 블록과 연결하면 '공구검사'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-083",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-083-c3",
+    "directSolution": "절대적 열화는 같은 설비가 사용·노화로 물리적 성능이 저하되는 것을 뜻한다. 따라서 '절대적 열화'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-083-c1",
+        "verdict": "incorrect",
+        "rationale": "'기술적 열화'는 절대적 열화는 같은 설비가 사용·노화로 물리적 성능이 저하되는 것을 뜻한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-083-c2",
+        "verdict": "incorrect",
+        "rationale": "'경제적 열화'는 절대적 열화는 같은 설비가 사용·노화로 물리적 성능이 저하되는 것을 뜻한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-083-c3",
+        "verdict": "correct",
+        "rationale": "'절대적 열화'는 절대적 열화는 같은 설비가 사용·노화로 물리적 성능이 저하되는 것을 뜻한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-083-c4",
+        "verdict": "incorrect",
+        "rationale": "'상대적 열화'는 절대적 열화는 같은 설비가 사용·노화로 물리적 성능이 저하되는 것을 뜻한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "절대적 열화는 같은 설비가 사용·노화로 물리적 성능이 저하되는 것을 뜻한다.의 판단 기준을 빼고 '절대적 열화'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1lrcpch",
+    "existingBlockId": "diagnosis",
+    "assertionText": "절대적 열화는 같은 설비가 사용·노화로 물리적 성능이 저하되는 것을 뜻한다. 이 원리를 lesson-1lrcpch의 diagnosis 블록과 연결하면 '절대적 열화'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-093",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-093-c3",
+    "directSolution": "유리판 투시 관찰은 현장 간이·간접 판정에 가깝고 직접판정은 성상시험과 기준비교를 포함한다. 따라서 '두 유리판 사이 오일을 투시해 이물질만 관찰한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-093-c1",
+        "verdict": "incorrect",
+        "rationale": "'신유 성상을 미리 파악한다.'는 유리판 투시 관찰은 현장 간이·간접 판정에 가깝고 직접판정은 성상시험과 기준비교를 포함한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-093-c2",
+        "verdict": "incorrect",
+        "rationale": "'사용유 대표시료를 채취해 성상을 조사한다.'는 유리판 투시 관찰은 현장 간이·간접 판정에 가깝고 직접판정은 성상시험과 기준비교를 포함한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-093-c3",
+        "verdict": "correct",
+        "rationale": "'두 유리판 사이 오일을 투시해 이물질만 관찰한다.'는 유리판 투시 관찰은 현장 간이·간접 판정에 가깝고 직접판정은 성상시험과 기준비교를 포함한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-093-c4",
+        "verdict": "incorrect",
+        "rationale": "'신유·사용유 비교 후 관리기준에 따라 교환한다.'는 유리판 투시 관찰은 현장 간이·간접 판정에 가깝고 직접판정은 성상시험과 기준비교를 포함한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "유리판 투시 관찰은 현장 간이·간접 판정에 가깝고 직접판정은 성상시험과 기준비교를 포함한다.의 판단 기준을 빼고 '두 유리판 사이 오일을 투시해 이물질만 관찰한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-193jlj0",
+    "existingBlockId": "trap",
+    "assertionText": "유리판 투시 관찰은 현장 간이·간접 판정에 가깝고 직접판정은 성상시험과 기준비교를 포함한다. 이 원리를 lesson-193jlj0의 trap 블록과 연결하면 '두 유리판 사이 오일을 투시해 이물질만 관찰한다.'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-094",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-094-c3",
+    "directSolution": "일반 시험항목에는 동판부식성·전산가·수분·색상 등이 있으며 단순 ‘부식도’ 표현은 표준 항목과 다르다. 따라서 '부식도'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-094-c1",
+        "verdict": "incorrect",
+        "rationale": "'색상'는 일반 시험항목에는 동판부식성·전산가·수분·색상 등이 있으며 단순 ‘부식도’ 표현은 표준 항목과 다르다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-094-c2",
+        "verdict": "incorrect",
+        "rationale": "'수분'는 일반 시험항목에는 동판부식성·전산가·수분·색상 등이 있으며 단순 ‘부식도’ 표현은 표준 항목과 다르다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-094-c3",
+        "verdict": "correct",
+        "rationale": "'부식도'는 일반 시험항목에는 동판부식성·전산가·수분·색상 등이 있으며 단순 ‘부식도’ 표현은 표준 항목과 다르다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-094-c4",
+        "verdict": "incorrect",
+        "rationale": "'전산가'는 일반 시험항목에는 동판부식성·전산가·수분·색상 등이 있으며 단순 ‘부식도’ 표현은 표준 항목과 다르다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "일반 시험항목에는 동판부식성·전산가·수분·색상 등이 있으며 단순 ‘부식도’ 표현은 표준 항목과 다르다.의 판단 기준을 빼고 '부식도'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-15oo7my",
+    "existingBlockId": "principle",
+    "assertionText": "일반 시험항목에는 동판부식성·전산가·수분·색상 등이 있으며 단순 ‘부식도’ 표현은 표준 항목과 다르다. 이 원리를 lesson-15oo7my의 principle 블록과 연결하면 '부식도'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-096",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-096-c2",
+    "directSolution": "트라이볼로지는 접촉표면의 마찰·마모·윤활 현상을 종합적으로 연구한다. 따라서 'Tribology'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-096-c1",
+        "verdict": "incorrect",
+        "rationale": "'Friction'는 트라이볼로지는 접촉표면의 마찰·마모·윤활 현상을 종합적으로 연구한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-096-c2",
+        "verdict": "correct",
+        "rationale": "'Tribology'는 트라이볼로지는 접촉표면의 마찰·마모·윤활 현상을 종합적으로 연구한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-096-c3",
+        "verdict": "incorrect",
+        "rationale": "'Lubrication'는 트라이볼로지는 접촉표면의 마찰·마모·윤활 현상을 종합적으로 연구한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-096-c4",
+        "verdict": "incorrect",
+        "rationale": "'Maintenance'는 트라이볼로지는 접촉표면의 마찰·마모·윤활 현상을 종합적으로 연구한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "트라이볼로지는 접촉표면의 마찰·마모·윤활 현상을 종합적으로 연구한다.의 판단 기준을 빼고 'Tribology'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-12u8w8z",
+    "existingBlockId": "diagnosis",
+    "assertionText": "트라이볼로지는 접촉표면의 마찰·마모·윤활 현상을 종합적으로 연구한다. 이 원리를 lesson-12u8w8z의 diagnosis 블록과 연결하면 'Tribology'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-098",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-098-c4",
+    "directSolution": "방열불량은 마찰면·설비구조·열환경의 문제이며 작업절차 자체와는 거리가 있다. 따라서 '전도열 과다와 마찰면 방열불량'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-098-c1",
+        "verdict": "incorrect",
+        "rationale": "'플러싱 불충분'는 방열불량은 마찰면·설비구조·열환경의 문제이며 작업절차 자체와는 거리가 있다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-098-c2",
+        "verdict": "incorrect",
+        "rationale": "'과잉급유와 부주의'는 방열불량은 마찰면·설비구조·열환경의 문제이며 작업절차 자체와는 거리가 있다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-098-c3",
+        "verdict": "incorrect",
+        "rationale": "'급유속도가 지나치게 빠르거나 느림'는 방열불량은 마찰면·설비구조·열환경의 문제이며 작업절차 자체와는 거리가 있다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-098-c4",
+        "verdict": "correct",
+        "rationale": "'전도열 과다와 마찰면 방열불량'는 방열불량은 마찰면·설비구조·열환경의 문제이며 작업절차 자체와는 거리가 있다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "방열불량은 마찰면·설비구조·열환경의 문제이며 작업절차 자체와는 거리가 있다.의 판단 기준을 빼고 '전도열 과다와 마찰면 방열불량'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-bdite",
+    "existingBlockId": "diagnosis",
+    "assertionText": "방열불량은 마찰면·설비구조·열환경의 문제이며 작업절차 자체와는 거리가 있다. 이 원리를 lesson-bdite의 diagnosis 블록과 연결하면 '전도열 과다와 마찰면 방열불량'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-101",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-101-c1",
+    "directSolution": "그리스는 보유성이 좋아 일반적으로 오일보다 재급유 간격이 길다. 따라서 '급유간격이 짧다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-101-c1",
+        "verdict": "correct",
+        "rationale": "'급유간격이 짧다.'는 그리스는 보유성이 좋아 일반적으로 오일보다 재급유 간격이 길다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-101-c2",
+        "verdict": "incorrect",
+        "rationale": "'회전저항이 크다.'는 그리스는 보유성이 좋아 일반적으로 오일보다 재급유 간격이 길다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-101-c3",
+        "verdict": "incorrect",
+        "rationale": "'순환급유가 어렵다.'는 그리스는 보유성이 좋아 일반적으로 오일보다 재급유 간격이 길다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-101-c4",
+        "verdict": "incorrect",
+        "rationale": "'혼입물 제거가 어렵다.'는 그리스는 보유성이 좋아 일반적으로 오일보다 재급유 간격이 길다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "그리스는 보유성이 좋아 일반적으로 오일보다 재급유 간격이 길다.의 판단 기준을 빼고 '급유간격이 짧다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-rw0dwq",
+    "existingBlockId": "trap",
+    "assertionText": "그리스는 보유성이 좋아 일반적으로 오일보다 재급유 간격이 길다. 이 원리를 lesson-rw0dwq의 trap 블록과 연결하면 '급유간격이 짧다.'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-102",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-102-c2",
+    "directSolution": "작동유는 기포·공동 발생을 억제해야 압력전달과 펌프 수명을 확보할 수 있다. 따라서 '캐비테이션이 잘 일어날 것'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-102-c1",
+        "verdict": "incorrect",
+        "rationale": "'체적탄성계수가 클 것'는 작동유는 기포·공동 발생을 억제해야 압력전달과 펌프 수명을 확보할 수 있다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-102-c2",
+        "verdict": "correct",
+        "rationale": "'캐비테이션이 잘 일어날 것'는 작동유는 기포·공동 발생을 억제해야 압력전달과 펌프 수명을 확보할 수 있다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-102-c3",
+        "verdict": "incorrect",
+        "rationale": "'산화·유화 안정성이 좋을 것'는 작동유는 기포·공동 발생을 억제해야 압력전달과 펌프 수명을 확보할 수 있다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-102-c4",
+        "verdict": "incorrect",
+        "rationale": "'온도에 따른 점도변화가 작을 것'는 작동유는 기포·공동 발생을 억제해야 압력전달과 펌프 수명을 확보할 수 있다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "작동유는 기포·공동 발생을 억제해야 압력전달과 펌프 수명을 확보할 수 있다.의 판단 기준을 빼고 '캐비테이션이 잘 일어날 것'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-97pmjf",
+    "existingBlockId": "trap",
+    "assertionText": "작동유는 기포·공동 발생을 억제해야 압력전달과 펌프 수명을 확보할 수 있다. 이 원리를 lesson-97pmjf의 trap 블록과 연결하면 '캐비테이션이 잘 일어날 것'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-103",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-103-c1",
+    "directSolution": "점도는 유체 내부의 층간 전단저항을 나타낸다. 따라서 '점도'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-103-c1",
+        "verdict": "correct",
+        "rationale": "'점도'는 점도는 유체 내부의 층간 전단저항을 나타낸다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-103-c2",
+        "verdict": "incorrect",
+        "rationale": "'인화점'는 점도는 유체 내부의 층간 전단저항을 나타낸다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-103-c3",
+        "verdict": "incorrect",
+        "rationale": "'발화점'는 점도는 유체 내부의 층간 전단저항을 나타낸다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-103-c4",
+        "verdict": "incorrect",
+        "rationale": "'유동점'는 점도는 유체 내부의 층간 전단저항을 나타낸다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "점도는 유체 내부의 층간 전단저항을 나타낸다.의 판단 기준을 빼고 '점도'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1wap7yn",
+    "existingBlockId": "principle",
+    "assertionText": "점도는 유체 내부의 층간 전단저항을 나타낸다. 이 원리를 lesson-1wap7yn의 principle 블록과 연결하면 '점도'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-104",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-104-c1",
+    "directSolution": "기출 분류에서 감마작용은 유막을 형성해 마찰·마모를 줄이는 작용을 뜻한다. 따라서 '감마작용'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-104-c1",
+        "verdict": "correct",
+        "rationale": "'감마작용'는 기출 분류에서 감마작용은 유막을 형성해 마찰·마모를 줄이는 작용을 뜻한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-104-c2",
+        "verdict": "incorrect",
+        "rationale": "'청정작용'는 기출 분류에서 감마작용은 유막을 형성해 마찰·마모를 줄이는 작용을 뜻한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-104-c3",
+        "verdict": "incorrect",
+        "rationale": "'방청작용'는 기출 분류에서 감마작용은 유막을 형성해 마찰·마모를 줄이는 작용을 뜻한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-104-c4",
+        "verdict": "incorrect",
+        "rationale": "'응력분산작용'는 기출 분류에서 감마작용은 유막을 형성해 마찰·마모를 줄이는 작용을 뜻한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "기출 분류에서 감마작용은 유막을 형성해 마찰·마모를 줄이는 작용을 뜻한다.의 판단 기준을 빼고 '감마작용'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-4mwvpf",
+    "existingBlockId": "principle",
+    "assertionText": "기출 분류에서 감마작용은 유막을 형성해 마찰·마모를 줄이는 작용을 뜻한다. 이 원리를 lesson-4mwvpf의 principle 블록과 연결하면 '감마작용'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-105",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-105-c3",
+    "directSolution": "R&O는 Rust and Oxidation inhibited oil로 방청·산화방지 첨가제를 포함한다. 따라서 'R&O 윤활유'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-105-c1",
+        "verdict": "incorrect",
+        "rationale": "'극압윤활유'는 R&O는 Rust and Oxidation inhibited oil로 방청·산화방지 첨가제를 포함한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-105-c2",
+        "verdict": "incorrect",
+        "rationale": "'전기절연유'는 R&O는 Rust and Oxidation inhibited oil로 방청·산화방지 첨가제를 포함한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-105-c3",
+        "verdict": "correct",
+        "rationale": "'R&O 윤활유'는 R&O는 Rust and Oxidation inhibited oil로 방청·산화방지 첨가제를 포함한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-105-c4",
+        "verdict": "incorrect",
+        "rationale": "'개방형기어유'는 R&O는 Rust and Oxidation inhibited oil로 방청·산화방지 첨가제를 포함한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      }
+    ],
+    "misconception": "R&O는 Rust and Oxidation inhibited oil로 방청·산화방지 첨가제를 포함한다.의 판단 기준을 빼고 'R&O 윤활유'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-zwdlxk",
+    "existingBlockId": "principle",
+    "assertionText": "R&O는 Rust and Oxidation inhibited oil로 방청·산화방지 첨가제를 포함한다. 이 원리를 lesson-zwdlxk의 principle 블록과 연결하면 'R&O 윤활유'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-107",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-107-c4",
+    "directSolution": "오일미스트·분무급유는 압축공기가 오일을 미세입자로 운반하며 냉각에도 기여한다. 따라서 '분무식급유'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-107-c1",
+        "verdict": "incorrect",
+        "rationale": "'적하급유'는 오일미스트·분무급유는 압축공기가 오일을 미세입자로 운반하며 냉각에도 기여한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-107-c2",
+        "verdict": "incorrect",
+        "rationale": "'패드급유'는 오일미스트·분무급유는 압축공기가 오일을 미세입자로 운반하며 냉각에도 기여한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-107-c3",
+        "verdict": "incorrect",
+        "rationale": "'심지급유'는 오일미스트·분무급유는 압축공기가 오일을 미세입자로 운반하며 냉각에도 기여한다. 이 기준에 비추어 문항의 조건과 맞지 않아 오답이다."
+      },
+      {
+        "choiceId": "U-107-c4",
+        "verdict": "correct",
+        "rationale": "'분무식급유'는 오일미스트·분무급유는 압축공기가 오일을 미세입자로 운반하며 냉각에도 기여한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "오일미스트·분무급유는 압축공기가 오일을 미세입자로 운반하며 냉각에도 기여한다.의 판단 기준을 빼고 '분무식급유'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-4zb4qv",
+    "existingBlockId": "principle",
+    "assertionText": "오일미스트·분무급유는 압축공기가 오일을 미세입자로 운반하며 냉각에도 기여한다. 이 원리를 lesson-4zb4qv의 principle 블록과 연결하면 '분무식급유'를 판별할 수 있다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T18:00:00.000+09:00"
+  }
+]

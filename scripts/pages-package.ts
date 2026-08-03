@@ -2,20 +2,69 @@ import { spawn } from "node:child_process";
 import { cp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { createServer } from "node:net";
 import { dirname, relative, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 import { Writable } from "node:stream";
 import { pipeline } from "node:stream/promises";
 import { createGzip } from "node:zlib";
-import { build } from "esbuild";
 
 const rootDirectory = process.cwd();
 const clientDirectory = resolve(rootDirectory, "dist", "client");
-const workerEntry = resolve(rootDirectory, "dist", "server", "index.js");
+const serverDirectory = resolve(rootDirectory, "dist", "server");
+const workerEntry = resolve(serverDirectory, "index.js");
+const serverAssetsDirectory = resolve(serverDirectory, "assets");
+const serverSsrDirectory = resolve(serverDirectory, "ssr");
+const serverAssetsManifest = resolve(
+  serverDirectory,
+  "__vite_rsc_assets_manifest.js",
+);
 const pagesDirectory = resolve(rootDirectory, "dist", "pages");
-const pagesWorker = resolve(pagesDirectory, "_worker.js");
+const pagesWorkerDirectory = resolve(pagesDirectory, "_worker.js");
+const pagesWorker = resolve(pagesWorkerDirectory, "index.js");
 const runtimeDataDirectory = resolve(rootDirectory, ".runtime-assets", "data");
 const pagesDataDirectory = resolve(pagesDirectory, "data");
 const workerConfig = resolve(rootDirectory, "dist", "server", "wrangler.json");
 const wranglerCli = resolve(rootDirectory, "node_modules", "wrangler", "bin", "wrangler.js");
+
+type PagesStageOptions = {
+  clientDirectory: string;
+  pagesDirectory: string;
+  serverDirectory: string;
+};
+
+export async function stagePagesOutput({
+  clientDirectory: sourceClientDirectory,
+  pagesDirectory: targetPagesDirectory,
+  serverDirectory: sourceServerDirectory,
+}: PagesStageOptions) {
+  const targetWorkerDirectory = resolve(targetPagesDirectory, "_worker.js");
+  const targetServerDirectory = resolve(targetWorkerDirectory, "server");
+  await rm(targetPagesDirectory, { recursive: true, force: true });
+  await mkdir(targetServerDirectory, { recursive: true });
+  await cp(sourceClientDirectory, targetPagesDirectory, { recursive: true });
+  await writeFile(
+    resolve(targetWorkerDirectory, "index.js"),
+    'export { default } from "./server/index.js";\n',
+    "utf8",
+  );
+  await cp(
+    resolve(sourceServerDirectory, "index.js"),
+    resolve(targetServerDirectory, "index.js"),
+  );
+  await cp(
+    resolve(sourceServerDirectory, "assets"),
+    resolve(targetServerDirectory, "assets"),
+    { recursive: true },
+  );
+  await cp(
+    resolve(sourceServerDirectory, "ssr"),
+    resolve(targetServerDirectory, "ssr"),
+    { recursive: true },
+  );
+  await cp(
+    resolve(sourceServerDirectory, "__vite_rsc_assets_manifest.js"),
+    resolve(targetServerDirectory, "__vite_rsc_assets_manifest.js"),
+  );
+}
 
 async function requireFile(path: string, label: string) {
   try {
@@ -166,66 +215,74 @@ async function prerenderWrittenTheory() {
   }
 }
 
-await requireFile(clientDirectory, "Client build output");
-await requireFile(workerEntry, "Server Worker entry");
-await requireFile(resolve(runtimeDataDirectory, "content.bin"), "Compressed runtime content");
-await requireFile(resolve(runtimeDataDirectory, "content.meta.json"), "Runtime content metadata");
-for (const subjectId of ["subject-1", "subject-2", "subject-3", "subject-4"]) {
-  await requireFile(
-    resolve(runtimeDataDirectory, `content-${subjectId}.bin`),
-    `Compressed runtime content for ${subjectId}`,
+async function packagePages() {
+  await requireFile(clientDirectory, "Client build output");
+  await requireFile(workerEntry, "Server Worker entry");
+  await requireFile(serverAssetsDirectory, "Server Worker modules");
+  await requireFile(serverSsrDirectory, "Server SSR modules");
+  await requireFile(serverAssetsManifest, "Server assets manifest");
+  await requireFile(resolve(runtimeDataDirectory, "content.bin"), "Compressed runtime content");
+  await requireFile(resolve(runtimeDataDirectory, "content.meta.json"), "Runtime content metadata");
+  for (const subjectId of ["subject-1", "subject-2", "subject-3", "subject-4"]) {
+    await requireFile(
+      resolve(runtimeDataDirectory, `content-${subjectId}.bin`),
+      `Compressed runtime content for ${subjectId}`,
+    );
+    await requireFile(
+      resolve(runtimeDataDirectory, `content-${subjectId}.meta.json`),
+      `Runtime content metadata for ${subjectId}`,
+    );
+  }
+
+  await stagePagesOutput({
+    clientDirectory,
+    pagesDirectory,
+    serverDirectory,
+  });
+  await prerenderWrittenTheory();
+
+  const workerSource = await readFile(pagesWorker, "utf8");
+  if (!workerSource.includes("export")) {
+    throw new Error("Pages Worker bundle has no ESM export.");
+  }
+
+  const packagedDataFiles = await readdir(pagesDataDirectory).catch(
+    (error: NodeJS.ErrnoException) => {
+      if (error.code === "ENOENT") return [];
+      throw error;
+    },
   );
-  await requireFile(
-    resolve(runtimeDataDirectory, `content-${subjectId}.meta.json`),
-    `Runtime content metadata for ${subjectId}`,
+  const expectedDataFiles = [
+    "content.bin",
+    "content.meta.json",
+    ...["subject-1", "subject-2", "subject-3", "subject-4"].flatMap(
+      (subjectId) => [
+        `content-${subjectId}.bin`,
+        `content-${subjectId}.meta.json`,
+      ],
+    ),
+  ].sort();
+  if (
+    JSON.stringify(packagedDataFiles.sort()) !==
+    JSON.stringify(expectedDataFiles)
+  ) {
+    throw new Error(
+      `Unexpected Worker-routed Pages data assets: ${packagedDataFiles.sort().join(", ")}.`,
+    );
+  }
+
+  const compressedBytes = await gzipSize(pagesWorker);
+  console.log(
+    `Cloudflare Pages package ready: ${relative(rootDirectory, pagesDirectory)} ` +
+      `(${relative(rootDirectory, pagesWorker)}, gzip ${compressedBytes} bytes).`,
   );
+  console.log("Preview with: npm run preview:pages");
+  console.log("Deploy with: npm run deploy:pages");
 }
 
-await rm(pagesDirectory, { recursive: true, force: true });
-await mkdir(dirname(pagesWorker), { recursive: true });
-await cp(clientDirectory, pagesDirectory, { recursive: true });
-await cp(runtimeDataDirectory, pagesDataDirectory, { recursive: true });
-await prerenderWrittenTheory();
-
-await build({
-  absWorkingDir: rootDirectory,
-  bundle: true,
-  entryPoints: [workerEntry],
-  external: ["node:*"],
-  format: "esm",
-  minify: true,
-  outfile: pagesWorker,
-  platform: "neutral",
-  sourcemap: false,
-  target: "es2022",
-});
-
-const workerSource = await readFile(pagesWorker, "utf8");
-if (!workerSource.includes("export")) {
-  throw new Error("Pages Worker bundle has no ESM export.");
+const invokedScript = process.argv[1]
+  ? pathToFileURL(resolve(process.argv[1])).href
+  : "";
+if (import.meta.url === invokedScript) {
+  await packagePages();
 }
-
-const packagedDataFiles = (await readdir(pagesDataDirectory)).sort();
-const expectedDataFiles = [
-  "content.bin",
-  "content.meta.json",
-  ...["subject-1", "subject-2", "subject-3", "subject-4"].flatMap(
-    (subjectId) => [
-      `content-${subjectId}.bin`,
-      `content-${subjectId}.meta.json`,
-    ],
-  ),
-].sort();
-if (JSON.stringify(packagedDataFiles) !== JSON.stringify(expectedDataFiles)) {
-  throw new Error(
-    `Refusing unexpected Pages data assets: ${packagedDataFiles.join(", ") || "(empty)"}.`,
-  );
-}
-
-const compressedBytes = await gzipSize(pagesWorker);
-console.log(
-  `Cloudflare Pages package ready: ${relative(rootDirectory, pagesDirectory)} ` +
-    `(${relative(rootDirectory, pagesWorker)}, gzip ${compressedBytes} bytes).`,
-);
-console.log("Preview with: npm run preview:pages");
-console.log("Deploy with: npm run deploy:pages");

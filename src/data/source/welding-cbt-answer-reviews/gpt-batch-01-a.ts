@@ -1,0 +1,57 @@
+type Lesson = { id: string; block: string; assertion: string; official: string };
+type Entry = { id: string; digest: string; kind: "safety" | "principle"; lesson: Lesson; correct: number; answer: string; steps: string[]; rule: string; notes: [string, string, string, string] };
+
+const ELECTRICAL: Lesson = { id: "lesson-welding-safety-electrical", block: "principle", assertion: "위험을 발견하면 먼저 전원을 차단하고 잠금·표지 등으로 재투입을 방지한 뒤 무전압을 확인합니다.", official: "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=273603" };
+const GAS: Lesson = { id: "lesson-welding-safety-gas", block: "principle", assertion: "용기는 직사광선과 열원을 피해 표면온도를 40℃ 이하로 유지하고, 전도·낙하·충격을 막습니다.", official: "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=554&callmode=normal&catimage=&eclang=ko&start=28&um=s" };
+const PPE: Lesson = { id: "lesson-welding-safety-ppe", block: "principle", assertion: "차광번호는 공정과 전류에 맞춰야 하고, 호흡보호구는 산소결핍 장소에서 여과식만 사용해서는 안 됩니다.", official: "https://portal.kosha.or.kr/openapi/v1/file/down/CTC2026012909222643246624/1" };
+const VENT: Lesson = { id: "lesson-welding-safety-ventilation", block: "principle", assertion: "국소배기는 후드를 발생원 가까이에 두고 오염공기가 작업자의 얼굴을 지나가지 않도록 포집합니다. 전체환기는 공간 전체 농도를 낮추는 보조수단입니다.", official: "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=554&callmode=normal&catimage=&eclang=ko&start=28&um=s" };
+const LIFT: Lesson = { id: "lesson-welding-safety-lifting-fall", block: "definition", assertion: "추락·낙하 및 양중 안전은 높은 곳의 작업자와 자재가 떨어지는 위험, 중량물이 이동·회전·이탈하며 사람이나 설비를 충돌·협착하는 위험을 통제하는 것입니다.", official: "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=273603" };
+const ACETYLENE: Lesson = { id: "lesson-welding-gas-equipment-flame", block: "structure", assertion: "용해아세틸렌 용기는 아세톤에 아세틸렌을 녹여 저장하며, 15℃에서 아세톤 1L는 1기압당 아세틸렌 약 25L를 용해합니다.", official: "https://www.kosha.or.kr/ebook/fcatalog/access/ecatalogt.jsp?Dir=554&callmode=normal&catimage=&eclang=ko&start=28&um=s" };
+
+function make(entry: Entry) {
+  return {
+    canonicalId: entry.id, contentDigest: entry.digest, authoringDisposition: "publish_candidate" as const, reviewStatus: "pending" as const, assessmentKind: entry.kind,
+    primaryLeafLessonId: entry.lesson.id,
+    conceptBinding: { lessonId: entry.lesson.id, lessonBlockId: entry.lesson.block, assertionText: entry.lesson.assertion, evidenceRefs: [{ kind: "lesson_block" as const, ref: `${entry.lesson.id}#${entry.lesson.block}` }, { kind: "official_source" as const, ref: entry.lesson.official }, { kind: "source_question" as const, ref: entry.id }] },
+    answerExplanation: entry.answer, solutionSteps: entry.steps, keyRule: entry.rule,
+    choiceFeedback: entry.notes.map((note, choiceIndex) => {
+      const correctNote = entry.notes[entry.correct];
+      const isCorrect = choiceIndex === entry.correct;
+      return {
+        choiceIndex,
+        relation: isCorrect ? "supports" as const : "refuted_by" as const,
+        rationale: note,
+        plausibleReason: isCorrect
+          ? `${note}라는 문항의 직접 판단근거를 확인하면 다른 조건을 섞지 않고 선택할 수 있습니다.`
+          : `${note}라는 문장이 일부 안전 조치처럼 보이더라도, 이 문항에서는 ${correctNote}라는 판단근거와 비교해야 합니다.`,
+        incorrectPoint: isCorrect
+          ? null
+          : `${note} 이 보기는 ${correctNote}를 직접 충족하는 선택지가 아니므로 문항의 답으로 고를 수 없습니다.`,
+        keyRule: isCorrect
+          ? `선택 기준: ${note}`
+          : `보기 ${choiceIndex + 1} 판별 기준: ${note}`,
+        differenceFromCorrect: isCorrect
+          ? null
+          : `정답 보기의 핵심은 ‘${correctNote}’이고, 이 보기는 ‘${note}’라는 별도 조건 또는 위험원을 말합니다.`,
+      };
+    }),
+    essentialRank: 1, essentialRationale: "복원 문항의 조건을 레슨의 안전 원리와 직접 대조하는 대표 문항입니다.", holdReasons: [], author: "gpt-batch-01-a", authoredAt: "2026-08-03T00:00:00.000Z", reviewer: null, reviewedAt: null,
+  };
+}
+
+export const WELDING_CBT_ANSWER_REVIEWS_GPT_BATCH_01_A = [
+  make({ id:"wcbt-029e820d-c90c-40c6-a3ff-ccdf1d0fbfef", digest:"115e228742cb83c879d7cc72394338ba12492be159daaad8b51d8fdd8dd42069", kind:"safety", lesson:VENT, correct:1, answer:"용접 흄 설명 중 옳은 것은 ‘실내 용접 작업에서는 환기설비가 필요하다.’입니다. 흄은 발생원 포집과 환기로 관리하므로 2번을 고릅니다.", steps:["흄을 유해인자로 분류합니다.","실내 작업의 포집·환기 필요성을 적용합니다.","환기설비를 든 2번을 선택합니다."], rule:"용접 흄은 발생원 포집과 환기를 우선 적용하고 노출 조건에 맞는 호흡보호구를 병행합니다.", notes:["흄을 아무리 마셔도 된다는 말은 노출 관리 원칙을 부정합니다.","실내 용접의 환기설비는 흄 농도를 줄이는 기본 조치입니다.","용접봉 종류와 무관하게 위험이 없다는 단정은 성립하지 않습니다.","가제마스크만으로 흄 위험이 사라진다고 볼 수 없습니다."] }),
+  make({ id:"wcbt-03c235a1-5e6a-4656-b55f-7879dec479fe", digest:"2ccbd342346af9b885cde9cf29b95c9757df6f5abe5e8a7b609730bb51f59c5a", kind:"safety", lesson:ELECTRICAL, correct:0, answer:"TIG 용접 안전사항 중 틀린 것은 ‘용접기 덮개를 벗기는 경우 반드시 전원 스위치를 켜고 작업한다.’입니다. 덮개 작업 전에는 전원을 차단해야 합니다.", steps:["덮개 제거는 충전부 접근 작업임을 봅니다.","차단·재투입 방지·무전압 확인 순서를 적용합니다.","전원을 켠 1번을 고릅니다."], rule:"전기계통 점검 전에는 전원을 차단하고 무전압을 확인합니다.", notes:["전원을 켠 채 덮개를 벗기는 것은 충전부 접촉 가능성을 남깁니다.","절연 상태 점검은 전기안전 관리에 필요합니다.","전원과 제어장치의 접지는 고장전류 경로를 돕습니다.","느슨한 케이블 연결부 점검은 접속 불량을 줄입니다."] }),
+  make({ id:"wcbt-06ac3679-b7e4-4f8d-a5cc-bff50093481f", digest:"65ca6fdfa14c2d8cba15e77e8c51a06649135dfe4c52804a58295a3e2dff4dc5", kind:"safety", lesson:GAS, correct:3, answer:"산소 용기 취급에서 틀린 것은 ‘밸브는 기름을 칠하여 항상 유연해야 한다.’입니다. 산소계통에는 기름·그리스를 묻히지 않습니다.", steps:["용기 전도·열원·누설·산소계통을 구분합니다.","산소 밸브의 유분 금지 원칙을 적용합니다.","기름칠을 든 4번을 고릅니다."], rule:"산소 밸브와 조정기에는 기름·그리스를 묻히지 않고 누설은 승인된 검지액으로 확인합니다.", notes:["산소병을 눕혀 두지 않는 것은 전도 위험을 줄입니다.","화기에서 멀리 두는 것은 열원 노출을 줄입니다.","비눗물 누설검사는 불꽃 대신 쓰는 승인된 방법입니다.","밸브에 기름을 칠하는 것은 산소계통 유분 금지와 충돌합니다."] }),
+  make({ id:"wcbt-0d1cf0de-4a52-460c-b0af-afe67bdc4643", digest:"738c71f88a64d1a3f4654749d517cfe435c611d80ca4d1e3235958e246a5371e", kind:"safety", lesson:GAS, correct:1, answer:"용해 아세틸렌 취급에서 틀린 것은 ‘용기는 45℃ 이상에서 보관’입니다. 레슨의 용기 표면온도 40℃ 이하 원칙에 맞지 않습니다.", steps:["충격·온도·방폭·동결 조건을 분리합니다.","용기 온도는 40℃ 이하인지 확인합니다.","45℃ 이상인 2번을 고릅니다."], rule:"가스용기는 직사광선과 열원을 피하고 표면온도를 40℃ 이하로 유지합니다.", notes:["용기를 진동·충격에서 보호하는 조치는 용기 손상과 전도를 막습니다.","45℃ 이상 보관은 40℃ 이하 원칙을 벗어납니다.","저장실 방폭 구조는 점화원 통제 취지입니다.","동결 해소는 지정 온도 범위의 온수로 관리하는 절차입니다."] }),
+  make({ id:"wcbt-0d7d54d0-4f3c-4747-9c38-ff0e9e6d3dd7", digest:"0b11f50427ea79f9bbdeba7eb17cb08cc021bf5c11fb195d3fe130eed1cddeb0", kind:"principle", lesson:PPE, correct:3, answer:"300A 이상 차광도 번호의 과거 시험용 범용 차광표 복원 기준은 ‘13~14번’입니다. 현행 실제 작업은 공정·전류·전극·모재두께와 최신 표·제조사 지침을 우선합니다.", steps:["이 문항을 과거 차광표 복원값으로 한정합니다.","300A 이상 구간의 복원 선택지를 대조합니다.","13~14번인 4번을 고릅니다."], rule:"과거 차광번호는 복원 문항 값이며 실제 작업용 차광도는 공정과 전류 등 최신 조건표로 정합니다.", notes:["1~2번은 300A 이상 과거 복원 구간보다 낮습니다.","5~6번도 해당 복원 전류 구간의 차광도와 맞지 않습니다.","9~10번은 더 낮은 조건의 범위로 제시된 값입니다.","13~14번은 이 과거 시험 문항의 복원 기준 선택지입니다."] }),
+  make({ id:"wcbt-0f40ba52-7383-4ac5-9d67-554c051fdfdd", digest:"7e28a2af3a6b5b6bd40907217d86eb814e52be23a1849b203d1fe6d07d8155cc", kind:"principle", lesson:PPE, correct:2, answer:"100A 이상 300A 미만의 과거 시험용 범용 차광표 복원 기준은 ‘10~12번’입니다. 실제 현장 차광도는 공정·전류·전극·모재두께와 최신 표·제조사 지침을 우선합니다.", steps:["수치를 과거 시험 복원값으로 제한합니다.","100~300A 미만 구간의 복원 번호를 대조합니다.","10~12번인 3번을 선택합니다."], rule:"차광번호는 실제 작업에서는 공정·전류와 최신 조건표로 확인하고 과거 시험 복원값을 일반화하지 않습니다.", notes:["3~5번은 이 과거 복원 전류 구간보다 낮은 값입니다.","6~8번은 100~300A 미만의 복원 기준보다 낮습니다.","10~12번은 해당 과거 시험 문항의 복원 기준입니다.","14~16번은 이 복원 전류 구간보다 높은 범위입니다."] }),
+  make({ id:"wcbt-10679df5-5977-4fc4-8651-24e0d6412dbb", digest:"3e97167fdeb7bad73ea412b8bdbec7e4a47f2e7e6528645df88aa78cfbe8441c", kind:"safety", lesson:ACETYLENE, correct:3, answer:"아세틸렌 폭발을 일으키는 물질과 가장 거리가 먼 것은 ‘아세톤’입니다. 이 문항에서는 아세톤이 용해아세틸렌의 저장 용매라는 레슨 연결로 판별합니다.", steps:["아세틸렌 용기의 저장 구조를 확인합니다.","아세톤이 용해 저장 용매임을 적용합니다.","아세톤인 4번을 고릅니다."], rule:"용해아세틸렌은 아세톤에 녹여 저장한다는 구조를 다른 반응·위험 조건과 구분합니다.", notes:["구리는 아세틸렌과 반응해 폭발성 아세틸라이드를 만들 수 있어 배관 재질 제한과 연결됩니다.","과도한 압력은 아세틸렌의 불안정성과 분해폭발 위험을 높이므로 가스용기 취급에서 통제 대상입니다.","산소는 조연성 가스로서 아세틸렌의 연소와 폭발 조건을 강화하므로 관련 위험요인입니다.","아세톤은 아세틸렌을 안정적으로 녹여 저장하는 용매이므로 폭발 원인과 가장 거리가 먼 보기입니다."] }),
+  make({ id:"wcbt-11c27de4-5879-4c94-bf67-54368b6f070d", digest:"f26b9e2440a6bc1f1ff779131c01c93ebd6daf5ef18d68e148f48f77fd64c819", kind:"safety", lesson:ELECTRICAL, correct:1, answer:"감전사고 방지대책 중 틀린 것은 ‘2차 무부하 전압이 높은 용접기를 사용할 것’입니다. 무부하전압을 낮춰 위험을 줄이는 원칙과 반대입니다.", steps:["절연·접속·케이블과 무부하전압을 나눕니다.","무부하전압은 낮춰 위험을 줄이는지 봅니다.","높다고 한 2번을 고릅니다."], rule:"감전 방지는 절연·접지·손상 점검과 함께 무부하전압 위험을 낮추는 방향으로 적용합니다.", notes:["절연형 홀더는 통전 용접봉 접촉을 줄입니다.","높은 2차 무부하전압은 전격 위험 저감 방향이 아닙니다.","단자와 케이블 접속부 완전 절연은 접촉을 줄입니다.","적정 굵기와 무손상 케이블은 절연 손상 경로를 줄입니다."] }),
+  make({ id:"wcbt-12b8dbac-fe7b-4bd1-8902-32d6a89a4294", digest:"9594682338ad4b5e8f8a2cd14476d20828aedd61436e49f1f8f6d2239438895b", kind:"safety", lesson:LIFT, correct:0, answer:"중량물 안전운반 설명 중 잘못된 것은 힘과 키가 다른 사람을 한 조로 짜라는 1번입니다. 운반은 하중 균형·협착 방지·통일된 신호를 우선합니다.", steps:["양중의 충돌·협착 위험을 확인합니다.","하중 분배와 보조·구령의 일관성을 비교합니다.","불균형 조 편성을 든 1번을 고릅니다."], rule:"중량물 운반은 하중을 고르게 분담하고 통일된 신호와 이동 자세로 충돌·협착을 통제합니다.", notes:["힘과 키 차이를 무시한 조 편성은 하중 균형과 보조를 어렵게 합니다.","여러 사람에게 무게를 평균 분담하는 것은 편심 부담을 줄입니다.","긴 물건을 같은 쪽 어깨에 메고 보조를 맞추는 것은 이동 방향 통일에 도움이 됩니다.","정해진 구령은 동시 동작과 충돌 방지에 필요합니다."] }),
+  make({ id:"wcbt-12d86fc0-ef82-4f24-84b9-eb278a642714", digest:"dc3dcb7e54045fc959b2e81267b4b8c7e1d14350022389605667c5890483458d", kind:"safety", lesson:GAS, correct:0, answer:"산소·아세틸렌 용기 취급에서 틀린 것은 가연성 물질과 함께 뉘어 보관하라는 1번입니다. 용기는 열원·전도·낙하를 피하고 세워 고정합니다.", steps:["보관 장소와 운반 조건을 나눕니다.","가연물 분리와 전도 방지 원칙을 적용합니다.","함께 뉘어 보관한 1번을 고릅니다."], rule:"가스용기는 가연물과 분리하고 전도·낙하를 막아 세워 고정합니다.", notes:["가연물과 함께 눕혀 보관하면 화재와 전도 위험을 함께 키웁니다.","통풍·차광 보관은 열원 노출을 줄입니다.","밸브를 닫고 캡을 씌운 운반은 밸브 손상을 줄입니다.","운반기구 사용과 전도 방지는 충격을 줄입니다."] }),
+  make({ id:"wcbt-15befab1-bd58-4d18-986e-bf20cb00d771", digest:"3e40f93caeee57bb991590108aec58fd6f5740b9d2664cf96919a3408d764f62", kind:"safety", lesson:ELECTRICAL, correct:2, answer:"전격 방지 준비 작업 중 틀린 것은 우천시 용접기를 비에 젖도록 하라는 3번입니다. 습윤 장소와 젖은 보호구는 감전 위험을 키웁니다.", steps:["접지·장갑·습윤·전격방지장치를 구분합니다.","비에 젖는 조건이 저항과 접촉 위험을 키우는지 봅니다.","3번을 고릅니다."], rule:"전격 방지는 건조한 작업환경과 절연을 유지하며 우천·습윤 조건을 통제합니다.", notes:["피용접물과 케이스 접지는 고장전류 경로 관리와 연결됩니다.","용접용 장갑은 손의 절연과 열 위험을 함께 고려하는 보호구입니다.","비에 젖도록 하는 행위는 습윤에 의한 감전 위험을 키웁니다.","전격방지장치는 무부하전압 위험을 줄이는 장치입니다."] }),
+  make({ id:"wcbt-19258862-b482-43fd-ac57-d1690751622d", digest:"42c3176d0ab357a2026a544ef2a5c28a47643effe412e4c55225824c530b8b17", kind:"safety", lesson:ELECTRICAL, correct:1, answer:"전격·감전 방지 주의사항 중 틀린 것은 무부하 전압이 높은 교류 아크용접기를 사용한다는 2번입니다.", steps:["협소 장소·무부하전압·중지·홀더 보관을 분리합니다.","무부하전압은 낮춰 위험을 줄이는지 확인합니다.","2번을 고릅니다."], rule:"교류 아크용접의 전격 방지는 무부하전압 위험을 낮추고 중지 시 전원을 차단하는 방향입니다.", notes:["협소 장소에서 신체 노출을 줄이는 것은 접촉 위험을 낮춥니다.","높은 무부하전압 사용은 전격방지 방향과 반대입니다.","작업 중지 시 스위치 차단은 재투입·접촉 위험을 줄입니다.","홀더를 정해진 장소에 두면 불필요한 접촉을 줄입니다."] }),
+  make({ id:"wcbt-1da3eb40-ccad-431e-bfbc-73f4f4026e98", digest:"7496de3b8d62d3da00658c18000615f0b9e736730921fa9e87157d2f926fd497", kind:"safety", lesson:ELECTRICAL, correct:2, answer:"전격 방지대책 중 틀린 것은 장시간 중지 시 스위치를 차단할 필요가 없다는 3번입니다. 중지할 때는 전원을 차단해야 합니다.", steps:["내부 접촉·맨손 취급·중지·습윤 보호구를 나눕니다.","중지 시 전원 차단 원칙을 적용합니다.","3번을 고릅니다."], rule:"작업 종료·장시간 중지 때는 전원을 차단하고 습윤 보호구와 맨손 접촉을 피합니다.", notes:["용접기 내부에 함부로 손대지 않는 것은 충전부 접촉을 줄입니다.","홀더와 용접봉 맨손 취급 금지는 절연 원칙과 맞습니다.","장시간 중지에 스위치 차단이 불필요하다는 말은 재투입 위험을 남깁니다.","습기 찬 작업복·장갑·구두는 감전 위험을 키웁니다."] }),
+  make({ id:"wcbt-0b7a714a-9344-4b9a-a829-65c331b8be4b", digest:"6ca1ed58e8af826ebc2e72a78ea29dc758463167881d2e8c79d85d2f12f92143", kind:"principle", lesson:GAS, correct:3, answer:"산소 충전의 ‘35℃, 15MPa’는 이 과거 문항의 역사적 복원 정답일 뿐 현행 일반 충전규칙이 아닙니다. 실제 충전은 최신 법정 표와 용기·제조사 지침을 우선합니다.", steps:["35℃·15MPa를 역사적 복원값으로 제한합니다.","보기 조합에서 복원 정답을 확인합니다.","4번을 고르되 실제 운전값으로 일반화하지 않습니다."], rule:"35℃·15MPa는 과거 시험 복원값이며 실제 산소 충전 조건은 최신 기준과 제조사 지침으로 확인합니다.", notes:["30℃·18MPa는 이 과거 복원 문항의 조합이 아닙니다.","35℃·18MPa도 역사적 복원 정답 조합과 다릅니다.","30℃·15MPa는 온도 조건이 복원값과 다릅니다.","35℃·15MPa는 이 과거 문항의 복원 정답이며 현행 일반 규칙으로 쓰지 않습니다."] }),
+] as const;

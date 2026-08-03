@@ -1,0 +1,230 @@
+[
+  {
+    "questionId": "U-074",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-074-c1",
+    "directSolution": "문항은 제동감 저하가 아니라 브레이크액이 계통 밖으로 새는 직접 원인이 아닌 것을 묻는다. 에어빼기가 불충분하면 배관 속 공기가 압축되어 페달이 물렁해질 수 있지만, 너트·플레어면·실처럼 액체가 빠져나갈 틈을 만들지는 않는다. 따라서 c1이 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-074-c1", "verdict": "correct", "rationale": "에어빼기 불충분은 배관 안에 공기가 남아 압력 전달을 지연시키는 문제다. 공기 혼입만으로 연결부 또는 실의 밀봉이 깨지지는 않으므로 외부 기름 누설의 직접 원인은 아니다." },
+      { "choiceId": "U-074-c2", "verdict": "incorrect", "rationale": "파이프 너트가 풀리면 접속부를 누르는 체결력이 부족해져 밀봉면에 틈이 생긴다. 압력이 걸릴 때 그 틈으로 브레이크액이 빠져나갈 수 있으므로 누설 원인이다." },
+      { "choiceId": "U-074-c3", "verdict": "incorrect", "rationale": "파이프 선단의 플레어 형상이 불량하면 상대 밀봉면과 고르게 밀착하지 못한다. 체결해도 압력 통로가 남아 브레이크액 누설을 일으킬 수 있다." },
+      { "choiceId": "U-074-c4", "verdict": "incorrect", "rationale": "실이 열화하거나 파손되면 피스톤 또는 연결부의 밀봉 기능이 사라진다. 이는 브레이크액이 계통 밖으로 나가는 직접적인 누설 경로다." }
+    ],
+    "misconception": "페달이 물렁해지는 성능 저하와 브레이크액이 외부로 빠져나가는 누설을 같은 고장으로 취급하는 오류",
+    "existingLessonId": "lesson-wbnx5g",
+    "existingBlockId": "principle",
+    "assertionText": "에어빼기 불충분은 외부 누설의 직접 원인이 아닙니다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://cbtbank.kr/exam/de20100905"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-075",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-075-c1",
+    "directSolution": "베어링부 발열은 회전 접촉부의 윤활, 조립, 축정렬처럼 마찰·하중을 바꾸는 조건에서 직접 생긴다. 절연물 열화는 권선의 절연 저하와 전기적 이상에 관한 항목으로 베어링부의 발열 원인과는 범위가 다르다. 따라서 c1이 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-075-c1", "verdict": "correct", "rationale": "절연물 열화는 누전·지락과 권선 과열에 관계되는 전기 절연 문제다. 베어링의 접촉·윤활·정렬 조건을 악화시키는 직접 원인은 아니므로 이 문항의 예외다." },
+      { "choiceId": "U-075-c2", "verdict": "incorrect", "rationale": "윤활제가 부족하면 전동체와 궤도 사이에 필요한 유막이 약해져 마찰과 온도가 상승한다. 따라서 베어링부 발열의 직접 원인이 될 수 있다." },
+      { "choiceId": "U-075-c3", "verdict": "incorrect", "rationale": "베어링 조립이 불량하면 간극·예압 또는 끼워맞춤이 부적절해져 회전 저항이 커진다. 그 결과 마찰열이 증가하므로 발열 원인에 해당한다." },
+      { "choiceId": "U-075-c4", "verdict": "incorrect", "rationale": "커플링 중심내기가 맞지 않으면 축에 추가 굽힘 하중과 진동이 전달된다. 이 하중은 베어링 마찰과 발열을 유발할 수 있다." }
+    ],
+    "misconception": "전동기의 전기 절연 이상과 회전체 베어링의 마찰·정렬 이상을 모두 베어링 발열 원인으로 묶는 오류",
+    "existingLessonId": "lesson-5uf9de",
+    "existingBlockId": "principle",
+    "assertionText": "절연물 열화는 누전·지락·권선 과열과 관계되며 베어링부 발열의 직접 원인과는 거리가 있다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-080",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-080-c4",
+    "directSolution": "지문은 내약품성 격막이 밸브시트에 밀착하여 유체를 차단하고 작동부를 유체와 격리하는 구조를 설명한다. 이 구조는 다이어프램밸브의 핵심이므로 c4를 고른다. 다른 보기는 지문의 격막 밀봉 구조를 갖는 밸브명이 아니다.",
+    "choiceRationales": [
+      { "choiceId": "U-080-c1", "verdict": "incorrect", "rationale": "플립밸브는 지문처럼 내약품성 다이어프램을 시트에 눌러 작동부와 유체를 격리하는 밸브 형식이 아니다. 따라서 패킹이 필요 없다는 구조 설명과 맞지 않는다." },
+      { "choiceId": "U-080-c2", "verdict": "incorrect", "rationale": "게이트밸브는 게이트를 올리고 내려 유로를 개폐하는 형식이다. 부식성 유체를 격막으로 격리해 차단한다는 지문의 단서와는 다르다." },
+      { "choiceId": "U-080-c3", "verdict": "incorrect", "rationale": "리프트밸브는 밸브체가 시트에서 들리거나 닫히는 방식으로 작동한다. 유체와 작동부를 다이어프램으로 분리하는 구조를 나타내지 않는다." },
+      { "choiceId": "U-080-c4", "verdict": "correct", "rationale": "다이어프램밸브는 내약품성 격막이 시트에 밀착해 유체를 차단하며, 격막이 작동부와 유체를 격리한다. 그래서 부식성 유체에 적합하고 지문의 패킹 불필요 조건에 맞는다." }
+    ],
+    "misconception": "밸브의 개폐 형식만 보고 유체 격리·밀봉 구조라는 선정 조건을 놓치는 오류",
+    "existingLessonId": "lesson-1l678ws",
+    "existingBlockId": "definition",
+    "assertionText": "다이어프램이 작동부와 유체를 격리해 부식성·오염성 유체에 적합하다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-086",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-086-c2",
+    "directSolution": "담금질 뒤 남은 오스테나이트를 마텐자이트로 더 변태시키려면 0℃ 이하까지 냉각하는 심랭처리를 한다. 침탄은 탄소를 침투시키는 표면처리이고, 항온열처리와 고주파경화는 지문의 저온 냉각 목적과 다르다. 따라서 c2가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-086-c1", "verdict": "incorrect", "rationale": "침탄은 강 표면에 탄소를 확산시켜 표면 경화를 위한 탄소 농도를 높이는 처리다. 잔류 오스테나이트를 0℃ 이하에서 변태시키는 공정은 아니다." },
+      { "choiceId": "U-086-c2", "verdict": "correct", "rationale": "심랭처리는 담금질강을 0℃ 이하로 냉각해 잔류 오스테나이트의 마텐자이트화를 촉진한다. 지문에 제시된 대상, 온도 조건, 목적이 모두 일치한다." },
+      { "choiceId": "U-086-c3", "verdict": "incorrect", "rationale": "항온열처리는 일정 온도에서 유지하여 변태를 제어하는 열처리다. 지문의 핵심인 0℃ 이하 냉각에 의한 잔류 오스테나이트 처리와는 다르다." },
+      { "choiceId": "U-086-c4", "verdict": "incorrect", "rationale": "고주파경화는 고주파 유도로 표면을 급가열·급냉해 표면층을 경화하는 방법이다. 담금질강 전체의 잔류 오스테나이트를 심냉하는 처리명은 아니다." }
+    ],
+    "misconception": "열처리 명칭을 표면 경화·탄소 침투·변태 제어와 저온 잔류오스테나이트 처리로 구분하지 못하는 오류",
+    "existingLessonId": "lesson-xbgfmv",
+    "existingBlockId": "principle",
+    "assertionText": "심랭처리는 잔류 오스테나이트를 줄여 치수안정성과 경도를 높인다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://cbtbank.kr/exam/de20190427", "https://cbtbank.kr/exam/de20161001"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-090",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-090-c4",
+    "directSolution": "코일스프링의 종류와 모양만 간략하게 나타낼 때 사용하는 선은 굵은 1점쇄선이 아니라 규정된 굵은 실선이다. c1~c3은 각각 무하중 작도, 왼감김 표시, 생략부 중심선에 관한 설명으로 성립한다. 따라서 옳지 않은 c4가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-090-c1", "verdict": "incorrect", "rationale": "코일스프링은 일반적으로 무하중 상태의 형상을 기준으로 작도한다. 따라서 이 설명은 작도 원칙에 맞아 부정형 문항의 정답이 아니다." },
+      { "choiceId": "U-090-c2", "verdict": "incorrect", "rationale": "왼쪽 감김은 도면에서 오른쪽 감김과 구별해야 하므로 감김 방향을 명기한다. 지문의 작도법으로 옳은 설명이다." },
+      { "choiceId": "U-090-c3", "verdict": "incorrect", "rationale": "길이가 긴 스프링의 중간 생략부 중심은 가는 1점쇄선으로 나타낼 수 있다. 이는 중심을 보조적으로 표시하는 규칙과 맞는다." },
+      { "choiceId": "U-090-c4", "verdict": "correct", "rationale": "종류와 모양만 도시할 때 굵은 1점쇄선을 쓰는 것은 선종 규칙과 맞지 않는다. 이 경우에는 규정된 굵은 실선을 사용하므로 c4가 옳지 않은 보기다." }
+    ],
+    "misconception": "중심선·생략선과 외형을 나타내는 실선의 용도를 같은 1점쇄선으로 혼동하는 오류",
+    "existingLessonId": "lesson-14tffap",
+    "existingBlockId": "principle",
+    "assertionText": "스프링의 종류와 모양만 간략히 나타낼 때는 규정된 굵은 실선을 사용한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-091",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-091-c1",
+    "directSolution": "금긋기는 기준을 정한 뒤 가는 한 줄을 정확히 표시해야 위치오차를 줄일 수 있다. 같은 선을 여러 번 반복하면 선이 넓어지고 서로 어긋날 수 있으므로 선을 굵게 하려는 c1은 옳지 않다. 따라서 c1이 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-091-c1", "verdict": "correct", "rationale": "선을 여러 번 반복하면 선이 겹쳐 폭이 넓어지고 실제 위치가 모호해진다. 금긋기에서는 굵은 선보다 기준에 맞춘 정확한 한 줄이 필요하므로 c1은 옳지 않다." },
+      { "choiceId": "U-091-c2", "verdict": "incorrect", "rationale": "기준면과 기준선을 먼저 설정하면 다른 치수를 같은 기준에서 전개할 수 있다. 이는 금긋기 오차를 줄이는 올바른 작업 순서다." },
+      { "choiceId": "U-091-c3", "verdict": "incorrect", "rationale": "같은 치수선은 정한 기준에 따라 한 번만 그어야 선의 위치와 폭이 유지된다. 반복 긋기로 생기는 누적 오차를 막는 원칙이다." },
+      { "choiceId": "U-091-c4", "verdict": "incorrect", "rationale": "금긋기 선은 가늘게 유지해야 표시 위치를 정확히 읽고 후속 가공 기준으로 쓸 수 있다. 따라서 매우 가늘게 유지한다는 설명은 맞다." }
+    ],
+    "misconception": "표시를 잘 보이게 하는 것과 가공 기준의 위치 정밀도를 확보하는 것을 혼동하는 오류",
+    "existingLessonId": "lesson-169yzdf",
+    "existingBlockId": "principle",
+    "assertionText": "반복해서 긋으면 선이 겹치고 위치오차가 커질 수 있으므로 정확한 한 줄을 긋는 것이 원칙이다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-136",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-136-c2",
+    "directSolution": "피치원은 기어 맞물림과 치수 계산의 기준이 되는 가상의 원이므로 도면에서 중심선 계열인 가는 1점쇄선으로 표시한다. 굵은 실선은 외형, 가는 파선은 숨은 부분, 굵은 2점쇄선은 다른 용도의 선이므로 c2가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-136-c1", "verdict": "incorrect", "rationale": "굵은 실선은 보이는 외형이나 윤곽을 나타낼 때 쓰는 선이다. 기어의 가상 기준원인 피치원을 표시하는 선종은 아니다." },
+      { "choiceId": "U-136-c2", "verdict": "correct", "rationale": "피치원은 실제 외형이 아니라 맞물림의 기준이 되는 가상 원이다. 따라서 중심선 계열인 가는 1점쇄선으로 표시한다." },
+      { "choiceId": "U-136-c3", "verdict": "incorrect", "rationale": "가는 파선은 보이지 않는 모서리나 내부 형상을 나타내는 숨은선이다. 피치원은 숨은 실제 형상이 아니라 계산·맞물림 기준원이다." },
+      { "choiceId": "U-136-c4", "verdict": "incorrect", "rationale": "굵은 2점쇄선은 피치원의 표준 표시에 쓰이지 않는다. 피치원은 기준선의 성격에 따라 가는 1점쇄선으로 그린다." }
+    ],
+    "misconception": "실제 외형선과 기어 맞물림을 위한 가상 기준원의 선종을 구분하지 못하는 오류",
+    "existingLessonId": "lesson-o98wx8",
+    "existingBlockId": "principle",
+    "assertionText": "기어 피치원은 기준원이므로 일반적으로 가는 1점쇄선으로 표시한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9659405", "https://www.comcbt.com/xe/webhaesul/9620123", "https://cbtbank.kr/exam/de20140920", "https://cbtbank.kr/exam/de20140525"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-152",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-152-c2",
+    "directSolution": "왕복동 압축기는 토출 맥동과 온도 변화가 배관에 반복 하중을 준다. 그래서 배관은 가능한 짧게 하고 지지·완충으로 진동과 열팽창을 다루며 드레인을 고려해야 한다. 이 조건을 모두 만족하는 c2가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-152-c1", "verdict": "incorrect", "rationale": "토출배관을 무조건 길게 하면 압력 손실과 배관 진동의 영향이 커질 수 있다. 왕복동 압축기 배관은 필요한 범위에서 가능한 짧고 안정적으로 구성하는 것이 원칙이다." },
+      { "choiceId": "U-152-c2", "verdict": "correct", "rationale": "왕복동 압축기의 맥동과 열팽창을 고려해 배관을 지지하고 완충하면 진동·응력을 줄일 수 있다. 배관을 가능한 짧게 하는 조건까지 포함해 토출배관 설계 원칙에 맞는다." },
+      { "choiceId": "U-152-c3", "verdict": "incorrect", "rationale": "토출계통에서 생긴 응축수나 액체는 드레인으로 배출할 수 있어야 한다. 드레인을 고려하지 않으면 액체 고임과 운전 문제를 방치하게 된다." },
+      { "choiceId": "U-152-c4", "verdict": "incorrect", "rationale": "왕복동 압축기는 압력맥동과 기계 진동을 전달하므로 진동흡수·완충과 적절한 지지가 필요하다. 강체로만 고정하면 반복 응력이 커질 수 있다." }
+    ],
+    "misconception": "배관을 단순 연결 부품으로 보고 압력맥동·열팽창·드레인·진동 조건을 설계 판단에서 빼는 오류",
+    "existingLessonId": "lesson-488l12",
+    "existingBlockId": "principle",
+    "assertionText": "왕복동 압축기는 맥동과 진동이 크므로 배관 길이·지지·완충·드레인 처리가 중요하다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9659405", "https://cbtbank.kr/exam/de20200822"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-195",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-195-c3",
+    "directSolution": "중요 볼트의 축력을 균일하게 만들려면 한 곳을 먼저 끝까지 조이지 않고 토크렌치로 단계적으로 체결한다. 대각선 순서는 플랜지나 커버의 편하중을 줄이며, 마찰·윤활 조건은 실제 축력에도 영향을 준다. 따라서 c3이 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-195-c1", "verdict": "incorrect", "rationale": "일반 렌치로 한 번에 최대한 조이면 목표 토크를 재현하기 어렵고 볼트별 축력이 달라질 수 있다. 규정 축력을 균일하게 만드는 방법이 아니다." },
+      { "choiceId": "U-195-c2", "verdict": "incorrect", "rationale": "한쪽 볼트만 먼저 완전히 조이면 접합면이 기울고 다른 볼트의 체결 조건이 변한다. 편하중을 줄이려면 대각선 방향으로 조금씩 나누어 조여야 한다." },
+      { "choiceId": "U-195-c3", "verdict": "correct", "rationale": "토크렌치로 규정 토크를 관리하고 대각선·단계적 순서로 체결하면 접합면의 압력이 고르게 분포한다. 그래서 중요한 볼트의 축력을 균일하게 만들기에 가장 적절하다." },
+      { "choiceId": "U-195-c4", "verdict": "incorrect", "rationale": "윤활과 마찰 조건은 같은 토크에서도 실제 볼트 축력을 달라지게 한다. 이를 무시하면 규정 축력의 재현성과 체결 균일성을 보장할 수 없다." }
+    ],
+    "misconception": "볼트 체결을 단순히 세게 조이는 작업으로 보고 토크·순서·마찰이 축력을 바꾸는 점을 놓치는 오류",
+    "existingLessonId": "lesson-1apo97k",
+    "existingBlockId": "principle",
+    "assertionText": "체결토크와 순서를 관리해야 플랜지·커버의 편하중과 누설을 방지할 수 있다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620121", "https://www.comcbt.com/xe/cet/5708822"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-196",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-196-c4",
+    "directSolution": "두 축 사이에 일정 각도가 있거나 운전 중 각도가 달라지는 조건에서는 축의 각도 변화를 허용하는 유니버설 커플링을 쓴다. 플랜지·슬리브·클램프 커플링은 주로 정렬된 축을 강체로 연결하는 형식이다. 따라서 c4가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-196-c1", "verdict": "incorrect", "rationale": "플랜지 커플링은 두 축 끝의 플랜지를 볼트로 고정해 정렬된 축을 연결하는 강체 커플링이다. 운전 중 축각 변화에 대응하는 형식은 아니다." },
+      { "choiceId": "U-196-c2", "verdict": "incorrect", "rationale": "슬리브 커플링은 슬리브로 두 축을 동축으로 연결하는 단순 강체 이음이다. 교차축이나 각도 변화가 있는 경우의 회전 전달에는 맞지 않는다." },
+      { "choiceId": "U-196-c3", "verdict": "incorrect", "rationale": "클램프 커플링도 축을 동축으로 물려 고정하는 형식이다. 지문처럼 두 축이 각도를 이루는 조건을 흡수하도록 설계된 커플링은 아니다." },
+      { "choiceId": "U-196-c4", "verdict": "correct", "rationale": "유니버설 커플링은 교차축 또는 각도 변화가 있는 두 축 사이에서 회전을 전달한다. 지문의 일정 각도와 운전 중 각도 변화 조건에 직접 맞는다." }
+    ],
+    "misconception": "모든 축이음을 같은 강체 연결로 보고 축각 변화 허용 여부를 구분하지 못하는 오류",
+    "existingLessonId": "lesson-1sp537v",
+    "existingBlockId": "principle",
+    "assertionText": "유니버설 조인트는 교차축 또는 각도변화가 있는 축 사이에 회전을 전달한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620121"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-199",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-199-c4",
+    "directSolution": "체크리스트는 누가 점검하더라도 대상·방법·판정·주기·결과와 조치를 같은 형식으로 남기도록 만드는 문서다. 점검자의 개인 경력 전체는 수행자의 이력이지 점검 항목이나 판정 기록이 아니다. 따라서 c4가 가장 거리가 멀다.",
+    "choiceRationales": [
+      { "choiceId": "U-199-c1", "verdict": "incorrect", "rationale": "점검 위치와 항목은 무엇을 확인할지 정하는 체크리스트의 핵심 구성이다. 현장에서 빠뜨리지 않고 같은 대상을 반복 확인하게 한다." },
+      { "choiceId": "U-199-c2", "verdict": "incorrect", "rationale": "판정기준은 관찰 결과를 정상·이상으로 구분하는 기준이다. 점검 결과를 일관되게 판단하려면 체크리스트에 포함되어야 한다." },
+      { "choiceId": "U-199-c3", "verdict": "incorrect", "rationale": "점검주기와 결과기록은 언제 점검했고 무엇을 발견했는지 추적하게 한다. 표준화된 점검 관리 문서에 포함되는 내용이다." },
+      { "choiceId": "U-199-c4", "verdict": "correct", "rationale": "점검자의 개인 경력 전체는 점검 대상·방법·기준·결과·조치를 표준화하는 정보가 아니다. 수행자의 이력은 체크리스트 본문에 넣을 항목과 가장 거리가 멀다." }
+    ],
+    "misconception": "점검을 수행하는 사람의 자격 정보와 점검 자체를 재현하게 하는 기록 항목을 혼동하는 오류",
+    "existingLessonId": "lesson-8ux74w",
+    "existingBlockId": "principle",
+    "assertionText": "체크리스트는 점검대상·방법·기준·주기·결과·조치를 표준화하는 문서다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620121"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-317",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-317-c3",
+    "directSolution": "빈번한 기동, 과부하, 결상은 전류를 증가시키거나 불평형을 만들어 전동기 온도를 올린다. 반대로 배선용차단기가 정상 작동하면 이상 전류를 차단해 과열을 막는 쪽이다. 따라서 과열의 직접 원인과 가장 거리가 먼 c3가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-317-c1", "verdict": "incorrect", "rationale": "빈번한 기동에서는 기동전류가 반복되어 권선에 열이 누적될 수 있다. 따라서 농형 유도전동기 과열의 직접 원인으로 볼 수 있다." },
+      { "choiceId": "U-317-c2", "verdict": "incorrect", "rationale": "과부하는 정격보다 큰 전류를 흐르게 해 동손과 온도 상승을 키운다. 전동기 과열과 직접 연결되는 조건이다." },
+      { "choiceId": "U-317-c3", "verdict": "correct", "rationale": "배선용차단기가 정상 작동하면 과전류·단락 조건에서 회로를 차단해 전동기를 보호한다. 과열을 만드는 원인이 아니라 방지하거나 제한하는 기능이다." },
+      { "choiceId": "U-317-c4", "verdict": "incorrect", "rationale": "3상 중 한 상의 단락 또는 결상은 전류 불평형과 과전류를 유발할 수 있다. 권선 발열을 키우므로 과열의 직접 원인 범주에 든다." }
+    ],
+    "misconception": "보호장치의 정상 작동을 고장 원인으로 보고 과전류·결상과 같은 실제 발열 조건과 구분하지 못하는 오류",
+    "existingLessonId": "lesson-6sl2br",
+    "existingBlockId": "principle",
+    "assertionText": "빈번한 기동·과부하·결상은 큰 전류와 온도상승을 유발한다. 보호장치의 정상 작동은 과열을 방지하거나 차단하는 기능이다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9658829"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+]

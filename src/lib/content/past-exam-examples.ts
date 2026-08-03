@@ -1,3 +1,8 @@
+import {
+  WELDING_CBT_ANSWER_REVIEWS,
+  isWeldingCbtAnswerReviewPublishable,
+} from "@/data/source/welding-cbt-answer-review";
+import { WELDING_CBT_LESSON_PROJECTION } from "@/data/source/welding-cbt-lesson-projection";
 import type { GeneratedContent } from "@/lib/domain/types";
 import { isPublishableQuestion } from "@/lib/domain/practice";
 
@@ -28,15 +33,26 @@ export type PastExamPatternSummary = {
     format: PastExamFormat;
     count: number;
     percentage: number;
-    representative: PastExamExample;
-    representativeAnswer: string;
-    representativeExplanation: string;
   }>;
 };
 
 type RankedExample = PastExamExample & {
   score: number;
+  essentialRank: number | null;
+  reviewedWelding: boolean;
 };
+
+const weldingAnswerReviewByCanonicalId = new Map(
+  WELDING_CBT_ANSWER_REVIEWS.entries.map((entry) => [
+    entry.canonicalId,
+    entry,
+  ]),
+);
+const reviewedWeldingLessonIds = new Set<string>(
+  WELDING_CBT_LESSON_PROJECTION.entries.flatMap((entry) =>
+    entry.primaryLeafLessonId ? [entry.primaryLeafLessonId] : [],
+  ),
+);
 
 export function getPastExamExamples(content: GeneratedContent, lessonId: string, limit = Number.POSITIVE_INFINITY): PastExamExample[] {
   return getPastExamExamplesForLessons(content, [lessonId], limit);
@@ -49,31 +65,40 @@ export function getPastExamExamplesForLessons(
 ): PastExamExample[] {
   const unique = new Map<string, RankedExample>();
   for (const example of collectVerifiedPastExamExamples(content, lessonIds)) {
-    const key = normalizeStem(example.stem);
+    const key = example.reviewedWelding
+      ? example.canonicalId
+      : normalizeStem(example.stem);
     const previous = unique.get(key);
     if (!previous || compareExamples(example, previous) < 0) unique.set(key, example);
   }
 
   const ranked = [...unique.values()].sort(compareExamples);
-  const selected: RankedExample[] = [];
-
-  for (const candidate of ranked) {
-    if (selected.length >= limit) break;
-    if (selected.every((item) => item.format !== candidate.format)) selected.push(candidate);
+  const reviewedEssentials = ranked.filter(
+    (example) =>
+      example.reviewedWelding && example.essentialRank !== null,
+  );
+  if (reviewedEssentials.length > 0) {
+    const selectedEssentials = reviewedEssentials.slice(0, limit);
+    const supplemental = selectDiverseExamples(
+      ranked.filter((example) => !example.reviewedWelding),
+      Math.max(0, limit - selectedEssentials.length),
+    );
+    return [...selectedEssentials, ...supplemental].map(toPastExamExample);
   }
-  for (const candidate of ranked) {
-    if (selected.length >= limit) break;
-    if (!selected.some((item) => item.externalId === candidate.externalId)) selected.push(candidate);
-  }
 
-  return selected.map(toPastExamExample);
+  return selectDiverseExamples(ranked, limit).map(toPastExamExample);
 }
 
 export function getPastExamPatternSummary(
   content: GeneratedContent,
   lessonId: string,
+  limit = Number.POSITIVE_INFINITY,
 ): PastExamPatternSummary {
-  const verified = collectVerifiedPastExamExamples(content, [lessonId]);
+  const verified = Number.isFinite(limit)
+    ? collectVerifiedPastExamExamples(content, [lessonId])
+      .sort(compareExamples)
+      .slice(0, limit)
+    : collectVerifiedPastExamExamples(content, [lessonId]);
   const total = verified.length;
   const byFormat = new Map<PastExamFormat, RankedExample[]>();
   for (const example of verified) {
@@ -82,29 +107,31 @@ export function getPastExamPatternSummary(
     byFormat.set(example.format, current);
   }
 
-  const patterns = [...byFormat.entries()]
+  const rankedPatterns = [...byFormat.entries()]
     .map(([format, examples]) => {
       const representative = [...examples].sort(compareExamples)[0];
-      const representativeQuestion = content.questions.find(
-        (question) => question.id === representative.canonicalId,
-      );
       return {
-        format,
-        count: examples.length,
-        percentage: total > 0 ? Math.round((examples.length / total) * 100) : 0,
-        representative: toPastExamExample(representative),
-        representativeAnswer: representativeQuestion?.answerText ?? "",
-        representativeExplanation: representativeQuestion?.explanation ?? "",
+        pattern: {
+          format,
+          count: examples.length,
+          percentage: total > 0
+            ? Math.round((examples.length / total) * 100)
+            : 0,
+        },
+        representative,
       };
     })
     .sort(
       (left, right) =>
-        right.count - left.count
+        right.pattern.count - left.pattern.count
         || right.representative.year - left.representative.year
-        || left.format.localeCompare(right.format),
+        || left.pattern.format.localeCompare(right.pattern.format),
     );
 
-  return { total, patterns };
+  return {
+    total,
+    patterns: rankedPatterns.map(({ pattern }) => pattern),
+  };
 }
 
 export function isUsablePastExamVariant(
@@ -161,6 +188,28 @@ function collectVerifiedPastExamExamples(
   for (const variant of content.variants) {
     const question = publicQuestions.get(variant.canonicalId);
     if (!question || !isUsablePastExamVariant(variant)) continue;
+    const weldingReview = weldingAnswerReviewByCanonicalId.get(
+      variant.canonicalId,
+    );
+    if (
+      reviewedWeldingLessonIds.has(question.lessonId)
+      && (
+        !weldingReview
+        || !isWeldingCbtAnswerReviewPublishable(weldingReview)
+        || weldingReview.essentialRank === null
+      )
+    ) {
+      continue;
+    }
+    if (
+      weldingReview
+      && (
+        !isWeldingCbtAnswerReviewPublishable(weldingReview)
+        || weldingReview.essentialRank === null
+      )
+    ) {
+      continue;
+    }
     const mappedChoices = mapVariantChoices(question, variant.choices);
     const answerIndex = parseVariantAnswerIndex(variant.answer, variant.choices);
     if (
@@ -184,9 +233,31 @@ function collectVerifiedPastExamExamples(
       sourceUrl: variant.sourceUrl,
       format,
       score: challengeScore(variant.stem, variant.choices, format),
+      essentialRank: weldingReview?.essentialRank ?? null,
+      reviewedWelding: Boolean(weldingReview),
     });
   }
   return examples;
+}
+
+function selectDiverseExamples(
+  ranked: RankedExample[],
+  limit: number,
+) {
+  const selected: RankedExample[] = [];
+  for (const candidate of ranked) {
+    if (selected.length >= limit) break;
+    if (selected.every((item) => item.format !== candidate.format)) {
+      selected.push(candidate);
+    }
+  }
+  for (const candidate of ranked) {
+    if (selected.length >= limit) break;
+    if (!selected.some((item) => item.externalId === candidate.externalId)) {
+      selected.push(candidate);
+    }
+  }
+  return selected;
 }
 
 function toPastExamExample(example: RankedExample): PastExamExample {
@@ -205,7 +276,9 @@ function toPastExamExample(example: RankedExample): PastExamExample {
 }
 
 function compareExamples(left: RankedExample, right: RankedExample) {
-  return right.score - left.score
+  return (left.essentialRank ?? Number.POSITIVE_INFINITY)
+    - (right.essentialRank ?? Number.POSITIVE_INFINITY)
+    || right.score - left.score
     || right.year - left.year
     || (right.questionNumber ?? 0) - (left.questionNumber ?? 0)
     || left.externalId.localeCompare(right.externalId, "ko");

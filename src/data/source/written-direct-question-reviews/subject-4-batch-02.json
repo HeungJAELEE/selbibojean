@@ -1,0 +1,482 @@
+[
+  {
+    "questionId": "U-004",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-004-c3",
+    "directSolution": "저항 비교·측정에서는 두 팔의 비를 맞추는 브리지 평형을 이용해 미지저항을 구하므로 휘트스톤 브리지 회로를 고른다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-004-c1",
+        "verdict": "incorrect",
+        "rationale": "열전대 회로는 두 금속 접점의 열기전력을 이용하는 온도 측정 회로이므로 저항비 평형으로 미지저항을 비교하는 회로가 아니다."
+      },
+      {
+        "choiceId": "U-004-c2",
+        "verdict": "incorrect",
+        "rationale": "포텐셔미터 회로는 기준전압과 비교해 전압·변위를 검출하는 방식이며, 두 저항비의 평형을 이용하는 브리지 회로와 다르다."
+      },
+      {
+        "choiceId": "U-004-c3",
+        "verdict": "correct",
+        "rationale": "휘트스톤 브리지 회로는 두 회로 팔의 저항비가 평형이 되게 하여 미지저항을 정밀 비교·측정하므로 정답이다."
+      },
+      {
+        "choiceId": "U-004-c4",
+        "verdict": "incorrect",
+        "rationale": "부자식 레벨센서 회로는 액면 위치 검출을 위한 회로로, 미지저항을 브리지 평형으로 구하는 목적과 맞지 않는다."
+      }
+    ],
+    "misconception": "온도 측정·변위 비교·액면 검출용 회로를 저항 평형 측정 회로와 같은 용도로 혼동하는 오류다.",
+    "existingLessonId": "lesson-c678ee",
+    "existingBlockId": "summary",
+    "assertionText": "브리지 평형조건을 이용해 미지저항을 정밀하게 구한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9635925",
+      "https://www.nist.gov/system/files/documents/calibrations/circ470.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-013",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-013-c3",
+    "directSolution": "상태기반 진단은 추세와 정량 데이터를 이용해 필요한 시점에 정비하므로, 정밀진단 자체가 오버홀 횟수를 늘린다는 진술이 효과가 아니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-013-c1",
+        "verdict": "incorrect",
+        "rationale": "경향관리는 같은 측정값의 시간 변화를 보아 열화 속도와 잔여수명을 예측하는 데 쓰이므로 일반적인 진단 도입 효과다."
+      },
+      {
+        "choiceId": "U-013-c2",
+        "verdict": "incorrect",
+        "rationale": "중요부위를 상시감시하면 이상을 조기에 포착해 돌발고장으로 진행하기 전에 조치할 수 있으므로 효과에 해당한다."
+      },
+      {
+        "choiceId": "U-013-c3",
+        "verdict": "correct",
+        "rationale": "정밀진단의 목적은 상태에 맞춰 정비시점을 고르는 것이므로 불필요한 오버홀을 늘린다는 진술은 효과가 아니며 정답이다."
+      },
+      {
+        "choiceId": "U-013-c4",
+        "verdict": "incorrect",
+        "rationale": "진동·온도·윤활 데이터처럼 측정 가능한 상태지표를 쓰면 상태판단을 수치와 추세로 관리할 수 있으므로 효과에 해당한다."
+      }
+    ],
+    "misconception": "진단을 더 많이 하면 분해정비도 비례해 늘어난다고 보고, 상태기반 보전의 불필요 정비 억제 목적을 놓치는 오류다.",
+    "existingLessonId": "lesson-6ms1k9",
+    "existingBlockId": "summary",
+    "assertionText": "상태기반 진단은 불필요한 분해·오버홀을 줄이고 필요한 시점에 정비하도록 하는 것이 목적이다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9635925",
+      "https://cbtbank.kr/exam/de20161001",
+      "https://cbtbank.kr/exam/de20140525"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-188",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-188-c4",
+    "directSolution": "예방보전은 돌발고장과 정지손실을 줄이고 수리계획과 수명을 개선하려는 활동이므로, 설비투자비가 반드시 증가한다는 진술은 일반적 효과가 아니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-188-c1",
+        "verdict": "incorrect",
+        "rationale": "예방보전은 열화 전에 점검·교환·조정을 수행해 돌발고장으로 이어질 가능성을 낮추므로 돌발고장 감소는 일반적 효과다."
+      },
+      {
+        "choiceId": "U-188-c2",
+        "verdict": "incorrect",
+        "rationale": "정기점검과 계획정비는 필요한 인력·부품·정지시간을 미리 배치하게 하므로 수리계획을 안정화하는 효과가 있다."
+      },
+      {
+        "choiceId": "U-188-c3",
+        "verdict": "incorrect",
+        "rationale": "마모·열화가 심해지기 전에 조치하면 기능저하와 2차손상을 줄일 수 있으므로 설비수명 연장에 기여할 수 있다."
+      },
+      {
+        "choiceId": "U-188-c4",
+        "verdict": "correct",
+        "rationale": "예방보전은 고장·정지손실을 줄이는 활동이며 설비투자비가 반드시 증가하는 것은 아니므로 일반적 효과가 아닌 보기이자 정답이다."
+      }
+    ],
+    "misconception": "예방보전의 작업비와 신규 설비의 투자비를 구분하지 않고, 보전을 하면 설비투자가 필연적으로 늘어난다고 보는 오류다.",
+    "existingLessonId": "lesson-dzb2as",
+    "existingBlockId": "summary",
+    "assertionText": "예방보전은 정지손실과 고장을 줄이는 것이 목적이며 투자비 증가가 필연적 효과는 아니다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620121",
+      "https://cbtbank.kr/exam/de20200606",
+      "https://cbtbank.kr/exam/de20190427",
+      "https://cbtbank.kr/exam/de20190303",
+      "https://cbtbank.kr/exam/de20170507"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-064",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-064-c4",
+    "directSolution": "정해진 조건에서 정해진 기간 동안 요구기능을 성공적으로 수행할 확률이라는 정의는 신뢰성이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-064-c1",
+        "verdict": "incorrect",
+        "rationale": "MTBF는 수리 가능한 설비의 평균 고장간격이라는 시간 지표이지, 주어진 기간의 기능수행 확률 자체가 아니다."
+      },
+      {
+        "choiceId": "U-064-c2",
+        "verdict": "incorrect",
+        "rationale": "MTTF는 비수리품의 평균 고장까지 시간으로서 평균수명 지표이며 신뢰성의 정의와 다르다."
+      },
+      {
+        "choiceId": "U-064-c3",
+        "verdict": "incorrect",
+        "rationale": "보전성은 규정된 절차와 자원에서 정해진 시간 안에 수리를 끝낼 확률이므로 고장 없이 기능을 수행할 확률이 아니다."
+      },
+      {
+        "choiceId": "U-064-c4",
+        "verdict": "correct",
+        "rationale": "신뢰성은 주어진 조건과 시간 동안 요구기능을 성공적으로 수행할 확률이므로 정답이다."
+      }
+    ],
+    "misconception": "고장간격·고장까지 시간·정해진 시간 내 수리확률을 모두 기능수행 확률과 같은 지표로 보는 오류다.",
+    "existingLessonId": "lesson-ak3xbq",
+    "existingBlockId": "summary",
+    "assertionText": "신뢰성은 주어진 조건과 시간 동안 요구기능을 성공적으로 수행할 확률이다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928",
+      "https://www.comcbt.com/xe/webhaesul/9620123",
+      "https://cbtbank.kr/exam/de20200606",
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-066",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-066-c3",
+    "directSolution": "TPM은 전원이 참여해 자주보전과 소집단 개선을 수행하므로, 결과만 보는 관리보다 개선을 위한 자기동기 부여를 중시한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-066-c1",
+        "verdict": "incorrect",
+        "rationale": "TPM은 고장·불량·로스를 줄이는 과정의 참여와 개선활동을 중시하므로 산출물만 보는 Output 지향으로 한정할 수 없다."
+      },
+      {
+        "choiceId": "U-066-c2",
+        "verdict": "incorrect",
+        "rationale": "TPM은 결과 수치뿐 아니라 원인 제거와 기본조건 유지를 위한 현장 참여를 요구하므로 결과 중심 시스템만이라는 설명은 부족하다."
+      },
+      {
+        "choiceId": "U-066-c3",
+        "verdict": "correct",
+        "rationale": "개선을 위한 자기동기 부여는 구성원의 자주보전과 소집단활동을 촉진하는 TPM의 특징이므로 정답이다."
+      },
+      {
+        "choiceId": "U-066-c4",
+        "verdict": "incorrect",
+        "rationale": "TPM은 운영·보전·관리 부문의 협업과 의사소통을 전제로 하므로 의사소통을 제한한다는 설명은 반대다."
+      }
+    ],
+    "misconception": "TPM을 산출량만 관리하는 결과 중심 제도로 축소하고 전원참가·자율개선의 성격을 놓치는 오류다.",
+    "existingLessonId": "lesson-1grlbny",
+    "existingBlockId": "summary",
+    "assertionText": "TPM은 전원참가·소집단활동·자주보전을 통해 구성원의 자율적 개선을 촉진한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928",
+      "https://www.comcbt.com/xe/webhaesul/9658829",
+      "https://cbtbank.kr/exam/de20190427",
+      "https://cbtbank.kr/exam/de20190303",
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20180428",
+      "https://cbtbank.kr/exam/de20140920"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-069",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-069-c2",
+    "directSolution": "설비 경제성 평가는 비용비교법·자본회수법·MAPI 방식을 사용하므로, 이 문항에서는 연환지수법을 경제성 평가방법으로 보지 않는다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-069-c1",
+        "verdict": "incorrect",
+        "rationale": "자본회수법은 투자비를 회수기간 또는 회수액 관점에서 비교하는 설비 경제성 평가방법이므로 제외 대상이 아니다."
+      },
+      {
+        "choiceId": "U-069-c2",
+        "verdict": "correct",
+        "rationale": "이 문항의 분류에서는 연환지수법이 비용비교·자본회수·MAPI와 같은 설비 경제성 평가방법에 포함되지 않으므로 정답이다."
+      },
+      {
+        "choiceId": "U-069-c3",
+        "verdict": "incorrect",
+        "rationale": "MAPI 방식은 설비투자의 경제성 검토에 사용하는 대표적 방법이므로 보기 어려운 방법이 아니다."
+      },
+      {
+        "choiceId": "U-069-c4",
+        "verdict": "incorrect",
+        "rationale": "비용비교법은 대안별 비용을 비교해 경제성을 판단하는 방법이므로 설비 경제성 평가방법에 해당한다."
+      }
+    ],
+    "misconception": "재무·투자 용어가 보이면 설비 대안의 경제성 평가법으로 모두 인정하는 오류다.",
+    "existingLessonId": "lesson-5cda76",
+    "existingBlockId": "summary",
+    "assertionText": "설비 경제성 평가는 비용비교·자본회수·MAPI 등의 방법을 사용한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928",
+      "https://www.comcbt.com/xe/webhaesul/9620123",
+      "https://www.comcbt.com/xe/webhaesul/9658829",
+      "https://cbtbank.kr/exam/de20200822",
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20180428",
+      "https://cbtbank.kr/exam/de20120915",
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-095",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-095-c4",
+    "directSolution": "윤활관리부서는 윤활 표준, 윤활제 선정, 분석·열화 판정기준을 정하고 현장 실시부서는 급유·교환·기록을 수행한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-095-c1",
+        "verdict": "incorrect",
+        "rationale": "개별 설비의 오일교환은 현장 실시부서가 작업표준에 따라 수행하는 실행업무이므로 관리부서의 핵심 책임이 아니다."
+      },
+      {
+        "choiceId": "U-095-c2",
+        "verdict": "incorrect",
+        "rationale": "급유장치 예비품을 현장에서 보관·점검하는 일은 실시부서의 일상 관리에 가깝고 윤활제 선정 업무와 다르다."
+      },
+      {
+        "choiceId": "U-095-c3",
+        "verdict": "incorrect",
+        "rationale": "일상 급유기록은 실제 급유를 수행한 현장에서 남기는 기록이므로 윤활관리부서의 가장 적합한 업무가 아니다."
+      },
+      {
+        "choiceId": "U-095-c4",
+        "verdict": "correct",
+        "rationale": "윤활제 선정과 열화기준 판정은 전사 표준과 분석기준을 정하는 윤활관리부서의 업무이므로 정답이다."
+      }
+    ],
+    "misconception": "현장 실시업무와 윤활관리의 표준·선정·분석 업무를 같은 조직의 책임으로 섞는 오류다.",
+    "existingLessonId": "lesson-1kard5u",
+    "existingBlockId": "summary",
+    "assertionText": "윤활관리부서는 표준·윤활제 선정·분석기준을 정하고 실시부서는 현장 급유와 기록을 수행한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-110",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-110-c1",
+    "directSolution": "바늘급유는 소량 오일을 한 방향으로 떨어뜨려 쓰는 비순환식 적하급유 계열이므로 회수·여과 후 재사용하는 순환급유법이 아니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-110-c1",
+        "verdict": "correct",
+        "rationale": "바늘급유는 중력으로 필요한 곳에 소량을 떨어뜨린 뒤 회수하지 않는 적하급유 계열이므로 순환급유법으로 보기 어려워 정답이다."
+      },
+      {
+        "choiceId": "U-110-c2",
+        "verdict": "incorrect",
+        "rationale": "비말급유는 회전부가 오일을 튀겨 공급하고 오일욕·회수계통을 갖는 장치에서는 반복 사용될 수 있으므로 바늘급유와 구별한다."
+      },
+      {
+        "choiceId": "U-110-c3",
+        "verdict": "incorrect",
+        "rationale": "유욕급유는 오일욕의 회전부가 윤활면에 오일을 공급하는 방식으로, 오일을 모아 관리하는 윤활계통과 연결될 수 있다."
+      },
+      {
+        "choiceId": "U-110-c4",
+        "verdict": "incorrect",
+        "rationale": "원심급유는 회전력으로 오일을 분산·공급하는 방식이며, 단순 낙하식 바늘급유와 달리 회전계통의 순환 윤활에 사용될 수 있다."
+      }
+    ],
+    "misconception": "오일을 사용하는 모든 급유법을 회수·재순환 과정의 유무와 관계없이 순환급유로 묶는 오류다.",
+    "existingLessonId": "lesson-ahysqd",
+    "existingBlockId": "summary",
+    "assertionText": "바늘급유는 중력에 의해 소량을 떨어뜨리는 적하급유 계열이다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928",
+      "https://cbtbank.kr/exam/de20150531",
+      "https://cbtbank.kr/exam/de20100905",
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-135",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-135-c2",
+    "directSolution": "오일욕 속 기어·베어링 등의 회전부가 윤활유를 튀겨 주변 마찰면에 공급하는 방식은 비말급유다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-135-c1",
+        "verdict": "incorrect",
+        "rationale": "적하급유는 주유기에서 오일을 한 방울씩 떨어뜨려 공급하므로 회전부가 오일을 튀기는 방식이 아니다."
+      },
+      {
+        "choiceId": "U-135-c2",
+        "verdict": "correct",
+        "rationale": "비말급유는 오일욕 속 회전부가 오일을 비산시켜 기어와 베어링에 공급하므로 정답이다."
+      },
+      {
+        "choiceId": "U-135-c3",
+        "verdict": "incorrect",
+        "rationale": "심지급유는 심지의 모세관 작용으로 오일을 끌어올리는 방식이므로 비산 공급과 다르다."
+      },
+      {
+        "choiceId": "U-135-c4",
+        "verdict": "incorrect",
+        "rationale": "강제순환급유는 펌프로 압송·회수·여과·냉각하는 방식이므로 회전부 자체의 튀김으로 공급하는 비말급유와 다르다."
+      }
+    ],
+    "misconception": "낙하·심지·펌프 압송처럼 공급원리가 다른 방식도 회전부의 비산 공급과 같은 것으로 보는 오류다.",
+    "existingLessonId": "lesson-s63xdq",
+    "existingBlockId": "summary",
+    "assertionText": "비말급유는 오일욕 속 회전부가 윤활유를 비산시켜 주변 마찰면에 공급한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9659405",
+      "https://www.comcbt.com/xe/webhaesul/9620123",
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20170507",
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-148",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-148-c2",
+    "directSolution": "정상상태 가용도는 가동시간 비중이므로 평균고장간격을 분자로 하고 평균고장간격과 평균수리시간의 합을 분모로 한 A=MTBF/(MTBF+MTTR)이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-148-c1",
+        "verdict": "incorrect",
+        "rationale": "MTTR은 수리로 설비를 사용할 수 없는 시간이라 분자가 될 수 없으므로 MTTR/(MTBF+MTTR)는 가용도 식이 아니다."
+      },
+      {
+        "choiceId": "U-148-c2",
+        "verdict": "correct",
+        "rationale": "MTBF는 가동 가능한 평균시간이고 MTBF+MTTR은 한 운용주기의 평균시간이므로 A=MTBF/(MTBF+MTTR)가 정답이다."
+      },
+      {
+        "choiceId": "U-148-c3",
+        "verdict": "incorrect",
+        "rationale": "MTBF와 MTTR을 곱하면 시간의 제곱이 되어 0과 1 사이의 무차원 가용도 비율을 나타내지 못한다."
+      },
+      {
+        "choiceId": "U-148-c4",
+        "verdict": "incorrect",
+        "rationale": "(MTBF+MTTR)/MTBF는 가용도의 역수보다 큰 값이 될 수 있어 확률·비율인 가용도 식이 아니다."
+      }
+    ],
+    "misconception": "수리시간을 가동시간처럼 분자에 두거나, 시간 단위를 더하지 않고 곱해 가용도라는 무차원 비율을 잃는 오류다.",
+    "existingLessonId": "lesson-13rqhro",
+    "existingBlockId": "summary",
+    "assertionText": "가용도는 전체 운용주기 중 가동 가능한 시간의 비율이며 평균고장간격과 평균수리시간으로 계산한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9659405",
+      "https://cbtbank.kr/exam/de20150919",
+      "https://cbtbank.kr/exam/de20130928",
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-178",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-178-c2",
+    "directSolution": "시간가동률은 (부하시간-정지시간)/부하시간×100이므로 (480-48)/480×100=90%이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-178-c1",
+        "verdict": "incorrect",
+        "rationale": "48/480×100=10%는 정지시간률이지 실제 운전시간의 비율인 시간가동률이 아니다."
+      },
+      {
+        "choiceId": "U-178-c2",
+        "verdict": "correct",
+        "rationale": "실제 운전시간은 480-48=432분이고 432/480×100=90%이므로 정답이다."
+      },
+      {
+        "choiceId": "U-178-c3",
+        "verdict": "incorrect",
+        "rationale": "48%는 정지시간 48분을 백분율처럼 잘못 읽은 값으로 부하시간과의 비율 계산을 반영하지 않는다."
+      },
+      {
+        "choiceId": "U-178-c4",
+        "verdict": "incorrect",
+        "rationale": "가동률은 부하시간 중 실제 운전시간의 비율이므로 110%처럼 100%를 넘을 수 없다."
+      }
+    ],
+    "misconception": "정지시간 비율을 시간가동률로 쓰거나, 분모를 바꾸어 가동률이 100%를 넘는 값이 되게 하는 오류다.",
+    "existingLessonId": "lesson-afsfio",
+    "existingBlockId": "summary",
+    "assertionText": "시간가동률=(부하시간-정지시간)/부하시간×100=(480-48)/480×100=90%이다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620121"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-909",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-909-c2",
+    "directSolution": "주파수는 1초당 반복횟수이고 f=1/T이므로 60초 동안의 사이클 수라는 설명이 옳지 않다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-909-c1",
+        "verdict": "incorrect",
+        "rationale": "Hz는 초당 사이클 수를 뜻하는 주파수의 단위이므로 ‘옳지 않은 것’의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-909-c2",
+        "verdict": "correct",
+        "rationale": "주파수는 60초가 아니라 1초 동안의 사이클 수이므로 이 문항에서 옳지 않은 보기이자 정답이다."
+      },
+      {
+        "choiceId": "U-909-c3",
+        "verdict": "incorrect",
+        "rationale": "f=1/T이므로 주기 T가 길어지면 주파수 f는 낮아져 이 설명은 옳다."
+      },
+      {
+        "choiceId": "U-909-c4",
+        "verdict": "incorrect",
+        "rationale": "fn=(1/2π)√(k/m)에서 질량이 같으면 강성 k가 커질수록 고유진동수가 높아지므로 이 설명은 옳다."
+      }
+    ],
+    "misconception": "주파수의 시간 기준을 1초가 아니라 1분으로 바꾸거나, 주기와 주파수의 역수 관계를 놓치는 오류다.",
+    "existingLessonId": "lesson-16mxoo6",
+    "existingBlockId": "summary",
+    "assertionText": "주파수는 1초당 반복횟수이며 f=1/T이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20150531",
+      "https://cbtbank.kr/exam/de20130928",
+      "https://www.nasa.gov/sites/default/files/atoms/files/supersonic-student.pdf"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+]

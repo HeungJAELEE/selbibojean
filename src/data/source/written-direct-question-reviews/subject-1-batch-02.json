@@ -1,0 +1,230 @@
+[
+  {
+    "questionId": "U-003",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-003-c4",
+    "directSolution": "문항은 응답 지연이 나타나기 쉬운 제어 대상을 고른다. 온도계와 제어 대상은 열용량을 갖고 열전달에도 시간이 걸리므로 검출부·대상에서 지연이 생기기 쉽다. 따라서 c4가 맞고, 유량 제어와 전송부의 지연을 ‘항상’ 또는 ‘반드시’라고 단정한 보기는 조건을 과장했다.",
+    "choiceRationales": [
+      { "choiceId": "U-003-c1", "verdict": "incorrect", "rationale": "유량계의 검출부 지연은 센서 방식·배관·유체조건에 따라 달라진다. 모든 유량제어에서 응답 지연이 항상 크다고 할 수 없다." },
+      { "choiceId": "U-003-c2", "verdict": "incorrect", "rationale": "온도제어에도 센서, 전송기, 제어기의 동특성이 있으므로 전송부 응답 지연이 없다고 단정할 수 없다." },
+      { "choiceId": "U-003-c3", "verdict": "incorrect", "rationale": "유량 신호의 전송 지연은 전송 방식과 계측 구성에 좌우된다. ‘반드시 크다’는 보편 명제가 성립하지 않는다." },
+      { "choiceId": "U-003-c4", "verdict": "correct", "rationale": "온도는 열용량과 열전달 과정 때문에 센서·대상에서 시간지연이 나타나기 쉬우므로 문항의 옳은 설명이다." }
+    ],
+    "misconception": "온도 제어의 열용량·열전달 지연을 보지 않고, 유량이나 전송부에 붙은 ‘항상·반드시·없다’ 같은 절대 표현을 사실로 받아들이는 오류.",
+    "existingLessonId": "lesson-2mjn9w",
+    "existingBlockId": "principle",
+    "assertionText": "온도는 열용량과 열전달 과정 때문에 센서·대상에서 시간지연이 나타나기 쉽다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9635925"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-006",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-006-c2",
+    "directSolution": "부적절한 기능을 고른다. 신호변환·조절기는 잡음을 거르는 필터링, 신호 레벨·형태 변환, 센서 출력의 선형화에 쓰인다. 반대로 비선형화를 새로 만드는 것은 측정 신호를 해석·제어하기 어렵게 하므로 c2가 답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-006-c1", "verdict": "incorrect", "rationale": "필터링은 측정 신호의 잡음 성분을 줄여 후단 제어·판단에 쓸 수 있게 하는 신호처리 기능이다." },
+      { "choiceId": "U-006-c2", "verdict": "correct", "rationale": "신호처리는 비선형 출력을 선형화하는 방향으로 수행하므로, 비선형화를 만드는 기능은 부적절하다." },
+      { "choiceId": "U-006-c3", "verdict": "incorrect", "rationale": "신호레벨 변환은 센서 출력을 제어기나 표시기의 입력 범위에 맞추는 신호변환 기능이다." },
+      { "choiceId": "U-006-c4", "verdict": "incorrect", "rationale": "신호형태 변환은 저항·전압·전류·주파수·디지털 펄스 등 서로 다른 형식의 신호를 다루는 기능이다." }
+    ],
+    "misconception": "선형화와 비선형화를 반대 의미로 구분하지 못해, 센서 출력 보정의 목적이 비선형성을 추가하는 것이라고 생각하는 오류.",
+    "existingLessonId": "lesson-6ss1qe",
+    "existingBlockId": "principle",
+    "assertionText": "신호처리는 비선형화를 만드는 것이 아니라 센서의 비선형 출력을 선형화하는 방향으로 수행한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9635925", "https://www.comcbt.com/xe/webhaesul/9658829"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-010",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-010-c3",
+    "directSolution": "조작부는 같은 입력에 대해 예측 가능한 출력을 내야 한다. 응답성·재현성·직선성은 이를 돕지만, 히스테리시스가 크면 이전 동작 이력 때문에 같은 입력에서도 출력이 달라진다. 그러므로 옳지 않은 조건은 c3이다.",
+    "choiceRationales": [
+      { "choiceId": "U-010-c1", "verdict": "incorrect", "rationale": "응답성이 좋으면 제어 신호 변화에 조작부가 빠르게 반응해 요구된 제어 동작을 수행하기 쉽다." },
+      { "choiceId": "U-010-c2", "verdict": "incorrect", "rationale": "재현성이 좋으면 같은 입력 조건에서 같은 출력이 반복되어 제어 결과를 예측할 수 있다." },
+      { "choiceId": "U-010-c3", "verdict": "correct", "rationale": "히스테리시스가 크면 동일 입력에서도 이력에 따라 출력이 달라져 정밀제어가 어려워진다." },
+      { "choiceId": "U-010-c4", "verdict": "incorrect", "rationale": "직선성이 좋으면 입력 변화와 출력 변화의 관계를 보정·제어하기 쉬워 제어요소의 바람직한 특성이다." }
+    ],
+    "misconception": "히스테리시스를 단순한 감도 또는 응답성으로 혼동하여, 큰 이력이 동일 입력의 재현성을 해친다는 점을 놓치는 오류.",
+    "existingLessonId": "lesson-14fjhlw",
+    "existingBlockId": "principle",
+    "assertionText": "히스테리시스가 크면 동일 입력에서도 출력이 이력에 따라 달라져 정밀제어가 어려워진다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9635925"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-046",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-046-c4",
+    "directSolution": "옳지 않은 특징을 고른다. 광학식 엔코더는 펄스·코드의 디지털 신호로 위치를 읽으며, 디지털 판정에는 허용 잡음 범위가 있다. 따라서 노이즈 마진이 작다는 c4는 틀리고, 나머지는 광학계의 일반적인 특성으로 볼 수 있다.",
+    "choiceRationales": [
+      { "choiceId": "U-046-c1", "verdict": "incorrect", "rationale": "광학식 엔코더는 광검출 소자의 펄스 신호를 처리하므로 위치·속도용 디지털 처리회로를 비교적 단순하게 구성할 수 있다." },
+      { "choiceId": "U-046-c2", "verdict": "incorrect", "rationale": "광학 디스크와 광학 정렬부는 충격·진동으로 오염·정렬오차 영향을 받을 수 있어 내충격성이 장점이라고 보기 어렵다." },
+      { "choiceId": "U-046-c3", "verdict": "incorrect", "rationale": "광학식 엔코더는 디스크의 눈금과 검출 펄스를 세분해 고분해능화하기 용이하다." },
+      { "choiceId": "U-046-c4", "verdict": "correct", "rationale": "디지털 신호는 일정 범위의 잡음에 견딜 수 있어 일반적으로 노이즈 마진이 크므로, 작다는 설명은 옳지 않다." }
+    ],
+    "misconception": "디지털 신호를 아날로그처럼 연속적으로 흔들리는 값으로만 생각해 임계값 기반의 노이즈 허용 범위를 놓치는 오류.",
+    "existingLessonId": "lesson-10zm7tf",
+    "existingBlockId": "principle",
+    "assertionText": "디지털 신호는 일정 범위의 잡음에 견딜 수 있어 일반적으로 노이즈 마진이 크다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-047",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-047-c4",
+    "directSolution": "조건과 그에 따른 조작을 행·열로 나열하는 표현을 묻는다. 가능한 조건 조합과 각 조합의 동작을 표로 대응시키는 것은 디시전 테이블이다. 흐름을 화살표로 그리는 플로차트나 동작 순서를 보이는 동작선도와 구분해 c4를 고른다.",
+    "choiceRationales": [
+      { "choiceId": "U-047-c1", "verdict": "incorrect", "rationale": "논리회로는 논리게이트나 논리식으로 입력과 출력을 표현하며 조건·조작의 매트릭스 표 자체를 뜻하지 않는다." },
+      { "choiceId": "U-047-c2", "verdict": "incorrect", "rationale": "플로차트는 처리 순서와 분기를 도형·화살표로 표현하는 방법이지, 조건과 동작의 표 형식 대응이 아니다." },
+      { "choiceId": "U-047-c3", "verdict": "incorrect", "rationale": "동작선도는 시간·단계에 따른 동작 순서를 보여 주지만 조건 조합별 조작을 행렬로 정리하지 않는다." },
+      { "choiceId": "U-047-c4", "verdict": "correct", "rationale": "디시전 테이블은 가능한 조건과 수행할 동작을 표 형태로 대응시키므로 문항의 매트릭스 표현과 일치한다." }
+    ],
+    "misconception": "시퀀스 표현법을 모두 시간 흐름 그림으로만 이해해, 조건 조합과 조작을 표로 완전하게 열거하는 디시전 테이블을 구분하지 못하는 오류.",
+    "existingLessonId": "lesson-1lasvv6",
+    "existingBlockId": "principle",
+    "assertionText": "디시전 테이블은 가능한 조건과 수행할 동작을 표 형태로 대응시킨다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-052",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-052-c2",
+    "directSolution": "목표값과 검출신호의 차이인 편차를 처리해 조작부로 제어신호를 보내는 요소는 조절부다. 외란은 계를 흐트러뜨리는 입력이고, 작동부는 신호를 받아 실제 작동하며, 제어량은 제어 대상의 출력값이다. 따라서 c2가 답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-052-c1", "verdict": "incorrect", "rationale": "외란은 목표값과 무관하게 제어량을 바꾸려는 외부·내부 영향으로, 편차를 계산해 제어신호를 만드는 부분이 아니다." },
+      { "choiceId": "U-052-c2", "verdict": "correct", "rationale": "조절부는 목표값과 검출신호에서 나온 편차를 처리해 조작부가 수행할 제어신호를 생성한다." },
+      { "choiceId": "U-052-c3", "verdict": "incorrect", "rationale": "작동부는 조절부의 제어신호를 받아 밸브·모터 등으로 실제 조작을 수행하며 신호를 산출하는 조절부와 역할이 다르다." },
+      { "choiceId": "U-052-c4", "verdict": "incorrect", "rationale": "제어량은 제어하려는 출력 물리량이며, 목표값·검출신호를 연산해 제어신호를 만드는 장치 요소가 아니다." }
+    ],
+    "misconception": "조절부·작동부·제어량을 모두 제어계의 구성요소라고만 외워 편차 연산과 실제 물리 조작의 역할을 섞는 오류.",
+    "existingLessonId": "lesson-170ekl4",
+    "existingBlockId": "principle",
+    "assertionText": "조절부는 편차를 처리해 조작부가 수행할 제어신호를 생성한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-113",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-113-c2",
+    "directSolution": "하나의 유압원으로 여러 동작을 정해진 순서로 수행한다는 조건이 핵심이다. 압력·위치신호를 이용해 복수 액추에이터를 차례로 움직이는 시퀀스회로가 이에 맞는다. 증압·언로드·카운터밸런스회로는 각각 압력 상승, 무부하 운전, 하중 유지의 목적이므로 c2가 답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-113-c1", "verdict": "incorrect", "rationale": "증압회로는 필요한 일부 구간의 압력을 높이는 회로로, 여러 액추에이터의 동작 순서를 정하는 회로가 아니다." },
+      { "choiceId": "U-113-c2", "verdict": "correct", "rationale": "시퀀스회로는 압력·위치신호 등을 이용해 복수 액추에이터를 순차 동작시키므로 문항 조건과 일치한다." },
+      { "choiceId": "U-113-c3", "verdict": "incorrect", "rationale": "언로드회로는 펌프 토출을 탱크로 돌려 무부하 운전·발열 저감을 하는 목적이 중심이며 순차 동작 회로가 아니다." },
+      { "choiceId": "U-113-c4", "verdict": "incorrect", "rationale": "카운터밸런스회로는 자중 하강·과속을 막고 하중을 유지하는 회로로, 동작 단계의 순서를 정의하지 않는다." }
+    ],
+    "misconception": "유압 회로 이름을 압력 관련 기능으로만 묶어, 복수 액추에이터의 순서 제어와 하중·무부하·증압 기능을 구분하지 못하는 오류.",
+    "existingLessonId": "lesson-187lrch",
+    "existingBlockId": "principle",
+    "assertionText": "시퀀스회로는 압력·위치신호 등을 이용해 복수 액추에이터를 순차 동작시킨다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://cbtbank.kr/exam/de20161001"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-121",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-121-c4",
+    "directSolution": "옳지 않은 설명을 찾는다. 급속배기밸브는 실린더 가까이에서 배기 공기를 큰 통로로 바로 빼 배기저항을 줄이고 속도를 높인다. 따라서 배기유량을 줄여 속도를 높인다는 c4는 인과관계가 반대다.",
+    "choiceRationales": [
+      { "choiceId": "U-121-c1", "verdict": "incorrect", "rationale": "교축밸브는 통과 단면을 조절해 유량을 바꾸므로 공압 액추에이터 속도 조절에 사용한다." },
+      { "choiceId": "U-121-c2", "verdict": "incorrect", "rationale": "속도제어밸브는 방향제어밸브와 실린더 사이의 흐름을 조절해 실린더 속도를 제어한다." },
+      { "choiceId": "U-121-c3", "verdict": "incorrect", "rationale": "공압실린더는 일반적으로 배기측을 교축하는 미터아웃 방식으로 속도를 안정적으로 조절한다." },
+      { "choiceId": "U-121-c4", "verdict": "correct", "rationale": "급속배기밸브는 배기경로를 짧고 크게 열어 배기유량을 증가시켜 속도를 높이므로, 유량을 줄인다는 설명은 옳지 않다." }
+    ],
+    "misconception": "교축밸브의 감속 원리와 급속배기밸브의 배기저항 감소 원리를 섞어, 유량을 줄여도 실린더 속도가 빨라진다고 생각하는 오류.",
+    "existingLessonId": "lesson-m58eqr",
+    "existingBlockId": "principle",
+    "assertionText": "급속배기밸브는 배기경로를 짧고 크게 열어 배기유량을 증가시켜 속도를 높인다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://www.comcbt.com/xe/webhaesul/9658829", "https://cbtbank.kr/exam/de20180428"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-122",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-122-c3",
+    "directSolution": "일반 특성 중 옳지 않은 것을 고른다. 공압은 인화 위험이 작고 탱크에 에너지를 저장할 수 있으며, 유압은 축압기에 에너지를 저장하고 비압축성 때문에 위치제어에 유리하다. 그러나 어떤 조건에서도 유압 이송속도가 공압보다 매우 빠르다고 단정할 수 없으므로 c3이 틀린 설명이다.",
+    "choiceRationales": [
+      { "choiceId": "U-122-c1", "verdict": "incorrect", "rationale": "압축공기는 가연성 작동유를 쓰지 않으므로 일반적으로 인화·폭발 위험이 작은 특성을 가진다." },
+      { "choiceId": "U-122-c2", "verdict": "incorrect", "rationale": "공기탱크는 압축공기를 저장해 공압 에너지를 축적·완충하는 장치다." },
+      { "choiceId": "U-122-c3", "verdict": "correct", "rationale": "유압은 위치제어에는 유리하지만 실제 속도는 펌프·배관·부하·제어방식에 따라 달라지므로 공압보다 매우 빠르다고 일반화할 수 없다." },
+      { "choiceId": "U-122-c4", "verdict": "incorrect", "rationale": "유압 축압기는 압력유를 저장해 에너지를 축적하고 압력 변동을 완충할 수 있다." }
+    ],
+    "misconception": "유압의 정밀한 위치제어 특성을 모든 조건에서 더 빠른 이송속도라는 주장으로 확장하는 오류.",
+    "existingLessonId": "lesson-166k8u",
+    "existingBlockId": "principle",
+    "assertionText": "다만 실제 성능은 펌프·압축기 용량, 밸브, 배관, 부하와 제어 방식에 따라 달라지므로 어느 한 방식이 모든 조건에서 더 빠르다고 단정할 수 없습니다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://www.comcbt.com/xe/webhaesul/9658829", "https://cbtbank.kr/exam/de20190303"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-123",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-123-c3",
+    "directSolution": "회로의 최고압력을 제한하고 과부하를 막는 기능을 묻는다. 릴리프밸브는 설정압력 이상에서 유량을 탱크로 빼 압력을 제한한다. 셔틀·체크밸브는 흐름 방향 선택·역류 방지이고 디셀러레이션밸브는 감속에 쓰이므로 c3이 답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-123-c1", "verdict": "incorrect", "rationale": "셔틀밸브는 두 입력 중 압력이 들어온 쪽의 유로를 선택하는 기능으로 최고압력 제한 장치가 아니다." },
+      { "choiceId": "U-123-c2", "verdict": "incorrect", "rationale": "체크밸브는 한 방향 흐름을 허용하고 역류를 막는 밸브로 설정압력에서 탱크로 방출하지 않는다." },
+      { "choiceId": "U-123-c3", "verdict": "correct", "rationale": "릴리프밸브는 설정압력 이상에서 탱크로 유량을 방출해 회로의 최고압력을 제한한다." },
+      { "choiceId": "U-123-c4", "verdict": "incorrect", "rationale": "디셀러레이션밸브는 액추에이터의 감속·완충 조건과 관계된 밸브이며 시스템 최고압력 제한이 주기능이 아니다." }
+    ],
+    "misconception": "유압밸브를 모두 압력 제어용으로 보아, 유로 선택·역류 방지·감속과 설정압력 초과 방출의 기능을 구분하지 못하는 오류.",
+    "existingLessonId": "lesson-8jo4gu",
+    "existingBlockId": "principle",
+    "assertionText": "릴리프밸브는 설정압력 이상에서 탱크로 유량을 방출해 최고압력을 제한한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://cbtbank.kr/exam/de20190303", "https://cbtbank.kr/exam/de20130928"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-125",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-125-c4",
+    "directSolution": "다음 동작의 시작 조건이 시간 경과나 논리 계산이 아니라 리밋스위치·센서로 확인한 실제 위치다. 실제 위치가 확인되어야 다음 단계로 넘어가는 제어는 위치종속 시퀀스이므로 c4가 답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-125-c1", "verdict": "incorrect", "rationale": "논리종속은 논리 조건의 성립에 따른 제어를 가리키며, 문항처럼 위치 검출을 직접 다음 단계 조건으로 삼는 분류가 아니다." },
+      { "choiceId": "U-125-c2", "verdict": "incorrect", "rationale": "동기종속은 여러 동작의 동시성·동기 조건에 초점을 두며, 리밋스위치 위치 확인이라는 문항의 직접 조건과 다르다." },
+      { "choiceId": "U-125-c3", "verdict": "incorrect", "rationale": "시간종속은 설정 시간이 지나면 다음 동작으로 넘어가며 실제 위치 검출이 다음 단계의 필수 조건은 아니다." },
+      { "choiceId": "U-125-c4", "verdict": "correct", "rationale": "작업물·실린더의 실제 위치를 검출해 다음 단계로 넘어가므로 위치종속 시퀀스다." }
+    ],
+    "misconception": "시퀀스 전환 조건을 시간·논리·위치로 나누지 않고, 센서가 있어도 실제 위치 확인과 무관한 제어라고 보는 오류.",
+    "existingLessonId": "lesson-vcib0",
+    "existingBlockId": "principle",
+    "assertionText": "작업물·실린더의 실제 위치를 검출해 다음 단계로 넘어가므로 위치종속 시퀀스다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://cbtbank.kr/exam/de20180428"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-128",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-128-c4",
+    "directSolution": "특징이 아닌 것을 고른다. 유도형 근접센서는 금속 접근으로 생기는 와전류와 발진 변화로 검출하므로 주 검출 대상은 금속이다. 비금속 재료 검출에 주로 사용한다는 c4는 정전용량형 센서의 적용과 혼동한 설명이다.",
+    "choiceRationales": [
+      { "choiceId": "U-128-c1", "verdict": "incorrect", "rationale": "유도형 근접센서는 비접촉 방식으로 금속을 검출하며 일반적인 센서 적용에서 전력소모가 비교적 작은 특성으로 다뤄진다." },
+      { "choiceId": "U-128-c2", "verdict": "incorrect", "rationale": "유도형 근접센서는 자체 발진회로와 금속의 와전류 변화를 이용하므로 영구자석을 검출 조건으로 요구하지 않는다." },
+      { "choiceId": "U-128-c3", "verdict": "incorrect", "rationale": "유도형 근접센서는 비접촉으로 검출하므로 일반적인 사용에서 검출물체를 마찰 가열하는 방식이 아니다." },
+      { "choiceId": "U-128-c4", "verdict": "correct", "rationale": "유도형 센서는 금속 접근에 따른 와전류·발진변화를 이용하므로 비금속 재료 검출에 주로 사용한다는 설명은 특징이 아니다." }
+    ],
+    "misconception": "유도형과 정전용량형 근접센서의 검출 원리·대상 재질을 구분하지 못해 유도형을 비금속용으로 선택하는 오류.",
+    "existingLessonId": "lesson-1y9qr6c",
+    "existingBlockId": "principle",
+    "assertionText": "유도형 센서는 금속 접근에 따른 와전류·발진변화를 이용하며 비금속은 정전용량형 등이 적합하다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928", "https://www.comcbt.com/xe/webhaesul/9659405"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  }
+]

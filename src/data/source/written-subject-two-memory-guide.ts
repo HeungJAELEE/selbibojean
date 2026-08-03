@@ -253,7 +253,7 @@ export const WRITTEN_SUBJECT_TWO_MEMORY_GUIDE: SubjectTwoMemoryBundle[] = [
     ],
     detailLessonTitles: ["소음·열·보호구 호환성", "용접면·차광필터 선정", "습윤 보호구와 용접 보호복", "안전표지", "소화·비상정지·잔류위험"],
     cbtStatusNote:
-      "보호구·안전표지·화재 구분에 직접 대응하는 CBT 원문은 현재 확보된 원문 묶음에서 확인되지 않았습니다. 다른 산업안전 문항을 대신 붙이지 않고 원문을 확보한 뒤 연결합니다.",
+      "보호구·안전표지·화재·소화기와 직접 대응하는 용접 CBT 원문을 대조해 연결했습니다. 최대 5문제만 대표로 보이며 전체 안전 문항은 모의고사 문제은행에서 출제됩니다.",
   },
   {
     id: "gas-electrical-machine-safety",

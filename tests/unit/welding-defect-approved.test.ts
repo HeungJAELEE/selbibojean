@@ -62,7 +62,7 @@ describe("approved welding defect content", () => {
     ]);
   });
 
-  it("exposes both originals as usable CBT examples on the silver-spot lesson", () => {
+  it("withholds unreviewed originals from CBT examples on the silver-spot lesson", () => {
     const content = mergeApprovedWeldingDefectContent(
       generatedContent as GeneratedContent,
     );
@@ -72,15 +72,6 @@ describe("approved welding defect content", () => {
       5,
     );
 
-    expect(examples.map((example) => example.questionNumber).sort()).toEqual([
-      51, 54,
-    ]);
-    expect(
-      examples.every(
-        (example) =>
-          example.year === 2009 &&
-          example.sessionLabel === "제3회 용접기사 필기",
-      ),
-    ).toBe(true);
+    expect(examples).toEqual([]);
   });
 });

@@ -24,6 +24,9 @@ const originalQuestions = createPracticePresentations(
   100,
   20260730,
 ).filter((question) => question.provenance.original);
+const publicOriginalQuestionIds = new Set(
+  originalQuestions.map((question) => question.id),
+);
 
 describe("subject 2 source and reverse-link audit", () => {
   it("classifies every non-empty private-source occurrence without gaps", () => {
@@ -115,6 +118,17 @@ describe("subject 2 source and reverse-link audit", () => {
   it("reviews every public original in the reverse direction exactly once", () => {
     const audits = getSubjectTwoQuestionAudit(originalQuestions);
     const auditIds = audits.map((audit) => audit.questionId);
+    const directBindings = getSubjectTwoFactCbtBindings().filter(
+      (binding) =>
+        binding.status === "direct_original" &&
+        binding.questionIds.some((questionId) =>
+          publicOriginalQuestionIds.has(questionId),
+        ),
+    );
+    const nonPublicDirectOriginalIds = getSubjectTwoFactCbtBindings()
+      .filter((binding) => binding.status === "direct_original")
+      .flatMap((binding) => binding.questionIds)
+      .filter((questionId) => !publicOriginalQuestionIds.has(questionId));
     const errors: string[] = [];
 
     expect(new Set(auditIds)).toEqual(
@@ -122,10 +136,9 @@ describe("subject 2 source and reverse-link audit", () => {
     );
     expect(new Set(auditIds).size).toBe(audits.length);
 
-    for (const binding of getSubjectTwoFactCbtBindings().filter(
-      (candidate) => candidate.status === "direct_original",
-    )) {
+    for (const binding of directBindings) {
       for (const questionId of binding.questionIds) {
+        if (!publicOriginalQuestionIds.has(questionId)) continue;
         const reverse = audits.find((audit) => audit.questionId === questionId);
         if (
           reverse?.disposition !== "direct_to_fact" ||
@@ -137,5 +150,11 @@ describe("subject 2 source and reverse-link audit", () => {
     }
 
     expect(errors).toEqual([]);
+    expect(nonPublicDirectOriginalIds.length).toBeGreaterThan(0);
+    expect(
+      audits.some((audit) =>
+        nonPublicDirectOriginalIds.includes(audit.questionId),
+      ),
+    ).toBe(false);
   });
 });

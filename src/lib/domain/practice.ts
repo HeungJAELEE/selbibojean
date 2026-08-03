@@ -17,6 +17,13 @@ export type SubjectAllocation = {
   count: number;
 };
 
+const DIRECT_FEEDBACK_REQUIRED_SUBJECT_IDS = new Set([
+  "subject-1",
+  "subject-2",
+  "subject-3",
+  "subject-4",
+]);
+
 function mulberry32(seed: number) {
   return () => {
     let value = (seed += 0x6d2b79f5);
@@ -41,10 +48,16 @@ export function isPublishableQuestion(question: Question) {
     !question.audit ||
     question.audit.auditDisposition === "verified" ||
     question.audit.auditDisposition === "cbt_corrected";
+  const hasRequiredDirectFeedback =
+    !DIRECT_FEEDBACK_REQUIRED_SUBJECT_IDS.has(question.subjectId) ||
+    Boolean(question.approvedReview);
 
   return (
     auditAllowsPublication &&
+    hasRequiredDirectFeedback &&
     question.contentStatus === "published" &&
+    question.publication?.readiness === "ready" &&
+    question.verification?.status === "verified" &&
     question.validation.answer &&
     question.validation.explanation &&
     question.validation.choiceFeedback &&
@@ -193,7 +206,20 @@ export function selectAllocatedPracticeQuestions(
 }
 
 export function toPublicQuestion(question: Question): PublicQuestion {
-  const { correctChoiceId, answerText, explanation, errorReason, validation, reviewStatus, publication, verification, audit, choices, ...safeQuestion } = question;
+  const {
+    correctChoiceId,
+    answerText,
+    explanation,
+    errorReason,
+    validation,
+    reviewStatus,
+    publication,
+    verification,
+    audit,
+    approvedReview,
+    choices,
+    ...safeQuestion
+  } = question;
   void correctChoiceId;
   void answerText;
   void explanation;
@@ -202,6 +228,7 @@ export function toPublicQuestion(question: Question): PublicQuestion {
   void reviewStatus;
   void publication;
   void audit;
+  void approvedReview;
   return {
     ...safeQuestion,
     choices: choices.map(({ id, order, text }) => ({ id, order, text })),
@@ -219,6 +246,7 @@ export function gradeQuestion(
   selfRating: SelfRating,
   lesson?: Lesson,
 ): PracticeFeedback {
+  void lesson;
   const selectedChoice = question.choices.find((choice) => choice.id === choiceId);
   const correctChoice = question.choices.find((choice) => choice.id === question.correctChoiceId);
   if (!selectedChoice || !correctChoice) {
@@ -226,45 +254,52 @@ export function gradeQuestion(
   }
 
   const isCorrect = selectedChoice.id === correctChoice.id;
-  const supportBlocks = lesson
-    ? [
-        lesson.blocks.find((block) => block.id === question.lessonAnchor),
-        lesson.blocks.find((block) => block.kind === "definition"),
-        lesson.blocks.find((block) => block.kind === "formula" || block.kind === "diagnosis"),
-        lesson.blocks.find((block) => block.kind === "exam_point"),
-        lesson.blocks.find((block) => block.kind === "trap"),
-      ]
-        .filter((block): block is Lesson["blocks"][number] => Boolean(block))
-        .filter((block, index, blocks) => blocks.findIndex((candidate) => candidate.id === block.id) === index)
-        .slice(0, 4)
-    : [];
+  const pendingReviewNotice =
+    "이 문항은 선택지별 풀이와 개념 연결을 검수 중입니다. 검수되지 않은 공통 문구는 표시하지 않습니다.";
+  const pendingFeedback = {
+    rationale: pendingReviewNotice,
+    plausibleReason: "",
+    incorrectPoint: null,
+    keyRule: "",
+    differenceFromCorrect: null,
+  };
+  const approvedDirect = Boolean(question.approvedReview);
 
   return {
     isCorrect,
+    feedbackQuality: approvedDirect ? "approved_direct" : "pending_review",
+    feedbackNotice: approvedDirect ? null : pendingReviewNotice,
     selectedChoice: {
       id: selectedChoice.id,
       text: selectedChoice.text,
-      ...selectedChoice.feedback,
+      ...(approvedDirect ? selectedChoice.feedback : pendingFeedback),
     },
     correctChoice: { id: correctChoice.id, text: correctChoice.text },
-    explanation: question.explanation,
+    explanation: approvedDirect ? question.explanation : pendingReviewNotice,
     errorReason: isCorrect ? null : question.errorReason,
     selfRating,
     lesson: {
       id: question.lessonId,
       anchor: question.lessonAnchor,
-      href: `/written/theory/${question.lessonId}#${question.lessonAnchor}`,
+      href:
+        question.approvedReview?.conceptBinding.href
+        ?? `/written/theory/${question.lessonId}#${question.lessonAnchor}`,
     },
-    conceptSupport: lesson
+    conceptSupport: null,
+    approvedReview: question.approvedReview
       ? {
-          title: lesson.title,
-          summary: lesson.summary,
-          blocks: supportBlocks.map(({ id, kind, title, body }) => ({ id, kind, title, body })),
+          ...question.approvedReview,
+          selectedChoiceReason: selectedChoice.feedback.rationale,
         }
-      : null,
+      : undefined,
     otherChoices: question.choices
       .filter((choice) => choice.id !== selectedChoice.id)
-      .map((choice) => ({ id: choice.id, text: choice.text, isCorrect: choice.id === correctChoice.id, ...choice.feedback })),
+      .map((choice) => ({
+        id: choice.id,
+        text: choice.text,
+        isCorrect: choice.id === correctChoice.id,
+        ...(approvedDirect ? choice.feedback : pendingFeedback),
+      })),
     answerAudit:
       question.audit?.auditDisposition === "cbt_corrected" &&
       question.audit.cbtAnswer &&

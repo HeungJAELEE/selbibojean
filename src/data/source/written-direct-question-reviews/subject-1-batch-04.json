@@ -1,0 +1,230 @@
+[
+  {
+    "questionId": "U-747",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-747-c2",
+    "directSolution": "저속에서 속도가 흔들리는 원인은 공기가 압축되면서 부하와 마찰 변화에 따라 압력·체적이 함께 변하는 데 있다. 이 압축성은 에너지를 저장하게도 하지만, 실린더가 일정한 속도로 움직이게 하지는 못한다. 따라서 압축성을 묻는 c2가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-747-c1", "verdict": "incorrect", "rationale": "배기소음은 배출 공기의 팽창과 유속에서 생기는 문제이며, 저속 구동 때 압력과 체적이 변해 속도가 불안정해지는 원인은 아니다." },
+      { "choiceId": "U-747-c2", "verdict": "correct", "rationale": "공기의 압축성 때문에 부하·마찰 변화에 따라 공기체적과 압력이 달라져 스틱슬립이 나타날 수 있으므로 문항의 두 조건을 함께 만족한다." },
+      { "choiceId": "U-747-c3", "verdict": "incorrect", "rationale": "과부하 안전성은 공압의 운전상 장점으로 볼 수 있지만, 공압실린더 저속운전의 속도불안정을 일으키는 물성은 아니다." },
+      { "choiceId": "U-747-c4", "verdict": "incorrect", "rationale": "압력·속도의 무단조절성은 조절 가능성을 말할 뿐, 조절한 저속이 스틱슬립 없이 안정되는지를 설명하지 못한다." }
+    ],
+    "misconception": "공압의 장점과 압축성으로 인한 저속 제어 한계를 같은 성질의 결론으로 혼동한다.",
+    "existingLessonId": "lesson-a135yo",
+    "existingBlockId": "principle",
+    "assertionText": "압축성 때문에 부하와 마찰변화에 따라 공기체적과 압력이 변해 스틱슬립이 나타날 수 있다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180428"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-808",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-808-c2",
+    "directSolution": "충격실린더는 공기를 축적했다가 피스톤을 급가속해 짧은 순간에 큰 충격력을 쓰는 장치다. 그래서 펀칭·마킹·리벳팅처럼 순간 힘이 필요한 목적이 정답이며 c2를 고른다.",
+    "choiceRationales": [
+      { "choiceId": "U-808-c1", "verdict": "incorrect", "rationale": "균일한 저속운전은 유량과 마찰을 안정시켜야 하는 제어 목적이며, 공기를 축적해 급가속하는 충격실린더의 대표 목적과 반대다." },
+      { "choiceId": "U-808-c2", "verdict": "correct", "rationale": "축적 공기로 피스톤을 급가속하여 펀칭·마킹·리벳팅에 필요한 충격력을 만든다는 레슨 근거와 일치한다." },
+      { "choiceId": "U-808-c3", "verdict": "incorrect", "rationale": "스틱슬립 방지는 저속 운동 안정화의 과제이고, 충격실린더는 순간 가속을 이용해 큰 힘을 얻는 장치다." },
+      { "choiceId": "U-808-c4", "verdict": "incorrect", "rationale": "완충기는 충격을 흡수해 감쇠시키는 장치인 반면 충격실린더는 필요한 충격력을 발생시키므로 기능이 다르다." }
+    ],
+    "misconception": "충격을 만드는 장치와 충격을 흡수하는 완충장치를 혼동한다.",
+    "existingLessonId": "lesson-5g4oy0",
+    "existingBlockId": "principle",
+    "assertionText": "공기를 축적한 뒤 피스톤을 급가속하여 펀칭·마킹·리벳팅 등에 필요한 충격력을 만든다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20170507"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-797",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-797-c4",
+    "directSolution": "릴리프밸브는 회로 최고압력을 제한하고 과압 시 유량을 탱크로 보내 펌프·배관을 보호한다. 반대로 2차측 압력을 낮은 값으로 일정하게 유지하는 일은 감압밸브의 기능이다. 따라서 릴리프의 주기능이 아닌 c4가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-797-c1", "verdict": "incorrect", "rationale": "최고압력 제한은 과압 시 릴리프밸브가 열리는 목적이므로 릴리프밸브의 주기능에 해당한다." },
+      { "choiceId": "U-797-c2", "verdict": "incorrect", "rationale": "과부하에서 유량을 탱크로 방출하면 회로 압력이 더 오르는 것을 막으므로 릴리프밸브의 보호 작동이다." },
+      { "choiceId": "U-797-c3", "verdict": "incorrect", "rationale": "최고압력을 제한하고 방출하는 기능은 펌프와 배관을 과압에서 보호하므로 이 보기는 주기능과 맞다." },
+      { "choiceId": "U-797-c4", "verdict": "correct", "rationale": "2차측 압력을 낮게 일정하게 유지하는 것은 감압밸브의 기능이라는 기존 레슨의 직접 근거와 일치한다." }
+    ],
+    "misconception": "압력제어밸브를 모두 과압 방출 장치로 보고 릴리프와 감압의 압력 기준 위치를 구분하지 못한다.",
+    "existingLessonId": "lesson-o1cuw1",
+    "existingBlockId": "principle",
+    "assertionText": "2차측 압력을 낮게 일정하게 유지하는 것은 감압밸브의 기능이다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20170507"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-950",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-950-c1",
+    "directSolution": "한 방향은 자유롭게 통과시키고 반대 방향은 막는 기능은 차압으로 자동 개폐되는 체크밸브의 정의다. 차단·스풀·포핏은 구조 또는 넓은 분류일 뿐, 역류 방지 기능을 특정하지 않는다. 따라서 c1이 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-950-c1", "verdict": "correct", "rationale": "체크밸브는 차압에 의해 자동 개폐되는 역지밸브로서 한 방향 자유흐름과 역류 방지라는 문항 조건에 정확히 맞는다." },
+      { "choiceId": "U-950-c2", "verdict": "incorrect", "rationale": "차단밸브는 유로를 열고 닫는 용도일 수 있으나 차압에 따라 자동으로 한쪽만 통과시키는 역지 기능을 뜻하지 않는다." },
+      { "choiceId": "U-950-c3", "verdict": "incorrect", "rationale": "스풀밸브는 스풀 이동으로 유로를 전환하는 구조 분류이며, 그 이름만으로 역류를 막는 한 방향 기능이 정해지지 않는다." },
+      { "choiceId": "U-950-c4", "verdict": "incorrect", "rationale": "포핏은 밸브의 밀폐·개폐 구조를 나타낼 뿐이며, 일반 포핏밸브 전체를 역류 방지용 체크밸브와 동일시할 수 없다." }
+    ],
+    "misconception": "밸브의 구조 이름과 유체를 한 방향으로만 통과시키는 기능 이름을 혼동한다.",
+    "existingLessonId": "lesson-1inmha6",
+    "existingBlockId": "principle",
+    "assertionText": "체크밸브는 차압에 의해 자동 개폐되는 역지밸브다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20150531", "https://cbtbank.kr/exam/de20070902"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-748",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-748-c3",
+    "directSolution": "오리피스는 얇은 날에 만든 짧은 교축이다. 길이가 긴 모세관형 초크와 달리 점도의 영향이 상대적으로 작으므로, 오리피스의 압력강하는 점도에 매우 크게 좌우된다고 볼 수 없다. 따라서 c3이 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-748-c1", "verdict": "incorrect", "rationale": "길이가 지름보다 매우 긴 교축은 모세관형 초크의 설명에 가깝고, 오리피스는 얇은 날의 짧은 교축이다." },
+      { "choiceId": "U-748-c2", "verdict": "incorrect", "rationale": "압력강하는 유로 형상과 유량 등 여러 조건에 관계되므로 온도만으로 결정된다는 설명은 오리피스의 특성을 설명하지 못한다." },
+      { "choiceId": "U-748-c3", "verdict": "correct", "rationale": "얇은 날의 짧은 교축인 오리피스는 모세관형 초크보다 점도영향이 작다는 기존 레슨의 직접 근거와 일치한다." },
+      { "choiceId": "U-748-c4", "verdict": "incorrect", "rationale": "점도에 매우 크게 비례하는 특성은 긴 모세관형 교축에 더 가까우며, 오리피스는 그보다 점도 영향이 비교적 작다." }
+    ],
+    "misconception": "짧은 오리피스 교축과 긴 모세관형 초크를 같은 점도 의존성으로 본다.",
+    "existingLessonId": "lesson-tcxwqa",
+    "existingBlockId": "principle",
+    "assertionText": "얇은 날의 짧은 교축인 오리피스는 모세관형 초크보다 점도영향이 작다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180428", "https://cbtbank.kr/exam/de20111002", "https://cbtbank.co.kr/exam/de20060910"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-1038",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1038-c2",
+    "directSolution": "양로드형은 피스톤 양쪽에 같은 지름의 로드를 가져 전진·후진 유효면적이 같다. 압력이 같으면 힘은 유효면적에 비례하므로 양방향 추력도 동일하다. 따라서 c2가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-1038-c1", "verdict": "incorrect", "rationale": "탠덤형은 여러 피스톤 면적을 더해 한 방향의 큰 힘을 얻는 형식으로, 양방향 유효면적을 같게 하는 구조가 아니다." },
+      { "choiceId": "U-1038-c2", "verdict": "correct", "rationale": "피스톤 양쪽에 같은 지름의 로드가 있어 전진·후진 유효면적과 속도·추력이 대칭이라는 기존 레슨 근거와 일치한다." },
+      { "choiceId": "U-1038-c3", "verdict": "incorrect", "rationale": "다위치형은 여러 행정 위치를 만들기 위한 조합 방식이며, 전진·후진의 유효면적을 같게 한다는 뜻은 아니다." },
+      { "choiceId": "U-1038-c4", "verdict": "incorrect", "rationale": "텔레스코프형은 긴 행정을 작은 설치 길이에서 얻는 다단 구조로, 양방향 추력 대칭을 보장하는 형식이 아니다." }
+    ],
+    "misconception": "실린더 형식의 사용 목적과 로드 배치가 만드는 유효면적·추력 관계를 혼동한다.",
+    "existingLessonId": "lesson-f79zvt",
+    "existingBlockId": "principle",
+    "assertionText": "피스톤 양쪽에 같은 지름의 로드가 있어 전진·후진 유효면적과 속도·추력이 대칭이다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20140525"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-742",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-742-c4",
+    "directSolution": "회전식 압축기는 회전 운동으로 압축하지만 다이어프램형은 막을 왕복시켜 체적을 변화시키는 왕복동식이다. 따라서 회전식으로 분류되지 않는 것은 c4다.",
+    "choiceRationales": [
+      { "choiceId": "U-742-c1", "verdict": "incorrect", "rationale": "베인형 압축기는 로터와 베인의 회전으로 공간 체적을 변화시키므로 회전식 압축기 분류에 들어간다." },
+      { "choiceId": "U-742-c2", "verdict": "incorrect", "rationale": "스크롤형 압축기는 두 스크롤의 상대 운동으로 압축을 수행하는 회전식 계열로 분류할 수 있다." },
+      { "choiceId": "U-742-c3", "verdict": "incorrect", "rationale": "루츠형 블로어는 로터가 회전하며 기체를 이송하는 회전식 기계이므로 막 왕복운동의 다이어프램형과 구별된다." },
+      { "choiceId": "U-742-c4", "verdict": "correct", "rationale": "다이어프램형은 막의 왕복운동으로 체적을 변화시키는 왕복동식 압축기라는 기존 레슨 근거와 일치한다." }
+    ],
+    "misconception": "압축기 분류에서 회전 운동과 막의 왕복운동으로 체적을 바꾸는 원리를 구분하지 못한다.",
+    "existingLessonId": "lesson-mhz73c",
+    "existingBlockId": "principle",
+    "assertionText": "다이어프램형은 막의 왕복운동으로 체적을 변화시키는 왕복동식 압축기다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180428", "https://cbtbank.kr/exam/de20120915"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-743",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-743-c4",
+    "directSolution": "양측 파일럿 방향밸브 또는 메모리밸브는 마지막 입력이 사라져도 스풀 위치를 유지한다. 그러므로 전진 버튼을 놓아도 전진 상태가 남고, 후진 버튼을 누르면 후진 상태가 유지된다는 c4가 맞다.",
+    "choiceRationales": [
+      { "choiceId": "U-743-c1", "verdict": "incorrect", "rationale": "두 버튼 동시 조작은 2압 논리의 조건일 수 있으나, 문항의 핵심인 마지막 신호 유지 기능을 설명하지 않는다." },
+      { "choiceId": "U-743-c2", "verdict": "incorrect", "rationale": "버튼을 놓자마자 원위치하는 것은 스프링복귀처럼 유지 기능이 없는 경우이며 메모리밸브의 스풀 위치 유지와 다르다." },
+      { "choiceId": "U-743-c3", "verdict": "incorrect", "rationale": "전진·후진 버튼은 각각 해당 동작을 명령하며, 기억 기능이 두 버튼의 역할을 항상 반대로 바꾸는 것은 아니다." },
+      { "choiceId": "U-743-c4", "verdict": "correct", "rationale": "양측 파일럿 방향밸브 또는 메모리밸브는 마지막 입력신호가 제거된 뒤에도 스풀위치를 유지한다는 기존 레슨 근거와 일치한다." }
+    ],
+    "misconception": "순간 조작 신호와 밸브가 마지막 위치를 유지하는 기억 기능을 같은 것으로 본다.",
+    "existingLessonId": "lesson-13r7cmg",
+    "existingBlockId": "principle",
+    "assertionText": "양측 파일럿 방향밸브 또는 메모리밸브는 마지막 입력신호가 제거된 뒤에도 스풀위치를 유지한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180428", "https://cbtbank.kr/exam/de20120915"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-1035",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1035-c3",
+    "directSolution": "동기속도는 전원 주파수에 비례하고 극수에 반비례하므로 Ns=120f/p이다. 슬립은 동기속도와 실제 회전수의 차이를 동기속도로 나눈 값이므로 s=(Ns-N)/Ns×100%이다. 두 식이 함께 맞는 c3이 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-1035-c1", "verdict": "incorrect", "rationale": "동기속도를 120p/f로 쓰면 주파수와 극수의 비례 관계가 뒤바뀌므로 첫 식부터 맞지 않는다." },
+      { "choiceId": "U-1035-c2", "verdict": "incorrect", "rationale": "Ns=120f/p는 맞지만 슬립은 실제속도에서 동기속도를 빼는 방식이나 실제속도를 분모로 쓰지 않고 동기속도를 기준으로 한다." },
+      { "choiceId": "U-1035-c3", "verdict": "correct", "rationale": "동기속도는 주파수에 비례하고 극수에 반비례하며 슬립은 동기속도와 실제속도의 차이를 동기속도로 나눈다는 기존 레슨 근거와 일치한다." },
+      { "choiceId": "U-1035-c4", "verdict": "incorrect", "rationale": "동기속도 식의 주파수·극수 위치가 바뀌었고, 슬립도 실제속도를 분모로 하여 기준값을 잘못 잡았다." }
+    ],
+    "misconception": "동기속도의 주파수·극수 관계와 슬립의 기준속도를 한 식으로 검산하지 않는다.",
+    "existingLessonId": "lesson-1c3bxux",
+    "existingBlockId": "principle",
+    "assertionText": "동기속도는 주파수에 비례하고 극수에 반비례하며, 슬립은 동기속도와 실제속도의 차이를 동기속도로 나눈 값이다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20140525"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-814",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-814-c1",
+    "directSolution": "리졸버·퍼텐쇼미터·로터리 인코더는 회전각을 전기 신호나 펄스로 바꾸어 검출할 수 있다. 밸브 포지셔너는 제어신호에 맞춰 밸브 개도를 조절하는 장치이지 각도센서 자체가 아니다. 따라서 c1이 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-814-c1", "verdict": "correct", "rationale": "포지셔너는 제어신호에 따라 밸브 개도를 맞추는 조절장치이며 각도센서 자체가 아니라는 기존 레슨 근거와 일치한다." },
+      { "choiceId": "U-814-c2", "verdict": "incorrect", "rationale": "리졸버는 회전자 각도에 따른 전기 신호를 내므로 회전각 검출에 사용할 수 있는 센서이다." },
+      { "choiceId": "U-814-c3", "verdict": "incorrect", "rationale": "퍼텐쇼미터는 회전에 따른 저항 또는 전압 변화를 이용해 축의 각도를 검출할 수 있다." },
+      { "choiceId": "U-814-c4", "verdict": "incorrect", "rationale": "로터리 인코더는 회전량을 펄스로 바꾸어 위치와 회전각을 검출하므로 회전각 검출센서에 해당한다." }
+    ],
+    "misconception": "밸브 위치를 제어하는 포지셔너와 회전각을 측정하는 센서를 같은 장치로 본다.",
+    "existingLessonId": "lesson-19jdhzr",
+    "existingBlockId": "principle",
+    "assertionText": "포지셔너는 제어신호에 따라 밸브 개도를 맞추는 조절장치이며 각도센서 자체가 아니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20161001"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-804",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-804-c4",
+    "directSolution": "서보제어는 위치·속도·힘 같은 출력을 측정하여 목표값과 비교하고 오차를 빠르게 보정하는 폐회로 제어다. 따라서 단순 증폭이나 피드백 없는 개루프가 아니라 빠르고 정확한 폐회로 제어인 c4가 맞다.",
+    "choiceRationales": [
+      { "choiceId": "U-804-c1", "verdict": "incorrect", "rationale": "증폭만 수행하면 실제 출력이 목표에 도달했는지 비교·보정하지 못하므로 서보제어의 폐회로 기능을 설명하지 못한다." },
+      { "choiceId": "U-804-c2", "verdict": "incorrect", "rationale": "서보제어는 느리기만 한 제어가 아니라 목표와 출력의 오차를 신속히 보정해 요구된 응답을 얻는 제어다." },
+      { "choiceId": "U-804-c3", "verdict": "incorrect", "rationale": "출력피드백이 없는 개루프는 오차를 측정해 스스로 보정할 수 없으므로 서보제어의 핵심 조건과 다르다." },
+      { "choiceId": "U-804-c4", "verdict": "correct", "rationale": "위치·속도·힘 등의 출력을 검출해 목표값과 비교하고 오차를 신속히 보정한다는 기존 레슨 근거가 빠르고 정확한 폐회로 제어를 뒷받침한다." }
+    ],
+    "misconception": "증폭 기능, 개루프 제어, 피드백을 통한 오차 보정을 구별하지 못한다.",
+    "existingLessonId": "lesson-13416lu",
+    "existingBlockId": "principle",
+    "assertionText": "위치·속도·힘 등의 출력을 검출해 목표값과 비교하고 오차를 신속히 보정한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20170507", "https://cbtbank.kr/exam/de20111002", "https://www.comcbt.com/xe/cet/5708822"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-799",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-799-c2",
+    "directSolution": "스테핑모터는 입력 펄스마다 정해진 스텝각으로 회전하므로 펄스 수로 각 위치를 정할 수 있다. 다만 고속·과부하에서는 공진과 탈조를 고려해야 한다. 따라서 펄스 수에 비례해 일정 각도씩 회전한다는 c2가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-799-c1", "verdict": "incorrect", "rationale": "스테핑모터는 고속·과부하에서 탈조를 고려해야 하므로 관성이 큰 부하에 항상 적합하다고 단정할 수 없다." },
+      { "choiceId": "U-799-c2", "verdict": "correct", "rationale": "스텝각이 정해져 있어 개루프 위치결정에 유리하다는 기존 레슨 근거가 입력펄스 수에 따른 일정 각도 회전을 뒷받침한다." },
+      { "choiceId": "U-799-c3", "verdict": "incorrect", "rationale": "스테핑모터는 고속·과부하에서 탈조와 공진을 고려해야 하므로 공진과 탈조가 전혀 없다는 설명은 틀리다." },
+      { "choiceId": "U-799-c4", "verdict": "incorrect", "rationale": "스테핑모터는 펄스에 따른 위치결정에 유리한 특성을 말하는 것이며 대용량 고속구동에만 사용한다는 제한은 없다." }
+    ],
+    "misconception": "펄스 기반 위치결정 장점만 보고 공진·탈조가 생기는 운전 한계를 놓친다.",
+    "existingLessonId": "lesson-71wcdd",
+    "existingBlockId": "principle",
+    "assertionText": "스텝각이 정해져 있어 개루프 위치결정에 유리하지만 고속·과부하에서는 탈조와 공진을 고려한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20170507", "https://www.comcbt.com/xe/cet/5708822"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  }
+]

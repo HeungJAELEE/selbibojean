@@ -1,0 +1,230 @@
+[
+  {
+    "questionId": "U-755",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-755-c4",
+    "directSolution": "시작 스위치를 놓은 뒤에도 릴레이의 보조 a접점이 코일 전원 경로를 이어 주면 여자 상태가 계속된다. 정지 스위치로 그 경로를 끊어 해제하는 구성이므로 자기유지회로가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-755-c1", "verdict": "incorrect", "rationale": "동조회로라는 명칭만으로는 코일의 보조접점이 자기 전원 경로를 유지한다는 조건을 만족하지 않는다." },
+      { "choiceId": "U-755-c2", "verdict": "incorrect", "rationale": "비동기회로는 시간 또는 동작의 동기 관계를 가리킬 수 있으나, 여자 상태 유지용 보조접점 회로의 이름은 아니다." },
+      { "choiceId": "U-755-c3", "verdict": "incorrect", "rationale": "인터록회로는 상반된 동작의 동시 투입을 막는 장치이며, 시작 후 코일을 계속 여자시키는 기능과 다르다." },
+      { "choiceId": "U-755-c4", "verdict": "correct", "rationale": "자기유지회로는 자기 보조접점으로 시작 신호가 사라진 뒤에도 코일 전원 경로를 유지하고 정지 신호로 해제한다." }
+    ],
+    "misconception": "인터록의 상호 배제 기능과 보조접점으로 코일 상태를 유지하는 기능을 같은 회로 역할로 혼동한다.",
+    "existingLessonId": "lesson-1viyswi",
+    "existingBlockId": "principle",
+    "assertionText": "시작스위치를 놓아도 보조접점이 전원경로를 유지하고 정지스위치로 회로를 해제한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180428"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-854",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-854-c3",
+    "directSolution": "문항의 큰 지름 램이 직접 왕복하고 한 방향 큰 힘을 낸다는 조건은 램이 수압면과 로드를 겸하는 단동 구조를 뜻한다. 프레스와 리프트의 큰 추력에 쓰는 램형 실린더가 맞다.",
+    "choiceRationales": [
+      { "choiceId": "U-854-c1", "verdict": "incorrect", "rationale": "사판형 액추에이터는 사판 기구를 이용한 회전 또는 제어 방식의 용어로, 큰 플런저가 직선 왕복하는 램형 실린더가 아니다." },
+      { "choiceId": "U-854-c2", "verdict": "incorrect", "rationale": "양로드 실린더는 피스톤 양쪽에 로드가 나와 면적 차를 줄이는 구조이지, 램 자체가 수압면이 되는 단동 구조가 아니다." },
+      { "choiceId": "U-854-c3", "verdict": "correct", "rationale": "램형 실린더는 큰 램이 수압면과 로드 역할을 함께 하여 프레스·리프트처럼 큰 한 방향 추력이 필요한 곳에 사용한다." },
+      { "choiceId": "U-854-c4", "verdict": "incorrect", "rationale": "텔레스코프 실린더는 짧은 설치 길이에서 긴 행정을 얻기 위한 다단 구조이며, 문항의 램형 특징과 판단 기준이 다르다." }
+    ],
+    "misconception": "긴 행정용 다단 실린더와 큰 압축력용 램형 실린더를 모두 큰 힘을 내는 장치로만 보아 구분하지 못한다.",
+    "existingLessonId": "lesson-rfxryp",
+    "existingBlockId": "principle",
+    "assertionText": "램형은 램 자체가 수압면과 로드 역할을 하며 프레스·리프트 등 큰 추력에 사용한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20161001"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-856",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-856-c2",
+    "directSolution": "회로도는 기호와 선으로 기기의 기능적 연결 및 동작 논리를 보여 준다. 실제 관의 길이와 현장 간격은 배관도나 설치도에서 정하는 물리 배치 정보이므로 회로도만으로 확정할 수 없다.",
+    "choiceRationales": [
+      { "choiceId": "U-856-c1", "verdict": "incorrect", "rationale": "회로 기호와 연결을 따라가면 작동유체가 어느 경로로 흐르는지 판단할 수 있으므로 회로도가 제공하는 정보에 속한다." },
+      { "choiceId": "U-856-c2", "verdict": "correct", "rationale": "실제 배관의 길이와 현장 설치거리는 기능선만 나타낸 회로도가 아닌 배관도·설치도에서 확인해야 하는 정보다." },
+      { "choiceId": "U-856-c3", "verdict": "incorrect", "rationale": "회로도는 밸브·펌프·액추에이터 등의 기호와 선으로 기기의 기능 및 상호 연결관계를 나타내는 도면이다." },
+      { "choiceId": "U-856-c4", "verdict": "incorrect", "rationale": "제어 신호와 밸브 연결을 해석하면 액추에이터의 동작 순서를 추적할 수 있어 실제 배치 치수와는 성격이 다르다." }
+    ],
+    "misconception": "기능 연결을 표현하는 회로도와 배관 길이·공간 배치를 표현하는 설치 도면의 역할을 혼동한다.",
+    "existingLessonId": "lesson-3rwcey",
+    "existingBlockId": "principle",
+    "assertionText": "회로도는 기능적 연결과 동작논리를 나타내며 실제 배관길이·공간배치는 배관도와 설치도에서 확인한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20161001"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-897",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-897-c3",
+    "directSolution": "공정이 정해진 단계 순서로 진행되고, 완료·시간·센서 조건이 충족될 때 다음 단계로 넘어가는 것이 핵심이다. 이는 연속량을 증폭하거나 비례 조절하는 제어가 아니라 시퀀스 제어다.",
+    "choiceRationales": [
+      { "choiceId": "U-897-c1", "verdict": "incorrect", "rationale": "단순 증폭제어는 신호 크기를 키우는 기능일 뿐 이전 단계의 완료 조건에 따라 공정 단계를 전이시키지 않는다." },
+      { "choiceId": "U-897-c2", "verdict": "incorrect", "rationale": "메모리소자는 상태를 저장하는 부품일 수 있지만, 순서와 전이 조건에 따라 공정 전체를 진행시키는 제어 방식 자체는 아니다." },
+      { "choiceId": "U-897-c3", "verdict": "correct", "rationale": "시퀀스 제어는 각 단계의 완료·시간·센서 조건을 확인한 후 미리 정한 다음 단계로 공정을 전환한다." },
+      { "choiceId": "U-897-c4", "verdict": "incorrect", "rationale": "연속비례제어는 오차 크기에 비례한 연속 출력을 다루며, 이산적인 공정 단계와 전이 조건을 중심으로 하지 않는다." }
+    ],
+    "misconception": "상태를 저장하는 소자와 순서 조건으로 여러 공정을 진행시키는 시퀀스 제어를 같은 개념으로 본다.",
+    "existingLessonId": "lesson-udw4i",
+    "existingBlockId": "principle",
+    "assertionText": "시퀀스제어는 이전 단계의 완료·시간·센서조건에 따라 다음 단계로 전환한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20150919"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-902",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-902-c1",
+    "directSolution": "고주파 LC 발진기의 금속 접근 검출은 금속 표면의 와전류가 발진 에너지를 소모해 진폭을 바꾸는 원리다. 이 발진 변화를 쓰는 센서는 유도형 근접센서다.",
+    "choiceRationales": [
+      { "choiceId": "U-902-c1", "verdict": "correct", "rationale": "유도형 근접센서는 금속에서 생긴 와전류로 LC 발진 진폭이 변하는 것을 검출하여 금속의 접근을 판단한다." },
+      { "choiceId": "U-902-c2", "verdict": "incorrect", "rationale": "광전센서는 빛의 차단·반사 또는 수광량 변화를 이용하므로 LC 발진기와 금속 와전류를 검출 원리로 쓰지 않는다." },
+      { "choiceId": "U-902-c3", "verdict": "incorrect", "rationale": "리드스위치는 자석의 자기장으로 접점을 개폐하는 방식이며, 금속 접근에 의한 발진 진폭 감소와는 작동 원리가 다르다." },
+      { "choiceId": "U-902-c4", "verdict": "incorrect", "rationale": "정전용량형 센서는 대상과 센서 사이의 정전용량 변화를 이용하므로 비금속도 검출할 수 있고 와전류 검출 방식이 아니다." }
+    ],
+    "misconception": "금속을 검출한다는 공통점만 보고 유도형의 와전류 방식과 정전용량형·광전형의 검출 원리를 구별하지 못한다.",
+    "existingLessonId": "lesson-1y9qr6c",
+    "existingBlockId": "principle",
+    "assertionText": "금속표면에 생기는 와전류가 발진에너지를 소모하므로 발진진폭 변화를 검출한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20150919"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-943",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-943-c3",
+    "directSolution": "카운터밸런스밸브는 중력 부하가 스스로 내려가 폭주하는 것을 막기 위해 배압을 유지한다. 반대 방향으로 공급할 때는 내장 체크밸브가 자유흐름을 허용할 수 있으므로 3번 설명이 옳다.",
+    "choiceRationales": [
+      { "choiceId": "U-943-c1", "verdict": "incorrect", "rationale": "유압신호를 전기신호로 바꾸는 장치는 압력스위치나 변환기이며, 카운터밸런스밸브의 하중 유지·배압 제어 기능과 다르다." },
+      { "choiceId": "U-943-c2", "verdict": "incorrect", "rationale": "카운터밸런스밸브는 설정 압력과 배압으로 하중을 제어하는 압력제어 성격의 밸브이지 방향제어밸브만으로 분류되지 않는다." },
+      { "choiceId": "U-943-c3", "verdict": "correct", "rationale": "카운터밸런스밸브는 하중 낙하를 막는 압력제어 기능과 함께, 반대 방향 공급 시 자유흐름을 위한 체크밸브를 내장할 수 있다." },
+      { "choiceId": "U-943-c4", "verdict": "incorrect", "rationale": "이 밸브의 목적은 항상 무부하를 만드는 것이 아니라 부하가 폭주하지 않도록 필요한 배압을 유지하며 제어된 하강을 만드는 것이다." }
+    ],
+    "misconception": "하중 유지용 압력제어밸브를 단순 방향전환 장치나 무부하용 밸브로 오해한다.",
+    "existingLessonId": "lesson-6jatm",
+    "existingBlockId": "principle",
+    "assertionText": "하중의 낙하를 방지하고 배압을 유지하며 반대방향 공급에는 체크밸브로 자유흐름을 허용한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20150531"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-991",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-991-c1",
+    "directSolution": "트로코이드펌프는 내·외측 로터의 잇수 차를 하나로 두고 편심 회전시켜 치간 체적을 변화시킨다. 따라서 외측로터의 잇수가 내측로터보다 하나 많은 1번이 구조적 특징이다.",
+    "choiceRationales": [
+      { "choiceId": "U-991-c1", "verdict": "correct", "rationale": "트로코이드펌프는 외측로터가 내측로터보다 잇수가 하나 많고 두 로터의 편심 회전으로 흡입·토출 체적 변화를 만든다." },
+      { "choiceId": "U-991-c2", "verdict": "incorrect", "rationale": "초승달형 스페이서는 인벌루트 내접기어펌프 계열에서 유로를 나누는 구조로 쓰일 수 있으며 트로코이드펌프의 필수 조건은 아니다." },
+      { "choiceId": "U-991-c3", "verdict": "incorrect", "rationale": "내·외측로터의 잇수가 같으면 트로코이드펌프의 편심 치간 체적 변화 조건이 성립하지 않으므로 구조 설명이 틀린다." },
+      { "choiceId": "U-991-c4", "verdict": "incorrect", "rationale": "트로코이드펌프는 비교적 간단한 저·중압 용적식 펌프이며, 초고압용 피스톤펌프보다 고압 운전에 유리하다고 볼 수 없다." }
+    ],
+    "misconception": "내접기어펌프의 초승달 구조와 트로코이드펌프의 잇수 차·편심 구조를 같은 방식으로 기억한다.",
+    "existingLessonId": "lesson-1buj9ja",
+    "existingBlockId": "principle",
+    "assertionText": "내·외측로터의 잇수차 1개와 편심회전으로 체적변화를 만든다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20140920", "https://cbtbank.kr/exam/de20111002"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-992",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-992-c2",
+    "directSolution": "실린더에서 빠져나오는 유량을 교축하면 유출측에 배압이 생긴다. 이 배압으로 인장성·관성부하의 앞당김을 억제해 속도를 안정시키는 방식이 미터아웃 회로다.",
+    "choiceRationales": [
+      { "choiceId": "U-992-c1", "verdict": "incorrect", "rationale": "미터인 회로는 실린더로 들어가는 유량을 교축하므로 배출 유량을 교축한다는 문항의 조건과 반대쪽에 제한을 둔다." },
+      { "choiceId": "U-992-c2", "verdict": "correct", "rationale": "미터아웃 회로는 실린더에서 나오는 유량을 교축해 배압을 형성하므로 관성 또는 인장성 부하에서도 속도 안정에 유리하다." },
+      { "choiceId": "U-992-c3", "verdict": "incorrect", "rationale": "급속배기 회로는 실린더의 배기 공기를 빠르게 대기로 빼내 속도를 높이는 방식으로, 배출측 교축에 의한 속도 제어가 아니다." },
+      { "choiceId": "U-992-c4", "verdict": "incorrect", "rationale": "블리드오프 회로는 펌프 토출 유량 일부를 탱크로 우회시키는 유량 제어 방식이며 실린더 배출측을 직접 교축하지 않는다." }
+    ],
+    "misconception": "공급 유량을 줄이는 미터인과 배출 유량을 줄여 배압을 만드는 미터아웃의 교축 위치를 뒤바꾼다.",
+    "existingLessonId": "lesson-1ffd4xt",
+    "existingBlockId": "principle",
+    "assertionText": "유출측 교축으로 배압을 형성해 인장성·관성부하에서도 속도를 안정시킨다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20140920", "https://cbtbank.kr/exam/de20120915", "https://www.comcbt.com/xe/cet/5708822", "https://cbtbank.kr/exam/de20080907", "https://cbtbank.co.kr/exam/de20060910"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-1041",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1041-c1",
+    "directSolution": "동기전동기는 동기 운전 시 속도와 역률 조절 면에서 장점이 있지만, 정지 상태에서 스스로 가속할 기동토크가 없다. 그래서 별도 기동 수단이 필요 없다는 1번은 장점으로 보기 어렵다.",
+    "choiceRationales": [
+      { "choiceId": "U-1041-c1", "verdict": "correct", "rationale": "동기전동기는 본질적 기동토크가 없어 댐퍼권선·보조전동기·인버터 같은 기동 수단이 필요하므로 자체 기동이 쉽지 않다." },
+      { "choiceId": "U-1041-c2", "verdict": "incorrect", "rationale": "동기전동기는 탈조 범위 안에서 부하가 변해도 전원 주파수와 극수로 정해진 동기속도를 유지하는 특성이 있다." },
+      { "choiceId": "U-1041-c3", "verdict": "incorrect", "rationale": "여자 전류를 조절하면 무효전력을 조정할 수 있어 높은 역률 운전 또는 역률 개선에 활용할 수 있으므로 장점에 해당한다." },
+      { "choiceId": "U-1041-c4", "verdict": "incorrect", "rationale": "동기속도는 전원 주파수와 극수로 정해지므로 두 값이 일정한 정상 운전에서는 회전속도 일정성이 동기전동기의 특성이다." }
+    ],
+    "misconception": "동기 운전 중의 일정 속도 특성과 정지 상태에서 별도 기동 장치가 필요한 특성을 함께 고려하지 못한다.",
+    "existingLessonId": "lesson-1n7phfg",
+    "existingBlockId": "principle",
+    "assertionText": "동기전동기는 본질적으로 기동토크가 없어 댐퍼권선·보조전동기·인버터 등 기동수단이 필요하다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20140525", "https://cbtbank.kr/exam/de20070902"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-1045",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1045-c4",
+    "directSolution": "입력 신호가 사라진 후에도 한 비트 상태를 남기려면 현재 입력만 계산하는 조합논리가 아니라 두 안정 상태를 보존하는 순차논리가 필요하다. 따라서 플립플롭 회로가 맞다.",
+    "choiceRationales": [
+      { "choiceId": "U-1045-c1", "verdict": "incorrect", "rationale": "AND 회로의 출력은 현재 입력들이 모두 참인지에 따라 즉시 달라지는 조합논리이므로 입력이 사라진 상태를 저장하지 못한다." },
+      { "choiceId": "U-1045-c2", "verdict": "incorrect", "rationale": "OFF 논리만이라는 표현은 0 상태만을 뜻할 뿐, 0과 1 중 이전 상태 하나를 기억하는 회로 구조를 설명하지 않는다." },
+      { "choiceId": "U-1045-c3", "verdict": "incorrect", "rationale": "OR 회로도 현재 입력 중 하나 이상이 참인지 계산하는 조합논리이므로 입력이 바뀌면 출력이 함께 바뀌어 상태 기억 기능이 없다." },
+      { "choiceId": "U-1045-c4", "verdict": "correct", "rationale": "플립플롭 회로는 두 안정 상태를 갖는 순차논리회로로서 입력 신호가 사라진 뒤에도 한 비트의 상태를 유지한다." }
+    ],
+    "misconception": "AND·OR 같은 조합논리의 즉시 계산 기능과 플립플롭의 이전 상태 저장 기능을 구분하지 못한다.",
+    "existingLessonId": "lesson-18wjsaa",
+    "existingBlockId": "principle",
+    "assertionText": "플립플롭은 두 안정상태를 갖는 순차논리회로로 메모리 기능을 수행한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20140525"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-1048",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1048-c1",
+    "directSolution": "두 제어계를 계단처럼 연결해 외부 주제어기의 출력이 내부 부제어기의 설정값이 되는 구조가 캐스케이드 제어다. 내부 루프가 가까운 외란을 먼저 다뤄 외란 억제를 빠르게 한다.",
+    "choiceRationales": [
+      { "choiceId": "U-1048-c1", "verdict": "correct", "rationale": "캐스케이드 제어는 주제어기 출력이 부제어기의 설정값이 되는 중첩 루프 구조로, 내부 루프가 외란을 빠르게 보정한다." },
+      { "choiceId": "U-1048-c2", "verdict": "incorrect", "rationale": "선택제어는 여러 측정값이나 조작 신호 중 조건에 맞는 하나를 선택하는 방식이며, 두 제어기의 설정값을 계단식으로 연결하지 않는다." },
+      { "choiceId": "U-1048-c3", "verdict": "incorrect", "rationale": "프로그램제어는 시간이나 미리 정한 절차에 따라 설정값을 변화시키는 방식으로, 주제어기 출력이 부제어기 설정값이 되는 구조와 다르다." },
+      { "choiceId": "U-1048-c4", "verdict": "incorrect", "rationale": "정치제어는 제어량을 일정하게 유지한다는 일반 표현일 뿐, 두 피드백 루프를 연결하는 캐스케이드 구성의 명칭이 아니다." }
+    ],
+    "misconception": "설정값을 시간 순서로 바꾸는 프로그램제어와 주·부 제어기를 중첩하는 캐스케이드 제어를 혼동한다.",
+    "existingLessonId": "lesson-l6kr9y",
+    "existingBlockId": "principle",
+    "assertionText": "외부 주제어기의 출력이 내부 부제어기의 설정값으로 사용되어 외란을 빠르게 억제한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20130928"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-1139",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1139-c4",
+    "directSolution": "외부 공기가 유압유에 섞여 미세 기포가 생기는 현상은 에어레이션이다. 오일의 압축성 증가, 소음, 펌프 효율 저하로 이어지는 공기 혼입을 묻는 것이므로 캐비테이션과 구별해야 한다.",
+    "choiceRationales": [
+      { "choiceId": "U-1139-c1", "verdict": "incorrect", "rationale": "캐비테이션은 국부 저압으로 증기 기포가 생겼다가 고압부에서 붕괴하는 현상으로, 외부 공기가 오일에 혼입되는 에어레이션과 원인이 다르다." },
+      { "choiceId": "U-1139-c2", "verdict": "incorrect", "rationale": "채터링은 밸브나 접점이 진동하며 빠르게 반복 동작하는 현상을 말하므로 유압유 속 미세 공기기포의 명칭이 아니다." },
+      { "choiceId": "U-1139-c3", "verdict": "incorrect", "rationale": "점핑은 부품 또는 운동체의 불규칙한 튐을 가리킬 수 있으나, 외부 공기가 오일에 섞여 기포가 생기는 현상을 뜻하지 않는다." },
+      { "choiceId": "U-1139-c4", "verdict": "correct", "rationale": "에어레이션은 외부 공기가 유압유에 혼입되어 미세 기포를 만들고 압축성 증가·소음·펌프 효율 저하를 일으키는 현상이다." }
+    ],
+    "misconception": "기포가 보인다는 결과만으로 외부 공기 혼입인 에어레이션과 압력 변화에 따른 캐비테이션을 같은 현상으로 판단한다.",
+    "existingLessonId": "lesson-lvga3a",
+    "existingBlockId": "principle",
+    "assertionText": "외부공기가 오일에 혼입되어 압축성·소음·펌프효율 저하를 일으킨다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20120915"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  }
+]

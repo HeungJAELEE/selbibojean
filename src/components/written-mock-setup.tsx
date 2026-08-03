@@ -5,10 +5,13 @@ import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRight, BookOpenCheck, ClipboardList, RotateCcw } from "lucide-react";
 import type { Subject } from "@/lib/domain/types";
+import {
+  preparePracticeSessionStorage,
+  savePracticeSession,
+} from "@/lib/learning/practice-session-storage";
 import { cn } from "@/lib/utils";
 import { useHydrated } from "@/lib/use-hydrated";
 
-const SESSION_PREFIX = "seolbi:practice:";
 const RATIOS = [0, 25, 50, 75, 100] as const;
 
 type Allocation = {
@@ -20,12 +23,14 @@ type Allocation = {
 export function WrittenMockSetup({
   subjects,
   availableBySubject,
+  sourceBankBySubject,
   availableYears,
   availableByYearRange,
   choiceShuffleEnabled,
 }: {
   subjects: Subject[];
   availableBySubject: Record<string, number>;
+  sourceBankBySubject: Record<string, number>;
   availableYears: number[];
   availableByYearRange: Record<string, Record<string, number>>;
   choiceShuffleEnabled: boolean;
@@ -77,6 +82,14 @@ export function WrittenMockSetup({
   );
   const standardTotal = subjects.reduce((total, subject) => total + Math.min(20, rangeAvailability[subject.id] ?? 0), 0);
   const standardReady = standardTotal === subjects.length * 20;
+  const sourceBankTotal = subjects.reduce(
+    (total, subject) => total + (sourceBankBySubject[subject.id] ?? 0),
+    0,
+  );
+  const availableTotal = subjects.reduce(
+    (total, subject) => total + (availableBySubject[subject.id] ?? 0),
+    0,
+  );
 
   async function startMock(standard: boolean) {
     const selected = standard
@@ -90,6 +103,7 @@ export function WrittenMockSetup({
     setLoading(true);
     setError("");
     try {
+      preparePracticeSessionStorage(localStorage);
       const response = await fetch("/api/practice/session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -105,7 +119,7 @@ export function WrittenMockSetup({
       });
       const session = await response.json() as { sessionId?: string; error?: string };
       if (!response.ok || !session.sessionId) throw new Error(session.error ?? "모의고사를 시작하지 못했습니다.");
-      localStorage.setItem(`${SESSION_PREFIX}${session.sessionId}`, JSON.stringify(session));
+      savePracticeSession(localStorage, session.sessionId, session);
       router.push(`/written/practice/random?resume=${session.sessionId}&index=0`);
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "모의고사를 시작하지 못했습니다.");
@@ -140,6 +154,14 @@ export function WrittenMockSetup({
           <div><p className="eyebrow">Custom mock</p><h2 id="custom-mock-title" className="mt-1 text-2xl font-extrabold">커스텀 필기 모의고사</h2><p className="mt-2 text-sm leading-6 text-slate-600">응시할 과목과 과목별 문제 수, 실제 기출 비율을 직접 선택합니다.</p></div>
         </div>
 
+        <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-4 text-sm leading-6 text-amber-950">
+          <strong>기출 원장 {sourceBankTotal.toLocaleString("ko-KR")}문제는 전부 보존합니다.</strong>{" "}
+          현재 바로 풀 수 있는 {availableTotal.toLocaleString("ko-KR")}문제는
+          정답·직접 풀이·네 보기별 이유·개념 연결까지 검수된 문항입니다.
+          나머지는 삭제하지 않고 보강 대기로 관리하며, 검수가 끝난 순서대로
+          모의고사에 포함합니다.
+        </div>
+
         <div className="mt-7 grid gap-3 md:grid-cols-2">
           {subjects.map((subject) => {
             const allocation = allocations.find((item) => item.subjectId === subject.id);
@@ -158,7 +180,20 @@ export function WrittenMockSetup({
                   <select aria-label={`제${subject.code}과목 문제 수`} disabled={!isHydrated || !allocation.enabled} value={allocation.count} onChange={(event) => updateAllocation(subject.id, { count: Number(event.target.value) })} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50">
                     {countOptions.map((count) => <option key={count} value={count}>{count}문제</option>)}
                   </select>
-                  <span className="text-xs font-medium text-slate-500">검수 완료 {availableCount}문제</span>
+                  <span className="text-xs font-medium text-slate-500">
+                    기출 원장 {sourceBankBySubject[subject.id] ?? 0}문제 ·
+                    현재 학습 가능 {availableBySubject[subject.id] ?? 0}문제 ·
+                    선택 연도 원문 {availableCount}문제
+                  </span>
+                  {(sourceBankBySubject[subject.id] ?? 0) >
+                    (availableBySubject[subject.id] ?? 0) && (
+                    <span className="text-xs font-semibold text-amber-700">
+                      보강 대기{" "}
+                      {(sourceBankBySubject[subject.id] ?? 0) -
+                        (availableBySubject[subject.id] ?? 0)}
+                      문제는 삭제하지 않고 풀이·개념 연결 검수 중입니다.
+                    </span>
+                  )}
                 </label>
               </div>
             );

@@ -3,9 +3,15 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
+import {
+  WELDING_CBT_ANSWER_REVIEWS,
+  isWeldingCbtAnswerReviewPublishable,
+} from "@/data/source/welding-cbt-answer-review";
+import { isIndependentlyAcceptedWeldingCbtQuestion } from "@/data/source/welding-cbt-independent-review-gates";
 import { notionGapWrittenLessons } from "@/lib/content/notion-gap-written-lessons";
 import { buildRuntimeContent } from "@/lib/content/runtime-content";
 import { supplementalWrittenLessons } from "@/lib/content/supplemental-written-lessons";
+import { getWeldingCbtCurationSummary } from "@/lib/content/welding-cbt-approved";
 import {
   isPublishableLesson,
   isPublishableQuestion,
@@ -21,7 +27,7 @@ const base = JSON.parse(
 const content = buildRuntimeContent(base);
 
 describe("runtime merged content gates", () => {
-  it("keeps IDs and question-to-lesson taxonomy relationships consistent", () => {
+  it("keeps IDs and reviewed question-to-lesson relationships consistent", () => {
     expect(new Set(content.questions.map((item) => item.id)).size).toBe(
       content.questions.length,
     );
@@ -34,7 +40,12 @@ describe("runtime merged content gates", () => {
     expect(
       content.questions.filter((question) => {
         const lesson = lessonById.get(question.lessonId);
-        return !lesson || lesson.conceptGroupId !== question.conceptGroupId;
+        if (!lesson || lesson.subjectId !== question.subjectId) return true;
+        if (question.approvedReview) {
+          return question.approvedReview.conceptBinding.href
+            !== `/written/theory/${question.lessonId}#${question.lessonAnchor}`;
+        }
+        return lesson.conceptGroupId !== question.conceptGroupId;
       }),
     ).toEqual([]);
   });
@@ -53,7 +64,7 @@ describe("runtime merged content gates", () => {
     ).toEqual([]);
   });
 
-  it("publishes reviewed 33rd-batch welding safety rows and keeps unresolved rows blocked", () => {
+  it("publishes the fully direct-reviewed 33rd-batch welding safety rows", () => {
     const weldingQuestions = content.questions.filter((question) =>
       question.id.startsWith("welding-safety-b33-"),
     );
@@ -61,18 +72,70 @@ describe("runtime merged content gates", () => {
       question.audit?.auditDisposition.startsWith("held_"),
     );
 
-    expect(weldingQuestions.filter(isPublishableQuestion)).toHaveLength(133);
-    expect(heldWelding).toHaveLength(17);
-    expect(heldWelding.some(isPublishableQuestion)).toBe(false);
+    expect(weldingQuestions).toHaveLength(150);
+    expect(weldingQuestions.filter(isPublishableQuestion)).toHaveLength(150);
+    expect(
+      weldingQuestions.filter((question) => question.approvedReview),
+    ).toHaveLength(150);
+    expect(
+      weldingQuestions.every((question) => question.contentStatus === "published"),
+    ).toBe(true);
+    expect(heldWelding).toEqual([]);
   });
 
   it("applies the complete written-question audit and blocks every held item", () => {
     const audited = content.questions.filter((question) => question.audit);
+    const runtimeWeldingQuestions = content.questions.filter((question) =>
+      question.id.startsWith("wcbt-"),
+    );
+    const runtimeWeldingVariants = content.variants.filter((variant) =>
+      variant.canonicalId.startsWith("wcbt-"),
+    );
+    const publishableWeldingReviewIds = new Set(
+      WELDING_CBT_ANSWER_REVIEWS.entries
+        .filter(
+          (entry) =>
+            isWeldingCbtAnswerReviewPublishable(entry)
+            && isIndependentlyAcceptedWeldingCbtQuestion(entry.canonicalId),
+        )
+        .map((entry) => entry.canonicalId),
+    );
+    const blockedWeldingReviewIds = new Set(
+      WELDING_CBT_ANSWER_REVIEWS.entries
+        .filter(
+          (entry) =>
+            !isWeldingCbtAnswerReviewPublishable(entry)
+            || !isIndependentlyAcceptedWeldingCbtQuestion(entry.canonicalId),
+        )
+        .map((entry) => entry.canonicalId),
+    );
+    const weldingCuration = getWeldingCbtCurationSummary();
     const held = audited.filter((question) =>
       question.audit?.auditDisposition.startsWith("held_"),
     );
 
-    expect(audited).toHaveLength(281);
+    expect(
+      new Set(runtimeWeldingQuestions.map((question) => question.id)),
+    ).toEqual(publishableWeldingReviewIds);
+    expect(
+      new Set(runtimeWeldingVariants.map((variant) => variant.canonicalId)),
+    ).toEqual(publishableWeldingReviewIds);
+    expect(
+      runtimeWeldingQuestions.filter((question) =>
+        blockedWeldingReviewIds.has(question.id),
+      ),
+    ).toEqual([]);
+    expect(
+      runtimeWeldingVariants.filter((variant) =>
+        blockedWeldingReviewIds.has(variant.canonicalId),
+      ),
+    ).toEqual([]);
+    expect(blockedWeldingReviewIds.size).toBe(
+      WELDING_CBT_ANSWER_REVIEWS.entries.length
+        - publishableWeldingReviewIds.size,
+    );
+    expect(weldingCuration.sourceApprovedCanonicalCount).toBe(3009);
+    expect(audited).toHaveLength(281 + runtimeWeldingQuestions.length);
     expect(
       audited.filter((question) => question.audit?.scope === "review_queue"),
     ).toHaveLength(257);
@@ -80,8 +143,8 @@ describe("runtime merged content gates", () => {
       audited.filter(
         (question) => question.audit?.scope === "high_risk_public",
       ),
-    ).toHaveLength(24);
-    expect(held).toHaveLength(95);
+    ).toHaveLength(24 + runtimeWeldingQuestions.length);
+    expect(held).toHaveLength(15);
     expect(held.some(isPublishableQuestion)).toBe(false);
     expect(
       held.every(
@@ -105,10 +168,14 @@ describe("runtime merged content gates", () => {
       supplemental.every((lesson) => lesson.relatedQuestionIds.length === 0),
     ).toBe(true);
     const supplementalIds = new Set(supplemental.map((lesson) => lesson.id));
+    const reviewedTheoryLinks = content.questions.filter(
+      (question) =>
+        isPublishableQuestion(question)
+        && supplementalIds.has(question.lessonId),
+    );
+    expect(reviewedTheoryLinks.length).toBeGreaterThan(0);
     expect(
-      content.questions.some((question) =>
-        supplementalIds.has(question.lessonId),
-      ),
-    ).toBe(false);
+      supplemental.flatMap((lesson) => lesson.relatedQuestionIds),
+    ).toEqual([]);
   });
 });

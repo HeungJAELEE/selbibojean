@@ -3,8 +3,11 @@ import generatedContent from "@/data/generated/content.json";
 import { WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE } from "@/data/source/written-subject-four-memory-guide";
 import { WRITTEN_SUBJECT_ONE_MEMORY_GUIDE } from "@/data/source/written-subject-one-memory-guide";
 import { WRITTEN_SUBJECT_THREE_MEMORY_GUIDE } from "@/data/source/written-subject-three-memory-guide";
+import { getSubjectOneBundleCbtSelection } from "@/data/source/written-subject-one-cbt-links";
 import { getSubjectThreeBundleCbtSelection } from "@/data/source/written-subject-three-cbt-links";
+import { getSubjectFourBundleCbtSelection } from "@/data/source/written-subject-four-cbt-links";
 import { WRITTEN_SUBJECT_TWO_MEMORY_GUIDE } from "@/data/source/written-subject-two-memory-guide";
+import { getSubjectTwoBundleCbtSelection } from "@/data/source/written-subject-two-cbt-links";
 import {
   getWrittenSubjectBundleLessonTitles,
   getWrittenSubjectFactEvidenceBinding,
@@ -16,9 +19,12 @@ import {
   isPublishableLesson,
   isPublishableQuestion,
 } from "@/lib/domain/practice";
-import { getSafeOriginalsByQuestion } from "@/lib/content/practice-presentations";
+import {
+  createPracticePresentations,
+  getSafeOriginalsByQuestion,
+} from "@/lib/content/practice-presentations";
 import { buildRuntimeContent } from "@/lib/content/runtime-content";
-import type { GeneratedContent } from "@/lib/domain/types";
+import type { GeneratedContent, PublicQuestion } from "@/lib/domain/types";
 
 const content = buildRuntimeContent(generatedContent as GeneratedContent);
 
@@ -354,60 +360,82 @@ describe("written subject memory guide CBT links", () => {
   it("links a verified CBT question or declares an explicit review boundary", () => {
     const unaccountedBundles: string[] = [];
 
-    for (const guide of GUIDES) {
-      const publicLessons = content.lessons.filter(
-        (lesson) =>
-          lesson.subjectId === guide.subjectId && isPublishableLesson(lesson),
-      );
+    const auditGuide = <TBundle extends { id: string }>(
+      subjectId: string,
+      bundles: readonly TBundle[],
+      getSelection: (
+        bundle: TBundle,
+        questions: readonly PublicQuestion[],
+      ) => {
+        questions: readonly PublicQuestion[];
+        statusNote?: string;
+      },
+    ) => {
       const publicQuestions = content.questions.filter(
         (question) =>
-          question.subjectId === guide.subjectId &&
+          question.subjectId === subjectId &&
           isPublishableQuestion(question),
       );
-      const originalsByQuestion = getSafeOriginalsByQuestion(
+      const approvedOriginalQuestions = createPracticePresentations(
         publicQuestions,
         content.variants,
-      );
+        100,
+        20260730,
+      ).filter((question) => question.provenance.original);
 
-      for (const bundle of guide.bundles) {
-        if (guide.subjectCode === 3) {
-          const reviewedSelection = getSubjectThreeBundleCbtSelection(
-            bundle,
-            [],
-          );
-          if (
-            reviewedSelection.questions.length === 0 &&
-            !reviewedSelection.statusNote
-          ) {
-            unaccountedBundles.push(`${guide.subjectId}:${bundle.id}`);
-          }
-          continue;
-        }
-
-        const bundleLessonTitles = getWrittenSubjectBundleLessonTitles(
-          guide.subjectCode,
+      for (const bundle of bundles) {
+        const reviewedSelection = getSelection(
           bundle,
-        );
-        const relatedLessons = publicLessons.filter((lesson) =>
-          bundleLessonTitles.includes(lesson.title),
-        );
-        const lessonIds = new Set(relatedLessons.map((lesson) => lesson.id));
-        const hasLinkedQuestion = publicQuestions.some(
-          (question) =>
-            lessonIds.has(question.lessonId) &&
-            originalsByQuestion.has(question.id),
+          approvedOriginalQuestions,
         );
 
-        const hasExplicitReviewBoundary =
-          "cbtStatusNote" in bundle &&
-          typeof bundle.cbtStatusNote === "string" &&
-          bundle.cbtStatusNote.length > 0;
-
-        if (!hasLinkedQuestion && !hasExplicitReviewBoundary) {
-          unaccountedBundles.push(`${guide.subjectId}:${bundle.id}`);
+        if (
+          reviewedSelection.questions.length === 0 &&
+          !reviewedSelection.statusNote
+        ) {
+          unaccountedBundles.push(`${subjectId}:${bundle.id}`);
+        }
+        if (reviewedSelection.questions.length > 5) {
+          unaccountedBundles.push(
+            `${subjectId}:${bundle.id}:over-five`,
+          );
+        }
+        if (
+          reviewedSelection.questions.some(
+            (selectedQuestion) =>
+              !approvedOriginalQuestions.some(
+                (approvedQuestion) =>
+                  approvedQuestion.id === selectedQuestion.id,
+              ),
+          )
+        ) {
+          unaccountedBundles.push(
+            `${subjectId}:${bundle.id}:outside-approved-set`,
+          );
         }
       }
-    }
+    };
+
+    auditGuide(
+      "subject-1",
+      WRITTEN_SUBJECT_ONE_MEMORY_GUIDE,
+      getSubjectOneBundleCbtSelection,
+    );
+    auditGuide(
+      "subject-2",
+      WRITTEN_SUBJECT_TWO_MEMORY_GUIDE,
+      getSubjectTwoBundleCbtSelection,
+    );
+    auditGuide(
+      "subject-3",
+      WRITTEN_SUBJECT_THREE_MEMORY_GUIDE,
+      getSubjectThreeBundleCbtSelection,
+    );
+    auditGuide(
+      "subject-4",
+      WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE,
+      getSubjectFourBundleCbtSelection,
+    );
 
     expect(unaccountedBundles).toEqual([]);
   });

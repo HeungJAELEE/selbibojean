@@ -10,8 +10,8 @@ import {
 
 describe("supplemental written lessons", () => {
   it("covers the requested written-exam reinforcement topics without question links", () => {
-    expect(supplementalWrittenLessons).toHaveLength(14);
-    expect(supplementalWrittenLessonIds.size).toBe(14);
+    expect(supplementalWrittenLessons).toHaveLength(17);
+    expect(supplementalWrittenLessonIds.size).toBe(17);
     expect(new Set(supplementalWrittenLessons.map((lesson) => lesson.subjectId))).toEqual(
       new Set(["subject-1", "subject-2", "subject-3", "subject-4"]),
     );
@@ -24,6 +24,51 @@ describe("supplemental written lessons", () => {
       expect(lesson.sourceNeeded).toBe(false);
       expect(lesson.quality.passed).toBe(true);
     }
+  });
+
+  it("fills the subject-1 electrical and PLC theory-gap clusters with independent references", () => {
+    const electrical = supplementalWrittenLessons.find(
+      (item) => item.id === "supplemental-written-electrical-core-reference",
+    );
+    const plc = supplementalWrittenLessons.find(
+      (item) =>
+        item.id === "supplemental-written-automatic-control-plc-reference",
+    );
+
+    expect(electrical?.blocks.find((block) => block.kind === "formula")?.body)
+      .toContain("P=√3·V_L·I_L·cosφ");
+    expect(electrical?.blocks.find((block) => block.kind === "source")?.body)
+      .toContain("se.com");
+    expect(plc?.blocks.find((block) => block.kind === "principle")?.body)
+      .toContain("입력 판독·프로그램 실행·출력 갱신");
+    expect(plc?.blocks.find((block) => block.kind === "source")?.body)
+      .toContain("sitrain-learning.siemens.com");
+  });
+
+  it("adds the source-backed fluid-power foundation needed by held past questions", () => {
+    const lesson = supplementalWrittenLessons.find(
+      (item) =>
+        item.id === "supplemental-written-fluid-power-core-reference",
+    );
+
+    expect(lesson).toMatchObject({
+      subjectId: "subject-1",
+      conceptGroupId: "s1-g01",
+      reviewedAt: "2026-08-03T00:00:00.000+09:00",
+      contentRole: "supplemental",
+    });
+    expect(lesson?.aliases).toEqual(
+      expect.arrayContaining([
+        "절대압력",
+        "파스칼의 원리",
+        "베르누이",
+        "작동유",
+      ]),
+    );
+    expect(lesson?.blocks.find((block) => block.kind === "formula")?.body)
+      .toContain("p_abs=p_gauge+p_atm");
+    expect(lesson?.blocks.find((block) => block.kind === "source")?.body)
+      .toContain("nist.gov");
   });
 
   it("uses the required definition-to-source block sequence", () => {

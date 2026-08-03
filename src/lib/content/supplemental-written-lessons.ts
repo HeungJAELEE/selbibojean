@@ -9,6 +9,7 @@ type SupplementalLessonSeed = {
   slug: string;
   subjectId: `subject-${1 | 2 | 3 | 4}`;
   conceptGroupId: string;
+  reviewedAt?: string;
   title: string;
   aliases: string[];
   summary: [string, string, string];
@@ -25,6 +26,151 @@ type SupplementalLessonSeed = {
 const REVIEWED_AT = "2026-07-23T00:00:00.000Z";
 
 const seeds: SupplementalLessonSeed[] = [
+  {
+    slug: "fluid-power-core-reference",
+    subjectId: "subject-1",
+    conceptGroupId: "s1-g01",
+    reviewedAt: "2026-08-03T00:00:00.000+09:00",
+    title: "공유압 계산의 기준 단위·압력·유체법칙",
+    aliases: [
+      "공유압 기초",
+      "절대압력",
+      "게이지압력",
+      "파스칼의 원리",
+      "연속의 법칙",
+      "베르누이",
+      "레이놀즈수",
+      "작동유",
+    ],
+    summary: [
+      "계산은 물리량·기준압·단위를 먼저 고정한 뒤 공식을 선택한다.",
+      "정지 유체의 압력 전달과 흐르는 유체의 유량·속도·에너지 관계를 구분한다.",
+      "작동유의 점도와 온도는 누설·마찰·응답·발열에 서로 다른 영향을 준다.",
+    ],
+    definition:
+      "압력은 단위면적에 작용하는 힘이며 SI 단위는 파스칼(Pa=N/m²)이다. 밀도는 질량을 부피로 나눈 값 ρ=m/V이고, 비중은 기준 유체와의 밀도비라 단위가 없다. 절대압력은 완전진공을, 게이지압력은 대기압을 기준으로 하므로 p_abs=p_gauge+p_atm으로 구분한다.",
+    principle:
+      "파스칼의 원리는 밀폐 유체에 가한 압력이 유체 각 부분에 전달되는 정지 유체 관계다. 정상 비압축성 유동에서는 연속의 법칙 A₁v₁=A₂v₂로 단면적과 속도를 연결하고, 베르누이 관계는 같은 유선에서 압력·속도·높이 에너지의 교환을 설명한다. 기체 계산은 온도를 절대온도로 바꾸고 보일·샤를 법칙의 일정 조건을 확인한다.",
+    formula:
+      "기본식은 `p=F/A`, `F=pA`, `ρ=m/V`, `p_abs=p_gauge+p_atm`, `Q=Av`, `A₁v₁=A₂v₂`다. 보일 법칙은 온도가 일정할 때 `p₁V₁=p₂V₂`, 샤를 법칙은 압력이 일정할 때 `V₁/T₁=V₂/T₂`를 사용한다. 동점도는 `ν=μ/ρ`이며 μ는 점도, ρ는 밀도다.",
+    comparison:
+      "공압은 압축성 때문에 빠른 왕복과 단순한 과부하 대응에 유리하지만 저속 안정성과 위치 정밀도에는 불리할 수 있다. 유압은 비압축성에 가까운 작동유로 큰 힘과 비교적 안정된 속도를 얻지만 누유·오염·온도·점도 관리가 중요하다. 점도가 너무 높으면 마찰손실과 흡입저항이 커지고, 너무 낮으면 누설과 윤활 부족이 커질 수 있다.",
+    examPoint:
+      "① 질량·힘·압력·밀도를 구분하고 ② 절대압인지 게이지압인지 표시한 뒤 ③ 면적과 온도를 SI·절대온도로 통일하고 ④ 정지 유체인지 유동인지에 맞는 식을 선택한다. 부정형 문제는 공식에 맞는 보기를 찾은 뒤 질문이 ‘옳지 않은 것’인지 마지막에 다시 확인한다.",
+    trap:
+      "Pa·N·kg을 같은 종류의 단위로 보거나, 섭씨를 그대로 기체식에 넣거나, 같은 압력이 곧 같은 유량·속도를 뜻한다고 단정하면 안 된다. 압력 환산과 작동유 선정은 기준온도·반올림·장비 허용범위를 함께 확인하며, 안전·절차·제품 수치는 해당 공식 자료가 없으면 공개 승격하지 않는다.",
+    sources: [
+      {
+        label: "NIST Guide to the SI — pressure, density and viscosity",
+        url: "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-8",
+      },
+      {
+        label: "NIST Guide to the SI — pressure conversion factors",
+        url: "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9",
+      },
+      {
+        label: "Festo Didactic — Pneumatics and Hydraulics learning systems",
+        url: "https://www.festo.com/pdf_flip/didactic/Pneumatics_and_Hydraulics/en/index.html",
+      },
+    ],
+  },
+  {
+    slug: "electrical-core-reference",
+    subjectId: "subject-1",
+    conceptGroupId: "s1-g08",
+    reviewedAt: "2026-08-03T00:00:00.000+09:00",
+    title: "전기 기초 계산·회로·삼상전력",
+    aliases: [
+      "옴의 법칙",
+      "직렬회로",
+      "병렬회로",
+      "전력",
+      "전력량",
+      "역률",
+      "삼상전력",
+      "전기 보호",
+    ],
+    summary: [
+      "전압·전류·저항·전력·전력량은 서로 다른 물리량과 단위로 구분한다.",
+      "직렬과 병렬은 전류·전압의 공통 조건을 먼저 정한 뒤 합성저항을 계산한다.",
+      "삼상전력과 보호기기 문제는 결선·선간값·역률·고장전류의 역할을 함께 본다.",
+    ],
+    definition:
+      "전류의 SI 단위는 암페어(A), 전위차는 볼트(V), 저항은 옴(Ω), 전력은 와트(W), 에너지는 줄(J)이다. 전압은 전하를 움직이게 하는 전위차, 전류는 단위시간에 이동하는 전하량, 저항은 전류 흐름을 제한하는 성질이다. 전력은 단위시간에 전달되는 에너지이고 전력량은 일정 시간 동안 사용한 에너지다.",
+    principle:
+      "옴의 법칙은 일정한 조건에서 V=IR로 전압·전류·저항을 연결한다. 직렬회로는 같은 전류가 흐르고 각 전압강하의 합이 공급전압이 되며, 병렬회로는 각 가지의 전압이 같고 가지전류의 합이 전체전류가 된다. 교류 부하는 유효전력뿐 아니라 역률과 무효성분을 구분해야 하며, 차단기와 접지는 고장 시 전류 경로와 차단시간을 확보하는 보호수단이다.",
+    formula:
+      "기본식은 `V=IR`, `P=VI`, `W=Pt`다. 저항 직렬은 `R=R₁+R₂+…`, 병렬은 `1/R=1/R₁+1/R₂+…`를 쓴다. 평형 삼상 유효전력은 선간전압과 선전류를 사용할 때 `P=√3·V_L·I_L·cosφ`이며, 단상식과 혼동하지 않는다.",
+    comparison:
+      "전력 W는 순간적인 에너지 전달률이고 전력량 Wh·kWh는 시간 누적값이다. 퓨즈와 차단기는 과전류를 차단하고, 누전차단기는 누설전류를 검출해 감전·화재 위험을 줄이며, 접지는 고장전류 경로와 노출 도전부의 전위 관리에 쓰인다. 기기마다 목적과 동작조건이 다르므로 서로 대체한다고 단정하지 않는다.",
+    examPoint:
+      "① 묻는 값과 단위를 표시하고 ② 직류·단상·삼상 및 선간값·상값을 구분하고 ③ 직렬·병렬의 공통량을 확인한 뒤 ④ 역률과 효율을 식에 포함한다. 보호기기 문제는 정상전류를 끊는 장치인지, 과전류·누설·단락 같은 이상을 검출하는 장치인지 구분한다.",
+    trap:
+      "전력과 전력량을 같은 단위로 쓰거나, 삼상식의 √3과 역률을 빠뜨리거나, 병렬회로에서 전류가 같다고 판단하면 안 된다. 보호기기의 정격·차단용량·감도·배선 조건은 공식 설계자료와 제조사 사양이 없으면 임의 확정하지 않는다.",
+    sources: [
+      {
+        label: "NIST — SI Units: Electric Current",
+        url: "https://www.nist.gov/pml/owm/si-units-electric-current",
+      },
+      {
+        label: "NIST Guide to the SI — derived electrical units",
+        url: "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes",
+      },
+      {
+        label: "Schneider Electric — Electrical Installation Guide",
+        url: "https://www.se.com/sg/en/work/products/product-launch/electrical-installation-guide/",
+      },
+    ],
+  },
+  {
+    slug: "automatic-control-plc-reference",
+    subjectId: "subject-1",
+    conceptGroupId: "s1-g09",
+    reviewedAt: "2026-08-03T00:00:00.000+09:00",
+    title: "자동제어·릴레이·PLC 논리 기초",
+    aliases: [
+      "자동제어",
+      "시퀀스 제어",
+      "피드백 제어",
+      "PLC",
+      "래더 다이어그램",
+      "자기유지",
+      "인터록",
+      "타이머",
+      "카운터",
+    ],
+    summary: [
+      "시퀀스 제어는 정해진 조건과 순서에 따라 동작하고, 피드백 제어는 출력의 상태를 목표값과 비교해 보정한다.",
+      "릴레이·PLC 회로는 입력 조건, 내부 논리, 출력, 복귀 조건을 왼쪽에서 오른쪽으로 추적한다.",
+      "PID와 시간응답은 현재·누적·변화 오차가 속도·정상편차·오버슈트·안정도에 미치는 영향으로 판단한다.",
+    ],
+    definition:
+      "자동제어는 사람의 연속 조작 없이 목표 동작을 수행하도록 입력·제어기·출력을 구성하는 기술이다. 시퀀스 제어는 미리 정한 순서와 조건에 따라 단계를 진행하고, 피드백 제어는 출력값을 측정해 목표값과의 오차를 줄인다. PLC는 입력 신호를 읽고 저장된 프로그램을 실행한 뒤 출력 상태를 갱신하는 산업용 제어장치다.",
+    principle:
+      "래더 논리는 전원선 사이의 접점 조건이 참일 때 오른쪽 코일 또는 명령이 동작하는 형태로 읽는다. 직렬 접점은 AND, 병렬 접점은 OR 조건에 해당한다. 자기유지는 순간 시작신호가 사라져도 자기 접점으로 코일 상태를 유지하고, 인터록은 상반 동작이 동시에 성립하지 않도록 상대 회로를 차단한다. PLC는 입력 판독·프로그램 실행·출력 갱신의 반복 스캔을 거친다. 폐루프 제어에서는 센서로 측정한 출력과 목표값의 편차를 제어기가 계산하고, P는 현재 편차, I는 누적 편차, D는 편차 변화율에 반응한다.",
+    formula:
+      "논리식은 직렬 `A·B`, 병렬 `A+B`, 부정 `¬A`로 정리할 수 있다. 드모르간 법칙은 `¬(A·B)=¬A+¬B`, `¬(A+B)=¬A·¬B`다. 피드백 제어의 기본 오차는 `e(t)=r(t)-y(t)`이고 PID 조작량은 개념적으로 `u(t)=Kp·e(t)+Ki∫e(t)dt+Kd·de(t)/dt`로 나타낸다. 단위 피드백의 폐루프 전달함수는 `G/(1+G)` 형태이며, 실제 블록의 부호와 피드백 경로를 먼저 확인한다.",
+    comparison:
+      "릴레이 제어는 실제 접점·코일과 배선으로 논리를 구성해 직관적이지만 변경 시 배선 작업이 필요하다. PLC는 프로그램으로 논리를 바꾸고 타이머·카운터·진단을 통합하기 쉽다. NO/NC 표기는 장치의 정상·무여자 상태를 기준으로 하며, 래더의 접점 명령이 실제 현장 접점과 언제나 같은 그림이라는 뜻은 아니다.",
+    examPoint:
+      "① 초기상태를 표시하고 ② 시작·정지·한계신호를 찾고 ③ 직렬·병렬 논리를 식으로 바꾼 뒤 ④ 자기유지와 인터록 경로를 추적하고 ⑤ 타이머·카운터의 완료조건과 복귀조건을 확인한다. 피드백 문제는 입력·출력·비교점·조작량을 먼저 구분하고, PID와 과도응답 문제는 상승시간·오버슈트·정착시간·정상편차 중 무엇을 묻는지 표시한다.",
+    trap:
+      "자기유지를 단순 병렬접점 전체로 외우거나, 인터록을 비상정지와 동일시하거나, NO/NC를 장치가 지금 열려 있는지의 육안 상태만으로 정하면 안 된다. 타이머의 온딜레이·오프딜레이와 PLC 주소·스캔 동작은 제시된 기종과 회로 조건을 확인한다.",
+    sources: [
+      {
+        label: "Siemens SITRAIN — Introduction to PLC",
+        url: "https://www.sitrain-learning.siemens.com/ZA/en/product/chapter/QAJ7KFB/course/DBAAIAX/pdf.do?hash=3943a6a7008df7dd5017d5374cd0bb01",
+      },
+      {
+        label: "Siemens SITRAIN — Digitalization Basic and PLC programming",
+        url: "https://www.sitrain-learning.siemens.com/IN/en/product/chapter/QA8KG0C/course/QJH2SB4/pdf.do",
+      },
+      {
+        label: "NI — The PID Controller & Theory Explained",
+        url: "https://www.ni.com/en/shop/labview/pid-theory-explained.html",
+      },
+    ],
+  },
   {
     slug: "bleed-off-synchronization",
     subjectId: "subject-1",
@@ -522,7 +668,7 @@ function makeLesson(seed: SupplementalLessonSeed): SupplementalWrittenLesson {
     coverageStatus: "covered",
     contentStatus: "published",
     sourceNeeded: false,
-    reviewedAt: REVIEWED_AT,
+    reviewedAt: seed.reviewedAt ?? REVIEWED_AT,
     publication: { readiness: "ready", blockers: [] },
     quality: {
       tier: "standard",

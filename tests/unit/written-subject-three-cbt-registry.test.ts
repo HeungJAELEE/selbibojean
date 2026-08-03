@@ -6,7 +6,10 @@ import {
   getSubjectThreeFactCbtBinding,
   SUBJECT_THREE_NO_DIRECT_CBT_NOTE,
 } from "@/data/source/written-subject-three-cbt-links";
-import { createPracticePresentations } from "@/lib/content/practice-presentations";
+import {
+  createPracticePresentations,
+  getSafeOriginalsByQuestion,
+} from "@/lib/content/practice-presentations";
 import { buildRuntimeContent } from "@/lib/content/runtime-content";
 import { isPublishableQuestion } from "@/lib/domain/practice";
 import type { GeneratedContent } from "@/lib/domain/types";
@@ -22,88 +25,78 @@ const originalQuestions = createPracticePresentations(
   100,
   20260729,
 ).filter((question) => question.provenance.original);
+const approvedOriginalQuestionIds = new Set(
+  originalQuestions.map((question) => question.id),
+);
 
 describe("subject 3 reviewed CBT registry", () => {
-  it("preserves the reviewed bundle selections while the common selector is extracted", () => {
-    expect(
-      Object.fromEntries(
-        WRITTEN_SUBJECT_THREE_MEMORY_GUIDE.map((bundle) => [
-          bundle.id,
-          getSubjectThreeBundleCbtSelection(bundle, originalQuestions).questions.map(
-            (question) => question.id,
-          ),
-        ]),
-      ),
-    ).toEqual({
-      "drawing-lines-tolerance": [],
-      "measurement-principles": [
-        "U-073",
-        "U-318",
-        "U-441",
-        "U-724",
-        "U-1216",
-      ],
-      "gauges-drawing-rules": ["U-197", "U-054", "U-136", "U-782"],
-      "machine-tools-cutting": [
-        "U-533",
-        "U-594",
-        "U-721",
-        "U-972",
-        "U-1282",
-      ],
-      "chips-tools-finishing": [
-        "U-240",
-        "U-377",
-        "U-440",
-        "U-449",
-        "U-655",
-      ],
-      "casting-plastic-materials": ["U-1319"],
-      "heat-treatment-testing": [
-        "U-249",
-        "U-288",
-        "U-603",
-        "U-667",
-        "U-776",
-      ],
-      "assembly-fasteners": ["U-237", "U-195", "U-085", "U-371", "U-532"],
-      "shaft-coupling-bearing": [
-        "U-078",
-        "U-445",
-        "U-718",
-        "U-878",
-        "U-928",
-      ],
-      "power-transmission": [
-        "U-246",
-        "U-362",
-        "U-373",
-        "U-447",
-        "U-659",
-      ],
-      "piping-valves-seals": [
-        "U-234",
-        "U-238",
-        "U-241",
-        "U-206",
-        "U-079",
-      ],
-      "fluid-machinery-troubles": [
-        "U-203",
-        "U-087",
-        "U-290",
-        "U-443",
-        "U-446",
-      ],
-      "motor-startup-maintenance": [
-        "U-199",
-        "U-317",
-        "U-521",
-        "U-626",
-        "U-656",
-      ],
-      "maintenance-tools-lubrication": [],
-    });
+  it("uses the runtime public gate's answer-safe original exact set", () => {
+    const runtimeApprovedIds = [
+      ...getSafeOriginalsByQuestion(
+        subjectThreeQuestions,
+        content.variants,
+      ).keys(),
+    ];
+
+    expect(new Set(originalQuestions.map((question) => question.id))).toEqual(
+      new Set(runtimeApprovedIds),
+    );
+  });
+
+  it("selects only gate-approved direct originals for every bundle", () => {
+    const errors: string[] = [];
+
+    for (const bundle of WRITTEN_SUBJECT_THREE_MEMORY_GUIDE) {
+      const first = getSubjectThreeBundleCbtSelection(
+        bundle,
+        originalQuestions,
+      );
+      const second = getSubjectThreeBundleCbtSelection(
+        bundle,
+        [...originalQuestions].reverse(),
+      );
+      const availableDirectIds = new Set(
+        bundle.facts.flatMap((fact) => {
+          if (!fact.id) return [];
+          const binding = getSubjectThreeFactCbtBinding(fact.id);
+          return binding?.status === "direct_original"
+            ? binding.questionIds.filter((questionId) =>
+                approvedOriginalQuestionIds.has(questionId),
+              )
+            : [];
+        }),
+      );
+      const selectedIds = first.questions.map((question) => question.id);
+
+      if (selectedIds.length > 5) errors.push(`${bundle.id}:over-limit`);
+      if (
+        selectedIds.some(
+          (questionId) =>
+            !approvedOriginalQuestionIds.has(questionId) ||
+            !availableDirectIds.has(questionId),
+        )
+      ) {
+        errors.push(`${bundle.id}:outside-approved-direct-set`);
+      }
+      if (
+        availableDirectIds.size <= 5 &&
+        (selectedIds.length !== availableDirectIds.size ||
+          selectedIds.some((questionId) => !availableDirectIds.has(questionId)))
+      ) {
+        errors.push(`${bundle.id}:exact-set-mismatch`);
+      }
+      if (
+        selectedIds.join("|") !==
+        second.questions.map((question) => question.id).join("|")
+      ) {
+        errors.push(`${bundle.id}:non-deterministic`);
+      }
+      if (selectedIds.length === 0 && !first.statusNote) {
+        errors.push(`${bundle.id}:missing-hold-note`);
+      }
+    }
+
+    expect(errors).toEqual([]);
   });
 
   it("gives every atomic fact one stable ID and one fail-closed CBT binding", () => {
@@ -163,8 +156,14 @@ describe("subject 3 reviewed CBT registry", () => {
 
         for (const questionId of binding.questionIds) {
           const question = originalsById.get(questionId);
+          if (!approvedOriginalQuestionIds.has(questionId)) {
+            if (question) {
+              errors.push(`${fact.id}:${questionId}:held-question-leaked`);
+            }
+            continue;
+          }
           if (!question) {
-            errors.push(`${fact.id}:${questionId}:not-public-original`);
+            errors.push(`${fact.id}:${questionId}:approved-original-missing`);
             continue;
           }
           if (
@@ -235,6 +234,11 @@ describe("subject 3 reviewed CBT registry", () => {
     );
     expect(
       first.questions.every((question) => directIds.has(question.id)),
+    ).toBe(true);
+    expect(
+      first.questions.every((question) =>
+        approvedOriginalQuestionIds.has(question.id),
+      ),
     ).toBe(true);
   });
 

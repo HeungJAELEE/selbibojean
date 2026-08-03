@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { MarkdownContent } from "@/components/markdown-content";
 
@@ -30,5 +30,17 @@ $$`} />);
       getByRole("heading", { level: 4, name: "속도 제어 회로 3가지" }),
     ).toBeInTheDocument();
     expect(queryByText("#### 속도 제어 회로 3가지")).not.toBeInTheDocument();
+  });
+
+  it("renders thematic breaks between repeated exam patterns instead of literal dashes", () => {
+    const { container } = render(
+      <MarkdownContent
+        content={"**Question**\nFirst pattern\n\n---\n\n**Question**\nSecond pattern"}
+      />,
+    );
+
+    expect(screen.getAllByText("Question")).toHaveLength(2);
+    expect(container.querySelectorAll("hr")).toHaveLength(1);
+    expect(screen.queryByText("---")).not.toBeInTheDocument();
   });
 });

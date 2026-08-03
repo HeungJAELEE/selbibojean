@@ -1,0 +1,39 @@
+[
+  {
+    "questionId": "U-1259",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "U-1259-c1",
+    "directSolution": "문제는 직류 아크용접에서 전극을 음극에 연결한 경우의 명칭을 묻습니다. 직류 정극성(DCEN)은 전극이 음극이고 모재가 양극인 연결이므로 정답은 정극성(DCEN)입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1259-c1",
+        "verdict": "correct",
+        "rationale": "DCEN은 전극을 음극, 모재를 양극에 연결하는 직류 정극성입니다. 지문의 전극 연결 조건과 정확히 일치합니다."
+      },
+      {
+        "choiceId": "U-1259-c2",
+        "verdict": "incorrect",
+        "rationale": "DCEP는 전극을 양극, 모재를 음극에 연결하는 역극성입니다. 전극이 음극이라는 지문의 조건과 단자가 반대입니다."
+      },
+      {
+        "choiceId": "U-1259-c3",
+        "verdict": "incorrect",
+        "rationale": "교류는 극성이 주기적으로 바뀌므로 전극을 계속 음극에 고정한 직류 연결을 가리키지 않습니다. 문제의 직류 조건과도 다릅니다."
+      },
+      {
+        "choiceId": "U-1259-c4",
+        "verdict": "incorrect",
+        "rationale": "무극성은 전극과 모재의 양극·음극 연결을 구분하는 직류 극성 명칭이 아닙니다. 제시된 단자 연결을 설명할 수 없습니다."
+      }
+    ],
+    "misconception": "정극성과 역극성의 명칭만 외우고 전극·모재 중 어느 쪽이 음극인지 뒤바꾸는 혼동입니다.",
+    "existingLessonId": "lesson-welding-foundation-power-heat",
+    "existingBlockId": "definition",
+    "assertionText": "직류 정극성은 일반적으로 전극을 음극, 모재를 양극에 연결하고, 역극성은 전극을 양극, 모재를 음극에 연결합니다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+]

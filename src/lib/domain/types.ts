@@ -138,6 +138,22 @@ export type Choice = {
   feedback: ChoiceFeedback;
 };
 
+export type ApprovedCalculationFeedback = {
+  formula: string;
+  substitution: string;
+  result: string;
+  unit: string;
+};
+
+export type ApprovedQuestionReview = {
+  directSolution: string;
+  conceptBinding: {
+    assertionText: string;
+    href: string;
+  };
+  calculation?: ApprovedCalculationFeedback;
+};
+
 export type Question = {
   id: string;
   canonicalNumber: number;
@@ -159,6 +175,7 @@ export type Question = {
   publication?: PublicationAssessment;
   verification?: QuestionVerification;
   audit?: QuestionAudit;
+  approvedReview?: ApprovedQuestionReview;
   validation: {
     answer: boolean;
     explanation: boolean;
@@ -170,7 +187,7 @@ export type Question = {
 
 export type PublicQuestion = Omit<
   Question,
-  "choices" | "correctChoiceId" | "answerText" | "explanation" | "errorReason" | "validation" | "reviewStatus" | "publication" | "verification" | "audit"
+  "choices" | "correctChoiceId" | "answerText" | "explanation" | "errorReason" | "validation" | "reviewStatus" | "publication" | "verification" | "audit" | "approvedReview"
 > & {
   choices: Array<Pick<Choice, "id" | "order" | "text">>;
   provenance: {
@@ -189,6 +206,8 @@ export type PublicQuestion = Omit<
 
 export type PracticeFeedback = {
   isCorrect: boolean;
+  feedbackQuality: "approved_direct" | "pending_review";
+  feedbackNotice: string | null;
   selectedChoice: Pick<Choice, "id" | "text"> & ChoiceFeedback;
   correctChoice: Pick<Choice, "id" | "text">;
   explanation: string;
@@ -200,6 +219,9 @@ export type PracticeFeedback = {
     summary: string[];
     blocks: Array<Pick<LessonBlock, "id" | "kind" | "title" | "body">>;
   } | null;
+  approvedReview?: ApprovedQuestionReview & {
+    selectedChoiceReason: string;
+  };
   otherChoices: Array<Pick<Choice, "id" | "text"> & ChoiceFeedback & { isCorrect: boolean }>;
   answerAudit?: {
     auditDisposition: "cbt_corrected";

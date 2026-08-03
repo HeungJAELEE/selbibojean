@@ -1,7 +1,6 @@
 import "server-only";
 
 import { decodeCompressedContent, type RuntimeContentMetadata } from "@/lib/content/compressed-content";
-import { buildRuntimeContent } from "@/lib/content/runtime-content";
 import type {
   ConceptGroup,
   GeneratedContent,
@@ -87,7 +86,7 @@ async function loadContent() {
 }
 
 export async function getContent() {
-  contentPromise ??= loadContent().then(buildRuntimeContent);
+  contentPromise ??= loadContent();
   return contentPromise;
 }
 

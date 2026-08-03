@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type APIRequestContext } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { readFileSync } from "node:fs";
 import path from "node:path";
@@ -12,6 +12,31 @@ const auditManifest = JSON.parse(
     "utf8",
   ),
 ) as { counts: { held: number } };
+
+const WELDING_HOLD_QUESTION_ID =
+  "wcbt-50ea9e7d-008c-45e1-a35c-21ad26b026cc";
+const WELDING_CALCULATION_QUESTION_IDS = [
+  "wcbt-4533db22-25e9-48ab-8060-a0559a855a21",
+  "wcbt-b37a80db-aab9-4a62-bcd3-c06e960f18b8",
+  "wcbt-c67f0293-11ab-4da5-9b2f-06accefc995e",
+  "wcbt-cf105c30-d472-4fa4-af62-66079cb9f7fe",
+  "wcbt-d73939fa-7fef-4141-a9ff-ce886310e8bb",
+] as const;
+
+async function selectPublishableWeldingCalculationQuestion(
+  request: APIRequestContext,
+) {
+  for (const questionId of WELDING_CALCULATION_QUESTION_IDS) {
+    const response = await request.get(`/written/practice/${questionId}`);
+    if (response.ok()) return questionId;
+    if (response.status() !== 404) {
+      throw new Error(
+        `Unexpected status ${response.status()} for welding calculation ${questionId}`,
+      );
+    }
+  }
+  throw new Error("No approved welding calculation question is publicly available.");
+}
 
 test("home exposes the main learning paths", async ({ page }) => {
   await page.goto("/");
@@ -145,12 +170,136 @@ test("written mock preserves subject quotas without repeating or exposing unveri
   expect(session.questions.filter((question: { subjectId: string }) => question.subjectId === "subject-2")).toHaveLength(20);
 });
 
+test("standard mock keeps direct-review subjects answer-safe and returns complete feedback only after submission", async ({
+  request,
+}) => {
+  const response = await request.post("/api/practice/session", {
+    data: {
+      mode: "mock",
+      count: 80,
+      originalRatio: 50,
+      seed: 20260804,
+      subjectAllocations: [1, 2, 3, 4].map((code) => ({
+        subjectId: `subject-${code}`,
+        count: 20,
+      })),
+    },
+  });
+  expect(response.ok()).toBeTruthy();
+
+  const session = (await response.json()) as {
+    questions: Array<{
+      id: string;
+      subjectId: string;
+      choices: Array<{ id: string; text: string }>;
+    }>;
+  };
+  expect(session.questions).toHaveLength(80);
+
+  const serialized = JSON.stringify(session);
+  for (const forbiddenField of [
+    "correctChoiceId",
+    "answerText",
+    "explanation",
+    "approvedReview",
+    "conceptBinding",
+  ]) {
+    expect(
+      serialized,
+      `standard mock pre-submit payload leaks ${forbiddenField}`,
+    ).not.toContain(`\"${forbiddenField}\"`);
+  }
+
+  for (const subjectId of ["subject-1", "subject-3", "subject-4"]) {
+    const subjectQuestions = session.questions.filter(
+      (question) => question.subjectId === subjectId,
+    );
+    expect(subjectQuestions, `${subjectId} standard allocation`).toHaveLength(20);
+
+    const question = subjectQuestions[0];
+    if (!question) {
+      throw new Error(`${subjectId} standard allocation did not return a question.`);
+    }
+    expect(question.choices).toHaveLength(4);
+    let feedback: {
+      isCorrect: boolean;
+      feedbackQuality: string;
+      feedbackNotice: string | null;
+      selectedChoice: { id: string; rationale: string; keyRule: string };
+      otherChoices: Array<{
+        id: string;
+        rationale: string;
+        keyRule: string;
+      }>;
+      lesson: { href: string };
+      approvedReview?: {
+        directSolution: string;
+        conceptBinding: { assertionText: string; href: string };
+      };
+    } | undefined;
+
+    // The session response deliberately omits the answer. Try visible choices
+    // until the server identifies an incorrect response after submission.
+    for (const choice of question.choices) {
+      const submit = await request.post("/api/practice/submit", {
+        data: {
+          questionId: question.id,
+          choiceId: choice.id,
+          selfRating: "unsure",
+          attemptKind: "initial",
+        },
+      });
+      expect(submit.ok()).toBeTruthy();
+      const candidate = (await submit.json()) as typeof feedback;
+      if (candidate && !candidate.isCorrect) {
+        feedback = candidate;
+        break;
+      }
+    }
+
+    expect(feedback, `${subjectId} exposes an incorrect-answer result`).toBeTruthy();
+    expect(feedback).toMatchObject({
+      isCorrect: false,
+      feedbackQuality: "approved_direct",
+      feedbackNotice: null,
+    });
+    expect(feedback?.approvedReview?.directSolution).toMatch(/\S/u);
+    expect(feedback?.approvedReview?.conceptBinding.assertionText).toMatch(/\S/u);
+    expect(feedback?.approvedReview?.conceptBinding.href).toMatch(
+      /^\/written\/theory\/.+#[-a-z0-9]+$/u,
+    );
+    expect(feedback?.lesson.href).toBe(
+      feedback?.approvedReview?.conceptBinding.href,
+    );
+    const [conceptPath, conceptAnchor] = (
+      feedback?.approvedReview?.conceptBinding.href ?? ""
+    ).split("#", 2);
+    const conceptResponse = await request.get(conceptPath);
+    expect(conceptResponse.ok()).toBeTruthy();
+    expect(await conceptResponse.text()).toContain(`id=\"${conceptAnchor}\"`);
+
+    const choiceFeedback = [
+      feedback?.selectedChoice,
+      ...(feedback?.otherChoices ?? []),
+    ];
+    expect(choiceFeedback).toHaveLength(4);
+    expect(new Set(choiceFeedback.map((choice) => choice?.id)).size).toBe(4);
+    expect(
+      new Set(choiceFeedback.map((choice) => choice?.rationale)).size,
+    ).toBe(4);
+    for (const choice of choiceFeedback) {
+      expect(choice?.rationale).toMatch(/\S/u);
+      expect(choice?.keyRule).toMatch(/\S/u);
+    }
+  }
+});
+
 test("written mock UI supports subject checkboxes and per-subject counts", async ({ page }) => {
   await page.goto("/written/mock");
   await expect(page.getByRole("heading", { name: "필기 모의고사", exact: true, level: 1 })).toBeVisible();
   await expect(page.getByText("총 80문제", { exact: true })).toBeVisible();
   await expect(page.getByText("80문제 시작", { exact: true })).toBeVisible();
-  await page.getByRole("checkbox").last().uncheck();
+  await page.getByRole("checkbox", { name: /제4과목/ }).uncheck();
   await page.getByLabel("제1과목 문제 수").selectOption("10");
   await expect(page.getByText("총 50문제", { exact: true })).toBeVisible();
   await page.getByRole("radio", { name: "75%" }).check();
@@ -180,6 +329,107 @@ test("held questions are unavailable from their direct public routes", async ({
   expect(assetMissing.status()).toBe(404);
   const verified = await request.get("/written/practice/U-004");
   expect(verified.status()).toBe(200);
+});
+
+test("welding review fields stay out of the pre-submit practice session payload", async ({
+  request,
+}) => {
+  const questionId =
+    await selectPublishableWeldingCalculationQuestion(request);
+  const response = await request.post("/api/practice/session", {
+    data: {
+      mode: "wrong",
+      count: 1,
+      guestQuestionIds: [questionId],
+      originalRatio: 0,
+      seed: 20260803,
+      shuffleChoices: false,
+    },
+  });
+  expect(response.ok()).toBeTruthy();
+
+  const session = await response.json();
+  expect(session.questions).toHaveLength(1);
+  expect(session.questions[0]?.id).toBe(questionId);
+  const serialized = JSON.stringify(session);
+  for (const forbiddenField of [
+    "approvedReview",
+    "answerExplanation",
+    "solutionSteps",
+    "choiceFeedback",
+    "keyRule",
+    "conceptBinding",
+    "assertionText",
+    "essentialRank",
+  ]) {
+    expect(
+      serialized,
+      `pre-submit payload leaks ${forbiddenField}`,
+    ).not.toContain(`"${forbiddenField}"`);
+  }
+});
+
+test("HOLD welding question stays unavailable from its direct public route", async ({
+  request,
+}) => {
+  const response = await request.get(
+    `/written/practice/${WELDING_HOLD_QUESTION_ID}`,
+  );
+  expect(response.status()).toBe(404);
+  expect(await response.text()).not.toContain(
+    "용해 아세틸렌을 충전했을 때",
+  );
+});
+
+test("approved welding calculation shows one structured solution and reaches its concept anchor", async ({
+  page,
+  request,
+}) => {
+  const questionId =
+    await selectPublishableWeldingCalculationQuestion(request);
+  await page.goto(`/written/practice/${questionId}`);
+  await page.waitForLoadState("networkidle");
+
+  const choiceButtons = page.locator('main [role="group"] button');
+  await expect(choiceButtons).toHaveCount(4);
+  await choiceButtons.first().click();
+  const submitButton = page.getByTestId(`inline-cbt-submit-${questionId}`);
+  await expect(submitButton).toBeEnabled();
+  await submitButton.click();
+
+  const feedback = page.getByTestId("approved-review-feedback");
+  await expect(feedback).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "공식 적용으로 분류했어요" }),
+  ).toBeVisible();
+  await expect(feedback.getByText("정답 풀이", { exact: true })).toBeVisible();
+  await expect(
+    feedback
+      .getByText("정답 풀이", { exact: true })
+      .locator("..")
+      .locator(".markdown-content"),
+  ).toContainText(/\S/u);
+
+  for (const title of ["공식", "대입", "결과", "단위"]) {
+    const term = feedback.locator("dt", { hasText: title }).locator("..");
+    await expect(term.locator("dd")).toContainText(/\S/u);
+  }
+  await expect(page.getByText("전체 해설", { exact: true })).toHaveCount(0);
+
+  const conceptLink = feedback.getByRole("link", {
+    name: "개념에서 확인하기",
+  });
+  const actualHref = await conceptLink.getAttribute("href");
+  expect(actualHref).toBeTruthy();
+  const destination = new URL(actualHref ?? "", page.url());
+  expect(destination.hash).toMatch(/^#[a-z0-9-]+$/u);
+
+  await conceptLink.click();
+  await expect(page).toHaveURL(
+    (url) =>
+      url.pathname === destination.pathname && url.hash === destination.hash,
+  );
+  await expect(page.locator(destination.hash)).toBeVisible();
 });
 
 test("supplemental theory is searchable, badged, and visually responsive", async ({
@@ -390,9 +640,10 @@ test("subject two follows the integrated source and preserves its detail routes"
   await weldDefectQuestion.locator(":scope > summary").click();
   await expect(weldDefectQuestion.getByRole("button").first()).toBeVisible();
   await expect(page).toHaveURL(/\/written\/theory/);
-  await expect(
-    guide.getByTestId("subject-two-cbt-pending-grooves-symbols"),
-  ).toContainText("관계없는 용접 문항을 대신 붙이지 않고");
+  const grooveCbt = guide.getByTestId(
+    "subject-two-cbt-grooves-symbols",
+  );
+  await expect(grooveCbt).toContainText("원문 확인 4문제");
 
   const fullIndex = page.getByTestId("written-subject-two-full-index");
   await expect(fullIndex).not.toHaveAttribute("open", "");
@@ -436,6 +687,34 @@ test("arc-welding subtopics fit a 390px study screen", async ({ page }) => {
     scrollWidth: document.documentElement.scrollWidth,
   }));
   expect(viewport.scrollWidth).toBeLessThanOrEqual(viewport.width);
+});
+
+test("subject two projected theory stays usable at 390, 1024, and 1440 pixels", async ({
+  page,
+}) => {
+  for (const width of [390, 1024, 1440]) {
+    await page.setViewportSize({ width, height: width === 390 ? 844 : 900 });
+    await page.goto("/written/theory/subject/subject-2");
+
+    const guide = page.getByTestId("written-subject-two-memory-guide");
+    await expect(guide).toBeVisible();
+    const viewport = await page.evaluate(() => ({
+      width: document.documentElement.clientWidth,
+      scrollWidth: document.documentElement.scrollWidth,
+    }));
+    expect(viewport.scrollWidth).toBeLessThanOrEqual(viewport.width);
+
+    if (width === 1024) {
+      const safetyPart = guide.locator("#subject-two-industrial-safety");
+      const summary = safetyPart.locator(":scope > summary");
+      await summary.focus();
+      await summary.press("Enter");
+      await expect(safetyPart).toHaveAttribute("open", "");
+      await expect(
+        guide.getByTestId("subject-two-bundle-ppe-classification-details"),
+      ).toBeVisible();
+    }
+  }
 });
 
 test("subject three follows the integrated source and preserves its detail routes", async ({ page }) => {

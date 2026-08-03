@@ -5,6 +5,8 @@ import {
   WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE,
   WRITTEN_SUBJECT_FOUR_SOURCE_BOUNDARY,
 } from "@/data/source/written-subject-four-memory-guide";
+import { getSubjectFourBundleCbtSelection } from "@/data/source/written-subject-four-cbt-links";
+import { createPracticePresentations } from "@/lib/content/practice-presentations";
 import {
   isPublishableLesson,
   isPublishableQuestion,
@@ -13,6 +15,18 @@ import { buildRuntimeContent } from "@/lib/content/runtime-content";
 import type { GeneratedContent } from "@/lib/domain/types";
 
 const content = buildRuntimeContent(generatedContent as GeneratedContent);
+const approvedOriginalQuestions = createPracticePresentations(
+  content.questions.filter(
+    (question) =>
+      question.subjectId === "subject-4" && isPublishableQuestion(question),
+  ),
+  content.variants,
+  100,
+  20260730,
+).filter((question) => question.provenance.original);
+const approvedOriginalQuestionIds = new Set(
+  approvedOriginalQuestions.map((question) => question.id),
+);
 
 describe("written subject four memory guide", () => {
   it("keeps twenty-four bundles across the five source flows", () => {
@@ -74,35 +88,23 @@ describe("written subject four memory guide", () => {
     expect(serialized).not.toContain("최고 유면 90%");
   });
 
-  it("gives every memory bundle an immediate verified CBT route", () => {
-    const publicLessons = content.lessons.filter(
-      (lesson) =>
-        lesson.subjectId === "subject-4" && isPublishableLesson(lesson),
-    );
-    const publicQuestions = content.questions.filter(
-      (question) =>
-        question.subjectId === "subject-4" && isPublishableQuestion(question),
-    );
-
+  it("gives every memory bundle an approved CBT route or explicit HOLD boundary", () => {
     for (const bundle of WRITTEN_SUBJECT_FOUR_MEMORY_GUIDE) {
-      const lessonIds = new Set(
-        publicLessons
-          .filter((lesson) => bundle.detailLessonTitles.includes(lesson.title))
-          .map((lesson) => lesson.id),
+      const selection = getSubjectFourBundleCbtSelection(
+        bundle,
+        approvedOriginalQuestions,
       );
-      const groupIds = new Set(
-        publicLessons
-          .filter((lesson) => bundle.detailLessonTitles.includes(lesson.title))
-          .map((lesson) => lesson.conceptGroupId),
-      );
+
+      expect(selection.questions.length, bundle.id).toBeLessThanOrEqual(5);
       expect(
-        publicQuestions.some(
-          (question) =>
-            lessonIds.has(question.lessonId) ||
-            groupIds.has(question.conceptGroupId),
+        selection.questions.every((question) =>
+          approvedOriginalQuestionIds.has(question.id),
         ),
         bundle.id,
       ).toBe(true);
+      if (selection.questions.length === 0) {
+        expect(selection.statusNote, bundle.id).toBeTruthy();
+      }
     }
   });
 });

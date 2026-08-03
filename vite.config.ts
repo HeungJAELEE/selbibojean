@@ -24,6 +24,12 @@ export default defineConfig(async () => {
         config: {
           main: "./worker/index.ts",
           compatibility_flags: ["nodejs_compat"],
+          vars: {
+            ENABLE_MOCK_CHOICE_SHUFFLE:
+              process.env.ENABLE_MOCK_CHOICE_SHUFFLE ?? "false",
+            ENABLE_BUSAN_KOPO_MEDIA:
+              process.env.ENABLE_BUSAN_KOPO_MEDIA ?? "false",
+          },
           assets: {
             binding: "ASSETS",
             run_worker_first: ["/data", "/data/*"],

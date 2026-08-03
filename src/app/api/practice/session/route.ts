@@ -5,12 +5,120 @@ import {
   createPracticePresentations,
   filterPracticeContentByYearRange,
 } from "@/lib/content/practice-presentations";
-import { buildWeakFocus, selectAllocatedPracticeQuestions, selectPracticeQuestions } from "@/lib/domain/practice";
+import { selectDeduplicatedPracticeQuestions } from "@/lib/content/practice-question-deduplication";
+import {
+  buildWeakFocus,
+  selectPracticeQuestions,
+  shuffleQuestionIds,
+  type PracticeFilter,
+  type SubjectAllocation,
+} from "@/lib/domain/practice";
+import type { Question } from "@/lib/domain/types";
 import {
   createSupabaseAdminClient,
   createSupabaseServerClient,
 } from "@/lib/supabase/server";
 import { isReleaseFeatureEnabled } from "@/lib/release-features";
+import { hasCompletePracticeQuestionMapping } from "@/lib/learning/practice-session-storage";
+
+function deduplicationCandidate(question: Question, essentialRank?: number) {
+  return {
+    question,
+    id: question.id,
+    lessonId: question.lessonId,
+    stem: question.stem,
+    choices: question.choices.map((choice) => choice.text),
+    essentialRank,
+  };
+}
+
+function selectSessionQuestions(
+  questions: Question[],
+  filter: PracticeFilter,
+  count: number | "all",
+  seed: number,
+) {
+  // Keep the established publishability, scope, and year filters as the source
+  // of eligible questions; only the final session projection is deduplicated.
+  const eligible = selectPracticeQuestions(questions, filter, "all", seed);
+  const candidates = eligible.questions.map((question) =>
+    deduplicationCandidate(question),
+  );
+  const available = selectDeduplicatedPracticeQuestions(candidates, {
+    count: "all",
+    seed,
+  });
+  const selected = selectDeduplicatedPracticeQuestions(candidates, {
+    count,
+    seed,
+  });
+
+  return {
+    availableCount: available.length,
+    requestedCount: count,
+    limited: count !== "all" && available.length < count,
+    questions: selected.map((candidate) => candidate.question),
+  };
+}
+
+function selectAllocatedSessionQuestions(
+  questions: Question[],
+  allocations: SubjectAllocation[],
+  seed: number,
+) {
+  const selected: Question[] = [];
+  const usedQuestionIds = new Set<string>();
+  const breakdown = allocations.map((allocation, index) => {
+    const allocationSeed = seed ^ ((index + 1) * 0x45d9f3b);
+    const eligible = selectPracticeQuestions(
+      questions.filter((question) => !usedQuestionIds.has(question.id)),
+      { subjectId: allocation.subjectId },
+      "all",
+      allocationSeed,
+    );
+    // Previously allocated questions get first claim on their exact duplicate
+    // group, so a later subject cannot repeat an earlier session item.
+    const candidates = [
+      ...selected.map((question) => deduplicationCandidate(question, 0)),
+      ...eligible.questions.map((question) => deduplicationCandidate(question, 1)),
+    ];
+    const available = selectDeduplicatedPracticeQuestions(candidates, {
+      count: "all",
+      seed: allocationSeed,
+    }).filter((candidate) => !usedQuestionIds.has(candidate.id));
+    const selectedWithAllocation = selectDeduplicatedPracticeQuestions(candidates, {
+      count: selected.length + allocation.count,
+      seed: allocationSeed,
+    });
+    const allocationQuestions = selectedWithAllocation
+      .filter((candidate) => !usedQuestionIds.has(candidate.id))
+      .map((candidate) => candidate.question);
+    selected.push(...allocationQuestions);
+    allocationQuestions.forEach((question) => usedQuestionIds.add(question.id));
+
+    return {
+      subjectId: allocation.subjectId,
+      requestedCount: allocation.count,
+      actualCount: allocationQuestions.length,
+      availableCount: available.length,
+      limited: allocationQuestions.length < allocation.count,
+    };
+  });
+  const shuffled = shuffleQuestionIds(
+    selected.map((question) => question.id),
+    seed ^ 0x6a09e667,
+  )
+    .map((id) => selected.find((question) => question.id === id))
+    .filter((question): question is Question => Boolean(question));
+
+  return {
+    availableCount: breakdown.reduce((total, item) => total + item.availableCount, 0),
+    requestedCount: allocations.reduce((total, item) => total + item.count, 0),
+    limited: breakdown.some((item) => item.limited),
+    questions: shuffled,
+    breakdown,
+  };
+}
 
 const requestSchema = z.object({
   mode: z.enum(["all", "subject", "group", "wrong", "due", "weak", "mock"]).default("all"),
@@ -95,8 +203,8 @@ export async function POST(request: Request) {
   const yearFilteredVariants = yearFiltered.variants;
   const questionPool = yearFiltered.questions;
   const selected = parsed.data.mode === "mock"
-    ? selectAllocatedPracticeQuestions(questionPool, parsed.data.subjectAllocations ?? [], seed)
-    : selectPracticeQuestions(
+    ? selectAllocatedSessionQuestions(questionPool, parsed.data.subjectAllocations ?? [], seed)
+    : selectSessionQuestions(
         questionPool,
         {
           subjectId: parsed.data.mode === "subject" || parsed.data.mode === "group" || parsed.data.mode === "weak" ? parsed.data.subjectId : undefined,
@@ -115,29 +223,30 @@ export async function POST(request: Request) {
   );
 
   const sessionId = crypto.randomUUID();
+  let storage: "account" | "guest" = "guest";
+  let storageNotice: string | null = null;
   if (auth.user && supabase) {
-    const { error } = await supabase.from("practice_sessions").insert({
-      id: sessionId,
-      user_id: auth.user.id,
-      filter: { ...parsed.data, shuffleChoices },
-      requested_count: selected.requestedCount === "all" ? null : selected.requestedCount,
-      actual_count: selected.questions.length,
-      status: "active",
-      shuffle_choices: shuffleChoices,
-      session_seed: seed,
-    });
-    if (error) {
-      return NextResponse.json(
-        { error: "학습 세션을 저장하지 못했습니다." },
-        { status: 503 },
-      );
-    }
-
-    if (selected.questions.length) {
-      const { data: storedQuestions } = await supabase
+    const selectedQuestionIds = selected.questions.map(
+      (question) => question.id,
+    );
+    const { data: storedQuestions, error: storedQuestionError } =
+      selectedQuestionIds.length
+        ? await supabase
         .from("questions")
         .select("id,external_id")
-        .in("external_id", selected.questions.map((question) => question.id));
+            .in("external_id", selectedQuestionIds)
+        : { data: [], error: null };
+    const canPersistAccountSession =
+      !storedQuestionError &&
+      hasCompletePracticeQuestionMapping(
+        selectedQuestionIds,
+        storedQuestions ?? [],
+      );
+
+    if (!canPersistAccountSession) {
+      storageNotice =
+        "일부 신규 문항이 계정 저장소와 동기화되기 전이라 이번 기록은 이 기기에 저장됩니다.";
+    } else {
       const storedByExternalId = new Map((storedQuestions ?? []).map((item) => [item.external_id as string, item.id as string]));
       const variantExternalIds = publicQuestions
         .map((question) => question.provenance.exam?.externalId)
@@ -154,6 +263,24 @@ export async function POST(request: Request) {
           item.id as string,
         ]),
       );
+
+      const { error } = await supabase.from("practice_sessions").insert({
+        id: sessionId,
+        user_id: auth.user.id,
+        filter: { ...parsed.data, shuffleChoices },
+        requested_count: selected.requestedCount === "all" ? null : selected.requestedCount,
+        actual_count: selected.questions.length,
+        status: "active",
+        shuffle_choices: shuffleChoices,
+        session_seed: seed,
+      });
+      if (error) {
+        return NextResponse.json(
+          { error: "학습 세션을 저장하지 못했습니다." },
+          { status: 503 },
+        );
+      }
+
       const items = selected.questions
         .map((question, index) => {
           const questionId = storedByExternalId.get(question.id);
@@ -173,42 +300,44 @@ export async function POST(request: Request) {
       const { error: itemError } = items.length
         ? await supabase.from("practice_session_items").insert(items)
         : { error: null };
-      if (itemError || items.length !== selected.questions.length) {
+      if (itemError) {
         await supabase.from("practice_sessions").delete().eq("id", sessionId);
         return NextResponse.json(
           { error: "문항 순서를 저장하지 못했습니다." },
           { status: 503 },
         );
       }
-    }
 
-    if (!admin) {
-      await supabase.from("practice_sessions").delete().eq("id", sessionId);
-      return NextResponse.json(
-        { error: "계정 활동을 저장하지 못했습니다." },
-        { status: 503 },
+      if (!admin) {
+        await supabase.from("practice_sessions").delete().eq("id", sessionId);
+        return NextResponse.json(
+          { error: "계정 활동을 저장하지 못했습니다." },
+          { status: 503 },
+        );
+      }
+      const { data: touched, error: touchError } = await admin.rpc(
+        "touch_account_activity",
+        {
+          p_user_id: auth.user.id,
+          p_event: "practice_session",
+          p_reference_id: sessionId,
+        },
       );
-    }
-    const { data: touched, error: touchError } = await admin.rpc(
-      "touch_account_activity",
-      {
-        p_user_id: auth.user.id,
-        p_event: "practice_session",
-        p_reference_id: sessionId,
-      },
-    );
-    if (touchError || !Array.isArray(touched) || touched.length !== 1) {
-      await supabase.from("practice_sessions").delete().eq("id", sessionId);
-      return NextResponse.json(
-        { error: "계정 활동을 저장하지 못했습니다." },
-        { status: 503 },
-      );
+      if (touchError || !Array.isArray(touched) || touched.length !== 1) {
+        await supabase.from("practice_sessions").delete().eq("id", sessionId);
+        return NextResponse.json(
+          { error: "계정 활동을 저장하지 못했습니다." },
+          { status: 503 },
+        );
+      }
+      storage = "account";
     }
   }
 
   return NextResponse.json({
     sessionId,
-    storage: auth.user ? "account" : "guest",
+    storage,
+    storageNotice,
     availableCount: selected.availableCount,
     limited: selected.limited,
     originalRatio: parsed.data.originalRatio,

@@ -1,0 +1,2592 @@
+[
+  {
+    "questionId": "welding-safety-b33-ws33-q044",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q044-c4",
+    "directSolution": "제시 문장은 '와이어 송급롤러에 이물질이 끼었을 때 적절한 조치는?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 전원을 차단하고 예기치 않은 송급을 방지한 뒤 제거한다는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q044-c1",
+        "verdict": "incorrect",
+        "rationale": "'토치스위치를 누른 채 손으로 뺀다'는 문항의 조건에서 필요한 '전원을 차단하고 예기치 않은 송급을 방지한 뒤 제거한다'와 다른 대상·현상 또는 조치다. 따라서 '와이어 송급롤러에 이물질이 끼었을 때 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q044-c2",
+        "verdict": "incorrect",
+        "rationale": "'보호덮개를 열고 계속 운전한다'는 문항의 조건에서 필요한 '전원을 차단하고 예기치 않은 송급을 방지한 뒤 제거한다'와 다른 대상·현상 또는 조치다. 따라서 '와이어 송급롤러에 이물질이 끼었을 때 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q044-c3",
+        "verdict": "incorrect",
+        "rationale": "'와이어를 맨손으로 잡아당긴다'는 문항의 조건에서 필요한 '전원을 차단하고 예기치 않은 송급을 방지한 뒤 제거한다'와 다른 대상·현상 또는 조치다. 따라서 '와이어 송급롤러에 이물질이 끼었을 때 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q044-c4",
+        "verdict": "correct",
+        "rationale": "'전원을 차단하고 예기치 않은 송급을 방지한 뒤 제거한다'는 '와이어 송급롤러에 이물질이 끼었을 때 적절한 조치는?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'와이어 송급롤러에 이물질이 끼었을 때 적절한 조치는?'에서는 익숙한 용어만 고르지 말고, '전원을 차단하고 예기치 않은 송급을 방지한 뒤 제거한다'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '전원을 차단하고 예기치 않은 송급을 방지한 뒤 제거한다'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q045",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q045-c1",
+    "directSolution": "제시 문장은 '고소 위치에서 용접할 때 하부 작업구역을 통제해야 하는 이유는?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 불티·슬래그·공구가 떨어져 아래 작업자를 다치게 할 수 있기 때문이다는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q045-c1",
+        "verdict": "correct",
+        "rationale": "'불티·슬래그·공구가 떨어져 아래 작업자를 다치게 할 수 있기 때문이다'는 '고소 위치에서 용접할 때 하부 작업구역을 통제해야 하는 이유는?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q045-c2",
+        "verdict": "incorrect",
+        "rationale": "'용접전류가 위로 흐르기 때문이다'는 문항의 조건에서 필요한 '불티·슬래그·공구가 떨어져 아래 작업자를 다치게 할 수 있기 때문이다'와 다른 대상·현상 또는 조치다. 따라서 '고소 위치에서 용접할 때 하부 작업구역을 통제해야 하는 이유는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q045-c3",
+        "verdict": "incorrect",
+        "rationale": "'차폐가스가 아래로만 흐르기 때문이다'는 문항의 조건에서 필요한 '불티·슬래그·공구가 떨어져 아래 작업자를 다치게 할 수 있기 때문이다'와 다른 대상·현상 또는 조치다. 따라서 '고소 위치에서 용접할 때 하부 작업구역을 통제해야 하는 이유는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q045-c4",
+        "verdict": "incorrect",
+        "rationale": "'비드폭이 줄기 때문이다'는 문항의 조건에서 필요한 '불티·슬래그·공구가 떨어져 아래 작업자를 다치게 할 수 있기 때문이다'와 다른 대상·현상 또는 조치다. 따라서 '고소 위치에서 용접할 때 하부 작업구역을 통제해야 하는 이유는?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'고소 위치에서 용접할 때 하부 작업구역을 통제해야 하는 이유는?'에서는 익숙한 용어만 고르지 말고, '불티·슬래그·공구가 떨어져 아래 작업자를 다치게 할 수 있기 때문이다'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '불티·슬래그·공구가 떨어져 아래 작업자를 다치게 할 수 있기 때문이다'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q046",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q046-c2",
+    "directSolution": "제시 문장은 '광택이 높은 대형 판재를 용접할 때 주변 차광막을 넓게 배치하는 이유는?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 직접광뿐 아니라 판재에서 반사되는 유해광선도 줄이기 위해서는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q046-c1",
+        "verdict": "incorrect",
+        "rationale": "'용접전류를 안정시키기 위해서'는 문항의 조건에서 필요한 '직접광뿐 아니라 판재에서 반사되는 유해광선도 줄이기 위해서'와 다른 대상·현상 또는 조치다. 따라서 '광택이 높은 대형 판재를 용접할 때 주변 차광막을 넓게 배치하는 이유는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q046-c2",
+        "verdict": "correct",
+        "rationale": "'직접광뿐 아니라 판재에서 반사되는 유해광선도 줄이기 위해서'는 '광택이 높은 대형 판재를 용접할 때 주변 차광막을 넓게 배치하는 이유는?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q046-c3",
+        "verdict": "incorrect",
+        "rationale": "'가스용기를 냉각하기 위해서'는 문항의 조건에서 필요한 '직접광뿐 아니라 판재에서 반사되는 유해광선도 줄이기 위해서'와 다른 대상·현상 또는 조치다. 따라서 '광택이 높은 대형 판재를 용접할 때 주변 차광막을 넓게 배치하는 이유는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q046-c4",
+        "verdict": "incorrect",
+        "rationale": "'용접봉을 건조하기 위해서'는 문항의 조건에서 필요한 '직접광뿐 아니라 판재에서 반사되는 유해광선도 줄이기 위해서'와 다른 대상·현상 또는 조치다. 따라서 '광택이 높은 대형 판재를 용접할 때 주변 차광막을 넓게 배치하는 이유는?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'광택이 높은 대형 판재를 용접할 때 주변 차광막을 넓게 배치하는 이유는?'에서는 익숙한 용어만 고르지 말고, '직접광뿐 아니라 판재에서 반사되는 유해광선도 줄이기 위해서'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '직접광뿐 아니라 판재에서 반사되는 유해광선도 줄이기 위해서'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q047",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q047-c3",
+    "directSolution": "제시 문장은 '용접 후 치핑과 연삭을 장시간 반복할 때 필요한 조치는?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 소음수준을 평가하고 필요 시 적합한 청력보호구를 사용한다는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q047-c1",
+        "verdict": "incorrect",
+        "rationale": "'용접면만 착용한다'는 문항의 조건에서 필요한 '소음수준을 평가하고 필요 시 적합한 청력보호구를 사용한다'와 다른 대상·현상 또는 조치다. 따라서 '용접 후 치핑과 연삭을 장시간 반복할 때 필요한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q047-c2",
+        "verdict": "incorrect",
+        "rationale": "'귀에 천을 느슨하게 넣는다'는 문항의 조건에서 필요한 '소음수준을 평가하고 필요 시 적합한 청력보호구를 사용한다'와 다른 대상·현상 또는 조치다. 따라서 '용접 후 치핑과 연삭을 장시간 반복할 때 필요한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q047-c3",
+        "verdict": "correct",
+        "rationale": "'소음수준을 평가하고 필요 시 적합한 청력보호구를 사용한다'는 '용접 후 치핑과 연삭을 장시간 반복할 때 필요한 조치는?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q047-c4",
+        "verdict": "incorrect",
+        "rationale": "'소음원을 금속판으로 둘러 반사시킨다'는 문항의 조건에서 필요한 '소음수준을 평가하고 필요 시 적합한 청력보호구를 사용한다'와 다른 대상·현상 또는 조치다. 따라서 '용접 후 치핑과 연삭을 장시간 반복할 때 필요한 조치는?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용접 후 치핑과 연삭을 장시간 반복할 때 필요한 조치는?'에서는 익숙한 용어만 고르지 말고, '소음수준을 평가하고 필요 시 적합한 청력보호구를 사용한다'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '소음수준을 평가하고 필요 시 적합한 청력보호구를 사용한다'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q048",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q048-c4",
+    "directSolution": "제시 문장은 '가스용기를 전용카트에 실었더라도 보호캡이 필요한 경우는?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 조정기를 분리한 용기를 운반하거나 저장할 때는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q048-c1",
+        "verdict": "incorrect",
+        "rationale": "'용접 중 토치에 가스가 흐를 때'는 문항의 조건에서 필요한 '조정기를 분리한 용기를 운반하거나 저장할 때'와 다른 대상·현상 또는 조치다. 따라서 '가스용기를 전용카트에 실었더라도 보호캡이 필요한 경우는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q048-c2",
+        "verdict": "incorrect",
+        "rationale": "'용기를 밸브로 인양할 때'는 문항의 조건에서 필요한 '조정기를 분리한 용기를 운반하거나 저장할 때'와 다른 대상·현상 또는 조치다. 따라서 '가스용기를 전용카트에 실었더라도 보호캡이 필요한 경우는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q048-c3",
+        "verdict": "incorrect",
+        "rationale": "'조정기를 연결한 채 눕힐 때'는 문항의 조건에서 필요한 '조정기를 분리한 용기를 운반하거나 저장할 때'와 다른 대상·현상 또는 조치다. 따라서 '가스용기를 전용카트에 실었더라도 보호캡이 필요한 경우는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q048-c4",
+        "verdict": "correct",
+        "rationale": "'조정기를 분리한 용기를 운반하거나 저장할 때'는 '가스용기를 전용카트에 실었더라도 보호캡이 필요한 경우는?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'가스용기를 전용카트에 실었더라도 보호캡이 필요한 경우는?'에서는 익숙한 용어만 고르지 말고, '조정기를 분리한 용기를 운반하거나 저장할 때'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '조정기를 분리한 용기를 운반하거나 저장할 때'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q049",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q049-c1",
+    "directSolution": "제시 문장은 '용접기 팬 흡입구를 작업복이나 자재로 막으면 안 되는 이유는?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 냉각공기 부족으로 내부 온도와 절연열화 위험이 증가하기 때문이다는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q049-c1",
+        "verdict": "correct",
+        "rationale": "'냉각공기 부족으로 내부 온도와 절연열화 위험이 증가하기 때문이다'는 '용접기 팬 흡입구를 작업복이나 자재로 막으면 안 되는 이유는?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q049-c2",
+        "verdict": "incorrect",
+        "rationale": "'용접흄이 감소하기 때문이다'는 문항의 조건에서 필요한 '냉각공기 부족으로 내부 온도와 절연열화 위험이 증가하기 때문이다'와 다른 대상·현상 또는 조치다. 따라서 '용접기 팬 흡입구를 작업복이나 자재로 막으면 안 되는 이유는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q049-c3",
+        "verdict": "incorrect",
+        "rationale": "'가스압력이 일정해지기 때문이다'는 문항의 조건에서 필요한 '냉각공기 부족으로 내부 온도와 절연열화 위험이 증가하기 때문이다'와 다른 대상·현상 또는 조치다. 따라서 '용접기 팬 흡입구를 작업복이나 자재로 막으면 안 되는 이유는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q049-c4",
+        "verdict": "incorrect",
+        "rationale": "'차광도가 높아지기 때문이다'는 문항의 조건에서 필요한 '냉각공기 부족으로 내부 온도와 절연열화 위험이 증가하기 때문이다'와 다른 대상·현상 또는 조치다. 따라서 '용접기 팬 흡입구를 작업복이나 자재로 막으면 안 되는 이유는?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용접기 팬 흡입구를 작업복이나 자재로 막으면 안 되는 이유는?'에서는 익숙한 용어만 고르지 말고, '냉각공기 부족으로 내부 온도와 절연열화 위험이 증가하기 때문이다'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '냉각공기 부족으로 내부 온도와 절연열화 위험이 증가하기 때문이다'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q050",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q050-c2",
+    "directSolution": "제시 문장은 '용접 완료품을 다른 작업자에게 인계할 때 필요한 안전조치는?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 잔열을 확인하고 고온표지·집게·내열장갑 등으로 접촉화상을 예방한다는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q050-c1",
+        "verdict": "incorrect",
+        "rationale": "'표시 없이 공용작업대에 둔다'는 문항의 조건에서 필요한 '잔열을 확인하고 고온표지·집게·내열장갑 등으로 접촉화상을 예방한다'와 다른 대상·현상 또는 조치다. 따라서 '용접 완료품을 다른 작업자에게 인계할 때 필요한 안전조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q050-c2",
+        "verdict": "correct",
+        "rationale": "'잔열을 확인하고 고온표지·집게·내열장갑 등으로 접촉화상을 예방한다'는 '용접 완료품을 다른 작업자에게 인계할 때 필요한 안전조치는?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q050-c3",
+        "verdict": "incorrect",
+        "rationale": "'가연성 포장재 위에 올린다'는 문항의 조건에서 필요한 '잔열을 확인하고 고온표지·집게·내열장갑 등으로 접촉화상을 예방한다'와 다른 대상·현상 또는 조치다. 따라서 '용접 완료품을 다른 작업자에게 인계할 때 필요한 안전조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q050-c4",
+        "verdict": "incorrect",
+        "rationale": "'맨손으로 온도를 확인한다'는 문항의 조건에서 필요한 '잔열을 확인하고 고온표지·집게·내열장갑 등으로 접촉화상을 예방한다'와 다른 대상·현상 또는 조치다. 따라서 '용접 완료품을 다른 작업자에게 인계할 때 필요한 안전조치는?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용접 완료품을 다른 작업자에게 인계할 때 필요한 안전조치는?'에서는 익숙한 용어만 고르지 말고, '잔열을 확인하고 고온표지·집게·내열장갑 등으로 접촉화상을 예방한다'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '잔열을 확인하고 고온표지·집게·내열장갑 등으로 접촉화상을 예방한다'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q051",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q051-c3",
+    "directSolution": "제시 문장은 '고압가스용기 밸브를 급히 열면 안 되는 이유는?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 급격한 압력상승으로 조정기 손상·단열압축 가열·가스분출 위험이 있기 때문이다는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q051-c1",
+        "verdict": "incorrect",
+        "rationale": "'용접전류가 감소하기 때문이다'는 문항의 조건에서 필요한 '급격한 압력상승으로 조정기 손상·단열압축 가열·가스분출 위험이 있기 때문이다'와 다른 대상·현상 또는 조치다. 따라서 '고압가스용기 밸브를 급히 열면 안 되는 이유는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q051-c2",
+        "verdict": "incorrect",
+        "rationale": "'차광필터가 어두워지기 때문이다'는 문항의 조건에서 필요한 '급격한 압력상승으로 조정기 손상·단열압축 가열·가스분출 위험이 있기 때문이다'와 다른 대상·현상 또는 조치다. 따라서 '고압가스용기 밸브를 급히 열면 안 되는 이유는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q051-c3",
+        "verdict": "correct",
+        "rationale": "'급격한 압력상승으로 조정기 손상·단열압축 가열·가스분출 위험이 있기 때문이다'는 '고압가스용기 밸브를 급히 열면 안 되는 이유는?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q051-c4",
+        "verdict": "incorrect",
+        "rationale": "'호스가 길어지기 때문이다'는 문항의 조건에서 필요한 '급격한 압력상승으로 조정기 손상·단열압축 가열·가스분출 위험이 있기 때문이다'와 다른 대상·현상 또는 조치다. 따라서 '고압가스용기 밸브를 급히 열면 안 되는 이유는?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'고압가스용기 밸브를 급히 열면 안 되는 이유는?'에서는 익숙한 용어만 고르지 말고, '급격한 압력상승으로 조정기 손상·단열압축 가열·가스분출 위험이 있기 때문이다'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '급격한 압력상승으로 조정기 손상·단열압축 가열·가스분출 위험이 있기 때문이다'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q052",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q052-c4",
+    "directSolution": "제시 문장은 '기름 묻은 스패너로 산소조정기 연결부를 조이면 안 되는 이유는?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 고농도 산소와 유류가 접촉하면 급격한 연소가 발생할 수 있기 때문이다는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q052-c1",
+        "verdict": "incorrect",
+        "rationale": "'용기 무게가 증가하기 때문이다'는 문항의 조건에서 필요한 '고농도 산소와 유류가 접촉하면 급격한 연소가 발생할 수 있기 때문이다'와 다른 대상·현상 또는 조치다. 따라서 '기름 묻은 스패너로 산소조정기 연결부를 조이면 안 되는 이유는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q052-c2",
+        "verdict": "incorrect",
+        "rationale": "'가스가 액체로 변하기 때문이다'는 문항의 조건에서 필요한 '고농도 산소와 유류가 접촉하면 급격한 연소가 발생할 수 있기 때문이다'와 다른 대상·현상 또는 조치다. 따라서 '기름 묻은 스패너로 산소조정기 연결부를 조이면 안 되는 이유는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q052-c3",
+        "verdict": "incorrect",
+        "rationale": "'용접봉이 녹지 않기 때문이다'는 문항의 조건에서 필요한 '고농도 산소와 유류가 접촉하면 급격한 연소가 발생할 수 있기 때문이다'와 다른 대상·현상 또는 조치다. 따라서 '기름 묻은 스패너로 산소조정기 연결부를 조이면 안 되는 이유는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q052-c4",
+        "verdict": "correct",
+        "rationale": "'고농도 산소와 유류가 접촉하면 급격한 연소가 발생할 수 있기 때문이다'는 '기름 묻은 스패너로 산소조정기 연결부를 조이면 안 되는 이유는?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'기름 묻은 스패너로 산소조정기 연결부를 조이면 안 되는 이유는?'에서는 익숙한 용어만 고르지 말고, '고농도 산소와 유류가 접촉하면 급격한 연소가 발생할 수 있기 때문이다'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '고농도 산소와 유류가 접촉하면 급격한 연소가 발생할 수 있기 때문이다'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q053",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q053-c1",
+    "directSolution": "제시 문장은 '산소와 연료가스의 압력 불균형이 큰 상태에서 토치를 사용하면 우려되는 것은?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 한쪽 가스가 반대 계통으로 역류해 혼합가스와 역화위험을 만드는 것는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q053-c1",
+        "verdict": "correct",
+        "rationale": "'한쪽 가스가 반대 계통으로 역류해 혼합가스와 역화위험을 만드는 것'는 '산소와 연료가스의 압력 불균형이 큰 상태에서 토치를 사용하면 우려되는 것은?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q053-c2",
+        "verdict": "incorrect",
+        "rationale": "'차광도가 자동 조절되는 것'는 문항의 조건에서 필요한 '한쪽 가스가 반대 계통으로 역류해 혼합가스와 역화위험을 만드는 것'와 다른 대상·현상 또는 조치다. 따라서 '산소와 연료가스의 압력 불균형이 큰 상태에서 토치를 사용하면 우려되는 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q053-c3",
+        "verdict": "incorrect",
+        "rationale": "'용접흄이 사라지는 것'는 문항의 조건에서 필요한 '한쪽 가스가 반대 계통으로 역류해 혼합가스와 역화위험을 만드는 것'와 다른 대상·현상 또는 조치다. 따라서 '산소와 연료가스의 압력 불균형이 큰 상태에서 토치를 사용하면 우려되는 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q053-c4",
+        "verdict": "incorrect",
+        "rationale": "'용기가 자동 고정되는 것'는 문항의 조건에서 필요한 '한쪽 가스가 반대 계통으로 역류해 혼합가스와 역화위험을 만드는 것'와 다른 대상·현상 또는 조치다. 따라서 '산소와 연료가스의 압력 불균형이 큰 상태에서 토치를 사용하면 우려되는 것은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'산소와 연료가스의 압력 불균형이 큰 상태에서 토치를 사용하면 우려되는 것은?'에서는 익숙한 용어만 고르지 말고, '한쪽 가스가 반대 계통으로 역류해 혼합가스와 역화위험을 만드는 것'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '한쪽 가스가 반대 계통으로 역류해 혼합가스와 역화위험을 만드는 것'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q054",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q054-c2",
+    "directSolution": "제시 문장은 '아르곤이나 질소로 퍼지한 설비 내부에 진입하기 전에 필요한 조치는?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 공기치환·환기 후 산소농도와 유해가스를 측정한다는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q054-c1",
+        "verdict": "incorrect",
+        "rationale": "'냄새가 없으면 바로 진입한다'는 문항의 조건에서 필요한 '공기치환·환기 후 산소농도와 유해가스를 측정한다'와 다른 대상·현상 또는 조치다. 따라서 '아르곤이나 질소로 퍼지한 설비 내부에 진입하기 전에 필요한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q054-c2",
+        "verdict": "correct",
+        "rationale": "'공기치환·환기 후 산소농도와 유해가스를 측정한다'는 '아르곤이나 질소로 퍼지한 설비 내부에 진입하기 전에 필요한 조치는?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q054-c3",
+        "verdict": "incorrect",
+        "rationale": "'방진마스크만 쓰고 들어간다'는 문항의 조건에서 필요한 '공기치환·환기 후 산소농도와 유해가스를 측정한다'와 다른 대상·현상 또는 조치다. 따라서 '아르곤이나 질소로 퍼지한 설비 내부에 진입하기 전에 필요한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q054-c4",
+        "verdict": "incorrect",
+        "rationale": "'환기를 중지한다'는 문항의 조건에서 필요한 '공기치환·환기 후 산소농도와 유해가스를 측정한다'와 다른 대상·현상 또는 조치다. 따라서 '아르곤이나 질소로 퍼지한 설비 내부에 진입하기 전에 필요한 조치는?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'아르곤이나 질소로 퍼지한 설비 내부에 진입하기 전에 필요한 조치는?'에서는 익숙한 용어만 고르지 말고, '공기치환·환기 후 산소농도와 유해가스를 측정한다'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '공기치환·환기 후 산소농도와 유해가스를 측정한다'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q055",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q055-c3",
+    "directSolution": "제시 문장은 '가스호스에서 순간 누출이 있었으나 불이 붙지 않은 경우 적절한 조치는?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 작업을 중지하고 계통을 격리한 뒤 아차사고로 보고·원인조사한다는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q055-c1",
+        "verdict": "incorrect",
+        "rationale": "'점화되지 않았으므로 기록하지 않는다'는 문항의 조건에서 필요한 '작업을 중지하고 계통을 격리한 뒤 아차사고로 보고·원인조사한다'와 다른 대상·현상 또는 조치다. 따라서 '가스호스에서 순간 누출이 있었으나 불이 붙지 않은 경우 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q055-c2",
+        "verdict": "incorrect",
+        "rationale": "'테이프로 감고 계속 사용한다'는 문항의 조건에서 필요한 '작업을 중지하고 계통을 격리한 뒤 아차사고로 보고·원인조사한다'와 다른 대상·현상 또는 조치다. 따라서 '가스호스에서 순간 누출이 있었으나 불이 붙지 않은 경우 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q055-c3",
+        "verdict": "correct",
+        "rationale": "'작업을 중지하고 계통을 격리한 뒤 아차사고로 보고·원인조사한다'는 '가스호스에서 순간 누출이 있었으나 불이 붙지 않은 경우 적절한 조치는?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q055-c4",
+        "verdict": "incorrect",
+        "rationale": "'불꽃으로 누출 여부를 확인한다'는 문항의 조건에서 필요한 '작업을 중지하고 계통을 격리한 뒤 아차사고로 보고·원인조사한다'와 다른 대상·현상 또는 조치다. 따라서 '가스호스에서 순간 누출이 있었으나 불이 붙지 않은 경우 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'가스호스에서 순간 누출이 있었으나 불이 붙지 않은 경우 적절한 조치는?'에서는 익숙한 용어만 고르지 말고, '작업을 중지하고 계통을 격리한 뒤 아차사고로 보고·원인조사한다'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '작업을 중지하고 계통을 격리한 뒤 아차사고로 보고·원인조사한다'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q056",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q056-c4",
+    "directSolution": "제시 문장은 '전격방지장치의 대기전압을 점검할 때 적절한 방법은?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 자격 있는 인원이 적합한 계측기와 제조사 시험절차를 사용한다는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q056-c1",
+        "verdict": "incorrect",
+        "rationale": "'전극과 모재를 맨손으로 동시에 만진다'는 문항의 조건에서 필요한 '자격 있는 인원이 적합한 계측기와 제조사 시험절차를 사용한다'와 다른 대상·현상 또는 조치다. 따라서 '전격방지장치의 대기전압을 점검할 때 적절한 방법은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q056-c2",
+        "verdict": "incorrect",
+        "rationale": "'안전장치를 단락한다'는 문항의 조건에서 필요한 '자격 있는 인원이 적합한 계측기와 제조사 시험절차를 사용한다'와 다른 대상·현상 또는 조치다. 따라서 '전격방지장치의 대기전압을 점검할 때 적절한 방법은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q056-c3",
+        "verdict": "incorrect",
+        "rationale": "'젖은 전선으로 시험한다'는 문항의 조건에서 필요한 '자격 있는 인원이 적합한 계측기와 제조사 시험절차를 사용한다'와 다른 대상·현상 또는 조치다. 따라서 '전격방지장치의 대기전압을 점검할 때 적절한 방법은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q056-c4",
+        "verdict": "correct",
+        "rationale": "'자격 있는 인원이 적합한 계측기와 제조사 시험절차를 사용한다'는 '전격방지장치의 대기전압을 점검할 때 적절한 방법은?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'전격방지장치의 대기전압을 점검할 때 적절한 방법은?'에서는 익숙한 용어만 고르지 말고, '자격 있는 인원이 적합한 계측기와 제조사 시험절차를 사용한다'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '자격 있는 인원이 적합한 계측기와 제조사 시험절차를 사용한다'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q057",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q057-c1",
+    "directSolution": "제시 문장은 '용접기 내부에 금속분진이 축적된 경우 적절한 조치는?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 전원을 격리하고 제조사 절차에 따라 청소·절연·통풍상태를 점검한다는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q057-c1",
+        "verdict": "correct",
+        "rationale": "'전원을 격리하고 제조사 절차에 따라 청소·절연·통풍상태를 점검한다'는 '용접기 내부에 금속분진이 축적된 경우 적절한 조치는?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q057-c2",
+        "verdict": "incorrect",
+        "rationale": "'가동 중 압축공기를 무작정 분사한다'는 문항의 조건에서 필요한 '전원을 격리하고 제조사 절차에 따라 청소·절연·통풍상태를 점검한다'와 다른 대상·현상 또는 조치다. 따라서 '용접기 내부에 금속분진이 축적된 경우 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q057-c3",
+        "verdict": "incorrect",
+        "rationale": "'물로 내부를 씻는다'는 문항의 조건에서 필요한 '전원을 격리하고 제조사 절차에 따라 청소·절연·통풍상태를 점검한다'와 다른 대상·현상 또는 조치다. 따라서 '용접기 내부에 금속분진이 축적된 경우 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q057-c4",
+        "verdict": "incorrect",
+        "rationale": "'과열경보를 해제한다'는 문항의 조건에서 필요한 '전원을 격리하고 제조사 절차에 따라 청소·절연·통풍상태를 점검한다'와 다른 대상·현상 또는 조치다. 따라서 '용접기 내부에 금속분진이 축적된 경우 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용접기 내부에 금속분진이 축적된 경우 적절한 조치는?'에서는 익숙한 용어만 고르지 말고, '전원을 격리하고 제조사 절차에 따라 청소·절연·통풍상태를 점검한다'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '전원을 격리하고 제조사 절차에 따라 청소·절연·통풍상태를 점검한다'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q058",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q058-c2",
+    "directSolution": "제시 문장은 '용접전류 원격조정기 케이블의 피복이 손상되었을 때 적절한 조치는?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 사용을 중지하고 정격 케이블로 수리·교체한 뒤 기능시험한다는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q058-c1",
+        "verdict": "incorrect",
+        "rationale": "'젖은 천으로 감아 사용한다'는 문항의 조건에서 필요한 '사용을 중지하고 정격 케이블로 수리·교체한 뒤 기능시험한다'와 다른 대상·현상 또는 조치다. 따라서 '용접전류 원격조정기 케이블의 피복이 손상되었을 때 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q058-c2",
+        "verdict": "correct",
+        "rationale": "'사용을 중지하고 정격 케이블로 수리·교체한 뒤 기능시험한다'는 '용접전류 원격조정기 케이블의 피복이 손상되었을 때 적절한 조치는?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q058-c3",
+        "verdict": "incorrect",
+        "rationale": "'손상부를 용접부 아래에 둔다'는 문항의 조건에서 필요한 '사용을 중지하고 정격 케이블로 수리·교체한 뒤 기능시험한다'와 다른 대상·현상 또는 조치다. 따라서 '용접전류 원격조정기 케이블의 피복이 손상되었을 때 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q058-c4",
+        "verdict": "incorrect",
+        "rationale": "'내부단자를 맨손으로 만진다'는 문항의 조건에서 필요한 '사용을 중지하고 정격 케이블로 수리·교체한 뒤 기능시험한다'와 다른 대상·현상 또는 조치다. 따라서 '용접전류 원격조정기 케이블의 피복이 손상되었을 때 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용접전류 원격조정기 케이블의 피복이 손상되었을 때 적절한 조치는?'에서는 익숙한 용어만 고르지 말고, '사용을 중지하고 정격 케이블로 수리·교체한 뒤 기능시험한다'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '사용을 중지하고 정격 케이블로 수리·교체한 뒤 기능시험한다'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q059",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q059-c3",
+    "directSolution": "제시 문장은 '용접흄 집진기의 필터 차압이 비정상적으로 높아졌을 때 적절한 조치는?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 작업노출을 평가하고 필터·덕트·팬을 점검·교체한 뒤 성능을 확인한다는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q059-c1",
+        "verdict": "incorrect",
+        "rationale": "'후드를 용접점에서 더 멀리 둔다'는 문항의 조건에서 필요한 '작업노출을 평가하고 필터·덕트·팬을 점검·교체한 뒤 성능을 확인한다'와 다른 대상·현상 또는 조치다. 따라서 '용접흄 집진기의 필터 차압이 비정상적으로 높아졌을 때 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q059-c2",
+        "verdict": "incorrect",
+        "rationale": "'배기팬을 끈다'는 문항의 조건에서 필요한 '작업노출을 평가하고 필터·덕트·팬을 점검·교체한 뒤 성능을 확인한다'와 다른 대상·현상 또는 조치다. 따라서 '용접흄 집진기의 필터 차압이 비정상적으로 높아졌을 때 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q059-c3",
+        "verdict": "correct",
+        "rationale": "'작업노출을 평가하고 필터·덕트·팬을 점검·교체한 뒤 성능을 확인한다'는 '용접흄 집진기의 필터 차압이 비정상적으로 높아졌을 때 적절한 조치는?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q059-c4",
+        "verdict": "incorrect",
+        "rationale": "'필터를 제거한 채 실내로 배출한다'는 문항의 조건에서 필요한 '작업노출을 평가하고 필터·덕트·팬을 점검·교체한 뒤 성능을 확인한다'와 다른 대상·현상 또는 조치다. 따라서 '용접흄 집진기의 필터 차압이 비정상적으로 높아졌을 때 적절한 조치는?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용접흄 집진기의 필터 차압이 비정상적으로 높아졌을 때 적절한 조치는?'에서는 익숙한 용어만 고르지 말고, '작업노출을 평가하고 필터·덕트·팬을 점검·교체한 뒤 성능을 확인한다'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '작업노출을 평가하고 필터·덕트·팬을 점검·교체한 뒤 성능을 확인한다'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "welding-safety-b33-ws33-q060",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "welding-safety-b33-ws33-q060-c4",
+    "directSolution": "제시 문장은 '용접작업 종료 시 가장 적절한 종합점검은?'이다. 문항은 안전조치의 우선순위와 위험원 통제를 묻는다. 전원·가스를 차단하고 잔압·고온부·불티·화재감시·통로정리를 확인한다는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "welding-safety-b33-ws33-q060-c1",
+        "verdict": "incorrect",
+        "rationale": "'홀더와 토치를 통전·가압 상태로 둔다'는 문항의 조건에서 필요한 '전원·가스를 차단하고 잔압·고온부·불티·화재감시·통로정리를 확인한다'와 다른 대상·현상 또는 조치다. 따라서 '용접작업 종료 시 가장 적절한 종합점검은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q060-c2",
+        "verdict": "incorrect",
+        "rationale": "'고온품을 가연물 위에 둔다'는 문항의 조건에서 필요한 '전원·가스를 차단하고 잔압·고온부·불티·화재감시·통로정리를 확인한다'와 다른 대상·현상 또는 조치다. 따라서 '용접작업 종료 시 가장 적절한 종합점검은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q060-c3",
+        "verdict": "incorrect",
+        "rationale": "'화재감시를 즉시 종료한다'는 문항의 조건에서 필요한 '전원·가스를 차단하고 잔압·고온부·불티·화재감시·통로정리를 확인한다'와 다른 대상·현상 또는 조치다. 따라서 '용접작업 종료 시 가장 적절한 종합점검은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "welding-safety-b33-ws33-q060-c4",
+        "verdict": "correct",
+        "rationale": "'전원·가스를 차단하고 잔압·고온부·불티·화재감시·통로정리를 확인한다'는 '용접작업 종료 시 가장 적절한 종합점검은?'에서 요구한 안전조치의 우선순위와 위험원 통제에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'용접작업 종료 시 가장 적절한 종합점검은?'에서는 익숙한 용어만 고르지 말고, '전원·가스를 차단하고 잔압·고온부·불티·화재감시·통로정리를 확인한다'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-safety",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 안전조치의 우선순위와 위험원 통제의 판단을 다룬다. '전원·가스를 차단하고 잔압·고온부·불티·화재감시·통로정리를 확인한다'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.kosha.or.kr"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-PROC-001",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-PROC-001-c1",
+    "directSolution": "제시 문장은 '피복제가 입혀진 짧은 소모성 봉 전극을 사용하고, 피복제에서 생긴 가스와 슬래그로 용융지를 보호하는 용접은?'이다. 문항은 용접 공정의 전극·보호 방식과 적용 조건를 묻는다. 피복아크용접(SMAW)는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-PROC-001-c1",
+        "verdict": "correct",
+        "rationale": "'피복아크용접(SMAW)'는 '피복제가 입혀진 짧은 소모성 봉 전극을 사용하고, 피복제에서 생긴 가스와 슬래그로 용융지를 보호하는 용접은?'에서 요구한 용접 공정의 전극·보호 방식과 적용 조건에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-PROC-001-c2",
+        "verdict": "incorrect",
+        "rationale": "'TIG용접(GTAW)'는 문항의 조건에서 필요한 '피복아크용접(SMAW)'와 다른 대상·현상 또는 조치다. 따라서 '피복제가 입혀진 짧은 소모성 봉 전극을 사용하고, 피복제에서 생긴 가스와 슬래그로 용융지를 보호하는 용접은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-PROC-001-c3",
+        "verdict": "incorrect",
+        "rationale": "'MIG용접(GMAW)'는 문항의 조건에서 필요한 '피복아크용접(SMAW)'와 다른 대상·현상 또는 조치다. 따라서 '피복제가 입혀진 짧은 소모성 봉 전극을 사용하고, 피복제에서 생긴 가스와 슬래그로 용융지를 보호하는 용접은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-PROC-001-c4",
+        "verdict": "incorrect",
+        "rationale": "'서브머지드아크용접(SAW)'는 문항의 조건에서 필요한 '피복아크용접(SMAW)'와 다른 대상·현상 또는 조치다. 따라서 '피복제가 입혀진 짧은 소모성 봉 전극을 사용하고, 피복제에서 생긴 가스와 슬래그로 용융지를 보호하는 용접은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'피복제가 입혀진 짧은 소모성 봉 전극을 사용하고, 피복제에서 생긴 가스와 슬래그로 용융지를 보호하는 용접은?'에서는 익숙한 용어만 고르지 말고, '피복아크용접(SMAW)'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 공정의 전극·보호 방식과 적용 조건의 판단을 다룬다. '피복아크용접(SMAW)'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-PROC-002",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-PROC-002-c3",
+    "directSolution": "제시 문장은 '비소모성 텅스텐 전극과 불활성 보호가스를 사용하며 필요하면 별도의 용가봉을 넣는 용접은?'이다. 문항은 용접 공정의 전극·보호 방식과 적용 조건를 묻는다. TIG용접(GTAW)는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-PROC-002-c1",
+        "verdict": "incorrect",
+        "rationale": "'FCAW'는 문항의 조건에서 필요한 'TIG용접(GTAW)'와 다른 대상·현상 또는 조치다. 따라서 '비소모성 텅스텐 전극과 불활성 보호가스를 사용하며 필요하면 별도의 용가봉을 넣는 용접은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-PROC-002-c2",
+        "verdict": "incorrect",
+        "rationale": "'SAW'는 문항의 조건에서 필요한 'TIG용접(GTAW)'와 다른 대상·현상 또는 조치다. 따라서 '비소모성 텅스텐 전극과 불활성 보호가스를 사용하며 필요하면 별도의 용가봉을 넣는 용접은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-PROC-002-c3",
+        "verdict": "correct",
+        "rationale": "'TIG용접(GTAW)'는 '비소모성 텅스텐 전극과 불활성 보호가스를 사용하며 필요하면 별도의 용가봉을 넣는 용접은?'에서 요구한 용접 공정의 전극·보호 방식과 적용 조건에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-PROC-002-c4",
+        "verdict": "incorrect",
+        "rationale": "'피복아크용접(SMAW)'는 문항의 조건에서 필요한 'TIG용접(GTAW)'와 다른 대상·현상 또는 조치다. 따라서 '비소모성 텅스텐 전극과 불활성 보호가스를 사용하며 필요하면 별도의 용가봉을 넣는 용접은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'비소모성 텅스텐 전극과 불활성 보호가스를 사용하며 필요하면 별도의 용가봉을 넣는 용접은?'에서는 익숙한 용어만 고르지 말고, 'TIG용접(GTAW)'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 공정의 전극·보호 방식과 적용 조건의 판단을 다룬다. 'TIG용접(GTAW)'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-PROC-003",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-PROC-003-c2",
+    "directSolution": "제시 문장은 'MIG용접과 MAG용접을 구분하는 가장 직접적인 기준은?'이다. 문항은 용접 공정의 전극·보호 방식과 적용 조건를 묻는다. 보호가스가 불활성인지 활성인지는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-PROC-003-c1",
+        "verdict": "incorrect",
+        "rationale": "'전극이 소모되는지 여부'는 문항의 조건에서 필요한 '보호가스가 불활성인지 활성인지'와 다른 대상·현상 또는 조치다. 따라서 'MIG용접과 MAG용접을 구분하는 가장 직접적인 기준은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-PROC-003-c2",
+        "verdict": "correct",
+        "rationale": "'보호가스가 불활성인지 활성인지'는 'MIG용접과 MAG용접을 구분하는 가장 직접적인 기준은?'에서 요구한 용접 공정의 전극·보호 방식과 적용 조건에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-PROC-003-c3",
+        "verdict": "incorrect",
+        "rationale": "'입상 플럭스를 사용하는지 여부'는 문항의 조건에서 필요한 '보호가스가 불활성인지 활성인지'와 다른 대상·현상 또는 조치다. 따라서 'MIG용접과 MAG용접을 구분하는 가장 직접적인 기준은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-PROC-003-c4",
+        "verdict": "incorrect",
+        "rationale": "'전극이 봉인지 관상 와이어인지'는 문항의 조건에서 필요한 '보호가스가 불활성인지 활성인지'와 다른 대상·현상 또는 조치다. 따라서 'MIG용접과 MAG용접을 구분하는 가장 직접적인 기준은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'MIG용접과 MAG용접을 구분하는 가장 직접적인 기준은?'에서는 익숙한 용어만 고르지 말고, '보호가스가 불활성인지 활성인지'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 공정의 전극·보호 방식과 적용 조건의 판단을 다룬다. '보호가스가 불활성인지 활성인지'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-PROC-004",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-PROC-004-c2",
+    "directSolution": "제시 문장은 '내부에 플럭스가 채워진 관상 와이어를 연속 송급하며 가스차폐형과 자체보호형이 있는 용접은?'이다. 문항은 용접 공정의 전극·보호 방식과 적용 조건를 묻는다. 플럭스코어드아크용접(FCAW)는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-PROC-004-c1",
+        "verdict": "incorrect",
+        "rationale": "'TIG용접'는 문항의 조건에서 필요한 '플럭스코어드아크용접(FCAW)'와 다른 대상·현상 또는 조치다. 따라서 '내부에 플럭스가 채워진 관상 와이어를 연속 송급하며 가스차폐형과 자체보호형이 있는 용접은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-PROC-004-c2",
+        "verdict": "correct",
+        "rationale": "'플럭스코어드아크용접(FCAW)'는 '내부에 플럭스가 채워진 관상 와이어를 연속 송급하며 가스차폐형과 자체보호형이 있는 용접은?'에서 요구한 용접 공정의 전극·보호 방식과 적용 조건에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-PROC-004-c3",
+        "verdict": "incorrect",
+        "rationale": "'서브머지드아크용접(SAW)'는 문항의 조건에서 필요한 '플럭스코어드아크용접(FCAW)'와 다른 대상·현상 또는 조치다. 따라서 '내부에 플럭스가 채워진 관상 와이어를 연속 송급하며 가스차폐형과 자체보호형이 있는 용접은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-PROC-004-c4",
+        "verdict": "incorrect",
+        "rationale": "'저항점용접'는 문항의 조건에서 필요한 '플럭스코어드아크용접(FCAW)'와 다른 대상·현상 또는 조치다. 따라서 '내부에 플럭스가 채워진 관상 와이어를 연속 송급하며 가스차폐형과 자체보호형이 있는 용접은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'내부에 플럭스가 채워진 관상 와이어를 연속 송급하며 가스차폐형과 자체보호형이 있는 용접은?'에서는 익숙한 용어만 고르지 말고, '플럭스코어드아크용접(FCAW)'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 공정의 전극·보호 방식과 적용 조건의 판단을 다룬다. '플럭스코어드아크용접(FCAW)'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-PROC-005",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-PROC-005-c3",
+    "directSolution": "제시 문장은 '입상 플럭스 아래에 아크가 잠기며 긴 직선의 두꺼운 판을 고전류·고용착률로 기계화·자동화 용접하는 데 적합한 공정은?'이다. 문항은 용접 공정의 전극·보호 방식과 적용 조건를 묻는다. 서브머지드아크용접(SAW)는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-PROC-005-c1",
+        "verdict": "incorrect",
+        "rationale": "'피복아크용접'는 문항의 조건에서 필요한 '서브머지드아크용접(SAW)'와 다른 대상·현상 또는 조치다. 따라서 '입상 플럭스 아래에 아크가 잠기며 긴 직선의 두꺼운 판을 고전류·고용착률로 기계화·자동화 용접하는 데 적합한 공정은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-PROC-005-c2",
+        "verdict": "incorrect",
+        "rationale": "'TIG용접'는 문항의 조건에서 필요한 '서브머지드아크용접(SAW)'와 다른 대상·현상 또는 조치다. 따라서 '입상 플럭스 아래에 아크가 잠기며 긴 직선의 두꺼운 판을 고전류·고용착률로 기계화·자동화 용접하는 데 적합한 공정은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-PROC-005-c3",
+        "verdict": "correct",
+        "rationale": "'서브머지드아크용접(SAW)'는 '입상 플럭스 아래에 아크가 잠기며 긴 직선의 두꺼운 판을 고전류·고용착률로 기계화·자동화 용접하는 데 적합한 공정은?'에서 요구한 용접 공정의 전극·보호 방식과 적용 조건에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-PROC-005-c4",
+        "verdict": "incorrect",
+        "rationale": "'가스용접'는 문항의 조건에서 필요한 '서브머지드아크용접(SAW)'와 다른 대상·현상 또는 조치다. 따라서 '입상 플럭스 아래에 아크가 잠기며 긴 직선의 두꺼운 판을 고전류·고용착률로 기계화·자동화 용접하는 데 적합한 공정은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'입상 플럭스 아래에 아크가 잠기며 긴 직선의 두꺼운 판을 고전류·고용착률로 기계화·자동화 용접하는 데 적합한 공정은?'에서는 익숙한 용어만 고르지 말고, '서브머지드아크용접(SAW)'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 공정의 전극·보호 방식과 적용 조건의 판단을 다룬다. '서브머지드아크용접(SAW)'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-PROC-006",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-PROC-006-c2",
+    "directSolution": "제시 문장은 '가스 차폐 아크용접에서 기공이 늘었을 때 가장 적절한 첫 점검은?'이다. 문항은 용접 공정의 전극·보호 방식과 적용 조건를 묻는다. 바람·호스 누설·노즐 오염과 거리·모재 표면을 함께 확인한다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-PROC-006-c1",
+        "verdict": "incorrect",
+        "rationale": "'보호가스 유량을 조건과 관계없이 최대로 높인다.'는 문항의 조건에서 필요한 '바람·호스 누설·노즐 오염과 거리·모재 표면을 함께 확인한다.'와 다른 대상·현상 또는 조치다. 따라서 '가스 차폐 아크용접에서 기공이 늘었을 때 가장 적절한 첫 점검은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-PROC-006-c2",
+        "verdict": "correct",
+        "rationale": "'바람·호스 누설·노즐 오염과 거리·모재 표면을 함께 확인한다.'는 '가스 차폐 아크용접에서 기공이 늘었을 때 가장 적절한 첫 점검은?'에서 요구한 용접 공정의 전극·보호 방식과 적용 조건에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-PROC-006-c3",
+        "verdict": "incorrect",
+        "rationale": "'차폐가스는 바람의 영향을 받지 않으므로 와이어만 교체한다.'는 문항의 조건에서 필요한 '바람·호스 누설·노즐 오염과 거리·모재 표면을 함께 확인한다.'와 다른 대상·현상 또는 조치다. 따라서 '가스 차폐 아크용접에서 기공이 늘었을 때 가장 적절한 첫 점검은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-PROC-006-c4",
+        "verdict": "incorrect",
+        "rationale": "'SAW처럼 모든 가스 차폐 공정의 아크 위에 입상 플럭스를 붓는다.'는 문항의 조건에서 필요한 '바람·호스 누설·노즐 오염과 거리·모재 표면을 함께 확인한다.'와 다른 대상·현상 또는 조치다. 따라서 '가스 차폐 아크용접에서 기공이 늘었을 때 가장 적절한 첫 점검은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'가스 차폐 아크용접에서 기공이 늘었을 때 가장 적절한 첫 점검은?'에서는 익숙한 용어만 고르지 말고, '바람·호스 누설·노즐 오염과 거리·모재 표면을 함께 확인한다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 공정의 전극·보호 방식과 적용 조건의 판단을 다룬다. '바람·호스 누설·노즐 오염과 거리·모재 표면을 함께 확인한다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-001",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-001-c1",
+    "directSolution": "제시 문장은 '용접 비드의 토(toe), 즉 비드와 모재가 만나는 가장자리를 따라 모재가 도랑처럼 파였지만 용착금속으로 채워지지 않은 홈입니다. 이 설명에 해당하는 용접 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 언더컷는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-001-c1",
+        "verdict": "correct",
+        "rationale": "'언더컷'는 '용접 비드의 토(toe), 즉 비드와 모재가 만나는 가장자리를 따라 모재가 도랑처럼 파였지만 용착금속으로 채워지지 않은 홈입니다. 이 설명에 해당하는 용접 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-001-c2",
+        "verdict": "incorrect",
+        "rationale": "'오버랩'는 문항의 조건에서 필요한 '언더컷'와 다른 대상·현상 또는 조치다. 따라서 '용접 비드의 토(toe), 즉 비드와 모재가 만나는 가장자리를 따라 모재가 도랑처럼 파였지만 용착금속으로 채워지지 않은 홈입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-001-c3",
+        "verdict": "incorrect",
+        "rationale": "'기공·피트'는 문항의 조건에서 필요한 '언더컷'와 다른 대상·현상 또는 조치다. 따라서 '용접 비드의 토(toe), 즉 비드와 모재가 만나는 가장자리를 따라 모재가 도랑처럼 파였지만 용착금속으로 채워지지 않은 홈입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-001-c4",
+        "verdict": "incorrect",
+        "rationale": "'용입 불량·융합 불량'는 문항의 조건에서 필요한 '언더컷'와 다른 대상·현상 또는 조치다. 따라서 '용접 비드의 토(toe), 즉 비드와 모재가 만나는 가장자리를 따라 모재가 도랑처럼 파였지만 용착금속으로 채워지지 않은 홈입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용접 비드의 토(toe), 즉 비드와 모재가 만나는 가장자리를 따라 모재가 도랑처럼 파였지만 용착금속으로 채워지지 않은 홈입니다. 이 설명에 해당하는 용접 결함은?'에서는 익숙한 용어만 고르지 말고, '언더컷'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '언더컷'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-002",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-002-c2",
+    "directSolution": "제시 문장은 '과대한 용접전류, 높은 아크전압·긴 아크, 지나치게 빠른 진행속도, 부적절한 용접봉 각도와 과도한 위빙 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 언더컷는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-002-c1",
+        "verdict": "incorrect",
+        "rationale": "'오버랩'는 문항의 조건에서 필요한 '언더컷'와 다른 대상·현상 또는 조치다. 따라서 '과대한 용접전류, 높은 아크전압·긴 아크, 지나치게 빠른 진행속도, 부적절한 용접봉 각도와 과도한 위빙 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-002-c2",
+        "verdict": "correct",
+        "rationale": "'언더컷'는 '과대한 용접전류, 높은 아크전압·긴 아크, 지나치게 빠른 진행속도, 부적절한 용접봉 각도와 과도한 위빙 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-002-c3",
+        "verdict": "incorrect",
+        "rationale": "'기공·피트'는 문항의 조건에서 필요한 '언더컷'와 다른 대상·현상 또는 조치다. 따라서 '과대한 용접전류, 높은 아크전압·긴 아크, 지나치게 빠른 진행속도, 부적절한 용접봉 각도와 과도한 위빙 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-002-c4",
+        "verdict": "incorrect",
+        "rationale": "'용입 불량·융합 불량'는 문항의 조건에서 필요한 '언더컷'와 다른 대상·현상 또는 조치다. 따라서 '과대한 용접전류, 높은 아크전압·긴 아크, 지나치게 빠른 진행속도, 부적절한 용접봉 각도와 과도한 위빙 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'과대한 용접전류, 높은 아크전압·긴 아크, 지나치게 빠른 진행속도, 부적절한 용접봉 각도와 과도한 위빙 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서는 익숙한 용어만 고르지 말고, '언더컷'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '언더컷'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-003",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-003-c3",
+    "directSolution": "제시 문장은 '오버랩은 금속이 모재 위로 흘러 덮이지만 융합되지 않은 돌출이고, 언더컷은 모재 가장자리가 파인 홈입니다. 위 구분 기준이 설명하는 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 언더컷는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-003-c1",
+        "verdict": "incorrect",
+        "rationale": "'오버랩'는 문항의 조건에서 필요한 '언더컷'와 다른 대상·현상 또는 조치다. 따라서 '오버랩은 금속이 모재 위로 흘러 덮이지만 융합되지 않은 돌출이고, 언더컷은 모재 가장자리가 파인 홈입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-003-c2",
+        "verdict": "incorrect",
+        "rationale": "'기공·피트'는 문항의 조건에서 필요한 '언더컷'와 다른 대상·현상 또는 조치다. 따라서 '오버랩은 금속이 모재 위로 흘러 덮이지만 융합되지 않은 돌출이고, 언더컷은 모재 가장자리가 파인 홈입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-003-c3",
+        "verdict": "correct",
+        "rationale": "'언더컷'는 '오버랩은 금속이 모재 위로 흘러 덮이지만 융합되지 않은 돌출이고, 언더컷은 모재 가장자리가 파인 홈입니다. 위 구분 기준이 설명하는 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-003-c4",
+        "verdict": "incorrect",
+        "rationale": "'용입 불량·융합 불량'는 문항의 조건에서 필요한 '언더컷'와 다른 대상·현상 또는 조치다. 따라서 '오버랩은 금속이 모재 위로 흘러 덮이지만 융합되지 않은 돌출이고, 언더컷은 모재 가장자리가 파인 홈입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'오버랩은 금속이 모재 위로 흘러 덮이지만 융합되지 않은 돌출이고, 언더컷은 모재 가장자리가 파인 홈입니다. 위 구분 기준이 설명하는 결함은?'에서는 익숙한 용어만 고르지 말고, '언더컷'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '언더컷'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-004",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-004-c4",
+    "directSolution": "제시 문장은 '언더컷의 재발을 줄이기 위한 조치로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 전류와 아크길이를 낮추고 진행속도·봉각·위빙 폭을 조정하여 비드 가장자리가 충분히 채워지게 합니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-004-c1",
+        "verdict": "incorrect",
+        "rationale": "'모재가 융합될 만큼 전류와 진행속도를 맞추고 용착량·봉각·운봉 폭을 조절하여 금속이 모재 위에 덮이기만 하지 않게 합니다.'는 문항의 조건에서 필요한 '전류와 아크길이를 낮추고 진행속도·봉각·위빙 폭을 조정하여 비드 가장자리가 충분히 채워지게 합니다.'와 다른 대상·현상 또는 조치다. 따라서 '언더컷의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-004-c2",
+        "verdict": "incorrect",
+        "rationale": "'모재를 청소·건조하고 소모재를 지정 조건으로 보관하며 가스 종류·유량·호스 누설·노즐 거리와 방풍 상태를 확인합니다.'는 문항의 조건에서 필요한 '전류와 아크길이를 낮추고 진행속도·봉각·위빙 폭을 조정하여 비드 가장자리가 충분히 채워지게 합니다.'와 다른 대상·현상 또는 조치다. 따라서 '언더컷의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-004-c3",
+        "verdict": "incorrect",
+        "rationale": "'도면과 절차에 맞춰 루트 간격·개선각을 확보하고 전류·속도·봉각을 조정하며 모재와 층간 표면을 깨끗이 합니다.'는 문항의 조건에서 필요한 '전류와 아크길이를 낮추고 진행속도·봉각·위빙 폭을 조정하여 비드 가장자리가 충분히 채워지게 합니다.'와 다른 대상·현상 또는 조치다. 따라서 '언더컷의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-004-c4",
+        "verdict": "correct",
+        "rationale": "'전류와 아크길이를 낮추고 진행속도·봉각·위빙 폭을 조정하여 비드 가장자리가 충분히 채워지게 합니다.'는 '언더컷의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'언더컷의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, '전류와 아크길이를 낮추고 진행속도·봉각·위빙 폭을 조정하여 비드 가장자리가 충분히 채워지게 합니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '전류와 아크길이를 낮추고 진행속도·봉각·위빙 폭을 조정하여 비드 가장자리가 충분히 채워지게 합니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-005",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-005-c1",
+    "directSolution": "제시 문장은 '언더컷을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. VT에서는 비드 가장자리의 연속 또는 단속 홈을 확인하고, 방사선 사진에서는 용접부 가장자리의 가늘고 긴 어두운 선으로 판독할 수 있습니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-005-c1",
+        "verdict": "correct",
+        "rationale": "'VT에서는 비드 가장자리의 연속 또는 단속 홈을 확인하고, 방사선 사진에서는 용접부 가장자리의 가늘고 긴 어두운 선으로 판독할 수 있습니다.'는 '언더컷을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-005-c2",
+        "verdict": "incorrect",
+        "rationale": "'VT에서 비드 가장자리의 돌출과 경계 융합 상태를 확인하며, 방사선 사진에서는 용접부보다 약간 밝게 보이는 경계로 나타날 수 있습니다.'는 문항의 조건에서 필요한 'VT에서는 비드 가장자리의 연속 또는 단속 홈을 확인하고, 방사선 사진에서는 용접부 가장자리의 가늘고 긴 어두운 선으로 판독할 수 있습니다.'와 다른 대상·현상 또는 조치다. 따라서 '언더컷을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-005-c3",
+        "verdict": "incorrect",
+        "rationale": "'표면 피트는 VT로 확인하고 내부 기공은 RT에서 불규칙하게 흩어진 둥근 어두운 점으로 판독하는 경우가 많습니다.'는 문항의 조건에서 필요한 'VT에서는 비드 가장자리의 연속 또는 단속 홈을 확인하고, 방사선 사진에서는 용접부 가장자리의 가늘고 긴 어두운 선으로 판독할 수 있습니다.'와 다른 대상·현상 또는 조치다. 따라서 '언더컷을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-005-c4",
+        "verdict": "incorrect",
+        "rationale": "'루트 형상은 VT·매크로시험으로, 내부의 선형 불연속은 RT·UT로 확인하며 촬영 방향과 결함 방향을 함께 고려합니다.'는 문항의 조건에서 필요한 'VT에서는 비드 가장자리의 연속 또는 단속 홈을 확인하고, 방사선 사진에서는 용접부 가장자리의 가늘고 긴 어두운 선으로 판독할 수 있습니다.'와 다른 대상·현상 또는 조치다. 따라서 '언더컷을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'언더컷을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, 'VT에서는 비드 가장자리의 연속 또는 단속 홈을 확인하고, 방사선 사진에서는 용접부 가장자리의 가늘고 긴 어두운 선으로 판독할 수 있습니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. 'VT에서는 비드 가장자리의 연속 또는 단속 홈을 확인하고, 방사선 사진에서는 용접부 가장자리의 가늘고 긴 어두운 선으로 판독할 수 있습니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-006",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-006-c2",
+    "directSolution": "제시 문장은 '용착금속이 모재 표면 위로 흘러 겹쳐 덮였지만 그 경계가 모재와 충분히 융합되지 않은 돌출 형상입니다. 이 설명에 해당하는 용접 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 오버랩는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-006-c1",
+        "verdict": "incorrect",
+        "rationale": "'기공·피트'는 문항의 조건에서 필요한 '오버랩'와 다른 대상·현상 또는 조치다. 따라서 '용착금속이 모재 표면 위로 흘러 겹쳐 덮였지만 그 경계가 모재와 충분히 융합되지 않은 돌출 형상입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-006-c2",
+        "verdict": "correct",
+        "rationale": "'오버랩'는 '용착금속이 모재 표면 위로 흘러 겹쳐 덮였지만 그 경계가 모재와 충분히 융합되지 않은 돌출 형상입니다. 이 설명에 해당하는 용접 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-006-c3",
+        "verdict": "incorrect",
+        "rationale": "'슬래그 혼입'는 문항의 조건에서 필요한 '오버랩'와 다른 대상·현상 또는 조치다. 따라서 '용착금속이 모재 표면 위로 흘러 겹쳐 덮였지만 그 경계가 모재와 충분히 융합되지 않은 돌출 형상입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-006-c4",
+        "verdict": "incorrect",
+        "rationale": "'스패터'는 문항의 조건에서 필요한 '오버랩'와 다른 대상·현상 또는 조치다. 따라서 '용착금속이 모재 표면 위로 흘러 겹쳐 덮였지만 그 경계가 모재와 충분히 융합되지 않은 돌출 형상입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용착금속이 모재 표면 위로 흘러 겹쳐 덮였지만 그 경계가 모재와 충분히 융합되지 않은 돌출 형상입니다. 이 설명에 해당하는 용접 결함은?'에서는 익숙한 용어만 고르지 말고, '오버랩'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '오버랩'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-007",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-007-c3",
+    "directSolution": "제시 문장은 '낮은 용접전류, 지나치게 느린 진행속도, 과도한 용착량, 짧은 아크와 부적절한 용접봉 각도 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 오버랩는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-007-c1",
+        "verdict": "incorrect",
+        "rationale": "'기공·피트'는 문항의 조건에서 필요한 '오버랩'와 다른 대상·현상 또는 조치다. 따라서 '낮은 용접전류, 지나치게 느린 진행속도, 과도한 용착량, 짧은 아크와 부적절한 용접봉 각도 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-007-c2",
+        "verdict": "incorrect",
+        "rationale": "'슬래그 혼입'는 문항의 조건에서 필요한 '오버랩'와 다른 대상·현상 또는 조치다. 따라서 '낮은 용접전류, 지나치게 느린 진행속도, 과도한 용착량, 짧은 아크와 부적절한 용접봉 각도 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-007-c3",
+        "verdict": "correct",
+        "rationale": "'오버랩'는 '낮은 용접전류, 지나치게 느린 진행속도, 과도한 용착량, 짧은 아크와 부적절한 용접봉 각도 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-007-c4",
+        "verdict": "incorrect",
+        "rationale": "'스패터'는 문항의 조건에서 필요한 '오버랩'와 다른 대상·현상 또는 조치다. 따라서 '낮은 용접전류, 지나치게 느린 진행속도, 과도한 용착량, 짧은 아크와 부적절한 용접봉 각도 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'낮은 용접전류, 지나치게 느린 진행속도, 과도한 용착량, 짧은 아크와 부적절한 용접봉 각도 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서는 익숙한 용어만 고르지 말고, '오버랩'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '오버랩'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-008",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-008-c4",
+    "directSolution": "제시 문장은 '언더컷은 모재가 파인 홈이고, 오버랩은 용착금속이 모재 위를 덮은 채 융합되지 않은 돌출입니다. 위 구분 기준이 설명하는 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 오버랩는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-008-c1",
+        "verdict": "incorrect",
+        "rationale": "'기공·피트'는 문항의 조건에서 필요한 '오버랩'와 다른 대상·현상 또는 조치다. 따라서 '언더컷은 모재가 파인 홈이고, 오버랩은 용착금속이 모재 위를 덮은 채 융합되지 않은 돌출입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-008-c2",
+        "verdict": "incorrect",
+        "rationale": "'슬래그 혼입'는 문항의 조건에서 필요한 '오버랩'와 다른 대상·현상 또는 조치다. 따라서 '언더컷은 모재가 파인 홈이고, 오버랩은 용착금속이 모재 위를 덮은 채 융합되지 않은 돌출입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-008-c3",
+        "verdict": "incorrect",
+        "rationale": "'스패터'는 문항의 조건에서 필요한 '오버랩'와 다른 대상·현상 또는 조치다. 따라서 '언더컷은 모재가 파인 홈이고, 오버랩은 용착금속이 모재 위를 덮은 채 융합되지 않은 돌출입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-008-c4",
+        "verdict": "correct",
+        "rationale": "'오버랩'는 '언더컷은 모재가 파인 홈이고, 오버랩은 용착금속이 모재 위를 덮은 채 융합되지 않은 돌출입니다. 위 구분 기준이 설명하는 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'언더컷은 모재가 파인 홈이고, 오버랩은 용착금속이 모재 위를 덮은 채 융합되지 않은 돌출입니다. 위 구분 기준이 설명하는 결함은?'에서는 익숙한 용어만 고르지 말고, '오버랩'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '오버랩'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-009",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-009-c1",
+    "directSolution": "제시 문장은 '오버랩의 재발을 줄이기 위한 조치로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 모재가 융합될 만큼 전류와 진행속도를 맞추고 용착량·봉각·운봉 폭을 조절하여 금속이 모재 위에 덮이기만 하지 않게 합니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-009-c1",
+        "verdict": "correct",
+        "rationale": "'모재가 융합될 만큼 전류와 진행속도를 맞추고 용착량·봉각·운봉 폭을 조절하여 금속이 모재 위에 덮이기만 하지 않게 합니다.'는 '오버랩의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-009-c2",
+        "verdict": "incorrect",
+        "rationale": "'모재를 청소·건조하고 소모재를 지정 조건으로 보관하며 가스 종류·유량·호스 누설·노즐 거리와 방풍 상태를 확인합니다.'는 문항의 조건에서 필요한 '모재가 융합될 만큼 전류와 진행속도를 맞추고 용착량·봉각·운봉 폭을 조절하여 금속이 모재 위에 덮이기만 하지 않게 합니다.'와 다른 대상·현상 또는 조치다. 따라서 '오버랩의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-009-c3",
+        "verdict": "incorrect",
+        "rationale": "'매 층의 슬래그를 완전히 제거하고 홈 접근성을 확보하며 적정 전류·봉각·운봉으로 건전하고 평탄한 층을 만듭니다.'는 문항의 조건에서 필요한 '모재가 융합될 만큼 전류와 진행속도를 맞추고 용착량·봉각·운봉 폭을 조절하여 금속이 모재 위에 덮이기만 하지 않게 합니다.'와 다른 대상·현상 또는 조치다. 따라서 '오버랩의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-009-c4",
+        "verdict": "incorrect",
+        "rationale": "'전류·전압·아크길이·극성을 공정에 맞추고 용접봉을 건조하며 와이어 송급과 가스 차폐 상태를 안정시킵니다.'는 문항의 조건에서 필요한 '모재가 융합될 만큼 전류와 진행속도를 맞추고 용착량·봉각·운봉 폭을 조절하여 금속이 모재 위에 덮이기만 하지 않게 합니다.'와 다른 대상·현상 또는 조치다. 따라서 '오버랩의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'오버랩의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, '모재가 융합될 만큼 전류와 진행속도를 맞추고 용착량·봉각·운봉 폭을 조절하여 금속이 모재 위에 덮이기만 하지 않게 합니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '모재가 융합될 만큼 전류와 진행속도를 맞추고 용착량·봉각·운봉 폭을 조절하여 금속이 모재 위에 덮이기만 하지 않게 합니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-010",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-010-c2",
+    "directSolution": "제시 문장은 '오버랩을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. VT에서 비드 가장자리의 돌출과 경계 융합 상태를 확인하며, 방사선 사진에서는 용접부보다 약간 밝게 보이는 경계로 나타날 수 있습니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-010-c1",
+        "verdict": "incorrect",
+        "rationale": "'표면 피트는 VT로 확인하고 내부 기공은 RT에서 불규칙하게 흩어진 둥근 어두운 점으로 판독하는 경우가 많습니다.'는 문항의 조건에서 필요한 'VT에서 비드 가장자리의 돌출과 경계 융합 상태를 확인하며, 방사선 사진에서는 용접부보다 약간 밝게 보이는 경계로 나타날 수 있습니다.'와 다른 대상·현상 또는 조치다. 따라서 '오버랩을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-010-c2",
+        "verdict": "correct",
+        "rationale": "'VT에서 비드 가장자리의 돌출과 경계 융합 상태를 확인하며, 방사선 사진에서는 용접부보다 약간 밝게 보이는 경계로 나타날 수 있습니다.'는 '오버랩을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-010-c3",
+        "verdict": "incorrect",
+        "rationale": "'표면에 드러난 흔적은 VT로 보고 내부 혼입은 RT에서 불규칙한 중간 농도의 형상, UT에서 불연속 반사로 확인할 수 있습니다.'는 문항의 조건에서 필요한 'VT에서 비드 가장자리의 돌출과 경계 융합 상태를 확인하며, 방사선 사진에서는 용접부보다 약간 밝게 보이는 경계로 나타날 수 있습니다.'와 다른 대상·현상 또는 조치다. 따라서 '오버랩을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-010-c4",
+        "verdict": "incorrect",
+        "rationale": "'VT로 비드 주변의 부착 금속과 표면 손상 여부를 확인하고 승인 기준에 따라 제거·그라인딩 후 모재 손상을 재검사합니다.'는 문항의 조건에서 필요한 'VT에서 비드 가장자리의 돌출과 경계 융합 상태를 확인하며, 방사선 사진에서는 용접부보다 약간 밝게 보이는 경계로 나타날 수 있습니다.'와 다른 대상·현상 또는 조치다. 따라서 '오버랩을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'오버랩을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, 'VT에서 비드 가장자리의 돌출과 경계 융합 상태를 확인하며, 방사선 사진에서는 용접부보다 약간 밝게 보이는 경계로 나타날 수 있습니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. 'VT에서 비드 가장자리의 돌출과 경계 융합 상태를 확인하며, 방사선 사진에서는 용접부보다 약간 밝게 보이는 경계로 나타날 수 있습니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-011",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-011-c3",
+    "directSolution": "제시 문장은 '용접금속이 굳는 동안 빠져나오지 못한 가스가 내부에 둥근 공극으로 남은 것이 기공이며, 표면까지 열린 작은 구멍은 피트로 구분합니다. 이 설명에 해당하는 용접 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 기공·피트는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-011-c1",
+        "verdict": "incorrect",
+        "rationale": "'슬래그 혼입'는 문항의 조건에서 필요한 '기공·피트'와 다른 대상·현상 또는 조치다. 따라서 '용접금속이 굳는 동안 빠져나오지 못한 가스가 내부에 둥근 공극으로 남은 것이 기공이며, 표면까지 열린 작은 구멍은 피트로 구분합니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-011-c2",
+        "verdict": "incorrect",
+        "rationale": "'용입 불량·융합 불량'는 문항의 조건에서 필요한 '기공·피트'와 다른 대상·현상 또는 조치다. 따라서 '용접금속이 굳는 동안 빠져나오지 못한 가스가 내부에 둥근 공극으로 남은 것이 기공이며, 표면까지 열린 작은 구멍은 피트로 구분합니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-011-c3",
+        "verdict": "correct",
+        "rationale": "'기공·피트'는 '용접금속이 굳는 동안 빠져나오지 못한 가스가 내부에 둥근 공극으로 남은 것이 기공이며, 표면까지 열린 작은 구멍은 피트로 구분합니다. 이 설명에 해당하는 용접 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-011-c4",
+        "verdict": "incorrect",
+        "rationale": "'용락'는 문항의 조건에서 필요한 '기공·피트'와 다른 대상·현상 또는 조치다. 따라서 '용접금속이 굳는 동안 빠져나오지 못한 가스가 내부에 둥근 공극으로 남은 것이 기공이며, 표면까지 열린 작은 구멍은 피트로 구분합니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용접금속이 굳는 동안 빠져나오지 못한 가스가 내부에 둥근 공극으로 남은 것이 기공이며, 표면까지 열린 작은 구멍은 피트로 구분합니다. 이 설명에 해당하는 용접 결함은?'에서는 익숙한 용어만 고르지 말고, '기공·피트'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '기공·피트'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-012",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-012-c4",
+    "directSolution": "제시 문장은 '모재의 녹·유분·수분·도료, 젖은 용접봉과 플럭스, 보호가스 부족·누설·과대 유량에 의한 난류, 바람과 긴 아크 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 기공·피트는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-012-c1",
+        "verdict": "incorrect",
+        "rationale": "'슬래그 혼입'는 문항의 조건에서 필요한 '기공·피트'와 다른 대상·현상 또는 조치다. 따라서 '모재의 녹·유분·수분·도료, 젖은 용접봉과 플럭스, 보호가스 부족·누설·과대 유량에 의한 난류, 바람과 긴 아크 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-012-c2",
+        "verdict": "incorrect",
+        "rationale": "'용입 불량·융합 불량'는 문항의 조건에서 필요한 '기공·피트'와 다른 대상·현상 또는 조치다. 따라서 '모재의 녹·유분·수분·도료, 젖은 용접봉과 플럭스, 보호가스 부족·누설·과대 유량에 의한 난류, 바람과 긴 아크 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-012-c3",
+        "verdict": "incorrect",
+        "rationale": "'용락'는 문항의 조건에서 필요한 '기공·피트'와 다른 대상·현상 또는 조치다. 따라서 '모재의 녹·유분·수분·도료, 젖은 용접봉과 플럭스, 보호가스 부족·누설·과대 유량에 의한 난류, 바람과 긴 아크 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-012-c4",
+        "verdict": "correct",
+        "rationale": "'기공·피트'는 '모재의 녹·유분·수분·도료, 젖은 용접봉과 플럭스, 보호가스 부족·누설·과대 유량에 의한 난류, 바람과 긴 아크 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'모재의 녹·유분·수분·도료, 젖은 용접봉과 플럭스, 보호가스 부족·누설·과대 유량에 의한 난류, 바람과 긴 아크 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서는 익숙한 용어만 고르지 말고, '기공·피트'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '기공·피트'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-013",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-013-c1",
+    "directSolution": "제시 문장은 '내부의 둥근 공극은 기공, 표면에 열린 작은 구멍은 피트이며, 슬래그 혼입은 둥근 가스공이 아니라 불규칙한 비금속 개재물입니다. 위 구분 기준이 설명하는 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 기공·피트는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-013-c1",
+        "verdict": "correct",
+        "rationale": "'기공·피트'는 '내부의 둥근 공극은 기공, 표면에 열린 작은 구멍은 피트이며, 슬래그 혼입은 둥근 가스공이 아니라 불규칙한 비금속 개재물입니다. 위 구분 기준이 설명하는 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-013-c2",
+        "verdict": "incorrect",
+        "rationale": "'슬래그 혼입'는 문항의 조건에서 필요한 '기공·피트'와 다른 대상·현상 또는 조치다. 따라서 '내부의 둥근 공극은 기공, 표면에 열린 작은 구멍은 피트이며, 슬래그 혼입은 둥근 가스공이 아니라 불규칙한 비금속 개재물입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-013-c3",
+        "verdict": "incorrect",
+        "rationale": "'용입 불량·융합 불량'는 문항의 조건에서 필요한 '기공·피트'와 다른 대상·현상 또는 조치다. 따라서 '내부의 둥근 공극은 기공, 표면에 열린 작은 구멍은 피트이며, 슬래그 혼입은 둥근 가스공이 아니라 불규칙한 비금속 개재물입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-013-c4",
+        "verdict": "incorrect",
+        "rationale": "'용락'는 문항의 조건에서 필요한 '기공·피트'와 다른 대상·현상 또는 조치다. 따라서 '내부의 둥근 공극은 기공, 표면에 열린 작은 구멍은 피트이며, 슬래그 혼입은 둥근 가스공이 아니라 불규칙한 비금속 개재물입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'내부의 둥근 공극은 기공, 표면에 열린 작은 구멍은 피트이며, 슬래그 혼입은 둥근 가스공이 아니라 불규칙한 비금속 개재물입니다. 위 구분 기준이 설명하는 결함은?'에서는 익숙한 용어만 고르지 말고, '기공·피트'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '기공·피트'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-014",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-014-c2",
+    "directSolution": "제시 문장은 '기공·피트의 재발을 줄이기 위한 조치로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 모재를 청소·건조하고 소모재를 지정 조건으로 보관하며 가스 종류·유량·호스 누설·노즐 거리와 방풍 상태를 확인합니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-014-c1",
+        "verdict": "incorrect",
+        "rationale": "'매 층의 슬래그를 완전히 제거하고 홈 접근성을 확보하며 적정 전류·봉각·운봉으로 건전하고 평탄한 층을 만듭니다.'는 문항의 조건에서 필요한 '모재를 청소·건조하고 소모재를 지정 조건으로 보관하며 가스 종류·유량·호스 누설·노즐 거리와 방풍 상태를 확인합니다.'와 다른 대상·현상 또는 조치다. 따라서 '기공·피트의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-014-c2",
+        "verdict": "correct",
+        "rationale": "'모재를 청소·건조하고 소모재를 지정 조건으로 보관하며 가스 종류·유량·호스 누설·노즐 거리와 방풍 상태를 확인합니다.'는 '기공·피트의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-014-c3",
+        "verdict": "incorrect",
+        "rationale": "'도면과 절차에 맞춰 루트 간격·개선각을 확보하고 전류·속도·봉각을 조정하며 모재와 층간 표면을 깨끗이 합니다.'는 문항의 조건에서 필요한 '모재를 청소·건조하고 소모재를 지정 조건으로 보관하며 가스 종류·유량·호스 누설·노즐 거리와 방풍 상태를 확인합니다.'와 다른 대상·현상 또는 조치다. 따라서 '기공·피트의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-014-c4",
+        "verdict": "incorrect",
+        "rationale": "'전류와 열입력을 낮추고 진행속도와 루트 간격을 절차에 맞추며 필요하면 받침재·백킹과 적절한 작업 순서를 사용합니다.'는 문항의 조건에서 필요한 '모재를 청소·건조하고 소모재를 지정 조건으로 보관하며 가스 종류·유량·호스 누설·노즐 거리와 방풍 상태를 확인합니다.'와 다른 대상·현상 또는 조치다. 따라서 '기공·피트의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'기공·피트의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, '모재를 청소·건조하고 소모재를 지정 조건으로 보관하며 가스 종류·유량·호스 누설·노즐 거리와 방풍 상태를 확인합니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '모재를 청소·건조하고 소모재를 지정 조건으로 보관하며 가스 종류·유량·호스 누설·노즐 거리와 방풍 상태를 확인합니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-015",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-015-c3",
+    "directSolution": "제시 문장은 '기공·피트을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 표면 피트는 VT로 확인하고 내부 기공은 RT에서 불규칙하게 흩어진 둥근 어두운 점으로 판독하는 경우가 많습니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-015-c1",
+        "verdict": "incorrect",
+        "rationale": "'표면에 드러난 흔적은 VT로 보고 내부 혼입은 RT에서 불규칙한 중간 농도의 형상, UT에서 불연속 반사로 확인할 수 있습니다.'는 문항의 조건에서 필요한 '표면 피트는 VT로 확인하고 내부 기공은 RT에서 불규칙하게 흩어진 둥근 어두운 점으로 판독하는 경우가 많습니다.'와 다른 대상·현상 또는 조치다. 따라서 '기공·피트을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-015-c2",
+        "verdict": "incorrect",
+        "rationale": "'루트 형상은 VT·매크로시험으로, 내부의 선형 불연속은 RT·UT로 확인하며 촬영 방향과 결함 방향을 함께 고려합니다.'는 문항의 조건에서 필요한 '표면 피트는 VT로 확인하고 내부 기공은 RT에서 불규칙하게 흩어진 둥근 어두운 점으로 판독하는 경우가 많습니다.'와 다른 대상·현상 또는 조치다. 따라서 '기공·피트을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-015-c3",
+        "verdict": "correct",
+        "rationale": "'표면 피트는 VT로 확인하고 내부 기공은 RT에서 불규칙하게 흩어진 둥근 어두운 점으로 판독하는 경우가 많습니다.'는 '기공·피트을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-015-c4",
+        "verdict": "incorrect",
+        "rationale": "'VT로 루트면의 구멍·과대 처짐을 확인하고 접근이 어려우면 내시경 또는 적합한 비파괴검사와 치수 검사를 병행합니다.'는 문항의 조건에서 필요한 '표면 피트는 VT로 확인하고 내부 기공은 RT에서 불규칙하게 흩어진 둥근 어두운 점으로 판독하는 경우가 많습니다.'와 다른 대상·현상 또는 조치다. 따라서 '기공·피트을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'기공·피트을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, '표면 피트는 VT로 확인하고 내부 기공은 RT에서 불규칙하게 흩어진 둥근 어두운 점으로 판독하는 경우가 많습니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '표면 피트는 VT로 확인하고 내부 기공은 RT에서 불규칙하게 흩어진 둥근 어두운 점으로 판독하는 경우가 많습니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-016",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-016-c4",
+    "directSolution": "제시 문장은 '이전 층의 슬래그나 플럭스 잔류물이 다음 용접층에 갇혀 용접금속 내부에 불규칙한 비금속 개재물로 남은 결함입니다. 이 설명에 해당하는 용접 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 슬래그 혼입는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-016-c1",
+        "verdict": "incorrect",
+        "rationale": "'용입 불량·융합 불량'는 문항의 조건에서 필요한 '슬래그 혼입'와 다른 대상·현상 또는 조치다. 따라서 '이전 층의 슬래그나 플럭스 잔류물이 다음 용접층에 갇혀 용접금속 내부에 불규칙한 비금속 개재물로 남은 결함입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-016-c2",
+        "verdict": "incorrect",
+        "rationale": "'스패터'는 문항의 조건에서 필요한 '슬래그 혼입'와 다른 대상·현상 또는 조치다. 따라서 '이전 층의 슬래그나 플럭스 잔류물이 다음 용접층에 갇혀 용접금속 내부에 불규칙한 비금속 개재물로 남은 결함입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-016-c3",
+        "verdict": "incorrect",
+        "rationale": "'균열·은점'는 문항의 조건에서 필요한 '슬래그 혼입'와 다른 대상·현상 또는 조치다. 따라서 '이전 층의 슬래그나 플럭스 잔류물이 다음 용접층에 갇혀 용접금속 내부에 불규칙한 비금속 개재물로 남은 결함입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-016-c4",
+        "verdict": "correct",
+        "rationale": "'슬래그 혼입'는 '이전 층의 슬래그나 플럭스 잔류물이 다음 용접층에 갇혀 용접금속 내부에 불규칙한 비금속 개재물로 남은 결함입니다. 이 설명에 해당하는 용접 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'이전 층의 슬래그나 플럭스 잔류물이 다음 용접층에 갇혀 용접금속 내부에 불규칙한 비금속 개재물로 남은 결함입니다. 이 설명에 해당하는 용접 결함은?'에서는 익숙한 용어만 고르지 말고, '슬래그 혼입'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '슬래그 혼입'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-017",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-017-c1",
+    "directSolution": "제시 문장은 '층간 슬래그 미제거, 좁은 개선과 불충분한 접근, 낮은 전류, 부적절한 봉각·운봉, 볼록한 앞층 비드 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 슬래그 혼입는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-017-c1",
+        "verdict": "correct",
+        "rationale": "'슬래그 혼입'는 '층간 슬래그 미제거, 좁은 개선과 불충분한 접근, 낮은 전류, 부적절한 봉각·운봉, 볼록한 앞층 비드 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-017-c2",
+        "verdict": "incorrect",
+        "rationale": "'용입 불량·융합 불량'는 문항의 조건에서 필요한 '슬래그 혼입'와 다른 대상·현상 또는 조치다. 따라서 '층간 슬래그 미제거, 좁은 개선과 불충분한 접근, 낮은 전류, 부적절한 봉각·운봉, 볼록한 앞층 비드 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-017-c3",
+        "verdict": "incorrect",
+        "rationale": "'스패터'는 문항의 조건에서 필요한 '슬래그 혼입'와 다른 대상·현상 또는 조치다. 따라서 '층간 슬래그 미제거, 좁은 개선과 불충분한 접근, 낮은 전류, 부적절한 봉각·운봉, 볼록한 앞층 비드 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-017-c4",
+        "verdict": "incorrect",
+        "rationale": "'균열·은점'는 문항의 조건에서 필요한 '슬래그 혼입'와 다른 대상·현상 또는 조치다. 따라서 '층간 슬래그 미제거, 좁은 개선과 불충분한 접근, 낮은 전류, 부적절한 봉각·운봉, 볼록한 앞층 비드 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'층간 슬래그 미제거, 좁은 개선과 불충분한 접근, 낮은 전류, 부적절한 봉각·운봉, 볼록한 앞층 비드 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서는 익숙한 용어만 고르지 말고, '슬래그 혼입'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '슬래그 혼입'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-018",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-018-c2",
+    "directSolution": "제시 문장은 '기공은 가스가 만든 둥근 공극이고, 슬래그 혼입은 층간 잔류물이 만든 길쭉하거나 불규칙한 비금속 형상입니다. 위 구분 기준이 설명하는 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 슬래그 혼입는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-018-c1",
+        "verdict": "incorrect",
+        "rationale": "'용입 불량·융합 불량'는 문항의 조건에서 필요한 '슬래그 혼입'와 다른 대상·현상 또는 조치다. 따라서 '기공은 가스가 만든 둥근 공극이고, 슬래그 혼입은 층간 잔류물이 만든 길쭉하거나 불규칙한 비금속 형상입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-018-c2",
+        "verdict": "correct",
+        "rationale": "'슬래그 혼입'는 '기공은 가스가 만든 둥근 공극이고, 슬래그 혼입은 층간 잔류물이 만든 길쭉하거나 불규칙한 비금속 형상입니다. 위 구분 기준이 설명하는 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-018-c3",
+        "verdict": "incorrect",
+        "rationale": "'스패터'는 문항의 조건에서 필요한 '슬래그 혼입'와 다른 대상·현상 또는 조치다. 따라서 '기공은 가스가 만든 둥근 공극이고, 슬래그 혼입은 층간 잔류물이 만든 길쭉하거나 불규칙한 비금속 형상입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-018-c4",
+        "verdict": "incorrect",
+        "rationale": "'균열·은점'는 문항의 조건에서 필요한 '슬래그 혼입'와 다른 대상·현상 또는 조치다. 따라서 '기공은 가스가 만든 둥근 공극이고, 슬래그 혼입은 층간 잔류물이 만든 길쭉하거나 불규칙한 비금속 형상입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'기공은 가스가 만든 둥근 공극이고, 슬래그 혼입은 층간 잔류물이 만든 길쭉하거나 불규칙한 비금속 형상입니다. 위 구분 기준이 설명하는 결함은?'에서는 익숙한 용어만 고르지 말고, '슬래그 혼입'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '슬래그 혼입'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-019",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-019-c3",
+    "directSolution": "제시 문장은 '슬래그 혼입의 재발을 줄이기 위한 조치로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 매 층의 슬래그를 완전히 제거하고 홈 접근성을 확보하며 적정 전류·봉각·운봉으로 건전하고 평탄한 층을 만듭니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-019-c1",
+        "verdict": "incorrect",
+        "rationale": "'도면과 절차에 맞춰 루트 간격·개선각을 확보하고 전류·속도·봉각을 조정하며 모재와 층간 표면을 깨끗이 합니다.'는 문항의 조건에서 필요한 '매 층의 슬래그를 완전히 제거하고 홈 접근성을 확보하며 적정 전류·봉각·운봉으로 건전하고 평탄한 층을 만듭니다.'와 다른 대상·현상 또는 조치다. 따라서 '슬래그 혼입의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-019-c2",
+        "verdict": "incorrect",
+        "rationale": "'전류·전압·아크길이·극성을 공정에 맞추고 용접봉을 건조하며 와이어 송급과 가스 차폐 상태를 안정시킵니다.'는 문항의 조건에서 필요한 '매 층의 슬래그를 완전히 제거하고 홈 접근성을 확보하며 적정 전류·봉각·운봉으로 건전하고 평탄한 층을 만듭니다.'와 다른 대상·현상 또는 조치다. 따라서 '슬래그 혼입의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-019-c3",
+        "verdict": "correct",
+        "rationale": "'매 층의 슬래그를 완전히 제거하고 홈 접근성을 확보하며 적정 전류·봉각·운봉으로 건전하고 평탄한 층을 만듭니다.'는 '슬래그 혼입의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-019-c4",
+        "verdict": "incorrect",
+        "rationale": "'저수소계 소모재를 건조·보관하고 모재를 청소하며 재질과 절차에 따라 예열·층간온도·후열·입열·구속을 관리합니다.'는 문항의 조건에서 필요한 '매 층의 슬래그를 완전히 제거하고 홈 접근성을 확보하며 적정 전류·봉각·운봉으로 건전하고 평탄한 층을 만듭니다.'와 다른 대상·현상 또는 조치다. 따라서 '슬래그 혼입의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'슬래그 혼입의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, '매 층의 슬래그를 완전히 제거하고 홈 접근성을 확보하며 적정 전류·봉각·운봉으로 건전하고 평탄한 층을 만듭니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '매 층의 슬래그를 완전히 제거하고 홈 접근성을 확보하며 적정 전류·봉각·운봉으로 건전하고 평탄한 층을 만듭니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-020",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-020-c4",
+    "directSolution": "제시 문장은 '슬래그 혼입을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 표면에 드러난 흔적은 VT로 보고 내부 혼입은 RT에서 불규칙한 중간 농도의 형상, UT에서 불연속 반사로 확인할 수 있습니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-020-c1",
+        "verdict": "incorrect",
+        "rationale": "'루트 형상은 VT·매크로시험으로, 내부의 선형 불연속은 RT·UT로 확인하며 촬영 방향과 결함 방향을 함께 고려합니다.'는 문항의 조건에서 필요한 '표면에 드러난 흔적은 VT로 보고 내부 혼입은 RT에서 불규칙한 중간 농도의 형상, UT에서 불연속 반사로 확인할 수 있습니다.'와 다른 대상·현상 또는 조치다. 따라서 '슬래그 혼입을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-020-c2",
+        "verdict": "incorrect",
+        "rationale": "'VT로 비드 주변의 부착 금속과 표면 손상 여부를 확인하고 승인 기준에 따라 제거·그라인딩 후 모재 손상을 재검사합니다.'는 문항의 조건에서 필요한 '표면에 드러난 흔적은 VT로 보고 내부 혼입은 RT에서 불규칙한 중간 농도의 형상, UT에서 불연속 반사로 확인할 수 있습니다.'와 다른 대상·현상 또는 조치다. 따라서 '슬래그 혼입을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-020-c3",
+        "verdict": "incorrect",
+        "rationale": "'표면 균열은 VT·PT·MT, 내부 균열은 UT·RT 등을 재질과 방향에 맞춰 적용하고 지연균열은 지정 대기시간 뒤 재검사합니다.'는 문항의 조건에서 필요한 '표면에 드러난 흔적은 VT로 보고 내부 혼입은 RT에서 불규칙한 중간 농도의 형상, UT에서 불연속 반사로 확인할 수 있습니다.'와 다른 대상·현상 또는 조치다. 따라서 '슬래그 혼입을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-020-c4",
+        "verdict": "correct",
+        "rationale": "'표면에 드러난 흔적은 VT로 보고 내부 혼입은 RT에서 불규칙한 중간 농도의 형상, UT에서 불연속 반사로 확인할 수 있습니다.'는 '슬래그 혼입을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'슬래그 혼입을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, '표면에 드러난 흔적은 VT로 보고 내부 혼입은 RT에서 불규칙한 중간 농도의 형상, UT에서 불연속 반사로 확인할 수 있습니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '표면에 드러난 흔적은 VT로 보고 내부 혼입은 RT에서 불규칙한 중간 농도의 형상, UT에서 불연속 반사로 확인할 수 있습니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-021",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-021-c1",
+    "directSolution": "제시 문장은 '용입 불량은 이음의 루트까지 충분히 녹아들지 않은 상태이고, 융합 불량은 용접금속과 모재 또는 용접층 사이의 경계가 붙지 않은 상태입니다. 이 설명에 해당하는 용접 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 용입 불량·융합 불량는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-021-c1",
+        "verdict": "correct",
+        "rationale": "'용입 불량·융합 불량'는 '용입 불량은 이음의 루트까지 충분히 녹아들지 않은 상태이고, 융합 불량은 용접금속과 모재 또는 용접층 사이의 경계가 붙지 않은 상태입니다. 이 설명에 해당하는 용접 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-021-c2",
+        "verdict": "incorrect",
+        "rationale": "'스패터'는 문항의 조건에서 필요한 '용입 불량·융합 불량'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량은 이음의 루트까지 충분히 녹아들지 않은 상태이고, 융합 불량은 용접금속과 모재 또는 용접층 사이의 경계가 붙지 않은 상태입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-021-c3",
+        "verdict": "incorrect",
+        "rationale": "'용락'는 문항의 조건에서 필요한 '용입 불량·융합 불량'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량은 이음의 루트까지 충분히 녹아들지 않은 상태이고, 융합 불량은 용접금속과 모재 또는 용접층 사이의 경계가 붙지 않은 상태입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-021-c4",
+        "verdict": "incorrect",
+        "rationale": "'아크 스트라이크'는 문항의 조건에서 필요한 '용입 불량·융합 불량'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량은 이음의 루트까지 충분히 녹아들지 않은 상태이고, 융합 불량은 용접금속과 모재 또는 용접층 사이의 경계가 붙지 않은 상태입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용입 불량은 이음의 루트까지 충분히 녹아들지 않은 상태이고, 융합 불량은 용접금속과 모재 또는 용접층 사이의 경계가 붙지 않은 상태입니다. 이 설명에 해당하는 용접 결함은?'에서는 익숙한 용어만 고르지 말고, '용입 불량·융합 불량'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '용입 불량·융합 불량'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-022",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-022-c2",
+    "directSolution": "제시 문장은 '좁은 루트 간격과 개선각, 낮은 전류, 빠른 진행속도, 부적절한 봉각·운봉, 모재 또는 층간 표면의 오염 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 용입 불량·융합 불량는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-022-c1",
+        "verdict": "incorrect",
+        "rationale": "'스패터'는 문항의 조건에서 필요한 '용입 불량·융합 불량'와 다른 대상·현상 또는 조치다. 따라서 '좁은 루트 간격과 개선각, 낮은 전류, 빠른 진행속도, 부적절한 봉각·운봉, 모재 또는 층간 표면의 오염 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-022-c2",
+        "verdict": "correct",
+        "rationale": "'용입 불량·융합 불량'는 '좁은 루트 간격과 개선각, 낮은 전류, 빠른 진행속도, 부적절한 봉각·운봉, 모재 또는 층간 표면의 오염 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-022-c3",
+        "verdict": "incorrect",
+        "rationale": "'용락'는 문항의 조건에서 필요한 '용입 불량·융합 불량'와 다른 대상·현상 또는 조치다. 따라서 '좁은 루트 간격과 개선각, 낮은 전류, 빠른 진행속도, 부적절한 봉각·운봉, 모재 또는 층간 표면의 오염 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-022-c4",
+        "verdict": "incorrect",
+        "rationale": "'아크 스트라이크'는 문항의 조건에서 필요한 '용입 불량·융합 불량'와 다른 대상·현상 또는 조치다. 따라서 '좁은 루트 간격과 개선각, 낮은 전류, 빠른 진행속도, 부적절한 봉각·운봉, 모재 또는 층간 표면의 오염 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'좁은 루트 간격과 개선각, 낮은 전류, 빠른 진행속도, 부적절한 봉각·운봉, 모재 또는 층간 표면의 오염 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서는 익숙한 용어만 고르지 말고, '용입 불량·융합 불량'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '용입 불량·융합 불량'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-023",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-023-c3",
+    "directSolution": "제시 문장은 '용입 불량은 루트 깊이가 부족한 문제이고, 융합 불량은 모재 또는 층간 경계가 붙지 않은 문제입니다. 위 구분 기준이 설명하는 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 용입 불량·융합 불량는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-023-c1",
+        "verdict": "incorrect",
+        "rationale": "'스패터'는 문항의 조건에서 필요한 '용입 불량·융합 불량'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량은 루트 깊이가 부족한 문제이고, 융합 불량은 모재 또는 층간 경계가 붙지 않은 문제입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-023-c2",
+        "verdict": "incorrect",
+        "rationale": "'용락'는 문항의 조건에서 필요한 '용입 불량·융합 불량'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량은 루트 깊이가 부족한 문제이고, 융합 불량은 모재 또는 층간 경계가 붙지 않은 문제입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-023-c3",
+        "verdict": "correct",
+        "rationale": "'용입 불량·융합 불량'는 '용입 불량은 루트 깊이가 부족한 문제이고, 융합 불량은 모재 또는 층간 경계가 붙지 않은 문제입니다. 위 구분 기준이 설명하는 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-023-c4",
+        "verdict": "incorrect",
+        "rationale": "'아크 스트라이크'는 문항의 조건에서 필요한 '용입 불량·융합 불량'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량은 루트 깊이가 부족한 문제이고, 융합 불량은 모재 또는 층간 경계가 붙지 않은 문제입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용입 불량은 루트 깊이가 부족한 문제이고, 융합 불량은 모재 또는 층간 경계가 붙지 않은 문제입니다. 위 구분 기준이 설명하는 결함은?'에서는 익숙한 용어만 고르지 말고, '용입 불량·융합 불량'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '용입 불량·융합 불량'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-024",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-024-c4",
+    "directSolution": "제시 문장은 '용입 불량·융합 불량의 재발을 줄이기 위한 조치로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 도면과 절차에 맞춰 루트 간격·개선각을 확보하고 전류·속도·봉각을 조정하며 모재와 층간 표면을 깨끗이 합니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-024-c1",
+        "verdict": "incorrect",
+        "rationale": "'전류·전압·아크길이·극성을 공정에 맞추고 용접봉을 건조하며 와이어 송급과 가스 차폐 상태를 안정시킵니다.'는 문항의 조건에서 필요한 '도면과 절차에 맞춰 루트 간격·개선각을 확보하고 전류·속도·봉각을 조정하며 모재와 층간 표면을 깨끗이 합니다.'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량·융합 불량의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-024-c2",
+        "verdict": "incorrect",
+        "rationale": "'전류와 열입력을 낮추고 진행속도와 루트 간격을 절차에 맞추며 필요하면 받침재·백킹과 적절한 작업 순서를 사용합니다.'는 문항의 조건에서 필요한 '도면과 절차에 맞춰 루트 간격·개선각을 확보하고 전류·속도·봉각을 조정하며 모재와 층간 표면을 깨끗이 합니다.'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량·융합 불량의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-024-c3",
+        "verdict": "incorrect",
+        "rationale": "'아크는 지정된 용접부 또는 허용된 시작판에서만 발생시키고 케이블·홀더·접지와 작업 동선을 정리합니다.'는 문항의 조건에서 필요한 '도면과 절차에 맞춰 루트 간격·개선각을 확보하고 전류·속도·봉각을 조정하며 모재와 층간 표면을 깨끗이 합니다.'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량·융합 불량의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-024-c4",
+        "verdict": "correct",
+        "rationale": "'도면과 절차에 맞춰 루트 간격·개선각을 확보하고 전류·속도·봉각을 조정하며 모재와 층간 표면을 깨끗이 합니다.'는 '용입 불량·융합 불량의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'용입 불량·융합 불량의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, '도면과 절차에 맞춰 루트 간격·개선각을 확보하고 전류·속도·봉각을 조정하며 모재와 층간 표면을 깨끗이 합니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '도면과 절차에 맞춰 루트 간격·개선각을 확보하고 전류·속도·봉각을 조정하며 모재와 층간 표면을 깨끗이 합니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-025",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-025-c1",
+    "directSolution": "제시 문장은 '용입 불량·융합 불량을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 루트 형상은 VT·매크로시험으로, 내부의 선형 불연속은 RT·UT로 확인하며 촬영 방향과 결함 방향을 함께 고려합니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-025-c1",
+        "verdict": "correct",
+        "rationale": "'루트 형상은 VT·매크로시험으로, 내부의 선형 불연속은 RT·UT로 확인하며 촬영 방향과 결함 방향을 함께 고려합니다.'는 '용입 불량·융합 불량을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-025-c2",
+        "verdict": "incorrect",
+        "rationale": "'VT로 비드 주변의 부착 금속과 표면 손상 여부를 확인하고 승인 기준에 따라 제거·그라인딩 후 모재 손상을 재검사합니다.'는 문항의 조건에서 필요한 '루트 형상은 VT·매크로시험으로, 내부의 선형 불연속은 RT·UT로 확인하며 촬영 방향과 결함 방향을 함께 고려합니다.'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량·융합 불량을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-025-c3",
+        "verdict": "incorrect",
+        "rationale": "'VT로 루트면의 구멍·과대 처짐을 확인하고 접근이 어려우면 내시경 또는 적합한 비파괴검사와 치수 검사를 병행합니다.'는 문항의 조건에서 필요한 '루트 형상은 VT·매크로시험으로, 내부의 선형 불연속은 RT·UT로 확인하며 촬영 방향과 결함 방향을 함께 고려합니다.'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량·융합 불량을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-025-c4",
+        "verdict": "incorrect",
+        "rationale": "'VT로 위치와 표면 손상을 확인하고 절차에 따라 제거·연마한 뒤 필요하면 PT·MT와 경도·두께 검사를 수행합니다.'는 문항의 조건에서 필요한 '루트 형상은 VT·매크로시험으로, 내부의 선형 불연속은 RT·UT로 확인하며 촬영 방향과 결함 방향을 함께 고려합니다.'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량·융합 불량을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용입 불량·융합 불량을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, '루트 형상은 VT·매크로시험으로, 내부의 선형 불연속은 RT·UT로 확인하며 촬영 방향과 결함 방향을 함께 고려합니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '루트 형상은 VT·매크로시험으로, 내부의 선형 불연속은 RT·UT로 확인하며 촬영 방향과 결함 방향을 함께 고려합니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-026",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-026-c2",
+    "directSolution": "제시 문장은 '아크 중 튀어나온 작은 용융금속 방울이 비드 주변 모재 표면에 붙어 거친 외관과 후처리 부담을 만드는 현상입니다. 이 설명에 해당하는 용접 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 스패터는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-026-c1",
+        "verdict": "incorrect",
+        "rationale": "'용락'는 문항의 조건에서 필요한 '스패터'와 다른 대상·현상 또는 조치다. 따라서 '아크 중 튀어나온 작은 용융금속 방울이 비드 주변 모재 표면에 붙어 거친 외관과 후처리 부담을 만드는 현상입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-026-c2",
+        "verdict": "correct",
+        "rationale": "'스패터'는 '아크 중 튀어나온 작은 용융금속 방울이 비드 주변 모재 표면에 붙어 거친 외관과 후처리 부담을 만드는 현상입니다. 이 설명에 해당하는 용접 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-026-c3",
+        "verdict": "incorrect",
+        "rationale": "'균열·은점'는 문항의 조건에서 필요한 '스패터'와 다른 대상·현상 또는 조치다. 따라서 '아크 중 튀어나온 작은 용융금속 방울이 비드 주변 모재 표면에 붙어 거친 외관과 후처리 부담을 만드는 현상입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-026-c4",
+        "verdict": "incorrect",
+        "rationale": "'언더컷'는 문항의 조건에서 필요한 '스패터'와 다른 대상·현상 또는 조치다. 따라서 '아크 중 튀어나온 작은 용융금속 방울이 비드 주변 모재 표면에 붙어 거친 외관과 후처리 부담을 만드는 현상입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'아크 중 튀어나온 작은 용융금속 방울이 비드 주변 모재 표면에 붙어 거친 외관과 후처리 부담을 만드는 현상입니다. 이 설명에 해당하는 용접 결함은?'에서는 익숙한 용어만 고르지 말고, '스패터'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '스패터'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-027",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-027-c3",
+    "directSolution": "제시 문장은 '과대한 전류, 지나치게 긴 아크, 부적절한 극성, 젖거나 상태가 나쁜 용접봉, 불안정한 와이어 송급과 가스 조건 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 스패터는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-027-c1",
+        "verdict": "incorrect",
+        "rationale": "'용락'는 문항의 조건에서 필요한 '스패터'와 다른 대상·현상 또는 조치다. 따라서 '과대한 전류, 지나치게 긴 아크, 부적절한 극성, 젖거나 상태가 나쁜 용접봉, 불안정한 와이어 송급과 가스 조건 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-027-c2",
+        "verdict": "incorrect",
+        "rationale": "'균열·은점'는 문항의 조건에서 필요한 '스패터'와 다른 대상·현상 또는 조치다. 따라서 '과대한 전류, 지나치게 긴 아크, 부적절한 극성, 젖거나 상태가 나쁜 용접봉, 불안정한 와이어 송급과 가스 조건 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-027-c3",
+        "verdict": "correct",
+        "rationale": "'스패터'는 '과대한 전류, 지나치게 긴 아크, 부적절한 극성, 젖거나 상태가 나쁜 용접봉, 불안정한 와이어 송급과 가스 조건 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-027-c4",
+        "verdict": "incorrect",
+        "rationale": "'언더컷'는 문항의 조건에서 필요한 '스패터'와 다른 대상·현상 또는 조치다. 따라서 '과대한 전류, 지나치게 긴 아크, 부적절한 극성, 젖거나 상태가 나쁜 용접봉, 불안정한 와이어 송급과 가스 조건 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'과대한 전류, 지나치게 긴 아크, 부적절한 극성, 젖거나 상태가 나쁜 용접봉, 불안정한 와이어 송급과 가스 조건 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서는 익숙한 용어만 고르지 말고, '스패터'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '스패터'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-028",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-028-c4",
+    "directSolution": "제시 문장은 '스패터는 비드 주변에 붙은 작은 금속 방울이며, 피트처럼 용접금속 표면에 열린 구멍이 아닙니다. 위 구분 기준이 설명하는 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 스패터는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-028-c1",
+        "verdict": "incorrect",
+        "rationale": "'용락'는 문항의 조건에서 필요한 '스패터'와 다른 대상·현상 또는 조치다. 따라서 '스패터는 비드 주변에 붙은 작은 금속 방울이며, 피트처럼 용접금속 표면에 열린 구멍이 아닙니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-028-c2",
+        "verdict": "incorrect",
+        "rationale": "'균열·은점'는 문항의 조건에서 필요한 '스패터'와 다른 대상·현상 또는 조치다. 따라서 '스패터는 비드 주변에 붙은 작은 금속 방울이며, 피트처럼 용접금속 표면에 열린 구멍이 아닙니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-028-c3",
+        "verdict": "incorrect",
+        "rationale": "'언더컷'는 문항의 조건에서 필요한 '스패터'와 다른 대상·현상 또는 조치다. 따라서 '스패터는 비드 주변에 붙은 작은 금속 방울이며, 피트처럼 용접금속 표면에 열린 구멍이 아닙니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-028-c4",
+        "verdict": "correct",
+        "rationale": "'스패터'는 '스패터는 비드 주변에 붙은 작은 금속 방울이며, 피트처럼 용접금속 표면에 열린 구멍이 아닙니다. 위 구분 기준이 설명하는 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'스패터는 비드 주변에 붙은 작은 금속 방울이며, 피트처럼 용접금속 표면에 열린 구멍이 아닙니다. 위 구분 기준이 설명하는 결함은?'에서는 익숙한 용어만 고르지 말고, '스패터'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '스패터'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-029",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-029-c1",
+    "directSolution": "제시 문장은 '스패터의 재발을 줄이기 위한 조치로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 전류·전압·아크길이·극성을 공정에 맞추고 용접봉을 건조하며 와이어 송급과 가스 차폐 상태를 안정시킵니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-029-c1",
+        "verdict": "correct",
+        "rationale": "'전류·전압·아크길이·극성을 공정에 맞추고 용접봉을 건조하며 와이어 송급과 가스 차폐 상태를 안정시킵니다.'는 '스패터의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-029-c2",
+        "verdict": "incorrect",
+        "rationale": "'전류와 열입력을 낮추고 진행속도와 루트 간격을 절차에 맞추며 필요하면 받침재·백킹과 적절한 작업 순서를 사용합니다.'는 문항의 조건에서 필요한 '전류·전압·아크길이·극성을 공정에 맞추고 용접봉을 건조하며 와이어 송급과 가스 차폐 상태를 안정시킵니다.'와 다른 대상·현상 또는 조치다. 따라서 '스패터의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-029-c3",
+        "verdict": "incorrect",
+        "rationale": "'저수소계 소모재를 건조·보관하고 모재를 청소하며 재질과 절차에 따라 예열·층간온도·후열·입열·구속을 관리합니다.'는 문항의 조건에서 필요한 '전류·전압·아크길이·극성을 공정에 맞추고 용접봉을 건조하며 와이어 송급과 가스 차폐 상태를 안정시킵니다.'와 다른 대상·현상 또는 조치다. 따라서 '스패터의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-029-c4",
+        "verdict": "incorrect",
+        "rationale": "'전류와 아크길이를 낮추고 진행속도·봉각·위빙 폭을 조정하여 비드 가장자리가 충분히 채워지게 합니다.'는 문항의 조건에서 필요한 '전류·전압·아크길이·극성을 공정에 맞추고 용접봉을 건조하며 와이어 송급과 가스 차폐 상태를 안정시킵니다.'와 다른 대상·현상 또는 조치다. 따라서 '스패터의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'스패터의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, '전류·전압·아크길이·극성을 공정에 맞추고 용접봉을 건조하며 와이어 송급과 가스 차폐 상태를 안정시킵니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '전류·전압·아크길이·극성을 공정에 맞추고 용접봉을 건조하며 와이어 송급과 가스 차폐 상태를 안정시킵니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-030",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-030-c2",
+    "directSolution": "제시 문장은 '스패터을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. VT로 비드 주변의 부착 금속과 표면 손상 여부를 확인하고 승인 기준에 따라 제거·그라인딩 후 모재 손상을 재검사합니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-030-c1",
+        "verdict": "incorrect",
+        "rationale": "'VT로 루트면의 구멍·과대 처짐을 확인하고 접근이 어려우면 내시경 또는 적합한 비파괴검사와 치수 검사를 병행합니다.'는 문항의 조건에서 필요한 'VT로 비드 주변의 부착 금속과 표면 손상 여부를 확인하고 승인 기준에 따라 제거·그라인딩 후 모재 손상을 재검사합니다.'와 다른 대상·현상 또는 조치다. 따라서 '스패터을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-030-c2",
+        "verdict": "correct",
+        "rationale": "'VT로 비드 주변의 부착 금속과 표면 손상 여부를 확인하고 승인 기준에 따라 제거·그라인딩 후 모재 손상을 재검사합니다.'는 '스패터을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-030-c3",
+        "verdict": "incorrect",
+        "rationale": "'표면 균열은 VT·PT·MT, 내부 균열은 UT·RT 등을 재질과 방향에 맞춰 적용하고 지연균열은 지정 대기시간 뒤 재검사합니다.'는 문항의 조건에서 필요한 'VT로 비드 주변의 부착 금속과 표면 손상 여부를 확인하고 승인 기준에 따라 제거·그라인딩 후 모재 손상을 재검사합니다.'와 다른 대상·현상 또는 조치다. 따라서 '스패터을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-030-c4",
+        "verdict": "incorrect",
+        "rationale": "'VT에서는 비드 가장자리의 연속 또는 단속 홈을 확인하고, 방사선 사진에서는 용접부 가장자리의 가늘고 긴 어두운 선으로 판독할 수 있습니다.'는 문항의 조건에서 필요한 'VT로 비드 주변의 부착 금속과 표면 손상 여부를 확인하고 승인 기준에 따라 제거·그라인딩 후 모재 손상을 재검사합니다.'와 다른 대상·현상 또는 조치다. 따라서 '스패터을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'스패터을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, 'VT로 비드 주변의 부착 금속과 표면 손상 여부를 확인하고 승인 기준에 따라 제거·그라인딩 후 모재 손상을 재검사합니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. 'VT로 비드 주변의 부착 금속과 표면 손상 여부를 확인하고 승인 기준에 따라 제거·그라인딩 후 모재 손상을 재검사합니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-031",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-031-c3",
+    "directSolution": "제시 문장은 '루트부 모재가 과도하게 녹아 용융금속을 지탱하지 못하고 빠져나가 구멍 또는 과대한 처짐이 생긴 결함입니다. 이 설명에 해당하는 용접 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 용락는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-031-c1",
+        "verdict": "incorrect",
+        "rationale": "'균열·은점'는 문항의 조건에서 필요한 '용락'와 다른 대상·현상 또는 조치다. 따라서 '루트부 모재가 과도하게 녹아 용융금속을 지탱하지 못하고 빠져나가 구멍 또는 과대한 처짐이 생긴 결함입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-031-c2",
+        "verdict": "incorrect",
+        "rationale": "'아크 스트라이크'는 문항의 조건에서 필요한 '용락'와 다른 대상·현상 또는 조치다. 따라서 '루트부 모재가 과도하게 녹아 용융금속을 지탱하지 못하고 빠져나가 구멍 또는 과대한 처짐이 생긴 결함입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-031-c3",
+        "verdict": "correct",
+        "rationale": "'용락'는 '루트부 모재가 과도하게 녹아 용융금속을 지탱하지 못하고 빠져나가 구멍 또는 과대한 처짐이 생긴 결함입니다. 이 설명에 해당하는 용접 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-031-c4",
+        "verdict": "incorrect",
+        "rationale": "'오버랩'는 문항의 조건에서 필요한 '용락'와 다른 대상·현상 또는 조치다. 따라서 '루트부 모재가 과도하게 녹아 용융금속을 지탱하지 못하고 빠져나가 구멍 또는 과대한 처짐이 생긴 결함입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'루트부 모재가 과도하게 녹아 용융금속을 지탱하지 못하고 빠져나가 구멍 또는 과대한 처짐이 생긴 결함입니다. 이 설명에 해당하는 용접 결함은?'에서는 익숙한 용어만 고르지 말고, '용락'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '용락'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-032",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-032-c4",
+    "directSolution": "제시 문장은 '과대한 전류·열입력, 지나치게 느린 진행속도, 넓은 루트 간격, 얇은 판과 부족한 받침·백킹 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 용락는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-032-c1",
+        "verdict": "incorrect",
+        "rationale": "'균열·은점'는 문항의 조건에서 필요한 '용락'와 다른 대상·현상 또는 조치다. 따라서 '과대한 전류·열입력, 지나치게 느린 진행속도, 넓은 루트 간격, 얇은 판과 부족한 받침·백킹 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-032-c2",
+        "verdict": "incorrect",
+        "rationale": "'아크 스트라이크'는 문항의 조건에서 필요한 '용락'와 다른 대상·현상 또는 조치다. 따라서 '과대한 전류·열입력, 지나치게 느린 진행속도, 넓은 루트 간격, 얇은 판과 부족한 받침·백킹 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-032-c3",
+        "verdict": "incorrect",
+        "rationale": "'오버랩'는 문항의 조건에서 필요한 '용락'와 다른 대상·현상 또는 조치다. 따라서 '과대한 전류·열입력, 지나치게 느린 진행속도, 넓은 루트 간격, 얇은 판과 부족한 받침·백킹 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-032-c4",
+        "verdict": "correct",
+        "rationale": "'용락'는 '과대한 전류·열입력, 지나치게 느린 진행속도, 넓은 루트 간격, 얇은 판과 부족한 받침·백킹 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'과대한 전류·열입력, 지나치게 느린 진행속도, 넓은 루트 간격, 얇은 판과 부족한 받침·백킹 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서는 익숙한 용어만 고르지 말고, '용락'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '용락'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-033",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-033-c1",
+    "directSolution": "제시 문장은 '용입 불량은 루트가 덜 녹은 상태이고, 용락은 반대로 루트가 지나치게 녹아 구멍이나 과대 처짐이 생긴 상태입니다. 위 구분 기준이 설명하는 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 용락는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-033-c1",
+        "verdict": "correct",
+        "rationale": "'용락'는 '용입 불량은 루트가 덜 녹은 상태이고, 용락은 반대로 루트가 지나치게 녹아 구멍이나 과대 처짐이 생긴 상태입니다. 위 구분 기준이 설명하는 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-033-c2",
+        "verdict": "incorrect",
+        "rationale": "'균열·은점'는 문항의 조건에서 필요한 '용락'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량은 루트가 덜 녹은 상태이고, 용락은 반대로 루트가 지나치게 녹아 구멍이나 과대 처짐이 생긴 상태입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-033-c3",
+        "verdict": "incorrect",
+        "rationale": "'아크 스트라이크'는 문항의 조건에서 필요한 '용락'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량은 루트가 덜 녹은 상태이고, 용락은 반대로 루트가 지나치게 녹아 구멍이나 과대 처짐이 생긴 상태입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-033-c4",
+        "verdict": "incorrect",
+        "rationale": "'오버랩'는 문항의 조건에서 필요한 '용락'와 다른 대상·현상 또는 조치다. 따라서 '용입 불량은 루트가 덜 녹은 상태이고, 용락은 반대로 루트가 지나치게 녹아 구멍이나 과대 처짐이 생긴 상태입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용입 불량은 루트가 덜 녹은 상태이고, 용락은 반대로 루트가 지나치게 녹아 구멍이나 과대 처짐이 생긴 상태입니다. 위 구분 기준이 설명하는 결함은?'에서는 익숙한 용어만 고르지 말고, '용락'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '용락'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-034",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-034-c2",
+    "directSolution": "제시 문장은 '용락의 재발을 줄이기 위한 조치로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 전류와 열입력을 낮추고 진행속도와 루트 간격을 절차에 맞추며 필요하면 받침재·백킹과 적절한 작업 순서를 사용합니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-034-c1",
+        "verdict": "incorrect",
+        "rationale": "'저수소계 소모재를 건조·보관하고 모재를 청소하며 재질과 절차에 따라 예열·층간온도·후열·입열·구속을 관리합니다.'는 문항의 조건에서 필요한 '전류와 열입력을 낮추고 진행속도와 루트 간격을 절차에 맞추며 필요하면 받침재·백킹과 적절한 작업 순서를 사용합니다.'와 다른 대상·현상 또는 조치다. 따라서 '용락의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-034-c2",
+        "verdict": "correct",
+        "rationale": "'전류와 열입력을 낮추고 진행속도와 루트 간격을 절차에 맞추며 필요하면 받침재·백킹과 적절한 작업 순서를 사용합니다.'는 '용락의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-034-c3",
+        "verdict": "incorrect",
+        "rationale": "'아크는 지정된 용접부 또는 허용된 시작판에서만 발생시키고 케이블·홀더·접지와 작업 동선을 정리합니다.'는 문항의 조건에서 필요한 '전류와 열입력을 낮추고 진행속도와 루트 간격을 절차에 맞추며 필요하면 받침재·백킹과 적절한 작업 순서를 사용합니다.'와 다른 대상·현상 또는 조치다. 따라서 '용락의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-034-c4",
+        "verdict": "incorrect",
+        "rationale": "'모재가 융합될 만큼 전류와 진행속도를 맞추고 용착량·봉각·운봉 폭을 조절하여 금속이 모재 위에 덮이기만 하지 않게 합니다.'는 문항의 조건에서 필요한 '전류와 열입력을 낮추고 진행속도와 루트 간격을 절차에 맞추며 필요하면 받침재·백킹과 적절한 작업 순서를 사용합니다.'와 다른 대상·현상 또는 조치다. 따라서 '용락의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용락의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, '전류와 열입력을 낮추고 진행속도와 루트 간격을 절차에 맞추며 필요하면 받침재·백킹과 적절한 작업 순서를 사용합니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '전류와 열입력을 낮추고 진행속도와 루트 간격을 절차에 맞추며 필요하면 받침재·백킹과 적절한 작업 순서를 사용합니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-035",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-035-c3",
+    "directSolution": "제시 문장은 '용락을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. VT로 루트면의 구멍·과대 처짐을 확인하고 접근이 어려우면 내시경 또는 적합한 비파괴검사와 치수 검사를 병행합니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-035-c1",
+        "verdict": "incorrect",
+        "rationale": "'표면 균열은 VT·PT·MT, 내부 균열은 UT·RT 등을 재질과 방향에 맞춰 적용하고 지연균열은 지정 대기시간 뒤 재검사합니다.'는 문항의 조건에서 필요한 'VT로 루트면의 구멍·과대 처짐을 확인하고 접근이 어려우면 내시경 또는 적합한 비파괴검사와 치수 검사를 병행합니다.'와 다른 대상·현상 또는 조치다. 따라서 '용락을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-035-c2",
+        "verdict": "incorrect",
+        "rationale": "'VT로 위치와 표면 손상을 확인하고 절차에 따라 제거·연마한 뒤 필요하면 PT·MT와 경도·두께 검사를 수행합니다.'는 문항의 조건에서 필요한 'VT로 루트면의 구멍·과대 처짐을 확인하고 접근이 어려우면 내시경 또는 적합한 비파괴검사와 치수 검사를 병행합니다.'와 다른 대상·현상 또는 조치다. 따라서 '용락을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-035-c3",
+        "verdict": "correct",
+        "rationale": "'VT로 루트면의 구멍·과대 처짐을 확인하고 접근이 어려우면 내시경 또는 적합한 비파괴검사와 치수 검사를 병행합니다.'는 '용락을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-035-c4",
+        "verdict": "incorrect",
+        "rationale": "'VT에서 비드 가장자리의 돌출과 경계 융합 상태를 확인하며, 방사선 사진에서는 용접부보다 약간 밝게 보이는 경계로 나타날 수 있습니다.'는 문항의 조건에서 필요한 'VT로 루트면의 구멍·과대 처짐을 확인하고 접근이 어려우면 내시경 또는 적합한 비파괴검사와 치수 검사를 병행합니다.'와 다른 대상·현상 또는 조치다. 따라서 '용락을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용락을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, 'VT로 루트면의 구멍·과대 처짐을 확인하고 접근이 어려우면 내시경 또는 적합한 비파괴검사와 치수 검사를 병행합니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. 'VT로 루트면의 구멍·과대 처짐을 확인하고 접근이 어려우면 내시경 또는 적합한 비파괴검사와 치수 검사를 병행합니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-036",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-036-c4",
+    "directSolution": "제시 문장은 '균열은 용접금속 또는 열영향부가 선형으로 갈라진 결함이며, 은점·피시아이는 파단면에서 보이는 밝은 원형·타원형 흔적으로 수소 영향과 연결해 봅니다. 이 설명에 해당하는 용접 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 균열·은점는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-036-c1",
+        "verdict": "incorrect",
+        "rationale": "'아크 스트라이크'는 문항의 조건에서 필요한 '균열·은점'와 다른 대상·현상 또는 조치다. 따라서 '균열은 용접금속 또는 열영향부가 선형으로 갈라진 결함이며, 은점·피시아이는 파단면에서 보이는 밝은 원형·타원형 흔적으로 수소 영향과 연결해 봅니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-036-c2",
+        "verdict": "incorrect",
+        "rationale": "'언더컷'는 문항의 조건에서 필요한 '균열·은점'와 다른 대상·현상 또는 조치다. 따라서 '균열은 용접금속 또는 열영향부가 선형으로 갈라진 결함이며, 은점·피시아이는 파단면에서 보이는 밝은 원형·타원형 흔적으로 수소 영향과 연결해 봅니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-036-c3",
+        "verdict": "incorrect",
+        "rationale": "'기공·피트'는 문항의 조건에서 필요한 '균열·은점'와 다른 대상·현상 또는 조치다. 따라서 '균열은 용접금속 또는 열영향부가 선형으로 갈라진 결함이며, 은점·피시아이는 파단면에서 보이는 밝은 원형·타원형 흔적으로 수소 영향과 연결해 봅니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-036-c4",
+        "verdict": "correct",
+        "rationale": "'균열·은점'는 '균열은 용접금속 또는 열영향부가 선형으로 갈라진 결함이며, 은점·피시아이는 파단면에서 보이는 밝은 원형·타원형 흔적으로 수소 영향과 연결해 봅니다. 이 설명에 해당하는 용접 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'균열은 용접금속 또는 열영향부가 선형으로 갈라진 결함이며, 은점·피시아이는 파단면에서 보이는 밝은 원형·타원형 흔적으로 수소 영향과 연결해 봅니다. 이 설명에 해당하는 용접 결함은?'에서는 익숙한 용어만 고르지 말고, '균열·은점'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '균열·은점'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-037",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-037-c1",
+    "directSolution": "제시 문장은 '젖은 소모재와 오염에 의한 수소, 큰 구속과 인장응력, 급랭·경화조직, 고온균열의 S·P 저융점 성분과 부적절한 크레이터 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 균열·은점는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-037-c1",
+        "verdict": "correct",
+        "rationale": "'균열·은점'는 '젖은 소모재와 오염에 의한 수소, 큰 구속과 인장응력, 급랭·경화조직, 고온균열의 S·P 저융점 성분과 부적절한 크레이터 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-037-c2",
+        "verdict": "incorrect",
+        "rationale": "'아크 스트라이크'는 문항의 조건에서 필요한 '균열·은점'와 다른 대상·현상 또는 조치다. 따라서 '젖은 소모재와 오염에 의한 수소, 큰 구속과 인장응력, 급랭·경화조직, 고온균열의 S·P 저융점 성분과 부적절한 크레이터 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-037-c3",
+        "verdict": "incorrect",
+        "rationale": "'언더컷'는 문항의 조건에서 필요한 '균열·은점'와 다른 대상·현상 또는 조치다. 따라서 '젖은 소모재와 오염에 의한 수소, 큰 구속과 인장응력, 급랭·경화조직, 고온균열의 S·P 저융점 성분과 부적절한 크레이터 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-037-c4",
+        "verdict": "incorrect",
+        "rationale": "'기공·피트'는 문항의 조건에서 필요한 '균열·은점'와 다른 대상·현상 또는 조치다. 따라서 '젖은 소모재와 오염에 의한 수소, 큰 구속과 인장응력, 급랭·경화조직, 고온균열의 S·P 저융점 성분과 부적절한 크레이터 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'젖은 소모재와 오염에 의한 수소, 큰 구속과 인장응력, 급랭·경화조직, 고온균열의 S·P 저융점 성분과 부적절한 크레이터 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서는 익숙한 용어만 고르지 말고, '균열·은점'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '균열·은점'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-038",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-038-c2",
+    "directSolution": "제시 문장은 '은점은 정상 비드 표면 무늬가 아니라 파단면의 밝은 흔적이며, 기공처럼 둥근 빈 공간으로만 판단하지 않습니다. 위 구분 기준이 설명하는 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 균열·은점는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-038-c1",
+        "verdict": "incorrect",
+        "rationale": "'아크 스트라이크'는 문항의 조건에서 필요한 '균열·은점'와 다른 대상·현상 또는 조치다. 따라서 '은점은 정상 비드 표면 무늬가 아니라 파단면의 밝은 흔적이며, 기공처럼 둥근 빈 공간으로만 판단하지 않습니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-038-c2",
+        "verdict": "correct",
+        "rationale": "'균열·은점'는 '은점은 정상 비드 표면 무늬가 아니라 파단면의 밝은 흔적이며, 기공처럼 둥근 빈 공간으로만 판단하지 않습니다. 위 구분 기준이 설명하는 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-038-c3",
+        "verdict": "incorrect",
+        "rationale": "'언더컷'는 문항의 조건에서 필요한 '균열·은점'와 다른 대상·현상 또는 조치다. 따라서 '은점은 정상 비드 표면 무늬가 아니라 파단면의 밝은 흔적이며, 기공처럼 둥근 빈 공간으로만 판단하지 않습니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-038-c4",
+        "verdict": "incorrect",
+        "rationale": "'기공·피트'는 문항의 조건에서 필요한 '균열·은점'와 다른 대상·현상 또는 조치다. 따라서 '은점은 정상 비드 표면 무늬가 아니라 파단면의 밝은 흔적이며, 기공처럼 둥근 빈 공간으로만 판단하지 않습니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'은점은 정상 비드 표면 무늬가 아니라 파단면의 밝은 흔적이며, 기공처럼 둥근 빈 공간으로만 판단하지 않습니다. 위 구분 기준이 설명하는 결함은?'에서는 익숙한 용어만 고르지 말고, '균열·은점'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '균열·은점'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-039",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-039-c3",
+    "directSolution": "제시 문장은 '균열·은점의 재발을 줄이기 위한 조치로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 저수소계 소모재를 건조·보관하고 모재를 청소하며 재질과 절차에 따라 예열·층간온도·후열·입열·구속을 관리합니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-039-c1",
+        "verdict": "incorrect",
+        "rationale": "'아크는 지정된 용접부 또는 허용된 시작판에서만 발생시키고 케이블·홀더·접지와 작업 동선을 정리합니다.'는 문항의 조건에서 필요한 '저수소계 소모재를 건조·보관하고 모재를 청소하며 재질과 절차에 따라 예열·층간온도·후열·입열·구속을 관리합니다.'와 다른 대상·현상 또는 조치다. 따라서 '균열·은점의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-039-c2",
+        "verdict": "incorrect",
+        "rationale": "'전류와 아크길이를 낮추고 진행속도·봉각·위빙 폭을 조정하여 비드 가장자리가 충분히 채워지게 합니다.'는 문항의 조건에서 필요한 '저수소계 소모재를 건조·보관하고 모재를 청소하며 재질과 절차에 따라 예열·층간온도·후열·입열·구속을 관리합니다.'와 다른 대상·현상 또는 조치다. 따라서 '균열·은점의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-039-c3",
+        "verdict": "correct",
+        "rationale": "'저수소계 소모재를 건조·보관하고 모재를 청소하며 재질과 절차에 따라 예열·층간온도·후열·입열·구속을 관리합니다.'는 '균열·은점의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-039-c4",
+        "verdict": "incorrect",
+        "rationale": "'모재를 청소·건조하고 소모재를 지정 조건으로 보관하며 가스 종류·유량·호스 누설·노즐 거리와 방풍 상태를 확인합니다.'는 문항의 조건에서 필요한 '저수소계 소모재를 건조·보관하고 모재를 청소하며 재질과 절차에 따라 예열·층간온도·후열·입열·구속을 관리합니다.'와 다른 대상·현상 또는 조치다. 따라서 '균열·은점의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'균열·은점의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, '저수소계 소모재를 건조·보관하고 모재를 청소하며 재질과 절차에 따라 예열·층간온도·후열·입열·구속을 관리합니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '저수소계 소모재를 건조·보관하고 모재를 청소하며 재질과 절차에 따라 예열·층간온도·후열·입열·구속을 관리합니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-040",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-040-c4",
+    "directSolution": "제시 문장은 '균열·은점을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 표면 균열은 VT·PT·MT, 내부 균열은 UT·RT 등을 재질과 방향에 맞춰 적용하고 지연균열은 지정 대기시간 뒤 재검사합니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-040-c1",
+        "verdict": "incorrect",
+        "rationale": "'VT로 위치와 표면 손상을 확인하고 절차에 따라 제거·연마한 뒤 필요하면 PT·MT와 경도·두께 검사를 수행합니다.'는 문항의 조건에서 필요한 '표면 균열은 VT·PT·MT, 내부 균열은 UT·RT 등을 재질과 방향에 맞춰 적용하고 지연균열은 지정 대기시간 뒤 재검사합니다.'와 다른 대상·현상 또는 조치다. 따라서 '균열·은점을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-040-c2",
+        "verdict": "incorrect",
+        "rationale": "'VT에서는 비드 가장자리의 연속 또는 단속 홈을 확인하고, 방사선 사진에서는 용접부 가장자리의 가늘고 긴 어두운 선으로 판독할 수 있습니다.'는 문항의 조건에서 필요한 '표면 균열은 VT·PT·MT, 내부 균열은 UT·RT 등을 재질과 방향에 맞춰 적용하고 지연균열은 지정 대기시간 뒤 재검사합니다.'와 다른 대상·현상 또는 조치다. 따라서 '균열·은점을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-040-c3",
+        "verdict": "incorrect",
+        "rationale": "'표면 피트는 VT로 확인하고 내부 기공은 RT에서 불규칙하게 흩어진 둥근 어두운 점으로 판독하는 경우가 많습니다.'는 문항의 조건에서 필요한 '표면 균열은 VT·PT·MT, 내부 균열은 UT·RT 등을 재질과 방향에 맞춰 적용하고 지연균열은 지정 대기시간 뒤 재검사합니다.'와 다른 대상·현상 또는 조치다. 따라서 '균열·은점을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-040-c4",
+        "verdict": "correct",
+        "rationale": "'표면 균열은 VT·PT·MT, 내부 균열은 UT·RT 등을 재질과 방향에 맞춰 적용하고 지연균열은 지정 대기시간 뒤 재검사합니다.'는 '균열·은점을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'균열·은점을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, '표면 균열은 VT·PT·MT, 내부 균열은 UT·RT 등을 재질과 방향에 맞춰 적용하고 지연균열은 지정 대기시간 뒤 재검사합니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '표면 균열은 VT·PT·MT, 내부 균열은 UT·RT 등을 재질과 방향에 맞춰 적용하고 지연균열은 지정 대기시간 뒤 재검사합니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-041",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-041-c1",
+    "directSolution": "제시 문장은 '정해진 용접선 밖의 모재 표면에 전극이나 홀더가 순간 접촉해 생긴 국부 아크 흔적입니다. 이 설명에 해당하는 용접 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 아크 스트라이크는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-041-c1",
+        "verdict": "correct",
+        "rationale": "'아크 스트라이크'는 '정해진 용접선 밖의 모재 표면에 전극이나 홀더가 순간 접촉해 생긴 국부 아크 흔적입니다. 이 설명에 해당하는 용접 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-041-c2",
+        "verdict": "incorrect",
+        "rationale": "'언더컷'는 문항의 조건에서 필요한 '아크 스트라이크'와 다른 대상·현상 또는 조치다. 따라서 '정해진 용접선 밖의 모재 표면에 전극이나 홀더가 순간 접촉해 생긴 국부 아크 흔적입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-041-c3",
+        "verdict": "incorrect",
+        "rationale": "'오버랩'는 문항의 조건에서 필요한 '아크 스트라이크'와 다른 대상·현상 또는 조치다. 따라서 '정해진 용접선 밖의 모재 표면에 전극이나 홀더가 순간 접촉해 생긴 국부 아크 흔적입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-041-c4",
+        "verdict": "incorrect",
+        "rationale": "'슬래그 혼입'는 문항의 조건에서 필요한 '아크 스트라이크'와 다른 대상·현상 또는 조치다. 따라서 '정해진 용접선 밖의 모재 표면에 전극이나 홀더가 순간 접촉해 생긴 국부 아크 흔적입니다. 이 설명에 해당하는 용접 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'정해진 용접선 밖의 모재 표면에 전극이나 홀더가 순간 접촉해 생긴 국부 아크 흔적입니다. 이 설명에 해당하는 용접 결함은?'에서는 익숙한 용어만 고르지 말고, '아크 스트라이크'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '아크 스트라이크'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-042",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-042-c2",
+    "directSolution": "제시 문장은 '용접선 밖에서의 임의 아크 발생, 전극·홀더의 우발 접촉, 부적절한 접지와 작업 습관 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 아크 스트라이크는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-042-c1",
+        "verdict": "incorrect",
+        "rationale": "'언더컷'는 문항의 조건에서 필요한 '아크 스트라이크'와 다른 대상·현상 또는 조치다. 따라서 '용접선 밖에서의 임의 아크 발생, 전극·홀더의 우발 접촉, 부적절한 접지와 작업 습관 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-042-c2",
+        "verdict": "correct",
+        "rationale": "'아크 스트라이크'는 '용접선 밖에서의 임의 아크 발생, 전극·홀더의 우발 접촉, 부적절한 접지와 작업 습관 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-042-c3",
+        "verdict": "incorrect",
+        "rationale": "'오버랩'는 문항의 조건에서 필요한 '아크 스트라이크'와 다른 대상·현상 또는 조치다. 따라서 '용접선 밖에서의 임의 아크 발생, 전극·홀더의 우발 접촉, 부적절한 접지와 작업 습관 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-042-c4",
+        "verdict": "incorrect",
+        "rationale": "'슬래그 혼입'는 문항의 조건에서 필요한 '아크 스트라이크'와 다른 대상·현상 또는 조치다. 따라서 '용접선 밖에서의 임의 아크 발생, 전극·홀더의 우발 접촉, 부적절한 접지와 작업 습관 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'용접선 밖에서의 임의 아크 발생, 전극·홀더의 우발 접촉, 부적절한 접지와 작업 습관 이 조건에서 형상까지 함께 확인해야 할 대표 결함은?'에서는 익숙한 용어만 고르지 말고, '아크 스트라이크'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '아크 스트라이크'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-043",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-043-c3",
+    "directSolution": "제시 문장은 '스패터는 튄 금속 방울이 붙은 것이고, 아크 스트라이크는 모재 자체가 순간 아크열을 받은 국부 흔적입니다. 위 구분 기준이 설명하는 결함은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 아크 스트라이크는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-043-c1",
+        "verdict": "incorrect",
+        "rationale": "'언더컷'는 문항의 조건에서 필요한 '아크 스트라이크'와 다른 대상·현상 또는 조치다. 따라서 '스패터는 튄 금속 방울이 붙은 것이고, 아크 스트라이크는 모재 자체가 순간 아크열을 받은 국부 흔적입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-043-c2",
+        "verdict": "incorrect",
+        "rationale": "'오버랩'는 문항의 조건에서 필요한 '아크 스트라이크'와 다른 대상·현상 또는 조치다. 따라서 '스패터는 튄 금속 방울이 붙은 것이고, 아크 스트라이크는 모재 자체가 순간 아크열을 받은 국부 흔적입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-043-c3",
+        "verdict": "correct",
+        "rationale": "'아크 스트라이크'는 '스패터는 튄 금속 방울이 붙은 것이고, 아크 스트라이크는 모재 자체가 순간 아크열을 받은 국부 흔적입니다. 위 구분 기준이 설명하는 결함은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-043-c4",
+        "verdict": "incorrect",
+        "rationale": "'슬래그 혼입'는 문항의 조건에서 필요한 '아크 스트라이크'와 다른 대상·현상 또는 조치다. 따라서 '스패터는 튄 금속 방울이 붙은 것이고, 아크 스트라이크는 모재 자체가 순간 아크열을 받은 국부 흔적입니다. 위 구분 기준이 설명하는 결함은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'스패터는 튄 금속 방울이 붙은 것이고, 아크 스트라이크는 모재 자체가 순간 아크열을 받은 국부 흔적입니다. 위 구분 기준이 설명하는 결함은?'에서는 익숙한 용어만 고르지 말고, '아크 스트라이크'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '아크 스트라이크'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-044",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-044-c4",
+    "directSolution": "제시 문장은 '아크 스트라이크의 재발을 줄이기 위한 조치로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. 아크는 지정된 용접부 또는 허용된 시작판에서만 발생시키고 케이블·홀더·접지와 작업 동선을 정리합니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-044-c1",
+        "verdict": "incorrect",
+        "rationale": "'전류와 아크길이를 낮추고 진행속도·봉각·위빙 폭을 조정하여 비드 가장자리가 충분히 채워지게 합니다.'는 문항의 조건에서 필요한 '아크는 지정된 용접부 또는 허용된 시작판에서만 발생시키고 케이블·홀더·접지와 작업 동선을 정리합니다.'와 다른 대상·현상 또는 조치다. 따라서 '아크 스트라이크의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-044-c2",
+        "verdict": "incorrect",
+        "rationale": "'모재가 융합될 만큼 전류와 진행속도를 맞추고 용착량·봉각·운봉 폭을 조절하여 금속이 모재 위에 덮이기만 하지 않게 합니다.'는 문항의 조건에서 필요한 '아크는 지정된 용접부 또는 허용된 시작판에서만 발생시키고 케이블·홀더·접지와 작업 동선을 정리합니다.'와 다른 대상·현상 또는 조치다. 따라서 '아크 스트라이크의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-044-c3",
+        "verdict": "incorrect",
+        "rationale": "'매 층의 슬래그를 완전히 제거하고 홈 접근성을 확보하며 적정 전류·봉각·운봉으로 건전하고 평탄한 층을 만듭니다.'는 문항의 조건에서 필요한 '아크는 지정된 용접부 또는 허용된 시작판에서만 발생시키고 케이블·홀더·접지와 작업 동선을 정리합니다.'와 다른 대상·현상 또는 조치다. 따라서 '아크 스트라이크의 재발을 줄이기 위한 조치로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-044-c4",
+        "verdict": "correct",
+        "rationale": "'아크는 지정된 용접부 또는 허용된 시작판에서만 발생시키고 케이블·홀더·접지와 작업 동선을 정리합니다.'는 '아크 스트라이크의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'아크 스트라이크의 재발을 줄이기 위한 조치로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, '아크는 지정된 용접부 또는 허용된 시작판에서만 발생시키고 케이블·홀더·접지와 작업 동선을 정리합니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. '아크는 지정된 용접부 또는 허용된 시작판에서만 발생시키고 케이블·홀더·접지와 작업 동선을 정리합니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-DEF-045",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-DEF-045-c1",
+    "directSolution": "제시 문장은 '아크 스트라이크을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'이다. 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법를 묻는다. VT로 위치와 표면 손상을 확인하고 절차에 따라 제거·연마한 뒤 필요하면 PT·MT와 경도·두께 검사를 수행합니다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-DEF-045-c1",
+        "verdict": "correct",
+        "rationale": "'VT로 위치와 표면 손상을 확인하고 절차에 따라 제거·연마한 뒤 필요하면 PT·MT와 경도·두께 검사를 수행합니다.'는 '아크 스트라이크을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서 요구한 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      },
+      {
+        "choiceId": "WELD-DEF-045-c2",
+        "verdict": "incorrect",
+        "rationale": "'VT에서는 비드 가장자리의 연속 또는 단속 홈을 확인하고, 방사선 사진에서는 용접부 가장자리의 가늘고 긴 어두운 선으로 판독할 수 있습니다.'는 문항의 조건에서 필요한 'VT로 위치와 표면 손상을 확인하고 절차에 따라 제거·연마한 뒤 필요하면 PT·MT와 경도·두께 검사를 수행합니다.'와 다른 대상·현상 또는 조치다. 따라서 '아크 스트라이크을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-045-c3",
+        "verdict": "incorrect",
+        "rationale": "'VT에서 비드 가장자리의 돌출과 경계 융합 상태를 확인하며, 방사선 사진에서는 용접부보다 약간 밝게 보이는 경계로 나타날 수 있습니다.'는 문항의 조건에서 필요한 'VT로 위치와 표면 손상을 확인하고 절차에 따라 제거·연마한 뒤 필요하면 PT·MT와 경도·두께 검사를 수행합니다.'와 다른 대상·현상 또는 조치다. 따라서 '아크 스트라이크을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-DEF-045-c4",
+        "verdict": "incorrect",
+        "rationale": "'표면에 드러난 흔적은 VT로 보고 내부 혼입은 RT에서 불규칙한 중간 농도의 형상, UT에서 불연속 반사로 확인할 수 있습니다.'는 문항의 조건에서 필요한 'VT로 위치와 표면 손상을 확인하고 절차에 따라 제거·연마한 뒤 필요하면 PT·MT와 경도·두께 검사를 수행합니다.'와 다른 대상·현상 또는 조치다. 따라서 '아크 스트라이크을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'의 판단 근거로 사용할 수 없다."
+      }
+    ],
+    "misconception": "'아크 스트라이크을 확인할 때의 형상·검사 연결로 가장 적절한 것은?'에서는 익숙한 용어만 고르지 말고, 'VT로 위치와 표면 손상을 확인하고 절차에 따라 제거·연마한 뒤 필요하면 PT·MT와 경도·두께 검사를 수행합니다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접 결함의 형상, 발생 원인, 예방 또는 검사 방법의 판단을 다룬다. 'VT로 위치와 표면 손상을 확인하고 절차에 따라 제거·연마한 뒤 필요하면 PT·MT와 경도·두께 검사를 수행합니다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-ACTUAL-2009-Q51",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-ACTUAL-2009-Q51-c4",
+    "directSolution": "제시 문장은 '용접금속에서 수소의 영향이 아닌 것은?'이다. 문항은 용접금속의 수소 영향과 은점의 특징를 묻는다. 석출경화는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-ACTUAL-2009-Q51-c1",
+        "verdict": "incorrect",
+        "rationale": "'언더비드 크랙'는 문항의 조건에서 필요한 '석출경화'와 다른 대상·현상 또는 조치다. 따라서 '용접금속에서 수소의 영향이 아닌 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-ACTUAL-2009-Q51-c2",
+        "verdict": "incorrect",
+        "rationale": "'은점'는 문항의 조건에서 필요한 '석출경화'와 다른 대상·현상 또는 조치다. 따라서 '용접금속에서 수소의 영향이 아닌 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-ACTUAL-2009-Q51-c3",
+        "verdict": "incorrect",
+        "rationale": "'선상조직'는 문항의 조건에서 필요한 '석출경화'와 다른 대상·현상 또는 조치다. 따라서 '용접금속에서 수소의 영향이 아닌 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-ACTUAL-2009-Q51-c4",
+        "verdict": "correct",
+        "rationale": "'석출경화'는 '용접금속에서 수소의 영향이 아닌 것은?'에서 요구한 용접금속의 수소 영향과 은점의 특징에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'용접금속에서 수소의 영향이 아닌 것은?'에서는 익숙한 용어만 고르지 말고, '석출경화'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접금속의 수소 영향과 은점의 특징의 판단을 다룬다. '석출경화'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "WELD-ACTUAL-2009-Q54",
+    "subjectId": "subject-2",
+    "decision": "approve",
+    "correctChoiceId": "WELD-ACTUAL-2009-Q54-c4",
+    "directSolution": "제시 문장은 '은점(fish eye)에 관한 설명 중 틀린 것은?'이다. 문항은 용접금속의 수소 영향과 은점의 특징를 묻는다. 불순물 S, P의 편석에 의한 것이다.는 제시된 조건을 직접 충족하므로 선택해야 한다. 다른 보기는 이 판단 기준의 핵심 작동·형상·조치를 대신하지 못한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "WELD-ACTUAL-2009-Q54-c1",
+        "verdict": "incorrect",
+        "rationale": "'용착 금속이 인장 또는 굽힘으로 파단 될 때 파면에 나타나는 원형의 결함이다.'는 문항의 조건에서 필요한 '불순물 S, P의 편석에 의한 것이다.'와 다른 대상·현상 또는 조치다. 따라서 '은점(fish eye)에 관한 설명 중 틀린 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-ACTUAL-2009-Q54-c2",
+        "verdict": "incorrect",
+        "rationale": "'은점 생성의 주요 원인은 수소의 석출취화이다.'는 문항의 조건에서 필요한 '불순물 S, P의 편석에 의한 것이다.'와 다른 대상·현상 또는 조치다. 따라서 '은점(fish eye)에 관한 설명 중 틀린 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-ACTUAL-2009-Q54-c3",
+        "verdict": "incorrect",
+        "rationale": "'용착 금속의 인장강도에는 거의 영향이 없으나 연신은 감소시킨다.'는 문항의 조건에서 필요한 '불순물 S, P의 편석에 의한 것이다.'와 다른 대상·현상 또는 조치다. 따라서 '은점(fish eye)에 관한 설명 중 틀린 것은?'의 판단 근거로 사용할 수 없다."
+      },
+      {
+        "choiceId": "WELD-ACTUAL-2009-Q54-c4",
+        "verdict": "correct",
+        "rationale": "'불순물 S, P의 편석에 의한 것이다.'는 '은점(fish eye)에 관한 설명 중 틀린 것은?'에서 요구한 용접금속의 수소 영향과 은점의 특징에 정확히 해당한다. 제시된 현상과 필요한 판단을 함께 충족하므로 정답이다."
+      }
+    ],
+    "misconception": "'은점(fish eye)에 관한 설명 중 틀린 것은?'에서는 익숙한 용어만 고르지 말고, '불순물 S, P의 편석에 의한 것이다.'가 제시 조건을 어떻게 충족하는지 비교해야 한다.",
+    "existingLessonId": "lesson-welding-cbt-arc",
+    "existingBlockId": "principle",
+    "assertionText": "이 문항은 용접금속의 수소 영향과 은점의 특징의 판단을 다룬다. '불순물 S, P의 편석에 의한 것이다.'를 근거로 제시 조건과 결과를 연결해 확인한다.",
+    "evidenceUrls": [
+      "https://www.aws.org"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+]

@@ -168,10 +168,15 @@ function isTableDivider(line: string | undefined) {
   return Boolean(line && /^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*$/.test(line));
 }
 
+function isHorizontalRule(line: string | undefined) {
+  return Boolean(line && /^\s*(?:-{3,}|\*{3,}|_{3,})\s*$/.test(line));
+}
+
 function isBlockStart(lines: string[], index: number) {
   const line = lines[index] ?? "";
   return (
     !line.trim() ||
+    isHorizontalRule(line) ||
     /^#{1,4}\s+/.test(line) ||
     /^\s*([-*+]|\d+\.)\s+/.test(line) ||
     /^\s*>\s?/.test(line) ||
@@ -189,6 +194,17 @@ function MarkdownBlocks({ content }: { content: string }) {
   while (index < lines.length) {
     const line = lines[index];
     if (!line.trim()) {
+      index += 1;
+      continue;
+    }
+
+    if (isHorizontalRule(line)) {
+      blocks.push(
+        <hr
+          key={`rule-${index}`}
+          className="my-6 border-0 border-t border-[#b9d9d7]"
+        />,
+      );
       index += 1;
       continue;
     }

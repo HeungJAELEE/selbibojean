@@ -1,0 +1,5258 @@
+{
+  "version": 1,
+  "taxonomyVersion": "welding-cbt-leaf-v2",
+  "reviewedAt": "2026-08-02T15:50:00.000Z",
+  "reviewer": "codex-sol-high",
+  "entries": [
+    {
+      "canonicalId": "wcbt-00f9f1f5-27ba-4964-9c98-b36ed75b659b",
+      "contentDigest": "322f4bcf836143a522c41222e4c4026c352b245e75fefd2e28ab930cf2762e61",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-01ce7f13-9f5b-43c2-8765-8040bd7dcb54",
+      "contentDigest": "8829902da61e3aab3cbc0b708ad36ad387223c9add98148debab9b24b4a8bddc",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-resistance",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-01fc477e-07c3-415a-b6fd-7b9b6272ec56",
+      "contentDigest": "0bb7d82e1838a40d498b3c0b4fc38c8eb0f6e7fe3e82d521f729aac94b9f1b76",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0211af37-8db1-464d-8dcf-eb1b4bf39e78",
+      "contentDigest": "3db8edcc68c161b8ec4743df11cfcf87696017905bde2792023c1e125ff775d4",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0293bcfc-32a3-4950-94e2-8dcca6ff46cc",
+      "contentDigest": "cb41c66ac34e8758b48911942c6bb6a867a4af6acc67e2ae36fb7feb27278496",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-brazing-pressure",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-029e820d-c90c-40c6-a3ff-ccdf1d0fbfef",
+      "contentDigest": "115e228742cb83c879d7cc72394338ba12492be159daaad8b51d8fdd8dd42069",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-02fc6a25-5680-4abf-b234-204bac57d39b",
+      "contentDigest": "855ca16c0156b1d60f0c8b2ffc1b7237341a509bc3b78257b91c00e3d27a2829",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-038889cd-c77e-47f5-ba84-eeb3d2d2d4df",
+      "contentDigest": "112b593570ff33f4863208c189cfd5f5e800fa4571c257389d3339b964ea18c0",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-03c235a1-5e6a-4656-b55f-7879dec479fe",
+      "contentDigest": "2ccbd342346af9b885cde9cf29b95c9757df6f5abe5e8a7b609730bb51f59c5a",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-041fdd04-e807-41a0-bc35-dfc295b788a2",
+      "contentDigest": "9f38426e8747cf2c1a36dc4f756935d3cb02d2014b817381af445bbe8aab3995",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-05b21a8d-8ddb-4096-a592-824ee9437641",
+      "contentDigest": "53e413001a207f55cc06695e3e31c5b1277981275962efd2e955ec85430285ad",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-06ac3679-b7e4-4f8d-a5cc-bff50093481f",
+      "contentDigest": "65ca6fdfa14c2d8cba15e77e8c51a06649135dfe4c52804a58295a3e2dff4dc5",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-084a3868-12bd-410c-84d0-23717d4861b4",
+      "contentDigest": "f1e03ccc67ffe705b079abb01a30d32f2c2300eaf0121d116048c251e3c6d5b1",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-090f8987-d07c-4aae-8a13-bfbcba5bdc4b",
+      "contentDigest": "39b964aef6ad59c83c02a4b9e1606cc3d0648164cdadb89796476ca8179275c3",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0a74b2b3-ed80-4674-a92b-5e740f6614c4",
+      "contentDigest": "c4e55eb1b2387a0fa92007e046e9a19099178eec84db94600d83f73827df70f7",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0af025b3-8c15-4822-adad-0969bda0f633",
+      "contentDigest": "e24ffb4872507b7499f290c2d72c4b7646978ad9eaf0c6d9c578f7dd0fc38756",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0b53ad90-99d3-4cbf-acb9-4b86c387e340",
+      "contentDigest": "e2e6bc05245719578fe752194999ebefb91cc18b4fbffff1faa36536363211b5",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0b629617-b26c-4feb-b1be-27152697c7e7",
+      "contentDigest": "27a009033b08cb88294d9a51bfbacf72d7b171e6135032e57fb7dae11d346a0c",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0b7a714a-9344-4b9a-a829-65c331b8be4b",
+      "contentDigest": "6ca1ed58e8af826ebc2e72a78ea29dc758463167881d2e8c79d85d2f12f92143",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0ba3351b-e547-470b-bc19-b46189743d35",
+      "contentDigest": "ada4c3ee08a09b9cbd8ad2cd828a59485d2b4118c16cbccbd05fbed37421ccb1",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0d1cf0de-4a52-460c-b0af-afe67bdc4643",
+      "contentDigest": "738c71f88a64d1a3f4654749d517cfe435c611d80ca4d1e3235958e246a5371e",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0d47eb38-a356-41d7-baea-ff97a95513d1",
+      "contentDigest": "f7c6cd8778dec9bada26800246cff2af17db00a872bef795d7cd5935f5ec9d44",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-brazing-pressure",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0d7d54d0-4f3c-4747-9c38-ff0e9e6d3dd7",
+      "contentDigest": "0b11f50427ea79f9bbdeba7eb17cb08cc021bf5c11fb195d3fe130eed1cddeb0",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0de820bc-24a5-452e-a72f-4363d0f37404",
+      "contentDigest": "b8e9de49e3cd29e4708a3b3f7887b0402098d441ed39d6b0e2acaa0675a47a41",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0e3b73b7-d9d9-4c21-8a62-772fb8a4236a",
+      "contentDigest": "3b7f56c02423489663e4cbe1f3d2310bb76352f303d34513829156378d405431",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0f40ba52-7383-4ac5-9d67-554c051fdfdd",
+      "contentDigest": "7e28a2af3a6b5b6bd40907217d86eb814e52be23a1849b203d1fe6d07d8155cc",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-0f682295-1b00-4762-b2a3-e65cfab323a4",
+      "contentDigest": "070b339ab92f8cee8224cd62a2d7209077f5da6a6c4fa194074863b871f928b3",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-resistance",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-10679df5-5977-4fc4-8651-24e0d6412dbb",
+      "contentDigest": "3e97167fdeb7bad73ea412b8bdbec7e4a47f2e7e6528645df88aa78cfbe8441c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-112d1a4b-0ec5-43b5-8d27-90b52f762894",
+      "contentDigest": "e94a44ac15b862792b496be8b8204a4b4a6ac2eefc5317f129b790c8944ab7e6",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-11c27de4-5879-4c94-bf67-54368b6f070d",
+      "contentDigest": "f26b9e2440a6bc1f1ff779131c01c93ebd6daf5ef18d68e148f48f77fd64c819",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-129d72f3-4426-4ee9-b601-c6ca4b02e10a",
+      "contentDigest": "de96e5eb141a77ae12c86ee64527a4600d7200df2d8c6641a6bb93cd79eb087e",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-12b8dbac-fe7b-4bd1-8902-32d6a89a4294",
+      "contentDigest": "9594682338ad4b5e8f8a2cd14476d20828aedd61436e49f1f8f6d2239438895b",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-lifting-fall",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-12d86fc0-ef82-4f24-84b9-eb278a642714",
+      "contentDigest": "dc3dcb7e54045fc959b2e81267b4b8c7e1d14350022389605667c5890483458d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-12da4754-2357-4368-84ca-e21194d72c71",
+      "contentDigest": "64c98e151b92f89b90ad546d2d0c2c8be25a13de9c142d87cb4ad16a0f37dada",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1304129c-e543-4484-84d6-e08c8c5af4ef",
+      "contentDigest": "cf7a2646aa2f68a048f296b66dded67310000748f0e6f060e5905e22e62fb86a",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-14586fff-063c-4789-9c62-b4168996fc32",
+      "contentDigest": "eeadb20f991353c58c4ed95a2fdc42ef9e71d7c780394e613b6e3fd4d82ad5a3",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1553db67-5542-45aa-b023-2414f912c032",
+      "contentDigest": "77bb348e1fd0071021aac02dfbf6682025ac8c60dbe4a8c055f9740052fd490f",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1585d2b5-0ff9-4dc4-9566-19c8c3aacb6e",
+      "contentDigest": "8ba4d9e02d4c040921d2828b35ac9f2d4ba54f2311359af98b59fd745f761060",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-15befab1-bd58-4d18-986e-bf20cb00d771",
+      "contentDigest": "3e40f93caeee57bb991590108aec58fd6f5740b9d2664cf96919a3408d764f62",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-15d116e4-72e5-4116-a71b-f82574b2ff01",
+      "contentDigest": "4135b37a01f805ed7d82db9a5cd8c3f35ecc4d245aa121c07628840c582bdc34",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-164cdf70-275d-473f-a669-04c30cda93e8",
+      "contentDigest": "1e6ca933506cf0c8e338ba6978cc9864ecd73a515cce202dd25d5ae1509db2e6",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-172cccc0-a967-46ed-a2f1-bbfbb638b031",
+      "contentDigest": "ac2dfb75511e3a6392bbb14a16181fc5a92a6377b451ba912e4130167d22d411",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1731649b-3c45-4a15-801d-fba51e741249",
+      "contentDigest": "1bef7db62f2d8ab3ca97b630d8cd5cff8a5ac87762b8a144a168a5ca83b796d7",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-17c0c6cc-9bbd-4059-ada9-60b5e1749a22",
+      "contentDigest": "3e1e53306331303e117dcbef2deaa22e521bc7dcb642c0c6736dde7f5acf8bb9",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1849879e-3d3c-4faf-b0ac-81d86f1ed34b",
+      "contentDigest": "f194570111a8b75ec08d0b3b0b3d9e20089b2e61f18b06e576cabaefafba26a0",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-19258862-b482-43fd-ac57-d1690751622d",
+      "contentDigest": "42c3176d0ab357a2026a544ef2a5c28a47643effe412e4c55225824c530b8b17",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1954a2cd-be07-4c93-b7c3-908788c78448",
+      "contentDigest": "82246abcdfde08ce31ffcc9c35aead5ca0bf57b5e12aed2a5570dc85753776c8",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1a285271-3774-437f-94b8-5f68558a4bd6",
+      "contentDigest": "41caee9e78dc8a3641c23e5d6678cae5c4c1e732324a3386f35e8fdb40e8643b",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1b11cff7-3ebd-4fbe-96ab-f31e4a9d9355",
+      "contentDigest": "0ee081076c17e5365753633e415eebca140a4b9de44d81a7b791a3473de1ab8c",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1b523859-ed5b-49bf-ad90-a5d7e89e3e5e",
+      "contentDigest": "5e3002ad1e140d1ed5374a46d076ddc24787efdff124a9a681984620baf227cd",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1b86109f-4c41-46ea-ac2a-2512ee86f3ee",
+      "contentDigest": "e341467f085f6b3cfe01fb5421de9fa0d1a491e0f758a73a4e3ac81e6dc1b41c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1c007e72-16d0-4990-bda0-8de1ffa49614",
+      "contentDigest": "815bbf2754a0d69640ec347e025b952915313ca03f2a63fae264a5f01adf4f15",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1c236c95-d1b2-47e9-ae69-ba6dc50aa870",
+      "contentDigest": "6ba2ae9a309c084e05e5fb8c097cda385fded8af68074fb2b1602d6c14e757a4",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1c57aad6-b6bb-46e8-9c2f-e70566d4e189",
+      "contentDigest": "ef105cd18ca7b04551f4dba53de55895e948dd4e7657c0a3980377433c4de20f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1da3eb40-ccad-431e-bfbc-73f4f4026e98",
+      "contentDigest": "7496de3b8d62d3da00658c18000615f0b9e736730921fa9e87157d2f926fd497",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1dda358a-9f26-4888-b212-fb19e33dbf50",
+      "contentDigest": "d52568cbde07757cfa7ff1f02d55a15743e7cf083bfd0f13f67a7344db10873a",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1e07655b-bf67-42c3-ad7b-a498471e4660",
+      "contentDigest": "d8b4dc0107b12a576425d7cc941561b0326bf2b22951c4949a01b43df714aefb",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1e33d37e-fada-4314-b5a8-696176e14297",
+      "contentDigest": "220b0338ee1a0b5088f6d6d31d1c7806b9c325e90d3fac29cd09363070a591fb",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1e4d561b-49ba-48dc-9f67-966b16f968a2",
+      "contentDigest": "96f668b4f5dfddde7dfebb1bf9723b7ed05ba914c757bfa6e92d370b7a1e04a4",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1e842d89-059c-4a18-b9bd-9e1e7ea1e038",
+      "contentDigest": "d119bf3e497d2853740a425ceec4aaebeaa9e3cf544a56a986d424562ee67612",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1ebc004e-8a18-4c02-b920-096418dd28cd",
+      "contentDigest": "3f8d193fd093b4492ed20f25753af56ad24b8144f7606ef527166d23b36d5c18",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-1f32e582-dcf1-4574-8d41-2ba612073a2d",
+      "contentDigest": "1a6b7e9670b0c74db656470ffe1abf74aeeddae75365cc121dcb4544f145d547",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-201159be-260a-4bd1-8d38-f033af276199",
+      "contentDigest": "ed315e42255b6b2aea88ba6702eb0ab1debd451f5e9f8f8916f0b472e60ee43e",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-202c7319-13da-42f0-b9bf-a591436aca53",
+      "contentDigest": "d16ff8e32d179a0130290c12a7357728086491e725bc8de39b6c30ee08be4b7f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-202ca0c3-bc7f-4218-bcce-e05518174611",
+      "contentDigest": "97711e57841b808281a9500f664a20f9ca4ab28dbff24ccdea5c38e6cadd0947",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-20d47670-da3a-4ad0-927c-a4c61dc64684",
+      "contentDigest": "7958b42e129f2b6ce6b3d351671bedeef61b6386092f1c63b1e9c9c7b5354451",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-20fb4989-b844-44bb-b0a5-36ce895c7c88",
+      "contentDigest": "a6a1250757bea0165c8857c140f25394a59fddb9a8e742206c451ba7475c1ebc",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-21b9a47c-5a3c-4f43-8c77-35f063233fc6",
+      "contentDigest": "215ea0373abc734d3aafabe55262cba242bff050aa06aa6ecf17849c0eb88e29",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-resistance",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-21c03b1e-efc8-4451-beb0-281436267893",
+      "contentDigest": "8cd6c341ea8a9a79c68a1c0a6485be99a6050b2591996b2fde05fe249d34d8c9",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2393580f-61a7-428f-a6ed-e14bc97251ed",
+      "contentDigest": "7d8f4e7ef74fe123aa6c182322649fe921d8e2edf30e967d505912c703a2d724",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-brazing-pressure",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-23f24ea7-7a99-4ec5-9703-062408900936",
+      "contentDigest": "0b4effee9168ec2bd04e4eb95952110685131fb6454c0ba0cf33eb1ff3ecb13c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-24e8b1eb-ca30-463b-b6e8-ec7843f5a94e",
+      "contentDigest": "aa22ce0df8cecb69d3c471b8ece8988410a8309d47fa4553c620307719d47fe1",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-25599af8-aa0e-47e3-9b8b-51dc27f60bc8",
+      "contentDigest": "bcf627336ba438f84c6cea2a97652587ade6d9744b2f9d6fdcbda2c0b1d0aebe",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-25851d65-116c-47bf-8163-92f85ee758c9",
+      "contentDigest": "045898ce7ed7c1cf7e5d3a26b10df1b9146c1a64f0200401ac05c757441d0b91",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-25867beb-2201-4b4f-9cc6-61568ba0c04d",
+      "contentDigest": "98d5c19173c13cb0dff360f712c6c58db9773cedee77a6aa5597312a94beb02c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-25a3805f-8958-4063-92fb-6174146b9eda",
+      "contentDigest": "2f6586a724b4bdf599c3bc83c5e868600226c22c10cbf8226706110e30e747ab",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-25ffa5ee-c042-41e6-a6be-b9be023a448b",
+      "contentDigest": "beec57f22ab1099b48b0a29858070819d22608be789e0ea0e624acc4b18afd3d",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2755f539-00e8-4a13-9690-fa53051f10c1",
+      "contentDigest": "a020aff6e31b1b7cef3def1ddfcc6c132da5c744b0f107b4b2a36ff326dab43a",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-280eb4b6-07e0-4368-b378-3b822a3458ca",
+      "contentDigest": "2d26d45bb8f40d0c9505dcabe63e5e5e3bf792cf030549009070b570a401483b",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-28eb12d3-6637-403e-abf1-559000b17934",
+      "contentDigest": "f107bba71c79dc8b227d76a5d9c718d2b40ac6cf280eac1ab58f29bd35460e18",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2923b324-12e7-4dca-85ff-d92bee9ea3d6",
+      "contentDigest": "3b1398023f25a430d0c395d04bd6ba8b534d970a4f1d947c377a3909302db6ef",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2a04d461-5398-4093-b028-3c7f8bd0c456",
+      "contentDigest": "73f99088c7db0005a4672daecbdc4bcbb6423731bb67c88417f6e7b036a192c3",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2a6eb622-806f-48d7-b05d-4f1df2d9c0a4",
+      "contentDigest": "6651c6a9e1513065f7831540740dd07b6d6cff189d1fdc29f8c3d79249dced4f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2ad10a34-960a-4b6a-ac16-6a2dce691492",
+      "contentDigest": "6d32db40d668b4f97e3c1b95b1504ce7f84dd99dc5a6345a09dec8178ce2be65",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2b0493d5-8097-4815-860c-032096d15435",
+      "contentDigest": "79d1fb4d2eec25292a22089178db52851f79f80e1733d1687abd4a51bbea62e7",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2c2cef8e-ca25-4816-9d01-676e1b3fba11",
+      "contentDigest": "6763e40cb9f9ee128054e032fd0bec08c913b082f1bc7d34cbb4cf9493a6ace2",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2c3a5d4f-ab6b-456e-b51f-f3c1d5c30f5e",
+      "contentDigest": "c5813de78295e092bf807ee32ead51073550fcda8faf5621b32aef1601f5be6c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2cf7cb1b-c71c-4563-904c-7d1c9ec9c674",
+      "contentDigest": "d450eec467849b3853fab0a6ee9d89129e7fcb73008ab4352e75761f5c9b795e",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2e3af0f9-d9ee-4606-887b-a305525d6e79",
+      "contentDigest": "8c37aa34b66a5b4136a7b5f823bbf11e3730b2cee4b0005107b722b68d8c9036",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-resistance",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2ea02ec8-7f9c-45fb-88fb-826d95c12bd9",
+      "contentDigest": "cbfa7e2cdb91faee8c4ab93e43324a4b9263ebe84db1084861686a6ae9457fba",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2ef9cf26-068e-4f4b-9929-028edc8aeb4f",
+      "contentDigest": "d3004b286fb0b2041d9ca4d4c99e94df1bb208377f529200817a635acc1c0559",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2efa9ccf-bd1e-4e92-9c68-54c38d3aae4c",
+      "contentDigest": "5fb12bbd82f22e127bdb457875d6789a5485d8d1c4c963d388a94975de77d585",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-resistance",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2f66b68c-c5f6-44b6-983f-6a612cbff472",
+      "contentDigest": "507b536cfdca35c7eef09306b0bebfb472497a9a480c92b0a453df56e6ecb4f1",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2feeada0-bfa4-42b9-9382-f911a106c445",
+      "contentDigest": "bc21d4932790f12c5f67188a74d8678ef0d7573101f33e45cd9d3bb1c26da8e8",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-2ffcceed-fcf3-4c1b-942b-7d2ca6906480",
+      "contentDigest": "87d7e7a336ab17d2afdb73218e5f140db5c53d1bc52b6b05e60a9c2458732d40",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-brazing-pressure",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-308565c8-acf6-4138-b4de-3b05b9276a10",
+      "contentDigest": "ddc7a66149d72e0568d5d85644b0eb49ed1f25ce17e2aab69ea7ce9c1f328097",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-31235cf2-ae0b-4fb7-b1a3-8a507831f8b2",
+      "contentDigest": "8f7782b0b77a6cf87438b41da9f3205da0e0f685f11baed1cb795d67ddb8e973",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-32fa0fc6-1a9f-471c-b844-71262d223288",
+      "contentDigest": "138d088a7f9de314d6468bc461080d8286e49037b573fd9a2e777cdf97944773",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-33a4b109-3213-4ec0-95a6-af2e77ff915a",
+      "contentDigest": "e02328fe94dff1793a3ab0ba68725bd7de04f75811ebb5813af9fbc70dde3da9",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-340e4444-990f-49a9-af98-1017d5f9d2d3",
+      "contentDigest": "5d25a9effbb0a5b45f0061df150e695b5bce1c84504d0f21434b6fa2599aabd8",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-349a0edd-c1da-4c2c-8fa5-000958a6e137",
+      "contentDigest": "03ea0e44117a65ac08a2cc9d4bee4bc50f231f3e2915830fb68972d97a2ff56d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-353e2c66-db3e-41e5-935b-8dd443ef736a",
+      "contentDigest": "bc3def67e92d4ce288df992cfcc692045a3a2e140daa92ef3df46b9118a62101",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-brazing-pressure",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3556b232-c404-4097-8462-c6a66e0b219f",
+      "contentDigest": "03d27cce1e24e5632919eb2fc8ccbfd2d33e9dd00e8792e789e6ef7f169796de",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-35636d4d-7974-4b9c-8a82-2500bd58ed41",
+      "contentDigest": "8eb388d264210764ce64b52f9d8c133a107291deb73c110b9c767846762d78a5",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-35b1b5d8-8d7b-4758-a45e-80a1b8419344",
+      "contentDigest": "c96da986e9d5d7f3be849bbccfff17043c69edd75113f397bee52326f1505201",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-35e1f60e-ecd2-4df0-8734-4d5ee777df02",
+      "contentDigest": "d107bc3cc1a9a57e23c8176dfea444dd5ebecb97e47420e612484761870efd48",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3609db8e-2100-4ee1-a538-c0e5eb220a14",
+      "contentDigest": "84f35962848940ad5a1024329562676f421a8d727b5a235fe3b2819c23535476",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-360f4bdc-a4ab-4be1-89af-2d0c71eab08c",
+      "contentDigest": "45cbb05647bf245d909dc22081a9b940c3eedca40e66dfcebadadfd57bb75fbf",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-36b8f694-21f0-4aec-ba94-de4ffe516780",
+      "contentDigest": "7250b4bdab8ec3e0a94babf3b5fde50514f3eea8566a08cb8d869f6b5b93147f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3722e991-f852-44bf-bcc5-efaa75c7fa9c",
+      "contentDigest": "236efd254b852183e6af2f0572b6cfe1278b476e27b50c1b5d05a324afc1f7cb",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-374983d5-71eb-46a0-a16e-752cf4033418",
+      "contentDigest": "bc7353415d60ca4265d6cb1c6ea8df595707a46a4614c4c3e412e86d0121ee7c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3908bf15-c3ed-4f85-982e-7ad5902e70ab",
+      "contentDigest": "fa6425fa102cc93a7c32a72d10bacd90c0c885b045e4dd59928ad57c93049baf",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3992f95e-df2c-426a-9290-5134028d0e23",
+      "contentDigest": "332f97757a98ffb48a821ca996f6a14fefac11b5adb9470f1ad10cef7be6e334",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-39d3434f-93e6-43af-92af-d8fa5e7b1401",
+      "contentDigest": "64699f2201e91c99034684feba5ecb4fc888f6c9af19ad86c0848d4be64517dc",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3b1ab86a-05b8-4009-8c18-b790ecb386f0",
+      "contentDigest": "34e74c7739bfc3edcb5d43848c9ff014377a7e5b20dbe1a153eb78e269640fe6",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3b8734af-12f5-4ec0-aa98-992b504e0759",
+      "contentDigest": "595bb22e7616d4d11148ba009a17661b1b556b2454a0084ee443cf660b48c97e",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3c30431c-21a3-4d3a-8b15-35b1395798e1",
+      "contentDigest": "48ce115719dc49ea17f91801e37b3cc40d0c8da8dd52a64aac39918ecdb1c94e",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3c9ee1f8-ee8a-49b8-84ec-350a0ee3f1c0",
+      "contentDigest": "90585c002d781d486d895e3b6230a91957c1be041de677976594c11ecc76a310",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3cdeac36-72b5-4967-9ed9-8cc0756c94ae",
+      "contentDigest": "b2ba63512f6494f96279412afc14120d54a318e5e26ca2436ff4359e27dd44e7",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3d750033-f180-44cd-afea-f4b6ea2a4138",
+      "contentDigest": "75090b1e81f8bf3e6ac901f341c278309cee9c7439d472dc78d866571d910dbb",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3e61a952-5a82-418f-b3fa-4b2c38ee696e",
+      "contentDigest": "ef13c3a99c1a441f6d02688c98c247fe93bcd660eb6059e4e0d1298f6ce14fac",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3ea74ecf-6f29-4beb-89c1-d20f379e46b6",
+      "contentDigest": "3e0c0ff7dce520051adbb8cb4555720836b4ac2c1cc6008b852aaeebb99af0fc",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3f4cea85-7b37-4be2-b6bf-0d1c4e3dc41a",
+      "contentDigest": "31e9733ada70bd2bdd0dabc5a734011dd504a7d29d73cbd0ccf55e279791c06d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-3ff084f2-2dbd-4d0d-825a-eee98c7175ca",
+      "contentDigest": "ddaa94b8eb9f9330e24b45b47da4bf052f0cc49f4d23ca98c75055a61a9a8991",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-resistance",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-40198adf-2738-4579-a773-c881390b9359",
+      "contentDigest": "b8d48596f6093ba2016b11b69a0f18da864a18b0c4b74ce6db90d0b35ef5b5f7",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4024dd7f-1b01-4c75-b45d-acb3790544bf",
+      "contentDigest": "c4571d5ebcbe530e254aa211c1c025890f8c0da0c5ed92f34d3a29259a3419dc",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4068b5c0-c9b8-43b2-a449-51777e52adc2",
+      "contentDigest": "1b7e764464356fcc368fe322e8315b1c6cf1b780410490aa463bac413f0f5bd2",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-408e679b-c056-4d0d-b726-f187e81b9d6d",
+      "contentDigest": "ddbe2dfdcc02c0712cb862ffb276b71fba0c21aaa72a5509ee69b92a688e3450",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-40e58c7c-ed00-4479-bb95-547a99decb79",
+      "contentDigest": "71a9c85d484afa9b83e0cdc853f77162733cc900dcf21e3bdf44e582a74568ce",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-40eec9f7-55e4-415c-8ece-e7a3f7a41d59",
+      "contentDigest": "e200519769998bb3e417b5a05f521af8c42d618b91a16c6ce4559a7306faf090",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-41060104-877e-4bb6-97a4-98871d43ce19",
+      "contentDigest": "afc267d218f8d2ec9a2ecdab314eafa78709273af34e89d89b8cf9e6a1c4a341",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-415b45d0-c3d0-43b3-8f8f-0eec7b46bdfb",
+      "contentDigest": "70d5290cd513b9e93a0e56bbb05f2189ba76d40a9c1a35d6cd91983016782e15",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-41ef9ea0-1284-4e13-9490-eb556396fe02",
+      "contentDigest": "d1ffa3c18e3acb2321ebdd0ca8ea2640e62275bf16d14abbe408be4ab955626a",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-425de48f-f4b5-4af4-b15a-b9c536583d6d",
+      "contentDigest": "f7e5ddd0d1b7c6a504144d1044b60cc39530eecfd23f4801b3b4b00d123c905f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4346c5cd-a267-476e-8733-c5c0a5f88360",
+      "contentDigest": "d59f1431c49ef5fae44757187b5b3753ee5e62849882afd37c6804b10c182151",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-44be46e0-0c52-4056-ad68-bd95d9c44da4",
+      "contentDigest": "77a66830209fae16dad1adadb1485471987854930c711b81b734c8d88b0823c7",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-45159144-f12f-4a40-92fc-b58bd50eba03",
+      "contentDigest": "6cc17234d789a5edd2200ef3f68b0ea0863b8e9e496aa2538d5b95162d3e9b72",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4533db22-25e9-48ab-8060-a0559a855a21",
+      "contentDigest": "c33acacc3343a909e8af7be12de5db92f83871ff808787363bd93ff5e040237c",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4540c967-cdf8-482e-b865-a9ddd68ed5bb",
+      "contentDigest": "d8ad83186290e3050ebb1250625033ee217ed98ef773be271e0427e8aca6cf05",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-456f08fc-6a2a-4339-b0af-a7590eb048cb",
+      "contentDigest": "5cd61942530100b764adbaf69c2efb3308fec4473c01f2abc2ff54ad13bf1f16",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-461c229f-03d1-40e7-9517-38d030f73ed2",
+      "contentDigest": "f8eff06e390b13bb67a262fbdf4989f0ca8996f5096c5afb672252a6f343dd2e",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4721b52d-05ea-44bc-bcde-8ad01d021e41",
+      "contentDigest": "dce38a2946f6fd505f94edf83e95641d8916085ada6ee934ee6b0a42060c5828",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4826f43f-efc4-4fc6-8231-34aa63bf210a",
+      "contentDigest": "347d681011f9ac7672aac6b5bb35794429e2a89b8d065042d6e8e24020a59190",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4871f59f-a27a-497b-8c63-a105360a90d9",
+      "contentDigest": "2bccc375a2745513471008f99a7e093c7af59063faf359639fc74349b0ad45f5",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-488c5eff-5546-48ad-b252-808df7cc315d",
+      "contentDigest": "49e2d081f81142a6e44cb793605aa628e98afd1281d910f97a454a6482a0815f",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-48a507ff-9d5b-4d18-af0d-cafee43ff243",
+      "contentDigest": "33062dbb1a16d57db5589490ca3cc50e03beb11f475e41a3f9d310b63cc72af2",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-48c678d0-c20f-4592-ae2b-d7efba6c6e45",
+      "contentDigest": "4f9466bd1a4a82e6084588e3792a8f683b6c9a428ee2c8f72f294105ae5c6e7c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-48da0877-bb8c-4575-a606-b091adf83e79",
+      "contentDigest": "1936c58bbd0defbe8c6fb9c77a1a217b38e125e4f62288b3e11f2ef5b0a643f3",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4925dffa-26cb-46db-9d75-e84bd59e1e1d",
+      "contentDigest": "57b18ab7633a767635324a0f0f89a4cbc99a8b45ab54ccfa36c7dc1a57c63cb6",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-493b2168-1ef8-40e4-b986-92db667cd95d",
+      "contentDigest": "4f13a14b0c5ceaa1a89cfbcf9a93c3981f4bc7fde816820b703c215425abe592",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-49410040-52d0-406b-8828-d3f10a95d6fa",
+      "contentDigest": "1b71f6f62dbbc9836ea2906a841ad2e26050171571cc81986d93b26a8ff0d1e8",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-49a6b46a-d48e-4369-8005-26d7cd2dbc18",
+      "contentDigest": "18ebfa86d69909be9280bc6a977e756adced0a2a945d4e48ace059536b0fd4cc",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-49ddc1c2-05f9-454e-a01a-21440d2f4a92",
+      "contentDigest": "8358640295e9d03aee5f89d64f1c35c35c603a9b0d3ada8f6f5d5050e4a76663",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4a022b98-5d0a-4b87-a300-1e39056ff4bd",
+      "contentDigest": "7237a59ed92f699ae1ea419e234e08d28e018822d2cdfbcd5a16bb6a12f0f6ea",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4a42ec5a-b40c-4f60-9983-4ce4a289cf70",
+      "contentDigest": "066124440a3758f7b95eaa6231596da2f6b2c85b2d067f780b4c0080ab3d588f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4b8bf34b-46fa-4435-9869-c21b3dfbea7f",
+      "contentDigest": "85b7c1a6c08becae9a61455e6c6235e24edc4806555eab6317b97912ba1e18d1",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4b9b72f8-4957-4028-bd1c-bc8157976a8e",
+      "contentDigest": "5bb85461f4bc3c5fdb7a49857169cb91340d310bd79218dd396512c88b7c9d59",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4c6637b9-321f-40e7-be9c-9942a0c1e3db",
+      "contentDigest": "9bd74e628a35428502221b286180a4489f773c09a3fe20cc043915faafaa07b3",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4d23cb4d-867e-44fa-9848-b127a9b6d5f1",
+      "contentDigest": "3cb45f1625d0a4fbb6517956d45da9de8fc227b4cda51f4469dd03d4324f0af7",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-lifting-fall",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4e0628e5-cf7e-4595-94c5-7527b370464d",
+      "contentDigest": "ce29fe776535fcdf7e8e8693923c4c51a23206919f98441574dcdc2da5571469",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-4ecfae36-0ec2-410e-b9dc-4e13eb8e6f1a",
+      "contentDigest": "2fd67065c5ac127d7cf0c6aa6502fa3be8d109e0e44b755cd51ed089cc147368",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-resistance",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-50205d5a-4685-403f-9ca5-345142be4a27",
+      "contentDigest": "6240468733eb3f18eb9c9a4c14ab894a55e575b59efd7be4e294a1b3aef903c2",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-50c18982-fab2-44eb-9f47-8f8c9ea42367",
+      "contentDigest": "b8dddad66babc4d3fd5c4289203986934dddf754859469ecad098c4ff671e393",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-50dd66f0-8283-4a3f-be90-ce827cd1c768",
+      "contentDigest": "8007c04d798a5fbb0ebd8116c2eda11a0bc2587d00868aa4b6b509ad8e31e514",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-50ea9e7d-008c-45e1-a35c-21ad26b026cc",
+      "contentDigest": "4f54466bfb4186beba9141b0f2162b07e8ec477abb9009914babb57dbf4997db",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-51319666-b8de-4f6e-b502-74dfffd8fe1d",
+      "contentDigest": "a12872801d2f4198f7592dbf89d61b6b654eb3d64be99e14db854999a13487b7",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-51c79a56-2c2e-486c-9e3e-f826baccc2c8",
+      "contentDigest": "3a57ddad95991772f264f7e8e132365317acfc9d4f91fe80b0b6a4b3d81c5766",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-53168311-74f4-4d52-ab30-822e43ba4498",
+      "contentDigest": "2559d0d4d9b49e9a91602b9b9d3a0af49d6a83d5230058750c23b03ad104d96d",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5328eb9a-d28d-4752-9ce3-35ec0c6e2675",
+      "contentDigest": "a7b690326231042a9eb405788433db258b36901f508b1336b83dbf7af602e2ef",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-532b89e8-28da-4a34-bafe-1d64cf7291b2",
+      "contentDigest": "fa21303a6ebb22b7cde924c48dc384d4f4d434da3d51711871d81646e71d21be",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-53411a9a-bb69-4302-a7c8-b52d7b5f850c",
+      "contentDigest": "0c595aeaeaa499cf8f7bda7eacea0dcc87e288e2ca2f45a97aec88aefbf4a302",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-53896050-0379-4bb4-82aa-82a6b5bd1188",
+      "contentDigest": "ad81bb9f1bb2bd4a91a0cb20a67735ac7c04a9d897d19d5068a49ca8669d74cc",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-53df2750-fa2e-4fe5-8cbf-c30a6fe7aafc",
+      "contentDigest": "a4973f0d70defab37f1cf9b4b9f036b3c98ee9f4cf93f842f7e3359ca7e01ec2",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-54512c61-a0a5-4069-8454-408808fb6884",
+      "contentDigest": "94ff94234d2e8e50653517cd2e3faf2e9fd11d13c2bf1faa6dcc87685e79ee29",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-54873729-6a6e-465a-bd5c-ec4c30e53719",
+      "contentDigest": "2af60de46319f6e84284b24c64dce261b9e51a64610e4446995721e3939944f4",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-54b1baf9-7574-493b-b616-6caa2db72509",
+      "contentDigest": "3b86e438082d478962f9383884c81cbb87bb32e19fd17cdec30fe6764bc88a1d",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-54d3be8c-ff5f-4757-82e6-d78cec05728c",
+      "contentDigest": "9b032cdc8c94c408e06bff1e9672c1f9d62641164fa58b0313be9f8c1d74ba2c",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-554378fb-1eac-4b69-90e3-067ab9c5faf9",
+      "contentDigest": "422a5934d015c408b604d524f3e263082995a8cab297e5985bcac730e1894901",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-555a0255-d277-49d8-a6ca-f256252958be",
+      "contentDigest": "86b2e61f05600714c5a1119d64c8e18468fd0492c84d1c29c8e87ce7f059e2b9",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-55c9a8ee-a23b-45a1-b611-931deadc3bb6",
+      "contentDigest": "aad307eebf9d15fa50a89e684988cb1d170aa928ad4317e622a1ccc25e7b6b5c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-573e80f6-38c7-42e6-a61d-8f942a28f103",
+      "contentDigest": "bf3fbbff92e8b417b749018d075c6bf97b6a313aa0500af8c4afeb5fcec59a72",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-58dc1504-10b8-4b86-888c-f8b6f89665cc",
+      "contentDigest": "aa2cccc4930dd74d6245299f42c1783568f60d324df183ef3b10d0bc899d3418",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-59878d67-ca03-4618-9a25-73f4ddb6548e",
+      "contentDigest": "4c2a3a103fd812a21abe21c390e2a45c54d4eaa82852483555f0afc55cabadd1",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5a09b1ed-bff6-453b-bf9f-dfcb3d44fa09",
+      "contentDigest": "292a9677d13618ecf95e87bc0536203a62be780e0f4d36ec3bae51fb8cae575a",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5a2a8c7f-d685-499d-b9e7-c3bf5cffe5fc",
+      "contentDigest": "701f82debde670660b29f0f12def6ff311e5fc071a31329797865a55df03b8f7",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5aa223c9-0799-4f5a-a896-30b7ddbe834c",
+      "contentDigest": "0f15982ad9d402ef3626d9f06b490f04f047c8ad53ee61192a4522564e81a3d5",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5ab4d74f-bf01-4d1b-8c95-8f31f086cf0d",
+      "contentDigest": "5bedf6f13b039763ed39b7fbdb6fa9b616789859f3d3e3bf95f4bbbef7c820f1",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5af601ec-c0ac-47a1-9645-2f7a3b5f1206",
+      "contentDigest": "f80041bbe7dee437d0ba2de89110c487143915779b1521fcd4b3bd96865828f9",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5b488388-9a3b-4e1f-bed2-4ccdc8c3b7e6",
+      "contentDigest": "8dfd613caed4af4aa98ab2c833fb5b02140aff501628d74b7f5eabe4e0949e60",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5b55eff9-b6cd-49bc-8b0c-797db0098ad0",
+      "contentDigest": "79b15bad79527fdba7fa57bec140174dfb63bfa3bc4915f5d068dea605bec195",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5b5e7db4-dcf6-4169-b73c-46e3ec7655eb",
+      "contentDigest": "759a9c7a7332855a74765c8d59991080db9e6b228e56e05d044cd806e4a2c50e",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5bbb16c3-8be6-495b-8820-491eb4b0fec6",
+      "contentDigest": "2ee9a0cd96bc796014b7574e317ad6424e9bccbe3cb0ff59b2ac6c1ae9ef53bf",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5d3568c8-289a-43fc-93cb-338dc9615629",
+      "contentDigest": "231a26ffd4698778e4273917980c09192c9799382ddcadae83f51a254d2f6d6b",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5d49e479-72b3-4b50-b30a-b131f28270c9",
+      "contentDigest": "37db03c8f96856651d6e5c0c6fa6d7c93d07aecd8fcf4ffb62feb02a85f87e6a",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5d760de1-faeb-4672-af3a-75cf31888745",
+      "contentDigest": "a2b30778132cb8c2ebc94e40d437520e3a370c88ef06a7248567d4ba34fd8150",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5def7fc5-6966-47b2-b956-3c116bde71cb",
+      "contentDigest": "ed20e01595a4377872224ae4703845e5ca9009c52293f133bc62b6b9148b3f8e",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5e77bfab-c147-40b7-8607-86b3ccc8a254",
+      "contentDigest": "a0dca3aa4aad5c5dfcdbb8f1c9cb7a095c20c36a922163354697db246c6acc7b",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5e808e7a-4a33-4f64-a868-65f133a9916a",
+      "contentDigest": "a18e6bf929cc7e5c9262ba1a159d3fd237bf85ba2d9a5dd374e9ca9e3be1e976",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5ea8373f-bd20-4ff5-92b7-b5d18e4440f0",
+      "contentDigest": "d016024005ab962b02ac3d9bdf37c6807b059d1ee1b165f8f4120282e711c0ae",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5edff901-48c1-41df-8f74-687898814049",
+      "contentDigest": "31cc755df3e7bd407c902fe87bc545d3109e202cab09d23c8da246ec3804f77f",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5ef44068-2ea4-434c-acc7-1d7dd58a4446",
+      "contentDigest": "0d04ba0e3290711fb9434776fe69d996d0e7b45d5ad21976ae47357b4cb93c55",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5f1c3bdf-7069-46e7-a669-a5f30ebe7e2a",
+      "contentDigest": "d241fffc204eb3629898897d92d9234e7a7e205a97ce50420f8c9162a4b78c00",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5f34198c-db99-4d01-84d7-670440718586",
+      "contentDigest": "2df7a9ac7b0511ce87a5f801a67bc9b3cad2b2ad8295a6eb83cbc3f599de50cb",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5fd128d0-334f-4f07-96a3-1a17fcb8d2f0",
+      "contentDigest": "be35385ed7f4d01f406a42754b7197f21c792024b7e34308ce6a875352cc550d",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-5fe8408c-85a5-4541-8fda-8ead41bcf0ed",
+      "contentDigest": "2d94f03b33fdfdaed40f1c23422053b44da134fde1e7dfcd3aa7dd5c0eb8b69f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-603d99c2-680a-4aba-93e3-550925ae2e8a",
+      "contentDigest": "859d2fc788a6d4e87ac81d664092b0dc47b3db6a151161806a0f5b5d94519304",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6150ff7d-6b71-48ae-9de2-71cf5edac1c8",
+      "contentDigest": "a557d08ea6ed1ceccf316e492a7b4e7d35d3e1713ccd6566ae012f756ecc96ca",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-63ac30ef-f659-4ead-b120-9e9318a81eb5",
+      "contentDigest": "f1110682712c35954811a3693b0e5c8cb4e0be6726ea8b5c71fde492973feaad",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-64cec1d7-7500-40ed-9e36-8d85a849f4d7",
+      "contentDigest": "d790f85c7715c5bdb0fd97d1790bfa9397f8a4ca3ef37c48bb0a6dc87819f703",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-655a2b3d-b60a-4614-beb3-c1f426f0b40d",
+      "contentDigest": "86342feabeb7879dd1017f2c0a3e9133da7bd8fa5165e28fd855fadc1272507a",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-656215be-28d9-4f4b-8545-c80963d6bd4d",
+      "contentDigest": "83c4f79c0dfeac41e026b367e5cf79113d6798d7a3fd099ba5e730ae12bd03f1",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-65aa007e-6c83-4457-87da-227cc2814570",
+      "contentDigest": "d23a26d2ade32dbe9f046aabd9acae4fc9b231115cba023edca64d4781247402",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-65bac955-6f24-475a-85c6-3c063e7930ec",
+      "contentDigest": "1c05f9f47e467e3af3fa672ca15c671c1c1507bfdb470b2018aa067497b4acb7",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-660f8987-975b-459d-b9ed-4e0b29ab5517",
+      "contentDigest": "ebb787ac61e4ba38f3e989fc537a2b4dfd103c12e65f79aa126f44eda8e8b7c7",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-665aa96d-358b-49b6-85ff-2a4959aeb072",
+      "contentDigest": "9b3f0ce7a26d3e4e4233bee9af544df5238d6d436eb35313006566f033a0c4a8",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-666809c5-1e60-4f90-af52-aaf84b843e31",
+      "contentDigest": "c901c3ce15b3f7393cb73f53bb2e3408cac001f26e03a8270ecf1e2115e2870a",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-66ec4b00-f32e-4898-98e4-bb812a67e35c",
+      "contentDigest": "af74f3173011eef56a4ecd919b06a8c4d39b67da7d8329bce9481927ba9e459a",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-67c9f16f-e263-42bd-b3c5-e63836025fbe",
+      "contentDigest": "e76168ff22df136554cebc7a56ef86ae17327bde8656a1000c9eca9054e8b49c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-67e3488a-e554-4546-a776-5464d75a2154",
+      "contentDigest": "35e754e773f1d6c5b14311aecfdfcca6c3cca825b59e773b603c96f5c93ddf07",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-68ccd2ca-fecb-43b8-a631-c14971189e6f",
+      "contentDigest": "131b0a31aad2ff3b9486145d7e821054b215404525f80dc4419f418b37c13da8",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6922ab0e-8efe-44d8-88d4-2936190714ec",
+      "contentDigest": "ce58dd42713b73fd00893eaf96d58a094493b4aa9a95a954310526aead67b17e",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-697ddc41-8c7f-4a06-a251-3dd3a0753f7d",
+      "contentDigest": "f4a702606b6b3376f9718a0b08102f5097e56bb4a00dfcb9d865c8f686450198",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-special-processes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-69bf7747-7602-433d-beb5-34aa05b0bccc",
+      "contentDigest": "72e2a43912cb1490fc79fe0fcb6d9c87b7b6ee7d4c049a3c3c74f916cded3ce5",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-69fa37b5-9016-4e3f-9d57-7579a738c287",
+      "contentDigest": "9031793c2c97bb76c78a6708df8995f7dd6c6bbfaca01b6ade3aff5ae22c0e68",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6a14f9d1-0b9c-4729-8688-819fdaa8297a",
+      "contentDigest": "e2512ab0401ba8d5034135239e5198fa20c32e107eb9280818064b69898cb50f",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-deformation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6a17f14d-41d7-4669-a7e3-1054c35dc564",
+      "contentDigest": "3805135c421d28f7457b78e5201cf6b236d3e0354fa7cf5cbf3bff77ebeabfd0",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6a36f746-613a-4870-9adf-dff0317f635a",
+      "contentDigest": "c5714a8167a2169157a663d3e61acc6a41d3e89f667e143aa33fdc688706759f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6a84812d-8286-4bc0-9589-c9da392da3b5",
+      "contentDigest": "55696c33c80983402f8e1b26a8f07200a248fd4a384552412be6d9ff49a5891a",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-resistance",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6ae3f4ba-da59-4882-9527-c93cf40b3178",
+      "contentDigest": "9a9edd99729a3fb4ee61816dae292295a8a7a49afa28a65301bf18996d4aafbc",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6b397197-6e80-4a75-9116-d1917669bcea",
+      "contentDigest": "dacbd31736507eeec8abbde94f5fdde42dd6b582d599aff1b2a5619d692d0369",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6c01dced-9b5b-42eb-a493-265efccd5087",
+      "contentDigest": "c72c9f0cc8fa7e4d36264f9b1b1847b533b0f24f11eacbd7a9525295a24d77da",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6c1607b3-09d3-429f-b911-7a6d2f5f7418",
+      "contentDigest": "9b5328e7cfbb2fefbfc82e98c60d66418ef4dac8539559f773c2e6db851728f8",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6c715cc5-a085-4b96-b5a3-1214ec67ad82",
+      "contentDigest": "8fd3caa41e0ea59c9e210d495ce6124dce29e98dd694bfadc5ae0841c8d89a95",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6ca39a2c-f256-4cb4-ba4e-383f6dacd918",
+      "contentDigest": "4a2ded389f608bfea5cb48703fca3168ca185521ca100c7b454a661b3063bf13",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6d0b74e0-f84d-433a-be85-73af29610321",
+      "contentDigest": "c39ab8d27dff927ef071640412d206eee73b3f286c10010816fc36444de2d410",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6d3a365d-009d-4bcc-919d-93541d0c85d3",
+      "contentDigest": "9d9531e2a28c0df78d019cd26bf7696918011e8af928b7394a2d4061fed02ddf",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-deformation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6d3bb63d-6bfd-4bb8-bb8f-9225487e769d",
+      "contentDigest": "816d8cff8a6ab6104dbe59213fbac9c27e3e49f4103c4e2dc6bb1b4ed650febf",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6d971281-bbd4-45d2-9968-fdc9c770d1ef",
+      "contentDigest": "8315eb6080a90bfad65a70cfce44fce2acb345d25df1edb97ad397fe206b6abf",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-joints-symbols",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6d9f3f9a-b947-4d13-9fd3-97a40ea4ab86",
+      "contentDigest": "8475fd18ca671e3e979fb920d5985709ccfce14284ce5283bd738f1cfe1c298b",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6dc1fdb7-e852-4eee-85f5-055c3ce19861",
+      "contentDigest": "df518e565f5bc31afc116b557f4b5d683505918f5d38eab598db50a80abd266c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6e148eed-ae64-40f1-a514-463bfb57b82b",
+      "contentDigest": "4c94f2b4adcf594af3b1ccb63790a79d72acd24750e6df12cc2ee17eb9e64ebe",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6e1842ed-1b16-4aca-94f3-38222279db32",
+      "contentDigest": "111364e1c59c508d2df13f1362eb90663d60a1499d1cd03c65bafedaba18b8fa",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6e2eda31-ff77-4159-831f-a97b7c319a4d",
+      "contentDigest": "475f06bcc56525a36e317a3994db29288a866d0295dfd47fa313b6ac5b14219b",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6e332d06-879a-4586-8cd3-70541d393e91",
+      "contentDigest": "deab8c2edbab7abe87af94be4c929d8e94a77160000f1c9705b278744d2e9eae",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-special-processes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6e9aafab-29de-4eeb-b2da-a29acbb0f38d",
+      "contentDigest": "0afc40e91de3e7a5bf1746466adf94746257f89ba53671b263d2ef7e839dec70",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6ea640f7-c430-4abe-b5a8-d862c2312571",
+      "contentDigest": "1343a10acd0f58c2de5f40dc3cbb41acf9dd04d94901fe15a3df9bb64c57690e",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-6ef58bc6-26fd-4833-8db1-2dc3709e7c3a",
+      "contentDigest": "cbe37506529457d888c6a73cc188b74369de8022f1138cd6cff9c442a91cde6f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-70aee86e-0061-464c-ae45-3531caf57c40",
+      "contentDigest": "1b54c423c31196c5fe58ce0c6491a2bb08f9eca3b9d057ba93b0a370b66008c7",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-70da0854-ea6b-4050-80bc-40f4b566f194",
+      "contentDigest": "72246e354d6f62ce821dd98539953c3a4f5b7d15da12bb11f337f8ece647c4b4",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-7101c3dc-d865-4f47-b357-7c93684c24fa",
+      "contentDigest": "e92eeb5655dab038a5a191aa47f76b3c7004af0797680eb7103277ca44607dc6",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-7146bf9e-a336-4d68-bf23-9834c2003f93",
+      "contentDigest": "f6070ae6a0c3f7befb1c4269430b0871d3f28eb63e4b975c78dd5c637f19917c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-717fc07f-e0dc-44eb-8306-8be92109748b",
+      "contentDigest": "6ffcabeb5b23dfd2ceec281fe9d61424818a7216e21eba7687bea467d37f486f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-71abac61-0c5f-463c-8d97-1e0ab952971d",
+      "contentDigest": "d327d01af500671aebde0aaf16d0c00faf4b67e6b049f1ff880e07490d47a65d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-71df4419-2eb7-4839-b826-5dbd4aa6d22e",
+      "contentDigest": "ae4e13f5c90884922902738735d26e1486a02416c90e49245d2fc39b20fea9bf",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-722146cd-c070-464b-9743-47ee073680dd",
+      "contentDigest": "37e1e0ff4a318674919bc14b6569f476bfbf61c8cc0696dfdf58f793b5448619",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-733fbcae-d2c2-46c4-9f35-02eddba9997b",
+      "contentDigest": "486062e94de32fb493667e3180428b59166fca558dc09ce60467453838cf0781",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-7464fb6c-ed91-480e-b2d4-df7cf83ba538",
+      "contentDigest": "03fb0d8a84fa29f95fd305a677f4d06eb21689c3ba8799465c9e95019896d3e7",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-748c6048-140c-4585-99b2-1ba6b0389fc0",
+      "contentDigest": "615d1bdc01d723e023b0be2a66b4e1a590928594ce25dbabf144e042258f8469",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-74f42564-e007-4f81-949b-e9cf09db5cd6",
+      "contentDigest": "74d2408780dd8b900f7fd7deda74492f6d1e1811efe91413e7cd205e4721d5a8",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-74f658b2-544b-498c-9fd6-c8f240721933",
+      "contentDigest": "42bb8988e7d699e917a174fcb3acef285f14dc6b9f850fe9c27ac353946e0111",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-7549a259-99cd-4fe0-8c3e-4e1b5a4f665f",
+      "contentDigest": "50a7d173e185e008b639f53a688f4aa03df401dea2bea0b78eeb593c377d5a1e",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-75d4bef1-9728-4ca6-95c3-0a84cbf1e096",
+      "contentDigest": "f78f2e1134e1d9374a6aa2bd0b75d17d758824e1f46f594b975b5cbc7094e4f3",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-76197828-9f05-496a-94a8-403ea045bdb8",
+      "contentDigest": "cf933d869f1e4933208922bcf0bce3ec1d3800b4885f305bbe6ed7df916b75b0",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-764e8511-5d60-4b47-bf08-203d771097b8",
+      "contentDigest": "9728a7401ad4c2f982c03c2797e0b067e0ac37cc427944a0e4b42ecee07afdef",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-special-processes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-76a22788-0490-409d-807e-b4151a3b2eba",
+      "contentDigest": "5644e510e519179f21cb40a72c16184d7d31df31991c5e614e64b25e55de3492",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-77c96178-7761-4243-9762-d85f730d8676",
+      "contentDigest": "ec24760a030cb53ba55b5de46c012af5cb1edae178662e23b08095a94f6e458d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-77d74eb7-43d2-421e-91a6-66405189f1f2",
+      "contentDigest": "75d0fc4471e38e34f02dc3bc1a8f7dafd59470af2dfa0c1ac02d84c1e9878740",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-77fe689b-73dd-4b7f-80fd-4d794d468b8f",
+      "contentDigest": "ae3f6b3d07a7f474a233fabe72a77f24e2441f2c60cd30bf6410e583c6afb320",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-786dc116-eed5-4aed-b41f-2fd4def06920",
+      "contentDigest": "d9e58c49140cbc0f58ad56f9dbdc1f283e1f78f2533cc2828c541ad8b2682b17",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-799be6ca-ad4f-487b-872c-68392459797f",
+      "contentDigest": "dbada633c0f039ad164b788d7b3931e99448a53a18d52baed9fa174c8748bca3",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-79f3f7f3-4827-4d41-bd5f-c7cdfc2eb35b",
+      "contentDigest": "3aaedb63f2f2ab21751c52e88effaa5e55ab543174fb3f1cdc55ab62c751fead",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-7a095646-c8af-460d-ae55-23c8a4e14805",
+      "contentDigest": "7782153feae6e2b46a3c05c6ffb48a8203df0d251533d1a236974fcd2f2ba6b1",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-7a2a008d-bc95-4b06-b520-5c5e8b75a408",
+      "contentDigest": "8d8d69dfa5e4cc039ba791e5577d8b9e7d97b7fc578d2e7247d148c10bc4bf00",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-7a4b416c-da37-4c7b-ab99-08b322d65700",
+      "contentDigest": "3d625d58e0d7c9ca90cac04d21345f281a937e267e3d59062dcd6fa557190473",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-deformation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-7adf06d7-5cc9-4ee1-b138-1bbd4cb63f5e",
+      "contentDigest": "13ece2c34e15b168e862afef5a1e12f745c117efbb9f34c953820c9e065083e8",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-7afa6e4e-4671-4bce-b61a-5d632c452259",
+      "contentDigest": "acfd0d8ac561187aecfb4e73d3f51f2bb9535b349b0af56ade9803693c821ce9",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-7cbc2b96-1c2a-4e8f-a3df-8375e14ce9de",
+      "contentDigest": "f02abaefa1dabfb8bfd106ec102fe419ac007bff8f57edb6a2bcb23a832621ce",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-7d2aba6c-7ddf-4559-bfcb-b535c53c7d21",
+      "contentDigest": "a49bff3767e92e7cf0b4f85d195e1e0902dcb391efffd0040ac4e6ffa15813e7",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-7d98f9f8-8c72-49cc-b81a-6c1b13d5ae2b",
+      "contentDigest": "02291acbf12be5d67d8500a03a65f429fc527c9d568756848129f907870a83eb",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-resistance",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-7f217133-abbe-4aa7-ad38-ab2aba2d869c",
+      "contentDigest": "565b7db19ddc2390b542306262df277d7a6c656a3418f1d6ad585d56b425f196",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-7f774cbd-2064-4e3d-a315-eff2f15d2e85",
+      "contentDigest": "08b49f91f72ecd411a8c20908d76a1331ee3c8b36e7391af8aeff3871c3a00e1",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-process-gmaw",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-80706c8a-dcaa-46b3-b224-5b0be9571ad1",
+      "contentDigest": "17a469c42d2cf875b0d875b40293662ee54c7dda352ea13cd4fd7ae7b6542d72",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-8110b161-2486-4565-af02-fe35b463d8d5",
+      "contentDigest": "e5602788cdb84a0161fde1021a8e267fe913567364f97092afc199cbea83e9da",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-8136767c-e891-4be3-b146-2262eb3b1609",
+      "contentDigest": "78cee8d9fd0d7e76ef09e0d99eb6bdfb35cb0595356f8202874c183275fae67c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-8256a6bc-6d25-4444-aee5-433e254cc50a",
+      "contentDigest": "c3ced16c75494148266e493b2a9439990ff12df23f48b273a53afbdc809f7c53",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-82d1138e-598e-4c93-abd5-3cf8336e9f79",
+      "contentDigest": "8b785a105e6f543efa5140591f21b5464173ca4d148d17f8db4a6a1e206df382",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-82dc3102-37c3-4776-87d6-687fd59c644b",
+      "contentDigest": "8c9cddfa76fb7b1811347dd6fc6463937f41bda718f198b273b5631605f0ed4e",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-8300ec36-b2c5-46ab-ba1c-2d0dbfe2e0f3",
+      "contentDigest": "a5dfa64f73a1f4081de8a549e75f291b59323264c6b2b7f330443e3395970261",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-84152a71-d25a-4012-867d-fec93e3b54c7",
+      "contentDigest": "bb8d23d4ce246737b6316903c6b7b489589bd9767defc8984167132ced20ec2f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-84763bc0-9648-4942-a4e5-4e9ef4659b74",
+      "contentDigest": "b20998e1fae1fec599d57b8cbad9f560c512471867345347ca921eca70f0ba9f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-84f775a0-c945-40ff-a349-f48457be3752",
+      "contentDigest": "e02d2374c89af48276ff3a68b9c02085df26b6750767ddd89035209ca69869fe",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-85708e17-4943-4867-acd6-9dd53ab04a3e",
+      "contentDigest": "2c54e27e88cb8b379181de04c3dd47d7bf11433c37c7da09196574cdda844ccf",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-85957333-1657-4bf9-beb9-2e6e7ef627bf",
+      "contentDigest": "1d09cc5315d0b56533c7b2641b248d2fda15a12ca8d52f9b7d9a170b8a3b1306",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-85f146ae-1ef7-4a74-994d-af4975753cfd",
+      "contentDigest": "bffecd2f87d6e6fa7ebc94860d698ec60e8af770c98b890b134c6d71e683ca2b",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-868cd16d-a8be-406d-90d9-30db9b7fcf2d",
+      "contentDigest": "ddd05349d36a0dfd8feb33b4950ade43b3836b8a0cff3d5c902a613648611dc3",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-86ef214a-a8b8-4b1d-8eb2-67d88b6920c1",
+      "contentDigest": "a9f34752a664653c59d9cd2c7ac2b836bf7a98a50e92eb7b6e0ce80d3b205bd1",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-deformation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-889870ba-3d06-4112-aae8-9975e6f8d278",
+      "contentDigest": "2c8490efdcf5b363091af743532229266352185d081b38a9bb33a8ed72e3dded",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-88ee8d21-9fe9-45cc-8dc7-3578cba39e55",
+      "contentDigest": "2a36c28d0bf392592b6876804b5f6c2001a5c447d6a4ab6cfce9a9246e6eeef7",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-8b3cecc3-52b9-405f-ba61-0c30a2c9d128",
+      "contentDigest": "cbbcbd9d410c7ed56474ec2fd3e0e59168bd94dd4f73df927f67063ef85496ab",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-8b411328-b443-462d-b541-04b20f0d1009",
+      "contentDigest": "91c1bcfda2637383178dc06ab3a58cf1e246047f2498a4c253e7cbdb8e99f701",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-cutting",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-8b917311-40fb-4ad0-83e4-f4defa8993e2",
+      "contentDigest": "9f4e97878c995c36ccfb9b9e4d814eb237d5aaf7e7589b3f170d2b741ac77559",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-chemical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-8bd32a13-a544-4238-8cf9-7b73632b9ed2",
+      "contentDigest": "b632b910b3e225859e3210442177cf9c138d0445f9aeff3c13fe4f8b29e5aec3",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-8c6297e5-7253-427d-8e7d-d69da076df9b",
+      "contentDigest": "a07a0defca69a8a1e7739863547bb5416093b41d22848e7f61c608573d54901b",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-8d95af75-7382-4895-a637-dd79dea99d64",
+      "contentDigest": "3f961d0c1ff0584cb149921313b106594838b71c4a097db00b52431bdbbb0835",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-8dc15426-0548-4953-aa70-cd2ff217b9fa",
+      "contentDigest": "eb4751ecc1b2c6e3e112a555f0b43fcd05119730feb23fe8fa7b05c4fa0f739d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-8e49c987-7eae-400b-a310-44c7b1243175",
+      "contentDigest": "f50e8fa0cc69e9e6e0ff26d6ff335fabf2e55a09c412b3df5dfceb33678b4bed",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-8eeaa651-8843-46ee-a866-cf3f942db146",
+      "contentDigest": "e719ec9dc58c978bec63750a5c6be6bea3f85cfafc5794afba231376cbf7ab53",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-8f2a8bdf-84c2-4d6c-a18e-bf9095360aaf",
+      "contentDigest": "0d88e2efa32f9feed8ab8fdbabf8fde0a8a1ae2cd2f7d1bb58e67a4839651a85",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-901628ba-de3a-4f81-b9fc-76d7afb8b893",
+      "contentDigest": "e1db8fe881a3f6c46c63ceff067297b86f335a89e4e0b1ef88b40d1022b2113d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-91703a40-c539-4c1b-944f-21d1aa5ab13f",
+      "contentDigest": "c22d4ffa1de1e89b94de08c6cff3ef6c4d135b5410668bb4d06a91e4f8200e58",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-922e945a-a2af-4f2d-9d79-cef946bf1562",
+      "contentDigest": "ebd88e912e12d7f1b9908252471ac01a0f892bfbdf56cc347f83375d3d79134c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-930074db-4314-4849-a66c-de84fb9d5312",
+      "contentDigest": "3663dd1f60376ee35760c885354da959b235c7bde973f4382f288b216fec8a84",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-93154ef4-aea0-455d-8056-1cf2958182f3",
+      "contentDigest": "0728de1acae347ee117367d99707b38f29b11bdfcf134083dd71f7d3a13476ae",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9398f220-d2e7-4e16-b52b-c594091d6dd1",
+      "contentDigest": "289426955fa7c2cb816ffca69ae4eb746ecea2d5b8caecb85cb7ec6739f7b685",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-93b768cb-bf55-4b99-b6de-7e1d9d471453",
+      "contentDigest": "def24b26a02d735b9e1c485714f3cdd9bbe1885b299e72ff47d1c02f8a6e135d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-93d836a7-62f0-45e0-a4bd-5904119c428b",
+      "contentDigest": "56ae3339e46cc1dab7d6897895488fdcacb866a5b220d266f2613245ea6edc28",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9571fa34-020d-437e-b8d1-5b1fae0de65d",
+      "contentDigest": "d9691ddf2beabfac248d5ddb4cf908f926645ba2d23d703bf4477cb0f3873645",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9585836a-4e5e-4770-8365-ca5a34d328a6",
+      "contentDigest": "66553dd95633d4ba37e195c563676f75f095abf4cf10510be32523cfb59fa10c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-95d3678b-1e52-425f-b9ed-7e71682ddefc",
+      "contentDigest": "9d57bc92b3e0dd6b25ca3c6a7869d9e280d3beaae5e696a335642c6cf66cede5",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-96491c19-65a8-4703-bb9a-06b9ba852fee",
+      "contentDigest": "f97f8882406a7493cfb86d4d6973bd916a0a41abfef0f4498d53e9ffee9625ed",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-969f4224-0dbf-4104-a287-810819895698",
+      "contentDigest": "5d865d3612cca4c3b35145e4c0f5351e7b04cad03e47b7c98cf9d2384f48c8b2",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-98a50e11-b55d-48c0-bd32-77f501a16ca9",
+      "contentDigest": "372c75e51bc7522426fc6c0722816915a44a86fddc0fae301acbc10f0dc4f0b5",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-990601dc-1ada-4602-a90a-77a5733a73c9",
+      "contentDigest": "ac4c67d88c2bcc302a13b184078d8d0b6440e78f63297a2f08d0265c7c63cef9",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9aef99ef-f65c-4b48-aedb-4221b508eda6",
+      "contentDigest": "3d465cff28ffa1e72c672c8afeae219590de0f6714b9865d5f925869dce5b320",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9b45ff5c-ebf4-4eba-8519-2980d1e38866",
+      "contentDigest": "5697a56349d709312e45bedf975f59f88cda59019fe46dfbf8e505d8013cbd39",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9b5fbee6-490d-4332-a009-eabb40fcafb5",
+      "contentDigest": "5d07065c5c82b4a0cd59afe7f537faf472a9e6fef09c396c5b44757d43baafb8",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9b70cca9-324f-419c-9ef2-eea8bda09dcf",
+      "contentDigest": "87b01850a0ea9e062cd8597dea28bddacaaaa8180b149fbfde0f9f1b07aefdfe",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9b83fd23-5e95-4ccb-bf5e-3b5f67f62ea6",
+      "contentDigest": "821dd108e14e3bf82533e7f79e1ba4bdbae8aefdf699444f174aee2ad511d0dd",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9c245a77-0521-41aa-a84c-1a234141fe56",
+      "contentDigest": "fecf7eee727cfa941ff2fa89086ac59ee35861efa079b750380809b7cf4f2ff1",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9c5a0873-ff16-4e2b-b488-0b6dd9f1f967",
+      "contentDigest": "22a1fb31c2c8a68c96687bb80834bd1c57e5afa3115311a545a48b7cf91c6eb6",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9cde2cff-48ca-482a-a46b-bcebd4ba9780",
+      "contentDigest": "d296085f5c198809df80e86ca8c038269ab414552fd683419e8e8300252b5b81",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9cff516f-6a55-4733-b433-983aa311c95b",
+      "contentDigest": "bf3a4310d3ab12d09897a670025a1ca9c51cb81de66f098838661a4ca3036b1d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9d5bb7dc-5042-45f0-9820-7f31a2d0d8a4",
+      "contentDigest": "952d6c318a85d4e66f6cdb0302b008193f7a1497754e21927e8e7b1d5e5e3ac8",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9d613c71-b324-4230-a601-ee0f52d4ad69",
+      "contentDigest": "f2dc01f1819812f7dd9a5f4e58ca01ae8a195064700da71020c3227444ec3ef8",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9dd8be73-dfdb-4c80-9139-499829c36d92",
+      "contentDigest": "443795d16789309a9c9ff013e656466a31ec6c17b6dbef7707491c2dcac690b3",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9df7e166-d00d-418a-ad97-dd441f70627c",
+      "contentDigest": "c0d287bca5f8b2ad559dc07959e9dc03072892cf0e5aea0df955fd882b922e3f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-9e115499-3857-4e97-9f2e-e4e7595b9ae5",
+      "contentDigest": "5689bb4b32e2c56de20fdcd9e4eaf376b71870a8a6c301afe141721ebdb92a73",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a0b1d99f-9464-4b13-9069-3385c1ae3556",
+      "contentDigest": "fcaa96061930a42eff7e1f2f3989c7de9ca2576885d3b1922cb84362d4a2a0f2",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a127d025-4ce4-4958-aa2e-9f4de14a0e1c",
+      "contentDigest": "2205f10aebeaf5ca27ec5583534780844760994b5f6c73b83b5dbb432ea3fb7a",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a1331d01-2161-4f12-bdf1-7188f4820ac5",
+      "contentDigest": "d7b4f1d5f920fd010f0904bfdb44af39a9ca500158370d9d3abe5fa39c28c573",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a17156b5-4223-4dfd-9e87-e354ef07a97c",
+      "contentDigest": "c3205ffbf513d5a711b2734c89260f942feba2d9854ed4d4c307b80530ad0ef8",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a1822b61-0f3a-4161-b413-8d6a78f6e4bd",
+      "contentDigest": "ab9b445b9622fef6a9860cca185433304c19534e4ec555326b465c705ea770e0",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-special-processes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a255087a-7bc8-433b-95a4-b7c30b351839",
+      "contentDigest": "02aad56c056cc47af1c9e02fd291c944e09a24f3126cf6935d070663b5914dbd",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a28f1f15-d914-46e0-8b0d-71395c75c660",
+      "contentDigest": "0dcb7f9c705ee79bd3daf1b32672f8741353ffc2f4a750024e838e8b59a73bef",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a2db3491-7ae6-4229-b7fd-ff3667af2082",
+      "contentDigest": "eb5f98509402a82e00542cdb93468003d07469c8cada8611179bf945f2f00b08",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a396f176-3ffc-484f-a6ba-8c6f20e19d9a",
+      "contentDigest": "fccea07650cfd14c3a8233fc7bd045f3905452efa055258cd4f692f3b1479a69",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a510e570-ea74-4dce-8b15-0975fdcfcc86",
+      "contentDigest": "2f1afcc9553baf5f2f95b40f164b4356869ceddd0d7013a69b8750f5919cde70",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a56f0c35-a8b1-4111-8239-642683810836",
+      "contentDigest": "9cf9bb3a7f2dcc84a7d095331dd2f769b0d2c8908eca40ef1e83c735a6287d96",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a5e7e8de-25df-42c5-b3a2-c53c8506e121",
+      "contentDigest": "730cec35b5514f3c592f9b406cf9497f58794b0e6b6d414124da71d2c16eabe0",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a6199a9e-c85c-42c6-b162-8ad36e3c60a6",
+      "contentDigest": "f3befd2f23c7f91d99db73b153304ce4e0d4c071710935135829c773b9186999",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a6eb9960-a45c-420b-ae6c-ea6325902a7b",
+      "contentDigest": "0db8d5dcccc1cb5769d2af51e8f95faaba76214eac7ff9d8b3d3cbf51950a409",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-deformation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a748501e-8539-419d-a278-21f40e6ce1ca",
+      "contentDigest": "cb10997fed518169590b89b11793d0a3cbaa0a51da13a03b44c5461e21fb76fd",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-cutting",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a77a967a-af76-4593-9827-bd8b96f06b14",
+      "contentDigest": "0aa5277c8101065e64f44e02c34c4559ff883eb87349c2c1e5279141a90f953d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a84a6499-a581-42cf-998d-e3a1c01bbe7f",
+      "contentDigest": "eed3a195c30811ab41287fdc19758504fae54ef3437e14a7cf35dc7399dfbf70",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-a87a960e-86a7-4383-ad28-804bdabb5929",
+      "contentDigest": "c41400f9963c95e4131f670e1f1f81765d98608040f5272532a9ae55c210900f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-aa17492a-f0b7-44a3-857a-27e1b5258a01",
+      "contentDigest": "2d2f3f767e27440c51dbd1e4f29e522c015c5b0bd13fcc7b6815ff6f697e702b",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-aa1b0a92-5ad6-4a41-b98b-032ffad6e8cd",
+      "contentDigest": "b7cde40f244235b4302ca55b700ffdbb646328de3d6a29084cf6ce4f86e99a1c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-aa2f39d5-1059-4648-8b93-bf53267409a4",
+      "contentDigest": "8461807bd39afccea8b90340ce6d5a9e2da461df9c588200fdee9dbafebc5d75",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-abab436d-8dcb-4718-b143-81e3a90c090d",
+      "contentDigest": "c4a3c767ceb334e97eb8a875fbcd140b19ae440ba7300453ca8714c29c0d674d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-abcfadc7-3205-440f-a69f-074fc4d8aba1",
+      "contentDigest": "3787dd5d7f356203d35ac695e22bc45cf788adf088761c54f853fba8d17491a3",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-abdaedc0-0e56-442c-9d9f-f78833a2b11b",
+      "contentDigest": "6539a0e8e743e68458f57ae68cc7711a524a88fbd36fee8a1a187932dd144bb1",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-ad05a0cc-f6a3-4d20-a05c-aa97092d02b9",
+      "contentDigest": "dd41d11d8dd1babf2803cce8a977bd0518c1b36a78bf8d5e107f600b4217c377",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-ad07513a-2c12-42a2-8aaa-2736f6571c32",
+      "contentDigest": "d7a0cdc377af4bc304e23d41b9918cfaa421638b6a7bf6bfd9da374bd895479f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-ad55f62c-3029-46ef-a02a-c73c140e2c61",
+      "contentDigest": "00610a6c3189c228fe0941f3776ed3f0a00cecc0d2d9b674503d062ef14239ef",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-ae988bf0-4135-4bbd-96ee-57cb2f6183bf",
+      "contentDigest": "bf7e978c718741e365d9e5954bfa97e7ce5cc00cd1ad4523ff4b8443aaada26d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-aede6970-76cc-4837-8c2a-f10bc6d140c4",
+      "contentDigest": "5e91e40eb2dcb2cfae36a4cd4dfddb175838e2783287843a5aa7a3597c0b3dca",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-aefa06ce-0765-4430-bc80-804aa0759444",
+      "contentDigest": "ddc364fcbd6dd5933391487d2e45528e311016fc3767ce99357eb2616fb9337f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b022cfe8-5cff-47a6-8ba2-7acc8999cfa1",
+      "contentDigest": "d2b6dcbefac69132b7b33be58a7c613157876b2a47dc64bb3eeaacf130b0467d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b02d3b54-c7f1-4f3a-8c0d-5b0709a998e2",
+      "contentDigest": "205c57dfea52ea745fef681c92e44c2b0e2d66766e994a4767c6f6de79494064",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b0dfbe58-d993-41c4-823c-44ad59114dea",
+      "contentDigest": "a76c6f58632cd469fad0f15c02a3e4b671fbf1ece0c787d1e103f3cd2fc32b1a",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b19d69fb-e9b7-4444-8621-4b96f2315549",
+      "contentDigest": "eb33d4bc49482a54a494fef1e2745c77ecfaa406cdf5e5e8a30dd9cca286407e",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b21592e6-d7fb-4390-85f3-6ff9855b9209",
+      "contentDigest": "6c905ac2df6a2436e250bb255154a65b6998cb8e46529482e44b6195ebb5b8cd",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b2b00455-83d5-4f41-ad50-44912757fb0c",
+      "contentDigest": "a143a45cb3d5cf77cead999928c2e0073273d096ba053c260c4220d0faaad9ab",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b34a687d-d4ee-48b1-95d8-68dd905a351b",
+      "contentDigest": "e6f97f033310b0a80925ce36e2cd932224fd73abb8bed3aef080b86d9bbbf69b",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b37a80db-aab9-4a62-bcd3-c06e960f18b8",
+      "contentDigest": "84d4e863f4a8ea75f8480cf44fd730f16a90d9d12d2a533f0cdb79a492f67ede",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-resistance",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b3994f0f-2d47-4b78-bfa3-f31e17193ca0",
+      "contentDigest": "d6dad0ca9d5841e4d8d15b142f0bc0b017dea709be6fb98e4940764f3a341aec",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b44c6391-c091-4a30-86f4-4db7cc66e042",
+      "contentDigest": "c86b1ec6c4db85b11dffd237585c67cc37f04955f0b421759a2a2c610f771b14",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b51a0d4b-4ffa-42a6-9541-d67601f6991d",
+      "contentDigest": "11a158c2e2b972d1c73456333c0e21b94ed0a72258e32ea7477487f92149396b",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-deformation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b5db8dcc-598a-43ae-abff-96661bcf2707",
+      "contentDigest": "07ab6b23ce71a2763f2dcf587b194da5a5612648f7736f22cf69d05abb77aa68",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b5e2cfc4-48d4-4371-ab60-ad0c33cf9554",
+      "contentDigest": "be118670ed472fa85edc95098e6c66c3e661dad949cc7f89e1a601f87a1b7f12",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b6170b72-ebf1-423e-a924-1ab656c039ba",
+      "contentDigest": "6c1968b1c7e8d7ca105bfa3f755ccbb6243a412a02a8e660052ebfb5271315ed",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b66c9d94-9ade-4311-8b95-e6fc5eba2264",
+      "contentDigest": "0ac7f2cf6cc9767be29cc4abb9e618f11c0dd9a96b204eb08f0396b676a1d253",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b6dcab8c-097d-4aa9-9e5d-e589400ed107",
+      "contentDigest": "3d2d70cdb26975fa7d178afbaf9294531f0fad9fe12e733375c98779931ae02b",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b6ec049a-3023-487c-b28a-cac96dec3e9d",
+      "contentDigest": "b904de3755d1fd13aebdb5eeff5dd6b225f9d6058148bc9979efcdfeccf0a68c",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b7446bb2-a6d3-4e8d-bd4c-37cc2d15f6b8",
+      "contentDigest": "faba6ff929f6abf25df8f4e3a59228ec58adec1e7d92ecc4b14c97e6b7795164",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b8eed5d3-45f3-4817-ae0c-16b24edc2aef",
+      "contentDigest": "65108a6214e0eaba9858c44ccc4d5958c4bf519284322df13fd9cf1b810bd4aa",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-b98bb4f6-b005-4c3e-8d05-a7ffc7529ed3",
+      "contentDigest": "46e4c913094638f77a00412af197203934e0b619afb3af17eba633ef9e00738f",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-deformation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-ba5ac236-873f-47be-813b-1823dc99b131",
+      "contentDigest": "f26fde3bdb150a0ab2b22d7a057bb7fcaf1339d3c0965e3f7f9675ebed6e8c80",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-bb1a153a-4e87-4af7-91df-b63f27b3cc39",
+      "contentDigest": "cb5fe7c42750e8a7cdbf1322fa08a9f5a3fc170e60af7c99e14734e979e67d4c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-bb46e1d0-c14a-41f2-8cb8-609b004f1b9f",
+      "contentDigest": "c3fb02111a18e9c4db129d545a655d039a6f5e39549c4acf12e447daa7530714",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-basics",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-bb5d5d2f-5e43-4885-938a-158efd1678cc",
+      "contentDigest": "7fe696ab78b331406f472b9ecbfa380c26e31eab2a065a42308867ebf05e89a6",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-bbd5c5b3-2965-4c5d-9b34-955d68405c9e",
+      "contentDigest": "e1de48650b4c379fe46cfdfabd5de77e202a0f6323e93820dc6b1732d98b2a9c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-bc50f787-acef-464f-bbb8-45024b58d596",
+      "contentDigest": "3aa7848156cead42c4316fc7762175d5bde1c187de1e1fd88408074082610a42",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-bce3cfeb-3e2c-4a8d-8fe1-881a4e5a367e",
+      "contentDigest": "0f2c75014ff7fe472a3457da4a5a07d46eb44c0da5d85c424f8853373c562882",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-bd1f47d5-667a-4d42-b72a-9a0010c19ee9",
+      "contentDigest": "f34f38abfbd46e022367b9072cbdd46a68e53f6fb4bbf0fd304e3b9740bd1fc9",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-brazing-pressure",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-bd3f5cca-16d5-48b5-ab29-f857f3a2e827",
+      "contentDigest": "ba67f343bc8858b21029040b73975aad41079342dea2c2e6354345816c5886bb",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-beff8783-7b5d-4989-a337-d4d7b3506ffe",
+      "contentDigest": "f8932954f5be200f82e2a9e1d5caa05ab577986606674845a585ac320928ad5d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-bf13ceb3-2308-4fad-bd37-e2fd026ae7ce",
+      "contentDigest": "2fe744f4b0f99367f3dec3381d5bcc3ad085612904d4ca4be9de765e9cba783d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c05c93b5-5663-4e78-8871-d156bb4f078f",
+      "contentDigest": "415f0a133678018cbb3858a5ba942636b0fc3e95fd2b76e58c4b1d7587001700",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-resistance",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c0d01721-ad4b-4481-977f-06db04bd3f89",
+      "contentDigest": "ba663f1a8870d911dac4fc613ecd480fe5fd4d24c24ab1ef4bac24838ae1b99d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c11f00fd-734c-471c-b9be-e9937703c2d4",
+      "contentDigest": "4bb0c612d66f41a88981b9a56b8d056747772b23bd142d6fd4b63b17a7987225",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-special-processes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c2023671-499b-418f-b635-66d40a758128",
+      "contentDigest": "b4869cffd6b6c8790f2c2756c4dee76d1e06402a0eb9c68e2129eb3dcda47ff5",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c21531d9-223d-4572-9460-1e80f2e9cd75",
+      "contentDigest": "c26a1f2dac0b87550c5d781dc5ab284dd7f878bcf80bc7bd676f987641982794",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c24361f3-a550-4009-9085-f42dd41ed8d2",
+      "contentDigest": "a6a1ce99d191c8767ae2d16c05148f72275775ccf6a353086b2f16adeca5d095",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c2bf8f9d-2b38-4b83-b592-45107077a9ba",
+      "contentDigest": "c20c8dafda68d191ad23bcba6e465ab1292823b472fa8d56299f45ef7dfbfe4d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c37cac88-310a-4d05-b13b-a63b5aa4b0d9",
+      "contentDigest": "978f248bfe39b51cbe69fc5fc5ab5a2be023a2ce50d211e258f888609136b52f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c3b3f647-5df3-417e-90f8-e58b0ec8aa66",
+      "contentDigest": "85982692ad5ac17a8e93298f80faaf122f59859c831345dab92d6f3f61d8a94a",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-special-processes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c3b79dfe-54de-429e-9bee-f842bad64249",
+      "contentDigest": "0f7e69cb346406c823cb39f863e882e1d4983121b44b5d3883752e2cb085210a",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c424eeb3-b2b1-4e72-a427-c4dc7cf7f264",
+      "contentDigest": "17f03e0afa525e0bff5a945920229359e5238dacc558c6bdfe10a4b14fb38ebc",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c4744e84-4f79-496f-ab6f-0d8eac062463",
+      "contentDigest": "2ce14cf6b2387482b7b061eb86a1ec98825bdaf53e70fac2da1519510e985803",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c47fcc2c-cd8a-4833-9093-cf7fd36d8c98",
+      "contentDigest": "933eb6ed87fc85b4af78c7c033df815a42212e185fdce67956679447489ce7fe",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-joints-symbols",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c56f30ee-f211-4c2e-b573-f0f4797ceb6e",
+      "contentDigest": "385d62833473cf4283d996f7aa6f556fbf86713b7aad9a6e859a01f2fe081f0c",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c5b6edeb-085e-4fa2-b735-7f07f6dc3477",
+      "contentDigest": "c7cf1c55ddfde79cd8dcdc0eba25297e9326a8fd2a1f953f64fe6f4e1d3701e0",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c5fbf279-a648-4d1d-9462-abffd6cb9b1a",
+      "contentDigest": "6e745fba54181155fba0c92c1a1c7fbe542653443ba240646cd1950484d5b1a7",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c64381ad-91e6-4b16-82fc-63bd206bf1be",
+      "contentDigest": "11fb905045a090f8da4ca0bc42a7da0097064f5438737b03fc15511240eae2bd",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c67f0293-11ab-4da5-9b2f-06accefc995e",
+      "contentDigest": "ca9d5c9daf5852da63cc758c14f0831ebac9675fdf28dfd41a100f23b268ba9b",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c84b2840-9aec-4719-bb7c-9f0916b7ab17",
+      "contentDigest": "6bac825be816ffd8eca205bdb4af815af5b840eb15ec836b8497d50824495ba0",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c8afd1af-91f1-4cde-947c-26d530c5c95b",
+      "contentDigest": "aa8beff9fc90f79303e771afd0f5aee9a909277bcc875fd228a3071ee62a05ef",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c8dc3368-3fcd-4383-9aa0-02961d337997",
+      "contentDigest": "70bb27de18f9fb1b65eb98fb4f3c443613dccc61b7fa5391043728a9c4ba8f6c",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-brazing-pressure",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c8f1fe36-7712-43c1-b228-eaa20988e52e",
+      "contentDigest": "2e3d26b4d00338bdb0498661e41865aa4c9615a6869965a0cb78749093fcdd07",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c9940318-4550-4ce9-bf71-c7f810861fd0",
+      "contentDigest": "5e7f6d58a9f5cb6436eb059a19078cad5cf821cb290fc341c20c03080fa1909f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-c9de7d4d-db9b-4956-9af7-a312bd3e7d4e",
+      "contentDigest": "b2791426e145aeeb2ae12145368fee1002d26778c23f78c2a859400b238077bc",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-ca5a48ae-2ed9-477c-b4c9-896abfc18ee2",
+      "contentDigest": "016eed1c19584b4aa3f7da500450c23764b5455c6a2e67bc6411f73272523a81",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-cbe1febc-3857-4d07-9925-14da803dbaac",
+      "contentDigest": "4f57f33f7787e3c9489307b2da8ba1717192284046ab1db55cabe100d2eeb98f",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-cbfb7700-fd7f-4fe7-b262-bcbf544fa0a6",
+      "contentDigest": "2eef2097dadcabc320e73089122957ddaabdfdc57a17533443143d9483d0c80d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-cc962377-fe06-436e-8fa0-895042a3684e",
+      "contentDigest": "a287a50e6337ff1f3d47642c7ff5853c1fd4068d34ea456835989e4918c596a4",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-ccf97e42-9263-4a09-acef-32df7eb9b34c",
+      "contentDigest": "30c0f07a3daeeed1cca9399c2ae9fcb43b221e3c57dabb1d8f3d305ba6907831",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-cd02234a-2201-4e0d-b017-526e5f875999",
+      "contentDigest": "272b398795866e669f1021f331348b042036d333fe1c46190be4c2922da70703",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-cd4322fb-71f8-43ff-88ba-3f94b4faa7b2",
+      "contentDigest": "22142e54454942cb5e93d7a50b6ffe69210d9691fefe8396ce5c4a9ec331d237",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-cded0304-db1f-43f3-b6b7-058b579531e0",
+      "contentDigest": "326b684c1e36e70564c1aad1fad065c5be10a0bfaebf6aa66644e0fdd8d32aab",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-ce5568b4-be67-4f2e-a451-09a07459ff81",
+      "contentDigest": "2b8f17e2d1e6007896cd6ee067e9a336b0305704bda37b1bc71e0614ade18d74",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-cf105c30-d472-4fa4-af62-66079cb9f7fe",
+      "contentDigest": "aad621d69701c1a136c0d5f0ddda44305ad875781571933a8a596b006dc646e6",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-cf46554d-76b0-4f70-b7d5-d5e117ac105d",
+      "contentDigest": "221470e442d7424c42f24c27c0a9ee03afde3bb01cd1c5d45bee3343f12e1e7e",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-cfe0d4c7-a8db-42d1-9759-c25a03def708",
+      "contentDigest": "ef528aca64fe94ae69dbee2a0c63880bb9f6d5a18b34969b5011c83ad5bca3d3",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d016bfad-2d67-4140-862e-2e56492d797e",
+      "contentDigest": "ed495048cfaa3561bcc861aa66864acfab44f0205ce30a2690abaef807c01580",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d04cf3b7-0874-44d3-9438-a066fc26bdc8",
+      "contentDigest": "5a8f71105e5a0d760334d781455494da18f1f60799ee4c5570c3826008118669",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d10ddb45-60d1-424f-8b14-7430a7158464",
+      "contentDigest": "1ba52a8d148e1cf5c07484d42cb9d9985101ebba8efc05583925e7df34af7dbd",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d1cc6867-006c-4d7f-bfad-2c48d66fca53",
+      "contentDigest": "42bc034a376e7954908380892fc81b8694291016978fa2760dab614e96665e24",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-deformation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d1f709cb-3717-42ad-9551-8c19e93643bb",
+      "contentDigest": "e845e3fd04806dffb283939b8c0a69f34abdacefbd66e7517c92e24ef9dae126",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d2a0c21c-d30c-40c0-8a6c-940ea27a8387",
+      "contentDigest": "819d21d0d4fa8a5c8dc857e656a12b09e02b53d8962bc6903101c4403fe04961",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d2d4d97a-7fe8-4e35-a83b-35b4294d79df",
+      "contentDigest": "2d164fdbb0b0fb1b4c84525d0efbf11e4d68a560cf46c221886f1bd737c17d27",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d3f71696-6187-4b10-b7af-3284f188d883",
+      "contentDigest": "fc7238d9b936b32176524f87604c5553da901fd529b2c2169f724ba9637a9789",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-cutting",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d588064c-625b-4689-8b7d-6e832b2c0f57",
+      "contentDigest": "d08863e3d0bf048297dfe42062e84ceed8c66e4c3d5c6ede4583b90e7f2e646a",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-deformation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d6115815-1f6b-4057-8e47-544623efa126",
+      "contentDigest": "27b6f3ff46e283dfd36ccd0cc1e4556c4305c3e432476751e92274766caf5aeb",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d73939fa-7fef-4141-a9ff-ce886310e8bb",
+      "contentDigest": "e558ca761060e46058b0f898e431b4e7576af4f0bbdb572988e51f4c8132d386",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d812451f-ba08-4667-86bb-c5ba6442fd20",
+      "contentDigest": "c58b8992a183d473f96c0d1a07b08ea11210807391ef9595a5c3c83520442343",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d8b661b3-8b34-46ac-8107-5e584d0bc27e",
+      "contentDigest": "ad241594b11f5590e96abea805df1844544d48e598177951a9754506165bd093",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d90bc15e-4578-41ca-9a90-a32fd2c8f6cc",
+      "contentDigest": "4bcff77094e64ae7bceda0e42e80ac0a8dd15a9895126b0fbb4eaef7eb79cfc9",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-d9548928-3ee2-4f2a-90d3-f50820142e3f",
+      "contentDigest": "7bab6547e1650ff9a13b79dcce959b92a2704ce30264b38d92d332468ee68e9a",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-da2e3518-f489-417d-9957-0e74ef173857",
+      "contentDigest": "7a05fd47eb9fb024cc03fe5fa934f772d61d98ca53fa28caf4407b53057740b5",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-dabf8f68-5efa-4f04-b9d7-c748ef21bebc",
+      "contentDigest": "73f7356f4b85025162280a5dd63eba4460ba227cbef3abc6bbbd5c14b0b4f693",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-dc264edc-738f-4d92-9667-c15597b14bd0",
+      "contentDigest": "972a300ec516a220bffff1297ccd7e24c76db131f0506500a3a01ae5facd13c9",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-dc4ee99f-f73c-4c24-adf6-460d2d45463d",
+      "contentDigest": "887bf69b2a56e1804863676558014ecc82d68964d1dcf8e88e04a04fd3994abd",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-dcc31c72-925e-4fca-a334-e1bef1c4c2cf",
+      "contentDigest": "5579e362e642e684d7573e868a3a5e1256de374a302542ffd930e3792d9a66c0",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-dd389161-8ff4-4984-8b5f-dc86347413e8",
+      "contentDigest": "968fb9ee4f4f590a3729ddc74371a8900862f3a79127c12e3ee7b0bb914aef9b",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-dd5ec301-3faf-4cee-81b4-fdcecbe8dbf4",
+      "contentDigest": "5093a0c5e695b1957c1c3c1fc32cf1d0b31ddf5d5f97acc0c12d463760c93e8f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-dd8f606c-ec88-4b08-83d2-6dbc9830b3fe",
+      "contentDigest": "2834ebc44c2a0e5960fbd25f17b455b1a1e4d41f7a119f109c6aa0a7acc2acbd",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-de3c3b0a-d038-4e5e-a1b5-84af45c5083f",
+      "contentDigest": "ff2167f2128ddacc0ba5512fad5f23516f409004a68a224b28968b683c9e109b",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-de3d5b54-b1ff-488a-a622-444b949df0bb",
+      "contentDigest": "9ab376035330f1bb1f1b916cf5ef56390c06e025e9a28726f7a82fbf665376ff",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-de7f12c8-0081-4c24-8da4-ba7879e463a8",
+      "contentDigest": "e7e838d49c48749678b15389a264a1b846a470172f36759d81de2c06d9b428dc",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-joints-symbols",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-decc4b6d-72ae-403c-b61d-21c664cdfd73",
+      "contentDigest": "2661b36f924ff00270ff1032f5d51f33c43507b96565ce02e59c54975cf9a305",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-df5595a1-87d5-43fe-87d7-efce22bbf671",
+      "contentDigest": "786c2fb1ea6792aabb4a4da7781dd61ea994f43520b1775ac830fda88d389e52",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e0c8202c-2ec8-4d42-bc1a-01a4daab8fd6",
+      "contentDigest": "618ff8841d400b6387ea8f79cf239c00a7ad16c5e0b6a2f972ad3f4b972614f7",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e0fa3fb4-694f-4e55-9678-33015de507e3",
+      "contentDigest": "514253820652108dc3e943d9da7358760389e1090f66d7dfc9841f6d0ea756a9",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e13a6159-7287-49bd-84e2-2f5f201c9394",
+      "contentDigest": "443118850eedd914acbc7d85af6aeb0ed5f06ba9c06b8ef73bd9db35e53be21f",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e18a8e80-3b6d-449d-9c9e-a19d718fe8d8",
+      "contentDigest": "5a33d33bc198d31585b6e1a5264cce44e10df45bb852a93bc75a7d9c2ffdb32b",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e2236840-c559-460c-8891-4b1456d3e72b",
+      "contentDigest": "14174a6b159565489249158b0ab46da4b418a593c51f5c2dfba874eef7313ed1",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e322b722-f1e1-432c-872f-97476518af6d",
+      "contentDigest": "02f9ab5915f2a260c90d24311c46e2582ac81412134aee55af639ea1f96483f0",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e34e9863-3071-4160-badd-429e396e7c1c",
+      "contentDigest": "7da2921733ae8df26690c643f2bb5e7131491dba9512a963c28ee91a39fbccfd",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e35ba685-ecc1-49da-99db-77b53525e58a",
+      "contentDigest": "b1cb3ad51b2ce1a8557449a44a426a5b708c3a1e39d9bb32f03d10fbd1c18d54",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-brazing-pressure",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e3dcf843-d5b6-404d-a09a-ac7c419e0e26",
+      "contentDigest": "f0653ee704d35a9d533a1fe40a3ed17538b29683ea4383eb72c1b2e7619cf803",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-joints-symbols",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e46283d7-7ceb-42c6-b9f0-7683f2de75a1",
+      "contentDigest": "c99b2a8412c5bd9d726fb8526f0a7b06749aaa28f31c0f95718060737b130f88",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e4813b7a-2b14-4acf-8f30-22abdc152a54",
+      "contentDigest": "e45034929a86696d7ca2cc0627712551899820f8b2cd2c479623eb72297ec60d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e5699573-06f7-4875-ad2f-cede0184ab99",
+      "contentDigest": "1ed96c4b42102c35765904560c5ff0810117caa192ae98231f1c4cbee2d26766",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e5eb93a6-1f16-4d8c-ac02-1c4ddc75a4df",
+      "contentDigest": "f7b72b38003df52d4cbfe6c07b342577b00dc1c2e8a9a7220db98b8ae9b8b979",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e6235e1b-7977-454b-8d2c-b9028bcc494e",
+      "contentDigest": "0e59e1dc465403ee8003e4a15076f4b876281ecd44e805933c30c50e1af087fe",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e630bc06-fe6f-4eb4-9f04-77e97ceb8d4a",
+      "contentDigest": "0f3d011b02dc78fdfa27275e74d47d83b992f69ee95be474ddb2cdd4ad4a1c82",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e77fd21a-737f-4407-a9fd-7fbcfae27f8d",
+      "contentDigest": "4df0d1676b0a81d82db76b7345071f95a65fca89843dbd84083f7b31d486e1f8",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-cutting",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e785ee2b-56ac-45e1-8ed0-ddb4abb9af47",
+      "contentDigest": "65aec8c0ed23d7f75bdba5f3fd5b2ec9bf26f48a3b735bcfc5b11bea919264be",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e7d0a421-44c3-4f07-b260-94b85969805b",
+      "contentDigest": "85cb4cd85b20168b6247e3e1525a960f073a561c657912de7614cc2420223020",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e8035ef5-ce6e-49f8-acd4-45aa6c0d916d",
+      "contentDigest": "af2e5a26bbd9dd9b24a53d07b8b784861344c607a18160910cecba31a202ab84",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e82f878f-d67c-47cc-9afe-5f06f05207e4",
+      "contentDigest": "f5d700f9d07f0e7ffc0628a87ff646920a5dd36c0dca5007a11ca30f5d83a33d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e84ebfbd-e848-48e5-85f2-b66383042a0c",
+      "contentDigest": "26fb03ea16a635dddb9de5548c4515b183677705875fa87beb9922b773e0c1e7",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e9180f4c-f793-453d-a08e-e6e55c993354",
+      "contentDigest": "668a19a90b7c05cafc0d561134f0632305ec30aa8ca020545a1f7ae70769b180",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-e95eb7e9-5395-47d5-a327-deea591263c2",
+      "contentDigest": "53fc06fce5a9cf14d1cf26f9793a2ed61cff120cb4fb4e79d894bc3eb264b925",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-deformation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-ea9d7b6f-0e26-42e7-bec6-4a1af51504ce",
+      "contentDigest": "b583ac73977ff6f03e3f26549079fd0e6d418f416605d0cd5090177155c65a2e",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-eae3f4e9-688f-43f2-b3e8-bf68969e4331",
+      "contentDigest": "b0d354f0f9185885de8960d629c905bd4d56d7984c3294760ae52a19a0f40e60",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-ebf2676a-c3bf-4638-aab9-cccf1a5e9b9e",
+      "contentDigest": "e7b1631c4c481c225c8473b874234c86955e5f208361ce19a5e9e6badc951502",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-edacdead-4c69-4bdf-a2bb-0712e26e48c2",
+      "contentDigest": "3b684546671070d158b214d8954a191441e0efcd4b6b7ca0963b7204181c5fb7",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-brazing-pressure",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-edfc5be7-c962-4213-a46d-1d207583c478",
+      "contentDigest": "d74b8a8139a92ace038fa96d5065c960951f97ccb75507db2d4303e48f3dc3ae",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-deformation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-eed26a0a-e7e0-40b4-92ad-768820b0448c",
+      "contentDigest": "2939837b7672c0caaa05c00f897ec5a322f2f144c58bce7c8e47084b5f0cbae3",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-special-processes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-ef348cef-a492-4e38-bce0-0e88807a2947",
+      "contentDigest": "a28441d3e5a3e485d0e49264f72b73010e58fe75f200842122ca11d19b71995b",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-efa35849-446d-46ff-bbfb-67a9c20befd4",
+      "contentDigest": "0ab1effba506e90013470815a3ac5cedd7a033b1a4792972a8625591eb21c5bc",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f010c9fd-72f1-46a1-9d54-3240600fb2e7",
+      "contentDigest": "2d38c8a0a62ed76043e323533d2f5b6f467e868b5aedd80e43a7f81aa775b0c8",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f035c47d-d873-4913-9ab5-c59531e934e8",
+      "contentDigest": "41fe0a716839f88c4024b7fcdea39536552fba78d5bd7aaebff0e2e0c09553c0",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f06c129c-e5ec-4723-9b0d-75464898dafb",
+      "contentDigest": "c64c9d372405ea4d117e91dfe5dc579d1b38036d1160ef01d00d8053f8078f03",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-brazing-pressure",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f11e5087-d570-483e-8bdf-dafcfee28744",
+      "contentDigest": "c999c0947ecf913e0fab588542dc21b4219f6d8ad80a30fafa8059e5304af32a",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f129cd98-0a8c-4d40-9d9a-8c2db7129cde",
+      "contentDigest": "9f63576fde2f09135cc527cb5cc070b1ba144160cd942e781a6e3a9fd5d36b14",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-deformation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f1616695-c90c-4df1-8a16-83eab96be481",
+      "contentDigest": "4618be440761b4bd601a809f08171e38fad149f48f7aeb43e22be4d630de383d",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f188c6bb-300c-4827-9efd-3cfc26ffbd15",
+      "contentDigest": "db85236de87ecce2ef491cdae0d0fb5f84ae29342a85219b33873a3c8d649b81",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-power-heat",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f1a7d802-f94c-4458-9865-3e6360962150",
+      "contentDigest": "9495fa3cddb0fdab8674513b087d86adf950ee07db103da746299bfce8fb77d6",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-lifting-fall",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f1fe152b-068c-4593-80f6-e450c4da1a55",
+      "contentDigest": "794712c4f322b502d9c6e1ffaf6430b387509e77c416b6851ae0993f2b3d986e",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f25dcfe3-5f09-41ec-bb2c-3928bfebde9d",
+      "contentDigest": "f7cba7ddfebe88080572710dc2af4215b8092ab0dc60fbfe6219abd3df1b69c1",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-special-processes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f2780053-6468-4757-b3d9-1688a5f19728",
+      "contentDigest": "f43f3fc2b23e7c8326a51f8c0a1194a1b07de9f5aa0e08d7bb0e331e0d630c3c",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f2a3cc9c-18e0-4356-bc1c-1ba865e29259",
+      "contentDigest": "c482d98c4dce9bdbeccce96c013d84aba41142a4f943d64f5362641f04780699",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f2c2332a-e350-4cf6-86ba-d156a035bc93",
+      "contentDigest": "17324d2f0a53edb0d80f6c3ceaf17b56262875673d9b4fee881b6af57b4561b5",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f3483828-12c5-4cc8-8f64-15bbbd64dbdd",
+      "contentDigest": "099c88f63273068f9c95cacab70dcbecd620327a99cda5dd4b2642c932eaaf4f",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f3ea6923-ff9f-4e21-b0ce-309dc296f93b",
+      "contentDigest": "60d0a7a1ca693ddf62b6127de700bb62b6521425733068b55ad472017f767656",
+      "aggregateTopicKey": "foundation",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f40755ed-7d3f-4569-94c7-08971e2076fc",
+      "contentDigest": "c91d07dc9744b3cc30a53acbdb650c3ce8d3284e75838209566127dbacf87d48",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-fire",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f411d3f8-5a61-4360-b948-b5a5d1c7e1c9",
+      "contentDigest": "9e2f83cc660b38adf3b2ea4624547f1d1de82c1d1fe805e16ee99a640417180e",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-special-processes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f4c7f1aa-e109-48a9-b254-57a6c2822297",
+      "contentDigest": "a0880e795857c51585a6ec9b492a655784b7430da10dba80aac2ca2d69ee9381",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ventilation",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f57d62cb-bb21-48ed-84d7-48921ddfe072",
+      "contentDigest": "bb49e4ca7b7f77dea1300b7b7b46c2d2562c9d8baad76ae1f7d21722b1af14b0",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f5e6ee10-2de5-479a-80b0-a1a8e9f51541",
+      "contentDigest": "eeac90bd90438f62c7a5c1199a22a545ad95e0da78581836dbc5493165a0d8db",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f6a20fe8-0880-4e2a-9878-0207e051da08",
+      "contentDigest": "db79e3d379c97a75c99eb0d93dc0abc4f44c4dac2520327a71ea8362341e2696",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-cutting",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f6e2d9cc-1c74-451a-a94b-7dd84ea556c7",
+      "contentDigest": "3d9b896f8ab5b91da7359f84fc15b78ea4c3ad32f6df6b35d0c63b76f7266184",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-gas-equipment-flame",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f7042fb6-cd59-4f0d-8d7f-a79c6ee076be",
+      "contentDigest": "66c8e5ec0d41965952caa4bfd2353a553dcfc599638378d2afc77dac8c58bffe",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-management",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f77b67db-0542-40fa-ab23-440aecb7bfd8",
+      "contentDigest": "3778ec161a1d69c2649f6fbb101f0e673f04d95baa474f7239ccd5ac61b43e29",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f79ddd21-a686-4eb6-9aeb-63a132c59e6a",
+      "contentDigest": "5e8229b38700b0baac40e37db7cc9fca2df1a232cb17e786c245d2d7a40363d5",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-ppe",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f7d0db74-b25d-49e0-892f-061828641c40",
+      "contentDigest": "c70e96f213a87237f34dbaae078d368784d63eb7d90f0ad4ad991ca627f63691",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f89970bc-935a-4b92-986a-1cf9a8a85e4a",
+      "contentDigest": "5944420614924297814b455e75f405598513bed7cc768b6dd8b5fad57777642a",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-electrical",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-f930d348-8d63-427e-9737-51fcf85526e8",
+      "contentDigest": "70f3bbd576f67fb673b1919d6c1d1e1956a7b7024b2eb94dbb5e9ffb8212bc1a",
+      "aggregateTopicKey": "arc",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-electrodes",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-fb87cad6-15a6-486f-8a1d-2cd427ee0e66",
+      "contentDigest": "7bd0701e801621922658289e2d959d15b17afa37b2a2a679e81daa44b7da7e6d",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-foundation-brazing-pressure",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-fcc15073-28c6-48bb-b735-8ee30957ed8b",
+      "contentDigest": "81d077acfdb63ddcb94a492b94d4756620f8353b1970e6aada36c633fdf04831",
+      "aggregateTopicKey": "safety",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-safety-gas",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-fd41f16c-fb1e-4943-b917-a0ab7f2c8707",
+      "contentDigest": "6283f16c44d9df9fab63ee29182695cfc6d2217814454d75c2b22bdf6c59321a",
+      "aggregateTopicKey": "gas",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-resistance",
+      "reasonCodes": [
+        "rule"
+      ]
+    },
+    {
+      "canonicalId": "wcbt-fffecb03-9c1c-4f9c-9caf-0821b5f0d224",
+      "contentDigest": "956604cd3449933ea1a0e752fd5723805a74c487a1a5acc9c0dce41d9d04b4da",
+      "aggregateTopicKey": "defects",
+      "reviewStatus": "approved",
+      "primaryLeafLessonId": "lesson-welding-inspection-ndt",
+      "reasonCodes": [
+        "answer-review"
+      ]
+    }
+  ]
+}

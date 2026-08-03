@@ -165,6 +165,31 @@ describe("written question audit manifest", () => {
     ).toBe(false);
   });
 
+  it("does not turn audit prose into synthetic direct-feedback theory blocks", () => {
+    const overlaid = applyWrittenQuestionAuditManifest(content, manifest);
+    const targetSubjectIds = new Set(["subject-1", "subject-3", "subject-4"]);
+    const approved = overlaid.questions.filter(
+      (question) =>
+        targetSubjectIds.has(question.subjectId) &&
+        (question.audit?.auditDisposition === "verified" ||
+          question.audit?.auditDisposition === "cbt_corrected") &&
+        Boolean(question.audit.reviewRationale) &&
+        question.audit.reviewChoiceFeedback?.length === 4,
+    );
+
+    expect(approved.length).toBeGreaterThan(0);
+    for (const question of approved) {
+      expect(question.approvedReview).toBeUndefined();
+      const lesson = overlaid.lessons.find(
+        (candidate) => candidate.id === question.lessonId,
+      );
+      expect(
+        lesson?.blocks.some((block) => block.id === `review-${question.id.toLowerCase()}`),
+      ).toBe(false);
+      expect(isPublishableQuestion(question)).toBe(false);
+    }
+  });
+
   it("keeps audit evidence internally while removing it from learner lesson copy", () => {
     const overlaid = applyWrittenQuestionAuditManifest(content, manifest);
     const lesson = overlaid.lessons.find(
@@ -182,6 +207,9 @@ describe("written question audit manifest", () => {
 
     expect(examPoint?.body).toContain("**질문**");
     expect(examPoint?.body).toContain("**판단 기준**");
+    expect(examPoint?.body.match(/\*\*질문\*\*/g)?.length ?? 0).toBeLessThanOrEqual(
+      5,
+    );
     expect(examPoint?.body).not.toContain("welding-safety-b33-ws31-q001");
     expect(learnerCopy).not.toContain("감사 승인 근거");
     expect(learnerCopy).not.toContain("최종 검수일");

@@ -273,7 +273,7 @@ export const WRITTEN_SUBJECT_TWO_MEMORY_GUIDE_SUPPLEMENT: SubjectTwoMemoryBundle
         "습윤 보호구와 용접 보호복",
       ],
       cbtStatusNote:
-        "안전모·안전화·호흡·눈·청력 보호구를 직접 판단하는 공개·검수 완료 CBT 원문은 현재 문제셋에서 확인되지 않았습니다. 일반 용접 문항을 대신 붙이지 않습니다.",
+        "차광면·보안경과 용접 보호구를 직접 판단하는 용접 CBT 원문을 연결했습니다. 안전모·안전화·호흡·청력 보호구는 직접 일치하는 문항이 추가 확인될 때까지 현재 이론 설명을 기준으로 학습합니다.",
     },
     {
       id: "safety-sign-fire-details",
@@ -349,7 +349,7 @@ export const WRITTEN_SUBJECT_TWO_MEMORY_GUIDE_SUPPLEMENT: SubjectTwoMemoryBundle
       ],
       detailLessonTitles: ["안전표지", "소화·비상정지·잔류위험"],
       cbtStatusNote:
-        "안전색·연소 3요소·화재등급을 직접 판단하는 공개·검수 완료 CBT 원문은 현재 문제셋에서 확인되지 않았습니다. 키워드만 겹치는 안전 문항은 대신 붙이지 않습니다.",
+        "안전색·안전표지, 연소 3요소, 화재등급과 소화기를 직접 묻는 용접 CBT 원문을 대조해 연결했습니다.",
     },
     {
       id: "gas-cylinder-flashback-details",
@@ -419,7 +419,7 @@ export const WRITTEN_SUBJECT_TWO_MEMORY_GUIDE_SUPPLEMENT: SubjectTwoMemoryBundle
         "소화·비상정지·잔류위험",
       ],
       cbtStatusNote:
-        "가스용기·누설·역류·역화·인화를 직접 판단하는 공개·검수 완료 CBT 원문은 현재 문제셋에서 확인되지 않았습니다. 다른 가스·안전 문항은 대신 붙이지 않습니다.",
+        "가스용기 식별·취급과 역류·역화·인화를 직접 판단하는 용접 CBT 원문을 대조해 연결했습니다. 단순 가스용접 원리 문항은 안전 문항으로 대신 붙이지 않습니다.",
     },
     {
       id: "machine-workplace-safety-details",

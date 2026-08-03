@@ -26,8 +26,30 @@ const originalQuestions = createPracticePresentations(
   100,
   20260730,
 ).filter((question) => question.provenance.original);
+const approvedOriginalQuestionIds = new Set(
+  originalQuestions.map((question) => question.id),
+);
 
 describe("subject 4 reviewed CBT registry", () => {
+  it("uses the runtime public gate's directly reviewed exact set", () => {
+    const runtimeApprovedIds = new Set(
+      content.questions
+      .filter(
+        (question) =>
+          question.subjectId === "subject-4" &&
+          isPublishableQuestion(question) &&
+          Boolean(question.approvedReview),
+      )
+        .map((question) => question.id),
+    );
+
+    expect(
+      originalQuestions.every((question) =>
+        runtimeApprovedIds.has(question.id),
+      ),
+    ).toBe(true);
+  });
+
   it("gives every displayed fact a stable fail-closed CBT binding", () => {
     const factIds = new Set<string>();
     const errors: string[] = [];
@@ -82,8 +104,14 @@ describe("subject 4 reviewed CBT registry", () => {
 
         for (const questionId of binding.questionIds) {
           const question = originalsById.get(questionId);
+          if (!approvedOriginalQuestionIds.has(questionId)) {
+            if (question) {
+              errors.push(`${factId}:${questionId}:held-question-leaked`);
+            }
+            continue;
+          }
           if (!question) {
-            errors.push(`${factId}:${questionId}:not-public-original`);
+            errors.push(`${factId}:${questionId}:approved-original-missing`);
             continue;
           }
           if (
@@ -149,13 +177,19 @@ describe("subject 4 reviewed CBT registry", () => {
       [...originalQuestions].reverse(),
     );
 
-    expect(first.questions.length).toBe(5);
+    expect(first.questions.length).toBeGreaterThan(0);
+    expect(first.questions.length).toBeLessThanOrEqual(5);
     expect(first.questions.map((question) => question.id)).toEqual(
       second.questions.map((question) => question.id),
     );
     expect(new Set(first.questions.map((question) => question.id)).size).toBe(
       first.questions.length,
     );
+    expect(
+      first.questions.every((question) =>
+        approvedOriginalQuestionIds.has(question.id),
+      ),
+    ).toBe(true);
   });
 
   it("does not fall back to lesson or title matches when direct IDs are absent", () => {

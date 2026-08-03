@@ -1,0 +1,1196 @@
+[
+  {
+    "questionId": "U-1235",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1235-c1",
+    "directSolution": "에너지 변환은 전동기의 기계에너지→유압펌프의 유압에너지→제어밸브의 압력·유량·방향 조절→액추에이터의 기계운동→외부 기계적 일 순서이므로 c1이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1235-c1",
+        "verdict": "correct",
+        "rationale": "동력원, 펌프, 제어부, 구동부, 부하의 실제 에너지 전달 순서를 모두 만족한다."
+      },
+      {
+        "choiceId": "U-1235-c2",
+        "verdict": "incorrect",
+        "rationale": "펌프가 압력유를 만들기 전에 제어밸브가 놓여 있어 동력 전달 순서가 뒤바뀌었다."
+      },
+      {
+        "choiceId": "U-1235-c3",
+        "verdict": "incorrect",
+        "rationale": "히터는 필수 에너지 전달 단계가 아니며 전동기 등 원동기도 빠져 있다."
+      },
+      {
+        "choiceId": "U-1235-c4",
+        "verdict": "incorrect",
+        "rationale": "축압기와 전동기는 액추에이터 뒤의 통상적 전달 순서가 아니고 에너지 흐름도 역전되어 있다."
+      }
+    ],
+    "misconception": "?? ??: 펌프가 압력유를 만들기 전에 제어밸브가 놓여 있어 동력 전달 순서가 뒤바뀌었다.",
+    "existingLessonId": "lesson-1uaufkz",
+    "existingBlockId": "principle",
+    "assertionText": "유압장치는 원동기가 펌프를 구동해 유압에너지를 만들고, 제어밸브가 이를 조절한 뒤 액추에이터가 기계적 일로 변환한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20100905"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1236",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1236-c3",
+    "directSolution": "밸브의 가동부가 불안정하게 반복 개폐되며 시트에 충돌해 소음과 압력변동을 일으키는 현상은 채터링이므로 c3이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1236-c1",
+        "verdict": "incorrect",
+        "rationale": "캐비테이션은 국부 저압에서 기포가 생성·붕괴하는 현상으로, 밸브 부품의 반복 충돌 자체를 뜻하지 않는다."
+      },
+      {
+        "choiceId": "U-1236-c2",
+        "verdict": "incorrect",
+        "rationale": "크래킹 압력은 체크밸브나 릴리프밸브가 처음 열리기 시작하는 압력값이다."
+      },
+      {
+        "choiceId": "U-1236-c3",
+        "verdict": "correct",
+        "rationale": "가동부의 연속 진동과 시트 충돌로 소음·압력변동이 생기는 정의에 정확히 해당한다."
+      },
+      {
+        "choiceId": "U-1236-c4",
+        "verdict": "incorrect",
+        "rationale": "정상 맥동은 펌프 토출 등에서 나타날 수 있는 주기 변동이며 비정상적인 밸브 충돌 현상이 아니다."
+      }
+    ],
+    "misconception": "?? ??: 캐비테이션은 국부 저압에서 기포가 생성·붕괴하는 현상으로, 밸브 부품의 반복 충돌 자체를 뜻하지 않는다.",
+    "existingLessonId": "lesson-10hvc85",
+    "existingBlockId": "principle",
+    "assertionText": "채터링은 밸브 가동부가 불안정하게 반복 진동·개폐하며 시트와 충돌해 소음, 진동, 압력변동을 만드는 현상이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20100905"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1237",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1237-c1",
+    "directSolution": "1 kgf/cm²=(9.80665 N)/(10^-4 m²)=98,066.5 Pa=98.0665 kPa=0.980665 bar≈735.56 mmHg이다. 반면 1 bar=100 kPa≈750.06 mmHg이므로 크기가 다른 값은 c1이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1237-c1",
+        "verdict": "correct",
+        "rationale": "98.0665 kPa로 환산되어 나머지 100 kPa 계열보다 약 1.93% 작다."
+      },
+      {
+        "choiceId": "U-1237-c2",
+        "verdict": "incorrect",
+        "rationale": "1 bar는 정확히 100,000 Pa, 즉 100 kPa이다."
+      },
+      {
+        "choiceId": "U-1237-c3",
+        "verdict": "incorrect",
+        "rationale": "100 kPa는 1 bar와 정확히 같은 압력이다."
+      },
+      {
+        "choiceId": "U-1237-c4",
+        "verdict": "incorrect",
+        "rationale": "1 mmHg≈133.322 Pa이므로 750.06 mmHg≈100,000 Pa=1 bar이다."
+      }
+    ],
+    "misconception": "?? ??: 1 bar는 정확히 100,000 Pa, 즉 100 kPa이다.",
+    "existingLessonId": "lesson-vm79ss",
+    "existingBlockId": "principle",
+    "assertionText": "압력 단위 환산에서 1 bar=100 kPa≈750.06 mmHg이고, 1 kgf/cm²≈98.0665 kPa≈0.980665 bar이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20100905"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1267",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1267-c2",
+    "directSolution": "압력은 p=F/A이므로 SI 단위는 N/m²이며, 이 유도단위의 명칭이 Pa이다. 따라서 c2이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1267-c1",
+        "verdict": "incorrect",
+        "rationale": "N은 힘의 SI 단위이지 힘을 면적으로 나눈 압력 단위가 아니다."
+      },
+      {
+        "choiceId": "U-1267-c2",
+        "verdict": "correct",
+        "rationale": "Pa=N/m²로 압력을 나타내는 SI 유도단위이다."
+      },
+      {
+        "choiceId": "U-1267-c3",
+        "verdict": "incorrect",
+        "rationale": "J=N·m는 일 또는 에너지를 나타내는 단위이다."
+      },
+      {
+        "choiceId": "U-1267-c4",
+        "verdict": "incorrect",
+        "rationale": "W=J/s는 일률 또는 전력을 나타내는 단위이다."
+      }
+    ],
+    "misconception": "?? ??: N은 힘의 SI 단위이지 힘을 면적으로 나눈 압력 단위가 아니다.",
+    "existingLessonId": "lesson-qayo1g",
+    "existingBlockId": "principle",
+    "assertionText": "압력은 단위면적당 수직력 p=F/A이며 SI 단위는 파스칼(Pa=N/m²)이다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1275",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1275-c4",
+    "directSolution": "유도형·정전용량형·광전형 센서는 비접촉으로 물체의 접근 또는 존재를 검출할 수 있지만, 로터리 인코더는 축의 회전 위치·각도·속도를 검출하므로 c4이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1275-c1",
+        "verdict": "incorrect",
+        "rationale": "금속 물체 접근에 따른 전자기장 변화를 검출하는 대표적 근접센서이다."
+      },
+      {
+        "choiceId": "U-1275-c2",
+        "verdict": "incorrect",
+        "rationale": "정전용량 변화를 이용해 금속과 비금속 물체의 접근을 검출할 수 있다."
+      },
+      {
+        "choiceId": "U-1275-c3",
+        "verdict": "incorrect",
+        "rationale": "투광·수광 또는 반사광 변화를 이용해 물체의 존재를 비접촉 검출한다."
+      },
+      {
+        "choiceId": "U-1275-c4",
+        "verdict": "correct",
+        "rationale": "회전축의 변위나 속도를 펄스로 변환하는 위치센서로서 일반적인 접근 유무 검출용 근접센서가 아니다."
+      }
+    ],
+    "misconception": "?? ??: 금속 물체 접근에 따른 전자기장 변화를 검출하는 대표적 근접센서이다.",
+    "existingLessonId": "lesson-5jfn87",
+    "existingBlockId": "principle",
+    "assertionText": "근접센서는 물체의 존재나 접근을 비접촉 검출하며 유도형·정전용량형·광전형이 대표적이고, 로터리 인코더는 회전 위치와 속도를 측정한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1295",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1295-c1",
+    "directSolution": "베인펌프는 비교적 토출맥동과 소음이 작고 가변용량형 구성이 가능하며 오염과 마모 관리가 중요하다. '기동토크가 매우 커 급속기동이 어렵다'는 일반적 특징이 아니므로 c1이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1295-c1",
+        "verdict": "correct",
+        "rationale": "베인펌프의 대표적 일반 특성으로 보기 어렵고, 과도하게 큰 기동토크와 급속기동 곤란을 본질적 특성으로 단정할 수 없다."
+      },
+      {
+        "choiceId": "U-1295-c2",
+        "verdict": "incorrect",
+        "rationale": "다수 베인이 연속적으로 토출해 유량 변동이 작아 기어펌프보다 저소음·저맥동 특성을 얻기 쉽다."
+      },
+      {
+        "choiceId": "U-1295-c3",
+        "verdict": "incorrect",
+        "rationale": "캠링 편심량 등을 조절하는 구조로 가변용량형을 만들 수 있다."
+      },
+      {
+        "choiceId": "U-1295-c4",
+        "verdict": "incorrect",
+        "rationale": "베인과 캠링의 미끄럼 접촉이 있어 오염입자와 마모에 민감하므로 청정도 관리가 중요하다."
+      }
+    ],
+    "misconception": "?? ??: 다수 베인이 연속적으로 토출해 유량 변동이 작아 기어펌프보다 저소음·저맥동 특성을 얻기 쉽다.",
+    "existingLessonId": "lesson-ejal04",
+    "existingBlockId": "principle",
+    "assertionText": "베인펌프는 토출맥동과 소음이 비교적 작고 가변용량형 구성이 가능하지만, 베인·캠링의 마모와 작동유 청정도 관리가 중요하다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1296",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1296-c4",
+    "directSolution": "액추에이터는 압축공기 에너지를 직선 또는 회전 기계운동으로 바꾸는 장치이다. 공압실린더·공압모터·로터리 액추에이터는 이에 해당하지만 공기압축기는 압축공기를 만드는 동력원이므로 c4이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1296-c1",
+        "verdict": "incorrect",
+        "rationale": "압축공기를 피스톤의 직선운동과 힘으로 변환하는 직선형 액추에이터이다."
+      },
+      {
+        "choiceId": "U-1296-c2",
+        "verdict": "incorrect",
+        "rationale": "압축공기를 연속 회전운동과 토크로 변환하는 회전형 액추에이터이다."
+      },
+      {
+        "choiceId": "U-1296-c3",
+        "verdict": "incorrect",
+        "rationale": "압축공기를 제한된 각도의 회전운동으로 바꾸는 액추에이터이다."
+      },
+      {
+        "choiceId": "U-1296-c4",
+        "verdict": "correct",
+        "rationale": "대기 공기를 압축해 시스템에 공급하는 발생장치로서 출력 구동부인 액추에이터가 아니다."
+      }
+    ],
+    "misconception": "?? ??: 압축공기를 피스톤의 직선운동과 힘으로 변환하는 직선형 액추에이터이다.",
+    "existingLessonId": "lesson-1y7dg5v",
+    "existingBlockId": "principle",
+    "assertionText": "공압 액추에이터는 압축공기 에너지를 직선운동이나 회전운동으로 변환하며, 공기압축기는 에너지원인 압축공기를 발생시키는 장치이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1297",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1297-c2",
+    "directSolution": "유압은 작동유의 낮은 압축성으로 큰 힘과 비교적 정밀한 제어가 가능하지만, 탱크·회수배관·밀봉 및 누유대책이 필요해 배치와 소형화에 제약이 생길 수 있으므로 c2이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1297-c1",
+        "verdict": "incorrect",
+        "rationale": "유압유는 공기보다 압축성이 매우 작아 오히려 강성과 정밀제어 측면에서 유리하다."
+      },
+      {
+        "choiceId": "U-1297-c2",
+        "verdict": "correct",
+        "rationale": "폐회로식 유체 회수, 저장탱크, 배관, 씰과 누유관리가 필요하므로 구성 제약이 생길 수 있다."
+      },
+      {
+        "choiceId": "U-1297-c3",
+        "verdict": "incorrect",
+        "rationale": "유압은 높은 압력과 출력밀도로 작은 액추에이터에서도 큰 힘을 얻기 쉽다."
+      },
+      {
+        "choiceId": "U-1297-c4",
+        "verdict": "incorrect",
+        "rationale": "작동유 누유 가능성이 있고 가연성 유체는 고온원에서 화재 위험도 있으므로 '전혀 없다'는 틀리다."
+      }
+    ],
+    "misconception": "?? ??: 유압유는 공기보다 압축성이 매우 작아 오히려 강성과 정밀제어 측면에서 유리하다.",
+    "existingLessonId": "lesson-166k8u",
+    "existingBlockId": "principle",
+    "assertionText": "유압은 높은 출력밀도와 낮은 유체 압축성으로 큰 힘과 정밀제어에 유리하지만, 탱크·배관·밀봉·누유 및 화재 대책이 필요하다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1298",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1298-c3",
+    "directSolution": "수분 제거는 냉각해 응축수를 분리하거나, 흡착제 표면에 수분을 붙이거나, 흡수제에 수분을 흡수시키는 방식이 일반적이다. 공기를 가열하기만 하면 상대습도만 낮아질 뿐 수증기 자체가 제거되지 않으므로 c3이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1298-c1",
+        "verdict": "incorrect",
+        "rationale": "공기를 냉각해 수증기를 응축시키고 응축수를 분리하는 표준 건조방식이다."
+      },
+      {
+        "choiceId": "U-1298-c2",
+        "verdict": "incorrect",
+        "rationale": "실리카겔·활성알루미나 등 흡착제에 수분을 흡착시키는 건조방식이다."
+      },
+      {
+        "choiceId": "U-1298-c3",
+        "verdict": "correct",
+        "rationale": "배출·응축·흡착 과정 없이 가열만 하면 절대 수분량이 줄지 않아 일반적인 수분 제거법이 아니다."
+      },
+      {
+        "choiceId": "U-1298-c4",
+        "verdict": "incorrect",
+        "rationale": "흡습성 물질이 수분을 흡수하도록 하는 건조방식이다."
+      }
+    ],
+    "misconception": "?? ??: 공기를 냉각해 수증기를 응축시키고 응축수를 분리하는 표준 건조방식이다.",
+    "existingLessonId": "lesson-d53kgr",
+    "existingBlockId": "principle",
+    "assertionText": "압축공기 건조는 냉동식·흡착식·흡수식처럼 수증기를 실제로 제거해야 하며, 단순 가열만으로는 절대 수분량이 줄지 않는다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1299",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1299-c2",
+    "directSolution": "주배관은 응축수가 배관 저점으로 이동하도록 공기 흐름방향에 약 1~2% 하향 경사를 두고 저점에 드레인을 설치하는 것이 적절하므로 c2이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1299-c1",
+        "verdict": "incorrect",
+        "rationale": "역경사로 응축수가 고이면 부식, 압력손실, 수격 및 말단 수분 유입이 증가한다."
+      },
+      {
+        "choiceId": "U-1299-c2",
+        "verdict": "correct",
+        "rationale": "경사와 저점 자동드레인을 함께 두어 응축수를 지속적으로 모아 배출하는 원칙에 맞는다."
+      },
+      {
+        "choiceId": "U-1299-c3",
+        "verdict": "incorrect",
+        "rationale": "주관 바닥 취출은 응축수가 분기관으로 함께 유입되기 쉬워 통상 상부에서 분기한다."
+      },
+      {
+        "choiceId": "U-1299-c4",
+        "verdict": "incorrect",
+        "rationale": "응축수는 운전 중 계속 발생하므로 배출구가 없으면 배관과 기기에 축적된다."
+      }
+    ],
+    "misconception": "?? ??: 역경사로 응축수가 고이면 부식, 압력손실, 수격 및 말단 수분 유입이 증가한다.",
+    "existingLessonId": "lesson-1jnk4b8",
+    "existingBlockId": "principle",
+    "assertionText": "공압 주배관은 응축수 배출을 위해 흐름방향으로 경사를 주고 저점에 드레인을 설치하며, 분기관은 응축수 유입을 줄이도록 주관 상부에서 취출한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1300",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1300-c4",
+    "directSolution": "각 노드가 양쪽의 인접 노드와 연결되고 전체 연결이 닫힌 고리를 이루는 구조는 링형 토폴로지이므로 c4이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1300-c1",
+        "verdict": "incorrect",
+        "rationale": "스타형은 모든 노드가 중앙 허브나 스위치에 방사형으로 연결된다."
+      },
+      {
+        "choiceId": "U-1300-c2",
+        "verdict": "incorrect",
+        "rationale": "버스형은 하나의 공통 전송선에 여러 노드가 접속한다."
+      },
+      {
+        "choiceId": "U-1300-c3",
+        "verdict": "incorrect",
+        "rationale": "트리형은 계층적인 가지 구조로 연결되며 폐쇄 고리를 기본으로 하지 않는다."
+      },
+      {
+        "choiceId": "U-1300-c4",
+        "verdict": "correct",
+        "rationale": "각 노드가 두 이웃과 연결되어 폐쇄 루프를 형성하는 정의와 일치한다."
+      }
+    ],
+    "misconception": "?? ??: 스타형은 모든 노드가 중앙 허브나 스위치에 방사형으로 연결된다.",
+    "existingLessonId": "lesson-61c948",
+    "existingBlockId": "principle",
+    "assertionText": "링형 네트워크는 각 노드가 두 인접 노드와 연결되어 전체가 하나의 폐쇄 고리를 이루는 토폴로지이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1301",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1301-c3",
+    "directSolution": "복수 실린더는 부하·마찰·누설 차이로 같은 밸브 명령만으로는 속도와 위치가 달라질 수 있다. 유량분배, 기계적 결합, 센서 피드백은 오차를 억제하지만 보정 없는 방향밸브 하나는 동기를 보장하지 못하므로 c3이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1301-c1",
+        "verdict": "incorrect",
+        "rationale": "분배·집합 유량을 일정 비율로 맞춰 실린더 속도차를 줄이는 전형적인 동기화 방법이다."
+      },
+      {
+        "choiceId": "U-1301-c2",
+        "verdict": "incorrect",
+        "rationale": "랙·피니언, 링크, 공통축 등의 기계적 결합으로 두 실린더의 변위를 강제 일치시킬 수 있다."
+      },
+      {
+        "choiceId": "U-1301-c3",
+        "verdict": "correct",
+        "rationale": "유량과 위치 편차를 보정하지 않으므로 부하차나 누설차가 곧 동기오차로 나타난다."
+      },
+      {
+        "choiceId": "U-1301-c4",
+        "verdict": "incorrect",
+        "rationale": "각 위치를 측정하고 서보제어로 차이를 보정하면 폐루프 동기운전이 가능하다."
+      }
+    ],
+    "misconception": "?? ??: 분배·집합 유량을 일정 비율로 맞춰 실린더 속도차를 줄이는 전형적인 동기화 방법이다.",
+    "existingLessonId": "lesson-1lo7iiv",
+    "existingBlockId": "principle",
+    "assertionText": "복수 실린더 동기운전에는 유량분배, 기계적 결합 또는 위치 피드백 보정이 필요하며, 단순 동시 방향전환만으로는 동기가 보장되지 않는다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1341",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1341-c4",
+    "directSolution": "펌프는 유압에너지를 만들고, 방향밸브는 유로를 바꾸며, 유량밸브는 속도에 영향을 준다. 액추에이터는 유체에너지를 기계운동으로 바꾸는 구동부이지 제어밸브가 아니므로 c4이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1341-c1",
+        "verdict": "incorrect",
+        "rationale": "원동기의 축동력을 유체의 압력·유량 에너지로 변환하는 펌프 기능을 올바르게 설명한다."
+      },
+      {
+        "choiceId": "U-1341-c2",
+        "verdict": "incorrect",
+        "rationale": "방향제어밸브는 공급·귀환 유로의 연결을 바꾸어 운동방향을 전환한다."
+      },
+      {
+        "choiceId": "U-1341-c3",
+        "verdict": "incorrect",
+        "rationale": "액추에이터 유입·유출 유량을 조절하면 실린더 또는 모터의 속도가 변한다."
+      },
+      {
+        "choiceId": "U-1341-c4",
+        "verdict": "correct",
+        "rationale": "액추에이터는 유체에너지를 힘·토크와 운동으로 변환하며 유량조절 제어밸브가 아니다."
+      }
+    ],
+    "misconception": "?? ??: 원동기의 축동력을 유체의 압력·유량 에너지로 변환하는 펌프 기능을 올바르게 설명한다.",
+    "existingLessonId": "lesson-1g9iqlg",
+    "existingBlockId": "principle",
+    "assertionText": "공유압 계통에서 펌프·압축기는 에너지를 공급하고, 제어밸브는 압력·유량·방향을 조절하며, 액추에이터는 유체에너지를 기계운동으로 변환한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1342",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1342-c1",
+    "directSolution": "공압은 작동매체가 공기이므로 가연성 작동유를 쓰는 방식보다 인화·폭발 위험이 비교적 작다는 장점이 있다. 나머지는 공기의 압축성과 빠른 작동 특성에 반하므로 c1이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1342-c1",
+        "verdict": "correct",
+        "rationale": "공기 자체는 가연성 작동유가 아니어서 적절한 기기 선정 시 화재·폭발 환경에 비교적 유리하다."
+      },
+      {
+        "choiceId": "U-1342-c2",
+        "verdict": "incorrect",
+        "rationale": "공기의 압축성과 마찰 영향 때문에 매우 낮은 속도에서 항상 균일한 운동을 얻기는 어렵다."
+      },
+      {
+        "choiceId": "U-1342-c3",
+        "verdict": "incorrect",
+        "rationale": "공압 액추에이터는 일반적으로 고속 작동이 가능하므로 '항상 느리다'는 반대이다."
+      },
+      {
+        "choiceId": "U-1342-c4",
+        "verdict": "incorrect",
+        "rationale": "공기는 압축성 유체이므로 부하 변화에 따른 속도·위치 변동과 탄성 효과가 존재한다."
+      }
+    ],
+    "misconception": "?? ??: 공기의 압축성과 마찰 영향 때문에 매우 낮은 속도에서 항상 균일한 운동을 얻기는 어렵다.",
+    "existingLessonId": "lesson-ql41oa",
+    "existingBlockId": "principle",
+    "assertionText": "공압은 청결하고 빠르며 인화 위험이 비교적 작지만, 공기의 압축성 때문에 정밀 위치제어와 균일한 저속운전에는 제약이 있다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1343",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1343-c2",
+    "directSolution": "작업 결과와 경험 데이터를 이용해 제어규칙이나 동작을 수정·개선하는 로봇은 학습제어 로봇이므로 c2이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1343-c1",
+        "verdict": "incorrect",
+        "rationale": "플레이백 로봇은 사람이 교시한 동작을 저장·재생하는 방식이며 경험으로 규칙을 스스로 개선한다는 뜻은 아니다."
+      },
+      {
+        "choiceId": "U-1343-c2",
+        "verdict": "correct",
+        "rationale": "작업 결과를 반영해 제어전략이나 동작 성능을 개선하는 학습 기능의 정의와 일치한다."
+      },
+      {
+        "choiceId": "U-1343-c3",
+        "verdict": "incorrect",
+        "rationale": "수치제어는 수치 명령에 따라 정해진 운동을 수행하는 방식으로 학습을 필수로 하지 않는다."
+      },
+      {
+        "choiceId": "U-1343-c4",
+        "verdict": "incorrect",
+        "rationale": "고정시퀀스 로봇은 미리 정한 순서를 반복하며 결과에 따라 규칙을 개선하지 않는다."
+      }
+    ],
+    "misconception": "?? ??: 플레이백 로봇은 사람이 교시한 동작을 저장·재생하는 방식이며 경험으로 규칙을 스스로 개선한다는 뜻은 아니다.",
+    "existingLessonId": "lesson-17apum5",
+    "existingBlockId": "principle",
+    "assertionText": "학습제어 로봇은 반복 작업의 입력·결과·오차를 이용해 제어규칙이나 동작을 갱신하여 성능을 개선한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1344",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1344-c3",
+    "directSolution": "유압제어밸브는 압력으로 힘, 유량으로 속도, 유로 연결로 방향을 제어한다. 에너지를 장시간 저장하는 기능은 축압기의 역할이므로 c3이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1344-c1",
+        "verdict": "incorrect",
+        "rationale": "압력제어밸브로 회로압을 조절하면 액추에이터의 힘 F=pA 또는 토크가 제어된다."
+      },
+      {
+        "choiceId": "U-1344-c2",
+        "verdict": "incorrect",
+        "rationale": "유량제어밸브로 유량 Q를 바꾸면 실린더 속도 v=Q/A가 조절된다."
+      },
+      {
+        "choiceId": "U-1344-c3",
+        "verdict": "correct",
+        "rationale": "에너지 저장은 압축가스나 스프링 등을 이용하는 축압기의 기능이며 일반 제어밸브의 목적이 아니다."
+      },
+      {
+        "choiceId": "U-1344-c4",
+        "verdict": "incorrect",
+        "rationale": "방향제어밸브는 공급·귀환 유로를 전환해 액추에이터의 운동방향을 바꾼다."
+      }
+    ],
+    "misconception": "?? ??: 압력제어밸브로 회로압을 조절하면 액추에이터의 힘 F=pA 또는 토크가 제어된다.",
+    "existingLessonId": "lesson-1byfent",
+    "existingBlockId": "principle",
+    "assertionText": "유압제어밸브의 기본 목적은 압력으로 힘, 유량으로 속도, 유로 전환으로 방향을 제어하는 것이며 에너지 저장은 축압기가 담당한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1345",
+    "subjectId": "subject-1",
+    "decision": "hold",
+    "holdReason": "SOURCE_IMAGE_MISSING: the source valve diagram required to read the initial position is unavailable.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1346",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1346-c2",
+    "directSolution": "과속은 기계·유동 소음을 키우고, 흡입 막힘은 캐비테이션, 공기 혼입은 에어레이션을 일으키는 직접적 소음원이다. 점도가 '약간 낮다'는 사실만으로는 이들처럼 직접적·대표적인 소음원이라고 보기 어려우므로 c2이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1346-c1",
+        "verdict": "incorrect",
+        "rationale": "지나친 회전속도는 유속·압력변동, 진동과 베어링·기계소음을 증가시킬 수 있다."
+      },
+      {
+        "choiceId": "U-1346-c2",
+        "verdict": "correct",
+        "rationale": "극단적 저점도는 누설·윤활 문제를 만들 수 있지만, 약간 낮다는 조건만으로는 직접적인 대표 소음원으로 특정하기 어렵다."
+      },
+      {
+        "choiceId": "U-1346-c3",
+        "verdict": "incorrect",
+        "rationale": "흡입저항이 커지면 펌프 입구 압력이 떨어져 기포 생성·붕괴에 의한 캐비테이션 소음이 발생한다."
+      },
+      {
+        "choiceId": "U-1346-c4",
+        "verdict": "incorrect",
+        "rationale": "혼입 공기의 압축·팽창과 기포 이동은 에어레이션 소음, 진동 및 불규칙 토출을 만든다."
+      }
+    ],
+    "misconception": "?? ??: 지나친 회전속도는 유속·압력변동, 진동과 베어링·기계소음을 증가시킬 수 있다.",
+    "existingLessonId": "lesson-35nkwz",
+    "existingBlockId": "principle",
+    "assertionText": "유압펌프의 대표 소음원은 과속, 흡입저항에 의한 캐비테이션, 공기 혼입에 의한 에어레이션 및 기계적 이상이며 점도는 허용범위를 크게 벗어날 때 별도 고장을 유발할 수 있다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1347",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1347-c2",
+    "directSolution": "일반 공기압축기는 용적식의 왕복피스톤형·스크루형과 동력식의 터보형으로 분류한다. 트로코이드형은 일반적으로 유압용 내접기어 펌프 형식으로 다뤄지므로 공기압축기 형식으로 보기 어려워 c2이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1347-c1",
+        "verdict": "incorrect",
+        "rationale": "실린더 체적을 주기적으로 줄여 공기를 압축하는 대표적 왕복동식 압축기이다."
+      },
+      {
+        "choiceId": "U-1347-c2",
+        "verdict": "correct",
+        "rationale": "트로코이드 기어 형식은 보통 오일펌프 등 액체용 용적펌프로 분류되며 일반 공기압축기 분류가 아니다."
+      },
+      {
+        "choiceId": "U-1347-c3",
+        "verdict": "incorrect",
+        "rationale": "맞물리는 두 로터 사이의 체적 감소로 공기를 압축하는 대표적 회전 용적식 압축기이다."
+      },
+      {
+        "choiceId": "U-1347-c4",
+        "verdict": "incorrect",
+        "rationale": "임펠러로 공기에 속도에너지를 주고 디퓨저에서 압력으로 바꾸는 대표적 동력식 압축기이다."
+      }
+    ],
+    "misconception": "?? ??: 실린더 체적을 주기적으로 줄여 공기를 압축하는 대표적 왕복동식 압축기이다.",
+    "existingLessonId": "lesson-1rbcc6l",
+    "existingBlockId": "principle",
+    "assertionText": "공기압축기는 왕복피스톤·스크루·베인 같은 용적식과 터보 같은 동력식으로 구분하며, 트로코이드 형식은 일반적으로 액체용 내접기어 펌프에서 다룬다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1348",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1348-c2",
+    "directSolution": "실린더 배기포트 가까이에서 배기를 대기로 직접 방출해 방향밸브와 긴 귀환배관의 저항을 우회하는 장치는 급속배기밸브이므로 c2이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1348-c1",
+        "verdict": "incorrect",
+        "rationale": "배기교축은 배기 유량을 제한해 속도를 조절하므로 배기를 빠르게 우회 방출하는 장치가 아니다."
+      },
+      {
+        "choiceId": "U-1348-c2",
+        "verdict": "correct",
+        "rationale": "실린더의 배기를 방향밸브로 되돌리지 않고 근처에서 직접 대기로 배출해 복귀저항과 배기시간을 줄인다."
+      },
+      {
+        "choiceId": "U-1348-c3",
+        "verdict": "incorrect",
+        "rationale": "속도제어밸브는 유량을 교축해 속도를 맞추는 일반 기능이며 직접 대기 급속배기 기능을 특정하지 않는다."
+      },
+      {
+        "choiceId": "U-1348-c4",
+        "verdict": "incorrect",
+        "rationale": "쿠션조절밸브는 행정 말단의 배기를 제한해 충격을 완화하는 장치이다."
+      }
+    ],
+    "misconception": "?? ??: 배기교축은 배기 유량을 제한해 속도를 조절하므로 배기를 빠르게 우회 방출하는 장치가 아니다.",
+    "existingLessonId": "lesson-s9dn0o",
+    "existingBlockId": "principle",
+    "assertionText": "급속배기밸브는 실린더 가까이에서 배기공기를 대기로 직접 방출해 방향밸브와 배관의 배기저항을 줄이고 작동속도를 높인다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1349",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1349-c1",
+    "directSolution": "출력 위치센서 없이 PLC 명령으로 솔레노이드밸브를 정해진 순서대로 전환하면 출력 오차를 되먹임하지 않는 개루프 시퀀스제어이므로 c1이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1349-c1",
+        "verdict": "correct",
+        "rationale": "명령 논리에 따라 밸브를 전환할 뿐 실제 실린더 위치를 연속 피드백해 오차를 보정한다는 조건이 없다."
+      },
+      {
+        "choiceId": "U-1349-c2",
+        "verdict": "incorrect",
+        "rationale": "폐루프 위치제어라고 명시되어 실제 위치와 지령의 오차를 피드백한다."
+      },
+      {
+        "choiceId": "U-1349-c3",
+        "verdict": "incorrect",
+        "rationale": "서보 모션제어는 관절 위치·속도 센서의 피드백을 이용하는 대표적 폐루프 제어이다."
+      },
+      {
+        "choiceId": "U-1349-c4",
+        "verdict": "incorrect",
+        "rationale": "엔코더 피드백을 명시하므로 출력 위치를 측정해 보정하는 폐루프 제어이다."
+      }
+    ],
+    "misconception": "?? ??: 폐루프 위치제어라고 명시되어 실제 위치와 지령의 오차를 피드백한다.",
+    "existingLessonId": "lesson-1vxu6ik",
+    "existingBlockId": "principle",
+    "assertionText": "개루프 제어는 출력값을 측정해 입력에 되먹임하지 않으며, 센서 없는 PLC 솔레노이드 시퀀스는 대표적인 개루프 동작이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1382",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1382-c1",
+    "directSolution": "후부냉각기는 압축 직후의 고온 공기를 냉각해 수분을 응축·분리하도록 압축기 뒤, 공기조화기기와 액추에이터보다 앞쪽에 설치한다. 액추에이터 뒤에 설치한다는 c1이 옳지 않다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1382-c1",
+        "verdict": "correct",
+        "rationale": "후부냉각기는 압축기 토출 직후에 두어야 하며 액추에이터를 지난 뒤에 두면 공급공기 수분 제거 목적을 달성하지 못한다."
+      },
+      {
+        "choiceId": "U-1382-c2",
+        "verdict": "incorrect",
+        "rationale": "미세 오일입자가 많은 압축공기에는 코얼레싱형 미스트분리기를 사용해 오일미스트를 제거할 수 있다."
+      },
+      {
+        "choiceId": "U-1382-c3",
+        "verdict": "incorrect",
+        "rationale": "공압 건조기는 일반적으로 냉동식, 흡수식, 흡착식 등의 원리로 분류할 수 있다."
+      },
+      {
+        "choiceId": "U-1382-c4",
+        "verdict": "incorrect",
+        "rationale": "응축수 자동배출에는 부력 변화나 압력차 등을 이용하는 여러 형식이 사용된다."
+      }
+    ],
+    "misconception": "?? ??: 미세 오일입자가 많은 압축공기에는 코얼레싱형 미스트분리기를 사용해 오일미스트를 제거할 수 있다.",
+    "existingLessonId": "lesson-y0oy73",
+    "existingBlockId": "principle",
+    "assertionText": "후부냉각기는 압축기 토출 직후의 고온 압축공기를 냉각해 수분을 응축시키며, 이후 분리기·드라이어·필터를 거쳐 액추에이터에 공급한다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1383",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1383-c3",
+    "directSolution": "펌프의 이론 토출용적은 축 1회전마다 밀어내는 체적이므로 차원은 체적/회전이며 단위는 cm³/rev 또는 cc/rev이다. 따라서 c3이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1383-c1",
+        "verdict": "incorrect",
+        "rationale": "cm³/min은 시간당 체적유량으로 회전당 토출량이 아니다."
+      },
+      {
+        "choiceId": "U-1383-c2",
+        "verdict": "incorrect",
+        "rationale": "L/min도 실제 또는 이론 유량 단위이지 1회전당 변위 단위가 아니다."
+      },
+      {
+        "choiceId": "U-1383-c3",
+        "verdict": "correct",
+        "rationale": "회전당 체적이라는 펌프 용적 또는 배제용적의 정의와 단위가 정확히 맞는다."
+      },
+      {
+        "choiceId": "U-1383-c4",
+        "verdict": "incorrect",
+        "rationale": "rpm은 rev/min이므로 L/rpm은 표준적인 회전당 체적 표기가 아니며 차원도 직접적인 cm³/rev 표기와 다르다."
+      }
+    ],
+    "misconception": "?? ??: cm³/min은 시간당 체적유량으로 회전당 토출량이 아니다.",
+    "existingLessonId": "lesson-4ttavt",
+    "existingBlockId": "principle",
+    "assertionText": "펌프 용적은 축 1회전당 이론적으로 토출하는 체적으로 cm³/rev(cc/rev)로 나타내며, 이론유량은 용적에 회전수를 곱해 구한다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1384",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1384-c4",
+    "directSolution": "실린더 몸체 아래의 받침대 또는 발을 프레임 바닥면에 볼트로 고정하는 방식은 풋형 설치이므로 c4이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1384-c1",
+        "verdict": "incorrect",
+        "rationale": "플랜지형은 실린더 전면 또는 후면의 플랜지를 기계 구조물에 체결한다."
+      },
+      {
+        "choiceId": "U-1384-c2",
+        "verdict": "incorrect",
+        "rationale": "트러니언형은 실린더 몸체의 축핀을 지지해 실린더가 회전할 수 있게 설치한다."
+      },
+      {
+        "choiceId": "U-1384-c3",
+        "verdict": "incorrect",
+        "rationale": "클레비스형은 후단의 포크와 핀을 이용해 회전 가능한 지지점에 연결한다."
+      },
+      {
+        "choiceId": "U-1384-c4",
+        "verdict": "correct",
+        "rationale": "몸체 하부의 발 모양 받침대를 바닥이나 프레임에 볼트로 고정하는 방식이다."
+      }
+    ],
+    "misconception": "?? ??: 플랜지형은 실린더 전면 또는 후면의 플랜지를 기계 구조물에 체결한다.",
+    "existingLessonId": "lesson-1gkkcfs",
+    "existingBlockId": "principle",
+    "assertionText": "실린더 풋형 설치는 몸체 하부의 받침발을 기계 프레임에 볼트로 고정하는 고정식 장착 방식이다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1385",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1385-c1",
+    "directSolution": "직류 직권전동기는 계자권선과 전기자에 같은 전류가 흘러 기동 시 큰 전류와 자속으로 큰 기동토크를 내며, 부하가 증가하면 속도가 크게 떨어지는 특성이 있으므로 c1이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1385-c1",
+        "verdict": "correct",
+        "rationale": "큰 기동토크와 부하에 따른 큰 속도변동이 대표 특성이며 무부하 과속에도 주의해야 한다."
+      },
+      {
+        "choiceId": "U-1385-c2",
+        "verdict": "incorrect",
+        "rationale": "분권전동기는 계자자속이 비교적 일정해 부하변화에도 속도변동이 작다."
+      },
+      {
+        "choiceId": "U-1385-c3",
+        "verdict": "incorrect",
+        "rationale": "동기전동기는 정상 운전에서 전원 주파수와 극수로 정해진 동기속도를 유지하며 일반적으로 자체 기동토크 특성이 다르다."
+      },
+      {
+        "choiceId": "U-1385-c4",
+        "verdict": "incorrect",
+        "rationale": "단상 유도전동기는 구조와 기동방식에 따라 특성이 달라지지만 직권전동기처럼 큰 기동토크·큰 속도저하를 대표 특성으로 하지 않는다."
+      }
+    ],
+    "misconception": "?? ??: 분권전동기는 계자자속이 비교적 일정해 부하변화에도 속도변동이 작다.",
+    "existingLessonId": "lesson-ab1ad5",
+    "existingBlockId": "principle",
+    "assertionText": "직류 직권전동기는 큰 기동토크를 내고 부하가 커질수록 속도가 크게 낮아지며, 무부하에서는 과속 위험이 있다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1386",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1386-c2",
+    "directSolution": "압력 차원은 힘/면적이다. Pa=N/m², bar, kgf/cm²는 모두 압력 단위지만 dyne/cm은 힘/길이로 표면장력 등의 단위이며 압력의 cgs 표기는 dyne/cm²이므로 c2이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1386-c1",
+        "verdict": "incorrect",
+        "rationale": "Pa=N/m²로 정의되는 SI 압력 단위이다."
+      },
+      {
+        "choiceId": "U-1386-c2",
+        "verdict": "correct",
+        "rationale": "dyne/cm은 힘을 길이로 나눈 단위이고, 압력이라면 dyne/cm²이어야 한다."
+      },
+      {
+        "choiceId": "U-1386-c3",
+        "verdict": "incorrect",
+        "rationale": "bar는 100,000 Pa로 정의되는 압력 단위이다."
+      },
+      {
+        "choiceId": "U-1386-c4",
+        "verdict": "incorrect",
+        "rationale": "kgf/cm²는 공학적으로 사용되는 중력단위계 압력 단위이다."
+      }
+    ],
+    "misconception": "?? ??: Pa=N/m²로 SI 압력 단위이다.",
+    "existingLessonId": "lesson-qayo1g",
+    "existingBlockId": "principle",
+    "assertionText": "압력 단위는 반드시 힘/면적 차원을 가지며, cgs계에서는 dyne/cm²가 압력이고 dyne/cm은 표면장력과 같은 힘/길이 단위이다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1387",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1387-c3",
+    "directSolution": "두 입력이 서로 다를 때만 1이 되는 진리표 00→0, 01→1, 10→1, 11→0은 배타적 OR(XOR)이므로 c3이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1387-c1",
+        "verdict": "incorrect",
+        "rationale": "AND는 두 입력이 모두 1인 11에서만 출력이 1이다."
+      },
+      {
+        "choiceId": "U-1387-c2",
+        "verdict": "incorrect",
+        "rationale": "OR는 적어도 하나가 1이면 출력이 1이므로 11에서도 1이다."
+      },
+      {
+        "choiceId": "U-1387-c3",
+        "verdict": "correct",
+        "rationale": "01과 10에서만 1이고 두 입력이 같은 00과 11에서는 0이 되는 정의와 일치한다."
+      },
+      {
+        "choiceId": "U-1387-c4",
+        "verdict": "incorrect",
+        "rationale": "NOT은 하나의 입력을 반전하는 단항 논리로 두 입력 비교 논리가 아니다."
+      }
+    ],
+    "misconception": "?? ??: AND는 두 입력이 모두 1인 11에서만 출력이 1이다.",
+    "existingLessonId": "lesson-1uwza7u",
+    "existingBlockId": "principle",
+    "assertionText": "XOR은 두 입력이 서로 다를 때만 1을 출력하며 진리표는 00→0, 01→1, 10→1, 11→0이다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1388",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1388-c4",
+    "directSolution": "저항·인덕터·커패시터는 스스로 에너지를 만들어 공급하지 않는 수동소자이다. 독립 정전압원은 회로에 전압과 전력을 공급할 수 있는 능동 전원요소이므로 c4이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1388-c1",
+        "verdict": "incorrect",
+        "rationale": "저항은 전기에너지를 열로 소모하며 외부 에너지를 생성하지 않는 수동소자이다."
+      },
+      {
+        "choiceId": "U-1388-c2",
+        "verdict": "incorrect",
+        "rationale": "인덕턴스 소자는 자기장에 에너지를 저장·반환하지만 순에너지를 생성하지 않는 수동소자이다."
+      },
+      {
+        "choiceId": "U-1388-c3",
+        "verdict": "incorrect",
+        "rationale": "커패시턴스 소자는 전기장에 에너지를 저장·반환하는 수동소자이다."
+      },
+      {
+        "choiceId": "U-1388-c4",
+        "verdict": "correct",
+        "rationale": "독립 전압원은 외부 회로 상태와 무관하게 지정 전압을 유지하며 에너지를 공급할 수 있어 수동소자가 아니다."
+      }
+    ],
+    "misconception": "?? ??: 저항은 전기에너지를 열로 소모하며 외부 에너지를 생성하지 않는 수동소자이다.",
+    "existingLessonId": "lesson-w546dd",
+    "existingBlockId": "principle",
+    "assertionText": "저항·인덕터·커패시터는 에너지를 소모하거나 저장·반환하는 수동소자이고, 독립 전압원은 회로에 에너지를 공급하는 전원요소이다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1389",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1389-c1",
+    "directSolution": "베인·스크루·피스톤 압축기는 밀폐 체적을 줄여 압축하는 용적식이다. 터보 압축기는 임펠러로 속도에너지를 준 뒤 압력으로 변환하는 동력식이므로 작동원리가 다른 c1이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1389-c1",
+        "verdict": "correct",
+        "rationale": "연속 유동에 속도에너지를 부여하고 디퓨저에서 압력으로 바꾸는 동력식 압축기이다."
+      },
+      {
+        "choiceId": "U-1389-c2",
+        "verdict": "incorrect",
+        "rationale": "로터와 베인 사이의 체적을 감소시켜 공기를 압축하는 회전 용적식이다."
+      },
+      {
+        "choiceId": "U-1389-c3",
+        "verdict": "incorrect",
+        "rationale": "맞물린 스크루 로터 사이에 갇힌 체적을 줄이는 회전 용적식이다."
+      },
+      {
+        "choiceId": "U-1389-c4",
+        "verdict": "incorrect",
+        "rationale": "피스톤 왕복운동으로 실린더 체적을 줄이는 왕복 용적식이다."
+      }
+    ],
+    "misconception": "?? ??: 로터와 베인 사이의 체적을 감소시켜 공기를 압축하는 회전 용적식이다.",
+    "existingLessonId": "lesson-1jbssv6",
+    "existingBlockId": "principle",
+    "assertionText": "용적식 압축기는 갇힌 공기의 체적을 줄여 압축하고, 터보 압축기 같은 동력식은 유체의 속도에너지를 압력에너지로 변환한다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1390",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1390-c2",
+    "directSolution": "선형 시스템에서 초기조건을 0으로 두었을 때 입력 x(t)와 출력 y(t)의 라플라스변환 비 G(s)=Y(s)/X(s)를 전달함수라고 정의하므로 c2이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1390-c1",
+        "verdict": "incorrect",
+        "rationale": "도함수는 함수의 변화율이며 출력과 입력의 라플라스변환 비를 뜻하지 않는다."
+      },
+      {
+        "choiceId": "U-1390-c2",
+        "verdict": "correct",
+        "rationale": "영 초기조건에서 출력 라플라스변환을 입력 라플라스변환으로 나눈 시스템 특성의 정의이다."
+      },
+      {
+        "choiceId": "U-1390-c3",
+        "verdict": "incorrect",
+        "rationale": "피드백신호는 출력의 전부 또는 일부를 비교점으로 되돌리는 신호이다."
+      },
+      {
+        "choiceId": "U-1390-c4",
+        "verdict": "incorrect",
+        "rationale": "블리드오프는 유체회로에서 일부 유량을 우회·배출하는 방식으로 전달함수 정의와 무관하다."
+      }
+    ],
+    "misconception": "?? ??: 도함수는 함수의 변화율이며 출력과 입력의 라플라스변환 비를 뜻하지 않는다.",
+    "existingLessonId": "lesson-1uan30a",
+    "existingBlockId": "principle",
+    "assertionText": "전달함수는 초기조건이 0일 때 시스템 출력의 라플라스변환을 입력의 라플라스변환으로 나눈 G(s)=Y(s)/X(s)이다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1391",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1391-c3",
+    "directSolution": "CPU의 연산·제어 기능을 하나 또는 소수의 반도체 칩에 집적한 소자가 마이크로프로세서이므로 c3이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1391-c1",
+        "verdict": "incorrect",
+        "rationale": "제어용 컴퓨터 전체는 CPU뿐 아니라 메모리, 입출력장치, 전원과 주변회로를 포함한다."
+      },
+      {
+        "choiceId": "U-1391-c2",
+        "verdict": "incorrect",
+        "rationale": "마이크로컴퓨터는 마이크로프로세서에 메모리와 입출력장치 등을 결합한 완전한 소형 컴퓨터 시스템이다."
+      },
+      {
+        "choiceId": "U-1391-c3",
+        "verdict": "correct",
+        "rationale": "중앙처리장치 기능을 한 개 또는 몇 개의 집적회로 칩으로 구현한 소자의 정의와 일치한다."
+      },
+      {
+        "choiceId": "U-1391-c4",
+        "verdict": "incorrect",
+        "rationale": "디지털제어 방식은 제어신호 처리 방법을 뜻하며 반도체 칩 자체의 명칭이 아니다."
+      }
+    ],
+    "misconception": "?? ??: 제어용 컴퓨터 전체는 CPU뿐 아니라 메모리, 입출력장치, 전원과 주변회로를 포함한다.",
+    "existingLessonId": "lesson-1rshfw2",
+    "existingBlockId": "principle",
+    "assertionText": "마이크로프로세서는 CPU 기능을 하나 또는 소수의 반도체 칩에 집적한 소자이며, 메모리와 입출력장치까지 포함한 시스템은 마이크로컴퓨터이다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1392",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1392-c4",
+    "directSolution": "보드선도는 가로축을 로그 주파수로 두고 전달함수의 크기(보통 20log10|G(jω)| dB)와 위상각 ∠G(jω)을 별도 그래프로 나타내므로 c4이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1392-c1",
+        "verdict": "incorrect",
+        "rationale": "복소평면에 주파수응답 궤적을 그리는 방식은 나이퀴스트 선도의 설명이다."
+      },
+      {
+        "choiceId": "U-1392-c2",
+        "verdict": "incorrect",
+        "rationale": "보드선도는 주파수가 가로축이고 크기 또는 위상이 세로축이다."
+      },
+      {
+        "choiceId": "U-1392-c3",
+        "verdict": "incorrect",
+        "rationale": "크기비의 데시벨 표현은 상용로그를 사용해 보통 20log10|G|이며 자연로그에 항상 10을 곱하지 않는다."
+      },
+      {
+        "choiceId": "U-1392-c4",
+        "verdict": "correct",
+        "rationale": "로그 주파수축에 크기선도와 위상선도를 각각 표시한다는 표준 정의이다."
+      }
+    ],
+    "misconception": "?? ??: 복소평면에 주파수응답 궤적을 그리는 방식은 나이퀴스트 선도의 설명이다.",
+    "existingLessonId": "lesson-ayc4ku",
+    "existingBlockId": "principle",
+    "assertionText": "보드선도는 로그 주파수축에 전달함수의 크기 20log10|G(jω)|와 위상각 ∠G(jω)을 각각 나타내는 주파수응답 선도이다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1393",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-1393-c4",
+    "directSolution": "시퀀스제어는 입력 조건과 미리 정한 순서·논리에 따라 출력을 발생시키며 프로그램으로 구현할 수 있다. 출력의 연속 피드백은 폐루프 연속제어에는 중요하지만 모든 시퀀스제어의 필수조건이 아니므로 c4가 옳지 않다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1393-c1",
+        "verdict": "incorrect",
+        "rationale": "버튼, 센서, 타이머 완료 등 입력신호나 상태조건이 다음 단계 전이의 근거가 된다."
+      },
+      {
+        "choiceId": "U-1393-c2",
+        "verdict": "incorrect",
+        "rationale": "정해진 작업 순서와 논리조건에 따라 제어출력을 순차적으로 발생시키는 것이 핵심이다."
+      },
+      {
+        "choiceId": "U-1393-c3",
+        "verdict": "incorrect",
+        "rationale": "PLC 래더, 상태기계, 프로그램 명령 등 프로그램제어 형태로 구현할 수 있다."
+      },
+      {
+        "choiceId": "U-1393-c4",
+        "verdict": "correct",
+        "rationale": "시간기반 개루프 시퀀스처럼 연속 출력 피드백 없이도 구현되는 방식이 있어 '모든'과 '반드시'가 틀리다."
+      }
+    ],
+    "misconception": "?? ??: 버튼, 센서, 타이머 완료 등 입력신호나 상태조건이 다음 단계 전이의 근거가 된다.",
+    "existingLessonId": "lesson-9zru6",
+    "existingBlockId": "principle",
+    "assertionText": "시퀀스제어는 입력조건과 정해진 순서·논리에 따라 출력을 발생시키며, 단계 확인용 피드백을 사용할 수 있지만 연속 출력 피드백이 모든 경우의 필수조건은 아니다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  }
+]

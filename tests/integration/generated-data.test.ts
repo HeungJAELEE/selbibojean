@@ -3,7 +3,11 @@ import path from "node:path";
 import katex from "katex";
 import { describe, expect, it } from "vitest";
 import type { GeneratedContent } from "@/lib/domain/types";
-import { isPublishableLesson, isPublishableQuestion } from "@/lib/domain/practice";
+import {
+  isPublishableLesson,
+  isPublishableQuestion,
+  toPublicQuestion,
+} from "@/lib/domain/practice";
 import { getLessonFamilies, getLessonFamily } from "@/lib/content/lesson-families";
 import { getLessonSubcategories } from "@/lib/content/lesson-subcategories";
 import { getPastExamExamples, getPastExamExamplesForLessons } from "@/lib/content/past-exam-examples";
@@ -12,12 +16,17 @@ import {
   filterPracticeContentByYearRange,
   getSafeOriginalsByQuestion,
 } from "@/lib/content/practice-presentations";
+import { buildRuntimeContent } from "@/lib/content/runtime-content";
 
 const data = JSON.parse(await readFile(path.join(process.cwd(), "src/data/generated/content.json"), "utf8")) as GeneratedContent;
+const runtimeData = buildRuntimeContent(data);
+const runtimePublicQuestions = runtimeData.questions.filter(isPublishableQuestion);
 
 describe("27th workbook reconciliation", () => {
   it("matches every agreed row count", () => {
     expect(data.report.rows).toEqual({ originals: 2384, canonicalQuestions: 1396, mappings: 2384, backlog: 276 });
+    expect(data.questions).toHaveLength(1396);
+    expect(new Set(data.questions.map((question) => question.id)).size).toBe(1396);
     expect(data.report.exactMatch).toBe(true);
     expect(data.report.numberOnlyAnswers).toBe(109);
     expect(data.report.reviewStatusCount).toBe(351);
@@ -27,15 +36,39 @@ describe("27th workbook reconciliation", () => {
     expect(data.variants).toHaveLength(2384);
     expect(data.variants.every((variant) => Boolean(variant.canonicalId))).toBe(true);
   });
-  it("keeps unverified content out of public practice", () => {
-    const publicQuestions = data.questions.filter((question) => question.contentStatus === "published");
-    expect(publicQuestions).toHaveLength(1314);
+  it("keeps the workbook ledger intact while exposing only independently reviewed runtime questions", () => {
+    const workbookPublishedQuestions = data.questions.filter((question) => question.contentStatus === "published");
+    const publishedBySubject = Object.fromEntries(
+      runtimeData.subjects.map((subject) => [
+        subject.id,
+        runtimePublicQuestions.filter((question) => question.subjectId === subject.id).length,
+      ]),
+    );
+
+    expect(workbookPublishedQuestions).toHaveLength(1314);
     expect(data.questions.filter((question) => question.publication?.readiness === "blocked")).toHaveLength(82);
-    expect(publicQuestions.every(isPublishableQuestion)).toBe(true);
+    expect(workbookPublishedQuestions.some((question) => !isPublishableQuestion(question))).toBe(true);
+    expect(runtimePublicQuestions).toHaveLength(2062);
+    expect(publishedBySubject).toEqual({
+      "subject-1": 314,
+      "subject-2": 714,
+      "subject-3": 255,
+      "subject-4": 779,
+    });
+    expect(runtimePublicQuestions.every(isPublishableQuestion)).toBe(true);
+    expect(runtimePublicQuestions.every((question) => Boolean(question.approvedReview))).toBe(true);
     expect(data.questions.filter((question) => question.contentStatus !== "published").length).toBeGreaterThan(0);
-    expect(publicQuestions.every((question) => question.publication?.readiness === "ready")).toBe(true);
-    expect(data.report.publication.ready).toBe(publicQuestions.length);
+    expect(runtimePublicQuestions.every((question) => question.publication?.readiness === "ready")).toBe(true);
+    expect(data.report.publication.ready).toBe(workbookPublishedQuestions.length);
     expect(data.report.publication.ready + data.report.publication.review + data.report.publication.blocked).toBe(data.questions.length);
+
+    const publicProjection = JSON.stringify(
+      runtimePublicQuestions.map(toPublicQuestion),
+    );
+    expect(publicProjection).not.toContain("correctChoiceId");
+    expect(publicProjection).not.toContain("answerText");
+    expect(publicProjection).not.toContain("\"explanation\":");
+    expect(publicProjection).not.toContain("approvedReview");
   });
 
   it("records a source-backed disposition for every canonical question", () => {
@@ -170,7 +203,8 @@ describe("27th workbook reconciliation", () => {
   });
 
   it("teaches P, I, and D as one curated comparison family", () => {
-    const family = getLessonFamily(data, "s1-g11", "action");
+    const family = getLessonFamily(runtimeData, "s1-g11", "action");
+    const previouslyPublishedTrapIds = ["U-683", "U-556", "U-329"];
     expect(family).toBeTruthy();
     expect(family?.label).toBe("P·I·D 제어동작");
     expect(family?.relatedTerms).toEqual(expect.arrayContaining([
@@ -182,9 +216,22 @@ describe("27th workbook reconciliation", () => {
     expect(family?.comparison.map((item) => item.term)).toEqual(["P 제어", "I 제어", "D 제어", "PI·PID"]);
     expect(family?.comparison.every((item) => !/U-\d{3}/.test(item.effect))).toBe(true);
     expect(family?.fieldCases.map((item) => item.focus)).toEqual(["P 제어", "I 제어", "D 제어"]);
-    expect(family?.trapQuestions.slice(0, 3).map((question) => question.id)).toEqual(["U-683", "U-556", "U-329"]);
+    expect(
+      data.questions.filter((question) => previouslyPublishedTrapIds.includes(question.id)),
+    ).toHaveLength(previouslyPublishedTrapIds.length);
+    expect(
+      runtimeData.questions
+        .filter((question) => previouslyPublishedTrapIds.includes(question.id))
+        .filter(isPublishableQuestion),
+    ).toHaveLength(previouslyPublishedTrapIds.length);
     expect(family?.trapQuestions.every(isPublishableQuestion)).toBe(true);
-    expect(family?.trapQuestions.length).toBe(4);
+    expect(family?.trapQuestions.map((question) => question.id)).toEqual([
+      "U-030",
+      "U-683",
+      "U-556",
+      "U-329",
+      "U-817",
+    ]);
     expect(family?.lessons.map((lesson) => lesson.title)).toEqual(expect.arrayContaining([
       "적분제어",
       "미분제어",
@@ -194,20 +241,28 @@ describe("27th workbook reconciliation", () => {
   });
 
   it("uses actual exam criteria instead of repeating generic comparison cautions", () => {
-    const lubricantFamily = getLessonFamily(data, "s4-g14", "application");
-    const adhesiveFamily = getLessonFamily(data, "s3-g08", "surface");
-    const accumulatorFamily = getLessonFamily(data, "s1-g02", "accumulator");
-    const weldingFamily = getLessonFamily(data, "s2-g01", "classification");
+    const lubricantFamily = getLessonFamily(runtimeData, "s4-g14", "application");
+    const adhesiveFamily = getLessonFamily(runtimeData, "s3-g08", "surface");
+    const accumulatorFamily = getLessonFamily(runtimeData, "s1-g02", "accumulator");
+    const weldingFamily = getLessonFamily(runtimeData, "s2-g01", "classification");
+    const reviewedAdhesiveQuestion = runtimeData.questions.find(
+      (question) => question.id === "U-727",
+    );
 
     expect(lubricantFamily).toBeTruthy();
     expect(adhesiveFamily).toBeTruthy();
-    expect(new Set(lubricantFamily?.comparison.map((item) => item.effect)).size).toBeGreaterThan(2);
     expect(new Set(lubricantFamily?.comparison.map((item) => item.caution)).size).toBeGreaterThan(2);
     expect(lubricantFamily?.comparison.every((item) => item.effect !== item.role)).toBe(true);
     expect(lubricantFamily?.comparison.every(
       (item) => item.caution !== "명칭만으로 판단하지 말고 대상·조건·기능이 모두 맞는지 확인한다.",
     )).toBe(true);
-    expect(adhesiveFamily?.trapQuestions.map((question) => question.id)).toContain("U-727");
+    expect(reviewedAdhesiveQuestion).toBeTruthy();
+    expect(isPublishableQuestion(reviewedAdhesiveQuestion!)).toBe(true);
+    expect(adhesiveFamily?.trapQuestions.map((question) => question.id)).toEqual([
+      "U-833",
+      "U-727",
+      "U-241",
+    ]);
     expect(accumulatorFamily?.comparison.every((item) => !/U-\d{3}/.test(item.effect))).toBe(true);
     expect(weldingFamily?.comparison.every((item) => !/U-\d{3}/.test(item.effect))).toBe(true);
   });
@@ -252,24 +307,26 @@ describe("27th workbook reconciliation", () => {
     expect(displayCount).toBe(16);
   });
 
-  it("surfaces answer-safe actual past exam originals for nearly every public lesson", () => {
-    const publishedLessons = data.lessons.filter((lesson) => lesson.contentStatus === "published");
-    const coveredLessons = publishedLessons.filter((lesson) => getPastExamExamples(data, lesson.id, 3).length > 0);
+  it("surfaces answer-safe actual past exam originals only from the runtime-public pool", () => {
+    const publishedLessons = runtimeData.lessons.filter(isPublishableLesson);
+    const publicQuestionIds = new Set(runtimePublicQuestions.map((question) => question.id));
+    const coveredLessons = publishedLessons.filter((lesson) => getPastExamExamples(runtimeData, lesson.id, 3).length > 0);
 
-    expect(publishedLessons).toHaveLength(1190);
-    expect(coveredLessons).toHaveLength(1176);
+    expect(publishedLessons).toHaveLength(1362);
+    expect(coveredLessons).toHaveLength(1202);
 
     for (const lesson of coveredLessons) {
-      const examples = getPastExamExamples(data, lesson.id, 3);
+      const examples = getPastExamExamples(runtimeData, lesson.id, 3);
       expect(examples.length).toBeLessThanOrEqual(3);
       expect(new Set(examples.map((example) => example.stem.normalize("NFKC"))).size).toBe(examples.length);
       expect(examples.every((example) => example.choices.length >= 4)).toBe(true);
+      expect(examples.every((example) => publicQuestionIds.has(example.canonicalId))).toBe(true);
       expect(examples.every((example) =>
         example.choiceIds.length === example.choices.length
         && new Set(example.choiceIds).size === example.choiceIds.length,
       )).toBe(true);
       for (const example of examples) {
-        const canonical = data.questions.find((question) => question.id === example.canonicalId);
+        const canonical = runtimeData.questions.find((question) => question.id === example.canonicalId);
         expect(canonical).toBeTruthy();
         expect(new Set(example.choiceIds)).toEqual(new Set(canonical?.choices.map((choice) => choice.id)));
       }
@@ -279,17 +336,27 @@ describe("27th workbook reconciliation", () => {
       expect(JSON.stringify(examples)).not.toContain("\"answer\":");
     }
 
-    const orificeExamples = getPastExamExamples(data, "lesson-tcxwqa", 3);
-    expect(orificeExamples).toHaveLength(1);
-    expect(orificeExamples.map((example) => example.year)).toEqual([2018]);
-    expect(orificeExamples.map((example) => example.questionNumber)).toEqual([88]);
+    const displacementExamples = getPastExamExamples(runtimeData, "lesson-5yr4el", 3);
+    expect(displacementExamples.map((example) => example.canonicalId)).toEqual([
+      "U-027",
+      "U-348",
+      "U-008",
+    ]);
+    expect(displacementExamples.map((example) => example.year)).toEqual([2021, 2020, 2016]);
+    expect(displacementExamples.map((example) => example.questionNumber)).toEqual([11, 18, 10]);
   });
 
   it("aggregates answer-safe actual originals across a lesson family", () => {
-    const family = getLessonFamily(data, "s1-g11", "action");
-    const examples = getPastExamExamplesForLessons(data, family?.lessons.map((lesson) => lesson.id) ?? [], 6);
+    const family = getLessonFamily(runtimeData, "s1-g01", "gas");
+    const examples = getPastExamExamplesForLessons(runtimeData, family?.lessons.map((lesson) => lesson.id) ?? [], 6);
 
-    expect(examples.length).toBeGreaterThan(0);
+    expect(examples.map((example) => example.canonicalId)).toEqual([
+      "U-133",
+      "U-117",
+      "U-747",
+      "U-402",
+      "U-806",
+    ]);
     expect(new Set(examples.map((example) => example.externalId)).size).toBe(examples.length);
     expect(examples.every((example) => example.choiceIds.length === example.choices.length)).toBe(true);
     expect(JSON.stringify(examples)).not.toContain("correctChoiceId");
@@ -298,16 +365,16 @@ describe("27th workbook reconciliation", () => {
   });
 
   it("mixes only answer-aligned actual originals into random practice", () => {
-    const publishedQuestions = data.questions.filter(isPublishableQuestion);
-    const originalsByQuestion = getSafeOriginalsByQuestion(publishedQuestions, data.variants);
+    const publishedQuestions = runtimePublicQuestions;
+    const originalsByQuestion = getSafeOriginalsByQuestion(publishedQuestions, runtimeData.variants);
 
-    expect(originalsByQuestion.size).toBe(1300);
-    expect([...originalsByQuestion.values()].flat()).toHaveLength(1377);
+    expect(originalsByQuestion.size).toBe(1845);
+    expect([...originalsByQuestion.values()].flat()).toHaveLength(1923);
 
     const sample = publishedQuestions.slice(0, 20);
-    const mixed = createPracticePresentations(sample, data.variants, 50, 20260723);
-    const originalFocused = createPracticePresentations(sample, data.variants, 100, 20260723);
-    const conceptFocused = createPracticePresentations(sample, data.variants, 0, 20260723);
+    const mixed = createPracticePresentations(sample, runtimeData.variants, 50, 20260723);
+    const originalFocused = createPracticePresentations(sample, runtimeData.variants, 100, 20260723);
+    const conceptFocused = createPracticePresentations(sample, runtimeData.variants, 0, 20260723);
 
     expect(mixed.filter((question) => question.provenance.original)).toHaveLength(10);
     expect(originalFocused.filter((question) => question.provenance.original).length).toBeGreaterThan(10);
@@ -325,8 +392,8 @@ describe("27th workbook reconciliation", () => {
 
   it("limits the mock pool to answer-safe originals inside the chosen years", () => {
     const result = filterPracticeContentByYearRange(
-      data.questions.filter(isPublishableQuestion),
-      data.variants,
+      runtimePublicQuestions,
+      runtimeData.variants,
       2020,
       2021,
     );

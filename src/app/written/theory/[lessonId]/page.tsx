@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, BookOpenCheck, RotateCcw } from "lucide-react";
 import { ConceptVisualAid } from "@/components/concept-visual-aid";
+import { ConflictTheoryReview } from "@/components/conflict-theory-review";
 import { ContentRoleBadge } from "@/components/content-role-badge";
 import { LessonExamTypes } from "@/components/lesson-exam-types";
 import { LessonPracticeSet, type LessonPracticeItem } from "@/components/lesson-practice-set";
@@ -21,6 +22,7 @@ import {
   getPastExamExamples,
   getPastExamPatternSummary,
 } from "@/lib/content/past-exam-examples";
+import { selectConflictTheoryReviewItems } from "@/lib/content/conflict-theory-review";
 import { getContent, getLesson } from "@/lib/content/repository";
 import { getConceptGroup, getSubject } from "@/lib/domain/catalog";
 import {
@@ -67,19 +69,28 @@ export default async function LessonPage({
     lesson.relatedQuestionIds,
     5,
   );
-  const examPatternSummary = getPastExamPatternSummary(content, lesson.id);
+  const examPatternSummary = getPastExamPatternSummary(content, lesson.id, 5);
   const authoredExamPoints = getAuthoredExamPoints(lesson);
   const family = getLessonFamilyForLesson(content, lesson.id);
   const useFamilyProcessVisual =
     family?.groupId === "s2-g02" && family.id === "process";
   const trapQuestions = getLessonTrapQuestions(content, lesson.id, 3);
+  const conflictReviewItems = selectConflictTheoryReviewItems(content, {
+    lessonId: lesson.id,
+    relatedQuestionIds: lesson.relatedQuestionIds,
+  });
   const definition = getDefinition(lesson);
-  const principleKinds = lesson.id.startsWith("lesson-welding-process-")
+  const summaryBlock = lesson.blocks.find((block) => block.id === "summary");
+  const trapBlock = lesson.blocks.find((block) => block.id === "trap");
+  const principleKinds = lesson.id.startsWith("lesson-welding-")
     || lesson.title === "CO₂ 아크용접"
     ? ["principle", "structure", "selection", "diagnosis", "formula", "pros_cons", "safety"]
     : ["principle", "selection", "formula", "pros_cons", "safety"];
   const principleBlocks = lesson.blocks.filter((block) =>
     principleKinds.includes(block.kind),
+  );
+  const hasPrincipleAnchor = principleBlocks.some(
+    (block) => block.id === "principle",
   );
 
   return (
@@ -134,6 +145,16 @@ export default async function LessonPage({
           </figure>
         )}
 
+        {summaryBlock && (
+          <section id="summary" className="mt-9 scroll-mt-28">
+            <p className="text-xs font-black uppercase tracking-[.14em] text-[#16697a]">핵심 정리</p>
+            <h2 className="mt-1 text-xl font-extrabold text-[#173957]">{summaryBlock.title}</h2>
+            <div className="prose-learning mt-4">
+              <MarkdownContent content={summaryBlock.body} />
+            </div>
+          </section>
+        )}
+
         <section
           id="definition"
           className="min-w-0 max-w-full overflow-hidden scroll-mt-28"
@@ -166,12 +187,19 @@ export default async function LessonPage({
           <WrittenLessonVisuals lesson={lesson} />
         )}
 
-        <section id="principle" className="mt-9 scroll-mt-28">
+        <section
+          id={hasPrincipleAnchor ? undefined : "principle"}
+          className="mt-9 scroll-mt-28"
+        >
           <p className="text-xs font-black uppercase tracking-[.14em] text-[#16697a]">Step 2 · Background</p>
           <h2 className="mt-1 text-xl font-extrabold text-[#173957]">정의를 이해하기 위한 배경</h2>
           <div className="prose-learning mt-4">
             {principleBlocks.map((block) => (
-              <section key={block.id}>
+              <section
+                key={block.id}
+                id={block.id}
+                className="scroll-mt-28"
+              >
                 <h3>{normalizePrincipleTitle(block.title)}</h3>
                 <MarkdownContent content={cleanPrincipleBody(block.body)} />
               </section>
@@ -182,11 +210,23 @@ export default async function LessonPage({
           </div>
         </section>
 
-        <LessonExamTypes
-          summary={examPatternSummary}
-          authoredPoints={authoredExamPoints}
-        />
+        <div id="exam-point" className="scroll-mt-28">
+          <LessonExamTypes
+            summary={examPatternSummary}
+            authoredPoints={authoredExamPoints}
+          />
+        </div>
         <PastExamExamples examples={pastExamExamples} initialCount={5} />
+        <ConflictTheoryReview items={conflictReviewItems} />
+        {trapBlock && (
+          <section id="trap" className="mt-9 scroll-mt-28">
+            <p className="text-xs font-black uppercase tracking-[.14em] text-[#16697a]">대표 오답</p>
+            <h2 className="mt-1 text-xl font-extrabold text-[#173957]">{trapBlock.title}</h2>
+            <div className="prose-learning mt-4">
+              <MarkdownContent content={trapBlock.body} />
+            </div>
+          </section>
+        )}
         <QuestionTrapReview
           questions={trapQuestions}
           pid={Boolean(family && isPidFamily(family.groupId, family.id))}

@@ -1,0 +1,1836 @@
+[
+  {
+    "questionId": "U-508",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-508-c3",
+    "directSolution": "언밸런스는 주로 1×, 정렬불량은 1×·2× 등 회전동기 성분이 나타나는 결정론적 진동이다. 따라서 '회전주파수와 고조파에 동기된 주기성 성분이 나타나기 때문이다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-508-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-508-c1 '항상 진동이 발생하지 않기 때문이다.'는 언밸런스는 주로 1×, 정렬불량은 1×·2× 등 회전동기 성분이 나타나는 결정론적 진동이다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-508-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-508-c2 '온도변화만으로 발생하기 때문이다.'는 언밸런스는 주로 1×, 정렬불량은 1×·2× 등 회전동기 성분이 나타나는 결정론적 진동이다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-508-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-508-c3 '회전주파수와 고조파에 동기된 주기성 성분이 나타나기 때문이다.'는 언밸런스는 주로 1×, 정렬불량은 1×·2× 등 회전동기 성분이 나타나는 결정론적 진동이다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-508-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-508-c4 '직류성분만 나타나기 때문이다.'는 언밸런스는 주로 1×, 정렬불량은 1×·2× 등 회전동기 성분이 나타나는 결정론적 진동이다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "언밸런스는 주로 1×, 정렬불량은 1×·2× 등 회전동기 성분이 나타나는 결정론적 진동이다.의 조건을 생략해 '회전주파수와 고조파에 동기된 주기성 성분이 나타나기 때문이다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-87g0uj",
+    "existingBlockId": "formula",
+    "assertionText": "언밸런스는 주로 1×, 정렬불량은 1×·2× 등 회전동기 성분이 나타나는 결정론적 진동이다. 이 기준을 lesson-87g0uj의 formula 블록과 연결해 '회전주파수와 고조파에 동기된 주기성 성분이 나타나기 때문이다.'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-509",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-509-c4",
+    "directSolution": "설비관리는 생애주기비용과 손실을 줄이고 생산·품질·안전을 높이는 활동이다. 따라서 '설비투자비를 의도적으로 증가시키는 것'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-509-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-509-c1 '품질향상'는 설비관리는 생애주기비용과 손실을 줄이고 생산·품질·안전을 높이는 활동이다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-509-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-509-c2 '원가절감'는 설비관리는 생애주기비용과 손실을 줄이고 생산·품질·안전을 높이는 활동이다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-509-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-509-c3 '생산계획 달성'는 설비관리는 생애주기비용과 손실을 줄이고 생산·품질·안전을 높이는 활동이다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-509-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-509-c4 '설비투자비를 의도적으로 증가시키는 것'는 설비관리는 생애주기비용과 손실을 줄이고 생산·품질·안전을 높이는 활동이다. 따라서 정답 조건을 충족한다."
+      }
+    ],
+    "misconception": "설비관리는 생애주기비용과 손실을 줄이고 생산·품질·안전을 높이는 활동이다.의 조건을 생략해 '설비투자비를 의도적으로 증가시키는 것'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-t0acan",
+    "existingBlockId": "principle",
+    "assertionText": "설비관리는 생애주기비용과 손실을 줄이고 생산·품질·안전을 높이는 활동이다. 이 기준을 lesson-t0acan의 principle 블록과 연결해 '설비투자비를 의도적으로 증가시키는 것'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-510",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-510-c2",
+    "directSolution": "현상분석에서 불량이 언제·어디서·어떻게 발생하는지와 관련 설비조건을 구체화한다. 따라서 '현상분석'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-510-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-510-c1 '표준화'는 현상분석에서 불량이 언제·어디서·어떻게 발생하는지와 관련 설비조건을 구체화한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-510-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-510-c2 '현상분석'는 현상분석에서 불량이 언제·어디서·어떻게 발생하는지와 관련 설비조건을 구체화한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-510-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-510-c3 '요인해석 완료'는 현상분석에서 불량이 언제·어디서·어떻게 발생하는지와 관련 설비조건을 구체화한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-510-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-510-c4 '대책효과 검증'는 현상분석에서 불량이 언제·어디서·어떻게 발생하는지와 관련 설비조건을 구체화한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "현상분석에서 불량이 언제·어디서·어떻게 발생하는지와 관련 설비조건을 구체화한다.의 조건을 생략해 '현상분석'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-h4mge5",
+    "existingBlockId": "diagnosis",
+    "assertionText": "현상분석에서 불량이 언제·어디서·어떻게 발생하는지와 관련 설비조건을 구체화한다. 이 기준을 lesson-h4mge5의 diagnosis 블록과 연결해 '현상분석'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-511",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-511-c1",
+    "directSolution": "계측관리는 정확하고 추적 가능한 측정값을 확보하는 활동이며 자주보전 전체를 대체하지 않는다. 따라서 '운전자의 자주보전 활동 자체를 대신하는 것'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-511-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-511-c1 '운전자의 자주보전 활동 자체를 대신하는 것'는 계측관리는 정확하고 추적 가능한 측정값을 확보하는 활동이며 자주보전 전체를 대체하지 않는다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-511-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-511-c2 '측정정밀도 유지'는 계측관리는 정확하고 추적 가능한 측정값을 확보하는 활동이며 자주보전 전체를 대체하지 않는다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-511-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-511-c3 '계측기 교정·검정'는 계측관리는 정확하고 추적 가능한 측정값을 확보하는 활동이며 자주보전 전체를 대체하지 않는다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-511-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-511-c4 '측정방법 표준화'는 계측관리는 정확하고 추적 가능한 측정값을 확보하는 활동이며 자주보전 전체를 대체하지 않는다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "계측관리는 정확하고 추적 가능한 측정값을 확보하는 활동이며 자주보전 전체를 대체하지 않는다.의 조건을 생략해 '운전자의 자주보전 활동 자체를 대신하는 것'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-n5qqke",
+    "existingBlockId": "principle",
+    "assertionText": "계측관리는 정확하고 추적 가능한 측정값을 확보하는 활동이며 자주보전 전체를 대체하지 않는다. 이 기준을 lesson-n5qqke의 principle 블록과 연결해 '운전자의 자주보전 활동 자체를 대신하는 것'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-512",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-512-c1",
+    "directSolution": "GT는 유사부품을 그룹화해 생산성을 높이는 생산기술이며 공기단축 전용기법은 아니다. 따라서 'GT(Group Technology)'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-512-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-512-c1 'GT(Group Technology)'는 GT는 유사부품을 그룹화해 생산성을 높이는 생산기술이며 공기단축 전용기법은 아니다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-512-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-512-c2 '선형계획법'는 GT는 유사부품을 그룹화해 생산성을 높이는 생산기술이며 공기단축 전용기법은 아니다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-512-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-512-c3 '최소비용촉진법'는 GT는 유사부품을 그룹화해 생산성을 높이는 생산기술이며 공기단축 전용기법은 아니다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-512-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-512-c4 '공정근사법'는 GT는 유사부품을 그룹화해 생산성을 높이는 생산기술이며 공기단축 전용기법은 아니다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "GT는 유사부품을 그룹화해 생산성을 높이는 생산기술이며 공기단축 전용기법은 아니다.의 조건을 생략해 'GT(Group Technology)'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1xkeid4",
+    "existingBlockId": "principle",
+    "assertionText": "GT는 유사부품을 그룹화해 생산성을 높이는 생산기술이며 공기단축 전용기법은 아니다. 이 기준을 lesson-1xkeid4의 principle 블록과 연결해 'GT(Group Technology)'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-513",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-513-c3",
+    "directSolution": "누전·공회전·저효율은 전기에너지를 직접 낭비한다. 공정관리 불량은 간접손실로 보는 것이 일반적이다. 따라서 '공정관리 불량'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-513-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-513-c1 '누전'는 누전·공회전·저효율은 전기에너지를 직접 낭비한다. 공정관리 불량은 간접손실로 보는 것이 일반적이다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-513-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-513-c2 '기계 공회전'는 누전·공회전·저효율은 전기에너지를 직접 낭비한다. 공정관리 불량은 간접손실로 보는 것이 일반적이다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-513-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-513-c3 '공정관리 불량'는 누전·공회전·저효율은 전기에너지를 직접 낭비한다. 공정관리 불량은 간접손실로 보는 것이 일반적이다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-513-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-513-c4 '저효율 설비 사용'는 누전·공회전·저효율은 전기에너지를 직접 낭비한다. 공정관리 불량은 간접손실로 보는 것이 일반적이다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "누전·공회전·저효율은 전기에너지를 직접 낭비한다. 공정관리 불량은 간접손실로 보는 것이 일반적이다.의 조건을 생략해 '공정관리 불량'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-5cmxzo",
+    "existingBlockId": "principle",
+    "assertionText": "누전·공회전·저효율은 전기에너지를 직접 낭비한다. 공정관리 불량은 간접손실로 보는 것이 일반적이다. 이 기준을 lesson-5cmxzo의 principle 블록과 연결해 '공정관리 불량'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-514",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-514-c4",
+    "directSolution": "집중보전은 전문성과 인력효율이 높지만 지역현장과의 대응거리·연락 문제가 생길 수 있다. 따라서 '현장과의 거리가 생겨 작업착수와 의사소통이 늦어질 수 있다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-514-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-514-c1 '전문기술자 활용이 불가능하다.'는 집중보전은 전문성과 인력효율이 높지만 지역현장과의 대응거리·연락 문제가 생길 수 있다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-514-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-514-c2 '대형공사에 인력동원이 불가능하다.'는 집중보전은 전문성과 인력효율이 높지만 지역현장과의 대응거리·연락 문제가 생길 수 있다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-514-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-514-c3 '보전표준화가 불가능하다.'는 집중보전은 전문성과 인력효율이 높지만 지역현장과의 대응거리·연락 문제가 생길 수 있다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-514-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-514-c4 '현장과의 거리가 생겨 작업착수와 의사소통이 늦어질 수 있다.'는 집중보전은 전문성과 인력효율이 높지만 지역현장과의 대응거리·연락 문제가 생길 수 있다. 따라서 정답 조건을 충족한다."
+      }
+    ],
+    "misconception": "집중보전은 전문성과 인력효율이 높지만 지역현장과의 대응거리·연락 문제가 생길 수 있다.의 조건을 생략해 '현장과의 거리가 생겨 작업착수와 의사소통이 늦어질 수 있다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1n7s258",
+    "existingBlockId": "principle",
+    "assertionText": "집중보전은 전문성과 인력효율이 높지만 지역현장과의 대응거리·연락 문제가 생길 수 있다. 이 기준을 lesson-1n7s258의 principle 블록과 연결해 '현장과의 거리가 생겨 작업착수와 의사소통이 늦어질 수 있다.'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-515",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-515-c2",
+    "directSolution": "조직은 사람의 전문성·동기·협업을 활용해야 하며 인간을 단순한 도구로만 보아서는 안 된다. 따라서 '사람을 단순한 목적달성 수단으로만 취급한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-515-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-515-c1 '조직목적 달성을 위한 수단이어야 한다.'는 조직은 사람의 전문성·동기·협업을 활용해야 하며 인간을 단순한 도구로만 보아서는 안 된다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-515-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-515-c2 '사람을 단순한 목적달성 수단으로만 취급한다.'는 조직은 사람의 전문성·동기·협업을 활용해야 하며 인간을 단순한 도구로만 보아서는 안 된다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-515-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-515-c3 '환경변화에 적응해야 한다.'는 조직은 사람의 전문성·동기·협업을 활용해야 하며 인간을 단순한 도구로만 보아서는 안 된다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-515-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-515-c4 '업무특성에 맞게 전문화와 단순화를 조정한다.'는 조직은 사람의 전문성·동기·협업을 활용해야 하며 인간을 단순한 도구로만 보아서는 안 된다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "조직은 사람의 전문성·동기·협업을 활용해야 하며 인간을 단순한 도구로만 보아서는 안 된다.의 조건을 생략해 '사람을 단순한 목적달성 수단으로만 취급한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1qwoyl1",
+    "existingBlockId": "trap",
+    "assertionText": "조직은 사람의 전문성·동기·협업을 활용해야 하며 인간을 단순한 도구로만 보아서는 안 된다. 이 기준을 lesson-1qwoyl1의 trap 블록과 연결해 '사람을 단순한 목적달성 수단으로만 취급한다.'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-516",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-516-c1",
+    "directSolution": "강한 보전조직은 내부 진단·수리·개선능력을 갖추고 필요 시 외주를 선택적으로 활용한다. 따라서 '필요한 모든 작업을 외부업체에만 의존한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-516-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-516-c1 '필요한 모든 작업을 외부업체에만 의존한다.'는 강한 보전조직은 내부 진단·수리·개선능력을 갖추고 필요 시 외주를 선택적으로 활용한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-516-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-516-c2 '고장원인 분석'는 강한 보전조직은 내부 진단·수리·개선능력을 갖추고 필요 시 외주를 선택적으로 활용한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-516-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-516-c3 '정확한 분해·조립'는 강한 보전조직은 내부 진단·수리·개선능력을 갖추고 필요 시 외주를 선택적으로 활용한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-516-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-516-c4 '안전하고 신속한 복구'는 강한 보전조직은 내부 진단·수리·개선능력을 갖추고 필요 시 외주를 선택적으로 활용한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "강한 보전조직은 내부 진단·수리·개선능력을 갖추고 필요 시 외주를 선택적으로 활용한다.의 조건을 생략해 '필요한 모든 작업을 외부업체에만 의존한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-11ixmmn",
+    "existingBlockId": "principle",
+    "assertionText": "강한 보전조직은 내부 진단·수리·개선능력을 갖추고 필요 시 외주를 선택적으로 활용한다. 이 기준을 lesson-11ixmmn의 principle 블록과 연결해 '필요한 모든 작업을 외부업체에만 의존한다.'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-517",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-517-c3",
+    "directSolution": "좋은 배치는 불필요한 운반·대기·인력소요와 공간낭비를 줄인다. 따라서 '생산인력을 의도적으로 늘리는 것'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-517-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-517-c1 '운반거리 단축'는 좋은 배치는 불필요한 운반·대기·인력소요와 공간낭비를 줄인다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-517-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-517-c2 '공정흐름 원활화'는 좋은 배치는 불필요한 운반·대기·인력소요와 공간낭비를 줄인다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-517-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-517-c3 '생산인력을 의도적으로 늘리는 것'는 좋은 배치는 불필요한 운반·대기·인력소요와 공간낭비를 줄인다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-517-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-517-c4 '공간활용 향상'는 좋은 배치는 불필요한 운반·대기·인력소요와 공간낭비를 줄인다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "좋은 배치는 불필요한 운반·대기·인력소요와 공간낭비를 줄인다.의 조건을 생략해 '생산인력을 의도적으로 늘리는 것'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1yuycsb",
+    "existingBlockId": "principle",
+    "assertionText": "좋은 배치는 불필요한 운반·대기·인력소요와 공간낭비를 줄인다. 이 기준을 lesson-1yuycsb의 principle 블록과 연결해 '생산인력을 의도적으로 늘리는 것'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-518",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-518-c1",
+    "directSolution": "보전주기는 데이터·위험도·열화속도와 경제성을 근거로 설정한다. 따라서 '관리자의 막연한 자신감'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-518-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-518-c1 '관리자의 막연한 자신감'는 보전주기는 데이터·위험도·열화속도와 경제성을 근거로 설정한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-518-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-518-c2 '고장·열화 이력'는 보전주기는 데이터·위험도·열화속도와 경제성을 근거로 설정한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-518-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-518-c3 '운전시간과 부하'는 보전주기는 데이터·위험도·열화속도와 경제성을 근거로 설정한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-518-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-518-c4 '검사결과와 위험도'는 보전주기는 데이터·위험도·열화속도와 경제성을 근거로 설정한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "보전주기는 데이터·위험도·열화속도와 경제성을 근거로 설정한다.의 조건을 생략해 '관리자의 막연한 자신감'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-2ddmue",
+    "existingBlockId": "principle",
+    "assertionText": "보전주기는 데이터·위험도·열화속도와 경제성을 근거로 설정한다. 이 기준을 lesson-2ddmue의 principle 블록과 연결해 '관리자의 막연한 자신감'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-519",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-519-c3",
+    "directSolution": "사용고 방식은 실제 소비량을 기준으로 재고를 보충한다. 따라서 '사용고 발주방식'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-519-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-519-c1 '정기정량 발주만'는 사용고 방식은 실제 소비량을 기준으로 재고를 보충한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-519-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-519-c2 '포장법'는 사용고 방식은 실제 소비량을 기준으로 재고를 보충한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-519-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-519-c3 '사용고 발주방식'는 사용고 방식은 실제 소비량을 기준으로 재고를 보충한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-519-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-519-c4 '복책법'는 사용고 방식은 실제 소비량을 기준으로 재고를 보충한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "사용고 방식은 실제 소비량을 기준으로 재고를 보충한다.의 조건을 생략해 '사용고 발주방식'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1fc58be",
+    "existingBlockId": "principle",
+    "assertionText": "사용고 방식은 실제 소비량을 기준으로 재고를 보충한다. 이 기준을 lesson-1fc58be의 principle 블록과 연결해 '사용고 발주방식'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-522",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-522-c1",
+    "directSolution": "고장으로 생산·판매기회를 놓쳐 발생하는 손실을 보전활동으로 예방할 수 있다. 따라서 '기회손실'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-522-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-522-c1 '기회손실'는 고장으로 생산·판매기회를 놓쳐 발생하는 손실을 보전활동으로 예방할 수 있다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-522-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-522-c2 '보전비 자체'는 고장으로 생산·판매기회를 놓쳐 발생하는 손실을 보전활동으로 예방할 수 있다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-522-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-522-c3 '취득원가'는 고장으로 생산·판매기회를 놓쳐 발생하는 손실을 보전활동으로 예방할 수 있다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-522-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-522-c4 '감가상각비'는 고장으로 생산·판매기회를 놓쳐 발생하는 손실을 보전활동으로 예방할 수 있다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "고장으로 생산·판매기회를 놓쳐 발생하는 손실을 보전활동으로 예방할 수 있다.의 조건을 생략해 '기회손실'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-6c3eyr",
+    "existingBlockId": "principle",
+    "assertionText": "고장으로 생산·판매기회를 놓쳐 발생하는 손실을 보전활동으로 예방할 수 있다. 이 기준을 lesson-6c3eyr의 principle 블록과 연결해 '기회손실'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-538",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-538-c4",
+    "directSolution": "SOAP는 마모금속 원소농도를 분광학적으로 측정한다. 페로그래피는 입자의 크기·형상·분포를 관찰한다. 따라서 '페로그래피'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-538-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-538-c1 'ICP 분석'는 SOAP는 마모금속 원소농도를 분광학적으로 측정한다. 페로그래피는 입자의 크기·형상·분포를 관찰한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-538-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-538-c2 '원자흡광분석'는 SOAP는 마모금속 원소농도를 분광학적으로 측정한다. 페로그래피는 입자의 크기·형상·분포를 관찰한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-538-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-538-c3 '회전전극분광분석'는 SOAP는 마모금속 원소농도를 분광학적으로 측정한다. 페로그래피는 입자의 크기·형상·분포를 관찰한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-538-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-538-c4 '페로그래피'는 SOAP는 마모금속 원소농도를 분광학적으로 측정한다. 페로그래피는 입자의 크기·형상·분포를 관찰한다. 따라서 정답 조건을 충족한다."
+      }
+    ],
+    "misconception": "SOAP는 마모금속 원소농도를 분광학적으로 측정한다. 페로그래피는 입자의 크기·형상·분포를 관찰한다.의 조건을 생략해 '페로그래피'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1ojvd7g",
+    "existingBlockId": "diagnosis",
+    "assertionText": "SOAP는 마모금속 원소농도를 분광학적으로 측정한다. 페로그래피는 입자의 크기·형상·분포를 관찰한다. 이 기준을 lesson-1ojvd7g의 diagnosis 블록과 연결해 '페로그래피'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-539",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-539-c1",
+    "directSolution": "저점도유는 펌프 내부 간극누설을 증가시켜 실제 토출량을 줄일 수 있다. 따라서 '작동유 점도가 지나치게 낮아 내부누설이 증가하는 경우'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-539-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-539-c1 '작동유 점도가 지나치게 낮아 내부누설이 증가하는 경우'는 저점도유는 펌프 내부 간극누설을 증가시켜 실제 토출량을 줄일 수 있다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-539-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-539-c2 '흡입배관이 완전히 밀폐되고 유면이 충분한 경우'는 저점도유는 펌프 내부 간극누설을 증가시켜 실제 토출량을 줄일 수 있다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-539-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-539-c3 '규정회전수로 정상운전하는 경우'는 저점도유는 펌프 내부 간극누설을 증가시켜 실제 토출량을 줄일 수 있다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-539-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-539-c4 '필터가 청정하고 흡입저항이 작은 경우'는 저점도유는 펌프 내부 간극누설을 증가시켜 실제 토출량을 줄일 수 있다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "저점도유는 펌프 내부 간극누설을 증가시켜 실제 토출량을 줄일 수 있다.의 조건을 생략해 '작동유 점도가 지나치게 낮아 내부누설이 증가하는 경우'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1qrc86g",
+    "existingBlockId": "diagnosis",
+    "assertionText": "저점도유는 펌프 내부 간극누설을 증가시켜 실제 토출량을 줄일 수 있다. 이 기준을 lesson-1qrc86g의 diagnosis 블록과 연결해 '작동유 점도가 지나치게 낮아 내부누설이 증가하는 경우'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-540",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-540-c1",
+    "directSolution": "같은 제품군에서는 일반적으로 저점도·저비점 성분이 많은 등급일수록 인화점이 낮은 경향이 있습니다. 제시된 ISO VG 등급 중 가장 저점도인 ISO VG 15가 ①의 정답입니다.",
+    "choiceRationales": [
+      { "choiceId": "U-540-c1", "verdict": "correct", "rationale": "ISO VG 15는 제시된 네 등급 가운데 가장 낮은 점도 등급입니다. 같은 제품군이라는 조건에서는 저점도·저비점 성분이 많은 쪽의 인화점이 낮은 경향과 맞습니다." },
+      { "choiceId": "U-540-c2", "verdict": "incorrect", "rationale": "ISO VG 32는 ISO VG 15보다 높은 점도 등급입니다. 같은 제품군에서 가장 낮은 인화점을 묻는 조건에서는 더 낮은 점도인 VG 15보다 앞설 수 없습니다." },
+      { "choiceId": "U-540-c3", "verdict": "incorrect", "rationale": "ISO VG 46은 VG 15와 VG 32보다 높은 점도 등급입니다. 저점도 등급일수록 인화점이 낮아지는 일반적 경향을 적용하면 이 보기는 최저값이 아닙니다." },
+      { "choiceId": "U-540-c4", "verdict": "incorrect", "rationale": "ISO VG 68은 제시된 선택지 중 가장 높은 점도 등급입니다. 같은 제품군에서 가장 낮은 인화점을 고르는 기준과는 반대 방향의 등급입니다." }
+    ],
+    "misconception": "ISO VG 숫자가 커질수록 점도가 높아진다는 등급 순서와, 같은 제품군에서의 저점도·저비점 성분의 인화점 경향을 반대로 읽는 오류.",
+    "existingLessonId": "lesson-1lcaqyr",
+    "existingBlockId": "principle",
+    "assertionText": "같은 제품군에서는 저점도·저비점 성분이 많은 등급의 인화점이 낮은 경향이 있다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-542",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-542-c3",
+    "directSolution": "유체윤활에서는 하중을 유막압력이 지지하여 금속접촉이 거의 없다. 따라서 '유체윤활'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-542-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-542-c1 '경계윤활'는 유체윤활에서는 하중을 유막압력이 지지하여 금속접촉이 거의 없다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-542-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-542-c2 '혼합윤활'는 유체윤활에서는 하중을 유막압력이 지지하여 금속접촉이 거의 없다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-542-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-542-c3 '유체윤활'는 유체윤활에서는 하중을 유막압력이 지지하여 금속접촉이 거의 없다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-542-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-542-c4 '극압윤활'는 유체윤활에서는 하중을 유막압력이 지지하여 금속접촉이 거의 없다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "유체윤활에서는 하중을 유막압력이 지지하여 금속접촉이 거의 없다.의 조건을 생략해 '유체윤활'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-rgkmdz",
+    "existingBlockId": "diagnosis",
+    "assertionText": "유체윤활에서는 하중을 유막압력이 지지하여 금속접촉이 거의 없다. 이 기준을 lesson-rgkmdz의 diagnosis 블록과 연결해 '유체윤활'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-543",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-543-c3",
+    "directSolution": "연마한 동판을 시료에 노출한 뒤 변색·부식등급을 표준판과 비교한다. 따라서 '동판부식시험'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-543-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-543-c1 '잔류탄소시험'는 연마한 동판을 시료에 노출한 뒤 변색·부식등급을 표준판과 비교한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-543-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-543-c2 '황산회분시험'는 연마한 동판을 시료에 노출한 뒤 변색·부식등급을 표준판과 비교한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-543-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-543-c3 '동판부식시험'는 연마한 동판을 시료에 노출한 뒤 변색·부식등급을 표준판과 비교한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-543-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-543-c4 '산화안정도시험'는 연마한 동판을 시료에 노출한 뒤 변색·부식등급을 표준판과 비교한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "연마한 동판을 시료에 노출한 뒤 변색·부식등급을 표준판과 비교한다.의 조건을 생략해 '동판부식시험'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-y0zevh",
+    "existingBlockId": "principle",
+    "assertionText": "연마한 동판을 시료에 노출한 뒤 변색·부식등급을 표준판과 비교한다. 이 기준을 lesson-y0zevh의 principle 블록과 연결해 '동판부식시험'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-544",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-544-c4",
+    "directSolution": "하이포이드기어는 높은 치면미끄럼과 하중 때문에 적합한 EP 기어유가 필요하다. 따라서 '하이포이드기어'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-544-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-544-c1 '스퍼기어'는 하이포이드기어는 높은 치면미끄럼과 하중 때문에 적합한 EP 기어유가 필요하다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-544-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-544-c2 '베벨기어 일반'는 하이포이드기어는 높은 치면미끄럼과 하중 때문에 적합한 EP 기어유가 필요하다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-544-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-544-c3 '평행축 헬리컬기어'는 하이포이드기어는 높은 치면미끄럼과 하중 때문에 적합한 EP 기어유가 필요하다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-544-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-544-c4 '하이포이드기어'는 하이포이드기어는 높은 치면미끄럼과 하중 때문에 적합한 EP 기어유가 필요하다. 따라서 정답 조건을 충족한다."
+      }
+    ],
+    "misconception": "하이포이드기어는 높은 치면미끄럼과 하중 때문에 적합한 EP 기어유가 필요하다.의 조건을 생략해 '하이포이드기어'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1p2ulh9",
+    "existingBlockId": "principle",
+    "assertionText": "하이포이드기어는 높은 치면미끄럼과 하중 때문에 적합한 EP 기어유가 필요하다. 이 기준을 lesson-1p2ulh9의 principle 블록과 연결해 '하이포이드기어'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-545",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-545-c3",
+    "directSolution": "압축기 운전부는 하중·수분·온도조건을 고려한 전용 또는 규정 윤활유를 사용해야 한다. 따라서 '일반 터빈유를 사용하는 것이 항상 바람직하다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-545-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-545-c1 '산화안정성이 좋아야 한다.'는 압축기 운전부는 하중·수분·온도조건을 고려한 전용 또는 규정 윤활유를 사용해야 한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-545-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-545-c2 '방청성이 있어야 한다.'는 압축기 운전부는 하중·수분·온도조건을 고려한 전용 또는 규정 윤활유를 사용해야 한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-545-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-545-c3 '일반 터빈유를 사용하는 것이 항상 바람직하다.'는 압축기 운전부는 하중·수분·온도조건을 고려한 전용 또는 규정 윤활유를 사용해야 한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-545-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-545-c4 '하중과 온도에 맞는 압축기유를 선정해야 한다.'는 압축기 운전부는 하중·수분·온도조건을 고려한 전용 또는 규정 윤활유를 사용해야 한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "압축기 운전부는 하중·수분·온도조건을 고려한 전용 또는 규정 윤활유를 사용해야 한다.의 조건을 생략해 '일반 터빈유를 사용하는 것이 항상 바람직하다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-mzecqf",
+    "existingBlockId": "principle",
+    "assertionText": "압축기 운전부는 하중·수분·온도조건을 고려한 전용 또는 규정 윤활유를 사용해야 한다. 이 기준을 lesson-mzecqf의 principle 블록과 연결해 '일반 터빈유를 사용하는 것이 항상 바람직하다.'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-546",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-546-c4",
+    "directSolution": "순환계통은 오일을 회수해 냉각·여과한 뒤 재공급하므로 열제거에 가장 유리하다. 따라서 '순환식 급유'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-546-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-546-c1 '링급유'는 순환계통은 오일을 회수해 냉각·여과한 뒤 재공급하므로 열제거에 가장 유리하다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-546-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-546-c2 '적하급유'는 순환계통은 오일을 회수해 냉각·여과한 뒤 재공급하므로 열제거에 가장 유리하다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-546-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-546-c3 '수동급유'는 순환계통은 오일을 회수해 냉각·여과한 뒤 재공급하므로 열제거에 가장 유리하다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-546-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-546-c4 '순환식 급유'는 순환계통은 오일을 회수해 냉각·여과한 뒤 재공급하므로 열제거에 가장 유리하다. 따라서 정답 조건을 충족한다."
+      }
+    ],
+    "misconception": "순환계통은 오일을 회수해 냉각·여과한 뒤 재공급하므로 열제거에 가장 유리하다.의 조건을 생략해 '순환식 급유'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-q2v86z",
+    "existingBlockId": "diagnosis",
+    "assertionText": "순환계통은 오일을 회수해 냉각·여과한 뒤 재공급하므로 열제거에 가장 유리하다. 이 기준을 lesson-q2v86z의 diagnosis 블록과 연결해 '순환식 급유'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-547",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-547-c2",
+    "directSolution": "리튬계는 내열·내수·기계적 안정성의 균형이 좋아 범용 고온용으로 널리 사용된다. 실제 한계온도는 제품사양을 따른다. 따라서 '리튬계 그리스'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-547-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-547-c1 '칼슘계 그리스'는 리튬계는 내열·내수·기계적 안정성의 균형이 좋아 범용 고온용으로 널리 사용된다. 실제 한계온도는 제품사양을 따른다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-547-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-547-c2 '리튬계 그리스'는 리튬계는 내열·내수·기계적 안정성의 균형이 좋아 범용 고온용으로 널리 사용된다. 실제 한계온도는 제품사양을 따른다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-547-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-547-c3 '나트륨계 그리스만'는 리튬계는 내열·내수·기계적 안정성의 균형이 좋아 범용 고온용으로 널리 사용된다. 실제 한계온도는 제품사양을 따른다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-547-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-547-c4 '일반 알루미늄계 그리스'는 리튬계는 내열·내수·기계적 안정성의 균형이 좋아 범용 고온용으로 널리 사용된다. 실제 한계온도는 제품사양을 따른다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "리튬계는 내열·내수·기계적 안정성의 균형이 좋아 범용 고온용으로 널리 사용된다. 실제 한계온도는 제품사양을 따른다.의 조건을 생략해 '리튬계 그리스'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1ygs5iu",
+    "existingBlockId": "principle",
+    "assertionText": "리튬계는 내열·내수·기계적 안정성의 균형이 좋아 범용 고온용으로 널리 사용된다. 실제 한계온도는 제품사양을 따른다. 이 기준을 lesson-1ygs5iu의 principle 블록과 연결해 '리튬계 그리스'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-557",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-557-c3",
+    "directSolution": "수동조정을 센서·제어기로 자동화하여 편차와 숙련의존성을 줄이는 접근이다. 따라서 '조정의 조절화 사고법'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-557-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-557-c1 '기능의 사고법'는 수동조정을 센서·제어기로 자동화하여 편차와 숙련의존성을 줄이는 접근이다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-557-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-557-c2 '미결함의 사고법'는 수동조정을 센서·제어기로 자동화하여 편차와 숙련의존성을 줄이는 접근이다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-557-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-557-c3 '조정의 조절화 사고법'는 수동조정을 센서·제어기로 자동화하여 편차와 숙련의존성을 줄이는 접근이다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-557-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-557-c4 '바람직한 모습 사고법'는 수동조정을 센서·제어기로 자동화하여 편차와 숙련의존성을 줄이는 접근이다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "수동조정을 센서·제어기로 자동화하여 편차와 숙련의존성을 줄이는 접근이다.의 조건을 생략해 '조정의 조절화 사고법'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1yj2hk4",
+    "existingBlockId": "principle",
+    "assertionText": "수동조정을 센서·제어기로 자동화하여 편차와 숙련의존성을 줄이는 접근이다. 이 기준을 lesson-1yj2hk4의 principle 블록과 연결해 '조정의 조절화 사고법'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-568",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-568-c2",
+    "directSolution": "재현성 확보에는 회전수·부하·센서위치가 중요하며 시계상의 같은 시간은 본질조건이 아니다. 따라서 '측정 시각'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-568-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-568-c1 '회전수'는 재현성 확보에는 회전수·부하·센서위치가 중요하며 시계상의 같은 시간은 본질조건이 아니다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-568-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-568-c2 '측정 시각'는 재현성 확보에는 회전수·부하·센서위치가 중요하며 시계상의 같은 시간은 본질조건이 아니다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-568-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-568-c3 '부하조건'는 재현성 확보에는 회전수·부하·센서위치가 중요하며 시계상의 같은 시간은 본질조건이 아니다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-568-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-568-c4 '측정지점'는 재현성 확보에는 회전수·부하·센서위치가 중요하며 시계상의 같은 시간은 본질조건이 아니다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "재현성 확보에는 회전수·부하·센서위치가 중요하며 시계상의 같은 시간은 본질조건이 아니다.의 조건을 생략해 '측정 시각'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-6v0bfu",
+    "existingBlockId": "principle",
+    "assertionText": "재현성 확보에는 회전수·부하·센서위치가 중요하며 시계상의 같은 시간은 본질조건이 아니다. 이 기준을 lesson-6v0bfu의 principle 블록과 연결해 '측정 시각'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-570",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-570-c1",
+    "directSolution": "점음원에서 같은 위상의 점은 구면을 이루며 거리가 멀수록 면적이 증가한다. 따라서 '구면파'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-570-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-570-c1 '구면파'는 점음원에서 같은 위상의 점은 구면을 이루며 거리가 멀수록 면적이 증가한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-570-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-570-c2 '평면파'는 점음원에서 같은 위상의 점은 구면을 이루며 거리가 멀수록 면적이 증가한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-570-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-570-c3 '발산파라는 별도 기본형'는 점음원에서 같은 위상의 점은 구면을 이루며 거리가 멀수록 면적이 증가한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-570-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-570-c4 '정재파'는 점음원에서 같은 위상의 점은 구면을 이루며 거리가 멀수록 면적이 증가한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "점음원에서 같은 위상의 점은 구면을 이루며 거리가 멀수록 면적이 증가한다.의 조건을 생략해 '구면파'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1if5krx",
+    "existingBlockId": "principle",
+    "assertionText": "점음원에서 같은 위상의 점은 구면을 이루며 거리가 멀수록 면적이 증가한다. 이 기준을 lesson-1if5krx의 principle 블록과 연결해 '구면파'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-571",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-571-c4",
+    "directSolution": "불평형량 증가는 가진력을 키우므로 원인제거·방진·기초보강의 반대다. 따라서 '언밸런스량을 크게 한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-571-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-571-c1 '방진기 설치'는 불평형량 증가는 가진력을 키우므로 원인제거·방진·기초보강의 반대다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-571-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-571-c2 '기초진동 제어'는 불평형량 증가는 가진력을 키우므로 원인제거·방진·기초보강의 반대다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-571-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-571-c3 '거더·질량체 활용'는 불평형량 증가는 가진력을 키우므로 원인제거·방진·기초보강의 반대다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-571-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-571-c4 '언밸런스량을 크게 한다.'는 불평형량 증가는 가진력을 키우므로 원인제거·방진·기초보강의 반대다. 따라서 정답 조건을 충족한다."
+      }
+    ],
+    "misconception": "불평형량 증가는 가진력을 키우므로 원인제거·방진·기초보강의 반대다.의 조건을 생략해 '언밸런스량을 크게 한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1juv3lj",
+    "existingBlockId": "principle",
+    "assertionText": "불평형량 증가는 가진력을 키우므로 원인제거·방진·기초보강의 반대다. 이 기준을 lesson-1juv3lj의 principle 블록과 연결해 '언밸런스량을 크게 한다.'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-572",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-572-c2",
+    "directSolution": "초음파는 주로 거리·레벨·두께 측정에 사용하며 압력의 대표 검출방식은 아니다. 따라서 '초음파형'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-572-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-572-c1 '압전형'는 초음파는 주로 거리·레벨·두께 측정에 사용하며 압력의 대표 검출방식은 아니다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-572-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-572-c2 '초음파형'는 초음파는 주로 거리·레벨·두께 측정에 사용하며 압력의 대표 검출방식은 아니다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-572-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-572-c3 '정전용량형'는 초음파는 주로 거리·레벨·두께 측정에 사용하며 압력의 대표 검출방식은 아니다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-572-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-572-c4 '스트레인게이지형'는 초음파는 주로 거리·레벨·두께 측정에 사용하며 압력의 대표 검출방식은 아니다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "초음파는 주로 거리·레벨·두께 측정에 사용하며 압력의 대표 검출방식은 아니다.의 조건을 생략해 '초음파형'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1saadjx",
+    "existingBlockId": "principle",
+    "assertionText": "초음파는 주로 거리·레벨·두께 측정에 사용하며 압력의 대표 검출방식은 아니다. 이 기준을 lesson-1saadjx의 principle 블록과 연결해 '초음파형'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-574",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-574-c3",
+    "directSolution": "부지 내 조사에서는 소음이 어느 경로로 언제·어디에 전파되는지 분석한다. 따라서 '전파경로 해석과 소음의 시공간 분석'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-574-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-574-c1 '소음원의 명칭만 조사'는 부지 내 조사에서는 소음이 어느 경로로 언제·어디에 전파되는지 분석한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-574-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-574-c2 '제품 품질검사만 수행'는 부지 내 조사에서는 소음이 어느 경로로 언제·어디에 전파되는지 분석한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-574-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-574-c3 '전파경로 해석과 소음의 시공간 분석'는 부지 내 조사에서는 소음이 어느 경로로 언제·어디에 전파되는지 분석한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-574-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-574-c4 '작업자의 개인 청력만 측정'는 부지 내 조사에서는 소음이 어느 경로로 언제·어디에 전파되는지 분석한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "부지 내 조사에서는 소음이 어느 경로로 언제·어디에 전파되는지 분석한다.의 조건을 생략해 '전파경로 해석과 소음의 시공간 분석'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-173or6j",
+    "existingBlockId": "principle",
+    "assertionText": "부지 내 조사에서는 소음이 어느 경로로 언제·어디에 전파되는지 분석한다. 이 기준을 lesson-173or6j의 principle 블록과 연결해 '전파경로 해석과 소음의 시공간 분석'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-575",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-575-c2",
+    "directSolution": "주기 T는 주파수 f의 역수 T=1/f이다. 따라서 '진동주기'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-575-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-575-c1 '진동수'는 주기 T는 주파수 f의 역수 T=1/f이다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-575-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-575-c2 '진동주기'는 주기 T는 주파수 f의 역수 T=1/f이다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-575-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-575-c3 '각진동수'는 주기 T는 주파수 f의 역수 T=1/f이다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-575-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-575-c4 '진동위상'는 주기 T는 주파수 f의 역수 T=1/f이다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "주기 T는 주파수 f의 역수 T=1/f이다.의 조건을 생략해 '진동주기'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-11m0vkg",
+    "existingBlockId": "formula",
+    "assertionText": "주기 T는 주파수 f의 역수 T=1/f이다. 이 기준을 lesson-11m0vkg의 formula 블록과 연결해 '진동주기'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-576",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-576-c3",
+    "directSolution": "귀의 주파수별 감도가 다르므로 같은 감각적 크기를 만드는 음압을 주파수별로 표시한다. 따라서 '등청감곡선'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-576-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-576-c1 '음압도'는 귀의 주파수별 감도가 다르므로 같은 감각적 크기를 만드는 음압을 주파수별로 표시한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-576-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-576-c2 '소음레벨 한 점'는 귀의 주파수별 감도가 다르므로 같은 감각적 크기를 만드는 음압을 주파수별로 표시한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-576-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-576-c3 '등청감곡선'는 귀의 주파수별 감도가 다르므로 같은 감각적 크기를 만드는 음압을 주파수별로 표시한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-576-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-576-c4 '음향파워레벨'는 귀의 주파수별 감도가 다르므로 같은 감각적 크기를 만드는 음압을 주파수별로 표시한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "귀의 주파수별 감도가 다르므로 같은 감각적 크기를 만드는 음압을 주파수별로 표시한다.의 조건을 생략해 '등청감곡선'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1ung7xm",
+    "existingBlockId": "principle",
+    "assertionText": "귀의 주파수별 감도가 다르므로 같은 감각적 크기를 만드는 음압을 주파수별로 표시한다. 이 기준을 lesson-1ung7xm의 principle 블록과 연결해 '등청감곡선'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-577",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-577-c2",
+    "directSolution": "헬름홀츠 공명기는 조정된 공진주파수 부근의 협대역 소음을 크게 줄이는 장치다. 따라서 '공진주파수 부근에서 소음저감 효과가 작다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-577-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-577-c1 '사이드브랜치 공명기라고도 한다.'는 헬름홀츠 공명기는 조정된 공진주파수 부근의 협대역 소음을 크게 줄이는 장치다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-577-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-577-c2 '공진주파수 부근에서 소음저감 효과가 작다.'는 헬름홀츠 공명기는 조정된 공진주파수 부근의 협대역 소음을 크게 줄이는 장치다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-577-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-577-c3 '덕트·엔진실 소음저감에 이용할 수 있다.'는 헬름홀츠 공명기는 조정된 공진주파수 부근의 협대역 소음을 크게 줄이는 장치다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-577-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-577-c4 '공진부근의 좁은 주파수대에서 큰 감쇠를 얻는다.'는 헬름홀츠 공명기는 조정된 공진주파수 부근의 협대역 소음을 크게 줄이는 장치다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "헬름홀츠 공명기는 조정된 공진주파수 부근의 협대역 소음을 크게 줄이는 장치다.의 조건을 생략해 '공진주파수 부근에서 소음저감 효과가 작다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-si5iq9",
+    "existingBlockId": "trap",
+    "assertionText": "헬름홀츠 공명기는 조정된 공진주파수 부근의 협대역 소음을 크게 줄이는 장치다. 이 기준을 lesson-si5iq9의 trap 블록과 연결해 '공진주파수 부근에서 소음저감 효과가 작다.'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-578",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-578-c3",
+    "directSolution": "변형게이지는 변형률을 측정하고 나머지는 오일의 마모금속·입자를 분석한다. 따라서 '변형게이지법'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-578-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-578-c1 '회전전극법'는 변형게이지는 변형률을 측정하고 나머지는 오일의 마모금속·입자를 분석한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-578-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-578-c2 '원자흡광법'는 변형게이지는 변형률을 측정하고 나머지는 오일의 마모금속·입자를 분석한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-578-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-578-c3 '변형게이지법'는 변형게이지는 변형률을 측정하고 나머지는 오일의 마모금속·입자를 분석한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-578-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-578-c4 '페로그래피법'는 변형게이지는 변형률을 측정하고 나머지는 오일의 마모금속·입자를 분석한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "변형게이지는 변형률을 측정하고 나머지는 오일의 마모금속·입자를 분석한다.의 조건을 생략해 '변형게이지법'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-eyhvtz",
+    "existingBlockId": "trap",
+    "assertionText": "변형게이지는 변형률을 측정하고 나머지는 오일의 마모금속·입자를 분석한다. 이 기준을 lesson-eyhvtz의 trap 블록과 연결해 '변형게이지법'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-579",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-579-c3",
+    "directSolution": "예방보전은 정기점검과 교환·조정을 통해 고장 전에 열화를 제거하거나 복구한다. 따라서 '예방보전'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-579-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-579-c1 '생산보전'는 예방보전은 정기점검과 교환·조정을 통해 고장 전에 열화를 제거하거나 복구한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-579-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-579-c2 '개량보전'는 예방보전은 정기점검과 교환·조정을 통해 고장 전에 열화를 제거하거나 복구한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-579-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-579-c3 '예방보전'는 예방보전은 정기점검과 교환·조정을 통해 고장 전에 열화를 제거하거나 복구한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-579-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-579-c4 '사후보전'는 예방보전은 정기점검과 교환·조정을 통해 고장 전에 열화를 제거하거나 복구한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "예방보전은 정기점검과 교환·조정을 통해 고장 전에 열화를 제거하거나 복구한다.의 조건을 생략해 '예방보전'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-sd1pst",
+    "existingBlockId": "diagnosis",
+    "assertionText": "예방보전은 정기점검과 교환·조정을 통해 고장 전에 열화를 제거하거나 복구한다. 이 기준을 lesson-sd1pst의 diagnosis 블록과 연결해 '예방보전'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-581",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-581-c1",
+    "directSolution": "공사관리는 작업범위·공법·인력·자재·비용·검수를 종합적으로 관리한다. 따라서 '공사관리'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-581-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-581-c1 '공사관리'는 공사관리는 작업범위·공법·인력·자재·비용·검수를 종합적으로 관리한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-581-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-581-c2 '부하관리'는 공사관리는 작업범위·공법·인력·자재·비용·검수를 종합적으로 관리한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-581-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-581-c3 '외주관리만'는 공사관리는 작업범위·공법·인력·자재·비용·검수를 종합적으로 관리한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-581-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-581-c4 '일정관리만'는 공사관리는 작업범위·공법·인력·자재·비용·검수를 종합적으로 관리한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "공사관리는 작업범위·공법·인력·자재·비용·검수를 종합적으로 관리한다.의 조건을 생략해 '공사관리'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1bt5fzi",
+    "existingBlockId": "principle",
+    "assertionText": "공사관리는 작업범위·공법·인력·자재·비용·검수를 종합적으로 관리한다. 이 기준을 lesson-1bt5fzi의 principle 블록과 연결해 '공사관리'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-582",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-582-c3",
+    "directSolution": "총점검은 교육·전달·실천과 이상발견 역량 향상이 핵심이며 형식적 체크만으로 끝나지 않는다. 따라서 '점검수준 향상을 단순 체크만으로 끝낸다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-582-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-582-c1 '설비 기초교육을 받는다.'는 총점검은 교육·전달·실천과 이상발견 역량 향상이 핵심이며 형식적 체크만으로 끝나지 않는다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-582-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-582-c2 '배운 내용을 작업자에게 전달한다.'는 총점검은 교육·전달·실천과 이상발견 역량 향상이 핵심이며 형식적 체크만으로 끝나지 않는다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-582-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-582-c3 '점검수준 향상을 단순 체크만으로 끝낸다.'는 총점검은 교육·전달·실천과 이상발견 역량 향상이 핵심이며 형식적 체크만으로 끝나지 않는다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-582-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-582-c4 '실천을 통해 이상을 발견한다.'는 총점검은 교육·전달·실천과 이상발견 역량 향상이 핵심이며 형식적 체크만으로 끝나지 않는다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "총점검은 교육·전달·실천과 이상발견 역량 향상이 핵심이며 형식적 체크만으로 끝나지 않는다.의 조건을 생략해 '점검수준 향상을 단순 체크만으로 끝낸다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-oi3n2w",
+    "existingBlockId": "diagnosis",
+    "assertionText": "총점검은 교육·전달·실천과 이상발견 역량 향상이 핵심이며 형식적 체크만으로 끝나지 않는다. 이 기준을 lesson-oi3n2w의 diagnosis 블록과 연결해 '점검수준 향상을 단순 체크만으로 끝낸다.'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-583",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-583-c4",
+    "directSolution": "대안별 생애비용을 현재가치로 환산한 뒤 연간 등가비용으로 비교한다. 따라서 '연평균비교법'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-583-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-583-c1 '신 MAPI 방식'는 대안별 생애비용을 현재가치로 환산한 뒤 연간 등가비용으로 비교한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-583-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-583-c2 'MAPI 긴급도비율만'는 대안별 생애비용을 현재가치로 환산한 뒤 연간 등가비용으로 비교한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-583-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-583-c3 '자본회수기간법'는 대안별 생애비용을 현재가치로 환산한 뒤 연간 등가비용으로 비교한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-583-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-583-c4 '연평균비교법'는 대안별 생애비용을 현재가치로 환산한 뒤 연간 등가비용으로 비교한다. 따라서 정답 조건을 충족한다."
+      }
+    ],
+    "misconception": "대안별 생애비용을 현재가치로 환산한 뒤 연간 등가비용으로 비교한다.의 조건을 생략해 '연평균비교법'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1x43asb",
+    "existingBlockId": "principle",
+    "assertionText": "대안별 생애비용을 현재가치로 환산한 뒤 연간 등가비용으로 비교한다. 이 기준을 lesson-1x43asb의 principle 블록과 연결해 '연평균비교법'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-584",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-584-c2",
+    "directSolution": "저부하에서는 과도한 연소율을 낮추도록 연료조건이나 투입량을 조정한다. 따라서 '연료의 품질을 낮추거나 투입열량을 줄인다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-584-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-584-c1 '연소실을 더 크게 한다.'는 저부하에서는 과도한 연소율을 낮추도록 연료조건이나 투입량을 조정한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-584-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-584-c2 '연료의 품질을 낮추거나 투입열량을 줄인다.'는 저부하에서는 과도한 연소율을 낮추도록 연료조건이나 투입량을 조정한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-584-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-584-c3 '노상면적을 더 크게 한다.'는 저부하에서는 과도한 연소율을 낮추도록 연료조건이나 투입량을 조정한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-584-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-584-c4 '통풍을 무조건 증가시킨다.'는 저부하에서는 과도한 연소율을 낮추도록 연료조건이나 투입량을 조정한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "저부하에서는 과도한 연소율을 낮추도록 연료조건이나 투입량을 조정한다.의 조건을 생략해 '연료의 품질을 낮추거나 투입열량을 줄인다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-etb8gj",
+    "existingBlockId": "principle",
+    "assertionText": "저부하에서는 과도한 연소율을 낮추도록 연료조건이나 투입량을 조정한다. 이 기준을 lesson-etb8gj의 principle 블록과 연결해 '연료의 품질을 낮추거나 투입열량을 줄인다.'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-585",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-585-c3",
+    "directSolution": "부품별 상태와 수명을 관리해 고장 전 계획시점에 개별적으로 교환한다. 따라서 '개별사전대체'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-585-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-585-c1 '각개 고장대체'는 부품별 상태와 수명을 관리해 고장 전 계획시점에 개별적으로 교환한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-585-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-585-c2 '일제대체'는 부품별 상태와 수명을 관리해 고장 전 계획시점에 개별적으로 교환한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-585-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-585-c3 '개별사전대체'는 부품별 상태와 수명을 관리해 고장 전 계획시점에 개별적으로 교환한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-585-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-585-c4 '최적수리주기만'는 부품별 상태와 수명을 관리해 고장 전 계획시점에 개별적으로 교환한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "부품별 상태와 수명을 관리해 고장 전 계획시점에 개별적으로 교환한다.의 조건을 생략해 '개별사전대체'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-ltc473",
+    "existingBlockId": "diagnosis",
+    "assertionText": "부품별 상태와 수명을 관리해 고장 전 계획시점에 개별적으로 교환한다. 이 기준을 lesson-ltc473의 diagnosis 블록과 연결해 '개별사전대체'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-586",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-586-c4",
+    "directSolution": "청소는 기본조건 유지·이상발견 능력이고 수리능력은 교환·복구·긴급조치를 포함한다. 따라서 '공장 주변환경의 중요성을 이해하고 청소만 수행한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-586-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-586-c1 '오버홀을 보조한다.'는 청소는 기본조건 유지·이상발견 능력이고 수리능력은 교환·복구·긴급조치를 포함한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-586-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-586-c2 '부품수명을 알고 교환한다.'는 청소는 기본조건 유지·이상발견 능력이고 수리능력은 교환·복구·긴급조치를 포함한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-586-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-586-c3 '고장원인을 추정해 긴급처리한다.'는 청소는 기본조건 유지·이상발견 능력이고 수리능력은 교환·복구·긴급조치를 포함한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-586-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-586-c4 '공장 주변환경의 중요성을 이해하고 청소만 수행한다.'는 청소는 기본조건 유지·이상발견 능력이고 수리능력은 교환·복구·긴급조치를 포함한다. 따라서 정답 조건을 충족한다."
+      }
+    ],
+    "misconception": "청소는 기본조건 유지·이상발견 능력이고 수리능력은 교환·복구·긴급조치를 포함한다.의 조건을 생략해 '공장 주변환경의 중요성을 이해하고 청소만 수행한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1bc03h5",
+    "existingBlockId": "principle",
+    "assertionText": "청소는 기본조건 유지·이상발견 능력이고 수리능력은 교환·복구·긴급조치를 포함한다. 이 기준을 lesson-1bc03h5의 principle 블록과 연결해 '공장 주변환경의 중요성을 이해하고 청소만 수행한다.'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-587",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-587-c2",
+    "directSolution": "상비품은 사용빈도·공통성·긴급성이 높고 보관이 쉬운 것이 적합하다. 따라서 '사용량이 적고 단기간만 쓰는 전용품'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-587-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-587-c1 '단가가 낮은 품목'는 상비품은 사용빈도·공통성·긴급성이 높고 보관이 쉬운 것이 적합하다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-587-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-587-c2 '사용량이 적고 단기간만 쓰는 전용품'는 상비품은 사용빈도·공통성·긴급성이 높고 보관이 쉬운 것이 적합하다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-587-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-587-c3 '여러 설비에 공통사용되는 품목'는 상비품은 사용빈도·공통성·긴급성이 높고 보관이 쉬운 것이 적합하다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-587-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-587-c4 '보관 중 변질우려가 적은 품목'는 상비품은 사용빈도·공통성·긴급성이 높고 보관이 쉬운 것이 적합하다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "상비품은 사용빈도·공통성·긴급성이 높고 보관이 쉬운 것이 적합하다.의 조건을 생략해 '사용량이 적고 단기간만 쓰는 전용품'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-vf9zxi",
+    "existingBlockId": "principle",
+    "assertionText": "상비품은 사용빈도·공통성·긴급성이 높고 보관이 쉬운 것이 적합하다. 이 기준을 lesson-vf9zxi의 principle 블록과 연결해 '사용량이 적고 단기간만 쓰는 전용품'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-588",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-588-c2",
+    "directSolution": "사용신뢰성은 운전·점검·정비와 같은 사용단계 관리능력에 의해 좌우된다. 따라서 '보전기술'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-588-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-588-c1 '설계기술'는 사용신뢰성은 운전·점검·정비와 같은 사용단계 관리능력에 의해 좌우된다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-588-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-588-c2 '보전기술'는 사용신뢰성은 운전·점검·정비와 같은 사용단계 관리능력에 의해 좌우된다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-588-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-588-c3 '제조기술'는 사용신뢰성은 운전·점검·정비와 같은 사용단계 관리능력에 의해 좌우된다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-588-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-588-c4 '부품재료의 고유성질'는 사용신뢰성은 운전·점검·정비와 같은 사용단계 관리능력에 의해 좌우된다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "사용신뢰성은 운전·점검·정비와 같은 사용단계 관리능력에 의해 좌우된다.의 조건을 생략해 '보전기술'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-e0jea7",
+    "existingBlockId": "principle",
+    "assertionText": "사용신뢰성은 운전·점검·정비와 같은 사용단계 관리능력에 의해 좌우된다. 이 기준을 lesson-e0jea7의 principle 블록과 연결해 '보전기술'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-589",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-589-c4",
+    "directSolution": "열화고장은 사용시간이 누적된 마모고장기에 증가하며 초기고장은 설계·제조·설치결함이 주원인이다. 따라서 '장기간 사용에 따른 열화'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-589-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-589-c1 '설계오류'는 열화고장은 사용시간이 누적된 마모고장기에 증가하며 초기고장은 설계·제조·설치결함이 주원인이다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-589-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-589-c2 '부적절한 설치'는 열화고장은 사용시간이 누적된 마모고장기에 증가하며 초기고장은 설계·제조·설치결함이 주원인이다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-589-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-589-c3 '제조과정의 실수'는 열화고장은 사용시간이 누적된 마모고장기에 증가하며 초기고장은 설계·제조·설치결함이 주원인이다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-589-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-589-c4 '장기간 사용에 따른 열화'는 열화고장은 사용시간이 누적된 마모고장기에 증가하며 초기고장은 설계·제조·설치결함이 주원인이다. 따라서 정답 조건을 충족한다."
+      }
+    ],
+    "misconception": "열화고장은 사용시간이 누적된 마모고장기에 증가하며 초기고장은 설계·제조·설치결함이 주원인이다.의 조건을 생략해 '장기간 사용에 따른 열화'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-141lj7w",
+    "existingBlockId": "diagnosis",
+    "assertionText": "열화고장은 사용시간이 누적된 마모고장기에 증가하며 초기고장은 설계·제조·설치결함이 주원인이다. 이 기준을 lesson-141lj7w의 diagnosis 블록과 연결해 '장기간 사용에 따른 열화'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-590",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-590-c1",
+    "directSolution": "고장률은 단위 가동시간당 발생하는 고장횟수를 나타낸다. 따라서 '고장횟수÷총 가동시간'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-590-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-590-c1 '고장횟수÷총 가동시간'는 고장률은 단위 가동시간당 발생하는 고장횟수를 나타낸다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-590-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-590-c2 '고장정지시간÷총 가동시간'는 고장률은 단위 가동시간당 발생하는 고장횟수를 나타낸다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-590-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-590-c3 '고장횟수÷부하시간만'는 고장률은 단위 가동시간당 발생하는 고장횟수를 나타낸다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-590-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-590-c4 '고장정지시간÷부하시간'는 고장률은 단위 가동시간당 발생하는 고장횟수를 나타낸다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "고장률은 단위 가동시간당 발생하는 고장횟수를 나타낸다.의 조건을 생략해 '고장횟수÷총 가동시간'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1mhojpg",
+    "existingBlockId": "formula",
+    "assertionText": "고장률은 단위 가동시간당 발생하는 고장횟수를 나타낸다. 이 기준을 lesson-1mhojpg의 formula 블록과 연결해 '고장횟수÷총 가동시간'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-591",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-591-c4",
+    "directSolution": "경제성 분석은 투자효율을 평가하고, 불량요인 규명에는 FMECA·PM·특성요인도 등을 사용한다. 따라서 '경제성 분석'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-591-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-591-c1 'FMECA'는 경제성 분석은 투자효율을 평가하고, 불량요인 규명에는 FMECA·PM·특성요인도 등을 사용한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-591-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-591-c2 'PM분석'는 경제성 분석은 투자효율을 평가하고, 불량요인 규명에는 FMECA·PM·특성요인도 등을 사용한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-591-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-591-c3 '특성요인도'는 경제성 분석은 투자효율을 평가하고, 불량요인 규명에는 FMECA·PM·특성요인도 등을 사용한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-591-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-591-c4 '경제성 분석'는 경제성 분석은 투자효율을 평가하고, 불량요인 규명에는 FMECA·PM·특성요인도 등을 사용한다. 따라서 정답 조건을 충족한다."
+      }
+    ],
+    "misconception": "경제성 분석은 투자효율을 평가하고, 불량요인 규명에는 FMECA·PM·특성요인도 등을 사용한다.의 조건을 생략해 '경제성 분석'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1yo1hsi",
+    "existingBlockId": "principle",
+    "assertionText": "경제성 분석은 투자효율을 평가하고, 불량요인 규명에는 FMECA·PM·특성요인도 등을 사용한다. 이 기준을 lesson-1yo1hsi의 principle 블록과 연결해 '경제성 분석'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-592",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-592-c1",
+    "directSolution": "투자평가는 대안 간 경제적 차이와 시간가치를 비교해야 한다. 따라서 '수익수준에 차이가 없는 대안만을 대상으로 한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-592-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-592-c1 '수익수준에 차이가 없는 대안만을 대상으로 한다.'는 투자평가는 대안 간 경제적 차이와 시간가치를 비교해야 한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-592-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-592-c2 '현재자금은 동일액의 미래자금보다 가치가 크다.'는 투자평가는 대안 간 경제적 차이와 시간가치를 비교해야 한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-592-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-592-c3 '불확실한 미래수익과 현재지출을 비교한다.'는 투자평가는 대안 간 경제적 차이와 시간가치를 비교해야 한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-592-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-592-c4 '미래금액은 현재가치로 환산한다.'는 투자평가는 대안 간 경제적 차이와 시간가치를 비교해야 한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "투자평가는 대안 간 경제적 차이와 시간가치를 비교해야 한다.의 조건을 생략해 '수익수준에 차이가 없는 대안만을 대상으로 한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-qyb7of",
+    "existingBlockId": "trap",
+    "assertionText": "투자평가는 대안 간 경제적 차이와 시간가치를 비교해야 한다. 이 기준을 lesson-qyb7of의 trap 블록과 연결해 '수익수준에 차이가 없는 대안만을 대상으로 한다.'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-593",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-593-c4",
+    "directSolution": "첫 단계에서 목적·요구기능·성능규격과 기본개념을 정의한다. 따라서 '시스템 개념구성과 규격결정'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-593-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-593-c1 '제작·설치'는 첫 단계에서 목적·요구기능·성능규격과 기본개념을 정의한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-593-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-593-c2 '운용·유지'는 첫 단계에서 목적·요구기능·성능규격과 기본개념을 정의한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-593-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-593-c3 '상세 설계·개발'는 첫 단계에서 목적·요구기능·성능규격과 기본개념을 정의한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-593-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-593-c4 '시스템 개념구성과 규격결정'는 첫 단계에서 목적·요구기능·성능규격과 기본개념을 정의한다. 따라서 정답 조건을 충족한다."
+      }
+    ],
+    "misconception": "첫 단계에서 목적·요구기능·성능규격과 기본개념을 정의한다.의 조건을 생략해 '시스템 개념구성과 규격결정'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-rf85xy",
+    "existingBlockId": "principle",
+    "assertionText": "첫 단계에서 목적·요구기능·성능규격과 기본개념을 정의한다. 이 기준을 lesson-rf85xy의 principle 블록과 연결해 '시스템 개념구성과 규격결정'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-607",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-607-c3",
+    "directSolution": "기포는 유막파괴와 산화를 촉진하므로 기어유는 소포성이 좋아야 한다. 따라서 '기포가 많아질수록 윤활성능이 좋아지므로 소포성이 낮아야 한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-607-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-607-c1 '방청성이 좋아야 한다.'는 기포는 유막파괴와 산화를 촉진하므로 기어유는 소포성이 좋아야 한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-607-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-607-c2 '고속기어에는 비교적 저점도유가 적합하다.'는 기포는 유막파괴와 산화를 촉진하므로 기어유는 소포성이 좋아야 한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-607-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-607-c3 '기포가 많아질수록 윤활성능이 좋아지므로 소포성이 낮아야 한다.'는 기포는 유막파괴와 산화를 촉진하므로 기어유는 소포성이 좋아야 한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-607-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-607-c4 '수분 혼입 시 분리가 잘되는 항유화성이 필요하다.'는 기포는 유막파괴와 산화를 촉진하므로 기어유는 소포성이 좋아야 한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "기포는 유막파괴와 산화를 촉진하므로 기어유는 소포성이 좋아야 한다.의 조건을 생략해 '기포가 많아질수록 윤활성능이 좋아지므로 소포성이 낮아야 한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-4bfob1",
+    "existingBlockId": "trap",
+    "assertionText": "기포는 유막파괴와 산화를 촉진하므로 기어유는 소포성이 좋아야 한다. 이 기준을 lesson-4bfob1의 trap 블록과 연결해 '기포가 많아질수록 윤활성능이 좋아지므로 소포성이 낮아야 한다.'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-608",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-608-c2",
+    "directSolution": "윤활제는 산화·오염·첨가제 소모로 열화되므로 상태와 주기에 따라 교환한다. 따라서 '윤활유와 그리스를 교환하지 않고 계속 사용한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-608-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-608-c1 '급유순서와 경로를 계획한다.'는 윤활제는 산화·오염·첨가제 소모로 열화되므로 상태와 주기에 따라 교환한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-608-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-608-c2 '윤활유와 그리스를 교환하지 않고 계속 사용한다.'는 윤활제는 산화·오염·첨가제 소모로 열화되므로 상태와 주기에 따라 교환한다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-608-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-608-c3 '이상점검과 급유기록을 남긴다.'는 윤활제는 산화·오염·첨가제 소모로 열화되므로 상태와 주기에 따라 교환한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-608-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-608-c4 '윤활제 종류를 합리적으로 통합한다.'는 윤활제는 산화·오염·첨가제 소모로 열화되므로 상태와 주기에 따라 교환한다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "윤활제는 산화·오염·첨가제 소모로 열화되므로 상태와 주기에 따라 교환한다.의 조건을 생략해 '윤활유와 그리스를 교환하지 않고 계속 사용한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-ji2wa3",
+    "existingBlockId": "trap",
+    "assertionText": "윤활제는 산화·오염·첨가제 소모로 열화되므로 상태와 주기에 따라 교환한다. 이 기준을 lesson-ji2wa3의 trap 블록과 연결해 '윤활유와 그리스를 교환하지 않고 계속 사용한다.'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-609",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-609-c4",
+    "directSolution": "윤활제 선정과 표준·소비계획은 관리부서가 담당하고 현장부서는 급유·점검·기록을 수행한다. 따라서 '전사 윤활제 선정과 소비량 정책 결정'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-609-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-609-c1 '급유장치 예비품 관리'는 윤활제 선정과 표준·소비계획은 관리부서가 담당하고 현장부서는 급유·점검·기록을 수행한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-609-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-609-c2 '윤활대장·기록 작성'는 윤활제 선정과 표준·소비계획은 관리부서가 담당하고 현장부서는 급유·점검·기록을 수행한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-609-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-609-c3 '표준에 따른 급유작업'는 윤활제 선정과 표준·소비계획은 관리부서가 담당하고 현장부서는 급유·점검·기록을 수행한다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-609-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-609-c4 '전사 윤활제 선정과 소비량 정책 결정'는 윤활제 선정과 표준·소비계획은 관리부서가 담당하고 현장부서는 급유·점검·기록을 수행한다. 따라서 정답 조건을 충족한다."
+      }
+    ],
+    "misconception": "윤활제 선정과 표준·소비계획은 관리부서가 담당하고 현장부서는 급유·점검·기록을 수행한다.의 조건을 생략해 '전사 윤활제 선정과 소비량 정책 결정'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-xykjlp",
+    "existingBlockId": "principle",
+    "assertionText": "윤활제 선정과 표준·소비계획은 관리부서가 담당하고 현장부서는 급유·점검·기록을 수행한다. 이 기준을 lesson-xykjlp의 principle 블록과 연결해 '전사 윤활제 선정과 소비량 정책 결정'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-610",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-610-c2",
+    "directSolution": "청정분산제는 오염물을 표면에서 떼어내고 응집되지 않도록 오일 속에 분산시킨다. 따라서 '청정분산제'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-610-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-610-c1 '소포제'는 청정분산제는 오염물을 표면에서 떼어내고 응집되지 않도록 오일 속에 분산시킨다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-610-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-610-c2 '청정분산제'는 청정분산제는 오염물을 표면에서 떼어내고 응집되지 않도록 오일 속에 분산시킨다. 따라서 정답 조건을 충족한다."
+      },
+      {
+        "choiceId": "U-610-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-610-c3 '유성향상제'는 청정분산제는 오염물을 표면에서 떼어내고 응집되지 않도록 오일 속에 분산시킨다. 따라서 문항 조건과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-610-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-610-c4 '유동점강하제'는 청정분산제는 오염물을 표면에서 떼어내고 응집되지 않도록 오일 속에 분산시킨다. 따라서 문항 조건과 맞지 않는다."
+      }
+    ],
+    "misconception": "청정분산제는 오염물을 표면에서 떼어내고 응집되지 않도록 오일 속에 분산시킨다.의 조건을 생략해 '청정분산제'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1vmyb3",
+    "existingBlockId": "principle",
+    "assertionText": "청정분산제는 오염물을 표면에서 떼어내고 응집되지 않도록 오일 속에 분산시킨다. 이 기준을 lesson-1vmyb3의 principle 블록과 연결해 '청정분산제'를 판별한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T19:00:00.000+09:00"
+  }
+]

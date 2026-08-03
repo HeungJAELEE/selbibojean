@@ -1,0 +1,230 @@
+[
+  {
+    "questionId": "U-127",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-127-c1",
+    "directSolution": "문항은 설치형식이 아니라 격판실린더의 밀봉 구조를 묻는 부정형이다. 격판실린더는 유연한 다이어프램으로 기밀을 유지하므로, 일반 피스톤 로드처럼 미끄럼실링이 필요하다는 1번이 옳지 않다.",
+    "choiceRationales": [
+      { "choiceId": "U-127-c1", "verdict": "correct", "rationale": "격판실린더는 다이어프램이 변형되며 밀봉하므로 일반 피스톤식 로드의 미끄럼실링을 전제로 하지 않는다. 따라서 부정형 문항의 정답이다." },
+      { "choiceId": "U-127-c2", "verdict": "incorrect", "rationale": "회전실린더는 랙과 피니언 기구로 직선 운동을 제한 각도의 회전 운동으로 바꾸는 구성이 가능하므로 틀린 설명이 아니다." },
+      { "choiceId": "U-127-c3", "verdict": "incorrect", "rationale": "탠덤실린더는 둘 이상의 복동실린더를 직렬로 구성하여 같은 압력에서 더 큰 힘을 얻는 방식이므로 설명이 성립한다." },
+      { "choiceId": "U-127-c4", "verdict": "incorrect", "rationale": "다위치실린더는 여러 실린더의 조합으로 둘 이상의 정지 위치를 만들 수 있으므로 설치·구조 설명으로 옳다." }
+    ],
+    "misconception": "격판실린더의 다이어프램 밀봉과 일반 피스톤 로드의 미끄럼실링을 같은 구조로 취급하는 오류.",
+    "existingLessonId": "lesson-wuir00",
+    "existingBlockId": "principle",
+    "assertionText": "격판실린더는 유연한 다이어프램으로 밀봉되므로 일반 피스톤식 미끄럼실링이 필요 없다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-130",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-130-c4",
+    "directSolution": "공유압 변환기에서는 공기의 압축성이 응답을 흐리게 만든다. 따라서 특정 설치 자세를 단정하기보다 액추에이터와 배관의 에어를 충분히 빼 압력 전달을 안정시키는 4번을 고른다.",
+    "choiceRationales": [
+      { "choiceId": "U-130-c1", "verdict": "incorrect", "rationale": "설치 자세는 변환기의 구조와 제조사 지침에 따라 달라지므로 수평 설치만을 모든 장치의 공통 주의사항으로 단정할 수 없다." },
+      { "choiceId": "U-130-c2", "verdict": "incorrect", "rationale": "발열 장치 가까이는 작동유와 공기의 온도를 높여 특성을 불안정하게 할 수 있으므로 공유압 변환기 설치의 적절한 주의사항이 아니다." },
+      { "choiceId": "U-130-c3", "verdict": "incorrect", "rationale": "높이 관계만으로 배관 고점과 액추에이터 내부의 잔류 공기가 제거되지는 않으므로 반드시 낮게 설치한다는 일반 규칙은 성립하지 않는다." },
+      { "choiceId": "U-130-c4", "verdict": "correct", "rationale": "잔류 공기는 압축되면서 응답 지연과 불안정한 동작을 만들 수 있으므로 액추에이터와 배관 내부의 공기를 충분히 제거해야 한다." }
+    ],
+    "misconception": "공기 제거라는 운전 조건을 단순한 설치 높이 또는 자세 규칙과 혼동하는 오류.",
+    "existingLessonId": "lesson-1ag5h06",
+    "existingBlockId": "principle",
+    "assertionText": "잔류 공기는 압축성 때문에 응답 지연·불안정·발열을 유발하므로 충분히 공기를 제거해야 한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9630928"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-165",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-165-c4",
+    "directSolution": "출력을 검출해 목표값과 비교하고 편차를 보정한다는 표현은 피드백 경로를 뜻한다. 피드백으로 외란과 특성 변화의 오차를 보정하는 방식은 폐회로 제어이므로 4번이다.",
+    "choiceRationales": [
+      { "choiceId": "U-165-c1", "verdict": "incorrect", "rationale": "개회로 제어는 출력값을 되먹임하여 목표값과 비교하는 경로가 없으므로 외란에 따른 오차를 자동 보정하는 방식이 아니다." },
+      { "choiceId": "U-165-c2", "verdict": "incorrect", "rationale": "수동조작만으로는 출력 검출값을 목표값과 계속 비교해 편차를 보정하는 자동 피드백 제어 조건을 충족하지 못한다." },
+      { "choiceId": "U-165-c3", "verdict": "incorrect", "rationale": "무피드백 시퀀스는 미리 정한 순서로 동작할 수 있지만 출력값을 되먹임해 편차를 줄이는 폐회로 구조는 아니다." },
+      { "choiceId": "U-165-c4", "verdict": "correct", "rationale": "폐회로 제어는 출력 정보를 피드백하여 목표값과의 오차를 보정하므로 문항의 출력 검출·비교·보정 조건을 모두 만족한다." }
+    ],
+    "misconception": "제어 순서가 있다는 사실과 출력 피드백으로 편차를 보정하는 폐회로 구조를 혼동하는 오류.",
+    "existingLessonId": "lesson-1t7v6nu",
+    "existingBlockId": "principle",
+    "assertionText": "폐회로 제어는 피드백을 이용해 외란과 특성변화에 따른 오차를 보정한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9659405", "https://cbtbank.kr/exam/de20200606", "https://cbtbank.kr/exam/de20190427", "https://cbtbank.kr/exam/de20140920", "https://cbtbank.kr/exam/de20100905"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-202",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-202-c1",
+    "directSolution": "설정압력 드리프트는 압력 설정을 실제로 결정하는 스프링과 밸브 내부의 작동 상태가 변할 때 생긴다. 스프링 특성 변화, 오염, 마찰 증가는 직접 원인이므로 1번이다.",
+    "choiceRationales": [
+      { "choiceId": "U-202-c1", "verdict": "correct", "rationale": "스프링 열화·온도변화와 밸브의 오염·마찰 증가는 개방 압력의 평형 조건을 바꾸므로 설정압력 드리프트를 직접 유발한다." },
+      { "choiceId": "U-202-c2", "verdict": "incorrect", "rationale": "배관 색상은 식별과 관리에는 쓰일 수 있으나 밸브의 스프링력·유압력 평형이나 내부 마찰을 바꾸지 않아 설정압력 원인이 아니다." },
+      { "choiceId": "U-202-c3", "verdict": "incorrect", "rationale": "탱크 외부 도장은 부식 방지나 식별을 위한 것이며 압력제어밸브의 내부 운동과 설정압력에는 직접 작용하지 않는다." },
+      { "choiceId": "U-202-c4", "verdict": "incorrect", "rationale": "명판 글자 마모는 설정값 식별을 어렵게 할 수는 있어도 스프링 특성이나 밸브 고착을 바꾸지 않으므로 드리프트 원인이 아니다." }
+    ],
+    "misconception": "설비 외관·식별 정보의 변화와 압력제어밸브 내부의 스프링·마찰 변화가 만드는 실제 설정압력 변동을 혼동하는 오류.",
+    "existingLessonId": "lesson-osztt8",
+    "existingBlockId": "principle",
+    "assertionText": "스프링 열화·온도변화, 밸브 고착, 오염과 마찰은 설정압력 드리프트를 유발한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620121"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-208",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-208-c1",
+    "directSolution": "차동실린더의 로드측 귀환유를 헤드측에 합류시키면 펌프유량에 귀환유량이 더해져 전진속도가 증가한다. 이 속도 우선 회로는 유효추력이 줄어드는 재생회로이므로 1번이다.",
+    "choiceRationales": [
+      { "choiceId": "U-208-c1", "verdict": "correct", "rationale": "재생회로는 로드측 귀환유를 헤드측으로 재공급해 펌프유량과 합치므로 빠른 전진을 얻지만 유효 압력면적이 줄어 추력은 감소한다." },
+      { "choiceId": "U-208-c2", "verdict": "incorrect", "rationale": "카운터밸런스회로는 자중이나 인장 하중으로 인한 액추에이터의 폭주를 막고 배압을 유지하는 회로로 전진속도 증가가 주목적이 아니다." },
+      { "choiceId": "U-208-c3", "verdict": "incorrect", "rationale": "블리드오프회로는 펌프 토출 일부를 탱크로 우회시켜 유량을 조절하는 방식이므로 로드측 귀환유를 헤드측에 합류시키지 않는다." },
+      { "choiceId": "U-208-c4", "verdict": "incorrect", "rationale": "언로드회로는 무부하 시 펌프 토출을 저압으로 우회해 동력 손실을 줄이는 목적이며 차동실린더의 재생 전진과 다른 기능이다." }
+    ],
+    "misconception": "부하 유지·유량 우회 회로와 로드측 귀환유를 재사용하여 전진속도를 높이는 재생회로를 혼동하는 오류.",
+    "existingLessonId": "lesson-kea5hx",
+    "existingBlockId": "principle",
+    "assertionText": "재생회로는 펌프유량과 로드측 유량을 합쳐 빠른 전진을 얻지만 유효추력은 감소한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620121", "https://www.comcbt.com/xe/cet/5708822"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-209",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-209-c1",
+    "directSolution": "문항의 조건은 회전 중이 아니라 펄스입력 없이 정지한 여자상태다. 이때 외력에 맞서 축 위치를 유지할 수 있는 최대 정적토크의 명칭은 홀딩토크이므로 1번이다.",
+    "choiceRationales": [
+      { "choiceId": "U-209-c1", "verdict": "correct", "rationale": "홀딩토크는 스테핑모터가 정지한 채 여자되어 있을 때 외력에 견디며 축 위치를 유지할 수 있는 최대 정적토크를 뜻한다." },
+      { "choiceId": "U-209-c2", "verdict": "incorrect", "rationale": "기동토크는 모터가 정지 상태에서 부하를 이기고 회전을 시작할 때의 특성과 관련되며 정지 여자 상태의 위치 유지 토크가 아니다." },
+      { "choiceId": "U-209-c3", "verdict": "incorrect", "rationale": "슬립토크는 동기 속도와 실제 회전 속도의 차이 또는 탈조와 연결되는 표현으로 정지한 스테핑모터의 고정 유지 토크를 뜻하지 않는다." },
+      { "choiceId": "U-209-c4", "verdict": "incorrect", "rationale": "유체토크는 유체를 매개로 동력을 전달하는 장치의 토크 개념이므로 전자기적으로 여자된 스테핑모터의 정적 위치 유지 조건과 다르다." }
+    ],
+    "misconception": "모터가 정지한 여자상태의 홀딩토크와 회전 시작 또는 슬립 상태에서 논의하는 토크를 구분하지 못하는 오류.",
+    "existingLessonId": "lesson-71wcdd",
+    "existingBlockId": "principle",
+    "assertionText": "홀딩토크는 펄스입력이 없는 정지 여자상태에서 축 위치를 유지하는 최대 정적토크다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620121"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-301",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-301-c3",
+    "directSolution": "대표 유압모터 형식은 기어·베인·피스톤이다. 스크루형은 일반적으로 펌프나 압축기 분류에서 더 많이 쓰이므로 유압모터 형식으로 보기 어려운 3번을 고른다.",
+    "choiceRationales": [
+      { "choiceId": "U-301-c1", "verdict": "incorrect", "rationale": "기어모터는 기어의 체적 변화를 이용해 유압에너지를 회전 운동으로 바꾸는 대표적인 유압모터 형식이므로 부정형 문항의 정답이 아니다." },
+      { "choiceId": "U-301-c2", "verdict": "incorrect", "rationale": "베인모터는 로터와 베인의 체적실 변화로 회전력을 얻는 유압모터 형식이므로 일반적인 유압모터 분류에 포함된다." },
+      { "choiceId": "U-301-c3", "verdict": "correct", "rationale": "스크루형은 통상 펌프·압축기 분류에서 더 일반적으로 다뤄지며 기어·베인·피스톤과 같은 대표 유압모터 형식으로 보기는 어렵다." },
+      { "choiceId": "U-301-c4", "verdict": "incorrect", "rationale": "피스톤모터는 피스톤에 작용하는 유압으로 회전력을 만드는 대표 형식이며 고압·고성능 유압모터에 널리 쓰이는 분류다." }
+    ],
+    "misconception": "펌프·압축기에서 쓰는 형식 명칭을 대표 유압모터 분류에 그대로 옮겨 적용하는 오류.",
+    "existingLessonId": "lesson-qxpd61",
+    "existingBlockId": "principle",
+    "assertionText": "기어·베인·피스톤모터가 대표 형식이며 스크루형은 통상 펌프·압축기 분류에서 더 일반적이다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9658829"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-331",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-331-c2",
+    "directSolution": "애프터쿨러는 압축기 후단의 고온 공기를 냉각해 수분을 응축시키는 장치다. 일반적으로 수랭식의 열교환 능력이 공랭식보다 크므로 반대로 서술한 2번이 옳지 않다.",
+    "choiceRationales": [
+      { "choiceId": "U-331-c1", "verdict": "incorrect", "rationale": "애프터쿨러는 압축기 후단에서 압축공기를 먼저 냉각하고 에어드라이어의 수분 제거 부담을 줄이므로 배치 설명이 성립한다." },
+      { "choiceId": "U-331-c2", "verdict": "correct", "rationale": "공랭식도 방열판을 사용할 수 있으나 일반적으로 수랭식이 더 큰 열교환 능력을 가지므로 공랭식이 더 크다는 서술은 틀리다." },
+      { "choiceId": "U-331-c3", "verdict": "incorrect", "rationale": "고온 압축공기를 냉각하면 포함 수분의 상당 부분이 응축되어 분리되므로 애프터쿨러의 기본 기능 설명으로 옳다." },
+      { "choiceId": "U-331-c4", "verdict": "incorrect", "rationale": "공랭식은 냉각수 배관과 수질 관리가 필요 없다는 장점이 있어 수랭식과 비교하면 일반적으로 관리 구성이 단순한 편이다." }
+    ],
+    "misconception": "공랭식의 냉각수 불필요 특성과 수랭식의 일반적인 큰 열교환 능력을 서로 뒤바꾸는 오류.",
+    "existingLessonId": "lesson-axyn1i",
+    "existingBlockId": "principle",
+    "assertionText": "일반적으로 수랭식 애프터쿨러가 공랭식보다 열교환 능력이 크다. 애프터쿨러는 압축공기를 냉각해 수분을 응축시키고 후단 드라이어의 부하를 줄인다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9658829", "https://cbtbank.co.kr/exam/de20060910"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-395",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-395-c2",
+    "directSolution": "각 기기의 고유 기능을 대조한다. 셔틀밸브는 두 입력 중 압력이 높거나 신호가 있는 쪽을 선택하는 OR 논리요소이므로 안전장치·검사기능·연동제어 용도로 단정한 2번이 옳지 않다.",
+    "choiceRationales": [
+      { "choiceId": "U-395-c1", "verdict": "incorrect", "rationale": "감압밸브는 분기 회로의 2차측 압력을 주회로보다 낮고 일정하게 유지하는 압력제어밸브이므로 기능 연결이 맞다." },
+      { "choiceId": "U-395-c2", "verdict": "correct", "rationale": "셔틀밸브의 직접 기능은 두 입력 중 높은 압력 또는 유효 신호를 선택하는 OR 논리이며 제시한 일반 용도 서술은 그 기능을 정확히 나타내지 못한다." },
+      { "choiceId": "U-395-c3", "verdict": "incorrect", "rationale": "압력스위치는 설정 압력 도달 여부를 전기 접점 신호로 바꾸어 제어 회로에 전달하므로 압력신호를 전기신호로 변환한다는 연결이 맞다." },
+      { "choiceId": "U-395-c4", "verdict": "incorrect", "rationale": "시퀀스밸브는 설정압력에 도달한 뒤 다음 액추에이터로 유량을 보내 동작 순서를 만들므로 기능 연결이 성립한다." }
+    ],
+    "misconception": "밸브의 실제 유체 논리 기능 대신 넓고 모호한 설비 용도를 기기 명칭에 연결하는 오류.",
+    "existingLessonId": "lesson-5mlpnh",
+    "existingBlockId": "principle",
+    "assertionText": "셔틀밸브는 두 입력 중 높은 쪽 또는 신호가 있는 쪽을 선택하는 OR 논리요소이며 보기의 용도 서술은 부정확하다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20200822", "https://cbtbank.kr/exam/de20161001"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-481",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-481-c3",
+    "directSolution": "문항은 여러 실린더의 위치 변화를 단계 순서에 따라 나타내는 도면을 묻는다. 액추에이터별 변위를 단계축에 배치해 시퀀스를 검증하는 것은 변위-단계선도이므로 3번이다.",
+    "choiceRationales": [
+      { "choiceId": "U-481-c1", "verdict": "incorrect", "rationale": "파레토도는 항목별 빈도나 영향도를 큰 순서로 나타내어 문제 우선순위를 정하는 도구로 실린더의 전진·후진 위치를 표시하지 않는다." },
+      { "choiceId": "U-481-c2", "verdict": "incorrect", "rationale": "히스토그램은 연속 데이터의 분포를 계급별 막대로 나타내는 그래프이므로 복수 액추에이터의 동작 순서와 위치 변화를 표현하는 선도가 아니다." },
+      { "choiceId": "U-481-c3", "verdict": "correct", "rationale": "변위-단계선도는 각 액추에이터의 위치를 단계축을 따라 표시하여 전진·후진 시퀀스를 설계하고 동작 순서를 검증하는 데 사용한다." },
+      { "choiceId": "U-481-c4", "verdict": "incorrect", "rationale": "주파수응답선도는 입력 주파수 변화에 대한 제어계의 응답 특성을 나타내는 것으로 실린더 위치와 단계별 시퀀스를 표시하지 않는다." }
+    ],
+    "misconception": "품질·통계 그래프나 제어 주파수 그래프를 액추에이터 시퀀스의 위치 관계를 나타내는 선도와 혼동하는 오류.",
+    "existingLessonId": "lesson-g093o9",
+    "existingBlockId": "principle",
+    "assertionText": "변위-단계선도는 각 액추에이터의 위치를 단계축에 따라 표시해 시퀀스 동작순서를 설계·검증한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20200606", "https://cbtbank.kr/exam/de20100905"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-634",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-634-c2",
+    "directSolution": "옴의 법칙의 기본식은 전압이 전류와 저항의 곱이라는 V=IR이다. 나머지는 나눗셈 또는 변수 정리가 잘못되었으므로 2번만 관계식을 만족한다.",
+    "choiceRationales": [
+      { "choiceId": "U-634-c1", "verdict": "incorrect", "rationale": "V=I/R은 저항이 커질수록 같은 전류에서 전압이 작아진다는 잘못된 관계가 되며 옴의 법칙의 V=IR과 일치하지 않는다." },
+      { "choiceId": "U-634-c2", "verdict": "correct", "rationale": "옴의 법칙은 전압 V가 전류 I와 저항 R의 곱이라는 V=IR 관계이므로 제시된 네 식 중 정확한 식이다." },
+      { "choiceId": "U-634-c3", "verdict": "incorrect", "rationale": "I=VR은 전류를 전압과 저항의 곱으로 둔 식이다. V=IR을 전류에 대해 정리하면 I=V/R가 되어야 한다." },
+      { "choiceId": "U-634-c4", "verdict": "incorrect", "rationale": "R=I/V는 저항과 전류의 위치가 뒤바뀐 식이다. V=IR을 저항에 대해 정리한 올바른 식은 R=V/I이다." }
+    ],
+    "misconception": "옴의 법칙을 변수별로 이항할 때 곱과 나눗셈의 위치를 뒤바꾸는 오류.",
+    "existingLessonId": "lesson-v5clik",
+    "existingBlockId": "principle",
+    "assertionText": "옴의 법칙은 전압이 전류와 저항의 곱과 같다는 관계이다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915", "https://cbtbank.kr/exam/de20150919", "https://cbtbank.co.kr/exam/de20060910"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId": "U-692",
+    "subjectId": "subject-1",
+    "decision": "approve",
+    "correctChoiceId": "U-692-c4",
+    "directSolution": "열전대의 열기전력은 온도에 따라 연속적으로 변하는 전압이다. 연속값을 표현하는 기본 신호는 아날로그이므로 이진·펄스·문자열이 아닌 4번을 선택한다.",
+    "choiceRationales": [
+      { "choiceId": "U-692-c1", "verdict": "incorrect", "rationale": "2진신호는 정해진 두 논리 수준으로 상태를 나타내지만 열전대의 열기전력은 온도 변화에 따라 연속적인 전압값으로 변한다." },
+      { "choiceId": "U-692-c2", "verdict": "incorrect", "rationale": "디지털 펄스는 변환·계수 후 사용할 수 있는 표현일 수 있으나 열전대 소자 자체가 출력하는 기본 열기전력 신호는 연속 전압이다." },
+      { "choiceId": "U-692-c3", "verdict": "incorrect", "rationale": "문자열신호는 측정값을 사람이 읽는 문자로 표현한 데이터 형식일 뿐 온도에 비례해 변하는 열전대의 물리적 출력 신호 형태가 아니다." },
+      { "choiceId": "U-692-c4", "verdict": "correct", "rationale": "열전대의 열기전력은 온도에 따라 연속적으로 변하는 전압신호이므로 시간과 크기가 연속인 아날로그 신호에 해당한다." }
+    ],
+    "misconception": "센서의 원래 연속 전압 출력과 이를 변환한 뒤의 디지털 데이터 표현을 같은 신호 형태로 보는 오류.",
+    "existingLessonId": "lesson-1yvi82m",
+    "existingBlockId": "principle",
+    "assertionText": "열전대의 열기전력은 온도에 따라 연속적으로 변하는 전압신호다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915", "https://cbtbank.kr/exam/de20120915"],
+    "reviewedAt": "2026-08-03T00:00:00.000Z"
+  }
+]

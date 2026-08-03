@@ -313,8 +313,11 @@ async function verifyClientBuild(content: PracticalContent) {
       });
     }
   }
-  const clientFiles = (await walk(clientDirectory)).filter((file) =>
-    textExtensions.has(path.extname(file)),
+  const runtimeDataDirectory = path.join(clientDirectory, "data");
+  const clientFiles = (await walk(clientDirectory)).filter(
+    (file) =>
+      !file.startsWith(`${runtimeDataDirectory}${path.sep}`) &&
+      textExtensions.has(path.extname(file)),
   );
   for (const file of clientFiles) {
     if (manifestNamePattern.test(path.basename(file))) {

@@ -1,0 +1,192 @@
+[
+  {
+    "questionId": "U-1254",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1254-c3",
+    "directSolution": "내륜이 축과 함께 회전하고 하중방향은 고정되어 있으므로, 내륜에는 회전하중이 작용한다. 이때 내륜이 축 위에서 미끄러지는 크리프를 막기 위해 간섭, 즉 억지끼워맞춤을 검토한다. 따라서 c3이 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-1254-c1", "verdict": "incorrect", "rationale": "회전하중을 받는 내륜을 항상 헐거운 끼워맞춤으로 하면 축과 내륜 사이의 미끄럼이 생길 수 있다. 끼워맞춤은 하중 조건에 따라 정하므로 ‘항상’이라는 단정도 맞지 않는다." },
+      { "choiceId": "U-1254-c2", "verdict": "incorrect", "rationale": "접착 여부는 이 문항이 묻는 끼워맞춤의 판단 기준이 아니다. 내륜의 회전하중과 크리프 방지를 기준으로 간섭량을 검토해야 한다." },
+      { "choiceId": "U-1254-c3", "verdict": "correct", "rationale": "내륜이 축과 함께 회전하면 내륜에 대한 하중 방향이 회전하는 조건이 된다. 크리프를 방지하려면 축과 내륜에 간섭끼워맞춤을 적용하거나 그 필요성을 검토하므로 c3이 맞다." },
+      { "choiceId": "U-1254-c4", "verdict": "incorrect", "rationale": "외륜과의 상대적인 느슨함으로 내륜 끼워맞춤을 정하지 않는다. 각 궤도륜의 하중 상태와 크리프 가능성을 따로 판단해야 한다." }
+    ],
+    "misconception": "내륜과 외륜의 끼워맞춤을 한 규칙으로 처리하고 회전하중에 따른 크리프 방지 조건을 놓치는 오개념",
+    "existingLessonId": "lesson-1v3sjon",
+    "existingBlockId": "principle",
+    "assertionText": "궤도륜에 하중방향이 회전하면 크리프를 방지하도록 간섭끼워맞춤을 적용한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/cet/5708822"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1319",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1319-c4",
+    "directSolution": "문항은 냉간가공 뒤의 일반적인 성질변화 중 옳지 않은 것을 묻는다. 가공경화가 일어나면 강도와 경도는 커지지만 연성과 인성은 보통 줄어든다. 따라서 인성이 증가한다는 c4가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-1319-c1", "verdict": "incorrect", "rationale": "냉간가공은 가공경화를 일으켜 인장강도를 높이는 방향으로 작용한다. 문항은 옳지 않은 설명을 고르므로 맞는 변화인 c1은 정답이 아니다." },
+      { "choiceId": "U-1319-c2", "verdict": "incorrect", "rationale": "가공경화가 진행되면 변형 저항이 커져 경도도 일반적으로 증가한다. 따라서 c2는 냉간가공의 정상적인 성질변화다." },
+      { "choiceId": "U-1319-c3", "verdict": "incorrect", "rationale": "가공경화로 연성이 낮아지므로 파단 전 늘어나는 정도인 연신율은 감소한다. c3은 옳은 설명이므로 부정형 문항의 정답이 될 수 없다." },
+      { "choiceId": "U-1319-c4", "verdict": "correct", "rationale": "냉간가공은 강도·경도를 높이는 대신 연성과 인성을 낮추는 경향이 있다. 인성이 증가한다는 c4는 이 방향과 반대이므로 ‘옳지 않은 것’의 정답이다." }
+    ],
+    "misconception": "강도와 경도가 높아지면 인성까지 함께 좋아진다고 생각해 가공경화의 상충 관계를 놓치는 오개념",
+    "existingLessonId": "lesson-1czg86j",
+    "existingBlockId": "principle",
+    "assertionText": "가공경화로 강도와 경도는 증가하지만 연성과 인성은 일반적으로 감소한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20070902"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1255",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1255-c1",
+    "directSolution": "웜기어가 역구동되는지는 웜의 나선 경사와 접촉면의 마찰이 만드는 자기잠김 조건으로 판단한다. 리드각이 작고 마찰계수가 크면 역구동이 어려워진다. 따라서 이를 직접 나타내는 c1이 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-1255-c1", "verdict": "correct", "rationale": "리드각과 마찰계수는 웜과 웜휠 접촉면에서 역구동을 막거나 허용하는 자기잠김 경향을 결정한다. 두 조건을 함께 제시한 c1이 직접 판단 기준이다." },
+      { "choiceId": "U-1255-c2", "verdict": "incorrect", "rationale": "기어 색상은 식별이나 도장 상태와 관련될 수 있으나 웜기어 치면의 마찰각이나 리드각을 바꾸지 않는다. 따라서 역구동성의 결정 요인이 아니다." },
+      { "choiceId": "U-1255-c3", "verdict": "incorrect", "rationale": "축 길이만으로는 웜 치면의 기하와 마찰 조건을 알 수 없다. 역구동 판단에는 리드각과 마찰계수의 관계가 필요하다." },
+      { "choiceId": "U-1255-c4", "verdict": "incorrect", "rationale": "베어링 외경은 지지부 선정 치수일 뿐 웜기어 맞물림의 자기잠김 조건을 직접 정하지 않는다. 치면의 리드각과 마찰을 확인해야 한다." }
+    ],
+    "misconception": "웜기어의 역구동성을 주변 부품 치수나 외관으로 판단하고 리드각과 마찰의 관계를 놓치는 오개념",
+    "existingLessonId": "lesson-1qjv16g",
+    "existingBlockId": "principle",
+    "assertionText": "리드각이 작고 마찰이 크면 자기잠김 경향이 커지지만 모든 웜기어가 완전 자기잠김인 것은 아니다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/cet/5708822"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-718",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-718-c3",
+    "directSolution": "문항의 조건은 축 중심선의 작은 불일치와 충격·진동의 흡수다. 탄성요소 또는 유연한 구조를 가진 플렉시블 커플링이 정렬오차와 비틀림 충격을 일부 흡수한다. 따라서 c3이 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-718-c1", "verdict": "incorrect", "rationale": "머프 커플링은 축을 강하게 고정해 동력을 전달하는 고정형 축이음이다. 중심선 불일치와 충격을 흡수하는 유연 구조가 문항 조건에 맞지 않는다." },
+      { "choiceId": "U-718-c2", "verdict": "incorrect", "rationale": "클램프 커플링도 분할된 몸체로 축을 체결하는 강성 축이음에 가깝다. 약간의 정렬오차와 비틀림 충격을 흡수하는 목적은 아니다." },
+      { "choiceId": "U-718-c3", "verdict": "correct", "rationale": "플렉시블 커플링은 탄성요소 또는 유연구조로 축 정렬의 작은 오차와 충격·진동을 일부 흡수한다. 문항의 두 조건을 모두 충족한다." },
+      { "choiceId": "U-718-c4", "verdict": "incorrect", "rationale": "마찰원통 커플링은 마찰력으로 전달·결합하는 방식이며, 축 중심선 불일치와 충격 흡수가 주된 선정 조건인 축이음은 아니다." }
+    ],
+    "misconception": "축을 연결하는 모든 커플링이 같은 정도로 정렬오차와 충격을 흡수한다고 보는 오개념",
+    "existingLessonId": "lesson-11ambh0",
+    "existingBlockId": "principle",
+    "assertionText": "탄성요소 또는 유연구조가 정렬오차와 비틀림충격을 일부 흡수한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180428"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-834",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-834-c2",
+    "directSolution": "문항은 블록브레이크의 제동력 저하를 막는 대책이 아닌 것을 묻는다. 제동은 드럼과 블록의 마찰에 의존하므로 마찰면에 방청유를 바르면 마찰계수가 낮아져 오히려 제동력이 줄어든다. 따라서 c2가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-834-c1", "verdict": "incorrect", "rationale": "유압작동부에서 누설이 생기면 필요한 제동력을 전달하기 어렵다. 누설 점검은 제동력 저하를 예방하는 올바른 대책이다." },
+      { "choiceId": "U-834-c2", "verdict": "correct", "rationale": "드럼 마찰면의 방청유는 마찰계수를 낮춰 블록브레이크가 발생시키는 제동력을 떨어뜨린다. 따라서 저하 방지대책으로는 부적절하다." },
+      { "choiceId": "U-834-c3", "verdict": "incorrect", "rationale": "브레이크블록이 손상되거나 탈락하면 드럼에 정상 접촉하지 못한다. 손상과 탈락을 점검하는 것은 제동력 유지에 필요하다." },
+      { "choiceId": "U-834-c4", "verdict": "incorrect", "rationale": "마찰면의 이물질은 접촉 상태와 마찰계수를 불안정하게 만들어 제동을 약화시킬 수 있다. 유입 방지는 적절한 예방조치다." }
+    ],
+    "misconception": "방청 목적의 유막을 제동 마찰면에도 적용할 수 있다고 보아 마찰계수 저하를 놓치는 오개념",
+    "existingLessonId": "lesson-oxf4l9",
+    "existingBlockId": "principle",
+    "assertionText": "마찰면에 오일이 묻으면 마찰계수가 낮아져 제동력이 크게 감소한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20161001"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-320",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-320-c4",
+    "directSolution": "긴 관로나 유체기기 가까이에서는 배관을 돌리지 않고 분리할 수 있어야 정비가 쉽다. 유니언은 너트를 풀어 양쪽 배관을 분리하는 이음쇠이므로 c4가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-320-c1", "verdict": "incorrect", "rationale": "니플은 두 암나사 부품이나 배관을 연결하는 짧은 수나사 이음쇠다. 기기 주변을 배관 회전 없이 쉽게 분해하는 기능은 유니언의 특징이다." },
+      { "choiceId": "U-320-c2", "verdict": "incorrect", "rationale": "엘보는 배관의 진행 방향을 꺾는 이음쇠다. 방향 전환에는 맞지만 분해·정비를 쉽게 하는 접속 구조는 아니다." },
+      { "choiceId": "U-320-c3", "verdict": "incorrect", "rationale": "소켓은 두 수나사 관이나 이음쇠를 연결하는 부품이다. 배관을 회전시키지 않고 분리하는 너트 구조가 없어 문항의 정비 조건에 맞지 않는다." },
+      { "choiceId": "U-320-c4", "verdict": "correct", "rationale": "유니언은 배관 자체를 회전시키지 않고 너트를 풀어 양쪽 배관을 분리할 수 있다. 긴 관로나 기기 주변의 분해·정비용 접속에 적합하다." }
+    ],
+    "misconception": "배관 이음쇠의 연결 기능만 보고 방향전환·단순 연결·정비용 분리 기능을 구분하지 못하는 오개념",
+    "existingLessonId": "notion-gap-pipe-joints-valves-seals",
+    "existingBlockId": "notion-gap-pipe-joints-valves-seals-principle-2",
+    "assertionText": "유니언은 관을 돌리지 않고 분해하기 쉽고, 플랜지는 큰 관경과 반복 정비에 유리하다. 신축이음은 벨로즈·슬리브·스위블·루프형 구조로 열팽창과 변위를 흡수한다. 게이트밸브는 완전 개방 때 유로가 비교적 곧지만 중간 개도로 조절하면 시트가 손상될 수 있다. 글로브밸브는 흐름이 꺾여 손실은 크지만 조절성이 좋다. 체크밸브는 압력차로 자동 작동해 역류를 막는다. 버터플라이밸브는 원판을 약 90도 회전시켜 대구경 관로를 빠르게 개폐·조절한다. 메커니컬실은 회전축과 고정부의 정밀한 접촉면으로 누설을 줄이고, 래버린스실은 비접촉 미로 틈새의 반복 저항으로 누설을 억제한다. 혐기성 접착제는 금속 틈에서 공기가 차단되면 경화한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9658829"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-599",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-599-c4",
+    "directSolution": "문항은 플랜지이음에 대한 부적절한 설명을 묻는다. 플랜지는 대구경·고압 배관에도 쓰고 분해·조립이 필요한 곳에 유리하다. 반면 구리·납 같은 연질금속은 주로 개스킷 재료이며 플랜지의 주재료라는 c4는 부적절하다.",
+    "choiceRationales": [
+      { "choiceId": "U-599-c1", "verdict": "incorrect", "rationale": "플랜지이음은 볼트와 개스킷으로 접속하므로 대구경 관의 조립·분해와 검사에 널리 사용된다. c1은 일반적 설명에 맞는다." },
+      { "choiceId": "U-599-c2", "verdict": "incorrect", "rationale": "압력·온도·유체 조건에 맞는 플랜지와 볼트·개스킷을 선정하면 고압배관에도 사용할 수 있다. 따라서 c2는 부적절한 설명이 아니다." },
+      { "choiceId": "U-599-c3", "verdict": "incorrect", "rationale": "플랜지는 용접이음과 달리 볼트를 풀어 분해할 수 있어 정비와 내부 검사가 필요한 곳에 편리하다. c3은 플랜지이음의 장점이다." },
+      { "choiceId": "U-599-c4", "verdict": "correct", "rationale": "플랜지 본체는 압력·온도·유체에 맞는 강재·주철·스테인리스 등을 선정한다. 구리·납 같은 연질금속은 주로 개스킷재이므로 c4는 부적절하다." }
+    ],
+    "misconception": "플랜지 본체 재질과 밀봉에 쓰는 개스킷 재질을 같은 것으로 혼동하는 오개념",
+    "existingLessonId": "lesson-1s6885c",
+    "existingBlockId": "principle",
+    "assertionText": "플랜지 재질은 압력·온도·유체에 맞는 강재·주철·스테인리스 등을 선정하며 연질금속은 주로 개스킷재다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20190303"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-206",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-206-c1",
+    "directSolution": "열팽창을 흡수하는 신축이음은 배관의 축방향 변위를 흡수할 구조가 있어야 한다. 일반 플랜지는 분해 가능한 접속부일 뿐 열변위 흡수 장치가 아니다. 따라서 c1이 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-206-c1", "verdict": "correct", "rationale": "일반 플랜지 이음은 볼트와 개스킷으로 배관을 분해 가능하게 연결한다. 축방향 열변위를 흡수하는 신축 구조가 없으므로 문항의 정답이다." },
+      { "choiceId": "U-206-c2", "verdict": "incorrect", "rationale": "벨로스형 신축이음은 주름진 벨로스가 변형하면서 배관의 열팽창과 축방향 변위를 흡수한다. 따라서 ‘보기 어려운 것’에는 해당하지 않는다." },
+      { "choiceId": "U-206-c3", "verdict": "incorrect", "rationale": "루프형 신축이음은 배관의 굴곡부가 탄성 변형해 열팽창을 흡수한다. 신축이음의 기능을 하므로 오답 선택지다." },
+      { "choiceId": "U-206-c4", "verdict": "incorrect", "rationale": "슬리브형 신축이음은 관의 미끄럼 이동을 이용해 축방향 변위를 흡수한다. 열팽창 흡수 장치이므로 문항 조건과 반대다." }
+    ],
+    "misconception": "분해 가능한 배관 접속부인 플랜지와 열변위를 흡수하는 신축이음을 같은 기능으로 보는 오개념",
+    "existingLessonId": "notion-gap-pipe-joints-valves-seals",
+    "existingBlockId": "notion-gap-pipe-joints-valves-seals-principle-2",
+    "assertionText": "유니언은 관을 돌리지 않고 분해하기 쉽고, 플랜지는 큰 관경과 반복 정비에 유리하다. 신축이음은 벨로즈·슬리브·스위블·루프형 구조로 열팽창과 변위를 흡수한다. 게이트밸브는 완전 개방 때 유로가 비교적 곧지만 중간 개도로 조절하면 시트가 손상될 수 있다. 글로브밸브는 흐름이 꺾여 손실은 크지만 조절성이 좋다. 체크밸브는 압력차로 자동 작동해 역류를 막는다. 버터플라이밸브는 원판을 약 90도 회전시켜 대구경 관로를 빠르게 개폐·조절한다. 메커니컬실은 회전축과 고정부의 정밀한 접촉면으로 누설을 줄이고, 래버린스실은 비접촉 미로 틈새의 반복 저항으로 누설을 억제한다. 혐기성 접착제는 금속 틈에서 공기가 차단되면 경화한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620121"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-238",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-238-c4",
+    "directSolution": "열팽창 흡수 장치는 변위를 받아들이는 신축 구조가 필요하다. 유니언은 배관을 쉽게 분리하는 접속구로서 열변위를 흡수하지 않는다. 따라서 c4가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-238-c1", "verdict": "incorrect", "rationale": "벨로스형 신축이음은 주름진 벨로스의 탄성 변형으로 배관의 열팽창에 따른 변위를 흡수한다. 따라서 문항에서 찾는 예외가 아니다." },
+      { "choiceId": "U-238-c2", "verdict": "incorrect", "rationale": "슬리브형 신축이음은 관의 축방향 이동을 허용해 열팽창 변위를 흡수한다. 기능이 문항 조건에 맞으므로 정답이 아니다." },
+      { "choiceId": "U-238-c3", "verdict": "incorrect", "rationale": "루프형 신축이음은 배관 루프의 탄성 변형을 이용해 열팽창을 흡수한다. 열변위를 흡수하는 장치에 해당한다." },
+      { "choiceId": "U-238-c4", "verdict": "correct", "rationale": "유니언 이음은 배관을 회전시키지 않고 분해하기 위한 접속구다. 신축 구조가 없어 열변위를 흡수하지 않으므로 c4가 맞다." }
+    ],
+    "misconception": "유니언의 분해·정비 기능을 열팽창 흡수 기능으로 잘못 확장하는 오개념",
+    "existingLessonId": "notion-gap-pipe-joints-valves-seals",
+    "existingBlockId": "notion-gap-pipe-joints-valves-seals-principle-2",
+    "assertionText": "유니언은 관을 돌리지 않고 분해하기 쉽고, 플랜지는 큰 관경과 반복 정비에 유리하다. 신축이음은 벨로즈·슬리브·스위블·루프형 구조로 열팽창과 변위를 흡수한다. 게이트밸브는 완전 개방 때 유로가 비교적 곧지만 중간 개도로 조절하면 시트가 손상될 수 있다. 글로브밸브는 흐름이 꺾여 손실은 크지만 조절성이 좋다. 체크밸브는 압력차로 자동 작동해 역류를 막는다. 버터플라이밸브는 원판을 약 90도 회전시켜 대구경 관로를 빠르게 개폐·조절한다. 메커니컬실은 회전축과 고정부의 정밀한 접촉면으로 누설을 줄이고, 래버린스실은 비접촉 미로 틈새의 반복 저항으로 누설을 억제한다. 혐기성 접착제는 금속 틈에서 공기가 차단되면 경화한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620123"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-242",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-242-c4",
+    "directSolution": "유로와 직각으로 판형 디스크를 위아래로 움직여 완전 개폐하는 구조는 게이트밸브다. 완전히 열리면 유로가 비교적 곧아 압력손실이 작고, 유량조절보다 차단에 쓴다. 따라서 c4가 정답이다.",
+    "choiceRationales": [
+      { "choiceId": "U-242-c1", "verdict": "incorrect", "rationale": "글로브밸브는 유로를 굴절시켜 디스크와 시트 사이의 개도를 조절하는 구조라 유량조절에 적합하다. 판형 게이트를 상하 이동하는 완전 개폐 구조와 다르다." },
+      { "choiceId": "U-242-c2", "verdict": "incorrect", "rationale": "니들밸브는 뾰족한 니들로 작은 유량을 미세 조절하는 밸브다. 판형 디스크를 올리고 내려 차단하는 밸브는 아니다." },
+      { "choiceId": "U-242-c3", "verdict": "incorrect", "rationale": "체크밸브는 유체의 역류를 자동으로 막는 밸브다. 외부 조작으로 판형 디스크를 상하 이동해 완전 개폐하는 구조가 아니다." },
+      { "choiceId": "U-242-c4", "verdict": "correct", "rationale": "게이트밸브는 유로와 직각으로 게이트형 디스크를 상하 이동시켜 완전 개폐한다. 완전 개방 시 압력손실이 작아 차단용으로 쓰므로 c4가 맞다." }
+    ],
+    "misconception": "밸브를 모두 유량조절용으로 보고 게이트밸브의 판형 디스크·완전 개폐·차단 기능을 구분하지 못하는 오개념",
+    "existingLessonId": "notion-gap-pipe-joints-valves-seals",
+    "existingBlockId": "notion-gap-pipe-joints-valves-seals-principle-2",
+    "assertionText": "유니언은 관을 돌리지 않고 분해하기 쉽고, 플랜지는 큰 관경과 반복 정비에 유리하다. 신축이음은 벨로즈·슬리브·스위블·루프형 구조로 열팽창과 변위를 흡수한다. 게이트밸브는 완전 개방 때 유로가 비교적 곧지만 중간 개도로 조절하면 시트가 손상될 수 있다. 글로브밸브는 흐름이 꺾여 손실은 크지만 조절성이 좋다. 체크밸브는 압력차로 자동 작동해 역류를 막는다. 버터플라이밸브는 원판을 약 90도 회전시켜 대구경 관로를 빠르게 개폐·조절한다. 메커니컬실은 회전축과 고정부의 정밀한 접촉면으로 누설을 줄이고, 래버린스실은 비접촉 미로 틈새의 반복 저항으로 누설을 억제한다. 혐기성 접착제는 금속 틈에서 공기가 차단되면 경화한다.",
+    "evidenceUrls": ["https://www.comcbt.com/xe/webhaesul/9620123"],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+]

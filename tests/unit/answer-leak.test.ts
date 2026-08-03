@@ -53,6 +53,63 @@ describe("answer leak guard", () => {
     ]);
   });
 
+  it("rejects approved-review and solution fields from pre-submit DTOs", () => {
+    const forbiddenFields = [
+      "answerExplanation",
+      "solutionSteps",
+      "choiceFeedback",
+      "choiceExplanations",
+      "keyRule",
+      "conceptBinding",
+      "assertionText",
+      "essentialRank",
+      "approvedReview",
+      "conceptSupport",
+    ];
+
+    expect(
+      findForbiddenPreSubmitFields({
+        nested: Object.fromEntries(
+          forbiddenFields.map((field) => [field, "server-only"]),
+        ),
+      }).map((finding) => finding.field),
+    ).toEqual(forbiddenFields);
+  });
+
+  it("rejects normalized answer, solution, and rubric-like field names", () => {
+    const forbiddenFields = [
+      "answer_explanation",
+      "correct-answer",
+      "answerKey",
+      "selectedAnswer",
+      "gradingRubric",
+      "rubric_v2",
+      "scoring_criteria",
+      "markingScheme",
+      "solution-guide",
+      "choice_rationales",
+      "ａｎｓｗｅｒＴｅｘｔ",
+    ];
+
+    expect(
+      findForbiddenPreSubmitFields(
+        Object.fromEntries(
+          forbiddenFields.map((field) => [field, "answer-bearing"]),
+        ),
+      ).map((finding) => finding.field),
+    ).toEqual(forbiddenFields);
+  });
+
+  it("preserves answer-free prompt timing metadata", () => {
+    expect(
+      findForbiddenPreSubmitFields({
+        answerCritical: true,
+        captionBeforeAnswer: "Inspect the frame before submitting.",
+        resolution: "1920x1080",
+      }),
+    ).toEqual([]);
+  });
+
   it("normalizes and deduplicates only long unique answer sentinels", () => {
     const longAnswer =
       "  축압기는 압력 에너지를 저장하고 맥동을 흡수하며 비상 동력원으로 사용한다.  ";

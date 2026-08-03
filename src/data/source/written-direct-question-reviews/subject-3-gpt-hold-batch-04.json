@@ -1,0 +1,1670 @@
+[
+  {
+    "questionId": "U-1024",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1024-c3",
+    "directSolution": "완전 고착된 베어링은 회전저항을 극단적으로 높여 기동불능·구속전류·보호장치 동작을 유발하므로 ‘단지 저속 회전’이라는 연결이 가장 부적절하다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1024-c1",
+        "verdict": "incorrect",
+        "rationale": "과부하는 전류와 동손을 증가시켜 과열을 일으킬 수 있다."
+      },
+      {
+        "choiceId": "U-1024-c2",
+        "verdict": "incorrect",
+        "rationale": "퓨즈 단선이나 결상은 정상 자계를 만들지 못하게 하여 기동불능을 일으킬 수 있다."
+      },
+      {
+        "choiceId": "U-1024-c3",
+        "verdict": "correct",
+        "rationale": "베어링 완전 고착은 단순 저속운전이 아니라 구속 또는 기동불능으로 이어지는 것이 일반적이다."
+      },
+      {
+        "choiceId": "U-1024-c4",
+        "verdict": "incorrect",
+        "rationale": "회전자 결함은 토크 불균형·슬립 증가·진동과 회전불량을 일으킬 수 있다."
+      }
+    ],
+    "misconception": "베어링 완전 고착은 단순 저속운전이 아니라 구속 또는 기동불능으로 이어지는 것이 일반적이다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-191dv6s",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 전압·전류·절연 상태를 확인한다.\n2. 부하·회전수·온도·진동을 비교한다.\n3. 베어링·정렬·냉각·전원 이상을 순서대로 배제한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20140525"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1065",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1065-c2",
+    "directSolution": "줄 작업의 대표 운동법은 직진법·사진법·병진법이며, 후퇴법은 일반적인 줄 작업방법의 분류로 쓰지 않으므로 c2가 답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1065-c1",
+        "verdict": "incorrect",
+        "rationale": "줄을 길이방향으로 밀어 가공하는 대표 방법이다."
+      },
+      {
+        "choiceId": "U-1065-c2",
+        "verdict": "correct",
+        "rationale": "일반적인 줄 작업방법의 정식 분류로 보기 어렵다."
+      },
+      {
+        "choiceId": "U-1065-c3",
+        "verdict": "incorrect",
+        "rationale": "줄을 대각선 방향으로 움직여 평면성과 절삭흔을 관리하는 방법이다."
+      },
+      {
+        "choiceId": "U-1065-c4",
+        "verdict": "incorrect",
+        "rationale": "줄을 옆으로 평행 이동시키며 다듬는 대표 방법이다."
+      }
+    ],
+    "misconception": "일반적인 줄 작업방법의 정식 분류로 보기 어렵다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1vsijbs",
+    "existingBlockId": "principle",
+    "assertionText": "절삭속도·이송·절입과 공구 재질이 절삭력·발열·표면품질·공구수명을 결정한다. 선반·밀링·드릴·연삭은 주운동과 이송운동의 주체가 다르다.\n\n**이 문제군의 직접 근거**\n\n- 줄 작업은 진행방향에 따라 직진·사진·병진법 등으로 구분하며 후퇴법은 일반 분류에 포함되지 않는다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20130928",
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1066",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1066-c1",
+    "directSolution": "포지셔너 누설은 먼저 오염·정렬·간극·손상을 점검하고 세척·조정한 뒤 필요한 부품만 교환해야 하므로 원인점검 없는 전체 교환이 부적절하다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1066-c1",
+        "verdict": "correct",
+        "rationale": "원인 규명 없이 전체를 교환하면 정비 순서와 경제성이 모두 부적절하다."
+      },
+      {
+        "choiceId": "U-1066-c2",
+        "verdict": "incorrect",
+        "rationale": "피드백 링크의 걸림·유격은 위치제어 오차를 만들므로 움직임 확인이 필요하다."
+      },
+      {
+        "choiceId": "U-1066-c3",
+        "verdict": "incorrect",
+        "rationale": "캠 방향과 형상은 입력-밸브행정 관계 및 작동특성에 영향을 줄 수 있다."
+      },
+      {
+        "choiceId": "U-1066-c4",
+        "verdict": "incorrect",
+        "rationale": "ZERO·RANGE 조정값이 변하지 않도록 조정 후 잠금장치를 체결하는 것이 적절하다."
+      }
+    ],
+    "misconception": "원인 규명 없이 전체를 교환하면 정비 순서와 경제성이 모두 부적절하다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-tzfj3c",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 유체 성질과 압력·온도를 확인한다.\n2. 밸브 기능과 유동 방향을 구분한다.\n3. 체결·밀봉면·개스킷·부식 상태로 누설 원인을 찾는다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20130928",
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1067",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1067-c1",
+    "directSolution": "PTFE는 내열성이 우수하지만 통상 연속사용온도에는 한계가 있으므로 300℃ 초과에서도 제한 없이 쓸 수 있다는 c1이 옳지 않다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1067-c1",
+        "verdict": "correct",
+        "rationale": "고온에서는 크리프·열분해·강도저하가 문제되며 무제한 사용은 불가능하다."
+      },
+      {
+        "choiceId": "U-1067-c2",
+        "verdict": "incorrect",
+        "rationale": "PTFE의 낮은 마찰계수는 씰의 미끄럼저항과 기동토크를 줄이는 데 유리하다."
+      },
+      {
+        "choiceId": "U-1067-c3",
+        "verdict": "incorrect",
+        "rationale": "많은 화학약품에 안정하여 내화학성이 우수한 편이다."
+      },
+      {
+        "choiceId": "U-1067-c4",
+        "verdict": "incorrect",
+        "rationale": "체적저항이 크고 유전특성이 좋아 전기절연재로 널리 사용된다."
+      }
+    ],
+    "misconception": "고온에서는 크리프·열분해·강도저하가 문제되며 무제한 사용은 불가능하다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-2y7njr",
+    "existingBlockId": "source",
+    "assertionText": "- 문제 근거: 27차 정규화 대표문제 U-1067\n- 이론 상태: 문제 근거에서 도출한 보강안이며 독립 이론 출처 대조가 추가로 필요합니다.\n- 원문 출처 1: https://cbtbank.kr/exam/de20130928\n- 공개 상태: 출처·기술 검수 전까지 검토 대기",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20130928"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1068",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1068-c4",
+    "directSolution": "사이클로이드 감속기는 한 단계에서 큰 감속비를 얻고 다수 치가 하중을 분담하므로 ‘평기어 감속기보다 감속비가 낮다’는 c4가 특징과 반대다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1068-c1",
+        "verdict": "incorrect",
+        "rationale": "고감속비를 작은 체적에 구현할 수 있어 소형·경량화에 유리하다."
+      },
+      {
+        "choiceId": "U-1068-c2",
+        "verdict": "incorrect",
+        "rationale": "여러 치가 동시에 하중을 분담하여 충격하중에 비교적 강하다."
+      },
+      {
+        "choiceId": "U-1068-c3",
+        "verdict": "incorrect",
+        "rationale": "편심운동과 치수차를 이용해 한 단계에서도 큰 감속비를 얻는다."
+      },
+      {
+        "choiceId": "U-1068-c4",
+        "verdict": "correct",
+        "rationale": "일반적인 장점은 높은 감속비이므로 낮다는 설명은 부적절하다."
+      }
+    ],
+    "misconception": "일반적인 장점은 높은 감속비이므로 낮다는 설명은 부적절하다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-2ummz1",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 기어 형식과 입력·출력 잇수를 확인한다.\n2. 속도비·회전방향·중심거리 관계를 적용한다.\n3. 치면 손상 형상과 윤활·하중·정렬 조건을 연결한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20130928"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1069",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1069-c4",
+    "directSolution": "일반적인 평행키의 키홈은 축 중심선과 평행한 축방향으로 가공하므로 중심선과 직각방향으로 길게 가공한다는 c4가 틀리다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1069-c1",
+        "verdict": "incorrect",
+        "rationale": "규격과 재질이 맞지 않으면 강도·끼워맞춤·조립성이 확보되지 않으므로 확인해야 한다."
+      },
+      {
+        "choiceId": "U-1069-c2",
+        "verdict": "incorrect",
+        "rationale": "축-보스 끼워맞춤 불량은 편심과 하중집중을 만들 수 있어 선행 점검이 필요하다."
+      },
+      {
+        "choiceId": "U-1069-c3",
+        "verdict": "incorrect",
+        "rationale": "토크는 주로 키의 양 측면으로 전달되므로 폭과 측면 마무리가 중요하다."
+      },
+      {
+        "choiceId": "U-1069-c4",
+        "verdict": "correct",
+        "rationale": "평행키 키홈의 길이방향은 축 중심선과 평행하며 직각방향이 아니다."
+      }
+    ],
+    "misconception": "평행키 키홈의 길이방향은 축 중심선과 평행하며 직각방향이 아니다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-zuc8om",
+    "existingBlockId": "trap",
+    "assertionText": "아래 문장은 이 레슨에 연결된 문제에서 실제로 사용된 오답 보기입니다. 문장 자체만 외우지 말고, 왜 그럴듯하며 어느 조건에서 틀리는지 함께 확인합니다.\n\n### 함정 보기 1\n> **“키의 윗면만으로 토크를 전달한다.”**\n\n- **문항 맥락:** 키 맞춤 작업의 주의사항으로 옳은 것은?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘키의 윗면만으로 토크를 전달한다.’는 ‘키와 키홈은 흔들림 없이 접촉하되 과도한 강제끼움은 피한다.’와 대상·기능·적용 조건이 다릅니다. 정답을 판단하는 직접 근거는 키의 측면이 토크를 전달하며 버 제거·접촉상태·축과 보스의 끼워맞춤을 함께 관리해야 한다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 키의 측면이 토크를 전달하며 버 제거·접촉상태·축과 보스의 끼워맞춤을 함께 관리해야 한다.\n\n### 함정 보기 2\n> **“축과 보스의 중심정렬을 무시한다.”**\n\n- **문항 맥락:** 키 맞춤 작업의 주의사항으로 옳은 것은?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘축과 보스의 중심정렬을 무시한다.’는 ‘키와 키홈은 흔들림 없이 접촉하되 과도한 강제끼움은 피한다.’와 대상·기능·적용 조건이 다릅니다. 정답을 판단하는 직접 근거는 키의 측면이 토크를 전달하며 버 제거·접촉상태·축과 보스의 끼워맞춤을 함께 관리해야 한다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 키의 측면이 토크를 전달하며 버 제거·접촉상태·축과 보스의 끼워맞춤을 함께 관리해야 한다.\n\n### 함정 보기 3\n> **“키홈 모서리의 버를 남긴다.”**\n\n- **문항 맥락:** 키 맞춤 작업의 주의사항으로 옳은 것은?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘키홈 모서리의 버를 남긴다.’는 ‘키와 키홈은 흔들림 없이 접촉하되 과도한 강제끼움은 피한다.’와 대상·기능·적용 조건이 다릅니다. 정답을 판단하는 직접 근거는 키의 측면이 토크를 전달하며 버 제거·접촉상태·축과 보스의 끼워맞춤을 함께 관리해야 한다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 키의 측면이 토크를 전달하며 버 제거·접촉상태·축과 보스의 끼워맞춤을 함께 관리해야 한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20130928",
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1071",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1071-c1",
+    "directSolution": "과거 기계보전 교재의 경험칙에서는 감압밸브 바이패스를 고압측 주관보다 한 호칭 작게 잡아 과도한 우회유량을 제한하므로 c1을 답으로 본다. 다만 실제 관경은 필요한 비상유량·압력손실·설계기준으로 산정해야 한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1071-c1",
+        "verdict": "correct",
+        "rationale": "교재형 경험칙과 일치하지만 실제 설계값으로 일반화해서는 안 된다."
+      },
+      {
+        "choiceId": "U-1071-c2",
+        "verdict": "incorrect",
+        "rationale": "우회유량 요구가 특별히 크지 않은 일반 사례에서 주관보다 크게 잡는 것은 경험칙과 맞지 않는다."
+      },
+      {
+        "choiceId": "U-1071-c3",
+        "verdict": "incorrect",
+        "rationale": "주관의 2배는 단면적과 유량능력을 과도하게 키우므로 일반 기준이 아니다."
+      },
+      {
+        "choiceId": "U-1071-c4",
+        "verdict": "incorrect",
+        "rationale": "주관의 3배 역시 보조관의 통상적 목적과 맞지 않는 과대 치수다."
+      }
+    ],
+    "misconception": "교재형 경험칙과 일치하지만 실제 설계값으로 일반화해서는 안 된다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-miz0mt",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 유체 성질과 압력·온도를 확인한다.\n2. 밸브 기능과 유동 방향을 구분한다.\n3. 체결·밀봉면·개스킷·부식 상태로 누설 원인을 찾는다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20130928"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1072",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "GPT HOLD: 제시 답 c1을 기술적으로 확정하기 어렵다. 일반적인 팬 성능곡선에서는 후향익 터보팬·에어포일팬은 비과부하형 경향이 있고, 다익 전향익 팬은 풍량 증가에 따라 축동력이 크게 증가하는 경우가 많아 현재 정답과 충돌 가능성이 있다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20130928"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1073",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1073-c1",
+    "directSolution": "타이밍벨트는 치형 맞물림으로 동기전동에 유리하지만 매우 큰 동력 전달의 최적 수단이라고 일반화할 수 없으므로 c1이 옳지 않다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1073-c1",
+        "verdict": "correct",
+        "rationale": "동기성과 정밀전달이 장점이지만 초대형 동력에는 기어·체인 등 다른 방식이 더 적합할 수 있다."
+      },
+      {
+        "choiceId": "U-1073-c2",
+        "verdict": "incorrect",
+        "rationale": "벨트 이와 풀리 홈이 맞물려 정상 장력에서는 미끄럼이 거의 없다."
+      },
+      {
+        "choiceId": "U-1073-c3",
+        "verdict": "incorrect",
+        "rationale": "미끄럼이 거의 없어 입력·출력의 회전각속도비를 일정하게 유지한다."
+      },
+      {
+        "choiceId": "U-1073-c4",
+        "verdict": "incorrect",
+        "rationale": "마찰벨트보다 작은 풀리와 비교적 좁은 공간에 적용할 수 있다."
+      }
+    ],
+    "misconception": "동기성과 정밀전달이 장점이지만 초대형 동력에는 기어·체인 등 다른 방식이 더 적합할 수 있다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1mf2b03",
+    "existingBlockId": "trap",
+    "assertionText": "아래 문장은 이 레슨에 연결된 문제에서 실제로 사용된 오답 보기입니다. 문장 자체만 외우지 말고, 왜 그럴듯하며 어느 조건에서 틀리는지 함께 확인합니다.\n\n### 함정 보기 1\n> **“평벨트”**\n\n- **문항 맥락:** 안쪽에 이가 있어 미끄럼 없이 정확한 속도비를 전달하는 벨트는?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘평벨트’는 ‘타이밍벨트’와 대상·기능·적용 조건이 다릅니다. 정답을 판단하는 직접 근거는 타이밍벨트는 풀리의 이와 맞물려 동기운전을 하므로 슬립이 거의 없다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 타이밍벨트는 풀리의 이와 맞물려 동기운전을 하므로 슬립이 거의 없다.\n\n### 함정 보기 2\n> **“링크벨트”**\n\n- **문항 맥락:** 안쪽에 이가 있어 미끄럼 없이 정확한 속도비를 전달하는 벨트는?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘링크벨트’는 ‘타이밍벨트’와 대상·기능·적용 조건이 다릅니다. 정답을 판단하는 직접 근거는 타이밍벨트는 풀리의 이와 맞물려 동기운전을 하므로 슬립이 거의 없다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 타이밍벨트는 풀리의 이와 맞물려 동기운전을 하므로 슬립이 거의 없다.\n\n### 함정 보기 3\n> **“레이스벨트”**\n\n- **문항 맥락:** 안쪽에 이가 있어 미끄럼 없이 정확한 속도비를 전달하는 벨트는?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘레이스벨트’는 ‘타이밍벨트’와 대상·기능·적용 조건이 다릅니다. 정답을 판단하는 직접 근거는 타이밍벨트는 풀리의 이와 맞물려 동기운전을 하므로 슬립이 거의 없다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 타이밍벨트는 풀리의 이와 맞물려 동기운전을 하므로 슬립이 거의 없다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20130928"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1074",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1074-c4",
+    "directSolution": "무부하 기동 후 부하에서 과열되는 현상은 과부하·저전압·기동장치 이상으로 설명할 수 있지만 회전자 회로가 완전히 단선되어 전동기가 아예 동작하지 않는 상태는 현상 전제와 맞지 않으므로 c4다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1074-c1",
+        "verdict": "incorrect",
+        "rationale": "부하토크가 정격을 넘으면 전류가 증가하여 과열된다."
+      },
+      {
+        "choiceId": "U-1074-c2",
+        "verdict": "incorrect",
+        "rationale": "저전압에서는 같은 부하토크를 내기 위해 전류가 증가해 과열될 수 있다."
+      },
+      {
+        "choiceId": "U-1074-c3",
+        "verdict": "incorrect",
+        "rationale": "기동권선·스위치가 정상적으로 절환되지 않으면 과전류와 과열이 생길 수 있다."
+      },
+      {
+        "choiceId": "U-1074-c4",
+        "verdict": "correct",
+        "rationale": "완전 단선으로 동작하지 않으면 ‘부하 시 운전하며 과열’이라는 현상이 성립하지 않는다."
+      }
+    ],
+    "misconception": "완전 단선으로 동작하지 않으면 ‘부하 시 운전하며 과열’이라는 현상이 성립하지 않는다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-14pqjqm",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 전압·전류·절연 상태를 확인한다.\n2. 부하·회전수·온도·진동을 비교한다.\n3. 베어링·정렬·냉각·전원 이상을 순서대로 배제한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20130928"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1075",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1075-c4",
+    "directSolution": "토크법에서는 입력토크 대부분이 나사면과 좌면 마찰에 소모되므로 마찰계수 불균형을 무시하면 축력 오차가 커진다. 따라서 c4가 옳지 않다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1075-c1",
+        "verdict": "incorrect",
+        "rationale": "강도등급은 허용응력과 목표 체결력을 정하므로 체결 전에 확인해야 한다."
+      },
+      {
+        "choiceId": "U-1075-c2",
+        "verdict": "incorrect",
+        "rationale": "토크법·회전각법·가열법·장력법은 모두 사용 가능한 체결관리 방법이다."
+      },
+      {
+        "choiceId": "U-1075-c3",
+        "verdict": "incorrect",
+        "rationale": "대형 볼트의 축력을 직접 관리할 때 유압텐셔너를 사용할 수 있다."
+      },
+      {
+        "choiceId": "U-1075-c4",
+        "verdict": "correct",
+        "rationale": "마찰계수 변화는 동일 토크에서도 축력을 크게 바꾸므로 무시할 수 없다."
+      }
+    ],
+    "misconception": "마찰계수 변화는 동일 토크에서도 축력을 크게 바꾸므로 무시할 수 없다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-hq6736",
+    "existingBlockId": "trap",
+    "assertionText": "아래 문장은 이 레슨에 연결된 문제에서 실제로 사용된 오답 보기입니다. 문장 자체만 외우지 말고, 왜 그럴듯하며 어느 조건에서 틀리는지 함께 확인합니다.\n\n### 함정 보기 1\n> **“체결 전 볼트 강도등급을 확인한다.”**\n\n- **문항 맥락:** 나사 체결방법에 관한 설명으로 옳지 않은 것은?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘체결 전 볼트 강도등급을 확인한다.’는 ‘나사 체결방법’과 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 토크의 상당 부분이 마찰에 소모되므로 마찰계수 변화는 실제 축력의 큰 오차를 만든다.\n\n### 함정 보기 2\n> **“토크법·회전각법·가열법·장력법 등을 사용할 수 있다.”**\n\n- **문항 맥락:** 나사 체결방법에 관한 설명으로 옳지 않은 것은?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘토크법·회전각법·가열법·장력법 등을 사용할 수 있다.’는 ‘나사 체결방법’과 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 토크의 상당 부분이 마찰에 소모되므로 마찰계수 변화는 실제 축력의 큰 오차를 만든다.\n\n### 함정 보기 3\n> **“큰 축력을 정밀하게 관리할 때 유압텐셔너를 사용할 수 있다.”**\n\n- **문항 맥락:** 나사 체결방법에 관한 설명으로 옳지 않은 것은?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘큰 축력을 정밀하게 관리할 때 유압텐셔너를 사용할 수 있다.’는 ‘나사 체결방법’과 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 토크의 상당 부분이 마찰에 소모되므로 마찰계수 변화는 실제 축력의 큰 오차를 만든다.\n\n> 부정형 문항에서는 기술적으로 옳은 보기가 오히려 오답 선택지가 됩니다. 문제의 ‘옳지 않은 것’, ‘아닌 것’, ‘거리가 먼 것’을 먼저 표시한 뒤 판단합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20130928"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1078",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1078-c2",
+    "directSolution": "응축수는 중력으로 배관과 탱크의 낮은 지점에 모이므로 U자형 배관의 높은 상부는 고이기 쉬운 곳이 아니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1078-c1",
+        "verdict": "incorrect",
+        "rationale": "공기탱크 하부는 응축수가 침전·집수되는 대표 위치다."
+      },
+      {
+        "choiceId": "U-1078-c2",
+        "verdict": "correct",
+        "rationale": "높은 상부는 중력에 의해 액체가 빠져나가므로 일반적인 집수점이 아니다."
+      },
+      {
+        "choiceId": "U-1078-c3",
+        "verdict": "incorrect",
+        "rationale": "분기관 하부나 드립레그는 주관의 수분이 모일 수 있는 위치다."
+      },
+      {
+        "choiceId": "U-1078-c4",
+        "verdict": "incorrect",
+        "rationale": "하향구배 관로의 최저점은 응축수 배출점을 설치하는 대표 위치다."
+      }
+    ],
+    "misconception": "높은 상부는 중력에 의해 액체가 빠져나가므로 일반적인 집수점이 아니다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1kelckk",
+    "existingBlockId": "trap",
+    "assertionText": "아래 문장은 이 레슨에 연결된 문제에서 실제로 사용된 오답 보기입니다. 문장 자체만 외우지 말고, 왜 그럴듯하며 어느 조건에서 틀리는지 함께 확인합니다.\n\n### 함정 보기 1\n> **“공기탱크의 하부”**\n\n- **문항 맥락:** 공압장치와 배관에서 응축수가 고이기 쉬운 곳이 아닌 것은?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘공기탱크의 하부’는 ‘공압배관 응축수’와 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 응축수는 중력으로 배관의 저점에 모이므로 높은 상부에는 일반적으로 고이지 않는다.\n\n### 함정 보기 2\n> **“분기관 취출부의 하부”**\n\n- **문항 맥락:** 공압장치와 배관에서 응축수가 고이기 쉬운 곳이 아닌 것은?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘분기관 취출부의 하부’는 ‘공압배관 응축수’와 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 응축수는 중력으로 배관의 저점에 모이므로 높은 상부에는 일반적으로 고이지 않는다.\n\n### 함정 보기 3\n> **“하향구배 관로의 최저점”**\n\n- **문항 맥락:** 공압장치와 배관에서 응축수가 고이기 쉬운 곳이 아닌 것은?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘하향구배 관로의 최저점’은 ‘공압배관 응축수’와 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 응축수는 중력으로 배관의 저점에 모이므로 높은 상부에는 일반적으로 고이지 않는다.\n\n> 부정형 문항에서는 기술적으로 옳은 보기가 오히려 오답 선택지가 됩니다. 문제의 ‘옳지 않은 것’, ‘아닌 것’, ‘거리가 먼 것’을 먼저 표시한 뒤 판단합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20130928"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1110",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1110-c2",
+    "directSolution": "오스테나이트 영역까지 가열한 강을 공기 중에서 냉각해 조직을 미세화하는 처리는 불림(normalizing)이므로 c2다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1110-c1",
+        "verdict": "incorrect",
+        "rationale": "뜨임은 담금질 후 재가열하여 취성을 낮추고 인성을 조절하는 처리다."
+      },
+      {
+        "choiceId": "U-1110-c2",
+        "verdict": "correct",
+        "rationale": "불림은 오스테나이트화 후 공랭하여 조직을 균질·미세화한다."
+      },
+      {
+        "choiceId": "U-1110-c3",
+        "verdict": "incorrect",
+        "rationale": "풀림은 보통 노냉 등 느린 냉각으로 연화·응력제거를 목적으로 한다."
+      },
+      {
+        "choiceId": "U-1110-c4",
+        "verdict": "incorrect",
+        "rationale": "담금질은 물·유·가스 등으로 급랭해 마르텐사이트 경화를 얻는 처리다."
+      }
+    ],
+    "misconception": "불림은 오스테나이트화 후 공랭하여 조직을 균질·미세화한다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-14b3wyc",
+    "existingBlockId": "principle",
+    "assertionText": "열처리 온도와 냉각속도가 조직과 경도·인성·잔류응력을 바꾼다. 표면경화와 내부 인성 확보처럼 요구 기능에 따라 침탄·질화·고주파경화 등을 선택한다.\n\n**이 문제군의 직접 근거**\n\n- 불림은 가공조직을 균질화하고 결정립을 미세화하여 기계적 성질을 개선한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20120915"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1112",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1112-c3",
+    "directSolution": "해머렌치로 강하게 조이는 행위는 초기 축력을 높일 뿐 회전방지 구조를 제공하지 않으므로 확실한 풀림방지 방법으로 보기 어렵다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1112-c1",
+        "verdict": "incorrect",
+        "rationale": "홈너트의 홈과 분할핀을 결합하면 너트의 회전을 기계적으로 막는다."
+      },
+      {
+        "choiceId": "U-1112-c2",
+        "verdict": "incorrect",
+        "rationale": "절삭·분할 구조로 나사부 마찰을 높이는 너트는 풀림방지에 이용된다."
+      },
+      {
+        "choiceId": "U-1112-c3",
+        "verdict": "correct",
+        "rationale": "과도한 조임은 손상 위험이 있고 진동에 의한 회전을 구조적으로 차단하지 못한다."
+      },
+      {
+        "choiceId": "U-1112-c4",
+        "verdict": "incorrect",
+        "rationale": "로크너트는 이중너트 또는 잠금구조로 풀림을 억제한다."
+      }
+    ],
+    "misconception": "과도한 조임은 손상 위험이 있고 진동에 의한 회전을 구조적으로 차단하지 못한다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1r9zx5t",
+    "existingBlockId": "principle",
+    "assertionText": "볼트의 축력과 접합면 마찰이 외력을 지지하며 키와 핀은 축·허브 사이 위치 결정이나 토크 전달을 담당한다. 나사산 형상과 리드·피치는 운동 특성을 바꾼다.\n\n**이 문제군의 직접 근거**\n\n- 강한 조임만으로 진동·충격에 의한 회전을 확실히 막을 수 없으며 잠금구조나 마찰증대장치가 필요하다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20120915"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1115",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1115-c4",
+    "directSolution": "체크밸브의 주기능은 역류방지이며 개도를 연속 조절하는 유량 교축용 밸브가 아니므로 c4다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1115-c1",
+        "verdict": "incorrect",
+        "rationale": "버터플라이밸브는 개도 조절로 유량을 조절할 수 있으나 정밀도와 운전범위는 검토해야 한다."
+      },
+      {
+        "choiceId": "U-1115-c2",
+        "verdict": "incorrect",
+        "rationale": "글로브밸브는 유로 저항을 연속적으로 바꾸기 쉬워 대표적인 교축용 밸브다."
+      },
+      {
+        "choiceId": "U-1115-c3",
+        "verdict": "incorrect",
+        "rationale": "니들밸브는 작은 유량을 미세하게 조절하는 데 적합하다."
+      },
+      {
+        "choiceId": "U-1115-c4",
+        "verdict": "correct",
+        "rationale": "체크밸브는 유체의 역류를 자동 차단하는 밸브로 교축이 주목적이 아니다."
+      }
+    ],
+    "misconception": "체크밸브는 유체의 역류를 자동 차단하는 밸브로 교축이 주목적이 아니다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-xwik6w",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 유체 성질과 압력·온도를 확인한다.\n2. 밸브 기능과 유동 방향을 구분한다.\n3. 체결·밀봉면·개스킷·부식 상태로 누설 원인을 찾는다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20120915"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1116",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1116-c4",
+    "directSolution": "대표 관용나사는 BSP 계열의 55° 나사산각과 인치 호칭을 사용하며 75°·미터계열이라는 c4는 옳지 않다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1116-c1",
+        "verdict": "incorrect",
+        "rationale": "관용나사는 기밀과 관 두께를 고려해 일반 체결나사와 다른 가는 형상 특성을 갖는다."
+      },
+      {
+        "choiceId": "U-1116-c2",
+        "verdict": "incorrect",
+        "rationale": "대표 관용테이퍼나사는 지름방향 1:16 테이퍼를 사용한다."
+      },
+      {
+        "choiceId": "U-1116-c3",
+        "verdict": "incorrect",
+        "rationale": "테이퍼나사는 체결하면서 간섭과 밀봉재로 기밀을 확보하기 쉬운 편이다."
+      },
+      {
+        "choiceId": "U-1116-c4",
+        "verdict": "correct",
+        "rationale": "75°는 대표 관용나사 산각이 아니며 관용나사는 통상 인치 호칭을 쓴다."
+      }
+    ],
+    "misconception": "75°는 대표 관용나사 산각이 아니며 관용나사는 통상 인치 호칭을 쓴다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1f248t3",
+    "existingBlockId": "trap",
+    "assertionText": "아래 문장은 이 레슨에 연결된 문제에서 실제로 사용된 오답 보기입니다. 문장 자체만 외우지 말고, 왜 그럴듯하며 어느 조건에서 틀리는지 함께 확인합니다.\n\n### 함정 보기 1\n> **“일반 체결나사보다 피치와 나사산 높이가 낮다.”**\n\n- **문항 맥락:** 관용나사의 특징으로 옳지 않은 것은?\n- **왜 그럴듯한가:** 수치·단위가 함께 제시되어 계산식이나 기준값의 일부처럼 보이기 쉽습니다.\n- **틀린 부분:** ‘일반 체결나사보다 피치와 나사산 높이가 낮다.’는 ‘관용나사’와 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 대표 관용나사는 55° 계열의 인치기준이며 테이퍼로 기밀을 확보한다.\n\n### 함정 보기 2\n> **“관용테이퍼나사는 약 1:16 테이퍼를 갖는다.”**\n\n- **문항 맥락:** 관용나사의 특징으로 옳지 않은 것은?\n- **왜 그럴듯한가:** 수치·단위가 함께 제시되어 계산식이나 기준값의 일부처럼 보이기 쉽습니다.\n- **틀린 부분:** ‘관용테이퍼나사는 약 1:16 테이퍼를 갖는다.’는 ‘관용나사’와 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 대표 관용나사는 55° 계열의 인치기준이며 테이퍼로 기밀을 확보한다.\n\n### 함정 보기 3\n> **“테이퍼나사는 평행나사보다 기밀성이 좋다.”**\n\n- **문항 맥락:** 관용나사의 특징으로 옳지 않은 것은?\n- **왜 그럴듯한가:** 수치·단위가 함께 제시되어 계산식이나 기준값의 일부처럼 보이기 쉽습니다.\n- **틀린 부분:** ‘테이퍼나사는 평행나사보다 기밀성이 좋다.’는 ‘관용나사’와 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 대표 관용나사는 55° 계열의 인치기준이며 테이퍼로 기밀을 확보한다.\n\n> 부정형 문항에서는 기술적으로 옳은 보기가 오히려 오답 선택지가 됩니다. 문제의 ‘옳지 않은 것’, ‘아닌 것’, ‘거리가 먼 것’을 먼저 표시한 뒤 판단합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20120915"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1117",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1117-c4",
+    "directSolution": "선형 열팽창식은 λ=α·t·ℓ이다. 대입 형식은 α[1/℃]×t[℃]×ℓ[mm]=λ[mm]이며 무차원인 αt에 원래 길이를 곱하므로 결과 단위는 길이이고 c4가 맞다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1117-c1",
+        "verdict": "incorrect",
+        "rationale": "계수 2를 곱할 근거가 없어 실제 신축량의 2배가 된다."
+      },
+      {
+        "choiceId": "U-1117-c2",
+        "verdict": "incorrect",
+        "rationale": "원주율 π는 선형 열팽창식에 들어가지 않는다."
+      },
+      {
+        "choiceId": "U-1117-c3",
+        "verdict": "incorrect",
+        "rationale": "α로 나누면 선팽창계수가 작을수록 팽창량이 커지는 잘못된 관계가 된다."
+      },
+      {
+        "choiceId": "U-1117-c4",
+        "verdict": "correct",
+        "rationale": "정의식 λ=αtℓ이며 단위검산도 길이로 일치한다."
+      }
+    ],
+    "misconception": "정의식 λ=αtℓ이며 단위검산도 길이로 일치한다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1kczvo",
+    "existingBlockId": "principle",
+    "assertionText": "열처리 온도와 냉각속도가 조직과 경도·인성·잔류응력을 바꾼다. 표면경화와 내부 인성 확보처럼 요구 기능에 따라 침탄·질화·고주파경화 등을 선택한다.\n\n**이 문제군의 직접 근거**\n\n- 선형 열팽창량은 선팽창계수·온도차·원래길이의 곱이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20120915"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1118",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1118-c2",
+    "directSolution": "머리부가 고리 형태여서 와이어로프나 체인을 걸어 인양점으로 사용하는 볼트는 아이볼트이므로 c2다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1118-c1",
+        "verdict": "incorrect",
+        "rationale": "관통볼트는 부재를 관통해 너트로 체결하는 형식이지 고리형 인양볼트가 아니다."
+      },
+      {
+        "choiceId": "U-1118-c2",
+        "verdict": "correct",
+        "rationale": "아이볼트는 고리형 머리에 훅·샤클·로프를 연결하는 인양용 볼트다."
+      },
+      {
+        "choiceId": "U-1118-c3",
+        "verdict": "incorrect",
+        "rationale": "스테이볼트는 두 판이나 구조물을 일정 간격으로 지지·결합하는 용도다."
+      },
+      {
+        "choiceId": "U-1118-c4",
+        "verdict": "incorrect",
+        "rationale": "나비볼트는 손으로 조이기 쉬운 날개형 머리를 가지며 인양용이 아니다."
+      }
+    ],
+    "misconception": "아이볼트는 고리형 머리에 훅·샤클·로프를 연결하는 인양용 볼트다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-vql7ck",
+    "existingBlockId": "principle",
+    "assertionText": "볼트의 축력과 접합면 마찰이 외력을 지지하며 키와 핀은 축·허브 사이 위치 결정이나 토크 전달을 담당한다. 나사산 형상과 리드·피치는 운동 특성을 바꾼다.\n\n**이 문제군의 직접 근거**\n\n- 머리부가 고리형으로 만들어져 장비·금형·부품의 인양점으로 사용한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20120915"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1119",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1119-c3",
+    "directSolution": "공식: 측정값=어미자값+(일치 눈금번호×최소눈금). 대입: 9 mm+(3×0.05 mm)=9.15 mm. 단위: mm. 결과: 9.15 mm이므로 c3다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1119-c1",
+        "verdict": "incorrect",
+        "rationale": "아들자 일치값 0.15 mm를 더하지 않은 값이다."
+      },
+      {
+        "choiceId": "U-1119-c2",
+        "verdict": "incorrect",
+        "rationale": "3×0.05 mm를 0.10 mm로 잘못 계산한 값이다."
+      },
+      {
+        "choiceId": "U-1119-c3",
+        "verdict": "correct",
+        "rationale": "9+0.15=9.15 mm로 공식·대입·단위가 모두 맞다."
+      },
+      {
+        "choiceId": "U-1119-c4",
+        "verdict": "incorrect",
+        "rationale": "어미자와 아들자 값을 잘못 합성한 값으로 주어진 눈금에서 나올 수 없다."
+      }
+    ],
+    "misconception": "9+0.15=9.15 mm로 공식·대입·단위가 모두 맞다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1nygfrv",
+    "existingBlockId": "formula",
+    "assertionText": "1. 기준과 측정 방향을 정한다.\n2. 공차 기호와 최대·최소 한계치수를 계산한다.\n3. 측정기 범위·분해능·측정오차를 확인한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20120915"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1121",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1121-c4",
+    "directSolution": "기동불능은 전원·보호장치·결선·권선·기계구속을 순서대로 점검해야 하며 원인 확인 없이 전압을 임의 변경하는 c4는 부적절하다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1121-c1",
+        "verdict": "incorrect",
+        "rationale": "전원·퓨즈·접촉기·결선은 기동회로의 기본 점검항목이다."
+      },
+      {
+        "choiceId": "U-1121-c2",
+        "verdict": "incorrect",
+        "rationale": "절연저하와 권선단선은 전동기 기동불능의 직접 원인이 될 수 있다."
+      },
+      {
+        "choiceId": "U-1121-c3",
+        "verdict": "incorrect",
+        "rationale": "브레이크·감속기·드럼 등 부하측 구속도 기동을 막을 수 있다."
+      },
+      {
+        "choiceId": "U-1121-c4",
+        "verdict": "correct",
+        "rationale": "임의 전압 변경은 과전압·과전류와 추가 손상을 만들 수 있어 진단방법이 아니다."
+      }
+    ],
+    "misconception": "임의 전압 변경은 과전압·과전류와 추가 손상을 만들 수 있어 진단방법이 아니다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-u8k7gn",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 전압·전류·절연 상태를 확인한다.\n2. 부하·회전수·온도·진동을 비교한다.\n3. 베어링·정렬·냉각·전원 이상을 순서대로 배제한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20120915"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1161",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1161-c1",
+    "directSolution": "캐비테이션 방지조건은 NPSHa>NPSHr에 충분한 여유를 두는 것이므로 NPSHa를 NPSHr 이하로 설정한다는 c1이 부적절하다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1161-c1",
+        "verdict": "correct",
+        "rationale": "NPSHa≤NPSHr이면 흡입부 압력이 증기압에 접근해 캐비테이션 위험이 커진다."
+      },
+      {
+        "choiceId": "U-1161-c2",
+        "verdict": "incorrect",
+        "rationale": "흡입배관을 짧고 굵게 하면 마찰손실이 줄어 NPSHa가 커진다."
+      },
+      {
+        "choiceId": "U-1161-c3",
+        "verdict": "incorrect",
+        "rationale": "공기유입과 스트레이너 막힘을 막으면 흡입손실·기포 발생을 줄일 수 있다."
+      },
+      {
+        "choiceId": "U-1161-c4",
+        "verdict": "incorrect",
+        "rationale": "NPSHa를 NPSHr보다 충분히 크게 확보하는 것이 기본 방지조건이다."
+      }
+    ],
+    "misconception": "NPSHa≤NPSHr이면 흡입부 압력이 증기압에 접근해 캐비테이션 위험이 커진다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1dxxrfh",
+    "existingBlockId": "source",
+    "assertionText": "- 문제 근거: 27차 정규화 대표문제 U-1161\n- 이론 상태: 문제 근거에서 도출한 보강안이며 독립 이론 출처 대조가 추가로 필요합니다.\n- 원문 출처 1: https://cbtbank.kr/exam/de20111002\n- 원문 출처 2: https://www.comcbt.com/xe/cet/5708822\n- 공개 상태: 출처·기술 검수 전까지 검토 대기",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20111002",
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1162",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "GPT CHOICE_ISSUE: 흡입방식이라는 분류축을 엄격히 적용하면 표준적인 항목은 편흡입형과 양흡입형이다. ‘평면흡입형’뿐 아니라 ‘축방향 흡입형’도 통상 흡입구 수에 따른 분류명이 아니므로 부적절한 선택지가 둘 이상이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20111002"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1165",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1165-c1",
+    "directSolution": "다축 드릴링머신은 동력으로 여러 구멍을 가공하는 공작기계이고 줄·탭·스크레이퍼는 손작업에 사용하는 공구이므로 c1이 답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1165-c1",
+        "verdict": "correct",
+        "rationale": "기계 본체와 동력구동 스핀들을 사용하는 공작기계로 수작업용 공구가 아니다."
+      },
+      {
+        "choiceId": "U-1165-c2",
+        "verdict": "incorrect",
+        "rationale": "줄은 손으로 밀어 재료를 깎고 다듬는 대표 수공구다."
+      },
+      {
+        "choiceId": "U-1165-c3",
+        "verdict": "incorrect",
+        "rationale": "핸드탭과 탭핸들을 이용해 손으로 암나사를 가공할 수 있다."
+      },
+      {
+        "choiceId": "U-1165-c4",
+        "verdict": "incorrect",
+        "rationale": "스크레이퍼는 접촉면을 손으로 미세 절삭·수정하는 공구다."
+      }
+    ],
+    "misconception": "기계 본체와 동력구동 스핀들을 사용하는 공작기계로 수작업용 공구가 아니다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1x5tj8f",
+    "existingBlockId": "principle",
+    "assertionText": "절삭속도·이송·절입과 공구 재질이 절삭력·발열·표면품질·공구수명을 결정한다. 선반·밀링·드릴·연삭은 주운동과 이송운동의 주체가 다르다.\n\n**이 문제군의 직접 근거**\n\n- 다축 드릴링머신은 동력 공작기계이고 줄·탭·스크레이퍼는 수작업에 사용할 수 있다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20111002"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1166",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1166-c1",
+    "directSolution": "인벌류트 기어의 언더컷은 잇수가 적을수록 발생하기 쉬우므로 ‘잇수가 많을수록 쉽게 발생한다’는 c1이 옳지 않다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1166-c1",
+        "verdict": "correct",
+        "rationale": "언더컷 위험은 작은 잇수에서 커지므로 방향이 반대다."
+      },
+      {
+        "choiceId": "U-1166-c2",
+        "verdict": "incorrect",
+        "rationale": "잇수가 최소잇수보다 작으면 창성가공 중 치근부가 과도하게 깎일 수 있다."
+      },
+      {
+        "choiceId": "U-1166-c3",
+        "verdict": "incorrect",
+        "rationale": "압력각을 키우면 간섭 없이 허용되는 최소잇수를 줄일 수 있다."
+      },
+      {
+        "choiceId": "U-1166-c4",
+        "verdict": "incorrect",
+        "rationale": "양의 전위는 치근 두께를 늘리고 언더컷을 줄이는 데 도움이 된다."
+      }
+    ],
+    "misconception": "언더컷 위험은 작은 잇수에서 커지므로 방향이 반대다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-mtdeel",
+    "existingBlockId": "trap",
+    "assertionText": "아래 문장은 이 레슨에 연결된 문제에서 실제로 사용된 오답 보기입니다. 문장 자체만 외우지 말고, 왜 그럴듯하며 어느 조건에서 틀리는지 함께 확인합니다.\n\n### 함정 보기 1\n> **“잇수가 너무 적으면 치근부가 깎일 수 있다.”**\n\n- **문항 맥락:** 인벌류트 기어의 언더컷에 관한 설명으로 옳지 않은 것은?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘잇수가 너무 적으면 치근부가 깎일 수 있다.’는 ‘기어 언더컷’과 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 언더컷은 피니언 잇수가 적을 때 발생하기 쉬우며 양의 전위와 압력각 증가가 예방에 도움이 된다.\n\n### 함정 보기 2\n> **“압력각을 크게 하면 최소잇수를 줄일 수 있다.”**\n\n- **문항 맥락:** 인벌류트 기어의 언더컷에 관한 설명으로 옳지 않은 것은?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘압력각을 크게 하면 최소잇수를 줄일 수 있다.’는 ‘기어 언더컷’과 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 언더컷은 피니언 잇수가 적을 때 발생하기 쉬우며 양의 전위와 압력각 증가가 예방에 도움이 된다.\n\n### 함정 보기 3\n> **“양의 전위기어로 언더컷을 줄일 수 있다.”**\n\n- **문항 맥락:** 인벌류트 기어의 언더컷에 관한 설명으로 옳지 않은 것은?\n- **왜 그럴듯한가:** 같은 세부항목군에서 함께 학습하는 용어이므로 대상·조건을 끝까지 확인하지 않으면 정답처럼 보일 수 있습니다.\n- **틀린 부분:** ‘양의 전위기어로 언더컷을 줄일 수 있다.’는 ‘기어 언더컷’과 관련해 실제로 성립하는 설명입니다. 따라서 ‘옳지 않은 것’을 찾는 이 문항의 정답으로 고를 수 없습니다.\n- **판단 기준:** 핵심 판단 기준은 다음과 같습니다. 언더컷은 피니언 잇수가 적을 때 발생하기 쉬우며 양의 전위와 압력각 증가가 예방에 도움이 된다.\n\n> 부정형 문항에서는 기술적으로 옳은 보기가 오히려 오답 선택지가 됩니다. 문제의 ‘옳지 않은 것’, ‘아닌 것’, ‘거리가 먼 것’을 먼저 표시한 뒤 판단합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20111002"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1207",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1207-c3",
+    "directSolution": "충분한 유막강도는 치면의 직접 금속접촉을 줄여 마모를 억제하므로 마모 증가 원인으로 보기 어려운 c3이 답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1207-c1",
+        "verdict": "incorrect",
+        "rationale": "급유부족은 경계·건조윤활 상태를 만들어 접착마모와 스코어링을 증가시킨다."
+      },
+      {
+        "choiceId": "U-1207-c2",
+        "verdict": "incorrect",
+        "rationale": "연마성 입자는 치면을 긁어 연삭마모를 증가시킨다."
+      },
+      {
+        "choiceId": "U-1207-c3",
+        "verdict": "correct",
+        "rationale": "유막강도 증가는 하중을 유막이 지지하게 하여 마모를 줄이는 방향이다."
+      },
+      {
+        "choiceId": "U-1207-c4",
+        "verdict": "incorrect",
+        "rationale": "부식성 성분과 부적절한 첨가제는 화학적 손상과 부식마모를 촉진할 수 있다."
+      }
+    ],
+    "misconception": "유막강도 증가는 하중을 유막이 지지하게 하여 마모를 줄이는 방향이다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1spjrmc",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 기어 형식과 입력·출력 잇수를 확인한다.\n2. 속도비·회전방향·중심거리 관계를 적용한다.\n3. 치면 손상 형상과 윤활·하중·정렬 조건을 연결한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20100905"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1209",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1209-c1",
+    "directSolution": "베어링 손상·체결 풀림·로터 접촉은 직접적인 기계진동을 만들지만 냉각공기량이 약간 부족한 상태만으로는 주로 온도상승이 문제이므로 c1이 가장 거리가 멀다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1209-c1",
+        "verdict": "correct",
+        "rationale": "경미한 냉각부족은 직접 진동보다 과열과 절연열화를 우선 유발한다."
+      },
+      {
+        "choiceId": "U-1209-c2",
+        "verdict": "incorrect",
+        "rationale": "베어링 손상은 반복충격·간극증가·마찰로 진동을 만든다."
+      },
+      {
+        "choiceId": "U-1209-c3",
+        "verdict": "incorrect",
+        "rationale": "커플링이나 풀리의 풀림은 편심·불평형·충격을 만들어 진동을 증가시킨다."
+      },
+      {
+        "choiceId": "U-1209-c4",
+        "verdict": "incorrect",
+        "rationale": "로터-스테이터 접촉은 회전주기 충격과 마찰로 큰 진동을 일으킨다."
+      }
+    ],
+    "misconception": "경미한 냉각부족은 직접 진동보다 과열과 절연열화를 우선 유발한다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-rcloio",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 전압·전류·절연 상태를 확인한다.\n2. 부하·회전수·온도·진동을 비교한다.\n3. 베어링·정렬·냉각·전원 이상을 순서대로 배제한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20100905",
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1210",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1210-c3",
+    "directSolution": "암모니아 분위기에서 약 500℃로 장시간 가열해 질소를 확산시키는 표면경화법은 질화법이므로 c3이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1210-c1",
+        "verdict": "incorrect",
+        "rationale": "침탄은 탄소를 표면에 확산시키는 처리로 암모니아 질소 확산과 다르다."
+      },
+      {
+        "choiceId": "U-1210-c2",
+        "verdict": "incorrect",
+        "rationale": "금속용사는 용융·반용융 입자를 분사해 피막을 형성하는 코팅법이다."
+      },
+      {
+        "choiceId": "U-1210-c3",
+        "verdict": "correct",
+        "rationale": "질화법은 암모니아 분해 질소가 강 표면에 확산되어 질화물을 형성한다."
+      },
+      {
+        "choiceId": "U-1210-c4",
+        "verdict": "incorrect",
+        "rationale": "풀림은 재료를 연화·응력제거하기 위한 열처리로 표면 질화경화가 아니다."
+      }
+    ],
+    "misconception": "질화법은 암모니아 분해 질소가 강 표면에 확산되어 질화물을 형성한다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-bx22g0",
+    "existingBlockId": "formula",
+    "assertionText": "수치가 없는 개념문제라도 단위, 기준온도, 압력의 기준, 이상·이하·초과·미만 같은 경계조건이 숨어 있는지 확인합니다. 공식이 필요한 문제는 기호의 뜻과 단위를 먼저 적고 계산 뒤 차원을 검산합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20100905"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1211",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "GPT HOLD: 누설·과다사용·밸브 기밀불량이 토출압력을 낮춘다는 점은 명확하지만 ‘모터 회전수 증가’는 정격범위인지 과속인지 조건이 없다. 정상범위에서는 토출량 증가 방향이지만 과속에서는 밸브 동특성·발열·효율저하가 생길 수 있어 현재 문장만으로 보편적 단일정답을 확정하기 어렵다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20100905"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1212",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1212-c1",
+    "directSolution": "송풍기 기동 직후에는 진동·온도·윤활·접촉음·전류를 감시해 안정상태를 확인해야 하므로 아무 확인 없이 장시간 무감시 운전하는 c1이 가장 부적절하다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1212-c1",
+        "verdict": "correct",
+        "rationale": "초기 이상을 놓쳐 손상을 확대할 수 있으므로 부적절하다."
+      },
+      {
+        "choiceId": "U-1212-c2",
+        "verdict": "incorrect",
+        "rationale": "베어링 온도와 진동은 윤활·정렬·손상 상태를 조기에 보여 주는 핵심 항목이다."
+      },
+      {
+        "choiceId": "U-1212-c3",
+        "verdict": "incorrect",
+        "rationale": "윤활유량과 오일링 작동 확인은 베어링 손상을 예방하는 적절한 점검이다."
+      },
+      {
+        "choiceId": "U-1212-c4",
+        "verdict": "incorrect",
+        "rationale": "임펠러 접촉음과 전동기 전류는 기계구속·과부하 여부를 확인하는 적절한 항목이다."
+      }
+    ],
+    "misconception": "초기 이상을 놓쳐 손상을 확대할 수 있으므로 부적절하다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1fl2dk5",
+    "existingBlockId": "source",
+    "assertionText": "- 문제 근거: 27차 정규화 대표문제 U-1212\n- 이론 상태: 문제 근거에서 도출한 보강안이며 독립 이론 출처 대조가 추가로 필요합니다.\n- 원문 출처 1: https://cbtbank.kr/exam/de20100905\n- 원문 출처 2: https://cbtbank.co.kr/exam/de20060910\n- 공개 상태: 출처·기술 검수 전까지 검토 대기",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20100905",
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1214",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1214-c1",
+    "directSolution": "하이포이드기어는 두 축이 엇갈리고 중심선이 교차하지 않는 기어이므로 c1이 옳다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1214-c1",
+        "verdict": "correct",
+        "rationale": "하이포이드기어는 비평행·비교차 축 사이에서 동력을 전달한다."
+      },
+      {
+        "choiceId": "U-1214-c2",
+        "verdict": "incorrect",
+        "rationale": "웜기어의 역구동 가능성은 리드각·마찰계수·효율에 따라 달라 ‘모든 조건’에서 자유롭지 않다."
+      },
+      {
+        "choiceId": "U-1214-c3",
+        "verdict": "incorrect",
+        "rationale": "크라운기어는 교차축용 베벨기어의 특수형으로 피치면이 서로 평행하지 않다."
+      },
+      {
+        "choiceId": "U-1214-c4",
+        "verdict": "incorrect",
+        "rationale": "스큐기어는 점접촉과 미끄럼이 커 큰 동력 전달에 가장 적합하지 않다."
+      }
+    ],
+    "misconception": "하이포이드기어는 비평행·비교차 축 사이에서 동력을 전달한다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1p4leyd",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 기어 형식과 입력·출력 잇수를 확인한다.\n2. 속도비·회전방향·중심거리 관계를 적용한다.\n3. 치면 손상 형상과 윤활·하중·정렬 조건을 연결한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20100905"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1216",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1216-c1",
+    "directSolution": "스핀들의 직선변위를 랙·피니언 등의 기어기구로 확대해 지침 회전으로 표시하는 비교측정기는 다이얼게이지이므로 c1이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1216-c1",
+        "verdict": "correct",
+        "rationale": "직선변위를 기어로 확대해 눈금판 지침으로 표시한다."
+      },
+      {
+        "choiceId": "U-1216-c2",
+        "verdict": "incorrect",
+        "rationale": "게이지블록은 길이 기준을 조합하는 단도기이며 지침식 비교측정기가 아니다."
+      },
+      {
+        "choiceId": "U-1216-c3",
+        "verdict": "incorrect",
+        "rationale": "하이트게이지는 정반 위에서 높이·선긋기를 수행하는 측정기다."
+      },
+      {
+        "choiceId": "U-1216-c4",
+        "verdict": "incorrect",
+        "rationale": "버니어캘리퍼스는 어미자와 아들자 눈금을 직접 판독한다."
+      }
+    ],
+    "misconception": "직선변위를 기어로 확대해 눈금판 지침으로 표시한다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-ytc0z0",
+    "existingBlockId": "principle",
+    "assertionText": "측정기는 분해능·정확도·반복성·측정력과 온도의 영향을 받는다. 끼워맞춤은 구멍과 축의 한계치수 관계로 틈새·중간·억지 상태가 결정된다.\n\n**이 문제군의 직접 근거**\n\n- 다이얼게이지는 스핀들의 작은 직선변위를 기어로 확대해 흔들림·평행도·높이차를 비교측정한다.\n- 스핀들의 미세변위를 랙·피니언 등으로 확대하여 눈금판에서 읽는다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20100905",
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1253",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1253-c1",
+    "directSolution": "V벨트 장력이 지나치게 크면 풀리에 큰 방사하중이 걸려 축과 베어링 하중·발열·피로가 증가하므로 c1이 맞다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1253-c1",
+        "verdict": "correct",
+        "rationale": "과대 장력의 대표 결과로 축 휨과 베어링 과부하가 생긴다."
+      },
+      {
+        "choiceId": "U-1253-c2",
+        "verdict": "incorrect",
+        "rationale": "장력을 높이면 일반적으로 미끄럼은 줄지만 과도하면 다른 손상이 증가한다."
+      },
+      {
+        "choiceId": "U-1253-c3",
+        "verdict": "incorrect",
+        "rationale": "과도한 인장응력과 굽힘반복으로 벨트 수명은 오히려 짧아질 수 있다."
+      },
+      {
+        "choiceId": "U-1253-c4",
+        "verdict": "incorrect",
+        "rationale": "장력은 풀리의 평행도·정렬오차를 자동 수정하지 않는다."
+      }
+    ],
+    "misconception": "과대 장력의 대표 결과로 축 휨과 베어링 과부하가 생긴다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-4qtggc",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 마찰전달인지 맞물림전달인지 구분한다.\n2. 장력·속도비·접촉각과 하중 조건을 확인한다.\n3. 미끄럼·신장·마모·누설 증상을 원인과 연결한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1256",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1256-c2",
+    "directSolution": "이완측 처짐이 과도하면 중심거리·장력을 조정하거나 텐셔너로 처짐을 제어해야 하므로 c2가 적절하다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1256-c1",
+        "verdict": "incorrect",
+        "rationale": "이완측을 위에 두고 더 처지게 하면 체인이 스프로킷과 간섭하거나 이탈하기 쉬워진다."
+      },
+      {
+        "choiceId": "U-1256-c2",
+        "verdict": "correct",
+        "rationale": "장력과 중심거리 조정 또는 텐셔너 설치가 직접적인 개선대책이다."
+      },
+      {
+        "choiceId": "U-1256-c3",
+        "verdict": "incorrect",
+        "rationale": "스프로킷 정렬불량은 편마모·소음·이탈을 악화시킨다."
+      },
+      {
+        "choiceId": "U-1256-c4",
+        "verdict": "incorrect",
+        "rationale": "무윤활은 핀·부시 마모와 신장을 촉진한다. 이 보기의 대상·조건은 문항의 직접 판단근거와 일치하지 않습니다."
+      }
+    ],
+    "misconception": "장력과 중심거리 조정 또는 텐셔너 설치가 직접적인 개선대책이다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-i89678",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 마찰전달인지 맞물림전달인지 구분한다.\n2. 장력·속도비·접촉각과 하중 조건을 확인한다.\n3. 미끄럼·신장·마모·누설 증상을 원인과 연결한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1257",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1257-c2",
+    "directSolution": "수격은 유속이 짧은 시간에 급변할수록 커지므로 밸브를 가능한 빠르게 닫는 c2가 방지대책으로 부적절하다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1257-c1",
+        "verdict": "incorrect",
+        "rationale": "유속을 낮추면 운동량 변화와 압력상승을 줄일 수 있다."
+      },
+      {
+        "choiceId": "U-1257-c2",
+        "verdict": "correct",
+        "rationale": "급폐쇄는 유속변화를 크게 만들어 수격을 악화시킨다."
+      },
+      {
+        "choiceId": "U-1257-c3",
+        "verdict": "incorrect",
+        "rationale": "개폐시간을 늘리면 압력파의 급격한 발생을 완화한다."
+      },
+      {
+        "choiceId": "U-1257-c4",
+        "verdict": "incorrect",
+        "rationale": "서지탱크·에어챔버는 압력변동을 흡수하는 완충장치다."
+      }
+    ],
+    "misconception": "급폐쇄는 유속변화를 크게 만들어 수격을 악화시킨다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1ii0u5y",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 유체 성질과 압력·온도를 확인한다.\n2. 밸브 기능과 유동 방향을 구분한다.\n3. 체결·밀봉면·개스킷·부식 상태로 누설 원인을 찾는다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1258",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1258-c3",
+    "directSolution": "왕복압축기의 흡입·토출밸브가 누설하면 역류와 재팽창이 늘어 실제 흡입량과 토출량이 줄고 압축효율이 떨어지므로 c3이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1258-c1",
+        "verdict": "incorrect",
+        "rationale": "누설은 압력을 유지하지 못하게 하므로 자동 상승과 반대다."
+      },
+      {
+        "choiceId": "U-1258-c2",
+        "verdict": "incorrect",
+        "rationale": "압축기는 계속 구동되므로 동력소비가 0이 되지 않는다."
+      },
+      {
+        "choiceId": "U-1258-c3",
+        "verdict": "correct",
+        "rationale": "밸브 기밀불량의 대표 결과는 용적효율·토출량·토출압력 저하다."
+      },
+      {
+        "choiceId": "U-1258-c4",
+        "verdict": "incorrect",
+        "rationale": "누설과 재압축은 발열을 늘릴 수 있어 온도가 항상 낮아진다는 설명은 틀리다."
+      }
+    ],
+    "misconception": "밸브 기밀불량의 대표 결과는 용적효율·토출량·토출압력 저하다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1yebhi0",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 취급 유체와 필요한 압력·유량을 확인한다.\n2. 원심식·축류식·용적식의 특성을 비교한다.\n3. 흡입압력·온도·배관저항·누설과 진동을 점검한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1282",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1282-c4",
+    "directSolution": "선반의 정식 테이퍼가공은 복식공구대 선회·심압대 편위·테이퍼 절삭장치를 이용하며 척 조를 임의로 다르게 조여 공작물을 기울이는 c4는 안전하고 정확한 방법이 아니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1282-c1",
+        "verdict": "incorrect",
+        "rationale": "짧고 큰 각도의 테이퍼는 복식공구대를 회전시켜 가공할 수 있다."
+      },
+      {
+        "choiceId": "U-1282-c2",
+        "verdict": "incorrect",
+        "rationale": "긴 완만한 외경 테이퍼는 심압대 편위법을 사용할 수 있다."
+      },
+      {
+        "choiceId": "U-1282-c3",
+        "verdict": "incorrect",
+        "rationale": "테이퍼 절삭장치는 공구를 설정 경사로 안내하는 정식 방법이다."
+      },
+      {
+        "choiceId": "U-1282-c4",
+        "verdict": "correct",
+        "rationale": "불균일한 척 조임은 고정불량·편심·이탈 위험을 만들어 정식 방법이 아니다."
+      }
+    ],
+    "misconception": "불균일한 척 조임은 고정불량·편심·이탈 위험을 만들어 정식 방법이 아니다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-vgwaq3",
+    "existingBlockId": "principle",
+    "assertionText": "절삭속도·이송·절입과 공구 재질이 절삭력·발열·표면품질·공구수명을 결정한다. 선반·밀링·드릴·연삭은 주운동과 이송운동의 주체가 다르다.\n\n**이 문제군의 직접 근거**\n\n- 척 조의 임의 편심은 고정불량과 진동을 유발하며 정식 테이퍼가공 방법이 아니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1283",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1283-c3",
+    "directSolution": "힘이 렌치에 수직이면 토크 T=F×ℓ이다. 대입 형식은 F[N]×ℓ[m]=T[N·m]이므로 c3이 맞다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1283-c1",
+        "verdict": "incorrect",
+        "rationale": "힘을 길이로 나누면 단위가 N/m가 되어 토크 단위가 아니다."
+      },
+      {
+        "choiceId": "U-1283-c2",
+        "verdict": "incorrect",
+        "rationale": "길이를 힘으로 나누면 단위가 m/N가 되어 물리적 의미가 맞지 않는다."
+      },
+      {
+        "choiceId": "U-1283-c3",
+        "verdict": "correct",
+        "rationale": "수직 힘의 모멘트팔이 ℓ이므로 T=ℓF이고 단위는 N·m다."
+      },
+      {
+        "choiceId": "U-1283-c4",
+        "verdict": "incorrect",
+        "rationale": "길이와 힘은 서로 다른 차원이므로 더할 수 없다."
+      }
+    ],
+    "misconception": "수직 힘의 모멘트팔이 ℓ이므로 T=ℓF이고 단위는 N·m다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-uszvgk",
+    "existingBlockId": "principle",
+    "assertionText": "볼트의 축력과 접합면 마찰이 외력을 지지하며 키와 핀은 축·허브 사이 위치 결정이나 토크 전달을 담당한다. 나사산 형상과 리드·피치는 운동 특성을 바꾼다.\n\n**이 문제군의 직접 근거**\n\n- 토크는 회전축에서 힘 작용선까지의 수직거리와 힘의 곱이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1284",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1284-c1",
+    "directSolution": "전원전압이나 부하가 변하면 전동기 발생토크와 슬립이 변해 속도가 불규칙해질 수 있으므로 c1이 가장 적절하다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1284-c1",
+        "verdict": "correct",
+        "rationale": "전압변동·접촉불량·과부하 변동은 토크와 속도를 불안정하게 만든다."
+      },
+      {
+        "choiceId": "U-1284-c2",
+        "verdict": "incorrect",
+        "rationale": "정격전압과 일정 부하는 안정운전 조건이다. 이 보기의 대상·조건은 문항의 직접 판단근거와 일치하지 않습니다."
+      },
+      {
+        "choiceId": "U-1284-c3",
+        "verdict": "incorrect",
+        "rationale": "정상 냉각팬 회전은 속도불규칙의 원인이 아니다."
+      },
+      {
+        "choiceId": "U-1284-c4",
+        "verdict": "incorrect",
+        "rationale": "규정범위의 베어링 간극은 정상상태이며 불규칙회전 원인이 아니다."
+      }
+    ],
+    "misconception": "전압변동·접촉불량·과부하 변동은 토크와 속도를 불안정하게 만든다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-bn7gmm",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 전압·전류·절연 상태를 확인한다.\n2. 부하·회전수·온도·진동을 비교한다.\n3. 베어링·정렬·냉각·전원 이상을 순서대로 배제한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1320",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1320-c1",
+    "directSolution": "감속기 진동·발열·소음은 윤활·기어·베어링·정렬·체결을 함께 진단해야 하므로 원인 확인 없이 오일만 바꾸고 계속 운전하는 c1이 가장 부적절하다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1320-c1",
+        "verdict": "correct",
+        "rationale": "윤활유 교환만으로 모든 원인을 제거했다고 보고 운전을 계속하면 손상을 확대할 수 있다."
+      },
+      {
+        "choiceId": "U-1320-c2",
+        "verdict": "incorrect",
+        "rationale": "유량·점도·오염은 마찰·발열·마모 진단의 기본 항목이다."
+      },
+      {
+        "choiceId": "U-1320-c3",
+        "verdict": "incorrect",
+        "rationale": "치면 접촉·마모와 베어링 손상은 소음·진동·발열의 직접 원인이다."
+      },
+      {
+        "choiceId": "U-1320-c4",
+        "verdict": "incorrect",
+        "rationale": "축정렬·체결불량은 반복하중과 진동을 만들므로 점검해야 한다."
+      }
+    ],
+    "misconception": "윤활유 교환만으로 모든 원인을 제거했다고 보고 운전을 계속하면 손상을 확대할 수 있다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1qn2ph0",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 기어 형식과 입력·출력 잇수를 확인한다.\n2. 속도비·회전방향·중심거리 관계를 적용한다.\n3. 치면 손상 형상과 윤활·하중·정렬 조건을 연결한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1321",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "GPT CHOICE_ISSUE: 응력집중 원인과 반복굽힘 원인이 혼합되어 단일정답이 불안정하다. 설계형상 오류와 축 가공흠집은 응력집중을 만들지만 커플링 중심불량은 주로 반복굽힘·추가하중 원인이고, ‘키홈의 정상범위 마모’도 손상정도에 따라 직접 파단원인으로 보기 어렵다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1322",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1322-c2",
+    "directSolution": "스템 나사부의 윤활부족·움직임 불량·구동부 이물질은 구동저항을 높여 직접 정지를 일으킬 수 있지만 경미한 시트 표면손상만은 주로 누설·차단성능 문제이므로 c2가 가장 거리가 멀다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1322-c1",
+        "verdict": "incorrect",
+        "rationale": "윤활부족은 스템 마찰과 요구토크를 증가시켜 정지를 유발할 수 있다."
+      },
+      {
+        "choiceId": "U-1322-c2",
+        "verdict": "correct",
+        "rationale": "경미한 시트 손상만으로는 보통 구동부 정지보다 누설이 먼저 문제된다."
+      },
+      {
+        "choiceId": "U-1322-c3",
+        "verdict": "incorrect",
+        "rationale": "스템 나사부 움직임 불량은 액추에이터 토크를 초과시켜 직접 정지시킬 수 있다."
+      },
+      {
+        "choiceId": "U-1322-c4",
+        "verdict": "incorrect",
+        "rationale": "구동부 이물질은 기계적 걸림을 만들어 회전을 직접 막는다."
+      }
+    ],
+    "misconception": "경미한 시트 손상만으로는 보통 구동부 정지보다 누설이 먼저 문제된다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-15dxc9u",
+    "existingBlockId": "source",
+    "assertionText": "- 문제 근거: 27차 정규화 대표문제 U-1322\n- 이론 상태: 문제 근거에서 도출한 보강안이며 독립 이론 출처 대조가 추가로 필요합니다.\n- 원문 출처 1: https://cbtbank.kr/exam/de20070902\n- 공개 상태: 출처·기술 검수 전까지 검토 대기",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1324",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1324-c2",
+    "directSolution": "원심압축기 초킹은 고유량측에서 유로의 국부 마하수가 1에 접근해 압력차를 더 키워도 질량유량이 거의 증가하지 않는 현상이므로 c2가 맞다. 현재 레슨에는 이 음속·질량유량 한계 설명을 직접 추가해야 한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1324-c1",
+        "verdict": "incorrect",
+        "rationale": "서징은 저유량측에서 압력·유량이 크게 진동하고 역류할 수 있는 불안정 현상이다."
+      },
+      {
+        "choiceId": "U-1324-c2",
+        "verdict": "correct",
+        "rationale": "음속 한계로 질량유량이 제한되는 설명이 초킹의 정의다."
+      },
+      {
+        "choiceId": "U-1324-c3",
+        "verdict": "incorrect",
+        "rationale": "공진은 가진주파수와 고유진동수 일치에 따른 진동현상으로 유량한계와 다르다."
+      },
+      {
+        "choiceId": "U-1324-c4",
+        "verdict": "incorrect",
+        "rationale": "실속은 날개 주위 유동박리이며 초킹과 다른 저유량측 현상이다."
+      }
+    ],
+    "misconception": "음속 한계로 질량유량이 제한되는 설명이 초킹의 정의다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1h5hctp",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 취급 유체와 필요한 압력·유량을 확인한다.\n2. 원심식·축류식·용적식의 특성을 비교한다.\n3. 흡입압력·온도·배관저항·누설과 진동을 점검한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1325",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1325-c4",
+    "directSolution": "내부 누설손실은 고압부와 저압부를 연결하는 임펠러 입구·축 관통부·다단 격판 틈새에서 발생한다. 베어링 자체와 외부 패킹상자의 조합은 대표 내부 누설 통로가 아니므로 c4다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1325-c1",
+        "verdict": "incorrect",
+        "rationale": "임펠러 입구와 케이싱 사이의 씰 틈은 고압가스의 재순환 누설통로가 될 수 있다."
+      },
+      {
+        "choiceId": "U-1325-c2",
+        "verdict": "incorrect",
+        "rationale": "축 관통부·평형장치 주변은 압력차가 있는 대표 누설부다."
+      },
+      {
+        "choiceId": "U-1325-c3",
+        "verdict": "incorrect",
+        "rationale": "다단 격판과 축 사이의 래버린스 틈은 단간 누설손실을 만든다."
+      },
+      {
+        "choiceId": "U-1325-c4",
+        "verdict": "correct",
+        "rationale": "베어링은 하중지지 부품이며 외부 패킹 누설과 묶어 내부 재순환 틈새로 분류하기 어렵다."
+      }
+    ],
+    "misconception": "베어링은 하중지지 부품이며 외부 패킹 누설과 묶어 내부 재순환 틈새로 분류하기 어렵다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-3zfy6",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 취급 유체와 필요한 압력·유량을 확인한다.\n2. 원심식·축류식·용적식의 특성을 비교한다.\n3. 흡입압력·온도·배관저항·누설과 진동을 점검한다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1326",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "GPT HOLD: 기어 요목표의 필수 기재항목은 적용 제도규격과 도면양식에 따라 달라질 수 있다. 치형·모듈·압력각은 기하정보이고 재질은 별도 부품표에 둘 수 있다는 논리는 타당하지만, ‘반드시 포함할 필요가 가장 적다’를 확정하려면 적용 KS/ISO 판과 표 양식을 확인해야 한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1327",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "GPT HOLD: c4의 옳고 그름은 적용 기계제도 규격의 기본 감김방향 표시 관례에 좌우된다. 일부 제도규칙은 별도 지시가 없을 때 우감김으로 도시하는 관례를 두므로, 현재 문장만으로 c4를 틀렸다고 확정할 수 없다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1328",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1328-c3",
+    "directSolution": "공구의 경사면과 여유면 사이에 형성되는 쐐기각은 절인각이므로 c3이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1328-c1",
+        "verdict": "incorrect",
+        "rationale": "경사각은 경사면이 기준면과 이루는 각으로 칩 흐름과 절삭력에 영향을 준다."
+      },
+      {
+        "choiceId": "U-1328-c2",
+        "verdict": "incorrect",
+        "rationale": "여유각은 여유면과 가공면 사이의 마찰을 피하기 위한 각이다."
+      },
+      {
+        "choiceId": "U-1328-c3",
+        "verdict": "correct",
+        "rationale": "절인각은 경사면과 여유면 사이의 공구 쐐기각이다."
+      },
+      {
+        "choiceId": "U-1328-c4",
+        "verdict": "incorrect",
+        "rationale": "랜드는 인선에 남겨 둔 좁은 평면부로 각도의 명칭이 아니다."
+      }
+    ],
+    "misconception": "절인각은 경사면과 여유면 사이의 공구 쐐기각이다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1swaer8",
+    "existingBlockId": "principle",
+    "assertionText": "절삭속도·이송·절입과 공구 재질이 절삭력·발열·표면품질·공구수명을 결정한다. 선반·밀링·드릴·연삭은 주운동과 이송운동의 주체가 다르다.\n\n**이 문제군의 직접 근거**\n\n- 절인각은 공구의 강도와 절삭성에 영향을 주는 경사면과 여유면 사이의 각이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1363",
+    "subjectId": "subject-3",
+    "decision": "hold",
+    "holdReason": "GPT HOLD: 액상 개스킷은 종류마다 도포형태가 얇은 막, 일정 비드, 비경화 도막 등으로 달라 c1의 ‘얇고 균일하게’도 모든 제품에 보편적이지 않다. 제조사 지침을 따른다는 방향은 맞지만 특정 제품군 없이 단일정답을 승인하기 어렵다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1364",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1364-c3",
+    "directSolution": "토크스위치는 액추에이터 출력토크가 설정값에 도달할 때 작동한다. 스템이 정상 회전한다는 사실만으로는 토크 설정값 도달을 뜻하지 않으므로 c3이 답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1364-c1",
+        "verdict": "incorrect",
+        "rationale": "닫힘 끝단의 시트 하중이 커지면 설정 토크에 도달해 작동할 수 있다."
+      },
+      {
+        "choiceId": "U-1364-c2",
+        "verdict": "incorrect",
+        "rationale": "기계적 걸림으로 요구토크가 설정값을 넘으면 보호를 위해 작동할 수 있다."
+      },
+      {
+        "choiceId": "U-1364-c3",
+        "verdict": "correct",
+        "rationale": "정상 회전은 위치·동작 상태일 뿐 토크스위치의 직접 작동조건이 아니다."
+      },
+      {
+        "choiceId": "U-1364-c4",
+        "verdict": "incorrect",
+        "rationale": "구조와 설정에 따라 열림 끝단의 토크상승으로 작동할 수 있다."
+      }
+    ],
+    "misconception": "정상 회전은 위치·동작 상태일 뿐 토크스위치의 직접 작동조건이 아니다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1xrgc5y",
+    "existingBlockId": "source",
+    "assertionText": "- 문제 근거: 27차 정규화 대표문제 U-1364\n- 이론 상태: 문제 근거에서 도출한 보강안이며 독립 이론 출처 대조가 추가로 필요합니다.\n- 원문 출처 1: https://cbtbank.co.kr/exam/de20060910\n- 공개 상태: 출처·기술 검수 전까지 검토 대기",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1365",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1365-c1",
+    "directSolution": "6206 P6에서 6은 단열 깊은홈 볼베어링 형식, 2는 치수계열, 06은 안지름 30 mm, P6은 정밀도 등급을 뜻한다. 따라서 2를 윤활유 점도등급이라고 한 c1이 옳지 않다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1365-c1",
+        "verdict": "correct",
+        "rationale": "숫자 2는 치수계열 관련 기호이며 윤활유 점도표시가 아니다."
+      },
+      {
+        "choiceId": "U-1365-c2",
+        "verdict": "incorrect",
+        "rationale": "선두 6은 단열 깊은홈 볼베어링 형식을 나타낸다."
+      },
+      {
+        "choiceId": "U-1365-c3",
+        "verdict": "incorrect",
+        "rationale": "안지름 번호 06은 04 이상 규칙 06×5=30 mm로 판독한다."
+      },
+      {
+        "choiceId": "U-1365-c4",
+        "verdict": "incorrect",
+        "rationale": "P6은 보통급보다 정밀한 공차·정밀도 등급을 나타낸다."
+      }
+    ],
+    "misconception": "숫자 2는 치수계열 관련 기호이며 윤활유 점도표시가 아니다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-cawhm",
+    "existingBlockId": "source",
+    "assertionText": "- 문제 근거: 27차 정규화 대표문제 U-1365\n- 이론 상태: 문제 근거에서 도출한 보강안이며 독립 이론 출처 대조가 추가로 필요합니다.\n- 원문 출처 1: https://cbtbank.co.kr/exam/de20060910\n- 공개 상태: 출처·기술 검수 전까지 검토 대기",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1367",
+    "subjectId": "subject-3",
+    "decision": "approve",
+    "correctChoiceId": "U-1367-c1",
+    "directSolution": "윤활량 불량·축정렬 불량·과대 벨트장력·베어링 손상은 직접 발열원인이지만 V벨트 표면의 경미한 마모만으로 베어링 온도상승을 직접 설명하기는 어려우므로 c1이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1367-c1",
+        "verdict": "correct",
+        "rationale": "경미한 표면마모만은 베어링에 큰 추가하중이나 마찰을 직접 만들지 않는다."
+      },
+      {
+        "choiceId": "U-1367-c2",
+        "verdict": "incorrect",
+        "rationale": "윤활부족은 금속접촉을, 과잉윤활은 교반저항을 늘려 모두 발열시킬 수 있다."
+      },
+      {
+        "choiceId": "U-1367-c3",
+        "verdict": "incorrect",
+        "rationale": "정렬불량과 과대 장력은 베어링 방사하중과 내부마찰을 증가시킨다."
+      },
+      {
+        "choiceId": "U-1367-c4",
+        "verdict": "incorrect",
+        "rationale": "베어링 손상과 부적절한 내부틈새는 접촉응력·마찰을 높여 발열한다."
+      }
+    ],
+    "misconception": "경미한 표면마모만은 베어링에 큰 추가하중이나 마찰을 직접 만들지 않는다. 이 직접 근거를 다른 보기의 대상·조건·기능과 혼동하면 오답입니다.",
+    "existingLessonId": "lesson-1whhquv",
+    "existingBlockId": "diagnosis",
+    "assertionText": "1. 레이디얼·스러스트 하중과 속도를 구분한다.\n2. 끼워맞춤·간극·정밀도·윤활 방식을 확인한다.\n3. 소음·온도·진동·마모 흔적으로 원인을 좁힌다.\n\n조건이나 단위가 제시된 경우에는 생략하지 말고 정답 문장에 다시 대입해 확인합니다.",
+    "evidenceUrls": [
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+]

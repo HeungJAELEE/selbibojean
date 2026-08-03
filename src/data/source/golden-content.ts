@@ -202,7 +202,39 @@ const pneumaticHydraulicConverterFeedback: Record<number, ChoiceFeedback> = {
   },
 };
 
+const abbePrincipleFeedback: Record<number, ChoiceFeedback> = {
+  1: {
+    rationale: "‘블록게이지’는 정해진 기준 길이를 재현·비교하는 표준기이므로, 이동하는 측정축과 기준 눈금축을 한 직선에 두는 아베 원리의 구조를 직접 만족하는 측정기로 고르지 않습니다.",
+    plausibleReason: "블록게이지도 매우 정밀한 길이 기준이어서 ‘정밀한 측정기’를 묻는 문제처럼 읽으면 알맞아 보일 수 있습니다.",
+    incorrectPoint: "이 문항의 판단축은 기준 길이의 정확도가 아니라, 측정 중 이동하는 측정축과 값을 읽는 기준축이 같은 직선 위에 배치되는가입니다.",
+    keyRule: "아베 원리는 측정 대상의 길이축과 기준 눈금축 사이의 오프셋을 줄여 작은 기울어짐이 길이 오차로 확대되는 것을 막습니다.",
+    differenceFromCorrect: "외측 마이크로미터는 스핀들 이동축·측정축·눈금축을 거의 같은 직선에 두지만, 블록게이지는 그 축 배치로 길이를 읽는 이동식 측정기가 아닙니다.",
+  },
+  2: {
+    rationale: "‘하이트게이지’는 기준 눈금이 있는 기둥과 스크라이버 측정점 사이에 오프셋이 생길 수 있어, 기울어짐이 있으면 그 떨어진 거리만큼 아베 오차가 커질 수 있습니다.",
+    plausibleReason: "하이트게이지는 평판 위에서 높이를 정밀하게 재므로 눈금과 측정점의 축도 자동으로 일치한다고 생각하기 쉽습니다.",
+    incorrectPoint: "측정점이 기준 눈금축에서 옆으로 떨어져 있고 돌출 길이·자세가 바뀌면, 작은 각도 변화가 스크라이버 위치의 길이 오차로 확대될 수 있습니다.",
+    keyRule: "두 축이 평행한지만 보지 말고, 실제 측정점과 기준 눈금축 사이에 수직 오프셋이 남는지를 확인합니다.",
+    differenceFromCorrect: "외측 마이크로미터는 측정 방향과 스핀들·눈금축을 같은 직선에 가깝게 두는 반면, 하이트게이지는 측정점과 기준 눈금축 사이의 오프셋을 검토해야 합니다.",
+  },
+  3: {
+    rationale: "‘외측 마이크로미터’는 스핀들의 이동축과 측정 치수의 방향, 기준 눈금축을 거의 같은 직선에 배치하므로 아베 원리의 축 배치 조건에 가장 잘 부합합니다.",
+    plausibleReason: "마이크로미터의 높은 분해능만 외우면 정답처럼 보이지만, 이 문항에서는 눈금의 세밀함보다 측정축과 기준축의 위치 관계가 근거입니다.",
+    incorrectPoint: null,
+    keyRule: "측정축과 기준 눈금축 사이의 거리 L을 줄이면 같은 작은 기울어짐 θ에서도 아베 오차 e ≈ Lθ가 작아집니다.",
+    differenceFromCorrect: null,
+  },
+  4: {
+    rationale: "‘버니어캘리퍼스’는 본척의 기준 눈금축과 조가 물체를 끼우는 측정선이 떨어져 있어, 슬라이더가 기울면 그 오프셋이 길이 읽기 오차로 이어질 수 있습니다.",
+    plausibleReason: "버니어 눈금으로 작은 치수를 읽을 수 있으므로 분해능이 좋다는 사실을 아베 원리의 축 일치와 혼동하기 쉽습니다.",
+    incorrectPoint: "본척 눈금이 정밀해도 조의 접촉점과 눈금축이 같은 직선에 놓이지 않으면, 평행도·직각도 또는 슬라이더 기울어짐의 영향을 별도로 받습니다.",
+    keyRule: "아베 원리는 분해능의 크기가 아니라 측정점의 이동축과 기준 눈금축 사이의 오프셋 및 각도 오차의 결합을 판단합니다.",
+    differenceFromCorrect: "외측 마이크로미터는 스핀들 이동축과 기준 눈금축을 거의 한 줄에 두지만, 버니어캘리퍼스는 조의 측정선이 본척 눈금축에서 떨어져 있습니다.",
+  },
+};
+
 export const GOLDEN_QUESTION_FEEDBACK: Record<string, Record<number, ChoiceFeedback>> = {
+  "U-073": abbePrincipleFeedback,
   "U-074": diskBrakeFeedback,
   "U-130": pneumaticHydraulicConverterFeedback,
   "U-1350": oilWhipFeedback,

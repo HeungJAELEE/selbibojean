@@ -1,0 +1,195 @@
+[
+  {
+    "questionId": "U-566",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-566-c3",
+    "directSolution": "실효값은 시간에 따라 변하는 신호가 같은 저항에서 내는 평균 전력과 등가인 값입니다. 순간값의 부호 상쇄를 막기 위해 먼저 제곱하고, 한 주기 T 동안 평균한 뒤 원래 신호와 같은 단위로 되돌리기 위해 제곱근을 취합니다. 따라서 Xrms=√[(1/T)∫₀ᵀx²(t)dt]인 U-566-c3이 정답이며, 순수 정현파에서는 최댓값 Xp의 1/√2입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-566-c1",
+        "verdict": "incorrect",
+        "rationale": "(1/T)∫₀ᵀx(t)dt는 산술평균값입니다. 영점을 중심으로 대칭인 순수 정현파는 양·음 반주기가 상쇄되어 평균이 0이 되므로 전력 효과를 나타내는 실효값이 아닙니다."
+      },
+      {
+        "choiceId": "U-566-c2",
+        "verdict": "incorrect",
+        "rationale": "평균을 구한 뒤 제곱근만 취해 적분 전에 순간값을 제곱하는 단계가 빠졌습니다. 순수 정현파에서는 적분 평균이 0이므로 RMS 정의를 만족하지 못합니다."
+      },
+      {
+        "choiceId": "U-566-c3",
+        "verdict": "correct",
+        "rationale": "순간값 제곱, 한 주기 평균, 제곱근의 세 단계를 모두 포함합니다. 부호 상쇄를 막으면서 결과를 원래 신호와 같은 단위로 되돌리므로 RMS의 일반 정의와 일치합니다."
+      },
+      {
+        "choiceId": "U-566-c4",
+        "verdict": "incorrect",
+        "rationale": "제곱값을 적분하기만 하여 주기 T로 나누는 평균 과정과 제곱근 과정이 모두 없습니다. 결과 차원도 원래 신호의 실효값 단위와 일치하지 않습니다."
+      }
+    ],
+    "misconception": "RMS를 산술평균으로 보거나 제곱·평균·제곱근 가운데 일부 단계를 생략하는 오류.",
+    "existingLessonId": "lesson-gyh36d",
+    "existingBlockId": "principle",
+    "assertionText": "주기 T인 신호의 실효값은 순간값을 제곱하여 한 주기 동안 평균한 뒤 제곱근을 취한 Xrms=√[(1/T)∫₀ᵀx²(t)dt]이며, 순수 정현파에서는 최댓값의 1/√2가 된다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303",
+      "https://cbtbank.kr/exam/de20150531"
+    ],
+    "reviewedAt": "2026-08-03T16:35:28.194+09:00"
+  },
+  {
+    "questionId": "U-812",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-812-c2",
+    "directSolution": "진동은 양·음 방향으로 반복하므로 산술평균이 0에 가까워도 실제 진동은 클 수 있습니다. RMS는 전체 파형을 제곱해 평균한 값의 제곱근이어서 전체 진동 수준을 하나의 양수값으로 대표할 수 있습니다. 따라서 일반적인 진동측정기의 대표 표시값을 묻는 문맥에서는 U-812-c2가 정답입니다. 다만 피크·편진폭·위상도 진단 목적에 따라 별도로 사용됩니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-812-c1",
+        "verdict": "incorrect",
+        "rationale": "산술평균은 양의 진동과 음의 진동이 상쇄됩니다. 진동이 반복되고 있어도 평균이 0에 가까워질 수 있으므로 전체 진동 크기의 대표값으로 부적합합니다."
+      },
+      {
+        "choiceId": "U-812-c2",
+        "verdict": "correct",
+        "rationale": "RMS는 전체 시간파형을 반영하면서 항상 0 이상의 진동 수준을 제공합니다. 일반적인 전체 진동 레벨을 대표하는 표시값이라는 문항의 조건에 직접 맞습니다."
+      },
+      {
+        "choiceId": "U-812-c3",
+        "verdict": "incorrect",
+        "rationale": "편진폭은 기준 위치에서 한쪽 극값까지의 크기입니다. 정현파나 변위 표현에는 쓸 수 있지만 불규칙한 전체 파형의 대표 유효 수준을 나타내는 일반 표시값은 아닙니다."
+      },
+      {
+        "choiceId": "U-812-c4",
+        "verdict": "incorrect",
+        "rationale": "위상값은 기준신호와의 시간적 또는 각도상 관계를 나타냅니다. 고장진단에는 중요하지만 진동의 전체 크기를 단독으로 표시하는 값은 아닙니다."
+      }
+    ],
+    "misconception": "양·음 진동의 상쇄를 무시하거나 위상·피크 계열 값을 전체 진동 수준의 대표값과 같은 것으로 보는 오류.",
+    "existingLessonId": "lesson-68po9a",
+    "existingBlockId": "principle",
+    "assertionText": "진동의 전체 수준은 양·음 파형이 상쇄되지 않고 전체 신호 크기를 반영하는 RMS로 대표하는 경우가 일반적이며, 피크·편진폭·위상은 파형 특성이나 고장진단 목적에 따라 별도로 사용한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20161001",
+      "https://cbtbank.kr/exam/de20140525",
+      "https://cbtbank.kr/exam/de20080907",
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T16:35:28.194+09:00"
+  },
+  {
+    "questionId": "U-032",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-032-c3",
+    "directSolution": "열전대는 서로 다른 두 도체로 회로를 만들고 측정접점과 기준접점 사이에 온도차가 생기면 열기전력이 발생하는 제벡 효과를 이용합니다. 톰슨 효과는 온도구배가 있는 하나의 균질한 도체에 전류가 흐를 때 도체 내부에서 열이 가역적으로 발생하거나 흡수되는 현상입니다. 따라서 이종금속 접점의 온도차에 의한 기전력을 톰슨 효과라고 한 U-032-c3이 옳지 않은 설명입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-032-c1",
+        "verdict": "incorrect",
+        "rationale": "구리-콘스탄탄 조합은 T형 열전대이며 백금계 R·S형 열전대와 비교하면 상대적으로 저온 측정에 적합하므로 옳은 설명입니다."
+      },
+      {
+        "choiceId": "U-032-c2",
+        "verdict": "incorrect",
+        "rationale": "서로 다른 두 도체로 열전회로를 만들고 두 접점 사이에 온도차를 주면 제벡 전압이 발생합니다. 이는 열전온도계의 기본 원리이므로 옳은 설명입니다."
+      },
+      {
+        "choiceId": "U-032-c3",
+        "verdict": "correct",
+        "rationale": "이 보기가 설명한 이종금속 열전회로의 온도차 기전력은 제벡 효과입니다. 톰슨 효과는 온도구배가 있는 단일 균질 도체에 전류가 흐를 때의 가역적 열 현상이므로 용어가 틀렸습니다."
+      },
+      {
+        "choiceId": "U-032-c4",
+        "verdict": "incorrect",
+        "rationale": "백금로듐-백금 조합은 R형 또는 S형 열전대에 해당하며 높은 온도 범위의 측정에 사용되므로 옳은 설명입니다."
+      }
+    ],
+    "misconception": "제벡 효과와 톰슨 효과를 혼동하고 열전대 재료 조합별 상대적인 사용 온도 범위를 구분하지 못하는 오류.",
+    "existingLessonId": "lesson-1vttr35",
+    "existingBlockId": "trap",
+    "assertionText": "이종금속 열전회로의 두 접점에 온도차가 있을 때 기전력이 생기는 현상은 제벡 효과이고, 온도구배가 있는 단일 균질 도체에 전류가 흐를 때 열이 발생·흡수되는 현상은 톰슨 효과이다. 구리-콘스탄탄 T형은 비교적 저온용이고, 백금로듐-백금 R·S형은 고온용이다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8162917",
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20140525"
+    ],
+    "reviewedAt": "2026-08-03T16:35:28.194+09:00"
+  },
+  {
+    "questionId": "U-352",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-352-c4",
+    "directSolution": "효율적인 열관리는 열설비 성능 유지, 연료의 경제성과 적용 가능성 검토, 열사용 기준·목표 설정, 계측과 성과 확인을 결합해 지속적으로 개선하는 활동입니다. 반면 U-352-c4는 에너지 사용과 설비 운전에 관여하는 부서와 작업자의 참여를 관리자와 일부 관계자로 제한합니다. 잘못된 부분은 중앙제어 또는 관리책임의 집중 자체가 아니라 관련 영역의 참여를 인위적으로 제한한 것이므로 U-352-c4가 가장 거리가 먼 보기입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-352-c1",
+        "verdict": "incorrect",
+        "rationale": "열설비의 성능과 운전상태를 관리하면 불완전 운전, 열손실과 에너지 낭비를 줄일 수 있으므로 효율적인 열관리의 직접 활동입니다."
+      },
+      {
+        "choiceId": "U-352-c2",
+        "verdict": "incorrect",
+        "rationale": "사용 가능한 연료의 가격, 발열량, 연소 적합성과 공급조건을 비교하면 열원 비용과 열효율을 함께 개선할 수 있으므로 적절한 열관리 활동입니다."
+      },
+      {
+        "choiceId": "U-352-c3",
+        "verdict": "incorrect",
+        "rationale": "열사용량, 원단위, 운전조건이나 성과기준을 설정해야 실제 사용량과 비교해 이탈 여부와 개선 효과를 판단할 수 있으므로 적절한 활동입니다."
+      },
+      {
+        "choiceId": "U-352-c4",
+        "verdict": "correct",
+        "rationale": "관련 부서와 현장 작업자의 정보·실행·피드백을 배제하면 설비 운전과 에너지 사용을 지속적으로 개선하기 어렵습니다. 참여 범위를 일부에 제한하므로 효율적인 열관리와 가장 거리가 멉니다."
+      }
+    ],
+    "misconception": "관리책임의 명확화나 중앙제어 설비와 관련 영역의 참여를 일부 관계자로 제한하는 운영방식을 같은 것으로 보는 오류.",
+    "existingLessonId": "lesson-vjhp2p",
+    "existingBlockId": "principle",
+    "assertionText": "효율적인 열관리는 열설비 성능, 연료의 경제성과 적합성, 열사용 기준 및 성과를 체계적으로 관리하고 관련 부서와 현장의 참여를 통해 지속적으로 개선해야 하며, 관리자와 일부 관계자에게만 참여를 제한하는 방식은 적절하지 않다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20200822",
+      "https://cbtbank.kr/exam/de20111002",
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T16:35:28.194+09:00"
+  },
+  {
+    "questionId": "U-425",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-425-c1",
+    "directSolution": "공장의 열관리는 연료가 가진 에너지를 효율적으로 열로 전환하고 그 사용량과 운전상태를 측정·관리하는 활동입니다. 연소관리, 연료관리와 열계측관리는 모두 열효율과 열사용량에 직접 연결됩니다. 소음관리는 열설비에도 필요할 수 있지만 직접 관리대상은 소음 노출과 작업환경이므로 열관리의 직접 분류가 아닙니다. 따라서 U-425-c1이 열관리 방법으로 보기 어려운 유일한 선택지입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-425-c1",
+        "verdict": "correct",
+        "rationale": "소음관리는 설비에서 발생하는 음압과 작업자의 소음 노출을 줄이는 작업환경·산업보건 관리입니다. 열에너지의 발생·전달·사용량 관리와 직접 목적이 다르므로 정답입니다."
+      },
+      {
+        "choiceId": "U-425-c2",
+        "verdict": "incorrect",
+        "rationale": "공기-연료비, 배기가스와 연소상태를 관리하면 연료의 열량을 유효한 열로 전환하는 효율을 높일 수 있으므로 열관리의 직접 영역입니다."
+      },
+      {
+        "choiceId": "U-425-c3",
+        "verdict": "incorrect",
+        "rationale": "연료의 종류·품질·발열량·사용량과 비용을 관리해야 투입 열량, 열설비 효율과 경제성을 판단할 수 있으므로 열관리 범위에 포함됩니다."
+      },
+      {
+        "choiceId": "U-425-c4",
+        "verdict": "incorrect",
+        "rationale": "온도, 압력, 유량, 연료량과 열량 등의 계측값은 열사용 상태, 손실과 개선 효과를 판단하는 기초이므로 열계측관리는 열관리의 직접 영역입니다."
+      }
+    ],
+    "misconception": "공장 설비와 관련된 모든 관리 활동을 열에너지의 발생·전달·사용을 다루는 열관리로 분류하는 오류.",
+    "existingLessonId": "lesson-vjhp2p",
+    "existingBlockId": "principle",
+    "assertionText": "공장 열관리는 연료의 공급·품질과 사용량, 연소상태, 온도·압력·유량·열량 등의 열계측을 관리하여 열효율과 에너지 원단위를 개선하는 영역이며, 소음관리는 작업환경을 다루는 별도의 관리 영역이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20200606"
+    ],
+    "reviewedAt": "2026-08-03T16:35:28.194+09:00"
+  }
+]

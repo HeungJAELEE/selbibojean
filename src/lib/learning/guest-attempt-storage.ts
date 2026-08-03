@@ -1,5 +1,8 @@
 export const GUEST_ATTEMPTS_KEY = "seolbi:guest-attempts";
 export const GUEST_ATTEMPTS_CHANGED_EVENT = "seolbi:guest-attempts-changed";
+export const MAX_GUEST_LEARNING_ATTEMPTS = 500;
+
+type GuestStorage = Pick<Storage, "getItem" | "setItem">;
 
 export type GuestLearningAttempt = {
   questionId: string;
@@ -53,10 +56,38 @@ export function parseGuestLearningAttempts(
           },
         ];
       })
-      .slice(-500);
+      .slice(-MAX_GUEST_LEARNING_ATTEMPTS);
   } catch {
     return [];
   }
+}
+
+export function compactGuestLearningAttempts(storage: GuestStorage) {
+  const raw = storage.getItem(GUEST_ATTEMPTS_KEY);
+  if (!raw) return;
+  let needsCompaction = false;
+  try {
+    const parsed: unknown = JSON.parse(raw);
+    needsCompaction =
+      Array.isArray(parsed) &&
+      parsed.length > MAX_GUEST_LEARNING_ATTEMPTS;
+  } catch {
+    return;
+  }
+  if (!needsCompaction) return;
+  const attempts = parseGuestLearningAttempts(raw);
+  storage.setItem(GUEST_ATTEMPTS_KEY, JSON.stringify(attempts));
+}
+
+export function appendGuestLearningAttempt(
+  storage: GuestStorage,
+  attempt: GuestLearningAttempt,
+) {
+  const attempts = [
+    ...parseGuestLearningAttempts(storage.getItem(GUEST_ATTEMPTS_KEY)),
+    attempt,
+  ].slice(-MAX_GUEST_LEARNING_ATTEMPTS);
+  storage.setItem(GUEST_ATTEMPTS_KEY, JSON.stringify(attempts));
 }
 
 export function notifyGuestAttemptsChanged() {

@@ -1,14 +1,18 @@
 import { execFile } from "node:child_process";
-import { rm } from "node:fs/promises";
+import { cp, mkdir, rm } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
+import nextEnv from "@next/env";
 
 const execFileAsync = promisify(execFile);
 const root = process.cwd();
+nextEnv.loadEnvConfig(root);
 const vinextCli = path.join(root, "node_modules", "vinext", "dist", "cli.js");
 const tsxCli = path.join(root, "node_modules", "tsx", "dist", "cli.mjs");
 const prepareScript = path.join(root, "scripts", "prepare-runtime-assets.ts");
 const transientPublicData = path.join(root, "public", "data");
+const privateRuntimeData = path.join(root, ".runtime-assets", "data");
+const builtRuntimeData = path.join(root, "dist", "client", "data");
 const gatedBusanMedia = path.join(
   root,
   "public",
@@ -41,6 +45,9 @@ try {
   });
   if (result.stdout) process.stdout.write(result.stdout);
   if (result.stderr) process.stderr.write(result.stderr);
+  await rm(builtRuntimeData, { recursive: true, force: true });
+  await mkdir(path.dirname(builtRuntimeData), { recursive: true });
+  await cp(privateRuntimeData, builtRuntimeData, { recursive: true });
 } catch (error) {
   exitCode = 1;
   if (

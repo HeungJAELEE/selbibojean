@@ -1,0 +1,1820 @@
+[
+  {
+    "questionId": "U-218",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-218-c4",
+    "directSolution": "강체 연결은 구조전달음을 증가시킬 수 있으므로 방진·절연으로 전달경로를 차단해야 한다. 따라서 '진동 전달경로를 오히려 강체로 연결한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-218-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-218-c1의 '음원 차폐'는 강체 연결은 구조전달음을 증가시킬 수 있으므로 방진·절연으로 전달경로를 차단해야 한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-218-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-218-c2의 '흡음재 설치'는 강체 연결은 구조전달음을 증가시킬 수 있으므로 방진·절연으로 전달경로를 차단해야 한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-218-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-218-c3의 '소음기 사용'는 강체 연결은 구조전달음을 증가시킬 수 있으므로 방진·절연으로 전달경로를 차단해야 한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-218-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-218-c4의 '진동 전달경로를 오히려 강체로 연결한다.'는 강체 연결은 구조전달음을 증가시킬 수 있으므로 방진·절연으로 전달경로를 차단해야 한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "강체 연결은 구조전달음을 증가시킬 수 있으므로 방진·절연으로 전달경로를 차단해야 한다.의 핵심 조건을 생략해 '진동 전달경로를 오히려 강체로 연결한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1vpmv6w",
+    "existingBlockId": "principle",
+    "assertionText": "강체 연결은 구조전달음을 증가시킬 수 있으므로 방진·절연으로 전달경로를 차단해야 한다. 이 판단 기준을 lesson-1vpmv6w의 principle 학습 블록과 연결해 '진동 전달경로를 오히려 강체로 연결한다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-219",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-219-c2",
+    "directSolution": "동배율은 동적 하중에 의한 진폭을 같은 힘의 정적변위와 비교한 무차원 비다. 따라서 '동배율'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-219-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-219-c1의 '감쇠비'는 동배율은 동적 하중에 의한 진폭을 같은 힘의 정적변위와 비교한 무차원 비다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-219-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-219-c2의 '동배율'는 동배율은 동적 하중에 의한 진폭을 같은 힘의 정적변위와 비교한 무차원 비다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-219-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-219-c3의 '주파수'는 동배율은 동적 하중에 의한 진폭을 같은 힘의 정적변위와 비교한 무차원 비다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-219-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-219-c4의 '위상각'는 동배율은 동적 하중에 의한 진폭을 같은 힘의 정적변위와 비교한 무차원 비다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "동배율은 동적 하중에 의한 진폭을 같은 힘의 정적변위와 비교한 무차원 비다.의 핵심 조건을 생략해 '동배율'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1u6mgse",
+    "existingBlockId": "principle",
+    "assertionText": "동배율은 동적 하중에 의한 진폭을 같은 힘의 정적변위와 비교한 무차원 비다. 이 판단 기준을 lesson-1u6mgse의 principle 학습 블록과 연결해 '동배율'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-220",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-220-c4",
+    "directSolution": "손으로 대는 방식은 접촉강성이 불안정하여 정량측정에 부적합하다. 따라서 '측정 중 손으로 들고 접촉해 정량 고주파측정을 한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-220-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-220-c1의 '스터드로 견고하게 고정한다.'는 손으로 대는 방식은 접촉강성이 불안정하여 정량측정에 부적합하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-220-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-220-c2의 '케이블 흔들림을 줄인다.'는 손으로 대는 방식은 접촉강성이 불안정하여 정량측정에 부적합하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-220-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-220-c3의 '센서의 질량과 주파수범위를 고려한다.'는 손으로 대는 방식은 접촉강성이 불안정하여 정량측정에 부적합하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-220-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-220-c4의 '측정 중 손으로 들고 접촉해 정량 고주파측정을 한다.'는 손으로 대는 방식은 접촉강성이 불안정하여 정량측정에 부적합하다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "손으로 대는 방식은 접촉강성이 불안정하여 정량측정에 부적합하다.의 핵심 조건을 생략해 '측정 중 손으로 들고 접촉해 정량 고주파측정을 한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1tr0pp8",
+    "existingBlockId": "trap",
+    "assertionText": "손으로 대는 방식은 접촉강성이 불안정하여 정량측정에 부적합하다. 이 판단 기준을 lesson-1tr0pp8의 trap 학습 블록과 연결해 '측정 중 손으로 들고 접촉해 정량 고주파측정을 한다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-221",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-221-c4",
+    "directSolution": "직렬스프링은 같은 힘을 받고 변위가 합해지므로 1/keq=1/k1+1/k2이다. 따라서 'keq=k1k2/(k1+k2)'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-221-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-221-c1의 'keq=k1+k2'는 직렬스프링은 같은 힘을 받고 변위가 합해지므로 1/keq=1/k1+1/k2이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-221-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-221-c2의 'keq=k1-k2'는 직렬스프링은 같은 힘을 받고 변위가 합해지므로 1/keq=1/k1+1/k2이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-221-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-221-c3의 'keq=(k1+k2)/(k1k2)'는 직렬스프링은 같은 힘을 받고 변위가 합해지므로 1/keq=1/k1+1/k2이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-221-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-221-c4의 'keq=k1k2/(k1+k2)'는 직렬스프링은 같은 힘을 받고 변위가 합해지므로 1/keq=1/k1+1/k2이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "직렬스프링은 같은 힘을 받고 변위가 합해지므로 1/keq=1/k1+1/k2이다.의 핵심 조건을 생략해 'keq=k1k2/(k1+k2)'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-up9czs",
+    "existingBlockId": "formula",
+    "assertionText": "직렬스프링은 같은 힘을 받고 변위가 합해지므로 1/keq=1/k1+1/k2이다. 이 판단 기준을 lesson-up9czs의 formula 학습 블록과 연결해 'keq=k1k2/(k1+k2)'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-222",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-222-c1",
+    "directSolution": "상대적으로 접근하면 관측주파수가 높아지고 멀어지면 낮아진다. 따라서 '도플러 효과'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-222-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-222-c1의 '도플러 효과'는 상대적으로 접근하면 관측주파수가 높아지고 멀어지면 낮아진다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-222-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-222-c2의 '마스킹 효과'는 상대적으로 접근하면 관측주파수가 높아지고 멀어지면 낮아진다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-222-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-222-c3의 '회절'는 상대적으로 접근하면 관측주파수가 높아지고 멀어지면 낮아진다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-222-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-222-c4의 '공진'는 상대적으로 접근하면 관측주파수가 높아지고 멀어지면 낮아진다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "상대적으로 접근하면 관측주파수가 높아지고 멀어지면 낮아진다.의 핵심 조건을 생략해 '도플러 효과'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1j7c4yr",
+    "existingBlockId": "principle",
+    "assertionText": "상대적으로 접근하면 관측주파수가 높아지고 멀어지면 낮아진다. 이 판단 기준을 lesson-1j7c4yr의 principle 학습 블록과 연결해 '도플러 효과'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-225",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-225-c4",
+    "directSolution": "자주보전은 현장의 기본조건 유지와 조기발견을 목적으로 하며 FMEA 자동작성은 직접 효과가 아니다. 따라서 'FMEA 문서를 자동으로 완성한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-225-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-225-c1의 '운전원의 설비 이해 향상'는 자주보전은 현장의 기본조건 유지와 조기발견을 목적으로 하며 FMEA 자동작성은 직접 효과가 아니다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-225-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-225-c2의 '이상 조기발견'는 자주보전은 현장의 기본조건 유지와 조기발견을 목적으로 하며 FMEA 자동작성은 직접 효과가 아니다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-225-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-225-c3의 '청소·급유·조임의 기본조건 유지'는 자주보전은 현장의 기본조건 유지와 조기발견을 목적으로 하며 FMEA 자동작성은 직접 효과가 아니다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-225-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-225-c4의 'FMEA 문서를 자동으로 완성한다.'는 자주보전은 현장의 기본조건 유지와 조기발견을 목적으로 하며 FMEA 자동작성은 직접 효과가 아니다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "자주보전은 현장의 기본조건 유지와 조기발견을 목적으로 하며 FMEA 자동작성은 직접 효과가 아니다.의 핵심 조건을 생략해 'FMEA 문서를 자동으로 완성한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-8r7on",
+    "existingBlockId": "principle",
+    "assertionText": "자주보전은 현장의 기본조건 유지와 조기발견을 목적으로 하며 FMEA 자동작성은 직접 효과가 아니다. 이 판단 기준을 lesson-8r7on의 principle 학습 블록과 연결해 'FMEA 문서를 자동으로 완성한다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-226",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-226-c3",
+    "directSolution": "수리시간이 지수분포를 따르면 평균수리시간은 수리율의 역수다. 따라서 'μ=1/MTTR'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-226-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-226-c1의 'μ=MTTR'는 수리시간이 지수분포를 따르면 평균수리시간은 수리율의 역수다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-226-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-226-c2의 'μ=MTBF×MTTR'는 수리시간이 지수분포를 따르면 평균수리시간은 수리율의 역수다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-226-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-226-c3의 'μ=1/MTTR'는 수리시간이 지수분포를 따르면 평균수리시간은 수리율의 역수다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-226-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-226-c4의 'μ=MTBF/MTTR'는 수리시간이 지수분포를 따르면 평균수리시간은 수리율의 역수다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "수리시간이 지수분포를 따르면 평균수리시간은 수리율의 역수다.의 핵심 조건을 생략해 'μ=1/MTTR'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1nfwqqt",
+    "existingBlockId": "principle",
+    "assertionText": "수리시간이 지수분포를 따르면 평균수리시간은 수리율의 역수다. 이 판단 기준을 lesson-1nfwqqt의 principle 학습 블록과 연결해 'μ=1/MTTR'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-227",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-227-c2",
+    "directSolution": "유욕급유는 기계 내부에 고인 오일에 부품 일부를 잠기게 하는 비순환 방식이다. 따라서 '유욕급유'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-227-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-227-c1의 '펌프 강제순환급유'는 유욕급유는 기계 내부에 고인 오일에 부품 일부를 잠기게 하는 비순환 방식이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-227-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-227-c2의 '유욕급유'는 유욕급유는 기계 내부에 고인 오일에 부품 일부를 잠기게 하는 비순환 방식이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-227-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-227-c3의 '오일제트 순환급유'는 유욕급유는 기계 내부에 고인 오일에 부품 일부를 잠기게 하는 비순환 방식이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-227-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-227-c4의 '중앙집중 순환급유'는 유욕급유는 기계 내부에 고인 오일에 부품 일부를 잠기게 하는 비순환 방식이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "유욕급유는 기계 내부에 고인 오일에 부품 일부를 잠기게 하는 비순환 방식이다.의 핵심 조건을 생략해 '유욕급유'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1t6qtm3",
+    "existingBlockId": "diagnosis",
+    "assertionText": "유욕급유는 기계 내부에 고인 오일에 부품 일부를 잠기게 하는 비순환 방식이다. 이 판단 기준을 lesson-1t6qtm3의 diagnosis 학습 블록과 연결해 '유욕급유'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-228",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-228-c1",
+    "directSolution": "터보압축기의 가스통로는 일반적으로 무급유 구조이며 윤활은 베어링·기어에 공급한다. 따라서 '압축실 내부에 다량의 윤활유를 직접 분사해야만 한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-228-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-228-c1의 '압축실 내부에 다량의 윤활유를 직접 분사해야만 한다.'는 터보압축기의 가스통로는 일반적으로 무급유 구조이며 윤활은 베어링·기어에 공급한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-228-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-228-c2의 '베어링 윤활계통을 관리한다.'는 터보압축기의 가스통로는 일반적으로 무급유 구조이며 윤활은 베어링·기어에 공급한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-228-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-228-c3의 '오일 압력과 온도를 감시한다.'는 터보압축기의 가스통로는 일반적으로 무급유 구조이며 윤활은 베어링·기어에 공급한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-228-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-228-c4의 '공정가스 오염방지형 씰을 고려한다.'는 터보압축기의 가스통로는 일반적으로 무급유 구조이며 윤활은 베어링·기어에 공급한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "터보압축기의 가스통로는 일반적으로 무급유 구조이며 윤활은 베어링·기어에 공급한다.의 핵심 조건을 생략해 '압축실 내부에 다량의 윤활유를 직접 분사해야만 한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1bgq28h",
+    "existingBlockId": "trap",
+    "assertionText": "터보압축기의 가스통로는 일반적으로 무급유 구조이며 윤활은 베어링·기어에 공급한다. 이 판단 기준을 lesson-1bgq28h의 trap 학습 블록과 연결해 '압축실 내부에 다량의 윤활유를 직접 분사해야만 한다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-229",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-229-c3",
+    "directSolution": "품질보전은 불량과 설비조건의 인과관계를 찾아 발생하지 않는 조건을 설정·유지한다. 따라서 '품질현상 파악→설비조건과의 관계분석→관리조건 설정→유지·개선'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-229-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-229-c1의 '결과검사만 확대→조건 무시→생산증대'는 품질보전은 불량과 설비조건의 인과관계를 찾아 발생하지 않는 조건을 설정·유지한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-229-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-229-c2의 '설비조건 삭제→작업자 교체만'는 품질보전은 불량과 설비조건의 인과관계를 찾아 발생하지 않는 조건을 설정·유지한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-229-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-229-c3의 '품질현상 파악→설비조건과의 관계분석→관리조건 설정→유지·개선'는 품질보전은 불량과 설비조건의 인과관계를 찾아 발생하지 않는 조건을 설정·유지한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-229-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-229-c4의 '불량발생 후 재작업만'는 품질보전은 불량과 설비조건의 인과관계를 찾아 발생하지 않는 조건을 설정·유지한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "품질보전은 불량과 설비조건의 인과관계를 찾아 발생하지 않는 조건을 설정·유지한다.의 핵심 조건을 생략해 '품질현상 파악→설비조건과의 관계분석→관리조건 설정→유지·개선'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-fv1sq9",
+    "existingBlockId": "principle",
+    "assertionText": "품질보전은 불량과 설비조건의 인과관계를 찾아 발생하지 않는 조건을 설정·유지한다. 이 판단 기준을 lesson-fv1sq9의 principle 학습 블록과 연결해 '품질현상 파악→설비조건과의 관계분석→관리조건 설정→유지·개선'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-231",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-231-c3",
+    "directSolution": "생산보전은 설비의 전 생애에서 취득·운전·보전·폐기비용을 최소화하도록 관리한다. 따라서 '생애주기비용(LCC)'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-231-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-231-c1의 '초기구입비만'는 생산보전은 설비의 전 생애에서 취득·운전·보전·폐기비용을 최소화하도록 관리한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-231-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-231-c2의 '직접노무비만'는 생산보전은 설비의 전 생애에서 취득·운전·보전·폐기비용을 최소화하도록 관리한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-231-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-231-c3의 '생애주기비용(LCC)'는 생산보전은 설비의 전 생애에서 취득·운전·보전·폐기비용을 최소화하도록 관리한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-231-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-231-c4의 '당일 전력비만'는 생산보전은 설비의 전 생애에서 취득·운전·보전·폐기비용을 최소화하도록 관리한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "생산보전은 설비의 전 생애에서 취득·운전·보전·폐기비용을 최소화하도록 관리한다.의 핵심 조건을 생략해 '생애주기비용(LCC)'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1lm6w2e",
+    "existingBlockId": "principle",
+    "assertionText": "생산보전은 설비의 전 생애에서 취득·운전·보전·폐기비용을 최소화하도록 관리한다. 이 판단 기준을 lesson-1lm6w2e의 principle 학습 블록과 연결해 '생애주기비용(LCC)'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-232",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-232-c2",
+    "directSolution": "긴급공사는 돌발고장·안전위험처럼 지연손실이 큰 경우 즉시 인력과 자원을 투입한다. 따라서 '긴급공사'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-232-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-232-c1의 '계획공사'는 긴급공사는 돌발고장·안전위험처럼 지연손실이 큰 경우 즉시 인력과 자원을 투입한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-232-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-232-c2의 '긴급공사'는 긴급공사는 돌발고장·안전위험처럼 지연손실이 큰 경우 즉시 인력과 자원을 투입한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-232-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-232-c3의 '개량공사만'는 긴급공사는 돌발고장·안전위험처럼 지연손실이 큰 경우 즉시 인력과 자원을 투입한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-232-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-232-c4의 '예비공사'는 긴급공사는 돌발고장·안전위험처럼 지연손실이 큰 경우 즉시 인력과 자원을 투입한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "긴급공사는 돌발고장·안전위험처럼 지연손실이 큰 경우 즉시 인력과 자원을 투입한다.의 핵심 조건을 생략해 '긴급공사'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-2brllx",
+    "existingBlockId": "principle",
+    "assertionText": "긴급공사는 돌발고장·안전위험처럼 지연손실이 큰 경우 즉시 인력과 자원을 투입한다. 이 판단 기준을 lesson-2brllx의 principle 학습 블록과 연결해 '긴급공사'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-233",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-233-c2",
+    "directSolution": "과부하는 연소시간과 열전달 여유를 줄여 불완전연소·과열·효율저하를 유발할 수 있다. 따라서 '필요 연소실 면적이 감소하여 모든 문제가 해결된다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-233-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-233-c1의 '불완전연소 위험 증가'는 과부하는 연소시간과 열전달 여유를 줄여 불완전연소·과열·효율저하를 유발할 수 있다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-233-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-233-c2의 '필요 연소실 면적이 감소하여 모든 문제가 해결된다.'는 과부하는 연소시간과 열전달 여유를 줄여 불완전연소·과열·효율저하를 유발할 수 있다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-233-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-233-c3의 '배기가스 온도상승'는 과부하는 연소시간과 열전달 여유를 줄여 불완전연소·과열·효율저하를 유발할 수 있다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-233-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-233-c4의 '연료손실과 설비열화 증가'는 과부하는 연소시간과 열전달 여유를 줄여 불완전연소·과열·효율저하를 유발할 수 있다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "과부하는 연소시간과 열전달 여유를 줄여 불완전연소·과열·효율저하를 유발할 수 있다.의 핵심 조건을 생략해 '필요 연소실 면적이 감소하여 모든 문제가 해결된다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-17ocpdn",
+    "existingBlockId": "trap",
+    "assertionText": "과부하는 연소시간과 열전달 여유를 줄여 불완전연소·과열·효율저하를 유발할 수 있다. 이 판단 기준을 lesson-17ocpdn의 trap 학습 블록과 연결해 '필요 연소실 면적이 감소하여 모든 문제가 해결된다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-239",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-239-c2",
+    "directSolution": "일상보전은 정상조건을 유지하고 작은 이상을 조기에 발견하는 기본 보전활동이다. 따라서 '일상보전'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-239-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-239-c1의 '대수리'는 일상보전은 정상조건을 유지하고 작은 이상을 조기에 발견하는 기본 보전활동이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-239-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-239-c2의 '일상보전'는 일상보전은 정상조건을 유지하고 작은 이상을 조기에 발견하는 기본 보전활동이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-239-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-239-c3의 '사후보전만'는 일상보전은 정상조건을 유지하고 작은 이상을 조기에 발견하는 기본 보전활동이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-239-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-239-c4의 '설비폐기'는 일상보전은 정상조건을 유지하고 작은 이상을 조기에 발견하는 기본 보전활동이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "일상보전은 정상조건을 유지하고 작은 이상을 조기에 발견하는 기본 보전활동이다.의 핵심 조건을 생략해 '일상보전'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-ctc5r8",
+    "existingBlockId": "diagnosis",
+    "assertionText": "일상보전은 정상조건을 유지하고 작은 이상을 조기에 발견하는 기본 보전활동이다. 이 판단 기준을 lesson-ctc5r8의 diagnosis 학습 블록과 연결해 '일상보전'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-257",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-257-c1",
+    "directSolution": "회전수는 광학 펄스·자기 펄스·주기 측정으로 구하는 것이 일반적이다. 따라서 '초음파만을 이용해 회전수를 직접 판정하는 방법'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-257-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-257-c1의 '초음파만을 이용해 회전수를 직접 판정하는 방법'는 회전수는 광학 펄스·자기 펄스·주기 측정으로 구하는 것이 일반적이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-257-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-257-c2의 '반사테이프를 이용한 광학식'는 회전수는 광학 펄스·자기 펄스·주기 측정으로 구하는 것이 일반적이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-257-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-257-c3의 '자속변화를 이용한 전자식'는 회전수는 광학 펄스·자기 펄스·주기 측정으로 구하는 것이 일반적이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-257-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-257-c4의 '회전주기의 역수 계산'는 회전수는 광학 펄스·자기 펄스·주기 측정으로 구하는 것이 일반적이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "회전수는 광학 펄스·자기 펄스·주기 측정으로 구하는 것이 일반적이다.의 핵심 조건을 생략해 '초음파만을 이용해 회전수를 직접 판정하는 방법'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-qfjro9",
+    "existingBlockId": "principle",
+    "assertionText": "회전수는 광학 펄스·자기 펄스·주기 측정으로 구하는 것이 일반적이다. 이 판단 기준을 lesson-qfjro9의 principle 학습 블록과 연결해 '초음파만을 이용해 회전수를 직접 판정하는 방법'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-258",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-258-c2",
+    "directSolution": "축정렬 불량은 축방향 진동과 회전주파수의 고조파 성분을 동반하는 경우가 많다. 따라서 '모터와 펌프의 축정렬을 점검·조정한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-258-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-258-c1의 '모터 용량만 키운다.'는 축정렬 불량은 축방향 진동과 회전주파수의 고조파 성분을 동반하는 경우가 많다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-258-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-258-c2의 '모터와 펌프의 축정렬을 점검·조정한다.'는 축정렬 불량은 축방향 진동과 회전주파수의 고조파 성분을 동반하는 경우가 많다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-258-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-258-c3의 '임펠러 질량만 무조건 추가한다.'는 축정렬 불량은 축방향 진동과 회전주파수의 고조파 성분을 동반하는 경우가 많다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-258-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-258-c4의 '오일휩 대책만 실시한다.'는 축정렬 불량은 축방향 진동과 회전주파수의 고조파 성분을 동반하는 경우가 많다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "축정렬 불량은 축방향 진동과 회전주파수의 고조파 성분을 동반하는 경우가 많다.의 핵심 조건을 생략해 '모터와 펌프의 축정렬을 점검·조정한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-9vm8pa",
+    "existingBlockId": "formula",
+    "assertionText": "축정렬 불량은 축방향 진동과 회전주파수의 고조파 성분을 동반하는 경우가 많다. 이 판단 기준을 lesson-9vm8pa의 formula 학습 블록과 연결해 '모터와 펌프의 축정렬을 점검·조정한다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-259",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-259-c1",
+    "directSolution": "원기출은 강성이 높은 재료의 차음효과를 정답으로 처리했다. 실제 설계에서는 면밀도·강성·공진·시공조건을 함께 본다. 따라서 '차음재의 강성을 높인다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-259-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-259-c1의 '차음재의 강성을 높인다.'는 원기출은 강성이 높은 재료의 차음효과를 정답으로 처리했다. 실제 설계에서는 면밀도·강성·공진·시공조건을 함께 본다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-259-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-259-c2의 '차음재의 질량을 줄인다.'는 원기출은 강성이 높은 재료의 차음효과를 정답으로 처리했다. 실제 설계에서는 면밀도·강성·공진·시공조건을 함께 본다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-259-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-259-c3의 '내부 감쇠를 줄인다.'는 원기출은 강성이 높은 재료의 차음효과를 정답으로 처리했다. 실제 설계에서는 면밀도·강성·공진·시공조건을 함께 본다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-259-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-259-c4의 '벽체를 더 얇게 만든다.'는 원기출은 강성이 높은 재료의 차음효과를 정답으로 처리했다. 실제 설계에서는 면밀도·강성·공진·시공조건을 함께 본다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "원기출은 강성이 높은 재료의 차음효과를 정답으로 처리했다. 실제 설계에서는 면밀도·강성·공진·시공조건을 함께 본다.의 핵심 조건을 생략해 '차음재의 강성을 높인다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1hwcsgt",
+    "existingBlockId": "principle",
+    "assertionText": "원기출은 강성이 높은 재료의 차음효과를 정답으로 처리했다. 실제 설계에서는 면밀도·강성·공진·시공조건을 함께 본다. 이 판단 기준을 lesson-1hwcsgt의 principle 학습 블록과 연결해 '차음재의 강성을 높인다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-260",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-260-c4",
+    "directSolution": "음압은 압력변동이므로 파스칼 Pa=N/m²를 사용한다. 따라서 'N/m²(Pa)'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-260-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-260-c1의 'N'는 음압은 압력변동이므로 파스칼 Pa=N/m²를 사용한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-260-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-260-c2의 'kgf'는 음압은 압력변동이므로 파스칼 Pa=N/m²를 사용한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-260-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-260-c3의 'm/s²'는 음압은 압력변동이므로 파스칼 Pa=N/m²를 사용한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-260-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-260-c4의 'N/m²(Pa)'는 음압은 압력변동이므로 파스칼 Pa=N/m²를 사용한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "음압은 압력변동이므로 파스칼 Pa=N/m²를 사용한다.의 핵심 조건을 생략해 'N/m²(Pa)'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-5m3qyc",
+    "existingBlockId": "formula",
+    "assertionText": "음압은 압력변동이므로 파스칼 Pa=N/m²를 사용한다. 이 판단 기준을 lesson-5m3qyc의 formula 학습 블록과 연결해 'N/m²(Pa)'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-261",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-261-c1",
+    "directSolution": "푸리에 법칙에서 열전달량은 면적과 온도차·열전도율에 비례하고 두께에 반비례한다. 따라서 '전열면적이 작을수록 열전달량이 커진다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-261-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-261-c1의 '전열면적이 작을수록 열전달량이 커진다.'는 푸리에 법칙에서 열전달량은 면적과 온도차·열전도율에 비례하고 두께에 반비례한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-261-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-261-c2의 '두께가 얇을수록 커진다.'는 푸리에 법칙에서 열전달량은 면적과 온도차·열전도율에 비례하고 두께에 반비례한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-261-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-261-c3의 '온도차가 클수록 커진다.'는 푸리에 법칙에서 열전달량은 면적과 온도차·열전도율에 비례하고 두께에 반비례한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-261-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-261-c4의 '금속의 열전도율은 일반적으로 기체보다 크다.'는 푸리에 법칙에서 열전달량은 면적과 온도차·열전도율에 비례하고 두께에 반비례한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "푸리에 법칙에서 열전달량은 면적과 온도차·열전도율에 비례하고 두께에 반비례한다.의 핵심 조건을 생략해 '전열면적이 작을수록 열전달량이 커진다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1f6hlgt",
+    "existingBlockId": "trap",
+    "assertionText": "푸리에 법칙에서 열전달량은 면적과 온도차·열전도율에 비례하고 두께에 반비례한다. 이 판단 기준을 lesson-1f6hlgt의 trap 학습 블록과 연결해 '전열면적이 작을수록 열전달량이 커진다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-262",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-262-c2",
+    "directSolution": "속도는 변위의 시간미분이며 중간 주파수대의 기계상태와 에너지 수준 평가에 유용하다. 따라서 '진동속도'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-262-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-262-c1의 '진동변위'는 속도는 변위의 시간미분이며 중간 주파수대의 기계상태와 에너지 수준 평가에 유용하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-262-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-262-c2의 '진동속도'는 속도는 변위의 시간미분이며 중간 주파수대의 기계상태와 에너지 수준 평가에 유용하다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-262-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-262-c3의 '진동가속도만'는 속도는 변위의 시간미분이며 중간 주파수대의 기계상태와 에너지 수준 평가에 유용하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-262-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-262-c4의 '위상각'는 속도는 변위의 시간미분이며 중간 주파수대의 기계상태와 에너지 수준 평가에 유용하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "속도는 변위의 시간미분이며 중간 주파수대의 기계상태와 에너지 수준 평가에 유용하다.의 핵심 조건을 생략해 '진동속도'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1ls3lb9",
+    "existingBlockId": "principle",
+    "assertionText": "속도는 변위의 시간미분이며 중간 주파수대의 기계상태와 에너지 수준 평가에 유용하다. 이 판단 기준을 lesson-1ls3lb9의 principle 학습 블록과 연결해 '진동속도'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-263",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-263-c1",
+    "directSolution": "Band-stop 필터는 지정 대역을 감쇠하고 저주파와 고주파의 나머지 구간을 통과시킨다. 따라서 '대역소거필터'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-263-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-263-c1의 '대역소거필터'는 Band-stop 필터는 지정 대역을 감쇠하고 저주파와 고주파의 나머지 구간을 통과시킨다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-263-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-263-c2의 '저역통과필터'는 Band-stop 필터는 지정 대역을 감쇠하고 저주파와 고주파의 나머지 구간을 통과시킨다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-263-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-263-c3의 '고역통과필터'는 Band-stop 필터는 지정 대역을 감쇠하고 저주파와 고주파의 나머지 구간을 통과시킨다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-263-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-263-c4의 '대역통과필터'는 Band-stop 필터는 지정 대역을 감쇠하고 저주파와 고주파의 나머지 구간을 통과시킨다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "Band-stop 필터는 지정 대역을 감쇠하고 저주파와 고주파의 나머지 구간을 통과시킨다.의 핵심 조건을 생략해 '대역소거필터'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1soyk6v",
+    "existingBlockId": "principle",
+    "assertionText": "Band-stop 필터는 지정 대역을 감쇠하고 저주파와 고주파의 나머지 구간을 통과시킨다. 이 판단 기준을 lesson-1soyk6v의 principle 학습 블록과 연결해 '대역소거필터'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-264",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-264-c1",
+    "directSolution": "기포의 생성·붕괴는 불규칙한 충격을 만들어 고주파 광대역 성분과 소음을 발생시킨다. 따라서 '광대역 고주파 진동과 불규칙 충격성 소음'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-264-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-264-c1의 '광대역 고주파 진동과 불규칙 충격성 소음'는 기포의 생성·붕괴는 불규칙한 충격을 만들어 고주파 광대역 성분과 소음을 발생시킨다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-264-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-264-c2의 '정확한 1× 성분만'는 기포의 생성·붕괴는 불규칙한 충격을 만들어 고주파 광대역 성분과 소음을 발생시킨다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-264-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-264-c3의 '0 Hz 성분만'는 기포의 생성·붕괴는 불규칙한 충격을 만들어 고주파 광대역 성분과 소음을 발생시킨다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-264-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-264-c4의 '항상 저주파 정현파만'는 기포의 생성·붕괴는 불규칙한 충격을 만들어 고주파 광대역 성분과 소음을 발생시킨다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "기포의 생성·붕괴는 불규칙한 충격을 만들어 고주파 광대역 성분과 소음을 발생시킨다.의 핵심 조건을 생략해 '광대역 고주파 진동과 불규칙 충격성 소음'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1qh7qgt",
+    "existingBlockId": "diagnosis",
+    "assertionText": "기포의 생성·붕괴는 불규칙한 충격을 만들어 고주파 광대역 성분과 소음을 발생시킨다. 이 판단 기준을 lesson-1qh7qgt의 diagnosis 학습 블록과 연결해 '광대역 고주파 진동과 불규칙 충격성 소음'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-265",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-265-c2",
+    "directSolution": "길이가 관측거리보다 충분히 긴 소음원은 선음원으로 근사하며 거리감쇠 특성이 점음원과 다르다. 따라서 '선음원'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-265-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-265-c1의 '점음원'는 길이가 관측거리보다 충분히 긴 소음원은 선음원으로 근사하며 거리감쇠 특성이 점음원과 다르다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-265-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-265-c2의 '선음원'는 길이가 관측거리보다 충분히 긴 소음원은 선음원으로 근사하며 거리감쇠 특성이 점음원과 다르다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-265-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-265-c3의 '면음원'는 길이가 관측거리보다 충분히 긴 소음원은 선음원으로 근사하며 거리감쇠 특성이 점음원과 다르다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-265-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-265-c4의 '무지향 음원만'는 길이가 관측거리보다 충분히 긴 소음원은 선음원으로 근사하며 거리감쇠 특성이 점음원과 다르다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "길이가 관측거리보다 충분히 긴 소음원은 선음원으로 근사하며 거리감쇠 특성이 점음원과 다르다.의 핵심 조건을 생략해 '선음원'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-xayd1h",
+    "existingBlockId": "principle",
+    "assertionText": "길이가 관측거리보다 충분히 긴 소음원은 선음원으로 근사하며 거리감쇠 특성이 점음원과 다르다. 이 판단 기준을 lesson-xayd1h의 principle 학습 블록과 연결해 '선음원'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-266",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-266-c3",
+    "directSolution": "정적처짐 δ가 커질수록 fn≈(1/2π)√(g/δ)는 낮아져 진동절연에 유리할 수 있다. 따라서 '낮아진다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-266-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-266-c1의 '높아진다.'는 정적처짐 δ가 커질수록 fn≈(1/2π)√(g/δ)는 낮아져 진동절연에 유리할 수 있다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-266-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-266-c2의 '변하지 않는다.'는 정적처짐 δ가 커질수록 fn≈(1/2π)√(g/δ)는 낮아져 진동절연에 유리할 수 있다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-266-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-266-c3의 '낮아진다.'는 정적처짐 δ가 커질수록 fn≈(1/2π)√(g/δ)는 낮아져 진동절연에 유리할 수 있다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-266-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-266-c4의 '항상 0이 된다.'는 정적처짐 δ가 커질수록 fn≈(1/2π)√(g/δ)는 낮아져 진동절연에 유리할 수 있다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "정적처짐 δ가 커질수록 fn≈(1/2π)√(g/δ)는 낮아져 진동절연에 유리할 수 있다.의 핵심 조건을 생략해 '낮아진다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-n82dpm",
+    "existingBlockId": "formula",
+    "assertionText": "정적처짐 δ가 커질수록 fn≈(1/2π)√(g/δ)는 낮아져 진동절연에 유리할 수 있다. 이 판단 기준을 lesson-n82dpm의 formula 학습 블록과 연결해 '낮아진다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-267",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-267-c3",
+    "directSolution": "나이트릴고무의 대표 장점은 내유성과 내약품성이다. 따라서 '나이트릴고무는 내수성이 필요할 때만 사용하는 대표 재료이다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-267-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-267-c1의 '천연고무는 오일·일광에 약하다.'는 나이트릴고무의 대표 장점은 내유성과 내약품성이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-267-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-267-c2의 '부틸고무는 감쇠성이 크다.'는 나이트릴고무의 대표 장점은 내유성과 내약품성이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-267-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-267-c3의 '나이트릴고무는 내수성이 필요할 때만 사용하는 대표 재료이다.'는 나이트릴고무의 대표 장점은 내유성과 내약품성이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-267-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-267-c4의 '네오프렌은 내후·내열성이 비교적 좋다.'는 나이트릴고무의 대표 장점은 내유성과 내약품성이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "나이트릴고무의 대표 장점은 내유성과 내약품성이다.의 핵심 조건을 생략해 '나이트릴고무는 내수성이 필요할 때만 사용하는 대표 재료이다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-arjezm",
+    "existingBlockId": "trap",
+    "assertionText": "나이트릴고무의 대표 장점은 내유성과 내약품성이다. 이 판단 기준을 lesson-arjezm의 trap 학습 블록과 연결해 '나이트릴고무는 내수성이 필요할 때만 사용하는 대표 재료이다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-268",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-268-c3",
+    "directSolution": "회전 또는 반복주기와 동기화하여 평균하면 비동기 성분은 상쇄되고 주기성 신호가 남는다. 따라서 '동기시간평균'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-268-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-268-c1의 '선형평균만'는 회전 또는 반복주기와 동기화하여 평균하면 비동기 성분은 상쇄되고 주기성 신호가 남는다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-268-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-268-c2의 '적분평균만'는 회전 또는 반복주기와 동기화하여 평균하면 비동기 성분은 상쇄되고 주기성 신호가 남는다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-268-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-268-c3의 '동기시간평균'는 회전 또는 반복주기와 동기화하여 평균하면 비동기 성분은 상쇄되고 주기성 신호가 남는다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-268-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-268-c4의 '피크홀드 평균'는 회전 또는 반복주기와 동기화하여 평균하면 비동기 성분은 상쇄되고 주기성 신호가 남는다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "회전 또는 반복주기와 동기화하여 평균하면 비동기 성분은 상쇄되고 주기성 신호가 남는다.의 핵심 조건을 생략해 '동기시간평균'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-sg4qbv",
+    "existingBlockId": "principle",
+    "assertionText": "회전 또는 반복주기와 동기화하여 평균하면 비동기 성분은 상쇄되고 주기성 신호가 남는다. 이 판단 기준을 lesson-sg4qbv의 principle 학습 블록과 연결해 '동기시간평균'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-269",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-269-c4",
+    "directSolution": "시간가동률은 부하시간에서 정지시간을 제외한 실제 가동시간의 비율이다. 따라서 '시간가동률'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-269-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-269-c1의 '성능가동률'는 시간가동률은 부하시간에서 정지시간을 제외한 실제 가동시간의 비율이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-269-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-269-c2의 '정미가동률만'는 시간가동률은 부하시간에서 정지시간을 제외한 실제 가동시간의 비율이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-269-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-269-c3의 '부하율'는 시간가동률은 부하시간에서 정지시간을 제외한 실제 가동시간의 비율이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-269-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-269-c4의 '시간가동률'는 시간가동률은 부하시간에서 정지시간을 제외한 실제 가동시간의 비율이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "시간가동률은 부하시간에서 정지시간을 제외한 실제 가동시간의 비율이다.의 핵심 조건을 생략해 '시간가동률'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-afsfio",
+    "existingBlockId": "principle",
+    "assertionText": "시간가동률은 부하시간에서 정지시간을 제외한 실제 가동시간의 비율이다. 이 판단 기준을 lesson-afsfio의 principle 학습 블록과 연결해 '시간가동률'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-270",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-270-c3",
+    "directSolution": "즉시성은 낮지만 필요성이 있는 작업을 여유 인력·시간에 실시하도록 예비로 관리한다. 따라서 '예비공사'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-270-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-270-c1의 '계획공사'는 즉시성은 낮지만 필요성이 있는 작업을 여유 인력·시간에 실시하도록 예비로 관리한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-270-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-270-c2의 '긴급공사'는 즉시성은 낮지만 필요성이 있는 작업을 여유 인력·시간에 실시하도록 예비로 관리한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-270-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-270-c3의 '예비공사'는 즉시성은 낮지만 필요성이 있는 작업을 여유 인력·시간에 실시하도록 예비로 관리한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-270-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-270-c4의 '준급공사'는 즉시성은 낮지만 필요성이 있는 작업을 여유 인력·시간에 실시하도록 예비로 관리한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "즉시성은 낮지만 필요성이 있는 작업을 여유 인력·시간에 실시하도록 예비로 관리한다.의 핵심 조건을 생략해 '예비공사'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1xjyw4r",
+    "existingBlockId": "principle",
+    "assertionText": "즉시성은 낮지만 필요성이 있는 작업을 여유 인력·시간에 실시하도록 예비로 관리한다. 이 판단 기준을 lesson-1xjyw4r의 principle 학습 블록과 연결해 '예비공사'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-271",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-271-c1",
+    "directSolution": "기억식은 기호 자체에서 대상의 명칭이나 의미를 연상하도록 구성한다. 따라서 '기억식 기호법'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-271-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-271-c1의 '기억식 기호법'는 기억식은 기호 자체에서 대상의 명칭이나 의미를 연상하도록 구성한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-271-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-271-c2의 '순번식 기호법'는 기억식은 기호 자체에서 대상의 명칭이나 의미를 연상하도록 구성한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-271-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-271-c3의 '세구분식 기호법'는 기억식은 기호 자체에서 대상의 명칭이나 의미를 연상하도록 구성한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-271-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-271-c4의 '십진분류 기호법'는 기억식은 기호 자체에서 대상의 명칭이나 의미를 연상하도록 구성한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "기억식은 기호 자체에서 대상의 명칭이나 의미를 연상하도록 구성한다.의 핵심 조건을 생략해 '기억식 기호법'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-y53pbg",
+    "existingBlockId": "principle",
+    "assertionText": "기억식은 기호 자체에서 대상의 명칭이나 의미를 연상하도록 구성한다. 이 판단 기준을 lesson-y53pbg의 principle 학습 블록과 연결해 '기억식 기호법'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-273",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-273-c1",
+    "directSolution": "주문점에 해당하는 수량을 포장단위로 구분해 다음 포장을 열 때 발주한다. 따라서 '포장법'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-273-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-273-c1의 '포장법'는 주문점에 해당하는 수량을 포장단위로 구분해 다음 포장을 열 때 발주한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-273-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-273-c2의 '정수법'는 주문점에 해당하는 수량을 포장단위로 구분해 다음 포장을 열 때 발주한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-273-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-273-c3의 '정량유지방식'는 주문점에 해당하는 수량을 포장단위로 구분해 다음 포장을 열 때 발주한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-273-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-273-c4의 '정기발주방식'는 주문점에 해당하는 수량을 포장단위로 구분해 다음 포장을 열 때 발주한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "주문점에 해당하는 수량을 포장단위로 구분해 다음 포장을 열 때 발주한다.의 핵심 조건을 생략해 '포장법'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1fc58be",
+    "existingBlockId": "formula",
+    "assertionText": "주문점에 해당하는 수량을 포장단위로 구분해 다음 포장을 열 때 발주한다. 이 판단 기준을 lesson-1fc58be의 formula 학습 블록과 연결해 '포장법'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-274",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-274-c1",
+    "directSolution": "기출 분류에서는 연료·연소·열사용·열설비 관리를 기본 영역으로 본다. 따라서 '배기관리'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-274-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-274-c1의 '배기관리'는 기출 분류에서는 연료·연소·열사용·열설비 관리를 기본 영역으로 본다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-274-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-274-c2의 '연료관리'는 기출 분류에서는 연료·연소·열사용·열설비 관리를 기본 영역으로 본다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-274-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-274-c3의 '연소관리'는 기출 분류에서는 연료·연소·열사용·열설비 관리를 기본 영역으로 본다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-274-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-274-c4의 '열사용관리'는 기출 분류에서는 연료·연소·열사용·열설비 관리를 기본 영역으로 본다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "기출 분류에서는 연료·연소·열사용·열설비 관리를 기본 영역으로 본다.의 핵심 조건을 생략해 '배기관리'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-19rm2p3",
+    "existingBlockId": "principle",
+    "assertionText": "기출 분류에서는 연료·연소·열사용·열설비 관리를 기본 영역으로 본다. 이 판단 기준을 lesson-19rm2p3의 principle 학습 블록과 연결해 '배기관리'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-275",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-275-c2",
+    "directSolution": "가동시간은 설비가 실제로 생산활동을 수행한 시간이다. 따라서 '가동시간'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-275-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-275-c1의 '조정시간'는 가동시간은 설비가 실제로 생산활동을 수행한 시간이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-275-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-275-c2의 '가동시간'는 가동시간은 설비가 실제로 생산활동을 수행한 시간이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-275-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-275-c3의 '휴지시간'는 가동시간은 설비가 실제로 생산활동을 수행한 시간이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-275-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-275-c4의 '캘린더시간'는 가동시간은 설비가 실제로 생산활동을 수행한 시간이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "가동시간은 설비가 실제로 생산활동을 수행한 시간이다.의 핵심 조건을 생략해 '가동시간'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-2o9ggm",
+    "existingBlockId": "diagnosis",
+    "assertionText": "가동시간은 설비가 실제로 생산활동을 수행한 시간이다. 이 판단 기준을 lesson-2o9ggm의 diagnosis 학습 블록과 연결해 '가동시간'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-276",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-276-c1",
+    "directSolution": "제품별 배치는 대량생산에 유리하지만 전용설비 투자와 라인불균형·고장파급 위험이 있다. 따라서 '기계 대수가 항상 적어지고 공구가동률이 반드시 향상된다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-276-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-276-c1의 '기계 대수가 항상 적어지고 공구가동률이 반드시 향상된다.'는 제품별 배치는 대량생산에 유리하지만 전용설비 투자와 라인불균형·고장파급 위험이 있다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-276-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-276-c2의 '간접작업이 줄어들 수 있다.'는 제품별 배치는 대량생산에 유리하지만 전용설비 투자와 라인불균형·고장파급 위험이 있다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-276-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-276-c3의 '운반거리와 소요면적이 줄어들 수 있다.'는 제품별 배치는 대량생산에 유리하지만 전용설비 투자와 라인불균형·고장파급 위험이 있다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-276-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-276-c4의 '전용기계 사용과 작업단순화가 쉽다.'는 제품별 배치는 대량생산에 유리하지만 전용설비 투자와 라인불균형·고장파급 위험이 있다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "제품별 배치는 대량생산에 유리하지만 전용설비 투자와 라인불균형·고장파급 위험이 있다.의 핵심 조건을 생략해 '기계 대수가 항상 적어지고 공구가동률이 반드시 향상된다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-gqwa9n",
+    "existingBlockId": "trap",
+    "assertionText": "제품별 배치는 대량생산에 유리하지만 전용설비 투자와 라인불균형·고장파급 위험이 있다. 이 판단 기준을 lesson-gqwa9n의 trap 학습 블록과 연결해 '기계 대수가 항상 적어지고 공구가동률이 반드시 향상된다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-277",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-277-c3",
+    "directSolution": "고장분석·개량·설계피드백·보전성 연구는 설비관리의 기술기능에 속한다. 따라서 '기술기능'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-277-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-277-c1의 '실시기능'는 고장분석·개량·설계피드백·보전성 연구는 설비관리의 기술기능에 속한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-277-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-277-c2의 '지원기능'는 고장분석·개량·설계피드백·보전성 연구는 설비관리의 기술기능에 속한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-277-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-277-c3의 '기술기능'는 고장분석·개량·설계피드백·보전성 연구는 설비관리의 기술기능에 속한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-277-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-277-c4의 '일반관리기능'는 고장분석·개량·설계피드백·보전성 연구는 설비관리의 기술기능에 속한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "고장분석·개량·설계피드백·보전성 연구는 설비관리의 기술기능에 속한다.의 핵심 조건을 생략해 '기술기능'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-fxqj9y",
+    "existingBlockId": "principle",
+    "assertionText": "고장분석·개량·설계피드백·보전성 연구는 설비관리의 기술기능에 속한다. 이 판단 기준을 lesson-fxqj9y의 principle 학습 블록과 연결해 '기술기능'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-278",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-278-c4",
+    "directSolution": "보전용 자재는 수요가 불규칙하고 긴급성이 높으며 비순환품과 순환품이 혼재한다. 따라서 '소모·폐기품과 예비기처럼 순환사용되는 품목이 함께 존재한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-278-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-278-c1의 '불용자재 발생 가능성이 거의 없다.'는 보전용 자재는 수요가 불규칙하고 긴급성이 높으며 비순환품과 순환품이 혼재한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-278-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-278-c2의 '연간 사용빈도가 항상 높다.'는 보전용 자재는 수요가 불규칙하고 긴급성이 높으며 비순환품과 순환품이 혼재한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-278-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-278-c3의 '수량·시기 계획이 생산자재보다 항상 쉽다.'는 보전용 자재는 수요가 불규칙하고 긴급성이 높으며 비순환품과 순환품이 혼재한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-278-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-278-c4의 '소모·폐기품과 예비기처럼 순환사용되는 품목이 함께 존재한다.'는 보전용 자재는 수요가 불규칙하고 긴급성이 높으며 비순환품과 순환품이 혼재한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "보전용 자재는 수요가 불규칙하고 긴급성이 높으며 비순환품과 순환품이 혼재한다.의 핵심 조건을 생략해 '소모·폐기품과 예비기처럼 순환사용되는 품목이 함께 존재한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-e87mj2",
+    "existingBlockId": "principle",
+    "assertionText": "보전용 자재는 수요가 불규칙하고 긴급성이 높으며 비순환품과 순환품이 혼재한다. 이 판단 기준을 lesson-e87mj2의 principle 학습 블록과 연결해 '소모·폐기품과 예비기처럼 순환사용되는 품목이 함께 존재한다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-279",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-279-c1",
+    "directSolution": "가용도는 신뢰성과 보전성을 함께 반영하여 필요한 시점에 사용 가능한 정도를 나타낸다. 따라서 '가용도'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-279-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-279-c1의 '가용도'는 가용도는 신뢰성과 보전성을 함께 반영하여 필요한 시점에 사용 가능한 정도를 나타낸다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-279-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-279-c2의 '평균고장수명만'는 가용도는 신뢰성과 보전성을 함께 반영하여 필요한 시점에 사용 가능한 정도를 나타낸다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-279-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-279-c3의 '보전성만'는 가용도는 신뢰성과 보전성을 함께 반영하여 필요한 시점에 사용 가능한 정도를 나타낸다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-279-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-279-c4의 '신뢰성만'는 가용도는 신뢰성과 보전성을 함께 반영하여 필요한 시점에 사용 가능한 정도를 나타낸다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "가용도는 신뢰성과 보전성을 함께 반영하여 필요한 시점에 사용 가능한 정도를 나타낸다.의 핵심 조건을 생략해 '가용도'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-13rqhro",
+    "existingBlockId": "principle",
+    "assertionText": "가용도는 신뢰성과 보전성을 함께 반영하여 필요한 시점에 사용 가능한 정도를 나타낸다. 이 판단 기준을 lesson-13rqhro의 principle 학습 블록과 연결해 '가용도'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-291",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-291-c3",
+    "directSolution": "온도에 따른 점도변화가 작도록 점도지수가 높은 윤활유가 유리하다. 따라서 '점도지수가 낮을 것'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-291-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-291-c1의 '기포가 적을 것'는 온도에 따른 점도변화가 작도록 점도지수가 높은 윤활유가 유리하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-291-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-291-c2의 '내하중성이 클 것'는 온도에 따른 점도변화가 작도록 점도지수가 높은 윤활유가 유리하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-291-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-291-c3의 '점도지수가 낮을 것'는 온도에 따른 점도변화가 작도록 점도지수가 높은 윤활유가 유리하다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-291-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-291-c4의 '산화안정성이 좋을 것'는 온도에 따른 점도변화가 작도록 점도지수가 높은 윤활유가 유리하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "온도에 따른 점도변화가 작도록 점도지수가 높은 윤활유가 유리하다.의 핵심 조건을 생략해 '점도지수가 낮을 것'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-5empm8",
+    "existingBlockId": "principle",
+    "assertionText": "온도에 따른 점도변화가 작도록 점도지수가 높은 윤활유가 유리하다. 이 판단 기준을 lesson-5empm8의 principle 학습 블록과 연결해 '점도지수가 낮을 것'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-293",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-293-c2",
+    "directSolution": "펌프를 이용해 유량과 압력을 확보하고 회수유를 처리해 반복 공급한다. 따라서 '강제순환급유'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-293-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-293-c1의 '중력순환급유'는 펌프를 이용해 유량과 압력을 확보하고 회수유를 처리해 반복 공급한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-293-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-293-c2의 '강제순환급유'는 펌프를 이용해 유량과 압력을 확보하고 회수유를 처리해 반복 공급한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-293-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-293-c3의 '오일순환식이라는 모호한 명칭만'는 펌프를 이용해 유량과 압력을 확보하고 회수유를 처리해 반복 공급한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-293-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-293-c4의 '가시부상유적급유'는 펌프를 이용해 유량과 압력을 확보하고 회수유를 처리해 반복 공급한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "펌프를 이용해 유량과 압력을 확보하고 회수유를 처리해 반복 공급한다.의 핵심 조건을 생략해 '강제순환급유'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1c4enjb",
+    "existingBlockId": "diagnosis",
+    "assertionText": "펌프를 이용해 유량과 압력을 확보하고 회수유를 처리해 반복 공급한다. 이 판단 기준을 lesson-1c4enjb의 diagnosis 학습 블록과 연결해 '강제순환급유'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-294",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-294-c3",
+    "directSolution": "기어 또는 베어링 일부가 오일에 잠겨 회전하며 윤활유를 끌어올린다. 따라서 '유욕식 급유'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-294-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-294-c1의 '나사급유'는 기어 또는 베어링 일부가 오일에 잠겨 회전하며 윤활유를 끌어올린다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-294-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-294-c2의 '비산급유만'는 기어 또는 베어링 일부가 오일에 잠겨 회전하며 윤활유를 끌어올린다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-294-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-294-c3의 '유욕식 급유'는 기어 또는 베어링 일부가 오일에 잠겨 회전하며 윤활유를 끌어올린다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-294-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-294-c4의 '사이펀급유'는 기어 또는 베어링 일부가 오일에 잠겨 회전하며 윤활유를 끌어올린다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "기어 또는 베어링 일부가 오일에 잠겨 회전하며 윤활유를 끌어올린다.의 핵심 조건을 생략해 '유욕식 급유'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-x098io",
+    "existingBlockId": "diagnosis",
+    "assertionText": "기어 또는 베어링 일부가 오일에 잠겨 회전하며 윤활유를 끌어올린다. 이 판단 기준을 lesson-x098io의 diagnosis 학습 블록과 연결해 '유욕식 급유'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-295",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-295-c1",
+    "directSolution": "그리스는 설비의 속도·하중·온도·수분·약품 환경과 기유점도·증주제 적합성을 먼저 보고 선정합니다. 제조공정의 세부 배합순서는 사용자가 설비용 그리스를 고를 때의 우선 판단항목이 아니므로 ①이 정답입니다.",
+    "choiceRationales": [
+      { "choiceId": "U-295-c1", "verdict": "correct", "rationale": "제조사의 세부 배합순서는 제품을 만드는 공정 정보입니다. 사용 설비에 적합한 그리스를 고르는 초기 판단에서는 운전조건과 성능 요구보다 우선하지 않습니다." },
+      { "choiceId": "U-295-c2", "verdict": "incorrect", "rationale": "증주제 종류와 기유점도는 내수성·내열성·유막 형성·혼합 적합성에 영향을 주므로, 사용조건에 맞는 그리스를 선정할 때 확인해야 합니다." },
+      { "choiceId": "U-295-c3", "verdict": "incorrect", "rationale": "회전수와 하중은 필요한 점도와 유막 조건을 정하는 운전 정보입니다. 이 조건을 빼면 그리스의 점도 등급과 극압 성능을 맞출 수 없습니다." },
+      { "choiceId": "U-295-c4", "verdict": "incorrect", "rationale": "온도·수분·약품 환경은 적점, 내수성, 산화안정성, 재질 적합성에 직접 영향을 줍니다. 따라서 그리스 선정에서 먼저 검토할 환경 조건입니다." }
+    ],
+    "misconception": "제조사가 제품을 만드는 내부 공정과 사용자가 설비 운전조건에 맞춰 제품 성능을 선정하는 기준을 같은 단계로 보는 오류.",
+    "existingLessonId": "lesson-mt7iis",
+    "existingBlockId": "principle",
+    "assertionText": "그리스 선정은 사용조건에 맞는 성능을 우선하며 제조사의 세부 제조법은 우선 선정기준이 아니다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-296",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-296-c1",
+    "directSolution": "일반적으로 파라핀계는 밀도가 더 낮고 점도지수·인화점·유동점이 높은 편이다. 따라서 '밀도가 더 높다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-296-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-296-c1의 '밀도가 더 높다.'는 일반적으로 파라핀계는 밀도가 더 낮고 점도지수·인화점·유동점이 높은 편이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-296-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-296-c2의 '휘발성이 낮다.'는 일반적으로 파라핀계는 밀도가 더 낮고 점도지수·인화점·유동점이 높은 편이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-296-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-296-c3의 '인화점이 높다.'는 일반적으로 파라핀계는 밀도가 더 낮고 점도지수·인화점·유동점이 높은 편이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-296-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-296-c4의 '점도지수가 높은 편이다.'는 일반적으로 파라핀계는 밀도가 더 낮고 점도지수·인화점·유동점이 높은 편이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "일반적으로 파라핀계는 밀도가 더 낮고 점도지수·인화점·유동점이 높은 편이다.의 핵심 조건을 생략해 '밀도가 더 높다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-vhw7o5",
+    "existingBlockId": "trap",
+    "assertionText": "일반적으로 파라핀계는 밀도가 더 낮고 점도지수·인화점·유동점이 높은 편이다. 이 판단 기준을 lesson-vhw7o5의 trap 학습 블록과 연결해 '밀도가 더 높다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-297",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-297-c2",
+    "directSolution": "밀폐기어는 오일욕·비말 또는 순환계통으로 지속 급유하며 고속·고하중에서는 순환급유가 유리하다. 따라서 '순환급유'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-297-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-297-c1의 '손급유'는 밀폐기어는 오일욕·비말 또는 순환계통으로 지속 급유하며 고속·고하중에서는 순환급유가 유리하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-297-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-297-c2의 '순환급유'는 밀폐기어는 오일욕·비말 또는 순환계통으로 지속 급유하며 고속·고하중에서는 순환급유가 유리하다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-297-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-297-c3의 '적하급유'는 밀폐기어는 오일욕·비말 또는 순환계통으로 지속 급유하며 고속·고하중에서는 순환급유가 유리하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-297-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-297-c4의 '도포급유'는 밀폐기어는 오일욕·비말 또는 순환계통으로 지속 급유하며 고속·고하중에서는 순환급유가 유리하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "밀폐기어는 오일욕·비말 또는 순환계통으로 지속 급유하며 고속·고하중에서는 순환급유가 유리하다.의 핵심 조건을 생략해 '순환급유'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1tccb1o",
+    "existingBlockId": "diagnosis",
+    "assertionText": "밀폐기어는 오일욕·비말 또는 순환계통으로 지속 급유하며 고속·고하중에서는 순환급유가 유리하다. 이 판단 기준을 lesson-1tccb1o의 diagnosis 학습 블록과 연결해 '순환급유'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-298",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-298-c1",
+    "directSolution": "황·인계 극압첨가제는 고온 고하중 접촉면에 반응피막을 형성해 용착과 스코어링을 줄인다. 따라서 '극압첨가제'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-298-c1",
+        "verdict": "correct",
+        "rationale": "선택지 U-298-c1의 '극압첨가제'는 황·인계 극압첨가제는 고온 고하중 접촉면에 반응피막을 형성해 용착과 스코어링을 줄인다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-298-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-298-c2의 '청정분산제'는 황·인계 극압첨가제는 고온 고하중 접촉면에 반응피막을 형성해 용착과 스코어링을 줄인다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-298-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-298-c3의 '산화방지제'는 황·인계 극압첨가제는 고온 고하중 접촉면에 반응피막을 형성해 용착과 스코어링을 줄인다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-298-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-298-c4의 '점도지수향상제'는 황·인계 극압첨가제는 고온 고하중 접촉면에 반응피막을 형성해 용착과 스코어링을 줄인다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "황·인계 극압첨가제는 고온 고하중 접촉면에 반응피막을 형성해 용착과 스코어링을 줄인다.의 핵심 조건을 생략해 '극압첨가제'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-o41oxb",
+    "existingBlockId": "principle",
+    "assertionText": "황·인계 극압첨가제는 고온 고하중 접촉면에 반응피막을 형성해 용착과 스코어링을 줄인다. 이 판단 기준을 lesson-o41oxb의 principle 학습 블록과 연결해 '극압첨가제'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-308",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-308-c2",
+    "directSolution": "생산량은 설비성과의 결과지표이며 신뢰성·보전성은 고장률, MTBF, MTTR 등으로 평가한다. 따라서 '생산량'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-308-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-308-c1의 '고장률'는 생산량은 설비성과의 결과지표이며 신뢰성·보전성은 고장률, MTBF, MTTR 등으로 평가한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-308-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-308-c2의 '생산량'는 생산량은 설비성과의 결과지표이며 신뢰성·보전성은 고장률, MTBF, MTTR 등으로 평가한다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-308-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-308-c3의 'MTBF'는 생산량은 설비성과의 결과지표이며 신뢰성·보전성은 고장률, MTBF, MTTR 등으로 평가한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-308-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-308-c4의 'MTTR'는 생산량은 설비성과의 결과지표이며 신뢰성·보전성은 고장률, MTBF, MTTR 등으로 평가한다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "생산량은 설비성과의 결과지표이며 신뢰성·보전성은 고장률, MTBF, MTTR 등으로 평가한다.의 핵심 조건을 생략해 '생산량'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-16opp66",
+    "existingBlockId": "principle",
+    "assertionText": "생산량은 설비성과의 결과지표이며 신뢰성·보전성은 고장률, MTBF, MTTR 등으로 평가한다. 이 판단 기준을 lesson-16opp66의 principle 학습 블록과 연결해 '생산량'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-311",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-311-c3",
+    "directSolution": "트리거는 입력신호가 설정레벨이나 조건을 통과할 때 측정을 시작하도록 하여 반복신호의 시작점을 일정하게 맞춘다. 따라서 '신호가 설정한 특정 값 이상이 되면 신호 수집을 시작한다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-311-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-311-c1의 '주파수분석 결과 중 진동의 최대치만 표시한다.'는 트리거는 입력신호가 설정레벨이나 조건을 통과할 때 측정을 시작하도록 하여 반복신호의 시작점을 일정하게 맞춘다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-311-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-311-c2의 '수집 전후의 신호를 중복 처리하여 정확도를 향상시킨다.'는 트리거는 입력신호가 설정레벨이나 조건을 통과할 때 측정을 시작하도록 하여 반복신호의 시작점을 일정하게 맞춘다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-311-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-311-c3의 '신호가 설정한 특정 값 이상이 되면 신호 수집을 시작한다.'는 트리거는 입력신호가 설정레벨이나 조건을 통과할 때 측정을 시작하도록 하여 반복신호의 시작점을 일정하게 맞춘다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-311-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-311-c4의 '관심 주파수의 분해능을 자동으로 높인다.'는 트리거는 입력신호가 설정레벨이나 조건을 통과할 때 측정을 시작하도록 하여 반복신호의 시작점을 일정하게 맞춘다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "트리거는 입력신호가 설정레벨이나 조건을 통과할 때 측정을 시작하도록 하여 반복신호의 시작점을 일정하게 맞춘다.의 핵심 조건을 생략해 '신호가 설정한 특정 값 이상이 되면 신호 수집을 시작한다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-17n2ww1",
+    "existingBlockId": "principle",
+    "assertionText": "트리거는 입력신호가 설정레벨이나 조건을 통과할 때 측정을 시작하도록 하여 반복신호의 시작점을 일정하게 맞춘다. 이 판단 기준을 lesson-17n2ww1의 principle 학습 블록과 연결해 '신호가 설정한 특정 값 이상이 되면 신호 수집을 시작한다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-312",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-312-c4",
+    "directSolution": "만성로스는 원인과 결과가 복합적으로 얽혀 잠재해 있고, 현상·물리원리·메커니즘을 단계적으로 분석해야 합니다. 관리도만 적용하면 제로화가 가장 바람직하다는 ④는 이 특성과 맞지 않으므로 정답입니다.",
+    "choiceRationales": [
+      { "choiceId": "U-312-c1", "verdict": "incorrect", "rationale": "만성로스는 작은 손실이 누적되거나 정상으로 여겨져 드러나지 않는 경우가 있어 표면화하기 어렵습니다. 이는 만성로스의 대표적인 특성입니다." },
+      { "choiceId": "U-312-c2", "verdict": "incorrect", "rationale": "만성로스는 반복되는 현상 아래의 조건과 메커니즘을 파악해야 줄일 수 있습니다. 따라서 로스의 특징을 정확히 파악하는 일은 중요합니다." },
+      { "choiceId": "U-312-c3", "verdict": "incorrect", "rationale": "만성로스는 설비 조건·작업 방법·미세 결함이 겹쳐 발생할 수 있어 단일 원인으로 설명하기 어렵습니다. 원인과 결과의 관계가 복합적이라는 설명은 맞습니다." },
+      { "choiceId": "U-312-c4", "verdict": "correct", "rationale": "관리도는 변동을 관찰하는 도구이지만, 만성로스의 제로화에는 현상 분석과 물리적 메커니즘 확인 등 여러 분석이 필요합니다. 관리도만 적용한다는 단정이 틀렸습니다." }
+    ],
+    "misconception": "변동 감시용 관리도를 만성로스의 복합 원인 분석과 개선을 모두 대신하는 단일 해결기법으로 오해하는 오류.",
+    "existingLessonId": "lesson-1grtg70",
+    "existingBlockId": "principle",
+    "assertionText": "만성로스는 복합 원인을 단계적으로 분석해야 하며 관리도 하나만으로 해결되지 않는다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-313",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-313-c2",
+    "directSolution": "현장 계측기 관리는 선정·등록·교정·검정·보관·이력관리와 사용기준 유지가 중심이며 제품 연구개발은 별도 기능이다. 따라서 '계측기 자체의 연구개발을 관리업무의 핵심으로 삼는다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-313-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-313-c1의 '관리규정을 제정한다.'는 현장 계측기 관리는 선정·등록·교정·검정·보관·이력관리와 사용기준 유지가 중심이며 제품 연구개발은 별도 기능이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-313-c2",
+        "verdict": "correct",
+        "rationale": "선택지 U-313-c2의 '계측기 자체의 연구개발을 관리업무의 핵심으로 삼는다.'는 현장 계측기 관리는 선정·등록·교정·검정·보관·이력관리와 사용기준 유지가 중심이며 제품 연구개발은 별도 기능이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-313-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-313-c3의 '목적과 정밀도에 맞게 선정·구입한다.'는 현장 계측기 관리는 선정·등록·교정·검정·보관·이력관리와 사용기준 유지가 중심이며 제품 연구개발은 별도 기능이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-313-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-313-c4의 '정기적인 검사와 검정을 실시한다.'는 현장 계측기 관리는 선정·등록·교정·검정·보관·이력관리와 사용기준 유지가 중심이며 제품 연구개발은 별도 기능이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "현장 계측기 관리는 선정·등록·교정·검정·보관·이력관리와 사용기준 유지가 중심이며 제품 연구개발은 별도 기능이다.의 핵심 조건을 생략해 '계측기 자체의 연구개발을 관리업무의 핵심으로 삼는다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-2qfm6o",
+    "existingBlockId": "principle",
+    "assertionText": "현장 계측기 관리는 선정·등록·교정·검정·보관·이력관리와 사용기준 유지가 중심이며 제품 연구개발은 별도 기능이다. 이 판단 기준을 lesson-2qfm6o의 principle 학습 블록과 연결해 '계측기 자체의 연구개발을 관리업무의 핵심으로 삼는다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-314",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-314-c3",
+    "directSolution": "목적별 설비분류는 투자·자산·예산·원가 관리에 직접 활용되며 생산공정능력 파악은 공정별·기능별 분석과 더 밀접하다. 따라서 '생산공정능력을 파악하는 데 편리하기 위해서이다.'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-314-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-314-c1의 '설비원가를 파악하기 위해서이다.'는 목적별 설비분류는 투자·자산·예산·원가 관리에 직접 활용되며 생산공정능력 파악은 공정별·기능별 분석과 더 밀접하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-314-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-314-c2의 '설비투자의 합리화를 위해서이다.'는 목적별 설비분류는 투자·자산·예산·원가 관리에 직접 활용되며 생산공정능력 파악은 공정별·기능별 분석과 더 밀접하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-314-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-314-c3의 '생산공정능력을 파악하는 데 편리하기 위해서이다.'는 목적별 설비분류는 투자·자산·예산·원가 관리에 직접 활용되며 생산공정능력 파악은 공정별·기능별 분석과 더 밀접하다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-314-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-314-c4의 '예산통제와 고정자산 관리를 위해서이다.'는 목적별 설비분류는 투자·자산·예산·원가 관리에 직접 활용되며 생산공정능력 파악은 공정별·기능별 분석과 더 밀접하다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "목적별 설비분류는 투자·자산·예산·원가 관리에 직접 활용되며 생산공정능력 파악은 공정별·기능별 분석과 더 밀접하다.의 핵심 조건을 생략해 '생산공정능력을 파악하는 데 편리하기 위해서이다.'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-lxzxu1",
+    "existingBlockId": "principle",
+    "assertionText": "목적별 설비분류는 투자·자산·예산·원가 관리에 직접 활용되며 생산공정능력 파악은 공정별·기능별 분석과 더 밀접하다. 이 판단 기준을 lesson-lxzxu1의 principle 학습 블록과 연결해 '생산공정능력을 파악하는 데 편리하기 위해서이다.'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-315",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-315-c3",
+    "directSolution": "설비배치는 생산에 필요한 사람·자재·기계·공간의 위치와 흐름을 결정해 운반거리, 정체, 공간낭비와 작업비용을 줄이는 활동이다. 따라서 '설비배치'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-315-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-315-c1의 '구조설계'는 설비배치는 생산에 필요한 사람·자재·기계·공간의 위치와 흐름을 결정해 운반거리, 정체, 공간낭비와 작업비용을 줄이는 활동이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-315-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-315-c2의 '안전설계'는 설비배치는 생산에 필요한 사람·자재·기계·공간의 위치와 흐름을 결정해 운반거리, 정체, 공간낭비와 작업비용을 줄이는 활동이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-315-c3",
+        "verdict": "correct",
+        "rationale": "선택지 U-315-c3의 '설비배치'는 설비배치는 생산에 필요한 사람·자재·기계·공간의 위치와 흐름을 결정해 운반거리, 정체, 공간낭비와 작업비용을 줄이는 활동이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      },
+      {
+        "choiceId": "U-315-c4",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-315-c4의 '운반시스템 설계'는 설비배치는 생산에 필요한 사람·자재·기계·공간의 위치와 흐름을 결정해 운반거리, 정체, 공간낭비와 작업비용을 줄이는 활동이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      }
+    ],
+    "misconception": "설비배치는 생산에 필요한 사람·자재·기계·공간의 위치와 흐름을 결정해 운반거리, 정체, 공간낭비와 작업비용을 줄이는 활동이다.의 핵심 조건을 생략해 '설비배치'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-110jswm",
+    "existingBlockId": "principle",
+    "assertionText": "설비배치는 생산에 필요한 사람·자재·기계·공간의 위치와 흐름을 결정해 운반거리, 정체, 공간낭비와 작업비용을 줄이는 활동이다. 이 판단 기준을 lesson-110jswm의 principle 학습 블록과 연결해 '설비배치'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  },
+  {
+    "questionId": "U-323",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-323-c4",
+    "directSolution": "외부 액체가 윤활유에 섞이면 점도가 낮아지고 유막강도가 감소한다. 특히 연료 혼입은 대표적인 희석 원인이다. 따라서 '희석'가 정답이다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-323-c1",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-323-c1의 '산화'는 외부 액체가 윤활유에 섞이면 점도가 낮아지고 유막강도가 감소한다. 특히 연료 혼입은 대표적인 희석 원인이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-323-c2",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-323-c2의 '탄화'는 외부 액체가 윤활유에 섞이면 점도가 낮아지고 유막강도가 감소한다. 특히 연료 혼입은 대표적인 희석 원인이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-323-c3",
+        "verdict": "incorrect",
+        "rationale": "선택지 U-323-c3의 '동화'는 외부 액체가 윤활유에 섞이면 점도가 낮아지고 유막강도가 감소한다. 특히 연료 혼입은 대표적인 희석 원인이다. 이 원리와 적용 조건이 달라 문항의 정답이 될 수 없다."
+      },
+      {
+        "choiceId": "U-323-c4",
+        "verdict": "correct",
+        "rationale": "선택지 U-323-c4의 '희석'는 외부 액체가 윤활유에 섞이면 점도가 낮아지고 유막강도가 감소한다. 특히 연료 혼입은 대표적인 희석 원인이다. 그러므로 문항의 조건을 충족하는 정답이다."
+      }
+    ],
+    "misconception": "외부 액체가 윤활유에 섞이면 점도가 낮아지고 유막강도가 감소한다. 특히 연료 혼입은 대표적인 희석 원인이다.의 핵심 조건을 생략해 '희석'와 다른 선택지를 같은 개념으로 판단하는 오류.",
+    "existingLessonId": "lesson-1kuxsd4",
+    "existingBlockId": "principle",
+    "assertionText": "외부 액체가 윤활유에 섞이면 점도가 낮아지고 유막강도가 감소한다. 특히 연료 혼입은 대표적인 희석 원인이다. 이 판단 기준을 lesson-1kuxsd4의 principle 학습 블록과 연결해 '희석'를 선택한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T18:15:00.000+09:00"
+  }
+]

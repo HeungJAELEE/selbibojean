@@ -6,6 +6,9 @@ import {
   parseWrittenQuestionAuditManifest,
   type WrittenQuestionAuditEntry,
 } from "../src/lib/content/written-question-audit";
+import {
+  WRITTEN_DIRECT_QUESTION_REVIEWS,
+} from "../src/data/source/written-direct-question-reviews";
 import { mergeApprovedWeldingProcessContent } from "../src/lib/content/welding-process-approved";
 import { mergeApprovedWeldingSafetyContent } from "../src/lib/content/welding-safety-approved";
 import { normalizeCanonicalTaxonomy } from "../src/lib/content/taxonomy-normalization";
@@ -281,6 +284,57 @@ for (const reviewUrl of reviewUrls) {
   }
 }
 
+for (const review of WRITTEN_DIRECT_QUESTION_REVIEWS) {
+    if (review.decision !== "approve") continue;
+    if (!auditedIds.has(review.questionId)) continue;
+
+    const question = questionById.get(review.questionId);
+    if (!question) {
+      throw new Error(`문제를 찾을 수 없습니다: ${review.questionId}`);
+    }
+    if (review.correctChoiceId !== question.correctChoiceId) {
+      throw new Error(
+        `직접 검수 정답과 원문 복원 정답이 다릅니다: ${review.questionId}`,
+      );
+    }
+
+    const reviewedChoiceIds = new Set(
+      review.choiceRationales.map((choice) => choice.choiceId),
+    );
+    const correctVerdicts = review.choiceRationales.filter(
+      (choice) => choice.verdict === "correct",
+    );
+    if (
+      reviewedChoiceIds.size !== question.choices.length ||
+      question.choices.some((choice) => !reviewedChoiceIds.has(choice.id)) ||
+      correctVerdicts.length !== 1 ||
+      correctVerdicts[0].choiceId !== question.correctChoiceId
+    ) {
+      throw new Error(
+        `직접 검수 선택지 판정이 원문과 일치하지 않습니다: ${review.questionId}`,
+      );
+    }
+
+    const reviewedAt = new Date(review.reviewedAt).toISOString();
+    if (reviewedAt > latestGeneratedAt) latestGeneratedAt = reviewedAt;
+    decisionByQuestionId.set(review.questionId, {
+      questionId: review.questionId,
+      auditDisposition: "verified",
+      evidenceLevel: "dual_secondary",
+      cbtAnswer: question.answerText,
+      verifiedAnswer: question.answerText,
+      evidenceUrls: review.evidenceUrls,
+      reviewNote:
+        "CBT 원문 복원 정답과 문항별 기술 풀이를 대조해 과거 기출 복원 문항으로 공개 승인했습니다.",
+      nextAction:
+        "별도 보기 원문 대조 목록의 후보는 문제·보기·복원 정답을 바꾸지 않고 후속 일괄 검토합니다.",
+      assetStatus: "not_required",
+      reviewRationale: review.directSolution,
+      reviewChoiceFeedback: review.choiceRationales,
+      reviewedAt,
+    });
+}
+
 const entries = [...decisionByQuestionId.values()];
 
 writeFileSync(
@@ -302,5 +356,5 @@ writeFileSync(
 );
 
 process.stdout.write(
-  `감사 결정 ${entries.length}건을 병합했습니다 (${reviewUrls.filter((url) => existsSync(url)).length}개 검수 파일).\n`,
+  `감사 결정 ${entries.length}건을 병합했습니다 (${reviewUrls.filter((url) => existsSync(url)).length}개 검수 파일 + 직접 검수 승인 ${WRITTEN_DIRECT_QUESTION_REVIEWS.filter((review) => review.decision === "approve").length}건).\n`,
 );

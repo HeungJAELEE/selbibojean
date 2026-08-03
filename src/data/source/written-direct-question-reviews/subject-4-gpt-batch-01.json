@@ -1,0 +1,306 @@
+[
+  {
+    "questionId": "U-292",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-292-c4",
+    "directSolution": "윤활관리 기술자는 윤활제 선정·급유표준 수립·작업자 교육·급유장치 관리·윤활사고 분석을 담당합니다. 따라서 윤활유 제조공정 자체의 기술개발까지 현장 윤활관리 직무로 묶은 ④가 가장 거리가 멉니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-292-c1",
+        "verdict": "incorrect",
+        "rationale": "작업자에게 올바른 윤활제 취급·급유주기·오염방지 방법을 교육하는 일은 윤활관리 기술자의 직접 직무이므로 ‘거리가 먼 것’이 아닙니다."
+      },
+      {
+        "choiceId": "U-292-c2",
+        "verdict": "incorrect",
+        "rationale": "설비에 맞는 급유장치를 설치하고 정상 공급·누설·막힘 상태를 관리하는 일은 현장 윤활관리의 핵심 업무이므로 제외할 수 없습니다."
+      },
+      {
+        "choiceId": "U-292-c3",
+        "verdict": "incorrect",
+        "rationale": "윤활사고와 반복 문제를 검토해 윤활제·급유량·오염·주기 문제를 개선하는 일은 윤활관리 기술자가 수행해야 할 분석 업무입니다."
+      },
+      {
+        "choiceId": "U-292-c4",
+        "verdict": "correct",
+        "rationale": "현장 윤활관리자는 적용·표준·교육·상태분석을 담당하지만 윤활유 제조공정 자체의 기술개발은 제조사 연구개발 영역이므로 이 보기가 가장 거리가 멉니다."
+      }
+    ],
+    "misconception": "현장 윤활관리와 윤활유 제조사의 제품·공정 연구개발을 같은 직무 범위로 보는 오류.",
+    "existingLessonId": "lesson-1hn6jkv",
+    "existingBlockId": "principle",
+    "assertionText": "윤활관리자는 선정·표준·교육·분석·급유장치 관리를 담당하며 윤활유 제조기술은 제조사의 영역이다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829",
+      "https://cbtbank.kr/exam/de20180428",
+      "https://cbtbank.kr/exam/de20170507",
+      "https://cbtbank.kr/exam/de20140920",
+      "https://cbtbank.kr/exam/de20120915"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-472",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-472-c3",
+    "directSolution": "표준 혼화주도는 시료를 25±0.5℃로 맞춘 뒤 그리스 워커로 60복동(double strokes), 즉 왕복 동작 60회를 수행하고 침입도를 측정합니다. 따라서 원문의 ‘25±0.5℃, 60회 혼화’인 ③이 맞습니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-472-c1",
+        "verdict": "incorrect",
+        "rationale": "표준 혼화주도의 기준온도는 25±0.5℃이고 표준 혼화횟수는 60복동이므로 20±0.5℃와 80회 모두 기준에서 벗어납니다."
+      },
+      {
+        "choiceId": "U-472-c2",
+        "verdict": "incorrect",
+        "rationale": "25±0.5℃라는 온도는 맞지만 표준 혼화횟수가 40회가 아니라 60복동이므로 시험조건을 완성하지 못합니다."
+      },
+      {
+        "choiceId": "U-472-c3",
+        "verdict": "correct",
+        "rationale": "25±0.5℃에서 그리스 워커를 60복동한 뒤 침입도를 측정하는 조건이 표준 혼화주도의 기출 조건과 일치합니다."
+      },
+      {
+        "choiceId": "U-472-c4",
+        "verdict": "incorrect",
+        "rationale": "20±0.5℃는 기준온도와 다르고 100회도 표준 혼화횟수 60복동과 다르므로 두 조건을 모두 만족하지 못합니다."
+      }
+    ],
+    "misconception": "원문의 ‘60회’를 단순 편도 횟수로 읽거나 온도와 혼화횟수 중 하나만 맞으면 된다고 판단하는 오류.",
+    "existingLessonId": "lesson-19b55kn",
+    "existingBlockId": "principle",
+    "assertionText": "표준 혼화주도는 일반적으로 25℃에서 규정된 60회 왕복 혼화 후 침입도를 측정한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20200606",
+      "https://store.astm.org/standards/d217"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-541",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-541-c2",
+    "directSolution": "이 문항은 2019년 기출이 채택한 과거 일반관리값을 묻습니다. 그 기준에서는 유압작동유 탱크 최고온도를 약 55℃ 이내로 관리하므로 ②가 맞습니다. 다만 55℃를 모든 유종·유압시스템의 현행 보편 상한으로 적용하지 말고 실제 운전에서는 작동유와 장치 제조사 허용온도를 우선합니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-541-c1",
+        "verdict": "incorrect",
+        "rationale": "30℃는 제시된 과거 기출의 최고 관리온도인 약 55℃보다 지나치게 낮아 해당 문항이 요구하는 상한값이 아닙니다."
+      },
+      {
+        "choiceId": "U-541-c2",
+        "verdict": "correct",
+        "rationale": "과거 일반관리 기준을 묻는 이 기출에서는 유압작동유 탱크의 최고 관리온도를 약 55℃ 이내로 보아 ②를 정답으로 채택합니다."
+      },
+      {
+        "choiceId": "U-541-c3",
+        "verdict": "incorrect",
+        "rationale": "75℃는 과거 기출 관리값 약 55℃를 넘으며 점도저하와 산화 촉진 위험도 커지므로 이 문항의 관리 상한이 아닙니다."
+      },
+      {
+        "choiceId": "U-541-c4",
+        "verdict": "incorrect",
+        "rationale": "90℃는 과거 기출 관리값 약 55℃를 크게 초과하므로 일반관리 상한으로 선택할 수 없고 실제 장치에도 제조사 기준 확인이 필요합니다."
+      }
+    ],
+    "misconception": "과거 기출의 일반관리값 약 55℃를 모든 유압유와 모든 현행 시스템에 무조건 적용하는 오류.",
+    "existingLessonId": "lesson-1xgk865",
+    "existingBlockId": "principle",
+    "assertionText": "과도한 온도상승은 점도저하와 산화를 촉진한다. 실제 허용온도는 작동유와 장치 제조사 기준을 우선한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190427"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-741",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-741-c1",
+    "directSolution": "형상을 유지하는 매우 단단한 그리스를 규정 크기로 절단하고 25℃에서 침입도를 측정한 값은 고형주도입니다. 혼화 여부나 축소형 시험기 크기를 묻는 것이 아니므로 ①이 맞습니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-741-c1",
+        "verdict": "correct",
+        "rationale": "고형주도는 형상을 유지할 만큼 단단한 그리스를 규정 형상으로 준비해 25℃에서 침입도를 평가하는 주도이므로 지문과 일치합니다."
+      },
+      {
+        "choiceId": "U-741-c2",
+        "verdict": "incorrect",
+        "rationale": "혼화주도는 그리스를 규정 횟수로 혼화한 뒤 측정하는 값이므로 단단한 시료를 절단해 측정한다는 지문의 준비방법과 다릅니다."
+      },
+      {
+        "choiceId": "U-741-c3",
+        "verdict": "incorrect",
+        "rationale": "불혼화주도는 시료를 규정 혼화하지 않은 상태에서 재는 주도이지만 고형 그리스를 절단해 측정하는 고형주도와는 시험대상이 다릅니다."
+      },
+      {
+        "choiceId": "U-741-c4",
+        "verdict": "incorrect",
+        "rationale": "1/4주도는 소량 시료용 축소형 장치·절차를 가리키는 구분이며 형상을 유지하는 고형 그리스의 시험명칭이 아닙니다."
+      }
+    ],
+    "misconception": "주도를 시료 상태·사전 혼화·시험기 크기로 구분하지 않고 모두 같은 침입도 명칭으로 보는 오류.",
+    "existingLessonId": "lesson-1h9q1s4",
+    "existingBlockId": "principle",
+    "assertionText": "고형주도는 매우 단단한 그리스의 침입도를 규정방법으로 평가하는 지표다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180428"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-867",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-867-c4",
+    "directSolution": "소음계의 주파수범위는 적용 규격과 기종·등급에 따라 정해지므로 정밀 소음계가 ‘항상 10~17000 Hz’라는 고정값을 가진다고 일반화할 수 없습니다. 따라서 틀린 설명은 ④입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-867-c1",
+        "verdict": "incorrect",
+        "rationale": "과거 등급 비교에서 간이 소음계는 보통형·정밀형보다 비교적 좁은 주파수범위를 갖는다는 설명이므로 틀린 보기가 아닙니다."
+      },
+      {
+        "choiceId": "U-867-c2",
+        "verdict": "incorrect",
+        "rationale": "보통 소음계가 간이형보다 넓은 범위를 갖는다는 상대 비교는 과거 등급별 범위의 방향과 맞으므로 틀린 설명으로 고를 수 없습니다."
+      },
+      {
+        "choiceId": "U-867-c3",
+        "verdict": "incorrect",
+        "rationale": "정밀 소음계가 적용 규격에서 정한 넓은 주파수범위를 충족해야 한다는 설명은 고정 수치가 아니라 규격 준수를 말하므로 타당합니다."
+      },
+      {
+        "choiceId": "U-867-c4",
+        "verdict": "correct",
+        "rationale": "정밀 소음계의 범위를 규격·기종과 무관하게 항상 10~17000 Hz라고 단정한 것이 오류이므로 부정형 문항의 정답입니다."
+      }
+    ],
+    "misconception": "과거 특정 표의 대표 범위를 모든 규격·기종에 공통인 절대 주파수범위로 일반화하는 오류.",
+    "existingLessonId": "lesson-1wzpral",
+    "existingBlockId": "principle",
+    "assertionText": "소음계 주파수범위는 적용 규격과 기종에 따라 정해지며 원기출의 수치표현은 당시 기준으로 확인해야 한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20150919",
+      "https://cbtbank.kr/exam/de20140525"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-892",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-892-c1",
+    "directSolution": "이 문항은 과거 KS 유압작동유 제품군의 등급 비교표를 전제로 합니다. 그 표에서 저점도 등급인 ISO VG 22의 인화점이 제시 보기 중 가장 낮아 ①이 맞습니다. 실제 인화점은 점도등급만으로 확정하지 말고 제품 시험성적서를 확인해야 합니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-892-c1",
+        "verdict": "correct",
+        "rationale": "과거 기출이 전제로 한 같은 유압작동유 제품군의 비교표에서는 ISO VG 22가 보기 중 저점도 등급이며 인화점도 가장 낮게 제시됩니다."
+      },
+      {
+        "choiceId": "U-892-c2",
+        "verdict": "incorrect",
+        "rationale": "ISO VG 32는 해당 과거 비교표에서 ISO VG 22보다 인화점이 높게 제시되므로 ‘가장 낮은 것’이라는 조건을 만족하지 않습니다."
+      },
+      {
+        "choiceId": "U-892-c3",
+        "verdict": "incorrect",
+        "rationale": "ISO VG 38 표기는 과거 문항의 보기로 보존하지만 해당 비교에서 최저 인화점으로 채택된 등급은 ISO VG 22이므로 정답이 아닙니다."
+      },
+      {
+        "choiceId": "U-892-c4",
+        "verdict": "incorrect",
+        "rationale": "ISO VG 46은 해당 과거 제품군 비교에서 ISO VG 22보다 높은 인화점으로 제시되므로 최저값을 묻는 조건과 맞지 않습니다."
+      }
+    ],
+    "misconception": "과거 특정 제품군 비교의 등급별 경향을 모든 제조사 유압작동유의 고정 인화점 순서로 일반화하는 오류.",
+    "existingLessonId": "lesson-5pyf48",
+    "existingBlockId": "principle",
+    "assertionText": "같은 제품군에서는 저점도 등급의 인화점이 낮은 경향이 있으나 실제 값은 제품시험성적서를 확인한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20150919"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-894",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-894-c1",
+    "directSolution": "이 문항은 과거 KS의 그리스 제품종류별 동판부식시험 조건을 묻습니다. 원기출이 사용한 A법은 실온, B법은 100℃에서 각각 24시간 유지한 뒤 동판 변색을 판정하므로 ①이 맞습니다. 이 조건을 현행 ASTM의 모든 그리스에 공통인 일반조건으로 확대하지 않습니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-894-c1",
+        "verdict": "correct",
+        "rationale": "과거 기출의 제품종류별 조건에서는 연마 동판을 그리스에 넣고 A법 실온 또는 B법 100℃에서 24시간 유지한 뒤 변색을 조사합니다."
+      },
+      {
+        "choiceId": "U-894-c2",
+        "verdict": "incorrect",
+        "rationale": "실온 또는 100℃라는 온도 구분은 비슷하지만 유지시간이 과거 기출 조건의 24시간이 아니라 12시간이므로 틀립니다."
+      },
+      {
+        "choiceId": "U-894-c3",
+        "verdict": "incorrect",
+        "rationale": "24시간이라는 유지시간은 맞지만 과거 기출의 B법 조건은 125℃가 아니라 100℃이므로 온도조건이 일치하지 않습니다."
+      },
+      {
+        "choiceId": "U-894-c4",
+        "verdict": "incorrect",
+        "rationale": "25℃에서 1시간만 유지하는 조건은 과거 기출의 실온 또는 100℃·24시간 조건과 온도 적용방식과 유지시간이 모두 다릅니다."
+      }
+    ],
+    "misconception": "과거 KS의 제품종류별 A·B법 조건을 현행 ASTM을 포함한 모든 그리스 동판부식시험의 단일 보편조건으로 보는 오류.",
+    "existingLessonId": "lesson-zd7ryt",
+    "existingBlockId": "principle",
+    "assertionText": "원기출은 A법 실온, B법 100℃에서 24시간 후 동판변색을 판정하는 조건을 사용했다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20150919",
+      "https://standard.go.kr/KSCI/standardIntro/getStandardSearchView.do?ksNo=KSM2130&menuId=919&reformNo=20&tmprKsNo=KSM2130&topMenuId=502&upperMenuId=503"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-984",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-984-c1",
+    "directSolution": "제4석유류는 인화점이 200℃ 이상 250℃ 미만인 위험물로 분류하므로 ①이 맞습니다. 문항의 ‘이상’은 200℃를 포함하고 ‘미만’은 250℃를 포함하지 않는 경계조건입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-984-c1",
+        "verdict": "correct",
+        "rationale": "200℃ 이상 250℃ 미만은 제4석유류의 인화점 구간과 일치하며 200℃는 포함하고 250℃는 포함하지 않습니다."
+      },
+      {
+        "choiceId": "U-984-c2",
+        "verdict": "incorrect",
+        "rationale": "20℃ 이하처럼 낮은 인화점 구간은 제4석유류가 아니며 인화점 200℃ 이상이라는 제4석유류의 하한을 만족하지 못합니다."
+      },
+      {
+        "choiceId": "U-984-c3",
+        "verdict": "incorrect",
+        "rationale": "21℃ 이상 69℃ 이하의 낮은 구간은 제4석유류의 200℃ 이상 250℃ 미만 구간과 전혀 다르므로 정답이 아닙니다."
+      },
+      {
+        "choiceId": "U-984-c4",
+        "verdict": "incorrect",
+        "rationale": "300℃ 이상만을 제4석유류로 보는 것은 200℃ 이상 250℃ 미만이라는 법정 구간의 상·하한과 모두 맞지 않습니다."
+      }
+    ],
+    "misconception": "제1·제2·제3·제4석유류의 인화점 경계를 서로 바꾸거나 이상·미만의 포함 여부를 놓치는 오류.",
+    "existingLessonId": "lesson-qzu1jm",
+    "existingBlockId": "principle",
+    "assertionText": "원기출은 기계유·실린더유가 포함되는 제4석유류의 인화점 구간을 이 범위로 제시했다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20140920",
+      "https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=0&chrClsCd=010202&efYd=20260701&lsiSeq=287381&urlMode=lsInfoP"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  }
+]

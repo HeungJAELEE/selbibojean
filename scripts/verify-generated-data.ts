@@ -4,6 +4,7 @@ import type { GeneratedContent } from "../src/lib/domain/types";
 import {
   isPublishableLesson,
   isPublishableQuestion,
+  toPublicQuestion,
 } from "../src/lib/domain/practice";
 import { weldingSafetyReviewDatasetSchema } from "../src/lib/content/welding-safety-supplement";
 import { getApprovedWeldingSafetyContent } from "../src/lib/content/welding-safety-approved";
@@ -35,6 +36,9 @@ async function main() {
   if (data.formatVersion !== 2) errors.push(`콘텐츠 포맷 버전이 2가 아닙니다: ${data.formatVersion}`);
   if (!data.report.exactMatch) errors.push("엑셀 기준 수량 대사가 일치하지 않습니다.");
   if (data.conceptGroups.length !== 44) errors.push(`세부항목군이 44개가 아닙니다: ${data.conceptGroups.length}`);
+  if (data.questions.length !== 1396 || data.report.rows.canonicalQuestions !== 1396) {
+    errors.push(`27차 원장 대표문제 1,396 ID가 보존되지 않았습니다: ${data.questions.length}/${data.report.rows.canonicalQuestions}`);
+  }
   if (new Set(data.questions.map((question) => question.id)).size !== data.questions.length) errors.push("문제 ID가 중복됩니다.");
   if (new Set(data.lessons.map((lesson) => lesson.id)).size !== data.lessons.length) errors.push("레슨 ID가 중복됩니다.");
   if (data.variants.length !== data.report.rows.originals) errors.push(`원문 변형문제 수가 다릅니다: ${data.variants.length}`);
@@ -65,10 +69,48 @@ async function main() {
   );
   if (failedGroups.length) errors.push(`세부항목군 품질 대사 실패: ${failedGroups.map((group) => group.groupId).join(", ")}`);
 
-  const invalidPublished = data.questions.filter(
-    (question) => question.contentStatus === "published" && !isPublishableQuestion(question),
+  const runtimePublicQuestions = runtimeData.questions.filter(
+    isPublishableQuestion,
   );
-  if (invalidPublished.length) errors.push(`공개 조건 미충족 문제가 ${invalidPublished.length}개 있습니다.`);
+  const expectedRuntimePublicQuestions = 2_062;
+  if (runtimePublicQuestions.length !== expectedRuntimePublicQuestions) {
+    errors.push(
+      `런타임 공개 문제 수량 불일치: ${runtimePublicQuestions.length}/${expectedRuntimePublicQuestions}`,
+    );
+  }
+  const expectedRuntimePublicBySubject = new Map([
+    ["subject-1", 314],
+    ["subject-2", 714],
+    ["subject-3", 255],
+    ["subject-4", 779],
+  ]);
+  for (const [subjectId, expected] of expectedRuntimePublicBySubject) {
+    const actual = runtimePublicQuestions.filter(
+      (question) => question.subjectId === subjectId,
+    ).length;
+    if (actual !== expected) {
+      errors.push(`런타임 과목별 공개 문제 수량 불일치 ${subjectId}: ${actual}/${expected}`);
+    }
+  }
+  const runtimePublishedWithoutReview = runtimePublicQuestions.filter(
+    (question) => !question.approvedReview,
+  );
+  if (runtimePublishedWithoutReview.length) {
+    errors.push(`직접풀이·독립검토 없이 공개되는 런타임 문제: ${runtimePublishedWithoutReview.length}개`);
+  }
+  const publicProjection = JSON.stringify(
+    runtimePublicQuestions.map(toPublicQuestion),
+  );
+  for (const answerField of [
+    "correctChoiceId",
+    "answerText",
+    "\"explanation\":",
+    "approvedReview",
+  ]) {
+    if (publicProjection.includes(answerField)) {
+      errors.push(`답안 제출 전 공개 투영에 금지 필드가 남아 있습니다: ${answerField}`);
+    }
+  }
   const publicationMismatch = data.questions.filter((question) =>
     question.contentStatus === "published"
       ? question.publication?.readiness !== "ready"
@@ -194,7 +236,9 @@ async function main() {
       return (
         !lesson ||
         !isPublishableLesson(lesson) ||
-        lesson.conceptGroupId !== question.conceptGroupId
+        lesson.subjectId !== question.subjectId ||
+        question.approvedReview?.conceptBinding.href
+          !== `/written/theory/${question.lessonId}#${question.lessonAnchor}`
       );
     });
   if (runtimeBrokenPublicGraph.length) {
@@ -220,15 +264,31 @@ async function main() {
         .join(", ")}`,
     );
   }
-  const expectedPublishedWeldingSafety = writtenQuestionAudit.entries.filter(
+  const sourceApprovedWeldingSafety = writtenQuestionAudit.entries.filter(
     (entry) =>
       entry.questionId.startsWith("welding-safety-b33-") &&
       (entry.auditDisposition === "verified" ||
         entry.auditDisposition === "cbt_corrected"),
   ).length;
-  if (publishedWeldingSafety.length !== expectedPublishedWeldingSafety) {
+  if (sourceApprovedWeldingSafety !== 150) {
     errors.push(
-      `33차 용접 안전 감사 승인 수량 불일치: 공개 ${publishedWeldingSafety.length}, 승인 ${expectedPublishedWeldingSafety}`,
+      `33차 용접 안전 원장 감사 승인 수량 불일치: ${sourceApprovedWeldingSafety}/150`,
+    );
+  }
+  if (publishedWeldingSafety.length !== sourceApprovedWeldingSafety) {
+    errors.push(
+      `33차 용접 안전 런타임 공개 수량 불일치: ${publishedWeldingSafety.length}/${sourceApprovedWeldingSafety}`,
+    );
+  }
+  const weldingSafetyWithoutDirectApproval = runtimeWeldingSafety.filter(
+    (question) =>
+      !question.approvedReview ||
+      question.contentStatus !== "published" ||
+      question.publication?.readiness !== "ready",
+  );
+  if (weldingSafetyWithoutDirectApproval.length) {
+    errors.push(
+      `33차 용접 안전 직접풀이 승인 경계 오류: ${weldingSafetyWithoutDirectApproval.length}개`,
     );
   }
 
@@ -245,9 +305,18 @@ async function main() {
   const auditedRuntimeQuestions = runtimeData.questions.filter(
     (question) => question.audit,
   );
-  if (auditedRuntimeQuestions.length !== writtenQuestionAudit.entries.length) {
+  const auditedRuntimeById = new Map(
+    auditedRuntimeQuestions.map((question) => [question.id, question]),
+  );
+  const missingManifestAudits = writtenQuestionAudit.entries.filter(
+    (entry) => !auditedRuntimeById.has(entry.questionId),
+  );
+  if (missingManifestAudits.length) {
     errors.push(
-      `필기 감사 매니페스트 런타임 연결 불일치: ${auditedRuntimeQuestions.length}/${writtenQuestionAudit.entries.length}`,
+      `필기 감사 매니페스트 런타임 연결 누락: ${missingManifestAudits
+        .map((entry) => entry.questionId)
+        .slice(0, 20)
+        .join(", ")}`,
     );
   }
   const heldAuditQuestions = auditedRuntimeQuestions.filter((question) =>
@@ -298,6 +367,15 @@ async function main() {
         .join(", ")}`,
     );
   }
+  const supplementalRuntimeIds = new Set(
+    supplementalRuntimeLessons.map((lesson) => lesson.id),
+  );
+  const reviewedSupplementalTheoryLinks = runtimePublicQuestions.filter(
+    (question) => supplementalRuntimeIds.has(question.lessonId),
+  );
+  if (reviewedSupplementalTheoryLinks.length === 0) {
+    errors.push("보강용 레슨을 참조하는 승인된 직접풀이 연결을 확인할 수 없습니다.");
+  }
 
   if (errors.length) {
     errors.forEach((error) => console.error(`FAIL: ${error}`));
@@ -305,7 +383,7 @@ async function main() {
     return;
   }
   console.log(
-    `PASS: 원문 ${data.report.rows.originals}, 대표 ${data.report.rows.canonicalQuestions}, 매핑 ${data.report.rows.mappings}, 잔여 ${data.report.rows.backlog}, 44개 세부항목군, 공개 레슨 ${publishedLessons.length}, 선택지 해설 ${data.report.quality.choiceFeedbackPassed}, 공개 문제 ${data.report.publishedQuestionCount}, 근거 확인 대기 ${data.report.verification.blocked}, 용접 안전 원본 ${weldingSafety.counts.importedQuestions}문제·${weldingSafety.counts.importedLessons}레슨·${weldingSafety.counts.completedRounds}회차, 명시승인 ${approvedWeldingSafety.audit.publishedQuestions}문제·${approvedWeldingSafety.audit.publishedLessons}레슨, 검수대기 ${approvedWeldingSafety.audit.heldQuestions}문제·${approvedWeldingSafety.audit.heldLessons}레슨, 런타임 공개 ${runtimeData.questions.filter(isPublishableQuestion).length}문제·${runtimeData.lessons.filter(isPublishableLesson).length}레슨`,
+    `PASS: 원문 ${data.report.rows.originals}, 원장 대표 ID ${data.report.rows.canonicalQuestions}, 매핑 ${data.report.rows.mappings}, 잔여 ${data.report.rows.backlog}, 44개 세부항목군, 공개 레슨 ${publishedLessons.length}, 선택지 해설 ${data.report.quality.choiceFeedbackPassed}, 원장 발행준비 ${data.report.publishedQuestionCount}, 근거 확인 대기 ${data.report.verification.blocked}, 용접 안전 원본 ${weldingSafety.counts.importedQuestions}문제·${weldingSafety.counts.importedLessons}레슨·${weldingSafety.counts.completedRounds}회차, 원본 단계 명시승인 ${approvedWeldingSafety.audit.publishedQuestions}문제·${approvedWeldingSafety.audit.publishedLessons}레슨, 원본 단계 검수대기 ${approvedWeldingSafety.audit.heldQuestions}문제·${approvedWeldingSafety.audit.heldLessons}레슨, 런타임 직접풀이 승인 ${publishedWeldingSafety.length}문제, 런타임 공개 ${runtimePublicQuestions.length}문제(subject-1 314·subject-2 714·subject-3 255·subject-4 779)·${runtimeData.lessons.filter(isPublishableLesson).length}레슨`,
   );
 }
 

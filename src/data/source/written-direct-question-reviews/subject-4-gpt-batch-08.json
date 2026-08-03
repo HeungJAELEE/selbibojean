@@ -1,0 +1,1831 @@
+[
+  {
+    "questionId": "U-611",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-611-c1",
+    "directSolution": "정답은 “ICP법”이다. ICP는 유도결합 플라즈마에서 원소가 방출하는 스펙트럼을 분석한다. 따라서 “플라즈마를 이용하여 윤활유의 금속원소를 분석하는 SOAP 방식은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-611-c1",
+        "verdict": "correct",
+        "rationale": "“ICP법”은 ICP는 유도결합 플라즈마에서 원소가 방출하는 스펙트럼을 분석한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-611-c2",
+        "verdict": "incorrect",
+        "rationale": "“회전전극법”은 “ICP법”과 구별되는 항목이다. ICP는 유도결합 플라즈마에서 원소가 방출하는 스펙트럼을 분석한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-611-c3",
+        "verdict": "incorrect",
+        "rationale": "“원자흡광법”을 고르면 ICP는 유도결합 플라즈마에서 원소가 방출하는 스펙트럼을 분석한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-611-c4",
+        "verdict": "incorrect",
+        "rationale": "“페로그래피법”을 고르면 ICP는 유도결합 플라즈마에서 원소가 방출하는 스펙트럼을 분석한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“ICP법”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-uqkbgk",
+    "existingBlockId": "summary",
+    "assertionText": "ICP는 유도결합 플라즈마에서 원소가 방출하는 스펙트럼을 분석한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20190303"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-612",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-612-c2",
+    "directSolution": "정답은 “전손식은 주로 고속운전에 적용한다.”이다. 전손식은 소량을 공급하고 회수하지 않는 방식으로 주로 저속·경하중에 적용한다. 따라서 “미끄럼베어링 급유법 설명으로 옳지 않은 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-612-c1",
+        "verdict": "incorrect",
+        "rationale": "“전손식에는 적하급유 등이 있다.”은 “전손식은 주로 고속운전에 적용한다.”을 가리키지 않는다. 전손식은 소량을 공급하고 회수하지 않는 방식으로 주로 저속·경하중에 적용한다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-612-c2",
+        "verdict": "correct",
+        "rationale": "“전손식은 주로 고속운전에 적용한다.”은 전손식은 소량을 공급하고 회수하지 않는 방식으로 주로 저속·경하중에 적용한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-612-c3",
+        "verdict": "incorrect",
+        "rationale": "“유욕식에는 링·체인·비말급유가 있다.”을 고르면 전손식은 소량을 공급하고 회수하지 않는 방식으로 주로 저속·경하중에 적용한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-612-c4",
+        "verdict": "incorrect",
+        "rationale": "“순환식은 냉각이 필요한 곳에 적합하다.”을 고르면 전손식은 소량을 공급하고 회수하지 않는 방식으로 주로 저속·경하중에 적용한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“전손식은 주로 고속운전에 적용한다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-11qy6e8",
+    "existingBlockId": "summary",
+    "assertionText": "전손식은 소량을 공급하고 회수하지 않는 방식으로 주로 저속·경하중에 적용한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303",
+      "https://cbtbank.kr/exam/de20140920"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-613",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-613-c1",
+    "directSolution": "정답은 “산화와 열에 대한 안정성이 낮아야 한다.”이다. 윤활유는 고온·산소 노출에서도 성능을 유지하도록 산화·열안정성이 높아야 한다. 따라서 “액상윤활유가 갖춰야 할 성질로 옳지 않은 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-613-c1",
+        "verdict": "correct",
+        "rationale": "“산화와 열에 대한 안정성이 낮아야 한다.”은 윤활유는 고온·산소 노출에서도 성능을 유지하도록 산화·열안정성이 높아야 한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-613-c2",
+        "verdict": "incorrect",
+        "rationale": "“사용조건에 맞는 점도를 가져야 한다.”은 “산화와 열에 대한 안정성이 낮아야 한다.”과 구별되는 항목이다. 윤활유는 고온·산소 노출에서도 성능을 유지하도록 산화·열안정성이 높아야 한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-613-c3",
+        "verdict": "incorrect",
+        "rationale": "“화학적으로 안정하고 청정해야 한다.”을 고르면 윤활유는 고온·산소 노출에서도 성능을 유지하도록 산화·열안정성이 높아야 한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-613-c4",
+        "verdict": "incorrect",
+        "rationale": "“경계윤활에서 견딜 유성이 필요하다.”을 고르면 윤활유는 고온·산소 노출에서도 성능을 유지하도록 산화·열안정성이 높아야 한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“산화와 열에 대한 안정성이 낮아야 한다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-ofr6fo",
+    "existingBlockId": "summary",
+    "assertionText": "윤활유는 고온·산소 노출에서도 성능을 유지하도록 산화·열안정성이 높아야 한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303",
+      "https://cbtbank.kr/exam/de20161001",
+      "https://cbtbank.kr/exam/de20140920",
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-614",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-614-c3",
+    "directSolution": "정답은 “밀봉작용”이다. 유막이 미세간극을 메워 압축가스와 연소가스의 누설을 감소시킨다. 따라서 “피스톤과 실린더 사이 유막이 연소가스 누설을 막는 윤활기능은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-614-c1",
+        "verdict": "incorrect",
+        "rationale": "“방진작용”은 “밀봉작용”을 가리키지 않는다. 유막이 미세간극을 메워 압축가스와 연소가스의 누설을 감소시킨다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-614-c2",
+        "verdict": "incorrect",
+        "rationale": "“마찰증가작용”은 “밀봉작용”과 구별되는 항목이다. 유막이 미세간극을 메워 압축가스와 연소가스의 누설을 감소시킨다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-614-c3",
+        "verdict": "correct",
+        "rationale": "“밀봉작용”은 유막이 미세간극을 메워 압축가스와 연소가스의 누설을 감소시킨다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-614-c4",
+        "verdict": "incorrect",
+        "rationale": "“마모촉진작용”을 고르면 유막이 미세간극을 메워 압축가스와 연소가스의 누설을 감소시킨다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“밀봉작용”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-g2vxpg",
+    "existingBlockId": "summary",
+    "assertionText": "유막이 미세간극을 메워 압축가스와 연소가스의 누설을 감소시킨다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303",
+      "https://cbtbank.kr/exam/de20111002"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-628",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-628-c4",
+    "directSolution": "정답은 “현장작업자는 일상점검·청소·급유·이상보고, 보전담당자는 정기점검·수리·개선보전을 맡는다.”이다. 운전자는 기본조건 유지와 조기발견, 보전담당자는 전문진단·복구·개선을 담당한다. 따라서 “예방보전에서 현장작업자와 전문 보전담당자의 역할분담으로 가장 적절한 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-628-c1",
+        "verdict": "incorrect",
+        "rationale": "“현장작업자가 모든 대수리까지 수행한다.”은 “현장작업자는 일상점검·청소·급유·이상보고, 보전담당자는 정기점검·수리·개선보전을 맡는다.”을 가리키지 않는다. 운전자는 기본조건 유지와 조기발견, 보전담당자는 전문진단·복구·개선을 담당한다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-628-c2",
+        "verdict": "incorrect",
+        "rationale": "“보전담당자는 청소와 급유만 수행한다.”은 “현장작업자는 일상점검·청소·급유·이상보고, 보전담당자는 정기점검·수리·개선보전을 맡는다.”과 구별되는 항목이다. 운전자는 기본조건 유지와 조기발견, 보전담당자는 전문진단·복구·개선을 담당한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-628-c3",
+        "verdict": "incorrect",
+        "rationale": "“양측 모두 이상보고만 하고 수리는 외주화한다.”을 고르면 운전자는 기본조건 유지와 조기발견, 보전담당자는 전문진단·복구·개선을 담당한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-628-c4",
+        "verdict": "correct",
+        "rationale": "“현장작업자는 일상점검·청소·급유·이상보고, 보전담당자는 정기점검·수리·개선보전을 맡는다.”은 운전자는 기본조건 유지와 조기발견, 보전담당자는 전문진단·복구·개선을 담당한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      }
+    ],
+    "misconception": "“현장작업자는 일상점검·청소·급유·이상보고, 보전담당자는 정기점검·수리·개선보전을 맡는다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-gnfmcd",
+    "existingBlockId": "summary",
+    "assertionText": "운전자는 기본조건 유지와 조기발견, 보전담당자는 전문진단·복구·개선을 담당한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303",
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-632",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-632-c1",
+    "directSolution": "정답은 “납”이다. 고체의 종파속도는 탄성계수와 밀도에 좌우되며 납은 탄성계수가 낮아 상대적으로 느리다. 따라서 “다음 고체재료 중 일반적으로 음의 전달속도가 가장 느린 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-632-c1",
+        "verdict": "correct",
+        "rationale": "“납”은 고체의 종파속도는 탄성계수와 밀도에 좌우되며 납은 탄성계수가 낮아 상대적으로 느리다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-632-c2",
+        "verdict": "incorrect",
+        "rationale": "“강”은 “납”과 구별되는 항목이다. 고체의 종파속도는 탄성계수와 밀도에 좌우되며 납은 탄성계수가 낮아 상대적으로 느리다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-632-c3",
+        "verdict": "incorrect",
+        "rationale": "“알루미늄”을 고르면 고체의 종파속도는 탄성계수와 밀도에 좌우되며 납은 탄성계수가 낮아 상대적으로 느리다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-632-c4",
+        "verdict": "incorrect",
+        "rationale": "“구리”을 고르면 고체의 종파속도는 탄성계수와 밀도에 좌우되며 납은 탄성계수가 낮아 상대적으로 느리다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“납”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-13s863u",
+    "existingBlockId": "summary",
+    "assertionText": "고체의 종파속도는 탄성계수와 밀도에 좌우되며 납은 탄성계수가 낮아 상대적으로 느리다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-633",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-633-c4",
+    "directSolution": "정답은 “진행파는 입사파와 반사파의 간섭으로 마디와 배가 고정된 파이다.”이다. 고정된 마디와 배는 정재파의 특성이며 진행파는 파형과 에너지가 이동한다. 따라서 “파동의 종류와 설명의 연결로 옳지 않은 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-633-c1",
+        "verdict": "incorrect",
+        "rationale": "“진행파는 에너지가 공간을 따라 전파된다.”은 “진행파는 입사파와 반사파의 간섭으로 마디와 배가 고정된 파이다.”을 가리키지 않는다. 고정된 마디와 배는 정재파의 특성이며 진행파는 파형과 에너지가 이동한다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-633-c2",
+        "verdict": "incorrect",
+        "rationale": "“정재파는 서로 반대방향의 같은 주파수 파가 중첩될 때 생긴다.”은 “진행파는 입사파와 반사파의 간섭으로 마디와 배가 고정된 파이다.”과 구별되는 항목이다. 고정된 마디와 배는 정재파의 특성이며 진행파는 파형과 에너지가 이동한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-633-c3",
+        "verdict": "incorrect",
+        "rationale": "“정재파에는 위치가 고정된 마디와 배가 나타난다.”을 고르면 고정된 마디와 배는 정재파의 특성이며 진행파는 파형과 에너지가 이동한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-633-c4",
+        "verdict": "correct",
+        "rationale": "“진행파는 입사파와 반사파의 간섭으로 마디와 배가 고정된 파이다.”은 고정된 마디와 배는 정재파의 특성이며 진행파는 파형과 에너지가 이동한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      }
+    ],
+    "misconception": "“진행파는 입사파와 반사파의 간섭으로 마디와 배가 고정된 파이다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1i2liii",
+    "existingBlockId": "summary",
+    "assertionText": "고정된 마디와 배는 정재파의 특성이며 진행파는 파형과 에너지가 이동한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-635",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-635-c2",
+    "directSolution": "정답은 “질량센서”이다. 진동은 변위·속도·가속도 센서로 측정하며 질량센서는 일반적인 진동센서 분류가 아니다. 따라서 “대표적인 진동센서로 보기 어려운 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-635-c1",
+        "verdict": "incorrect",
+        "rationale": "“변위센서”은 “질량센서”을 가리키지 않는다. 진동은 변위·속도·가속도 센서로 측정하며 질량센서는 일반적인 진동센서 분류가 아니다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-635-c2",
+        "verdict": "correct",
+        "rationale": "“질량센서”은 진동은 변위·속도·가속도 센서로 측정하며 질량센서는 일반적인 진동센서 분류가 아니다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-635-c3",
+        "verdict": "incorrect",
+        "rationale": "“속도센서”을 고르면 진동은 변위·속도·가속도 센서로 측정하며 질량센서는 일반적인 진동센서 분류가 아니다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-635-c4",
+        "verdict": "incorrect",
+        "rationale": "“가속도센서”을 고르면 진동은 변위·속도·가속도 센서로 측정하며 질량센서는 일반적인 진동센서 분류가 아니다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“질량센서”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1ckjgj0",
+    "existingBlockId": "principle",
+    "assertionText": "진동은 변위·속도·가속도 센서로 측정하며 질량센서는 일반적인 진동센서 분류가 아니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-636",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-636-c1",
+    "directSolution": "정답은 “dB”이다. 소음레벨은 기준값과의 로그비로 나타내며 데시벨을 사용한다. 따라서 “소음레벨을 나타내는 단위는?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-636-c1",
+        "verdict": "correct",
+        "rationale": "“dB”은 소음레벨은 기준값과의 로그비로 나타내며 데시벨을 사용한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-636-c2",
+        "verdict": "incorrect",
+        "rationale": "“Pa”은 “dB”과 구별되는 항목이다. 소음레벨은 기준값과의 로그비로 나타내며 데시벨을 사용한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-636-c3",
+        "verdict": "incorrect",
+        "rationale": "“W”을 고르면 소음레벨은 기준값과의 로그비로 나타내며 데시벨을 사용한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-636-c4",
+        "verdict": "incorrect",
+        "rationale": "“m/s”을 고르면 소음레벨은 기준값과의 로그비로 나타내며 데시벨을 사용한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“dB”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1xhh0tx",
+    "existingBlockId": "summary",
+    "assertionText": "소음레벨은 기준값과의 로그비로 나타내며 데시벨을 사용한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-637",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-637-c4",
+    "directSolution": "정답은 “삼각파 입력”이다. 과도특성 시험의 대표 기본입력은 계단·임펄스·램프·정현입력 등이다. 따라서 “계측계의 과도응답을 시험하는 대표적인 기본입력으로 보기 어려운 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-637-c1",
+        "verdict": "incorrect",
+        "rationale": "“계단입력”은 “삼각파 입력”을 가리키지 않는다. 과도특성 시험의 대표 기본입력은 계단·임펄스·램프·정현입력 등이다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-637-c2",
+        "verdict": "incorrect",
+        "rationale": "“임펄스입력”은 “삼각파 입력”과 구별되는 항목이다. 과도특성 시험의 대표 기본입력은 계단·임펄스·램프·정현입력 등이다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-637-c3",
+        "verdict": "incorrect",
+        "rationale": "“램프입력”을 고르면 과도특성 시험의 대표 기본입력은 계단·임펄스·램프·정현입력 등이다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-637-c4",
+        "verdict": "correct",
+        "rationale": "“삼각파 입력”은 과도특성 시험의 대표 기본입력은 계단·임펄스·램프·정현입력 등이다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      }
+    ],
+    "misconception": "“삼각파 입력”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-pkqlvm",
+    "existingBlockId": "summary",
+    "assertionText": "과도특성 시험의 대표 기본입력은 계단·임펄스·램프·정현입력 등이다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-638",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-638-c3",
+    "directSolution": "정답은 “팽창실 단면적÷접속덕트 단면적”이다. 단면적이 급격히 커지면서 음향임피던스가 변하고 반사·간섭으로 소음이 감소한다. 따라서 “팽창형 소음기의 팽창비를 나타내는 식은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-638-c1",
+        "verdict": "incorrect",
+        "rationale": "“접속덕트 단면적÷팽창실 단면적”은 “팽창실 단면적÷접속덕트 단면적”을 가리키지 않는다. 단면적이 급격히 커지면서 음향임피던스가 변하고 반사·간섭으로 소음이 감소한다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-638-c2",
+        "verdict": "incorrect",
+        "rationale": "“팽창실 길이÷덕트 길이”은 “팽창실 단면적÷접속덕트 단면적”과 구별되는 항목이다. 단면적이 급격히 커지면서 음향임피던스가 변하고 반사·간섭으로 소음이 감소한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-638-c3",
+        "verdict": "correct",
+        "rationale": "“팽창실 단면적÷접속덕트 단면적”은 단면적이 급격히 커지면서 음향임피던스가 변하고 반사·간섭으로 소음이 감소한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-638-c4",
+        "verdict": "incorrect",
+        "rationale": "“덕트 길이÷팽창실 길이”을 고르면 단면적이 급격히 커지면서 음향임피던스가 변하고 반사·간섭으로 소음이 감소한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“팽창실 단면적÷접속덕트 단면적”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-gqw4k0",
+    "existingBlockId": "summary",
+    "assertionText": "단면적이 급격히 커지면서 음향임피던스가 변하고 반사·간섭으로 소음이 감소한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-639",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-639-c4",
+    "directSolution": "정답은 “회전체 질량중심이 기하학적 중심과 일치하지 않는다.”이다. 질량중심의 편심은 언밸런스 원인이며 정렬불량은 축 중심선의 위치·각도 불일치다. 따라서 “축정렬 불량의 원인으로 가장 거리가 먼 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-639-c1",
+        "verdict": "incorrect",
+        "rationale": "“두 축의 중심선이 평행하게 어긋난다.”은 “회전체 질량중심이 기하학적 중심과 일치하지 않는다.”을 가리키지 않는다. 질량중심의 편심은 언밸런스 원인이며 정렬불량은 축 중심선의 위치·각도 불일치다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-639-c2",
+        "verdict": "incorrect",
+        "rationale": "“두 축의 중심선이 각도를 이룬다.”은 “회전체 질량중심이 기하학적 중심과 일치하지 않는다.”과 구별되는 항목이다. 질량중심의 편심은 언밸런스 원인이며 정렬불량은 축 중심선의 위치·각도 불일치다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-639-c3",
+        "verdict": "incorrect",
+        "rationale": "“커플링 조립과 기초침하로 축 중심이 변한다.”을 고르면 질량중심의 편심은 언밸런스 원인이며 정렬불량은 축 중심선의 위치·각도 불일치다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-639-c4",
+        "verdict": "correct",
+        "rationale": "“회전체 질량중심이 기하학적 중심과 일치하지 않는다.”은 질량중심의 편심은 언밸런스 원인이며 정렬불량은 축 중심선의 위치·각도 불일치다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      }
+    ],
+    "misconception": "“회전체 질량중심이 기하학적 중심과 일치하지 않는다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-9vm8pa",
+    "existingBlockId": "principle",
+    "assertionText": "질량중심의 편심은 언밸런스 원인이며 정렬불량은 축 중심선의 위치·각도 불일치다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-640",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-640-c2",
+    "directSolution": "정답은 “연소실의 유효면적을 줄인다.”이다. 연소실 면적을 줄이면 단위면적당 열부하가 더 커져 과열·불완전연소 위험이 증가할 수 있다. 따라서 “연소설비를 과부하 운전할 때의 대책으로 옳지 않은 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-640-c1",
+        "verdict": "incorrect",
+        "rationale": "“연료 투입량과 공기비를 적정하게 조절한다.”은 “연소실의 유효면적을 줄인다.”을 가리키지 않는다. 연소실 면적을 줄이면 단위면적당 열부하가 더 커져 과열·불완전연소 위험이 증가할 수 있다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-640-c2",
+        "verdict": "correct",
+        "rationale": "“연소실의 유효면적을 줄인다.”은 연소실 면적을 줄이면 단위면적당 열부하가 더 커져 과열·불완전연소 위험이 증가할 수 있다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-640-c3",
+        "verdict": "incorrect",
+        "rationale": "“열부하와 배기가스 상태를 점검한다.”을 고르면 연소실 면적을 줄이면 단위면적당 열부하가 더 커져 과열·불완전연소 위험이 증가할 수 있다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-640-c4",
+        "verdict": "incorrect",
+        "rationale": "“설비 허용부하를 넘지 않도록 운전한다.”을 고르면 연소실 면적을 줄이면 단위면적당 열부하가 더 커져 과열·불완전연소 위험이 증가할 수 있다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“연소실의 유효면적을 줄인다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-17ocpdn",
+    "existingBlockId": "definition",
+    "assertionText": "연소실 면적을 줄이면 단위면적당 열부하가 더 커져 과열·불완전연소 위험이 증가할 수 있다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20140920",
+      "https://cbtbank.kr/exam/de20130928"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-641",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-641-c3",
+    "directSolution": "정답은 “경향검사-열화지연”이다. 경향검사는 열화를 측정·예측하는 활동이며 열화 자체를 지연시키는 직접대책은 아니다. 따라서 “설비 열화대책의 연결로 가장 거리가 먼 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-641-c1",
+        "verdict": "incorrect",
+        "rationale": "“청소·급유-열화방지”은 “경향검사-열화지연”을 가리키지 않는다. 경향검사는 열화를 측정·예측하는 활동이며 열화 자체를 지연시키는 직접대책은 아니다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-641-c2",
+        "verdict": "incorrect",
+        "rationale": "“부품교환-열화회복”은 “경향검사-열화지연”과 구별되는 항목이다. 경향검사는 열화를 측정·예측하는 활동이며 열화 자체를 지연시키는 직접대책은 아니다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-641-c3",
+        "verdict": "correct",
+        "rationale": "“경향검사-열화지연”은 경향검사는 열화를 측정·예측하는 활동이며 열화 자체를 지연시키는 직접대책은 아니다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-641-c4",
+        "verdict": "incorrect",
+        "rationale": "“상태진단-열화측정”을 고르면 경향검사는 열화를 측정·예측하는 활동이며 열화 자체를 지연시키는 직접대책은 아니다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“경향검사-열화지연”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1f09k1e",
+    "existingBlockId": "summary",
+    "assertionText": "경향검사는 열화를 측정·예측하는 활동이며 열화 자체를 지연시키는 직접대책은 아니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-642",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-642-c2",
+    "directSolution": "정답은 “재고금액이 증가한다.”이다. 계획구매는 적정재고와 일괄구매를 통해 긴급구매와 과잉재고를 줄이는 것이 목적이다. 따라서 “보전용 자재의 계획구매 효과로 옳지 않은 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-642-c1",
+        "verdict": "incorrect",
+        "rationale": "“구매단가를 낮출 수 있다.”은 “재고금액이 증가한다.”을 가리키지 않는다. 계획구매는 적정재고와 일괄구매를 통해 긴급구매와 과잉재고를 줄이는 것이 목적이다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-642-c2",
+        "verdict": "correct",
+        "rationale": "“재고금액이 증가한다.”은 계획구매는 적정재고와 일괄구매를 통해 긴급구매와 과잉재고를 줄이는 것이 목적이다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-642-c3",
+        "verdict": "incorrect",
+        "rationale": "“긴급구매를 줄일 수 있다.”을 고르면 계획구매는 적정재고와 일괄구매를 통해 긴급구매와 과잉재고를 줄이는 것이 목적이다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-642-c4",
+        "verdict": "incorrect",
+        "rationale": "“납기와 조달계획을 안정화할 수 있다.”을 고르면 계획구매는 적정재고와 일괄구매를 통해 긴급구매와 과잉재고를 줄이는 것이 목적이다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“재고금액이 증가한다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-ecydr4",
+    "existingBlockId": "summary",
+    "assertionText": "계획구매는 적정재고와 일괄구매를 통해 긴급구매와 과잉재고를 줄이는 것이 목적이다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-643",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-643-c4",
+    "directSolution": "정답은 “기술변화로 부품 종류가 다소 증가한다.”이다. 단순 품목수 증가만으로는 공장·라인의 물리적 설비계획이 반드시 필요한 것은 아니다. 따라서 “설비계획을 새로 수립해야 할 상황으로 가장 거리가 먼 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-643-c1",
+        "verdict": "incorrect",
+        "rationale": "“새 공장을 건설한다.”은 “기술변화로 부품 종류가 다소 증가한다.”을 가리키지 않는다. 단순 품목수 증가만으로는 공장·라인의 물리적 설비계획이 반드시 필요한 것은 아니다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-643-c2",
+        "verdict": "incorrect",
+        "rationale": "“생산능력을 대폭 확장한다.”은 “기술변화로 부품 종류가 다소 증가한다.”과 구별되는 항목이다. 단순 품목수 증가만으로는 공장·라인의 물리적 설비계획이 반드시 필요한 것은 아니다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-643-c3",
+        "verdict": "incorrect",
+        "rationale": "“신제품과 새로운 공정을 도입한다.”을 고르면 단순 품목수 증가만으로는 공장·라인의 물리적 설비계획이 반드시 필요한 것은 아니다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-643-c4",
+        "verdict": "correct",
+        "rationale": "“기술변화로 부품 종류가 다소 증가한다.”은 단순 품목수 증가만으로는 공장·라인의 물리적 설비계획이 반드시 필요한 것은 아니다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      }
+    ],
+    "misconception": "“기술변화로 부품 종류가 다소 증가한다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-o4jlor",
+    "existingBlockId": "summary",
+    "assertionText": "단순 품목수 증가만으로는 공장·라인의 물리적 설비계획이 반드시 필요한 것은 아니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-644",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-644-c2",
+    "directSolution": "정답은 “중점설비와 개선대상을 선정한다.”이다. 먼저 손실이 크고 파급효과가 높은 중점설비·로스를 선정한 뒤 현상과 원인을 분석한다. 따라서 “TPM 개별개선 활동의 첫 단계로 가장 적절한 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-644-c1",
+        "verdict": "incorrect",
+        "rationale": "“대책효과를 표준화한다.”은 “중점설비와 개선대상을 선정한다.”을 가리키지 않는다. 먼저 손실이 크고 파급효과가 높은 중점설비·로스를 선정한 뒤 현상과 원인을 분석한다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-644-c2",
+        "verdict": "correct",
+        "rationale": "“중점설비와 개선대상을 선정한다.”은 먼저 손실이 크고 파급효과가 높은 중점설비·로스를 선정한 뒤 현상과 원인을 분석한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-644-c3",
+        "verdict": "incorrect",
+        "rationale": "“개선 후 수평전개한다.”을 고르면 먼저 손실이 크고 파급효과가 높은 중점설비·로스를 선정한 뒤 현상과 원인을 분석한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-644-c4",
+        "verdict": "incorrect",
+        "rationale": "“경제효과를 최종 확인한다.”을 고르면 먼저 손실이 크고 파급효과가 높은 중점설비·로스를 선정한 뒤 현상과 원인을 분석한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“중점설비와 개선대상을 선정한다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1tjta9z",
+    "existingBlockId": "summary",
+    "assertionText": "먼저 손실이 크고 파급효과가 높은 중점설비·로스를 선정한 뒤 현상과 원인을 분석한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20111002"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-645",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-645-c4",
+    "directSolution": "정답은 “수율저하로스는 정상생산 중 발생하는 공정불량만을 뜻한다.”이다. 수율저하로스는 시동 후 안정조건에 이르기 전의 초기불량·재작업·폐기손실을 포함한다. 따라서 “가공·조립형 설비의 6대 로스에 관한 설명으로 옳지 않은 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-645-c1",
+        "verdict": "incorrect",
+        "rationale": "“고장로스는 돌발정지에 따른 시간손실이다.”은 “수율저하로스는 정상생산 중 발생하는 공정불량만을 뜻한다.”을 가리키지 않는다. 수율저하로스는 시동 후 안정조건에 이르기 전의 초기불량·재작업·폐기손실을 포함한다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-645-c2",
+        "verdict": "incorrect",
+        "rationale": "“준비·조정로스는 품종교환과 조건설정에 따른 손실이다.”은 “수율저하로스는 정상생산 중 발생하는 공정불량만을 뜻한다.”과 구별되는 항목이다. 수율저하로스는 시동 후 안정조건에 이르기 전의 초기불량·재작업·폐기손실을 포함한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-645-c3",
+        "verdict": "incorrect",
+        "rationale": "“속도저하로스는 기준속도와 실제속도의 차이에서 생긴다.”을 고르면 수율저하로스는 시동 후 안정조건에 이르기 전의 초기불량·재작업·폐기손실을 포함한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-645-c4",
+        "verdict": "correct",
+        "rationale": "“수율저하로스는 정상생산 중 발생하는 공정불량만을 뜻한다.”은 수율저하로스는 시동 후 안정조건에 이르기 전의 초기불량·재작업·폐기손실을 포함한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      }
+    ],
+    "misconception": "“수율저하로스는 정상생산 중 발생하는 공정불량만을 뜻한다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-9dx5fp",
+    "existingBlockId": "summary",
+    "assertionText": "수율저하로스는 시동 후 안정조건에 이르기 전의 초기불량·재작업·폐기손실을 포함한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20150919"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-646",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-646-c1",
+    "directSolution": "정답은 “설비고장을 정밀 진단하는 능력만을 의미한다.”이다. 진단은 이상원인 판별능력이고 수리능력은 분해·교환·복구·조립·시험을 수행하는 능력이다. 따라서 “보전작업자의 '수리할 수 있는 능력'으로 보기 어려운 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-646-c1",
+        "verdict": "correct",
+        "rationale": "“설비고장을 정밀 진단하는 능력만을 의미한다.”은 진단은 이상원인 판별능력이고 수리능력은 분해·교환·복구·조립·시험을 수행하는 능력이다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-646-c2",
+        "verdict": "incorrect",
+        "rationale": "“부품을 올바르게 분해·조립한다.”은 “설비고장을 정밀 진단하는 능력만을 의미한다.”과 구별되는 항목이다. 진단은 이상원인 판별능력이고 수리능력은 분해·교환·복구·조립·시험을 수행하는 능력이다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-646-c3",
+        "verdict": "incorrect",
+        "rationale": "“고장부위를 복구하고 시험운전한다.”을 고르면 진단은 이상원인 판별능력이고 수리능력은 분해·교환·복구·조립·시험을 수행하는 능력이다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-646-c4",
+        "verdict": "incorrect",
+        "rationale": "“소모부품의 교환시기와 방법을 안다.”을 고르면 진단은 이상원인 판별능력이고 수리능력은 분해·교환·복구·조립·시험을 수행하는 능력이다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“설비고장을 정밀 진단하는 능력만을 의미한다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-h3bnuv",
+    "existingBlockId": "summary",
+    "assertionText": "진단은 이상원인 판별능력이고 수리능력은 분해·교환·복구·조립·시험을 수행하는 능력이다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-647",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-647-c3",
+    "directSolution": "정답은 “자재표준”이다. 자재표준은 구매·자재관리 영역이고 보전표준은 점검·검사·급유·수리 절차를 중심으로 한다. 따라서 “설비보전 표준에 직접 포함하기 어려운 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-647-c1",
+        "verdict": "incorrect",
+        "rationale": "“검사표준”은 “자재표준”을 가리키지 않는다. 자재표준은 구매·자재관리 영역이고 보전표준은 점검·검사·급유·수리 절차를 중심으로 한다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-647-c2",
+        "verdict": "incorrect",
+        "rationale": "“수리표준”은 “자재표준”과 구별되는 항목이다. 자재표준은 구매·자재관리 영역이고 보전표준은 점검·검사·급유·수리 절차를 중심으로 한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-647-c3",
+        "verdict": "correct",
+        "rationale": "“자재표준”은 자재표준은 구매·자재관리 영역이고 보전표준은 점검·검사·급유·수리 절차를 중심으로 한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-647-c4",
+        "verdict": "incorrect",
+        "rationale": "“급유표준”을 고르면 자재표준은 구매·자재관리 영역이고 보전표준은 점검·검사·급유·수리 절차를 중심으로 한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“자재표준”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-17o46k5",
+    "existingBlockId": "summary",
+    "assertionText": "자재표준은 구매·자재관리 영역이고 보전표준은 점검·검사·급유·수리 절차를 중심으로 한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20161001"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-648",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-648-c4",
+    "directSolution": "정답은 “측정”이다. 생산성 요소는 생산량·품질·원가·납기·안전·의욕 등으로 분류하며 측정은 관리수단이다. 따라서 “생산성의 6대 요소에 포함되지 않는 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-648-c1",
+        "verdict": "incorrect",
+        "rationale": "“생산량”은 “측정”을 가리키지 않는다. 생산성 요소는 생산량·품질·원가·납기·안전·의욕 등으로 분류하며 측정은 관리수단이다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-648-c2",
+        "verdict": "incorrect",
+        "rationale": "“품질”은 “측정”과 구별되는 항목이다. 생산성 요소는 생산량·품질·원가·납기·안전·의욕 등으로 분류하며 측정은 관리수단이다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-648-c3",
+        "verdict": "incorrect",
+        "rationale": "“원가”을 고르면 생산성 요소는 생산량·품질·원가·납기·안전·의욕 등으로 분류하며 측정은 관리수단이다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-648-c4",
+        "verdict": "correct",
+        "rationale": "“측정”은 생산성 요소는 생산량·품질·원가·납기·안전·의욕 등으로 분류하며 측정은 관리수단이다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      }
+    ],
+    "misconception": "“측정”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-16eegvr",
+    "existingBlockId": "summary",
+    "assertionText": "생산성 요소는 생산량·품질·원가·납기·안전·의욕 등으로 분류하며 측정은 관리수단이다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-649",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-649-c1",
+    "directSolution": "정답은 “갱 시스템”이다. 갱 시스템은 복수 기술자가 팀을 구성해 한 작업이나 설비군을 협업하여 보전한다. 따라서 “여러 작업자가 한 조가 되어 설비군의 보전작업을 공동 수행하는 조직방식은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-649-c1",
+        "verdict": "correct",
+        "rationale": "“갱 시스템”은 갱 시스템은 복수 기술자가 팀을 구성해 한 작업이나 설비군을 협업하여 보전한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-649-c2",
+        "verdict": "incorrect",
+        "rationale": "“기능별 배치”은 “갱 시스템”과 구별되는 항목이다. 갱 시스템은 복수 기술자가 팀을 구성해 한 작업이나 설비군을 협업하여 보전한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-649-c3",
+        "verdict": "incorrect",
+        "rationale": "“라인 시스템”을 고르면 갱 시스템은 복수 기술자가 팀을 구성해 한 작업이나 설비군을 협업하여 보전한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-649-c4",
+        "verdict": "incorrect",
+        "rationale": "“개인청부 시스템”을 고르면 갱 시스템은 복수 기술자가 팀을 구성해 한 작업이나 설비군을 협업하여 보전한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“갱 시스템”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-zoxye2",
+    "existingBlockId": "summary",
+    "assertionText": "갱 시스템은 복수 기술자가 팀을 구성해 한 작업이나 설비군을 협업하여 보전한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20150531"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-650",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-650-c1",
+    "directSolution": "정답은 “생산량÷총보전비”이다. 제품 단위당 보전비는 총보전비를 생산량으로 나누어 계산한다. 따라서 “제품 단위당 보전비의 계산식으로 옳지 않은 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-650-c1",
+        "verdict": "correct",
+        "rationale": "“생산량÷총보전비”은 제품 단위당 보전비는 총보전비를 생산량으로 나누어 계산한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-650-c2",
+        "verdict": "incorrect",
+        "rationale": "“총보전비÷생산량”은 “생산량÷총보전비”과 구별되는 항목이다. 제품 단위당 보전비는 총보전비를 생산량으로 나누어 계산한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-650-c3",
+        "verdict": "incorrect",
+        "rationale": "“보전비 원단위로 관리”을 고르면 제품 단위당 보전비는 총보전비를 생산량으로 나누어 계산한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-650-c4",
+        "verdict": "incorrect",
+        "rationale": "“기간별 생산량과 비용을 같은 기준으로 비교”을 고르면 제품 단위당 보전비는 총보전비를 생산량으로 나누어 계산한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“생산량÷총보전비”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-3dpp35",
+    "existingBlockId": "definition",
+    "assertionText": "제품 단위당 보전비는 총보전비를 생산량으로 나누어 계산한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20150531"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-651",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-651-c1",
+    "directSolution": "정답은 “치공구”이다. 지그와 고정구는 공작물을 정확히 고정하고 공구 또는 작업위치를 안내한다. 따라서 “가공물의 위치를 잡고 공구를 안내하여 작업의 반복정밀도를 높이는 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-651-c1",
+        "verdict": "correct",
+        "rationale": "“치공구”은 지그와 고정구는 공작물을 정확히 고정하고 공구 또는 작업위치를 안내한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-651-c2",
+        "verdict": "incorrect",
+        "rationale": "“윤활장치”은 “치공구”과 구별되는 항목이다. 지그와 고정구는 공작물을 정확히 고정하고 공구 또는 작업위치를 안내한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-651-c3",
+        "verdict": "incorrect",
+        "rationale": "“동력전달장치”을 고르면 지그와 고정구는 공작물을 정확히 고정하고 공구 또는 작업위치를 안내한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-651-c4",
+        "verdict": "incorrect",
+        "rationale": "“계측변환기”을 고르면 지그와 고정구는 공작물을 정확히 고정하고 공구 또는 작업위치를 안내한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“치공구”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-11c5ms8",
+    "existingBlockId": "summary",
+    "assertionText": "지그와 고정구는 공작물을 정확히 고정하고 공구 또는 작업위치를 안내한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-652",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-652-c1",
+    "directSolution": "정답은 “설비 성능표준”이다. 성능표준은 능력·정도·속도·품질·에너지효율 등 정상상태의 기준값을 정한다. 따라서 “설비가 정상적으로 발휘해야 하는 능력·정도·효율의 기준은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-652-c1",
+        "verdict": "correct",
+        "rationale": "“설비 성능표준”은 성능표준은 능력·정도·속도·품질·에너지효율 등 정상상태의 기준값을 정한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-652-c2",
+        "verdict": "incorrect",
+        "rationale": "“자재표준”은 “설비 성능표준”과 구별되는 항목이다. 성능표준은 능력·정도·속도·품질·에너지효율 등 정상상태의 기준값을 정한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-652-c3",
+        "verdict": "incorrect",
+        "rationale": "“인사평가표준”을 고르면 성능표준은 능력·정도·속도·품질·에너지효율 등 정상상태의 기준값을 정한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-652-c4",
+        "verdict": "incorrect",
+        "rationale": "“구매계약표준”을 고르면 성능표준은 능력·정도·속도·품질·에너지효율 등 정상상태의 기준값을 정한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“설비 성능표준”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1b2vkkb",
+    "existingBlockId": "summary",
+    "assertionText": "성능표준은 능력·정도·속도·품질·에너지효율 등 정상상태의 기준값을 정한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-658",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-658-c1",
+    "directSolution": "정답은 “불용·진부화 자재가 발생할 가능성이 낮다.”이다. 보전자재는 사용빈도가 낮고 설비변경의 영향을 받아 진부화·불용재고가 발생하기 쉽다. 따라서 “보전용 자재의 특징으로 옳지 않은 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-658-c1",
+        "verdict": "correct",
+        "rationale": "“불용·진부화 자재가 발생할 가능성이 낮다.”은 보전자재는 사용빈도가 낮고 설비변경의 영향을 받아 진부화·불용재고가 발생하기 쉽다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-658-c2",
+        "verdict": "incorrect",
+        "rationale": "“수요시점과 수량을 예측하기 어렵다.”은 “불용·진부화 자재가 발생할 가능성이 낮다.”과 구별되는 항목이다. 보전자재는 사용빈도가 낮고 설비변경의 영향을 받아 진부화·불용재고가 발생하기 쉽다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-658-c3",
+        "verdict": "incorrect",
+        "rationale": "“긴급조달이 필요한 품목이 있다.”을 고르면 보전자재는 사용빈도가 낮고 설비변경의 영향을 받아 진부화·불용재고가 발생하기 쉽다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-658-c4",
+        "verdict": "incorrect",
+        "rationale": "“설비개조·폐기로 불용재고가 생길 수 있다.”을 고르면 보전자재는 사용빈도가 낮고 설비변경의 영향을 받아 진부화·불용재고가 발생하기 쉽다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“불용·진부화 자재가 발생할 가능성이 낮다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-e87mj2",
+    "existingBlockId": "definition",
+    "assertionText": "보전자재는 사용빈도가 낮고 설비변경의 영향을 받아 진부화·불용재고가 발생하기 쉽다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-663",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-663-c2",
+    "directSolution": "정답은 “설비보전 표준”이다. 보전표준은 누가·언제·어디서·무엇을·어떻게 점검·수리할지와 허용기준을 정한다. 따라서 “설비의 점검·급유·수리방법과 판정기준을 문서화한 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-663-c1",
+        "verdict": "incorrect",
+        "rationale": "“제품검사규격만”은 “설비보전 표준”을 가리키지 않는다. 보전표준은 누가·언제·어디서·무엇을·어떻게 점검·수리할지와 허용기준을 정한다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-663-c2",
+        "verdict": "correct",
+        "rationale": "“설비보전 표준”은 보전표준은 누가·언제·어디서·무엇을·어떻게 점검·수리할지와 허용기준을 정한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-663-c3",
+        "verdict": "incorrect",
+        "rationale": "“인사평가표”을 고르면 보전표준은 누가·언제·어디서·무엇을·어떻게 점검·수리할지와 허용기준을 정한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-663-c4",
+        "verdict": "incorrect",
+        "rationale": "“판매계획”을 고르면 보전표준은 누가·언제·어디서·무엇을·어떻게 점검·수리할지와 허용기준을 정한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“설비보전 표준”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-17o46k5",
+    "existingBlockId": "principle",
+    "assertionText": "보전표준은 누가·언제·어디서·무엇을·어떻게 점검·수리할지와 허용기준을 정한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-668",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-668-c1",
+    "directSolution": "정답은 “리징”이다. 리징은 치면에 평행한 미세한 융기와 홈이 형성되는 표면손상이다. 따라서 “기어 치면에 진행방향과 나란한 가는 홈이 줄지어 나타나는 손상은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-668-c1",
+        "verdict": "correct",
+        "rationale": "“리징”은 리징은 치면에 평행한 미세한 융기와 홈이 형성되는 표면손상이다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-668-c2",
+        "verdict": "incorrect",
+        "rationale": "“피팅”은 “리징”과 구별되는 항목이다. 리징은 치면에 평행한 미세한 융기와 홈이 형성되는 표면손상이다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-668-c3",
+        "verdict": "incorrect",
+        "rationale": "“스코어링”을 고르면 리징은 치면에 평행한 미세한 융기와 홈이 형성되는 표면손상이다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-668-c4",
+        "verdict": "incorrect",
+        "rationale": "“스폴링”을 고르면 리징은 치면에 평행한 미세한 융기와 홈이 형성되는 표면손상이다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“리징”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1dv0h9u",
+    "existingBlockId": "summary",
+    "assertionText": "리징은 치면에 평행한 미세한 융기와 홈이 형성되는 표면손상이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-669",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-669-c4",
+    "directSolution": "정답은 “급유가 어렵고 밀봉작업이 필요하다.”이다. 급유장치와 밀봉이 필요한 점은 오일윤활의 단점이다. 따라서 “그리스윤활과 비교한 오일윤활의 장점이 아닌 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-669-c1",
+        "verdict": "incorrect",
+        "rationale": "“윤활유 교환과 오염제거가 비교적 쉽다.”은 “급유가 어렵고 밀봉작업이 필요하다.”을 가리키지 않는다. 급유장치와 밀봉이 필요한 점은 오일윤활의 단점이다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-669-c2",
+        "verdict": "incorrect",
+        "rationale": "“냉각효과가 좋다.”은 “급유가 어렵고 밀봉작업이 필요하다.”과 구별되는 항목이다. 급유장치와 밀봉이 필요한 점은 오일윤활의 단점이다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-669-c3",
+        "verdict": "incorrect",
+        "rationale": "“고속회전에 사용할 수 있다.”을 고르면 급유장치와 밀봉이 필요한 점은 오일윤활의 단점이다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-669-c4",
+        "verdict": "correct",
+        "rationale": "“급유가 어렵고 밀봉작업이 필요하다.”은 급유장치와 밀봉이 필요한 점은 오일윤활의 단점이다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      }
+    ],
+    "misconception": "“급유가 어렵고 밀봉작업이 필요하다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-13v8m2m",
+    "existingBlockId": "summary",
+    "assertionText": "급유장치와 밀봉이 필요한 점은 오일윤활의 단점이다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-670",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-670-c4",
+    "directSolution": "정답은 “점도지수 향상제”이다. 고분자계 VI 향상제는 고온에서 점도가 지나치게 낮아지는 것을 줄여 넓은 온도범위에서 사용할 수 있게 한다. 따라서 “온도변화가 큰 옥외 유압시스템에서 작동유의 점도변화를 줄이기 위해 사용하는 첨가제는?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-670-c1",
+        "verdict": "incorrect",
+        "rationale": "“방청제”은 “점도지수 향상제”을 가리키지 않는다. 고분자계 VI 향상제는 고온에서 점도가 지나치게 낮아지는 것을 줄여 넓은 온도범위에서 사용할 수 있게 한다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-670-c2",
+        "verdict": "incorrect",
+        "rationale": "“내마모제”은 “점도지수 향상제”과 구별되는 항목이다. 고분자계 VI 향상제는 고온에서 점도가 지나치게 낮아지는 것을 줄여 넓은 온도범위에서 사용할 수 있게 한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-670-c3",
+        "verdict": "incorrect",
+        "rationale": "“소포제”을 고르면 고분자계 VI 향상제는 고온에서 점도가 지나치게 낮아지는 것을 줄여 넓은 온도범위에서 사용할 수 있게 한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-670-c4",
+        "verdict": "correct",
+        "rationale": "“점도지수 향상제”은 고분자계 VI 향상제는 고온에서 점도가 지나치게 낮아지는 것을 줄여 넓은 온도범위에서 사용할 수 있게 한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      }
+    ],
+    "misconception": "“점도지수 향상제”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-lqb211",
+    "existingBlockId": "summary",
+    "assertionText": "고분자계 VI 향상제는 고온에서 점도가 지나치게 낮아지는 것을 줄여 넓은 온도범위에서 사용할 수 있게 한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20140920"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-671",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-671-c4",
+    "directSolution": "정답은 “보전비 절감”이다. 적정 윤활은 고장·마모·에너지손실과 부품교환을 줄여 총보전비를 낮춘다. 따라서 “윤활관리 개선으로 기대할 수 있는 대표적인 경제효과는?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-671-c1",
+        "verdict": "incorrect",
+        "rationale": "“마찰손실 증가”은 “보전비 절감”을 가리키지 않는다. 적정 윤활은 고장·마모·에너지손실과 부품교환을 줄여 총보전비를 낮춘다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-671-c2",
+        "verdict": "incorrect",
+        "rationale": "“설비수명 단축”은 “보전비 절감”과 구별되는 항목이다. 적정 윤활은 고장·마모·에너지손실과 부품교환을 줄여 총보전비를 낮춘다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-671-c3",
+        "verdict": "incorrect",
+        "rationale": "“윤활사고 증가”을 고르면 적정 윤활은 고장·마모·에너지손실과 부품교환을 줄여 총보전비를 낮춘다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-671-c4",
+        "verdict": "correct",
+        "rationale": "“보전비 절감”은 적정 윤활은 고장·마모·에너지손실과 부품교환을 줄여 총보전비를 낮춘다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      }
+    ],
+    "misconception": "“보전비 절감”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1a2yzw8",
+    "existingBlockId": "summary",
+    "assertionText": "적정 윤활은 고장·마모·에너지손실과 부품교환을 줄여 총보전비를 낮춘다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-672",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-672-c3",
+    "directSolution": "정답은 “그리스 니플”이다. 그리스 니플은 급유구·부속품이고 그 자체가 공급방식은 아니다. 따라서 “그리스를 공급하는 급유방식으로 보기 어려운 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-672-c1",
+        "verdict": "incorrect",
+        "rationale": "“그리스컵”은 “그리스 니플”을 가리키지 않는다. 그리스 니플은 급유구·부속품이고 그 자체가 공급방식은 아니다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-672-c2",
+        "verdict": "incorrect",
+        "rationale": "“그리스건”은 “그리스 니플”과 구별되는 항목이다. 그리스 니플은 급유구·부속품이고 그 자체가 공급방식은 아니다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-672-c3",
+        "verdict": "correct",
+        "rationale": "“그리스 니플”은 그리스 니플은 급유구·부속품이고 그 자체가 공급방식은 아니다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-672-c4",
+        "verdict": "incorrect",
+        "rationale": "“중앙집중 그리스급유”을 고르면 그리스 니플은 급유구·부속품이고 그 자체가 공급방식은 아니다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“그리스 니플”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-19egevu",
+    "existingBlockId": "summary",
+    "assertionText": "그리스 니플은 급유구·부속품이고 그 자체가 공급방식은 아니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-673",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-673-c3",
+    "directSolution": "정답은 “공기 중 산소를 흡수하는 현상”이다. 산소와의 반응은 산화현상이고 탄화는 고온에서 열분해되어 탄소질 잔사가 생기는 현상이다. 따라서 “윤활유의 탄화현상과 직접 관련이 가장 적은 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-673-c1",
+        "verdict": "incorrect",
+        "rationale": "“고온열분해”은 “공기 중 산소를 흡수하는 현상”을 가리키지 않는다. 산소와의 반응은 산화현상이고 탄화는 고온에서 열분해되어 탄소질 잔사가 생기는 현상이다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-673-c2",
+        "verdict": "incorrect",
+        "rationale": "“탄소질 침전물 생성”은 “공기 중 산소를 흡수하는 현상”과 구별되는 항목이다. 산소와의 반응은 산화현상이고 탄화는 고온에서 열분해되어 탄소질 잔사가 생기는 현상이다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-673-c3",
+        "verdict": "correct",
+        "rationale": "“공기 중 산소를 흡수하는 현상”은 산소와의 반응은 산화현상이고 탄화는 고온에서 열분해되어 탄소질 잔사가 생기는 현상이다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-673-c4",
+        "verdict": "incorrect",
+        "rationale": "“국부과열”을 고르면 산소와의 반응은 산화현상이고 탄화는 고온에서 열분해되어 탄소질 잔사가 생기는 현상이다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“공기 중 산소를 흡수하는 현상”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-16ke1ln",
+    "existingBlockId": "summary",
+    "assertionText": "산소와의 반응은 산화현상이고 탄화는 고온에서 열분해되어 탄소질 잔사가 생기는 현상이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20150919"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-674",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-674-c2",
+    "directSolution": "정답은 “소포성”이다. 기포는 펌프흡입불량·유막파괴·산화를 유발하므로 오일은 공기를 빠르게 방출해야 한다. 따라서 “윤활유에서 발생한 기포가 빨리 사라지도록 요구되는 성질은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-674-c1",
+        "verdict": "incorrect",
+        "rationale": "“유화성”은 “소포성”을 가리키지 않는다. 기포는 펌프흡입불량·유막파괴·산화를 유발하므로 오일은 공기를 빠르게 방출해야 한다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-674-c2",
+        "verdict": "correct",
+        "rationale": "“소포성”은 기포는 펌프흡입불량·유막파괴·산화를 유발하므로 오일은 공기를 빠르게 방출해야 한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-674-c3",
+        "verdict": "incorrect",
+        "rationale": "“점착성”을 고르면 기포는 펌프흡입불량·유막파괴·산화를 유발하므로 오일은 공기를 빠르게 방출해야 한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-674-c4",
+        "verdict": "incorrect",
+        "rationale": "“증발성”을 고르면 기포는 펌프흡입불량·유막파괴·산화를 유발하므로 오일은 공기를 빠르게 방출해야 한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“소포성”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-9rxoda",
+    "existingBlockId": "summary",
+    "assertionText": "기포는 펌프흡입불량·유막파괴·산화를 유발하므로 오일은 공기를 빠르게 방출해야 한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20150919",
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-675",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-675-c1",
+    "directSolution": "정답은 “점도지수가 낮아야 한다.”이다. 운전온도 변화에도 점도를 유지하도록 점도지수가 높은 윤활유가 유리하다. 따라서 “왕복동 압축기 윤활유가 갖추어야 할 성질로 옳지 않은 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-675-c1",
+        "verdict": "correct",
+        "rationale": "“점도지수가 낮아야 한다.”은 운전온도 변화에도 점도를 유지하도록 점도지수가 높은 윤활유가 유리하다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-675-c2",
+        "verdict": "incorrect",
+        "rationale": "“산화안정성이 좋아야 한다.”은 “점도지수가 낮아야 한다.”과 구별되는 항목이다. 운전온도 변화에도 점도를 유지하도록 점도지수가 높은 윤활유가 유리하다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-675-c3",
+        "verdict": "incorrect",
+        "rationale": "“적정 점도와 유막강도를 가져야 한다.”을 고르면 운전온도 변화에도 점도를 유지하도록 점도지수가 높은 윤활유가 유리하다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-675-c4",
+        "verdict": "incorrect",
+        "rationale": "“탄화물 생성이 적고 부식방지성이 좋아야 한다.”을 고르면 운전온도 변화에도 점도를 유지하도록 점도지수가 높은 윤활유가 유리하다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“점도지수가 낮아야 한다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1qm7m2d",
+    "existingBlockId": "summary",
+    "assertionText": "운전온도 변화에도 점도를 유지하도록 점도지수가 높은 윤활유가 유리하다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-676",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-676-c3",
+    "directSolution": "정답은 “유성향상제”이다. 극성분자가 금속표면에 흡착막을 형성해 저·중하중 경계윤활성을 높인다. 따라서 “금속표면에 잘 흡착하여 경계윤활에서 마찰을 줄이는 첨가제는?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-676-c1",
+        "verdict": "incorrect",
+        "rationale": "“소포제”은 “유성향상제”을 가리키지 않는다. 극성분자가 금속표면에 흡착막을 형성해 저·중하중 경계윤활성을 높인다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-676-c2",
+        "verdict": "incorrect",
+        "rationale": "“점도지수향상제”은 “유성향상제”과 구별되는 항목이다. 극성분자가 금속표면에 흡착막을 형성해 저·중하중 경계윤활성을 높인다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-676-c3",
+        "verdict": "correct",
+        "rationale": "“유성향상제”은 극성분자가 금속표면에 흡착막을 형성해 저·중하중 경계윤활성을 높인다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-676-c4",
+        "verdict": "incorrect",
+        "rationale": "“유동점강하제”을 고르면 극성분자가 금속표면에 흡착막을 형성해 저·중하중 경계윤활성을 높인다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“유성향상제”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1sjxwyq",
+    "existingBlockId": "summary",
+    "assertionText": "극성분자가 금속표면에 흡착막을 형성해 저·중하중 경계윤활성을 높인다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20150919"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-677",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-677-c2",
+    "directSolution": "정답은 “계수법”이다. 자동입자계수기 또는 현미경으로 규정 체적당 입자수와 크기분포를 측정한다. 따라서 “일정 체적의 오일 속 입자를 크기별로 세어 오염도를 평가하는 방법은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-677-c1",
+        "verdict": "incorrect",
+        "rationale": "“중량법”은 “계수법”을 가리키지 않는다. 자동입자계수기 또는 현미경으로 규정 체적당 입자수와 크기분포를 측정한다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-677-c2",
+        "verdict": "correct",
+        "rationale": "“계수법”은 자동입자계수기 또는 현미경으로 규정 체적당 입자수와 크기분포를 측정한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-677-c3",
+        "verdict": "incorrect",
+        "rationale": "“색상법”을 고르면 자동입자계수기 또는 현미경으로 규정 체적당 입자수와 크기분포를 측정한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-677-c4",
+        "verdict": "incorrect",
+        "rationale": "“인화점시험”을 고르면 자동입자계수기 또는 현미경으로 규정 체적당 입자수와 크기분포를 측정한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“계수법”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1gegjb9",
+    "existingBlockId": "definition",
+    "assertionText": "자동입자계수기 또는 현미경으로 규정 체적당 입자수와 크기분포를 측정한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-678",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-678-c1",
+    "directSolution": "정답은 “수분 증가-고형입자 오염만의 결과”이다. 수분 증가는 외부누수·응축·열교환기 누설 등과 관련되며 고형입자 오염만의 결과가 아니다. 따라서 “윤활고장 현상과 원인의 연결로 옳지 않은 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-678-c1",
+        "verdict": "correct",
+        "rationale": "“수분 증가-고형입자 오염만의 결과”은 수분 증가는 외부누수·응축·열교환기 누설 등과 관련되며 고형입자 오염만의 결과가 아니다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-678-c2",
+        "verdict": "incorrect",
+        "rationale": "“수분 혼입-유화·부식”은 “수분 증가-고형입자 오염만의 결과”과 구별되는 항목이다. 수분 증가는 외부누수·응축·열교환기 누설 등과 관련되며 고형입자 오염만의 결과가 아니다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-678-c3",
+        "verdict": "incorrect",
+        "rationale": "“고형입자 혼입-마모·밸브고착”을 고르면 수분 증가는 외부누수·응축·열교환기 누설 등과 관련되며 고형입자 오염만의 결과가 아니다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-678-c4",
+        "verdict": "incorrect",
+        "rationale": "“점도저하-내부누설과 유막부족”을 고르면 수분 증가는 외부누수·응축·열교환기 누설 등과 관련되며 고형입자 오염만의 결과가 아니다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“수분 증가-고형입자 오염만의 결과”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-res044",
+    "existingBlockId": "definition",
+    "assertionText": "수분 증가는 외부누수·응축·열교환기 누설 등과 관련되며 고형입자 오염만의 결과가 아니다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180915"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-689",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-689-c1",
+    "directSolution": "정답은 “MTBF”이다. MTBF는 Mean Time Between Failures로 수리 가능한 설비의 평균고장간격이다. 따라서 “수리 가능한 설비에서 고장과 다음 고장 사이의 평균 가동시간은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-689-c1",
+        "verdict": "correct",
+        "rationale": "“MTBF”은 MTBF는 Mean Time Between Failures로 수리 가능한 설비의 평균고장간격이다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-689-c2",
+        "verdict": "incorrect",
+        "rationale": "“MTTR”은 “MTBF”과 구별되는 항목이다. MTBF는 Mean Time Between Failures로 수리 가능한 설비의 평균고장간격이다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-689-c3",
+        "verdict": "incorrect",
+        "rationale": "“MTTF”을 고르면 MTBF는 Mean Time Between Failures로 수리 가능한 설비의 평균고장간격이다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-689-c4",
+        "verdict": "incorrect",
+        "rationale": "“가용도”을 고르면 MTBF는 Mean Time Between Failures로 수리 가능한 설비의 평균고장간격이다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“MTBF”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1hicr8y",
+    "existingBlockId": "summary",
+    "assertionText": "MTBF는 Mean Time Between Failures로 수리 가능한 설비의 평균고장간격이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180915",
+      "https://cbtbank.kr/exam/de20150531"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-696",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-696-c2",
+    "directSolution": "정답은 “음의 세기”이다. 음의 세기 I는 단위면적당 음향파워이며 단위는 W/m²이다. 따라서 “음의 진행방향에 수직인 단위면적을 단위시간에 통과하는 음에너지는?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-696-c1",
+        "verdict": "incorrect",
+        "rationale": "“음압”은 “음의 세기”을 가리키지 않는다. 음의 세기 I는 단위면적당 음향파워이며 단위는 W/m²이다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-696-c2",
+        "verdict": "correct",
+        "rationale": "“음의 세기”은 음의 세기 I는 단위면적당 음향파워이며 단위는 W/m²이다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-696-c3",
+        "verdict": "incorrect",
+        "rationale": "“음향파워”을 고르면 음의 세기 I는 단위면적당 음향파워이며 단위는 W/m²이다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-696-c4",
+        "verdict": "incorrect",
+        "rationale": "“음의 지향성”을 고르면 음의 세기 I는 단위면적당 음향파워이며 단위는 W/m²이다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“음의 세기”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-27mw9x",
+    "existingBlockId": "summary",
+    "assertionText": "음의 세기 I는 단위면적당 음향파워이며 단위는 W/m²이다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180428",
+      "https://cbtbank.kr/exam/de20150531",
+      "https://cbtbank.kr/exam/de20111002",
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-697",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-697-c2",
+    "directSolution": "정답은 “변위”이다. 진동변위는 진동체의 위치변화를 나타내며 피크·피크투피크 등으로 표시한다. 따라서 “진동의 상한과 하한 사이 거리 또는 중립점에서 최대위치까지의 거리를 나타내는 물리량은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-697-c1",
+        "verdict": "incorrect",
+        "rationale": "“속도”은 “변위”을 가리키지 않는다. 진동변위는 진동체의 위치변화를 나타내며 피크·피크투피크 등으로 표시한다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-697-c2",
+        "verdict": "correct",
+        "rationale": "“변위”은 진동변위는 진동체의 위치변화를 나타내며 피크·피크투피크 등으로 표시한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-697-c3",
+        "verdict": "incorrect",
+        "rationale": "“주파수”을 고르면 진동변위는 진동체의 위치변화를 나타내며 피크·피크투피크 등으로 표시한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-697-c4",
+        "verdict": "incorrect",
+        "rationale": "“가속도”을 고르면 진동변위는 진동체의 위치변화를 나타내며 피크·피크투피크 등으로 표시한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“변위”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-xhgai0",
+    "existingBlockId": "summary",
+    "assertionText": "진동변위는 진동체의 위치변화를 나타내며 피크·피크투피크 등으로 표시한다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180428"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-700",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-700-c4",
+    "directSolution": "정답은 “방진구 설치”이다. 흡음·차음·댐핑은 소음저감 원리이고 방진구는 주로 구조진동 전달을 줄이는 요소다. 따라서 “기출에서 기본적인 소음 방지법으로 분류되지 않은 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-700-c1",
+        "verdict": "incorrect",
+        "rationale": "“흡음”은 “방진구 설치”을 가리키지 않는다. 흡음·차음·댐핑은 소음저감 원리이고 방진구는 주로 구조진동 전달을 줄이는 요소다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-700-c2",
+        "verdict": "incorrect",
+        "rationale": "“차음”은 “방진구 설치”과 구별되는 항목이다. 흡음·차음·댐핑은 소음저감 원리이고 방진구는 주로 구조진동 전달을 줄이는 요소다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-700-c3",
+        "verdict": "incorrect",
+        "rationale": "“진동댐핑”을 고르면 흡음·차음·댐핑은 소음저감 원리이고 방진구는 주로 구조진동 전달을 줄이는 요소다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-700-c4",
+        "verdict": "correct",
+        "rationale": "“방진구 설치”은 흡음·차음·댐핑은 소음저감 원리이고 방진구는 주로 구조진동 전달을 줄이는 요소다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      }
+    ],
+    "misconception": "“방진구 설치”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-b07nev",
+    "existingBlockId": "summary",
+    "assertionText": "흡음·차음·댐핑은 소음저감 원리이고 방진구는 주로 구조진동 전달을 줄이는 요소다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180428"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-701",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-701-c2",
+    "directSolution": "정답은 “정밀진단기술”이다. 정밀진단은 스펙트럼·위상·오일분석 등 전문기법으로 이상원인을 상세히 판정한다. 따라서 “전문기술부서에서 고급계측과 해석으로 설비 이상원인과 위치를 규명하는 기술은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-701-c1",
+        "verdict": "incorrect",
+        "rationale": "“간이진단기술”은 “정밀진단기술”을 가리키지 않는다. 정밀진단은 스펙트럼·위상·오일분석 등 전문기법으로 이상원인을 상세히 판정한다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-701-c2",
+        "verdict": "correct",
+        "rationale": "“정밀진단기술”은 정밀진단은 스펙트럼·위상·오일분석 등 전문기법으로 이상원인을 상세히 판정한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-701-c3",
+        "verdict": "incorrect",
+        "rationale": "“고장수리기술”을 고르면 정밀진단은 스펙트럼·위상·오일분석 등 전문기법으로 이상원인을 상세히 판정한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-701-c4",
+        "verdict": "incorrect",
+        "rationale": "“단순 동작확인”을 고르면 정밀진단은 스펙트럼·위상·오일분석 등 전문기법으로 이상원인을 상세히 판정한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“정밀진단기술”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1mvl1jm",
+    "existingBlockId": "summary",
+    "assertionText": "정밀진단은 스펙트럼·위상·오일분석 등 전문기법으로 이상원인을 상세히 판정한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180428",
+      "https://cbtbank.kr/exam/de20161001",
+      "https://cbtbank.kr/exam/de20120915"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-702",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-702-c4",
+    "directSolution": "정답은 “실드선을 사용한다.”이다. 도전성 실드는 외부 전기장을 차폐하고 규정된 한 점에 접지하여 유도잡음을 줄인다. 따라서 “정전유도에 의한 계측신호 노이즈를 줄이는 대표적인 방법은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-702-c1",
+        "verdict": "incorrect",
+        "rationale": "“연선만 사용한다.”은 “실드선을 사용한다.”을 가리키지 않는다. 도전성 실드는 외부 전기장을 차폐하고 규정된 한 점에 접지하여 유도잡음을 줄인다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-702-c2",
+        "verdict": "incorrect",
+        "rationale": "“비금속관만 사용한다.”은 “실드선을 사용한다.”과 구별되는 항목이다. 도전성 실드는 외부 전기장을 차폐하고 규정된 한 점에 접지하여 유도잡음을 줄인다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-702-c3",
+        "verdict": "incorrect",
+        "rationale": "“신호필터만 사용한다.”을 고르면 도전성 실드는 외부 전기장을 차폐하고 규정된 한 점에 접지하여 유도잡음을 줄인다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-702-c4",
+        "verdict": "correct",
+        "rationale": "“실드선을 사용한다.”은 도전성 실드는 외부 전기장을 차폐하고 규정된 한 점에 접지하여 유도잡음을 줄인다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      }
+    ],
+    "misconception": "“실드선을 사용한다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1ifq962",
+    "existingBlockId": "summary",
+    "assertionText": "도전성 실드는 외부 전기장을 차폐하고 규정된 한 점에 접지하여 유도잡음을 줄인다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180428"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-703",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-703-c3",
+    "directSolution": "정답은 “2단 방진계를 사용한다.”이다. 2단 절연계는 두 고유진동수와 중간질량을 이용해 특정 고주파 전달률을 더 낮출 수 있다. 따라서 “기출의 진동방지 분류에서 고주파 진동 차단에 가장 효과적인 것으로 제시된 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-703-c1",
+        "verdict": "incorrect",
+        "rationale": "“기초진동만 제어한다.”은 “2단 방진계를 사용한다.”을 가리키지 않는다. 2단 절연계는 두 고유진동수와 중간질량을 이용해 특정 고주파 전달률을 더 낮출 수 있다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-703-c2",
+        "verdict": "incorrect",
+        "rationale": "“단일 방진기만 사용한다.”은 “2단 방진계를 사용한다.”과 구별되는 항목이다. 2단 절연계는 두 고유진동수와 중간질량을 이용해 특정 고주파 전달률을 더 낮출 수 있다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-703-c3",
+        "verdict": "correct",
+        "rationale": "“2단 방진계를 사용한다.”은 2단 절연계는 두 고유진동수와 중간질량을 이용해 특정 고주파 전달률을 더 낮출 수 있다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-703-c4",
+        "verdict": "incorrect",
+        "rationale": "“질량이 큰 거더만 사용한다.”을 고르면 2단 절연계는 두 고유진동수와 중간질량을 이용해 특정 고주파 전달률을 더 낮출 수 있다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“2단 방진계를 사용한다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-8pjdic",
+    "existingBlockId": "summary",
+    "assertionText": "2단 절연계는 두 고유진동수와 중간질량을 이용해 특정 고주파 전달률을 더 낮출 수 있다.",
+    "evidenceUrls": ["https://cbtbank.kr/exam/de20180428"],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-704",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-704-c1",
+    "directSolution": "정답은 “압전기식”이다. 압전식은 응력에 따른 전하를 검출하고 나머지는 탄성체 변위를 이용한다. 따라서 “탄성체의 기계적 변형을 이용하는 압력계에 속하지 않는 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-704-c1",
+        "verdict": "correct",
+        "rationale": "“압전기식”은 압전식은 응력에 따른 전하를 검출하고 나머지는 탄성체 변위를 이용한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-704-c2",
+        "verdict": "incorrect",
+        "rationale": "“벨로스식”은 “압전기식”과 구별되는 항목이다. 압전식은 응력에 따른 전하를 검출하고 나머지는 탄성체 변위를 이용한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-704-c3",
+        "verdict": "incorrect",
+        "rationale": "“부르동관식”을 고르면 압전식은 응력에 따른 전하를 검출하고 나머지는 탄성체 변위를 이용한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-704-c4",
+        "verdict": "incorrect",
+        "rationale": "“다이어프램식”을 고르면 압전식은 응력에 따른 전하를 검출하고 나머지는 탄성체 변위를 이용한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“압전기식”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-132s7yd",
+    "existingBlockId": "summary",
+    "assertionText": "압전식은 응력에 따른 전하를 검출하고 나머지는 탄성체 변위를 이용한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180428",
+      "https://cbtbank.kr/exam/de20150531"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-705",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-705-c1",
+    "directSolution": "정답은 “공명”이다. 한 진동체가 방사한 가진주파수가 다른 진동체의 고유진동수와 일치하여 진폭이 증가한다. 따라서 “고유진동수가 같은 두 진동체 중 한쪽을 울렸을 때 다른 쪽도 진동하는 현상은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-705-c1",
+        "verdict": "correct",
+        "rationale": "“공명”은 한 진동체가 방사한 가진주파수가 다른 진동체의 고유진동수와 일치하여 진폭이 증가한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-705-c2",
+        "verdict": "incorrect",
+        "rationale": "“서징”은 “공명”과 구별되는 항목이다. 한 진동체가 방사한 가진주파수가 다른 진동체의 고유진동수와 일치하여 진폭이 증가한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-705-c3",
+        "verdict": "incorrect",
+        "rationale": "“음압도”을 고르면 한 진동체가 방사한 가진주파수가 다른 진동체의 고유진동수와 일치하여 진폭이 증가한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-705-c4",
+        "verdict": "incorrect",
+        "rationale": "“캐비테이션”을 고르면 한 진동체가 방사한 가진주파수가 다른 진동체의 고유진동수와 일치하여 진폭이 증가한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“공명”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1am3njx",
+    "existingBlockId": "summary",
+    "assertionText": "한 진동체가 방사한 가진주파수가 다른 진동체의 고유진동수와 일치하여 진폭이 증가한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180428",
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-706",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-706-c4",
+    "directSolution": "정답은 “제품중심 매트릭스 조직”이다. 제품 또는 프로젝트 책임축과 전문기능축을 동시에 두는 매트릭스 형태다. 따라서 “제품별 책임조직과 기능별 전문조직을 교차 운영하는 설비관리 조직은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-706-c1",
+        "verdict": "incorrect",
+        "rationale": "“설계보증 조직”은 “제품중심 매트릭스 조직”을 가리키지 않는다. 제품 또는 프로젝트 책임축과 전문기능축을 동시에 두는 매트릭스 형태다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-706-c2",
+        "verdict": "incorrect",
+        "rationale": "“제품중심 단일조직”은 “제품중심 매트릭스 조직”과 구별되는 항목이다. 제품 또는 프로젝트 책임축과 전문기능축을 동시에 두는 매트릭스 형태다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-706-c3",
+        "verdict": "incorrect",
+        "rationale": "“기능중심 단일조직”을 고르면 제품 또는 프로젝트 책임축과 전문기능축을 동시에 두는 매트릭스 형태다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-706-c4",
+        "verdict": "correct",
+        "rationale": "“제품중심 매트릭스 조직”은 제품 또는 프로젝트 책임축과 전문기능축을 동시에 두는 매트릭스 형태다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      }
+    ],
+    "misconception": "“제품중심 매트릭스 조직”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1rpd5bq",
+    "existingBlockId": "summary",
+    "assertionText": "제품 또는 프로젝트 책임축과 전문기능축을 동시에 두는 매트릭스 형태다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180428",
+      "https://cbtbank.kr/exam/de20150919",
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-707",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-707-c2",
+    "directSolution": "정답은 “복잡하고 불균형한 형상으로 만든다.”이다. 치공구는 단순·경량·균형·강성·안전성과 작업성을 확보해야 한다. 따라서 “치공구 설계의 일반원칙으로 옳지 않은 것은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-707-c1",
+        "verdict": "incorrect",
+        "rationale": "“구조를 단순화한다.”은 “복잡하고 불균형한 형상으로 만든다.”을 가리키지 않는다. 치공구는 단순·경량·균형·강성·안전성과 작업성을 확보해야 한다. 따라서 이 보기는 문항의 핵심 판단 기준을 충족하지 못한다."
+      },
+      {
+        "choiceId": "U-707-c2",
+        "verdict": "correct",
+        "rationale": "“복잡하고 불균형한 형상으로 만든다.”은 치공구는 단순·경량·균형·강성·안전성과 작업성을 확보해야 한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-707-c3",
+        "verdict": "incorrect",
+        "rationale": "“충분한 강성과 반복정밀도를 확보한다.”을 고르면 치공구는 단순·경량·균형·강성·안전성과 작업성을 확보해야 한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-707-c4",
+        "verdict": "incorrect",
+        "rationale": "“가공물의 탈착과 칩 배출을 쉽게 한다.”을 고르면 치공구는 단순·경량·균형·강성·안전성과 작업성을 확보해야 한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“복잡하고 불균형한 형상으로 만든다.”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-txxyhs",
+    "existingBlockId": "summary",
+    "assertionText": "치공구는 단순·경량·균형·강성·안전성과 작업성을 확보해야 한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180428",
+      "https://cbtbank.kr/exam/de20140920",
+      "https://cbtbank.co.kr/exam/de20060910"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-708",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-708-c1",
+    "directSolution": "정답은 “고장로스”이다. 설비가 고장으로 정지해 생산하지 못하는 시간을 고장로스라 한다. 따라서 “돌발적 또는 만성적인 설비고장 때문에 발생하는 시간손실은?”에서는 이 정의·작용·조건에 맞는 보기를 선택한다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-708-c1",
+        "verdict": "correct",
+        "rationale": "“고장로스”은 설비가 고장으로 정지해 생산하지 못하는 시간을 고장로스라 한다. 이 문항이 묻는 핵심 성질·작용·조건과 일치하므로 정답이다."
+      },
+      {
+        "choiceId": "U-708-c2",
+        "verdict": "incorrect",
+        "rationale": "“속도저하로스”은 “고장로스”과 구별되는 항목이다. 설비가 고장으로 정지해 생산하지 못하는 시간을 고장로스라 한다.에 비추어 이 보기의 정의·측정대상·기능은 일치하지 않는다."
+      },
+      {
+        "choiceId": "U-708-c3",
+        "verdict": "incorrect",
+        "rationale": "“수율저하로스”을 고르면 설비가 고장으로 정지해 생산하지 못하는 시간을 고장로스라 한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      },
+      {
+        "choiceId": "U-708-c4",
+        "verdict": "incorrect",
+        "rationale": "“순간정지로스”을 고르면 설비가 고장으로 정지해 생산하지 못하는 시간을 고장로스라 한다.라는 판단 근거를 놓치게 된다. 이 보기는 질문이 요구한 결론과 다른 설명이다."
+      }
+    ],
+    "misconception": "“고장로스”의 판단 근거를 다른 용어의 정의·적용 조건과 혼동하는 오류.",
+    "existingLessonId": "lesson-1p7pny4",
+    "existingBlockId": "summary",
+    "assertionText": "설비가 고장으로 정지해 생산하지 못하는 시간을 고장로스라 한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180428",
+      "https://cbtbank.kr/exam/de20150919",
+      "https://cbtbank.kr/exam/de20080907"
+    ],
+    "reviewedAt": "2026-08-03T13:00:00.000+09:00"
+  }
+]

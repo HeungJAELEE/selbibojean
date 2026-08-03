@@ -50,7 +50,6 @@ async function upsertRows(
         const message =
           error instanceof Error ? error.message : String(error);
         const retryable =
-          error instanceof TypeError &&
           /fetch failed|ECONNRESET|UND_ERR|ETIMEDOUT/i.test(message);
         const delay = NETWORK_RETRY_DELAYS_MS[attempt];
         if (!retryable || delay === undefined) {
@@ -68,16 +67,77 @@ async function upsertRows(
   }
 }
 
-async function countRows(
+async function replacePrimaryQuestionConcepts(
+  client: SupabaseClient,
+  rows: Array<Record<string, unknown>>,
+) {
+  for (const [batchIndex, batch] of chunks(rows).entries()) {
+    const questionIds = batch.map((row) => String(row.question_id));
+    for (let attempt = 0; ; attempt += 1) {
+      try {
+        const { error: deleteError } = await client
+          .from("question_concepts")
+          .delete()
+          .eq("role", "primary")
+          .in("question_id", questionIds);
+        if (deleteError) {
+          throw new Error(
+            `question_concepts primary replacement delete failed: ${deleteError.message}`,
+          );
+        }
+        const { error: upsertError } = await client
+          .from("question_concepts")
+          .upsert(batch, { onConflict: "question_id,concept_id" });
+        if (upsertError) {
+          throw new Error(
+            `question_concepts primary replacement upsert failed: ${upsertError.message}`,
+          );
+        }
+        break;
+      } catch (error) {
+        const message =
+          error instanceof Error ? error.message : String(error);
+        const retryable =
+          /fetch failed|ECONNRESET|UND_ERR|ETIMEDOUT/i.test(message);
+        const delay = NETWORK_RETRY_DELAYS_MS[attempt];
+        if (!retryable || delay === undefined) {
+          throw new Error(
+            `question_concepts batch ${batchIndex + 1} replacement failed: ${message}`,
+            { cause: error },
+          );
+        }
+        console.warn(
+          `question_concepts batch ${batchIndex + 1} network retry ${attempt + 1}/${NETWORK_RETRY_DELAYS_MS.length}`,
+        );
+        await new Promise((resolve) => setTimeout(resolve, delay));
+      }
+    }
+  }
+}
+
+async function countRowsByValues(
   client: SupabaseClient,
   table: string,
-  publishedOnly = false,
+  column: string,
+  values: string[],
+  equals: Record<string, string> = {},
 ) {
-  let query = client.from(table).select("*", { count: "exact", head: true });
-  if (publishedOnly) query = query.eq("status", "published");
-  const { count, error } = await query;
-  if (error) throw new Error(`${table} readback failed: ${error.message}`);
-  return count ?? 0;
+  let total = 0;
+  for (const batch of chunks(values)) {
+    let query = client
+      .from(table)
+      .select("*", { count: "exact", head: true })
+      .in(column, batch);
+    for (const [filterColumn, filterValue] of Object.entries(equals)) {
+      query = query.eq(filterColumn, filterValue);
+    }
+    const { count, error } = await query;
+    if (error) {
+      throw new Error(`${table} scoped readback failed: ${error.message}`);
+    }
+    total += count ?? 0;
+  }
+  return total;
 }
 
 async function resolveExamTrackId(client: SupabaseClient, apply: boolean) {
@@ -114,10 +174,32 @@ async function verifyPublicProjection(
   client: SupabaseClient,
   plan: SupabaseMaterializationPlan,
 ) {
+  const publishedQuestionIds = plan.questions
+    .filter((row) => row.status === "published")
+    .map((row) => row.id);
+  const { count: questionCount, error: questionError } = await client
+    .from("questions")
+    .select("*", { count: "exact", head: true })
+    .eq("exam_track_id", plan.identity.examTrackId);
+  if (questionError) {
+    throw new Error(
+      `questions public readback failed: ${questionError.message}`,
+    );
+  }
   const actual = {
-    questions: await countRows(client, "questions"),
-    choices: await countRows(client, "choices"),
-    questionVariants: await countRows(client, "question_variants"),
+    questions: questionCount ?? 0,
+    choices: await countRowsByValues(
+      client,
+      "choices",
+      "question_id",
+      publishedQuestionIds,
+    ),
+    questionVariants: await countRowsByValues(
+      client,
+      "question_variants",
+      "canonical_question_id",
+      publishedQuestionIds,
+    ),
   };
   const expected = {
     questions: plan.counts.publishedQuestions,
@@ -140,33 +222,110 @@ async function verifyAdminReadback(
   client: SupabaseClient,
   plan: SupabaseMaterializationPlan,
 ) {
-  const expected = {
-    subjects: plan.counts.subjects,
-    concept_groups: plan.counts.conceptGroups,
-    concepts: plan.counts.concepts,
-    questions: plan.counts.questions,
-    choices: plan.counts.choices,
-    choice_feedback: plan.counts.choiceFeedback,
-    answer_keys: plan.counts.answerKeys,
-    question_concepts: plan.counts.questionConcepts,
-    question_variants: plan.counts.questionVariants,
-  };
+  const expectations = [
+    ["subjects", "id", plan.subjects.map((row) => row.id), {}],
+    [
+      "concept_groups",
+      "id",
+      plan.conceptGroups.map((row) => row.id),
+      {},
+    ],
+    ["concepts", "id", plan.concepts.map((row) => row.id), {}],
+    ["questions", "id", plan.questions.map((row) => row.id), {}],
+    ["choices", "id", plan.choices.map((row) => row.id), {}],
+    [
+      "choice_feedback",
+      "choice_id",
+      plan.choiceFeedback.map((row) => row.choice_id),
+      {},
+    ],
+    [
+      "answer_keys",
+      "question_id",
+      plan.answerKeys.map((row) => row.question_id),
+      {},
+    ],
+    [
+      "question_concepts",
+      "question_id",
+      plan.questionConcepts.map((row) => row.question_id),
+      { role: "primary" },
+    ],
+    [
+      "question_variants",
+      "id",
+      plan.questionVariants.map((row) => row.id),
+      {},
+    ],
+  ] as const;
   const actual = Object.fromEntries(
     await Promise.all(
-      Object.keys(expected).map(async (table) => [
-        table,
-        await countRows(client, table),
-      ]),
+      expectations.map(
+        async ([table, column, values, equals]) => [
+          table,
+          await countRowsByValues(
+            client,
+            table,
+            column,
+            [...values],
+            equals,
+          ),
+        ],
+      ),
     ),
   );
-  for (const [table, count] of Object.entries(expected)) {
-    if (actual[table] !== count) {
+  for (const [table, , values] of expectations) {
+    if (actual[table] !== values.length) {
       throw new Error(
-        `${table} reconciliation failed: expected ${count}, received ${actual[table]}`,
+        `${table} reconciliation failed: expected ${values.length}, received ${actual[table]}`,
       );
     }
   }
   return actual;
+}
+
+async function retireStaleTrackQuestions(
+  client: SupabaseClient,
+  plan: SupabaseMaterializationPlan,
+) {
+  const existingIds: string[] = [];
+  const pageSize = 1_000;
+  for (let start = 0; ; start += pageSize) {
+    const { data, error } = await client
+      .from("questions")
+      .select("id")
+      .eq("exam_track_id", plan.identity.examTrackId)
+      .order("id")
+      .range(start, start + pageSize - 1);
+    if (error) {
+      throw new Error(`stale question lookup failed: ${error.message}`);
+    }
+    existingIds.push(...(data ?? []).map((row) => String(row.id)));
+    if ((data?.length ?? 0) < pageSize) break;
+  }
+  const plannedIds = new Set(plan.questions.map((row) => row.id));
+  const staleIds = existingIds.filter((id) => !plannedIds.has(id));
+  for (const batch of chunks(staleIds)) {
+    const { error: variantError } = await client
+      .from("question_variants")
+      .update({ status: "draft" })
+      .in("canonical_question_id", batch);
+    if (variantError) {
+      throw new Error(
+        `stale question variant retirement failed: ${variantError.message}`,
+      );
+    }
+    const { error: questionError } = await client
+      .from("questions")
+      .update({ status: "draft" })
+      .in("id", batch);
+    if (questionError) {
+      throw new Error(
+        `stale question retirement failed: ${questionError.message}`,
+      );
+    }
+  }
+  return staleIds.length;
 }
 
 async function applyPlan(
@@ -230,18 +389,14 @@ async function applyPlan(
     plan.answerKeys,
     "question_id",
   );
-  await upsertRows(
-    client,
-    "question_concepts",
-    plan.questionConcepts,
-    "question_id,concept_id",
-  );
+  await replacePrimaryQuestionConcepts(client, plan.questionConcepts);
   await upsertRows(
     client,
     "question_variants",
     plan.questionVariants,
     "external_id",
   );
+  return retireStaleTrackQuestions(client, plan);
 }
 
 async function main() {
@@ -306,7 +461,7 @@ async function main() {
     return;
   }
 
-  await applyPlan(client!, plan);
+  const retiredQuestionCount = await applyPlan(client!, plan);
   const adminCounts = await verifyAdminReadback(client!, plan);
   const publicClient = createClient(url, publishableKey!, {
     auth: { autoRefreshToken: false, persistSession: false },
@@ -317,6 +472,7 @@ async function main() {
       {
         mode: "apply",
         digest: plan.digest,
+        retiredQuestionCount,
         adminCounts,
         publicCounts,
       },

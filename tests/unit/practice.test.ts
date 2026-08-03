@@ -42,6 +42,13 @@ function makeQuestion(index: number): Question {
       note: "원문 대조 완료",
       reviewedAt: "2026-07-23T00:00:00.000Z",
     },
+    approvedReview: {
+      directSolution: "문제 조건과 각 보기를 직접 대조한 승인 풀이입니다.",
+      conceptBinding: {
+        assertionText: "문제의 정답을 가르는 기존 이론 블록의 직접 판단근거입니다.",
+        href: "/written/theory/lesson-a#principle",
+      },
+    },
     validation: { answer: true, explanation: true, choiceFeedback: true, theoryLink: true, contentQuality: true },
   };
 }
@@ -78,6 +85,39 @@ describe("random practice", () => {
     expect(repeated).toEqual(first);
     expect(nextSession).not.toEqual(first);
     expect(orderPracticeChoices(choices, 20260801, "variant-1", false)).toEqual(choices);
+  });
+
+  it("maps approved feedback by stable choice ID after choices are shuffled", () => {
+    const question = makeQuestion(1);
+    question.approvedReview = {
+      directSolution: "승인된 직접 풀이",
+      conceptBinding: {
+        assertionText: "문제와 직접 연결된 승인 개념입니다.",
+        href: "/written/theory/lesson-canonical#structure",
+      },
+    };
+    question.choices = orderPracticeChoices(
+      question.choices,
+      20260803,
+      "approved-variant",
+      true,
+    );
+
+    const feedback = gradeQuestion(question, "U-1-c3", "unsure");
+
+    expect(feedback.approvedReview).toEqual({
+      directSolution: "승인된 직접 풀이",
+      conceptBinding: {
+        assertionText: "문제와 직접 연결된 승인 개념입니다.",
+        href: "/written/theory/lesson-canonical#structure",
+      },
+      selectedChoiceReason: "근거 3",
+    });
+    expect(feedback.selectedChoice.id).toBe("U-1-c3");
+    expect(feedback.lesson.href).toBe(
+      "/written/theory/lesson-canonical#structure",
+    );
+    expect(feedback.conceptSupport).toBeNull();
   });
 
   it("expands repeated mistakes into related questions from the weakest groups", () => {
@@ -117,6 +157,19 @@ describe("random practice", () => {
 
   it("does not expose answers or feedback before submission", () => {
     const question = makeQuestion(1);
+    question.approvedReview = {
+      directSolution: "제출 전 비공개 승인 풀이",
+      conceptBinding: {
+        assertionText: "제출 전 비공개 승인 개념",
+        href: "/written/theory/lesson-secret#trap",
+      },
+      calculation: {
+        formula: "SECRET_FORMULA",
+        substitution: "SECRET_SUBSTITUTION",
+        result: "SECRET_RESULT",
+        unit: "SECRET_UNIT",
+      },
+    };
     question.audit = {
       questionId: question.id,
       scope: "high_risk_public",
@@ -144,6 +197,10 @@ describe("random practice", () => {
     expect(payload).not.toContain("verifiedAnswer");
     expect(payload).not.toContain("evidenceUrls");
     expect(payload).not.toContain("공식 근거로 답을 보정했습니다.");
+    expect(payload).not.toContain("approvedReview");
+    expect(payload).not.toContain("제출 전 비공개 승인 풀이");
+    expect(payload).not.toContain("제출 전 비공개 승인 개념");
+    expect(payload).not.toContain("SECRET_FORMULA");
   });
 
   it("blocks every held audit disposition from public practice", () => {
@@ -175,6 +232,20 @@ describe("random practice", () => {
     }
   });
 
+  it("keeps every written subject out of public practice until direct feedback is approved", () => {
+    for (const subjectId of [
+      "subject-1",
+      "subject-2",
+      "subject-3",
+      "subject-4",
+    ]) {
+      const question = makeQuestion(1);
+      question.subjectId = subjectId;
+      delete question.approvedReview;
+      expect(isPublishableQuestion(question)).toBe(false);
+    }
+  });
+
   it("returns selected-choice reasoning and the exact lesson anchor after submission", () => {
     const lesson: Lesson = {
       id: "lesson-a",
@@ -195,13 +266,83 @@ describe("random practice", () => {
       reviewedAt: null,
       quality: { tier: "standard", substantiveCharacters: 800, genericPhraseMatches: [], languageIssueMatches: [], sourceLinked: true, passed: true },
     };
-    const feedback = gradeQuestion(makeQuestion(1), "U-1-c2", "unsure", lesson);
+    const question = makeQuestion(1);
+    delete question.approvedReview;
+    const feedback = gradeQuestion(question, "U-1-c2", "unsure", lesson);
     expect(feedback.isCorrect).toBe(false);
     expect(feedback.errorReason).toBe("개념 혼동");
     expect(feedback.lesson.href).toBe("/written/theory/lesson-a#principle");
-    expect(feedback.selectedChoice.incorrectPoint).toBe("조건이 다름");
-    expect(feedback.conceptSupport?.title).toBe("시험 개념");
-    expect(feedback.conceptSupport?.blocks[0].id).toBe("principle");
+    expect(feedback.feedbackQuality).toBe("pending_review");
+    expect(feedback.selectedChoice.incorrectPoint).toBeNull();
+    expect(feedback.conceptSupport).toBeNull();
+    expect(feedback.feedbackNotice).toContain("선택지별 풀이와 개념 연결을 검수 중");
+  });
+
+  it("BUG-R-PRACTICE-CONCEPT-SUPPORT: omits full exam-pattern banks from inline feedback", () => {
+    const question = makeQuestion(1);
+    question.lessonAnchor = "exam-point";
+    question.approvedReview!.conceptBinding.href =
+      "/written/theory/lesson-a#exam-point";
+    const lesson: Lesson = {
+      id: "lesson-a",
+      subjectId: "subject-1",
+      conceptGroupId: "s1-g01",
+      conceptId: "concept-a",
+      title: "시험 개념",
+      aliases: [],
+      summary: ["핵심 요약 1", "핵심 요약 2", "핵심 요약 3"],
+      blocks: [
+        {
+          id: "definition",
+          kind: "definition",
+          title: "정의",
+          body: "제출 뒤 바로 복습할 수 있는 짧은 정의입니다.",
+          order: 1,
+        },
+        {
+          id: "principle",
+          kind: "principle",
+          title: "원리",
+          body: "정답 판단에 필요한 핵심 원리입니다.",
+          order: 2,
+        },
+        {
+          id: "exam-point",
+          kind: "exam_point",
+          title: "시험에 자주 출제되는 유형",
+          body: Array.from(
+            { length: 20 },
+            (_, index) => `질문 ${index + 1}\n판단 기준 ${index + 1}`,
+          ).join("\n\n---\n\n"),
+          order: 3,
+        },
+        {
+          id: "trap",
+          kind: "trap",
+          title: "오답 함정",
+          body: "혼동하기 쉬운 조건을 확인합니다.",
+          order: 4,
+        },
+      ],
+      relatedQuestionIds: [question.id],
+      coverageStatus: "covered",
+      contentStatus: "published",
+      sourceNeeded: false,
+      reviewedAt: null,
+      quality: {
+        tier: "standard",
+        substantiveCharacters: 800,
+        genericPhraseMatches: [],
+        languageIssueMatches: [],
+        sourceLinked: true,
+        passed: true,
+      },
+    };
+
+    const feedback = gradeQuestion(question, "U-1-c1", "known", lesson);
+
+    expect(feedback.lesson.href).toBe("/written/theory/lesson-a#exam-point");
+    expect(feedback.conceptSupport).toBeNull();
   });
 
   it("returns CBT correction evidence only after grading", () => {

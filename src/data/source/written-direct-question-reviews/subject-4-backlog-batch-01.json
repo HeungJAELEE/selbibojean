@@ -1,0 +1,755 @@
+[
+  {
+    "questionId": "U-RMS-001",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-RMS-001-c3",
+    "directSolution": "정현파에서는 RMS가 피크값의 1/√2, 약 0.707배이므로 세 번째 식이 맞습니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-RMS-001-c1",
+        "verdict": "incorrect",
+        "rationale": "피크값을 2로 나누면 0.5 Peak가 되어 정현파 RMS의 약 0.707 Peak보다 작습니다."
+      },
+      {
+        "choiceId": "U-RMS-001-c2",
+        "verdict": "incorrect",
+        "rationale": "피크값에 √2를 곱하면 RMS가 피크보다 커지므로 정현파의 크기 관계가 뒤집힙니다."
+      },
+      {
+        "choiceId": "U-RMS-001-c3",
+        "verdict": "correct",
+        "rationale": "정현파 RMS는 Peak의 1/√2, 즉 약 0.707배이므로 정의와 정확히 일치합니다."
+      },
+      {
+        "choiceId": "U-RMS-001-c4",
+        "verdict": "incorrect",
+        "rationale": "2Peak는 피크의 두 배를 뜻하며 제곱평균제곱근으로 구한 실효값이 아닙니다."
+      }
+    ],
+    "misconception": "정현파 RMS의 0.707 계수와 2배 진폭 표현을 서로 바꾸어 기억하는 오류.",
+    "existingLessonId": "lesson-1ckjgj0",
+    "existingBlockId": "definition",
+    "assertionText": "정현파의 한 주기 절대값 평균은 Peak의 $2/\\pi\\approx0.637$배이고, RMS는 $1/\\sqrt2\\approx0.707$배이다. ‘평균값’이 부호를 포함한 한 주기 평균인지, 정류평균인지 문제 조건을 확인한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9635925"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-022",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-022-c4",
+    "directSolution": "피크투피크값은 2Peak이고 RMS는 Peak/√2이므로 Vrms는 Vp-p/(2√2)입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-022-c1",
+        "verdict": "incorrect",
+        "rationale": "Vp-p를 2로만 나누면 Peak까지만 구한 것이어서 RMS 변환에 필요한 √2 나눗셈이 빠집니다."
+      },
+      {
+        "choiceId": "U-022-c2",
+        "verdict": "incorrect",
+        "rationale": "Vp-p에 바로 1/√2를 적용하면 피크투피크를 Peak로 바꾸는 1/2 단계가 누락됩니다."
+      },
+      {
+        "choiceId": "U-022-c3",
+        "verdict": "incorrect",
+        "rationale": "Vp-p에 √2를 곱하면 피크투피크보다 더 큰 값이 되어 실효값의 정의와 맞지 않습니다."
+      },
+      {
+        "choiceId": "U-022-c4",
+        "verdict": "correct",
+        "rationale": "Vp-p÷2로 Peak를 구한 뒤 다시 √2로 나누므로 Vp-p/(2√2)가 됩니다."
+      }
+    ],
+    "misconception": "피크투피크를 Peak로 바꾸는 1/2 단계와 RMS 변환을 한 번에 섞는 오류.",
+    "existingLessonId": "lesson-1ckjgj0",
+    "existingBlockId": "definition",
+    "assertionText": "값의 표현:\n- Peak: 영점에서 최대값.\n- Peak-to-Peak: 양의 최대와 음의 최대 사이의 전체 폭.\n- RMS: 진동 에너지와 연관된 실효값. 정현파에서 RMS ≈ 0.707 Peak.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8162917"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-043",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-043-c1",
+    "directSolution": "진동 크기의 기본 표현은 변위·속도·가속도이고, 댐퍼는 에너지를 소산하는 감쇠장치이므로 예외입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-043-c1",
+        "verdict": "correct",
+        "rationale": "댐퍼는 진폭의 수치 표현이 아니라 진동 에너지를 줄이는 기계 요소이므로 문항의 예외입니다."
+      },
+      {
+        "choiceId": "U-043-c2",
+        "verdict": "incorrect",
+        "rationale": "변위는 진동체의 위치 변화량으로 진폭을 나타내는 기본 물리량에 포함됩니다."
+      },
+      {
+        "choiceId": "U-043-c3",
+        "verdict": "incorrect",
+        "rationale": "속도는 변위의 시간 변화율이며 일반적인 기계 진동 크기 평가에 쓰이는 기본량입니다."
+      },
+      {
+        "choiceId": "U-043-c4",
+        "verdict": "incorrect",
+        "rationale": "가속도는 속도의 시간 변화율로 고주파 충격을 포함한 진동 크기 표현에 사용됩니다."
+      }
+    ],
+    "misconception": "진동을 줄이는 장치와 진동 크기를 표시하는 물리량을 같은 범주로 보는 오류.",
+    "existingLessonId": "lesson-1ckjgj0",
+    "existingBlockId": "definition",
+    "assertionText": "진폭: 진동의 크기. 변위, 속도, 가속도로 표현한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1191",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-1191-c1",
+    "directSolution": "피크투피크값은 영점을 기준으로 한 한쪽 피크가 아니라 양의 최대값부터 음의 최대값까지의 전체 폭입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1191-c1",
+        "verdict": "correct",
+        "rationale": "양의 최대와 음의 최대 사이의 전체 폭이라는 설명이 Peak-to-Peak의 정의와 일치합니다."
+      },
+      {
+        "choiceId": "U-1191-c2",
+        "verdict": "incorrect",
+        "rationale": "한 주기를 수행하는 시간은 진폭이 아니라 주기 T를 정의하는 시간축 물리량입니다."
+      },
+      {
+        "choiceId": "U-1191-c3",
+        "verdict": "incorrect",
+        "rationale": "대칭 정현파의 피크투피크값은 피크의 절반이 아니라 양·음 피크를 합친 2Peak입니다."
+      },
+      {
+        "choiceId": "U-1191-c4",
+        "verdict": "incorrect",
+        "rationale": "위상차는 두 신호의 시간적 위치 차이를 각도로 나타낸 값으로 진폭 폭과 구분됩니다."
+      }
+    ],
+    "misconception": "주기·위상·피크를 모두 파형 용어라는 이유로 피크투피크와 혼동하는 오류.",
+    "existingLessonId": "lesson-1ckjgj0",
+    "existingBlockId": "definition",
+    "assertionText": "Peak-to-Peak: 양의 최대와 음의 최대 사이의 전체 폭.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20100905"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-566",
+    "subjectId": "subject-4",
+    "decision": "hold",
+    "holdReason": "일반 RMS 적분정의를 직접 뒷받침하는 독립 기존 이론 문장이 없어 승인할 수 없습니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20190303"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-812",
+    "subjectId": "subject-4",
+    "decision": "hold",
+    "holdReason": "진동측정기의 대표 표시값이 RMS라는 빈도 주장을 뒷받침할 독립 기존 이론 문장이 없습니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20161001"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-032",
+    "subjectId": "subject-4",
+    "decision": "hold",
+    "holdReason": "제벡·톰슨 구별과 두 열전대 재료별 온도범위를 함께 검증하는 독립 기존 이론 문장이 부족합니다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/8162917"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-348",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-348-c4",
+    "directSolution": "도전성 회전축의 축진동·축중심 위치는 프로브와 축 사이 간극을 비접촉으로 읽는 와전류형 변위센서가 적합합니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-348-c1",
+        "verdict": "incorrect",
+        "rationale": "동전형 속도센서는 코일과 자석의 상대운동으로 속도를 읽어 축과 프로브 사이 정적 간극에는 맞지 않습니다."
+      },
+      {
+        "choiceId": "U-348-c2",
+        "verdict": "incorrect",
+        "rationale": "서보형 가속도센서는 가속도를 측정하므로 축중심의 상대 위치와 간극을 직접 제시하지 못합니다."
+      },
+      {
+        "choiceId": "U-348-c3",
+        "verdict": "incorrect",
+        "rationale": "압전형 가속도센서는 동적 가속도와 고주파 충격에 유리하지만 정적인 축중심 위치 측정에는 부적합합니다."
+      },
+      {
+        "choiceId": "U-348-c4",
+        "verdict": "correct",
+        "rationale": "와전류형 변위센서는 도전성 축과 프로브 간격을 비접촉 측정해 축진동·축위치·편심을 관찰합니다."
+      }
+    ],
+    "misconception": "변위·속도·가속도 센서를 모두 진동센서라는 이유로 측정 물리량 없이 고르는 오류.",
+    "existingLessonId": "lesson-5yr4el",
+    "existingBlockId": "definition",
+    "assertionText": "와전류형 변위센서: 도전성 축과 프로브 사이 간격을 비접촉으로 측정한다. 축 상대진동, 축 위치, 편심 측정에 적합하다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20200822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1241",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-1241-c3",
+    "directSolution": "와전류형 변위센서는 도전성 표면에 유도되는 와전류 변화를 이용하므로 전도성 금속 회전축이 적합합니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1241-c1",
+        "verdict": "incorrect",
+        "rationale": "고무벨트는 비도전성 재료여서 와전류가 형성되지 않으므로 표준 와전류 변위 측정대상이 아닙니다."
+      },
+      {
+        "choiceId": "U-1241-c2",
+        "verdict": "incorrect",
+        "rationale": "투명 유리판도 전기전도성이 없어 프로브가 요구하는 와전류 변화를 만들지 못합니다."
+      },
+      {
+        "choiceId": "U-1241-c3",
+        "verdict": "correct",
+        "rationale": "전도성 금속 회전축은 와전류가 형성되고 프로브 간극 변화가 출력으로 변환되는 대상입니다."
+      },
+      {
+        "choiceId": "U-1241-c4",
+        "verdict": "incorrect",
+        "rationale": "윤활유 산가는 화학적 열화 지표이며 축과 프로브 사이의 비접촉 변위를 재는 대상이 아닙니다."
+      }
+    ],
+    "misconception": "와전류센서를 재료 성질과 무관한 모든 비접촉 센서로 확대해 이해하는 오류.",
+    "existingLessonId": "lesson-5yr4el",
+    "existingBlockId": "definition",
+    "assertionText": "와전류형 변위센서: 도전성 축과 프로브 사이 간격을 비접촉으로 측정한다. 축 상대진동, 축 위치, 편심 측정에 적합하다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-106",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-106-c2",
+    "directSolution": "적점은 가열할 때 그리스 구조가 무너져 액상 물질이 떨어지는 온도이므로 내열성 판단의 참고지표입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-106-c1",
+        "verdict": "incorrect",
+        "rationale": "주도는 그리스의 무르기와 굳기를 나타내며 고온에서 액상화가 시작되는 온도 지표가 아닙니다."
+      },
+      {
+        "choiceId": "U-106-c2",
+        "verdict": "correct",
+        "rationale": "적점은 가열 시 액상 물질이 떨어지는 온도로 내열성과 사용온도 검토에 쓰는 참고지표입니다."
+      },
+      {
+        "choiceId": "U-106-c3",
+        "verdict": "incorrect",
+        "rationale": "이유도는 증주제 구조에서 기유가 분리되는 성향을 평가하므로 적점과 측정 목적이 다릅니다."
+      },
+      {
+        "choiceId": "U-106-c4",
+        "verdict": "incorrect",
+        "rationale": "혼화안정도는 반복 혼화 뒤 주도 변화를 보아 기계적 안정성을 평가하는 시험입니다."
+      }
+    ],
+    "misconception": "그리스의 주도·적점·이유도·혼화안정도를 모두 온도특성으로 묶는 오류.",
+    "existingLessonId": "lesson-78g7he",
+    "existingBlockId": "summary",
+    "assertionText": "적점은 가열 시 그리스가 액상으로 떨어지는 온도로 내열성의 참고지표다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1340",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-1340-c1",
+    "directSolution": "그리스의 혼화주도에 따른 굳기 등급은 NLGI 번호로 표시하며 번호가 커질수록 일반적으로 단단해집니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1340-c1",
+        "verdict": "correct",
+        "rationale": "NLGI 번호는 그리스 주도와 굳기 등급을 나타내는 분류이므로 문항의 대상과 일치합니다."
+      },
+      {
+        "choiceId": "U-1340-c2",
+        "verdict": "incorrect",
+        "rationale": "API 서비스등급은 주로 엔진유의 성능·용도 분류이며 그리스 혼화주도 등급이 아닙니다."
+      },
+      {
+        "choiceId": "U-1340-c3",
+        "verdict": "incorrect",
+        "rationale": "SAE 엔진유 등급은 윤활유의 점도 등급 체계로 그리스의 반고체 굳기를 분류하지 않습니다."
+      },
+      {
+        "choiceId": "U-1340-c4",
+        "verdict": "incorrect",
+        "rationale": "ISO 청정도 코드는 유체 속 입자 오염도를 표시하며 그리스 혼화주도와 다른 지표입니다."
+      }
+    ],
+    "misconception": "윤활 관련 등급 명칭을 적용 대상과 무관하게 서로 바꾸어 쓰는 오류.",
+    "existingLessonId": "lesson-rr6fej",
+    "existingBlockId": "definition",
+    "assertionText": "주도: 그리스의 무르기·굳기. NLGI 번호가 클수록 일반적으로 단단하다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20070902"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-230",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-230-c3",
+    "directSolution": "그리스에서 기유가 증주제 구조 밖으로 분리되는 성향을 측정하는 것이 이유도 시험입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-230-c1",
+        "verdict": "incorrect",
+        "rationale": "적점 시험은 가열할 때 구조가 무너져 액상 물질이 떨어지는 온도를 확인합니다."
+      },
+      {
+        "choiceId": "U-230-c2",
+        "verdict": "incorrect",
+        "rationale": "주도 시험은 그리스에 침입하는 깊이로 무르기와 굳기를 평가하는 시험입니다."
+      },
+      {
+        "choiceId": "U-230-c3",
+        "verdict": "correct",
+        "rationale": "이유도 시험은 그리스에서 오일이 분리되는 성향을 측정해 저장·사용 안정성을 봅니다."
+      },
+      {
+        "choiceId": "U-230-c4",
+        "verdict": "incorrect",
+        "rationale": "동판부식 시험은 윤활제가 구리계 금속을 부식시키는 정도를 평가하며 기유 분리 시험이 아닙니다."
+      }
+    ],
+    "misconception": "그리스 시험을 측정대상인 온도·굳기·기유분리·부식으로 나누지 못하는 오류.",
+    "existingLessonId": "lesson-omk2kx",
+    "existingBlockId": "summary",
+    "assertionText": "이유도는 그리스에서 오일이 분리되는 성향을 측정하여 저장·사용 안정성을 평가한다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9620123"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-843",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-843-c2",
+    "directSolution": "그리스를 규정 횟수만큼 혼화한 뒤 주도 변화량을 재면 반복 전단에 대한 구조안정성을 평가할 수 있습니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-843-c1",
+        "verdict": "incorrect",
+        "rationale": "적점시험은 가열에 따른 액상화 온도를 측정하므로 반복 전단 뒤 구조 유지성을 직접 재지 않습니다."
+      },
+      {
+        "choiceId": "U-843-c2",
+        "verdict": "correct",
+        "rationale": "혼화안정도시험은 규정 혼화 전후의 주도 변화를 비교해 기계적·전단 안정성을 평가합니다."
+      },
+      {
+        "choiceId": "U-843-c3",
+        "verdict": "incorrect",
+        "rationale": "이유도시험은 기유가 분리되는 성향을 측정하며 반복 혼화로 생긴 주도 변화와 구분됩니다."
+      },
+      {
+        "choiceId": "U-843-c4",
+        "verdict": "incorrect",
+        "rationale": "함유탄소시험은 시료의 탄소 관련 성분을 보는 시험으로 그리스의 전단 구조안정성 시험이 아닙니다."
+      }
+    ],
+    "misconception": "기유 분리와 반복 전단 뒤 주도 변화를 같은 안정성 시험으로 보는 오류.",
+    "existingLessonId": "lesson-9ux2mo",
+    "existingBlockId": "summary",
+    "assertionText": "규정횟수로 그리스를 혼화한 뒤 주도변화를 측정해 구조안정성을 평가한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20161001"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-738",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-738-c3",
+    "directSolution": "고속에서 그리스를 과잉 충전하면 내부 교반저항이 커져 발열과 연화가 생기므로 적정 여유공간을 둡니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-738-c1",
+        "verdict": "incorrect",
+        "rationale": "적정 충전량은 속도와 하우징 여유공간에 따라 달라지므로 구조와 무관하게 고정할 수 없습니다."
+      },
+      {
+        "choiceId": "U-738-c2",
+        "verdict": "incorrect",
+        "rationale": "과잉충전 발열은 교반저항과 속도의 영향을 함께 받으므로 저속에서 반드시 더 크다고 할 수 없습니다."
+      },
+      {
+        "choiceId": "U-738-c3",
+        "verdict": "correct",
+        "rationale": "고속 과잉충전은 그리스 교반저항을 키워 온도 상승과 연화를 유발한다는 원리와 맞습니다."
+      },
+      {
+        "choiceId": "U-738-c4",
+        "verdict": "incorrect",
+        "rationale": "빈 공간을 100% 채우면 회전저항과 온도가 높아질 수 있어 항상 채우는 방식은 부적절합니다."
+      }
+    ],
+    "misconception": "그리스는 많이 넣을수록 윤활이 좋아진다고 생각해 속도와 여유공간을 무시하는 오류.",
+    "existingLessonId": "lesson-4wcurv",
+    "existingBlockId": "summary",
+    "assertionText": "과잉충전은 회전저항과 온도를 높이므로 속도와 하우징 여유공간에 맞춰 적정량을 넣는다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20180428"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-070",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-070-c2",
+    "directSolution": "자주보전 7단계에서 ⑤는 자주점검이므로 다섯 번째 단계의 답은 자주점검입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-070-c1",
+        "verdict": "incorrect",
+        "rationale": "초기청소는 설비 상태를 드러내고 이상을 찾는 첫 번째 단계이지 다섯 번째 단계가 아닙니다."
+      },
+      {
+        "choiceId": "U-070-c2",
+        "verdict": "correct",
+        "rationale": "자주점검은 총점검에서 익힌 지식을 바탕으로 작업자가 점검을 실행하는 다섯 번째 단계입니다."
+      },
+      {
+        "choiceId": "U-070-c3",
+        "verdict": "incorrect",
+        "rationale": "표준화·시스템화는 자주점검 다음인 여섯 번째 단계에 해당해 한 단계 늦습니다."
+      },
+      {
+        "choiceId": "U-070-c4",
+        "verdict": "incorrect",
+        "rationale": "발생원·곤란개소 대책은 초기청소 뒤 오염원과 점검 곤란부를 개선하는 두 번째 단계입니다."
+      }
+    ],
+    "misconception": "자주보전 단계 이름은 알지만 각 단계의 순서를 연결하지 못하는 오류.",
+    "existingLessonId": "lesson-8r7on",
+    "existingBlockId": "definition",
+    "assertionText": "7단계 암기: ① 초기청소 → ② 발생원·곤란개소 대책 → ③ 청소·급유·점검 잠정기준 작성 → ④ 총점검 → ⑤ 자주점검 → ⑥ 표준화 → ⑦ 자주관리.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9630928"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-272",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-272-c2",
+    "directSolution": "발생원·곤란개소 대책은 초기청소 다음에 오염 발생원과 작업 곤란부를 개선하는 제2단계입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-272-c1",
+        "verdict": "incorrect",
+        "rationale": "제1단계는 설비를 청소하면서 누유·풀림·마모 같은 이상을 드러내는 초기청소입니다."
+      },
+      {
+        "choiceId": "U-272-c2",
+        "verdict": "correct",
+        "rationale": "발생원·곤란개소 대책은 초기청소 결과를 바탕으로 재오염과 접근 곤란을 줄이는 제2단계입니다."
+      },
+      {
+        "choiceId": "U-272-c3",
+        "verdict": "incorrect",
+        "rationale": "제3단계는 개선된 설비를 유지하기 위한 청소·급유·점검 잠정기준을 작성하는 단계입니다."
+      },
+      {
+        "choiceId": "U-272-c4",
+        "verdict": "incorrect",
+        "rationale": "제4단계는 설비 구성요소와 기능을 배우며 전체 점검 능력을 높이는 총점검입니다."
+      }
+    ],
+    "misconception": "초기청소 뒤 원인개선과 잠정기준 작성의 선후관계를 바꾸는 오류.",
+    "existingLessonId": "lesson-8r7on",
+    "existingBlockId": "definition",
+    "assertionText": "7단계 암기: ① 초기청소 → ② 발생원·곤란개소 대책 → ③ 청소·급유·점검 잠정기준 작성 → ④ 총점검 → ⑤ 자주점검 → ⑥ 표준화 → ⑦ 자주관리.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-350",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-350-c4",
+    "directSolution": "자주보전은 초기청소부터 발생원대책·잠정기준·총점검·자주점검·표준화·자주관리 순으로 성숙합니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-350-c1",
+        "verdict": "incorrect",
+        "rationale": "총점검을 초기청소보다 앞에 두면 오염 제거와 발생원 개선을 통해 기본조건을 회복하는 선행단계가 뒤집힙니다."
+      },
+      {
+        "choiceId": "U-350-c2",
+        "verdict": "incorrect",
+        "rationale": "기준작성은 발생원·곤란개소 대책 뒤에 해야 하므로 두 번째와 세 번째 단계의 순서가 바뀌었습니다."
+      },
+      {
+        "choiceId": "U-350-c3",
+        "verdict": "incorrect",
+        "rationale": "총점검이 첫 단계가 될 수 없으며 초기청소와 발생원대책·잠정기준이 먼저 완료되어야 합니다."
+      },
+      {
+        "choiceId": "U-350-c4",
+        "verdict": "correct",
+        "rationale": "초기청소→발생원대책→잠정기준→총점검→자주점검→시스템화→철저의 단계 배열이 표준 순서와 대응합니다."
+      }
+    ],
+    "misconception": "총점검을 첫 단계로 두거나 발생원대책과 잠정기준의 순서를 바꾸는 오류.",
+    "existingLessonId": "lesson-8r7on",
+    "existingBlockId": "definition",
+    "assertionText": "7단계 암기: ① 초기청소 → ② 발생원·곤란개소 대책 → ③ 청소·급유·점검 잠정기준 작성 → ④ 총점검 → ⑤ 자주점검 → ⑥ 표준화 → ⑦ 자주관리.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20200822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1249",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-1249-c4",
+    "directSolution": "자주보전의 출발점은 설비를 청소하며 잠재 이상을 드러내고 기본조건을 회복하는 초기청소입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1249-c1",
+        "verdict": "incorrect",
+        "rationale": "총점검은 초기청소·발생원대책·잠정기준 작성 뒤 설비 기능을 체계적으로 배우는 제4단계입니다."
+      },
+      {
+        "choiceId": "U-1249-c2",
+        "verdict": "incorrect",
+        "rationale": "자주점검은 총점검 지식을 토대로 작업자가 점검을 실행하는 제5단계입니다."
+      },
+      {
+        "choiceId": "U-1249-c3",
+        "verdict": "incorrect",
+        "rationale": "시스템화·표준화는 점검기준을 조직적으로 정착시키는 제6단계로 시작 단계가 아닙니다."
+      },
+      {
+        "choiceId": "U-1249-c4",
+        "verdict": "correct",
+        "rationale": "초기청소는 오염을 제거하면서 누유·풀림·마모 등 이상을 찾아내는 제1단계입니다."
+      }
+    ],
+    "misconception": "자주보전의 목표 단계인 자주관리와 시작 단계인 초기청소를 뒤바꾸는 오류.",
+    "existingLessonId": "lesson-8r7on",
+    "existingBlockId": "definition",
+    "assertionText": "7단계 암기: ① 초기청소 → ② 발생원·곤란개소 대책 → ③ 청소·급유·점검 잠정기준 작성 → ④ 총점검 → ⑤ 자주점검 → ⑥ 표준화 → ⑦ 자주관리.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/cet/5708822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-874",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-874-c4",
+    "directSolution": "PM분석은 만성로스 현상을 물리적 원리와 성립 메커니즘으로 분해해 관련 요인을 빠짐없이 찾는 기법입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-874-c1",
+        "verdict": "incorrect",
+        "rationale": "FTA는 정상사상을 논리적으로 분해하는 고장분석 도구이지만 문항의 물리 메커니즘 중심 만성로스 기법 명칭은 아닙니다."
+      },
+      {
+        "choiceId": "U-874-c2",
+        "verdict": "incorrect",
+        "rationale": "FMEA는 기능별 고장모드·영향·원인을 표로 평가하며 만성로스를 물리현상으로 해석하는 PM분석과 다릅니다."
+      },
+      {
+        "choiceId": "U-874-c3",
+        "verdict": "incorrect",
+        "rationale": "QM분석은 이 문항에서 제시한 Physical·Mechanism 관점의 표준 기법 명칭이 아닙니다."
+      },
+      {
+        "choiceId": "U-874-c4",
+        "verdict": "correct",
+        "rationale": "PM분석은 만성로스를 물리적 현상과 원리·원칙으로 해석해 성립조건과 모든 요인을 찾습니다."
+      }
+    ],
+    "misconception": "여러 고장분석 도구의 목적과 산출물을 구분하지 않고 약어만으로 답을 고르는 오류.",
+    "existingLessonId": "lesson-1jt6plj",
+    "existingBlockId": "definition",
+    "assertionText": "PM 분석: 만성로스를 물리적 현상과 원리·원칙으로 해석해 성립조건을 찾는다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20150919"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-1064",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-1064-c1",
+    "directSolution": "PM분석은 산발적인 원인별 임시대책이 아니라 물리 메커니즘과 4M 요인을 연결한 종합대책을 세웁니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-1064-c1",
+        "verdict": "correct",
+        "rationale": "원인별 산발적 대책만 세우는 방식은 PM분석의 종합적 물리 메커니즘 접근과 반대이므로 옳지 않습니다."
+      },
+      {
+        "choiceId": "U-1064-c2",
+        "verdict": "incorrect",
+        "rationale": "현상을 세분화해야 성립조건과 메커니즘을 구체적으로 연결할 수 있으므로 PM분석의 특징입니다."
+      },
+      {
+        "choiceId": "U-1064-c3",
+        "verdict": "incorrect",
+        "rationale": "인과관계를 따라 관련 요인을 기능적으로 발췌하는 과정은 누락 요인을 줄이는 PM분석 절차입니다."
+      },
+      {
+        "choiceId": "U-1064-c4",
+        "verdict": "incorrect",
+        "rationale": "물리적 관점에서 원인을 과학적으로 추구하는 것은 PM분석을 다른 임시대책과 구분하는 핵심입니다."
+      }
+    ],
+    "misconception": "PM분석을 원인 하나씩 임시조치하는 일반 문제해결 활동으로 축소하는 오류.",
+    "existingLessonId": "lesson-1jt6plj",
+    "existingBlockId": "principle",
+    "assertionText": "PM분석은 산발적 임시조치가 아니라 물리메커니즘에 근거한 종합대책을 수립한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20130928"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-282",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-282-c4",
+    "directSolution": "사후보전은 고장 뒤 수리하므로 돌발정지와 2차손상 위험이 있고, 동일고장이나 불량 감소를 자동으로 보장하지 않습니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-282-c1",
+        "verdict": "incorrect",
+        "rationale": "고장까지 운전한 뒤 대응하면 2차손상과 대형사고로 확대될 위험이 있어 실제 단점에 해당합니다."
+      },
+      {
+        "choiceId": "U-282-c2",
+        "verdict": "incorrect",
+        "rationale": "고장 발생시점이 일정하지 않으므로 돌발수리의 시작과 소요시간을 계획하기 어려운 단점이 있습니다."
+      },
+      {
+        "choiceId": "U-282-c3",
+        "verdict": "incorrect",
+        "rationale": "사후 대응만 반복하면 체계적 원인분석과 예방활동이 약해져 보전기술 축적이 어려울 수 있습니다."
+      },
+      {
+        "choiceId": "U-282-c4",
+        "verdict": "correct",
+        "rationale": "불량률과 동일고장 반복빈도 감소는 원인제거·예방개선의 결과이지 사후수리 자체의 일반적 단점이 아닙니다."
+      }
+    ],
+    "misconception": "고장 후 기능복구와 고장원인 제거·재발방지 효과를 같은 활동으로 보는 오류.",
+    "existingLessonId": "lesson-5e0e83",
+    "existingBlockId": "principle",
+    "assertionText": "사후보전은 고장 후 수리하므로 돌발정지·2차손상·품질악화 위험이 있으며 불량 감소를 보장하지 않는다.",
+    "evidenceUrls": [
+      "https://www.comcbt.com/xe/webhaesul/9658829"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-883",
+    "subjectId": "subject-4",
+    "decision": "approve",
+    "correctChoiceId": "U-883-c3",
+    "directSolution": "고장이나 유해한 성능저하가 발생한 뒤 수리·교환으로 기능을 회복하는 방식은 사후보전 BM입니다.",
+    "choiceRationales": [
+      {
+        "choiceId": "U-883-c1",
+        "verdict": "incorrect",
+        "rationale": "예방보전 PM은 고장 전에 정기점검·교체 또는 상태관리를 수행하므로 발생 후 복구와 시점이 다릅니다."
+      },
+      {
+        "choiceId": "U-883-c2",
+        "verdict": "incorrect",
+        "rationale": "보전예방 MP는 설계·도입 단계에서 고장이 적고 정비하기 쉬운 설비를 만드는 활동입니다."
+      },
+      {
+        "choiceId": "U-883-c3",
+        "verdict": "correct",
+        "rationale": "사후보전 BM은 고장 발생 후 수리나 교환으로 요구 기능을 복구하는 방식입니다."
+      },
+      {
+        "choiceId": "U-883-c4",
+        "verdict": "incorrect",
+        "rationale": "TPM은 전원 참여로 설비 로스를 줄이는 종합 활동이며 고장 후 복구만을 뜻하지 않습니다."
+      }
+    ],
+    "misconception": "PM·MP·BM·TPM의 영문 약어를 보전 실시 시점과 범위 없이 외우는 오류.",
+    "existingLessonId": "lesson-5e0e83",
+    "existingBlockId": "principle",
+    "assertionText": "사후보전은 고장 발생 후 수리·교환하여 기능을 복구한다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20150919"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-352",
+    "subjectId": "subject-4",
+    "decision": "hold",
+    "holdReason": "열관리의 전사적 참여 범위를 직접 확정하는 독립 기존 이론 문장이 없어 승인할 수 없습니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20200822"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  },
+  {
+    "questionId": "U-425",
+    "subjectId": "subject-4",
+    "decision": "hold",
+    "holdReason": "열관리 범위와 소음관리의 제외 관계를 직접 확정하는 독립 기존 이론 문장이 없습니다.",
+    "evidenceUrls": [
+      "https://cbtbank.kr/exam/de20200606"
+    ],
+    "reviewedAt": "2026-08-03T00:00:00.000+09:00"
+  }
+]

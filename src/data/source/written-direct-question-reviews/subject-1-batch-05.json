@@ -1,0 +1,158 @@
+[
+  {
+    "questionId": "U-119", "subjectId": "subject-1", "decision": "approve", "correctChoiceId": "U-119-c1",
+    "directSolution": "릴리프밸브를 이용한다는 조건은 압축기 토출 공기를 방출해 압력을 조절한다는 뜻이다. 흡입을 막거나 전동기를 정지하는 방식이 아니라 토출측을 배기하는 방식이므로 배기조절을 고른다.",
+    "choiceRationales": [
+      {"choiceId":"U-119-c1","verdict":"correct","rationale":"릴리프밸브가 토출 공기를 방출하여 압력을 조절하므로 이 운전조절 방식은 배기조절이다."},
+      {"choiceId":"U-119-c2","verdict":"incorrect","rationale":"흡입조절은 흡입측 유량 또는 밸브를 다루는 방식이지만, 문항은 릴리프밸브로 토출 공기를 방출하는 조건을 제시한다."},
+      {"choiceId":"U-119-c3","verdict":"incorrect","rationale":"그립암조절은 압축기 토출 공기를 릴리프밸브로 방출해 압력을 제어하는 용량조절 방식의 명칭이 아니다."},
+      {"choiceId":"U-119-c4","verdict":"incorrect","rationale":"ON/OFF조절은 압력 범위에 따라 압축기를 기동·정지하는 방식이며, 운전 중 릴리프밸브로 토출 공기를 배기하는 조건과 다르다."}
+    ],
+    "misconception":"릴리프밸브의 방출 위치를 보지 않고 흡입조절이나 기동·정지 조절을 모두 같은 압축기 용량제어로 혼동한다.",
+    "existingLessonId":"lesson-8gxwir","existingBlockId":"principle","assertionText":"릴리프밸브로 토출 공기를 방출해 압력을 조절하는 방식은 배기조절이다.",
+    "evidenceUrls":["https://www.comcbt.com/xe/webhaesul/9630928","https://cbtbank.kr/exam/de20140525"],"reviewedAt":"2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId":"U-134","subjectId":"subject-1","decision":"approve","correctChoiceId":"U-134-c4",
+    "directSolution":"기준이 대기압이면 절대압력에서 대기압을 뺀 압력이다. 완전진공을 기준으로 하는 절대압력과 달리, 대기압을 0으로 표시하는 게이지압력으로 판단한다.",
+    "choiceRationales":[
+      {"choiceId":"U-134-c1","verdict":"incorrect","rationale":"절대압력은 완전진공을 0으로 삼는 압력이므로 대기압을 기준으로 한다는 문항 조건과 맞지 않는다."},
+      {"choiceId":"U-134-c2","verdict":"incorrect","rationale":"진공압력은 대기압보다 낮은 상태의 부족분을 나타내는 표현이며, 대기압 기준 일반 압력의 명칭은 아니다."},
+      {"choiceId":"U-134-c3","verdict":"incorrect","rationale":"정체압력은 흐르는 유체를 정지시킬 때의 압력 개념으로, 압력의 기준면을 대기압으로 정한 분류가 아니다."},
+      {"choiceId":"U-134-c4","verdict":"correct","rationale":"게이지압력은 절대압력에서 대기압을 뺀 값이므로 대기압을 기준으로 측정한 압력에 해당한다."}
+    ],
+    "misconception":"절대압력의 기준인 완전진공과 게이지압력의 기준인 대기압을 바꾸어 적용한다.",
+    "existingLessonId":"lesson-15ss7i4","existingBlockId":"principle","assertionText":"게이지압력은 절대압력에서 대기압을 뺀 값이다.",
+    "evidenceUrls":["https://www.comcbt.com/xe/webhaesul/9659405","https://www.comcbt.com/xe/webhaesul/9620121"],"reviewedAt":"2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId":"U-166","subjectId":"subject-1","decision":"approve","correctChoiceId":"U-166-c3",
+    "directSolution":"부정형 문항이므로 설치형식이 아닌 것을 찾는다. 풋형·플랜지형·트러니언형은 실린더를 지지하거나 회전시키는 설치형식이지만, 타이로드는 실린더 구조를 체결하는 부품이어서 3번이다.",
+    "choiceRationales":[
+      {"choiceId":"U-166-c1","verdict":"incorrect","rationale":"풋형은 실린더 하부를 베이스에 고정하는 대표적인 설치형식이므로 설치형식으로 보기 어렵지 않다."},
+      {"choiceId":"U-166-c2","verdict":"incorrect","rationale":"플랜지형은 실린더 끝단의 플랜지로 장착하는 설치형식이므로 문항의 부정형 답이 아니다."},
+      {"choiceId":"U-166-c3","verdict":"correct","rationale":"타이로드는 실린더 구조를 체결하는 부품이며 풋·플랜지·트러니언처럼 설치브래킷의 명칭이 아니다."},
+      {"choiceId":"U-166-c4","verdict":"incorrect","rationale":"트러니언형은 핀 축을 중심으로 실린더가 요동하도록 장착하는 설치형식이므로 제외 대상이 아니다."}
+    ],
+    "misconception":"실린더의 체결 부품인 타이로드와 하중·운동 조건에 따라 고르는 설치브래킷 형식을 같은 분류로 본다.",
+    "existingLessonId":"lesson-1p65lbi","existingBlockId":"principle","assertionText":"타이로드는 실린더 구조를 체결하는 부품이며 풋·플랜지·트러니언 등이 대표 설치형식이다.",
+    "evidenceUrls":["https://www.comcbt.com/xe/webhaesul/9659405","https://cbtbank.kr/exam/de20120915"],"reviewedAt":"2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId":"U-310","subjectId":"subject-1","decision":"approve","correctChoiceId":"U-310-c4",
+    "directSolution":"인장·자중하중은 실린더를 하강 방향으로 끌어 폭주시키므로, 하강측에 배압을 만들어 제어해야 한다. 부하의 자유낙하를 막고 제어된 하강을 만드는 카운터밸런스밸브가 정답이다.",
+    "choiceRationales":[
+      {"choiceId":"U-310-c1","verdict":"incorrect","rationale":"안전밸브는 회로의 최고압력을 제한하는 보호 장치이지, 매달린 부하의 하강 속도를 배압으로 제어하는 밸브가 아니다."},
+      {"choiceId":"U-310-c2","verdict":"incorrect","rationale":"브레이크밸브라는 포괄 표현만으로는 자중하중의 자유낙하 방지와 제어된 하강이라는 카운터밸런스 기능을 특정하지 못한다."},
+      {"choiceId":"U-310-c3","verdict":"incorrect","rationale":"시퀀스밸브는 설정압력 도달 뒤 다음 회로를 동작시키는 순서제어용이며, 부하 폭주를 막기 위한 배압 형성이 주기능이 아니다."},
+      {"choiceId":"U-310-c4","verdict":"correct","rationale":"카운터밸런스밸브는 부하의 폭주·자유낙하를 방지하고 배압으로 제어된 하강을 가능하게 한다."}
+    ],
+    "misconception":"과압 보호, 순서제어, 자중하중 제어를 모두 압력밸브의 같은 기능으로 취급한다.",
+    "existingLessonId":"lesson-6jatm","existingBlockId":"principle","assertionText":"카운터밸런스밸브는 부하의 폭주·자유낙하를 방지하고 제어된 하강을 가능하게 한다.",
+    "evidenceUrls":["https://www.comcbt.com/xe/webhaesul/9658829","https://www.comcbt.com/xe/cet/5708822"],"reviewedAt":"2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId":"U-329","subjectId":"subject-1","decision":"approve","correctChoiceId":"U-329-c4",
+    "directSolution":"폐회로에서는 설정값과 피드백된 실제값을 비교한다. 두 값의 차이가 제어기가 줄이려는 신호이므로, 비교연산 결과는 제어편차이다.",
+    "choiceRationales":[
+      {"choiceId":"U-329-c1","verdict":"incorrect","rationale":"외란은 제어계 밖에서 출력에 영향을 주는 방해 입력이며, 설정값과 피드백값을 뺀 비교 결과가 아니다."},
+      {"choiceId":"U-329-c2","verdict":"incorrect","rationale":"기준값은 비교기에 입력되는 목표 기준 자체이고, 비교 후 계산되어 나오는 차이값은 아니다."},
+      {"choiceId":"U-329-c3","verdict":"incorrect","rationale":"목표값은 원하는 출력 상태를 나타내는 설정 입력이며, 실제 검출값과의 차이를 뜻하지 않는다."},
+      {"choiceId":"U-329-c4","verdict":"correct","rationale":"제어편차는 목표값과 실제 검출값의 차이이며 제어기는 이 편차를 줄이도록 조작량을 만든다."}
+    ],
+    "misconception":"목표값·기준값 같은 비교 입력과 비교연산 뒤에 생기는 제어편차를 구분하지 못한다.",
+    "existingLessonId":"lesson-1f5dgyy","existingBlockId":"principle","assertionText":"제어편차는 목표값과 실제 검출값의 차이이며 제어기는 이 편차를 줄이도록 조작량을 만든다.",
+    "evidenceUrls":["https://www.comcbt.com/xe/webhaesul/9658829"],"reviewedAt":"2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId":"U-396","subjectId":"subject-1","decision":"approve","correctChoiceId":"U-396-c3",
+    "directSolution":"로드가 없고 자석 등의 결합으로 피스톤 운동을 외부 캐리지에 전달한다는 조건이 핵심이다. 긴 행정에서도 설치길이를 줄이는 로드리스실린더를 선택한다.",
+    "choiceRationales":[
+      {"choiceId":"U-396-c1","verdict":"incorrect","rationale":"충격실린더는 순간적인 큰 힘이나 속도를 얻기 위한 장치이며, 로드 없이 외부 캐리지를 결합해 긴 행정을 만드는 형식이 아니다."},
+      {"choiceId":"U-396-c2","verdict":"incorrect","rationale":"탠덤실린더는 피스톤을 직렬로 두어 추력을 키우는 형식으로, 설치길이를 줄이는 무로드 구조가 아니다."},
+      {"choiceId":"U-396-c3","verdict":"correct","rationale":"로드리스실린더는 피스톤과 외부 캐리지를 자력 또는 기계적으로 결합해 설치길이를 줄이고 긴 행정에 적합하다."},
+      {"choiceId":"U-396-c4","verdict":"incorrect","rationale":"양로드실린더는 양쪽에 로드를 두어 유효면적을 대칭화하는 형식이므로 로드가 없다는 문항 조건과 반대다."}
+    ],
+    "misconception":"추력 증가용 탠덤 형식과 긴 행정·짧은 설치길이용 로드리스 형식을 혼동한다.",
+    "existingLessonId":"lesson-i1hnsa","existingBlockId":"principle","assertionText":"로드리스실린더는 피스톤과 외부 캐리지를 자력 또는 기계적으로 결합해 설치길이를 줄인다.",
+    "evidenceUrls":["https://cbtbank.kr/exam/de20200822","https://cbtbank.kr/exam/de20130928"],"reviewedAt":"2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId":"U-404","subjectId":"subject-1","decision":"approve","correctChoiceId":"U-404-c1",
+    "directSolution":"압축기 토출 직후에 공기를 강제로 냉각해 수분을 응축시키는 장치는 애프터쿨러다. 후단 드라이어의 수분 부하를 낮추는 냉각기라는 작동 순서로 판단한다.",
+    "choiceRationales":[
+      {"choiceId":"U-404-c1","verdict":"correct","rationale":"애프터쿨러는 압축공기를 냉각해 수분을 응축시키고 후단 드라이어의 부하를 줄이는 토출 직후 냉각기다."},
+      {"choiceId":"U-404-c2","verdict":"incorrect","rationale":"드레인분리기는 이미 응축된 물을 분리·배출하는 장치이며, 토출공기를 강제냉각하여 응축을 만드는 장치는 아니다."},
+      {"choiceId":"U-404-c3","verdict":"incorrect","rationale":"메인라인필터는 배관 내 입자·오염물 관리를 위한 필터로, 고온 토출공기에서 수분을 응축시키는 냉각기와 기능이 다르다."},
+      {"choiceId":"U-404-c4","verdict":"incorrect","rationale":"오일미스트세퍼레이터는 오일 미스트 분리가 목적이며, 압축기 토출 직후 공기를 냉각해 수분을 응축하는 열교환 장치가 아니다."}
+    ],
+    "misconception":"냉각으로 수분을 응축시키는 단계와 응축수·입자·오일을 각자 분리하는 후속 장치를 혼동한다.",
+    "existingLessonId":"lesson-axyn1i","existingBlockId":"principle","assertionText":"일반적으로 수랭식 애프터쿨러가 공랭식보다 열교환 능력이 크다. 애프터쿨러는 압축공기를 냉각해 수분을 응축시키고 후단 드라이어의 부하를 줄인다.",
+    "evidenceUrls":["https://cbtbank.kr/exam/de20200822","https://cbtbank.kr/exam/de20161001"],"reviewedAt":"2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId":"U-485","subjectId":"subject-1","decision":"approve","correctChoiceId":"U-485-c2",
+    "directSolution":"완전진공을 0으로 삼는다는 기준이 절대압력의 정의다. 대기압을 0으로 삼는 게이지압력과 기준점을 구별해 절대압력을 고른다.",
+    "choiceRationales":[
+      {"choiceId":"U-485-c1","verdict":"incorrect","rationale":"대기압력은 주변 대기의 실제 압력이며, 완전진공을 영점으로 잡아 측정하는 압력의 명칭이 아니다."},
+      {"choiceId":"U-485-c2","verdict":"correct","rationale":"절대압력은 완전진공을 0으로 하여 측정하므로 문항의 기준과 일치한다."},
+      {"choiceId":"U-485-c3","verdict":"incorrect","rationale":"표준압력은 기준 조건에서 정한 압력값을 뜻할 수 있지만, 완전진공 기준으로 측정한 압력의 분류는 아니다."},
+      {"choiceId":"U-485-c4","verdict":"incorrect","rationale":"게이지압력은 대기압을 0으로 하므로 완전진공을 영점으로 한다는 조건과 맞지 않는다."}
+    ],
+    "misconception":"절대압력과 게이지압력의 영점 기준을 대기압 또는 완전진공으로 뒤바꾼다.",
+    "existingLessonId":"lesson-1cb6ye0","existingBlockId":"principle","assertionText":"절대압력은 완전진공을 0으로 하며 게이지압력은 대기압을 0으로 한다.",
+    "evidenceUrls":["https://cbtbank.kr/exam/de20200606","https://cbtbank.kr/exam/de20140525"],"reviewedAt":"2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId":"U-491","subjectId":"subject-1","decision":"approve","correctChoiceId":"U-491-c1",
+    "directSolution":"두 입구 모두에 압축공기가 작용해야 출력된다는 조건은 AND 논리다. 공압 논리에서 AND 기능을 하는 2압밸브를 선택한다.",
+    "choiceRationales":[
+      {"choiceId":"U-491-c1","verdict":"correct","rationale":"2압밸브는 두 입력이 모두 1일 때만 출력이 발생하는 AND 논리요소이므로 조건에 맞다."},
+      {"choiceId":"U-491-c2","verdict":"incorrect","rationale":"OR밸브는 두 입력 중 한쪽에 신호가 있어도 출력되는 OR 논리이므로 두 입구가 모두 필요하다는 조건과 다르다."},
+      {"choiceId":"U-491-c3","verdict":"incorrect","rationale":"감압밸브는 2차측 압력을 낮추고 일정하게 유지하는 압력제어밸브이며, 두 입력의 논리 조합을 만들지 않는다."},
+      {"choiceId":"U-491-c4","verdict":"incorrect","rationale":"분류밸브라는 명칭은 두 입력이 모두 존재할 때만 출력을 만드는 공압 AND 논리 기능을 나타내지 않는다."}
+    ],
+    "misconception":"두 입력 중 하나면 되는 OR 논리와 두 입력이 모두 필요한 AND 논리를 밸브 명칭만으로 혼동한다.",
+    "existingLessonId":"lesson-1yhs4sb","existingBlockId":"principle","assertionText":"2압밸브는 두 입력이 모두 1일 때만 출력이 발생하는 AND 논리요소다.",
+    "evidenceUrls":["https://cbtbank.kr/exam/de20200606","https://www.comcbt.com/xe/cet/5708822","https://cbtbank.kr/exam/de20080907"],"reviewedAt":"2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId":"U-549","subjectId":"subject-1","decision":"approve","correctChoiceId":"U-549-c1",
+    "directSolution":"기계적 축동력을 받아 공기를 압축해 압력에너지로 바꾸는 기기는 압축기다. 공기압모터와 실린더는 반대로 압축공기 에너지를 기계 운동으로 바꾸므로 제외한다.",
+    "choiceRationales":[
+      {"choiceId":"U-549-c1","verdict":"correct","rationale":"공기압축기는 전동기 등의 축동력으로 공기를 압축하여 기계적 에너지를 공기의 압력에너지로 변환한다."},
+      {"choiceId":"U-549-c2","verdict":"incorrect","rationale":"공기압모터는 압축공기의 에너지를 회전 운동으로 바꾸는 액추에이터이므로 에너지 변환 방향이 반대다."},
+      {"choiceId":"U-549-c3","verdict":"incorrect","rationale":"루브리케이터는 사용점 공기에 윤활유를 공급하는 FRL 구성요소로, 공기를 압축해 압력에너지를 만드는 기기가 아니다."},
+      {"choiceId":"U-549-c4","verdict":"incorrect","rationale":"공압실린더는 압축공기 에너지를 직선 운동으로 바꾸는 액추에이터이므로 압축기와 변환 방향이 반대다."}
+    ],
+    "misconception":"공압 계통의 발생원인 압축기와 압축공기를 사용하는 모터·실린더를 같은 에너지 변환 방향으로 생각한다.",
+    "existingLessonId":"lesson-1b5x39f","existingBlockId":"principle","assertionText":"압축기는 전동기 등의 축동력을 이용해 공기를 압축한다.",
+    "evidenceUrls":["https://cbtbank.kr/exam/de20190427"],"reviewedAt":"2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId":"U-555","subjectId":"subject-1","decision":"approve","correctChoiceId":"U-555-c1",
+    "directSolution":"두 입력 중 어느 한쪽에 압력이 있으면 출력되는 조건은 OR 논리다. 공압 회로에서 OR 기능은 존재하는 신호 또는 높은 압력 쪽을 출력하는 셔틀밸브가 수행한다.",
+    "choiceRationales":[
+      {"choiceId":"U-555-c1","verdict":"correct","rationale":"셔틀밸브는 두 입력 중 압력이 높은 쪽 또는 존재하는 신호를 출력하므로 OR 논리 조건에 맞다."},
+      {"choiceId":"U-555-c2","verdict":"incorrect","rationale":"2압밸브는 두 입력이 모두 있어야 출력되는 AND 논리요소이므로 한쪽 입력만으로 출력되는 조건과 다르다."},
+      {"choiceId":"U-555-c3","verdict":"incorrect","rationale":"릴리프밸브는 설정압력 이상에서 유량을 방출하여 최고압력을 제한하는 밸브로, 두 입력을 OR 연산하지 않는다."},
+      {"choiceId":"U-555-c4","verdict":"incorrect","rationale":"감압밸브는 2차측 압력을 낮추고 유지하는 압력제어밸브이며, 어느 한 입력 신호를 선택해 출력하는 논리밸브가 아니다."}
+    ],
+    "misconception":"한 입력만으로 출력되는 OR 논리와 두 입력 모두가 필요한 2압밸브의 AND 논리를 반대로 기억한다.",
+    "existingLessonId":"lesson-16e6faq","existingBlockId":"principle","assertionText":"셔틀밸브는 두 입력 중 압력이 높은 쪽 또는 존재하는 신호를 출력한다.",
+    "evidenceUrls":["https://cbtbank.kr/exam/de20190427","https://cbtbank.kr/exam/de20180915","https://cbtbank.kr/exam/de20150919","https://cbtbank.kr/exam/de20120915","https://cbtbank.kr/exam/de20100905","https://www.comcbt.com/xe/cet/5708822"],"reviewedAt":"2026-08-03T00:00:00.000Z"
+  },
+  {
+    "questionId":"U-687","subjectId":"subject-1","decision":"approve","correctChoiceId":"U-687-c1",
+    "directSolution":"문항은 행정 끝에서 피스톤이 충돌하는 충격을 줄이는 장치를 묻는다. 말단부 유로를 교축해 피스톤을 감속시키는 쿠션 장치가 충격·소음·손상을 줄이므로 정답이다.",
+    "choiceRationales":[
+      {"choiceId":"U-687-c1","verdict":"correct","rationale":"쿠션 장치는 행정 말기에 배기·유출유로를 교축해 피스톤을 감속시키므로 끝단 충격을 줄인다."},
+      {"choiceId":"U-687-c2","verdict":"incorrect","rationale":"에어브리저는 피스톤이 행정 끝에서 충돌하는 에너지를 유로 교축으로 감속시키는 실린더 쿠션 장치가 아니다."},
+      {"choiceId":"U-687-c3","verdict":"incorrect","rationale":"더스트와이퍼는 로드에 묻은 이물질이 실린더 안으로 들어가는 것을 막는 씰 부품으로, 말단 충격을 줄이지 않는다."},
+      {"choiceId":"U-687-c4","verdict":"incorrect","rationale":"피스톤패킹은 누설을 줄여 압력을 유지하는 부품일 뿐, 행정 말단의 유로를 교축해 충돌을 완화하는 장치는 아니다."}
+    ],
+    "misconception":"누설·오염을 관리하는 실린더 씰 부품과 행정 끝 충격을 감속시키는 쿠션 기능을 혼동한다.",
+    "existingLessonId":"lesson-gkv0x6","existingBlockId":"principle","assertionText":"행정 말기에 배기·유출유로를 교축해 피스톤을 감속한다.",
+    "evidenceUrls":["https://cbtbank.kr/exam/de20180915"],"reviewedAt":"2026-08-03T00:00:00.000Z"
+  }
+]

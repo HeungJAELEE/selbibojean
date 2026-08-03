@@ -107,10 +107,18 @@ export async function WrittenTheoryIndex({
                     <h2 className="text-2xl font-extrabold">{subject.title}</h2>
                   </div>
                 </div>
-                <p className="text-sm text-slate-500">
-                  통합 묶음 {familyCount}개 · 이론 레슨 {count}개
-                  {supplementalCount > 0 ? ` · 보강용 ${supplementalCount}개` : ""}
-                </p>
+                <div className="flex flex-col items-start gap-2 md:items-end">
+                  <p className="text-sm text-slate-500">
+                    통합 묶음 {familyCount}개 · 이론 레슨 {count}개
+                    {supplementalCount > 0 ? ` · 보강용 ${supplementalCount}개` : ""}
+                  </p>
+                  <Link
+                    href={`/written/theory/review/conflicts?subjectId=${subject.id}`}
+                    className="text-sm font-extrabold text-amber-800 underline decoration-amber-300 underline-offset-4"
+                  >
+                    조건부 참고·비채점 문항 보기
+                  </Link>
+                </div>
               </header>
 
               {subjectSlug ? (
