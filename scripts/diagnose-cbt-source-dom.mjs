@@ -1,9 +1,12 @@
-import { readFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
 
 const cheerioPath = process.env.CBT_CHEERIO_PATH;
 if (!cheerioPath) throw new Error("CBT_CHEERIO_PATH is required");
 const { load } = await import(pathToFileURL(cheerioPath).href);
+
+const outputDir = "artifacts/cbt-dom-diagnostic";
+await mkdir(outputDir, { recursive: true });
 
 const content = JSON.parse(await readFile("src/data/generated/content.json", "utf8"));
 const samples = [
@@ -11,11 +14,12 @@ const samples = [
   "https://www.comcbt.com/xe/webhaesul/9635925",
   "https://www.comcbt.com/xe/cet/5708822",
 ];
+const reports = [];
 
-for (const sourceUrl of samples) {
+for (const [sampleIndex, sourceUrl] of samples.entries()) {
   const variant = content.variants.find((item) => item.sourceUrl === sourceUrl);
   if (!variant) {
-    console.log(JSON.stringify({ sourceUrl, error: "variant_not_found" }));
+    reports.push({ sourceUrl, error: "variant_not_found" });
     continue;
   }
 
@@ -28,26 +32,8 @@ for (const sourceUrl of samples) {
   });
   const html = await response.text();
   const $ = load(html);
-  const needle = normalize(variant.stem).slice(0, 24);
-  const matches = [];
-
-  $("body *").each((_, element) => {
-    if (matches.length >= 8) return;
-    const ownText = normalize($(element).clone().children().remove().end().text());
-    const fullText = normalize($(element).text());
-    if (!fullText.includes(needle)) return;
-    matches.push(describeElement($, element));
-  });
-
-  const numberedCandidates = [];
-  $("body *").each((_, element) => {
-    if (numberedCandidates.length >= 40) return;
-    const ownText = normalize($(element).clone().children().remove().end().text());
-    const fullText = normalize($(element).text());
-    if (!/^1\s*[.)번]\s*/.test(ownText) && !/^1\s*[.)번]\s*/.test(fullText)) return;
-    if (fullText.length > 1800) return;
-    numberedCandidates.push(describeElement($, element));
-  });
+  const filePrefix = `${sampleIndex + 1}-${new URL(sourceUrl).hostname.replace(/[^a-z0-9]+/gi, "-")}`;
+  await writeFile(`${outputDir}/${filePrefix}.html`, html, "utf8");
 
   const classCounts = new Map();
   $("[class]").each((_, element) => {
@@ -56,74 +42,76 @@ for (const sourceUrl of samples) {
     }
   });
 
-  const structuralCandidates = [];
-  $("[class*='question'], [id*='question'], [class*='exam'], [id*='exam'], [class*='quiz'], [id*='quiz'], [class*='choice'], [id*='choice'], table, iframe").each((_, element) => {
-    if (structuralCandidates.length >= 80) return;
-    const fullText = normalize($(element).text());
-    const fragment = $.html(element);
-    if (element.tagName === "table" && !/[1-4]\s*[.)번]/.test(fullText)) return;
-    structuralCandidates.push({
-      ...describeElement($, element),
+  const keywordElements = [];
+  $("[class*='question'], [id*='question'], [class*='exam'], [id*='exam'], [class*='quiz'], [id*='quiz'], [class*='choice'], [id*='choice'], [class*='answer'], [id*='answer'], [class*='document'], [id*='document'], [class*='content'], [id*='content'], table, iframe").each((_, element) => {
+    if (keywordElements.length >= 160) return;
+    const text = normalize($(element).text());
+    if (element.tagName === "table" && text.length < 20) return;
+    keywordElements.push({
+      tag: element.tagName || element.name || null,
+      id: $(element).attr("id") || null,
+      class: $(element).attr("class") || null,
       attrs: element.attribs || {},
-      html: fragment.slice(0, 2200),
+      text: text.slice(0, 2200),
+      html: $.html(element).slice(0, 5000),
+      parent: describe($(element).parent()),
     });
   });
 
-  const answerHints = [];
-  $("[class*='answer'], [id*='answer'], [data-answer], [data-correct], input, script").each((_, element) => {
-    if (answerHints.length >= 50) return;
-    const fragment = $.html(element);
-    if (!/(answer|correct|dap|정답|ans|good|right)/i.test(fragment)) return;
-    answerHints.push(fragment.slice(0, 1400));
+  const numberedElements = [];
+  $("body *").each((_, element) => {
+    if (numberedElements.length >= 100) return;
+    const ownText = normalize($(element).clone().children().remove().end().text());
+    const fullText = normalize($(element).text());
+    const candidate = ownText || fullText;
+    if (!/(^|\s)(1|01)\s*[.)번:]\s*/.test(candidate)) return;
+    if (fullText.length < 10 || fullText.length > 3500) return;
+    numberedElements.push({
+      tag: element.tagName || element.name || null,
+      id: $(element).attr("id") || null,
+      class: $(element).attr("class") || null,
+      ownText: ownText.slice(0, 1000),
+      fullText: fullText.slice(0, 3000),
+      html: $.html(element).slice(0, 6000),
+      parent: describe($(element).parent()),
+    });
   });
 
-  const rawContexts = [];
-  for (const pattern of ["1.", "1)", "문제", "정답", "answer", "correct", "good"] ) {
-    let offset = 0;
-    while (rawContexts.length < 50) {
-      const index = html.toLowerCase().indexOf(pattern.toLowerCase(), offset);
-      if (index < 0) break;
-      rawContexts.push({ pattern, index, html: html.slice(Math.max(0, index - 350), index + 1600) });
-      offset = index + pattern.length;
-    }
-  }
+  const scripts = $("script")
+    .map((_, element) => ({
+      src: $(element).attr("src") || null,
+      text: normalize($(element).text()).slice(0, 3000),
+    }))
+    .get()
+    .filter((entry) => entry.src || /(answer|correct|question|exam|quiz|정답|문제)/i.test(entry.text))
+    .slice(0, 100);
 
-  console.log(`\n=== ${sourceUrl} ===`);
-  console.log(JSON.stringify({
+  reports.push({
+    sourceUrl,
     status: response.status,
     finalUrl: response.url,
-    htmlLength: html.length,
     title: normalize($("title").text()),
+    htmlFile: `${filePrefix}.html`,
+    htmlLength: html.length,
     externalId: variant.externalId,
-    currentNeedle: needle,
-    classCounts: [...classCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 80),
-    matchCount: matches.length,
-    matches,
-    numberedCandidates,
-    structuralCandidates,
-    answerHints,
-    rawContexts,
-  }, null, 2));
+    currentStemPrefix: normalize(variant.stem).slice(0, 80),
+    classCounts: [...classCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 100),
+    iframes: $("iframe").map((_, element) => element.attribs || {}).get(),
+    forms: $("form").map((_, element) => ({ attrs: element.attribs || {}, text: normalize($(element).text()).slice(0, 1000) })).get().slice(0, 30),
+    keywordElements,
+    numberedElements,
+    scripts,
+  });
 }
+
+await writeFile(`${outputDir}/diagnostic.json`, `${JSON.stringify(reports, null, 2)}\n`, "utf8");
+console.log(`CBT DOM diagnostic artifact written: ${reports.length} pages`);
 
 function normalize(value) {
   return String(value ?? "")
     .normalize("NFC")
     .replace(/\s+/g, " ")
     .trim();
-}
-
-function describeElement($, element) {
-  const ownText = normalize($(element).clone().children().remove().end().text());
-  const fullText = normalize($(element).text());
-  return {
-    tag: element.tagName || element.name || null,
-    id: $(element).attr("id") || null,
-    class: $(element).attr("class") || null,
-    ownText: ownText.slice(0, 500),
-    fullText: fullText.slice(0, 1500),
-    parent: describe($(element).parent()),
-  };
 }
 
 function describe(node) {
