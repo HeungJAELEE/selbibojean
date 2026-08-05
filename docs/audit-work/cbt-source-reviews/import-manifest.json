@@ -1,0 +1,65 @@
+{
+  "formatVersion": 1,
+  "status": "identity_validated_pending_repository_import",
+  "sourceReconstructionRecordCount": 2384,
+  "reviewRecordCount": 250,
+  "sourceIdentityMatches": 250,
+  "registeredIdentityMatches": 250,
+  "sourceIdentityMismatches": 0,
+  "registeredIdentityMismatches": 0,
+  "rawBundleSha256": "260798068da2383171a19433a2eb7ba7a90ff0ead267a5a35127b9dd486edba8",
+  "gzipBundleSha256": "237996c82ca33596d09c5e2b02b78749648892ac5641c850e94fca6079036a68",
+  "batches": [
+    {
+      "fileName": "de20060910_q01-q50_review.jsonl",
+      "recordCount": 50,
+      "sha256": "60117ed76a7a6c35c4c748efa1f2ae954dde7838faa55fd239f23a9eeb25d5a8",
+      "firstExternalId": "2006-4-Q01",
+      "lastExternalId": "2006-4-Q50",
+      "answerConfidence": { "confirmed": 41, "likely": 5, "conflict": 4 },
+      "reviewResolution": { "reviewed_candidate": 37, "hold": 13 }
+    },
+    {
+      "fileName": "de20060910_q51-q100_review.jsonl",
+      "recordCount": 50,
+      "sha256": "86ef3214e9a868df9c7e9e08a8417a2c190b67d3dd9a07851790211781675385",
+      "firstExternalId": "2006-4-Q51",
+      "lastExternalId": "2006-4-Q100",
+      "answerConfidence": { "confirmed": 39, "likely": 9, "conflict": 2 },
+      "reviewResolution": { "reviewed_candidate": 33, "hold": 17 }
+    },
+    {
+      "fileName": "de20070902_q01-q50_review.jsonl",
+      "recordCount": 50,
+      "sha256": "3d9725e05df6bf2375264cd6163ca381f9ebb5b3db5f5fe868ae84da1d415727",
+      "firstExternalId": "2007-4-Q01",
+      "lastExternalId": "2007-4-Q50",
+      "answerConfidence": { "confirmed": 36, "likely": 10, "conflict": 4 },
+      "reviewResolution": { "reviewed_candidate": 36, "hold": 14 }
+    },
+    {
+      "fileName": "de20070902_q51-q100_review.jsonl",
+      "recordCount": 50,
+      "sha256": "1afd36beb263fcd50556886083ab91b322af427e0a897870aaa71d06af12c2e8",
+      "firstExternalId": "2007-4-Q51",
+      "lastExternalId": "2007-4-Q100",
+      "answerConfidence": { "confirmed": 34, "likely": 12, "conflict": 3, "unknown": 1 },
+      "reviewResolution": { "reviewed_candidate": 33, "hold": 17 }
+    },
+    {
+      "fileName": "de20080907_q01-q50_review.jsonl",
+      "recordCount": 50,
+      "sha256": "00387af297145efd9c5d4516fa8f8a863e71420cc68af44c8ef3d363a511f1f9",
+      "firstExternalId": "2008-4-Q01",
+      "lastExternalId": "2008-4-Q50",
+      "answerConfidence": { "confirmed": 32, "likely": 14, "conflict": 4 },
+      "reviewResolution": { "reviewed_candidate": 31, "hold": 19 }
+    }
+  ],
+  "publicationPolicy": {
+    "autoApprove": false,
+    "singleCaptureUncontestedCheckRequired": true,
+    "identityMismatchDisposition": "reject_import",
+    "conflictUnknownOrSourceImageMissingDisposition": "hold"
+  }
+}
