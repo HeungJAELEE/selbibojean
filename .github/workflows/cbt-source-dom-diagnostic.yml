@@ -1,0 +1,29 @@
+name: CBT source DOM diagnostic
+
+on:
+  push:
+    branches:
+      - codex/cbt-source-dom-diagnostic-20260806
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install isolated parser dependency
+        run: |
+          mkdir -p /tmp/cbt-parser
+          cd /tmp/cbt-parser
+          npm init -y
+          npm install cheerio@1.1.2
+      - name: Inspect source page DOM
+        env:
+          CBT_CHEERIO_PATH: /tmp/cbt-parser/node_modules/cheerio/dist/esm/index.js
+        run: node scripts/diagnose-cbt-source-dom.mjs
