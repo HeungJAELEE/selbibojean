@@ -39,10 +39,14 @@ jobs:
         run: node /tmp/reconstruct-cbt-sources-exact.mjs
       - name: Remove position-only choice mappings
         run: node scripts/harden-cbt-source-reconstruction.mjs
+      - name: Bind theory identities and force unreviewed publication HOLD
+        run: node scripts/annotate-cbt-source-reconstruction.mjs
       - name: Verify exact-set, hashes, source-text mapping and HOLD gates
         run: node scripts/verify-cbt-source-reconstruction-v2.mjs
       - name: Verify source formula formatting regression
         run: node scripts/verify-cbt-source-format-regression.mjs
+      - name: Verify unreviewed publication gate
+        run: node scripts/verify-cbt-reconstruction-publication-hold.mjs
       - name: Upload reconstruction evidence
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
