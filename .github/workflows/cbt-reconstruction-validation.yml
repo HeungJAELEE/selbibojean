@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
@@ -43,7 +43,7 @@ jobs:
           src/lib/content/cbt-source-reconstruction.ts
           src/app/admin/page.tsx
           src/app/admin/review/cbt-sources/page.tsx
-          'src/app/admin/review/cbt-sources/[externalId]/page.tsx'
+          "src/app/admin/review/cbt-sources/[externalId]/page.tsx"
           scripts/reconstruct-cbt-sources.mjs
           scripts/harden-cbt-source-reconstruction.mjs
           scripts/prepare-cbt-reconstruction-script.mjs
