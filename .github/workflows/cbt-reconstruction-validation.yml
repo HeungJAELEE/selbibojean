@@ -1,0 +1,55 @@
+name: CBT reconstruction validation
+
+on:
+  push:
+    branches:
+      - codex/cbt-source-reconstruction-20260806
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/cbt-source-reconstruction-20260806
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Confirm Node.js 24
+        run: |
+          node --version
+          node scripts/verify-node-runtime.mjs
+      - name: Install repository dependencies
+        run: npm ci
+      - name: Verify reconstruction exact-set and HOLD gates
+        run: |
+          node scripts/verify-cbt-source-reconstruction-v2.mjs
+          node scripts/verify-cbt-source-format-regression.mjs
+          node scripts/verify-cbt-reconstruction-publication-hold.mjs
+      - name: Verify reconstruction source boundary
+        run: node scripts/verify-cbt-source-no-answer-leak.mjs --scope=source
+      - name: Run reconstruction unit tests serially
+        run: npx vitest run tests/unit/cbt-source-reconstruction-ledger.test.ts --maxWorkers=1
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Lint changed reconstruction files
+        run: >-
+          npx eslint
+          src/lib/content/cbt-source-reconstruction.ts
+          src/app/admin/page.tsx
+          src/app/admin/review/cbt-sources/page.tsx
+          'src/app/admin/review/cbt-sources/[externalId]/page.tsx'
+          scripts/reconstruct-cbt-sources.mjs
+          scripts/harden-cbt-source-reconstruction.mjs
+          scripts/prepare-cbt-reconstruction-script.mjs
+          scripts/verify-cbt-source-reconstruction-v2.mjs
+          scripts/verify-cbt-source-format-regression.mjs
+          scripts/annotate-cbt-source-reconstruction.mjs
+          scripts/verify-cbt-reconstruction-publication-hold.mjs
+          scripts/verify-cbt-source-no-answer-leak.mjs
+          tests/unit/cbt-source-reconstruction-ledger.test.ts
