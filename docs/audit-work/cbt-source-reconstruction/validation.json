@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-05T17:30:01.927Z",
+  "generatedAt": "2026-08-05T17:35:50.919Z",
   "status": "PASS",
   "counts": {
     "variants": 2384,
     "records": 2384,
     "sessions": 27,
-    "restoredCandidates": 289,
-    "holds": 2095,
+    "restoredCandidates": 282,
+    "holds": 2102,
     "sourceImages": 226,
     "reachableSourceImages": 226
   },
