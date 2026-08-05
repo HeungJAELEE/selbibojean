@@ -1,0 +1,60 @@
+name: CBT source reconstruction
+
+on:
+  push:
+    branches:
+      - codex/cbt-source-reconstruction-20260806
+
+permissions:
+  contents: write
+
+jobs:
+  reconstruct:
+    if: ${{ !contains(github.event.head_commit.message, '[skip cbt reconstruction]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/cbt-source-reconstruction-20260806
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Confirm Node.js 24
+        run: |
+          node --version
+          node scripts/verify-node-runtime.mjs
+      - name: Install isolated source parser
+        run: |
+          mkdir -p /tmp/cbt-parser
+          cd /tmp/cbt-parser
+          npm init -y
+          npm install cheerio@1.1.2
+      - name: Reconstruct all registered CBT sessions
+        env:
+          CBT_CHEERIO_PATH: /tmp/cbt-parser/node_modules/cheerio/dist/esm/index.js
+        run: node scripts/reconstruct-cbt-sources.mjs
+      - name: Verify exact-set, hashes, mapping and HOLD gates
+        run: node scripts/verify-cbt-source-reconstruction.mjs
+      - name: Upload reconstruction evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: cbt-source-reconstruction
+          path: |
+            src/data/generated/cbt-source-reconstruction.json
+            docs/audit-work/cbt-source-reconstruction
+          if-no-files-found: error
+          retention-days: 7
+      - name: Commit reconstruction ledger only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/generated/cbt-source-reconstruction.json
+          git add docs/audit-work/cbt-source-reconstruction
+          if git diff --cached --quiet; then
+            echo "No reconstruction ledger changes"
+          else
+            git commit -m "data: record full CBT source reconstruction [skip cbt reconstruction]"
+            git push origin HEAD:codex/cbt-source-reconstruction-20260806
+          fi
