@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-08-05T17:44:37.875Z",
+  "variants": 2384,
+  "publicationReady": 0,
+  "publicationHolds": 2384,
+  "variantSpecificChoiceContractRequired": 2091,
+  "canonicalFidelity": {
+    "stemExact": 5,
+    "stemNormalizedExact": 0,
+    "stemMismatch": 2379,
+    "choicesExact": 133,
+    "choicesNormalizedExact": 0,
+    "choicesMismatch": 2251
+  },
+  "publicationHoldReasonCounts": {
+    "source_answer_review_required": 2384,
+    "source_direct_solution_review_required": 2384,
+    "source_choice_feedback_review_required": 2384,
+    "source_theory_link_review_required": 2384,
+    "variant_specific_choice_contract_required": 2091,
+    "stable_choice_mapping_missing": 2091,
+    "source_image_missing": 33,
+    "source_answer_canonical_conflict": 1
+  }
+}
