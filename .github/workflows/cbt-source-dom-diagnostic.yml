@@ -11,7 +11,7 @@ permissions:
 jobs:
   diagnose:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -27,10 +27,21 @@ jobs:
         env:
           CBT_CHEERIO_PATH: /tmp/cbt-parser/node_modules/cheerio/dist/esm/index.js
         run: node scripts/diagnose-cbt-source-dom.mjs
+      - name: Inventory all source pages
+        env:
+          CBT_CHEERIO_PATH: /tmp/cbt-parser/node_modules/cheerio/dist/esm/index.js
+        run: node scripts/inventory-cbt-sources.mjs
       - name: Upload DOM diagnostic
         uses: actions/upload-artifact@v4
         with:
           name: cbt-dom-diagnostic
           path: artifacts/cbt-dom-diagnostic
+          if-no-files-found: error
+          retention-days: 3
+      - name: Upload source inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: cbt-source-inventory
+          path: artifacts/cbt-source-inventory
           if-no-files-found: error
           retention-days: 3
