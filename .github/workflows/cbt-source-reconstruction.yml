@@ -35,18 +35,22 @@ jobs:
         env:
           CBT_CHEERIO_PATH: /tmp/cbt-parser/node_modules/cheerio/dist/esm/index.js
         run: node scripts/reconstruct-cbt-sources.mjs
-      - name: Verify exact-set, hashes, mapping and HOLD gates
-        run: node scripts/verify-cbt-source-reconstruction.mjs
+      - name: Remove position-only choice mappings
+        run: node scripts/harden-cbt-source-reconstruction.mjs
+      - name: Verify exact-set, hashes, source-text mapping and HOLD gates
+        run: node scripts/verify-cbt-source-reconstruction-v2.mjs
       - name: Upload reconstruction evidence
+        if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: cbt-source-reconstruction
           path: |
             src/data/generated/cbt-source-reconstruction.json
             docs/audit-work/cbt-source-reconstruction
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 7
       - name: Commit reconstruction ledger only
+        if: ${{ success() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
