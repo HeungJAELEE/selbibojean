@@ -1,0 +1,35 @@
+[
+  {
+    "externalId": "2008-4-Q04",
+    "sourceExactStem": "진동폭의 ISO 단위에서 틀린 것은?",
+    "sourceExactChoices": [
+      "변위(m), 속도(m/s), 가속도(m/s^{2})",
+      "변위(mm), 속도(mm/s), 가속도(m/s^{2})",
+      "변위(㎛), 속도(m/s), 가속도(m/s^{2})",
+      "변위(㎛), 속도(m/s2), 가속도(m/s)"
+    ],
+    "sourceAnswerIndex": 3
+  },
+  {
+    "externalId": "2008-4-Q06",
+    "sourceExactStem": "베어링 소음의 발생원에 따른 특성 주파수의 관계식이 잘못 된 것은? (단 r_{1} = 내륜의 반경, r_{2} = 외륜의 반경, r_{3} = 볼(Ball) 또는 롤러(Roller)의 반경, m = 볼(Ball) 또는 롤러(Roller) 의 수, n_{r} = 내륜의 회전속도(rpm) 이다.)",
+    "sourceExactChoices": [
+      "베어링의 편심 혹은 불균형에 의한 회전 소음 주파수 (f_{r}) : f_{r} = n_{r}",
+      "볼, 롤러 또는 케이스 표면의 불균일에 의한 소음주파수 (f_{c}) : f_{c} = n_{r} x r_{1} / (r_{1} + r_{2})",
+      "볼 또는 롤러의 자체회전에 의한 소음 주파수 (f_{B}) : f_{B} = (r_{2} / r_{B}) x n_{r} x r_{1}/(r_{1}+r_{2})",
+      "내륜 표면의 불균일에 의한 소음 주파수 (f_{1}) : f_{1} = n_{r} x m x r_{1} / (r_{1}+r_{2})"
+    ],
+    "sourceAnswerIndex": 3
+  },
+  {
+    "externalId": "2008-4-Q13",
+    "sourceExactStem": "다음 중 음압의 단위로 적합한 것은",
+    "sourceExactChoices": [
+      "N",
+      "kgf",
+      "㎨",
+      "N/m^{2}"
+    ],
+    "sourceAnswerIndex": 3
+  }
+]
