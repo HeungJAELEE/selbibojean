@@ -31,14 +31,18 @@ jobs:
           cd /tmp/cbt-parser
           npm init -y
           npm install cheerio@1.1.2
+      - name: Prepare source-semantic reconstruction script
+        run: node scripts/prepare-cbt-reconstruction-script.mjs
       - name: Reconstruct all registered CBT sessions
         env:
           CBT_CHEERIO_PATH: /tmp/cbt-parser/node_modules/cheerio/dist/esm/index.js
-        run: node scripts/reconstruct-cbt-sources.mjs
+        run: node /tmp/reconstruct-cbt-sources-exact.mjs
       - name: Remove position-only choice mappings
         run: node scripts/harden-cbt-source-reconstruction.mjs
       - name: Verify exact-set, hashes, source-text mapping and HOLD gates
         run: node scripts/verify-cbt-source-reconstruction-v2.mjs
+      - name: Verify source formula formatting regression
+        run: node scripts/verify-cbt-source-format-regression.mjs
       - name: Upload reconstruction evidence
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
