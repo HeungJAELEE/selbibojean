@@ -11,7 +11,7 @@ permissions:
 jobs:
   validate:
     runs-on: windows-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,10 +31,22 @@ jobs:
           node scripts/verify-cbt-source-reconstruction-v2.mjs
           node scripts/verify-cbt-source-format-regression.mjs
           node scripts/verify-cbt-reconstruction-publication-hold.mjs
+          npm run verify:cbt-audit
       - name: Verify reconstruction source boundary
-        run: node scripts/verify-cbt-source-no-answer-leak.mjs --scope=source
-      - name: Run reconstruction unit tests serially
-        run: npx vitest run tests/unit/cbt-source-reconstruction-ledger.test.ts --maxWorkers=1
+        run: |
+          node scripts/verify-cbt-source-no-answer-leak.mjs --scope=source
+          npm run verify:no-answer-leak -- --scope=source
+      - name: Run reconstruction and learning persistence tests serially
+        run: >-
+          npx vitest run
+          tests/unit/cbt-source-reconstruction-ledger.test.ts
+          tests/unit/answer-leak.test.ts
+          tests/unit/practice-session-persistence-contract.test.ts
+          tests/unit/merge-guest-learning-route.test.ts
+          tests/unit/device-learning-storage.test.tsx
+          tests/unit/practice.test.ts
+          tests/integration/runtime-content-gates.test.ts
+          --maxWorkers=1
       - name: Typecheck
         run: npm run typecheck
       - name: Lint changed reconstruction files
@@ -53,3 +65,9 @@ jobs:
           scripts/verify-cbt-reconstruction-publication-hold.mjs
           scripts/verify-cbt-source-no-answer-leak.mjs
           tests/unit/cbt-source-reconstruction-ledger.test.ts
+      - name: Production build
+        run: npm run build
+      - name: Verify production client answer boundary
+        run: |
+          npm run verify:no-answer-leak -- --scope=all
+          node scripts/verify-cbt-source-no-answer-leak.mjs --scope=build
