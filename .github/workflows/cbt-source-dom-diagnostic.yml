@@ -31,6 +31,13 @@ jobs:
         env:
           CBT_CHEERIO_PATH: /tmp/cbt-parser/node_modules/cheerio/dist/esm/index.js
         run: node scripts/inventory-cbt-sources.mjs
+      - name: Capture required source image
+        run: |
+          mkdir -p artifacts/cbt-source-images
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0 (compatible; SelbiSourceAudit/1.0)' \
+            'https://cbtbank.kr/images/de/de20070902/de20070902m93.gif' \
+            --output artifacts/cbt-source-images/de20070902m93.gif
+          file artifacts/cbt-source-images/de20070902m93.gif
       - name: Create repository snapshot
         run: |
           mkdir -p artifacts/repository-snapshot
@@ -47,6 +54,13 @@ jobs:
         with:
           name: cbt-source-inventory
           path: artifacts/cbt-source-inventory
+          if-no-files-found: error
+          retention-days: 3
+      - name: Upload required source image
+        uses: actions/upload-artifact@v4
+        with:
+          name: de20070902-q93-source-image
+          path: artifacts/cbt-source-images/de20070902m93.gif
           if-no-files-found: error
           retention-days: 3
       - name: Upload repository snapshot
