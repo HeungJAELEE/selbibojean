@@ -1,0 +1,22 @@
+{
+  "formatVersion": 1,
+  "scope": "reviewed CBT import checkpoint through batch 07",
+  "recordCount": 1370,
+  "encoding": "brotli-base64",
+  "rawSha256": "423232bbc1bcac47fbd4fbbfa60a19d4459a80ad4a366ea916db03c55204332e",
+  "rawBytes": 245108,
+  "compressedBytes": 12855,
+  "base64Bytes": 17140,
+  "statusCounts": {
+    "candidate": 1305,
+    "choice_conflict": 14,
+    "hold": 51
+  },
+  "remainingUnreviewed": 1014,
+  "sourceReconstructionPath": "src/data/generated/cbt-source-reconstruction.json",
+  "notes": [
+    "This is a non-published migration checkpoint.",
+    "Candidate records remain blocked from learner runtime until final runtime integration and publication gates pass.",
+    "Choice-conflict and required-image records remain non-scoring."
+  ]
+}
