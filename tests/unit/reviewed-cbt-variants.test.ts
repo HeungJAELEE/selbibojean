@@ -963,7 +963,9 @@ describe("reviewed CBT variant imports", () => {
     ]);
     expect(batch?.canonicalQuestionChangeIds).toEqual(["U-649"]);
 
-    const lesson = reviewedCbtVariantManifest.theoryLessonAdditions.find(
+    const lesson = (
+      reviewedCbtVariantManifest.theoryLessonAdditions ?? []
+    ).find(
       (addition) =>
         addition.lesson.id === "lesson-cbt-gang-system-process-layout",
     );
@@ -1264,7 +1266,9 @@ describe("reviewed CBT variant imports", () => {
     expect(batch?.theoryLessonAdditionIds).toEqual([]);
     expect(batch?.canonicalQuestionChangeIds).toEqual(["U-478"]);
 
-    const canonicalChange = reviewedCbtVariantManifest.canonicalQuestionChanges.find(
+    const canonicalChange = (
+      reviewedCbtVariantManifest.canonicalQuestionChanges ?? []
+    ).find(
       (change) => change.question.id === "U-478",
     );
     expect(canonicalChange).toMatchObject({

@@ -295,8 +295,10 @@ export function applyWrittenQuestionAuditManifest(
     const accepted =
       audit.auditDisposition === "verified" ||
       audit.auditDisposition === "cbt_corrected";
+    const reviewedAt = audit.reviewedAt;
     if (
       !accepted ||
+      !reviewedAt ||
       hasAuditPromotionBlocker(question) ||
       !publicLessonIds.has(question.lessonId)
     ) {
@@ -376,7 +378,7 @@ export function applyWrittenQuestionAuditManifest(
             tag !== "authoritative_source_required",
         ) ?? [],
         note: audit.reviewNote,
-        reviewedAt: audit.reviewedAt,
+        reviewedAt,
       },
       audit,
       validation: {

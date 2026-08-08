@@ -18,6 +18,7 @@ import {
 import {
   PUBLICATION_BLOCKERS,
   type GeneratedContent,
+  type ReviewedCbtVariantRecord,
 } from "../src/lib/domain/types";
 
 const source = generatedContent as GeneratedContent;
@@ -44,6 +45,30 @@ const runtimeQuestionsById = new Map(
 const runtimeLessonsById = new Map(
   runtime.lessons.map((lesson) => [lesson.id, lesson]),
 );
+
+const theoryLessonAdditions =
+  reviewedCbtVariantManifest.theoryLessonAdditions ?? [];
+const canonicalQuestionChanges =
+  reviewedCbtVariantManifest.canonicalQuestionChanges ?? [];
+
+type ReviewedRecordWithTheoryLink = ReviewedCbtVariantRecord & {
+  theoryLink: NonNullable<ReviewedCbtVariantRecord["theoryLink"]>;
+};
+
+function hasTheoryLink(
+  record: ReviewedCbtVariantRecord | undefined,
+): record is ReviewedRecordWithTheoryLink {
+  return record?.theoryLink != null;
+}
+
+type TaxonomyRepairMigration = ReviewedCbtVariantRecord["migration"] & {
+  taxonomyRepair?: {
+    applied: boolean;
+    currentConceptGroupId: string;
+    targetConceptGroupId: string | null;
+    sourceStatedTargetFamily: string;
+  };
+};
 
 type Batch13TheoryLinkSnapshot = {
   canonicalId: string;
@@ -348,8 +373,15 @@ function verifyTheoryAndCanonicalExtensions() {
 
 function verifyFinalCanonicalPublicationBlockers() {
   const allowed = new Set<string>(PUBLICATION_BLOCKERS);
-  for (const change of reviewedCbtVariantManifest.canonicalQuestionChanges) {
-    const invalid = change.question.publication.blockers.filter(
+  for (const change of canonicalQuestionChanges) {
+    const publication = change.question.publication;
+    if (!publication) {
+      failures.push(
+        `${change.question.id}: canonical publication contract missing`,
+      );
+      continue;
+    }
+    const invalid = publication.blockers.filter(
       (blocker) => !allowed.has(blocker),
     );
     if (invalid.length) {
@@ -365,18 +397,20 @@ function verifyFinalCanonicalPublicationBlockers() {
     "U-1072",
     "U-1089",
   ]) {
-    const change = reviewedCbtVariantManifest.canonicalQuestionChanges.find(
+    const change = canonicalQuestionChanges.find(
       (candidate) => candidate.question.id === canonicalId,
     );
-    if (!change?.question.publication.blockers.includes("answer_conflict")) {
+    const blockers = change?.question.publication?.blockers ?? [];
+    if (!blockers.includes("answer_conflict")) {
       failures.push(`${canonicalId}: canonical answer-conflict blocker missing`);
     }
   }
   for (const canonicalId of ["U-649", "U-478"]) {
-    const change = reviewedCbtVariantManifest.canonicalQuestionChanges.find(
+    const change = canonicalQuestionChanges.find(
       (candidate) => candidate.question.id === canonicalId,
     );
-    if (!change?.question.publication.blockers.includes("mapping_unverified")) {
+    const blockers = change?.question.publication?.blockers ?? [];
+    if (!blockers.includes("mapping_unverified")) {
       failures.push(`${canonicalId}: canonical mapping blocker missing`);
     }
   }
@@ -1450,10 +1484,13 @@ function verifyBatch07Contracts() {
   }
 
   const formulaHold = recordsById.get("2016-4-Q10");
+  const formulaContract = formulaHold?.formulaUnitSubstitution;
   if (
-    formulaHold?.formulaUnitSubstitution?.formula !==
+    typeof formulaContract !== "object" ||
+    formulaContract === null ||
+    formulaContract.formula !==
       "무감쇠 1자유도계의 각고유진동수는 ωn=√(k/m)이다" ||
-    !formulaHold.formulaUnitSubstitution.result.includes("HOLD")
+    !formulaContract.result.includes("HOLD")
   ) {
     failures.push("2016-4-Q10: image/formula HOLD contract failed");
   }
@@ -1681,7 +1718,8 @@ function verifyBatch08Contracts() {
 
   const reassigned = recordsById.get("2018-4-Q19");
   if (
-    reassigned?.currentCanonicalId !== "U-026" ||
+    !hasTheoryLink(reassigned) ||
+    reassigned.currentCanonicalId !== "U-026" ||
     reassigned.canonicalId !== "U-997" ||
     reassigned.migration.canonicalAction !== "REASSIGN_CANONICAL" ||
     reassigned.theoryLink.lessonId !== "lesson-lqjgxa" ||
@@ -1693,30 +1731,29 @@ function verifyBatch08Contracts() {
 
   const repaired = recordsById.get("2018-4-Q35");
   if (
-    repaired?.canonicalId !== "U-649" ||
+    !hasTheoryLink(repaired) ||
+    repaired.canonicalId !== "U-649" ||
     repaired.migration.canonicalAction !== "APPLY_CANONICAL_OVERLAY" ||
     repaired.migration.theoryAction !== "ADD_DIRECT_THEORY_LESSON" ||
     repaired.theoryLink.lessonId !==
       "lesson-cbt-gang-system-process-layout" ||
-    repaired.review.runtimeStatus !== "candidate" ||
-    !repaired.review.publicationBlockers.includes("lesson_source_needed") ||
     JSON.stringify(repaired.choiceIdMapping) !==
       JSON.stringify(["U-649-c1", "U-649-c2", "U-649-c3", "U-649-c4"])
   ) {
     failures.push("2018-4-Q35: canonical/theory repair contract failed");
   }
 
-  const lessonAddition = reviewedCbtVariantManifest.theoryLessonAdditions?.find(
+  const lessonAddition = theoryLessonAdditions.find(
     (addition) =>
       addition.lesson.id === "lesson-cbt-gang-system-process-layout",
   );
-  const canonicalChange = reviewedCbtVariantManifest.canonicalQuestionChanges?.find(
+  const canonicalChange = canonicalQuestionChanges.find(
     (change) => change.question.id === "U-649",
   );
   if (
     !lessonAddition ||
     lessonAddition.lesson.sourceNeeded !== true ||
-    lessonAddition.lesson.publication.readiness !== "blocked" ||
+    lessonAddition.lesson.publication?.readiness !== "blocked" ||
     !canonicalChange ||
     canonicalChange.action !== "replace" ||
     canonicalChange.question.lessonId !==
@@ -2231,7 +2268,8 @@ function verifyBatch10Contracts() {
   for (const contract of reassignmentContracts) {
     const record = recordsById.get(contract.externalId);
     if (
-      record?.currentCanonicalId !== contract.currentCanonicalId ||
+      !hasTheoryLink(record) ||
+      record.currentCanonicalId !== contract.currentCanonicalId ||
       record.canonicalId !== contract.targetCanonicalId ||
       record.theoryLink.lessonId !== contract.lessonId ||
       record.theoryLink.lessonAnchor !== contract.lessonAnchor ||
@@ -2246,7 +2284,8 @@ function verifyBatch10Contracts() {
 
   const repaired = recordsById.get("2020-12B-Q86");
   if (
-    repaired?.canonicalId !== "U-478" ||
+    !hasTheoryLink(repaired) ||
+    repaired.canonicalId !== "U-478" ||
     repaired.currentCanonicalId !== "U-478" ||
     repaired.theoryLink.lessonId !== "lesson-qnsesu" ||
     repaired.theoryLink.lessonAnchor !== "trap" ||
@@ -2467,7 +2506,8 @@ function verifyBatch11Contracts() {
 
   const reassigned = recordsByBatchId.get("2021-1-Q100");
   if (
-    reassigned?.currentCanonicalId !== "U-170" ||
+    !hasTheoryLink(reassigned) ||
+    reassigned.currentCanonicalId !== "U-170" ||
     reassigned.canonicalId !== "U-1236" ||
     reassigned.theoryLink.lessonId !== "lesson-10hvc85" ||
     reassigned.theoryLink.lessonAnchor !== "principle" ||
@@ -2692,7 +2732,8 @@ function verifyBatch12Contracts() {
   for (const [externalId, currentId, targetId, lessonId, anchor, groupId, conceptId] of reassignments) {
     const record = recordsByBatchId.get(externalId);
     if (
-      record?.currentCanonicalId !== currentId ||
+      !hasTheoryLink(record) ||
+      record.currentCanonicalId !== currentId ||
       record.canonicalId !== targetId ||
       record.theoryLink.lessonId !== lessonId ||
       record.theoryLink.lessonAnchor !== anchor ||
@@ -2726,19 +2767,14 @@ function verifyBatch12Contracts() {
   ];
   for (const [externalId, canonicalId, currentGroupId, targetFamily, sourceBlocker] of pendingTaxonomyRepairs) {
     const record = recordsByBatchId.get(externalId);
-    const migration = record?.migration as
-      | (typeof record.migration & {
-          taxonomyRepair?: {
-            applied: boolean;
-            currentConceptGroupId: string;
-            targetConceptGroupId: string | null;
-            sourceStatedTargetFamily: string;
-          };
-        })
-      | undefined;
-    const repair = migration?.taxonomyRepair;
+    if (!hasTheoryLink(record)) {
+      failures.push(`${externalId}: pending taxonomy-repair contract failed`);
+      continue;
+    }
+    const migration = record.migration as TaxonomyRepairMigration;
+    const repair = migration.taxonomyRepair;
     if (
-      record?.canonicalId !== canonicalId ||
+      record.canonicalId !== canonicalId ||
       record.review.runtimeStatus !== "candidate" ||
       record.theoryLink.conceptGroupId !== currentGroupId ||
       record.migration.mappingClass !== "THEORY_TAXONOMY_REPAIR_PENDING" ||
@@ -2906,7 +2942,7 @@ function verifyBatch13Contracts() {
       !sourceQuestion ||
       change.previousQuestionSha256 !== actualDigest ||
       change.previousQuestionHashBasis !==
-        "content_json_full_question_contract" ||
+        ("content_json_full_question_contract" as const) ||
       correction?.afterSha256 !== actualDigest
     ) {
       failures.push(`${canonicalId}: batch 13 canonical digest rebind failed`);

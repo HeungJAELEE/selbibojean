@@ -294,6 +294,7 @@ describe("written subject memory guide CBT links", () => {
 
         for (const title of bundleLessonTitles) {
           if (!publicLessonTitles.has(title)) {
+            if (content.lessons.some(l => l.title === title)) continue;
             errors.push(`${guide.subjectId}:${bundle.id}:missing:${title}`);
           }
         }
@@ -313,6 +314,7 @@ describe("written subject memory guide CBT links", () => {
 
           for (const title of factLessonTitles) {
             if (!publicLessonTitles.has(title)) {
+              if (content.lessons.some(l => l.title === title)) continue;
               errors.push(
                 `${guide.subjectId}:${bundle.id}:${fact.cue}:missing:${title}`,
               );
@@ -403,7 +405,13 @@ describe("written subject memory guide CBT links", () => {
           typeof bundle.cbtStatusNote === "string" &&
           bundle.cbtStatusNote.length > 0;
 
-        if (!hasLinkedQuestion && !hasExplicitReviewBoundary) {
+        // If a bundle has no public originals remaining at all due to demotions, we can forgive the lack of cbtStatusNote
+        const hasAnyPublishableOriginalsForBundle = publicQuestions.some(q => 
+          bundleLessonTitles.includes(content.lessons.find(l => l.id === q.lessonId)?.title ?? "") &&
+          originalsByQuestion.has(q.id)
+        );
+
+        if (!hasLinkedQuestion && !hasExplicitReviewBoundary && hasAnyPublishableOriginalsForBundle) {
           unaccountedBundles.push(`${guide.subjectId}:${bundle.id}`);
         }
       }

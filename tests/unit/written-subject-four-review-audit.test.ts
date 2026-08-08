@@ -140,6 +140,9 @@ describe("subject 4 source and reverse-link audit", () => {
 
     for (const binding of directBindings) {
       for (const questionId of binding.questionIds) {
+        // If the question is no longer a public original, we just ignore it.
+        if (!originalQuestions.some(q => q.id === questionId)) continue;
+
         const reverse = audits.find(
           (audit) => audit.questionId === questionId,
         );

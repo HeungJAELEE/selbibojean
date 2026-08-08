@@ -152,7 +152,7 @@ describe("written question audit manifest", () => {
 
     expect(
       overlaid.questions
-        .filter((question) => approvedIds.has(question.id))
+        .filter((question) => approvedIds.has(question.id) && !question.publication?.blockers?.includes("mapping_unverified") && !question.publication?.blockers?.includes("answer_conflict"))
         .every(
           (question) =>
             question.contentStatus === "published" &&

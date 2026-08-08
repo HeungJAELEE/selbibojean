@@ -452,6 +452,7 @@ export type ReviewedCbtCanonicalQuestionChange = {
   action: "add" | "replace";
   question: Question;
   previousQuestionSha256: string | null;
+  previousQuestionHashBasis?: "content_json_full_question_contract";
   affectedExternalIds: string[];
   rationale: string;
 };

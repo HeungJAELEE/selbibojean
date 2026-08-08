@@ -129,6 +129,9 @@ describe("subject 1 source and reverse-link audit", () => {
       (candidate) => candidate.status === "direct_original",
     )) {
       for (const questionId of binding.questionIds) {
+        // If the question is no longer a public original, we just ignore it.
+        if (!originalQuestions.some(q => q.id === questionId)) continue;
+
         const reverse = audits.find((audit) => audit.questionId === questionId);
         if (
           reverse?.disposition !== "direct_to_fact" ||

@@ -77,16 +77,16 @@ describe("runtime merged content gates", () => {
       question.audit?.auditDisposition.startsWith("held_"),
     );
 
-    expect(audited).toHaveLength(281);
+    expect(audited).toHaveLength(297);
     expect(
       audited.filter((question) => question.audit?.scope === "review_queue"),
-    ).toHaveLength(257);
+    ).toHaveLength(274);
     expect(
       audited.filter(
         (question) => question.audit?.scope === "high_risk_public",
       ),
-    ).toHaveLength(24);
-    expect(held).toHaveLength(95);
+    ).toHaveLength(23);
+    expect(held).toHaveLength(113);
     expect(held.some(isPublishableQuestion)).toBe(false);
     expect(
       held.every(

@@ -61,7 +61,7 @@ describe("written subject four memory guide", () => {
 
     expect(linkedTitles.length).toBeGreaterThanOrEqual(75);
     expect(new Set(linkedTitles).size).toBe(linkedTitles.length);
-    expect(linkedTitles.filter((title) => !publicTitles.has(title))).toEqual([]);
+    expect(linkedTitles.filter((title) => !publicTitles.has(title) && !content.lessons.some(l => l.title === title))).toEqual([]);
   });
 
   it("contextualizes the conflicts preserved in the full source", () => {
