@@ -66,12 +66,34 @@ export function PracticalWrittenQuestion({
     setFeedback({ ...feedback, selfRating });
   }
 
+  function retry() {
+    setAnswer("");
+    setFeedback(null);
+    setScore("");
+    setError("");
+  }
+
   return (
     <section
       className="card p-6 md:p-8"
       aria-busy={!isHydrated}
       data-hydrated={isHydrated ? "true" : "false"}
     >
+      {question.promptOptions && question.promptOptions.length > 0 ? (
+        <div className="mb-6 rounded-xl border border-slate-200 bg-slate-50 p-5">
+          <p className="font-extrabold text-[#173957]">보기</p>
+          <ol className="mt-3 space-y-2 text-sm leading-6">
+            {question.promptOptions.map((option, index) => (
+              <li key={option} className="flex gap-3">
+                <span className="font-black text-[#16697a]">
+                  {["가", "나", "다", "라", "마", "바"][index] ?? index + 1}.
+                </span>
+                <span>{option}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      ) : null}
       <label
         htmlFor="practical-answer"
         className="text-sm font-extrabold text-[#173957]"
@@ -111,6 +133,22 @@ export function PracticalWrittenQuestion({
               {feedback.modelAnswer}
             </p>
           </div>
+          {feedback.answerDefinition ? (
+            <div className="rounded-xl border border-teal-200 bg-teal-50 p-5">
+              <p className="font-extrabold text-[#173957]">핵심 정의</p>
+              <p className="mt-2 leading-7 text-slate-700">
+                {feedback.answerDefinition}
+              </p>
+            </div>
+          ) : null}
+          {feedback.memoryTip ? (
+            <div className="rounded-xl border border-sky-200 bg-sky-50 p-5">
+              <p className="font-extrabold text-[#173957]">암기팁</p>
+              <p className="mt-2 leading-7 text-slate-700">
+                {feedback.memoryTip}
+              </p>
+            </div>
+          ) : null}
           {feedback.calculation.length > 0 ? (
             <div className="rounded-xl bg-slate-50 p-5">
               <p className="font-extrabold">계산·적용조건</p>
@@ -159,6 +197,29 @@ export function PracticalWrittenQuestion({
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-amber-900">
                 {feedback.traps.map((trap) => (
                   <li key={trap}>{trap}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          {feedback.sourceLinks.length > 0 ? (
+            <div
+              data-testid="practical-answer-sources"
+              className="rounded-xl border border-slate-200 bg-slate-50 p-5"
+            >
+              <p className="font-extrabold text-[#173957]">근거 자료</p>
+              <ul className="mt-3 space-y-3 text-sm leading-6">
+                {feedback.sourceLinks.map((source) => (
+                  <li key={`${source.href}-${source.page}`}>
+                    <a
+                      href={source.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-extrabold text-[#16697a] underline decoration-[#16697a]/30 underline-offset-4"
+                    >
+                      {source.label}
+                    </a>
+                    <span className="ml-2 text-slate-600">{source.page}</span>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -212,6 +273,13 @@ export function PracticalWrittenQuestion({
               </Link>
             ))}
           </div>
+          <button
+            type="button"
+            onClick={retry}
+            className="rounded-xl border border-[#173957] px-5 py-3 text-sm font-extrabold text-[#173957]"
+          >
+            답안 지우고 다시 풀기
+          </button>
         </div>
       ) : null}
     </section>

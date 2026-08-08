@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "scope": "supplemental_runtime_and_supabase_projection",
+  "nodeVersion": "v22.16.0",
+  "officialNode24Validation": false,
+  "safetyValveQ59": {
+    "candidateBlocked": true,
+    "publishedSafe": true,
+    "sourceAnswerIndexPreserved": 0,
+    "reviewedAnswerIndex": 2,
+    "mappedChoiceIds": [
+      "U-1215-c1",
+      "U-1215-c2",
+      "U-1215-c3",
+      "U-1215-c4"
+    ],
+    "canonicalCorrectChoiceId": "U-1215-c3",
+    "reviewedAnswerText": "③ 하부 조정 링의 상향 조정"
+  },
+  "choiceConflicts": {
+    "blockedAndNonScoring": true,
+    "externalIds": [
+      "2011-4-Q42",
+      "2011-4-Q59"
+    ]
+  },
+  "supabase": {
+    "reviewedRowCount": 600,
+    "batch03RowCount": 200,
+    "allReviewedRowsDraft": true,
+    "allBatch03RowsDraft": true,
+    "forbiddenKeysFound": []
+  },
+  "limitations": [
+    "Supplemental Node.js 22 execution does not replace official Node.js 24 repository checks."
+  ]
+}

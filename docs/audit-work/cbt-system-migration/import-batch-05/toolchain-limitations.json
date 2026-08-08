@@ -1,0 +1,58 @@
+{
+  "status": "BLOCKED",
+  "generatedAt": "2026-08-07T20:20:00+09:00",
+  "currentNodeVersion": "v22.16.0",
+  "requiredNodeRange": ">=24.0.0 <25",
+  "attempts": [
+    {
+      "command": "npm run verify:node-runtime",
+      "exitCode": 1,
+      "result": "BLOCKED_BY_NODE_VERSION",
+      "log": "node-runtime-check.log"
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 1,
+      "result": "BLOCKED_BY_PRETYPECHECK_NODE_VERSION",
+      "log": "official-typecheck-attempt.log"
+    },
+    {
+      "command": "npm run test -- --maxWorkers=1",
+      "exitCode": 1,
+      "result": "BLOCKED_BY_PRETEST_NODE_VERSION",
+      "log": "official-vitest-attempt.log"
+    },
+    {
+      "command": "npm run lint -- changed files",
+      "exitCode": 1,
+      "result": "BLOCKED_BY_PRELINT_NODE_VERSION",
+      "log": "official-eslint-attempt.log"
+    },
+    {
+      "command": "npm run verify:reviewed-cbt",
+      "exitCode": 127,
+      "result": "BLOCKED_BY_MISSING_TSX",
+      "log": "official-reviewed-verifier-attempt.log"
+    },
+    {
+      "command": "npm run verify:no-answer-leak -- --scope=source",
+      "exitCode": 127,
+      "result": "BLOCKED_BY_MISSING_TSX",
+      "log": "official-no-answer-leak-attempt.log"
+    }
+  ],
+  "supplementalChecks": {
+    "targetedTypecheck": "PASS",
+    "typescriptSyntax": "PASS",
+    "reviewedCbtVerifier": "PASS",
+    "runtimeAndSupabaseProjection": "PASS",
+    "negativeContractMutations": "PASS",
+    "sourceAnswerLeakScan": "PASS",
+    "generatorIdempotency": "PASS"
+  },
+  "notRun": [
+    "SQL migration tests",
+    "login/guest browser integration flows"
+  ],
+  "reason": "Official repository validation requires Node.js 24.x and installed project dependencies. Failed or blocked attempts are not reported as PASS."
+}

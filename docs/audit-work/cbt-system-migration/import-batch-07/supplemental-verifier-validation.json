@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "exitCode": 0,
+  "scope": "independent Python reload of batch-07 manifest, source identities, theory links, queues, and publication gates",
+  "output": "PASS: import-07 independently verified (170 records; 165 candidates; 5 image holds; 136 variant-specific contracts; cumulative 1370).",
+  "officialNode24Validation": false,
+  "limitations": [
+    "The TypeScript repository verifier was syntax-checked but not executed against the complete Node.js 24 repository."
+  ]
+}

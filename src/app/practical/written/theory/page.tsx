@@ -1,24 +1,103 @@
 import Link from "next/link";
 import { PageHeading } from "@/components/page-heading";
 import { PracticalTextbookSubjectPanel } from "@/components/practical-textbook-index";
+import { PracticalWrittenExamTypeIndex } from "@/components/practical-written-exam-type-index";
+import { PracticalWrittenCardLink } from "@/components/practical-written-card-link";
+import { PracticalWrittenSectionNav } from "@/components/practical-written-section-nav";
+import { PracticalExamSubjectTabs } from "@/components/practical-exam-subject-tabs";
+import { PracticalExamSubjectCheatSheet } from "@/components/practical-exam-subject-cheat-sheet";
+import { getExamSubjectCheatSheet } from "@/data/source/practical-exam-subject-summaries";
+import { visualAidIdsForSubjectSummary } from "@/data/source/practical-visual-coverage";
+import type { PracticalTextbookSubjectId } from "@/data/source/practical-textbook-taxonomy";
+import {
+  PracticalWrittenViewTabs,
+  type PracticalWrittenTheoryView,
+} from "@/components/practical-written-view-tabs";
 import {
   getPracticalContent,
   getPracticalNcsCoverage,
   getPracticalTextbookStudyTypes,
   getPracticalTextbookSubjects,
+  getPracticalWrittenExamCards,
+  getPracticalWrittenEvidenceCoverage,
+  getPublicPracticalExamRepresentativeQuestions,
+  getPublicPracticalVisualAid,
   practicalConceptsByTextbookSubject,
 } from "@/lib/content/practical-repository";
 import type {
   PracticalConcept,
   PracticalNcsCoverage,
 } from "@/lib/domain/practical-types";
+import { isLearnerVisibleContentId } from "@/lib/content/learner-visibility";
 
-export default async function PracticalTheoryPage() {
-  const [subjects, studyTypes, ncsCoverage, practicalContent] = await Promise.all([
+export default async function PracticalTheoryPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ view?: string; subject?: string }>;
+}) {
+  const [{ view: requestedView, subject: requestedSubject }, subjects] = await Promise.all([
+    searchParams,
     getPracticalTextbookSubjects(),
+  ]);
+  const view: PracticalWrittenTheoryView =
+    requestedView === "exam-type"
+      ? "exam-type"
+      : requestedView === "concept"
+        ? "concept"
+        : "subject-summary";
+  const selectedSubject =
+    subjects.find((subject) => subject.id === requestedSubject) ?? subjects[0];
+  const selectedSubjectId = selectedSubject.id as PracticalTextbookSubjectId;
+
+  if (view === "subject-summary") {
+    const subjectSummary = getExamSubjectCheatSheet(selectedSubjectId);
+    const representativeQuestions =
+      getPublicPracticalExamRepresentativeQuestions(
+        subjectSummary?.practicalWritten.representativeQuestionIds ?? [],
+      );
+    const summaryVisualAids = (
+      await Promise.all(
+        visualAidIdsForSubjectSummary(selectedSubjectId).map((visualAidId) =>
+          getPublicPracticalVisualAid(visualAidId, "summary_diagram"),
+        ),
+      )
+    ).filter((visualAid) => visualAid !== undefined);
+
+    return (
+      <div className="page-wrap py-12">
+        <PageHeading
+          eyebrow="실기 필답형 · 시험요약"
+          title="과목별 핵심을 먼저 보고 문제로 확인합니다"
+          description="긴 원문보다 시험 방향, 한 줄 정답, 필수 암기와 대표 문제를 먼저 봅니다. 전체 개념과 NCS 근거는 필요한 경우에만 내려가 확인합니다."
+        />
+        <PracticalWrittenSectionNav activeSection="subjects" />
+        <PracticalWrittenViewTabs view={view} />
+        <PracticalExamSubjectTabs
+          subjects={subjects}
+          selectedSubjectId={selectedSubjectId}
+        />
+        <PracticalExamSubjectCheatSheet
+          subject={selectedSubject}
+          summary={subjectSummary}
+          questions={representativeQuestions}
+          visualAids={summaryVisualAids}
+        />
+      </div>
+    );
+  }
+
+  const [
+    studyTypes,
+    ncsCoverage,
+    practicalContent,
+    examCards,
+    evidenceCoverage,
+  ] = await Promise.all([
     getPracticalTextbookStudyTypes(),
     getPracticalNcsCoverage(),
     getPracticalContent(),
+    getPracticalWrittenExamCards(),
+    getPracticalWrittenEvidenceCoverage(),
   ]);
   const conceptsById = new Map(
     practicalContent.concepts.map((concept) => [concept.id, concept]),
@@ -27,11 +106,40 @@ export default async function PracticalTheoryPage() {
   return (
     <div className="page-wrap py-12">
       <PageHeading
-        eyebrow="실기 필답형 · NCS 기반 학습 목차"
-        title="실기 이론 목차"
-        description="필기 이론 목차처럼 과목과 세부 개념군을 먼저 고르고, 각 개념의 통합 학습에서 전체를 이해한 뒤 개념 정의·계산 공식·순서 맞추기·그림 맞추기·도면·기호 맞추기·기타 유형을 확인합니다. 빈 행은 아직 NCS 원문으로 확인해 등록한 학습 항목이 없는 유형입니다."
+        eyebrow="실기 필답형 · 시험요약"
+        title="과목별 핵심을 먼저 보고 문제로 확인합니다"
+        description="긴 원문보다 시험 방향, 한 줄 정답, 필수 암기와 대표 문제를 먼저 봅니다. 전체 개념과 NCS 근거는 필요한 경우에만 내려가 확인합니다."
       />
+      <PracticalWrittenSectionNav
+        activeSection={view === "exam-type" ? "exam-types" : "subjects"}
+      />
+      <PracticalWrittenViewTabs view={view} />
 
+      {view === "exam-type" ? (
+        <>
+          <PracticalWrittenExamTypeIndex cards={examCards} />
+          <section className="mt-10" aria-labelledby="all-exam-cards-title">
+            <h2 id="all-exam-cards-title" className="text-2xl font-extrabold">
+              전체 기출풀이 카드
+            </h2>
+            <p className="mt-2 text-sm leading-7 text-slate-600">
+              검증된 기출은 모두 카드에 연결했습니다. 원그림이나 출처가
+              확인되지 않은 복원문제는 보류 사유만 남기고 풀이문제로
+              공개하지 않습니다.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {examCards.map((card) => (
+                <PracticalWrittenCardLink key={card.id} card={card} />
+              ))}
+            </div>
+          </section>
+          <HeldPastQuestionAudit
+            coverage={evidenceCoverage}
+            questions={practicalContent.questions}
+          />
+        </>
+      ) : (
+        <>
       <section
         data-testid="practical-textbook-learning-types"
         className="mt-8 rounded-2xl border border-teal-200 bg-teal-50 p-5 md:p-6"
@@ -69,9 +177,53 @@ export default async function PracticalTheoryPage() {
           />
         ))}
       </div>
+        </>
+      )}
 
       <NcsSourceAudit coverage={ncsCoverage} conceptsById={conceptsById} />
     </div>
+  );
+}
+
+function HeldPastQuestionAudit({
+  coverage,
+  questions,
+}: {
+  coverage: Awaited<ReturnType<typeof getPracticalWrittenEvidenceCoverage>>;
+  questions: Awaited<ReturnType<typeof getPracticalContent>>["questions"];
+}) {
+  const held = coverage.filter((item) => item.status === "held");
+  if (held.length === 0) return null;
+  const questionsById = new Map(
+    questions.map((question) => [question.id, question]),
+  );
+
+  return (
+    <details className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-5">
+      <summary className="cursor-pointer font-extrabold text-amber-950">
+        원문 확인 전 공개하지 않은 기출복원 {held.length}건
+      </summary>
+      <p className="mt-3 text-sm leading-7 text-amber-900">
+        복원 근거가 부족한 문항은 비슷한 문제를 지어내지 않고 보류합니다.
+        제목과 보류 사유를 확인할 수 있으며, 원문 근거가 확보되면 같은
+        Evidence ID에 연결합니다.
+      </p>
+      <ul className="mt-4 space-y-3">
+        {held.map((item) => (
+          <li
+            key={item.questionId}
+            className="rounded-xl border border-amber-200 bg-white p-4"
+          >
+            <p className="font-bold text-slate-950">
+              {questionsById.get(item.questionId)?.title ?? item.questionId}
+            </p>
+            <p className="mt-1 text-sm leading-6 text-slate-700">
+              {item.holdReason}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </details>
   );
 }
 
@@ -82,6 +234,12 @@ function NcsSourceAudit({
   coverage: PracticalNcsCoverage;
   conceptsById: Map<string, PracticalConcept>;
 }) {
+  const visibleLessonCount = new Set(
+    coverage.documents.flatMap((document) =>
+      document.conceptIds.filter(isLearnerVisibleContentId),
+    ),
+  ).size;
+
   return (
     <details
       data-testid="practical-ncs-source-audit"
@@ -108,7 +266,7 @@ function NcsSourceAudit({
           </div>
           <div className="rounded-xl bg-slate-100 px-3 py-2 font-bold text-slate-800">
             <span className="block text-lg">
-              {coverage.summary.uniqueLessonCount}
+              {visibleLessonCount}
             </span>
             연결 레슨
           </div>
@@ -116,8 +274,12 @@ function NcsSourceAudit({
       </summary>
 
       <div className="mt-5 grid gap-3 lg:grid-cols-2">
-        {coverage.documents.map((document) => (
-          <article
+        {coverage.documents.map((document) => {
+          const visibleConceptIds = document.conceptIds.filter(
+            isLearnerVisibleContentId,
+          );
+          return (
+            <article
             key={document.ncsCode}
             className="rounded-xl border border-slate-200 bg-slate-50 p-4"
           >
@@ -145,7 +307,7 @@ function NcsSourceAudit({
               </span>
             </div>
             <p className="mt-3 text-sm text-slate-700">
-              연결 레슨 <strong>{document.conceptIds.length}개</strong> · 원문 참조{" "}
+              연결 레슨 <strong>{visibleConceptIds.length}개</strong> · 원문 참조{" "}
               <strong>{document.sourceReferenceCount}건</strong>
             </p>
             <a
@@ -156,13 +318,13 @@ function NcsSourceAudit({
             >
               NCS 원문 위치 확인
             </a>
-            {document.conceptIds.length > 0 ? (
+            {visibleConceptIds.length > 0 ? (
               <details className="mt-3 rounded-lg border border-sky-200 bg-white px-3 py-2">
                 <summary className="cursor-pointer text-sm font-bold text-sky-950">
-                  이 문서에서 반영한 레슨 {document.conceptIds.length}개 보기
+                  이 문서에서 반영한 레슨 {visibleConceptIds.length}개 보기
                 </summary>
                 <ul className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
-                  {document.conceptIds.map((conceptId) => {
+                  {visibleConceptIds.map((conceptId) => {
                     const concept = conceptsById.get(conceptId);
                     if (!concept) return null;
                     return (
@@ -205,8 +367,9 @@ function NcsSourceAudit({
                 </ul>
               </details>
             ) : null}
-          </article>
-        ))}
+            </article>
+          );
+        })}
       </div>
     </details>
   );

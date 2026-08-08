@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 360" role="img" aria-labelledby="title desc">
+  <title id="title">측정기 세 종 식별 문제</title>
+  <desc id="desc">1부터 3까지 다이얼형, 깊이형, 내측형 측정기를 단순화해 배열한 자체 제작 도식</desc>
+  <rect width="1080" height="360" rx="28" fill="#f8fafc"/>
+  <g font-family="sans-serif" font-size="30" font-weight="800" fill="#183b56" text-anchor="middle">
+    <text x="180" y="42">(1)</text><text x="540" y="42">(2)</text><text x="900" y="42">(3)</text>
+  </g>
+  <circle cx="180" cy="155" r="88" fill="#fff" stroke="#183b56" stroke-width="12"/>
+  <path d="M180 155l38-50M180 243v78M144 64h72v-20" stroke="#183b56" stroke-width="10" stroke-linecap="round"/>
+  <g stroke="#183b56" stroke-width="10" fill="#fff" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M395 120h250M438 88v64M602 88v64M515 120v182"/>
+    <path d="M770 150h260M820 94v112M980 110v80M820 116h-28v68h28M980 116h28v68h-28"/>
+  </g>
+  <path d="M425 100h184m-174 40h164M790 135h198m-198 30h198" stroke="#64748b" stroke-width="3" stroke-dasharray="8 7"/>
+</svg>

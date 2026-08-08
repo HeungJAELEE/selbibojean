@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "katex/dist/katex.min.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
 import "./globals.css";
 
 const defaultSiteUrl = "https://seolbi-learning-platform.pages.dev";
@@ -20,7 +21,14 @@ export const metadata: Metadata = {
   other: adsenseClientId ? { "google-adsense-account": adsenseClientId } : undefined,
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  const supabase = await createSupabaseServerClient();
+  const { data: auth } = supabase
+    ? await supabase.auth.getUser()
+    : { data: { user: null } };
+
   return (
     <html lang="ko" data-scroll-behavior="smooth">
       <head>
@@ -33,7 +41,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         ) : null}
       </head>
       <body>
-        <SiteHeader />
+        <SiteHeader isAuthenticated={Boolean(auth.user)} />
         <main>{children}</main>
         <SiteFooter />
       </body>

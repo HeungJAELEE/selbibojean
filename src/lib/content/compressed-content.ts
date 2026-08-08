@@ -12,10 +12,10 @@ function toHex(buffer: ArrayBuffer) {
   return Array.from(new Uint8Array(buffer), (byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 
-export async function decodeCompressedContent(
+export async function decodeCompressedContent<T = GeneratedContent>(
   compressedBytes: Uint8Array<ArrayBuffer>,
   metadata: RuntimeContentMetadata,
-): Promise<GeneratedContent> {
+): Promise<T> {
   if (
     metadata.formatVersion !== 1 ||
     metadata.encoding !== "gzip" ||
@@ -40,5 +40,5 @@ export async function decodeCompressedContent(
     throw new Error("Runtime content SHA-256 verification failed.");
   }
 
-  return JSON.parse(new TextDecoder().decode(decompressed)) as GeneratedContent;
+  return JSON.parse(new TextDecoder().decode(decompressed)) as T;
 }

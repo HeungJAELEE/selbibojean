@@ -1,4 +1,5 @@
-import { ArrowRight, ChartNoAxesCombined, CircleGauge, GitCompareArrows } from "lucide-react";
+import { ChartNoAxesCombined, CircleGauge, GitCompareArrows } from "lucide-react";
+import { ToleranceFitVisual } from "@/components/tolerance-fit-visual";
 import type { LessonFamily } from "@/lib/content/lesson-families";
 
 type ConceptVisualAidProps = {
@@ -12,7 +13,8 @@ export function ConceptVisualAid({ family }: ConceptVisualAidProps) {
   if (key === "s1-g11:action") return <PidResponseVisual />;
   if (key === "s2-g01:classification") return <WeldingPrincipleVisual />;
   if (key === "s2-g02:process") return <ArcWeldingProcessVisual />;
-  return <FamilyDecisionMap family={family} />;
+  if (key === "s3-g01:tolerance") return <ToleranceFitVisual />;
+  return null;
 }
 
 function VisualFrame({
@@ -435,88 +437,5 @@ function WeldingCard({
       </svg>
       <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">{description}</p>
     </div>
-  );
-}
-
-function FamilyDecisionMap({ family }: { family: LessonFamily }) {
-  const rows = family.comparison.slice(0, 3);
-
-  return (
-    <VisualFrame
-      eyebrow="Concept map"
-      title={`${family.label} 기출 판단 지도`}
-      description="문제의 단서에서 바로 답을 고르지 않고, 적용 대상과 기능을 거쳐 실제 기출 판단유형까지 연결합니다. 아래에는 이 묶음에서 우선 구분할 대표 개념을 표시했습니다."
-      icon={<GitCompareArrows size={19} aria-hidden="true" />}
-    >
-      <div className="grid gap-4" data-testid="family-decision-map">
-        {rows.map((item, index) => (
-          <article
-            key={item.term}
-            className="grid items-stretch gap-2 rounded-xl border border-slate-200 bg-white p-3 md:grid-cols-[minmax(0,1fr)_32px_minmax(0,1fr)_32px_minmax(0,1fr)] md:gap-3 md:p-4"
-          >
-            <MapNode
-              step={`${index + 1}-A`}
-              label="문제에서 찾을 단서"
-              body={item.input}
-              tone="clue"
-            />
-            <FlowArrow />
-            <MapNode
-              step={`${index + 1}-B`}
-              label={item.term}
-              body={item.role}
-              tone="concept"
-            />
-            <FlowArrow />
-            <MapNode
-              step={`${index + 1}-C`}
-              label="기출 판단유형"
-              body={item.effect}
-              tone="judgment"
-            />
-          </article>
-        ))}
-      </div>
-      <figcaption className="mt-4 rounded-xl bg-[#eaf7f6] p-4 text-sm font-bold leading-6 text-[#294a58]">
-        읽는 순서: 문제의 조건을 찾고 → 해당 개념의 고유한 기능과 대조하고 → 아래 비교표에서 실제 함정과 주의점을
-        확인하세요. 명칭이 비슷하다는 이유만으로 판단하지 않습니다.
-      </figcaption>
-    </VisualFrame>
-  );
-}
-
-function MapNode({
-  step,
-  label,
-  body,
-  tone,
-}: {
-  step: string;
-  label: string;
-  body: string;
-  tone: "clue" | "concept" | "judgment";
-}) {
-  const toneClass = {
-    clue: "border-[#d7e1e8] bg-slate-50 text-[#294a58]",
-    concept: "border-[#b9d9d7] bg-[#f2fbfa] text-[#173957]",
-    judgment: "border-[#efc7aa] bg-[#fff8f2] text-[#6f320b]",
-  }[tone];
-
-  return (
-    <div className={`rounded-lg border p-3 ${toneClass}`}>
-      <div className="flex items-center gap-2">
-        <span className="sr-only">{step}</span>
-        <p className="text-xs font-black uppercase tracking-wider">{label}</p>
-      </div>
-      <p className="mt-2 text-sm font-semibold leading-6">{body}</p>
-    </div>
-  );
-}
-
-function FlowArrow() {
-  return (
-    <span className="grid place-items-center text-[#16697a]" aria-hidden="true">
-      <ArrowRight className="rotate-90 md:rotate-0" size={20} />
-    </span>
   );
 }

@@ -1,0 +1,4 @@
+(node:43734) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("/mnt/data/work-batch13/ts-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS: 답안 유출 검사 완료 (source; 공개 DTO·JSON·클라이언트 번들·동적 코드 실행).

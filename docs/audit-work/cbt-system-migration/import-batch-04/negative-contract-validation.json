@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "nodeVersion": "v22.16.0",
+  "officialNode24Validation": false,
+  "results": [
+    {
+      "name": "variant-specific Q08 cannot be published",
+      "status": "PASS",
+      "message": "Reviewed CBT variant-specific choice contract is invalid: 2012-4-Q08"
+    },
+    {
+      "name": "fan Q48 direct theory drift is rejected",
+      "status": "PASS",
+      "message": "Reviewed CBT direct-theory link is inconsistent: 2013-4-Q48"
+    },
+    {
+      "name": "fan Q48 canonical previous SHA tamper is rejected",
+      "status": "PASS",
+      "message": "Reviewed CBT canonical replacement digest mismatch: U-1072"
+    },
+    {
+      "name": "batch04 fan lesson digest tamper is rejected",
+      "status": "PASS",
+      "message": "Reviewed CBT theory lesson additions digest mismatch: 154970e0e7718437addca5c4b41d0d69e39e11cbdbf8eaca98a044b863b6f6f5 != d88442b44b0ae7e429f52ead051166d26aeeaa7c8571ed727ea9521e1da39397"
+    },
+    {
+      "name": "Q84 choice conflict cannot carry active answer mapping",
+      "status": "PASS",
+      "message": "Reviewed CBT choice conflict is invalid: 2013-4-Q84"
+    },
+    {
+      "name": "Q84 choice conflict cannot be published",
+      "status": "PASS",
+      "message": "Reviewed CBT candidate has no valid answer: 2013-4-Q84"
+    },
+    {
+      "name": "image hold Q36 cannot carry active answer",
+      "status": "PASS",
+      "message": "Reviewed CBT image hold is invalid: 2012-4-Q36"
+    }
+  ]
+}

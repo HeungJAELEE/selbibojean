@@ -1,0 +1,6 @@
+## src/lib/content/reviewed-cbt-variants.ts
+## src/lib/content/written-question-audit.ts
+## src/lib/domain/types.ts
+## scripts/verify-reviewed-cbt-variants.ts
+## tests/unit/reviewed-cbt-variants.test.ts
+## tests/unit/written-question-audit.test.ts

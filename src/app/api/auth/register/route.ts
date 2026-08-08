@@ -40,7 +40,5 @@ export async function POST(request: Request) {
 
   const { error: signInError } = await supabase.auth.signInWithPassword({ email: internalEmail, password: parsed.data.password });
   if (signInError) return NextResponse.json({ error: GENERIC_ERROR }, { status: 400 });
-  if (parsed.data.guestPayload) await supabase.rpc("merge_guest_learning", { p_payload: parsed.data.guestPayload });
   return NextResponse.json({ ok: true, username });
 }
-

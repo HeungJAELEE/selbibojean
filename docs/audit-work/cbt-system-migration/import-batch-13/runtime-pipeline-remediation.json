@@ -1,0 +1,16 @@
+{
+  "status": "APPLIED",
+  "changes": [
+    {
+      "sourceFile": "src/lib/content/written-question-audit.ts",
+      "reason": "Preserve a later explicit question.audit disposition over the older global audit manifest so held reviewed-CBT canonical replacements cannot be republished downstream."
+    },
+    {
+      "sourceFile": "src/lib/content/taxonomy-normalization.ts",
+      "lessonId": "lesson-qnsesu",
+      "beforeConceptGroupId": "s1-g02",
+      "afterConceptGroupId": "s1-g06",
+      "reason": "Carry the batch-10 U-478 taxonomy repair through the downstream runtime taxonomy normalization stage."
+    }
+  ]
+}

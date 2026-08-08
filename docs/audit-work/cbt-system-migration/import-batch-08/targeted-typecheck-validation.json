@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "supplemental_targeted_syntax_only",
+  "typescriptVersion": "5.8.3",
+  "nodeVersion": "v22.16.0",
+  "officialProjectNode24Check": false,
+  "checks": [
+    {
+      "name": "reviewed_variant_verifier_and_test_syntax",
+      "source": "syntax-validation.json",
+      "exitCode": 0,
+      "diagnostics": []
+    }
+  ],
+  "limitations": [
+    "The partial batch archive does not contain the complete repository or installed project dependencies.",
+    "This does not replace the repository-wide Node.js 24 typecheck, Vitest, or ESLint."
+  ]
+}

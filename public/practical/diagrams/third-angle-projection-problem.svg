@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">제3각법 투상도 복원 문제</title>
+  <desc id="desc">화살표 방향에서 본 정면도와 빈 평면도·우측면도 칸이 있는 자체 제작 도식</desc>
+  <rect width="1080" height="560" rx="28" fill="#f8fafc"/>
+  <g fill="#fff" stroke="#183b56" stroke-width="6" stroke-linejoin="round">
+    <path d="M80 280 170 90l155 70 45 190-150 65z"/>
+    <path d="M80 280 220 415 245 195 170 90z"/>
+    <path d="m245 195 80-35 45 190-150 65z"/>
+    <path d="m170 90 62-42 93 112-80 35z"/>
+  </g>
+  <path d="M18 385h105m0 0-24-16m24 16-24 16" fill="none" stroke="#d44c3f" stroke-width="10" stroke-linecap="round"/>
+  <text x="18" y="435" font-family="sans-serif" font-size="28" font-weight="700" fill="#d44c3f">정면 방향</text>
+  <g fill="#fff" stroke="#183b56" stroke-width="5">
+    <rect x="480" y="42" width="230" height="190"/>
+    <rect x="480" y="325" width="230" height="190"/>
+    <rect x="805" y="325" width="230" height="190"/>
+  </g>
+  <g stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5 7">
+    <path d="M526 42v190m46-190v190m46-190v190m46-190v190M480 80h230m-230 38h230m-230 38h230m-230 38h230"/>
+    <path d="M526 325v190m46-190v190m46-190v190m46-190v190M480 363h230m-230 38h230m-230 38h230m-230 38h230"/>
+    <path d="M851 325v190m46-190v190m46-190v190m46-190v190M805 363h230m-230 38h230m-230 38h230m-230 38h230"/>
+  </g>
+  <path d="M480 515V380l52-55h126l52 55v135M480 515l115-190 115 190" fill="none" stroke="#183b56" stroke-width="6"/>
+  <g font-family="sans-serif" font-size="27" font-weight="700" fill="#183b56">
+    <text x="545" y="280">평면도</text><text x="545" y="552">정면도</text><text x="855" y="552">우측면도</text>
+  </g>
+</svg>

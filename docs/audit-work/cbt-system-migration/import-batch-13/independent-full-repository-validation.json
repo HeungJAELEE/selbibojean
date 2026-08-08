@@ -1,0 +1,134 @@
+{
+  "status": "PASS",
+  "generatedAt": "2026-08-08T12:00:07.366945+09:00",
+  "counts": {
+    "records": 2384,
+    "states": {
+      "candidate": 2267,
+      "hold": 98,
+      "choice_conflict": 19,
+      "published": 0
+    },
+    "batches": 12,
+    "declaredSourceFiles": 53,
+    "rawSourceRows": 2625,
+    "uniqueSourceExternalIds": 2384,
+    "theoryAdditions": 20,
+    "canonicalChanges": 19
+  },
+  "hashes": {
+    "contentJsonSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "reviewedManifestFileSha256": "a981cbba77dface92801549850fa9166cca25eb039fb12a7fc74652848c373b8",
+    "recordsSha256": "aa269621210d13960e049613f47a213993d8f1033b7d3fbeb353a23d5a81f523",
+    "theoryLessonAdditionsSha256": "ee7d8abaa2201e6df64de4616c21f1304a36eaede75cb92a748968d2e61466de",
+    "canonicalQuestionChangesSha256": "1f7674218865c1988c0741cf44093631e19b530a155d78909cd1d6abe7caafe6"
+  },
+  "checks": {
+    "content_sha_bound": true,
+    "records_digest": true,
+    "theory_additions_digest": true,
+    "canonical_changes_digest": true,
+    "record_count_2384": true,
+    "unique_external_ids": true,
+    "state_counts": true,
+    "batch_count_sum": true,
+    "declared_source_files_unique": true,
+    "source_file_hashes_match": true,
+    "source_jsonl_parse": true,
+    "source_unique_external_id_count_2384": true,
+    "source_external_id_exact_set": true,
+    "canonical_preimage_digests": true,
+    "batch13_corrected_preimage_basis": true,
+    "u649_superseding_record": true,
+    "u478_prior_record_repaired": true,
+    "later_choice_conflicts_normalized": true,
+    "answer_key_hold_present": true
+  },
+  "canonicalPreimages": [
+    {
+      "id": "U-1241",
+      "ok": true,
+      "actual": "4d9099f2ae63751a1aea2d07d76b39371e6898e6561763ffe9bb043cd3aded9d",
+      "declared": "4d9099f2ae63751a1aea2d07d76b39371e6898e6561763ffe9bb043cd3aded9d",
+      "basis": null
+    },
+    {
+      "id": "U-1245",
+      "ok": true,
+      "actual": "8d983967efc391d83350d4e5540dcafbe148794ee9b6ff88d6d868bd63459edb",
+      "declared": "8d983967efc391d83350d4e5540dcafbe148794ee9b6ff88d6d868bd63459edb",
+      "basis": null
+    },
+    {
+      "id": "U-1252",
+      "ok": true,
+      "actual": "5beef00c566cbbc1c99dc71a2ce0386f1b35b4c6a69874af14e90a3d365c369b",
+      "declared": "5beef00c566cbbc1c99dc71a2ce0386f1b35b4c6a69874af14e90a3d365c369b",
+      "basis": null
+    },
+    {
+      "id": "U-1253",
+      "ok": true,
+      "actual": "66ee5e49124ffdf7695bbfb7244f3c712892d30aa1422743b139dbab6bab9d7e",
+      "declared": "66ee5e49124ffdf7695bbfb7244f3c712892d30aa1422743b139dbab6bab9d7e",
+      "basis": null
+    },
+    {
+      "id": "U-1257",
+      "ok": true,
+      "actual": "0ef3ae6404185b71f6de3d451646327a7d8f53fe644768e3481fe728034bf9dd",
+      "declared": "0ef3ae6404185b71f6de3d451646327a7d8f53fe644768e3481fe728034bf9dd",
+      "basis": null
+    },
+    {
+      "id": "U-1215",
+      "ok": true,
+      "actual": "6d24752299fd4da91c02c34bcf610d1fd122d2246213942314fc3faff6a8f834",
+      "declared": "6d24752299fd4da91c02c34bcf610d1fd122d2246213942314fc3faff6a8f834",
+      "basis": null
+    },
+    {
+      "id": "U-1161",
+      "ok": true,
+      "actual": "0da154ff665d1b594d87bf2d0e14cfa42148ebec0f82db7033627014f5f030d5",
+      "declared": "0da154ff665d1b594d87bf2d0e14cfa42148ebec0f82db7033627014f5f030d5",
+      "basis": null
+    },
+    {
+      "id": "U-1166",
+      "ok": true,
+      "actual": "7bf8facc711a9dfccbec3f4e58856f91b8bf18dcbc5e9ba7b11867b5f979c5e8",
+      "declared": "7bf8facc711a9dfccbec3f4e58856f91b8bf18dcbc5e9ba7b11867b5f979c5e8",
+      "basis": null
+    },
+    {
+      "id": "U-1072",
+      "ok": true,
+      "actual": "5e61f4690270fd2b3b6e9c092933ddff3feb889f33c6e9bad9c1a2fb294d6271",
+      "declared": "5e61f4690270fd2b3b6e9c092933ddff3feb889f33c6e9bad9c1a2fb294d6271",
+      "basis": null
+    },
+    {
+      "id": "U-1089",
+      "ok": true,
+      "actual": "52a897d9429e9e99124b91fe502b58c96bd889b0059728d7af17072e053b66b1",
+      "declared": "52a897d9429e9e99124b91fe502b58c96bd889b0059728d7af17072e053b66b1",
+      "basis": null
+    },
+    {
+      "id": "U-649",
+      "ok": true,
+      "actual": "3016da1929d96568fc768cbb0a176d322fb1bafabce9624f9f095cfb60037450",
+      "declared": "3016da1929d96568fc768cbb0a176d322fb1bafabce9624f9f095cfb60037450",
+      "basis": "content_json_canonical_preimage"
+    },
+    {
+      "id": "U-478",
+      "ok": true,
+      "actual": "ff0c8ded5a013a81ec018e98478060f67749d7862aecdf513387068556598bda",
+      "declared": "ff0c8ded5a013a81ec018e98478060f67749d7862aecdf513387068556598bda",
+      "basis": "content_json_canonical_preimage"
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,1 @@
+npm run lint -- scripts/verify-reviewed-cbt-variants.ts tests/unit/reviewed-cbt-variants.test.ts src/lib/content/reviewed-cbt-variants.ts 

@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "scope": "batch05_negative_contract_mutations",
+  "nodeVersion": "v22.16.0",
+  "officialNode24Validation": false,
+  "results": [
+    {
+      "name": "q87 manual answer mapping tamper is rejected",
+      "status": "PASS",
+      "message": "Reviewed CBT candidate choice mapping is invalid: 2014-4-Q87"
+    },
+    {
+      "name": "q87 reviewed answer tamper is rejected",
+      "status": "PASS",
+      "message": "Reviewed CBT candidate answer mapping is invalid: 2014-4-Q87"
+    },
+    {
+      "name": "q40 choice conflict cannot carry an active answer",
+      "status": "PASS",
+      "message": "Reviewed CBT choice conflict is invalid: 2014-2-Q40"
+    },
+    {
+      "name": "q40 choice conflict cannot be published",
+      "status": "PASS",
+      "message": "Reviewed CBT candidate has no valid answer: 2014-2-Q40"
+    },
+    {
+      "name": "q51 canonical reassignment cannot drift back",
+      "status": "PASS",
+      "message": "Reviewed CBT candidate canonical/theory link is inconsistent: 2014-4-Q51"
+    },
+    {
+      "name": "image hold cannot carry an active answer",
+      "status": "PASS",
+      "message": "Reviewed CBT image hold is invalid: 2014-2-Q26"
+    },
+    {
+      "name": "records digest tamper is rejected",
+      "status": "PASS",
+      "message": "Reviewed CBT record digest mismatch: ff987bfdbc2124871c0b331528489123fb54b33b02a46d5d39968df1b268d4a6 != d74f8044d3a60f227661f7138d3048b31048e0df7e52a0140eb535939a9f7933"
+    }
+  ],
+  "limitations": [
+    "Supplemental Node.js 22 mutation tests do not replace the official Node.js 24 repository test suite."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "base": "batch-12 complete overlay on repository commit c064ec3c2293d036ebfa4d4710c0ce9d56407bc8",
+  "target": "batch-13 integration-repaired worktree",
+  "files": [
+    {
+      "path": "src/data/generated/cbt-reviewed-variants.json",
+      "status": "modified",
+      "beforeSize": 11216389,
+      "afterSize": 11217405,
+      "beforeSha256": "b2a614eb26faadad231c30bb7eb69e55c18dfc9c28f8350515f7a50d6a4cfac5",
+      "afterSha256": "a981cbba77dface92801549850fa9166cca25eb039fb12a7fc74652848c373b8"
+    },
+    {
+      "path": "src/lib/content/reviewed-cbt-variants.ts",
+      "status": "modified",
+      "beforeSize": 32447,
+      "afterSize": 33181,
+      "beforeSha256": "f884090c88e08e49cd4a44394726c0a46f45d68a7c72c43f0b396069c80f790f",
+      "afterSha256": "0d12ffd3e8dbb8569c183d8fa3ffb56ba5bb4269cc5790923ec6e445e9f90489"
+    },
+    {
+      "path": "src/lib/content/runtime-content.ts",
+      "status": "modified",
+      "beforeSize": 2476,
+      "afterSize": 2901,
+      "beforeSha256": "f2b905e1effc65406f3ae61f703ca5b5859aab67e313d0d63110f7d6dcabb4a0",
+      "afterSha256": "7568b60c4d210b7dffac1698281ac0f6223549acfe78016dfa3b6cd2f07b78a6"
+    },
+    {
+      "path": "src/lib/content/taxonomy-normalization.ts",
+      "status": "modified",
+      "beforeSize": 5547,
+      "afterSize": 5547,
+      "beforeSha256": "3c62a1332938ae40d086791a1952c51b35c6b2b5c51ee5e70fc2aff2a6abf50f",
+      "afterSha256": "6b4c3dfa8203ee45a3e2bf98a845ba46dcfbef4640fcb685a0714574deb2aad8"
+    },
+    {
+      "path": "src/lib/content/written-question-audit.ts",
+      "status": "modified",
+      "beforeSize": 13307,
+      "afterSize": 13663,
+      "beforeSha256": "eaa33870232d45664996e3bc418ee035d3bfd3e45d048210145bcdb03452d77e",
+      "afterSha256": "d2277443535570453a0155754a6964dc18277c0201056ad1d1f2a6edb95abd00"
+    },
+    {
+      "path": "scripts/verify-reviewed-cbt-variants.ts",
+      "status": "modified",
+      "beforeSize": 96601,
+      "afterSize": 97928,
+      "beforeSha256": "d807a406ffba227cf12ecce51d6b3792aef5b39d8315744a2085ed51d2813dbe",
+      "afterSha256": "62cea76369466ecc05e03ce70555bf1f892360557ad04d01f8c470d3e0865543"
+    },
+    {
+      "path": "tests/integration/runtime-content-gates.test.ts",
+      "status": "modified",
+      "beforeSize": 3926,
+      "afterSize": 4753,
+      "beforeSha256": "ed606b7d7a5495d01ac9834040d7a978bdeac1dea5d18170ef944560424b5881",
+      "afterSha256": "cc9b5d062a0243dd5deeabcbbc4cfd4766137a238212f5317c2dc7ff9662abc7"
+    },
+    {
+      "path": "tests/unit/written-question-audit.test.ts",
+      "status": "modified",
+      "beforeSize": 6526,
+      "afterSize": 8819,
+      "beforeSha256": "789192f920f8fc2952ec05b7a5aee9d14cb779fb9b8791b8551b816de6babec9",
+      "afterSha256": "5f8a6503566ea895e3b329609d667bec803ab85e2e6ac1d303635bbbb623564c"
+    }
+  ]
+}

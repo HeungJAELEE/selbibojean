@@ -2,6 +2,7 @@
 dist/
 .wrangler/
 node_modules/
+.pnpm-store/
 coverage/
 playwright-report/
 test-results/
@@ -19,3 +20,4 @@ public/data/
 _workspace/
 .superloopy/
 tmp/
+work/visual-staging/

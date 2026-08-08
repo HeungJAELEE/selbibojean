@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "caseCount": 10,
+  "detectedCount": 10,
+  "results": [
+    {
+      "case": "duplicate_external_id",
+      "expectedFailedCheck": "unique_external_ids",
+      "detected": true,
+      "failedChecks": [
+        "unique_external_ids",
+        "ordered_external_ids",
+        "source_identity_hashes",
+        "theory_links",
+        "low_context_policy",
+        "variant_specific_queue"
+      ],
+      "failureCount": 6
+    },
+    {
+      "case": "prior_record_tamper",
+      "expectedFailedCheck": "prior_records_unchanged",
+      "detected": true,
+      "failedChecks": [
+        "prior_records_unchanged"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "hold_answer_activated",
+      "expectedFailedCheck": "holds_disabled",
+      "detected": true,
+      "failedChecks": [
+        "holds_disabled"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "conflict_answer_activated",
+      "expectedFailedCheck": "conflicts_disabled",
+      "detected": true,
+      "failedChecks": [
+        "conflicts_disabled"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "candidate_answer_removed",
+      "expectedFailedCheck": "candidate_answers",
+      "detected": true,
+      "failedChecks": [
+        "candidate_answers"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "variant_blocker_removed",
+      "expectedFailedCheck": "variant_specific_blocked",
+      "detected": true,
+      "failedChecks": [
+        "variant_specific_blocked"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "source_stem_tamper",
+      "expectedFailedCheck": "source_identity_hashes",
+      "detected": true,
+      "failedChecks": [
+        "source_identity_hashes"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "unexpected_canonical_reassignment",
+      "expectedFailedCheck": "canonical_preserved",
+      "detected": true,
+      "failedChecks": [
+        "canonical_preserved"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "low_context_policy_removed",
+      "expectedFailedCheck": "low_context_policy",
+      "detected": true,
+      "failedChecks": [
+        "low_context_policy"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "records_digest_tamper",
+      "expectedFailedCheck": "records_sha",
+      "detected": true,
+      "failedChecks": [
+        "records_sha"
+      ],
+      "failureCount": 1
+    }
+  ],
+  "failures": []
+}

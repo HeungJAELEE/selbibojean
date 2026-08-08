@@ -1,0 +1,64 @@
+{
+  "status": "OPEN_GATES_REMAIN",
+  "records": 2384,
+  "runtimeStates": {
+    "candidate": 2267,
+    "hold": 98,
+    "choice_conflict": 19
+  },
+  "publication": {
+    "publishedRecordCount": 0,
+    "automaticPromotionPerformed": false
+  },
+  "recordBlockers": {
+    "pending_runtime_integration": 2267,
+    "required_source_image_review": 97,
+    "choice_conflict_non_scoring": 19,
+    "canonical_theory_repair_runtime_validation": 1,
+    "variant_specific_choice_contract_pending": 1709,
+    "lesson_source_needed": 2,
+    "answer_key_correction_pending_runtime_validation": 1,
+    "reconstructed_answer_key_conflicts_with_centralized_maintenance_characteristics": 1,
+    "direct_concept_group_taxonomy_mismatch_hydraulic_regeneration_in_pneumatic_group": 1,
+    "canonical_theory_repair_exact_target_pending": 2,
+    "direct_concept_group_taxonomy_mismatch_pneumatic_stopper_cylinder_in_hydraulic_group": 1
+  },
+  "holdBreakdown": {
+    "필수 이미지 확인": 97,
+    "정답키 충돌": 1
+  },
+  "choiceContracts": {
+    "completeChoiceIdMappings": 558,
+    "variantSpecificPending": 1709
+  },
+  "theoryAdditions": {
+    "count": 20,
+    "sourceNeeded": 20,
+    "blocked": 20,
+    "sourceAuthorities": {
+      "authoritative_source": 10,
+      "exam_reconstruction_with_source_needed": 8,
+      "authoritative_components_with_exam_taxonomy": 1,
+      "review_packet_only_source_needed": 1
+    }
+  },
+  "canonicalChanges": {
+    "count": 19,
+    "blocked": 19
+  },
+  "exactTaxonomyTargetPending": [
+    {
+      "externalId": "2022-1-Q61",
+      "currentConceptGroupId": "s1-g08",
+      "sourceStatedTargetFamily": "유압 유량·속도제어 계열",
+      "targetConceptGroupId": null
+    },
+    {
+      "externalId": "2022-2-Q65",
+      "currentConceptGroupId": "s1-g02",
+      "sourceStatedTargetFamily": "공압 액추에이터·방향제어 계열",
+      "targetConceptGroupId": null
+    }
+  ],
+  "nextRequiredGate": "Install exact lockfile dependencies under Node.js 24, rerun official typecheck/Vitest/ESLint/verify:data/build/SQL/browser flows, then resolve content-specific image, answer-key, taxonomy, source, and variant-choice blockers before publication."
+}

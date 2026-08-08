@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "scope": "batch06_supplemental_negative_contract_mutations",
+  "nodeVersion": "v22.16.0",
+  "officialNode24Validation": false,
+  "results": [
+    {
+      "name": "image hold cannot carry an active answer",
+      "status": "PASS",
+      "message": "Reviewed CBT image hold is invalid: 2015-4-Q88"
+    },
+    {
+      "name": "variant-specific candidate cannot be published without choice contract",
+      "status": "PASS",
+      "message": "Reviewed CBT variant-specific choice contract is invalid: 2015-4-Q69"
+    },
+    {
+      "name": "choice conflict cannot carry an active answer",
+      "status": "PASS",
+      "message": "Reviewed CBT choice conflict is invalid: 2015-4-Q55"
+    },
+    {
+      "name": "canonical reassignment cannot drift back to U-889",
+      "status": "PASS",
+      "message": "2015-4-Q69 canonical/theory reassignment contract failed"
+    },
+    {
+      "name": "low-context registration cannot be silently changed to hold",
+      "status": "PASS",
+      "message": "Low-context registration contract failed: 2015-2-Q49"
+    },
+    {
+      "name": "records digest tamper is rejected",
+      "status": "PASS",
+      "message": "records digest mismatch"
+    }
+  ],
+  "limitations": [
+    "Supplemental Python mutation checks do not replace the official Node.js 24 repository test suite."
+  ]
+}

@@ -1,0 +1,25 @@
+src/lib/content/welding-safety-approved.ts(322,22): error TS2339: Property 'id' does not exist on type 'unknown'.
+src/lib/content/welding-safety-supplement.ts(194,77): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string | number'.
+src/lib/content/written-question-audit.ts(246,14): error TS2339: Property 'auditDisposition' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(247,14): error TS2339: Property 'auditDisposition' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(296,13): error TS2339: Property 'auditDisposition' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(297,13): error TS2339: Property 'auditDisposition' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(307,13): error TS2339: Property 'auditDisposition' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(307,59): error TS2339: Property 'verifiedAnswer' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(309,54): error TS2339: Property 'verifiedAnswer' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(320,13): error TS2339: Property 'reviewChoiceFeedback' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(326,13): error TS2339: Property 'reviewChoiceFeedback' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(345,33): error TS2339: Property 'rationale' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(346,57): error TS2339: Property 'rationale' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(348,21): error TS2339: Property 'reviewRationale' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(352,26): error TS2339: Property 'rationale' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(358,26): error TS2339: Property 'reviewRationale' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(367,17): error TS2339: Property 'evidenceLevel' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(371,27): error TS2339: Property 'evidenceUrls' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(378,21): error TS2339: Property 'reviewNote' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(379,27): error TS2339: Property 'reviewedAt' does not exist on type 'unknown'.
+src/lib/content/written-question-audit.ts(462,5): error TS2322: Type '(Question | { audit: unknown; id: string; canonicalNumber: number; subjectId: string; conceptGroupId: string; conceptId: string; lessonId: string; lessonAnchor: string; stem: string; choices: Choice[]; ... 10 more ...; validation: { ...; }; } | { ...; })[]' is not assignable to type 'Question[]'.
+  Type 'Question | { audit: unknown; id: string; canonicalNumber: number; subjectId: string; conceptGroupId: string; conceptId: string; lessonId: string; lessonAnchor: string; stem: string; choices: Choice[]; ... 10 more ...; validation: { ...; }; } | { ...; }' is not assignable to type 'Question'.
+    Type '{ audit: unknown; id: string; canonicalNumber: number; subjectId: string; conceptGroupId: string; conceptId: string; lessonId: string; lessonAnchor: string; stem: string; choices: Choice[]; ... 10 more ...; validation: { answer: boolean; explanation: boolean; choiceFeedback: boolean; theoryLink: boolean; contentQual...' is not assignable to type 'Question'.
+      Types of property 'audit' are incompatible.
+        Type '{}' is missing the following properties from type 'QuestionAudit': auditDisposition, evidenceLevel, cbtAnswer, verifiedAnswer, and 4 more.

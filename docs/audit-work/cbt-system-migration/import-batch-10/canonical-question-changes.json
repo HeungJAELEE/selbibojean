@@ -1,0 +1,148 @@
+[
+  {
+    "action": "replace",
+    "question": {
+      "id": "U-478",
+      "canonicalNumber": 478,
+      "subjectId": "subject-1",
+      "conceptGroupId": "s1-g06",
+      "conceptId": "concept-qnsesu",
+      "lessonId": "lesson-qnsesu",
+      "lessonAnchor": "trap",
+      "stem": "텔레스코프형 실린더에 관한 설명으로 옳지 않은 것은?",
+      "choices": [
+        {
+          "id": "U-478-c1",
+          "order": 1,
+          "text": "짧은 설치길이로 긴 행정을 얻는다.",
+          "feedback": {
+            "rationale": "설치길이가 제한되면서 긴 스트로크가 필요한 덤프·리프트 등에 사용한다",
+            "plausibleReason": "‘짧은 설치길이로 긴 행정을 얻는다.’는 텔레스코프 실린더와 관련된 설명이지만 문두의 예외 조건을 충족하지 않는다.",
+            "incorrectPoint": "설치길이가 제한되면서 긴 스트로크가 필요한 덤프·리프트 등에 사용한다",
+            "keyRule": "텔레스코프 실린더는 큰 행정에 유리하지만 각 단의 유효면적과 속도가 달라 정밀 중간위치 제어에는 불리하다 따라서 2번 “정확한 위치제어를 행하는 경우에 사용한다.”이 이 문항의 잘못된 설명 또는 예외다.",
+            "differenceFromCorrect": "정답은 다단별 유효면적과 속도 차이 때문에 정밀한 중간위치 제어에 가장 적합하다고 볼 수 없다는 점이다."
+          }
+        },
+        {
+          "id": "U-478-c2",
+          "order": 2,
+          "text": "정밀한 중간위치 제어에 가장 적합하다.",
+          "feedback": {
+            "rationale": "단이 바뀔 때 속도·추력이 달라지고 누적유격이 있어 고정밀 위치제어용으로 적합하지 않다",
+            "plausibleReason": "텔레스코프 실린더의 다단 구조와 긴 행정 특성을 함께 고려한다.",
+            "incorrectPoint": null,
+            "keyRule": "텔레스코프 실린더는 큰 행정에 유리하지만 각 단의 유효면적과 속도가 달라 정밀 중간위치 제어에는 불리하다 따라서 2번 “정확한 위치제어를 행하는 경우에 사용한다.”이 이 문항의 잘못된 설명 또는 예외다.",
+            "differenceFromCorrect": null
+          }
+        },
+        {
+          "id": "U-478-c3",
+          "order": 3,
+          "text": "다단 튜브가 순차적으로 신장한다.",
+          "feedback": {
+            "rationale": "큰 단부터 또는 설계된 순서로 각 단계가 차례로 신장·수축한다",
+            "plausibleReason": "‘다단 튜브가 순차적으로 신장한다.’는 텔레스코프 실린더와 관련된 설명이지만 문두의 예외 조건을 충족하지 않는다.",
+            "incorrectPoint": "큰 단부터 또는 설계된 순서로 각 단계가 차례로 신장·수축한다",
+            "keyRule": "텔레스코프 실린더는 큰 행정에 유리하지만 각 단의 유효면적과 속도가 달라 정밀 중간위치 제어에는 불리하다 따라서 2번 “정확한 위치제어를 행하는 경우에 사용한다.”이 이 문항의 잘못된 설명 또는 예외다.",
+            "differenceFromCorrect": "정답은 다단별 유효면적과 속도 차이 때문에 정밀한 중간위치 제어에 가장 적합하다고 볼 수 없다는 점이다."
+          }
+        },
+        {
+          "id": "U-478-c4",
+          "order": 4,
+          "text": "덤프트럭·리프트 등에 사용할 수 있다.",
+          "feedback": {
+            "rationale": "지름이 다른 여러 튜브·플런저가 망원경처럼 겹쳐진 구조이다",
+            "plausibleReason": "‘덤프트럭·리프트 등에 사용할 수 있다.’는 텔레스코프 실린더와 관련된 설명이지만 문두의 예외 조건을 충족하지 않는다.",
+            "incorrectPoint": "지름이 다른 여러 튜브·플런저가 망원경처럼 겹쳐진 구조이다",
+            "keyRule": "텔레스코프 실린더는 큰 행정에 유리하지만 각 단의 유효면적과 속도가 달라 정밀 중간위치 제어에는 불리하다 따라서 2번 “정확한 위치제어를 행하는 경우에 사용한다.”이 이 문항의 잘못된 설명 또는 예외다.",
+            "differenceFromCorrect": "정답은 다단별 유효면적과 속도 차이 때문에 정밀한 중간위치 제어에 가장 적합하다고 볼 수 없다는 점이다."
+          }
+        }
+      ],
+      "correctChoiceId": "U-478-c2",
+      "answerText": "정밀한 중간위치 제어에 가장 적합하다.",
+      "explanation": "텔레스코프 실린더는 큰 행정에 유리하지만 각 단의 유효면적과 속도가 달라 정밀 중간위치 제어에는 불리하다 따라서 2번 “정확한 위치제어를 행하는 경우에 사용한다.”이 이 문항의 잘못된 설명 또는 예외다.",
+      "errorReason": "canonical conceptGroup taxonomy 오연결 교정",
+      "sourceLabel": "https://cbtbank.kr/exam/de20200606",
+      "reviewStatus": "배치 10 독립 풀이 및 dry-run taxonomy repair 검수",
+      "contentStatus": "in_review",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "pending_runtime_integration",
+          "canonical_theory_repair_runtime_validation"
+        ]
+      },
+      "verification": {
+        "status": "blocked",
+        "method": "review_packet_and_dry_run_taxonomy_repair_pending_runtime_validation",
+        "variantCount": 2,
+        "sourceUrls": [
+          "https://cbtbank.kr/exam/de20070902",
+          "https://cbtbank.kr/exam/de20200606"
+        ],
+        "riskTags": [
+          "taxonomy_repair",
+          "canonical_overlay",
+          "runtime_validation_pending"
+        ],
+        "note": "canonical 문항·정답은 유지하고 텔레스코프 실린더를 액추에이터 개념군 s1-g06으로 재연결한다.",
+        "reviewedAt": "2026-08-08T20:40:00+09:00"
+      },
+      "audit": {
+        "questionId": "U-478",
+        "scope": "review_queue",
+        "sourceContentStatus": "in_review",
+        "auditDisposition": "held_runtime_validation_pending",
+        "evidenceLevel": null,
+        "cbtAnswer": "정확한 위치제어를 행하는 경우에 사용한다.",
+        "verifiedAnswer": "정확한 위치제어를 행하는 경우에 사용한다.",
+        "evidenceUrls": [
+          "https://cbtbank.kr/exam/de20200606"
+        ],
+        "reviewNote": "문항 의미와 정답은 유지하며 conceptGroup만 s1-g02에서 s1-g06으로 교정한다.",
+        "assetStatus": "not_required",
+        "nextAction": "전체 저장소 런타임·Supabase·브라우저 검증 후 공개 심사",
+        "reviewChoiceFeedback": [
+          {
+            "choiceId": "U-478-c1",
+            "verdict": "incorrect",
+            "rationale": "설치길이가 제한되면서 긴 스트로크가 필요한 덤프·리프트 등에 사용한다"
+          },
+          {
+            "choiceId": "U-478-c2",
+            "verdict": "correct",
+            "rationale": "단이 바뀔 때 속도·추력이 달라지고 누적유격이 있어 고정밀 위치제어용으로 적합하지 않다"
+          },
+          {
+            "choiceId": "U-478-c3",
+            "verdict": "incorrect",
+            "rationale": "큰 단부터 또는 설계된 순서로 각 단계가 차례로 신장·수축한다"
+          },
+          {
+            "choiceId": "U-478-c4",
+            "verdict": "incorrect",
+            "rationale": "지름이 다른 여러 튜브·플런저가 망원경처럼 겹쳐진 구조이다"
+          }
+        ],
+        "reviewedAt": "2026-08-08T20:40:00+09:00"
+      },
+      "validation": {
+        "answer": true,
+        "explanation": true,
+        "choiceFeedback": true,
+        "theoryLink": true,
+        "contentQuality": true,
+        "authoritativeSource": false
+      }
+    },
+    "previousQuestionSha256": "e8921a7fe71061153c108a92b05938d5698c2f2ed64d1f4929ef6c58fe9df0a3",
+    "previousQuestionHashBasis": "dry_run_canonical_reference_contract",
+    "affectedExternalIds": [
+      "2007-4-Q84",
+      "2020-12B-Q86"
+    ],
+    "rationale": "U-478의 문항·정답은 유지하고 conceptGroup을 유압 동력원과 액추에이터(s1-g02)에서 액추에이터(s1-g06)로 교정한다."
+  }
+]

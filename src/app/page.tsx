@@ -3,6 +3,7 @@ import {
   ArrowRight,
   BookOpen,
   ClipboardCheck,
+  FileText,
   FileCheck2,
   Layers3,
   RotateCcw,
@@ -40,19 +41,20 @@ export default async function HomePage() {
               <span className="text-[#8dd5ce]">근거로 연결합니다.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
-              필기 이론·객관식과 NCS 원문 기반 실기 기출복원·출제예상을 한
-              사이트에서 학습하고, 제출 후 모범답안과 채점 기준으로
-              복습합니다.
+              이론을 필기 또는 실기 관점으로 전환해 학습하고, CBT 필기
+              모의고사와 기출·NCS 예상 필답 모의고사, 공압·유압·용접
+              수행정보까지 한 흐름으로 이어갑니다.
             </p>
             <div
               data-testid="primary-learning-paths"
               className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
             >
-              <PrimaryLink href="/written/theory">필기 이론</PrimaryLink>
+              <PrimaryLink href="/theory">이론 학습</PrimaryLink>
               <PrimaryLink href="/written/mock" strong>
                 필기 모의고사
               </PrimaryLink>
-              <PrimaryLink href="/practical">실기 학습</PrimaryLink>
+              <PrimaryLink href="/practical/mock">필답 모의고사</PrimaryLink>
+              <PrimaryLink href="/practical/info">실기 정보</PrimaryLink>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -84,27 +86,34 @@ export default async function HomePage() {
         <h2 className="display mt-3 text-3xl font-bold md:text-4xl">
           시험 단계에 맞춰 시작하세요
         </h2>
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
+        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           <ActionCard
-            href="/written/theory"
+            href="/theory"
             icon={<BookOpen />}
-            title="필기 이론"
-            text="현행 과목과 세부 개념을 공식·오답 함정·관련 문제까지 연결해 학습합니다."
-            action="이론 목차"
+            title="이론"
+            text="필기 중심과 실기·필답 중심을 전환하며 개념·함정·기출 키워드를 학습합니다."
+            action="학습 모드 선택"
           />
           <ActionCard
             href="/written/mock"
             icon={<FileCheck2 />}
-            title="필기 문제풀이"
-            text="검증 완료 문제만 풀고, 답안 제출 후 선택지별 해설과 연결 이론을 확인합니다."
-            action="필기 시작"
+            title="필기 모의고사"
+            text="CBT 자료를 기반으로 실전 80문제 또는 과목·문제 수를 정한 랜덤 문제를 풉니다."
+            action="CBT 시작"
           />
           <ActionCard
-            href="/practical"
+            href="/practical/mock"
+            icon={<FileText />}
+            title="필답 모의고사"
+            text={`기출복원 ${practicalPast}문제와 NCS 기반 출제예상 ${practicalPredicted}문제를 혼합해 답안을 작성합니다.`}
+            action="필답 시작"
+          />
+          <ActionCard
+            href="/practical/info"
             icon={<Wrench />}
-            title="실기 학습"
-            text={`기출복원 ${practicalPast}문제, 출제예상 ${practicalPredicted}문제, 실기 개념 ${practical.report.rows.concepts}개를 제공합니다.`}
-            action="실기 시작"
+            title="실기 관련 정보"
+            text={`공압·유압·용접 작업과 수험 준비 팁을 ${practical.report.rows.concepts}개 실기 개념과 연결합니다.`}
+            action="실기 정보 보기"
           />
         </div>
         <div className="mt-5 flex flex-col gap-3 rounded-2xl bg-slate-50 p-4 text-sm sm:flex-row sm:items-center sm:justify-between">
@@ -126,6 +135,18 @@ export default async function HomePage() {
             </Link>
           </span>
         </div>
+        <p className="mt-5 text-center text-sm text-slate-600">
+          건의사항은{" "}
+          <a
+            href="https://blog.naver.com/heung891025/224357527404"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-[#16697a] underline decoration-[#16697a]/40 underline-offset-4 hover:decoration-[#16697a] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16697a] focus-visible:ring-offset-2"
+          >
+            여기에 댓글로 남겨주세요
+          </a>
+          .
+        </p>
       </section>
     </>
   );

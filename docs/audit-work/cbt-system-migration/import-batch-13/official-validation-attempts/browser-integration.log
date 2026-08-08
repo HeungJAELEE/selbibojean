@@ -1,0 +1,14 @@
+
+> seolbi-learning-platform@0.1.0 pretest:e2e
+> npm run verify:node-runtime
+
+
+> seolbi-learning-platform@0.1.0 verify:node-runtime
+> node scripts/verify-node-runtime.mjs
+
+NODE_RUNTIME_OK v24.11.1
+
+> seolbi-learning-platform@0.1.0 test:e2e
+> playwright test --list
+
+error: unknown command 'test'

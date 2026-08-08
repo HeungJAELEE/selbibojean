@@ -1,0 +1,55 @@
+{
+  "status": "BLOCKED",
+  "generatedAt": "2026-08-07T21:10:10+09:00",
+  "currentNodeVersion": "v22.16.0",
+  "requiredNodeRange": ">=24.0.0 <25",
+  "attempts": [
+    {
+      "name": "typecheck",
+      "exitCode": 1,
+      "status": "BLOCKED_NODE_RUNTIME",
+      "logFile": "official-validation-attempts/typecheck.log"
+    },
+    {
+      "name": "vitest",
+      "exitCode": 1,
+      "status": "BLOCKED_NODE_RUNTIME",
+      "logFile": "official-validation-attempts/vitest.log"
+    },
+    {
+      "name": "eslint",
+      "exitCode": 1,
+      "status": "BLOCKED_NODE_RUNTIME",
+      "logFile": "official-validation-attempts/eslint.log"
+    },
+    {
+      "name": "verify-reviewed-cbt",
+      "exitCode": 127,
+      "status": "BLOCKED_DEPENDENCY_MISSING",
+      "logFile": "official-validation-attempts/verify-reviewed-cbt.log"
+    },
+    {
+      "name": "verify-no-answer-leak",
+      "exitCode": 127,
+      "status": "BLOCKED_DEPENDENCY_MISSING",
+      "logFile": "official-validation-attempts/verify-no-answer-leak.log"
+    }
+  ],
+  "supplementalChecks": {
+    "generatorOwnedValidation": "PASS",
+    "independentValidation": "PASS",
+    "typescriptSyntax": "PASS",
+    "targetedTypecheck": "PASS",
+    "supplementalRuntime": "PASS",
+    "supplementalVerifier": "PASS",
+    "supplementalNoAnswerLeak": "PASS",
+    "negativeContracts": "PASS",
+    "generatorIdempotency": "PASS",
+    "pythonGeneratorSyntax": "PASS"
+  },
+  "notRun": [
+    "SQL migration tests",
+    "login/guest browser integration flows"
+  ],
+  "reason": "Official repository validation requires Node.js 24.x and installed project dependencies. Blocked attempts are not reported as PASS."
+}

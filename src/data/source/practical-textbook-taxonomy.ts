@@ -190,7 +190,7 @@ export const practicalTextbookPlacementByConceptId: Record<
     sourceEvidence: "direct",
   },
   "PCON-018": {
-    subjectId: "subject-4",
+    subjectId: "subject-3",
     studyTypeIds: ["definition", "visual", "diagnosis_safety"],
     sourceEvidence: "related",
   },

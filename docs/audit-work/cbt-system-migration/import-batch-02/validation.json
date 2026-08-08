@@ -1,0 +1,113 @@
+{
+  "batchContractStatus": "PASS",
+  "repositoryFinalValidationStatus": "NOT_RUN",
+  "scope": "import-02 theory-gap closure and direct-link runtime gating",
+  "counts": {
+    "batchId": "import-02",
+    "generatedAt": "2026-08-07T18:20:00+09:00",
+    "recordCount": 200,
+    "states": {
+      "candidate": 189,
+      "hold": 11
+    },
+    "fullCanonicalChoiceMappingCount": 24,
+    "variantSpecificFeedbackPendingCount": 165,
+    "theoryLessonAdditionCount": 14,
+    "canonicalQuestionChangeCount": 12,
+    "directTheoryLinkCount": 200,
+    "imageVerificationQueueCount": 11,
+    "sourceContentSha256Before": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "sourceContentUnchanged": true
+  },
+  "checks": {
+    "preNodeStatic": {
+      "status": "PASS",
+      "failures": [],
+      "failureCount": 0,
+      "records": 400,
+      "batch2": {
+        "candidate": 189,
+        "hold": 11
+      },
+      "variantSpecific": 165,
+      "lessons": 14,
+      "changes": 12,
+      "q84": {
+        "canonicalId": "U-1400",
+        "lessonId": "lesson-cbt-poppet-valve-components",
+        "choiceMappingCount": 4
+      },
+      "sourceContentSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4"
+    },
+    "targetedTypecheck": "PASS",
+    "typescriptSyntax": "PASS",
+    "supplementalVerifier": "PASS",
+    "runtimePublicationAndSupabase": {
+      "status": "PASS",
+      "nodeVersion": "v22.16.0",
+      "q84": {
+        "candidateBlocked": true,
+        "publishedSafe": true,
+        "mappedChoiceIds": [
+          "U-1400-c1",
+          "U-1400-c2",
+          "U-1400-c3",
+          "U-1400-c4"
+        ],
+        "answerIndex": 3,
+        "correctChoiceId": "U-1400-c4",
+        "sourceChoices": [
+          "디스크",
+          "원추",
+          "볼",
+          "스풀"
+        ]
+      },
+      "supabase": {
+        "reviewedRowCount": 400,
+        "allReviewedRowsDraft": true,
+        "forbiddenKeysFound": []
+      }
+    },
+    "negativeTamperTests": {
+      "status": "PASS",
+      "results": [
+        {
+          "name": "variant-specific record cannot be published",
+          "status": "PASS",
+          "message": "Reviewed CBT variant-specific choice contract is invalid: 2009-4-Q01"
+        },
+        {
+          "name": "direct theory drift is rejected",
+          "status": "PASS",
+          "message": "Reviewed CBT direct-theory link is inconsistent: 2009-4-Q84"
+        },
+        {
+          "name": "canonical replacement SHA tamper is rejected",
+          "status": "PASS",
+          "message": "Reviewed CBT canonical replacement digest mismatch: U-1241"
+        },
+        {
+          "name": "lesson addition digest tamper is rejected",
+          "status": "PASS",
+          "message": "Reviewed CBT theory lesson additions digest mismatch: e78d7028627a6061a2ba8236e01465439dcade4bea556c3cebd32ea72f1faeb7 != f36819775114cd45b20034aa1a7aa68fc014c55844750ebcac08f9979398eafa"
+        }
+      ]
+    },
+    "generatorIdempotency": "PASS",
+    "sourceContentUnchanged": true
+  },
+  "unexecutedOfficialChecks": [
+    "Node.js 24 full typecheck",
+    "Vitest",
+    "ESLint",
+    "repository verify-no-answer-leak",
+    "SQL migration tests"
+  ],
+  "notes": [
+    "모든 import-02 레코드는 candidate 또는 hold이며 published는 0건이다.",
+    "variant-specific 선택지 계약 미완성 165건은 fallback 없이 공개 차단된다.",
+    "2009-4-Q84는 U-1400과 포핏밸브 직접 레슨으로 재연결되어 4개 선택지 매핑을 갖는다.",
+    "2009-4-Q13과 Q46은 필수 이미지 확인 전 canonical 재구성을 유예하지만 직접 이론 레슨은 연결됐다."
+  ]
+}

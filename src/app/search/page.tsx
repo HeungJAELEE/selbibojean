@@ -13,6 +13,10 @@ import {
   isPublishableLesson,
   isPublishableQuestion,
 } from "@/lib/domain/practice";
+import {
+  isLearnerVisiblePracticalConcept,
+  isLearnerVisiblePracticalQuestion,
+} from "@/lib/content/learner-visibility";
 
 export default async function SearchPage({
   searchParams,
@@ -49,10 +53,12 @@ export default async function SearchPage({
     : [];
   const practicalConcepts = query
     ? practical.concepts
-        .filter((concept) =>
-          `${concept.title} ${concept.definition} ${concept.principle} ${concept.requiredKeywords.join(" ")}`
-            .toLowerCase()
-            .includes(query),
+        .filter(
+          (concept) =>
+            isLearnerVisiblePracticalConcept(concept) &&
+            `${concept.title} ${concept.definition} ${concept.principle} ${concept.requiredKeywords.join(" ")}`
+              .toLowerCase()
+              .includes(query),
         )
         .slice(0, 30)
     : [];
@@ -61,6 +67,7 @@ export default async function SearchPage({
         .filter(
           (question) =>
             isPublishablePracticalQuestion(question) &&
+            isLearnerVisiblePracticalQuestion(question) &&
             `${question.title} ${question.stem}`.toLowerCase().includes(query),
         )
         .slice(0, 30)

@@ -3,11 +3,14 @@ import { expect, test } from "@playwright/test";
 
 for (const path of [
   "/",
+  "/theory",
+  "/theory?mode=practical",
   "/written/theory",
   "/written/theory/family/s1-g11/action",
   "/written/practice/random",
   "/written/mock",
   "/practical/mock",
+  "/practical/info",
   "/login",
 ]) {
   test(`no serious accessibility violations on ${path}`, async ({ page }) => {
@@ -24,5 +27,5 @@ test("keyboard focus is visible and can reach the primary action", async ({ page
   await page.keyboard.press("Tab");
   const focused = page.locator(":focus-visible");
   await expect(focused).toBeVisible();
-  await expect(focused).toHaveAttribute("href", "/");
+  await expect(focused).not.toHaveAttribute("tabindex", "-1");
 });

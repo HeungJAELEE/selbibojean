@@ -1,0 +1,27 @@
+{
+  "batchId": "import-06",
+  "generatedAt": "2026-08-07T21:10:10+09:00",
+  "recordCount": 200,
+  "states": {
+    "candidate": 190,
+    "hold": 6,
+    "choice_conflict": 4
+  },
+  "fullCanonicalChoiceMappingCount": 25,
+  "manualChoiceMappingCount": 0,
+  "variantSpecificFeedbackPendingCount": 165,
+  "theoryLessonAdditionCount": 0,
+  "canonicalQuestionChangeCount": 0,
+  "directTheoryLinkCount": 200,
+  "existingTheoryRelinkCount": 1,
+  "imageVerificationQueueCount": 6,
+  "choiceConflictCount": 4,
+  "answerKeyCorrectionCount": 0,
+  "canonicalReassignmentCount": 1,
+  "lowContextRegistrationCount": 4,
+  "formulaUnitSubstitutionCount": 20,
+  "sourceContentSha256Before": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+  "sourceContentUnchanged": true
+}
+
+manifest sha ac923762d7bd7d423dc9908426d016cd1cb8376987a85b88ba16cdc0fd95f3b9

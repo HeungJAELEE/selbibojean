@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "caseCount": 10,
+  "detectedCount": 10,
+  "results": [
+    {
+      "case": "duplicate_external_id",
+      "expectedFailedCheck": "unique_external_ids",
+      "detected": true,
+      "failedChecks": [
+        "unique_external_ids",
+        "ordered_external_ids",
+        "source_identity_hashes",
+        "theory_links",
+        "variant_specific_queue"
+      ],
+      "failureCount": 5
+    },
+    {
+      "case": "prior_record_tamper",
+      "expectedFailedCheck": "prior_records_unchanged",
+      "detected": true,
+      "failedChecks": [
+        "prior_records_unchanged"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "image_hold_answer_activated",
+      "expectedFailedCheck": "image_holds_disabled",
+      "detected": true,
+      "failedChecks": [
+        "image_holds_disabled"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "choice_conflict_answer_activated",
+      "expectedFailedCheck": "conflicts_disabled",
+      "detected": true,
+      "failedChecks": [
+        "conflicts_disabled"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "answer_key_conflict_answer_activated",
+      "expectedFailedCheck": "answer_key_conflict_disabled",
+      "detected": true,
+      "failedChecks": [
+        "answer_key_conflict_disabled"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "variant_blocker_removed",
+      "expectedFailedCheck": "variant_specific_blocked",
+      "detected": true,
+      "failedChecks": [
+        "variant_specific_blocked"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "semantic_reassignment_removed",
+      "expectedFailedCheck": "canonical_reassignments",
+      "detected": true,
+      "failedChecks": [
+        "theory_links",
+        "canonical_reassignments"
+      ],
+      "failureCount": 2
+    },
+    {
+      "case": "canonical_repair_reverted",
+      "expectedFailedCheck": "canonical_theory_repair",
+      "detected": true,
+      "failedChecks": [
+        "theory_links",
+        "canonical_theory_repair"
+      ],
+      "failureCount": 2
+    },
+    {
+      "case": "low_context_policy_removed",
+      "expectedFailedCheck": "low_context_policy",
+      "detected": true,
+      "failedChecks": [
+        "low_context_policy"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "records_digest_tamper",
+      "expectedFailedCheck": "records_sha",
+      "detected": true,
+      "failedChecks": [
+        "records_sha"
+      ],
+      "failureCount": 1
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "scope": "supplemental_targeted_typecheck_and_syntax_only",
+  "typescriptVersion": "5.8.3",
+  "nodeVersion": "v22.16.0",
+  "officialProjectNode24Check": false,
+  "checks": [
+    {
+      "name": "reviewed_variant_runtime_core_semantic_typecheck",
+      "config": "/mnt/data/cbt_batch06_work/typecheck/tsconfig-core.json",
+      "exitCode": 0,
+      "diagnostics": []
+    },
+    {
+      "name": "reviewed_variant_verifier_and_test_syntax",
+      "source": "syntax-validation.json",
+      "exitCode": 0,
+      "diagnostics": []
+    }
+  ],
+  "limitations": [
+    "This does not replace the repository-wide Node.js 24 typecheck.",
+    "The verifier and Vitest file received syntax-only transpilation because project dependencies were not installed."
+  ]
+}

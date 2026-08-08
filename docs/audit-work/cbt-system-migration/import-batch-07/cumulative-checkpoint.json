@@ -1,0 +1,63 @@
+{
+  "formatVersion": 1,
+  "scope": "CBT reviewed import batches 01-07",
+  "reviewedRecordCount": 1370,
+  "remainingUnreviewed": 1014,
+  "sourceReconstructionPath": "src/data/generated/cbt-source-reconstruction.json",
+  "processedRanges": [
+    {"exam":"2006-4","questions":"Q01-Q100"},
+    {"exam":"2007-4","questions":"Q01-Q100"},
+    {"exam":"2008-4","questions":"Q01-Q100"},
+    {"exam":"2009-4","questions":"Q01-Q100"},
+    {"exam":"2010-4","questions":"Q01-Q100"},
+    {"exam":"2011-4","questions":"Q01-Q100"},
+    {"exam":"2012-4","questions":"Q01-Q100"},
+    {"exam":"2013-4","questions":"Q01-Q100"},
+    {"exam":"2014-2","questions":"Q01-Q100"},
+    {"exam":"2014-4","questions":"Q01-Q100"},
+    {"exam":"2015-2","questions":"Q01-Q100"},
+    {"exam":"2015-4","questions":"Q01-Q100"},
+    {"exam":"2016-2","questions":"Q01-Q20"},
+    {"exam":"2016-4","questions":"Q01-Q100"},
+    {"exam":"2017-2","questions":"Q01-Q50"}
+  ],
+  "statusCounts": {
+    "candidate": 1305,
+    "choice_conflict": 14,
+    "required_image_hold": 51
+  },
+  "answerKeyCorrections": [
+    {"externalId":"2010-4-Q59","sourceAnswerIndex":0,"reviewedAnswerIndex":2},
+    {"externalId":"2013-4-Q48","sourceAnswerIndex":0,"reviewedAnswerIndex":2},
+    {"externalId":"2014-4-Q87","sourceAnswerIndex":3,"reviewedAnswerIndex":1}
+  ],
+  "choiceConflictExternalIds": [
+    "2006-4-Q34","2006-4-Q49","2006-4-Q60","2006-4-Q93","2007-4-Q49","2007-4-Q66",
+    "2011-4-Q42","2011-4-Q59","2013-4-Q84","2014-2-Q40",
+    "2015-2-Q42","2015-4-Q20","2015-4-Q46","2015-4-Q55"
+  ],
+  "requiredImageHoldExternalIds": [
+    "2006-4-Q17","2006-4-Q37","2006-4-Q88","2006-4-Q91","2007-4-Q02","2007-4-Q10","2007-4-Q93",
+    "2008-4-Q36","2008-4-Q38","2008-4-Q92","2009-4-Q06","2009-4-Q08","2009-4-Q13","2009-4-Q35","2009-4-Q46","2009-4-Q87","2009-4-Q90","2009-4-Q91",
+    "2010-4-Q08","2010-4-Q09","2010-4-Q81","2010-4-Q89","2011-4-Q24","2011-4-Q54","2011-4-Q75","2011-4-Q85",
+    "2012-4-Q36","2012-4-Q43","2012-4-Q57","2012-4-Q93","2013-4-Q17","2013-4-Q46",
+    "2014-2-Q26","2014-2-Q50","2014-2-Q90","2014-2-Q96","2014-4-Q54","2014-4-Q90","2014-4-Q91","2014-4-Q97",
+    "2015-2-Q02","2015-4-Q12","2015-4-Q44","2015-4-Q84","2015-4-Q88","2015-4-Q97",
+    "2016-4-Q10","2016-4-Q26","2016-4-Q58","2017-2-Q32","2017-2-Q33"
+  ],
+  "batch07": {
+    "recordCount": 170,
+    "candidate": 165,
+    "requiredImageHold": 5,
+    "choiceConflict": 0,
+    "answerKeyCorrection": 0,
+    "newTheoryLesson": 0,
+    "newCanonical": 0
+  },
+  "publicationPolicy": {
+    "autoPublish": false,
+    "candidateRequiresRuntimeIntegration": true,
+    "choiceConflictScoring": "disabled",
+    "requiredImageHoldScoring": "disabled"
+  }
+}

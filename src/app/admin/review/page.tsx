@@ -37,6 +37,11 @@ const dispositionCopy: Record<
     tone: "bg-rose-50 text-rose-800",
     defaultAction: "공식 1차 자료 또는 독립적인 전문자료 2개를 확보합니다.",
   },
+  held_runtime_validation: {
+    label: "런타임 검증 보류",
+    tone: "bg-amber-50 text-amber-900",
+    defaultAction: "전체 저장소·DB·브라우저 검증이 통과된 뒤 공개를 다시 심사합니다.",
+  },
 };
 
 const riskLabels: Record<VerificationRiskTag, string> = {
@@ -51,6 +56,7 @@ const heldDispositions = new Set<AuditDisposition>([
   "held_answer_conflict",
   "held_asset_missing",
   "held_source_missing",
+  "held_runtime_validation",
 ]);
 
 export default async function ReviewPage() {

@@ -1,0 +1,60 @@
+{
+  "status": "PASS_SHIM_ASSISTED",
+  "boundary": {
+    "nodeVersion": "v24.11.1",
+    "typescriptLoader": "custom transpile-only loader using TypeScript 5.8.3",
+    "zod": "local validation-only runtime shim",
+    "projectDependenciesInstalled": false,
+    "claim": "Behavioral execution only; not a substitute for npm ci plus official repository commands."
+  },
+  "checks": {
+    "verify-reviewed-cbt-shim-assisted": {
+      "exitCode": 0,
+      "status": "PASS",
+      "resultLine": "PASS: reviewed CBT imports verified (2384 records; 2267 candidates; 19 choice conflicts; 98 holds; 0 gated; 20 theory additions; 19 canonical overlays).",
+      "log": "logs/verify-reviewed-cbt-shim-assisted.log"
+    },
+    "verify-no-answer-leak-source-shim-assisted": {
+      "exitCode": 0,
+      "status": "PASS",
+      "resultLine": "PASS: 답안 유출 검사 완료 (source; 공개 DTO·JSON·클라이언트 번들·동적 코드 실행).",
+      "log": "logs/verify-no-answer-leak-source-shim-assisted.log"
+    },
+    "verify-generated-data-shim-assisted": {
+      "exitCode": 0,
+      "status": "PASS",
+      "resultLine": "PASS: 원문 2384, 대표 1396, 매핑 2384, 잔여 276, 44개 세부항목군, 공개 레슨 1190, 선택지 해설 5584, 공개 문제 1314, 근거 확인 대기 82, 용접 안전 원본 283문제·30레슨·25회차, 명시승인 0문제·0레슨, 검수대기 150문제·30레슨, 런타임 공개 1493문제·1286레슨",
+      "log": "logs/verify-generated-data-shim-assisted.log"
+    },
+    "verify-cbt-source-audit-shim-assisted": {
+      "exitCode": 0,
+      "status": "PASS",
+      "resultLine": "CBT audit verified: 2384 shadow records; learner approvals=0",
+      "log": "logs/verify-cbt-source-audit-shim-assisted.log"
+    },
+    "verify-practical-data-shim-assisted": {
+      "exitCode": 0,
+      "status": "PASS",
+      "resultLine": "PASS: 실기 기출 51/51, 예상 183/185 (워크북 41 + 자체 77 + 필기선별 67), 출제연결 46/46 + NCS 보강 43/43, 보류 0, NCS 시각자료 88묶음, 학습유형 4개/236문제",
+      "log": "logs/verify-practical-data-shim-assisted.log"
+    },
+    "verify-practical-written-governance-shim-assisted": {
+      "exitCode": 0,
+      "status": "PASS",
+      "resultLine": "PASS: 필답 Evidence 279개, NCS Coverage 11개, 공개 234개, 보류 0개.",
+      "log": "logs/verify-practical-written-governance-shim-assisted.log"
+    },
+    "verify-practical-theory-coverage-shim-assisted": {
+      "exitCode": 0,
+      "status": "PASS",
+      "resultLine": "Practical written theory verified: 11 NCS documents, 89 published concepts, 122 required topics, 0 missing.",
+      "log": "logs/verify-practical-theory-coverage-shim-assisted.log"
+    },
+    "verify-practical-work-content-shim-assisted": {
+      "exitCode": 0,
+      "status": "PASS",
+      "resultLine": "Practical work content verified: 11 modules, 34 tasks, 269 steps, 126 safety gates, 68 measurements, 122 required topics.",
+      "log": "logs/verify-practical-work-content-shim-assisted.log"
+    }
+  }
+}

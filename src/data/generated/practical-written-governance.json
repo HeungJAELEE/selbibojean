@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "generatedAt": "2026-07-26T11:53:05.937Z",
+  "generatedAt": "2026-07-31T04:38:08.837Z",
   "sourceSha256": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
   "scope": "practical_written_only",
   "evidence": [
@@ -25,7 +25,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -64,7 +64,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -79,7 +79,8 @@
         "PCON-002"
       ],
       "gradingRequiredKeywords": [
-        "한 기어를 고정하고 다른 기어를 양방향으로 흔들어 다이얼게이지 변위차를 읽는다."
+        "백래시",
+        "다이얼 게이지"
       ]
     },
     {
@@ -103,7 +104,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -145,7 +146,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -153,7 +154,8 @@
         "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
-        "image"
+        "image",
+        "sequence"
       ],
       "learningKeywords": [
         "구름베어링 사진 식별",
@@ -187,7 +189,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -202,7 +204,8 @@
         "PCON-005"
       ],
       "gradingRequiredKeywords": [
-        "원본 도형 없이는 투상배치와 가시선·숨은선을 확정할 수 없음"
+        "정면도 위에 평면도를",
+        "정면도 오른쪽에 우측면도를 배치하고 입체의 가시 모서리와 경사면을 제3각법으로 정확히 투상한다."
       ]
     },
     {
@@ -226,7 +229,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -241,13 +244,15 @@
         "PCON-006"
       ],
       "gradingRequiredKeywords": [
-        "점검·치수확인",
-        "요크선택",
-        "센서부착",
-        "베어링설치",
-        "목표온도설정",
-        "가열·탈자",
-        "보호구착용 후 신속 장착·밀착"
+        "e",
+        "b",
+        "a",
+        "c",
+        "g",
+        "d",
+        "i",
+        "h",
+        "f"
       ]
     },
     {
@@ -271,7 +276,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -310,7 +315,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -325,12 +330,12 @@
         "PCON-008"
       ],
       "gradingRequiredKeywords": [
-        "내열성",
-        "내유성",
-        "내마모성",
-        "내약품성",
-        "낮은 압축영구변형",
-        "충분한 탄성"
+        "A",
+        "B",
+        "D",
+        "F",
+        "G",
+        "I"
       ]
     },
     {
@@ -354,7 +359,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -393,7 +398,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -434,15 +439,17 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
         "https://blog.naver.com/moru-1/223951709068",
-        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view",
+        "https://cdn.skfmediahub.skf.com/api/public/0901d1968027f7c9/pdf_preview_medium/0901d1968027f7c9_pdf_preview_medium.pdf"
       ],
       "formats": [
-        "image"
+        "image",
+        "symbol"
       ],
       "learningKeywords": [
         "자동조심 롤러베어링 식별",
@@ -473,7 +480,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -490,8 +497,9 @@
         "PCON-004"
       ],
       "gradingRequiredKeywords": [
+        "(다)",
+        "외륜 궤도면이 구면",
         "조심성",
-        "큰 방사하중·일부 축하중",
         "약간의 정렬오차 허용"
       ]
     },
@@ -516,7 +524,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -555,7 +563,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -596,12 +604,15 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
         "https://blog.naver.com/moru-1/223951709068",
-        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view",
+        "https://commons.wikimedia.org/wiki/File:Cl%C3%A9_%C3%A0_ergot.jpg",
+        "https://commons.wikimedia.org/wiki/File:Socket_wrench_set.jpg"
       ],
       "formats": [
         "image",
@@ -612,10 +623,10 @@
         "PCON-013"
       ],
       "gradingRequiredKeywords": [
-        "후크스패너-홈붙이너트",
-        "소켓렌치-육각체결",
-        "기어풀러-축부품분리",
-        "스냅링플라이어-스냅링착탈"
+        "(1)-b",
+        "(2)-d",
+        "(3)-a",
+        "(4)-c"
       ]
     },
     {
@@ -639,7 +650,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -678,7 +689,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -717,7 +728,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -732,7 +743,10 @@
         "PCON-015"
       ],
       "gradingRequiredKeywords": [
-        "베이퍼 록(vapor lock)"
+        "베이퍼 로크",
+        "브레이크 오일 기화",
+        "기포",
+        "제동력 저하"
       ]
     },
     {
@@ -756,14 +770,18 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
         "https://blog.naver.com/moru-1/223952223215",
         "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view",
         "https://miis.kosha.or.kr/oshci/busi/viewProtectionFees.do",
-        "https://360vr.kosha.or.kr/eduDutyInfo?search=true"
+        "https://360vr.kosha.or.kr/eduDutyInfo?search=true",
+        "https://commons.wikimedia.org/wiki/File:Dust_mask.jpg",
+        "https://commons.wikimedia.org/wiki/File:Air-Purifying_Respirator.jpg",
+        "https://commons.wikimedia.org/wiki/File:%D0%A8%D0%BB%D0%B0%D0%BD%D0%B3%D0%BE%D0%B2%D1%8B%D0%B9_%D1%80%D0%B5%D1%81%D0%BF%D0%B8%D1%80%D0%B0%D1%82%D0%BE%D1%80_%D1%81_%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%BB%D0%B8%D1%86%D0%B5%D0%B2%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%BE%D0%B9.JPG",
+        "https://commons.wikimedia.org/wiki/File:Portable_powered_HEPA_respirator.jpg"
       ],
       "formats": [
         "definition",
@@ -774,10 +792,10 @@
         "PCON-016"
       ],
       "gradingRequiredKeywords": [
-        "방진마스크-입자상 물질",
-        "방독마스크-가스·증기",
-        "송기마스크-외부 공기 공급",
-        "전동식 호흡보호구-송풍기와 필터·정화통"
+        "(가)-b",
+        "(나)-a",
+        "(다)-d",
+        "(라)-c"
       ]
     },
     {
@@ -801,7 +819,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -840,7 +858,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -855,9 +873,9 @@
         "PCON-018"
       ],
       "gradingRequiredKeywords": [
-        "피팅: 점상피로",
-        "스폴링: 큰 조각 박리",
-        "스코어링: 윤활막 파괴와 미끄럼에 의한 긁힘·용착"
+        "피팅-점상 홈",
+        "스폴링-넓고 깊은 박리",
+        "스코어링-긁힘·융착"
       ]
     },
     {
@@ -881,7 +899,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -922,7 +940,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -939,9 +957,9 @@
       ],
       "gradingRequiredKeywords": [
         "보안경 착용",
-        "안면보호구 착용",
+        "보안면 착용",
         "방진마스크 착용",
-        "낙하물 경고"
+        "매달린 물체 경고"
       ]
     },
     {
@@ -965,7 +983,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -981,11 +999,11 @@
       "gradingRequiredKeywords": [
         "초기청소",
         "발생원·곤란개소 대책",
-        "청소·급유 가기준",
+        "자주보전 기준서 작성",
         "총점검",
         "자주점검",
         "표준화",
-        "자율관리"
+        "자주관리"
       ]
     },
     {
@@ -1009,7 +1027,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1051,7 +1069,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1059,7 +1077,8 @@
         "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
-        "image"
+        "image",
+        "matching"
       ],
       "learningKeywords": [
         "축정렬 불량 식별",
@@ -1091,7 +1110,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1131,7 +1150,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1171,7 +1190,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1211,7 +1230,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1226,12 +1245,11 @@
         "PCON-026"
       ],
       "gradingRequiredKeywords": [
-        "적정 점도",
-        "온도 변화에 따른 점도 변화가 작음",
-        "윤활성",
-        "높은 비점",
-        "낮은 빙점",
-        "높은 인화점"
+        "b",
+        "c",
+        "f",
+        "g",
+        "h"
       ]
     },
     {
@@ -1255,7 +1273,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1297,7 +1315,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1336,7 +1354,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1345,16 +1363,20 @@
         "https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000207172"
       ],
       "formats": [
-        "image"
+        "image",
+        "symbol"
       ],
       "learningKeywords": [
         "금지·경고·지시 안전표지",
         "PCON-009"
       ],
       "gradingRequiredKeywords": [
-        "금지표지",
-        "경고표지",
-        "지시표지"
+        "a-출입금지",
+        "c-보행금지",
+        "b-인화성물질 경고",
+        "e-고압전기 경고",
+        "d-보안면 착용",
+        "f-청력보호구 착용"
       ]
     },
     {
@@ -1378,7 +1400,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1419,7 +1441,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1459,7 +1481,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1500,7 +1522,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1541,7 +1563,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1549,8 +1571,7 @@
         "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
       ],
       "formats": [
-        "calculation",
-        "matching"
+        "calculation"
       ],
       "learningKeywords": [
         "파스칼 원리",
@@ -1558,7 +1579,8 @@
         "PCON-032"
       ],
       "gradingRequiredKeywords": [
-        "F₂=F₁×A₂/A₁"
+        "밀폐된 비압축성 정지유체에 가한 압력은 모든 방향으로 동일하게 전달된다. P₁=P₂",
+        "즉 F₁/A₁=F₂/A₂이다."
       ]
     },
     {
@@ -1582,7 +1604,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1601,7 +1623,7 @@
         "기어 커플링",
         "큰 토크 전달",
         "편심·편각 허용",
-        "윤활·씰·치면 점검"
+        "축방향 이동 허용"
       ]
     },
     {
@@ -1625,15 +1647,17 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
         "https://blog.naver.com/moru-1/224275574425",
-        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
         "image",
+        "drawing",
         "symbol"
       ],
       "learningKeywords": [
@@ -1642,7 +1666,11 @@
       ],
       "gradingRequiredKeywords": [
         "외접기어펌프",
-        "평기어. 세부 공차기호는 원도면 확인 필요"
+        "평기어",
+        "평행도",
+        "원통도",
+        "동심도",
+        "헐거운 끼워맞춤"
       ]
     },
     {
@@ -1666,7 +1694,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-26T11:53:05.937Z"
+          "capturedAt": "2026-07-31T04:38:08.837Z"
         }
       ],
       "sourceRefs": [
@@ -1681,11 +1709,431 @@
         "PCON-035"
       ],
       "gradingRequiredKeywords": [
-        "청소",
-        "연선 배치",
-        "캡을 규정토크로 체결",
-        "재분해",
-        "눌린 연선 두께 측정·판정"
+        "저널베어링",
+        "간극 측정"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-2-Q10",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-033"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-2-Q10"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 2,
+          "questionNo": 10,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": null,
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-31T04:38:08.837Z"
+        }
+      ],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "타이어 커플링 조립 4단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-033"
+      ],
+      "gradingRequiredKeywords": [
+        "플랜지 간극 측정",
+        "플레이트·볼트 가조립·타이어 삽입",
+        "연결부 간극·완전 밀착 확인",
+        "대각선 단계 토크 체결"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-2-Q01",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-004"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-2-Q01"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 2,
+          "questionNo": 1,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-31T04:38:08.837Z"
+        }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/bjs2236/224350755723",
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "개회로·폐회로 제어",
+        "제어방식 2종 쓰기",
+        "PCON-SUP-004"
+      ],
+      "gradingRequiredKeywords": [
+        "개회로 제어",
+        "폐회로 제어"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-2-Q02",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-012",
+        "PCON-021"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-2-Q02"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 2,
+          "questionNo": 2,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-31T04:38:08.837Z"
+        }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/bjs2236/224350755723",
+        "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "M18×2 암나사 반지름 계산",
+        "지문 조건에 따른 a·b 반지름 계산",
+        "PCON-012",
+        "PCON-021"
+      ],
+      "gradingRequiredKeywords": [
+        "a=8 mm",
+        "b=9 mm"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-2-Q03",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-003"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-2-Q03"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 2,
+          "questionNo": 3,
+          "sourceType": "blog_reconstruction",
+          "confidence": "high",
+          "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-31T04:38:08.837Z"
+        }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/bjs2236/224350755723",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "송풍기 동력 상사법칙",
+        "회전수 변화에 따른 동력 계산",
+        "PCON-SUP-003"
+      ],
+      "gradingRequiredKeywords": [
+        "동력은 회전수의 세제곱에 비례",
+        "500/380",
+        "12.53 hp"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-2-Q04",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-021"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-2-Q04"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 2,
+          "questionNo": 4,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-31T04:38:08.837Z"
+        }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/bjs2236/224350755723",
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "SEMS 볼트 식별",
+        "사진·구조를 보고 명칭 쓰기",
+        "PCON-021"
+      ],
+      "gradingRequiredKeywords": [
+        "SEMS 볼트",
+        "와셔 사전 조립",
+        "와셔 이탈 방지"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-2-Q05",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-039"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-2-Q05"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 2,
+          "questionNo": 5,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-31T04:38:08.837Z"
+        }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/bjs2236/224350755723",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "적하급유법 분류",
+        "보기에서 적하급유법 모두 고르기",
+        "PCON-SUP-039"
+      ],
+      "gradingRequiredKeywords": [
+        "사이펀급유법",
+        "바늘급유법",
+        "가시적하급유법"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-2-Q06",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-043"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-2-Q06"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 2,
+          "questionNo": 6,
+          "sourceType": "blog_reconstruction",
+          "confidence": "high",
+          "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-31T04:38:08.837Z"
+        }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/bjs2236/224350755723",
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "연삭숫돌 시운전과 덮개",
+        "빈칸 3개 쓰기",
+        "PCON-SUP-043"
+      ],
+      "gradingRequiredKeywords": [
+        "1분 이상",
+        "3분 이상",
+        "덮개"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-2-Q07",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-037"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-2-Q07"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 2,
+          "questionNo": 7,
+          "sourceType": "blog_reconstruction",
+          "confidence": "high",
+          "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-31T04:38:08.837Z"
+        }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/bjs2236/224350755723",
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "아베의 원리",
+        "측정원리 정의",
+        "PCON-037"
+      ],
+      "gradingRequiredKeywords": [
+        "측정 대상의 축",
+        "기준 눈금의 축",
+        "같은 직선",
+        "측정방향"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-2-Q08",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-003"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-2-Q08"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 2,
+          "questionNo": 8,
+          "sourceType": "blog_reconstruction",
+          "confidence": "high",
+          "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-31T04:38:08.837Z"
+        }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/bjs2236/224350755723",
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "서징 현상",
+        "현상 정의",
+        "PCON-SUP-003"
+      ],
+      "gradingRequiredKeywords": [
+        "불안정 운전영역",
+        "압력·유량의 주기적 변동",
+        "진동·소음 또는 역류"
+      ]
+    },
+    {
+      "id": "evidence:P-2026-2-Q09",
+      "status": "past_reconstructed",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-030"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "P-2026-2-Q09"
+      ],
+      "sessions": [
+        {
+          "year": 2026,
+          "round": 2,
+          "questionNo": 9,
+          "sourceType": "blog_reconstruction",
+          "confidence": "medium",
+          "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
+          "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
+          "capturedAt": "2026-07-31T04:38:08.837Z"
+        }
+      ],
+      "sourceRefs": [
+        "https://blog.naver.com/bjs2236/224350755723",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "브레이크 라이닝 교체순서",
+        "글로 제시된 작업순서 배열",
+        "PCON-SUP-030"
+      ],
+      "gradingRequiredKeywords": [
+        "⑤-①-④-②-③",
+        "완전 해제",
+        "기존 라이닝 제거",
+        "새 라이닝 장착",
+        "재설정·체결"
       ]
     },
     {
@@ -2472,7 +2920,9 @@
         "EXP-C03"
       ],
       "sessions": [],
-      "sourceRefs": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20100905"
+      ],
       "formats": [
         "calculation"
       ],
@@ -2585,20 +3035,20 @@
       ],
       "sessions": [],
       "sourceRefs": [
-        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+        "https://www.law.go.kr/LSW/flDownload.do?flSeq=131883527"
       ],
       "formats": [
         "definition"
       ],
       "learningKeywords": [
-        "보호구 표지 판독",
+        "안전보건표지 4분류 판독",
         "PCON-009"
       ],
       "gradingRequiredKeywords": [
-        "눈",
-        "얼굴",
-        "호흡",
-        "청력 보호"
+        "금지표지-출입금지",
+        "경고표지-고압전기 경고",
+        "지시표지-보안경 착용",
+        "안내표지-비상구"
       ]
     },
     {
@@ -2956,6 +3406,944 @@
         "휠 실린더 또는 캘리퍼",
         "같은 압력",
         "유효면적"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-GEAR-COUPLING-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-033"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-GEAR-COUPLING-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "기어 커플링 측정·조립 사진 순서",
+        "사진 순서 배열과 단계별 핵심행동",
+        "PCON-033"
+      ],
+      "gradingRequiredKeywords": [
+        "나-라-가-다",
+        "같은 조건 측정",
+        "위치 일치",
+        "조립·체결",
+        "그리스 주입"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-TAPERED-BEARING-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-036"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-TAPERED-BEARING-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "테이퍼 롤러베어링 조립·간극조정 사진 순서",
+        "사진 순서 배열과 측정·고정 절차",
+        "PCON-036"
+      ],
+      "gradingRequiredKeywords": [
+        "나-라-가-마-다",
+        "다이얼 게이지 영점",
+        "허브를 앞뒤로 흔듦",
+        "규정 간극",
+        "로크 와셔 고정"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-BEARING-DAMAGE-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-035"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-BEARING-DAMAGE-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "베어링 손상 사진 8종 판별",
+        "손상 사진을 보고 명칭 쓰기",
+        "PCON-SUP-035"
+      ],
+      "gradingRequiredKeywords": [
+        "파손",
+        "폴스 브리넬링",
+        "녹·부식",
+        "플레이킹",
+        "전식",
+        "눌린 자국",
+        "용착",
+        "긁힘"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-RT-FILM-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-044",
+        "PCON-045"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-RT-FILM-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "RT 필름 용접결함 6종 판독",
+        "방사선투과 필름을 보고 결함명 쓰기",
+        "PCON-044",
+        "PCON-045"
+      ],
+      "gradingRequiredKeywords": [
+        "균열",
+        "융합 불량",
+        "기공",
+        "언더컷",
+        "슬래그 섞임",
+        "용입 부족"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-BRAKE-PAD-LINING-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-030"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-BRAKE-PAD-LINING-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "image",
+        "matching"
+      ],
+      "learningKeywords": [
+        "브레이크 패드·라이닝 점검 사진 4종",
+        "사진의 점검 위치와 측정 항목 연결",
+        "PCON-SUP-030"
+      ],
+      "gradingRequiredKeywords": [
+        "패드 잔여 두께",
+        "라이닝 슈 두께·폭",
+        "브레이크액 수위·오염",
+        "패드 표면·웨어 인디케이터"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-UNIVERSAL-JOINT-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-022"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-UNIVERSAL-JOINT-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "유니버설 조인트 십자저널 분해·조립 5단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-022"
+      ],
+      "gradingRequiredKeywords": [
+        "스냅키·커버 제거",
+        "십자축·베어링 분리",
+        "신품 부품·윤활 준비",
+        "그리스 주입·프레스 조립",
+        "스냅키 고정·최종 확인"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-SHAFT-ALIGNMENT-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-022"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-SHAFT-ALIGNMENT-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "다이얼 게이지 축정렬 3단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-022"
+      ],
+      "gradingRequiredKeywords": [
+        "수평·높이 1차 조정",
+        "게이지 설치·대각선 체결",
+        "회전 측정·재조정"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-GEARBOX-DISASSEMBLY-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-GEARBOX-DISASSEMBLY-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "감속기 축·베어링 분해·점검 7단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-SUP-029"
+      ],
+      "gradingRequiredKeywords": [
+        "커버·심 분리",
+        "피니언축·베어링 분리",
+        "부품 세척·마모점검",
+        "축 치수 측정",
+        "축 흔들림 측정",
+        "오일실·베어링 조립",
+        "커버·간극 복구"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-BEARING-PULLER-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-013"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-BEARING-PULLER-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "베어링 풀러 분해 5단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-013"
+      ],
+      "gradingRequiredKeywords": [
+        "축 중심 보호",
+        "풀러 양쪽 걸기",
+        "풀러 길이 조정",
+        "중심 지지·서서히 조임",
+        "베어링 인출·공구 제거"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-BUTT-WELDING-1G-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-019"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-BUTT-WELDING-1G-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "1G 아래보기 맞대기용접 6단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-SUP-019"
+      ],
+      "gradingRequiredKeywords": [
+        "개선면·루트간격 확인",
+        "가용접",
+        "역변형 설정",
+        "루트패스·열쇠구멍 유지",
+        "크레이터·층간 청소",
+        "표면·이면 비드 검사"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-BUTT-WELDING-3G-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-019"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-BUTT-WELDING-3G-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "3G 수직상진 맞대기용접 4단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-SUP-019"
+      ],
+      "gradingRequiredKeywords": [
+        "모재 수직 고정",
+        "가용접·역변형 확인",
+        "수직상진 루트패스",
+        "층간청소·완성검사"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-BUTT-WELDING-2G-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-019"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-BUTT-WELDING-2G-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "2G 수평 맞대기용접 6단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-SUP-019"
+      ],
+      "gradingRequiredKeywords": [
+        "용접선 수평 고정",
+        "루트간격·가용접",
+        "수평 루트패스",
+        "패스별 작업각 조정",
+        "마감비드·외관검사",
+        "굽힘시험"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-BUTT-WELDING-4G-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-019"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-BUTT-WELDING-4G-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "4G 위보기 맞대기용접 5단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-SUP-019"
+      ],
+      "gradingRequiredKeywords": [
+        "위보기 시험편 고정",
+        "가용접·루트간격 확인",
+        "위보기 루트패스",
+        "층간청소·다층용접",
+        "완성비드·시험"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-CYLINDER-GAUGE-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-031"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-CYLINDER-GAUGE-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "실린더 게이지 영점·내경 측정 3단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-031"
+      ],
+      "gradingRequiredKeywords": [
+        "측정범위·교환로드 선정",
+        "외측 마이크로미터 기준치 설정",
+        "최소점 탐색·영점조정"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-SINE-CENTER-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-025"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-SINE-CENTER-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "사인센터 설치·테이퍼 측정 3단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-SUP-025"
+      ],
+      "gradingRequiredKeywords": [
+        "다이얼 게이지 설치",
+        "사인센터·측정물 고정",
+        "게이지블록 조합·양단 측정"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-BEARING-PRESS-ASSEMBLY-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-036"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-BEARING-PRESS-ASSEMBLY-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "몸체·베어링 압입 조립 3단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-036"
+      ],
+      "gradingRequiredKeywords": [
+        "몸체 위치 결정·고정",
+        "축·베어링·슬리브 위치 결정",
+        "베어링 압입·조립상태 확인"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-AIR-ARC-GOUGING-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-044"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-AIR-ARC-GOUGING-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "아크에어가우징 결함 제거 3단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-044"
+      ],
+      "gradingRequiredKeywords": [
+        "장비·공기분출 확인",
+        "낮은 홈 가공",
+        "깊은 홈 확대·결함 제거"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-CRACK-REPAIR-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-046"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-CRACK-REPAIR-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "균열 정지구멍·제거·보수 3단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-046"
+      ],
+      "gradingRequiredKeywords": [
+        "균열 표시·정지구멍 가공",
+        "균열 가우징·완전 제거",
+        "제거면 검사·홈 정리·재용접"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-BRAKE-ALIGNMENT-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-030"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-BRAKE-ALIGNMENT-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "디스크 브레이크 정렬 4단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-SUP-030"
+      ],
+      "gradingRequiredKeywords": [
+        "커버·쐐기 분리",
+        "심 플레이트 준비",
+        "브레이크 위치 결정",
+        "디스크·패드 정렬"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-BRAKE-FIXING-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-030"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-BRAKE-FIXING-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "디스크 브레이크 고정 4단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-SUP-030"
+      ],
+      "gradingRequiredKeywords": [
+        "설치볼트 가체결",
+        "심·위치 보정",
+        "패드 접촉 조정",
+        "최종 체결·스프링 조정"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-BRAKE-AIR-GAP-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-030"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-BRAKE-AIR-GAP-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "브레이크 좌우 에어갭 조정 3단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-SUP-030"
+      ],
+      "gradingRequiredKeywords": [
+        "쐐기 청소·삽입",
+        "조정나사 균일 체결",
+        "좌우 에어갭 재확인"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-GAUGE-BLOCK-THIN-WRINGING-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-031"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-GAUGE-BLOCK-THIN-WRINGING-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "얇은 게이지블록 밀착 2단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-031"
+      ],
+      "gradingRequiredKeywords": [
+        "측정면 청소·한쪽 접촉",
+        "가볍게 누르며 겹쳐 밀기"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-GAUGE-BLOCK-THICK-WRINGING-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-031"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-GAUGE-BLOCK-THICK-WRINGING-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "두꺼운 게이지블록 밀착 2단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-031"
+      ],
+      "gradingRequiredKeywords": [
+        "측정면 직각 맞댐",
+        "90° 회전·완전 밀착"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-VERNIER-MEASUREMENT-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-014"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-VERNIER-MEASUREMENT-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "버니어캘리퍼스 점검·측정·판독 3단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-014"
+      ],
+      "gradingRequiredKeywords": [
+        "0점·측정면 점검",
+        "올바른 측정면 안착",
+        "주척·버니어 판독"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-THREE-WIRE-HOLDER-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-027"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-THREE-WIRE-HOLDER-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "삼침 세트 선정·홀더 장착 2단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-SUP-027"
+      ],
+      "gradingRequiredKeywords": [
+        "나사 규격·삼침 세트 선정",
+        "홀더 장착·영점 확인"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-DOVETAIL-ROLLER-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-031"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-DOVETAIL-ROLLER-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "롤러를 이용한 더브테일 측정 2단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-031"
+      ],
+      "gradingRequiredKeywords": [
+        "작은 롤러 d·M1 측정",
+        "큰 롤러 D·M2 측정"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-INTERNAL-TAPER-BALL-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-031"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-INTERNAL-TAPER-BALL-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "볼을 이용한 내측 테이퍼 측정 2단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-031"
+      ],
+      "gradingRequiredKeywords": [
+        "큰 직경 볼 삽입·H2 측정",
+        "작은 직경 볼 교체·H1 측정"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-MAGNETIC-COUPLING-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-033"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-MAGNETIC-COUPLING-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "마그네틱 커플링 조립 4단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-033"
+      ],
+      "gradingRequiredKeywords": [
+        "케이싱 체결·중앙 키 안착",
+        "영구자석 교차 삽입·고정",
+        "이물질 방지 스티커 부착",
+        "두 커플러·우레탄 최종 결합"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-GRID-COUPLING-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-033"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-GRID-COUPLING-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "그리드 커플링 조립 5단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-033"
+      ],
+      "gradingRequiredKeywords": [
+        "부품 준비·키 위치 정렬",
+        "스프로킷 조립·규정토크 체결",
+        "간극 조정·축 정렬 확인",
+        "그리드 스프링 삽입·안착",
+        "커버 체결·그리스 주입"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-OUTSIDE-MICROMETER-ZERO-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-008"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-OUTSIDE-MICROMETER-ZERO-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "외측 마이크로미터 0점 조정 3단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-008"
+      ],
+      "gradingRequiredKeywords": [
+        "측정면 청소·래칫 접촉·0점 확인",
+        "작은 오차·슬리브 조정",
+        "큰 오차·심블 재설정"
+      ]
+    },
+    {
+      "id": "evidence:EXP-VIS-DRIVE-UNIT-ASSEMBLY-01",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-028",
+        "PCON-SUP-028",
+        "PCON-SUP-031"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-VIS-DRIVE-UNIT-ASSEMBLY-01"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "기계 구동장치 조립 공정 5단계",
+        "사진을 끌어 올바른 작업순서로 배열",
+        "PCON-028",
+        "PCON-SUP-028",
+        "PCON-SUP-031"
+      ],
+      "gradingRequiredKeywords": [
+        "축 위치결정·베어링 조립",
+        "몸체 고정·축 조립체 삽입",
+        "커버·양쪽 오일실 조립",
+        "키·멈춤나사·V벨트 풀리 조립",
+        "기어 조립·풀림방지 너트 체결"
       ]
     },
     {
@@ -4348,6 +5736,2039 @@
       ]
     },
     {
+      "id": "evidence:EXP-BAL-DEF-SURGING",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-003"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-SURGING"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.energy.gov/sites/default/files/2016/03/f30/Improving%20Compressed%20Air%20Sourcebook%20version%203.pdf",
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "서징의 정의",
+        "필기 핵심 정의",
+        "PCON-SUP-003"
+      ],
+      "gradingRequiredKeywords": [
+        "저유량 불안정 영역",
+        "압력·유량 맥동",
+        "역류"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-ABBE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-037"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-ABBE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9630928",
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "아베의 원리",
+        "필기 핵심 정의",
+        "PCON-037"
+      ],
+      "gradingRequiredKeywords": [
+        "측정축",
+        "기준 눈금축",
+        "같은 직선",
+        "아베 오차"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-BOYLE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-003"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-BOYLE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9630928",
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "보일의 법칙",
+        "필기 핵심 정의",
+        "PCON-SUP-003"
+      ],
+      "gradingRequiredKeywords": [
+        "온도 일정",
+        "압력",
+        "체적",
+        "반비례"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-CHARLES",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-003"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-CHARLES"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20170507",
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "샤를의 법칙",
+        "필기 핵심 정의",
+        "PCON-SUP-003"
+      ],
+      "gradingRequiredKeywords": [
+        "압력 일정",
+        "체적",
+        "절대온도",
+        "비례"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-BERNOULLI",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-032"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-BERNOULLI"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9659405",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "베르누이 정리",
+        "필기 핵심 정의",
+        "PCON-032"
+      ],
+      "gradingRequiredKeywords": [
+        "정상 유동",
+        "압력수두",
+        "속도수두",
+        "위치수두"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-CONTINUITY",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-032"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-CONTINUITY"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150919",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "연속의 법칙",
+        "필기 핵심 정의",
+        "PCON-032"
+      ],
+      "gradingRequiredKeywords": [
+        "질량보존",
+        "정상 유동",
+        "A₁V₁=A₂V₂"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-REYNOLDS",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-032"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-REYNOLDS"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20200822",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "레이놀즈수",
+        "필기 핵심 정의",
+        "PCON-032"
+      ],
+      "gradingRequiredKeywords": [
+        "관성력",
+        "점성력",
+        "무차원수",
+        "층류·난류"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-CAVITATION",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-006"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-CAVITATION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20170507",
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "캐비테이션",
+        "필기 핵심 정의",
+        "PCON-SUP-006"
+      ],
+      "gradingRequiredKeywords": [
+        "포화증기압",
+        "기포 발생",
+        "기포 붕괴",
+        "침식"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-WATER-HAMMER",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-006"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-WATER-HAMMER"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9620121",
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "수격작용",
+        "필기 핵심 정의",
+        "PCON-SUP-006"
+      ],
+      "gradingRequiredKeywords": [
+        "유속 급변",
+        "압력파",
+        "순간 압력상승",
+        "충격"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-RESONANCE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-010"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-RESONANCE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9635925",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "공진",
+        "필기 핵심 정의",
+        "PCON-010"
+      ],
+      "gradingRequiredKeywords": [
+        "가진주파수",
+        "고유진동수",
+        "일치",
+        "진폭 증가"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-HYSTERESIS",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-014"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-HYSTERESIS"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9635925",
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "히스테리시스",
+        "필기 핵심 정의",
+        "PCON-SUP-014"
+      ],
+      "gradingRequiredKeywords": [
+        "같은 입력",
+        "증가·감소 방향",
+        "출력 차이",
+        "이력"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-PITTING",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-035"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-PITTING"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9659405",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "피팅",
+        "필기 핵심 정의",
+        "PCON-SUP-035"
+      ],
+      "gradingRequiredKeywords": [
+        "반복 접촉응력",
+        "표면피로",
+        "작은 박리구멍"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-SPALLING",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-035"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-SPALLING"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20200822",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "스폴링",
+        "필기 핵심 정의",
+        "PCON-SUP-035"
+      ],
+      "gradingRequiredKeywords": [
+        "접촉피로",
+        "균열 성장",
+        "큰 조각 박리"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-SCORING",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-035"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-SCORING"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9630928",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "스코어링",
+        "필기 핵심 정의",
+        "PCON-SUP-035"
+      ],
+      "gradingRequiredKeywords": [
+        "유막파괴",
+        "국부 용착",
+        "긁힘",
+        "윤활불량"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-UNDERCUT",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-044"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-UNDERCUT"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150531",
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "용접 언더컷",
+        "필기 핵심 정의",
+        "PCON-044"
+      ],
+      "gradingRequiredKeywords": [
+        "비드 토우",
+        "모재",
+        "홈",
+        "미충전"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-OVERLAP",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-044"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-OVERLAP"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150531",
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "용접 오버랩",
+        "필기 핵심 정의",
+        "PCON-044"
+      ],
+      "gradingRequiredKeywords": [
+        "용착금속",
+        "모재 표면",
+        "겹침",
+        "미융합"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-POROSITY",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-044"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-POROSITY"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150531",
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "용접 기공",
+        "필기 핵심 정의",
+        "PCON-044"
+      ],
+      "gradingRequiredKeywords": [
+        "가스",
+        "응고",
+        "공동",
+        "용접금속"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-SLAG-INCLUSION",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-044"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-SLAG-INCLUSION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150531",
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "슬래그 혼입",
+        "필기 핵심 정의",
+        "PCON-044"
+      ],
+      "gradingRequiredKeywords": [
+        "슬래그",
+        "용접금속 내부",
+        "패스 사이",
+        "혼입"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-LACK-PENETRATION",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-044"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-LACK-PENETRATION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150531",
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "용입불량",
+        "필기 핵심 정의",
+        "PCON-044"
+      ],
+      "gradingRequiredKeywords": [
+        "용접금속",
+        "루트",
+        "도달 부족",
+        "용입"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-LACK-FUSION",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-044"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-LACK-FUSION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150531",
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "융합불량",
+        "필기 핵심 정의",
+        "PCON-044"
+      ],
+      "gradingRequiredKeywords": [
+        "용접금속",
+        "모재",
+        "패스 사이",
+        "미융합"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-CRATER",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-044"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-CRATER"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150531",
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "용접 크레이터",
+        "필기 핵심 정의",
+        "PCON-044"
+      ],
+      "gradingRequiredKeywords": [
+        "비드 끝",
+        "아크 종료",
+        "미충전",
+        "오목함"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-WELD-CRACK",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-044"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-WELD-CRACK"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150531",
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "용접균열",
+        "필기 핵심 정의",
+        "PCON-044"
+      ],
+      "gradingRequiredKeywords": [
+        "용접금속",
+        "열영향부",
+        "인장응력",
+        "갈라짐"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-BM",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-BM"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150919",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "사후보전(BM)",
+        "필기 핵심 정의",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "고장 후",
+        "수리·교환",
+        "기능 회복"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-PM",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-PM"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20190303",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "예방보전(PM)",
+        "필기 핵심 정의",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "고장 전",
+        "계획",
+        "점검",
+        "정비"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-TBM",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-TBM"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20140920",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "시간기준보전(TBM)",
+        "필기 핵심 정의",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "정해진 주기",
+        "운전시간",
+        "횟수",
+        "수리·교환"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-CBM",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-CBM"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150531",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "상태기준보전(CBM)",
+        "필기 핵심 정의",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "상태감시",
+        "진동·온도·오일",
+        "판정기준",
+        "정비시점"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-PDM",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-PDM"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150531",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "예지보전(PdM)",
+        "필기 핵심 정의",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "상태 데이터",
+        "열화 추세",
+        "고장시점",
+        "잔여수명"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-CM",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-CM"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20161001",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "개량보전(CM)",
+        "필기 핵심 정의",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "기존 설비",
+        "구조·부품 개선",
+        "신뢰성",
+        "보전성"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-MP",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-MP"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9659405",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "보전예방(MP)",
+        "필기 핵심 정의",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "설계·도입 단계",
+        "고장 감소",
+        "정비 용이",
+        "보전정보 반영"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-PRODUCTIVE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-PRODUCTIVE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20200822",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "생산보전",
+        "필기 핵심 정의",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "전 생애주기",
+        "생애주기비용",
+        "생산성",
+        "설비효율"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-TPM",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-TPM"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20140525",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "종합적 생산보전(TPM)",
+        "필기 핵심 정의",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "전원참가",
+        "설비종합효율",
+        "고장·불량",
+        "손실제로"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-MAINTENANCE-HISTORY",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-MAINTENANCE-HISTORY"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20070902",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "definition",
+        "sequence"
+      ],
+      "learningKeywords": [
+        "설비보전 발전순서",
+        "이론 체계·순서",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "예방보전",
+        "생산보전",
+        "개량보전",
+        "보전예방",
+        "TPM"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-BATHTUB",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-BATHTUB"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20170507",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "욕조곡선",
+        "필기 핵심 정의",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "초기고장기",
+        "우발고장기",
+        "마모고장기",
+        "고장률"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-DEF-MTBF-MTTR",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-DEF-MTBF-MTTR"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9659405",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "MTBF와 MTTR",
+        "필기 핵심 정의",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "평균고장간격",
+        "평균수리시간",
+        "운전시간",
+        "복구시간"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-BOYLE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-003"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-BOYLE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9630928",
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "보일 법칙 체적 계산",
+        "필기 공식 발췌·계산",
+        "PCON-SUP-003"
+      ],
+      "gradingRequiredKeywords": [
+        "P₁V₁=P₂V₂",
+        "0.12 m³"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-CHARLES",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-003"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-CHARLES"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20170507",
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "샤를 법칙 체적 계산",
+        "필기 공식 발췌·계산",
+        "PCON-SUP-003"
+      ],
+      "gradingRequiredKeywords": [
+        "V₁/T₁=V₂/T₂",
+        "절대온도",
+        "3.0 L"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-CONTINUITY",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-032"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-CONTINUITY"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150919",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "연속방정식 유속 계산",
+        "필기 공식 발췌·계산",
+        "PCON-032"
+      ],
+      "gradingRequiredKeywords": [
+        "A₁V₁=A₂V₂",
+        "면적비",
+        "8 m/s"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-TORRICELLI",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-032"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-TORRICELLI"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20200822",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "토리첼리 유출량 계산",
+        "필기 공식 발췌·계산",
+        "PCON-032"
+      ],
+      "gradingRequiredKeywords": [
+        "v=√(2gh)",
+        "Q=Av",
+        "0.00990 m³/s"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-REYNOLDS",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-032"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-REYNOLDS"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20200822",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "레이놀즈수 계산",
+        "필기 공식 발췌·계산",
+        "PCON-032"
+      ],
+      "gradingRequiredKeywords": [
+        "Re=ρVD/μ",
+        "100,000",
+        "무차원"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-RMS",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-010"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-RMS"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9635925",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "진동 피크값의 실효값 계산",
+        "필기 공식 발췌·계산",
+        "PCON-010"
+      ],
+      "gradingRequiredKeywords": [
+        "RMS=Peak/√2",
+        "10.00 mm/s RMS"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-GMF",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-033"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-GMF"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9635925",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "기어 맞물림주파수 계산",
+        "필기 공식 발췌·계산",
+        "PCON-SUP-033"
+      ],
+      "gradingRequiredKeywords": [
+        "회전주파수",
+        "잇수×회전주파수",
+        "960 Hz"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-BEARING-LIFE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-035"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-BEARING-LIFE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9630928",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "볼베어링 기본정격수명 계산",
+        "필기 공식 발췌·계산",
+        "PCON-SUP-035"
+      ],
+      "gradingRequiredKeywords": [
+        "L10=(C/P)³",
+        "27 백만 회전"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-AVAILABILITY",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-AVAILABILITY"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9620121",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "설비 가용도 계산",
+        "필기 공식 발췌·계산",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "MTBF",
+        "MTTR",
+        "A=MTBF/(MTBF+MTTR)",
+        "90%"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-TIME-RATE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-TIME-RATE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9620121",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "calculation",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "시간가동률 계산",
+        "필기 공식 발췌·계산",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "부하시간",
+        "정지시간",
+        "90%"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-SPRING",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-033"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-SPRING"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9620123",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "calculation",
+        "matching"
+      ],
+      "learningKeywords": [
+        "직렬 스프링 등가강성 계산",
+        "필기 공식 발췌·계산",
+        "PCON-SUP-033"
+      ],
+      "gradingRequiredKeywords": [
+        "keq=k₁k₂/(k₁+k₂)",
+        "200 N/mm"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-NATURAL-FREQUENCY",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-033"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-NATURAL-FREQUENCY"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20200606",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "질량-스프링계 고유진동수 계산",
+        "필기 공식 발췌·계산",
+        "PCON-SUP-033"
+      ],
+      "gradingRequiredKeywords": [
+        "fn=(1/2π)√(k/m)",
+        "10.07 Hz"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-ACCELERATION",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-010"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-ACCELERATION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20200606",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "진동속도에서 가속도 계산",
+        "필기 공식 발췌·계산",
+        "PCON-010"
+      ],
+      "gradingRequiredKeywords": [
+        "a=2πfv",
+        "6.28 m/s²"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-SOUND-POWER",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-033"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-SOUND-POWER"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20200822",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "점음원 음향파워 계산",
+        "필기 공식 발췌·계산",
+        "PCON-SUP-033"
+      ],
+      "gradingRequiredKeywords": [
+        "W=4πr²I",
+        "25.13 W"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-PUMP-POWER",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-006"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-PUMP-POWER"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20200822",
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "펌프 수동력 계산",
+        "필기 공식 발췌·계산",
+        "PCON-SUP-006"
+      ],
+      "gradingRequiredKeywords": [
+        "γQH/4500",
+        "555.6 PS"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-SPINDLE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-027"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-SPINDLE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20190427",
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "스핀들 이송거리 계산",
+        "필기 공식 발췌·계산",
+        "PCON-SUP-027"
+      ],
+      "gradingRequiredKeywords": [
+        "S=h×a/360",
+        "2.0 mm"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-OHM",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-040"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-OHM"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20180915",
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
+      "formats": [
+        "calculation",
+        "matching"
+      ],
+      "learningKeywords": [
+        "옴의 법칙 전류 계산",
+        "필기 공식 발췌·계산",
+        "PCON-SUP-040"
+      ],
+      "gradingRequiredKeywords": [
+        "V=IR",
+        "I=V/R",
+        "2 A"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-NYQUIST",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-040"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-NYQUIST"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150919",
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "나이퀴스트 샘플링시간 계산",
+        "필기 공식 발췌·계산",
+        "PCON-SUP-040"
+      ],
+      "gradingRequiredKeywords": [
+        "fs≥2fmax",
+        "Δt≤1/(2fmax)",
+        "0.0005 s"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-OEE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-OEE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20100905",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "설비종합효율(OEE) 계산",
+        "필기 공식 발췌·계산",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "시간가동률",
+        "성능가동률",
+        "양품률",
+        "83.79%"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-PHASE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-010"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-PHASE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/cet/5708822",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "두 진동신호 위상차 계산",
+        "필기 공식 발췌·계산",
+        "PCON-010"
+      ],
+      "gradingRequiredKeywords": [
+        "φ=360fΔt",
+        "36°"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-SLIP",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-036"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-SLIP"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20140525",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "유도전동기 슬립 계산",
+        "필기 공식 발췌·계산",
+        "PCON-SUP-036"
+      ],
+      "gradingRequiredKeywords": [
+        "s=(Ns-N)/Ns×100",
+        "4%"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-FAILURE-RATE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-FAILURE-RATE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20190303",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "calculation",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "설비 고장률 계산",
+        "필기 공식 발췌·계산",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "고장횟수",
+        "총 가동시간",
+        "0.002 회/시간"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-REPAIR-RATE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-REPAIR-RATE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9620123",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "수리율 계산",
+        "필기 공식 발췌·계산",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "μ=1/MTTR",
+        "0.125 회/시간"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-PROPORTIONAL-BAND",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-040"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-PROPORTIONAL-BAND"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20161001",
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "비례대와 비례게인 계산",
+        "필기 공식 발췌·계산",
+        "PCON-SUP-040"
+      ],
+      "gradingRequiredKeywords": [
+        "Kc=100/PB",
+        "5"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-DEMAND-FACTOR",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-DEMAND-FACTOR"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20161001",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "수요율 계산",
+        "필기 공식 발췌·계산",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "최대수요전력",
+        "총 설비용량",
+        "80%"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-PRODUCTIVITY",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-PRODUCTIVITY"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20150919",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "생산성 계산",
+        "필기 공식 발췌·계산",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "산출량",
+        "투입량",
+        "4 개/인·시간"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-LOAD-FACTOR",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-LOAD-FACTOR"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20170507",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "부하율 계산",
+        "필기 공식 발췌·계산",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "평균부하",
+        "최대부하",
+        "60%"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-PERT",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-PERT"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20140525",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "PERT 기대시간 계산",
+        "필기 공식 발췌·계산",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "te=(a+4m+b)/6",
+        "8일"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-ABSOLUTE-PRESSURE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-032"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-ABSOLUTE-PRESSURE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20130928",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "절대압력 계산",
+        "필기 공식 발췌·계산",
+        "PCON-032"
+      ],
+      "gradingRequiredKeywords": [
+        "대기압",
+        "게이지압력",
+        "351.325 kPa"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-PERFORMANCE-RATE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-PERFORMANCE-RATE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20170507",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "성능가동률 계산",
+        "필기 공식 발췌·계산",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "속도가동률",
+        "실질가동률",
+        "87.4%"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-UNIT-MAINTENANCE-COST",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-029"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-UNIT-MAINTENANCE-COST"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20180915",
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "제품 단위당 보전비 계산",
+        "필기 공식 발췌·계산",
+        "PCON-029"
+      ],
+      "gradingRequiredKeywords": [
+        "총보전비",
+        "생산량",
+        "300 원/개"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-CALC-WAVE-FREQUENCY",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-033"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-CALC-WAVE-FREQUENCY"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://www.comcbt.com/xe/webhaesul/9630928",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "calculation"
+      ],
+      "learningKeywords": [
+        "파장으로 주파수 계산",
+        "필기 공식 발췌·계산",
+        "PCON-SUP-033"
+      ],
+      "gradingRequiredKeywords": [
+        "v=fλ",
+        "500 Hz"
+      ]
+    },
+    {
+      "id": "evidence:EXP-BAL-PROC-BRAKE-LINING",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-SUP-030"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-BAL-PROC-BRAKE-LINING"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://cbtbank.kr/exam/de20180915",
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "브레이크 라이닝·패드 점검 순서",
+        "이론 체계·순서",
+        "PCON-SUP-030"
+      ],
+      "gradingRequiredKeywords": [
+        "정지·격리",
+        "마찰재 점검",
+        "상대면·작동부",
+        "제동시험"
+      ]
+    },
+    {
       "id": "evidence:ncs-supplement:PCON-SUP-001",
       "status": "ncs_supplement",
       "variantOfEvidenceId": null,
@@ -4411,14 +7832,24 @@
       ],
       "taskIds": [],
       "questionIds": [
-        "EXP-SUP-003"
+        "EXP-SUP-003",
+        "EXP-BAL-DEF-SURGING",
+        "EXP-BAL-DEF-BOYLE",
+        "EXP-BAL-DEF-CHARLES",
+        "EXP-BAL-CALC-BOYLE",
+        "EXP-BAL-CALC-CHARLES"
       ],
       "sessions": [],
       "sourceRefs": [
-        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view",
+        "https://www.energy.gov/sites/default/files/2016/03/f30/Improving%20Compressed%20Air%20Sourcebook%20version%203.pdf",
+        "https://www.comcbt.com/xe/webhaesul/9630928",
+        "https://cbtbank.kr/exam/de20170507"
       ],
       "formats": [
-        "sequence"
+        "sequence",
+        "definition",
+        "calculation"
       ],
       "learningKeywords": [
         "압축공기 생산·처리·공급계통",
@@ -4499,14 +7930,22 @@
       ],
       "taskIds": [],
       "questionIds": [
-        "EXP-SUP-006"
+        "EXP-SUP-006",
+        "EXP-BAL-DEF-CAVITATION",
+        "EXP-BAL-DEF-WATER-HAMMER",
+        "EXP-BAL-CALC-PUMP-POWER"
       ],
       "sessions": [],
       "sourceRefs": [
-        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view",
+        "https://cbtbank.kr/exam/de20170507",
+        "https://www.comcbt.com/xe/webhaesul/9620121",
+        "https://cbtbank.kr/exam/de20200822"
       ],
       "formats": [
-        "sequence"
+        "sequence",
+        "definition",
+        "calculation"
       ],
       "learningKeywords": [
         "유압 동력원과 저장탱크",
@@ -4732,14 +8171,17 @@
       ],
       "taskIds": [],
       "questionIds": [
-        "EXP-SUP-014"
+        "EXP-SUP-014",
+        "EXP-BAL-DEF-HYSTERESIS"
       ],
       "sessions": [],
       "sourceRefs": [
-        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view",
+        "https://www.comcbt.com/xe/webhaesul/9635925"
       ],
       "formats": [
-        "sequence"
+        "sequence",
+        "definition"
       ],
       "learningKeywords": [
         "센서 특성·점검기록",
@@ -4749,7 +8191,15 @@
         "히스테리시스",
         "응답시간",
         "분해능",
-        "기록"
+        "기록",
+        "리드",
+        "NPN",
+        "PNP",
+        "2선",
+        "3선",
+        "PLC 입력",
+        "특성시험",
+        "점검이력"
       ],
       "gradingRequiredKeywords": []
     },
@@ -4778,7 +8228,13 @@
         "인터록",
         "금지조건",
         "순서제어",
-        "속도제어"
+        "속도제어",
+        "요구사항",
+        "블록도",
+        "제어모드",
+        "I/O",
+        "HMI",
+        "사이클타임"
       ],
       "gradingRequiredKeywords": []
     },
@@ -4880,6 +8336,10 @@
       ],
       "taskIds": [],
       "questionIds": [
+        "EXP-VIS-BUTT-WELDING-1G-01",
+        "EXP-VIS-BUTT-WELDING-3G-01",
+        "EXP-VIS-BUTT-WELDING-2G-01",
+        "EXP-VIS-BUTT-WELDING-4G-01",
         "EXP-SUP-019"
       ],
       "sessions": [],
@@ -4896,7 +8356,9 @@
         "수평",
         "수직",
         "위보기",
-        "용융지"
+        "용융지",
+        "2G",
+        "3G"
       ],
       "gradingRequiredKeywords": []
     },
@@ -4955,7 +8417,13 @@
         "운봉",
         "슬래그 제거",
         "전류",
-        "용접속도"
+        "용접속도",
+        "역변형",
+        "열쇠구멍",
+        "아크 재시작",
+        "크레이터",
+        "외관",
+        "굽힘"
       ],
       "gradingRequiredKeywords": []
     },
@@ -5057,6 +8525,7 @@
       ],
       "taskIds": [],
       "questionIds": [
+        "EXP-VIS-SINE-CENTER-01",
         "EXP-SUP-025"
       ],
       "sessions": [],
@@ -5064,6 +8533,7 @@
         "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
       ],
       "formats": [
+        "sequence",
         "calculation"
       ],
       "learningKeywords": [
@@ -5103,7 +8573,8 @@
         "M1",
         "M2",
         "K",
-        "180° 회전"
+        "180° 회전",
+        "원통도"
       ],
       "gradingRequiredKeywords": []
     },
@@ -5116,15 +8587,20 @@
       ],
       "taskIds": [],
       "questionIds": [
-        "EXP-SUP-027"
+        "EXP-VIS-THREE-WIRE-HOLDER-01",
+        "EXP-SUP-027",
+        "EXP-BAL-CALC-SPINDLE"
       ],
       "sessions": [],
       "sourceRefs": [
-        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view",
+        "https://cbtbank.kr/exam/de20190427"
       ],
       "formats": [
+        "sequence",
         "image",
-        "drawing"
+        "drawing",
+        "calculation"
       ],
       "learningKeywords": [
         "나사 유효경·피치 측정",
@@ -5146,6 +8622,7 @@
       ],
       "taskIds": [],
       "questionIds": [
+        "EXP-VIS-DRIVE-UNIT-ASSEMBLY-01",
         "EXP-SUP-028"
       ],
       "sessions": [],
@@ -5153,6 +8630,7 @@
         "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
       ],
       "formats": [
+        "sequence",
         "image",
         "drawing"
       ],
@@ -5176,6 +8654,7 @@
       ],
       "taskIds": [],
       "questionIds": [
+        "EXP-VIS-GEARBOX-DISASSEMBLY-01",
         "EXP-SUP-029"
       ],
       "sessions": [],
@@ -5183,6 +8662,7 @@
         "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
       ],
       "formats": [
+        "sequence",
         "image",
         "drawing"
       ],
@@ -5206,13 +8686,21 @@
       ],
       "taskIds": [],
       "questionIds": [
-        "EXP-SUP-030"
+        "EXP-VIS-BRAKE-PAD-LINING-01",
+        "EXP-VIS-BRAKE-ALIGNMENT-01",
+        "EXP-VIS-BRAKE-FIXING-01",
+        "EXP-VIS-BRAKE-AIR-GAP-01",
+        "EXP-SUP-030",
+        "EXP-BAL-PROC-BRAKE-LINING"
       ],
       "sessions": [],
       "sourceRefs": [
-        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view",
+        "https://cbtbank.kr/exam/de20180915"
       ],
       "formats": [
+        "image",
+        "matching",
         "sequence"
       ],
       "learningKeywords": [
@@ -5222,7 +8710,8 @@
         "균열",
         "간극",
         "제동시험",
-        "제조사 기준"
+        "제조사 기준",
+        "에어갭"
       ],
       "gradingRequiredKeywords": []
     },
@@ -5235,6 +8724,7 @@
       ],
       "taskIds": [],
       "questionIds": [
+        "EXP-VIS-DRIVE-UNIT-ASSEMBLY-01",
         "EXP-SUP-031"
       ],
       "sessions": [],
@@ -5242,6 +8732,7 @@
         "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
       ],
       "formats": [
+        "sequence",
         "image",
         "drawing"
       ],
@@ -5294,15 +8785,27 @@
       ],
       "taskIds": [],
       "questionIds": [
-        "EXP-SUP-033"
+        "EXP-SUP-033",
+        "EXP-BAL-CALC-GMF",
+        "EXP-BAL-CALC-SPRING",
+        "EXP-BAL-CALC-NATURAL-FREQUENCY",
+        "EXP-BAL-CALC-SOUND-POWER",
+        "EXP-BAL-CALC-WAVE-FREQUENCY"
       ],
       "sessions": [],
       "sourceRefs": [
-        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view",
+        "https://www.comcbt.com/xe/webhaesul/9635925",
+        "https://www.comcbt.com/xe/webhaesul/9620123",
+        "https://cbtbank.kr/exam/de20200606",
+        "https://cbtbank.kr/exam/de20200822",
+        "https://www.comcbt.com/xe/webhaesul/9630928"
       ],
       "formats": [
         "sequence",
-        "diagnosis"
+        "diagnosis",
+        "calculation",
+        "matching"
       ],
       "learningKeywords": [
         "구동장치 상태진단: 소음·온도·진동·누유",
@@ -5343,7 +8846,8 @@
         "재시험",
         "반복동작",
         "기록",
-        "재발방지"
+        "재발방지",
+        "조사계통도"
       ],
       "gradingRequiredKeywords": []
     },
@@ -5356,16 +8860,26 @@
       ],
       "taskIds": [],
       "questionIds": [
-        "EXP-SUP-035"
+        "EXP-VIS-BEARING-DAMAGE-01",
+        "EXP-SUP-035",
+        "EXP-BAL-DEF-PITTING",
+        "EXP-BAL-DEF-SPALLING",
+        "EXP-BAL-DEF-SCORING",
+        "EXP-BAL-CALC-BEARING-LIFE"
       ],
       "sessions": [],
       "sourceRefs": [
-        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view",
+        "https://www.comcbt.com/xe/webhaesul/9659405",
+        "https://cbtbank.kr/exam/de20200822",
+        "https://www.comcbt.com/xe/webhaesul/9630928"
       ],
       "formats": [
         "image",
         "drawing",
-        "diagnosis"
+        "diagnosis",
+        "definition",
+        "calculation"
       ],
       "learningKeywords": [
         "베어링 고장형태·원인·대책",
@@ -5387,14 +8901,17 @@
       ],
       "taskIds": [],
       "questionIds": [
-        "EXP-SUP-036"
+        "EXP-SUP-036",
+        "EXP-BAL-CALC-SLIP"
       ],
       "sessions": [],
       "sourceRefs": [
-        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view",
+        "https://cbtbank.kr/exam/de20140525"
       ],
       "formats": [
-        "definition"
+        "definition",
+        "calculation"
       ],
       "learningKeywords": [
         "부하토크·구동모터 선정조건",
@@ -5463,7 +8980,12 @@
         "전진",
         "후진",
         "완료신호",
-        "리셋"
+        "리셋",
+        "변위단계선도",
+        "논리식",
+        "배선",
+        "초기상태",
+        "고장진단"
       ],
       "gradingRequiredKeywords": []
     },
@@ -5506,14 +9028,22 @@
       ],
       "taskIds": [],
       "questionIds": [
-        "EXP-SUP-040"
+        "EXP-SUP-040",
+        "EXP-BAL-CALC-OHM",
+        "EXP-BAL-CALC-NYQUIST",
+        "EXP-BAL-CALC-PROPORTIONAL-BAND"
       ],
       "sessions": [],
       "sourceRefs": [
-        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view",
+        "https://cbtbank.kr/exam/de20180915",
+        "https://cbtbank.kr/exam/de20150919",
+        "https://cbtbank.kr/exam/de20161001"
       ],
       "formats": [
-        "definition"
+        "definition",
+        "calculation",
+        "matching"
       ],
       "learningKeywords": [
         "센서 신호증폭·변환회로 기초",
@@ -5641,7 +9171,26 @@
           "kind": "visual",
           "status": "published",
           "linkedIds": [
-            "ncs-vernier-reading"
+            "ncs-vernier-reading",
+            "ncs-height-gauge-up-down-measurement",
+            "ncs-cylindricity-measurement-methods",
+            "ncs-cylinder-gauge-measurement-sequence",
+            "ncs-sine-center-taper-measurement-sequence",
+            "ncs-gauge-block-thin-wringing-sequence",
+            "ncs-gauge-block-thick-wringing-sequence",
+            "ncs-vernier-measurement-sequence",
+            "ncs-three-wire-holder-preparation-sequence",
+            "ncs-dovetail-roller-measurement-sequence",
+            "ncs-internal-taper-ball-measurement-sequence",
+            "ncs-outside-micrometer-zero-adjustment-sequence",
+            "diagram-dial-vblock",
+            "diagram-vernier-48-2",
+            "diagram-measurement-instruments",
+            "diagram-measurement-tools",
+            "diagram-vernier-37-35",
+            "diagram-micrometer-12-73",
+            "diagram-measurement-instruments-exact",
+            "diagram-abbe-principle-exam"
           ],
           "disposition": null,
           "rationale": "출처·그림번호·이용조건이 확인된 NCS 시각자료다.",
@@ -5651,13 +9200,28 @@
           "kind": "assessment",
           "status": "published",
           "linkedIds": [
+            "P-2025-2-Q05",
+            "P-2025-3-Q07",
+            "P-2026-1-Q06",
+            "P-2026-2-Q07",
             "EXP-M01",
             "EXP-M02",
             "EXP-M03",
+            "EXP-VIS-CYLINDER-GAUGE-01",
+            "EXP-VIS-SINE-CENTER-01",
+            "EXP-VIS-GAUGE-BLOCK-THIN-WRINGING-01",
+            "EXP-VIS-GAUGE-BLOCK-THICK-WRINGING-01",
+            "EXP-VIS-VERNIER-MEASUREMENT-01",
+            "EXP-VIS-THREE-WIRE-HOLDER-01",
+            "EXP-VIS-DOVETAIL-ROLLER-01",
+            "EXP-VIS-INTERNAL-TAPER-BALL-01",
+            "EXP-VIS-OUTSIDE-MICROMETER-ZERO-01",
             "EXP-SUP-023",
             "EXP-SUP-025",
             "EXP-SUP-026",
-            "EXP-SUP-027"
+            "EXP-SUP-027",
+            "EXP-BAL-DEF-ABBE",
+            "EXP-BAL-CALC-SPINDLE"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -5703,17 +9267,24 @@
         },
         {
           "kind": "visual",
-          "status": "draft",
-          "linkedIds": [],
+          "status": "published",
+          "linkedIds": [
+            "diagram-third-angle-projection-problem",
+            "diagram-bracket-drawing-annotations",
+            "diagram-m18-thread-reconstruction"
+          ],
           "disposition": null,
-          "rationale": "필답 판단에 필요한 공개 시각자료가 아직 연결되지 않았다.",
-          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+          "rationale": "출처·그림번호·이용조건이 확인된 NCS 시각자료다.",
+          "nextAction": null
         },
         {
           "kind": "assessment",
           "status": "published",
           "linkedIds": [
+            "P-2025-1-Q05",
+            "P-2025-2-Q03",
             "P-2025-3-Q01",
+            "P-2026-2-Q02",
             "EXP-M04",
             "EXP-M05",
             "EXP-M06",
@@ -5764,11 +9335,21 @@
         },
         {
           "kind": "visual",
-          "status": "held",
-          "linkedIds": [],
-          "disposition": "held_visual_asset",
-          "rationale": "원본 그림 또는 공개 이용조건 검증이 남아 있다.",
-          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+          "status": "published",
+          "linkedIds": [
+            "ncs-drive-unit-exploded-assembly-order",
+            "ncs-bearing-press-assembly-sequence",
+            "ncs-drive-unit-assembly-process-sequence",
+            "diagram-maintenance-tools",
+            "diagram-thread-profiles",
+            "diagram-shaft-misalignment",
+            "diagram-shaft-misalignment-three",
+            "diagram-maintenance-tools-five",
+            "diagram-sems-bolt"
+          ],
+          "disposition": null,
+          "rationale": "출처·그림번호·이용조건이 확인된 NCS 시각자료다.",
+          "nextAction": null
         },
         {
           "kind": "assessment",
@@ -5776,11 +9357,17 @@
           "linkedIds": [
             "P-2025-1-Q01",
             "P-2025-1-Q07",
+            "P-2025-2-Q04",
             "P-2025-2-Q06",
+            "P-2025-3-Q04",
             "P-2026-1-Q01",
+            "P-2026-1-Q03",
+            "P-2026-2-Q04",
             "EXP-G01",
             "EXP-G06",
             "EXP-C01",
+            "EXP-VIS-BEARING-PRESS-ASSEMBLY-01",
+            "EXP-VIS-DRIVE-UNIT-ASSEMBLY-01",
             "EXP-SUP-028",
             "EXP-SUP-031"
           ],
@@ -5827,20 +9414,26 @@
         },
         {
           "kind": "visual",
-          "status": "draft",
-          "linkedIds": [],
+          "status": "published",
+          "linkedIds": [
+            "diagram-grinding-wheel-safety",
+            "diagram-ghs-pictograms-problem"
+          ],
           "disposition": null,
-          "rationale": "필답 판단에 필요한 공개 시각자료가 아직 연결되지 않았다.",
-          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+          "rationale": "출처·그림번호·이용조건이 확인된 NCS 시각자료다.",
+          "nextAction": null
         },
         {
           "kind": "assessment",
           "status": "published",
           "linkedIds": [
+            "P-2025-1-Q09",
             "P-2025-2-Q08",
             "P-2025-2-Q09",
+            "P-2025-3-Q02",
+            "P-2026-1-Q02",
+            "P-2026-2-Q06",
             "EXP-S01",
-            "EXP-S02",
             "EXP-S03",
             "EXP-S04",
             "EXP-SUP-043"
@@ -5889,22 +9482,53 @@
         },
         {
           "kind": "visual",
-          "status": "draft",
-          "linkedIds": [],
+          "status": "published",
+          "linkedIds": [
+            "diagram-autonomous-maintenance-7-steps",
+            "diagram-oee-six-losses",
+            "diagram-vibration-hva-directions",
+            "diagram-sensor-directions"
+          ],
           "disposition": null,
-          "rationale": "필답 판단에 필요한 공개 시각자료가 아직 연결되지 않았다.",
-          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+          "rationale": "출처·그림번호·이용조건이 확인된 NCS 시각자료다.",
+          "nextAction": null
         },
         {
           "kind": "assessment",
           "status": "published",
           "linkedIds": [
+            "P-2025-1-Q10",
             "P-2026-1-Q04",
+            "P-2026-2-Q03",
             "EXP-B04",
             "EXP-SUP-001",
             "EXP-SUP-004",
             "EXP-SUP-015",
-            "EXP-SUP-036"
+            "EXP-SUP-036",
+            "EXP-BAL-DEF-BM",
+            "EXP-BAL-DEF-PM",
+            "EXP-BAL-DEF-TBM",
+            "EXP-BAL-DEF-CBM",
+            "EXP-BAL-DEF-PDM",
+            "EXP-BAL-DEF-CM",
+            "EXP-BAL-DEF-MP",
+            "EXP-BAL-DEF-PRODUCTIVE",
+            "EXP-BAL-DEF-TPM",
+            "EXP-BAL-DEF-MAINTENANCE-HISTORY",
+            "EXP-BAL-DEF-BATHTUB",
+            "EXP-BAL-DEF-MTBF-MTTR",
+            "EXP-BAL-CALC-AVAILABILITY",
+            "EXP-BAL-CALC-TIME-RATE",
+            "EXP-BAL-CALC-OEE",
+            "EXP-BAL-CALC-SLIP",
+            "EXP-BAL-CALC-FAILURE-RATE",
+            "EXP-BAL-CALC-REPAIR-RATE",
+            "EXP-BAL-CALC-DEMAND-FACTOR",
+            "EXP-BAL-CALC-PRODUCTIVITY",
+            "EXP-BAL-CALC-LOAD-FACTOR",
+            "EXP-BAL-CALC-PERT",
+            "EXP-BAL-CALC-PERFORMANCE-RATE",
+            "EXP-BAL-CALC-UNIT-MAINTENANCE-COST"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -5952,11 +9576,14 @@
         },
         {
           "kind": "visual",
-          "status": "held",
-          "linkedIds": [],
-          "disposition": "held_visual_asset",
-          "rationale": "원본 그림 또는 공개 이용조건 검증이 남아 있다.",
-          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+          "status": "published",
+          "linkedIds": [
+            "ncs-photoelectric-switch-example",
+            "ncs-proximity-sensor-installation-spacing"
+          ],
+          "disposition": null,
+          "rationale": "출처·그림번호·이용조건이 확인된 NCS 시각자료다.",
+          "nextAction": null
         },
         {
           "kind": "assessment",
@@ -5964,12 +9591,17 @@
           "linkedIds": [
             "P-2025-1-Q03",
             "P-2025-2-Q02",
+            "P-2026-2-Q01",
             "EXP-SUP-011",
             "EXP-SUP-012",
             "EXP-SUP-013",
             "EXP-SUP-014",
             "EXP-SUP-039",
-            "EXP-SUP-040"
+            "EXP-SUP-040",
+            "EXP-BAL-DEF-HYSTERESIS",
+            "EXP-BAL-CALC-OHM",
+            "EXP-BAL-CALC-NYQUIST",
+            "EXP-BAL-CALC-PROPORTIONAL-BAND"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -6026,13 +9658,19 @@
           "kind": "assessment",
           "status": "published",
           "linkedIds": [
+            "P-2026-2-Q08",
             "EXP-H05",
             "EXP-H06",
             "EXP-SUP-003",
             "EXP-SUP-004",
             "EXP-SUP-005",
             "EXP-SUP-037",
-            "EXP-SUP-038"
+            "EXP-SUP-038",
+            "EXP-BAL-DEF-SURGING",
+            "EXP-BAL-DEF-BOYLE",
+            "EXP-BAL-DEF-CHARLES",
+            "EXP-BAL-CALC-BOYLE",
+            "EXP-BAL-CALC-CHARLES"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -6083,7 +9721,10 @@
           "kind": "visual",
           "status": "published",
           "linkedIds": [
-            "ncs-accumulator-safety-circuit"
+            "ncs-accumulator-safety-circuit",
+            "diagram-pascal-force",
+            "diagram-double-acting-cylinder",
+            "diagram-external-gear-pump-drawing"
           ],
           "disposition": null,
           "rationale": "출처·그림번호·이용조건이 확인된 NCS 시각자료다.",
@@ -6096,6 +9737,7 @@
             "P-2025-1-Q08",
             "P-2025-3-Q08",
             "P-2026-1-Q07",
+            "P-2026-1-Q09",
             "EXP-H01",
             "EXP-H02",
             "EXP-H03",
@@ -6109,7 +9751,10 @@
             "EXP-SUP-008",
             "EXP-SUP-009",
             "EXP-SUP-010",
-            "EXP-SUP-034"
+            "EXP-SUP-034",
+            "EXP-BAL-DEF-CAVITATION",
+            "EXP-BAL-DEF-WATER-HAMMER",
+            "EXP-BAL-CALC-PUMP-POWER"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -6169,10 +9814,37 @@
           "kind": "visual",
           "status": "published",
           "linkedIds": [
+            "ncs-spherical-roller-bearing-four-choice",
             "ncs-bearing-four-types",
             "ncs-spherical-roller-bearing",
+            "ncs-bearing-types",
+            "ncs-gear-coupling-sequence",
+            "ncs-tapered-bearing-assembly-sequence",
             "ncs-bearing-heating",
-            "ncs-tapered-bearing-disassembly"
+            "ncs-bearing-damage-identification",
+            "ncs-tapered-bearing-disassembly",
+            "diagram-bearing-induction-heating-sequence",
+            "ncs-brake-condition-examples",
+            "ncs-universal-joint-overhaul-sequence",
+            "ncs-shaft-alignment-sequence",
+            "ncs-gearbox-disassembly-sequence",
+            "ncs-bearing-puller-sequence",
+            "ncs-brake-alignment-sequence",
+            "ncs-brake-fixing-sequence",
+            "ncs-brake-air-gap-adjustment-sequence",
+            "ncs-brake-pad-lining-inspection",
+            "ncs-tire-coupling-assembly-sequence",
+            "ncs-magnetic-coupling-assembly-sequence",
+            "ncs-grid-coupling-assembly-sequence",
+            "diagram-gear-damage",
+            "diagram-gear-tooth-curves",
+            "diagram-bearing-components",
+            "diagram-journal-clearance",
+            "diagram-spherical-roller-bearing",
+            "diagram-bearing-four-exam",
+            "diagram-tapered-endplay",
+            "diagram-drip-lubrication",
+            "diagram-drive-unit-section-labels"
           ],
           "disposition": null,
           "rationale": "출처·그림번호·이용조건이 확인된 NCS 시각자료다.",
@@ -6184,10 +9856,20 @@
           "linkedIds": [
             "P-2025-1-Q02",
             "P-2025-1-Q04",
+            "P-2025-1-Q06",
+            "P-2025-2-Q01-1",
             "P-2025-2-Q01-2",
             "P-2025-2-Q07",
+            "P-2025-2-Q10",
+            "P-2025-3-Q05",
+            "P-2025-3-Q06",
             "P-2025-3-Q09",
+            "P-2025-3-Q10",
             "P-2026-1-Q08",
+            "P-2026-1-Q10",
+            "P-2026-2-Q10",
+            "P-2026-2-Q05",
+            "P-2026-2-Q09",
             "EXP-B01",
             "EXP-B02",
             "EXP-B03",
@@ -6204,11 +9886,45 @@
             "EXP-C08",
             "EXP-C06",
             "EXP-C07",
+            "EXP-VIS-GEAR-COUPLING-01",
+            "EXP-VIS-TAPERED-BEARING-01",
+            "EXP-VIS-BEARING-DAMAGE-01",
+            "EXP-VIS-BRAKE-PAD-LINING-01",
+            "EXP-VIS-UNIVERSAL-JOINT-01",
+            "EXP-VIS-SHAFT-ALIGNMENT-01",
+            "EXP-VIS-GEARBOX-DISASSEMBLY-01",
+            "EXP-VIS-BEARING-PULLER-01",
+            "EXP-VIS-BRAKE-ALIGNMENT-01",
+            "EXP-VIS-BRAKE-FIXING-01",
+            "EXP-VIS-BRAKE-AIR-GAP-01",
+            "EXP-VIS-MAGNETIC-COUPLING-01",
+            "EXP-VIS-GRID-COUPLING-01",
             "EXP-SUP-029",
             "EXP-SUP-030",
             "EXP-SUP-032",
             "EXP-SUP-033",
-            "EXP-SUP-035"
+            "EXP-SUP-035",
+            "EXP-BAL-DEF-BERNOULLI",
+            "EXP-BAL-DEF-CONTINUITY",
+            "EXP-BAL-DEF-REYNOLDS",
+            "EXP-BAL-DEF-RESONANCE",
+            "EXP-BAL-DEF-PITTING",
+            "EXP-BAL-DEF-SPALLING",
+            "EXP-BAL-DEF-SCORING",
+            "EXP-BAL-CALC-CONTINUITY",
+            "EXP-BAL-CALC-TORRICELLI",
+            "EXP-BAL-CALC-REYNOLDS",
+            "EXP-BAL-CALC-RMS",
+            "EXP-BAL-CALC-GMF",
+            "EXP-BAL-CALC-BEARING-LIFE",
+            "EXP-BAL-CALC-SPRING",
+            "EXP-BAL-CALC-NATURAL-FREQUENCY",
+            "EXP-BAL-CALC-ACCELERATION",
+            "EXP-BAL-CALC-SOUND-POWER",
+            "EXP-BAL-CALC-PHASE",
+            "EXP-BAL-CALC-ABSOLUTE-PRESSURE",
+            "EXP-BAL-CALC-WAVE-FREQUENCY",
+            "EXP-BAL-PROC-BRAKE-LINING"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -6252,11 +9968,15 @@
         },
         {
           "kind": "visual",
-          "status": "held",
-          "linkedIds": [],
-          "disposition": "held_visual_asset",
-          "rationale": "원본 그림 또는 공개 이용조건 검증이 남아 있다.",
-          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+          "status": "published",
+          "linkedIds": [
+            "ncs-rt-film-defect-identification",
+            "ncs-air-arc-gouging-sequence",
+            "ncs-crack-repair-sequence"
+          ],
+          "disposition": null,
+          "rationale": "출처·그림번호·이용조건이 확인된 NCS 시각자료다.",
+          "nextAction": null
         },
         {
           "kind": "assessment",
@@ -6265,7 +9985,18 @@
             "EXP-S04",
             "EXP-W01",
             "EXP-W02",
-            "EXP-W03"
+            "EXP-W03",
+            "EXP-VIS-RT-FILM-01",
+            "EXP-VIS-AIR-ARC-GOUGING-01",
+            "EXP-VIS-CRACK-REPAIR-01",
+            "EXP-BAL-DEF-UNDERCUT",
+            "EXP-BAL-DEF-OVERLAP",
+            "EXP-BAL-DEF-POROSITY",
+            "EXP-BAL-DEF-SLAG-INCLUSION",
+            "EXP-BAL-DEF-LACK-PENETRATION",
+            "EXP-BAL-DEF-LACK-FUSION",
+            "EXP-BAL-DEF-CRATER",
+            "EXP-BAL-DEF-WELD-CRACK"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -6316,17 +10047,26 @@
         },
         {
           "kind": "visual",
-          "status": "draft",
-          "linkedIds": [],
+          "status": "published",
+          "linkedIds": [
+            "ncs-butt-welding-1g-sequence",
+            "ncs-butt-welding-3g-sequence",
+            "ncs-butt-welding-2g-sequence",
+            "ncs-butt-welding-4g-sequence"
+          ],
           "disposition": null,
-          "rationale": "필답 판단에 필요한 공개 시각자료가 아직 연결되지 않았다.",
-          "nextAction": "NCS 원문 페이지·그림번호·권리상태를 확인한 뒤 별도 승인한다."
+          "rationale": "출처·그림번호·이용조건이 확인된 NCS 시각자료다.",
+          "nextAction": null
         },
         {
           "kind": "assessment",
           "status": "published",
           "linkedIds": [
             "EXP-W03",
+            "EXP-VIS-BUTT-WELDING-1G-01",
+            "EXP-VIS-BUTT-WELDING-3G-01",
+            "EXP-VIS-BUTT-WELDING-2G-01",
+            "EXP-VIS-BUTT-WELDING-4G-01",
             "EXP-SUP-002",
             "EXP-SUP-016",
             "EXP-SUP-017",
@@ -6363,196 +10103,12 @@
   ],
   "holds": [
     {
-      "id": "hold:question:P-2025-1-Q05",
-      "sourceKind": "question",
-      "sourceId": "P-2025-1-Q05",
-      "disposition": "held_asset_missing",
-      "rationale": "시험 캡처의 원도형과 NCS 원본 그림번호 확인 필요",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2025-1-Q06",
-      "sourceKind": "question",
-      "sourceId": "P-2025-1-Q06",
-      "disposition": "held_source_missing",
-      "rationale": "복원문제는 유도가열기 작업순서를 요구하지만 확보한 NCS 그림은 오일 배스 가열·가열 후 조립 장면이다. 동일 작업순서 원문을 확보하기 전까지 공개하지 않는다.",
-      "nextAction": "NCS·Q-Net·공식 기술자료에서 직접 근거를 추가 확보한다."
-    },
-    {
-      "id": "hold:question:P-2025-1-Q09",
-      "sourceKind": "question",
-      "sourceId": "P-2025-1-Q09",
-      "disposition": "held_asset_missing",
-      "rationale": "안전표지의 모양·색상 식별에 원그림이 필요하나 현재 저장소에 시험 원그림 또는 동일 NCS 원본이 없다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2025-1-Q10",
-      "sourceKind": "question",
-      "sourceId": "P-2025-1-Q10",
-      "disposition": "held_asset_missing",
-      "rationale": "H·V·A 측정방향을 판단할 시험 원그림과 동일 NCS 원본을 찾지 못했다. 자체 제작 도식은 기출 문제 자료로 사용하지 않는다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2025-2-Q01-1",
-      "sourceKind": "question",
-      "sourceId": "P-2025-2-Q01-1",
-      "disposition": "held_asset_missing",
-      "rationale": "정답 후보인 복열 자동조심 롤러베어링과 일치하는 NCS 사진은 확인했지만, 복원문제의 네 선택 사진 전체와 순서를 재현할 동일 원문 묶음은 확보하지 못했다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2025-2-Q03",
-      "sourceKind": "question",
-      "sourceId": "P-2025-2-Q03",
-      "disposition": "held_asset_missing",
-      "rationale": "원도면의 화살표·기호 위치가 정답 결정에 필수",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2025-2-Q04",
-      "sourceKind": "question",
-      "sourceId": "P-2025-2-Q04",
-      "disposition": "held_asset_missing",
-      "rationale": "복원문제의 네 정비 공구를 모두 포함하는 동일 NCS 원사진을 확인하지 못했다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2025-2-Q05",
-      "sourceKind": "question",
-      "sourceId": "P-2025-2-Q05",
-      "disposition": "held_asset_missing",
-      "rationale": "확보한 NCS 버니어캘리퍼스 원문 예시는 21.60 mm이며 복원문제의 48.2 mm 눈금과 다르다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2025-2-Q10",
-      "sourceKind": "question",
-      "sourceId": "P-2025-2-Q10",
-      "disposition": "held_asset_missing",
-      "rationale": "피팅·스폴링·스코어링의 일반 정의만으로는 복원문제의 세 사진 순서와 정답을 확정할 수 없다. 동일 시험 원그림 또는 출처가 확인된 동일 사진 묶음이 필요하다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2025-3-Q02",
-      "sourceKind": "question",
-      "sourceId": "P-2025-3-Q02",
-      "disposition": "held_asset_missing",
-      "rationale": "현행 안전표지 분류 근거는 확인했지만 복원문제의 네 도안과 순서를 확인할 원그림이 없다. 도안이 정답을 결정하므로 원그림 확보 전에는 공개하지 않는다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2025-3-Q04",
-      "sourceKind": "question",
-      "sourceId": "P-2025-3-Q04",
-      "disposition": "held_asset_missing",
-      "rationale": "나사산 형상 식별에 필요한 시험 원그림과 동일 NCS 원본이 없다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2025-3-Q05",
-      "sourceKind": "question",
-      "sourceId": "P-2025-3-Q05",
-      "disposition": "held_asset_missing",
-      "rationale": "축정렬 불량 유형을 판별할 시험 원그림과 동일 NCS 원본이 없다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2025-3-Q06",
-      "sourceKind": "question",
-      "sourceId": "P-2025-3-Q06",
-      "disposition": "held_asset_missing",
-      "rationale": "기어 치형 곡선을 판별할 시험 원그림과 동일 NCS 원본이 없다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2025-3-Q07",
-      "sourceKind": "question",
-      "sourceId": "P-2025-3-Q07",
-      "disposition": "held_asset_missing",
-      "rationale": "다이얼 게이지·V블록의 정확한 측정 배치를 보여 주는 시험 원그림과 동일 NCS 원본이 없다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2025-3-Q10",
-      "sourceKind": "question",
-      "sourceId": "P-2025-3-Q10",
-      "disposition": "held_asset_missing",
-      "rationale": "번호가 붙은 베어링 구성요소 원그림과 동일 NCS 원본이 없다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2026-1-Q02",
-      "sourceKind": "question",
-      "sourceId": "P-2026-1-Q02",
-      "disposition": "held_asset_missing",
-      "rationale": "금지·경고·지시표지의 현행 분류 근거는 확인했지만 복원문제의 도안과 배열을 확인할 원그림이 없다. 도안 식별 문제이므로 원그림 확보 전에는 공개하지 않는다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2026-1-Q03",
-      "sourceKind": "question",
-      "sourceId": "P-2026-1-Q03",
-      "disposition": "held_asset_missing",
-      "rationale": "번호·지시선이 있는 원도면과 NCS 그림번호 확인 필요",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2026-1-Q06",
-      "sourceKind": "question",
-      "sourceId": "P-2026-1-Q06",
-      "disposition": "held_asset_missing",
-      "rationale": "세 측정기의 시험 실사와 동일한 NCS 원사진을 확인하지 못했다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2026-1-Q09",
-      "sourceKind": "question",
-      "sourceId": "P-2026-1-Q09",
-      "disposition": "held_asset_missing",
-      "rationale": "기하공차 프레임의 기호가 정답 결정에 필수",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:P-2026-1-Q10",
-      "sourceKind": "question",
-      "sourceId": "P-2026-1-Q10",
-      "disposition": "held_asset_missing",
-      "rationale": "저널베어링 납선 간극 측정의 시험 단면도와 동일한 NCS 원본을 확인하지 못했다.",
-      "nextAction": "NCS 원문 페이지·그림번호와 시험 캡처의 정답 결정요소를 대조한다."
-    },
-    {
-      "id": "hold:question:EXP-C03",
-      "sourceKind": "question",
-      "sourceId": "EXP-C03",
-      "disposition": "held_source_missing",
-      "rationale": "OEE 계산 근거가 현재 확보한 NCS 11종에 없어 추가 원문 확보 전까지 공개하지 않는다.",
-      "nextAction": "NCS·Q-Net·공식 기술자료에서 직접 근거를 추가 확보한다."
-    },
-    {
-      "id": "hold:ncs:NCS-HOLD-MEASURING-VISUAL",
-      "sourceKind": "ncs_coverage",
-      "sourceId": "NCS-HOLD-MEASURING-VISUAL",
-      "disposition": "held_visual_asset",
-      "rationale": "측정값을 판정하는 핵심은 기구 배치와 눈금이므로, 원문 그림을 정확히 대조하기 전에는 그림 맞추기 문제로 공개하지 않는다.",
-      "nextAction": "원문 그림의 페이지·번호·정답 결정요소를 대조한 뒤 이미지를 별도 등록한다."
-    },
-    {
       "id": "hold:ncs:NCS-HOLD-DRAWING-STANDARD-TABLES",
       "sourceKind": "ncs_coverage",
       "sourceId": "NCS-HOLD-DRAWING-STANDARD-TABLES",
       "disposition": "held_source_or_standard",
       "rationale": "표준 기호와 수치표는 적용판·도면 조건이 있어 표 일부만 분리해 정답화하지 않는다.",
       "nextAction": "개념 정의는 유지하고 표준표·도면 이미지는 최신판 및 원본 이용조건 확인 후 추가한다."
-    },
-    {
-      "id": "hold:ncs:NCS-HOLD-DRIVE-VISUAL",
-      "sourceKind": "ncs_coverage",
-      "sourceId": "NCS-HOLD-DRIVE-VISUAL",
-      "disposition": "held_visual_asset",
-      "rationale": "공구·정렬 상태는 촬영 방향과 부품 형상에 따라 답이 달라질 수 있어 원문 사진을 추정해 붙이지 않는다.",
-      "nextAction": "NCS 원본 사진의 공개 이용조건과 답안 판정요소를 확인한 후 이미지 학습으로 승격한다."
     },
     {
       "id": "hold:ncs:NCS-HOLD-SAFE-LEGAL",
@@ -6579,14 +10135,6 @@
       "nextAction": "변수와 적용조건이 완전한 문제 또는 제조사 선정 절차를 근거로 보강한다."
     },
     {
-      "id": "hold:ncs:NCS-HOLD-SEN-PHOTOELECTRIC",
-      "sourceKind": "ncs_coverage",
-      "sourceId": "NCS-HOLD-SEN-PHOTOELECTRIC",
-      "disposition": "held_visual_asset",
-      "rationale": "원문 예시 그림만으로는 시험에서 요구할 수 있는 설치·광축·반사형 세부 판정을 동일하게 복원할 수 없다.",
-      "nextAction": "원본 그림번호와 정답 결정요소가 대조되면 그림 맞추기 항목으로 별도 승격한다."
-    },
-    {
       "id": "hold:ncs:NCS-HOLD-SEN-LOADCELL",
       "sourceKind": "ncs_coverage",
       "sourceId": "NCS-HOLD-SEN-LOADCELL",
@@ -6611,47 +10159,55 @@
       "nextAction": "단위와 효율 조건이 명시된 독립 문제 또는 공식 기준을 확보한다."
     },
     {
-      "id": "hold:ncs:NCS-HOLD-DRIVE-MAINTENANCE-VISUAL",
-      "sourceKind": "ncs_coverage",
-      "sourceId": "NCS-HOLD-DRIVE-MAINTENANCE-VISUAL",
-      "disposition": "held_visual_asset",
-      "rationale": "베어링·브레이크·윤활의 실사 사진과 간극 수치는 기종·도면·정비기준을 확인해야 하므로 원문 그대로 복제하거나 임의 도식으로 대체하지 않는다.",
-      "nextAction": "원본 사진·표의 이용조건과 실제 출제 캡처 일치 여부를 대조한 뒤 항목별로 승격한다."
-    },
-    {
-      "id": "hold:ncs:NCS-HOLD-WELD-REPAIR-VISUAL",
-      "sourceKind": "ncs_coverage",
-      "sourceId": "NCS-HOLD-WELD-REPAIR-VISUAL",
-      "disposition": "held_visual_asset",
-      "rationale": "결함 판정은 사진의 확대방향·표시·검사 조건에 좌우되므로 원본과 동일성 검증 없이 그림 문제로 공개하지 않는다.",
-      "nextAction": "NCS 그림번호와 공개 이용조건을 확인한 뒤 원본 또는 독립 재도식으로 재검수한다."
-    },
-    {
       "id": "hold:ncs:NCS-HOLD-WELD-CONDITIONS",
       "sourceKind": "ncs_coverage",
       "sourceId": "NCS-HOLD-WELD-CONDITIONS",
       "disposition": "held_source_or_standard",
       "rationale": "예열온도·층간온도·건조조건은 재질, 두께, 용접봉, WPS에 따라 달라 일반 수치로 공개하면 위험하다.",
       "nextAction": "원리는 현재 레슨으로 유지하고 수치는 WPS·제조사 조건이 확인된 경우에만 제시한다."
+    },
+    {
+      "id": "hold:question-recall:recall:2026-round2:m18-drawing:held_asset_missing",
+      "sourceKind": "question_recall",
+      "sourceId": "recall:2026-round2:m18-drawing",
+      "disposition": "held_asset_missing",
+      "rationale": "M18×2.0 도면 판독 출제 이력은 복원 기출 등록부에 공개하며, answer_resolved_reconstructed 경계 때문에 답안형 문제로는 승격하지 않는다.",
+      "nextAction": "문제 전체 문장, 치수가 보이는 원본 도면, 공식 답안 또는 적용 제도 표준"
+    },
+    {
+      "id": "hold:question-recall:recall:2026-round2:drip-lubrication:held_asset_missing",
+      "sourceKind": "question_recall",
+      "sourceId": "recall:2026-round2:drip-lubrication",
+      "disposition": "held_asset_missing",
+      "rationale": "적하급유법 복수 선택 출제 이력은 복원 기출 등록부에 공개하며, learning_source_verified 경계 때문에 답안형 문제로는 승격하지 않는다.",
+      "nextAction": "문제 전체 문장, 사진 또는 선택지 전체, 선택 개수"
+    },
+    {
+      "id": "hold:question-recall:recall:2026-05-10:10:held_asset_missing",
+      "sourceKind": "question_recall",
+      "sourceId": "recall:2026-05-10:10",
+      "disposition": "held_asset_missing",
+      "rationale": "수동 조작 제어기호 출제 이력은 복원 기출 등록부에 공개하며, learning_source_verified 경계 때문에 답안형 문제로는 승격하지 않는다.",
+      "nextAction": "원본 기호 이미지, 문제 전체 문장과 보기"
     }
   ],
   "report": {
     "evidence": {
-      "pastReconstructed": 41,
+      "pastReconstructed": 51,
       "pastVariant": 0,
-      "predictedRelated": 87,
+      "predictedRelated": 185,
       "ncsSupplement": 43
     },
     "publication": {
-      "past": 21,
-      "predicted": 86,
-      "held": 21
+      "past": 51,
+      "predicted": 183,
+      "held": 0
     },
     "coverage": {
       "ncsDocuments": 11,
       "publishedTheoryLinks": 88,
-      "publishedAssessmentLinks": 109,
-      "publishedVisualLinks": 6,
+      "publishedAssessmentLinks": 236,
+      "publishedVisualLinks": 82,
       "excludedTaskDeliverables": 11,
       "excludedRecordDeliverables": 11
     }

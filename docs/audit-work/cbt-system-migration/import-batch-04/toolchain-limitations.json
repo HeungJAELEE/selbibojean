@@ -1,0 +1,48 @@
+{
+  "status": "BLOCKED",
+  "currentNodeVersion": "v22.16.0",
+  "requiredNodeRange": ">=24.0.0 <25",
+  "attempts": [
+    {
+      "command": "npm run verify:node-runtime",
+      "exitCode": 1,
+      "result": "BLOCKED_BY_NODE_VERSION",
+      "log": "node-runtime-check.log"
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 1,
+      "result": "BLOCKED_BY_PRETYPECHECK_OR_DEPENDENCIES",
+      "log": "official-typecheck-attempt.log"
+    },
+    {
+      "command": "npm run test -- --maxWorkers=1",
+      "exitCode": 1,
+      "result": "BLOCKED_BY_PRETEST_OR_DEPENDENCIES",
+      "log": "official-vitest-attempt.log"
+    },
+    {
+      "command": "npm run lint -- scripts/verify-reviewed-cbt-variants.ts tests/unit/reviewed-cbt-variants.test.ts src/lib/content/reviewed-cbt-variants.ts",
+      "exitCode": 1,
+      "result": "BLOCKED_BY_PRELINT_OR_DEPENDENCIES",
+      "log": "official-eslint-attempt.log"
+    },
+    {
+      "command": "npm run verify:reviewed-cbt",
+      "exitCode": 127,
+      "result": "BLOCKED_BY_MISSING_PROJECT_DEPENDENCIES",
+      "log": "repository-verifier-attempt.log"
+    },
+    {
+      "command": "npm run verify:no-answer-leak",
+      "exitCode": 127,
+      "result": "BLOCKED_BY_MISSING_PROJECT_DEPENDENCIES",
+      "log": "official-no-answer-leak-attempt.log"
+    }
+  ],
+  "notRun": [
+    "SQL migration tests",
+    "login/guest browser integration flows"
+  ],
+  "reason": "Official repository validation requires Node.js 24.x and installed project dependencies. Failed attempts are not reported as PASS."
+}

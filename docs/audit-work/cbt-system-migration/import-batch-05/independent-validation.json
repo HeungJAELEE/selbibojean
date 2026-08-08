@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "failureCount": 0,
+  "failures": [],
+  "recordCount": 200,
+  "states": {
+    "candidate": 191,
+    "hold": 8,
+    "choice_conflict": 1
+  },
+  "cumulativeRecordCount": 1000,
+  "cumulativeStates": {
+    "candidate": 950,
+    "hold": 40,
+    "choice_conflict": 10
+  },
+  "variantSpecificFeedbackPendingCount": 154,
+  "priorRecordsUnchanged": true,
+  "sourceContentUnchanged": true
+}

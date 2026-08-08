@@ -1,0 +1,1 @@
+{"externalId":"2012-4-Q08","dryRunCurrentCanonicalId":"U-1099","dryRunTargetCanonicalId":"U-308","appliedCanonicalId":"U-1099","reason":"현재 U-1099가 고장형태·고장률·MTBF·MTTR 선택지와 직접 일치한다. U-308은 생산량 선택지를 소유하므로 통합하면 선택지 의미가 달라진다.","evidence":"고장률, 평균고장간격, 평균고장시간 계열은 신뢰성을 수치로 나타내는 지표다. 고장 형태는 어떤 방식으로 고장났는지를 분류하는 분석 항목이므로 2번이다."}

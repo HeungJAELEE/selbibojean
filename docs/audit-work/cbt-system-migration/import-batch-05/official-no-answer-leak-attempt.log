@@ -1,0 +1,5 @@
+
+> seolbi-learning-platform@0.1.0 verify:no-answer-leak
+> tsx scripts/verify-no-answer-leak.ts --scope=source
+
+sh: 1: tsx: not found

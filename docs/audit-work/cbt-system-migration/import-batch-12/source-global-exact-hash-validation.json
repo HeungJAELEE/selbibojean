@@ -1,0 +1,27 @@
+{
+  "validatorVersion": 3,
+  "validatedAt": "2026-08-07T03:02:03+09:00",
+  "status": "PASS",
+  "failureCount": 0,
+  "failures": [],
+  "sessionFileCount": 48,
+  "recordCount": 2384,
+  "uniqueExternalIdCount": 2384,
+  "ledgerRecordCount": 2384,
+  "verdictCounts": {
+    "ACCEPT": 2256,
+    "REVISE": 4,
+    "CHOICE_ISSUE": 27,
+    "HOLD": 97
+  },
+  "publicationCandidateCount": 2074,
+  "checks": {
+    "all48SessionFilesMatchRecordedSha": true,
+    "recordCountAndExternalIdExactSet": true,
+    "registeredAndResolvedUrlQuestionNumberExact": true,
+    "stemOrderedChoicesAnswerExact": true,
+    "allFourIdentityHashesRecomputed": true,
+    "acceptedAnswersAgreeAndNonacceptUnscored": true,
+    "finalVerdictCountsExact": true
+  }
+}

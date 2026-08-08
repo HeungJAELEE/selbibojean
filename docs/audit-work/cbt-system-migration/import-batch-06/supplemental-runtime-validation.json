@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "nodeVersion": "v22.16.0",
+  "typescriptVersion": "5.8.3",
+  "officialNode24Validation": false,
+  "recordCount": 200,
+  "runtimeStateCounts": {
+    "unreviewed": 1184,
+    "candidate": 1140,
+    "hold": 46,
+    "choice_conflict": 14
+  },
+  "checks": {
+    "manifestValidated": true,
+    "runtimeBuilt": true,
+    "candidateConflictHoldGated": true,
+    "supabaseProjectionBuilt": true,
+    "supabaseBatchRowsDraft": true,
+    "preSubmitForbiddenKeysAbsent": true
+  },
+  "failures": [],
+  "limitations": [
+    "Supplemental transpile-only Node.js 22 execution does not replace Node.js 24 project typecheck, Vitest, ESLint, or official repository verification."
+  ]
+}

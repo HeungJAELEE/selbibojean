@@ -1,0 +1,24 @@
+{
+  "batchNumber": 9,
+  "recordCount": 200,
+  "reviewFiles": [
+    "de20180915_q51-q100_independent-review.jsonl",
+    "de20190303_q01-q50_independent-review.jsonl",
+    "de20190303_q51-q100_independent-review.jsonl",
+    "de20190427_q01-q50_independent-review.jsonl"
+  ],
+  "firstExternalId": "2018-4-Q51",
+  "lastExternalId": "2019-2-Q50",
+  "mappingClassCounts": {
+    "EXACT_REPLACE": 192,
+    "HOLD": 8
+  },
+  "runtimeDispositionCounts": {
+    "HOLD": 8,
+    "PUBLICATION_CANDIDATE": 192
+  },
+  "semanticReassignmentCount": 0,
+  "relinkInPlaceCount": 0,
+  "holdCount": 8,
+  "unmatchedCount": 0
+}

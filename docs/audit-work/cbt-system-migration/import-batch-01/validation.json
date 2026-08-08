@@ -1,0 +1,138 @@
+{
+  "formatVersion": 4,
+  "batchId": "import-01",
+  "generatedAt": "2026-08-07T16:20:00+09:00",
+  "status": "STATIC_AND_SUPPLEMENTAL_PASS",
+  "finalReleaseStatus": "PENDING_REQUIRED_PROJECT_CHECKS",
+  "scope": {
+    "recordCount": 200,
+    "externalIdRanges": [
+      "2006-4-Q01..Q100",
+      "2007-4-Q01..Q100"
+    ]
+  },
+  "counts": {
+    "candidate": 187,
+    "choiceConflict": 6,
+    "hold": 7,
+    "unimportedGated": 2184,
+    "currentlyPublishedReviewedVariants": 0
+  },
+  "checks": {
+    "sourceContentUnchanged": true,
+    "recordsDigest": true,
+    "recordCount": true,
+    "externalIdsUnique": true,
+    "stateCounts": true,
+    "rawSourceEvidenceIntegrity": true,
+    "normalizedPresentationHashes": true,
+    "normalizedRawSourcePreserved": true,
+    "choiceFeedbackAligned": true,
+    "candidateAnswerMappings": true,
+    "theoryLinks": true,
+    "choiceConflictNonScoringGate": true,
+    "imageHoldGate": true,
+    "holdResolutionExactSets": true,
+    "queueExactSets": true,
+    "declaredSourceFileHashes": true
+  },
+  "exactSets": {
+    "normalized": [
+      "2006-4-Q09",
+      "2006-4-Q15",
+      "2006-4-Q84",
+      "2006-4-Q89",
+      "2007-4-Q40"
+    ],
+    "lowContextRegistered": [
+      "2006-4-Q11",
+      "2007-4-Q36",
+      "2007-4-Q50",
+      "2007-4-Q61",
+      "2007-4-Q82"
+    ],
+    "choiceConflict": [
+      "2006-4-Q34",
+      "2006-4-Q49",
+      "2006-4-Q60",
+      "2006-4-Q93",
+      "2007-4-Q49",
+      "2007-4-Q66"
+    ],
+    "imageHold": [
+      "2006-4-Q17",
+      "2006-4-Q37",
+      "2006-4-Q88",
+      "2006-4-Q91",
+      "2007-4-Q02",
+      "2007-4-Q10",
+      "2007-4-Q93"
+    ]
+  },
+  "hashes": {
+    "contentJson": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "reviewedOverlay": "0f1a94956b4aefdc0350262a0e1943251097f4cf3d27862ab9e739e08fb311f3",
+    "records": "9f1bd7284cd7cec502d121381b75ce8ad06a0b49d3cc67e989f8cc92df08c934"
+  },
+  "executed": {
+    "pythonIndependentStaticValidation": {
+      "status": "PASS",
+      "artifact": "hold-resolution-validation.json",
+      "recordCount": 200,
+      "candidateAnswerMappingsChecked": 187,
+      "nonScoringRecordsChecked": 13
+    },
+    "typescriptSyntaxTranspile": {
+      "status": "PASS",
+      "node": "v22.16.0",
+      "typescript": "5.8.3",
+      "fileCount": 9,
+      "note": "Syntax-only supplemental transpile; not the required Node.js 24 project typecheck."
+    },
+    "typescriptPartialTypecheck": {
+      "status": "PASS",
+      "node": "v22.16.0",
+      "typescript": "5.8.3",
+      "scope": [
+        "src/lib/domain/types.ts",
+        "src/lib/content/reviewed-cbt-variants.ts"
+      ],
+      "note": "Partial typecheck with a temporary node:crypto declaration; not the required Node.js 24 full-project typecheck."
+    },
+    "reviewedOverlayRuntimeExecution": {
+      "status": "PASS",
+      "node": "v22.16.0",
+      "typescript": "5.8.3",
+      "states": {
+        "candidate": 187,
+        "choice_conflict": 6,
+        "hold": 7,
+        "unreviewed": 2184
+      },
+      "normalizationApplied": 5,
+      "choiceConflictsNonScoring": 6,
+      "imageHoldsNonScoring": 7,
+      "note": "Supplemental execution of the reviewed overlay helper after TypeScript transpilation."
+    },
+    "supabaseProjectionSimulation": {
+      "status": "PASS",
+      "node": "v22.16.0",
+      "reviewedRows": 200,
+      "publishedRows": 0,
+      "answerFieldsAbsent": true,
+      "normalizedMetadata": true,
+      "choiceConflictMetadata": true,
+      "imageHoldMetadata": true,
+      "note": "Supplemental projection simulation after taxonomy normalization; not a database migration test."
+    }
+  },
+  "requiredChecksNotRunInThisBatch": [
+    "Node.js 24 typecheck",
+    "Vitest",
+    "changed-file ESLint",
+    "verify-no-answer-leak",
+    "login/guest/session merge integration flow",
+    "SQL migration tests"
+  ],
+  "failures": []
+}

@@ -24,6 +24,7 @@ export type PracticalFluidPowerVideo = {
 
 export type PracticalFluidPowerVideoGroup = {
   id: string;
+  eyebrow?: string;
   title: string;
   description: string;
   videos: readonly PracticalFluidPowerVideo[];
@@ -66,6 +67,51 @@ const hydraulicVideos = [
   ["YffbkIbFPQA", "2025년도 설비보전기사 실기 유압6번 문제풀이"],
   ["0ceJp3FJs-U", "2025년도 설비보전기사 실기 유압7번 문제풀이"],
   ["HWk32oJHY84", "2025년도 설비보전기사 실기 유압8번 문제풀이"],
+] as const;
+
+const hydraulicBeginnerVideos = [
+  {
+    videoId: "Wy83q8tOIMY",
+    label: "시험 직전 보기 좋은 영상",
+    sourceUrl: "https://youtu.be/Wy83q8tOIMY?si=gAA_rNcwrP-Xb7HP",
+    learningFocus:
+      "유압 실습에서 헷갈리기 쉬운 밸브의 명칭·기능·회로 위치를 시험 직전에 빠르게 복습합니다.",
+  },
+  {
+    videoId: "2cfRnrg2XMU",
+    label: "유압 릴리프 밸브 1",
+    sourceUrl: "https://youtu.be/2cfRnrg2XMU?si=zvB-BBklOliBTvjS",
+    learningFocus:
+      "릴리프밸브의 기본 역할과 설정 전 확인할 지점을 초보자 관점에서 복습합니다.",
+  },
+  {
+    videoId: "DbTVGZi6XYA",
+    label: "유압 릴리프 밸브 2",
+    sourceUrl: "https://youtu.be/DbTVGZi6XYA?si=nvRMhJVneQmr5kSo",
+    learningFocus:
+      "릴리프밸브의 회로 적용과 조정 과정에서 헷갈리기 쉬운 부분을 이어서 확인합니다.",
+  },
+  {
+    videoId: "cXvjBAN96BM",
+    label: "유압 감압 밸브",
+    sourceUrl: "https://youtu.be/cXvjBAN96BM?si=Jpziptitpa0jn3Wv",
+    learningFocus:
+      "감압밸브가 분기 회로의 압력을 낮춰 유지하는 흐름과 확인 지점을 복습합니다.",
+  },
+  {
+    videoId: "JaqbOmTLNWk",
+    label: "유압 카운터밸런스 밸브",
+    sourceUrl: "https://youtu.be/JaqbOmTLNWk?si=-_bMwuPqcY5UNHHT",
+    learningFocus:
+      "하중 낙하를 방지하고 배압을 유지하는 카운터밸런스 회로의 흐름을 확인합니다.",
+  },
+  {
+    videoId: "JwTt-oBo02g",
+    label: "유압 압력보상 밸브",
+    sourceUrl: "https://youtu.be/JwTt-oBo02g?si=Isw15tF42NdJTMw6",
+    learningFocus:
+      "부하 변화에 따른 압력 보상 동작과 유량 제어의 관계를 기초부터 확인합니다.",
+  },
 ] as const;
 
 const industrialEngineerVideos = [
@@ -232,6 +278,28 @@ export const practicalFluidPowerVideoGroups: readonly PracticalFluidPowerVideoGr
         relatedLessons: [...pneumaticLessons, ...hydraulicLessons],
       },
     ],
+  },
+  {
+    id: "hydraulic-beginner-review",
+    eyebrow: "헷갈리기 쉬운 기초",
+    title: "시험 직전 보기 좋은 초보자 기초 실기",
+    description:
+      "릴리프·감압·카운터밸런스·압력보상 밸브처럼 이름과 역할이 헷갈리기 쉬운 유압 기초를 시험 직전에 순서대로 복습하는 영상 묶음입니다.",
+    videos: hydraulicBeginnerVideos.map(
+      ({ videoId, label, sourceUrl, learningFocus }, index) => ({
+        id: `hydraulic-beginner-${index + 1}`,
+        label,
+        sourceTitle: label,
+        channel: "사용자 추천 영상",
+        sourceUrl,
+        accessLabel: "무료 공개 영상" as const,
+        embed: { type: "video" as const, videoId },
+        learningFocus,
+        caution:
+          "외부 보조 영상입니다. 실제 조립·조정 순서와 설정압력은 해당 연도의 Q-Net 공개문제와 시험장 지시를 최종 기준으로 확인하세요.",
+        relatedLessons: hydraulicLessons,
+      }),
+    ),
   },
 ] as const;
 

@@ -1,0 +1,5 @@
+
+> seolbi-learning-platform@0.1.0 test:rls
+> supabase test db
+
+sh: 1: supabase: not found

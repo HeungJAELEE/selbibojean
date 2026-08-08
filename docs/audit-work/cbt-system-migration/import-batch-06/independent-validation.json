@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "checks": {
+    "record_count": true,
+    "previous_records_unchanged": true,
+    "previous_theory_additions_unchanged": true,
+    "previous_canonical_changes_unchanged": true,
+    "unique_external_ids": true,
+    "records_sha": true,
+    "state_counts": true,
+    "source_hashes": true,
+    "theory_links": true,
+    "candidate_answers": true,
+    "holds_disabled": true,
+    "conflicts_disabled": true,
+    "variant_specific_blocked": true,
+    "q69_reassigned": true,
+    "formula_count": true,
+    "hold_policy_counts": true
+  },
+  "failures": [],
+  "recordCount": 200,
+  "cumulativeRecordCount": 1200,
+  "manifestSha256": "ac923762d7bd7d423dc9908426d016cd1cb8376987a85b88ba16cdc0fd95f3b9"
+}

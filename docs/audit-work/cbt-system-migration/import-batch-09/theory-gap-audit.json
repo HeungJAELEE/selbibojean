@@ -1,0 +1,16 @@
+{
+  "batchId": "import-09",
+  "recordCount": 200,
+  "existingDirectTheoryLinksRetained": 200,
+  "existingTheoryRelinks": 0,
+  "newDirectTheoryLessonsAdded": 0,
+  "canonicalContentAndTheoryRepairs": 0,
+  "missingDirectTheoryAfterBatch": 0,
+  "sourceNeededTheoryGateCount": 0,
+  "lowContextDirectTheoryLinks": 26,
+  "notes": [
+    "200문항 모두 검토 패킷의 직접 lesson·anchor·conceptGroup·concept 연결이 dry-run target canonical theory와 일치했다.",
+    "canonical 재배정, canonical 내용 교정, 신규 이론 레슨은 필요하지 않았다.",
+    "이미지 HOLD 7건과 선택지 충돌 1건도 감사용 직접 이론 링크만 보존하고 정답·채점은 차단했다."
+  ]
+}

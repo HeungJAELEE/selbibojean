@@ -21,6 +21,8 @@ export function toPublicPracticalQuestion(
 ): PublicPracticalQuestion {
   const {
     modelAnswer,
+    answerDefinition,
+    memoryTip,
     requiredKeywords,
     acceptedAnswers,
     calculation,
@@ -30,6 +32,8 @@ export function toPublicPracticalQuestion(
     ...safe
   } = question;
   void modelAnswer;
+  void answerDefinition;
+  void memoryTip;
   void requiredKeywords;
   void acceptedAnswers;
   void calculation;

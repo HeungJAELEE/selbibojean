@@ -3,6 +3,7 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import type { PracticalContent } from "../src/lib/domain/practical-types";
 import { isPublishablePracticalQuestion } from "../src/lib/domain/practical";
+import { isLearnerVisiblePracticalQuestion } from "../src/lib/content/learner-visibility";
 import {
   practicalTextbookPlacementByConceptId,
   practicalTextbookStudyTypes,
@@ -45,13 +46,19 @@ async function main() {
     }
   }
 
-  if (content.report.rows.past !== 41) errors.push("기출복원 41개가 아닙니다.");
-  if (content.report.rows.predicted !== 87)
-    errors.push("출제예상 전체 87개가 아닙니다.");
+  if (content.report.rows.past !== 51) errors.push("기출복원 원시 레코드 51개가 아닙니다.");
+  if (content.report.publication.past !== 51)
+    errors.push(
+      "학습자 공개 기출복원은 검증 완료 51개여야 합니다.",
+    );
+  if (content.report.rows.predicted !== 185)
+    errors.push("출제예상 전체 185개가 아닙니다.");
   if (content.report.rows.workbookPredicted !== 41)
     errors.push("원본 워크북 기반 출제예상 41개가 아닙니다.");
-  if (content.report.rows.authoredPredicted !== 46)
-    errors.push("NCS 원문 기반 자체 예상문항 46개가 아닙니다.");
+  if (content.report.rows.authoredPredicted !== 77)
+    errors.push("NCS 원문 기반 자체 예상문항 77개가 아닙니다.");
+  if (content.report.rows.balancedPredicted !== 67)
+    errors.push("필기 발췌·선별 예상문항 67개가 아닙니다.");
   if (content.report.rows.concepts !== 46)
     errors.push("실기 개념 46개가 아닙니다.");
   if (
@@ -95,10 +102,16 @@ async function main() {
   if (!content.report.exactMatch) errors.push("원본 행 수 대사가 실패했습니다.");
 
   const expectedCategoryCounts = new Map([
-    ["visual_identification", 34],
-    ["formula_calculation", 22],
-    ["theory_concept", 39],
-    ["work_procedure", 33],
+    ["visual_identification", 38],
+    ["formula_calculation", 56],
+    ["theory_concept", 77],
+    ["work_procedure", 65],
+  ]);
+  const expectedPublicPredictedCounts = new Map([
+    ["visual_identification", 19],
+    ["formula_calculation", 46],
+    ["theory_concept", 60],
+    ["work_procedure", 58],
   ]);
   if (content.studyCategories.length !== expectedCategoryCounts.size) {
     errors.push(`실기 학습유형은 ${expectedCategoryCounts.size}개여야 합니다.`);
@@ -134,8 +147,25 @@ async function main() {
   }
 
   const publicQuestions = content.questions.filter(
-    isPublishablePracticalQuestion,
+    (question) =>
+      isPublishablePracticalQuestion(question) &&
+      isLearnerVisiblePracticalQuestion(question),
   );
+  for (const [
+    categoryId,
+    expectedPublicCount,
+  ] of expectedPublicPredictedCounts) {
+    const publicPredictedCount = publicQuestions.filter(
+      (question) =>
+        question.kind === "predicted" &&
+        question.primaryStudyCategoryId === categoryId,
+    ).length;
+    if (publicPredictedCount !== expectedPublicCount) {
+      errors.push(
+        `실기 유형별 공개 예상문제 수량 불일치: ${categoryId} ${publicPredictedCount}/${expectedPublicCount}`,
+      );
+    }
+  }
   const leakedHeld = content.questions.filter(
     (question) =>
       question.auditDisposition.startsWith("held_") &&
@@ -178,21 +208,52 @@ async function main() {
   const publicVisualAids = content.visualAids.filter(
     (visualAid) => visualAid.publicUseStatus === "public",
   );
+  const frameIds = new Set<string>();
   for (const visualAid of publicVisualAids) {
     if (
       !visualAid.altText ||
       !visualAid.caption ||
       !visualAid.sourceFileHash ||
+      !/^[a-f0-9]{64}$/.test(visualAid.outputAssetHash) ||
+      visualAid.technicalReviewStatus !== "verified" ||
+      visualAid.usageTypes.length === 0 ||
+      visualAid.frames.length === 0 ||
       visualAid.rightsStatus === "unknown" ||
       visualAid.rightsStatus === "third_party_permission_required"
     ) {
       errors.push(`시각자료 메타데이터 오류: ${visualAid.id}`);
     }
-    for (const imagePath of visualAid.imagePaths) {
-      await access(
-        path.join(process.cwd(), "public", imagePath.replace(/^\//, "")),
-      ).catch(() => errors.push(`시각자료 파일 누락: ${imagePath}`));
+    for (const frame of visualAid.frames) {
+      if (frameIds.has(frame.id)) {
+        errors.push(`시각자료 프레임 ID 중복: ${frame.id}`);
+      }
+      frameIds.add(frame.id);
+      const assetPath = path.join(
+        process.cwd(),
+        "public",
+        frame.path.replace(/^\//, ""),
+      );
+      await access(assetPath).catch(() =>
+        errors.push(`시각자료 파일 누락: ${frame.path}`),
+      );
+      const assetBuffer = await readFile(assetPath).catch(() => null);
+      if (
+        assetBuffer &&
+        createHash("sha256").update(assetBuffer).digest("hex") !==
+          frame.outputAssetHash
+      ) {
+        errors.push(`시각자료 출력 해시 불일치: ${frame.id}`);
+      }
     }
+  }
+  if (
+    content.visualAids.some(
+      (visualAid) =>
+        visualAid.originType === "ai_generated" &&
+        visualAid.publicUseStatus === "public",
+    )
+  ) {
+    errors.push("이번 공개 범위에는 ai_generated 시각자료를 사용할 수 없습니다.");
   }
 
   const publishedConceptIds = content.concepts
@@ -231,9 +292,9 @@ async function main() {
     return;
   }
   console.log(
-    `PASS: 실기 기출 ${content.report.publication.past}/41, 예상 ${content.report.publication.predicted}/${content.report.rows.predicted} (워크북 ${content.report.rows.workbookPredicted} + 자체 ${content.report.rows.authoredPredicted}), ` +
+    `PASS: 실기 기출 ${content.report.publication.past}/${content.report.rows.past}, 예상 ${content.report.publication.predicted}/${content.report.rows.predicted} (워크북 ${content.report.rows.workbookPredicted} + 자체 ${content.report.rows.authoredPredicted} + 필기선별 ${content.report.rows.balancedPredicted}), ` +
       `출제연결 ${content.report.publication.concepts}/46 + NCS 보강 ${content.report.publication.supplementalConcepts}/${PRACTICAL_SUPPLEMENTAL_CONCEPTS.length}, 보류 ${content.report.publication.held}, ` +
-      `NCS 시각자료 ${publicVisualAids.length}묶음, 학습유형 4개/128문제`,
+      `NCS 시각자료 ${publicVisualAids.length}묶음, 학습유형 4개/236문제`,
   );
 }
 

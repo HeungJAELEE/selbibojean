@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "nodeVersion": "v22.16.0",
+  "q84": {
+    "candidateBlocked": true,
+    "publishedSafe": true,
+    "mappedChoiceIds": [
+      "U-1400-c1",
+      "U-1400-c2",
+      "U-1400-c3",
+      "U-1400-c4"
+    ],
+    "answerIndex": 3,
+    "correctChoiceId": "U-1400-c4",
+    "sourceChoices": [
+      "디스크",
+      "원추",
+      "볼",
+      "스풀"
+    ]
+  },
+  "supabase": {
+    "reviewedRowCount": 400,
+    "allReviewedRowsDraft": true,
+    "forbiddenKeysFound": []
+  }
+}

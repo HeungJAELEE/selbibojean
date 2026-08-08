@@ -256,6 +256,7 @@ const FAMILY_OVERRIDES: Record<string, FamilyOverride> = {
       "서브머지드·SAW",
       "소모성·비소모성 전극",
       "보호가스·플럭스",
+      "차폐 조건",
     ],
     scope:
       "아크용접의 종류는 공정 이름만 외우기보다 전극이 소모되는지, 와이어가 연속 송급되는지, 보호가스와 플럭스를 어디에서 어떻게 사용하는지로 구분해야 한다. 피복아크·TIG·GMAW·FCAW·SAW는 모두 아크열을 사용하지만 전극·차폐·생산성·자세와 적용설비가 서로 다르다. CO₂용접은 GMAW의 MAG 계열로 통합해 설명하고, 기존 용접 기초 레슨은 공정 개요와 출제 이력을 보존한다.",
@@ -267,6 +268,7 @@ const FAMILY_OVERRIDES: Record<string, FamilyOverride> = {
       "MIG·MAG·CO₂용접(GMAW)",
       "플럭스코어드아크용접(FCAW)",
       "서브머지드아크용접(SAW)",
+      "아크용접 차폐 조건",
     ],
     comparison: [
       {
@@ -304,6 +306,13 @@ const FAMILY_OVERRIDES: Record<string, FamilyOverride> = {
         effect: "적용 구분형: 긴 직선·원주 이음과 두꺼운 판에는 유리하고 복잡한 자세에는 불리하다.",
         caution: "플럭스가 용융지 위에 머물러야 하므로 모든 자세와 짧은 복잡 이음에 적합하다고 보지 않는다.",
       },
+      {
+        term: "차폐 조건",
+        input: "보호가스 흐름 또는 공정별 플럭스",
+        role: "고온의 전극 끝과 용융금속에 산소·질소·수분이 들어가는 것을 줄인다.",
+        effect: "점검·구분형: 가스 차폐의 바람·누설·노즐 조건과 플럭스의 위치·흡습·슬래그 관리를 함께 묻는다.",
+        caution: "가스유량을 무조건 높이거나 모든 공정의 아크 위에 입상 플럭스를 쓰는 것으로 일반화하지 않는다.",
+      },
     ],
     fieldCases: [
       {
@@ -331,6 +340,7 @@ const FAMILY_OVERRIDES: Record<string, FamilyOverride> = {
       "WELD-PROC-003",
       "WELD-PROC-004",
       "WELD-PROC-005",
+      "WELD-PROC-006",
     ],
   },
 };

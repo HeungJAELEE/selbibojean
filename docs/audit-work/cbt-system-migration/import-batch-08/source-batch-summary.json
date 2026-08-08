@@ -1,0 +1,259 @@
+{
+  "batchReviewVersion": 3,
+  "batch": "sessions29-32",
+  "reviewedAt": "2026-08-06T22:24:25+09:00",
+  "status": "PASS",
+  "failureCount": 0,
+  "failures": [],
+  "sessionCount": 4,
+  "recordCount": 200,
+  "verdictCounts": {
+    "ACCEPT": 191,
+    "REVISE": 0,
+    "CHOICE_ISSUE": 1,
+    "HOLD": 8
+  },
+  "scoredCount": 191,
+  "excludedCount": 9,
+  "publicationCandidateCount": 190,
+  "theoryGapHoldExternalIds": [
+    "2018-4-Q35"
+  ],
+  "lowContextAcceptedCount": 30,
+  "lowContextAcceptedExternalIds": [
+    "2017-2-Q58",
+    "2017-2-Q72",
+    "2017-2-Q75",
+    "2017-2-Q81",
+    "2017-2-Q82",
+    "2017-2-Q85",
+    "2017-2-Q88",
+    "2017-2-Q91",
+    "2018-2-Q01",
+    "2018-2-Q08",
+    "2018-2-Q18",
+    "2018-2-Q31",
+    "2018-2-Q42",
+    "2018-2-Q47",
+    "2018-2-Q58",
+    "2018-2-Q61",
+    "2018-2-Q68",
+    "2018-2-Q72",
+    "2018-2-Q90",
+    "2018-2-Q94",
+    "2018-4-Q02",
+    "2018-4-Q03",
+    "2018-4-Q04",
+    "2018-4-Q16",
+    "2018-4-Q17",
+    "2018-4-Q21",
+    "2018-4-Q26",
+    "2018-4-Q35",
+    "2018-4-Q44",
+    "2018-4-Q50"
+  ],
+  "nonAcceptDetails": [
+    {
+      "externalId": "2017-2-Q60",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 0,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_gear_damage_source_image_missing"
+      ],
+      "directSolution": "치면 손상 원인을 묻지만 지문의 “이 부분”이 가리키는 필수 그림이 복원 원장에도 없다. 마모·균열·반복굽힘·과부하 모두 손상원인이 될 수 있어 손상부위를 확인하지 않고 하나를 승인할 수 없으므로 HOLD한다.",
+      "requiredImages": []
+    },
+    {
+      "externalId": "2018-2-Q05",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 3,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_spring_arrangement_and_formula_images_not_independently_inspected"
+      ],
+      "directSolution": "식: 직렬스프링에서는 같은 힘 F가 작용하고 전체변위는 x=x₁+x₂=F/k₁+F/k₂이다. 단위: 각 스프링상수와 등가스프링상수의 단위는 N/m이다. 대입: x=F/kₑq를 적용하면 1/kₑq=1/k₁+1/k₂이다. 결과: kₑq=k₁k₂/(k₁+k₂)이지만 배치 그림과 3·4번 수식 이미지를 직접 판독하지 못해 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20180428/de20180428m5.gif",
+        "https://cbtbank.kr/images/de/de20180428/de20180428m5b3.gif",
+        "https://cbtbank.kr/images/de/de20180428/de20180428m5b4.gif"
+      ]
+    },
+    {
+      "externalId": "2018-2-Q10",
+      "verdict": "CHOICE_ISSUE",
+      "sourceAnswerIndex": 0,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "all_reconstructed_choices_are_resistance_based_transducers"
+      ],
+      "directSolution": "전위차계·가변저항기·저항온도계·스트레인게이지는 모두 저항 또는 저항비의 변화를 전기신호로 이용한다. 따라서 복원된 선택지에는 저항변환 방식과 명확히 거리가 먼 보기가 없어 단일정답이 성립하지 않는다.",
+      "requiredImages": []
+    },
+    {
+      "externalId": "2018-2-Q21",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 3,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_maintenance_organization_chart_not_independently_inspected"
+      ],
+      "directSolution": "복원 정답은 제품별 책임축과 기능별 전문축이 교차하는 제품중심 매트릭스 조직인 4번이다. 그러나 조직도의 축·보고선·책임방향을 원본 그림에서 직접 확인하지 못했으므로 승인하지 않는다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20180428/de20180428m21.gif"
+      ]
+    },
+    {
+      "externalId": "2018-2-Q45",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 1,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_pneumatic_motor_symbol_not_independently_inspected"
+      ],
+      "directSolution": "판단: 회전식 공압 액추에이터 기호라면 공기압 모터에 해당한다. 결과: 복원 정답은 2번 공기압 모터이지만, 지문의 ISO 기호 픽셀을 직접 판독하지 못했으므로 유압 펌프·유압 모터·요동형 액추에이터 기호와 구분하여 승인하지 않고 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20180428/de20180428m45.gif"
+      ]
+    },
+    {
+      "externalId": "2018-2-Q83",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 3,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_pneumatic_memory_circuit_not_independently_inspected"
+      ],
+      "directSolution": "회로판단: 양파일럿 메모리밸브라면 한쪽 순간신호로 전진위치가 유지되고 반대 순간신호로 후진위치가 유지된다. 결과: 설명상 4번이지만, 밸브 포트와 파일럿 연결을 원본 회로도에서 직접 판독하지 못해 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20180428/de20180428m83.gif"
+      ]
+    },
+    {
+      "externalId": "2018-4-Q15",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 0,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_displacement_velocity_formula_choice_images_not_independently_inspected"
+      ],
+      "directSolution": "식: 정현변위 x=D·sin(2πft)를 미분하면 속도피크 V=2πfD이다. 단위: D[μm]를 mm로 바꾸려면 10⁻³을 곱하므로 V[mm/s]=2πfD×10⁻³이다. 대입: 주어진 f와 D의 곱에 2π×10⁻³을 적용한다. 결과: 관계식은 확정했지만 선택지 수식 이미지를 직접 판독하지 못해 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20180915/de20180915m15b1.gif",
+        "https://cbtbank.kr/images/de/de20180915/de20180915m15b2.gif",
+        "https://cbtbank.kr/images/de/de20180915/de20180915m15b3.gif",
+        "https://cbtbank.kr/images/de/de20180915/de20180915m15b4.gif"
+      ]
+    },
+    {
+      "externalId": "2018-4-Q18",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 2,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_expansion_chamber_area_ratio_choice_images_not_independently_inspected"
+      ],
+      "directSolution": "식: 팽창형 소음기의 면적비는 m=S₂/S₁이다. 단위: 면적을 면적으로 나눈 무차원값이다. 대입: 팽창실 단면적 S₂를 입구관 단면적 S₁으로 나눈다. 결과: 식은 확인했지만 선택지 수식 이미지를 직접 판독하지 못해 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20180915/de20180915m18b1.gif",
+        "https://cbtbank.kr/images/de/de20180915/de20180915m18b2.gif",
+        "https://cbtbank.kr/images/de/de20180915/de20180915m18b3.gif",
+        "https://cbtbank.kr/images/de/de20180915/de20180915m18b4.gif"
+      ]
+    },
+    {
+      "externalId": "2018-4-Q37",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 0,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_maintenance_effect_formula_choice_images_not_independently_inspected"
+      ],
+      "directSolution": "식: 제품 단위당 보전비=총보전비/생산량이다. 단위: 원/개 또는 원/생산단위이다. 대입: 같은 기간의 총보전비를 양품 생산량으로 나눈다. 결과: 원리는 확인했지만 네 선택지의 수식 이미지를 직접 판독하지 못해 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20180915/de20180915m37b1.gif",
+        "https://cbtbank.kr/images/de/de20180915/de20180915m37b2.gif",
+        "https://cbtbank.kr/images/de/de20180915/de20180915m37b3.gif",
+        "https://cbtbank.kr/images/de/de20180915/de20180915m37b4.gif"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "sessionNumber": 29,
+      "sessionKey": "2017-05-07-Q51-Q100",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      },
+      "status": "PASS",
+      "jsonlSha256": "8046118beef6ba6fb41bb9e3396323271fa49af17e23efb2a8cf4eff12d7af91"
+    },
+    {
+      "sessionNumber": 30,
+      "sessionKey": "2018-04-28-Q01-Q50",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 46,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 3
+      },
+      "status": "PASS",
+      "jsonlSha256": "a6b1fd9ff1dca5c2e4893839cb28673e364d8360574ab7e413493d369c9859d1"
+    },
+    {
+      "sessionNumber": 31,
+      "sessionKey": "2018-04-28-Q51-Q100",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      },
+      "status": "PASS",
+      "jsonlSha256": "2885d681cdc15ed5615d456c0c7750f69c8bf828865df46ff887be375bcabe06"
+    },
+    {
+      "sessionNumber": 32,
+      "sessionKey": "2018-09-15-Q01-Q50",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 3
+      },
+      "status": "PASS",
+      "jsonlSha256": "8ee136981ad0c2ab49fb21fd2b200f721a230293a86cb2d4fe9769ac05adbe9c"
+    }
+  ],
+  "checks": {
+    "sourceTextAndHashesRecomputedFromPayload": true,
+    "choiceFeedbackSpecificBoundAndUnique": true,
+    "acceptNonAcceptAndTheoryGapGates": true,
+    "formulaAndCalculationStructurePresent": true,
+    "theoryLessonConceptGroupConceptKeywordEntitiesExist": true,
+    "batchExactSet200": true
+  },
+  "notRun": [
+    "repository_typecheck",
+    "vitest",
+    "eslint",
+    "verify_no_answer_leak_runtime",
+    "runtime_publication_gate",
+    "login_guest_integration_flow",
+    "sql_migration_test",
+    "git_commit"
+  ],
+  "secondPassValidation": {
+    "fileName": "sessions29-32_second-pass-validation.json",
+    "status": "PASS",
+    "failureCount": 0,
+    "sha256": "9ca810bebd3fdcc0b399bb2eb8b801c3f2da9762c4a1eaf2e0b3330c2709c02e"
+  }
+}

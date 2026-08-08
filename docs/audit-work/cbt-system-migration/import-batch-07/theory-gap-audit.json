@@ -1,0 +1,15 @@
+{
+  "batchId": "import-07",
+  "recordCount": 170,
+  "existingDirectTheoryLinksRetained": 170,
+  "existingTheoryRelinks": 0,
+  "newDirectTheoryLessonsAdded": 0,
+  "missingDirectTheoryAfterBatch": 0,
+  "lowContextDirectTheoryLinks": 32,
+  "notes": [
+    "170문항 모두 원문 검수 theoryLink와 dry-run current canonical theoryLink가 일치한다.",
+    "canonical 재배정·신규 canonical overlay·신규 이론 레슨은 필요하지 않았다.",
+    "필수 이미지 HOLD 5건도 직접 이론과 계산 원리는 보존하되 정답 번호·채점을 비활성화했다.",
+    "과거 교재 기준에 의존하는 32건은 riskNote와 low-context 정책을 보존했다."
+  ]
+}

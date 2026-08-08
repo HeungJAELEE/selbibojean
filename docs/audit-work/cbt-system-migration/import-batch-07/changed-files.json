@@ -1,0 +1,390 @@
+{
+  "base": "import-batch-06 cumulative worktree",
+  "target": "import-batch-07 cumulative worktree",
+  "modified": [
+    {
+      "path": "src/data/generated/cbt-reviewed-variants.json",
+      "before": {
+        "size": 5695373,
+        "sha256": "ac923762d7bd7d423dc9908426d016cd1cb8376987a85b88ba16cdc0fd95f3b9"
+      },
+      "after": {
+        "size": 6481324,
+        "sha256": "554131acc5dd2aa67c73eb97ce7336ea542f7c76bbdf92fc57adab42b4472144"
+      }
+    },
+    {
+      "path": "scripts/verify-reviewed-cbt-variants.ts",
+      "before": {
+        "size": 42640,
+        "sha256": "0739bc2d22cd663ef47b9b9a63fc492b041dbe10d8d8614e4c2bc425a18eaaa5"
+      },
+      "after": {
+        "size": 49901,
+        "sha256": "4629ad0ee6bb53c85b8747a4305b1aeee213f3054167a8d784fbbd94ccb84ead"
+      }
+    },
+    {
+      "path": "tests/unit/reviewed-cbt-variants.test.ts",
+      "before": {
+        "size": 26512,
+        "sha256": "1ed359a303d76be4d3ccf341730103098792b6aa8b71d1377684e612ab8c8281"
+      },
+      "after": {
+        "size": 29550,
+        "sha256": "d7256b7afe0f7f2961989f2fcc8933821baf812ddd7c4c3bcd5528b90fea1787"
+      }
+    }
+  ],
+  "added": [
+    {
+      "path": "docs/audit-work/cbt-source-reviews/final/de20160508_q01-q20_independent-review.jsonl",
+      "size": 72730,
+      "sha256": "920702f796bbcfb38347256aa4a150b165efc25285dc52d9136b02f56fa10e85"
+    },
+    {
+      "path": "docs/audit-work/cbt-source-reviews/final/de20161001_q01-q50_independent-review.jsonl",
+      "size": 180761,
+      "sha256": "d6e1c4bb7588d1b7760d838b357e5033f0a11406cdfc265eb4a423e0fdd632cd"
+    },
+    {
+      "path": "docs/audit-work/cbt-source-reviews/final/de20161001_q51-q100_independent-review.jsonl",
+      "size": 178446,
+      "sha256": "294c08f835dc14517de5a0af7d29e6cacdeff84f6a485b1121d122926169d500"
+    },
+    {
+      "path": "docs/audit-work/cbt-source-reviews/final/de20170507_q01-q50_independent-review.jsonl",
+      "size": 180616,
+      "sha256": "6e3d0631efde631372de5870130e96e477653640435a15e9c118e2bec1b11779"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/answer-key-correction-ledger.jsonl",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/artifact-manifest.json",
+      "size": 4413,
+      "sha256": "22a0fb572d61946db86ec7d1f5b85403098f2f2fb16d9bfaa5bb075e3a651172"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/batch-summary.json",
+      "size": 1113,
+      "sha256": "f6c6296b17d049618040559b6261f0bb68a12699075f1570319589567b8fb345"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/canonical-question-changes.json",
+      "size": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/canonical-reassignment-ledger.jsonl",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/choice-conflict-queue.jsonl",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/code-changes.patch",
+      "size": 818167,
+      "sha256": "5df839fb5f446ab706d30c5c8bce08e257cd802194701ef3283c57e3eecfb48a"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/completion-report.md",
+      "size": 4721,
+      "sha256": "ba2b5dd7228b11cac2c57916ee3212579d5a60c25f59f601ff35993205c2496a"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/content-binding-validation.json",
+      "size": 587,
+      "sha256": "cf77e54364322a7e3b4b1c787ddc24a38d9c688b82b7b7d5da645b8494624eb7"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/direct-theory-link-matrix.jsonl",
+      "size": 64269,
+      "sha256": "5df53c64057b7b6b27702eb990c8ec3215a961a6063307f019402d9a5ed499a2"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/external-ids.json",
+      "size": 2724,
+      "sha256": "8c865ca6041c62fb72e8d8951a63349f74a7acefc32fd9f6e21fca6796c5599d"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/final-completion-report.md",
+      "size": 4721,
+      "sha256": "ba2b5dd7228b11cac2c57916ee3212579d5a60c25f59f601ff35993205c2496a"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/final-validation.json",
+      "size": 4141,
+      "sha256": "2667542ebaa3ec26d3a0501f0fea69a22ec5caadb78924049d19eb6d054c6992"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/generate-import-batch-07.py",
+      "size": 31508,
+      "sha256": "d764531f37b86bd204f5e05bd9dab5c2fd79c216796a8c6b36d3e5d0c8f8a6af"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/generator-idempotency-run.log",
+      "size": 1192,
+      "sha256": "1976a4606ba84302a98fd511eb38c4eec50fa994d1ec819803d7032d3179ffb6"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/idempotency-validation.json",
+      "size": 6975,
+      "sha256": "480b95ec093baf5d68594be2f6fc928eb5347a35fea62cef9b38acc48aa359dc"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/image-verification-queue.jsonl",
+      "size": 19461,
+      "sha256": "6697567c8ebfe2674a5dfbabee39943054029c68a70b3143d3d7787856b5ea78"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/import-report.md",
+      "size": 2031,
+      "sha256": "e19e91e9b65fcbdf9cc5dd30eefd7adf94e0fa7da8822679e918279cb23a8341"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/independent-validation.json",
+      "size": 1284,
+      "sha256": "7653ddc5052a7ad043271fb261195cbe3b9dbd860d88f9c6a39f342106287e3c"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/low-context-registration-ledger.jsonl",
+      "size": 9131,
+      "sha256": "f9effd76385977f9eb73b6a1448f949924f5c706b4a4f2570aa8c4dd07cd9abf"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/manual-choice-mapping-ledger.jsonl",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/mapping-dry-run-input.jsonl",
+      "size": 866828,
+      "sha256": "302f58f43bcec93539be7af38f8657e42bad3d37004f85e4f41d5c797c9e50d9"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/mapping-source-summary.json",
+      "size": 3230,
+      "sha256": "652219fbc861149db2bf8d4afb3d751fed08affbe226eb0d879e07bc07db3b90"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/negative-contract-validation.json",
+      "size": 2234,
+      "sha256": "aa879fd39d6ec0f7cedf4f1370073d4f3368a5037011206004a3ff20d90baaee"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/negative-contract-validation.log",
+      "size": 2234,
+      "sha256": "aa879fd39d6ec0f7cedf4f1370073d4f3368a5037011206004a3ff20d90baaee"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/eslint.command.txt",
+      "size": 92,
+      "sha256": "99b6d36bef80dba8ecca3b00ce1658fd2d4871e9111498503b5ea34fafaaa604"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/eslint.exit-code.txt",
+      "size": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/eslint.log",
+      "size": 233,
+      "sha256": "698ee020e2dbb4af5290374ef0239ea90845859ee1f1a64c60cd7167a8271cba"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/node-version.txt",
+      "size": 9,
+      "sha256": "256a8e08ee35cb8ad36ae16385257192c3dbe7d80cfdeff9eaa886531b2f83bc"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/npm-version.txt",
+      "size": 7,
+      "sha256": "b90f6efb804599bb0ba84fec754b8c7807381dabfcdc1ffe3437ff37f18fb0f5"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/typecheck.command.txt",
+      "size": 18,
+      "sha256": "5bd319875d2e2af9cf583fbf41264ade30f65089c0c933f841be454d0bb822e5"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/typecheck.exit-code.txt",
+      "size": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/typecheck.log",
+      "size": 233,
+      "sha256": "698ee020e2dbb4af5290374ef0239ea90845859ee1f1a64c60cd7167a8271cba"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/verify-no-answer-leak.command.txt",
+      "size": 30,
+      "sha256": "47f98b78e2463fe4b443b09af9efb77852470defb3971569b43e1efca893855c"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/verify-no-answer-leak.exit-code.txt",
+      "size": 4,
+      "sha256": "743c7850cccfba5e53a9002663ec1ddd1079315a98bdbfdde10e6044f56abefe"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/verify-no-answer-leak.log",
+      "size": 256,
+      "sha256": "ec04d1fb4ecca2941d4c88b30a3bd6c600b1cd32cf6dd39abc726f53b64e66d6"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/verify-reviewed-cbt.command.txt",
+      "size": 28,
+      "sha256": "cbe180fb5712637abfb82e81e41f31b2415e0d86f162c1e983bae2656daf7fd1"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/verify-reviewed-cbt.exit-code.txt",
+      "size": 4,
+      "sha256": "743c7850cccfba5e53a9002663ec1ddd1079315a98bdbfdde10e6044f56abefe"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/verify-reviewed-cbt.log",
+      "size": 256,
+      "sha256": "ec04d1fb4ecca2941d4c88b30a3bd6c600b1cd32cf6dd39abc726f53b64e66d6"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/vitest.command.txt",
+      "size": 68,
+      "sha256": "e3784874be4c03e09fdb171b5590c43adf0e7617abd5b8e4db56fb314a378def"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/vitest.exit-code.txt",
+      "size": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts/vitest.log",
+      "size": 233,
+      "sha256": "698ee020e2dbb4af5290374ef0239ea90845859ee1f1a64c60cd7167a8271cba"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/official-validation-attempts.json",
+      "size": 1474,
+      "sha256": "441fa30eda8144e7ad8887cb2f19a1c5b0a74a8353ceaa0f12fc06c2e20e1b3e"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/pre-node-static-validation.json",
+      "size": 2977,
+      "sha256": "95e35f0db4c6373d2a887a8f7050ffb800fb316615c7d250cfe92ed341a9eb3f"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/python-pycompile.json",
+      "size": 330,
+      "sha256": "0600056df1ca80468034f8629538c84bfcd17d0102a467377dba7cd4a4eba38c"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/python-pycompile.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/run-negative-contract-validation.py",
+      "size": 5102,
+      "sha256": "eb54227524c8dd51ee21e7013e96a33ccc8be59f6649404ec4ad0218b569d23f"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/supplemental-no-answer-leak-validation.json",
+      "size": 747,
+      "sha256": "abbd84145ae8c52317a34e405e12af6fda4cf35860de96cfdd0800b29d3ade9a"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/supplemental-no-answer-leak.log",
+      "size": 747,
+      "sha256": "abbd84145ae8c52317a34e405e12af6fda4cf35860de96cfdd0800b29d3ade9a"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/supplemental-runtime-validation.json",
+      "size": 886,
+      "sha256": "dff8019fb9de2cc407514fb89b4f872cd42f590cc2e15cfd79de1745008b8220"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/supplemental-runtime-validation.log",
+      "size": 886,
+      "sha256": "dff8019fb9de2cc407514fb89b4f872cd42f590cc2e15cfd79de1745008b8220"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/supplemental-verifier-validation.json",
+      "size": 496,
+      "sha256": "361fe643b66644680eaf77b59e9bf119de0c8de6a2c18159222ec100089bca90"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/supplemental-verifier.log",
+      "size": 134,
+      "sha256": "711f3f87f4093baf63c3bc986f0ef8ed22a22b67d3d75825a231606ceef47e53"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/syntax-validation.json",
+      "size": 330,
+      "sha256": "9cfc6075e312946b145766c79ac698088e91da72b5ec758064b5f79e6255b679"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/syntax-validation.log",
+      "size": 256,
+      "sha256": "b8e17fdac1cdbac8f071da9a934416434146d9af0a155d977d6987d35a650e3a"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/targeted-typecheck-validation.json",
+      "size": 562,
+      "sha256": "0eaa2b151997c519620e67dfdb67c4a84c9f18de75194bb3262530a3dfdf71b7"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/theory-gap-audit.json",
+      "size": 691,
+      "sha256": "e80ee03d1da5221c32fb67b4d9573a1b81c705405388da35e2ae5d361e9f85ba"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/theory-lesson-additions.json",
+      "size": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/toolchain-limitations.json",
+      "size": 2421,
+      "sha256": "d997be4e54e5635042b69d09c0c0866ce27e4fff92f6d313172b09aae6df8dd1"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/validate-import-batch-07.py",
+      "size": 13801,
+      "sha256": "01edd55f98ab19e240eb548b663ec454302be0de0ef34121b6c451611a412a15"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/validation.json",
+      "size": 661,
+      "sha256": "abb2bce7a57d5fd2357f5971b2808316595bc442f66af4c9147f6bf32ba2603d"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/variant-mapping.jsonl",
+      "size": 618290,
+      "sha256": "7717684d07c8d4a7fa5eea454606e1a1adb1c82f8c731b158fea215a919e9efd"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-07/variant-specific-choice-contract-queue.jsonl",
+      "size": 501773,
+      "sha256": "bdc632f41d709912ef1ad8578b36020bcf9da4bcbd2abc34c31189c428257ddb"
+    }
+  ],
+  "removed": [],
+  "preserved": [
+    {
+      "path": "src/data/generated/content.json",
+      "size": 20924645,
+      "sha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+      "verificationMode": "not packaged; bound to batch-06 validated SHA and batch-07 dry-run source SHA"
+    }
+  ],
+  "priorRecords": {
+    "count": 1200,
+    "sha256": "60691b8ed34fc7b386fe0d12533c26fbd2d9df9ef286c217b8f4fd5cf39159e5",
+    "unchanged": true
+  }
+}

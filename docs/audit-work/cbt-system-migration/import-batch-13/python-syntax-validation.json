@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "files": [
+    "docs/audit-work/cbt-system-migration/import-batch-13/remediate-repository-integration-contracts.py",
+    "docs/audit-work/cbt-system-migration/import-batch-13/validate-import-batch-13.py",
+    "integration replay helper (external working script)",
+    "report generator (external working script)"
+  ]
+}

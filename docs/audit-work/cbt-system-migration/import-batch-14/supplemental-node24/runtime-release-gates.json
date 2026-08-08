@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "stateCounts": {
+    "candidate": 2267,
+    "hold": 98,
+    "choice_conflict": 19,
+    "published": 0,
+    "unreviewed": 0
+  },
+  "reviewedCount": 2384,
+  "publishableQuestionCount": 1490,
+  "publishableLessonCount": 1283,
+  "supabaseReviewedPublishedCount": 0,
+  "guardedCanonicalQuestions": [
+    {
+      "id": "U-1215",
+      "status": "in_review",
+      "readiness": "blocked",
+      "blockers": [
+        "lesson_source_needed",
+        "answer_conflict"
+      ],
+      "auditDisposition": "held_answer_conflict",
+      "publishable": false
+    },
+    {
+      "id": "U-1161",
+      "status": "in_review",
+      "readiness": "blocked",
+      "blockers": [
+        "lesson_source_needed",
+        "answer_conflict"
+      ],
+      "auditDisposition": "held_answer_conflict",
+      "publishable": false
+    },
+    {
+      "id": "U-1166",
+      "status": "in_review",
+      "readiness": "blocked",
+      "blockers": [
+        "lesson_source_needed",
+        "answer_conflict"
+      ],
+      "auditDisposition": "held_answer_conflict",
+      "publishable": false
+    },
+    {
+      "id": "U-1072",
+      "status": "in_review",
+      "readiness": "blocked",
+      "blockers": [
+        "lesson_source_needed",
+        "answer_conflict"
+      ],
+      "auditDisposition": "held_answer_conflict",
+      "publishable": false
+    },
+    {
+      "id": "U-1089",
+      "status": "in_review",
+      "readiness": "blocked",
+      "blockers": [
+        "lesson_source_needed",
+        "answer_conflict"
+      ],
+      "auditDisposition": "held_answer_conflict",
+      "publishable": false
+    },
+    {
+      "id": "U-649",
+      "status": "in_review",
+      "readiness": "blocked",
+      "blockers": [
+        "lesson_source_needed",
+        "mapping_unverified",
+        "authoritative_source_required"
+      ],
+      "auditDisposition": "held_source_missing",
+      "publishable": false
+    },
+    {
+      "id": "U-478",
+      "status": "in_review",
+      "readiness": "blocked",
+      "blockers": [
+        "mapping_unverified"
+      ],
+      "auditDisposition": "held_runtime_validation",
+      "publishable": false
+    }
+  ]
+}

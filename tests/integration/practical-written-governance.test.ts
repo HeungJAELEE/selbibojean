@@ -11,6 +11,7 @@ import {
   validatePracticalCoverageDeliverables,
   validatePracticalExamEvidenceGraph,
 } from "@/lib/validation/practical-execution";
+import { PRACTICAL_QUESTION_RECALL_AUDIT } from "@/data/source/practical-question-recall-audit";
 
 const [content, manifest] = await Promise.all([
   readFile(
@@ -31,13 +32,13 @@ describe("practical written governance manifest", () => {
     expect(manifest.scope).toBe("practical_written_only");
     expect(manifest.sourceSha256).toBe(content.report.sourceSha256);
     expect(manifest.report.evidence).toEqual({
-      pastReconstructed: 41,
+      pastReconstructed: 51,
       pastVariant: 0,
-      predictedRelated: 87,
+      predictedRelated: 185,
       ncsSupplement: 43,
     });
     expect(validatePracticalExamEvidenceGraph(manifest.evidence)).toEqual([]);
-    expect(countPracticalActualOccurrences(manifest.evidence)).toBe(41);
+    expect(countPracticalActualOccurrences(manifest.evidence)).toBe(51);
   });
 
   it("keeps all work-task links and records outside the written-only scope", () => {
@@ -90,7 +91,26 @@ describe("practical written governance manifest", () => {
       .map((hold) => hold.sourceId)
       .sort();
     expect(recordedIds).toEqual(heldQuestionIds);
-    expect(recordedIds).toHaveLength(21);
+    expect(recordedIds).toHaveLength(0);
+  });
+
+  it("records recall conflicts and missing assets only as governance holds", () => {
+    const expected = PRACTICAL_QUESTION_RECALL_AUDIT.flatMap((item) =>
+      item.blockers.map((blocker) => `${item.id}:${blocker}`),
+    ).sort();
+    const recorded = manifest.holds
+      .filter((hold) => hold.sourceKind === "question_recall")
+      .map((hold) => `${hold.sourceId}:${hold.disposition}`)
+      .sort();
+
+    expect(recorded).toEqual(expected);
+    expect(
+      manifest.evidence.some((evidence) =>
+        PRACTICAL_QUESTION_RECALL_AUDIT.some((item) =>
+          evidence.questionIds.includes(item.id),
+        ),
+      ),
+    ).toBe(false);
   });
 
   it("keeps official and NCS source references for promoted corrections", () => {

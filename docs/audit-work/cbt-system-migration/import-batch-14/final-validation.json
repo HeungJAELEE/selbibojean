@@ -1,0 +1,75 @@
+{
+  "status": "PASS_WITH_ENVIRONMENT_BLOCKERS",
+  "batchId": "import-14",
+  "generatedAt": "2026-08-08T15:10:17+09:00",
+  "integrationScope": "Batch 01-13 cumulative reviewed-CBT integration rebased to remote tree 1d7deb..., plus runtime publication, canonical audit, retry-idempotency, RLS behavior, CI, and release E2E contracts.",
+  "dataContractStatus": "PASS_SUPPLEMENTAL_NODE24",
+  "officialRepositoryValidationStatus": "BLOCKED_DEPENDENCY_REGISTRY",
+  "databaseValidationStatus": "NOT_RUN_TOOLCHAIN_MISSING",
+  "browserValidationStatus": "NOT_RUN_DEPENDENCY_INSTALL_BLOCKED",
+  "deploymentStatus": "NOT_RUN_USER_APPROVAL_AND_RELEASE_GATES_REQUIRED",
+  "counts": {
+    "recordCount": 2384,
+    "states": {
+      "candidate": 2267,
+      "hold": 98,
+      "choice_conflict": 19,
+      "published": 0,
+      "unreviewed": 0
+    },
+    "theoryLessonAdditionCount": 20,
+    "canonicalQuestionChangeCount": 19,
+    "recordsSha256": "fe901423e8c99fd27f6f2596031af624eb423549d4641a3ea9e5befbbd5a7400",
+    "theoryLessonAdditionsSha256": "ee7d8abaa2201e6df64de4616c21f1304a36eaede75cb92a748968d2e61466de",
+    "canonicalQuestionChangesSha256": "da01099a2812a70958c29a3dd0606d5a60266edc4c59224784350a3a014b4ccc",
+    "manifestFileSha256": "d5215c12387d95cd22fd3aa7e231cbf07a44b092d8aa869d7524813ee8d83551"
+  },
+  "runtime": {
+    "publishableQuestions": 1490,
+    "publishableLessons": 1283,
+    "reviewedVariantPublishedCount": 0,
+    "guardedCanonicalCount": 7
+  },
+  "supplementalChecks": {
+    "verifyReleaseInvariants": "PASS",
+    "verifyReviewedCbt": "PASS",
+    "verifyNoAnswerLeakSource": "PASS",
+    "verifyGeneratedData": "PASS",
+    "verifyCbtSourceAudit": "PASS",
+    "verifyPracticalData": "PASS",
+    "verifyPracticalWrittenGovernance": "PASS",
+    "verifyPracticalTheoryCoverage": "PASS",
+    "verifyPracticalWorkContent": "PASS",
+    "typescriptSyntax": {
+      "status": "PASS",
+      "fileCount": 35
+    },
+    "gitDiffCheck": "PASS_RELEASE_SOURCE_SCOPE; historical imported audit patch/log artifacts excluded",
+    "attemptIdRuntime": {
+      "status": "PASS",
+      "stableRetry": true,
+      "orderIndependent": true,
+      "distinctAttempts": true
+    },
+    "runtimeReleaseGates": {
+      "status": "PASS",
+      "reviewedPublished": 0,
+      "runtimeQuestions": 1490,
+      "runtimeLessons": 1283
+    }
+  },
+  "blockingChecks": {
+    "verifyNodeRuntime": "PASS",
+    "npmCi": "BLOCKED_DEPENDENCY_REGISTRY",
+    "typecheck": "NOT_RUN_DEPENDENCY_INSTALL_BLOCKED",
+    "eslint": "NOT_RUN_DEPENDENCY_INSTALL_BLOCKED",
+    "vitest": "NOT_RUN_DEPENDENCY_INSTALL_BLOCKED",
+    "productionBuild": "NOT_RUN_DEPENDENCY_INSTALL_BLOCKED",
+    "buildAnswerLeak": "NOT_RUN_BUILD_MISSING",
+    "supabaseDbLint": "NOT_RUN_TOOLCHAIN_MISSING",
+    "supabasePgTap": "NOT_RUN_TOOLCHAIN_MISSING",
+    "playwrightReleaseE2e": "NOT_RUN_DEPENDENCY_INSTALL_BLOCKED"
+  },
+  "goNoGo": "NO_GO_FOR_REMOTE_MERGE_OR_DEPLOY_UNTIL_CI_PASSES",
+  "localIntegrationCommitStatus": "PLANNED_IN_CURRENT_RELEASE_PACKAGE; exact SHA is recorded by post-commit validation outside the committed tree"
+}

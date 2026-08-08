@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "scope": "supplemental_runtime_and_supabase_projection",
+  "nodeVersion": "v22.16.0",
+  "officialNode24Validation": false,
+  "q87AnswerCorrection": {
+    "candidateBlocked": true,
+    "publishedSafe": true,
+    "sourceAnswerIndex": 3,
+    "reviewedAnswerIndex": 1,
+    "mappedChoiceIds": [
+      "U-990-c2",
+      "U-990-c3",
+      "U-990-c1",
+      "U-990-c4"
+    ],
+    "canonicalCorrectChoiceId": "U-990-c3",
+    "reviewedAnswerText": "② 저주파 소음이 없어서 소음 대책이 필요 없다.",
+    "variantSpecificFeedbackRequired": false
+  },
+  "q40ChoiceConflict": {
+    "blocked": true,
+    "state": "choice_conflict",
+    "answerEmpty": true,
+    "explanationEmpty": true,
+    "nonScoring": true,
+    "conflictIndices": [
+      1,
+      2
+    ]
+  },
+  "q51CanonicalReassignment": {
+    "canonicalId": "U-362",
+    "lessonId": "lesson-w8vtqs",
+    "candidateBlocked": true,
+    "simulatedPublishedStillBlocked": true,
+    "variantSpecificFeedbackRequired": true,
+    "mapping": []
+  },
+  "q26ImageHold": {
+    "blocked": true,
+    "answerEmpty": true,
+    "explanationEmpty": true
+  },
+  "supabase": {
+    "reviewedRowCount": 1000,
+    "batch05RowCount": 200,
+    "allReviewedRowsDraft": true,
+    "allBatch05RowsDraft": true,
+    "forbiddenKeysFound": []
+  },
+  "limitations": [
+    "Supplemental Node.js 22 execution does not replace official Node.js 24 repository checks."
+  ]
+}

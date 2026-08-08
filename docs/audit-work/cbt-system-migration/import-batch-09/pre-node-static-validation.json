@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "scope": "pre-Node-24 static and independent validation for import-09",
+  "generatedAt": "2026-08-08T19:20:00+09:00",
+  "counts": {
+    "batchRecords": 200,
+    "candidate": 192,
+    "hold": 7,
+    "choiceConflict": 1,
+    "fullCanonicalChoiceMappings": 28,
+    "variantSpecificContractsPending": 164,
+    "directTheoryLinks": 200,
+    "theoryLessonAdditions": 0,
+    "canonicalQuestionChanges": 0,
+    "lowContextRegistrations": 26,
+    "formulaStructures": 12,
+    "cumulativeRecords": 1770,
+    "unreviewed": 614
+  },
+  "checks": {
+    "generatorValidation": true,
+    "independentValidation": true,
+    "negativeContracts10Of10": true,
+    "generatorIdempotency": true,
+    "pythonSyntax": true,
+    "typescriptSyntax": true,
+    "staticRuntimeGates": true,
+    "staticNoAnswerLeak": true,
+    "contentHashBinding": true
+  },
+  "failures": [],
+  "repositoryFinalValidationStatus": "NOT_RUN"
+}

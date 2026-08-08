@@ -1,0 +1,5 @@
+
+> seolbi-learning-platform@0.1.0 verify:node-runtime
+> node scripts/verify-node-runtime.mjs
+
+NODE_RUNTIME_OK v24.11.1

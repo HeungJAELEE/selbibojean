@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "scope": "supplemental_reviewed_cbt_verifier_with_runtime_content_stub",
+  "nodeVersion": "v22.16.0",
+  "officialNode24Validation": false,
+  "exitCode": 0,
+  "stdoutStderr": "PASS: reviewed CBT imports verified (800 records; 759 candidates; 9 choice conflicts; 32 image holds; 1584 gated; 19 theory additions; 17 canonical overlays).",
+  "runtimeStub": "normalizeCanonicalTaxonomy(mergeReviewedCbtVariants(content))",
+  "limitations": [
+    "The full repository runtime-content graph was not loaded because project dependencies are not installed.",
+    "This does not replace npm run verify:reviewed-cbt under Node.js 24 with installed dependencies."
+  ]
+}

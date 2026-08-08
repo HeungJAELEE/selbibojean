@@ -1,0 +1,679 @@
+{
+  "validatedAt": "2026-08-07T03:01:57+09:00",
+  "scope": "sessions_01_to_48",
+  "sessionCount": 48,
+  "recordCount": 2384,
+  "uniqueExternalIdCount": 2384,
+  "reconstructionRecordCount": 2384,
+  "verdictCounts": {
+    "ACCEPT": 2256,
+    "REVISE": 4,
+    "CHOICE_ISSUE": 27,
+    "HOLD": 97
+  },
+  "scoredCount": 2256,
+  "excludedCount": 128,
+  "publicationCandidateCount": 2074,
+  "theoryGapHoldExternalIds": [
+    "2018-4-Q35",
+    "2022-1-Q61",
+    "2022-2-Q65"
+  ],
+  "remainingRecordCount": 0,
+  "semanticReviewComplete": true,
+  "status": "PASS",
+  "failureCount": 0,
+  "failures": [],
+  "checks": {
+    "all48FilesPresent": true,
+    "expectedRecordCount2384": true,
+    "globalExternalIdsUnique": true,
+    "globalExactSetMatchesReconstruction": true,
+    "cumulativeVerdictCountsExact": true,
+    "batch45To48Passed": true
+  },
+  "legacyCompatibility": {
+    "recordsWithoutExplicitPublicationStatus": 200,
+    "interpretation": "For early session schemas, scoringDisposition=scored is treated as an implicit reviewed candidate and excluded* as an implicit hold. Runtime publication still requires the later global publication gate."
+  },
+  "unresolvedTheoryLinkHoldIds": [
+    "2006-4-Q34",
+    "2018-4-Q35"
+  ],
+  "sessionFiles": [
+    {
+      "sessionNumber": 1,
+      "file": "de20060910_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "03990c91d2573f57c5be65463941591b393b5d17672f03a38e2f3337d346372b",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 43,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 5,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 2,
+      "file": "de20060910_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "93d69770befa1e99a1f3be97b0a8e132e1f6d3319ec37698358705e81cda9e0a",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 44,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 4,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 3,
+      "file": "de20070902_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "dfacf250bcf10da20099019ae5796f72c79a6e69d83202f4f55835910bc7ac50",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 44,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 4,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 4,
+      "file": "de20070902_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "6ba4e2bb83972231a8a589353c385078cb41cc74763fb6e4381adc1333126e83",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 48,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 1
+      }
+    },
+    {
+      "sessionNumber": 5,
+      "file": "de20080907_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "97898a8ec6c3a641b8ffee1bfe3015cb5a0b72d67794fcf47f666d168102cf8e",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 48,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 6,
+      "file": "de20080907_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "6931e83211f9eff6e8f08cada558184882f0bb6159e53b3a740a5dba70902bcd",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      }
+    },
+    {
+      "sessionNumber": 7,
+      "file": "de20090830_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "55d84279459b9f86a4bd6575dad403f8ce2ff4962015f878a2b607315d98126e",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 45,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 5
+      }
+    },
+    {
+      "sessionNumber": 8,
+      "file": "de20090830_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "98f0d7ba63f8918a3bc48d34cf8583156c5bd1fdd8fc2670d10278014678dd20",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 3
+      }
+    },
+    {
+      "sessionNumber": 9,
+      "file": "de20100905_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "ff0b9b7ac6b622d2a53feeafeb390e816114e8cfe473e4b9e35a355ebe8c23bb",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 48,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 10,
+      "file": "de20100905_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "dd29ca02f69c1c55aa70f61f63ae14d040f4ddfa42dc1c6056f724d6c7f15442",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 1,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 11,
+      "file": "de20111002_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "9277a2aca30c36809203bcdb24ef1137a5464d681cb39c05bd9ceb05c44f90dc",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 48,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 1
+      }
+    },
+    {
+      "sessionNumber": 12,
+      "file": "de20111002_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "2de7be178d33875e6d03babb0c61d8d924fa29c4b795a9ea8f2160cdce6ef024",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 46,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 3
+      }
+    },
+    {
+      "sessionNumber": 13,
+      "file": "de20120915_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "35fcacf3101d2740c701f432ca13996b6d704fdbf5248f57355d8c65cc59dc61",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 48,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 14,
+      "file": "de20120915_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "39a6c3c811d3d85a838dc365b2e952e050026cce17fe2144fb3cf920f9a28807",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 48,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 15,
+      "file": "de20130928_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "523d95e09b3a130d9f8ea04a344e92fe7ae63b2a1fd9ae7cb8b7bb65b23bba7d",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 1,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 16,
+      "file": "de20130928_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "6e47e5f93b26080445761e1cfc7e51e27103b33dc08122761113d1e65bc36289",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 0
+      }
+    },
+    {
+      "sessionNumber": 17,
+      "file": "de20140525_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "1d33f5359ae9fdd6264c90ed5e86a99f2b09758b8c760a84bdb03277b463b4e3",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 18,
+      "file": "de20140525_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "f4ed587b16b84c1b4525f9d7c4eb846ec0ff965a9208357ddbaed15ca9f9e2d0",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 48,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 19,
+      "file": "de20140920_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "869f11da2607112c2b88e0ec3ea3614a31f190b64e92694e1f818085b4026d1f",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 50,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 0
+      }
+    },
+    {
+      "sessionNumber": 20,
+      "file": "de20140920_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "fd047ea767f5241c3d0ab95c865b8f7422a099a21b7c6cc07159e5571d6a68af",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 45,
+        "REVISE": 1,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 4
+      }
+    },
+    {
+      "sessionNumber": 21,
+      "file": "de20150531_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "4879506592054e11eefa1c85f8c47363e49c356fe3ef16819818f72d9561f1ef",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 48,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 1
+      }
+    },
+    {
+      "sessionNumber": 22,
+      "file": "de20150531_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "d5fa902731780744058923a30969fad3f1c08609487b3b6379d75f4839ae660e",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 50,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 0
+      }
+    },
+    {
+      "sessionNumber": 23,
+      "file": "de20150919_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "aa5e3b60ae475a0fce0967bc8715107cc6240c7f1de6e2abface15aeab677454",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 46,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 2,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 24,
+      "file": "de20150919_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "8dd8f417bee908d0feb42d05892ce438c6ecd63046a70fdea95c1433bbf4964f",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 46,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 3
+      }
+    },
+    {
+      "sessionNumber": 25,
+      "file": "de20160508_q01-q20_independent-review.jsonl",
+      "recordCount": 20,
+      "jsonlSha256": "920702f796bbcfb38347256aa4a150b165efc25285dc52d9136b02f56fa10e85",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 20,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 0
+      }
+    },
+    {
+      "sessionNumber": 26,
+      "file": "de20161001_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "d6e1c4bb7588d1b7760d838b357e5033f0a11406cdfc265eb4a423e0fdd632cd",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 48,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 27,
+      "file": "de20161001_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "294c08f835dc14517de5a0af7d29e6cacdeff84f6a485b1121d122926169d500",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      }
+    },
+    {
+      "sessionNumber": 28,
+      "file": "de20170507_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "6e3d0631efde631372de5870130e96e477653640435a15e9c118e2bec1b11779",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 48,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 29,
+      "file": "de20170507_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "8046118beef6ba6fb41bb9e3396323271fa49af17e23efb2a8cf4eff12d7af91",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      }
+    },
+    {
+      "sessionNumber": 30,
+      "file": "de20180428_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "a6b1fd9ff1dca5c2e4893839cb28673e364d8360574ab7e413493d369c9859d1",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 46,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 3
+      }
+    },
+    {
+      "sessionNumber": 31,
+      "file": "de20180428_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "2885d681cdc15ed5615d456c0c7750f69c8bf828865df46ff887be375bcabe06",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      }
+    },
+    {
+      "sessionNumber": 32,
+      "file": "de20180915_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "8ee136981ad0c2ab49fb21fd2b200f721a230293a86cb2d4fe9769ac05adbe9c",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 3
+      }
+    },
+    {
+      "sessionNumber": 33,
+      "file": "de20180915_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "560532f84bd4d728ee326c76765bbb10a78af771600f880861ee18d5403ac81d",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      }
+    },
+    {
+      "sessionNumber": 34,
+      "file": "de20190303_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "7fa761ee4bd5f2647cbb6dac5620a6c917d5cb3436d6eb34423d1d48dffe1b3d",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      }
+    },
+    {
+      "sessionNumber": 35,
+      "file": "de20190303_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "6174683a47400e60d0e2f45fb8acd8dbb34de66af94067ef60460a4424564a03",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 3
+      }
+    },
+    {
+      "sessionNumber": 36,
+      "file": "de20190427_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "ae46d88b4de232fcb81ae97a062ea43d4cf3d6a67205897e7b5b38eb80776513",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 37,
+      "file": "de20190427_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "298a7e61c45b89d3a54231b4963be9d39929e9172a16dfc2407a20e45824513d",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 38,
+      "file": "de20200606_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "857df3dc8df315898eaf8884083bad8d2575eaa3e10a0dd860ab96e1f7cc9f92",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 3
+      }
+    },
+    {
+      "sessionNumber": 39,
+      "file": "de20200606_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "4d75f764df15d27bd25b72a43e74d5f85841515169dd9b6c04ed8ec39f667001",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 40,
+      "file": "de20200822_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "8ec964a36fb1efd45229f5557a54b3ec6e646d43d1e071b67248fb3c9f67136d",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 46,
+        "REVISE": 1,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 3
+      }
+    },
+    {
+      "sessionNumber": 41,
+      "file": "de20200822_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "2b974d89fc64d3d57e84358f7427d63b8e776b8be76b2ea5d41b986a22b98ac4",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 3
+      }
+    },
+    {
+      "sessionNumber": 42,
+      "file": "de20200926_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "5eb0299b31777ce71071837134308d9d9d99f33942e0c0aa97668d868924cc84",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 48,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 43,
+      "file": "de20200926_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "60e6dbc2f5bb0c38ce498c1723717236b8c6489bf248e972319cbd582c538fbc",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 3
+      }
+    },
+    {
+      "sessionNumber": 44,
+      "file": "de20210307_selected-42_independent-review.jsonl",
+      "recordCount": 42,
+      "jsonlSha256": "0a9d159f0206eadbb6b2c48cb360af17a73baf436de7b9f78319ec68a5a24a34",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 40,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 45,
+      "file": "de20210515_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "afbeaa460467de5815d010fbe874234477b227baf1b08839b5c153508b8fc15f",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 46,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 3
+      }
+    },
+    {
+      "sessionNumber": 46,
+      "file": "de20210515_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "jsonlSha256": "d9c8dd53dc5454c4b1d2dda464cd8e1ef2faf17a9ae1475d17dc0efc66ba1522",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      }
+    },
+    {
+      "sessionNumber": 47,
+      "file": "de20210912_q01-q20_independent-review.jsonl",
+      "recordCount": 20,
+      "jsonlSha256": "dde317d88bcbf61334e0554c8e8e0f7ab5cf5718c76e6cadbc00e35a26eeaebe",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 19,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      }
+    },
+    {
+      "sessionNumber": 48,
+      "file": "cet2022_selected-102_independent-review.jsonl",
+      "recordCount": 102,
+      "jsonlSha256": "6da7d728931937853d5e5dbf49fb07143b618d29256b514228f0d0d63f5f7bea",
+      "status": "PASS",
+      "verdictCounts": {
+        "ACCEPT": 96,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 6
+      }
+    }
+  ],
+  "notRun": [
+    "repository_typecheck_node24",
+    "vitest",
+    "eslint_changed_files",
+    "verify_no_answer_leak_runtime",
+    "runtime_publication_gate",
+    "login_guest_integration_flow",
+    "sql_migration_static_and_migration_test",
+    "git_commit"
+  ]
+}

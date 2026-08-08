@@ -1,0 +1,7 @@
+$ npm run verify:reviewed-cbt
+
+> seolbi-learning-platform@0.1.0 verify:reviewed-cbt
+> tsx scripts/verify-reviewed-cbt-variants.ts
+
+sh: 1: tsx: not found
+EXIT_CODE=127

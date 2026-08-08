@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">외접기어펌프와 공차기호 판독 도면</title>
+  <desc id="desc">외접 평기어 두 개와 축 단면, 가부터 다까지 기하공차 지시 위치를 표시한 자체 제작 도면</desc>
+  <rect width="1080" height="560" rx="28" fill="#f8fafc"/>
+  <path d="M65 120h410v330H65z" fill="#fff" stroke="#183b56" stroke-width="7"/>
+  <g fill="none" stroke="#183b56" stroke-width="7">
+    <circle cx="205" cy="285" r="83"/><circle cx="335" cy="285" r="83"/>
+    <circle cx="205" cy="285" r="32"/><circle cx="335" cy="285" r="32"/>
+    <path d="M205 202v-24m0 214v-24m-83-83H98m214 0h-24M335 202v-24m0 214v-24m83-83h24"/>
+  </g>
+  <path d="M485 155h510v240H485zM520 230h420v90H520z" fill="#fff" stroke="#183b56" stroke-width="7"/>
+  <path d="M500 275h470m-310-45v90m160-90v90" stroke="#64748b" stroke-width="4" stroke-dasharray="12 8"/>
+  <g fill="#fff" stroke="#d44c3f" stroke-width="5">
+    <rect x="560" y="92" width="160" height="50"/><rect x="745" y="410" width="160" height="50"/><rect x="835" y="92" width="160" height="50"/>
+  </g>
+  <g font-family="sans-serif" font-size="26" font-weight="800" fill="#183b56" text-anchor="middle">
+    <text x="640" y="126">가  ∥  0.015  A</text><text x="825" y="444">나  ⌭  0.011</text><text x="915" y="126">다  ◎  ⌀0.009  B</text>
+  </g>
+  <path d="M640 142v75M825 410v-80M915 142v76" stroke="#d44c3f" stroke-width="4"/>
+</svg>

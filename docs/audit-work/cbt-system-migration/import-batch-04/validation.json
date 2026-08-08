@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "recordCount": 200,
+  "candidateCount": 193,
+  "choiceConflictCount": 1,
+  "holdCount": 6,
+  "exactExternalIdSet": true,
+  "sourceHashesMatch": true,
+  "directTheoryLinksPresent": true,
+  "directTheoryAnchorsExist": true,
+  "candidateAnswersPresent": true,
+  "imageHoldAnswersDisabled": true,
+  "choiceConflictNonScoring": true,
+  "variantSpecificBlocked": true,
+  "answerKeyCorrectionApplied": true,
+  "sourceAnswerPreservedForCorrection": true,
+  "choiceConflictGroupRepaired": true,
+  "dryRunCanonicalOverrideApplied": true,
+  "theoryGapCountAfterBatch": 0,
+  "sourceContentUnchanged": true
+}

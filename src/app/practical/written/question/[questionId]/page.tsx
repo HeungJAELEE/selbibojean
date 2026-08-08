@@ -2,28 +2,67 @@ import { notFound } from "next/navigation";
 import { PracticalLabelBadges } from "@/components/practical-label-badges";
 import { PracticalVisualAidFigure } from "@/components/practical-visual-aid";
 import { PracticalWrittenQuestion } from "@/components/practical-written-question";
+import { PracticalSequenceQuestion } from "@/components/practical-sequence-question";
+import { PracticalMockNavigator } from "@/components/practical-mock-navigator";
 import { PracticalStudyCategoryBadge } from "@/components/practical-study-category-badge";
 import Link from "next/link";
 import {
-  getPublicPracticalVisualAid,
   getPublicPracticalQuestion,
+  getPublicPracticalQuestionVisualAids,
 } from "@/lib/content/practical-repository";
+import { shuffleSequence } from "@/lib/practical-sequence";
+import {
+  getPracticalPromptVisualUsage,
+  toPublicPracticalSequenceVisualAid,
+} from "@/lib/practical-sequence-server";
 
 export default async function PracticalQuestionPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ questionId: string }>;
+  searchParams: Promise<{ mock?: string; index?: string }>;
 }) {
-  const { questionId } = await params;
+  const [{ questionId }, query] = await Promise.all([params, searchParams]);
   const question = await getPublicPracticalQuestion(questionId);
   if (!question) notFound();
-  const visualAid = await getPublicPracticalVisualAid(
-    question.visualAidId,
-    "prompt",
+  const visualUsage = getPracticalPromptVisualUsage(question);
+  const visualAids = await getPublicPracticalQuestionVisualAids(
+    question,
+    visualUsage,
   );
+  const sequenceVisual = visualAids.find(
+    (visualAid) => visualAid.frames.length > 1,
+  );
+  const supportingVisualAids = visualAids.filter(
+    (visualAid) => visualAid.id !== sequenceVisual?.id,
+  );
+  const isInteractiveSequence =
+    question.examFormat === "sequence" &&
+    Boolean(sequenceVisual);
+  const initialCanonicalFrameIds = isInteractiveSequence
+    ? shuffleSequence(sequenceVisual?.frames.map((frame) => frame.id) ?? [])
+    : [];
+  const sequenceVisualAid =
+    sequenceVisual && isInteractiveSequence
+      ? toPublicPracticalSequenceVisualAid({
+          questionId: question.id,
+          visualAid: sequenceVisual,
+          frameIds: initialCanonicalFrameIds,
+        })
+      : undefined;
+  const initialFrameIds =
+    sequenceVisualAid?.frames.map((frame) => frame.id) ?? [];
 
   return (
     <div className="page-wrap max-w-4xl py-12">
+      {query.mock && Number.isInteger(Number(query.index)) ? (
+        <PracticalMockNavigator
+          sessionId={query.mock}
+          index={Number(query.index)}
+          currentQuestionId={question.id}
+        />
+      ) : null}
       <div className="flex flex-wrap items-center gap-3">
         <PracticalLabelBadges labels={[question.label]} />
         <PracticalStudyCategoryBadge
@@ -62,14 +101,53 @@ export default async function PracticalQuestionPage({
         >
           같은 유형 학습
         </Link>
+        {question.writtenSourceQuestionIds?.map((writtenQuestionId) => (
+          <Link
+            key={writtenQuestionId}
+            href={`/written/practice/${writtenQuestionId}`}
+            className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-2 text-sm font-extrabold text-amber-900"
+          >
+            필기 문제은행 연결 · {writtenQuestionId}
+          </Link>
+        ))}
       </div>
-      {visualAid ? (
-        <div className="mt-8">
-          <PracticalVisualAidFigure visualAid={visualAid} mode="prompt" />
+      {visualAids.length > 0 ? (
+        <div
+          className="mt-8 grid gap-5"
+          data-testid="practical-question-visuals"
+        >
+          {(isInteractiveSequence ? supportingVisualAids : visualAids).map(
+            (visualAid) => (
+              <PracticalVisualAidFigure
+                key={visualAid.id}
+                visualAid={visualAid}
+                mode="prompt"
+              />
+            ),
+          )}
         </div>
       ) : null}
       <div className="mt-8">
-        <PracticalWrittenQuestion question={question} />
+        {sequenceVisualAid ? (
+          <>
+            {sequenceVisual?.examMatchStatus === "licensed_equivalent" ? (
+              <p
+                className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm font-bold leading-6 text-amber-900"
+                data-testid="practical-equivalent-visual-notice"
+              >
+                저작권 문제로 NCS·외부 공개 자료를 활용하였으며, 원시험
+                이미지와 동일하지 않습니다.
+              </p>
+            ) : null}
+            <PracticalSequenceQuestion
+              question={question}
+              visualAid={sequenceVisualAid}
+              initialFrameIds={initialFrameIds}
+            />
+          </>
+        ) : (
+          <PracticalWrittenQuestion question={question} />
+        )}
       </div>
       <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5">
         <p className="font-extrabold">원문 근거</p>
@@ -82,14 +160,17 @@ export default async function PracticalQuestionPage({
                 rel="noreferrer"
                 className="font-bold text-[#16697a] underline"
               >
-                NCS {source.documentTitle}
+                {source.sourceKind === "official_reference" ? "" : "NCS "}
+                {source.documentTitle}
               </a>{" "}
-              · {source.ncsCode} · PDF p.{source.pdfPage}
+              · {source.ncsCode}
+              {source.pdfPage ? ` · PDF p.${source.pdfPage}` : ""}
               {source.printedPage ? ` / 인쇄 p.${source.printedPage}` : ""}
               {source.figureNumber ? ` · ${source.figureNumber}` : ""}
             </li>
           ))}
-          {question.ncsSources.length === 0 && question.occurrence?.sourceUrl ? (
+          {question.ncsSources.length === 0 &&
+          question.occurrence?.sourceUrl ? (
             <li>
               <a
                 href={question.occurrence.sourceUrl}

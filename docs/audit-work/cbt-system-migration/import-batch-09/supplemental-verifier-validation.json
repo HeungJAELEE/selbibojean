@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "exitCode": 0,
+  "scope": "independent Python reload of import-09 manifest, source identities, theory links, queues, canonical preservation, and publication gates",
+  "output": "PASS: import-09 independently verified (200 records; 192 candidates; 7 image holds; 1 choice conflict; 164 variant-specific contracts; cumulative 1770).",
+  "officialNode24Validation": false,
+  "limitations": [
+    "The TypeScript repository verifier was syntax-checked but not executed against the complete Node.js 24 repository."
+  ]
+}

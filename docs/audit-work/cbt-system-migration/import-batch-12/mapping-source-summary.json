@@ -1,0 +1,26 @@
+{
+  "batchNumber": 12,
+  "recordCount": 222,
+  "reviewFiles": [
+    "de20210515_q01-q50_independent-review.jsonl",
+    "de20210515_q51-q100_independent-review.jsonl",
+    "de20210912_q01-q20_independent-review.jsonl",
+    "cet2022_selected-102_independent-review.jsonl"
+  ],
+  "firstExternalId": "2021-2-Q01",
+  "lastExternalId": "2022-2-Q80",
+  "mappingClassCounts": {
+    "EXACT_REPLACE": 204,
+    "HOLD": 12,
+    "SEMANTIC_REPLACE": 6
+  },
+  "runtimeDispositionCounts": {
+    "CANDIDATE_AFTER_CANONICAL_THEORY_REPAIR": 2,
+    "HOLD": 12,
+    "PUBLICATION_CANDIDATE": 208
+  },
+  "semanticReassignmentCount": 6,
+  "relinkInPlaceCount": 2,
+  "holdCount": 12,
+  "unmatchedCount": 0
+}

@@ -17,21 +17,65 @@ type Allocation = {
   count: number;
 };
 
-export function WrittenMockSetup({ subjects, availableBySubject }: { subjects: Subject[]; availableBySubject: Record<string, number> }) {
+export function WrittenMockSetup({
+  subjects,
+  availableBySubject,
+  availableYears,
+  availableByYearRange,
+  choiceShuffleEnabled,
+}: {
+  subjects: Subject[];
+  availableBySubject: Record<string, number>;
+  availableYears: number[];
+  availableByYearRange: Record<string, Record<string, number>>;
+  choiceShuffleEnabled: boolean;
+}) {
   const router = useRouter();
   const isHydrated = useHydrated();
   const [allocations, setAllocations] = useState<Allocation[]>(
     subjects.map((subject) => ({ subjectId: subject.id, enabled: true, count: Math.min(20, availableBySubject[subject.id] ?? 0) })),
   );
   const [originalRatio, setOriginalRatio] = useState<(typeof RATIOS)[number]>(50);
+  const [shuffleChoices, setShuffleChoices] = useState(
+    choiceShuffleEnabled,
+  );
+  const [yearFrom, setYearFrom] = useState(
+    availableYears[0] ?? new Date().getFullYear(),
+  );
+  const [yearTo, setYearTo] = useState(
+    availableYears.at(-1) ?? new Date().getFullYear(),
+  );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const rangeAvailability =
+    availableByYearRange[`${yearFrom}-${yearTo}`] ?? availableBySubject;
+
+  function applyYearRange(nextFrom: number, nextTo: number) {
+    setYearFrom(nextFrom);
+    setYearTo(nextTo);
+    const nextAvailability =
+      availableByYearRange[`${nextFrom}-${nextTo}`] ?? availableBySubject;
+    setAllocations((items) =>
+      items.map((item) => {
+        const available = nextAvailability[item.subjectId] ?? 0;
+        return {
+          ...item,
+          enabled: available === 0 ? false : item.enabled,
+          count:
+            available === 0
+              ? 0
+              : Math.min(item.count || 20, 20, available),
+        };
+      }),
+    );
+  }
+
   const enabledAllocations = allocations.filter((allocation) => allocation.enabled);
   const totalCount = useMemo(
     () => enabledAllocations.reduce((total, allocation) => total + allocation.count, 0),
     [enabledAllocations],
   );
-  const standardTotal = subjects.reduce((total, subject) => total + Math.min(20, availableBySubject[subject.id] ?? 0), 0);
+  const standardTotal = subjects.reduce((total, subject) => total + Math.min(20, rangeAvailability[subject.id] ?? 0), 0);
   const standardReady = standardTotal === subjects.length * 20;
 
   async function startMock(standard: boolean) {
@@ -54,6 +98,9 @@ export function WrittenMockSetup({ subjects, availableBySubject }: { subjects: S
           subjectAllocations: selected,
           count: selected.reduce((total, allocation) => total + allocation.count, 0),
           originalRatio,
+          shuffleChoices,
+          yearFrom,
+          yearTo,
         }),
       });
       const session = await response.json() as { sessionId?: string; error?: string };
@@ -97,7 +144,7 @@ export function WrittenMockSetup({ subjects, availableBySubject }: { subjects: S
           {subjects.map((subject) => {
             const allocation = allocations.find((item) => item.subjectId === subject.id);
             if (!allocation) return null;
-            const availableCount = availableBySubject[subject.id] ?? 0;
+            const availableCount = rangeAvailability[subject.id] ?? 0;
             const countOptions = [...new Set([5, 10, 15, 20, Math.min(20, availableCount)])]
               .filter((count) => count > 0 && count <= availableCount)
               .sort((left, right) => left - right);
@@ -130,8 +177,73 @@ export function WrittenMockSetup({ subjects, availableBySubject }: { subjects: S
           </div>
         </fieldset>
 
+        <fieldset className="mt-7">
+          <legend className="text-sm font-extrabold">기출 연도 범위</legend>
+          <p className="mt-2 text-sm leading-6 text-slate-600">
+            선택한 기간에 공개 검증된 원문 기출이 연결된 문제만 출제 풀에
+            포함됩니다.
+          </p>
+          <div className="mt-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+            <label className="grid gap-2 text-sm font-bold">
+              시작 연도
+              <select
+                value={yearFrom}
+                disabled={!isHydrated}
+                onChange={(event) => {
+                  const next = Number(event.target.value);
+                  applyYearRange(next, next > yearTo ? next : yearTo);
+                }}
+                className="rounded-xl border border-slate-300 bg-white p-3"
+              >
+                {availableYears.map((year) => (
+                  <option key={year} value={year}>
+                    {year}년
+                  </option>
+                ))}
+              </select>
+            </label>
+            <span className="mt-7 font-bold text-slate-400">~</span>
+            <label className="grid gap-2 text-sm font-bold">
+              종료 연도
+              <select
+                value={yearTo}
+                disabled={!isHydrated}
+                onChange={(event) => {
+                  const next = Number(event.target.value);
+                  applyYearRange(next < yearFrom ? next : yearFrom, next);
+                }}
+                className="rounded-xl border border-slate-300 bg-white p-3"
+              >
+                {availableYears.map((year) => (
+                  <option key={year} value={year}>
+                    {year}년
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+        </fieldset>
+
+        <label className="mt-5 flex cursor-pointer items-start gap-3 rounded-2xl border border-slate-200 p-4">
+          <input
+            type="checkbox"
+            checked={shuffleChoices}
+            disabled={!isHydrated || !choiceShuffleEnabled}
+            onChange={(event) => setShuffleChoices(event.target.checked)}
+            className="mt-0.5 size-5 accent-[#16697a]"
+          />
+          <span>
+            <strong className="block text-sm text-[#173957]">보기 순서 섞기</strong>
+            <span className="mt-1 block text-sm text-slate-600">
+              {choiceShuffleEnabled
+                ? "세션 안에서는 같은 문항이 항상 같은 보기 순서로 표시됩니다."
+                : "운영 검증이 끝날 때까지 보기 섞기 기능은 비활성입니다."}
+            </span>
+          </span>
+        </label>
+
         <div className="mt-7 flex flex-col gap-4 rounded-2xl bg-slate-50 p-5 sm:flex-row sm:items-center sm:justify-between">
-          <div><strong className="text-lg text-[#173957]">총 {totalCount}문제</strong><p className="mt-1 text-sm text-slate-500">선택 과목 {enabledAllocations.length}개 · 실제 기출 목표 {Math.round(totalCount * originalRatio / 100)}문제</p></div>
+          <div><strong className="text-lg text-[#173957]">총 {totalCount}문제</strong><p className="mt-1 text-sm text-slate-500">선택 과목 {enabledAllocations.length}개 · {yearFrom}~{yearTo}년 · 실제 기출 목표 {Math.round(totalCount * originalRatio / 100)}문제</p></div>
           <button type="button" onClick={() => startMock(false)} disabled={!isHydrated || loading || totalCount === 0} className="flex items-center justify-center gap-2 rounded-xl bg-[#173957] px-6 py-4 font-extrabold text-white disabled:opacity-40">
             커스텀 모의고사 시작 <ArrowRight size={18} />
           </button>

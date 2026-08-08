@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "recordCount": 192,
+  "candidateCount": 182,
+  "choiceConflictCount": 0,
+  "holdCount": 10,
+  "exactExternalIdSet": true,
+  "orderedExternalIdsMatchDryRun": true,
+  "prior1970RecordsUnchanged": true,
+  "sourceHashesMatch": true,
+  "candidateAnswersPresent": true,
+  "imageHoldAnswersDisabled": true,
+  "variantSpecificBlocked": true,
+  "fullChoiceMappingsCorrect": true,
+  "semanticReassignmentApplied": true,
+  "lowContextPoliciesPreserved": true,
+  "formulaUnitSubstitutionCount": true,
+  "contentHashBindingVerified": true,
+  "sourceContentFilePackaged": false
+}

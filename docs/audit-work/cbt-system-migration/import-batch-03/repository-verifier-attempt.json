@@ -1,0 +1,12 @@
+{
+  "status": "BLOCKED",
+  "scope": "full_repository_reviewed_cbt_verifier_attempt",
+  "nodeVersion": "v22.16.0",
+  "officialNode24Validation": false,
+  "exitCode": 1,
+  "blocker": "PROJECT_DEPENDENCY_NOT_INSTALLED",
+  "missingModule": "zod",
+  "log": "repository-verifier-attempt.log",
+  "reason": "The full runtime-content graph imports welding-safety-supplement, which requires zod. Project dependencies are not installed in this environment.",
+  "reportedAsPass": false
+}

@@ -1,0 +1,309 @@
+{
+  "batchReviewVersion": 4,
+  "batch": "sessions37-40",
+  "reviewedAt": "2026-08-07T00:12:36+09:00",
+  "status": "PASS",
+  "failureCount": 0,
+  "failures": [],
+  "sessionCount": 4,
+  "recordCount": 200,
+  "verdictCounts": {
+    "ACCEPT": 187,
+    "REVISE": 1,
+    "CHOICE_ISSUE": 2,
+    "HOLD": 10
+  },
+  "scoredCount": 187,
+  "excludedCount": 13,
+  "publicationCandidateCount": 187,
+  "lowContextAcceptedCount": 31,
+  "lowContextAcceptedExternalIds": [
+    "2019-2-Q62",
+    "2019-2-Q66",
+    "2019-2-Q67",
+    "2019-2-Q68",
+    "2019-2-Q69",
+    "2019-2-Q73",
+    "2019-2-Q77",
+    "2019-2-Q89",
+    "2019-2-Q96",
+    "2020-12B-Q04",
+    "2020-12B-Q14",
+    "2020-12B-Q15",
+    "2020-12B-Q18",
+    "2020-12B-Q30",
+    "2020-12B-Q47",
+    "2020-12B-Q53",
+    "2020-12B-Q60",
+    "2020-12B-Q79",
+    "2020-12B-Q82",
+    "2020-12B-Q88",
+    "2020-12B-Q91",
+    "2020-12B-Q94",
+    "2020-3B-Q15",
+    "2020-3B-Q27",
+    "2020-3B-Q32",
+    "2020-3B-Q33",
+    "2020-3B-Q34",
+    "2020-3B-Q36",
+    "2020-3B-Q43",
+    "2020-3B-Q46",
+    "2020-3B-Q47"
+  ],
+  "nonAcceptDetails": [
+    {
+      "externalId": "2019-2-Q86",
+      "verdict": "CHOICE_ISSUE",
+      "sourceAnswerIndex": 0,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "multiple_incorrect_choices_svrdy_and_ptp"
+      ],
+      "directSolution": "SVRDY는 서보드라이브가 운전준비 상태임을 알리는 준비신호이지 ±10 V 속도명령이 아니다. 또한 PTP는 두 지정점 간 도달을 제어할 뿐 중간 궤적을 원으로 만드는 방식이 아니므로 1번과 4번이 모두 틀려 단일정답이 성립하지 않는다.",
+      "requiredImages": []
+    },
+    {
+      "externalId": "2019-2-Q94",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 1,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_linear_step_motor_formula_choice_images_not_independently_inspected"
+      ],
+      "directSolution": "식: S=h×a/360. 단위: h가 mm/rev이고 a/360은 회전수이므로 S는 mm이다. 대입: 1회전 리드 h에 회전비 a/360을 곱한다. 결과: S=h·a/360이지만 네 선택지 수식 이미지를 직접 대조하지 못해 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20190427/de20190427m94b1.gif",
+        "https://cbtbank.kr/images/de/de20190427/de20190427m94b2.gif",
+        "https://cbtbank.kr/images/de/de20190427/de20190427m94b3.gif",
+        "https://cbtbank.kr/images/de/de20190427/de20190427m94b4.gif"
+      ]
+    },
+    {
+      "externalId": "2019-2-Q99",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 0,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_hydraulic_circuit_image_not_independently_inspected"
+      ],
+      "directSolution": "로크회로라면 체크밸브·파일럿체크밸브 등으로 실린더 양측 유로를 차단해 유체를 가두고 위치를 유지한다. 그러나 회로 기호와 연결을 실제 그림에서 판독하지 못해 복원 정답 1번을 승인하지 않는다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20190427/de20190427m99.gif"
+      ]
+    },
+    {
+      "externalId": "2020-12B-Q05",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 3,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_rectifier_circuit_and_waveform_image_not_independently_inspected"
+      ],
+      "directSolution": "복원 해설은 양·음 반주기를 모두 같은 극성으로 출력하는 전파정류인 4번을 가리킨다. 그러나 정류회로와 출력파형이 필수 그림에만 있어 실제 다이오드 연결과 파형을 독립 판독하지 못했으므로 승인하지 않는다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20200606/de20200606m5.gif"
+      ]
+    },
+    {
+      "externalId": "2020-12B-Q08",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 1,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "formula_choice_image_unread_and_reconstructed_text_imprecise"
+      ],
+      "directSolution": "식: fn=(1/2π)√(k/m). 단위: k/m은 1/s²이고 제곱근은 1/s, 즉 Hz이다. 대입: 고유진동수는 √k에 비례하고 √m에 반비례한다. 결과: 2번 문구는 엄밀히 부정확하고 1번 수식이 손상돼 단일정답을 검증할 수 없으므로 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20200606/de20200606m8b1-1.gif"
+      ]
+    },
+    {
+      "externalId": "2020-12B-Q10",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 0,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "remaining_acceleration_formula_choice_images_not_independently_inspected"
+      ],
+      "directSolution": "식: a=ωv=2πfv. 단위: Hz×m/s=m/s²이다. 대입: 속도진폭 v에 각주파수 2πf를 곱한다. 결과: 1번 텍스트는 맞지만 나머지 수식 선택지를 직접 판독하지 못해 중복정답 가능성을 배제할 수 없으므로 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20200606/de20200606m10b2.gif",
+        "https://cbtbank.kr/images/de/de20200606/de20200606m10b3.gif",
+        "https://cbtbank.kr/images/de/de20200606/de20200606m10b4.gif"
+      ]
+    },
+    {
+      "externalId": "2020-12B-Q85",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 2,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_pneumatic_valve_symbol_images_not_independently_inspected"
+      ],
+      "directSolution": "방향·압력·유량제어밸브의 간략기호는 사각칸 수, 포트, 화살표, 폐쇄표시와 조작방식을 직접 읽어야 한다. 네 선택지 이미지와 문제의 대상 밸브 설명을 독립 판독하지 못해 복원 정답 3번을 승인하지 않는다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20200606/de20200606m85.gif",
+        "https://cbtbank.kr/images/de/de20200606/de20200606m85b1.gif",
+        "https://cbtbank.kr/images/de/de20200606/de20200606m85b2.gif",
+        "https://cbtbank.kr/images/de/de20200606/de20200606m85b3.gif",
+        "https://cbtbank.kr/images/de/de20200606/de20200606m85b4.gif"
+      ]
+    },
+    {
+      "externalId": "2020-12B-Q87",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 2,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_law_description_image_not_independently_inspected"
+      ],
+      "directSolution": "밀폐유체에 가한 압력이 모든 방향으로 동일하게 전달된다는 설명이라면 파스칼의 법칙이다. 그러나 핵심 설명문이 이미지로만 남아 있어 복원 정답 3번과 직접 대조하지 못했으므로 승인하지 않는다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20200606/de20200606m87.gif"
+      ]
+    },
+    {
+      "externalId": "2020-12B-Q92",
+      "verdict": "CHOICE_ISSUE",
+      "sourceAnswerIndex": 2,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "official_final_answer_multiple_choices_3_and_4_no_unique_single_answer"
+      ],
+      "directSolution": "실린더의 정지 이론출력은 F=pA로 계산하므로 행정거리는 필요하지 않다. 또한 전진출력만 계산하면 로드 치수도 필요 없고, 원문 자체가 최종답안에서 3번과 4번을 복수정답 처리했다고 명시하므로 단일정답 채점이 불가능하다.",
+      "requiredImages": []
+    },
+    {
+      "externalId": "2020-3B-Q04",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 3,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_physical_law_description_image_not_independently_inspected"
+      ],
+      "directSolution": "흑체 복사에너지가 절대온도 T의 4제곱에 비례한다는 설명이라면 슈테판-볼츠만 법칙이다. 그러나 핵심 설명이 이미지에만 있어 실제 문구를 독립 판독하지 못했으므로 복원 정답 4번을 승인하지 않는다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20200822/de20200822m4.gif"
+      ]
+    },
+    {
+      "externalId": "2020-3B-Q14",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 1,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_torricelli_flow_formula_choice_images_not_independently_inspected"
+      ],
+      "directSolution": "식: v=√(2gh), Q=Av=A√(2gh). 단위: m²×m/s=m³/s이다. 대입: 수두 h에서의 이상유출속도에 배관면적 A를 곱한다. 결과: Q=A√(2gh)이지만 네 수식 선택지를 직접 대조하지 못해 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20200822/de20200822m14.gif",
+        "https://cbtbank.kr/images/de/de20200822/de20200822m14b1.gif",
+        "https://cbtbank.kr/images/de/de20200822/de20200822m14b2.gif",
+        "https://cbtbank.kr/images/de/de20200822/de20200822m14b3.gif",
+        "https://cbtbank.kr/images/de/de20200822/de20200822m14b4.gif"
+      ]
+    },
+    {
+      "externalId": "2020-3B-Q28",
+      "verdict": "REVISE",
+      "sourceAnswerIndex": 0,
+      "independentAnswerIndex": 3,
+      "holdReasons": [
+        "reconstructed_answer_key_conflicts_with_centralized_maintenance_characteristics"
+      ],
+      "directSolution": "집중보전은 보전요원의 지휘·감독, 특수기능자 활용, 대형작업 인원동원에 유리하다. 반면 현장과 떨어진 중앙조직은 긴급작업의 착수·연락이 늦어질 수 있으므로 장점이 아닌 것은 4번이며 복원 정답 1번은 교정이 필요하다.",
+      "requiredImages": []
+    },
+    {
+      "externalId": "2020-3B-Q39",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 2,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_facility_category_description_image_not_independently_inspected"
+      ],
+      "directSolution": "전력·증기·용수·압축공기·냉각 같은 공통 공급설비를 나열한 설명이라면 유틸리티설비다. 그러나 핵심 보기 내용이 이미지에만 있어 실제 항목을 독립 판독하지 못했으므로 복원 정답 3번을 승인하지 않는다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20200822/de20200822m39.gif"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "sessionNumber": 37,
+      "sessionKey": "2019-04-27-Q51-Q100",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 2
+      },
+      "status": "PASS",
+      "jsonlSha256": "cd993398a18af4e792937dfa105c0cf849845060ee04e7704f114c0173968641"
+    },
+    {
+      "sessionNumber": 38,
+      "sessionKey": "2020-06-06-Q01-Q50",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 3
+      },
+      "status": "PASS",
+      "jsonlSha256": "a27ca691cd659002c70440a97352bfc9ec919bc2ea9cc6a030afc982574032a2"
+    },
+    {
+      "sessionNumber": 39,
+      "sessionKey": "2020-06-06-Q51-Q100",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 2
+      },
+      "status": "PASS",
+      "jsonlSha256": "d3586593a2a4c91a2c1f6c237efdc37de000f05c775d9f424f54008876a75b70"
+    },
+    {
+      "sessionNumber": 40,
+      "sessionKey": "2020-08-22-Q01-Q50",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 46,
+        "REVISE": 1,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 3
+      },
+      "status": "PASS",
+      "jsonlSha256": "79f25717f338c96fb7aaf310bc555de5ff776b89dd85e6cb3e41d9a09ad16ffc"
+    }
+  ],
+  "checks": {
+    "sourceTextAndHashesRecomputedFromPayload": true,
+    "choiceFeedbackSpecificBoundAndUnique": true,
+    "acceptAndNonAcceptGates": true,
+    "formulaAndCalculationStructurePresent": true,
+    "theoryLessonConceptGroupConceptKeywordEntitiesExist": true,
+    "batchExactSet200": true
+  },
+  "notRun": [
+    "repository_typecheck",
+    "vitest",
+    "eslint",
+    "verify_no_answer_leak_runtime",
+    "runtime_publication_gate",
+    "login_guest_integration_flow",
+    "sql_migration_test",
+    "git_commit"
+  ],
+  "secondPassValidation": {
+    "fileName": "sessions37-40_second-pass-validation.json",
+    "status": "PASS",
+    "failureCount": 0,
+    "sha256": "7783b0c9ec7eabb1c0ab18f35536ec8e90e8e5d27bcfb18cb47807745a1def90"
+  }
+}

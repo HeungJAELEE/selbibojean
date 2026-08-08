@@ -1,0 +1,210 @@
+{
+  "batchContractStatus": "PASS",
+  "repositoryFinalValidationStatus": "NOT_RUN",
+  "generatedAt": "2026-08-08T11:11:23+09:00",
+  "scope": "import-12 final source-exact overlay, image HOLD gating, multiple-answer isolation, six semantic canonical reassignments, two unresolved taxonomy repair gates, low-context registration, formula structure, direct-theory binding, variant-choice isolation, all-2384 coverage, and publication safety",
+  "counts": {
+    "batchId": "import-12",
+    "recordCount": 222,
+    "states": {
+      "candidate": 210,
+      "hold": 11,
+      "choice_conflict": 1
+    },
+    "sourcePublicationCandidateCount": 208,
+    "imageHoldCount": 11,
+    "fullCanonicalChoiceMappingCount": 45,
+    "variantSpecificFeedbackPendingCount": 165,
+    "theoryLessonAdditionCount": 0,
+    "canonicalQuestionChangeCount": 0,
+    "canonicalReassignmentCount": 6,
+    "canonicalTheoryRepairAppliedCount": 0,
+    "canonicalTheoryRepairPendingCount": 2,
+    "answerKeyCorrectionAppliedCount": 0,
+    "answerKeyConflictCount": 0,
+    "choiceConflictCount": 1,
+    "directTheoryLinkCount": 222,
+    "formulaRecordCount": 11,
+    "lowContextRegistrationCount": 30,
+    "cumulativeRecordCount": 2384,
+    "cumulativeStates": {
+      "candidate": 2267,
+      "hold": 98,
+      "choice_conflict": 19
+    },
+    "unreviewedRecordCount": 0
+  },
+  "sourceIntegrity": {
+    "contentJsonSha256Expected": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "contentJsonPackaged": false,
+    "contentHashBindingVerified": true,
+    "contentJsonDirectlyRehashedThisRun": false,
+    "manifestSha256": "b2a614eb26faadad231c30bb7eb69e55c18dfc9c28f8350515f7a50d6a4cfac5",
+    "recordsSha256": "6abd78b3582d8a05c01c715cbd8379db48ee99ea473f60102c69fd33b1cc9d42",
+    "dryRunMappingSha256": "383bb49174d6e3fa72b4a7166863cb97833879feae311dd8757d96f08d84952e",
+    "canonicalReferenceSha256": "a4f0f4ea5e8537c1337558426b5ac319bb3dc2042126a4f17ecd51c6f87e08f3",
+    "exactExternalIdSet": true,
+    "sourceHashesMatch": true,
+    "prior2162RecordsUnchanged": true,
+    "all2384SourceVariantsCovered": true
+  },
+  "specialFindings": {
+    "imageHolds": [
+      "2021-2-Q01",
+      "2021-2-Q06",
+      "2021-2-Q27",
+      "2021-2-Q97",
+      "2021-4-Q05",
+      "2022-1-Q75",
+      "2022-1-Q80",
+      "2022-2-Q13",
+      "2022-2-Q14",
+      "2022-2-Q22",
+      "2022-2-Q27"
+    ],
+    "choiceConflicts": [
+      {
+        "externalId": "2021-2-Q13",
+        "acceptedChoiceIndices": [
+          0,
+          3
+        ],
+        "policy": "non_scoring"
+      }
+    ],
+    "answerKeyConflicts": [],
+    "canonicalReassignments": [
+      {
+        "externalId": "2022-1-Q02",
+        "from": "U-RMS-001",
+        "to": "U-812",
+        "duplicateOf": "2016-4-Q06",
+        "theoryLink": {
+          "lessonId": "lesson-68po9a",
+          "lessonAnchor": "principle",
+          "conceptGroupId": "s4-g02",
+          "conceptId": "concept-68po9a"
+        },
+        "publicationGate": "variant_specific_choice_contract_pending"
+      },
+      {
+        "externalId": "2022-1-Q31",
+        "from": "U-187",
+        "to": "U-829",
+        "duplicateOf": "2016-4-Q37",
+        "theoryLink": {
+          "lessonId": "lesson-qih1ef",
+          "lessonAnchor": "principle",
+          "conceptGroupId": "s4-g08",
+          "conceptId": "concept-qih1ef"
+        },
+        "publicationGate": "pending_runtime_integration"
+      },
+      {
+        "externalId": "2022-1-Q43",
+        "from": "U-197",
+        "to": "U-136",
+        "duplicateOf": "2014-2-Q51",
+        "theoryLink": {
+          "lessonId": "lesson-o98wx8",
+          "lessonAnchor": "diagnosis",
+          "conceptGroupId": "s3-g06",
+          "conceptId": "concept-o98wx8"
+        },
+        "publicationGate": "variant_specific_choice_contract_pending"
+      },
+      {
+        "externalId": "2022-1-Q70",
+        "from": "U-210",
+        "to": "U-1180",
+        "duplicateOf": "2011-4-Q87",
+        "theoryLink": {
+          "lessonId": "lesson-1mpu74e",
+          "lessonAnchor": "principle",
+          "conceptGroupId": "s1-g12",
+          "conceptId": "concept-1mpu74e"
+        },
+        "publicationGate": "variant_specific_choice_contract_pending"
+      },
+      {
+        "externalId": "2022-2-Q40",
+        "from": "U-233",
+        "to": "U-640",
+        "duplicateOf": "2018-4-Q23",
+        "theoryLink": {
+          "lessonId": "lesson-17ocpdn",
+          "lessonAnchor": "trap",
+          "conceptGroupId": "s4-g12",
+          "conceptId": "concept-17ocpdn"
+        },
+        "publicationGate": "variant_specific_choice_contract_pending"
+      },
+      {
+        "externalId": "2022-2-Q44",
+        "from": "U-237",
+        "to": "U-661",
+        "duplicateOf": "2018-2-Q47",
+        "theoryLink": {
+          "lessonId": "lesson-z6u1mg",
+          "lessonAnchor": "principle",
+          "conceptGroupId": "s3-g03",
+          "conceptId": "concept-z6u1mg"
+        },
+        "publicationGate": "variant_specific_choice_contract_pending"
+      }
+    ],
+    "taxonomyRepairPending": [
+      {
+        "externalId": "2022-1-Q61",
+        "canonicalId": "U-208",
+        "currentConceptGroupId": "s1-g08",
+        "sourceStatedTargetFamily": "유압 유량·속도제어 계열",
+        "targetConceptGroupId": null,
+        "overlayApplied": false,
+        "publicationGate": "canonical_theory_repair_exact_target_pending"
+      },
+      {
+        "externalId": "2022-2-Q65",
+        "canonicalId": "U-250",
+        "currentConceptGroupId": "s1-g02",
+        "sourceStatedTargetFamily": "공압 액추에이터·방향제어 계열",
+        "targetConceptGroupId": null,
+        "overlayApplied": false,
+        "publicationGate": "canonical_theory_repair_exact_target_pending"
+      }
+    ],
+    "theoryGap": "222문항 모두 감사용 직접 이론 연결을 가진다. 6건은 target canonical의 직접 이론으로 재연결했고, 2건은 원자료가 taxonomy mismatch만 확인했으므로 정확한 target conceptGroup 승인 전까지 기존 링크를 감사용으로 보존하고 이론 공개를 차단한다.",
+    "calculationStructure": "11문항에 식·단위·대입·결과 구조를 보존했다.",
+    "choiceContract": "45문항은 canonical choice ID 1:1 매핑을 완료했고, 165문항은 variant 전용 선택지 계약 전까지 canonical 피드백 재사용을 차단했다.",
+    "finalCoverageBoundary": "2,384개 source external ID를 모두 누적 manifest에 포함했지만, 이는 published 완료를 뜻하지 않는다. 모든 reviewed record는 candidate, hold 또는 choice_conflict이며 published는 0건이다."
+  },
+  "supplementalChecks": {
+    "generatorOwnedValidation": "PASS",
+    "independentValidation": "PASS",
+    "typescriptSyntax": "PASS",
+    "targetedTypecheck": "PASS_SYNTAX_ONLY",
+    "supplementalRuntime": "PASS_STATIC_SIMULATION",
+    "supplementalVerifier": "PASS_INDEPENDENT_PYTHON",
+    "supplementalNoAnswerLeak": "PASS_STATIC_PROJECTION",
+    "negativeContracts": "PASS_14_OF_14",
+    "generatorIdempotency": "PASS_30_ARTIFACTS",
+    "pythonGeneratorSyntax": "PASS"
+  },
+  "officialChecks": {
+    "node24Typecheck": "BLOCKED_NODE_VERSION_AND_PARTIAL_SNAPSHOT",
+    "vitestMaxWorkers1": "BLOCKED_NODE_VERSION_DEPENDENCIES_AND_PARTIAL_SNAPSHOT",
+    "eslintChangedFiles": "BLOCKED_NODE_VERSION_DEPENDENCIES_AND_PARTIAL_SNAPSHOT",
+    "verifyReviewedCbt": "BLOCKED_MISSING_TSX_AND_COMPLETE_TREE",
+    "verifyNoAnswerLeak": "BLOCKED_MISSING_TSX_AND_COMPLETE_TREE",
+    "buildRuntimeContentAndSupabaseMaterialization": "NOT_RUN_PARTIAL_SNAPSHOT",
+    "sqlMigrationTests": "NOT_RUN_BATCH_SCOPE",
+    "loginGuestFlows": "NOT_RUN_FINAL_RUNTIME_INTEGRATION"
+  },
+  "git": {
+    "repositoryMetadataAvailable": false,
+    "commitCreated": false,
+    "push": false,
+    "pullRequest": false,
+    "deploy": false
+  }
+}

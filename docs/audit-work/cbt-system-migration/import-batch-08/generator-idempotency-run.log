@@ -1,0 +1,42 @@
+{
+  "batchId": "import-08",
+  "generatedAt": "2026-08-08T13:40:00+09:00",
+  "recordCount": 200,
+  "states": {
+    "candidate": 191,
+    "hold": 8,
+    "choice_conflict": 1
+  },
+  "fullCanonicalChoiceMappingCount": 38,
+  "manualChoiceMappingCount": 0,
+  "variantSpecificFeedbackPendingCount": 153,
+  "theoryLessonAdditionCount": 1,
+  "canonicalQuestionChangeCount": 1,
+  "directTheoryLinkCount": 200,
+  "existingTheoryRelinkCount": 1,
+  "imageVerificationQueueCount": 8,
+  "choiceConflictCount": 1,
+  "answerKeyCorrectionCount": 0,
+  "canonicalReassignmentCount": 1,
+  "canonicalTheoryRepairCount": 1,
+  "lowContextRegistrationCount": 30,
+  "formulaUnitSubstitutionCount": 8,
+  "formulaExternalIds": [
+    "2018-2-Q05",
+    "2018-2-Q86",
+    "2018-2-Q89",
+    "2018-4-Q06",
+    "2018-4-Q09",
+    "2018-4-Q15",
+    "2018-4-Q18",
+    "2018-4-Q37"
+  ],
+  "sourceContentSha256Expected": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+  "contentHashBindingVerified": true,
+  "dryRunMappingSha256": "40b656165a1dcfbc69d26451c0fdc6615f541333644cdf8903297d77bed8fe0d",
+  "priorRecordsSha256": "b71a7a6567ccc0f4d8fb02d0cb82d0708fe1b4a9b5b82403c3d5849158c5f196",
+  "cumulativeRecordCount": 1570,
+  "unreviewedRecordCount": 814
+}
+
+manifest sha 5bd1b38459c1bc15f3e7426023b5a91e3cc8e75883113a530b22d67dc5666803

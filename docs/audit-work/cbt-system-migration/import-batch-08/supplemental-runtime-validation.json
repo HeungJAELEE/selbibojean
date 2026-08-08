@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "scope": "supplemental static manifest publication-gate simulation",
+  "nodeVersion": null,
+  "officialNode24Validation": false,
+  "recordCount": 200,
+  "runtimeStateCounts": {
+    "unreviewed": 814,
+    "candidate": 1496,
+    "hold": 59,
+    "choice_conflict": 15
+  },
+  "checks": {
+    "cumulativeStateCounts": true,
+    "reviewedRecordCount": true,
+    "unreviewedCount": true,
+    "batchCandidateHoldConflictGated": true,
+    "publishedBatchRecordsZero": true,
+    "preSubmitForbiddenKeysAbsent": true,
+    "holdAnswersDisabled": true,
+    "choiceConflictAnswersDisabled": true,
+    "variantSpecificCanonicalFeedbackBlocked": true,
+    "sourceNeededTheoryBlocked": true
+  },
+  "failures": [],
+  "limitations": [
+    "No complete content.json or runtime source tree is packaged in this batch archive.",
+    "The U-649 canonical change and added lesson are overlay contracts, not a completed runtime materialization.",
+    "This static simulation does not replace buildRuntimeContent, Supabase materialization, browser flow, or Node.js 24 repository tests."
+  ]
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -51,7 +51,9 @@ export function PastExamExamples({
           <p className="text-xs font-black uppercase tracking-[.14em] text-[#16697a]">
             {examFirst ? "Step 1 · Past exam practice" : "Past exam practice"}
           </p>
-          <h2 className="mt-1 text-xl font-extrabold text-[#173957]">기출 문제 풀기</h2>
+          <h2 className="mt-1 text-xl font-extrabold text-[#173957]">
+            실제 CBT 기출 {examples.length}문제 풀기
+          </h2>
           <p className="mt-2 text-sm leading-6 text-slate-600">
             {examFirst
               ? `실제 CBT 문장을 읽고 보기를 선택하세요. 답안을 제출하면 정오답과 풀이가 같은 화면에 바로 열립니다. 처음 ${Math.min(initialCount, examples.length)}개부터 보여주며 정답은 제출 전까지 전송하지 않습니다.`
@@ -111,6 +113,7 @@ function PastExamQuestionCard({
   const [feedback, setFeedback] = useState<PracticeFeedback | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const pendingAttemptId = useRef<string | null>(null);
   const isHydrated = useHydrated();
 
   async function submitAnswer() {
@@ -118,10 +121,13 @@ function PastExamQuestionCard({
     setLoading(true);
     setError("");
     try {
+      const clientAttemptId = pendingAttemptId.current ?? crypto.randomUUID();
+      pendingAttemptId.current = clientAttemptId;
       const response = await fetch("/api/practice/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          clientAttemptId,
           questionId: example.canonicalId,
           choiceId: selectedChoiceId,
           selfRating: "unsure",
@@ -131,6 +137,7 @@ function PastExamQuestionCard({
       const result = await response.json() as PracticeFeedback & { error?: string };
       if (!response.ok) throw new Error(result.error);
       setFeedback(result);
+      pendingAttemptId.current = null;
       window.setTimeout(() => {
         document.getElementById(`past-exam-feedback-${example.externalId}`)
           ?.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -143,6 +150,7 @@ function PastExamQuestionCard({
   }
 
   function retry() {
+    pendingAttemptId.current = null;
     setSelectedChoiceId("");
     setFeedback(null);
     setError("");
@@ -175,7 +183,7 @@ function PastExamQuestionCard({
                 key={`${example.externalId}-${choiceId}`}
                 type="button"
                 aria-pressed={selected}
-                onClick={() => setSelectedChoiceId(choiceId)}
+                onClick={() => { pendingAttemptId.current = null; setSelectedChoiceId(choiceId); }}
                 className={cn(
                   "flex w-full gap-3 rounded-xl border px-3 py-3 text-left text-sm leading-6 transition",
                   selected ? "border-[#16697a] bg-[#eaf7f6] ring-1 ring-[#16697a]" : "border-slate-200 bg-slate-50 hover:border-slate-400",

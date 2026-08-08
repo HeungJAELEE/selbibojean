@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "generatedAt": "2026-08-07T23:25:00+09:00",
+  "scope": "import-07 pre-Node24 static, contract, source-integrity, idempotency, mutation, and publication-gate validation",
+  "failures": [],
+  "failureCount": 0,
+  "contentSha256Expected": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+  "contentHashBindingVerified": true,
+  "sourceContentFilePackaged": false,
+  "manifestSha256": "554131acc5dd2aa67c73eb97ce7336ea542f7c76bbdf92fc57adab42b4472144",
+  "recordsSha256": "b71a7a6567ccc0f4d8fb02d0cb82d0708fe1b4a9b5b82403c3d5849158c5f196",
+  "prior1200RecordsSha256": "60691b8ed34fc7b386fe0d12533c26fbd2d9df9ef286c217b8f4fd5cf39159e5",
+  "cumulativeRecordCount": 1370,
+  "cumulativeStates": {
+    "candidate": 1305,
+    "hold": 51,
+    "choice_conflict": 14
+  },
+  "unreviewedRecordCount": 1014,
+  "batch07": {
+    "recordCount": 170,
+    "states": {
+      "candidate": 165,
+      "hold": 5
+    },
+    "fullCanonicalChoiceMappingCount": 29,
+    "variantSpecificFeedbackPendingCount": 136,
+    "imageHoldCount": 5,
+    "choiceConflictCount": 0,
+    "formulaUnitSubstitutionCount": 8,
+    "directTheoryLinkCount": 170,
+    "theoryLessonAdditionCount": 0,
+    "canonicalQuestionChangeCount": 0,
+    "canonicalReassignmentCount": 0,
+    "lowContextRegistrationCount": 32
+  },
+  "specialContracts": {
+    "imageHolds": [
+      "2016-4-Q10",
+      "2016-4-Q26",
+      "2016-4-Q58",
+      "2017-2-Q32",
+      "2017-2-Q33"
+    ],
+    "lowContextRegistered": [
+      "2016-2-Q04",
+      "2016-2-Q18",
+      "2016-4-Q01",
+      "2016-4-Q02",
+      "2016-4-Q03",
+      "2016-4-Q17",
+      "2016-4-Q21",
+      "2016-4-Q30",
+      "2016-4-Q34",
+      "2016-4-Q44",
+      "2016-4-Q48",
+      "2016-4-Q52",
+      "2016-4-Q57",
+      "2016-4-Q69",
+      "2016-4-Q70",
+      "2016-4-Q80",
+      "2016-4-Q81",
+      "2016-4-Q82",
+      "2016-4-Q83",
+      "2016-4-Q90",
+      "2016-4-Q99",
+      "2017-2-Q05",
+      "2017-2-Q08",
+      "2017-2-Q19",
+      "2017-2-Q21",
+      "2017-2-Q23",
+      "2017-2-Q30",
+      "2017-2-Q35",
+      "2017-2-Q40",
+      "2017-2-Q43",
+      "2017-2-Q46",
+      "2017-2-Q48"
+    ],
+    "textSufficientMissingImageCandidates": [
+      "2016-4-Q70",
+      "2016-4-Q83",
+      "2016-4-Q90",
+      "2017-2-Q43"
+    ],
+    "formulaStructuredRecords": [
+      "2016-2-Q03",
+      "2016-2-Q14",
+      "2016-4-Q10",
+      "2016-4-Q16",
+      "2016-4-Q29",
+      "2017-2-Q03",
+      "2017-2-Q28",
+      "2017-2-Q43"
+    ]
+  },
+  "checks": {
+    "generatorOwnedValidation": true,
+    "independentValidation": true,
+    "typescriptSyntax": true,
+    "targetedTypecheck": true,
+    "supplementalRuntime": true,
+    "supplementalVerifier": true,
+    "supplementalNoAnswerLeak": true,
+    "negativeContracts": true,
+    "generatorIdempotency": true,
+    "pythonGeneratorSyntax": true,
+    "contentHashBinding": true
+  },
+  "officialRepositoryValidation": "NOT_RUN_OR_BLOCKED_NODE24_DEPENDENCIES_CONTENT_AND_COMPLETE_TREE_UNAVAILABLE"
+}

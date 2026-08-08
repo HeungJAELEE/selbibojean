@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "name": "variant-specific record cannot be published",
+      "status": "PASS",
+      "message": "Reviewed CBT variant-specific choice contract is invalid: 2009-4-Q01"
+    },
+    {
+      "name": "direct theory drift is rejected",
+      "status": "PASS",
+      "message": "Reviewed CBT direct-theory link is inconsistent: 2009-4-Q84"
+    },
+    {
+      "name": "canonical replacement SHA tamper is rejected",
+      "status": "PASS",
+      "message": "Reviewed CBT canonical replacement digest mismatch: U-1241"
+    },
+    {
+      "name": "lesson addition digest tamper is rejected",
+      "status": "PASS",
+      "message": "Reviewed CBT theory lesson additions digest mismatch: e78d7028627a6061a2ba8236e01465439dcade4bea556c3cebd32ea72f1faeb7 != f36819775114cd45b20034aa1a7aa68fc014c55844750ebcac08f9979398eafa"
+    }
+  ]
+}

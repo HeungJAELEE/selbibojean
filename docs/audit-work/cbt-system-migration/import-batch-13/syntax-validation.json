@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "runtime": "Node.js v24.11.1",
+  "method": "node --experimental-strip-types --check",
+  "files": [
+    "src/lib/content/reviewed-cbt-variants.ts",
+    "src/lib/content/written-question-audit.ts",
+    "src/lib/domain/types.ts",
+    "scripts/verify-reviewed-cbt-variants.ts",
+    "tests/unit/reviewed-cbt-variants.test.ts",
+    "tests/unit/written-question-audit.test.ts"
+  ],
+  "logFile": "node24-syntax.log"
+}

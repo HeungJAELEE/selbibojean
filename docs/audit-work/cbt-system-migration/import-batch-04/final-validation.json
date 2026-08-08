@@ -1,0 +1,106 @@
+{
+  "batchContractStatus": "PASS",
+  "repositoryFinalValidationStatus": "NOT_RUN",
+  "scope": "import-04 actual exam-question overlay, theory additions, answer-key correction, choice-conflict isolation, dry-run override, HOLD answer invariant, and publication gating",
+  "counts": {
+    "batchId": "import-04",
+    "recordCount": 200,
+    "states": {
+      "candidate": 193,
+      "hold": 6,
+      "choice_conflict": 1
+    },
+    "fullCanonicalChoiceMappingCount": 35,
+    "variantSpecificFeedbackPendingCount": 158,
+    "theoryLessonAdditionCount": 2,
+    "canonicalQuestionChangeCount": 2,
+    "semanticReassignmentCount": 0,
+    "answerKeyCorrectionCount": 1,
+    "directTheoryLinkCount": 200,
+    "cumulativeRecordCount": 800,
+    "cumulativeStates": {
+      "candidate": 759,
+      "hold": 32,
+      "choice_conflict": 9
+    }
+  },
+  "sourceIntegrity": {
+    "contentJsonSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "contentJsonUnchanged": true,
+    "manifestSha256": "5c643f7361d617d454289fa04dbbdebd3fcb2ebc4cc9c7eac8542d4dd5b808f1",
+    "externalIdsPreserved": true,
+    "registeredSourceUrlsPreserved": true,
+    "questionNumbersPreserved": true
+  },
+  "specialCases": {
+    "answerKeyCorrection": {
+      "externalId": "2013-4-Q48",
+      "sourceAnswerIndex": 0,
+      "reviewedAnswerIndex": 2,
+      "runtimeStatus": "candidate",
+      "published": false
+    },
+    "choiceConflict": {
+      "externalId": "2013-4-Q84",
+      "choiceIndices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "scoring": "disabled"
+    },
+    "imageHolds": [
+      "2012-4-Q36",
+      "2012-4-Q43",
+      "2012-4-Q57",
+      "2012-4-Q93",
+      "2013-4-Q17",
+      "2013-4-Q46"
+    ],
+    "dryRunOverride": {
+      "externalId": "2012-4-Q08",
+      "rejectedCanonicalId": "U-308",
+      "retainedCanonicalId": "U-1099"
+    },
+    "contractHardening": {
+      "rule": "HOLD records cannot carry reviewed answer text/index or active choice mapping",
+      "negativeFixture": "2012-4-Q36",
+      "status": "PASS"
+    },
+    "generatorCleanup": {
+      "supersededLessonIdRemoved": "lesson-cbt-fan-power-curve-answer-correction",
+      "canonicalLessonId": "lesson-cbt-forward-curved-fan-power-curve",
+      "status": "PASS"
+    }
+  },
+  "checks": {
+    "generatorOwnedValidation": "PASS",
+    "independentValidation": "PASS",
+    "targetedTypecheck": "PASS",
+    "typescriptSyntax": "PASS",
+    "supplementalRuntime": "PASS",
+    "supplementalVerifier": "PASS",
+    "negativeContractTests": "PASS",
+    "generatorIdempotency": "PASS",
+    "fullRepositoryVerifierAttempt": "BLOCKED",
+    "nodeRuntimeGate": "BLOCKED"
+  },
+  "unexecutedOfficialChecks": [
+    "Node.js 24 repository-wide typecheck",
+    "Vitest",
+    "ESLint",
+    "repository verify-no-answer-leak",
+    "SQL migration tests",
+    "login/guest browser integration flow"
+  ],
+  "notes": [
+    "All import-04 records remain candidate, choice_conflict, or hold; published count is zero.",
+    "The source answer for 2013-4-Q48 is preserved while the independently corrected answer is used only in the reviewed candidate overlay.",
+    "2013-4-Q84 preserves internal conflict rationale but carries no active answer mapping, answer text, or learner scoring.",
+    "Six image-dependent questions remain isolated in the image verification queue.",
+    "A negative test exposed and the runtime manifest validator now rejects active reviewed answer data on HOLD records.",
+    "A superseded fan-theory draft ID was removed so the cumulative theory-addition set is unique and idempotent.",
+    "Official Node.js 24 checks are not reported as PASS because the environment provides Node.js 22.16.0 and project dependencies are not installed."
+  ]
+}

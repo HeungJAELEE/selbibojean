@@ -1,0 +1,18 @@
+{
+  "batchId": "import-10",
+  "recordCount": 200,
+  "existingDirectTheoryLinksRetained": 197,
+  "existingTheoryRelinks": 3,
+  "newDirectTheoryLessonsAdded": 0,
+  "canonicalContentAndTheoryRepairs": 1,
+  "missingDirectTheoryAfterBatch": 0,
+  "sourceNeededTheoryGateCount": 0,
+  "lowContextDirectTheoryLinks": 31,
+  "notes": [
+    "2020-12B-Q75는 U-325에서 U-787 및 lesson-1kx5x2w로 재배정했다.",
+    "2020-3B-Q26은 U-060에서 U-1109 및 lesson-c16ieq로 재배정했다.",
+    "2020-12B-Q86은 기존 lesson-qnsesu를 유지하면서 conceptGroup을 s1-g02에서 s1-g06으로 교정했다.",
+    "2020-3B-Q28은 독립 정답 4번과 복원 정답 1번이 충돌해 직접 이론은 감사용으로 보존하되 정답·채점은 차단했다.",
+    "신규 이론 레슨은 필요하지 않았고 직접 이론 미연결은 0건이다."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "recordCount": 200,
+  "candidateCount": 190,
+  "choiceConflictCount": 4,
+  "holdCount": 6,
+  "exactExternalIdSet": true,
+  "sourceHashesMatch": true,
+  "directTheoryLinksPresent": true,
+  "directTheoryAnchorsExist": true,
+  "candidateCanonicalTheoryConsistent": true,
+  "candidateAnswersPresent": true,
+  "imageHoldAnswersDisabled": true,
+  "choiceConflictNonScoring": true,
+  "variantSpecificBlocked": true,
+  "canonicalReassignmentApplied": true,
+  "canonicalReassignmentTheoryApplied": true,
+  "choiceConflictContractsExact": true,
+  "lowContextPoliciesPreserved": true,
+  "formulaUnitSubstitutionCount": true,
+  "theoryGapCountAfterBatch": 0,
+  "sourceContentUnchanged": true
+}

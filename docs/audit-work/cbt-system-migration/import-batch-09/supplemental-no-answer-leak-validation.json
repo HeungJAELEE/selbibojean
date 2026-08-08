@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "scope": "supplemental static pre-submit projection and publication-gate inspection",
+  "officialRepositoryVerifierExecuted": false,
+  "checks": {
+    "candidateHoldConflictNotUsableBeforePublished": true,
+    "preSubmitForbiddenAnswerFieldsAbsent": true,
+    "imageHoldAnswersDisabled": true,
+    "choiceConflictAnswersDisabled": true,
+    "variantSpecificCanonicalFeedbackBlocked": true
+  },
+  "forbiddenFields": [
+    "answerText",
+    "choiceByChoiceReasons",
+    "choiceConflict",
+    "choiceIdMapping",
+    "correctChoiceId",
+    "directSolution",
+    "explanation",
+    "formulaUnitSubstitution",
+    "reviewedAnswerIndex",
+    "reviewedAnswerText",
+    "sourceAnswerIndex",
+    "sourceAnswerText"
+  ],
+  "failures": [],
+  "limitations": [
+    "The official verify:no-answer-leak command requires installed tsx and the complete repository tree.",
+    "This static check does not claim browser or server runtime execution."
+  ]
+}

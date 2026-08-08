@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "checks": {
+    "content_sha": true,
+    "record_count": true,
+    "unique_external_ids": true,
+    "records_sha": true,
+    "canonical_changes_sha": true,
+    "batch13_last": true,
+    "batch13_zero_record": true,
+    "state_counts": true,
+    "digest_U-649": true,
+    "digest_U-478": true,
+    "link_2015-2-Q23": true,
+    "link_2007-4-Q84": true,
+    "conflict_2018-2-Q10": true,
+    "conflict_2019-2-Q32": true,
+    "conflict_2019-2-Q86": true,
+    "conflict_2020-12B-Q92": true,
+    "conflict_2021-2-Q13": true,
+    "answer_key_hold": true,
+    "taxonomy_override": true,
+    "correction_ledger_count": true,
+    "restored_source_count": true,
+    "restored_source_integrity": true,
+    "all_declared_source_files": true,
+    "historical_matrix_preserved": true,
+    "answer_hold_validator_code": true,
+    "audit_precedence_code": true,
+    "batch13_verifier_code": true
+  },
+  "failures": [],
+  "counts": {
+    "records": 2384,
+    "corrections": 12,
+    "restoredSources": 16,
+    "batches": 13
+  },
+  "recordsSha256": "05a4d38ca6f9e02c3648f4d8156222d203f1b277f411ec8c1f371ac1c368ff9f",
+  "canonicalQuestionChangesSha256": "46a3306e5646dbdf55ebce4bd5130214cdeb68e9b0493117a65e575dcd62bf05"
+}

@@ -1,5 +1,6 @@
 import type { PracticalStudyCategoryId } from "../../lib/domain/practical-types";
 import { PRACTICAL_SUPPLEMENTAL_PRIMARY_CATEGORY_BY_QUESTION } from "./practical-supplemental-predicted-questions";
+import { PRACTICAL_TASK_SEQUENCE_SEEDS } from "./practical-task-sequences";
 
 const ids = <T extends PracticalStudyCategoryId>(
   primaryStudyCategoryId: T,
@@ -28,6 +29,9 @@ export const PRACTICAL_PRIMARY_CATEGORY_BY_QUESTION = Object.fromEntries([
     "P-2026-1-Q09",
     "EXP-B01",
     "EXP-M05",
+    "EXP-VIS-BEARING-DAMAGE-01",
+    "EXP-VIS-RT-FILM-01",
+    "EXP-VIS-BRAKE-PAD-LINING-01",
   ]),
   ...ids("formula_calculation", [
     "P-2025-1-Q01",
@@ -65,6 +69,9 @@ export const PRACTICAL_PRIMARY_CATEGORY_BY_QUESTION = Object.fromEntries([
     "EXP-D01",
     "EXP-D04",
     "EXP-W03",
+    "EXP-VIS-GEAR-COUPLING-01",
+    "EXP-VIS-TAPERED-BEARING-01",
+    ...PRACTICAL_TASK_SEQUENCE_SEEDS.map((sequence) => sequence.questionId),
   ]),
   ...ids("theory_concept", [
     "P-2025-1-Q03",

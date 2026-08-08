@@ -14,5 +14,9 @@ export default defineConfig([
     "**/.wrangler/**",
     "src/data/generated/**",
     "_workspace/**",
+    ".codexclaw/**",
+    "assets/private/**",
+    "outputs/**",
+    "work/**",
   ]),
 ]);

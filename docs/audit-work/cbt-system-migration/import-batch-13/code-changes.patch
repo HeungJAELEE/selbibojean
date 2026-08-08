@@ -1,0 +1,909 @@
+--- a/src/data/generated/cbt-reviewed-variants.json
++++ b/src/data/generated/cbt-reviewed-variants.json
+@@ -1,6 +1,6 @@
+ {
+   "formatVersion": 1,
+-  "generatedAt": "2026-08-08T10:55:50+09:00",
++  "generatedAt": "2026-08-08T12:00:32+09:00",
+   "mappingRunId": "CBT-SYSTEM-MAPPING-DRY-RUN-20260807-01",
+   "migrationPolicy": {
+     "sourceTextClassification": "official_exam_reconstructed_text",
+@@ -1027,9 +1027,47 @@
+           "sha256": "6da7d728931937853d5e5dbf49fb07143b618d29256b514228f0d0d63f5f7bea"
+         }
+       ]
++    },
++    {
++      "batchId": "import-13",
++      "reviewSessions": [
++        "repository-integration-final"
++      ],
++      "externalIdRanges": [],
++      "recordCount": 0,
++      "candidateCount": 0,
++      "choiceConflictCount": 0,
++      "holdCount": 0,
++      "normalizationCount": 0,
++      "imageReviewCount": 0,
++      "lowContextRegistrationCount": 0,
++      "variantSpecificFeedbackCount": 0,
++      "canonicalTheoryRepairs": [
++        "lesson-qnsesu:s1-g06"
++      ],
++      "theoryLessonAdditionIds": [],
++      "canonicalQuestionChangeIds": [],
++      "holdResolution": {
++        "imageVerificationQueue": [],
++        "normalizedAndRegistered": [],
++        "choiceConflictNonScoring": [],
++        "lowContextRegistered": [],
++        "answerKeyCorrectionPending": [],
++        "theoryTaxonomyRepairPending": []
++      },
++      "sourceFiles": [
++        {
++          "path": "docs/audit-work/cbt-system-migration/import-batch-13/integration-correction-ledger.jsonl",
++          "sha256": "9312b6ac10347b13f6cf6ffa9d7468bcf019e7ad9af91ef956b20428b2eaf78c"
++        },
++        {
++          "path": "docs/audit-work/cbt-system-migration/import-batch-13/restored-source-files-ledger.jsonl",
++          "sha256": "fdbeda9b69cdf69e464b0a4937881de2d2292d7f9108e25cb1dc85853fe04094"
++        }
++      ]
+     }
+   ],
+-  "recordsSha256": "6abd78b3582d8a05c01c715cbd8379db48ee99ea473f60102c69fd33b1cc9d42",
++  "recordsSha256": "05a4d38ca6f9e02c3648f4d8156222d203f1b277f411ec8c1f371ac1c368ff9f",
+   "records": [
+     {
+       "externalId": "2006-4-Q01",
+@@ -21028,7 +21066,7 @@
+         "canonicalId": "U-478",
+         "lessonId": "lesson-qnsesu",
+         "lessonAnchor": "trap",
+-        "conceptGroupId": "s1-g02",
++        "conceptGroupId": "s1-g06",
+         "conceptId": "concept-qnsesu",
+         "canonicalStem": "텔레스코프형 실린더에 관한 설명으로 옳지 않은 것은?"
+       },
+@@ -21041,23 +21079,24 @@
+       ],
+       "review": {
+         "verdict": "ACCEPT",
+-        "scoringDisposition": "scored",
++        "scoringDisposition": "scored_after_canonical_theory_repair",
+         "sourceAnswerAgreement": "match",
+         "answerEvidence": "independently_solved",
+         "answerConfidence": "confirmed",
+-        "theoryLinkStatus": "direct",
++        "theoryLinkStatus": "direct_existing_theory_canonical_taxonomy_repair",
+         "holdReasons": [],
+         "answerConflictOrMultipleAnswerRisk": "없음. 원문 보기에서 정답이 단일하게 결정된다.",
+         "runtimeStatus": "candidate",
+         "publicationBlockers": [
+-          "pending_runtime_integration"
++          "pending_runtime_integration",
++          "canonical_theory_repair_runtime_validation"
+         ],
+         "reviewedAt": "2026-08-06T14:03:24+09:00"
+       },
+       "migration": {
+         "mappingClass": "EXACT_REPLACE",
+-        "canonicalAction": "REBUILD_CANONICAL_CONTENT_AND_THEORY_IN_PLACE",
+-        "theoryAction": "RELINK_CANONICAL_TO_REVIEWED_DIRECT_THEORY",
++        "canonicalAction": "APPLY_CANONICAL_OVERLAY",
++        "theoryAction": "RELINK_CANONICAL_TO_EXISTING_THEORY_GROUP",
+         "runtimeDisposition": "CANDIDATE_AFTER_CANONICAL_THEORY_REPAIR",
+         "confidence": "high",
+         "duplicateCanonicalCluster": false,
+@@ -106510,11 +106549,11 @@
+       ],
+       "theoryLink": {
+         "canonicalId": "U-649",
+-        "lessonId": "lesson-zoxye2",
+-        "lessonAnchor": "principle",
+-        "conceptGroupId": "s4-g07",
+-        "conceptId": "concept-zoxye2",
+-        "canonicalStem": "여러 작업자가 한 조가 되어 설비군의 보전작업을 공동 수행하는 조직방식은?"
++        "lessonId": "lesson-cbt-gang-system-process-layout",
++        "lessonAnchor": "definition",
++        "conceptGroupId": "s4-g10",
++        "conceptId": "concept-cd7x17",
++        "canonicalStem": "공정별 배치에서 동일 기종이 모여 있는 시스템은?"
+       },
+       "conceptKeywords": [
+         "갱 시스템",
+@@ -106522,25 +106561,26 @@
+       ],
+       "review": {
+         "verdict": "ACCEPT",
+-        "scoringDisposition": "scored",
++        "scoringDisposition": "scored_after_theory_repair",
+         "sourceAnswerAgreement": "agrees",
+         "answerEvidence": "independently_solved",
+         "answerConfidence": "likely",
+-        "theoryLinkStatus": "direct_existing_theory",
++        "theoryLinkStatus": "direct_added_theory_source_needed",
+         "holdReasons": [],
+         "answerConflictOrMultipleAnswerRisk": "gang system이라는 명칭은 교재별로 작업조 중심 또는 동일기종 집단관리로 설명 범위가 다르다. 이 문항은 당시 설비보전 조직 분류를 따른다.",
+         "runtimeStatus": "candidate",
+         "publicationBlockers": [
+           "pending_runtime_integration",
+-          "variant_specific_choice_contract_pending"
++          "variant_specific_choice_contract_pending",
++          "lesson_source_needed"
+         ],
+         "reviewedAt": "2026-08-06T20:21:20+09:00"
+       },
+       "migration": {
+         "mappingClass": "EXACT_REPLACE",
+-        "canonicalAction": "KEEP_CURRENT_CANONICAL",
+-        "theoryAction": "USE_DIRECT_EXISTING_THEORY",
+-        "runtimeDisposition": "PUBLICATION_CANDIDATE_WITH_VARIANT_CHOICE_CONTRACT_PENDING",
++        "canonicalAction": "APPLY_CANONICAL_OVERLAY",
++        "theoryAction": "ADD_DIRECT_THEORY_LESSON",
++        "runtimeDisposition": "CANDIDATE_AFTER_CANONICAL_THEORY_REPAIR_SOURCE_GATED",
+         "confidence": "high",
+         "duplicateCanonicalCluster": false,
+         "preserveExternalId": true,
+@@ -148290,7 +148330,7 @@
+       ],
+       "review": {
+         "verdict": "CHOICE_ISSUE",
+-        "scoringDisposition": "non_scoring",
++        "scoringDisposition": "non_scoring_choice_conflict",
+         "sourceAnswerAgreement": "source_key_not_usable",
+         "answerEvidence": "independent_choice_set_conflict",
+         "answerConfidence": "confirmed",
+@@ -148326,7 +148366,9 @@
+         ],
+         "reason": "전위차계·가변저항기·저항온도계·스트레인게이지는 모두 저항 또는 저항비의 변화를 전기신호로 이용한다. 따라서 복원된 선택지에는 저항변환 방식과 명확히 거리가 먼 보기가 없어 단일정답이 성립하지 않는다.",
+         "scoringPolicy": "non_scoring",
+-        "sourceAnswerTreatment": "복원 정답은 출처 기록으로만 보존하고 학습자 채점에는 사용하지 않는다."
++        "sourceAnswerTreatment": "복원 정답은 출처 기록으로만 보존하고 학습자 채점에는 사용하지 않는다.",
++        "label": "선택지 충돌",
++        "conflictType": "no_unique_answer_all_choices_resistance_based"
+       }
+     },
+     {
+@@ -181466,7 +181508,7 @@
+       ],
+       "review": {
+         "verdict": "CHOICE_ISSUE",
+-        "scoringDisposition": "non_scoring",
++        "scoringDisposition": "non_scoring_choice_conflict",
+         "sourceAnswerAgreement": "source_key_not_usable",
+         "answerEvidence": "independent_choice_set_conflict",
+         "answerConfidence": "conflict",
+@@ -181500,7 +181542,9 @@
+         ],
+         "reason": "복원된 문장에서는 2번과 3번이 모두 조직원칙에 어긋난다. 목적에 지장이 없으면 조직은 불필요하게 전문화하기보다 단순화해야 하고, 사람을 수단으로만 보아서도 안 되므로 단일정답이 성립하지 않는다.",
+         "scoringPolicy": "non_scoring",
+-        "sourceAnswerTreatment": "복원 정답은 출처 기록으로만 보존하고 학습자 채점에는 사용하지 않는다."
++        "sourceAnswerTreatment": "복원 정답은 출처 기록으로만 보존하고 학습자 채점에는 사용하지 않는다.",
++        "label": "선택지 충돌",
++        "conflictType": "multiple_incorrect_choices"
+       }
+     },
+     {
+@@ -187020,7 +187064,7 @@
+       ],
+       "review": {
+         "verdict": "CHOICE_ISSUE",
+-        "scoringDisposition": "non_scoring",
++        "scoringDisposition": "non_scoring_choice_conflict",
+         "sourceAnswerAgreement": "source_key_not_usable",
+         "answerEvidence": "independent_choice_set_conflict",
+         "answerConfidence": "confirmed",
+@@ -187054,7 +187098,9 @@
+         ],
+         "reason": "SVRDY는 서보드라이브가 운전준비 상태임을 알리는 준비신호이지 ±10 V 속도명령이 아니다. 또한 PTP는 두 지정점 간 도달을 제어할 뿐 중간 궤적을 원으로 만드는 방식이 아니므로 1번과 4번이 모두 틀려 단일정답이 성립하지 않는다.",
+         "scoringPolicy": "non_scoring",
+-        "sourceAnswerTreatment": "복원 정답은 출처 기록으로만 보존하고 학습자 채점에는 사용하지 않는다."
++        "sourceAnswerTreatment": "복원 정답은 출처 기록으로만 보존하고 학습자 채점에는 사용하지 않는다.",
++        "label": "선택지 충돌",
++        "conflictType": "multiple_incorrect_choices"
+       }
+     },
+     {
+@@ -197944,7 +197990,7 @@
+       ],
+       "review": {
+         "verdict": "CHOICE_ISSUE",
+-        "scoringDisposition": "non_scoring",
++        "scoringDisposition": "non_scoring_choice_conflict",
+         "sourceAnswerAgreement": "source_key_not_usable",
+         "answerEvidence": "independent_choice_set_conflict",
+         "answerConfidence": "confirmed",
+@@ -197978,7 +198024,9 @@
+         ],
+         "reason": "실린더의 정지 이론출력은 F=pA로 계산하므로 행정거리는 필요하지 않다. 또한 전진출력만 계산하면 로드 치수도 필요 없고, 원문 자체가 최종답안에서 3번과 4번을 복수정답 처리했다고 명시하므로 단일정답 채점이 불가능하다.",
+         "scoringPolicy": "non_scoring",
+-        "sourceAnswerTreatment": "복원 정답은 출처 기록으로만 보존하고 학습자 채점에는 사용하지 않는다."
++        "sourceAnswerTreatment": "복원 정답은 출처 기록으로만 보존하고 학습자 채점에는 사용하지 않는다.",
++        "label": "선택지 충돌",
++        "conflictType": "official_multiple_answers"
+       }
+     },
+     {
+@@ -225044,7 +225092,7 @@
+       "sourceAnswerText": "④ 회전주기 측정법",
+       "reviewedAnswerText": "",
+       "choiceIdMapping": [],
+-      "directSolution": "반사테이프에 빛을 조사해 반사광 펄스를 검출하는 센서 방식은 광전식 검출법이다. 동시에 펄스 간 회전주기를 측정해 그 역수로 회전수를 계산할 수 있으므로 확정답안에서 1번과 4번이 함께 인정됐다. 단일정답형 채점에는 사용할 수 없다.",
++      "directSolution": "선택지 충돌: 반사테이프에 빛을 조사해 반사광 펄스를 검출하는 센서 방식은 광전식 검출법이다. 동시에 펄스 간 회전주기를 측정해 그 역수로 회전수를 계산할 수 있으므로 확정답안에서 1번과 4번이 함께 인정됐다. 단일정답형 채점에는 사용할 수 없다.",
+       "formulaUnitSubstitution": null,
+       "choiceByChoiceReasons": [
+         {
+@@ -225087,7 +225135,7 @@
+       ],
+       "review": {
+         "verdict": "CHOICE_ISSUE",
+-        "scoringDisposition": "non_scoring",
++        "scoringDisposition": "non_scoring_choice_conflict",
+         "sourceAnswerAgreement": "source_key_not_usable",
+         "answerEvidence": "multiple_final_answers_confirmed",
+         "answerConfidence": "confirmed",
+@@ -225121,7 +225169,11 @@
+         ],
+         "reason": "반사테이프에 빛을 조사해 반사광 펄스를 검출하는 센서 방식은 광전식 검출법이다. 동시에 펄스 간 회전주기를 측정해 그 역수로 회전수를 계산할 수 있으므로 확정답안에서 1번과 4번이 함께 인정됐다. 단일정답형 채점에는 사용할 수 없다.",
+         "sourceAnswerIndexPreservedForAudit": 3,
+-        "scoringAllowed": false
++        "scoringAllowed": false,
++        "label": "선택지 충돌",
++        "conflictType": "official_multiple_answers",
++        "scoringPolicy": "non_scoring",
++        "sourceAnswerTreatment": "복원 정답은 출처 기록으로만 보존하고 학습자 채점에는 사용하지 않는다."
+       }
+     },
+     {
+@@ -251126,7 +251178,7 @@
+           "authoritativeSource": false
+         }
+       },
+-      "previousQuestionSha256": "44617af2e712441165dc00045ff9848caae99330e643b14281da042335fe4866",
++      "previousQuestionSha256": "3016da1929d96568fc768cbb0a176d322fb1bafabce9624f9f095cfb60037450",
+       "previousQuestionHashBasis": "dry_run_canonical_contract",
+       "affectedExternalIds": [
+         "2015-2-Q23",
+@@ -251272,7 +251324,7 @@
+           "authoritativeSource": false
+         }
+       },
+-      "previousQuestionSha256": "e8921a7fe71061153c108a92b05938d5698c2f2ed64d1f4929ef6c58fe9df0a3",
++      "previousQuestionSha256": "ff0c8ded5a013a81ec018e98478060f67749d7862aecdf513387068556598bda",
+       "previousQuestionHashBasis": "dry_run_canonical_reference_contract",
+       "affectedExternalIds": [
+         "2007-4-Q84",
+@@ -251281,5 +251333,5 @@
+       "rationale": "U-478의 문항·정답은 유지하고 conceptGroup을 유압 동력원과 액추에이터(s1-g02)에서 액추에이터(s1-g06)로 교정한다."
+     }
+   ],
+-  "canonicalQuestionChangesSha256": "ea6e43f139345e607eb2e5dbe940093e7fe4acb443263a87f12c968c844b7f80"
++  "canonicalQuestionChangesSha256": "46a3306e5646dbdf55ebce4bd5130214cdeb68e9b0493117a65e575dcd62bf05"
+ }
+--- a/src/lib/content/reviewed-cbt-variants.ts
++++ b/src/lib/content/reviewed-cbt-variants.ts
+@@ -462,6 +462,11 @@
+       (batch) => batch.holdResolution.lowContextRegistered,
+     ),
+   );
++  const answerKeyConflictIds = new Set(
++    manifest.batches.flatMap(
++      (batch) => batch.holdResolution.answerKeyCorrectionPending ?? [],
++    ),
++  );
+   if (
+     imageQueueIds.size !== manifest.holdResolutionPolicy.imageVerificationQueueCount ||
+     normalizedIds.size !== manifest.holdResolutionPolicy.normalizedAndRegisteredCount ||
+@@ -481,6 +486,15 @@
+       );
+     }
+     if (
++      answerKeyConflictIds.has(record.externalId) !==
++      (record.review.runtimeStatus === "hold" &&
++        record.review.issueLabel === "정답키 충돌")
++    ) {
++      throw new Error(
++        `Reviewed CBT answer-key queue state mismatch: ${record.externalId}`,
++      );
++    }
++    if (
+       normalizedIds.has(record.externalId) !==
+       Boolean(record.presentationNormalization)
+     ) {
+@@ -743,9 +757,20 @@
+ }
+ 
+ function validateHoldRecord(record: ReviewedCbtVariantRecord) {
++  if (record.review.issueLabel === "필수 이미지 확인") {
++    validateImageHoldRecord(record);
++    return;
++  }
++  if (record.review.issueLabel === "정답키 충돌") {
++    validateAnswerKeyConflictHoldRecord(record);
++    return;
++  }
++  throw new Error(`Reviewed CBT hold type is invalid: ${record.externalId}`);
++}
++
++function validateImageHoldRecord(record: ReviewedCbtVariantRecord) {
+   if (
+     record.review.verdict !== "HOLD" ||
+-    record.review.issueLabel !== "필수 이미지 확인" ||
+     record.review.scoringDisposition !== "excluded_required_image" ||
+     record.reviewedAnswerIndex !== null ||
+     record.reviewedAnswerText !== "" ||
+@@ -759,6 +784,29 @@
+   }
+ }
+ 
++function validateAnswerKeyConflictHoldRecord(
++  record: ReviewedCbtVariantRecord,
++) {
++  if (
++    record.review.verdict !== "REVISE" ||
++    record.review.scoringDisposition !== "excluded_answer_key_conflict" ||
++    record.review.sourceAnswerAgreement !== "disagrees" ||
++    record.reviewedAnswerIndex !== null ||
++    record.reviewedAnswerText !== "" ||
++    record.choiceIdMapping.length > 0 ||
++    !record.review.publicationBlockers.includes(
++      "answer_key_correction_pending_runtime_validation",
++    ) ||
++    record.review.holdReasons.length === 0 ||
++    record.migration.mappingClass !== "ANSWER_KEY_CONFLICT_HOLD" ||
++    record.migration.runtimeDisposition !== "ANSWER_KEY_CORRECTION_QUEUE"
++  ) {
++    throw new Error(
++      `Reviewed CBT answer-key conflict hold is invalid: ${record.externalId}`,
++    );
++  }
++}
++
+ function validateChoiceConflictRecord(record: ReviewedCbtVariantRecord) {
+   const conflict = record.choiceConflict;
+   if (
+--- a/src/lib/content/written-question-audit.ts
++++ b/src/lib/content/written-question-audit.ts
+@@ -194,6 +194,18 @@
+   "authoritative_source_required",
+ ]);
+ 
++const AUDIT_PROMOTION_BLOCKERS = new Set([
++  "choice_conflict_non_scoring",
++]);
++
++function hasAuditPromotionBlocker(question: Question) {
++  return Boolean(
++    question.publication?.blockers.some((blocker) =>
++      AUDIT_PROMOTION_BLOCKERS.has(blocker),
++    ),
++  );
++}
++
+ export function isHighRiskPublicQuestion(question: Question) {
+   if (question.contentStatus !== "published") return false;
+ 
+@@ -230,6 +242,9 @@
+       audit?.auditDisposition === "cbt_corrected"
+     );
+   };
++  const questionsById = new Map(
++    content.questions.map((question) => [question.id, question]),
++  );
+   const questionIdsByLessonId = new Map<string, string[]>();
+   for (const question of content.questions) {
+     questionIdsByLessonId.set(question.lessonId, [
+@@ -246,12 +261,23 @@
+           lesson.coverageStatus === "covered" &&
+           lesson.quality.passed &&
+           !lesson.sourceNeeded;
+-        const hasAcceptedQuestion = (
++        const linkedQuestions = (
+           questionIdsByLessonId.get(lesson.id) ?? []
+-        ).some(acceptedAudit);
++        ).flatMap((questionId) => {
++          const question = questionsById.get(questionId);
++          return question ? [question] : [];
++        });
++        const hasAcceptedQuestion = linkedQuestions.some((question) =>
++          acceptedAudit(question.id),
++        );
++        const hasBlockedQuestion = linkedQuestions.some(
++          hasAuditPromotionBlocker,
++        );
+         return (
+           alreadyPublic ||
+-          (hasAcceptedQuestion && lesson.quality.passed)
++          (hasAcceptedQuestion &&
++            !hasBlockedQuestion &&
++            lesson.quality.passed)
+         );
+       })
+       .map((lesson) => lesson.id),
+@@ -264,7 +290,11 @@
+     const accepted =
+       audit.auditDisposition === "verified" ||
+       audit.auditDisposition === "cbt_corrected";
+-    if (!accepted || !publicLessonIds.has(question.lessonId)) {
++    if (
++      !accepted ||
++      hasAuditPromotionBlocker(question) ||
++      !publicLessonIds.has(question.lessonId)
++    ) {
+       return { ...question, audit };
+     }
+ 
+--- a/src/lib/domain/types.ts
++++ b/src/lib/domain/types.ts
+@@ -396,7 +396,7 @@
+   conceptKeywords: string[];
+   review: {
+     verdict: "ACCEPT" | "REVISE" | "CHOICE_ISSUE" | "HOLD";
+-    issueLabel?: "선택지 충돌" | "필수 이미지 확인";
++    issueLabel?: "선택지 충돌" | "필수 이미지 확인" | "정답키 충돌";
+     scoringDisposition: string;
+     sourceAnswerAgreement: string | null;
+     answerEvidence: string | null;
+@@ -484,6 +484,8 @@
+       normalizedAndRegistered: string[];
+       choiceConflictNonScoring: string[];
+       lowContextRegistered: string[];
++      answerKeyCorrectionPending?: string[];
++      theoryTaxonomyRepairPending?: string[];
+     };
+     sourceFiles: Array<{ path: string; sha256: string }>;
+   }>;
+--- a/scripts/verify-reviewed-cbt-variants.ts
++++ b/scripts/verify-reviewed-cbt-variants.ts
+@@ -38,6 +38,41 @@
+   runtime.lessons.map((lesson) => [lesson.id, lesson]),
+ );
+ 
++type Batch13TheoryLinkSnapshot = {
++  canonicalId: string;
++  lessonId: string;
++  lessonAnchor: string;
++  conceptGroupId: string;
++  conceptId: string;
++  canonicalStem: string;
++};
++
++type Batch13Correction = {
++  correctionId: string;
++  kind: string;
++  externalId?: string;
++  canonicalId?: string;
++  beforeSha256?: string;
++  afterSha256?: string;
++  before?: { theoryLink?: Batch13TheoryLinkSnapshot };
++  after?: { theoryLink?: Batch13TheoryLinkSnapshot };
++};
++
++const batch13CorrectionLedgerPath =
++  "docs/audit-work/cbt-system-migration/import-batch-13/integration-correction-ledger.jsonl";
++const batch13Corrections = parseJsonl<Batch13Correction>(
++  readFileSync(batch13CorrectionLedgerPath, "utf8"),
++);
++const batch13RecordSupersessions = new Map(
++  batch13Corrections
++    .filter(
++      (correction) =>
++        correction.kind === "record_theory_link_supersession" &&
++        correction.externalId,
++    )
++    .map((correction) => [correction.externalId!, correction]),
++);
++
+ verifyManifestDigest();
+ verifySourceFilesAndBatchExactSets();
+ verifyRuntimeVariants();
+@@ -54,6 +89,7 @@
+ verifyBatch10Contracts();
+ verifyBatch11Contracts();
+ verifyBatch12Contracts();
++verifyBatch13Contracts();
+ verifySupabaseProjection();
+ 
+ if (failures.length > 0) {
+@@ -63,7 +99,7 @@
+ 
+ const states = countStates(runtime.variants);
+ console.log(
+-  `PASS: reviewed CBT imports verified (${reviewedCbtVariantManifest.records.length} records; ${states.candidate ?? 0} candidates; ${states.choice_conflict ?? 0} choice conflicts; ${states.hold ?? 0} image holds; ${states.unreviewed ?? 0} gated; ${reviewedCbtVariantManifest.theoryLessonAdditions?.length ?? 0} theory additions; ${reviewedCbtVariantManifest.canonicalQuestionChanges?.length ?? 0} canonical overlays).`,
++  `PASS: reviewed CBT imports verified (${reviewedCbtVariantManifest.records.length} records; ${states.candidate ?? 0} candidates; ${states.choice_conflict ?? 0} choice conflicts; ${states.hold ?? 0} holds; ${states.unreviewed ?? 0} gated; ${reviewedCbtVariantManifest.theoryLessonAdditions?.length ?? 0} theory additions; ${reviewedCbtVariantManifest.canonicalQuestionChanges?.length ?? 0} canonical overlays; batch 13 integration corrections applied).`,
+ );
+ 
+ function verifyManifestDigest() {
+@@ -1042,11 +1078,25 @@
+   }
+   for (const row of directLinks) {
+     const record = recordsById.get(row.externalId);
++    const supersession = batch13RecordSupersessions.get(row.externalId);
++    const previousLink = supersession?.before?.theoryLink;
++    const effectiveLink = supersession?.after?.theoryLink ?? row;
++    if (
++      supersession &&
++      (!previousLink ||
++        previousLink.lessonId !== row.lessonId ||
++        previousLink.lessonAnchor !== row.lessonAnchor ||
++        previousLink.conceptGroupId !== row.conceptGroupId)
++    ) {
++      failures.push(
++        `${row.externalId}: batch 13 supersession does not bind the historical batch 06 matrix`,
++      );
++    }
+     if (
+       !record?.theoryLink ||
+-      record.theoryLink.lessonId !== row.lessonId ||
+-      record.theoryLink.lessonAnchor !== row.lessonAnchor ||
+-      record.theoryLink.conceptGroupId !== row.conceptGroupId ||
++      record.theoryLink.lessonId !== effectiveLink.lessonId ||
++      record.theoryLink.lessonAnchor !== effectiveLink.lessonAnchor ||
++      record.theoryLink.conceptGroupId !== effectiveLink.conceptGroupId ||
+       Boolean(record.variantSpecificFeedbackRequired) !==
+         row.variantSpecificFeedbackRequired
+     ) {
+@@ -2734,6 +2784,207 @@
+   }
+ }
+ 
++function verifyBatch13Contracts() {
++  const batch = reviewedCbtVariantManifest.batches.find(
++    (candidate) => candidate.batchId === "import-13",
++  );
++  if (!batch) {
++    failures.push("batch 13 metadata is missing");
++    return;
++  }
++
++  if (
++    reviewedCbtVariantManifest.batches.at(-1)?.batchId !== "import-13" ||
++    batch.recordCount !== 0 ||
++    batch.candidateCount !== 0 ||
++    batch.choiceConflictCount !== 0 ||
++    batch.holdCount !== 0 ||
++    (batch.variantSpecificFeedbackCount ?? 0) !== 0 ||
++    reviewedCbtVariantManifest.records.length !== 2384
++  ) {
++    failures.push("batch 13 zero-record integration metadata is invalid");
++  }
++
++  const expectedCorrectionKinds = new Map([
++    ["canonical_previous_digest_rebind", 2],
++    ["record_theory_link_supersession", 2],
++    ["choice_conflict_contract_normalization", 5],
++    ["runtime_validator_contract_fix", 1],
++    ["runtime_publication_precedence_fix", 1],
++    ["runtime_taxonomy_repair_override", 1],
++  ]);
++  for (const [kind, expected] of expectedCorrectionKinds) {
++    const actual = batch13Corrections.filter(
++      (correction) => correction.kind === kind,
++    ).length;
++    if (actual !== expected) {
++      failures.push(`batch 13 correction kind ${kind}: ${actual} != ${expected}`);
++    }
++  }
++  if (batch13Corrections.length !== 12) {
++    failures.push("batch 13 correction ledger count changed unexpectedly");
++  }
++
++  const sourceQuestionsById = new Map(
++    source.questions.map((question) => [question.id, question]),
++  );
++  for (const canonicalId of ["U-649", "U-478"]) {
++    const change = reviewedCbtVariantManifest.canonicalQuestionChanges?.find(
++      (candidate) => candidate.question.id === canonicalId,
++    );
++    const sourceQuestion = sourceQuestionsById.get(canonicalId);
++    const correction = batch13Corrections.find(
++      (candidate) =>
++        candidate.kind === "canonical_previous_digest_rebind" &&
++        candidate.canonicalId === canonicalId,
++    );
++    const actualDigest = sourceQuestion
++      ? sha256(JSON.stringify(sourceQuestion))
++      : "";
++    if (
++      !change ||
++      !sourceQuestion ||
++      change.previousQuestionSha256 !== actualDigest ||
++      correction?.afterSha256 !== actualDigest
++    ) {
++      failures.push(`${canonicalId}: batch 13 canonical digest rebind failed`);
++    }
++  }
++
++  const recordLinkExpectations = [
++    [
++      "2015-2-Q23",
++      "U-649",
++      "lesson-cbt-gang-system-process-layout",
++      "definition",
++      "s4-g10",
++      "concept-cd7x17",
++    ],
++    [
++      "2007-4-Q84",
++      "U-478",
++      "lesson-qnsesu",
++      "trap",
++      "s1-g06",
++      "concept-qnsesu",
++    ],
++  ] as const;
++  for (const [externalId, canonicalId, lessonId, anchor, groupId, conceptId] of recordLinkExpectations) {
++    const record = recordsById.get(externalId);
++    if (
++      record?.canonicalId !== canonicalId ||
++      record.theoryLink?.lessonId !== lessonId ||
++      record.theoryLink.lessonAnchor !== anchor ||
++      record.theoryLink.conceptGroupId !== groupId ||
++      record.theoryLink.conceptId !== conceptId ||
++      !batch13RecordSupersessions.has(externalId)
++    ) {
++      failures.push(`${externalId}: batch 13 cross-batch theory repair failed`);
++    }
++  }
++
++  const conflictExpectations = new Map([
++    ["2018-2-Q10", "no_unique_answer_all_choices_resistance_based"],
++    ["2019-2-Q32", "multiple_incorrect_choices"],
++    ["2019-2-Q86", "multiple_incorrect_choices"],
++    ["2020-12B-Q92", "official_multiple_answers"],
++    ["2021-2-Q13", "official_multiple_answers"],
++  ]);
++  for (const [externalId, conflictType] of conflictExpectations) {
++    const record = recordsById.get(externalId);
++    if (
++      record?.review.runtimeStatus !== "choice_conflict" ||
++      record.review.scoringDisposition !== "non_scoring_choice_conflict" ||
++      record.choiceConflict?.label !== "선택지 충돌" ||
++      record.choiceConflict.conflictType !== conflictType ||
++      record.choiceConflict.scoringPolicy !== "non_scoring" ||
++      !record.choiceConflict.sourceAnswerTreatment.trim() ||
++      !record.directSolution.startsWith("선택지 충돌:")
++    ) {
++      failures.push(`${externalId}: batch 13 conflict normalization failed`);
++    }
++  }
++
++  const answerKeyHold = recordsById.get("2020-3B-Q28");
++  if (
++    answerKeyHold?.review.runtimeStatus !== "hold" ||
++    answerKeyHold.review.issueLabel !== "정답키 충돌" ||
++    answerKeyHold.review.scoringDisposition !== "excluded_answer_key_conflict" ||
++    answerKeyHold.reviewedAnswerIndex !== null ||
++    answerKeyHold.choiceIdMapping.length !== 0 ||
++    answerKeyHold.migration.mappingClass !== "ANSWER_KEY_CONFLICT_HOLD"
++  ) {
++    failures.push("2020-3B-Q28: batch 13 answer-key HOLD contract failed");
++  }
++
++  for (const canonicalId of ["U-1161", "U-1089"]) {
++    const question = runtimeQuestionsById.get(canonicalId);
++    if (
++      !question ||
++      question.contentStatus === "published" ||
++      question.publication?.readiness === "ready" ||
++      !question.publication?.blockers.includes("choice_conflict_non_scoring")
++    ) {
++      failures.push(
++        `${canonicalId}: legacy written audit overrode the newer non-scoring gate`,
++      );
++    }
++    const lesson = question
++      ? runtimeLessonsById.get(question.lessonId)
++      : undefined;
++    if (
++      !lesson ||
++      lesson.contentStatus === "published" ||
++      lesson.publication?.readiness === "ready"
++    ) {
++      failures.push(`${canonicalId}: gated canonical lesson was published`);
++    }
++  }
++
++  if (!batch.canonicalTheoryRepairs.includes("lesson-qnsesu:s1-g06")) {
++    failures.push("batch 13 taxonomy repair override is missing");
++  }
++
++  const restoredSources = parseJsonl<{
++    path: string;
++    sha256: string;
++    size: number;
++  }>(
++    readFileSync(
++      "docs/audit-work/cbt-system-migration/import-batch-13/restored-source-files-ledger.jsonl",
++      "utf8",
++    ),
++  );
++  if (restoredSources.length !== 16) {
++    failures.push("batch 13 restored-source ledger count changed unexpectedly");
++  }
++  for (const restored of restoredSources) {
++    const raw = readFileSync(restored.path);
++    if (raw.length !== restored.size || sha256Buffer(raw) !== restored.sha256) {
++      failures.push(`${restored.path}: restored source integrity mismatch`);
++    }
++  }
++
++  const historicalBatch06 = parseJsonl<{
++    externalId: string;
++    lessonId: string;
++    lessonAnchor: string;
++    conceptGroupId: string;
++  }>(
++    readFileSync(
++      "docs/audit-work/cbt-system-migration/import-batch-06/direct-theory-link-matrix.jsonl",
++      "utf8",
++    ),
++  ).find((row) => row.externalId === "2015-2-Q23");
++  if (
++    historicalBatch06?.lessonId !== "lesson-zoxye2" ||
++    historicalBatch06.lessonAnchor !== "principle" ||
++    historicalBatch06.conceptGroupId !== "s4-g07"
++  ) {
++    failures.push("batch 13 mutated the historical batch 06 theory matrix");
++  }
++}
++
+ function verifySupabaseProjection() {
+   const plan = buildSupabaseMaterialization(
+     runtime,
+@@ -2836,3 +3087,7 @@
+ function sha256(value: string) {
+   return createHash("sha256").update(value, "utf8").digest("hex");
+ }
++
++function sha256Buffer(value: Buffer) {
++  return createHash("sha256").update(value).digest("hex");
++}
+--- a/tests/unit/reviewed-cbt-variants.test.ts
++++ b/tests/unit/reviewed-cbt-variants.test.ts
+@@ -1558,6 +1558,104 @@
+     ).toHaveLength(0);
+   });
+ 
++  it("applies batch 13 integration corrections without changing the 2384-record exact set", () => {
++    const runtime = buildRuntimeContent(source);
++    const batch = reviewedCbtVariantManifest.batches.find(
++      (candidate) => candidate.batchId === "import-13",
++    );
++
++    expect(batch).toMatchObject({
++      recordCount: 0,
++      candidateCount: 0,
++      choiceConflictCount: 0,
++      holdCount: 0,
++      canonicalTheoryRepairs: ["lesson-qnsesu:s1-g06"],
++    });
++    expect(reviewedCbtVariantManifest.records).toHaveLength(2384);
++
++    for (const [externalId, lessonId, conceptGroupId] of [
++      [
++        "2015-2-Q23",
++        "lesson-cbt-gang-system-process-layout",
++        "s4-g10",
++      ],
++      ["2007-4-Q84", "lesson-qnsesu", "s1-g06"],
++    ] as const) {
++      const variant = runtime.variants.find(
++        (candidate) => candidate.externalId === externalId,
++      );
++      expect(variant).toMatchObject({
++        reviewState: "candidate",
++        reviewed: {
++          theoryLink: { lessonId, conceptGroupId },
++          migration: { canonicalAction: "APPLY_CANONICAL_OVERLAY" },
++        },
++      });
++    }
++
++    for (const externalId of [
++      "2018-2-Q10",
++      "2019-2-Q32",
++      "2019-2-Q86",
++      "2020-12B-Q92",
++      "2021-2-Q13",
++    ]) {
++      const variant = runtime.variants.find(
++        (candidate) => candidate.externalId === externalId,
++      );
++      expect(variant).toMatchObject({
++        reviewState: "choice_conflict",
++        reviewed: {
++          reviewedAnswerIndex: null,
++          choiceIdMapping: [],
++          review: {
++            scoringDisposition: "non_scoring_choice_conflict",
++            issueLabel: "선택지 충돌",
++          },
++          choiceConflict: {
++            label: "선택지 충돌",
++            scoringPolicy: "non_scoring",
++          },
++        },
++      });
++      expect(variant?.reviewed?.directSolution.startsWith("선택지 충돌:")).toBe(
++        true,
++      );
++    }
++
++    const answerKeyHold = runtime.variants.find(
++      (variant) => variant.externalId === "2020-3B-Q28",
++    );
++    expect(answerKeyHold).toMatchObject({
++      reviewState: "hold",
++      reviewed: {
++        reviewedAnswerIndex: null,
++        choiceIdMapping: [],
++        review: {
++          issueLabel: "정답키 충돌",
++          scoringDisposition: "excluded_answer_key_conflict",
++        },
++        migration: { mappingClass: "ANSWER_KEY_CONFLICT_HOLD" },
++      },
++    });
++
++    for (const canonicalId of ["U-1161", "U-1089"]) {
++      const question = runtime.questions.find(
++        (candidate) => candidate.id === canonicalId,
++      );
++      const lesson = runtime.lessons.find(
++        (candidate) => candidate.id === question?.lessonId,
++      );
++      expect(question?.contentStatus).toBe("in_review");
++      expect(question?.publication).toMatchObject({
++        readiness: "blocked",
++        blockers: expect.arrayContaining(["choice_conflict_non_scoring"]),
++      });
++      expect(lesson?.contentStatus).toBe("in_review");
++      expect(lesson?.publication?.readiness).toBe("blocked");
++    }
++  });
++
+   it("does not let variant-specific choice contracts fall back to canonical text matching", () => {
+     const runtime = buildRuntimeContent(source);
+     const batch02CandidateRecord = reviewedCbtVariantManifest.records
+--- a/tests/unit/written-question-audit.test.ts
++++ b/tests/unit/written-question-audit.test.ts
+@@ -12,6 +12,7 @@
+ import { mergeApprovedWeldingProcessContent } from "@/lib/content/welding-process-approved";
+ import { mergeApprovedWeldingSafetyContent } from "@/lib/content/welding-safety-approved";
+ import { normalizeCanonicalTaxonomy } from "@/lib/content/taxonomy-normalization";
++import { mergeReviewedCbtVariants } from "@/lib/content/reviewed-cbt-variants";
+ import type { GeneratedContent } from "@/lib/domain/types";
+ 
+ const source = JSON.parse(
+@@ -165,6 +166,28 @@
+     ).toBe(false);
+   });
+ 
++  it("does not let an older accepted audit override a newer CBT non-scoring gate", () => {
++    const reviewed = mergeReviewedCbtVariants(source);
++    const overlaid = applyWrittenQuestionAuditManifest(reviewed, manifest);
++
++    for (const canonicalId of ["U-1161", "U-1089"]) {
++      const question = overlaid.questions.find(
++        (candidate) => candidate.id === canonicalId,
++      );
++      const lesson = overlaid.lessons.find(
++        (candidate) => candidate.id === question?.lessonId,
++      );
++      expect(question?.audit?.auditDisposition).toBe("verified");
++      expect(question?.contentStatus).toBe("in_review");
++      expect(question?.publication).toMatchObject({
++        readiness: "blocked",
++        blockers: expect.arrayContaining(["choice_conflict_non_scoring"]),
++      });
++      expect(lesson?.contentStatus).toBe("in_review");
++      expect(lesson?.publication?.readiness).toBe("blocked");
++    }
++  });
++
+   it("keeps audit evidence internally while removing it from learner lesson copy", () => {
+     const overlaid = applyWrittenQuestionAuditManifest(content, manifest);
+     const lesson = overlaid.lessons.find(

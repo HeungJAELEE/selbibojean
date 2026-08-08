@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">자주보전 7단계 흐름도</title>
+  <desc id="desc">초기청소에서 자주관리 철저까지 이어지는 자주보전 7단계를 두 줄로 정리한 학습용 도식</desc>
+  <rect width="960" height="540" rx="32" fill="#f8fafc"/>
+  <text x="56" y="66" fill="#173957" font-size="30" font-weight="800" font-family="system-ui, sans-serif">자주보전 7단계</text>
+  <text x="56" y="101" fill="#475569" font-size="17" font-family="system-ui, sans-serif">청소 → 원인 제거 → 기준화 → 점검 능력 → 자주관리</text>
+  <path d="M176 215H250M390 215H464M604 215H678M764 261V322M678 389H604M464 389H390M250 389H176" fill="none" stroke="#0f766e" stroke-width="8" stroke-linecap="round"/>
+  <g font-family="system-ui, sans-serif">
+    <g transform="translate(56 146)">
+      <rect width="120" height="136" rx="20" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="2"/>
+      <circle cx="60" cy="38" r="22" fill="#0369a1"/><text x="60" y="45" text-anchor="middle" fill="#fff" font-size="20" font-weight="800">1</text>
+      <text x="60" y="88" text-anchor="middle" fill="#0f172a" font-size="20" font-weight="800">초기청소</text>
+      <text x="60" y="115" text-anchor="middle" fill="#475569" font-size="14">이상 발견</text>
+    </g>
+    <g transform="translate(250 146)">
+      <rect width="140" height="136" rx="20" fill="#ecfeff" stroke="#67e8f9" stroke-width="2"/>
+      <circle cx="70" cy="38" r="22" fill="#0e7490"/><text x="70" y="45" text-anchor="middle" fill="#fff" font-size="20" font-weight="800">2</text>
+      <text x="70" y="82" text-anchor="middle" fill="#0f172a" font-size="18" font-weight="800">발생원·곤란</text>
+      <text x="70" y="106" text-anchor="middle" fill="#0f172a" font-size="18" font-weight="800">개소 대책</text>
+    </g>
+    <g transform="translate(464 146)">
+      <rect width="140" height="136" rx="20" fill="#ccfbf1" stroke="#5eead4" stroke-width="2"/>
+      <circle cx="70" cy="38" r="22" fill="#0f766e"/><text x="70" y="45" text-anchor="middle" fill="#fff" font-size="20" font-weight="800">3</text>
+      <text x="70" y="82" text-anchor="middle" fill="#0f172a" font-size="18" font-weight="800">청소·급유</text>
+      <text x="70" y="108" text-anchor="middle" fill="#0f172a" font-size="18" font-weight="800">기준 작성</text>
+    </g>
+    <g transform="translate(678 146)">
+      <rect width="140" height="136" rx="20" fill="#d1fae5" stroke="#6ee7b7" stroke-width="2"/>
+      <circle cx="70" cy="38" r="22" fill="#047857"/><text x="70" y="45" text-anchor="middle" fill="#fff" font-size="20" font-weight="800">4</text>
+      <text x="70" y="95" text-anchor="middle" fill="#0f172a" font-size="19" font-weight="800">총점검</text>
+    </g>
+    <g transform="translate(678 322)">
+      <rect width="140" height="136" rx="20" fill="#fef3c7" stroke="#fcd34d" stroke-width="2"/>
+      <circle cx="70" cy="38" r="22" fill="#b45309"/><text x="70" y="45" text-anchor="middle" fill="#fff" font-size="20" font-weight="800">5</text>
+      <text x="70" y="95" text-anchor="middle" fill="#0f172a" font-size="19" font-weight="800">자주점검</text>
+    </g>
+    <g transform="translate(464 322)">
+      <rect width="140" height="136" rx="20" fill="#ffedd5" stroke="#fdba74" stroke-width="2"/>
+      <circle cx="70" cy="38" r="22" fill="#c2410c"/><text x="70" y="45" text-anchor="middle" fill="#fff" font-size="20" font-weight="800">6</text>
+      <text x="70" y="95" text-anchor="middle" fill="#0f172a" font-size="19" font-weight="800">표준화</text>
+    </g>
+    <g transform="translate(250 322)">
+      <rect width="140" height="136" rx="20" fill="#fee2e2" stroke="#fca5a5" stroke-width="2"/>
+      <circle cx="70" cy="38" r="22" fill="#b91c1c"/><text x="70" y="45" text-anchor="middle" fill="#fff" font-size="20" font-weight="800">7</text>
+      <text x="70" y="82" text-anchor="middle" fill="#0f172a" font-size="18" font-weight="800">자주관리</text>
+      <text x="70" y="108" text-anchor="middle" fill="#0f172a" font-size="18" font-weight="800">철저</text>
+    </g>
+  </g>
+  <text x="56" y="508" fill="#64748b" font-size="15" font-family="system-ui, sans-serif">암기 기준: 청소에서 시작해 기준·점검 능력을 만들고 자주관리로 완성한다.</text>
+</svg>

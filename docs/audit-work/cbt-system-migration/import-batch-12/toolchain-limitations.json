@@ -1,0 +1,63 @@
+{
+  "status": "BLOCKED",
+  "generatedAt": "2026-08-08T11:09:09+09:00",
+  "currentNodeVersion": "v22.16.0",
+  "currentNpmVersion": "10.9.2",
+  "requiredNodeRange": ">=24.0.0 <25",
+  "partialSnapshot": true,
+  "attempts": [
+    {
+      "name": "typecheck",
+      "command": "npm run typecheck -- --pretty false",
+      "exitCode": 1,
+      "status": "BLOCKED_PARTIAL_SNAPSHOT_AND_UNSUPPORTED_NODE",
+      "logFile": "official-validation-attempts/typecheck.log"
+    },
+    {
+      "name": "vitest",
+      "command": "npm test -- --maxWorkers=1",
+      "exitCode": 1,
+      "status": "BLOCKED_PARTIAL_SNAPSHOT_AND_UNSUPPORTED_NODE",
+      "logFile": "official-validation-attempts/vitest.log"
+    },
+    {
+      "name": "eslint",
+      "command": "npm run lint -- scripts/verify-reviewed-cbt-variants.ts tests/unit/reviewed-cbt-variants.test.ts",
+      "exitCode": 1,
+      "status": "BLOCKED_PARTIAL_SNAPSHOT_AND_UNSUPPORTED_NODE",
+      "logFile": "official-validation-attempts/eslint.log"
+    },
+    {
+      "name": "verify-reviewed-cbt",
+      "command": "npm run verify:reviewed-cbt",
+      "exitCode": 127,
+      "status": "BLOCKED_DEPENDENCY_MISSING",
+      "logFile": "official-validation-attempts/verify-reviewed-cbt.log"
+    },
+    {
+      "name": "verify-no-answer-leak",
+      "command": "npm run verify:no-answer-leak -- --scope=source",
+      "exitCode": 127,
+      "status": "BLOCKED_DEPENDENCY_MISSING",
+      "logFile": "official-validation-attempts/verify-no-answer-leak.log"
+    }
+  ],
+  "notRun": [
+    "buildRuntimeContent and Supabase materialization",
+    "SQL migration tests",
+    "login/guest/browser integration flows"
+  ],
+  "supplementalChecks": {
+    "generatorOwnedValidation": "PASS",
+    "independentValidation": "PASS",
+    "typescriptSyntax": "PASS",
+    "targetedTypecheck": "PASS_SYNTAX_ONLY",
+    "supplementalRuntime": "PASS_STATIC_SIMULATION",
+    "supplementalVerifier": "PASS_INDEPENDENT_PYTHON",
+    "supplementalNoAnswerLeak": "PASS_STATIC_PROJECTION",
+    "negativeContracts": "PASS_14_OF_14",
+    "generatorIdempotency": "PASS_30_ARTIFACTS",
+    "pythonGeneratorSyntax": "PASS"
+  },
+  "reason": "Official repository validation requires Node.js 24.x, the complete repository tree, content.json, scripts/verify-node-runtime.mjs, and installed project dependencies. The partial snapshot lacks the complete tree and tsx. Blocked attempts are not reported as PASS."
+}

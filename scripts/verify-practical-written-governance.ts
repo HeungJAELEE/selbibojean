@@ -12,6 +12,7 @@ import {
   validatePracticalExamEvidenceGraph,
 } from "../src/lib/validation/practical-execution";
 import { PRACTICAL_WRITTEN_AUDIT_DECISIONS } from "../src/data/source/practical-written-audit-decisions";
+import { PRACTICAL_QUESTION_RECALL_AUDIT } from "../src/data/source/practical-question-recall-audit";
 
 const root = process.cwd();
 const [content, manifest] = await Promise.all([
@@ -151,6 +152,22 @@ if (
   [...heldQuestionIds].some((id) => !recordedHeldQuestionIds.has(id))
 ) {
   errors.push("필답 보류 문제 목록이 완전하지 않습니다.");
+}
+
+const expectedRecallHolds = PRACTICAL_QUESTION_RECALL_AUDIT.flatMap((item) =>
+  item.blockers.map((blocker) => `${item.id}:${blocker}`),
+).sort();
+const recordedRecallHolds = manifest.holds
+  .filter((hold) => hold.sourceKind === "question_recall")
+  .map((hold) => `${hold.sourceId}:${hold.disposition}`)
+  .sort();
+if (
+  expectedRecallHolds.length !== recordedRecallHolds.length ||
+  expectedRecallHolds.some(
+    (expected, index) => expected !== recordedRecallHolds[index],
+  )
+) {
+  errors.push("복원 검토 HOLD 목록이 감사 원본과 일치하지 않습니다.");
 }
 
 if (errors.length > 0) {

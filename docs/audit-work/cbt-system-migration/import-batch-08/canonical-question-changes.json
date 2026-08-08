@@ -1,0 +1,148 @@
+[
+  {
+    "action": "replace",
+    "question": {
+      "id": "U-649",
+      "canonicalNumber": 649,
+      "subjectId": "subject-4",
+      "conceptGroupId": "s4-g10",
+      "conceptId": "concept-cd7x17",
+      "lessonId": "lesson-cbt-gang-system-process-layout",
+      "lessonAnchor": "definition",
+      "stem": "공정별 배치에서 동일 기종이 모여 있는 시스템은?",
+      "choices": [
+        {
+          "id": "U-649-c1",
+          "order": 1,
+          "text": "갱 시스템(gang system)",
+          "feedback": {
+            "rationale": "갱 시스템은 같은 종류의 기계를 한 구역에 집단 배치하는 공정별 배치의 형태로 처리된다.",
+            "plausibleReason": "문두의 직접 조건을 충족한다.",
+            "incorrectPoint": null,
+            "keyRule": "독립 풀이: 갱 시스템은 같은 종류의 기계를 한 구역에 집단 배치하는 공정별 배치의 형태로 처리된다. 결론: 1번 “갱 시스템(gang system)”이 옳다.",
+            "differenceFromCorrect": null
+          }
+        },
+        {
+          "id": "U-649-c2",
+          "order": 2,
+          "text": "라인 시스템(line system)",
+          "feedback": {
+            "rationale": "라인 시스템은 제품의 공정순서에 따라 서로 다른 설비를 연속 배열하는 제품별 배치다.",
+            "plausibleReason": "‘라인 시스템(line system)’도 같은 분야의 용어이지만 문두의 배치 정의와는 다르다.",
+            "incorrectPoint": "라인 시스템은 제품의 공정순서에 따라 서로 다른 설비를 연속 배열하는 제품별 배치다.",
+            "keyRule": "독립 풀이: 갱 시스템은 같은 종류의 기계를 한 구역에 집단 배치하는 공정별 배치의 형태로 처리된다. 결론: 1번 “갱 시스템(gang system)”이 옳다.",
+            "differenceFromCorrect": "정답 ‘갱 시스템(gang system)’와 달리 문두의 동일기종 집단배치 조건을 충족하지 않는다."
+          }
+        },
+        {
+          "id": "U-649-c3",
+          "order": 3,
+          "text": "혼합형 시스템(combination system)",
+          "feedback": {
+            "rationale": "혼합형은 제품별·공정별 등 둘 이상의 배치방식을 조합한다.",
+            "plausibleReason": "‘혼합형 시스템(combination system)’도 같은 분야의 용어이지만 문두의 배치 정의와는 다르다.",
+            "incorrectPoint": "혼합형은 제품별·공정별 등 둘 이상의 배치방식을 조합한다.",
+            "keyRule": "독립 풀이: 갱 시스템은 같은 종류의 기계를 한 구역에 집단 배치하는 공정별 배치의 형태로 처리된다. 결론: 1번 “갱 시스템(gang system)”이 옳다.",
+            "differenceFromCorrect": "정답 ‘갱 시스템(gang system)’와 달리 문두의 동일기종 집단배치 조건을 충족하지 않는다."
+          }
+        },
+        {
+          "id": "U-649-c4",
+          "order": 4,
+          "text": "제품 고정형 시스템(fixed position system)",
+          "feedback": {
+            "rationale": "제품고정형은 제품을 이동시키지 않고 작업자와 설비가 제품 위치로 이동한다.",
+            "plausibleReason": "‘제품 고정형 시스템(fixed position system)’도 같은 분야의 용어이지만 문두의 배치 정의와는 다르다.",
+            "incorrectPoint": "제품고정형은 제품을 이동시키지 않고 작업자와 설비가 제품 위치로 이동한다.",
+            "keyRule": "독립 풀이: 갱 시스템은 같은 종류의 기계를 한 구역에 집단 배치하는 공정별 배치의 형태로 처리된다. 결론: 1번 “갱 시스템(gang system)”이 옳다.",
+            "differenceFromCorrect": "정답 ‘갱 시스템(gang system)’와 달리 문두의 동일기종 집단배치 조건을 충족하지 않는다."
+          }
+        }
+      ],
+      "correctChoiceId": "U-649-c1",
+      "answerText": "갱 시스템(gang system)",
+      "explanation": "독립 풀이: 갱 시스템은 같은 종류의 기계를 한 구역에 집단 배치하는 공정별 배치의 형태로 처리된다. 결론: 1번 “갱 시스템(gang system)”이 옳다.",
+      "errorReason": "canonical 의미·이론 오연결 교정",
+      "sourceLabel": "https://cbtbank.kr/exam/de20180915",
+      "reviewStatus": "배치 08 독립 풀이·동명 용례 분리 검수",
+      "contentStatus": "in_review",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed",
+          "pending_runtime_integration"
+        ]
+      },
+      "verification": {
+        "status": "blocked",
+        "method": "review_packet_reconstruction_requires_authoritative_source",
+        "variantCount": 2,
+        "sourceUrls": [
+          "https://cbtbank.kr/exam/de20150531",
+          "https://cbtbank.kr/exam/de20180915"
+        ],
+        "riskTags": [
+          "editorial_reconstruction",
+          "polysemy",
+          "theory_repair"
+        ],
+        "note": "두 회차의 복원 지문과 독립 풀이가 동일기종 집단배치 의미에 합치한다. 권위 출처 확보 전 공개하지 않는다.",
+        "reviewedAt": "2026-08-08T13:40:00+09:00"
+      },
+      "audit": {
+        "questionId": "U-649",
+        "scope": "review_queue",
+        "sourceContentStatus": "in_review",
+        "auditDisposition": "held_theory_source_needed",
+        "evidenceLevel": null,
+        "cbtAnswer": "갱 시스템(gang system)",
+        "verifiedAnswer": "갱 시스템(gang system)",
+        "evidenceUrls": [
+          "https://cbtbank.kr/exam/de20180915"
+        ],
+        "reviewNote": "gang system은 자료에 따라 보전작업자 팀 조직과 동일기종 집단배치라는 두 의미로 사용된다. 이 회차의 독립 답은 지문의 동일기종 집단배치 정의에 따라 1번으로 인정하지만, 공개 전에는 해당 의미를 직접 정의한 이론 레슨이 필요하다.",
+        "assetStatus": "not_required",
+        "nextAction": "권위 출처 연결 및 전체 런타임 검증 후 공개 심사",
+        "reviewChoiceFeedback": [
+          {
+            "choiceId": "U-649-c1",
+            "verdict": "correct",
+            "rationale": "갱 시스템은 같은 종류의 기계를 한 구역에 집단 배치하는 공정별 배치의 형태로 처리된다."
+          },
+          {
+            "choiceId": "U-649-c2",
+            "verdict": "incorrect",
+            "rationale": "라인 시스템은 제품의 공정순서에 따라 서로 다른 설비를 연속 배열하는 제품별 배치다."
+          },
+          {
+            "choiceId": "U-649-c3",
+            "verdict": "incorrect",
+            "rationale": "혼합형은 제품별·공정별 등 둘 이상의 배치방식을 조합한다."
+          },
+          {
+            "choiceId": "U-649-c4",
+            "verdict": "incorrect",
+            "rationale": "제품고정형은 제품을 이동시키지 않고 작업자와 설비가 제품 위치로 이동한다."
+          }
+        ],
+        "reviewedAt": "2026-08-08T13:40:00+09:00"
+      },
+      "validation": {
+        "answer": true,
+        "explanation": true,
+        "choiceFeedback": true,
+        "theoryLink": true,
+        "contentQuality": true,
+        "authoritativeSource": false
+      }
+    },
+    "previousQuestionSha256": "44617af2e712441165dc00045ff9848caae99330e643b14281da042335fe4866",
+    "previousQuestionHashBasis": "dry_run_canonical_contract",
+    "affectedExternalIds": [
+      "2015-2-Q23",
+      "2018-4-Q35"
+    ],
+    "rationale": "U-649를 보전작업자 팀 조직에서 공정별 동일기종 집단배치 의미로 교정하고 직접 이론을 분리한다."
+  }
+]

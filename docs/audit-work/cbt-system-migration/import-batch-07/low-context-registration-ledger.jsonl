@@ -1,0 +1,32 @@
+{"externalId":"2016-2-Q04","riskNote":"온도·유량 루프의 지연 위치는 센서, 전송기, 공정 동특성에 따라 달라질 수 있다. 이 문항은 열센서 검출지연을 대표특성으로 본다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-2-Q18","riskNote":"속도센서의 하한·상한 주파수는 모델과 장착조건에 따라 달라진다. 1번 판정은 해당 회차의 대표범위 표에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q01","riskNote":"주파수비 구간의 “미미·낮음·보통” 명칭은 해당 교재표를 따른다. 실제 전달률은 감쇠비와 주파수비로 계산하며 R이 커질수록 일반적으로 절연효과가 증가한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q02","riskNote":"자계 영향의 크기는 온도·자계·구조에 따라 달라진다. 3번은 해당 교재의 특성표 범위로만 유지한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q03","riskNote":"실무 프로젝트에서는 원인분석과 개선검증을 하나의 진단활동으로 묶기도 한다. 여기서는 교재의 진단단계/대책단계 구분을 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q17","riskNote":"실제 이격거리는 적용 측정규격과 현장 반사조건을 따른다. 1.5 m는 해당 기출의 교재 수치다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q21","riskNote":"소화설비는 자산체계에 따라 안전설비·관리설비·항만부대설비로 달리 분류될 수 있다. 해당 회차의 목적별 설비분류를 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q30","riskNote":"만성로스도 관찰상 불규칙해 보일 수 있으나 교재는 산포를 가진 반복·상시 손실과 돌발로스를 구분한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q34","riskNote":"실무에서는 요인계통 재검토도 반복 정체의 원인분석 수단이 될 수 있다. 이 판정은 교재가 구분한 직접대책 목록에 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q44","riskNote":"도금색과 속도는 금속염 농도 하나로 결정되지 않고 전류밀도·pH·온도·교반·첨가제에 좌우된다. 3번은 해당 교재의 단순화된 조건으로만 승인한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q48","riskNote":"실무에서는 키홈 마모와 유격도 충격·응력집중을 악화시킬 수 있다. 1번은 과거 교재의 손상원인 분류에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q52","riskNote":"단면 종류와 홈각 세부값은 적용 규격과 벨트 제조사 사양을 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q57","riskNote":"배관 부식은 수질·재질·유속·온도·미생물의 상호작용에 좌우된다. 50℃ 이상을 일률적 방지조건으로 보지 않는 회차 기준이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q69","riskNote":"현대의 윤활 5R 체계에서는 right place를 별도 원칙으로 포함할 수 있다. 4번 판정은 이 회차의 적유·적기·적량·적법 4원칙에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q70","riskNote":"원장에 이미지 누락 표시가 있지만 지문과 네 점도등급이 텍스트로 완전해 정답판정에는 이미지가 필요하지 않다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q80","riskNote":"그리스의 실제 최고사용온도는 증주제뿐 아니라 기유·첨가제·수명조건을 포함한 제품사양을 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q81","riskNote":"셔틀밸브도 실제 회로에서 안전·우선선택 기능에 응용될 수 있다. 이 문항은 교재의 OR/AND 논리요소 대표용도 분류를 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q82","riskNote":"요소 번호체계는 적용 표준·교재에 따라 표기법이 달라질 수 있다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q83","riskNote":"원본 펌프 그림을 독립 판독하지 않았지만 세 로터의 연속접촉과 큰 토출변동이라는 지문만으로 로브펌프를 판별할 수 있다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q90","riskNote":"원장에 이미지 누락 표시가 있지만 회로도의 기능표현과 실제 배관길이의 차이는 텍스트만으로 판단 가능하다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2016-4-Q99","riskNote":"실제 전압이 매우 낮거나 결상·전압불평형이 심하면 기동불능이 발생할 수 있다. 3번은 해당 교재의 고장진단 우선분류에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2017-2-Q05","riskNote":"구면파는 물리적으로 발산파의 대표형태다. 이 문항은 파형의 상위 분류명인 “발산파”를 정답으로 삼는다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2017-2-Q08","riskNote":"2단 방진계가 항상 저주파에 불리한 것은 아니며 설계된 고유진동수와 감쇠에 따라 달라진다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2017-2-Q19","riskNote":"“평균 고장 시간”은 교재에 따라 MTTF 또는 MTBF와 혼용될 수 있다. 이 문항은 정량 시간지표라는 범위로 해석한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2017-2-Q21","riskNote":"실무에서는 설비개선이 제품품질개선과 직접 연결된다. 이 문항은 과거 설비관리 업무영역의 명칭 분류를 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2017-2-Q23","riskNote":"현대 제품개발에서는 품질기획·검증이 양산 전에 수행된다. 이 판정은 과거 교재가 제시한 “개발계획→기업화계획→생산→품질화” 순서에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2017-2-Q30","riskNote":"열화 분류의 명칭과 경계는 교재에 따라 자연·노후·강제열화가 일부 겹친다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2017-2-Q35","riskNote":"현대 개선절차는 목표설정을 현상분석과 병행하거나 앞에 둘 수 있다. 1번은 해당 품질보전 교재의 단계표에 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2017-2-Q40","riskNote":"자산분류 체계에 따라 소방설비도 부대설비에 포함될 수 있다. 3번은 해당 교재가 소방설비를 별도 안전설비로 구분한 경우에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2017-2-Q43","riskNote":"원장에 이미지 누락 표시가 있지만 지문과 보기만으로 표준 보어번호 계산이 완결되므로 이미지가 정답판정에 필요하지 않다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2017-2-Q46","riskNote":"실제 체결은 손힘이 아니라 볼트등급·윤활·마찰조건에 맞춘 규정토크와 토크렌치를 사용해야 한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2017-2-Q48","riskNote":"현행 팬·블로어·압축기 분류는 압력비와 적용 표준을 함께 사용한다. 수치범위는 과거 교재 기준이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}

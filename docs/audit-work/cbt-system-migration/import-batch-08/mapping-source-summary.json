@@ -1,0 +1,26 @@
+{
+  "batchNumber": 8,
+  "recordCount": 200,
+  "reviewFiles": [
+    "de20170507_q51-q100_independent-review.jsonl",
+    "de20180428_q01-q50_independent-review.jsonl",
+    "de20180428_q51-q100_independent-review.jsonl",
+    "de20180915_q01-q50_independent-review.jsonl"
+  ],
+  "firstExternalId": "2017-2-Q51",
+  "lastExternalId": "2018-4-Q50",
+  "mappingClassCounts": {
+    "EXACT_REPLACE": 190,
+    "HOLD": 9,
+    "SEMANTIC_REPLACE": 1
+  },
+  "runtimeDispositionCounts": {
+    "CANDIDATE_AFTER_CANONICAL_THEORY_REPAIR": 1,
+    "HOLD": 9,
+    "PUBLICATION_CANDIDATE": 190
+  },
+  "semanticReassignmentCount": 1,
+  "relinkInPlaceCount": 1,
+  "holdCount": 9,
+  "unmatchedCount": 0
+}

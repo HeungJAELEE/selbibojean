@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "scope": "supplemental_runtime_and_supabase_projection",
+  "nodeVersion": "v22.16.0",
+  "officialNode24Validation": false,
+  "fanQ48": {
+    "candidateBlocked": true,
+    "publishedSafe": true,
+    "sourceAnswerIndexPreserved": 0,
+    "reviewedAnswerIndex": 2,
+    "mappedChoiceIds": [
+      "U-1072-c1",
+      "U-1072-c2",
+      "U-1072-c3",
+      "U-1072-c4"
+    ],
+    "canonicalCorrectChoiceId": "U-1072-c3",
+    "reviewedAnswerText": "③ 다익 팬",
+    "lessonId": "lesson-cbt-forward-curved-fan-power-curve"
+  },
+  "choiceConflictQ84": {
+    "blockedAndNonScoring": true,
+    "answer": "",
+    "explanation": ""
+  },
+  "dryRunOverrideQ08": {
+    "variantSpecificBlocked": true,
+    "canonicalId": "U-1099",
+    "mapping": []
+  },
+  "imageHoldQ36": {
+    "blockedAndNonScoring": true,
+    "answer": "",
+    "explanation": ""
+  },
+  "supabase": {
+    "reviewedRowCount": 800,
+    "batch04RowCount": 200,
+    "allReviewedRowsDraft": true,
+    "allBatch04RowsDraft": true,
+    "forbiddenKeysFound": []
+  },
+  "limitations": [
+    "Supplemental Node.js 22 execution does not replace official Node.js 24 repository checks."
+  ]
+}

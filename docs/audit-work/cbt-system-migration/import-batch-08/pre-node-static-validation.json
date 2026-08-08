@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "scope": "pre-Node-24 static and independent validation for import-08",
+  "generatedAt": "2026-08-08T13:40:00+09:00",
+  "counts": {
+    "batchRecords": 200,
+    "candidate": 191,
+    "hold": 8,
+    "choiceConflict": 1,
+    "fullCanonicalChoiceMappings": 38,
+    "variantSpecificContractsPending": 153,
+    "directTheoryLinks": 200,
+    "theoryLessonAdditions": 1,
+    "canonicalQuestionChanges": 1,
+    "canonicalReassignments": 1,
+    "canonicalTheoryRepairs": 1,
+    "lowContextRegistrations": 30,
+    "formulaRecords": 8,
+    "cumulativeRecords": 1570,
+    "unreviewedRecords": 814
+  },
+  "checks": {
+    "generatorValidation": true,
+    "independentValidation": true,
+    "negativeContracts10Of10": true,
+    "generatorIdempotency": true,
+    "pythonSyntax": true,
+    "typescriptSyntax": true,
+    "staticRuntimeGates": true,
+    "staticNoAnswerLeak": true,
+    "contentHashBinding": true
+  },
+  "failures": [],
+  "manifestSha256": "5bd1b38459c1bc15f3e7426023b5a91e3cc8e75883113a530b22d67dc5666803",
+  "recordsSha256": "058f348998cabc060faa93180071611e05d417acc2e3b729363a28ae5f113c5a",
+  "officialRepositoryValidation": "NOT_RUN"
+}

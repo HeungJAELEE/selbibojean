@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "repositoryContentFilePackaged": false,
+  "expectedContentSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+  "priorBatchValidatedContentSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+  "priorBatchContentHashBindingVerified": true,
+  "dryRunGeneratedFromBoundContentSnapshot": true,
+  "bindingHashesMatch": true,
+  "repositoryIntegrationPrecondition": "src/data/generated/content.json must hash to expectedContentSha256 before applying the overlay and running official validation"
+}

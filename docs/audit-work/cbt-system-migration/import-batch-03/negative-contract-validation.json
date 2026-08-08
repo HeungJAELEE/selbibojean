@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "nodeVersion": "v22.16.0",
+  "officialNode24Validation": false,
+  "results": [
+    {
+      "name": "variant-specific record cannot be published",
+      "status": "PASS",
+      "message": "Reviewed CBT variant-specific choice contract is invalid: 2010-4-Q02"
+    },
+    {
+      "name": "safety-valve direct theory drift is rejected",
+      "status": "PASS",
+      "message": "Reviewed CBT direct-theory link is inconsistent: 2010-4-Q59"
+    },
+    {
+      "name": "safety-valve canonical previous SHA tamper is rejected",
+      "status": "PASS",
+      "message": "Reviewed CBT canonical replacement digest mismatch: U-1215"
+    },
+    {
+      "name": "batch03 lesson addition digest tamper is rejected",
+      "status": "PASS",
+      "message": "Reviewed CBT theory lesson additions digest mismatch: a86e5a122280f7b3cc553b4ca57b5cb20bbb0677d3fd15168102d6d2769f6990 != 5b9bb7daade7dda18c49057cd586ff9d98a7f0157e921865c8e070e9476904e6"
+    },
+    {
+      "name": "choice-conflict record cannot carry active answer mapping",
+      "status": "PASS",
+      "message": "Reviewed CBT choice conflict is invalid: 2011-4-Q42"
+    },
+    {
+      "name": "choice-conflict record cannot be published",
+      "status": "PASS",
+      "message": "Reviewed CBT candidate has no valid answer: 2011-4-Q59"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "generatedBy": "process-busan-kopo-media.mjs",
+  "assets": [
+    {
+      "id": "busan-kopo-facility-room-sign",
+      "file": "facility-room-sign.webp",
+      "width": 165,
+      "height": 190,
+      "sha256": "aef93ff3052f246fa6d0b3e6afcb3ff31a2e3f6e5e4496275ec82bba07aa247b",
+      "review": "cropped sign only; excludes person and candidate roster"
+    },
+    {
+      "id": "busan-kopo-practical-test-site-sign",
+      "file": "practical-test-site-sign.webp",
+      "width": 370,
+      "height": 330,
+      "sha256": "47f8c2167c53410de9639025db60547b98073bd172408bc73c877365a85101cc",
+      "review": "cropped sign only; excludes person and candidate roster"
+    },
+    {
+      "id": "busan-kopo-pneumatic-training-room-overview",
+      "file": "pneumatic-training-room-overview.webp",
+      "width": 1440,
+      "height": 1081,
+      "sha256": "601e90f0d5273d771da34583b274415c3103279011a2d63f06acedb22baee541",
+      "review": "reviewed: no person, roster, document, monitor, or identifying reflection"
+    },
+    {
+      "id": "busan-kopo-electropneumatic-training-bench-front",
+      "file": "electropneumatic-training-bench-front.webp",
+      "width": 1440,
+      "height": 1081,
+      "sha256": "d236ef6eac7d69087d596aeb46e932db16176c956d35bae65b9ec38739a212b2",
+      "review": "reviewed: no person, roster, document, monitor, or identifying reflection"
+    },
+    {
+      "id": "busan-kopo-electropneumatic-training-bench-angle",
+      "file": "electropneumatic-training-bench-angle.webp",
+      "width": 1080,
+      "height": 1440,
+      "sha256": "65302980708865fa5f3d9d772f743cf781eed583543f4cda6fcc2421737f27cb",
+      "review": "reviewed: no person, roster, document, monitor, or identifying reflection"
+    },
+    {
+      "id": "busan-kopo-electropneumatic-training-benches-overview",
+      "file": "electropneumatic-training-benches-overview.webp",
+      "width": 1440,
+      "height": 1081,
+      "sha256": "353fbcb161f863666e4cb3ae9736238db589b5f19aabc8d7177bd4823cf1184f",
+      "review": "reviewed: no person, roster, document, monitor, or identifying reflection"
+    },
+    {
+      "id": "busan-kopo-electropneumatic-training-bench-wide",
+      "file": "electropneumatic-training-bench-wide.webp",
+      "width": 1440,
+      "height": 1081,
+      "sha256": "284e5104f3dfc862dd4ba4a48159f91f72a3603fbbeccbd7631b7f77e6202546",
+      "review": "reviewed: no person, roster, document, monitor, or identifying reflection"
+    }
+  ]
+}

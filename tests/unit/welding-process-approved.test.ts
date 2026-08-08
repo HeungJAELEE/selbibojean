@@ -1,12 +1,16 @@
 import { describe, expect, it } from "vitest";
 
+import generatedContent from "@/data/generated/content.json";
 import { getLessonFamilies } from "@/lib/content/lesson-families";
-import { getApprovedWeldingProcessContent } from "@/lib/content/welding-process-approved";
+import {
+  getApprovedWeldingProcessContent,
+  mergeApprovedWeldingProcessContent,
+} from "@/lib/content/welding-process-approved";
 import { isPublishableQuestion, toPublicQuestion } from "@/lib/domain/practice";
 import type { GeneratedContent } from "@/lib/domain/types";
 
 describe("아크용접 공정별 보강 콘텐츠", () => {
-  it("피복아크·TIG·GMAW·FCAW·SAW 레슨과 문제를 공개 게이트에 통과시킨다", () => {
+  it("피복아크·TIG·GMAW·FCAW·SAW·차폐 조건 레슨과 문제를 공개 게이트에 통과시킨다", () => {
     const supplement = getApprovedWeldingProcessContent();
 
     expect(supplement.lessons.map((lesson) => lesson.title)).toEqual([
@@ -15,8 +19,9 @@ describe("아크용접 공정별 보강 콘텐츠", () => {
       "MIG·MAG·CO₂용접(GMAW)",
       "플럭스코어드아크용접(FCAW)",
       "서브머지드아크용접(SAW)",
+      "아크용접 차폐 조건",
     ]);
-    expect(supplement.questions).toHaveLength(5);
+    expect(supplement.questions).toHaveLength(6);
     expect(supplement.questions.every(isPublishableQuestion)).toBe(true);
     expect(
       supplement.lessons.every(
@@ -45,11 +50,28 @@ describe("아크용접 공정별 보강 콘텐츠", () => {
       (family) => family.id === "process",
     );
 
-    expect(processFamily?.lessons).toHaveLength(5);
+    expect(processFamily?.lessons).toHaveLength(6);
     expect(processFamily?.comparison.map((item) => item.term)).toContain(
       "서브머지드·SAW",
     );
+    expect(processFamily?.comparison.map((item) => item.term)).toContain(
+      "차폐 조건",
+    );
     expect(processFamily?.trapQuestions).toHaveLength(5);
+  });
+
+  it("기존 CO₂ 레슨을 사용자 원문 기준의 공정별 본문으로 보강한다", () => {
+    const merged = mergeApprovedWeldingProcessContent(
+      generatedContent as GeneratedContent,
+    );
+    const co2Lesson = merged.lessons.find((lesson) => lesson.title === "CO₂ 아크용접");
+
+    expect(co2Lesson?.blocks.find((block) => block.id === "definition")?.body).toContain(
+      "연속 송급되는 소모성 솔리드 와이어",
+    );
+    expect(co2Lesson?.blocks.find((block) => block.id === "exam-point")?.body).toContain(
+      "방풍",
+    );
   });
 
   it("답안 제출 전에는 정답·해설·선택지 피드백을 노출하지 않는다", () => {

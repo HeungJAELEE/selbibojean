@@ -1,9 +1,17 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getContent } from "@/lib/content/repository";
-import { createPracticePresentations } from "@/lib/content/practice-presentations";
+import {
+  createPracticePresentations,
+  filterPracticeContentByYearRange,
+} from "@/lib/content/practice-presentations";
 import { buildWeakFocus, selectAllocatedPracticeQuestions, selectPracticeQuestions } from "@/lib/domain/practice";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import {
+  createSupabaseAdminClient,
+  createSupabaseServerClient,
+} from "@/lib/supabase/server";
+import { isReleaseFeatureEnabled } from "@/lib/release-features";
+import { isAuthSessionMissingError } from "@/lib/supabase/auth-errors";
 
 const requestSchema = z.object({
   mode: z.enum(["all", "subject", "group", "wrong", "due", "weak", "mock"]).default("all"),
@@ -14,7 +22,22 @@ const requestSchema = z.object({
   guestQuestionIds: z.array(z.string()).optional(),
   seed: z.number().int().optional(),
   originalRatio: z.union([z.literal(0), z.literal(25), z.literal(50), z.literal(75), z.literal(100)]).default(50),
+  shuffleChoices: z.boolean().default(true),
+  yearFrom: z.number().int().min(1900).max(2200).optional(),
+  yearTo: z.number().int().min(1900).max(2200).optional(),
 }).superRefine((value, context) => {
+  if (
+    (value.yearFrom === undefined) !== (value.yearTo === undefined) ||
+    (value.yearFrom !== undefined &&
+      value.yearTo !== undefined &&
+      value.yearFrom > value.yearTo)
+  ) {
+    context.addIssue({
+      code: "custom",
+      path: ["yearFrom"],
+      message: "기출 시작·종료 연도를 확인하세요.",
+    });
+  }
   if (value.mode !== "mock") return;
   if (!value.subjectAllocations?.length) {
     context.addIssue({ code: "custom", path: ["subjectAllocations"], message: "모의고사 과목을 선택하세요." });
@@ -34,7 +57,15 @@ export async function POST(request: Request) {
 
   const content = await getContent();
   const supabase = await createSupabaseServerClient();
-  const { data: auth } = supabase ? await supabase.auth.getUser() : { data: { user: null } };
+  const admin = createSupabaseAdminClient();
+  const authResult = supabase ? await supabase.auth.getUser() : null;
+  if (authResult?.error && !isAuthSessionMissingError(authResult.error)) {
+    return NextResponse.json(
+      { error: "로그인 상태를 확인하지 못했습니다. 다시 시도해 주세요." },
+      { status: 503 },
+    );
+  }
+  const auth = authResult?.data ?? { user: null };
   let scopedIds = parsed.data.guestQuestionIds;
 
   if (auth.user && (parsed.data.mode === "wrong" || parsed.data.mode === "weak") && supabase) {
@@ -60,10 +91,21 @@ export async function POST(request: Request) {
     ? buildWeakFocus(content.questions, scopedIds ?? [], parsed.data.subjectId)
     : null;
   const seed = parsed.data.seed ?? Date.now();
+  const shuffleChoices =
+    isReleaseFeatureEnabled("mock_choice_shuffle") &&
+    parsed.data.shuffleChoices;
+  const yearFiltered = filterPracticeContentByYearRange(
+    content.questions,
+    content.variants,
+    parsed.data.yearFrom,
+    parsed.data.yearTo,
+  );
+  const yearFilteredVariants = yearFiltered.variants;
+  const questionPool = yearFiltered.questions;
   const selected = parsed.data.mode === "mock"
-    ? selectAllocatedPracticeQuestions(content.questions, parsed.data.subjectAllocations ?? [], seed)
+    ? selectAllocatedPracticeQuestions(questionPool, parsed.data.subjectAllocations ?? [], seed)
     : selectPracticeQuestions(
-        content.questions,
+        questionPool,
         {
           subjectId: parsed.data.mode === "subject" || parsed.data.mode === "group" || parsed.data.mode === "weak" ? parsed.data.subjectId : undefined,
           conceptGroupId: parsed.data.mode === "group" ? parsed.data.conceptGroupId : undefined,
@@ -74,9 +116,10 @@ export async function POST(request: Request) {
       );
   const publicQuestions = createPracticePresentations(
     selected.questions,
-    content.variants,
+    yearFilteredVariants,
     parsed.data.originalRatio,
     seed,
+    shuffleChoices,
   );
 
   const sessionId = crypto.randomUUID();
@@ -84,21 +127,89 @@ export async function POST(request: Request) {
     const { error } = await supabase.from("practice_sessions").insert({
       id: sessionId,
       user_id: auth.user.id,
-      filter: parsed.data,
+      filter: { ...parsed.data, shuffleChoices },
       requested_count: selected.requestedCount === "all" ? null : selected.requestedCount,
       actual_count: selected.questions.length,
       status: "active",
+      shuffle_choices: shuffleChoices,
+      session_seed: seed,
     });
-    if (!error && selected.questions.length) {
+    if (error) {
+      return NextResponse.json(
+        { error: "학습 세션을 저장하지 못했습니다." },
+        { status: 503 },
+      );
+    }
+
+    if (selected.questions.length) {
       const { data: storedQuestions } = await supabase
         .from("questions")
         .select("id,external_id")
         .in("external_id", selected.questions.map((question) => question.id));
       const storedByExternalId = new Map((storedQuestions ?? []).map((item) => [item.external_id as string, item.id as string]));
-      await supabase.from("practice_session_items").insert(
-        selected.questions
-          .map((question, index) => ({ session_id: sessionId, question_id: storedByExternalId.get(question.id), position: index + 1 }))
-          .filter((item): item is { session_id: string; question_id: string; position: number } => Boolean(item.question_id)),
+      const variantExternalIds = publicQuestions
+        .map((question) => question.provenance.exam?.externalId)
+        .filter((externalId): externalId is string => Boolean(externalId));
+      const { data: storedVariants } = variantExternalIds.length
+        ? await supabase
+            .from("question_variants")
+            .select("id,external_id")
+            .in("external_id", variantExternalIds)
+        : { data: [] };
+      const variantByExternalId = new Map(
+        (storedVariants ?? []).map((item) => [
+          item.external_id as string,
+          item.id as string,
+        ]),
+      );
+      const items = selected.questions
+        .map((question, index) => {
+          const questionId = storedByExternalId.get(question.id);
+          if (!questionId) return null;
+          const presentation = publicQuestions[index];
+          return {
+            session_id: sessionId,
+            question_id: questionId,
+            question_variant_id: presentation.provenance.exam?.externalId
+              ? variantByExternalId.get(presentation.provenance.exam.externalId) ?? null
+              : null,
+            choice_order: presentation.choices.map((choice) => choice.id),
+            position: index + 1,
+          };
+        })
+        .filter((item): item is NonNullable<typeof item> => Boolean(item));
+      const { error: itemError } = items.length
+        ? await supabase.from("practice_session_items").insert(items)
+        : { error: null };
+      if (itemError || items.length !== selected.questions.length) {
+        await supabase.from("practice_sessions").delete().eq("id", sessionId);
+        return NextResponse.json(
+          { error: "문항 순서를 저장하지 못했습니다." },
+          { status: 503 },
+        );
+      }
+    }
+
+    if (!admin) {
+      await supabase.from("practice_sessions").delete().eq("id", sessionId);
+      return NextResponse.json(
+        { error: "계정 활동을 저장하지 못했습니다." },
+        { status: 503 },
+      );
+    }
+    const { data: touched, error: touchError } = await admin.rpc(
+      "touch_account_activity",
+      {
+        p_user_id: auth.user.id,
+        p_event: "practice_session",
+        p_reference_id: sessionId,
+      },
+    );
+    if (touchError || !Array.isArray(touched) || touched.length !== 1) {
+      await supabase.from("practice_sessions").delete().eq("id", sessionId);
+      return NextResponse.json(
+        { error: "계정 활동을 저장하지 못했습니다." },
+        { status: 503 },
       );
     }
   }
@@ -109,7 +220,12 @@ export async function POST(request: Request) {
     availableCount: selected.availableCount,
     limited: selected.limited,
     originalRatio: parsed.data.originalRatio,
+    shuffleChoices,
     actualOriginalCount: publicQuestions.filter((question) => question.provenance.original).length,
+    yearRange:
+      parsed.data.yearFrom !== undefined && parsed.data.yearTo !== undefined
+        ? { from: parsed.data.yearFrom, to: parsed.data.yearTo }
+        : null,
     focus: weakFocus ? {
       fallback: weakFocus.fallback,
       groups: weakFocus.groups.map((group) => ({

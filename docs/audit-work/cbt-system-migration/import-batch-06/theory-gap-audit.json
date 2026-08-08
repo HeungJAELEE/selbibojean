@@ -1,0 +1,23 @@
+{
+  "batchId": "import-06",
+  "recordCount": 200,
+  "existingDirectTheoryLinksRetained": 199,
+  "existingTheoryRelinks": 1,
+  "newDirectTheoryLessonsAdded": 0,
+  "missingDirectTheoryAfterBatch": 0,
+  "relinkedRecords": [
+    {
+      "externalId": "2015-4-Q69",
+      "fromCanonicalId": "U-889",
+      "toCanonicalId": "U-390",
+      "lessonId": "lesson-18pfbo5",
+      "reason": "2019-2-Q75와 같은 윤활유 첨가제 성질 문제군으로 직접 이론을 공유한다."
+    }
+  ],
+  "notes": [
+    "2015-2-Q42와 2015-4-Q20·Q46·Q55는 기존 직접 이론이 충돌 원인을 설명하므로 신규 이론을 중복 생성하지 않았다.",
+    "2015-4-Q69는 dry-run의 중복기출 재배정에 따라 U-390과 lesson-18pfbo5로 재연결했다.",
+    "필수 이미지 HOLD 6건도 계산·판단 원리와 직접 이론 연결은 보존하되 정답 번호와 채점을 비활성화했다.",
+    "나머지 189문항은 검수본의 lesson·anchor·conceptGroup·concept가 현재 effective content와 직접 일치한다."
+  ]
+}

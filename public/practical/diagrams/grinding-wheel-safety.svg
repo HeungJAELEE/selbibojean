@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">연삭숫돌 시운전과 덮개 문제</title>
+  <desc id="desc">연삭숫돌과 파편 비산을 막는 덮개, 시운전 빈칸을 표시한 자체 제작 안전 도식</desc>
+  <rect width="900" height="420" rx="28" fill="#f8fafc"/>
+  <circle cx="315" cy="220" r="135" fill="#cbd5e1" stroke="#183b56" stroke-width="12"/>
+  <circle cx="315" cy="220" r="35" fill="#fff" stroke="#183b56" stroke-width="10"/>
+  <path d="M315 65a155 155 0 0 1 148 204l-78-27a72 72 0 0 0-70-94z" fill="#f59e0b" stroke="#78350f" stroke-width="9"/>
+  <path d="M145 355h350M470 330l95-35" stroke="#183b56" stroke-width="13" stroke-linecap="round"/>
+  <path d="m488 190 55-25m-43 67 72-5m-64 50 62 28" stroke="#d44c3f" stroke-width="8"/>
+  <g fill="#fff" stroke="#183b56" stroke-width="5"><rect x="610" y="85" width="230" height="92" rx="14"/><rect x="610" y="235" width="230" height="92" rx="14"/></g>
+  <g font-family="sans-serif" font-size="28" font-weight="800" fill="#183b56" text-anchor="middle">
+    <text x="725" y="123">작업 시작 전</text><text x="725" y="158">① ____ 이상</text>
+    <text x="725" y="273">숫돌 교체 후</text><text x="725" y="308">② ____ 이상</text>
+  </g>
+  <text x="385" y="85" font-family="sans-serif" font-size="32" font-weight="800" fill="#78350f">③</text>
+</svg>

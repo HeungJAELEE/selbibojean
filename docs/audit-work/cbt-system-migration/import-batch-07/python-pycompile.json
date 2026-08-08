@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "files": [
+    "docs/audit-work/cbt-system-migration/import-batch-07/generate-import-batch-07.py",
+    "docs/audit-work/cbt-system-migration/import-batch-07/validate-import-batch-07.py",
+    "docs/audit-work/cbt-system-migration/import-batch-07/run-negative-contract-validation.py"
+  ],
+  "failures": []
+}

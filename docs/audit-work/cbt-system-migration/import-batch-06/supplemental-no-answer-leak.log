@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "scope": "supplemental_reviewed_cbt_pre_submit_and_publication_gate",
+  "recordCount": 200,
+  "checks": {
+    "candidateHoldConflictNotUsableAsPastExamOrOriginalPractice": true,
+    "supabaseBatchRowsRemainDraft": true,
+    "preSubmitForbiddenAnswerFieldsAbsent": true
+  },
+  "forbiddenFields": [
+    "reviewedAnswerIndex",
+    "sourceAnswerIndex",
+    "directSolution",
+    "choiceByChoiceReasons",
+    "reviewedAnswerText",
+    "sourceAnswerText"
+  ],
+  "officialNode24Validation": false,
+  "limitations": [
+    "This supplemental execution does not replace the official verify:no-answer-leak command under Node.js 24."
+  ]
+}

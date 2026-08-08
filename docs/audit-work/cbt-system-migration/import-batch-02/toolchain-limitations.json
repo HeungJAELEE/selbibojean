@@ -1,0 +1,29 @@
+{
+  "repositoryFinalValidationStatus": "NOT_RUN",
+  "currentNodeVersion": "v22.16.0",
+  "requiredNodeVersion": "24.x",
+  "nodeModulesPresent": false,
+  "officialChecks": {
+    "node24Typecheck": {
+      "status": "BLOCKED",
+      "reason": "verify-node-runtime rejected Node v22.16.0"
+    },
+    "vitest": {
+      "status": "NOT_RUN",
+      "reason": "Node 24 and project dependencies unavailable"
+    },
+    "eslint": {
+      "status": "NOT_RUN",
+      "reason": "Node 24 and project dependencies unavailable"
+    },
+    "verifyNoAnswerLeak": {
+      "status": "NOT_RUN",
+      "reason": "project tsx dependencies unavailable; supplemental Supabase forbidden-key scan passed"
+    },
+    "sqlMigrationTests": {
+      "status": "NOT_IN_BATCH_SCOPE"
+    }
+  },
+  "nodeRuntimeLog": "> seolbi-learning-platform@0.1.0 verify:node-runtime\n> node scripts/verify-node-runtime.mjs\n\nNode.js 24.x가 필요합니다. 현재 런타임: v22.16.0\nCodex에서는 workspace dependencies가 제공하는 Node.js 실행 파일을 사용하세요.\n로컬 셸에서는 .nvmrc 또는 .node-version을 기준으로 Node.js 24를 선택하세요.",
+  "officialTypecheckLog": "> seolbi-learning-platform@0.1.0 pretypecheck\n> npm run verify:node-runtime\n\n\n> seolbi-learning-platform@0.1.0 verify:node-runtime\n> node scripts/verify-node-runtime.mjs\n\nNode.js 24.x가 필요합니다. 현재 런타임: v22.16.0\nCodex에서는 workspace dependencies가 제공하는 Node.js 실행 파일을 사용하세요.\n로컬 셸에서는 .nvmrc 또는 .node-version을 기준으로 Node.js 24를 선택하세요."
+}

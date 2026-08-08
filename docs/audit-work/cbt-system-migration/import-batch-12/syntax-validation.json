@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "nodeVersion": "v22.16.0",
+  "typescriptVersion": "5.8.3",
+  "files": [
+    "scripts/verify-reviewed-cbt-variants.ts",
+    "tests/unit/reviewed-cbt-variants.test.ts"
+  ],
+  "methods": [
+    "Node.js --experimental-strip-types --check",
+    "TypeScript transpileModule parser diagnostics"
+  ],
+  "syntaxErrorCount": 0,
+  "officialNode24Validation": false,
+  "exitCodes": {
+    "verifierNodeSyntax": 0,
+    "testNodeSyntax": 0,
+    "typescriptParser": 0
+  },
+  "logs": [
+    "verify-reviewed-cbt-syntax.log",
+    "reviewed-cbt-test-syntax.log",
+    "syntax-validation.log"
+  ],
+  "limitations": [
+    "Syntax parsing does not replace repository-wide typecheck, Vitest, or ESLint."
+  ]
+}

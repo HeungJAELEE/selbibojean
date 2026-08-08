@@ -1,0 +1,37 @@
+{
+  "status": "PASS_WITH_NON_OFFICIAL_EXECUTION_PATH",
+  "generatedAt": "2026-08-08T12:01:37.055321+09:00",
+  "environment": {
+    "node": "v22.16.0",
+    "requiredNode": "24",
+    "typescript": "5.8.3"
+  },
+  "method": {
+    "typescriptExecution": "custom ESM loader using globally installed TypeScript transpileModule",
+    "schemaRuntime": "execution-only local zod-compatible validation shim because project dependencies were unavailable",
+    "productionFilesFromShimIncluded": false,
+    "officialEquivalenceClaimed": false
+  },
+  "passed": [
+    {
+      "name": "full reviewed-CBT verifier",
+      "result": "2384 records; 2267 candidates; 19 choice conflicts; 98 holds; 20 theory additions; 19 canonical overlays"
+    },
+    {
+      "name": "source answer-leak verification",
+      "result": "PASS"
+    },
+    {
+      "name": "runtime publication-gate regression",
+      "result": "PASS"
+    },
+    {
+      "name": "TypeScript syntax transpilation",
+      "result": "PASS"
+    },
+    {
+      "name": "independent source/hash/exact-set validation",
+      "result": "PASS"
+    }
+  ]
+}

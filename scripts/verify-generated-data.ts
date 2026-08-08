@@ -8,8 +8,10 @@ import {
 import { weldingSafetyReviewDatasetSchema } from "../src/lib/content/welding-safety-supplement";
 import { getApprovedWeldingSafetyContent } from "../src/lib/content/welding-safety-approved";
 import { buildRuntimeContent } from "../src/lib/content/runtime-content";
+import { notionGapWrittenLessons } from "../src/lib/content/notion-gap-written-lessons";
 import { supplementalWrittenLessons } from "../src/lib/content/supplemental-written-lessons";
 import { parseWrittenQuestionAuditManifest } from "../src/lib/content/written-question-audit";
+import { reviewedCbtVariantManifest } from "../src/lib/content/reviewed-cbt-variants";
 import rawWrittenQuestionAudit from "../src/data/generated/written-question-audit.json";
 
 async function main() {
@@ -244,9 +246,46 @@ async function main() {
   const auditedRuntimeQuestions = runtimeData.questions.filter(
     (question) => question.audit,
   );
-  if (auditedRuntimeQuestions.length !== writtenQuestionAudit.entries.length) {
+  const writtenAuditQuestionIds = new Set<string>(
+    writtenQuestionAudit.entries.map((entry) => entry.questionId),
+  );
+  const reviewedCbtCanonicalAuditIds = new Set<string>(
+    (reviewedCbtVariantManifest.canonicalQuestionChanges ?? [])
+      .filter((change) => Boolean(change.question.audit))
+      .map((change) => change.question.id),
+  );
+  const expectedRuntimeAuditIds = new Set<string>([
+    ...writtenAuditQuestionIds,
+    ...reviewedCbtCanonicalAuditIds,
+  ]);
+  const actualRuntimeAuditIds = new Set<string>(
+    auditedRuntimeQuestions.map((question) => question.id),
+  );
+  const missingRuntimeAuditIds = [...expectedRuntimeAuditIds].filter(
+    (questionId) => !actualRuntimeAuditIds.has(questionId),
+  );
+  const unexpectedRuntimeAuditIds = [...actualRuntimeAuditIds].filter(
+    (questionId) => !expectedRuntimeAuditIds.has(questionId),
+  );
+  if (missingRuntimeAuditIds.length || unexpectedRuntimeAuditIds.length) {
     errors.push(
-      `필기 감사 매니페스트 런타임 연결 불일치: ${auditedRuntimeQuestions.length}/${writtenQuestionAudit.entries.length}`,
+      `필기 감사 매니페스트 런타임 연결 불일치: ` +
+        `expected=${expectedRuntimeAuditIds.size}, actual=${actualRuntimeAuditIds.size}, ` +
+        `missing=${missingRuntimeAuditIds.join(",") || "none"}, ` +
+        `unexpected=${unexpectedRuntimeAuditIds.join(",") || "none"}`,
+    );
+  }
+  const unsafeReviewedCbtCanonicalAudits = auditedRuntimeQuestions.filter(
+    (question) =>
+      reviewedCbtCanonicalAuditIds.has(question.id) &&
+      (!question.audit?.auditDisposition.startsWith("held_") ||
+        isPublishableQuestion(question)),
+  );
+  if (unsafeReviewedCbtCanonicalAudits.length) {
+    errors.push(
+      `reviewed-CBT canonical 감사 게이트가 해제됐습니다: ${unsafeReviewedCbtCanonicalAudits
+        .map((question) => question.id)
+        .join(", ")}`,
     );
   }
   const heldAuditQuestions = auditedRuntimeQuestions.filter((question) =>
@@ -273,12 +312,15 @@ async function main() {
   const supplementalRuntimeLessons = runtimeData.lessons.filter(
     (lesson) => lesson.contentRole === "supplemental",
   );
+  const expectedSupplementalLessons = [
+    ...supplementalWrittenLessons,
+    ...notionGapWrittenLessons,
+  ];
   if (
-    supplementalWrittenLessons.length !== 14 ||
-    supplementalRuntimeLessons.length !== 14
+    supplementalRuntimeLessons.length !== expectedSupplementalLessons.length
   ) {
     errors.push(
-      `보강용 레슨 수량 불일치: 정의 ${supplementalWrittenLessons.length}, 런타임 ${supplementalRuntimeLessons.length}`,
+      `보강용 레슨 수량 불일치: 정의 ${expectedSupplementalLessons.length}, 런타임 ${supplementalRuntimeLessons.length}`,
     );
   }
   const invalidSupplementalLessons = supplementalRuntimeLessons.filter(

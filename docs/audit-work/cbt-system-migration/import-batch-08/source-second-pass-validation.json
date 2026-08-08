@@ -1,0 +1,99 @@
+{
+  "secondPassVersion": 3,
+  "validatedAt": "2026-08-06T22:24:25+09:00",
+  "status": "PASS",
+  "failureCount": 0,
+  "failures": [],
+  "batchRecordCount": 200,
+  "batchUniqueExternalIdCount": 200,
+  "batchVerdictCounts": {
+    "ACCEPT": 191,
+    "REVISE": 0,
+    "CHOICE_ISSUE": 1,
+    "HOLD": 8
+  },
+  "sessionResults": [
+    {
+      "sessionNumber": 29,
+      "sessionKey": "2017-05-07-Q51-Q100",
+      "fileName": "de20170507_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "status": "PASS",
+      "failureCount": 0,
+      "failures": [],
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      },
+      "sha256": "8046118beef6ba6fb41bb9e3396323271fa49af17e23efb2a8cf4eff12d7af91"
+    },
+    {
+      "sessionNumber": 30,
+      "sessionKey": "2018-04-28-Q01-Q50",
+      "fileName": "de20180428_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "status": "PASS",
+      "failureCount": 0,
+      "failures": [],
+      "verdictCounts": {
+        "ACCEPT": 46,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 3
+      },
+      "sha256": "a6b1fd9ff1dca5c2e4893839cb28673e364d8360574ab7e413493d369c9859d1"
+    },
+    {
+      "sessionNumber": 31,
+      "sessionKey": "2018-04-28-Q51-Q100",
+      "fileName": "de20180428_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "status": "PASS",
+      "failureCount": 0,
+      "failures": [],
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      },
+      "sha256": "2885d681cdc15ed5615d456c0c7750f69c8bf828865df46ff887be375bcabe06"
+    },
+    {
+      "sessionNumber": 32,
+      "sessionKey": "2018-09-15-Q01-Q50",
+      "fileName": "de20180915_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "status": "PASS",
+      "failureCount": 0,
+      "failures": [],
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 3
+      },
+      "sha256": "8ee136981ad0c2ab49fb21fd2b200f721a230293a86cb2d4fe9769ac05adbe9c"
+    }
+  ],
+  "checks": {
+    "sourceTextAndHashesRecomputedFromPayload": true,
+    "choiceFeedbackSpecificBoundAndUnique": true,
+    "acceptNonAcceptAndTheoryGapGates": true,
+    "formulaAndCalculationStructurePresent": true,
+    "theoryLessonConceptGroupConceptKeywordEntitiesExist": true,
+    "batchExactSet200": true
+  },
+  "notRun": [
+    "repository_typecheck",
+    "vitest",
+    "eslint",
+    "verify_no_answer_leak_runtime",
+    "runtime_publication_gate",
+    "login_guest_integration_flow",
+    "sql_migration_test",
+    "git_commit"
+  ]
+}

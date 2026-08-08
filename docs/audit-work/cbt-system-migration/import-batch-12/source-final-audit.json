@@ -1,0 +1,121 @@
+{
+  "auditVersion": 12,
+  "auditedAt": "2026-08-07T03:01:57+09:00",
+  "batch": "sessions45-48",
+  "status": "PASS",
+  "batchRecordCount": 222,
+  "batchUniqueExternalIdCount": 222,
+  "batchVerdictCounts": {
+    "ACCEPT": 210,
+    "REVISE": 0,
+    "CHOICE_ISSUE": 1,
+    "HOLD": 11
+  },
+  "expectedNonAcceptExactSet": {
+    "2021-2-Q01": "HOLD",
+    "2021-2-Q06": "HOLD",
+    "2021-2-Q13": "CHOICE_ISSUE",
+    "2021-2-Q27": "HOLD",
+    "2021-2-Q97": "HOLD",
+    "2021-4-Q05": "HOLD",
+    "2022-1-Q75": "HOLD",
+    "2022-1-Q80": "HOLD",
+    "2022-2-Q13": "HOLD",
+    "2022-2-Q14": "HOLD",
+    "2022-2-Q22": "HOLD",
+    "2022-2-Q27": "HOLD"
+  },
+  "sourceImageHoldCount": 11,
+  "imageRequiredButTextSufficientAcceptExternalIds": [
+    "2021-2-Q17",
+    "2022-1-Q25"
+  ],
+  "formulaExternalIds": [
+    "2021-2-Q01",
+    "2021-2-Q06",
+    "2021-2-Q17",
+    "2021-2-Q45",
+    "2021-4-Q05",
+    "2021-4-Q18",
+    "2022-1-Q25",
+    "2022-1-Q55",
+    "2022-1-Q80",
+    "2022-2-Q14",
+    "2022-2-Q22"
+  ],
+  "lowContextAcceptedExternalIds": [
+    "2021-2-Q17",
+    "2021-2-Q24",
+    "2021-2-Q31",
+    "2021-2-Q37",
+    "2021-2-Q53",
+    "2021-2-Q62",
+    "2021-2-Q78",
+    "2021-2-Q99",
+    "2021-4-Q02",
+    "2022-1-Q10",
+    "2022-1-Q17",
+    "2022-1-Q22",
+    "2022-1-Q23",
+    "2022-1-Q24",
+    "2022-1-Q25",
+    "2022-1-Q34",
+    "2022-1-Q35",
+    "2022-1-Q40",
+    "2022-1-Q53",
+    "2022-1-Q56",
+    "2022-1-Q60",
+    "2022-1-Q61",
+    "2022-2-Q11",
+    "2022-2-Q23",
+    "2022-2-Q42",
+    "2022-2-Q43",
+    "2022-2-Q44",
+    "2022-2-Q55",
+    "2022-2-Q59",
+    "2022-2-Q65"
+  ],
+  "theoryRemappedExternalIds": [
+    "2022-1-Q61",
+    "2022-1-Q70",
+    "2022-2-Q44",
+    "2022-2-Q65"
+  ],
+  "checks": {
+    "allSessionValidationsPass": true,
+    "secondPassPass": true,
+    "cumulativePass": true,
+    "all2384SemanticRecordsCovered": true,
+    "mandatoryImagesRemainHeld": true,
+    "acceptedTheoryTaxonomyGapsHeldFromPublication": true,
+    "noSourceTextChoiceAnswerOverwrite": true,
+    "noGenericChoiceFeedback": true,
+    "allTheoryEntitiesResolve": true,
+    "globalExactHashValidationPass": true,
+    "independentValidationPass": true
+  },
+  "failureCount": 0,
+  "failures": [],
+  "notRun": [
+    "repository_typecheck_node24",
+    "vitest",
+    "eslint_changed_files",
+    "verify_no_answer_leak_runtime",
+    "runtime_publication_gate",
+    "login_guest_integration_flow",
+    "sql_migration_static_and_migration_test",
+    "git_commit"
+  ],
+  "globalExactHashValidation": {
+    "fileName": "sessions01-48_global-exact-hash-validation.json",
+    "status": "PASS",
+    "failureCount": 0,
+    "sha256": "02c4e6173a45a70e1ec7f42c1df5538d4a0b01e7b173d2884f6369a7f89dc580"
+  },
+  "independentValidation": {
+    "fileName": "sessions45-48_independent-validation.json",
+    "status": "PASS",
+    "failureCount": 0,
+    "sha256": "f6114fdb839609a225f263b9ab572586f60fdb70b35176a766441d513a0c9843"
+  }
+}

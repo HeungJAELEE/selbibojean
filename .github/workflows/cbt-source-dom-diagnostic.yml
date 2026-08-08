@@ -1,0 +1,72 @@
+name: CBT source DOM diagnostic
+
+on:
+  push:
+    branches:
+      - codex/cbt-source-dom-diagnostic-20260806
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install isolated parser dependency
+        run: |
+          mkdir -p /tmp/cbt-parser
+          cd /tmp/cbt-parser
+          npm init -y
+          npm install cheerio@1.1.2
+      - name: Inspect source page DOM
+        env:
+          CBT_CHEERIO_PATH: /tmp/cbt-parser/node_modules/cheerio/dist/esm/index.js
+        run: node scripts/diagnose-cbt-source-dom.mjs
+      - name: Inventory all source pages
+        env:
+          CBT_CHEERIO_PATH: /tmp/cbt-parser/node_modules/cheerio/dist/esm/index.js
+        run: node scripts/inventory-cbt-sources.mjs
+      - name: Capture required source image
+        run: |
+          mkdir -p artifacts/cbt-source-images
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0 (compatible; SelbiSourceAudit/1.0)' \
+            'https://cbtbank.kr/images/de/de20070902/de20070902m93.gif' \
+            --output artifacts/cbt-source-images/de20070902m93.gif
+          file artifacts/cbt-source-images/de20070902m93.gif
+      - name: Create repository snapshot
+        run: |
+          mkdir -p artifacts/repository-snapshot
+          tar --exclude=.git --exclude=node_modules --exclude=artifacts -czf artifacts/repository-snapshot/selbibojean.tar.gz .
+      - name: Upload DOM diagnostic
+        uses: actions/upload-artifact@v4
+        with:
+          name: cbt-dom-diagnostic
+          path: artifacts/cbt-dom-diagnostic
+          if-no-files-found: error
+          retention-days: 3
+      - name: Upload source inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: cbt-source-inventory
+          path: artifacts/cbt-source-inventory
+          if-no-files-found: error
+          retention-days: 3
+      - name: Upload required source image
+        uses: actions/upload-artifact@v4
+        with:
+          name: de20070902-q93-source-image
+          path: artifacts/cbt-source-images/de20070902m93.gif
+          if-no-files-found: error
+          retention-days: 3
+      - name: Upload repository snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: selbibojean-repository-snapshot
+          path: artifacts/repository-snapshot/selbibojean.tar.gz
+          if-no-files-found: error
+          retention-days: 3

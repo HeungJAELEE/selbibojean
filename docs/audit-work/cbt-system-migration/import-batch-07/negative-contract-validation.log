@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "caseCount": 9,
+  "detectedCount": 9,
+  "results": [
+    {
+      "case": "duplicate_external_id",
+      "expectedFailedCheck": "unique_external_ids",
+      "detected": true,
+      "failedChecks": [
+        "unique_external_ids",
+        "ordered_external_ids",
+        "source_identity_hashes",
+        "theory_links"
+      ],
+      "failureCount": 4
+    },
+    {
+      "case": "prior_record_tamper",
+      "expectedFailedCheck": "prior_records_unchanged",
+      "detected": true,
+      "failedChecks": [
+        "prior_records_unchanged"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "hold_answer_activated",
+      "expectedFailedCheck": "holds_disabled",
+      "detected": true,
+      "failedChecks": [
+        "holds_disabled"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "candidate_answer_removed",
+      "expectedFailedCheck": "candidate_answers",
+      "detected": true,
+      "failedChecks": [
+        "candidate_answers",
+        "full_choice_mappings"
+      ],
+      "failureCount": 2
+    },
+    {
+      "case": "variant_blocker_removed",
+      "expectedFailedCheck": "variant_specific_blocked",
+      "detected": true,
+      "failedChecks": [
+        "variant_specific_blocked"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "source_stem_tamper",
+      "expectedFailedCheck": "source_identity_hashes",
+      "detected": true,
+      "failedChecks": [
+        "source_identity_hashes"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "canonical_reassignment_injected",
+      "expectedFailedCheck": "no_canonical_reassignment",
+      "detected": true,
+      "failedChecks": [
+        "no_canonical_reassignment"
+      ],
+      "failureCount": 1
+    },
+    {
+      "case": "low_context_policy_removed",
+      "expectedFailedCheck": "low_context_policy",
+      "detected": true,
+      "failedChecks": [
+        "low_context_policy",
+        "low_context_count",
+        "low_context_queue"
+      ],
+      "failureCount": 3
+    },
+    {
+      "case": "records_digest_tamper",
+      "expectedFailedCheck": "records_sha",
+      "detected": true,
+      "failedChecks": [
+        "records_sha"
+      ],
+      "failureCount": 1
+    }
+  ],
+  "failures": []
+}

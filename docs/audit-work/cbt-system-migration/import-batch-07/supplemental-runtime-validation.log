@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "scope": "supplemental static manifest publication-gate simulation",
+  "nodeVersion": null,
+  "officialNode24Validation": false,
+  "recordCount": 170,
+  "runtimeStateCounts": {
+    "unreviewed": 1014,
+    "candidate": 1305,
+    "hold": 51,
+    "choice_conflict": 14
+  },
+  "checks": {
+    "cumulativeStateCounts": true,
+    "reviewedRecordCount": true,
+    "unreviewedCount": true,
+    "batchCandidateHoldGated": true,
+    "publishedBatchRecordsZero": true,
+    "preSubmitForbiddenKeysAbsent": true,
+    "holdAnswersDisabled": true,
+    "variantSpecificCanonicalFeedbackBlocked": true
+  },
+  "failures": [],
+  "limitations": [
+    "No complete content.json or runtime source tree is packaged in this batch archive.",
+    "This static simulation does not replace buildRuntimeContent, Supabase materialization, browser flow, or Node.js 24 repository tests."
+  ]
+}

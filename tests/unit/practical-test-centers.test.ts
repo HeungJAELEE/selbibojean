@@ -1,0 +1,270 @@
+import { describe, expect, it } from "vitest";
+import {
+  getPracticalCenterComparison,
+  PRACTICAL_2025_HISTORY_CENTERS,
+  PRACTICAL_HISTORICAL_CANDIDATE_CENTERS,
+  PRACTICAL_MAIN_TEST_CENTERS,
+  PRACTICAL_TEST_CENTERS,
+  PRACTICAL_TEST_CENTER_SOURCE,
+  practicalTestCentersById,
+} from "@/data/source/practical-test-centers";
+import { practicalEquipmentModelsById } from "@/data/source/practical-equipment-models";
+
+describe("practical test center source catalog", () => {
+  it("keeps the 18 official facility rows with stable unique IDs", () => {
+    expect(PRACTICAL_TEST_CENTERS).toHaveLength(18);
+    expect(new Set(PRACTICAL_TEST_CENTERS.map((center) => center.id)).size).toBe(
+      18,
+    );
+    expect(
+      new Set(PRACTICAL_TEST_CENTERS.map((center) => center.facilitySheetRow))
+        .size,
+    ).toBe(18);
+    expect(PRACTICAL_TEST_CENTER_SOURCE.sourceFileSha256).toMatch(/^[A-F0-9]{64}$/);
+  });
+
+  it("adds 15 verified 2025 venue histories, promotes photographed centers, and keeps six candidates separate", () => {
+    expect(PRACTICAL_2025_HISTORY_CENTERS).toHaveLength(15);
+    expect(PRACTICAL_MAIN_TEST_CENTERS).toHaveLength(35);
+    expect(PRACTICAL_HISTORICAL_CANDIDATE_CENTERS).toHaveLength(6);
+    expect(new Set(PRACTICAL_MAIN_TEST_CENTERS.map((center) => center.id)).size).toBe(
+      35,
+    );
+    expect(
+      PRACTICAL_2025_HISTORY_CENTERS.every(
+        (center) => center.evidenceKind === "exam_history_2025",
+      ),
+    ).toBe(true);
+  });
+
+  it("promotes the photographed Changwon venue while preserving attribution and bounded uncertainty", () => {
+    const changwon = PRACTICAL_MAIN_TEST_CENTERS.find(
+      (center) => center.id === "gyeongnam-changwon-kopo",
+    );
+
+    expect(changwon).toMatchObject({
+      region: "경남",
+      evidenceKind: "verified_user_report",
+      equipmentModelIds: [],
+      candidateFieldReport: {
+        sourceKind: "user_report",
+        reportedAt: "2026-07-30",
+        reporterLabel: "수험자 24학번군바리",
+      },
+    });
+    expect(changwon?.candidateFieldReport?.sections[0]?.notes.join(" ")).toContain(
+      "배선을 모두 제거한 뒤",
+    );
+    expect(changwon?.evidenceNote).toContain("시험장 사용을 확인");
+    expect(
+      PRACTICAL_HISTORICAL_CANDIDATE_CENTERS.some(
+        (center) => center.name === "한국폴리텍대학 창원캠퍼스",
+      ),
+    ).toBe(false);
+    expect(
+      practicalTestCentersById.get("gyeongnam-changwon-kopo-candidate")?.id,
+    ).toBe("gyeongnam-changwon-kopo");
+  });
+
+  it("resolves only explicitly normalized equipment models", () => {
+    for (const center of PRACTICAL_TEST_CENTERS) {
+      expect(center.rawFacilityNote.trim().length, center.id).toBeGreaterThan(0);
+      for (const modelId of center.equipmentModelIds) {
+        expect(
+          practicalEquipmentModelsById.has(modelId),
+          `${center.id} missing ${modelId}`,
+        ).toBe(true);
+      }
+    }
+  });
+
+  it("keeps user-reported supply guidance separate from official facility-sheet notes", () => {
+    const busan = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "busan-technical-high",
+    );
+    const paju = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "gyeonggi-kcci",
+    );
+    const seongnam = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "seongnam-kopo-nuri",
+    );
+
+    expect(
+      PRACTICAL_TEST_CENTERS.filter((center) => center.candidateSupplyGuidance),
+    ).toHaveLength(3);
+    expect(busan?.suppliedMaterialNote).toBeNull();
+    expect(paju?.suppliedMaterialNote).toBeNull();
+    expect(seongnam?.suppliedMaterialNote).toBeNull();
+    expect(busan?.candidateSupplyGuidance).toMatchObject({
+      weldingPpeProvision: "not_provided",
+      otherSuppliesProvision: "provided",
+      personalBringGuidance: "welding_ppe_required",
+      sourceKind: "user_report",
+      reportedAt: "2026-07-28",
+    });
+    expect(paju?.candidateSupplyGuidance).toEqual(
+      busan?.candidateSupplyGuidance,
+    );
+    expect(seongnam?.candidateSupplyGuidance).toMatchObject({
+      weldingPpeProvision: "not_provided",
+      otherSuppliesProvision: "provided",
+      personalBringGuidance:
+        "welding_ppe_required_other_items_recommended",
+      sourceKind: "user_report",
+      reportedAt: "2026-07-30",
+    });
+    expect(seongnam?.candidateSupplyGuidance?.summary).toContain(
+      "미지참 시 시험장에서 제공",
+    );
+    expect(seongnam?.candidateSupplyGuidance?.summary).toContain(
+      "직접 구비해 지참",
+    );
+  });
+
+  it("keeps the Gyeonggi KCCI pneumatic and hydraulic field report bounded as user evidence", () => {
+    const center = PRACTICAL_TEST_CENTERS.find(
+      (item) => item.id === "gyeonggi-kcci",
+    );
+
+    expect(center?.candidateFieldReport).toMatchObject({
+      sourceKind: "user_report",
+      reportedAt: "2024-08-13",
+      summary: expect.stringContaining("수험자 제보"),
+    });
+    expect(center?.candidateFieldReport?.sections.map((section) => section.category))
+      .toEqual(["pneumatic", "hydraulic"]);
+    expect(
+      center?.candidateFieldReport?.sections
+        .map(
+          (section) =>
+            `${section.notes.join(" ")} ${section.caution ?? ""}`,
+        )
+        .join(" "),
+    ).toContain("임의 수리");
+    expect(center?.rawFacilityNote).toBe(
+      "LK 30KVA 15KW, Daedae 20KVA 12KW, Kumho 20KVA 10KW",
+    );
+  });
+
+  it("flags the Incheon welding PPE and finishing tools as personally required", () => {
+    const incheon = PRACTICAL_2025_HISTORY_CENTERS.find(
+      (center) => center.id === "incheon-kopo-industry",
+    );
+
+    expect(incheon?.candidateSupplyGuidance).toMatchObject({
+      weldingPpeProvision: "not_provided",
+      otherSuppliesProvision: "partially_not_provided",
+      personalBringGuidance: "welding_ppe_and_tools_required",
+      sourceKind: "user_report",
+      reportedAt: "2026-07-28",
+      requiredPersonalItems: expect.arrayContaining([
+        "용접 장갑",
+        "용접 앞치마",
+        "슬래그망치",
+        "와이어브러시",
+      ]),
+    });
+    expect(incheon?.candidateFieldReport?.sections).toHaveLength(4);
+    expect(
+      incheon?.candidateFieldReport?.sections.find(
+        (section) => section.category === "welding",
+      )?.notes.join(" "),
+    ).toContain("구형 다이얼식");
+  });
+
+  it("does not guess unpublished V-AMT equivalence and preserves explicit parking limits", () => {
+    const seongnam = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "seongnam-kopo-nuri",
+    );
+    const seoul = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "seoul-north-tech",
+    );
+    const busan = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "busan-technical-high",
+    );
+
+    expect(seongnam).toBeDefined();
+    expect(seoul).toBeDefined();
+    expect(busan).toBeDefined();
+    expect(getPracticalCenterComparison(seongnam!).pneumatic.label).toBe(
+      "일부 다름",
+    );
+    expect(getPracticalCenterComparison(seoul!).pneumatic.label).toBe(
+      "미확인",
+    );
+    expect(getPracticalCenterComparison(seoul!).parking.label).toBe(
+      "주차불가",
+    );
+    expect(getPracticalCenterComparison(busan!).parking).toMatchObject({
+      status: "parking_unavailable",
+      label: "주차불가",
+      detail: "주차불가 · 사용자 제보(2026-07-28)",
+    });
+  });
+
+  it("keeps raw facility labels while storing normalized welding models separately", () => {
+    const cw3m = practicalEquipmentModelsById.get("cnw-cw-3m");
+    const cat3m = practicalEquipmentModelsById.get("cnw-cw-cat3m");
+    const yeongju = practicalEquipmentModelsById.get(
+      "postech-weltop-unknown-300a",
+    );
+    const gumi = practicalEquipmentModelsById.get("postech-ac300a");
+
+    expect(cw3m?.welding).toMatchObject({
+      rawModelName: "CW-3M",
+      normalizedModelName: "CW-CTA3M",
+      normalizationStatus: "probable_alias",
+      outputCurrentType: "ac",
+      outputVerification: "probable",
+    });
+    expect(cat3m?.welding).toMatchObject({
+      rawModelName: "CW-CAT3M",
+      normalizedModelName: "CW-CTA3M",
+      normalizationStatus: "probable_transcription_error",
+      outputCurrentType: "ac",
+      outputVerification: "probable",
+    });
+    expect(yeongju?.welding).toMatchObject({
+      normalizedModelName: null,
+      outputCurrentType: "unknown",
+      outputVerification: "unknown",
+    });
+    expect(gumi?.welding).toMatchObject({
+      normalizedModelName: "AC300A",
+      outputCurrentType: "ac",
+      outputVerification: "confirmed",
+    });
+  });
+
+  it("does not overstate probable welding models as confirmed", () => {
+    const suncheon = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "jeonnam-suncheon-kopo",
+    );
+    const yeongju = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "gyeongbuk-yeongju-kopo",
+    );
+    const gumi = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "gumi-kopo-nuri",
+    );
+    const gyeonggi = PRACTICAL_TEST_CENTERS.find(
+      (center) => center.id === "gyeonggi-kcci",
+    );
+
+    expect(getPracticalCenterComparison(suncheon!).welding).toMatchObject({
+      status: "needs_check",
+      label: "교류 유력",
+    });
+    expect(getPracticalCenterComparison(yeongju!).welding).toMatchObject({
+      status: "needs_check",
+      label: "현장 확인",
+    });
+    expect(getPracticalCenterComparison(gumi!).welding).toMatchObject({
+      status: "ac",
+      label: "교류",
+    });
+    expect(getPracticalCenterComparison(gyeonggi!).welding).toMatchObject({
+      status: "ac",
+      label: "교류 확인·일부 유력",
+    });
+  });
+});

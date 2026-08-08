@@ -1,0 +1,333 @@
+{
+  "batchReviewVersion": 12,
+  "batch": "sessions45-48",
+  "reviewedAt": "2026-08-07T03:01:57+09:00",
+  "status": "PASS",
+  "failureCount": 0,
+  "failures": [],
+  "sessionCount": 4,
+  "recordCount": 222,
+  "verdictCounts": {
+    "ACCEPT": 210,
+    "REVISE": 0,
+    "CHOICE_ISSUE": 1,
+    "HOLD": 11
+  },
+  "scoredCount": 210,
+  "excludedCount": 12,
+  "publicationCandidateCount": 208,
+  "theoryGapHoldExternalIds": [
+    "2022-1-Q61",
+    "2022-2-Q65"
+  ],
+  "lowContextAcceptedCount": 30,
+  "lowContextAcceptedExternalIds": [
+    "2021-2-Q17",
+    "2021-2-Q24",
+    "2021-2-Q31",
+    "2021-2-Q37",
+    "2021-2-Q53",
+    "2021-2-Q62",
+    "2021-2-Q78",
+    "2021-2-Q99",
+    "2021-4-Q02",
+    "2022-1-Q10",
+    "2022-1-Q17",
+    "2022-1-Q22",
+    "2022-1-Q23",
+    "2022-1-Q24",
+    "2022-1-Q25",
+    "2022-1-Q34",
+    "2022-1-Q35",
+    "2022-1-Q40",
+    "2022-1-Q53",
+    "2022-1-Q56",
+    "2022-1-Q60",
+    "2022-1-Q61",
+    "2022-2-Q11",
+    "2022-2-Q23",
+    "2022-2-Q42",
+    "2022-2-Q43",
+    "2022-2-Q44",
+    "2022-2-Q55",
+    "2022-2-Q59",
+    "2022-2-Q65"
+  ],
+  "nonAcceptDetails": [
+    {
+      "externalId": "2021-2-Q01",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 1,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_stem_and_choice_formula_images_not_independently_inspected"
+      ],
+      "directSolution": "식: 정현파 변위 D[μm]와 속도 V[mm/s]의 관계는 V=2πfD×10⁻³이다. 단위: μm를 mm로 바꾸기 위해 10⁻³을 곱한다. 대입: 1번에는 환산계수가 없고 2번에는 포함되어 있으나 3·4번은 이미지다. 결과: 3·4번 수식을 직접 판독하기 전에는 복원답 2번의 유일성을 승인하지 않는다.",
+      "imageRequirement": "required",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20210515/de20210515m1.gif",
+        "https://cbtbank.kr/images/de/de20210515/de20210515m1b3.gif",
+        "https://cbtbank.kr/images/de/de20210515/de20210515m1b4.gif"
+      ]
+    },
+    {
+      "externalId": "2021-2-Q06",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 3,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_bearing_defect_frequency_formula_images_not_independently_inspected"
+      ],
+      "directSolution": "식: 구름베어링 특성주파수는 회전주파수 n_r, 전동체 수, 피치반경·전동체반경 및 접촉각의 함수이며 결함 위치별로 계수와 부호가 달라진다. 단위: 모든 특성주파수는 Hz(1/s)이다. 대입: 1번 f_r=n_r는 문자로 확인되지만 2~4번의 핵심 반경비·전동체 수 관계식은 이미지에만 있다. 결과: 이미지 식을 직접 판독하기 전에는 복원답 4번의 유일성을 승인하지 않는다.",
+      "imageRequirement": "required",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20210515/de20210515m6b2-1.gif",
+        "https://cbtbank.kr/images/de/de20210515/de20210515m6b3-1.gif",
+        "https://cbtbank.kr/images/de/de20210515/de20210515m6b4-1.gif"
+      ]
+    },
+    {
+      "externalId": "2021-2-Q13",
+      "verdict": "CHOICE_ISSUE",
+      "sourceAnswerIndex": 3,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "multiple_final_answers_one_and_four_confirmed_in_reconstructed_stem"
+      ],
+      "directSolution": "반사테이프에 빛을 조사해 반사광 펄스를 검출하는 센서 방식은 광전식 검출법이다. 동시에 펄스 간 회전주기를 측정해 그 역수로 회전수를 계산할 수 있으므로 확정답안에서 1번과 4번이 함께 인정됐다. 단일정답형 채점에는 사용할 수 없다.",
+      "imageRequirement": "none",
+      "requiredImages": []
+    },
+    {
+      "externalId": "2021-2-Q27",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 2,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_facility_network_diagram_not_independently_inspected"
+      ],
+      "directSolution": "제품·공정·시장·프로젝트 중심 설비망은 그림의 중심 노드와 연결방향을 읽어야 구분할 수 있다. 분류를 결정하는 네트워크 그림을 직접 판독하지 못했으므로 복원답 3번을 승인하지 않는다.",
+      "imageRequirement": "required",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20210515/de20210515m27.gif"
+      ]
+    },
+    {
+      "externalId": "2021-2-Q97",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 0,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_directional_valve_actuation_symbols_not_independently_inspected"
+      ],
+      "directSolution": "전자·페달·플런저·누름버튼 조작방식은 ISO 밸브기호의 실제 조작기호를 보기와 대조해야 한다. 네 기호 이미지를 독립 판독하지 못했으므로 복원답 1번을 승인하지 않는다.",
+      "imageRequirement": "required",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20210515/de20210515m97b1-1.gif",
+        "https://cbtbank.kr/images/de/de20210515/de20210515m97b2-1.gif",
+        "https://cbtbank.kr/images/de/de20210515/de20210515m97b3-1.gif",
+        "https://cbtbank.kr/images/de/de20210515/de20210515m97b4-1.gif"
+      ]
+    },
+    {
+      "externalId": "2021-4-Q05",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 3,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_rms_formula_choice_images_not_independently_inspected"
+      ],
+      "directSolution": "식: 정현파에서 피크값 V_p=V_{p-p}/2이고 실효값 V_RMS=V_p/√2이므로 V_RMS=V_{p-p}/(2√2)이다. 단위: 피크-피크값과 실효값은 같은 진동량 단위를 사용한다. 대입: 피크-피크값을 2로 나눠 피크값을 구한 뒤 다시 √2로 나눈다. 결과: V_{p-p}/(2√2)와 일치하는 선택지를 골라야 하지만 네 선택지가 모두 이미지이므로 복원답 4번을 직접 승인하지 않는다.",
+      "imageRequirement": "required",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20210912/de20210912m5b1.gif",
+        "https://cbtbank.kr/images/de/de20210912/de20210912m5b2.gif",
+        "https://cbtbank.kr/images/de/de20210912/de20210912m5b3.gif",
+        "https://cbtbank.kr/images/de/de20210912/de20210912m5b4.gif"
+      ]
+    },
+    {
+      "externalId": "2022-1-Q75",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 3,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_hydraulic_symbol_stem_and_choice_images_not_independently_inspected"
+      ],
+      "directSolution": "지문과 네 선택지가 모두 유압기호 이미지로 구성된다. 기호의 포트 수·위치 수·중립 유로를 직접 읽지 못했으므로 복원답을 추정 승인하지 않는다.",
+      "imageRequirement": "required",
+      "requiredImages": [
+        "https://cbtbank.kr/images/cet/cet20220305/cet20220305m75.gif",
+        "https://cbtbank.kr/images/cet/cet20220305/cet20220305m75b1.gif",
+        "https://cbtbank.kr/images/cet/cet20220305/cet20220305m75b2.gif",
+        "https://cbtbank.kr/images/cet/cet20220305/cet20220305m75b3.gif",
+        "https://cbtbank.kr/images/cet/cet20220305/cet20220305m75b4.gif"
+      ]
+    },
+    {
+      "externalId": "2022-1-Q80",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 1,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_bernoulli_formula_choice_images_not_independently_inspected"
+      ],
+      "directSolution": "식: P/γ+V²/(2g)+z=일정. 단위: 세 항은 모두 길이[m]이다. 대입: 압력수두·속도수두·위치수두를 합한다. 결과: 베르누이식과 일치하는 보기 번호를 이미지에서 직접 확인하기 전에는 승인하지 않는다.",
+      "imageRequirement": "required",
+      "requiredImages": [
+        "https://cbtbank.kr/images/cet/cet20220305/cet20220305m80b1.gif",
+        "https://cbtbank.kr/images/cet/cet20220305/cet20220305m80b2.gif",
+        "https://cbtbank.kr/images/cet/cet20220305/cet20220305m80b3.gif",
+        "https://cbtbank.kr/images/cet/cet20220305/cet20220305m80b4.gif"
+      ]
+    },
+    {
+      "externalId": "2022-2-Q13",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 2,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_waveform_label_diagram_not_independently_inspected"
+      ],
+      "directSolution": "주기·편진폭·양진폭은 파형의 가로·세로 치수와 기준선 위치를 그림에서 읽어야 한다. a~d 라벨의 실제 위치를 확인하지 못했으므로 정답 번호를 승인하지 않는다.",
+      "imageRequirement": "required",
+      "requiredImages": [
+        "https://cbtbank.kr/images/cet/cet20220424/cet20220424m13.gif"
+      ]
+    },
+    {
+      "externalId": "2022-2-Q14",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 3,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_spring_formula_choice_images_not_independently_inspected"
+      ],
+      "directSolution": "식: 직렬은 1/keq=Σ(1/ki), 병렬은 keq=Σki. 단위: 등가스프링정수는 N/m이다. 대입: 그림의 연결방식에 따라 해당 식을 적용한다. 결과: 배치 그림과 네 수식 이미지를 직접 판독하지 못해 복원답 번호를 승인하지 않는다.",
+      "imageRequirement": "required",
+      "requiredImages": [
+        "https://cbtbank.kr/images/cet/cet20220424/cet20220424m14.gif",
+        "https://cbtbank.kr/images/cet/cet20220424/cet20220424m14b1.gif",
+        "https://cbtbank.kr/images/cet/cet20220424/cet20220424m14b2.gif",
+        "https://cbtbank.kr/images/cet/cet20220424/cet20220424m14b3.gif",
+        "https://cbtbank.kr/images/cet/cet20220424/cet20220424m14b4.gif"
+      ]
+    },
+    {
+      "externalId": "2022-2-Q22",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 2,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_repair_rate_formula_choice_images_not_independently_inspected"
+      ],
+      "directSolution": "식: 수리율 μ=1/MTTR. 단위: MTTR이 h이면 μ는 1/h이다. 대입: 평균수리시간의 역수를 취한다. 결과: 3·4번 수식 이미지를 판독하지 못해 복원답 3번을 승인하지 않는다.",
+      "imageRequirement": "required",
+      "requiredImages": [
+        "https://cbtbank.kr/images/cet/cet20220424/cet20220424m22b3.gif",
+        "https://cbtbank.kr/images/cet/cet20220424/cet20220424m22b4.gif"
+      ]
+    },
+    {
+      "externalId": "2022-2-Q27",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 2,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_quality_maintenance_sequence_source_image_not_independently_inspected"
+      ],
+      "directSolution": "품질보전 전개는 현상분석→목표설정→요인해석→검토·실시→표준화 순이다. 다만 ㄱ~ㅁ 항목의 실제 문구가 원문 이미지에 있어 배열과 보기 번호를 독립 확인하지 못했다.",
+      "imageRequirement": "required",
+      "requiredImages": [
+        "https://cbtbank.kr/images/cet/cet20220424/cet20220424m27.gif"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "sessionNumber": 45,
+      "sessionKey": "2021-05-15-Q01-Q50",
+      "file": "de20210515_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 46,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 3
+      },
+      "status": "PASS",
+      "failureCount": 0,
+      "sha256": "afbeaa460467de5815d010fbe874234477b227baf1b08839b5c153508b8fc15f"
+    },
+    {
+      "sessionNumber": 46,
+      "sessionKey": "2021-05-15-Q51-Q100",
+      "file": "de20210515_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      },
+      "status": "PASS",
+      "failureCount": 0,
+      "sha256": "d9c8dd53dc5454c4b1d2dda464cd8e1ef2faf17a9ae1475d17dc0efc66ba1522"
+    },
+    {
+      "sessionNumber": 47,
+      "sessionKey": "2021-09-12-Q01-Q20",
+      "file": "de20210912_q01-q20_independent-review.jsonl",
+      "recordCount": 20,
+      "verdictCounts": {
+        "ACCEPT": 19,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      },
+      "status": "PASS",
+      "failureCount": 0,
+      "sha256": "dde317d88bcbf61334e0554c8e8e0f7ab5cf5718c76e6cadbc00e35a26eeaebe"
+    },
+    {
+      "sessionNumber": 48,
+      "sessionKey": "2022-selected-102",
+      "file": "cet2022_selected-102_independent-review.jsonl",
+      "recordCount": 102,
+      "verdictCounts": {
+        "ACCEPT": 96,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 6
+      },
+      "status": "PASS",
+      "failureCount": 0,
+      "sha256": "6da7d728931937853d5e5dbf49fb07143b618d29256b514228f0d0d63f5f7bea"
+    }
+  ],
+  "checks": {
+    "sourceTextChoicesAnswerAndIdentityHashesRecomputed": true,
+    "choiceFeedbackSpecificBoundAndUnique": true,
+    "formulaStructure": true,
+    "publicationAndScoringGates": true,
+    "theoryEntityTraceAndDirectBasis": true,
+    "batchExactSet222": true,
+    "nonAcceptExactSet12": true
+  },
+  "notRun": [
+    "repository_typecheck_node24",
+    "vitest",
+    "eslint_changed_files",
+    "verify_no_answer_leak_runtime",
+    "runtime_publication_gate",
+    "login_guest_integration_flow",
+    "sql_migration_static_and_migration_test",
+    "git_commit"
+  ],
+  "secondPassValidation": {
+    "fileName": "sessions45-48_second-pass-validation.json",
+    "status": "PASS",
+    "failureCount": 0,
+    "sha256": "7bc6b5f470d1d8ce57ee3f36016af3d8760f436bdd1c1b02cad518e988d51f6b"
+  }
+}

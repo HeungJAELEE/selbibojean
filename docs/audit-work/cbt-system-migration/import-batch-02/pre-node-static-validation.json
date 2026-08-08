@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "failureCount": 0,
+  "records": 400,
+  "batch2": {
+    "candidate": 189,
+    "hold": 11
+  },
+  "variantSpecific": 165,
+  "lessons": 14,
+  "changes": 12,
+  "q84": {
+    "canonicalId": "U-1400",
+    "lessonId": "lesson-cbt-poppet-valve-components",
+    "choiceMappingCount": 4
+  },
+  "sourceContentSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4"
+}

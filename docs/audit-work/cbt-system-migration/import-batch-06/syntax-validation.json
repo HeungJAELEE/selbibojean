@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "nodeVersion": "v22.16.0",
+  "files": [
+    "/mnt/data/cbt_batch06_work/repo/scripts/verify-reviewed-cbt-variants.ts",
+    "/mnt/data/cbt_batch06_work/repo/tests/unit/reviewed-cbt-variants.test.ts",
+    "/mnt/data/cbt_batch06_work/repo/src/lib/content/reviewed-cbt-variants.ts"
+  ],
+  "exitCode": 0,
+  "method": "TypeScript transpileModule syntax-only check; not a substitute for project typecheck"
+}

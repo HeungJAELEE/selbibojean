@@ -1,0 +1,222 @@
+{
+  "status": "PASS",
+  "scenarioCount": 14,
+  "detectedCount": 14,
+  "allMutationsDetected": true,
+  "scenarios": [
+    {
+      "scenario": "records_sha_stale",
+      "expectedAnyFailedCheck": [
+        "records_sha",
+        "source_identity_hashes"
+      ],
+      "actualFailedChecks": [
+        "records_sha",
+        "source_identity_hashes"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "records SHA mismatch",
+        "record source identity/hash mismatch"
+      ]
+    },
+    {
+      "scenario": "duplicate_external_id",
+      "expectedAnyFailedCheck": [
+        "ordered_external_ids",
+        "unique_external_ids"
+      ],
+      "actualFailedChecks": [
+        "ordered_external_ids",
+        "source_identity_hashes",
+        "theory_links",
+        "unique_external_ids",
+        "variant_specific_queue"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "external IDs are not unique",
+        "ordered external IDs mismatch",
+        "record source identity/hash mismatch",
+        "direct theory link mismatch",
+        "variant_specific_queue exact set mismatch"
+      ]
+    },
+    {
+      "scenario": "image_hold_answer_activated",
+      "expectedAnyFailedCheck": [
+        "image_holds_disabled"
+      ],
+      "actualFailedChecks": [
+        "image_holds_disabled"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "image HOLD gate failed"
+      ]
+    },
+    {
+      "scenario": "choice_conflict_answer_activated",
+      "expectedAnyFailedCheck": [
+        "choice_conflict_disabled"
+      ],
+      "actualFailedChecks": [
+        "choice_conflict_disabled"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "choice conflict gate failed"
+      ]
+    },
+    {
+      "scenario": "variant_mapping_fallback",
+      "expectedAnyFailedCheck": [
+        "full_choice_mappings",
+        "variant_specific_blocked"
+      ],
+      "actualFailedChecks": [
+        "full_choice_mappings",
+        "full_mapping_count",
+        "variant_specific_blocked"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "full choice mapping invalid",
+        "variant-specific gate failed",
+        "full mapping count is not 45"
+      ]
+    },
+    {
+      "scenario": "wrong_reassignment_canonical",
+      "expectedAnyFailedCheck": [
+        "canonical_reassignments",
+        "theory_links"
+      ],
+      "actualFailedChecks": [
+        "canonical_reassignments",
+        "full_choice_mappings",
+        "theory_links"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "full choice mapping invalid",
+        "direct theory link mismatch",
+        "canonical reassignment mismatch"
+      ]
+    },
+    {
+      "scenario": "wrong_reassignment_theory",
+      "expectedAnyFailedCheck": [
+        "canonical_reassignments",
+        "theory_links"
+      ],
+      "actualFailedChecks": [
+        "canonical_reassignments",
+        "theory_links"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "direct theory link mismatch",
+        "canonical reassignment mismatch"
+      ]
+    },
+    {
+      "scenario": "silent_taxonomy_overlay",
+      "expectedAnyFailedCheck": [
+        "pending_taxonomy_repairs",
+        "theory_links"
+      ],
+      "actualFailedChecks": [
+        "pending_taxonomy_repairs",
+        "theory_links"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "direct theory link mismatch",
+        "pending taxonomy repair contract mismatch"
+      ]
+    },
+    {
+      "scenario": "taxonomy_blocker_removed",
+      "expectedAnyFailedCheck": [
+        "pending_taxonomy_repairs"
+      ],
+      "actualFailedChecks": [
+        "pending_taxonomy_repairs"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "pending taxonomy repair contract mismatch"
+      ]
+    },
+    {
+      "scenario": "source_hash_tamper",
+      "expectedAnyFailedCheck": [
+        "source_identity_hashes"
+      ],
+      "actualFailedChecks": [
+        "source_identity_hashes"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "record source identity/hash mismatch"
+      ]
+    },
+    {
+      "scenario": "prior_record_mutation",
+      "expectedAnyFailedCheck": [
+        "prior_records_unchanged"
+      ],
+      "actualFailedChecks": [
+        "prior_records_unchanged"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "prior 2162 records changed"
+      ]
+    },
+    {
+      "scenario": "hold_policy_count",
+      "expectedAnyFailedCheck": [
+        "cumulative_hold_policy"
+      ],
+      "actualFailedChecks": [
+        "cumulative_hold_policy"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "cumulative hold policy mismatch"
+      ]
+    },
+    {
+      "scenario": "theory_additions_sha",
+      "expectedAnyFailedCheck": [
+        "theory_additions_sha"
+      ],
+      "actualFailedChecks": [
+        "global_theory_additions_unchanged",
+        "theory_additions_sha"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "theory additions SHA mismatch",
+        "global theory additions changed during batch 12"
+      ]
+    },
+    {
+      "scenario": "canonical_changes_sha",
+      "expectedAnyFailedCheck": [
+        "canonical_changes_sha"
+      ],
+      "actualFailedChecks": [
+        "canonical_changes_sha",
+        "global_canonical_changes_unchanged"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "canonical changes SHA mismatch",
+        "global canonical changes changed during batch 12"
+      ]
+    }
+  ]
+}

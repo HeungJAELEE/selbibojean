@@ -1,0 +1,375 @@
+export type PracticalTestCenterMediaCategory =
+  | "electrical_control"
+  | "pneumatic"
+  | "hydraulic"
+  | "welding";
+
+export type PracticalTestCenterMediaItem = {
+  id: string;
+  src: string;
+  fullSrc?: string;
+  width: number;
+  height: number;
+  alt: string;
+  caption: string;
+  category: PracticalTestCenterMediaCategory;
+  evidenceNote?: string;
+};
+
+export type PracticalTestCenterMediaGroup = {
+  centerId: string;
+  receivedAt: string;
+  sourceLabel: string;
+  sourceUrl?: string;
+  summary: string;
+  items: PracticalTestCenterMediaItem[];
+};
+
+const INCHON_CAFE_SOURCE =
+  "https://cafe.naver.com/f-e/cafes/29094056/articles/14301?referrerAllArticles=true&inCafeSearch=true&query=%EC%9D%B8%EC%B2%9C%20%EC%8B%9C%ED%97%98%EC%9E%A5&page=2";
+
+export const PRACTICAL_TEST_CENTER_MEDIA_GROUPS: PracticalTestCenterMediaGroup[] =
+  [
+    {
+      centerId: "incheon-kopo-industry",
+      receivedAt: "2026-07-28",
+      sourceLabel: "사용자 제공 현장 사진",
+      sourceUrl: INCHON_CAFE_SOURCE,
+      summary:
+        "산학협력관 실습대의 전기제어 모듈, 공압 밸브·센서 배치와 구형 다이얼식 KT-300AC 용접기를 확인할 수 있습니다.",
+      items: [
+        {
+          id: "incheon-control-power-switch",
+          src: "/practical/test-centers/incheon-kopo-industry/control-power-switch-modules.webp",
+          width: 1800,
+          height: 1013,
+          alt: "인천캠퍼스 실습대의 직류 전원공급기와 스위치 모듈",
+          caption: "직류 전원공급기·비상정지·스위치 모듈",
+          category: "electrical_control",
+        },
+        {
+          id: "incheon-relay-timer",
+          src: "/practical/test-centers/incheon-kopo-industry/relay-timer-modules.webp",
+          width: 1800,
+          height: 1013,
+          alt: "인천캠퍼스 실습대의 릴레이와 온딜레이 타이머 모듈",
+          caption: "릴레이·온딜레이 타이머 모듈",
+          category: "electrical_control",
+        },
+        {
+          id: "incheon-valve-bank",
+          src: "/practical/test-centers/incheon-kopo-industry/pneumatic-valve-bank-overview.webp",
+          width: 1800,
+          height: 1013,
+          alt: "인천캠퍼스 공압 실습대의 밸브 뱅크 전경",
+          caption: "공압 밸브 뱅크 전경",
+          category: "pneumatic",
+        },
+        {
+          id: "incheon-solenoid-valves",
+          src: "/practical/test-centers/incheon-kopo-industry/solenoid-valves-closeup.webp",
+          width: 1800,
+          height: 1013,
+          alt: "인천캠퍼스 공압 실습대의 솔레노이드 밸브 근접 사진",
+          caption: "단동·복동 솔레노이드 밸브 배치",
+          category: "pneumatic",
+        },
+        {
+          id: "incheon-mechanical-valve-sensor",
+          src: "/practical/test-centers/incheon-kopo-industry/mechanical-valve-and-sensor.webp",
+          width: 1800,
+          height: 1013,
+          alt: "인천캠퍼스 공압 실습대의 기계식 밸브와 센서 모듈",
+          caption: "기계식 밸브·센서 모듈",
+          category: "pneumatic",
+        },
+        {
+          id: "incheon-sensor-module",
+          src: "/practical/test-centers/incheon-kopo-industry/sensor-module-closeup.webp",
+          width: 1800,
+          height: 1013,
+          alt: "인천캠퍼스 실습대 센서 모듈의 근접 사진",
+          caption: "센서 모듈과 단자 배치",
+          category: "electrical_control",
+        },
+        {
+          id: "incheon-valves-closeup-01",
+          src: "/practical/test-centers/incheon-kopo-industry/pneumatic-valves-closeup-01.webp",
+          width: 1800,
+          height: 1013,
+          alt: "인천캠퍼스 공압 실습대 밸브의 첫 번째 근접 사진",
+          caption: "공압 밸브 포트·기호 근접 보기 1",
+          category: "pneumatic",
+        },
+        {
+          id: "incheon-valves-closeup-02",
+          src: "/practical/test-centers/incheon-kopo-industry/pneumatic-valves-closeup-02.webp",
+          width: 1800,
+          height: 1013,
+          alt: "인천캠퍼스 공압 실습대 밸브의 두 번째 근접 사진",
+          caption: "공압 밸브 포트·기호 근접 보기 2",
+          category: "pneumatic",
+        },
+        {
+          id: "incheon-kt-300ac-welder",
+          src: "/practical/test-centers/incheon-kopo-industry/kt-300ac-welder.webp",
+          width: 1600,
+          height: 1578,
+          alt: "인천폴리텍 산학협력관의 KT-300AC 구형 다이얼식 교류 아크용접기 전면",
+          caption: "KT-300AC 구형 다이얼식 교류 아크용접기",
+          category: "welding",
+          evidenceNote:
+            "사용자 제공 사진에서 KT-300AC 명판, 전류 조절 다이얼과 디지털 A 표시창을 확인했습니다. 실제 출력 설정은 현장 감독관 안내와 시험편 상태를 기준으로 판단하세요.",
+        },
+      ],
+    },
+    {
+      centerId: "jeonnam-suncheon-kopo",
+      receivedAt: "2026-07-27",
+      sourceLabel: "사용자 제공 현장 사진",
+      summary:
+        "유압·공압 실습대의 회로 구성 장면과 시설표에 적힌 CW-3M 용접기 전면을 확인할 수 있습니다.",
+      items: [
+        {
+          id: "suncheon-hydraulic-bench-01",
+          src: "/practical/test-centers/jeonnam-suncheon-kopo/training-bench-overview-01.webp",
+          width: 1026,
+          height: 1800,
+          alt: "순천캠퍼스 유압 실습대 장비 전경 첫 번째 사진",
+          caption: "유압 실습대·호스·제어모듈 전경 1",
+          category: "hydraulic",
+        },
+        {
+          id: "suncheon-hydraulic-bench-02",
+          src: "/practical/test-centers/jeonnam-suncheon-kopo/training-bench-overview-02.webp",
+          width: 1350,
+          height: 1800,
+          alt: "순천캠퍼스 유압 실습대 장비 전경 두 번째 사진",
+          caption: "유압 실습대·액추에이터 전경 2",
+          category: "hydraulic",
+        },
+        {
+          id: "suncheon-hydraulic-bench-03",
+          src: "/practical/test-centers/jeonnam-suncheon-kopo/training-bench-overview-03.webp",
+          width: 1026,
+          height: 1800,
+          alt: "순천캠퍼스 유압 실습대 장비 전경 세 번째 사진",
+          caption: "유압 실습대·호스 연결 전경 3",
+          category: "hydraulic",
+        },
+        {
+          id: "suncheon-pneumatic-circuit-01",
+          src: "/practical/test-centers/jeonnam-suncheon-kopo/pneumatic-circuit-bench-01.webp",
+          width: 1800,
+          height: 1350,
+          alt: "순천캠퍼스 공압 실습대의 튜브 연결 장면 첫 번째 사진",
+          caption: "공압 회로 구성 장면 1",
+          category: "pneumatic",
+        },
+        {
+          id: "suncheon-pneumatic-circuit-02",
+          src: "/practical/test-centers/jeonnam-suncheon-kopo/pneumatic-circuit-bench-02.webp",
+          width: 1800,
+          height: 1350,
+          alt: "순천캠퍼스 공압 실습대의 튜브 연결 장면 두 번째 사진",
+          caption: "공압 회로 구성 장면 2",
+          category: "pneumatic",
+        },
+        {
+          id: "suncheon-pneumatic-circuit-03",
+          src: "/practical/test-centers/jeonnam-suncheon-kopo/pneumatic-circuit-bench-03.webp",
+          width: 1800,
+          height: 1350,
+          alt: "순천캠퍼스 공압 실습대의 튜브 연결 장면 세 번째 사진",
+          caption: "공압 회로 구성 장면 3",
+          category: "pneumatic",
+        },
+        {
+          id: "suncheon-cw-3m-welder",
+          src: "/practical/test-centers/jeonnam-suncheon-kopo/cw-3m-welder-screen-detail.webp",
+          fullSrc:
+            "/practical/test-centers/jeonnam-suncheon-kopo/cw-3m-welder-screen-full.webp",
+          width: 1080,
+          height: 1498,
+          alt: "순천캠퍼스 CW-3M 복합 용접기 전면",
+          caption: "CW-3M 용접기 전면",
+          category: "welding",
+          evidenceNote:
+            "사진에서 CW-3M 표기는 확인되지만 CW-CTA3M과의 동일 모델 여부는 명판 전체 확인 전까지 유력으로 유지합니다.",
+        },
+      ],
+    },
+    {
+      centerId: "ulsan-kopo",
+      receivedAt: "2026-07-27",
+      sourceLabel: "사용자 제공 현장 사진",
+      summary:
+        "현장 사진에서는 KT-300AC 교류 아크용접기 표기가 확인됩니다.",
+      items: [
+        {
+          id: "ulsan-kt-300ac-welder",
+          src: "/practical/test-centers/ulsan-kopo/kt-300ac-welder-front.webp",
+          width: 1800,
+          height: 1549,
+          alt: "울산캠퍼스 KT-300AC 교류 아크용접기 전면",
+          caption: "KT-300AC 교류 아크용접기 전면",
+          category: "welding",
+          evidenceNote:
+            "공식 시설표의 CW-WA300E 표기와 사진의 KT-300AC 표기가 다릅니다. 장비 교체·복수 장비·촬영시점 차이 가능성이 있어 두 근거를 분리해 표시합니다.",
+        },
+      ],
+    },
+    {
+      centerId: "busan-technical-high",
+      receivedAt: "2026-07-30",
+      sourceLabel: "사용자 제공 현장 사진",
+      summary:
+        "용접실의 인버터 용접기, 보수용접 구멍 가공용 드릴프레스와 제공 공구 작업대를 확인할 수 있습니다.",
+      items: [
+        {
+          id: "busan-welding-machines",
+          src: "/practical/test-centers/busan-technical-high/welding-machines.webp",
+          width: 1050,
+          height: 1400,
+          alt: "부산공고 용접실의 CW-WC 350과 CW-WT350A 용접기",
+          caption: "CW-WC 350·CW-WT350A 용접기",
+          category: "welding",
+          evidenceNote:
+            "사용자 제공 사진에서는 CW-WC 350과 CW-WT350A 표기가 확인됩니다. 공식 시설표의 CW-WA300E 표기와 다르므로 장비 교체·복수 장비·촬영시점 차이 가능성을 열어 두고 각각의 근거를 분리해 표시합니다.",
+        },
+        {
+          id: "busan-drill-press",
+          src: "/practical/test-centers/busan-technical-high/drill-press.webp",
+          width: 1050,
+          height: 1400,
+          alt: "부산공고 용접실의 삼천리 드릴프레스와 바이스",
+          caption: "보수용접 구멍 가공용 드릴프레스·바이스",
+          category: "welding",
+          evidenceNote:
+            "사진에서 삼천리 드릴프레스와 테이블 바이스를 확인했습니다. 실제 시험에서 사용하는 공구·드릴 규격은 공개문제와 감독관 안내를 최종 기준으로 확인하세요.",
+        },
+        {
+          id: "busan-provided-tools-table",
+          src: "/practical/test-centers/busan-technical-high/provided-tools-table-cropped.webp",
+          width: 1050,
+          height: 1220,
+          alt: "부산공고 용접실의 제공 공구와 소모품이 정리된 작업대",
+          caption: "제공 공구·소모품 작업대",
+          category: "welding",
+          evidenceNote:
+            "사용자 제공 원본에서 식별 가능한 사람이 보이는 상단 배경을 제외하고 공구 작업대 영역만 크롭했습니다. 사진에는 탭·줄·브러시·플라이어·장갑 등이 보이지만, 회차별 제공 여부는 수험자 안내와 시험장 지시를 최종 기준으로 확인하세요.",
+        },
+      ],
+    },
+    {
+      centerId: "gyeongnam-changwon-kopo",
+      receivedAt: "2026-07-30",
+      sourceLabel: "사용자 제공 현장 사진",
+      summary:
+        "공유압 실습대의 전기제어 패널, 유압 액추에이터·호스와 압력계를 함께 확인할 수 있습니다.",
+      items: [
+        {
+          id: "changwon-fluid-power-training-bench",
+          src: "/practical/test-centers/gyeongnam-changwon-kopo/fluid-power-training-bench.webp",
+          width: 2000,
+          height: 1126,
+          alt: "창원 폴리텍 공유압 실습장의 전기제어 모듈과 유압 기초 실습장비 전경",
+          caption: "공유압 전기제어·유압 기초 실습대 전경",
+          category: "hydraulic",
+          evidenceNote:
+            "사진 상단의 ‘유압기초실습장비’ 표기와 실습대 구성을 확인했습니다. 제조사·모델과 실제 시험 시행 회차는 확인 전이므로 단정하지 않습니다.",
+        },
+        {
+          id: "changwon-electrical-control-panel",
+          src: "/practical/test-centers/gyeongnam-changwon-kopo/electrical-control-panel-cropped.webp",
+          width: 1300,
+          height: 290,
+          alt: "창원 폴리텍 공유압 실습장의 전기제어 패널과 바나나 배선",
+          caption: "공유압 전기제어 패널·배선",
+          category: "electrical_control",
+          evidenceNote:
+            "사용자 제공 원본에서 식별 가능한 사람과 반사가 있는 하단을 제외하고 전기제어 패널만 크롭했습니다. 제보된 배선 단선 여부는 사진만으로 판정하지 않으며, 작동하지 않을 때에는 감독관에게 알린 뒤 배선을 처음부터 재구성하는 현장 대응 팁으로만 안내합니다.",
+        },
+      ],
+    },
+    {
+      centerId: "busan-kopo-facility-energy-lab",
+      receivedAt: "2026-08-01",
+      sourceLabel: "사용자 제공 현장 사진",
+      summary:
+        "설비에너지실 공·유압실의 시험장 표지와 공압·전기제어 실습대 배치를 사용자 제공 사진에서 확인할 수 있습니다.",
+      items: [
+        {
+          id: "busan-kopo-facility-room-sign",
+          src: "/practical/test-centers/busan-kopo/facility-room-sign.webp",
+          width: 165,
+          height: 190,
+          alt: "부산 폴리텍 설비에너지실 공·유압실 문패",
+          caption: "설비에너지 보전실 공·유압실",
+          category: "pneumatic",
+          evidenceNote:
+            "사용자 제공 원본에 사람과 응시자 명단이 있어, 문패만 남긴 파생 crop을 공개합니다.",
+        },
+        {
+          id: "busan-kopo-practical-test-site-sign",
+          src: "/practical/test-centers/busan-kopo/practical-test-site-sign.webp",
+          width: 370,
+          height: 330,
+          alt: "부산 폴리텍 설비보전기사 통제구역 시험장 표지",
+          caption: "설비보전기사 통제구역 시험장",
+          category: "pneumatic",
+          evidenceNote:
+            "사용자 제공 원본에 사람과 응시자 명단이 있어, 시험장 표지만 남긴 파생 crop을 공개합니다.",
+        },
+        {
+          id: "busan-kopo-pneumatic-training-room-overview",
+          src: "/practical/test-centers/busan-kopo/pneumatic-training-room-overview.webp",
+          width: 1440,
+          height: 1081,
+          alt: "부산 폴리텍 공압·전기제어 실습실 전경",
+          caption: "공압·전기제어 실습대 전경",
+          category: "pneumatic",
+        },
+        {
+          id: "busan-kopo-electropneumatic-training-bench-front",
+          src: "/practical/test-centers/busan-kopo/electropneumatic-training-bench-front.webp",
+          width: 1440,
+          height: 1081,
+          alt: "부산 폴리텍 공압·전기제어 실습대 전면",
+          caption: "공압·전기제어 실습대 전면",
+          category: "electrical_control",
+        },
+        {
+          id: "busan-kopo-electropneumatic-training-bench-angle",
+          src: "/practical/test-centers/busan-kopo/electropneumatic-training-bench-angle.webp",
+          width: 1080,
+          height: 1440,
+          alt: "부산 폴리텍 공압·전기제어 실습대 사선 전경",
+          caption: "공압·전기제어 실습대 사선 전경",
+          category: "electrical_control",
+        },
+        {
+          id: "busan-kopo-electropneumatic-training-benches-overview",
+          src: "/practical/test-centers/busan-kopo/electropneumatic-training-benches-overview.webp",
+          width: 1440,
+          height: 1081,
+          alt: "부산 폴리텍 공압·전기제어 실습대 여러 대의 전경",
+          caption: "공압·전기제어 실습대 배치",
+          category: "electrical_control",
+        },
+        {
+          id: "busan-kopo-electropneumatic-training-bench-wide",
+          src: "/practical/test-centers/busan-kopo/electropneumatic-training-bench-wide.webp",
+          width: 1440,
+          height: 1081,
+          alt: "부산 폴리텍 공압·전기제어 실습대와 배선 리드 전경",
+          caption: "공압·전기제어 실습대와 배선 리드",
+          category: "electrical_control",
+        },
+      ],
+    },
+  ];
+
+export const practicalTestCenterMediaByCenter = new Map(
+  PRACTICAL_TEST_CENTER_MEDIA_GROUPS.map((group) => [group.centerId, group]),
+);

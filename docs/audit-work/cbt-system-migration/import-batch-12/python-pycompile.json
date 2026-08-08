@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "files": [
+    "generate-import-batch-12.py",
+    "validate-import-batch-12.py",
+    "run-negative-contract-validation.py"
+  ],
+  "failures": []
+}

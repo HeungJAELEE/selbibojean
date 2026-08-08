@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "runtime": "Node.js v24.11.1",
+  "execution": "package script logic through a local TypeScript compatibility loader; not the missing project tsx package",
+  "recordCount": 2384,
+  "states": {
+    "candidate": 2267,
+    "hold": 98,
+    "choice_conflict": 19,
+    "published": 0
+  },
+  "theoryAdditionCount": 20,
+  "canonicalOverlayCount": 19,
+  "logFile": "node24-runtime-verifier.log"
+}

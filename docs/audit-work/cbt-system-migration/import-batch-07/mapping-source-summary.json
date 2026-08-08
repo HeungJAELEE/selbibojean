@@ -1,0 +1,98 @@
+{
+  "formatVersion": 1,
+  "mappingRunId": "CBT-SYSTEM-MAPPING-DRY-RUN-20260807-01",
+  "generatedAt": "2026-08-07T13:11:50+09:00",
+  "scope": "exam-question-only-dry-run-no-runtime-mutation",
+  "inputs": {
+    "contentPath": "/mnt/data/selbibojean_checkout/src/data/generated/content.json",
+    "contentSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "sourceReconstructionPath": "/mnt/data/selbibojean_mapping_batch01/source_reconstruction/src/data/generated/cbt-source-reconstruction.json",
+    "sourceReconstructionSha256": "0fb6d6e5cf5527d912aa2f007e48678d1b412e5bb8360b3b744a94b45ac5516d",
+    "reviewFileCount": 48,
+    "reviewRecordCount": 2384,
+    "reviewFilesCombinedSha256": "384cc92d7a2bc89403789ceab123bfd8a4f59a6ec2882c0b7a8e7e1709d3db08"
+  },
+  "counts": {
+    "currentCanonicalQuestions": 1396,
+    "currentVariants": 2384,
+    "sourceReconstructionRecords": 2384,
+    "reviewRecords": 2384,
+    "mappingRecords": 2384,
+    "reviewVerdict": {
+      "ACCEPT": 2254,
+      "CHOICE_ISSUE": 29,
+      "HOLD": 97,
+      "REVISE": 4
+    },
+    "sourceAnswerAgreement": {
+      "agrees": 2077,
+      "conflict": 1,
+      "conflict_or_corrupted_choice": 1,
+      "conflicts": 3,
+      "disagrees": 1,
+      "likely_match_but_unscorable": 1,
+      "match": 177,
+      "not_confirmable_as_written": 5,
+      "not_scored_due_choice_contract": 7,
+      "not_verifiable_without_image": 2,
+      "not_verified_due_required_image": 3,
+      "not_verified_due_required_images": 6,
+      "not_visually_verified": 2,
+      "source_key_not_usable": 13,
+      "unverifiable": 3,
+      "unverified": 82
+    },
+    "mappingClass": {
+      "EXACT_REPLACE": 2188,
+      "HOLD": 130,
+      "SEMANTIC_REPLACE": 64,
+      "UNMATCHED": 2
+    },
+    "runtimeDisposition": {
+      "CANDIDATE_AFTER_CANONICAL_THEORY_REPAIR": 6,
+      "HOLD": 132,
+      "PUBLICATION_CANDIDATE": 2246
+    },
+    "comparisonTrueCounts": {
+      "variantStemExact": 8,
+      "variantChoicesExact": 164,
+      "variantAnswerMatchesSource": 112,
+      "canonicalStemExact": 5,
+      "canonicalChoicesExact": 133,
+      "canonicalAnswerMatchesSource": 1473,
+      "yearMatchesExternalId": 2384,
+      "questionNumberMatches": 2384,
+      "registeredSourceUrlMatches": 2384,
+      "reviewedTheoryMatchesCurrentCanonical": 2325
+    },
+    "canonicalReassignmentRecords": 70,
+    "canonicalRelinkInPlaceRecords": 6,
+    "duplicateCanonicalClusters": 21,
+    "duplicateClusterRecords": 42,
+    "holdQueueRecords": 130,
+    "unmatchedQueueRecords": 2,
+    "canonicalImpactRecords": 137,
+    "plannedImportBatches": 12
+  },
+  "policy": {
+    "preserveExternalIds": true,
+    "preserveRegisteredSourceUrls": true,
+    "preserveQuestionNumbers": true,
+    "overwriteUnrelatedCanonicalContent": false,
+    "deleteMismatchRecords": false,
+    "nonAcceptDisposition": "HOLD",
+    "requiredImageMissingDisposition": "HOLD",
+    "canonicalReassignmentRequiresExplicitMapping": true,
+    "runtimeMutationPerformed": false
+  },
+  "notExecuted": [
+    "runtime content mutation",
+    "Node.js 24 typecheck",
+    "Vitest",
+    "ESLint",
+    "verify-no-answer-leak",
+    "Supabase migration tests",
+    "login/guest session flows",
+    "Git commit"
+  ]
+}

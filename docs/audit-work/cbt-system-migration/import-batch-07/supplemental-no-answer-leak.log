@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "scope": "supplemental_reviewed_cbt_pre_submit_and_publication_gate_static_projection",
+  "recordCount": 170,
+  "checks": {
+    "candidateHoldNotUsableBeforePublished": true,
+    "preSubmitForbiddenAnswerFieldsAbsent": true,
+    "imageHoldAnswersDisabled": true,
+    "variantSpecificCanonicalFeedbackBlocked": true
+  },
+  "forbiddenFields": [
+    "choiceByChoiceReasons",
+    "choiceIdMapping",
+    "directSolution",
+    "formulaUnitSubstitution",
+    "reviewedAnswerIndex",
+    "reviewedAnswerText",
+    "sourceAnswerIndex",
+    "sourceAnswerText"
+  ],
+  "officialNode24Validation": false,
+  "limitations": [
+    "This static projection does not replace the official verify:no-answer-leak command under Node.js 24."
+  ]
+}

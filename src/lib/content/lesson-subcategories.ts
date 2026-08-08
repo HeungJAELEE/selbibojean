@@ -105,7 +105,7 @@ const GROUP_RULES: Record<string, GroupRuleSet> = {
   ]),
   "s2-g02": group("아크용접 종합", [
     rule("defect", "용접결함", /결함/),
-    rule("process", "피복아크·TIG·MIG/MAG·FCAW·SAW", /피복아크|TIG|GTAW|MIG|MAG|CO₂|FCAW|플럭스코어|서브머지드|SAW/),
+    rule("process", "피복아크·TIG·MIG/MAG·FCAW·SAW", /피복아크|TIG|GTAW|MIG|MAG|CO₂|FCAW|플럭스코어|서브머지드|SAW|차폐|보호가스|플럭스/),
     rule("arc", "아크 안정·쏠림", /아크/),
   ]),
   "s2-g03": group("저항·가스·특수용접 종합", [

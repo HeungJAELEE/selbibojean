@@ -1,0 +1,107 @@
+{
+  "manifestVersion": 8,
+  "createdAt": "2026-08-07T03:02:05+09:00",
+  "bundleName": "sessions45-48_review_bundle_final.zip",
+  "batch": "sessions45-48",
+  "sessionCount": 4,
+  "recordCount": 222,
+  "sessionRecordCounts": [
+    50,
+    50,
+    20,
+    102
+  ],
+  "fileCountExcludingManifest": 18,
+  "files": [
+    {
+      "fileName": "de20210515_q01-q50_independent-review.jsonl",
+      "sizeBytes": 194925,
+      "sha256": "afbeaa460467de5815d010fbe874234477b227baf1b08839b5c153508b8fc15f"
+    },
+    {
+      "fileName": "de20210515_q01-q50_summary.json",
+      "sizeBytes": 2183,
+      "sha256": "59b017b31020b9593b72e577efeb9b7ed974a058c74a5f6e0cdedcb892322611"
+    },
+    {
+      "fileName": "de20210515_q01-q50_validation.json",
+      "sizeBytes": 1059,
+      "sha256": "44c66bd118eff603eb0acd8df5f32fe68823ac0d29d2db29e765ac46e2e3ad3d"
+    },
+    {
+      "fileName": "de20210515_q51-q100_independent-review.jsonl",
+      "sizeBytes": 194808,
+      "sha256": "d9c8dd53dc5454c4b1d2dda464cd8e1ef2faf17a9ae1475d17dc0efc66ba1522"
+    },
+    {
+      "fileName": "de20210515_q51-q100_summary.json",
+      "sizeBytes": 2076,
+      "sha256": "497c5eeab6062b143e98b585b49a8a061fc6376e09fb3dc0a4369c51288868a9"
+    },
+    {
+      "fileName": "de20210515_q51-q100_validation.json",
+      "sizeBytes": 1060,
+      "sha256": "66de87671b1f31ed5595784c98b4d062b36f8f3e6cddd78b9a8db44758106164"
+    },
+    {
+      "fileName": "de20210912_q01-q20_independent-review.jsonl",
+      "sizeBytes": 79389,
+      "sha256": "dde317d88bcbf61334e0554c8e8e0f7ab5cf5718c76e6cadbc00e35a26eeaebe"
+    },
+    {
+      "fileName": "de20210912_q01-q20_summary.json",
+      "sizeBytes": 1014,
+      "sha256": "5636abff6650a31ddbe6239ae8598b0da62d2803c4c4c670016cfa7e76524d68"
+    },
+    {
+      "fileName": "de20210912_q01-q20_validation.json",
+      "sizeBytes": 996,
+      "sha256": "c0980d75a878c021595cb29d4a39b05c254ce57fd887002cb7823ad4398022e5"
+    },
+    {
+      "fileName": "cet2022_selected-102_independent-review.jsonl",
+      "sizeBytes": 414861,
+      "sha256": "6da7d728931937853d5e5dbf49fb07143b618d29256b514228f0d0d63f5f7bea"
+    },
+    {
+      "fileName": "cet2022_selected-102_summary.json",
+      "sizeBytes": 3617,
+      "sha256": "5c8ddfd54a5858e37e5027f45153e953ac9f3206abbc3324d0ddbb232566f2bf"
+    },
+    {
+      "fileName": "cet2022_selected-102_validation.json",
+      "sizeBytes": 1059,
+      "sha256": "d4780fe12cc812d75413ef1536bc2d7e58d3d696332a23f93cf2a483a609d35c"
+    },
+    {
+      "fileName": "sessions45-48_batch-summary.json",
+      "sizeBytes": 13695,
+      "sha256": "26e5c6d0dce27ceb3653f31566804df998256b0663e4ed8c4df4d154a246a599"
+    },
+    {
+      "fileName": "sessions45-48_second-pass-validation.json",
+      "sizeBytes": 2946,
+      "sha256": "7bc6b5f470d1d8ce57ee3f36016af3d8760f436bdd1c1b02cad518e988d51f6b"
+    },
+    {
+      "fileName": "sessions45-48_independent-validation.json",
+      "sizeBytes": 2698,
+      "sha256": "f6114fdb839609a225f263b9ab572586f60fdb70b35176a766441d513a0c9843"
+    },
+    {
+      "fileName": "sessions45-48_final-audit.json",
+      "sizeBytes": 2900,
+      "sha256": "c9e9b0fdac6f14d5ff36ff348dc1ac3a6d8696a4bf9cfc6e9c8cab84033c7757"
+    },
+    {
+      "fileName": "sessions01-48_cumulative-validation.json",
+      "sizeBytes": 18814,
+      "sha256": "1e3581d728b56bb94bb271335b5b19516d75591a26d8170d2d17114800090fea"
+    },
+    {
+      "fileName": "sessions01-48_global-exact-hash-validation.json",
+      "sizeBytes": 730,
+      "sha256": "02c4e6173a45a70e1ec7f42c1df5538d4a0b01e7b173d2884f6369a7f89dc580"
+    }
+  ]
+}

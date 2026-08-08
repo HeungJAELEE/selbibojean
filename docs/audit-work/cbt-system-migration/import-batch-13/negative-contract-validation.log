@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "scenarioCount": 15,
+  "detectedCount": 15,
+  "results": [
+    {
+      "scenario": "u649_dry_run_digest",
+      "detected": true
+    },
+    {
+      "scenario": "u478_dry_run_digest",
+      "detected": true
+    },
+    {
+      "scenario": "2015_old_theory_link",
+      "detected": true
+    },
+    {
+      "scenario": "2007_old_concept_group",
+      "detected": true
+    },
+    {
+      "scenario": "conflict_label_removed",
+      "detected": true
+    },
+    {
+      "scenario": "conflict_scoring_regressed",
+      "detected": true
+    },
+    {
+      "scenario": "conflict_source_treatment_removed",
+      "detected": true
+    },
+    {
+      "scenario": "answer_hold_relabelled",
+      "detected": true
+    },
+    {
+      "scenario": "taxonomy_override_removed",
+      "detected": true
+    },
+    {
+      "scenario": "records_digest_stale",
+      "detected": true
+    },
+    {
+      "scenario": "canonical_digest_stale",
+      "detected": true
+    },
+    {
+      "scenario": "restored_source_hash_removed",
+      "detected": true
+    },
+    {
+      "scenario": "historical_matrix_mutated",
+      "detected": true
+    },
+    {
+      "scenario": "answer_hold_validator_removed",
+      "detected": true
+    },
+    {
+      "scenario": "audit_gate_removed",
+      "detected": true
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "batchContractStatus": "PASS",
+  "repositoryFinalValidationStatus": "NOT_RUN",
+  "generatedAt": "2026-08-07T23:25:00+09:00",
+  "scope": "import-07 actual exam-question overlay, image HOLD gating, low-context registration, formula structure, direct theory binding, variant-specific choice isolation, and publication safety",
+  "counts": {
+    "batchId": "import-07",
+    "recordCount": 170,
+    "states": {
+      "candidate": 165,
+      "hold": 5
+    },
+    "fullCanonicalChoiceMappingCount": 29,
+    "variantSpecificFeedbackPendingCount": 136,
+    "theoryLessonAdditionCount": 0,
+    "canonicalQuestionChangeCount": 0,
+    "canonicalReassignmentCount": 0,
+    "answerKeyCorrectionCount": 0,
+    "choiceConflictCount": 0,
+    "directTheoryLinkCount": 170,
+    "formulaRecordCount": 8,
+    "lowContextRegistrationCount": 32,
+    "cumulativeRecordCount": 1370,
+    "cumulativeStates": {
+      "candidate": 1305,
+      "hold": 51,
+      "choice_conflict": 14
+    },
+    "unreviewedRecordCount": 1014
+  },
+  "sourceIntegrity": {
+    "contentJsonSha256Expected": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "contentJsonPackaged": false,
+    "contentHashBindingVerified": true,
+    "contentJsonDirectlyRehashedThisRun": false,
+    "manifestSha256": "554131acc5dd2aa67c73eb97ce7336ea542f7c76bbdf92fc57adab42b4472144",
+    "recordsSha256": "b71a7a6567ccc0f4d8fb02d0cb82d0708fe1b4a9b5b82403c3d5849158c5f196",
+    "dryRunMappingSha256": "302f58f43bcec93539be7af38f8657e42bad3d37004f85e4f41d5c797c9e50d9",
+    "exactExternalIdSet": true,
+    "sourceHashesMatch": true,
+    "prior1200RecordsUnchanged": true
+  },
+  "specialFindings": {
+    "imageHolds": [
+      "2016-4-Q10",
+      "2016-4-Q26",
+      "2016-4-Q58",
+      "2017-2-Q32",
+      "2017-2-Q33"
+    ],
+    "lowContextRegistered": [
+      "2016-2-Q04",
+      "2016-2-Q18",
+      "2016-4-Q01",
+      "2016-4-Q02",
+      "2016-4-Q03",
+      "2016-4-Q17",
+      "2016-4-Q21",
+      "2016-4-Q30",
+      "2016-4-Q34",
+      "2016-4-Q44",
+      "2016-4-Q48",
+      "2016-4-Q52",
+      "2016-4-Q57",
+      "2016-4-Q69",
+      "2016-4-Q70",
+      "2016-4-Q80",
+      "2016-4-Q81",
+      "2016-4-Q82",
+      "2016-4-Q83",
+      "2016-4-Q90",
+      "2016-4-Q99",
+      "2017-2-Q05",
+      "2017-2-Q08",
+      "2017-2-Q19",
+      "2017-2-Q21",
+      "2017-2-Q23",
+      "2017-2-Q30",
+      "2017-2-Q35",
+      "2017-2-Q40",
+      "2017-2-Q43",
+      "2017-2-Q46",
+      "2017-2-Q48"
+    ],
+    "textSufficientMissingImageCandidates": [
+      "2016-4-Q70",
+      "2016-4-Q83",
+      "2016-4-Q90",
+      "2017-2-Q43"
+    ],
+    "theoryGap": "170문항 모두 검수 theoryLink와 dry-run canonical theoryLink가 일치하며 신규 이론·canonical overlay·재배정은 필요하지 않았다.",
+    "calculationStructure": "8문항에 식·단위·대입·결과 구조를 보존했다.",
+    "choiceContract": "29문항은 canonical choice ID 1:1 매핑을 완료했고, 136문항은 variant 전용 선택지 계약 전까지 canonical 피드백 재사용을 차단했다."
+  },
+  "supplementalChecks": {
+    "generatorOwnedValidation": "PASS",
+    "independentValidation": "PASS",
+    "typescriptSyntax": "PASS",
+    "targetedTypecheck": "PASS_SYNTAX_ONLY",
+    "supplementalRuntime": "PASS_STATIC_SIMULATION",
+    "supplementalVerifier": "PASS_INDEPENDENT_PYTHON",
+    "supplementalNoAnswerLeak": "PASS_STATIC_PROJECTION",
+    "negativeContracts": "PASS_9_OF_9",
+    "generatorIdempotency": "PASS",
+    "pythonGeneratorSyntax": "PASS"
+  },
+  "officialChecks": {
+    "node24Typecheck": "BLOCKED_NODE_VERSION_AND_PARTIAL_SNAPSHOT",
+    "vitestMaxWorkers1": "BLOCKED_NODE_VERSION_AND_DEPENDENCIES",
+    "eslintChangedFiles": "BLOCKED_NODE_VERSION_AND_DEPENDENCIES",
+    "verifyReviewedCbt": "BLOCKED_DEPENDENCIES_CONTENT_AND_COMPLETE_TREE",
+    "verifyNoAnswerLeak": "BLOCKED_DEPENDENCIES_AND_COMPLETE_TREE",
+    "sqlMigrationTests": "NOT_RUN_BATCH_SCOPE",
+    "loginGuestFlows": "NOT_RUN_FINAL_RUNTIME_INTEGRATION"
+  },
+  "git": {
+    "repositoryMetadataAvailable": false,
+    "commitCreated": false,
+    "push": false,
+    "pullRequest": false,
+    "deploy": false
+  }
+}

@@ -2,7 +2,14 @@ import "server-only";
 
 import { decodeCompressedContent, type RuntimeContentMetadata } from "@/lib/content/compressed-content";
 import { buildRuntimeContent } from "@/lib/content/runtime-content";
-import type { GeneratedContent, Lesson, Question } from "@/lib/domain/types";
+import type {
+  ConceptGroup,
+  GeneratedContent,
+  Lesson,
+  PublicQuestion,
+  Question,
+  Subject,
+} from "@/lib/domain/types";
 
 const COMPRESSED_CONTENT_PATH = "/data/content.bin";
 const CONTENT_METADATA_PATH = "/data/content.meta.json";
@@ -13,14 +20,33 @@ type RuntimeGlobal = typeof globalThis & {
 };
 
 let contentPromise: Promise<GeneratedContent> | undefined;
+export type WrittenTheorySubjectContent = {
+  subjects: Subject[];
+  conceptGroups: ConceptGroup[];
+  lessons: Array<
+    Pick<
+      Lesson,
+      "id" | "title" | "subjectId" | "conceptGroupId" | "contentRole"
+    >
+  >;
+  questions: PublicQuestion[];
+};
 
-async function readRuntimeAssets() {
+const subjectContentPromises = new Map<
+  string,
+  Promise<WrittenTheorySubjectContent>
+>();
+
+async function readRuntimeAssets(
+  compressedPath = COMPRESSED_CONTENT_PATH,
+  metadataPath = CONTENT_METADATA_PATH,
+) {
   const assetFetcher = (globalThis as RuntimeGlobal).__SEOLBI_RUNTIME_ASSET_FETCH__;
 
   if (assetFetcher) {
     const [compressedResponse, metadataResponse] = await Promise.all([
-      assetFetcher(COMPRESSED_CONTENT_PATH),
-      assetFetcher(CONTENT_METADATA_PATH),
+      assetFetcher(compressedPath),
+      assetFetcher(metadataPath),
     ]);
 
     if (!compressedResponse.ok || !metadataResponse.ok) {
@@ -43,8 +69,8 @@ async function readRuntimeAssets() {
   ]);
   const runtimeDirectory = path.join(process.cwd(), ".runtime-assets", "data");
   const [compressed, metadata] = await Promise.all([
-    readFile(path.join(runtimeDirectory, "content.bin")),
-    readFile(path.join(runtimeDirectory, "content.meta.json"), "utf8"),
+    readFile(path.join(runtimeDirectory, path.basename(compressedPath))),
+    readFile(path.join(runtimeDirectory, path.basename(metadataPath)), "utf8"),
   ]);
 
   return {
@@ -63,6 +89,25 @@ async function loadContent() {
 export async function getContent() {
   contentPromise ??= loadContent().then(buildRuntimeContent);
   return contentPromise;
+}
+
+export async function getWrittenTheorySubjectContent(subjectId: string) {
+  if (!/^subject-[1-4]$/.test(subjectId)) {
+    throw new Error(`Unsupported written subject: ${subjectId}`);
+  }
+
+  const existing = subjectContentPromises.get(subjectId);
+  if (existing) return existing;
+
+  const basePath = `/data/content-${subjectId}`;
+  const subjectPromise = readRuntimeAssets(
+    `${basePath}.bin`,
+    `${basePath}.meta.json`,
+  ).then(({ compressed, metadata }) =>
+    decodeCompressedContent<WrittenTheorySubjectContent>(compressed, metadata),
+  );
+  subjectContentPromises.set(subjectId, subjectPromise);
+  return subjectPromise;
 }
 
 export async function getQuestion(questionId: string): Promise<Question | undefined> {

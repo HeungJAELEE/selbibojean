@@ -1,0 +1,5 @@
+{
+  "status": "APPLIED",
+  "sourceFile": "scripts/verify-generated-data.ts",
+  "reason": "The runtime audit set is the union of the 281 written-question audit entries and held audits embedded in reviewed-CBT canonical replacements. The verifier now checks the exact union and ensures all reviewed-CBT canonical audits remain held and non-publishable."
+}

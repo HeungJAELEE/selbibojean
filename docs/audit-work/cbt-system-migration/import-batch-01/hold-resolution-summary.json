@@ -1,0 +1,56 @@
+{
+  "formatVersion": 1,
+  "batchId": "import-01-hold-resolution",
+  "generatedAt": "2026-08-07T15:34:56+09:00",
+  "before": {
+    "candidate": 177,
+    "hold": 23
+  },
+  "after": {
+    "candidate": 187,
+    "choiceConflict": 6,
+    "hold": 7
+  },
+  "groups": {
+    "imageVerificationQueue": [
+      "2006-4-Q17",
+      "2006-4-Q37",
+      "2006-4-Q88",
+      "2006-4-Q91",
+      "2007-4-Q02",
+      "2007-4-Q10",
+      "2007-4-Q93"
+    ],
+    "normalizedAndRegistered": [
+      "2006-4-Q09",
+      "2006-4-Q15",
+      "2006-4-Q84",
+      "2006-4-Q89",
+      "2007-4-Q40"
+    ],
+    "choiceConflictNonScoring": [
+      "2006-4-Q34",
+      "2006-4-Q49",
+      "2006-4-Q60",
+      "2006-4-Q93",
+      "2007-4-Q49",
+      "2007-4-Q66"
+    ],
+    "lowContextRegistered": [
+      "2006-4-Q11",
+      "2007-4-Q36",
+      "2007-4-Q50",
+      "2007-4-Q61",
+      "2007-4-Q82"
+    ]
+  },
+  "publicationPolicy": {
+    "candidateLearnerVisible": false,
+    "holdLearnerScored": false,
+    "choiceConflictLearnerScored": false,
+    "explicitPublishedStatusRequired": true
+  },
+  "recordsSha256": "9f1bd7284cd7cec502d121381b75ce8ad06a0b49d3cc67e989f8cc92df08c934",
+  "overlaySha256": "0f1a94956b4aefdc0350262a0e1943251097f4cf3d27862ab9e739e08fb311f3",
+  "validationArtifact": "docs/audit-work/cbt-system-migration/import-batch-01/hold-resolution-validation.json"
+}

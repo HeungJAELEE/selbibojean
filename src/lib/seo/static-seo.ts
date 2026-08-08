@@ -1,3 +1,5 @@
+import { isLearnerVisibleContentId } from "@/lib/content/learner-visibility";
+
 export type SitemapEntry = {
   path: string;
 };
@@ -17,6 +19,7 @@ const STATIC_PUBLIC_PATHS = [
   "/",
   "/library",
   "/privacy",
+  "/theory",
   "/written/theory",
   "/written/practice",
   "/written/practice/random",
@@ -24,6 +27,7 @@ const STATIC_PUBLIC_PATHS = [
   "/written/review",
   "/practical",
   "/practical/mock",
+  "/practical/info",
   "/practical/work",
   "/practical/written",
   "/practical/written/past",
@@ -36,7 +40,11 @@ function publishedPaths<T extends { id: string; contentStatus: string }>(
   prefix: string,
 ) {
   return items
-    .filter((item) => item.contentStatus === "published")
+    .filter(
+      (item) =>
+        item.contentStatus === "published" &&
+        isLearnerVisibleContentId(item.id),
+    )
     .map((item) => `${prefix}/${encodeURIComponent(item.id)}`);
 }
 
@@ -53,7 +61,6 @@ export function getPublicSitemapPaths(
   for (const category of practical.studyCategories) {
     paths.add(`/practical/written/theory/category/${encodeURIComponent(category.id)}`);
   }
-
   return [...paths]
     .sort((left, right) => left.localeCompare(right))
     .map((path) => ({ path }));
