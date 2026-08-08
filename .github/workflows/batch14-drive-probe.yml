@@ -1,0 +1,39 @@
+name: Batch14 Drive probe
+
+on:
+  push:
+    branches:
+      - codex/cbt-batch14-payload-v2-20260808
+    paths:
+      - .github/workflows/batch14-drive-probe.yml
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Probe unauthenticated Drive download
+        shell: bash
+        run: |
+          set -euo pipefail
+          urls=(
+            'https://drive.google.com/uc?export=download&id=1Qc8HxiiheA6N23coV-kKuwxAqG5eQfqL'
+            'https://drive.usercontent.google.com/download?id=1Qc8HxiiheA6N23coV-kKuwxAqG5eQfqL&export=download&confirm=t'
+          )
+          ok=0
+          for i in "${!urls[@]}"; do
+            out="/tmp/drive-probe-$i"
+            code=$(curl -L -sS -o "$out" -w '%{http_code}' "${urls[$i]}" || true)
+            bytes=$(wc -c < "$out" 2>/dev/null || echo 0)
+            kind=$(file -b "$out" 2>/dev/null || true)
+            echo "probe=$i http=$code bytes=$bytes type=$kind"
+            head -c 120 "$out" | tr '\n' ' ' || true
+            echo
+            if grep -q 'partCount' "$out"; then
+              sha256sum "$out"
+              ok=1
+            fi
+          done
+          test "$ok" -eq 1
