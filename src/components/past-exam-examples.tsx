@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -113,6 +113,7 @@ function PastExamQuestionCard({
   const [feedback, setFeedback] = useState<PracticeFeedback | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const pendingAttemptId = useRef<string | null>(null);
   const isHydrated = useHydrated();
 
   async function submitAnswer() {
@@ -120,10 +121,13 @@ function PastExamQuestionCard({
     setLoading(true);
     setError("");
     try {
+      const clientAttemptId = pendingAttemptId.current ?? crypto.randomUUID();
+      pendingAttemptId.current = clientAttemptId;
       const response = await fetch("/api/practice/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          clientAttemptId,
           questionId: example.canonicalId,
           choiceId: selectedChoiceId,
           selfRating: "unsure",
@@ -133,6 +137,7 @@ function PastExamQuestionCard({
       const result = await response.json() as PracticeFeedback & { error?: string };
       if (!response.ok) throw new Error(result.error);
       setFeedback(result);
+      pendingAttemptId.current = null;
       window.setTimeout(() => {
         document.getElementById(`past-exam-feedback-${example.externalId}`)
           ?.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -145,6 +150,7 @@ function PastExamQuestionCard({
   }
 
   function retry() {
+    pendingAttemptId.current = null;
     setSelectedChoiceId("");
     setFeedback(null);
     setError("");
@@ -177,7 +183,7 @@ function PastExamQuestionCard({
                 key={`${example.externalId}-${choiceId}`}
                 type="button"
                 aria-pressed={selected}
-                onClick={() => setSelectedChoiceId(choiceId)}
+                onClick={() => { pendingAttemptId.current = null; setSelectedChoiceId(choiceId); }}
                 className={cn(
                   "flex w-full gap-3 rounded-xl border px-3 py-3 text-left text-sm leading-6 transition",
                   selected ? "border-[#16697a] bg-[#eaf7f6] ring-1 ring-[#16697a]" : "border-slate-200 bg-slate-50 hover:border-slate-400",

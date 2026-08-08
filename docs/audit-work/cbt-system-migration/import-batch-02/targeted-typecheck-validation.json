@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "scope": "supplemental_targeted_only",
+  "typescriptVersion": "5.8.3",
+  "nodeVersion": "v22.16.0",
+  "commands": [
+    "tsc -p /mnt/data/cbt_batch02_theory_work/typecheck/tsconfig.json --pretty false",
+    "tsc -p /mnt/data/cbt_batch02_theory_work/typecheck/tsconfig-verifier.json --pretty false"
+  ],
+  "filesCovered": [
+    "src/lib/domain/types.ts",
+    "src/lib/domain/practice.ts",
+    "src/lib/content/practice-choice-order.ts",
+    "src/lib/content/reviewed-cbt-variants.ts",
+    "src/lib/content/past-exam-examples.ts",
+    "src/lib/content/practice-presentations.ts",
+    "src/lib/content/supabase-materialization.ts",
+    "scripts/verify-reviewed-cbt-variants.ts"
+  ],
+  "note": "Node.js 24 프로젝트 전체 typecheck가 아니라, 현재 환경의 global TypeScript 5.8.3로 수행한 보조 범위 검사다."
+}

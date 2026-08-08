@@ -1,0 +1,73 @@
+{
+  "batchContractStatus": "PASS",
+  "repositoryFinalValidationStatus": "NOT_RUN",
+  "generatedAt": "2026-08-07T20:20:00+09:00",
+  "scope": "import-05 actual exam-question overlay, answer-key correction, choice-conflict isolation, duplicate canonical reassignment, image HOLD gating, and publication safety",
+  "counts": {
+    "batchId": "import-05",
+    "recordCount": 200,
+    "states": {
+      "candidate": 191,
+      "hold": 8,
+      "choice_conflict": 1
+    },
+    "fullCanonicalChoiceMappingCount": 37,
+    "manualChoiceMappingCount": 1,
+    "variantSpecificFeedbackPendingCount": 154,
+    "theoryLessonAdditionCount": 0,
+    "canonicalQuestionChangeCount": 0,
+    "canonicalReassignmentCount": 1,
+    "answerKeyCorrectionCount": 1,
+    "directTheoryLinkCount": 200,
+    "calculationRecordCount": 4,
+    "cumulativeRecordCount": 1000,
+    "cumulativeStates": {
+      "candidate": 950,
+      "hold": 40,
+      "choice_conflict": 10
+    },
+    "unreviewedRecordCount": 1384
+  },
+  "sourceIntegrity": {
+    "contentJsonSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "contentJsonUnchanged": true,
+    "manifestSha256": "43c2a313b57ae787800e3dc2e2de6a9f39c145561b25a5380fcc0d56d435b4d9",
+    "recordsSha256": "d74f8044d3a60f227661f7138d3048b31048e0df7e52a0140eb535939a9f7933",
+    "exactExternalIdSet": true,
+    "sourceHashesMatch": true,
+    "prior800RecordsUnchanged": true
+  },
+  "specialFindings": {
+    "2014-4-Q87": "복원 답 4번을 보존하고 독립 검토 답 2번을 U-990 canonical 정답키와 명시적으로 매핑했다.",
+    "2014-2-Q40": "복원 문구상 2번과 3번이 함께 틀려 선택지 충돌 비채점으로 유지했다.",
+    "2014-4-Q51": "2008-4-Q53과 동일 원문으로 판정해 U-362 및 lesson-w8vtqs로 재연결했으며 variant 전용 선택지 계약 전까지 공개를 차단했다.",
+    "theoryGap": "이번 200문항에는 신규 이론 공백이 없고, 기존 직접 이론 199건과 기존 이론 재연결 1건으로 완료했다.",
+    "calculationStructure": "2014-2-Q26, 2014-2-Q96, 2014-4-Q57, 2014-4-Q97의 식·단위·대입·결과 구조를 완성했다."
+  },
+  "supplementalChecks": {
+    "syntax": "PASS",
+    "targetedTypecheck": "PASS",
+    "reviewedVerifier": "PASS",
+    "runtimeAndSupabase": "PASS",
+    "sourceAnswerLeak": "PASS",
+    "negativeContracts": "PASS",
+    "idempotency": "PASS",
+    "independentValidation": "PASS"
+  },
+  "officialChecks": {
+    "node24Typecheck": "BLOCKED_NODE_VERSION",
+    "vitestMaxWorkers1": "BLOCKED_NODE_VERSION",
+    "eslintChangedFiles": "BLOCKED_NODE_VERSION",
+    "verifyReviewedCbt": "BLOCKED_MISSING_TSX",
+    "verifyNoAnswerLeak": "BLOCKED_MISSING_TSX",
+    "sqlMigrationTests": "NOT_RUN_BATCH_SCOPE",
+    "loginGuestFlows": "NOT_RUN_FINAL_RUNTIME_INTEGRATION"
+  },
+  "git": {
+    "repositoryMetadataAvailable": false,
+    "commitCreated": false,
+    "push": false,
+    "pullRequest": false,
+    "deploy": false
+  }
+}

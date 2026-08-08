@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "recordCount": 170,
+  "candidateCount": 165,
+  "choiceConflictCount": 0,
+  "holdCount": 5,
+  "exactExternalIdSet": true,
+  "orderedExternalIdsMatchDryRun": true,
+  "prior1200RecordsUnchanged": true,
+  "sourceHashesMatch": true,
+  "reviewAndDryRunTheoryLinksMatch": true,
+  "candidateAnswersPresent": true,
+  "imageHoldAnswersDisabled": true,
+  "variantSpecificBlocked": true,
+  "fullChoiceMappingsCorrect": true,
+  "lowContextPoliciesPreserved": true,
+  "formulaUnitSubstitutionCount": true,
+  "noCanonicalReassignment": true,
+  "theoryGapCountAfterBatch": 0,
+  "contentHashBindingVerified": true,
+  "sourceContentFilePackaged": false
+}

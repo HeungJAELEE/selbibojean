@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "file": "/mnt/data/work-batch12/cbt-system-import-batch12/scripts/verify-reviewed-cbt-variants.ts",
+      "errors": []
+    },
+    {
+      "file": "/mnt/data/work-batch12/cbt-system-import-batch12/tests/unit/reviewed-cbt-variants.test.ts",
+      "errors": []
+    }
+  ]
+}

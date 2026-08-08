@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "repository": "HeungJAELEE/selbibojean",
+  "baseCommit": "c064ec3c2293d036ebfa4d4710c0ce9d56407bc8",
+  "workflowArtifact": {
+    "artifactId": 8951134143,
+    "name": "selbibojean-repository-snapshot",
+    "declaredSha256": "be635b5d003dce73b46294511f103ce6c81205e1489ce561588e77c18ffe24c5",
+    "downloadedSha256": "be635b5d003dce73b46294511f103ce6c81205e1489ce561588e77c18ffe24c5",
+    "size": 105698124
+  },
+  "contentJson": {
+    "sha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "expectedSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "unchanged": true
+  },
+  "bindingPolicy": "Apply only to the exact base commit and content.json digest; otherwise revalidate all canonical and theory links."
+}

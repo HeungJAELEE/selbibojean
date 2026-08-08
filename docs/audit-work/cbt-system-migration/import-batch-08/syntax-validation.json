@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "nodeVersion": "v22.16.0",
+  "typescriptVersion": "5.8.3",
+  "files": [
+    "scripts/verify-reviewed-cbt-variants.ts",
+    "tests/unit/reviewed-cbt-variants.test.ts"
+  ],
+  "method": "Node.js --experimental-strip-types --check; syntax-only, not repository typecheck",
+  "officialNode24Validation": false
+}

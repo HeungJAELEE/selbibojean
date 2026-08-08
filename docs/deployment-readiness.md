@@ -8,9 +8,12 @@
 | 항목 | 현재 값 |
 |---|---:|
 | 이론 레슨 | 1,258 |
-| 공개 레슨 | 1,190 |
+| 생성 원본 공개 레슨 | 1,190 |
+| 런타임 공개 가능 레슨 | 1,283 |
 | 대표 문제 | 1,396 |
-| 공개 문제 | 1,314 |
+| 생성 원본 공개 문제 | 1,314 |
+| 런타임 공개 가능 문제 | 1,490 |
+| reviewed CBT 변형 공개 | 0 |
 | 원문 변형 | 2,384 |
 | 잔여 백로그 | 276 |
 | 용접 안전 33차 검수 문제 | 283 |
@@ -18,6 +21,8 @@
 | 우선 검수 큐 | 150 |
 | CBT 완료 회차 | 25/25 |
 | 권위 출처 URL 누락 | 33 |
+
+런타임 공개 수량은 생성 원본에 승인된 감사 overlay와 보강 콘텐츠를 적용한 뒤의 수량이다. reviewed CBT 변형 2,384건은 별도 공개 승인이 없어 모두 출제·채점·Supabase 공개행에서 차단된다.
 
 용접 안전 33차 문제 283개는 모두 `blocked` 상태다. 현재 공개 범위의 배포 준비와 별개로,
 정답·해설·선택지별 피드백·정확한 이론 연결·권위 출처가 완료되기 전까지 공개할 수 없다.
@@ -71,36 +76,42 @@ WELDING_SAFETY_REPORT_PATH
 ## 필수 검증
 
 ```bash
-npm install
-npm run preflight:deploy
+npm ci
+npm run preflight:release
 ```
 
-`preflight:deploy`는 다음 순서로 실행된다.
+`preflight:release`는 Node.js 24, npm 10.9.2, Supabase CLI 2.112.0, Docker와 운영 후보 Supabase 환경 변수가 준비된 상태에서 실행한다. 빠른 guest-only 대표 흐름만 확인할 때는 `npm run preflight:representative`를 사용한다.
 
-1. 생성 데이터 수량·공개 게이트 검사
-2. TypeScript 검사
-3. ESLint
-4. Vitest 단위·통합 테스트
-5. production build
-6. Playwright 데스크톱·모바일 E2E
-7. Sites project ID·정적 자산·민감파일·클라이언트 누출 검사
+1. 생성 데이터 수량·reviewed-CBT 공개 게이트 검사
+2. TypeScript 검사와 ESLint
+3. Vitest 단위·통합 테스트
+4. production build와 source/build 정답 비노출 검사
+5. Postgres 함수 lint와 pgTAP 구조·행위 RLS 검사
+6. Playwright 데스크톱·모바일 release E2E(대표 경로, CBT 정답 비노출, `/data` 차단, 잘못된 제출, 접근성)
+7. 운영 후보 Supabase의 공개 projection 검사
+8. Sites project ID·정적 자산·민감파일·클라이언트 누출 검사
 
 성공 결과에는 최소한 다음이 포함되어야 한다.
 
 ```text
-공개 레슨 1190
-공개 문제 1314
+생성 원본 공개 레슨 1190 / 런타임 공개 가능 레슨 1283
+생성 원본 공개 문제 1314 / 런타임 공개 가능 문제 1490
+reviewed CBT 변형 공개 0
 용접 안전 검수 283문제·30레슨·25회차
 Sites project appgprj_6a5cf5715fe4819189a1843f8cd3f749
 정답 자산 /data/* 직접 접근 차단
 33차 검수대기 데이터 클라이언트 미포함
 ```
 
-Supabase CLI와 Docker가 준비된 운영 후보 환경에서는 추가로 실행한다.
+로컬에서 DB 검사만 다시 실행할 때는 Supabase stack을 먼저 시작한 뒤 다음을 사용한다.
 
 ```bash
-npm run test:rls
+supabase start
+npm run verify:database
+supabase stop --no-backup
 ```
+
+GitHub의 `Database gate`는 Supabase CLI 2.112.0을 고정해 fresh migration, 함수 lint, 구조·행위 RLS 테스트를 자동 실행한다. `Quality gate`, `Database gate`, `Release E2E`가 모두 통과하지 않으면 release 후보로 취급하지 않는다.
 
 ## 정답 데이터 비노출
 
@@ -168,8 +179,8 @@ Sites 배포에서 실제 공개 URL이므로, 버전 저장과 배포는 사용
 - 용접 안전 33차 283문제의 기술·출처·선택지 피드백·이론 연결 검수
 - 권위 출처 URL이 없는 33건 보완
 - 27차 잔여 276문항 상세화
-- Supabase 운영 프로젝트 생성과 migration 적용
-- RLS 실제 프로젝트 검증
+- Supabase 운영 프로젝트 생성과 production migration 적용
+- production Supabase의 최종 RLS smoke 검증
 - 계정 purge Edge Function·cron 운영 설정
 - production 배포와 외부 공유
 

@@ -1,0 +1,186 @@
+[
+  {
+    "lesson": {
+      "id": "lesson-cbt-forward-curved-fan-power-curve",
+      "subjectId": "subject-3",
+      "conceptGroupId": "s3-g10",
+      "conceptId": "concept-cbt-forward-curved-fan-power-curve",
+      "title": "송풍기 날개형상과 축동력 곡선",
+      "aliases": [
+        "다익 팬",
+        "전향곡선 팬",
+        "forward-curved fan",
+        "비과부하 특성",
+        "fan power curve"
+      ],
+      "summary": [
+        "전향곡선형 다익 팬은 풍량이 증가할수록 축동력 요구가 자유토출점까지 크게 증가하는 과부하형 특성을 보인다.",
+        "터보·에어포일처럼 후향형 계열은 동력이 최고점 뒤 감소하는 비과부하형 특성이 일반적이다.",
+        "팬 명칭만 외우지 말고 날개형상과 풍량-동력곡선을 직접 대조해야 한다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 전향곡선형 다익 팬은 풍량이 증가할수록 축동력 요구가 자유토출점까지 크게 증가하는 과부하형 특성을 보인다.\n2. 터보·에어포일처럼 후향형 계열은 동력이 최고점 뒤 감소하는 비과부하형 특성이 일반적이다.\n3. 팬 명칭만 외우지 말고 날개형상과 풍량-동력곡선을 직접 대조해야 한다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "팬의 축동력 곡선은 일정 회전수에서 풍량 변화에 따라 구동축이 요구하는 동력이 어떻게 변하는지를 나타낸다. 전향곡선형과 후향곡선형은 동력곡선의 형태가 다르다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "AMCA 설명에 따르면 forward-curved fan의 동력은 유량 증가에 따라 자유토출점까지 증가한다. 반면 airfoil 및 backward-curved·backward-inclined 팬은 동력이 최고값에 도달한 뒤 감소하는 비과부하 곡선을 보일 수 있다. 따라서 이 문항의 독립 정답은 다익 팬이다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 긍정·부정 조건을 확인하고 **송풍기 날개형상과 축동력 곡선**의 직접 원리와 각 보기를 하나씩 대조한다. 복원 정답과 원리가 충돌하거나 유일한 답이 없으면 억지로 채점하지 않는다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "복원 정답이 터보 팬으로 남아 있지만, 후향형 터보 팬의 대표 동력곡선과 결론이 맞지 않는다. 복원 답안은 출처 기록으로 보존하고 검수 답안은 다익 팬으로 교정한다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 근거 URL 1: https://www.amca.org/educate/articles-and-technical-papers/amca-inmotion-articles/straightening-out-fan-curves.html\n- 공개 상태: 직접 연결은 완료했으나 런타임·출처 검증 전까지 in_review 유지\n- CBT 미러는 원문 확인용이며 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1072"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 976,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": true,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2013-4-Q48"
+    ],
+    "rationale": "2013-4-Q48의 정답교정 또는 선택지 충돌에 직접 근거를 제공하도록 추가",
+    "sourceAuthority": "authoritative_source"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-pneumatic-sequence-troubleshooting-choice-conflict",
+      "subjectId": "subject-1",
+      "conceptGroupId": "s1-g08",
+      "conceptId": "concept-cbt-pneumatic-sequence-troubleshooting-choice-conflict",
+      "title": "공압 시퀀스 고장진단과 에너지 격리",
+      "aliases": [
+        "운동-단계선도",
+        "공압 시퀀스 고장진단",
+        "잔류 공압",
+        "에너지 격리",
+        "lockout tagout"
+      ],
+      "summary": [
+        "운동-단계선도, 정지 단계 전후 신호, 전기·밸브·실린더 분리는 모두 정상적인 고장진단 절차다.",
+        "정비·점검 전에는 전기와 공압 에너지를 격리하고 잔류압력을 안전하게 해소해야 한다.",
+        "복원된 네 보기가 모두 적절하므로 이 문항에는 유일한 부적절 보기가 없다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 운동-단계선도, 정지 단계 전후 신호, 전기·밸브·실린더 분리는 모두 정상적인 고장진단 절차다.\n2. 정비·점검 전에는 전기와 공압 에너지를 격리하고 잔류압력을 안전하게 해소해야 한다.\n3. 복원된 네 보기가 모두 적절하므로 이 문항에는 유일한 부적절 보기가 없다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "공압 시퀀스 고장진단은 정지된 단계와 제어신호를 추적해 전기계통·밸브·액추에이터 중 고장영역을 분리하는 절차다. 정비 작업으로 전환할 때는 별도의 위험에너지 통제 절차가 필요하다.",
+          "order": 2
+        },
+        {
+          "id": "diagnosis",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "운동-단계선도로 정지 동작을 확인하고 전후 센서·솔레노이드 신호를 추적하는 것은 적절하다. OSHA 1910.147은 정비 전 전기·공압 등 에너지원의 격리와 저장·잔류에너지의 해소를 요구하므로, 전원과 압축공기 공급을 차단해 안전을 확보한다는 보기도 부적절하다고 할 수 없다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 긍정·부정 조건을 확인하고 **공압 시퀀스 고장진단과 에너지 격리**의 직접 원리와 각 보기를 하나씩 대조한다. 복원 정답과 원리가 충돌하거나 유일한 답이 없으면 억지로 채점하지 않는다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "고장진단 중 즉시 전원을 끄면 관찰 가능한 신호가 사라질 수 있다는 이유만으로 안전 격리 자체를 오답으로 만들면 안 된다. 진단 단계와 정비 단계의 순서를 구분하되 네 보기 모두 기술적으로 적절하므로 비채점한다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 근거 URL 1: https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147\n- 근거 URL 2: https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147AppA\n- 공개 상태: 직접 연결은 완료했으나 런타임·출처 검증 전까지 in_review 유지\n- CBT 미러는 원문 확인용이며 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1089"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 1029,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": true,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2013-4-Q84"
+    ],
+    "rationale": "2013-4-Q84의 정답교정 또는 선택지 충돌에 직접 근거를 제공하도록 추가",
+    "sourceAuthority": "authoritative_source"
+  }
+]

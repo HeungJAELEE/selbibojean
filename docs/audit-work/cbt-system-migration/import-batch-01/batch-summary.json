@@ -1,0 +1,82 @@
+{
+  "formatVersion": 3,
+  "batchId": "import-01",
+  "generatedAt": "2026-08-07T16:20:00+09:00",
+  "scope": {
+    "externalIdPrefixes": [
+      "2006-4-",
+      "2007-4-"
+    ],
+    "externalIdRanges": [
+      "2006-4-Q01..Q100",
+      "2007-4-Q01..Q100"
+    ],
+    "recordCount": 200
+  },
+  "counts": {
+    "candidate": 187,
+    "choiceConflict": 6,
+    "hold": 7,
+    "published": 0,
+    "unimportedSourceVariantsGated": 2184,
+    "normalizedAndRegistered": 5,
+    "lowContextRegistered": 5,
+    "canonicalTheoryRepair": 1
+  },
+  "preservation": {
+    "sourceContentJsonUnchanged": true,
+    "rawSourceTextPreservedForNormalizedRecords": 5,
+    "externalIdsPreserved": 200,
+    "registeredSourceUrlsPreserved": 200,
+    "questionNumbersPreserved": 200,
+    "originalWorkbookModified": false
+  },
+  "runtimePolicy": {
+    "reviewedCandidates": "candidate_only_not_learner_visible",
+    "choiceConflicts": "registered_non_scoring_answer_and_explanation_suppressed",
+    "imageHolds": "separate_image_queue_answer_and_explanation_suppressed",
+    "unimportedSourceVariants": "unreviewed_not_learner_visible",
+    "publicationRequires": "explicit_reviewState_published"
+  },
+  "holdResolution": {
+    "imageVerificationQueue": [
+      "2006-4-Q17",
+      "2006-4-Q37",
+      "2006-4-Q88",
+      "2006-4-Q91",
+      "2007-4-Q02",
+      "2007-4-Q10",
+      "2007-4-Q93"
+    ],
+    "normalizedAndRegistered": [
+      "2006-4-Q09",
+      "2006-4-Q15",
+      "2006-4-Q84",
+      "2006-4-Q89",
+      "2007-4-Q40"
+    ],
+    "choiceConflictNonScoring": [
+      "2006-4-Q34",
+      "2006-4-Q49",
+      "2006-4-Q60",
+      "2006-4-Q93",
+      "2007-4-Q49",
+      "2007-4-Q66"
+    ],
+    "lowContextRegistered": [
+      "2006-4-Q11",
+      "2007-4-Q36",
+      "2007-4-Q50",
+      "2007-4-Q61",
+      "2007-4-Q82"
+    ]
+  },
+  "hashes": {
+    "sourceContentSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "reviewedVariantManifestSha256": "0f1a94956b4aefdc0350262a0e1943251097f4cf3d27862ab9e739e08fb311f3",
+    "recordsSha256": "9f1bd7284cd7cec502d121381b75ce8ad06a0b49d3cc67e989f8cc92df08c934",
+    "batchMappingSha256": "5326cc5d410633a72547e0f0bae2f52eb17efccebf6fb240801aee464725fd5e"
+  },
+  "validationStatus": "STATIC_AND_SUPPLEMENTAL_PASS",
+  "finalReleaseStatus": "PENDING_REQUIRED_PROJECT_CHECKS"
+}

@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { readFileSync } from "node:fs";
@@ -73,7 +74,7 @@ test("an actual past exam presentation remains gradeable through the canonical a
   const results = [];
   for (const choice of question.choices) {
     const response = await request.post("/api/practice/submit", {
-      data: { questionId: question.id, choiceId: choice.id, selfRating: "unsure", attemptKind: "initial" },
+      data: { clientAttemptId: randomUUID(), questionId: question.id, choiceId: choice.id, selfRating: "unsure", attemptKind: "initial" },
     });
     expect(response.ok()).toBeTruthy();
     results.push(await response.json());
@@ -964,7 +965,7 @@ test("wrong answer links to a theory anchor", async ({ request }) => {
   const session = await (await request.post("/api/practice/session", { data: { mode: "all", count: 10, seed: 7 } })).json();
   const question = session.questions[0];
   const response = await request.post("/api/practice/submit", {
-    data: { questionId: question.id, choiceId: question.choices[1].id, selfRating: "unsure", attemptKind: "initial" },
+    data: { clientAttemptId: randomUUID(), questionId: question.id, choiceId: question.choices[1].id, selfRating: "unsure", attemptKind: "initial" },
   });
   expect(response.ok()).toBeTruthy();
   const feedback = await response.json();
@@ -980,7 +981,7 @@ test("theory remediation preserves a return-to-retry location", async ({ page, r
   let feedback;
   for (const choice of question.choices) {
     const result = await request.post("/api/practice/submit", {
-      data: { questionId: question.id, choiceId: choice.id, selfRating: "unsure", attemptKind: "initial" },
+      data: { clientAttemptId: randomUUID(), questionId: question.id, choiceId: choice.id, selfRating: "unsure", attemptKind: "initial" },
     });
     const candidate = await result.json();
     if (!candidate.isCorrect) { feedback = candidate; break; }

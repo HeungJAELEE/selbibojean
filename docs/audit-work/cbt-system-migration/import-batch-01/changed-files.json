@@ -1,0 +1,197 @@
+{
+  "formatVersion": 2,
+  "batchId": "import-01-hold-resolution",
+  "fileCount": 27,
+  "scopeNote": "Inventory excludes changed-files.json and artifact-manifest.json to avoid self-referential hashes.",
+  "files": [
+    {
+      "path": "docs/audit-work/cbt-source-reviews/final/de20060910_q01-q50_independent-review.jsonl",
+      "status": "added",
+      "bytes": 190017,
+      "sha256": "03990c91d2573f57c5be65463941591b393b5d17672f03a38e2f3337d346372b",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-source-reviews/final/de20060910_q51-q100_independent-review.jsonl",
+      "status": "added",
+      "bytes": 188334,
+      "sha256": "93d69770befa1e99a1f3be97b0a8e132e1f6d3319ec37698358705e81cda9e0a",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-source-reviews/final/de20070902_q01-q50_independent-review.jsonl",
+      "status": "added",
+      "bytes": 205204,
+      "sha256": "dfacf250bcf10da20099019ae5796f72c79a6e69d83202f4f55835910bc7ac50",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-source-reviews/final/de20070902_q51-q100_independent-review.jsonl",
+      "status": "added",
+      "bytes": 193778,
+      "sha256": "18a3504f97fe242b7c64c7b767504a55b7cb3c5e0caf57aea97187ac22d9adae",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-01/batch-summary.json",
+      "status": "added",
+      "bytes": 2326,
+      "sha256": "bcded0d93bd866b56c646587581bbf07147bfa3bced6e71d71d069c32b4b41c5",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-01/choice-conflict-queue.jsonl",
+      "status": "added",
+      "bytes": 15467,
+      "sha256": "b024e36bfe7cddc83449dcb5dc94cb849b4276b08b2b95423286e0af0313e459",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-01/code-changes.patch",
+      "status": "added",
+      "bytes": 53402,
+      "sha256": "92b96b4b4be0dfa634b597ea92ef15bc4792351b8ce9b9ae6b7a71623e8425a6",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-01/external-ids.json",
+      "status": "added",
+      "bytes": 3205,
+      "sha256": "6bb3f2cdb96441e5cf8983319ed75f6fa18e2a10c3efa4e342d8d3cb29a28a3e",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-01/hold-resolution-overrides.jsonl",
+      "status": "added",
+      "bytes": 11519,
+      "sha256": "d94bd4a2f62ff24e7f57585978829b9cb67c49e070889da58aa2a7a11b059120",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-01/hold-resolution-summary.json",
+      "status": "added",
+      "bytes": 1351,
+      "sha256": "69d28ba8b0e83850e97bb7defc9b794e01f9062d4b86a4cc5ae241afb5925c8a",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-01/hold-resolution-validation.json",
+      "status": "added",
+      "bytes": 1484,
+      "sha256": "9a0268e9a66145cec870883d4515ab7127a789e16c2bf7618e09820efccc5a95",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-01/image-verification-queue.jsonl",
+      "status": "added",
+      "bytes": 21856,
+      "sha256": "3b7a33d000d82bbef070211c9f7d853fc2795eece0d45dfe2f3aa5eda9ce05ba",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-01/import-report.md",
+      "status": "added",
+      "bytes": 4494,
+      "sha256": "ab719bfdc68d3e12d33d101f72e275fc8cc8980df2c53abd28c87f6023346b2d",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-01/normalization-ledger.jsonl",
+      "status": "added",
+      "bytes": 7963,
+      "sha256": "5ddc8002be3c959a932a2980d9090be71cce5366536ad7584cadee846d942b8d",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-01/validation.json",
+      "status": "added",
+      "bytes": 3867,
+      "sha256": "eb6d912a73224a7a543577977870f4c12f3fa6df3da6cea046079964e2ffb764",
+      "baselineSha256": null
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-01/variant-mapping.jsonl",
+      "status": "added",
+      "bytes": 1019389,
+      "sha256": "5326cc5d410633a72547e0f0bae2f52eb17efccebf6fb240801aee464725fd5e",
+      "baselineSha256": null
+    },
+    {
+      "path": "package.json",
+      "status": "modified",
+      "bytes": 5464,
+      "sha256": "34c581228c57ce4c4d2a140ed8392f6eaac6d5c7de24e2be92944c8fccf98053",
+      "baselineSha256": "0afc12bf32f3ab958a197981cc99004d882c24b5d5b0bcc8a58eb90ba6da4237"
+    },
+    {
+      "path": "scripts/verify-reviewed-cbt-variants.ts",
+      "status": "added",
+      "bytes": 8579,
+      "sha256": "1ff39b57219147a6a55e9b24e5b2d49bbc8ccfd996bf77c5f3c08d63f3e52eaf",
+      "baselineSha256": null
+    },
+    {
+      "path": "src/data/generated/cbt-reviewed-variants.json",
+      "status": "added",
+      "bytes": 971438,
+      "sha256": "0f1a94956b4aefdc0350262a0e1943251097f4cf3d27862ab9e739e08fb311f3",
+      "baselineSha256": null
+    },
+    {
+      "path": "src/lib/content/past-exam-examples.ts",
+      "status": "modified",
+      "bytes": 9114,
+      "sha256": "62903b13bc029d692924fbb0a2d5b9e0ffeda80e5138454fc98f2567de6517b3",
+      "baselineSha256": "09d02d112cf0d58e8f53f904c4b3ca504812e91ce8a7359313a22234dc515982"
+    },
+    {
+      "path": "src/lib/content/practice-presentations.ts",
+      "status": "modified",
+      "bytes": 7179,
+      "sha256": "a5c541e332634717e9e6bd6f498257100f4f17e0b3e8ce94397e87fcf9c7c439",
+      "baselineSha256": "a643877c5bed8b19a9385f9f9b21945100cfdca21bea69c879721861e271bbb8"
+    },
+    {
+      "path": "src/lib/content/reviewed-cbt-variants.ts",
+      "status": "added",
+      "bytes": 19109,
+      "sha256": "ede9f1cf828951aa4475a516fc08a5a32c4002f955236e420576cc37980b9714",
+      "baselineSha256": null
+    },
+    {
+      "path": "src/lib/content/runtime-content.ts",
+      "status": "modified",
+      "bytes": 2476,
+      "sha256": "f2b905e1effc65406f3ae61f703ca5b5859aab67e313d0d63110f7d6dcabb4a0",
+      "baselineSha256": "3a7fd27638488d542e37a76f392bbd54f20a4cf2f9a2516737720087fabe7b34"
+    },
+    {
+      "path": "src/lib/content/supabase-materialization.ts",
+      "status": "modified",
+      "bytes": 12081,
+      "sha256": "4b597859c980ed799026a3e073674daeeb6d38dcf03c27834936e319e7445a7b",
+      "baselineSha256": "db2bfc1838de24b5506b6cc6e9936460e37ba4eb900c475bec81bd8187f5bafa"
+    },
+    {
+      "path": "src/lib/content/taxonomy-normalization.ts",
+      "status": "modified",
+      "bytes": 5547,
+      "sha256": "3c62a1332938ae40d086791a1952c51b35c6b2b5c51ee5e70fc2aff2a6abf50f",
+      "baselineSha256": "984ff61ff866d2b639d743182057c6927fd9a00f4b2217cfc6cc6d0d625a18a8"
+    },
+    {
+      "path": "src/lib/domain/types.ts",
+      "status": "modified",
+      "bytes": 12964,
+      "sha256": "62c6cf9b33d1310697d66e61501cd6216790123f85cd3cb0db018a77d290ff71",
+      "baselineSha256": "80268dd4608535123608e84b0b39e7ab23ce2a2e810644d60bec2db167de05c5"
+    },
+    {
+      "path": "tests/unit/reviewed-cbt-variants.test.ts",
+      "status": "added",
+      "bytes": 10415,
+      "sha256": "a60652884ee90e8d4c9aeb62e34edb6d5bca0f1931d24a86e30b09e265c84ab9",
+      "baselineSha256": null
+    }
+  ]
+}

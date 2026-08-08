@@ -1,14 +1,12 @@
 import { z } from "zod";
 
-import type { GeneratedContent, Question } from "@/lib/domain/types";
+import {
+  AUDIT_DISPOSITIONS as DOMAIN_AUDIT_DISPOSITIONS,
+  type GeneratedContent,
+  type Question,
+} from "@/lib/domain/types";
 
-export const AUDIT_DISPOSITIONS = [
-  "verified",
-  "cbt_corrected",
-  "held_answer_conflict",
-  "held_asset_missing",
-  "held_source_missing",
-] as const;
+export const AUDIT_DISPOSITIONS = DOMAIN_AUDIT_DISPOSITIONS;
 
 export const EVIDENCE_LEVELS = ["primary", "dual_secondary"] as const;
 
@@ -194,6 +192,19 @@ const HIGH_RISK_TAGS = new Set([
   "authoritative_source_required",
 ]);
 
+const AUDIT_PROMOTION_BLOCKERS = new Set([
+  "answer_conflict",
+  "mapping_unverified",
+]);
+
+function hasAuditPromotionBlocker(question: Question) {
+  return Boolean(
+    question.publication?.blockers.some((blocker) =>
+      AUDIT_PROMOTION_BLOCKERS.has(blocker),
+    ),
+  );
+}
+
 export function isHighRiskPublicQuestion(question: Question) {
   if (question.contentStatus !== "published") return false;
 
@@ -223,13 +234,22 @@ export function applyWrittenQuestionAuditManifest(
   const auditByQuestionId = new Map(
     manifest.entries.map((entry) => [entry.questionId, entry]),
   );
+  const inputQuestionById = new Map(
+    content.questions.map((question) => [question.id, question]),
+  );
+  const effectiveAudit = (questionId: string) =>
+    inputQuestionById.get(questionId)?.audit ??
+    auditByQuestionId.get(questionId);
   const acceptedAudit = (questionId: string) => {
-    const audit = auditByQuestionId.get(questionId);
+    const audit = effectiveAudit(questionId);
     return (
       audit?.auditDisposition === "verified" ||
       audit?.auditDisposition === "cbt_corrected"
     );
   };
+  const questionsById = new Map(
+    content.questions.map((question) => [question.id, question]),
+  );
   const questionIdsByLessonId = new Map<string, string[]>();
   for (const question of content.questions) {
     questionIdsByLessonId.set(question.lessonId, [
@@ -246,25 +266,40 @@ export function applyWrittenQuestionAuditManifest(
           lesson.coverageStatus === "covered" &&
           lesson.quality.passed &&
           !lesson.sourceNeeded;
-        const hasAcceptedQuestion = (
+        const linkedQuestions = (
           questionIdsByLessonId.get(lesson.id) ?? []
-        ).some(acceptedAudit);
+        ).flatMap((questionId) => {
+          const question = questionsById.get(questionId);
+          return question ? [question] : [];
+        });
+        const hasAcceptedQuestion = linkedQuestions.some((question) =>
+          acceptedAudit(question.id),
+        );
+        const hasBlockedQuestion = linkedQuestions.some(
+          hasAuditPromotionBlocker,
+        );
         return (
           alreadyPublic ||
-          (hasAcceptedQuestion && lesson.quality.passed)
+          (hasAcceptedQuestion &&
+            !hasBlockedQuestion &&
+            lesson.quality.passed)
         );
       })
       .map((lesson) => lesson.id),
   );
 
   const questions = content.questions.map((question) => {
-    const audit = auditByQuestionId.get(question.id);
+    const audit = effectiveAudit(question.id);
     if (!audit) return question;
 
     const accepted =
       audit.auditDisposition === "verified" ||
       audit.auditDisposition === "cbt_corrected";
-    if (!accepted || !publicLessonIds.has(question.lessonId)) {
+    if (
+      !accepted ||
+      hasAuditPromotionBlocker(question) ||
+      !publicLessonIds.has(question.lessonId)
+    ) {
       return { ...question, audit };
     }
 

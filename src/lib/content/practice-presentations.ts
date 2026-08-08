@@ -1,5 +1,9 @@
 import type { GeneratedContent, PublicQuestion, Question } from "@/lib/domain/types";
 import { isUsablePastExamVariant } from "@/lib/content/past-exam-examples";
+import {
+  getReviewedCbtVariantAnswerIndex,
+  mapReviewedCbtVariantChoices,
+} from "@/lib/content/reviewed-cbt-variants";
 import { orderPracticeChoices } from "@/lib/content/practice-choice-order";
 import { shuffleQuestionIds, toPublicQuestion } from "@/lib/domain/practice";
 
@@ -82,7 +86,10 @@ export function filterPracticeContentByYearRange(
 export function isSafeOriginalPracticeVariant(question: Question, variant: Variant) {
   if (!isUsablePastExamVariant(variant)) return false;
   const mappedChoices = mapVariantChoices(question, variant);
-  const answerIndex = parseVariantAnswerIndex(variant);
+  const reviewedAnswerIndex = getReviewedCbtVariantAnswerIndex(variant);
+  const answerIndex = variant.reviewed
+    ? (reviewedAnswerIndex ?? -1)
+    : parseVariantAnswerIndex(variant);
 
   return Boolean(
     mappedChoices
@@ -147,7 +154,14 @@ function toOriginalPublicQuestion(
 }
 
 function mapVariantChoices(question: Question, variant: Variant) {
-  const mapped = variant.choices.map((choice) => question.choices.find((candidate) => normalizeText(candidate.text) === normalizeText(choice)));
+  const reviewedMapping = mapReviewedCbtVariantChoices(question, variant);
+  if (variant.reviewed) return reviewedMapping;
+
+  const mapped = variant.choices.map((choice) =>
+    question.choices.find(
+      (candidate) => normalizeText(candidate.text) === normalizeText(choice),
+    ),
+  );
   if (mapped.some((choice) => !choice)) return null;
   const complete = mapped.filter((choice): choice is Question["choices"][number] => Boolean(choice));
   return new Set(complete.map((choice) => choice.id)).size === complete.length ? complete : null;

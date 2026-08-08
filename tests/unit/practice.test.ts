@@ -151,6 +151,7 @@ describe("random practice", () => {
       "held_answer_conflict",
       "held_asset_missing",
       "held_source_missing",
+      "held_runtime_validation",
     ] as const;
 
     for (const auditDisposition of dispositions) {

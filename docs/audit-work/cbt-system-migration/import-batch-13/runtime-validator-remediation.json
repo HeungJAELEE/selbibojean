@@ -1,0 +1,6 @@
+{
+  "status": "APPLIED",
+  "change": "validateHoldRecord supports image HOLD and answer-key-conflict HOLD as separate fail-closed contracts",
+  "affectedExternalIds": ["2020-3B-Q28"],
+  "sourceFile": "src/lib/content/reviewed-cbt-variants.ts"
+}

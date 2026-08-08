@@ -1,0 +1,1 @@
+env -u NPM_CONFIG_REGISTRY npm ci --registry=https://registry.npmjs.org/

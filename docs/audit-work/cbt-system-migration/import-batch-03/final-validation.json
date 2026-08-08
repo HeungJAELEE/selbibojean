@@ -1,0 +1,114 @@
+{
+  "batchContractStatus": "PASS",
+  "repositoryFinalValidationStatus": "NOT_RUN",
+  "scope": "import-03 actual exam-question overlay, theory correction, answer-key correction, and publication gating",
+  "counts": {
+    "batchId": "import-03",
+    "recordCount": 200,
+    "states": {
+      "candidate": 190,
+      "choice_conflict": 2,
+      "hold": 8
+    },
+    "fullCanonicalChoiceMappingCount": 23,
+    "variantSpecificFeedbackPendingCount": 167,
+    "theoryLessonAdditionCount": 3,
+    "canonicalQuestionChangeCount": 3,
+    "semanticReassignmentCount": 2,
+    "answerKeyCorrectionCount": 1,
+    "directTheoryLinkCount": 200,
+    "cumulativeRecordCount": 600,
+    "cumulativeStates": {
+      "candidate": 566,
+      "choice_conflict": 8,
+      "hold": 26
+    }
+  },
+  "sourceIntegrity": {
+    "contentJsonSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "contentJsonUnchanged": true,
+    "manifestSha256": "137ef7d1c45f6af739f6597ea61a50d5b6b28018a4bf746d6d7fa600d0f246f3",
+    "externalIdsPreserved": true,
+    "registeredSourceUrlsPreserved": true,
+    "questionNumbersPreserved": true
+  },
+  "specialCases": {
+    "answerKeyCorrection": {
+      "externalId": "2010-4-Q59",
+      "sourceAnswerIndex": 0,
+      "reviewedAnswerIndex": 2,
+      "runtimeStatus": "candidate",
+      "published": false
+    },
+    "choiceConflicts": [
+      {
+        "externalId": "2011-4-Q42",
+        "choiceIndices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "scoring": "disabled"
+      },
+      {
+        "externalId": "2011-4-Q59",
+        "choiceIndices": [
+          1,
+          2
+        ],
+        "scoring": "disabled"
+      }
+    ],
+    "imageHolds": [
+      "2010-4-Q08",
+      "2010-4-Q09",
+      "2010-4-Q81",
+      "2010-4-Q89",
+      "2011-4-Q24",
+      "2011-4-Q54",
+      "2011-4-Q75",
+      "2011-4-Q85"
+    ],
+    "semanticReassignments": [
+      {
+        "externalId": "2010-4-Q92",
+        "from": "U-561",
+        "to": "U-1342"
+      },
+      {
+        "externalId": "2011-4-Q65",
+        "from": "U-849",
+        "to": "U-736"
+      }
+    ]
+  },
+  "checks": {
+    "generatorOwnedValidation": "PASS",
+    "independentValidation": "PASS",
+    "preNodeStatic": "PASS",
+    "targetedTypecheck": "PASS",
+    "typescriptSyntax": "PASS",
+    "supplementalRuntimeAndSupabase": "PASS",
+    "supplementalReviewedCbtVerifier": "PASS",
+    "negativeContractTests": "PASS",
+    "generatorIdempotency": "PASS",
+    "fullRepositoryVerifierAttempt": "BLOCKED",
+    "nodeRuntimeGate": "BLOCKED"
+  },
+  "unexecutedOfficialChecks": [
+    "Node.js 24 repository-wide typecheck",
+    "Vitest",
+    "ESLint",
+    "repository verify-no-answer-leak",
+    "SQL migration tests",
+    "login/guest browser integration flow"
+  ],
+  "notes": [
+    "All import-03 records remain candidate, choice_conflict, or hold; published count is zero.",
+    "The source answer for 2010-4-Q59 is preserved while the independently corrected answer is used only in the reviewed candidate overlay.",
+    "Choice-conflict records preserve internal rationale but carry no active answer mapping, answer text, or learner scoring.",
+    "Eight image-dependent questions remain isolated in the image verification queue.",
+    "Official Node.js 24 checks are not reported as PASS because the environment provides Node.js 22.16.0 and project dependencies are not installed."
+  ]
+}

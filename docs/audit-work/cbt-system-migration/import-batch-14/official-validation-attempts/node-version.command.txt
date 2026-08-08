@@ -1,0 +1,1 @@
+/mnt/data/node24-bin/node --version

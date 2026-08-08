@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "recordCount": 200,
+  "candidateCount": 190,
+  "choiceConflictCount": 2,
+  "holdCount": 8,
+  "exactExternalIdSet": true,
+  "sourceHashesMatch": true,
+  "directTheoryLinksPresent": true,
+  "candidateAnswersPresent": true,
+  "imageHoldAnswersDisabled": true,
+  "choiceConflictNonScoring": true,
+  "variantSpecificBlocked": true,
+  "answerKeyCorrectionApplied": true,
+  "sourceAnswerPreservedForCorrection": true,
+  "theoryGapCountAfterBatch": 0,
+  "sourceContentUnchanged": true
+}

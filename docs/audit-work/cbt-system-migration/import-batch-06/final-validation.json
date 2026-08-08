@@ -1,0 +1,92 @@
+{
+  "batchContractStatus": "PASS",
+  "repositoryFinalValidationStatus": "NOT_RUN",
+  "generatedAt": "2026-08-07T21:10:10+09:00",
+  "scope": "import-06 actual exam-question overlay, choice-conflict isolation, image HOLD gating, canonical reassignment, low-context registration, formula structure, and publication safety",
+  "counts": {
+    "batchId": "import-06",
+    "recordCount": 200,
+    "states": {
+      "candidate": 190,
+      "hold": 6,
+      "choice_conflict": 4
+    },
+    "fullCanonicalChoiceMappingCount": 25,
+    "variantSpecificFeedbackPendingCount": 165,
+    "theoryLessonAdditionCount": 0,
+    "canonicalQuestionChangeCount": 0,
+    "canonicalReassignmentCount": 1,
+    "answerKeyCorrectionCount": 0,
+    "directTheoryLinkCount": 200,
+    "formulaRecordCount": 20,
+    "cumulativeRecordCount": 1200,
+    "cumulativeStates": {
+      "candidate": 1140,
+      "hold": 46,
+      "choice_conflict": 14
+    },
+    "unreviewedRecordCount": 1184
+  },
+  "sourceIntegrity": {
+    "contentJsonSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "contentJsonUnchanged": true,
+    "manifestSha256": "ac923762d7bd7d423dc9908426d016cd1cb8376987a85b88ba16cdc0fd95f3b9",
+    "recordsSha256": "60691b8ed34fc7b386fe0d12533c26fbd2d9df9ef286c217b8f4fd5cf39159e5",
+    "exactExternalIdSet": true,
+    "sourceHashesMatch": true,
+    "prior1000RecordsUnchanged": true
+  },
+  "specialFindings": {
+    "2015-4-Q69": "현재 U-889 연결을 동일 윤활유 첨가제 문제군 U-390 및 lesson-18pfbo5로 재연결했다. 원문 선택지와 canonical 선택지의 완전한 1:1 계약이 없어 variant 전용 선택지 계약 전까지 공개를 차단한다.",
+    "choiceConflicts": [
+      "2015-2-Q42",
+      "2015-4-Q20",
+      "2015-4-Q46",
+      "2015-4-Q55"
+    ],
+    "imageHolds": [
+      "2015-2-Q02",
+      "2015-4-Q12",
+      "2015-4-Q44",
+      "2015-4-Q84",
+      "2015-4-Q88",
+      "2015-4-Q97"
+    ],
+    "lowContextRegistered": [
+      "2015-2-Q49",
+      "2015-2-Q70",
+      "2015-4-Q47",
+      "2015-4-Q91"
+    ],
+    "theoryGap": "200문항 모두 직접 이론 연결을 가지며 신규 레슨이나 canonical overlay는 필요하지 않았다.",
+    "calculationStructure": "20문항에 식·단위·대입·결과 구조를 보존했다."
+  },
+  "supplementalChecks": {
+    "generatorOwnedValidation": "PASS",
+    "independentValidation": "PASS",
+    "typescriptSyntax": "PASS",
+    "targetedTypecheck": "PASS",
+    "supplementalRuntime": "PASS",
+    "supplementalVerifier": "PASS",
+    "supplementalNoAnswerLeak": "PASS",
+    "negativeContracts": "PASS",
+    "generatorIdempotency": "PASS",
+    "pythonGeneratorSyntax": "PASS"
+  },
+  "officialChecks": {
+    "node24Typecheck": "BLOCKED_NODE_VERSION",
+    "vitestMaxWorkers1": "BLOCKED_NODE_VERSION",
+    "eslintChangedFiles": "BLOCKED_NODE_VERSION",
+    "verifyReviewedCbt": "BLOCKED_MISSING_TSX",
+    "verifyNoAnswerLeak": "BLOCKED_MISSING_TSX",
+    "sqlMigrationTests": "NOT_RUN_BATCH_SCOPE",
+    "loginGuestFlows": "NOT_RUN_FINAL_RUNTIME_INTEGRATION"
+  },
+  "git": {
+    "repositoryMetadataAvailable": false,
+    "commitCreated": false,
+    "push": false,
+    "pullRequest": false,
+    "deploy": false
+  }
+}

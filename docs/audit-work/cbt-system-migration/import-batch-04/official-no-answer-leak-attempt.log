@@ -1,0 +1,11 @@
+$ npm run verify:no-answer-leak
+cwd=/mnt/data/cbt_batch04_final_work/repo
+node=v22.16.0
+
+
+> seolbi-learning-platform@0.1.0 verify:no-answer-leak
+> tsx scripts/verify-no-answer-leak.ts
+
+sh: 1: tsx: not found
+
+exit_code=127

@@ -1,0 +1,290 @@
+[
+  {
+    "action": "replace",
+    "question": {
+      "id": "U-1072",
+      "canonicalNumber": 1075,
+      "subjectId": "subject-3",
+      "conceptGroupId": "s3-g10",
+      "conceptId": "concept-cbt-forward-curved-fan-power-curve",
+      "lessonId": "lesson-cbt-forward-curved-fan-power-curve",
+      "lessonAnchor": "principle",
+      "stem": "풍량의 변화에 대한 축 동력의 변화가 가장 큰 송풍기는 어느 것인가?",
+      "choices": [
+        {
+          "id": "U-1072-c1",
+          "order": 1,
+          "text": "터보 팬",
+          "feedback": {
+            "rationale": "‘터보 팬’는 정답 조건을 충족하지 않는다. 터보 팬은 통상 후향곡선형으로 동력곡선이 최고점 이후 감소하는 비과부하 특성이 있다.",
+            "plausibleReason": "‘터보 팬’도 같은 분야에서 사용하는 용어이지만 이 문항이 묻는 직접 원리와는 다르다.",
+            "incorrectPoint": "터보 팬은 통상 후향곡선형으로 동력곡선이 최고점 이후 감소하는 비과부하 특성이 있다.",
+            "keyRule": "표준 원심팬 특성에서 다익 팬은 전향곡선형으로 풍량이 증가할수록 축동력이 급격히 증가한다. 터보·에어포일처럼 후향형 팬은 동력이 최고점 뒤 감소하는 비과부하 특성이므로 독립 정답은 3번이며 복원답 1번은 교정 대상이다.",
+            "differenceFromCorrect": "정답 ‘다익 팬’와 달리 ‘터보 팬’는 문두의 직접 조건을 충족하지 않는다."
+          }
+        },
+        {
+          "id": "U-1072-c2",
+          "order": 2,
+          "text": "래이디얼 팬",
+          "feedback": {
+            "rationale": "‘래이디얼 팬’는 정답 조건을 충족하지 않는다. 래디얼 팬은 풍량 증가에 따라 동력이 증가하지만 전향 다익 팬보다 일반적으로 완만하다.",
+            "plausibleReason": "‘래이디얼 팬’도 같은 분야에서 사용하는 용어이지만 이 문항이 묻는 직접 원리와는 다르다.",
+            "incorrectPoint": "래디얼 팬은 풍량 증가에 따라 동력이 증가하지만 전향 다익 팬보다 일반적으로 완만하다.",
+            "keyRule": "표준 원심팬 특성에서 다익 팬은 전향곡선형으로 풍량이 증가할수록 축동력이 급격히 증가한다. 터보·에어포일처럼 후향형 팬은 동력이 최고점 뒤 감소하는 비과부하 특성이므로 독립 정답은 3번이며 복원답 1번은 교정 대상이다.",
+            "differenceFromCorrect": "정답 ‘다익 팬’와 달리 ‘래이디얼 팬’는 문두의 직접 조건을 충족하지 않는다."
+          }
+        },
+        {
+          "id": "U-1072-c3",
+          "order": 3,
+          "text": "다익 팬",
+          "feedback": {
+            "rationale": "‘다익 팬’가 문두의 조건에 직접 해당한다. 다익 팬은 전향곡선 날개로 자유토출 쪽까지 동력요구가 크게 증가한다.",
+            "plausibleReason": "문두의 대상·원리·조건을 모두 충족하므로 정답으로 선택할 수 있다.",
+            "incorrectPoint": null,
+            "keyRule": "표준 원심팬 특성에서 다익 팬은 전향곡선형으로 풍량이 증가할수록 축동력이 급격히 증가한다. 터보·에어포일처럼 후향형 팬은 동력이 최고점 뒤 감소하는 비과부하 특성이므로 독립 정답은 3번이며 복원답 1번은 교정 대상이다.",
+            "differenceFromCorrect": null
+          }
+        },
+        {
+          "id": "U-1072-c4",
+          "order": 4,
+          "text": "에어포일 팬",
+          "feedback": {
+            "rationale": "‘에어포일 팬’는 정답 조건을 충족하지 않는다. 에어포일 팬은 후향형 계열로 효율이 높고 동력은 비과부하 특성을 보인다.",
+            "plausibleReason": "‘에어포일 팬’도 같은 분야에서 사용하는 용어이지만 이 문항이 묻는 직접 원리와는 다르다.",
+            "incorrectPoint": "에어포일 팬은 후향형 계열로 효율이 높고 동력은 비과부하 특성을 보인다.",
+            "keyRule": "표준 원심팬 특성에서 다익 팬은 전향곡선형으로 풍량이 증가할수록 축동력이 급격히 증가한다. 터보·에어포일처럼 후향형 팬은 동력이 최고점 뒤 감소하는 비과부하 특성이므로 독립 정답은 3번이며 복원답 1번은 교정 대상이다.",
+            "differenceFromCorrect": "정답 ‘다익 팬’와 달리 ‘에어포일 팬’는 문두의 직접 조건을 충족하지 않는다."
+          }
+        }
+      ],
+      "correctChoiceId": "U-1072-c3",
+      "answerText": "다익 팬",
+      "explanation": "표준 원심팬 특성에서 다익 팬은 전향곡선형으로 풍량이 증가할수록 축동력이 급격히 증가한다. 터보·에어포일처럼 후향형 팬은 동력이 최고점 뒤 감소하는 비과부하 특성이므로 독립 정답은 3번이며 복원답 1번은 교정 대상이다.",
+      "errorReason": "복원 정답 교정",
+      "sourceLabel": "https://cbtbank.kr/exam/de20130928",
+      "reviewStatus": "배치 04 독립 풀이·직접 이론 연결 검수",
+      "contentStatus": "in_review",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed",
+          "answer_key_correction_pending_runtime_validation"
+        ]
+      },
+      "verification": {
+        "status": "blocked",
+        "method": "manual_source_required",
+        "variantCount": 1,
+        "sourceUrls": [
+          "https://cbtbank.kr/exam/de20130928",
+          "https://www.amca.org/educate/articles-and-technical-papers/amca-inmotion-articles/straightening-out-fan-curves.html"
+        ],
+        "riskTags": [
+          "editorial_reconstruction",
+          "answer_conflict"
+        ],
+        "note": "복원 원문과 독립 풀이를 보존했으며 운영 공개 전 런타임 계약과 출처 검증이 필요합니다.",
+        "reviewedAt": "2026-08-07T23:20:00+09:00"
+      },
+      "audit": {
+        "questionId": "U-1072",
+        "scope": "review_queue",
+        "sourceContentStatus": "in_review",
+        "auditDisposition": "held_answer_conflict",
+        "evidenceLevel": null,
+        "cbtAnswer": "터보 팬",
+        "verifiedAnswer": "다익 팬",
+        "evidenceUrls": [
+          "https://cbtbank.kr/exam/de20130928",
+          "https://www.amca.org/educate/articles-and-technical-papers/amca-inmotion-articles/straightening-out-fan-curves.html"
+        ],
+        "reviewNote": "표준 원심팬 특성에서 다익 팬은 전향곡선형으로 풍량이 증가할수록 축동력이 급격히 증가한다. 터보·에어포일처럼 후향형 팬은 동력이 최고점 뒤 감소하는 비과부하 특성이므로 독립 정답은 3번이며 복원답 1번은 교정 대상이다.",
+        "assetStatus": "not_required",
+        "nextAction": "런타임 variant 계약과 기술 검증 후 공개 심사",
+        "reviewChoiceFeedback": [
+          {
+            "choiceId": "U-1072-c1",
+            "verdict": "incorrect",
+            "rationale": "터보 팬은 통상 후향곡선형으로 동력곡선이 최고점 이후 감소하는 비과부하 특성이 있다."
+          },
+          {
+            "choiceId": "U-1072-c2",
+            "verdict": "incorrect",
+            "rationale": "래디얼 팬은 풍량 증가에 따라 동력이 증가하지만 전향 다익 팬보다 일반적으로 완만하다."
+          },
+          {
+            "choiceId": "U-1072-c3",
+            "verdict": "correct",
+            "rationale": "다익 팬은 전향곡선 날개로 자유토출 쪽까지 동력요구가 크게 증가한다."
+          },
+          {
+            "choiceId": "U-1072-c4",
+            "verdict": "incorrect",
+            "rationale": "에어포일 팬은 후향형 계열로 효율이 높고 동력은 비과부하 특성을 보인다."
+          }
+        ],
+        "reviewedAt": "2026-08-07T23:20:00+09:00"
+      },
+      "validation": {
+        "answer": true,
+        "explanation": true,
+        "choiceFeedback": true,
+        "theoryLink": true,
+        "contentQuality": true
+      }
+    },
+    "previousQuestionSha256": "5e61f4690270fd2b3b6e9c092933ddff3feb889f33c6e9bad9c1a2fb294d6271",
+    "affectedExternalIds": [
+      "2013-4-Q48"
+    ],
+    "rationale": "2013-4-Q48의 독립 풀이 및 정답키 교정을 직접 반영"
+  },
+  {
+    "action": "replace",
+    "question": {
+      "id": "U-1089",
+      "canonicalNumber": 1092,
+      "subjectId": "subject-1",
+      "conceptGroupId": "s1-g08",
+      "conceptId": "concept-cbt-pneumatic-sequence-troubleshooting-choice-conflict",
+      "lessonId": "lesson-cbt-pneumatic-sequence-troubleshooting-choice-conflict",
+      "lessonAnchor": "diagnosis",
+      "stem": "시퀀스 제어 방식으로 구성된 공압 시스템의 고장 발생, 시의 대처 방법으로 적당하지 않은 것은?",
+      "choices": [
+        {
+          "id": "U-1089-c1",
+          "order": 1,
+          "text": "운동-단계선도를 이용하여 정지된 동작 순서를 확인한다.",
+          "feedback": {
+            "rationale": "운동-단계선도와 실제 정지 위치를 비교하면 고장 단계의 범위를 좁힐 수 있다.",
+            "plausibleReason": "복원 선택지 집합 전체를 비교해야 하며 단일 보기만으로 정답을 확정할 수 없다.",
+            "incorrectPoint": null,
+            "keyRule": "보기 1~3은 정지 단계와 전후 신호를 따라 고장원인을 좁히는 정상적인 진단절차다. 4번의 전원 및 압축공기 차단도 정비·점검 전 안전확보에 필요한 조치이므로 부적절한 보기가 존재하지 않는다.",
+            "differenceFromCorrect": null
+          }
+        },
+        {
+          "id": "U-1089-c2",
+          "order": 2,
+          "text": "정지된 동작 순서의 전후 제어 신호 상태를 확인한다.",
+          "feedback": {
+            "rationale": "정지 단계 전후의 센서·솔레노이드 신호 확인은 제어계통 진단의 기본이다.",
+            "plausibleReason": "복원 선택지 집합 전체를 비교해야 하며 단일 보기만으로 정답을 확정할 수 없다.",
+            "incorrectPoint": null,
+            "keyRule": "보기 1~3은 정지 단계와 전후 신호를 따라 고장원인을 좁히는 정상적인 진단절차다. 4번의 전원 및 압축공기 차단도 정비·점검 전 안전확보에 필요한 조치이므로 부적절한 보기가 존재하지 않는다.",
+            "differenceFromCorrect": null
+          }
+        },
+        {
+          "id": "U-1089-c3",
+          "order": 3,
+          "text": "고장원인이 전기계통, 밸브 혹은 실린더인지를 파악한다.",
+          "feedback": {
+            "rationale": "전기·밸브·실린더로 원인 계통을 분리해 확인하는 것은 합리적이다.",
+            "plausibleReason": "복원 선택지 집합 전체를 비교해야 하며 단일 보기만으로 정답을 확정할 수 없다.",
+            "incorrectPoint": null,
+            "keyRule": "보기 1~3은 정지 단계와 전후 신호를 따라 고장원인을 좁히는 정상적인 진단절차다. 4번의 전원 및 압축공기 차단도 정비·점검 전 안전확보에 필요한 조치이므로 부적절한 보기가 존재하지 않는다.",
+            "differenceFromCorrect": null
+          }
+        },
+        {
+          "id": "U-1089-c4",
+          "order": 4,
+          "text": "전원과 압축공기의 공급을 먼저 차단하여 안전을 확보한다.",
+          "feedback": {
+            "rationale": "예기치 않은 기동과 잔류 공압에 의한 위험을 막기 위해 전기와 압축공기를 격리·배기하는 것은 안전상 적절하다.",
+            "plausibleReason": "복원 선택지 집합 전체를 비교해야 하며 단일 보기만으로 정답을 확정할 수 없다.",
+            "incorrectPoint": null,
+            "keyRule": "보기 1~3은 정지 단계와 전후 신호를 따라 고장원인을 좁히는 정상적인 진단절차다. 4번의 전원 및 압축공기 차단도 정비·점검 전 안전확보에 필요한 조치이므로 부적절한 보기가 존재하지 않는다.",
+            "differenceFromCorrect": null
+          }
+        }
+      ],
+      "correctChoiceId": "U-1089-c4",
+      "answerText": "전원과 압축공기의 공급을 먼저 차단하여 안전을 확보한다.",
+      "explanation": "선택지 충돌: 보기 1~3은 정지 단계와 전후 신호를 따라 고장원인을 좁히는 정상적인 진단절차다. 4번의 전원 및 압축공기 차단도 정비·점검 전 안전확보에 필요한 조치이므로 부적절한 보기가 존재하지 않는다.",
+      "errorReason": "선택지 충돌",
+      "sourceLabel": "https://cbtbank.kr/exam/de20130928",
+      "reviewStatus": "배치 04 독립 풀이·직접 이론 연결 검수",
+      "contentStatus": "in_review",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed",
+          "choice_conflict_non_scoring"
+        ]
+      },
+      "verification": {
+        "status": "blocked",
+        "method": "manual_source_required",
+        "variantCount": 1,
+        "sourceUrls": [
+          "https://cbtbank.kr/exam/de20130928",
+          "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147",
+          "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147AppA"
+        ],
+        "riskTags": [
+          "editorial_reconstruction",
+          "choice_conflict"
+        ],
+        "note": "복원 원문과 독립 풀이를 보존했으며 운영 공개 전 런타임 계약과 출처 검증이 필요합니다.",
+        "reviewedAt": "2026-08-07T23:20:00+09:00"
+      },
+      "audit": {
+        "questionId": "U-1089",
+        "scope": "review_queue",
+        "sourceContentStatus": "in_review",
+        "auditDisposition": "held_question_integrity",
+        "evidenceLevel": null,
+        "cbtAnswer": "전원과 압축공기의 공급을 먼저 차단하여 안전을 확보한다.",
+        "verifiedAnswer": null,
+        "evidenceUrls": [
+          "https://cbtbank.kr/exam/de20130928",
+          "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147",
+          "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147AppA"
+        ],
+        "reviewNote": "선택지 충돌: 보기 1~3은 정지 단계와 전후 신호를 따라 고장원인을 좁히는 정상적인 진단절차다. 4번의 전원 및 압축공기 차단도 정비·점검 전 안전확보에 필요한 조치이므로 부적절한 보기가 존재하지 않는다.",
+        "assetStatus": "not_required",
+        "nextAction": "선택지 원문 재확인 전 비채점 유지",
+        "reviewChoiceFeedback": [
+          {
+            "choiceId": "U-1089-c1",
+            "verdict": "conflict",
+            "rationale": "운동-단계선도와 실제 정지 위치를 비교하면 고장 단계의 범위를 좁힐 수 있다."
+          },
+          {
+            "choiceId": "U-1089-c2",
+            "verdict": "conflict",
+            "rationale": "정지 단계 전후의 센서·솔레노이드 신호 확인은 제어계통 진단의 기본이다."
+          },
+          {
+            "choiceId": "U-1089-c3",
+            "verdict": "conflict",
+            "rationale": "전기·밸브·실린더로 원인 계통을 분리해 확인하는 것은 합리적이다."
+          },
+          {
+            "choiceId": "U-1089-c4",
+            "verdict": "conflict",
+            "rationale": "예기치 않은 기동과 잔류 공압에 의한 위험을 막기 위해 전기와 압축공기를 격리·배기하는 것은 안전상 적절하다."
+          }
+        ],
+        "reviewedAt": "2026-08-07T23:20:00+09:00"
+      },
+      "validation": {
+        "answer": false,
+        "explanation": true,
+        "choiceFeedback": true,
+        "theoryLink": true,
+        "contentQuality": true
+      }
+    },
+    "previousQuestionSha256": "52a897d9429e9e99124b91fe502b58c96bd889b0059728d7af17072e053b66b1",
+    "affectedExternalIds": [
+      "2013-4-Q84"
+    ],
+    "rationale": "2013-4-Q84의 독립 풀이 및 선택지 충돌을 직접 반영"
+  }
+]

@@ -1,0 +1,237 @@
+{
+  "batchReviewVersion": 4,
+  "batch": "sessions33-36",
+  "reviewedAt": "2026-08-06T23:16:21+09:00",
+  "status": "PASS",
+  "failureCount": 0,
+  "failures": [],
+  "sessionCount": 4,
+  "recordCount": 200,
+  "verdictCounts": {
+    "ACCEPT": 192,
+    "REVISE": 0,
+    "CHOICE_ISSUE": 1,
+    "HOLD": 7
+  },
+  "scoredCount": 192,
+  "excludedCount": 8,
+  "publicationCandidateCount": 192,
+  "lowContextAcceptedCount": 26,
+  "lowContextAcceptedExternalIds": [
+    "2018-4-Q51",
+    "2018-4-Q61",
+    "2018-4-Q86",
+    "2018-4-Q87",
+    "2018-4-Q91",
+    "2019-1-Q04",
+    "2019-1-Q15",
+    "2019-1-Q24",
+    "2019-1-Q27",
+    "2019-1-Q28",
+    "2019-1-Q30",
+    "2019-1-Q36",
+    "2019-1-Q42",
+    "2019-1-Q46",
+    "2019-1-Q49",
+    "2019-1-Q52",
+    "2019-1-Q53",
+    "2019-1-Q58",
+    "2019-1-Q65",
+    "2019-1-Q81",
+    "2019-1-Q82",
+    "2019-1-Q87",
+    "2019-1-Q95",
+    "2019-2-Q42",
+    "2019-2-Q45",
+    "2019-2-Q46"
+  ],
+  "nonAcceptDetails": [
+    {
+      "externalId": "2018-4-Q89",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 0,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_forward_reverse_motor_circuit_image_not_independently_inspected"
+      ],
+      "directSolution": "정·역회전 접촉기 회로는 두 접촉기가 동시에 투입되지 않도록 상대측 보조접점으로 차단하는 인터록이 필요하다. 그러나 실제 회로의 K1·K2 접점 배치를 그림에서 확인하지 못해 복원답 1번은 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20180915/de20180915m89.gif"
+      ]
+    },
+    {
+      "externalId": "2019-1-Q01",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 3,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_rms_formula_choice_images_not_independently_inspected"
+      ],
+      "directSolution": "식: Xrms=√[(1/T)∫₀ᵀx²(t)dt], 정현파는 Xrms=Xp/√2. 단위: 원 신호와 같은 단위다. 대입: 피크값 Xp에 1/√2를 곱한다. 결과: 네 보기가 모두 수식 이미지여서 복원답 4번과 직접 대조하지 못해 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20190303/de20190303m1b1.gif",
+        "https://cbtbank.kr/images/de/de20190303/de20190303m1b2.gif",
+        "https://cbtbank.kr/images/de/de20190303/de20190303m1b3.gif",
+        "https://cbtbank.kr/images/de/de20190303/de20190303m1b4.gif"
+      ]
+    },
+    {
+      "externalId": "2019-1-Q91",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 1,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_pressure_control_valve_symbol_not_independently_inspected"
+      ],
+      "directSolution": "복원답은 릴리프밸브 2번이지만, 정답은 밸브 기호의 스프링·드레인·파일럿·포트 연결을 직접 읽어야 한다. 원본 기호를 판독하지 못해 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20190303/de20190303m91.gif"
+      ]
+    },
+    {
+      "externalId": "2019-1-Q92",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 3,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_pressure_valve_characteristic_description_image_not_independently_inspected"
+      ],
+      "directSolution": "복원답은 히스테리시스특성 4번이지만, 지문의 설명문이 이미지에만 있어 상승·하강 경로 차이인지 직접 확인하지 못했다. 원본 설명 이미지를 판독하기 전까지 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20190303/de20190303m92.gif"
+      ]
+    },
+    {
+      "externalId": "2019-1-Q98",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 3,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_self_holding_ladder_circuit_not_independently_inspected"
+      ],
+      "directSolution": "복원답은 4번이지만, 리셋우선 구조, K1 접점종류와 Y1 코일을 회로도에서 직접 확인해야 한다. 원본 회로를 판독하지 못해 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20190303/de20190303m98.gif"
+      ]
+    },
+    {
+      "externalId": "2019-2-Q21",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 2,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_mttr_formula_choice_images_not_independently_inspected"
+      ],
+      "directSolution": "식: MTTR=1/μ. 단위: μ가 1/h이면 MTTR은 h다. 대입: 수리율의 역수를 취한다. 결과: 복원답은 3번이지만 네 수식 이미지를 직접 대조하지 못해 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20190427/de20190427m21b1.gif",
+        "https://cbtbank.kr/images/de/de20190427/de20190427m21b2.gif",
+        "https://cbtbank.kr/images/de/de20190427/de20190427m21b3.gif",
+        "https://cbtbank.kr/images/de/de20190427/de20190427m21b4.gif"
+      ]
+    },
+    {
+      "externalId": "2019-2-Q32",
+      "verdict": "CHOICE_ISSUE",
+      "sourceAnswerIndex": 1,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "multiple_invalid_choices_2_and_3"
+      ],
+      "directSolution": "복원된 문장에서는 2번과 3번이 모두 조직원칙에 어긋난다. 목적에 지장이 없으면 조직은 불필요하게 전문화하기보다 단순화해야 하고, 사람을 수단으로만 보아서도 안 되므로 단일정답이 성립하지 않는다.",
+      "requiredImages": []
+    },
+    {
+      "externalId": "2019-2-Q35",
+      "verdict": "HOLD",
+      "sourceAnswerIndex": 0,
+      "independentAnswerIndex": null,
+      "holdReasons": [
+        "required_oee_formula_choice_images_not_independently_inspected"
+      ],
+      "directSolution": "식: OEE=시간가동률×성능가동률×양품률. 단위: 각 비율의 곱이므로 무차원 또는 %다. 대입: 세 비율을 소수로 곱한 뒤 필요하면 100을 곱한다. 결과: 1번은 정의와 일치하지만 3·4번 이미지의 동치식을 배제하지 못해 HOLD한다.",
+      "requiredImages": [
+        "https://cbtbank.kr/images/de/de20190427/de20190427m35b3.gif",
+        "https://cbtbank.kr/images/de/de20190427/de20190427m35b4.gif"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "sessionNumber": 33,
+      "sessionKey": "2018-09-15-Q51-Q100",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      },
+      "status": "PASS",
+      "jsonlSha256": "560532f84bd4d728ee326c76765bbb10a78af771600f880861ee18d5403ac81d"
+    },
+    {
+      "sessionNumber": 34,
+      "sessionKey": "2019-03-03-Q01-Q50",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      },
+      "status": "PASS",
+      "jsonlSha256": "7fa761ee4bd5f2647cbb6dac5620a6c917d5cb3436d6eb34423d1d48dffe1b3d"
+    },
+    {
+      "sessionNumber": 35,
+      "sessionKey": "2019-03-03-Q51-Q100",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 3
+      },
+      "status": "PASS",
+      "jsonlSha256": "6174683a47400e60d0e2f45fb8acd8dbb34de66af94067ef60460a4424564a03"
+    },
+    {
+      "sessionNumber": 36,
+      "sessionKey": "2019-04-27-Q01-Q50",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 2
+      },
+      "status": "PASS",
+      "jsonlSha256": "ae46d88b4de232fcb81ae97a062ea43d4cf3d6a67205897e7b5b38eb80776513"
+    }
+  ],
+  "checks": {
+    "sourceTextAndHashesRecomputedFromPayload": true,
+    "choiceFeedbackSpecificBoundAndUnique": true,
+    "acceptAndNonAcceptGates": true,
+    "formulaAndCalculationStructurePresent": true,
+    "theoryLessonConceptGroupConceptKeywordEntitiesExist": true,
+    "batchExactSet200": true
+  },
+  "notRun": [
+    "repository_typecheck",
+    "vitest",
+    "eslint",
+    "verify_no_answer_leak_runtime",
+    "runtime_publication_gate",
+    "login_guest_integration_flow",
+    "sql_migration_test",
+    "git_commit"
+  ],
+  "secondPassValidation": {
+    "fileName": "sessions33-36_second-pass-validation.json",
+    "status": "PASS",
+    "failureCount": 0,
+    "sha256": "580b6f736be0409ec8bbdb6cc1d9bcf15267191d130a55cfa7fe2936e6226c79"
+  }
+}

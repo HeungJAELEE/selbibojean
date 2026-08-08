@@ -1,0 +1,55 @@
+{
+  "batchId": "import-12",
+  "generatedAt": "2026-08-08T10:55:50+09:00",
+  "recordCount": 222,
+  "states": {
+    "hold": 11,
+    "candidate": 210,
+    "choice_conflict": 1
+  },
+  "sourcePublicationCandidateCount": 208,
+  "fullCanonicalChoiceMappingCount": 45,
+  "manualChoiceMappingCount": 0,
+  "variantSpecificFeedbackPendingCount": 165,
+  "theoryLessonAdditionCount": 0,
+  "canonicalQuestionChangeCount": 0,
+  "directTheoryLinkCount": 222,
+  "targetCanonicalTheoryRelinkCount": 6,
+  "imageVerificationQueueCount": 11,
+  "choiceConflictCount": 1,
+  "answerKeyCorrectionCount": 0,
+  "answerKeyConflictCount": 0,
+  "canonicalReassignmentCount": 6,
+  "canonicalTheoryRepairAppliedCount": 0,
+  "canonicalTheoryRepairPendingCount": 2,
+  "lowContextRegistrationCount": 30,
+  "formulaUnitSubstitutionCount": 11,
+  "formulaExternalIds": [
+    "2021-2-Q01",
+    "2021-2-Q06",
+    "2021-2-Q17",
+    "2021-2-Q45",
+    "2021-4-Q05",
+    "2021-4-Q18",
+    "2022-1-Q25",
+    "2022-1-Q55",
+    "2022-1-Q80",
+    "2022-2-Q14",
+    "2022-2-Q22"
+  ],
+  "sourceContentSha256Expected": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+  "contentHashBindingVerified": true,
+  "dryRunMappingSha256": "383bb49174d6e3fa72b4a7166863cb97833879feae311dd8757d96f08d84952e",
+  "canonicalReferenceSha256": "a4f0f4ea5e8537c1337558426b5ac319bb3dc2042126a4f17ecd51c6f87e08f3",
+  "priorRecordsSha256": "36f0ba1340ae854d10015eef0aacc5f0445248c809a270f569f07e8d0a8cd0e8",
+  "cumulativeRecordCount": 2384,
+  "cumulativeStates": {
+    "candidate": 2267,
+    "hold": 98,
+    "choice_conflict": 19
+  },
+  "unreviewedRecordCount": 0,
+  "allSourceVariantsCovered": true
+}
+
+manifest sha b2a614eb26faadad231c30bb7eb69e55c18dfc9c28f8350515f7a50d6a4cfac5

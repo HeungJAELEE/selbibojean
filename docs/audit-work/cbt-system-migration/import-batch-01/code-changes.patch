@@ -1,0 +1,1456 @@
+diff --git a/package.json b/package.json
+index 120e858..f6987d5 100644
+--- a/package.json
++++ b/package.json
+@@ -45,7 +45,7 @@
+     "audit:publication": "tsx scripts/audit-publication-scope.ts",
+     "audit:merge-decisions": "tsx scripts/merge-written-audit-decisions.ts",
+     "audit:report": "tsx scripts/generate-written-audit-report.ts",
+-    "verify:data": "tsx scripts/verify-generated-data.ts && tsx scripts/verify-cbt-source-audit.ts && tsx scripts/verify-practical-data.ts && tsx scripts/verify-practical-written-governance.ts && tsx scripts/verify-practical-theory-coverage.ts && tsx scripts/verify-practical-work-content.ts && tsx scripts/verify-no-answer-leak.ts --scope=source",
++    "verify:data": "tsx scripts/verify-generated-data.ts && tsx scripts/verify-cbt-source-audit.ts && npm run verify:reviewed-cbt && tsx scripts/verify-practical-data.ts && tsx scripts/verify-practical-written-governance.ts && tsx scripts/verify-practical-theory-coverage.ts && tsx scripts/verify-practical-work-content.ts && tsx scripts/verify-no-answer-leak.ts --scope=source",
+     "preverify:data": "npm run cleanup:runtime-public",
+     "verify:practical-work": "tsx scripts/verify-practical-work-content.ts",
+     "verify:practical-theory": "tsx scripts/verify-practical-theory-coverage.ts",
+@@ -56,7 +56,8 @@
+     "cleanup:runtime-public": "tsx scripts/cleanup-runtime-public.ts",
+     "verify:deploy": "tsx scripts/verify-deployment-readiness.ts",
+     "preflight:deploy": "npm run check && npm run test:e2e:predeploy && npm run verify:supabase-content && npm run verify:deploy",
+-    "check": "npm run verify:data && npm run typecheck && npm run lint && npm run test && npm run build && npm run verify:no-answer-leak"
++    "check": "npm run verify:data && npm run typecheck && npm run lint && npm run test && npm run build && npm run verify:no-answer-leak",
++    "verify:reviewed-cbt": "tsx scripts/verify-reviewed-cbt-variants.ts"
+   },
+   "dependencies": {
+     "@supabase/ssr": "0.12.3",
+diff --git a/src/lib/domain/types.ts b/src/lib/domain/types.ts
+index e01c6c2..6434934 100644
+--- a/src/lib/domain/types.ts
++++ b/src/lib/domain/types.ts
+@@ -316,6 +316,160 @@ export type ImportReport = {
+   warnings: string[];
+ };
+ 
++export const REVIEWED_CBT_VARIANT_STATES = [
++  "unreviewed",
++  "candidate",
++  "published",
++  "choice_conflict",
++  "hold",
++] as const;
++export type ReviewedCbtVariantState =
++  (typeof REVIEWED_CBT_VARIANT_STATES)[number];
++
++export type ReviewedCbtVariantRecord = {
++  externalId: string;
++  currentCanonicalId: string;
++  canonicalId: string;
++  year: number | null;
++  sessionLabel: string;
++  questionNumber: number | null;
++  source: {
++    textAuthority: string;
++    captureAuthority: string;
++    answerAuthority: string;
++    displayLabel: string;
++    registeredSourceUrl: string;
++    resolvedSourceUrl: string;
++    questionNumber: number;
++    stemSha256: string;
++    orderedChoicesSha256: string;
++    registeredIdentitySha256: string;
++    resolvedIdentitySha256: string;
++  };
++  stem: string;
++  choices: string[];
++  sourceAnswerIndex: number | null;
++  reviewedAnswerIndex: number | null;
++  sourceAnswerText: string;
++  reviewedAnswerText: string;
++  choiceIdMapping: string[];
++  directSolution: string;
++  formulaUnitSubstitution: unknown;
++  presentationNormalization?: {
++    applied: true;
++    authority: "user_approved_minimal_normalization";
++    rawStem: string;
++    rawChoices: string[];
++    rawStemSha256: string;
++    rawOrderedChoicesSha256: string;
++    normalizedStem: string;
++    normalizedChoices: string[];
++    normalizedStemSha256: string;
++    normalizedOrderedChoicesSha256: string;
++    reasonCodes: string[];
++    note: string;
++    sourceTextPreserved: true;
++  };
++  choiceConflict?: {
++    label: "선택지 충돌";
++    conflictType: string;
++    choiceIndices: number[];
++    reason: string;
++    scoringPolicy: "non_scoring";
++    sourceAnswerTreatment: string;
++  };
++  choiceByChoiceReasons: Array<{
++    choiceIndex: number;
++    choiceText: string;
++    evaluation: string;
++    reason: string;
++  }>;
++  theoryLink: {
++    canonicalId: string;
++    lessonId: string;
++    lessonAnchor: string;
++    conceptGroupId: string;
++    conceptId: string;
++    canonicalStem: string;
++  } | null;
++  conceptKeywords: string[];
++  review: {
++    verdict: "ACCEPT" | "REVISE" | "CHOICE_ISSUE" | "HOLD";
++    issueLabel?: "선택지 충돌" | "필수 이미지 확인";
++    scoringDisposition: string;
++    sourceAnswerAgreement: string | null;
++    answerEvidence: string | null;
++    answerConfidence: string | null;
++    theoryLinkStatus: string | null;
++    holdReasons: string[];
++    answerConflictOrMultipleAnswerRisk: string | null;
++    runtimeStatus: Exclude<ReviewedCbtVariantState, "unreviewed">;
++    publicationBlockers: string[];
++    reviewedAt: string;
++  };
++  migration: {
++    mappingClass: string;
++    canonicalAction: string;
++    theoryAction: string;
++    runtimeDisposition: string;
++    confidence: string;
++    duplicateCanonicalCluster: boolean;
++    preserveExternalId: boolean;
++    preserveRegisteredSourceUrl: boolean;
++    preserveQuestionNumber: boolean;
++  };
++};
++
++export type ReviewedCbtVariantManifest = {
++  formatVersion: 1;
++  generatedAt: string;
++  mappingRunId: string;
++  migrationPolicy: {
++    sourceTextClassification: string;
++    sourceCaptureClassification: string;
++    sourceAnswerDisplayLabel: string;
++    preserveExternalId: boolean;
++    preserveRegisteredSourceUrl: boolean;
++    preserveQuestionNumber: boolean;
++    preSubmitAnswerExposureAllowed: boolean;
++    runtimePublicationRequiresStatus: "published";
++    normalizedPresentationPreservesRawSource: boolean;
++    choiceConflictScoringAllowed: boolean;
++    imageReviewQueueRequiredForImageHolds: boolean;
++  };
++  holdResolutionPolicy: {
++    decisionAuthority: string;
++    decidedAt: string;
++    imageVerificationQueueCount: number;
++    normalizedAndRegisteredCount: number;
++    choiceConflictNonScoringCount: number;
++    lowContextRegisteredCount: number;
++    learnerPublicationStillRequiresStatus: "published";
++  };
++  batches: Array<{
++    batchId: string;
++    reviewSessions: string[];
++    externalIdRanges: string[];
++    recordCount: number;
++    candidateCount: number;
++    choiceConflictCount: number;
++    holdCount: number;
++    normalizationCount: number;
++    imageReviewCount: number;
++    lowContextRegistrationCount: number;
++    canonicalTheoryRepairs: string[];
++    holdResolution: {
++      imageVerificationQueue: string[];
++      normalizedAndRegistered: string[];
++      choiceConflictNonScoring: string[];
++      lowContextRegistered: string[];
++    };
++    sourceFiles: Array<{ path: string; sha256: string }>;
++  }>;
++  recordsSha256: string;
++  records: ReviewedCbtVariantRecord[];
++};
++
+ export type GeneratedContent = {
+   formatVersion: 2;
+   subjects: Subject[];
+@@ -339,6 +493,8 @@ export type GeneratedContent = {
+     reviewStatus: string;
+     verificationNote: string;
+     shufflePolicy?: "all" | "none" | "except_fixed";
++    reviewState?: ReviewedCbtVariantState;
++    reviewed?: ReviewedCbtVariantRecord;
+   }>;
+   backlog: Array<Record<string, string | number | null>>;
+   report: ImportReport;
+diff --git a/src/lib/content/runtime-content.ts b/src/lib/content/runtime-content.ts
+index e3981d8..e00d9f7 100644
+--- a/src/lib/content/runtime-content.ts
++++ b/src/lib/content/runtime-content.ts
+@@ -7,6 +7,7 @@ import { notionGapWrittenLessons } from "@/lib/content/notion-gap-written-lesson
+ import { refineLessonUnderstandingBackground } from "@/lib/content/lesson-understanding-background";
+ import { supplementalWrittenLessons } from "@/lib/content/supplemental-written-lessons";
+ import { applyWrittenQuestionAuditManifest } from "@/lib/content/written-question-audit";
++import { mergeReviewedCbtVariants } from "@/lib/content/reviewed-cbt-variants";
+ import rawWrittenQuestionAudit from "@/data/generated/written-question-audit.json";
+ import type { GeneratedContent } from "@/lib/domain/types";
+ 
+@@ -18,7 +19,9 @@ export function buildRuntimeContent(content: GeneratedContent) {
+           mergeApprovedWeldingSafetyContent(
+             mergeApprovedCompressorContent(
+               refineLessonUnderstandingBackground(
+-                normalizeCanonicalTaxonomy(content),
++                normalizeCanonicalTaxonomy(
++                  mergeReviewedCbtVariants(content),
++                ),
+               ),
+             ),
+           ),
+diff --git a/src/lib/content/taxonomy-normalization.ts b/src/lib/content/taxonomy-normalization.ts
+index 339deb6..726493a 100644
+--- a/src/lib/content/taxonomy-normalization.ts
++++ b/src/lib/content/taxonomy-normalization.ts
+@@ -7,6 +7,7 @@ const LEGACY_LESSON_GROUP_OVERRIDES = new Map<string, string>([
+ ]);
+ 
+ const REVIEWED_LESSON_GROUP_OVERRIDES = new Map<string, string>([
++  ["lesson-qnsesu", "s1-g02"],
+   ...[
+     "lesson-w9cpkq",
+     "lesson-10dr8g",
+diff --git a/src/lib/content/practice-presentations.ts b/src/lib/content/practice-presentations.ts
+index 8cb6d46..78b0d03 100644
+--- a/src/lib/content/practice-presentations.ts
++++ b/src/lib/content/practice-presentations.ts
+@@ -1,5 +1,9 @@
+ import type { GeneratedContent, PublicQuestion, Question } from "@/lib/domain/types";
+ import { isUsablePastExamVariant } from "@/lib/content/past-exam-examples";
++import {
++  getReviewedCbtVariantAnswerIndex,
++  mapReviewedCbtVariantChoices,
++} from "@/lib/content/reviewed-cbt-variants";
+ import { orderPracticeChoices } from "@/lib/content/practice-choice-order";
+ import { shuffleQuestionIds, toPublicQuestion } from "@/lib/domain/practice";
+ 
+@@ -82,7 +86,8 @@ export function filterPracticeContentByYearRange(
+ export function isSafeOriginalPracticeVariant(question: Question, variant: Variant) {
+   if (!isUsablePastExamVariant(variant)) return false;
+   const mappedChoices = mapVariantChoices(question, variant);
+-  const answerIndex = parseVariantAnswerIndex(variant);
++  const answerIndex =
++    getReviewedCbtVariantAnswerIndex(variant) ?? parseVariantAnswerIndex(variant);
+ 
+   return Boolean(
+     mappedChoices
+@@ -147,7 +152,14 @@ function toOriginalPublicQuestion(
+ }
+ 
+ function mapVariantChoices(question: Question, variant: Variant) {
+-  const mapped = variant.choices.map((choice) => question.choices.find((candidate) => normalizeText(candidate.text) === normalizeText(choice)));
++  const reviewedMapping = mapReviewedCbtVariantChoices(question, variant);
++  if (reviewedMapping) return reviewedMapping;
++
++  const mapped = variant.choices.map((choice) =>
++    question.choices.find(
++      (candidate) => normalizeText(candidate.text) === normalizeText(choice),
++    ),
++  );
+   if (mapped.some((choice) => !choice)) return null;
+   const complete = mapped.filter((choice): choice is Question["choices"][number] => Boolean(choice));
+   return new Set(complete.map((choice) => choice.id)).size === complete.length ? complete : null;
+diff --git a/src/lib/content/past-exam-examples.ts b/src/lib/content/past-exam-examples.ts
+index dbd27c9..1608c13 100644
+--- a/src/lib/content/past-exam-examples.ts
++++ b/src/lib/content/past-exam-examples.ts
+@@ -1,5 +1,9 @@
+ import type { GeneratedContent } from "@/lib/domain/types";
+ import { isPublishableQuestion } from "@/lib/domain/practice";
++import {
++  getReviewedCbtVariantAnswerIndex,
++  mapReviewedCbtVariantChoices,
++} from "@/lib/content/reviewed-cbt-variants";
+ 
+ const VISUAL_ASSET_CUE = /그림|도면|회로도|사진|이미지|도시(?:한|된)|다음\s*회로|아래\s*회로/i;
+ const CALCULATION_CUE = /계산|구하|얼마|몇\s*(?:배|개|%|kW|W|MPa|kPa|bar|rpm|Hz|dB|mm|cm|m)|값은|비율|효율|동력|토크|유량|속도/i;
+@@ -110,6 +114,12 @@ export function getPastExamPatternSummary(
+ export function isUsablePastExamVariant(
+   variant: GeneratedContent["variants"][number],
+ ): variant is GeneratedContent["variants"][number] & { year: number } {
++  if (
++    variant.reviewState !== undefined &&
++    variant.reviewState !== "published"
++  ) {
++    return false;
++  }
+   const choices = variant.choices.map((choice) => choice.trim()).filter(Boolean);
+   return Boolean(
+     variant.year
+@@ -161,8 +171,12 @@ function collectVerifiedPastExamExamples(
+   for (const variant of content.variants) {
+     const question = publicQuestions.get(variant.canonicalId);
+     if (!question || !isUsablePastExamVariant(variant)) continue;
+-    const mappedChoices = mapVariantChoices(question, variant.choices);
+-    const answerIndex = parseVariantAnswerIndex(variant.answer, variant.choices);
++    const mappedChoices =
++      mapReviewedCbtVariantChoices(question, variant) ??
++      mapVariantChoices(question, variant.choices);
++    const answerIndex =
++      getReviewedCbtVariantAnswerIndex(variant) ??
++      parseVariantAnswerIndex(variant.answer, variant.choices);
+     if (
+       !mappedChoices
+       || answerIndex < 0
+diff --git a/src/lib/content/supabase-materialization.ts b/src/lib/content/supabase-materialization.ts
+index 3ab9844..c7a329d 100644
+--- a/src/lib/content/supabase-materialization.ts
++++ b/src/lib/content/supabase-materialization.ts
+@@ -241,6 +241,36 @@ export function buildSupabaseMaterialization(
+         `Variant ${variant.externalId} references missing question ${variant.canonicalId}.`,
+       );
+     }
++    const reviewedPublicationAllowed =
++      variant.reviewState === undefined
++        ? true
++        : variant.reviewState === "published";
++    const published =
++      publishableQuestionIds.has(variant.canonicalId) &&
++      reviewedPublicationAllowed;
++    const reviewedPayload = variant.reviewed
++      ? {
++          reviewState: variant.reviewState,
++          reviewVerdict: variant.reviewed.review.verdict,
++          issueLabel: variant.reviewed.review.issueLabel ?? null,
++          normalizationApplied: Boolean(
++            variant.reviewed.presentationNormalization,
++          ),
++          choiceConflict: variant.reviewState === "choice_conflict",
++          choices: variant.choices,
++          choiceIdMapping: variant.reviewed.choiceIdMapping,
++          sourceTextAuthority:
++            variant.reviewed.source.textAuthority,
++          sourceCaptureAuthority:
++            variant.reviewed.source.captureAuthority,
++          sourceDisplayLabel: variant.reviewed.source.displayLabel,
++          resolvedSourceUrl:
++            variant.reviewed.source.resolvedSourceUrl,
++          stemSha256: variant.reviewed.source.stemSha256,
++          orderedChoicesSha256:
++            variant.reviewed.source.orderedChoicesSha256,
++        }
++      : null;
+     return {
+       id: stableContentUuid("question-variant", variant.externalId),
+       canonical_question_id: canonicalQuestionId,
+@@ -253,10 +283,13 @@ export function buildSupabaseMaterialization(
+         relationship: variant.relationship,
+         subjectCode: variant.subjectCode,
+         conceptAlias: variant.conceptAlias,
++        ...(reviewedPayload ? { reviewed: reviewedPayload } : {}),
+       },
+       source_id: null,
+-      verification_note: "",
+-      status: status(publishableQuestionIds.has(variant.canonicalId)),
++      verification_note: variant.reviewed
++        ? variant.verificationNote
++        : "",
++      status: status(published),
+       shuffle_policy: variant.shufflePolicy ?? "all",
+     };
+   });
+diff --git a/src/lib/content/reviewed-cbt-variants.ts b/src/lib/content/reviewed-cbt-variants.ts
+new file mode 100644
+index 0000000..fe6168e
+--- /dev/null
++++ b/src/lib/content/reviewed-cbt-variants.ts
+@@ -0,0 +1,553 @@
++import { createHash } from "node:crypto";
++import rawManifest from "@/data/generated/cbt-reviewed-variants.json";
++import type {
++  GeneratedContent,
++  ReviewedCbtVariantManifest,
++  ReviewedCbtVariantRecord,
++} from "@/lib/domain/types";
++
++export const reviewedCbtVariantManifest =
++  rawManifest as ReviewedCbtVariantManifest;
++
++export function mergeReviewedCbtVariants(
++  content: GeneratedContent,
++  manifest: ReviewedCbtVariantManifest = reviewedCbtVariantManifest,
++): GeneratedContent {
++  validateReviewedCbtVariantManifest(content, manifest);
++
++  const recordsByExternalId = new Map(
++    manifest.records.map((record) => [record.externalId, record]),
++  );
++
++  return {
++    ...content,
++    variants: content.variants.map((variant) => {
++      const reviewed = recordsByExternalId.get(variant.externalId);
++      if (!reviewed) {
++        return {
++          ...variant,
++          reviewState: "unreviewed" as const,
++        };
++      }
++
++      const answerBearing =
++        reviewed.review.runtimeStatus === "candidate" ||
++        reviewed.review.runtimeStatus === "published";
++      const presentation = getReviewedCbtVariantPresentation(reviewed);
++
++      return {
++        ...variant,
++        canonicalId: reviewed.canonicalId,
++        stem: presentation.stem,
++        choices: presentation.choices,
++        answer: answerBearing
++          ? reviewed.reviewedAnswerText || reviewed.sourceAnswerText || ""
++          : "",
++        explanation: answerBearing ? reviewed.directSolution : "",
++        sourceUrl: reviewed.source.registeredSourceUrl,
++        reviewStatus: buildReviewStatus(reviewed),
++        verificationNote: buildVerificationNote(reviewed),
++        reviewState: reviewed.review.runtimeStatus,
++        reviewed,
++      };
++    }),
++  };
++}
++
++export function mapReviewedCbtVariantChoices(
++  question: GeneratedContent["questions"][number],
++  variant: GeneratedContent["variants"][number],
++) {
++  if (variant.reviewState !== "published" || !variant.reviewed) return null;
++  if (variant.reviewed.choiceIdMapping.length !== variant.choices.length) {
++    return null;
++  }
++
++  const choicesById = new Map(
++    question.choices.map((choice) => [choice.id, choice]),
++  );
++  const mapped = variant.reviewed.choiceIdMapping.map((choiceId) =>
++    choicesById.get(choiceId),
++  );
++  if (mapped.some((choice) => !choice)) return null;
++
++  const complete = mapped.filter(
++    (choice): choice is GeneratedContent["questions"][number]["choices"][number] =>
++      Boolean(choice),
++  );
++  return new Set(complete.map((choice) => choice.id)).size === complete.length
++    ? complete
++    : null;
++}
++
++export function getReviewedCbtVariantAnswerIndex(
++  variant: GeneratedContent["variants"][number],
++) {
++  if (variant.reviewState !== "published" || !variant.reviewed) return null;
++  const answerIndex = variant.reviewed.reviewedAnswerIndex;
++  return answerIndex !== null &&
++    Number.isInteger(answerIndex) &&
++    answerIndex >= 0 &&
++    answerIndex < variant.choices.length
++    ? answerIndex
++    : null;
++}
++
++export function getReviewedCbtVariantPresentation(
++  record: ReviewedCbtVariantRecord,
++) {
++  const normalized = record.presentationNormalization;
++  return normalized
++    ? {
++        stem: normalized.normalizedStem,
++        choices: [...normalized.normalizedChoices],
++      }
++    : { stem: record.stem, choices: [...record.choices] };
++}
++
++export function validateReviewedCbtVariantManifest(
++  content: GeneratedContent,
++  manifest: ReviewedCbtVariantManifest = reviewedCbtVariantManifest,
++) {
++  if (manifest.formatVersion !== 1) {
++    throw new Error(
++      `Unsupported reviewed CBT variant format: ${manifest.formatVersion}`,
++    );
++  }
++  if (manifest.migrationPolicy.preSubmitAnswerExposureAllowed) {
++    throw new Error("Reviewed CBT variants must not expose answers pre-submit.");
++  }
++  if (
++    manifest.migrationPolicy.runtimePublicationRequiresStatus !== "published"
++  ) {
++    throw new Error("Reviewed CBT variants must require explicit publication.");
++  }
++  if (!manifest.migrationPolicy.normalizedPresentationPreservesRawSource) {
++    throw new Error(
++      "Reviewed CBT normalized presentation must preserve raw source text.",
++    );
++  }
++  if (manifest.migrationPolicy.choiceConflictScoringAllowed) {
++    throw new Error("Choice-conflict CBT variants must remain non-scoring.");
++  }
++  if (!manifest.migrationPolicy.imageReviewQueueRequiredForImageHolds) {
++    throw new Error("Image-dependent CBT holds require a dedicated queue.");
++  }
++  if (
++    manifest.holdResolutionPolicy.learnerPublicationStillRequiresStatus !==
++    "published"
++  ) {
++    throw new Error(
++      "Hold reclassification must not bypass explicit publication approval.",
++    );
++  }
++  const recordsSha256 = sha256(JSON.stringify(manifest.records));
++  if (recordsSha256 !== manifest.recordsSha256) {
++    throw new Error(
++      `Reviewed CBT record digest mismatch: ${recordsSha256} != ${manifest.recordsSha256}`,
++    );
++  }
++
++  const variantsByExternalId = new Map(
++    content.variants.map((variant) => [variant.externalId, variant]),
++  );
++  const questionsById = new Map(
++    content.questions.map((question) => [question.id, question]),
++  );
++  const lessonsById = new Map(
++    content.lessons.map((lesson) => [lesson.id, lesson]),
++  );
++  const repairedConceptGroupByLessonId = new Map(
++    manifest.batches.flatMap((batch) =>
++      batch.canonicalTheoryRepairs.map((repair) => {
++        const separatorIndex = repair.indexOf(":");
++        if (separatorIndex <= 0 || separatorIndex === repair.length - 1) {
++          throw new Error(`Invalid reviewed CBT taxonomy repair: ${repair}`);
++        }
++        return [
++          repair.slice(0, separatorIndex),
++          repair.slice(separatorIndex + 1),
++        ] as const;
++      }),
++    ),
++  );
++  const seen = new Set<string>();
++
++  for (const record of manifest.records) {
++    if (seen.has(record.externalId)) {
++      throw new Error(`Duplicate reviewed CBT variant: ${record.externalId}`);
++    }
++    seen.add(record.externalId);
++
++    const sourceVariant = variantsByExternalId.get(record.externalId);
++    if (!sourceVariant) {
++      throw new Error(`Unknown reviewed CBT variant: ${record.externalId}`);
++    }
++    const canonicalQuestion = questionsById.get(record.canonicalId);
++    if (!canonicalQuestion) {
++      throw new Error(
++        `Reviewed CBT variant ${record.externalId} references missing canonical question ${record.canonicalId}.`,
++      );
++    }
++    if (
++      sourceVariant.year !== record.year ||
++      sourceVariant.sessionLabel !== record.sessionLabel ||
++      sourceVariant.questionNumber !== record.questionNumber
++    ) {
++      throw new Error(
++        `Reviewed CBT variant identity changed: ${record.externalId}`,
++      );
++    }
++    if (
++      record.source.questionNumber !== record.questionNumber ||
++      record.source.registeredSourceUrl !== sourceVariant.sourceUrl
++    ) {
++      throw new Error(
++        `Reviewed CBT source identity mismatch: ${record.externalId}`,
++      );
++    }
++    if (sha256(record.stem) !== record.source.stemSha256) {
++      throw new Error(`Reviewed CBT stem hash mismatch: ${record.externalId}`);
++    }
++    if (
++      sha256(JSON.stringify(record.choices)) !==
++      record.source.orderedChoicesSha256
++    ) {
++      throw new Error(
++        `Reviewed CBT ordered-choice hash mismatch: ${record.externalId}`,
++      );
++    }
++    validatePresentationNormalization(record);
++    const presentation = getReviewedCbtVariantPresentation(record);
++    if (
++      record.choiceByChoiceReasons.length !== presentation.choices.length ||
++      record.choiceByChoiceReasons.some(
++        (choice, index) =>
++          choice.choiceIndex !== index ||
++          choice.choiceText !== presentation.choices[index],
++      )
++    ) {
++      throw new Error(
++        `Reviewed CBT choice feedback is not aligned: ${record.externalId}`,
++      );
++    }
++
++    if (
++      record.review.runtimeStatus === "candidate" ||
++      record.review.runtimeStatus === "published"
++    ) {
++      validateCandidateRecord(
++        record,
++        canonicalQuestion,
++        lessonsById,
++        repairedConceptGroupByLessonId,
++      );
++    } else if (record.review.runtimeStatus === "choice_conflict") {
++      validateChoiceConflictRecord(record);
++    } else if (record.choiceIdMapping.length > 0) {
++      throw new Error(
++        `Non-scoring CBT variant must not have an active choice mapping: ${record.externalId}`,
++      );
++    }
++  }
++
++  const declaredCount = manifest.batches.reduce(
++    (total, batch) => total + batch.recordCount,
++    0,
++  );
++  const declaredCandidateCount = manifest.batches.reduce(
++    (total, batch) => total + batch.candidateCount,
++    0,
++  );
++  const declaredChoiceConflictCount = manifest.batches.reduce(
++    (total, batch) => total + batch.choiceConflictCount,
++    0,
++  );
++  const declaredHoldCount = manifest.batches.reduce(
++    (total, batch) => total + batch.holdCount,
++    0,
++  );
++  const actualCandidateCount = manifest.records.filter(
++    (record) => record.review.runtimeStatus === "candidate",
++  ).length;
++  const actualChoiceConflictCount = manifest.records.filter(
++    (record) => record.review.runtimeStatus === "choice_conflict",
++  ).length;
++  const actualHoldCount = manifest.records.filter(
++    (record) => record.review.runtimeStatus === "hold",
++  ).length;
++  if (declaredCount !== manifest.records.length) {
++    throw new Error(
++      `Reviewed CBT batch count mismatch: ${declaredCount} != ${manifest.records.length}`,
++    );
++  }
++  if (
++    declaredCandidateCount !== actualCandidateCount ||
++    declaredChoiceConflictCount !== actualChoiceConflictCount ||
++    declaredHoldCount !== actualHoldCount
++  ) {
++    throw new Error(
++      `Reviewed CBT state count mismatch: candidate ${declaredCandidateCount}/${actualCandidateCount}, choice_conflict ${declaredChoiceConflictCount}/${actualChoiceConflictCount}, hold ${declaredHoldCount}/${actualHoldCount}`,
++    );
++  }
++
++  const imageQueueIds = new Set(
++    manifest.batches.flatMap(
++      (batch) => batch.holdResolution.imageVerificationQueue,
++    ),
++  );
++  const normalizedIds = new Set(
++    manifest.batches.flatMap(
++      (batch) => batch.holdResolution.normalizedAndRegistered,
++    ),
++  );
++  const conflictIds = new Set(
++    manifest.batches.flatMap(
++      (batch) => batch.holdResolution.choiceConflictNonScoring,
++    ),
++  );
++  const lowContextIds = new Set(
++    manifest.batches.flatMap(
++      (batch) => batch.holdResolution.lowContextRegistered,
++    ),
++  );
++  if (
++    imageQueueIds.size !== manifest.holdResolutionPolicy.imageVerificationQueueCount ||
++    normalizedIds.size !== manifest.holdResolutionPolicy.normalizedAndRegisteredCount ||
++    conflictIds.size !== manifest.holdResolutionPolicy.choiceConflictNonScoringCount ||
++    lowContextIds.size !== manifest.holdResolutionPolicy.lowContextRegisteredCount
++  ) {
++    throw new Error("Reviewed CBT hold-resolution exact sets are inconsistent.");
++  }
++  for (const record of manifest.records) {
++    if (
++      imageQueueIds.has(record.externalId) !==
++      (record.review.runtimeStatus === "hold" &&
++        record.review.issueLabel === "필수 이미지 확인")
++    ) {
++      throw new Error(
++        `Reviewed CBT image queue state mismatch: ${record.externalId}`,
++      );
++    }
++    if (
++      normalizedIds.has(record.externalId) !==
++      Boolean(record.presentationNormalization)
++    ) {
++      throw new Error(
++        `Reviewed CBT normalization set mismatch: ${record.externalId}`,
++      );
++    }
++    if (
++      conflictIds.has(record.externalId) !==
++      (record.review.runtimeStatus === "choice_conflict")
++    ) {
++      throw new Error(
++        `Reviewed CBT conflict set mismatch: ${record.externalId}`,
++      );
++    }
++    if (
++      lowContextIds.has(record.externalId) &&
++      record.review.runtimeStatus !== "candidate"
++    ) {
++      throw new Error(
++        `Reviewed CBT low-context record is not registered: ${record.externalId}`,
++      );
++    }
++  }
++}
++
++function validatePresentationNormalization(record: ReviewedCbtVariantRecord) {
++  const normalization = record.presentationNormalization;
++  if (!normalization) return;
++  if (
++    !normalization.applied ||
++    normalization.authority !== "user_approved_minimal_normalization" ||
++    !normalization.sourceTextPreserved ||
++    normalization.rawStem !== record.stem ||
++    JSON.stringify(normalization.rawChoices) !== JSON.stringify(record.choices) ||
++    normalization.rawStemSha256 !== record.source.stemSha256 ||
++    normalization.rawOrderedChoicesSha256 !==
++      record.source.orderedChoicesSha256 ||
++    sha256(normalization.rawStem) !== normalization.rawStemSha256 ||
++    sha256(JSON.stringify(normalization.rawChoices)) !==
++      normalization.rawOrderedChoicesSha256 ||
++    !normalization.normalizedStem.trim() ||
++    normalization.normalizedChoices.length !== record.choices.length ||
++    normalization.normalizedChoices.some((choice) => !choice.trim()) ||
++    sha256(normalization.normalizedStem) !==
++      normalization.normalizedStemSha256 ||
++    sha256(JSON.stringify(normalization.normalizedChoices)) !==
++      normalization.normalizedOrderedChoicesSha256 ||
++    normalization.reasonCodes.length === 0 ||
++    !normalization.note.trim()
++  ) {
++    throw new Error(
++      `Reviewed CBT normalization is invalid: ${record.externalId}`,
++    );
++  }
++}
++
++function validateCandidateRecord(
++  record: ReviewedCbtVariantRecord,
++  canonicalQuestion: GeneratedContent["questions"][number],
++  lessonsById: Map<string, GeneratedContent["lessons"][number]>,
++  repairedConceptGroupByLessonId: Map<string, string>,
++) {
++  const presentation = getReviewedCbtVariantPresentation(record);
++  const answerIndex = record.reviewedAnswerIndex;
++  if (
++    answerIndex === null ||
++    !Number.isInteger(answerIndex) ||
++    answerIndex < 0 ||
++    answerIndex >= presentation.choices.length
++  ) {
++    throw new Error(
++      `Reviewed CBT candidate has no valid answer: ${record.externalId}`,
++    );
++  }
++  if (
++    record.choiceIdMapping.length !== presentation.choices.length ||
++    new Set(record.choiceIdMapping).size !== record.choiceIdMapping.length
++  ) {
++    throw new Error(
++      `Reviewed CBT candidate choice mapping is invalid: ${record.externalId}`,
++    );
++  }
++  const canonicalChoiceIds = new Set(
++    canonicalQuestion.choices.map((choice) => choice.id),
++  );
++  if (
++    record.choiceIdMapping.some((choiceId) => !canonicalChoiceIds.has(choiceId))
++  ) {
++    throw new Error(
++      `Reviewed CBT candidate maps outside canonical choices: ${record.externalId}`,
++    );
++  }
++  if (
++    record.choiceIdMapping[answerIndex] !== canonicalQuestion.correctChoiceId
++  ) {
++    throw new Error(
++      `Reviewed CBT candidate answer mapping is invalid: ${record.externalId}`,
++    );
++  }
++  const answerSymbol = ["①", "②", "③", "④", "⑤"][answerIndex];
++  if (
++    !answerSymbol ||
++    record.reviewedAnswerText !==
++      `${answerSymbol} ${presentation.choices[answerIndex]}`
++  ) {
++    throw new Error(
++      `Reviewed CBT candidate answer text is invalid: ${record.externalId}`,
++    );
++  }
++  if (!record.directSolution.trim()) {
++    throw new Error(
++      `Reviewed CBT candidate has no direct solution: ${record.externalId}`,
++    );
++  }
++  const theoryLink = record.theoryLink;
++  if (!theoryLink) {
++    throw new Error(
++      `Reviewed CBT candidate has no theory link: ${record.externalId}`,
++    );
++  }
++  const lesson = lessonsById.get(theoryLink.lessonId);
++  if (
++    theoryLink.canonicalId !== record.canonicalId ||
++    canonicalQuestion.lessonId !== theoryLink.lessonId ||
++    canonicalQuestion.lessonAnchor !== theoryLink.lessonAnchor ||
++    canonicalQuestion.conceptId !== theoryLink.conceptId ||
++    canonicalQuestion.conceptGroupId !== theoryLink.conceptGroupId
++  ) {
++    throw new Error(
++      `Reviewed CBT candidate canonical/theory link is inconsistent: ${record.externalId}`,
++    );
++  }
++  if (
++    !lesson ||
++    lesson.conceptId !== theoryLink.conceptId ||
++    !lesson.blocks.some((block) => block.id === theoryLink.lessonAnchor)
++  ) {
++    throw new Error(
++      `Reviewed CBT candidate theory link is invalid: ${record.externalId}`,
++    );
++  }
++  const effectiveLessonConceptGroupId =
++    repairedConceptGroupByLessonId.get(lesson.id) ?? lesson.conceptGroupId;
++  if (effectiveLessonConceptGroupId !== theoryLink.conceptGroupId) {
++    throw new Error(
++      `Reviewed CBT candidate theory group is invalid: ${record.externalId}`,
++    );
++  }
++}
++
++function validateChoiceConflictRecord(record: ReviewedCbtVariantRecord) {
++  const conflict = record.choiceConflict;
++  if (
++    record.review.verdict !== "CHOICE_ISSUE" ||
++    record.review.issueLabel !== "선택지 충돌" ||
++    record.review.scoringDisposition !== "non_scoring_choice_conflict" ||
++    record.reviewedAnswerIndex !== null ||
++    record.reviewedAnswerText !== "" ||
++    record.choiceIdMapping.length > 0 ||
++    !record.directSolution.startsWith("선택지 충돌:") ||
++    !conflict ||
++    conflict.label !== "선택지 충돌" ||
++    conflict.scoringPolicy !== "non_scoring" ||
++    conflict.choiceIndices.length < 2 ||
++    new Set(conflict.choiceIndices).size !== conflict.choiceIndices.length ||
++    conflict.choiceIndices.some(
++      (index) =>
++        !Number.isInteger(index) || index < 0 || index >= record.choices.length,
++    ) ||
++    !conflict.reason.trim() ||
++    !conflict.sourceAnswerTreatment.trim()
++  ) {
++    throw new Error(
++      `Reviewed CBT choice conflict is invalid: ${record.externalId}`,
++    );
++  }
++}
++
++function buildReviewStatus(record: ReviewedCbtVariantRecord) {
++  switch (record.review.runtimeStatus) {
++    case "candidate":
++      return record.presentationNormalization
++        ? "원문 정규화 검수 완료 · 런타임 통합 대기"
++        : `독립 검수 ${record.review.verdict} · 런타임 통합 대기`;
++    case "published":
++      return `독립 검수 ${record.review.verdict} · 공개 승인`;
++    case "choice_conflict":
++      return "선택지 충돌 · 비채점 등록";
++    case "hold":
++      return `${record.review.issueLabel ?? `독립 검수 ${record.review.verdict}`} · 공개/채점 보류`;
++  }
++}
++
++function buildVerificationNote(record: ReviewedCbtVariantRecord) {
++  const status = record.review.runtimeStatus;
++  return [
++    `sourceText=${record.source.textAuthority}`,
++    `capture=${record.source.captureAuthority}`,
++    `stemSha256=${record.source.stemSha256}`,
++    `orderedChoicesSha256=${record.source.orderedChoicesSha256}`,
++    `runtimeStatus=${status}`,
++    ...(record.presentationNormalization
++      ? [
++          "presentationNormalization=applied",
++          `rawStemSha256=${record.presentationNormalization.rawStemSha256}`,
++          `rawOrderedChoicesSha256=${record.presentationNormalization.rawOrderedChoicesSha256}`,
++          `normalizedStemSha256=${record.presentationNormalization.normalizedStemSha256}`,
++          `normalizedOrderedChoicesSha256=${record.presentationNormalization.normalizedOrderedChoicesSha256}`,
++        ]
++      : []),
++    ...(record.choiceConflict ? ["choiceConflict=non_scoring"] : []),
++    ...(record.review.issueLabel
++      ? [`issueLabel=${record.review.issueLabel}`]
++      : []),
++  ].join("; ");
++}
++
++function sha256(value: string) {
++  return createHash("sha256").update(value, "utf8").digest("hex");
++}
+diff --git a/scripts/verify-reviewed-cbt-variants.ts b/scripts/verify-reviewed-cbt-variants.ts
+new file mode 100644
+index 0000000..f98bf33
+--- /dev/null
++++ b/scripts/verify-reviewed-cbt-variants.ts
+@@ -0,0 +1,224 @@
++import { createHash } from "node:crypto";
++import generatedContent from "../src/data/generated/content.json";
++import { buildRuntimeContent } from "../src/lib/content/runtime-content";
++import {
++  getReviewedCbtVariantPresentation,
++  reviewedCbtVariantManifest,
++  validateReviewedCbtVariantManifest,
++} from "../src/lib/content/reviewed-cbt-variants";
++import type { GeneratedContent } from "../src/lib/domain/types";
++
++const source = generatedContent as GeneratedContent;
++validateReviewedCbtVariantManifest(source, reviewedCbtVariantManifest);
++const runtime = buildRuntimeContent(source);
++const failures: string[] = [];
++const recordsById = new Map(
++  reviewedCbtVariantManifest.records.map((record) => [
++    record.externalId,
++    record,
++  ]),
++);
++
++const recordsSha256 = createHash("sha256")
++  .update(JSON.stringify(reviewedCbtVariantManifest.records), "utf8")
++  .digest("hex");
++if (recordsSha256 !== reviewedCbtVariantManifest.recordsSha256) {
++  failures.push(
++    `reviewed CBT record digest mismatch: ${recordsSha256} != ${reviewedCbtVariantManifest.recordsSha256}`,
++  );
++}
++
++if (recordsById.size !== reviewedCbtVariantManifest.records.length) {
++  failures.push("reviewed CBT external IDs are not unique");
++}
++const sourceVariantIds = new Set(
++  source.variants.map((variant) => variant.externalId),
++);
++const runtimeSourceVariants = runtime.variants.filter((variant) =>
++  sourceVariantIds.has(variant.externalId),
++);
++if (runtimeSourceVariants.length !== source.variants.length) {
++  failures.push("runtime source-variant exact set changed");
++}
++
++for (const variant of runtimeSourceVariants) {
++  const record = recordsById.get(variant.externalId);
++  if (!record) {
++    if (variant.reviewState !== "unreviewed") {
++      failures.push(`${variant.externalId}: unimported variant is not gated`);
++    }
++    continue;
++  }
++
++  const presentation = getReviewedCbtVariantPresentation(record);
++  if (
++    variant.canonicalId !== record.canonicalId ||
++    variant.stem !== presentation.stem ||
++    JSON.stringify(variant.choices) !== JSON.stringify(presentation.choices)
++  ) {
++    failures.push(`${variant.externalId}: reviewed payload was not applied`);
++  }
++  if (variant.reviewState !== record.review.runtimeStatus) {
++    failures.push(`${variant.externalId}: review state mismatch`);
++  }
++
++  const answerBearing =
++    record.review.runtimeStatus === "candidate" ||
++    record.review.runtimeStatus === "published";
++  if (!answerBearing) {
++    if (variant.answer || variant.explanation) {
++      failures.push(
++        `${variant.externalId}: non-scoring variant retains active answer data`,
++      );
++    }
++    continue;
++  }
++
++  const question = runtime.questions.find(
++    (candidate) => candidate.id === variant.canonicalId,
++  );
++  const answerIndex = record.reviewedAnswerIndex;
++  if (
++    !question ||
++    answerIndex === null ||
++    record.choiceIdMapping[answerIndex] !== question.correctChoiceId
++  ) {
++    failures.push(`${variant.externalId}: candidate answer mapping mismatch`);
++  }
++}
++
++const states = runtimeSourceVariants.reduce<Record<string, number>>(
++  (counts, variant) => {
++    const state = variant.reviewState ?? "legacy";
++    counts[state] = (counts[state] ?? 0) + 1;
++    return counts;
++  },
++  {},
++);
++if (
++  states.candidate !== 187 ||
++  states.choice_conflict !== 6 ||
++  states.hold !== 7 ||
++  states.unreviewed !== 2184
++) {
++  failures.push(`unexpected review states: ${JSON.stringify(states)}`);
++}
++if ((states.published ?? 0) !== 0) {
++  failures.push("batch 01 must not publish variants before runtime integration");
++}
++
++const expectedNormalized = new Set([
++  "2006-4-Q09",
++  "2006-4-Q15",
++  "2006-4-Q84",
++  "2006-4-Q89",
++  "2007-4-Q40",
++]);
++const expectedLowContext = new Set([
++  "2006-4-Q11",
++  "2007-4-Q36",
++  "2007-4-Q50",
++  "2007-4-Q61",
++  "2007-4-Q82",
++]);
++const expectedChoiceConflicts = new Set([
++  "2006-4-Q34",
++  "2006-4-Q49",
++  "2006-4-Q60",
++  "2006-4-Q93",
++  "2007-4-Q49",
++  "2007-4-Q66",
++]);
++const expectedImageHolds = new Set([
++  "2006-4-Q17",
++  "2006-4-Q37",
++  "2006-4-Q88",
++  "2006-4-Q91",
++  "2007-4-Q02",
++  "2007-4-Q10",
++  "2007-4-Q93",
++]);
++
++for (const record of reviewedCbtVariantManifest.records) {
++  const normalized = Boolean(record.presentationNormalization);
++  if (normalized !== expectedNormalized.has(record.externalId)) {
++    failures.push(`${record.externalId}: normalization exact-set mismatch`);
++  }
++  if (
++    expectedLowContext.has(record.externalId) &&
++    record.review.runtimeStatus !== "candidate"
++  ) {
++    failures.push(`${record.externalId}: low-context registration was lost`);
++  }
++  if (
++    expectedChoiceConflicts.has(record.externalId) !==
++    (record.review.runtimeStatus === "choice_conflict")
++  ) {
++    failures.push(`${record.externalId}: choice-conflict exact-set mismatch`);
++  }
++  if (
++    expectedImageHolds.has(record.externalId) !==
++    (record.review.runtimeStatus === "hold" &&
++      record.review.issueLabel === "필수 이미지 확인")
++  ) {
++    failures.push(`${record.externalId}: image-hold exact-set mismatch`);
++  }
++}
++
++const normalizedQ09 = runtime.variants.find(
++  (variant) => variant.externalId === "2006-4-Q09",
++);
++const rawQ09 = recordsById.get("2006-4-Q09");
++if (
++  normalizedQ09?.choices[1] !== "소음계" ||
++  rawQ09?.choices[1] !== "소음기" ||
++  rawQ09.presentationNormalization?.normalizedChoices[1] !== "소음계"
++) {
++  failures.push("2006-4-Q09: raw/normalized presentation contract failed");
++}
++
++const conflictQ34 = runtime.variants.find(
++  (variant) => variant.externalId === "2006-4-Q34",
++);
++if (
++  conflictQ34?.reviewState !== "choice_conflict" ||
++  !conflictQ34.reviewStatus.includes("선택지 충돌") ||
++  conflictQ34.answer ||
++  conflictQ34.explanation
++) {
++  failures.push("2006-4-Q34: non-scoring choice-conflict gate failed");
++}
++
++const imageQ17 = runtime.variants.find(
++  (variant) => variant.externalId === "2006-4-Q17",
++);
++if (
++  imageQ17?.reviewState !== "hold" ||
++  !imageQ17.reviewStatus.includes("필수 이미지 확인") ||
++  imageQ17.answer ||
++  imageQ17.explanation
++) {
++  failures.push("2006-4-Q17: image-verification hold gate failed");
++}
++
++const telescopeLesson = runtime.lessons.find(
++  (lesson) => lesson.id === "lesson-qnsesu",
++);
++const telescopeQuestions = runtime.questions.filter(
++  (question) => question.lessonId === "lesson-qnsesu",
++);
++if (
++  telescopeLesson?.conceptGroupId !== "s1-g02" ||
++  telescopeQuestions.some((question) => question.conceptGroupId !== "s1-g02")
++) {
++  failures.push("telescope-cylinder taxonomy repair was not applied");
++}
++
++if (failures.length > 0) {
++  console.error(failures.slice(0, 50).join("\n"));
++  process.exit(1);
++}
++
++console.log(
++  `PASS: reviewed CBT batch 01 verified (${reviewedCbtVariantManifest.records.length} records; ${states.candidate} candidates; ${states.choice_conflict} non-scoring choice conflicts; ${states.hold} image holds; ${states.unreviewed} gated).`,
++);
+diff --git a/tests/unit/reviewed-cbt-variants.test.ts b/tests/unit/reviewed-cbt-variants.test.ts
+new file mode 100644
+index 0000000..09e2a27
+--- /dev/null
++++ b/tests/unit/reviewed-cbt-variants.test.ts
+@@ -0,0 +1,290 @@
++import { createHash } from "node:crypto";
++import { describe, expect, it } from "vitest";
++import generatedContent from "@/data/generated/content.json";
++import { buildRuntimeContent } from "@/lib/content/runtime-content";
++import {
++  createPracticePresentations,
++  isSafeOriginalPracticeVariant,
++} from "@/lib/content/practice-presentations";
++import {
++  reviewedCbtVariantManifest,
++  mergeReviewedCbtVariants,
++  validateReviewedCbtVariantManifest,
++} from "@/lib/content/reviewed-cbt-variants";
++import { isUsablePastExamVariant } from "@/lib/content/past-exam-examples";
++import { buildSupabaseMaterialization } from "@/lib/content/supabase-materialization";
++import type { GeneratedContent } from "@/lib/domain/types";
++
++const source = generatedContent as GeneratedContent;
++
++describe("reviewed CBT variant batch 01", () => {
++  it("keeps the workbook-derived source untouched and validates 200 reviewed records", () => {
++    expect(source.variants.some((variant) => variant.reviewState)).toBe(false);
++    expect(() =>
++      validateReviewedCbtVariantManifest(source, reviewedCbtVariantManifest),
++    ).not.toThrow();
++    expect(reviewedCbtVariantManifest.records).toHaveLength(200);
++    expect(
++      new Set(
++        reviewedCbtVariantManifest.records.map((record) => record.externalId),
++      ).size,
++    ).toBe(200);
++    expect(reviewedCbtVariantManifest.holdResolutionPolicy).toMatchObject({
++      imageVerificationQueueCount: 7,
++      normalizedAndRegisteredCount: 5,
++      choiceConflictNonScoringCount: 6,
++      lowContextRegisteredCount: 5,
++      learnerPublicationStillRequiresStatus: "published",
++    });
++  });
++
++  it("applies the reclassified batch and gates every other source variant", () => {
++    const runtime = buildRuntimeContent(source);
++    const states = runtime.variants.reduce<Record<string, number>>(
++      (counts, variant) => {
++        const state = variant.reviewState ?? "legacy";
++        counts[state] = (counts[state] ?? 0) + 1;
++        return counts;
++      },
++      {},
++    );
++
++    const sourceVariantIds = new Set(
++      source.variants.map((variant) => variant.externalId),
++    );
++    const runtimeSourceVariants = runtime.variants.filter((variant) =>
++      sourceVariantIds.has(variant.externalId),
++    );
++    expect(runtimeSourceVariants).toHaveLength(source.variants.length);
++    expect(states).toMatchObject({
++      candidate: 187,
++      choice_conflict: 6,
++      hold: 7,
++      unreviewed: 2184,
++    });
++    expect(states.published ?? 0).toBe(0);
++
++    const reviewed = runtime.variants.find(
++      (variant) => variant.externalId === "2006-4-Q01",
++    );
++    expect(reviewed?.stem).toBe(
++      "설비진단 기법과 응용 예를 설명한 사항 중 잘못 연결된 것은?",
++    );
++    expect(reviewed?.choices).toEqual([
++      "진동법 - 블로우, 팬 등의 밸런싱 진단",
++      "오일 분석법 - 베어링의 오일 휩(oil whip) 진단",
++      "응력법 - 설비 구조물의 응력 분포도 검사",
++      "열화상법 - 전기, 전자 부품의 이상발견",
++    ]);
++    expect(reviewed?.reviewState).toBe("candidate");
++
++    const unreviewed = runtime.variants.find(
++      (variant) => variant.externalId === "2008-4-Q01",
++    );
++    expect(unreviewed?.reviewState).toBe("unreviewed");
++  });
++
++  it("preserves damaged raw source while displaying the approved normalization", () => {
++    const runtime = buildRuntimeContent(source);
++    const normalized = runtime.variants.find(
++      (variant) => variant.externalId === "2006-4-Q09",
++    );
++
++    expect(normalized?.reviewState).toBe("candidate");
++    expect(normalized?.choices[1]).toBe("소음계");
++    expect(normalized?.reviewed?.choices[1]).toBe("소음기");
++    expect(normalized?.reviewed?.presentationNormalization).toMatchObject({
++      applied: true,
++      rawChoices: ["녹음기", "소음기", "기록계", "주파수 분석기"],
++      normalizedChoices: [
++        "녹음기",
++        "소음계",
++        "기록계",
++        "주파수 분석기",
++      ],
++      sourceTextPreserved: true,
++    });
++    expect(normalized?.answer).toBe("② 소음계");
++  });
++
++  it("keeps choice conflicts and image-dependent records non-scoring", () => {
++    const runtime = buildRuntimeContent(source);
++    const conflict = runtime.variants.find(
++      (variant) => variant.externalId === "2006-4-Q34",
++    );
++    const imageHold = runtime.variants.find(
++      (variant) => variant.externalId === "2006-4-Q17",
++    );
++
++    expect(conflict?.reviewState).toBe("choice_conflict");
++    expect(conflict?.reviewStatus).toContain("선택지 충돌");
++    expect(conflict?.reviewed?.choiceConflict?.scoringPolicy).toBe(
++      "non_scoring",
++    );
++    expect(conflict?.reviewed?.directSolution).toMatch(/^선택지 충돌:/);
++    expect(conflict?.reviewed?.choiceIdMapping).toEqual([]);
++    expect(conflict?.answer).toBe("");
++    expect(conflict?.explanation).toBe("");
++
++    expect(imageHold?.reviewState).toBe("hold");
++    expect(imageHold?.reviewStatus).toContain("필수 이미지 확인");
++    expect(imageHold?.reviewed?.choiceIdMapping).toEqual([]);
++    expect(imageHold?.answer).toBe("");
++    expect(imageHold?.explanation).toBe("");
++  });
++
++  it("excludes candidate, choice-conflict, hold, and unreviewed variants from learner DTOs", () => {
++    const runtime = buildRuntimeContent(source);
++    const sourceVariantIds = new Set(
++      source.variants.map((variant) => variant.externalId),
++    );
++    expect(
++      runtime.variants
++        .filter((variant) => sourceVariantIds.has(variant.externalId))
++        .every((variant) => !isUsablePastExamVariant(variant)),
++    ).toBe(true);
++  });
++
++  it("can present a reviewed source variant only after explicit publication", () => {
++    const runtime = buildRuntimeContent(source);
++    const candidate = runtime.variants.find(
++      (variant) => variant.externalId === "2006-4-Q01",
++    );
++    const question = runtime.questions.find(
++      (item) => item.id === candidate?.canonicalId,
++    );
++    expect(candidate).toBeDefined();
++    expect(question).toBeDefined();
++
++    const published = {
++      ...candidate!,
++      reviewState: "published" as const,
++    };
++    expect(isSafeOriginalPracticeVariant(question!, published)).toBe(true);
++
++    const presentation = createPracticePresentations(
++      [question!],
++      [published],
++      100,
++      20260807,
++      false,
++    )[0];
++    expect(presentation.provenance.exam?.externalId).toBe("2006-4-Q01");
++    expect(presentation.stem).toBe(candidate?.stem);
++    expect(presentation.choices.map((choice) => choice.text)).toEqual(
++      candidate?.choices,
++    );
++    expect(presentation.choices.map((choice) => choice.id)).toEqual(
++      candidate?.reviewed?.choiceIdMapping,
++    );
++  });
++
++  it("accepts an explicitly published record after manifest counts and digest are updated", () => {
++    const records = reviewedCbtVariantManifest.records.map((record, index) =>
++      index === 0
++        ? {
++            ...record,
++            review: {
++              ...record.review,
++              runtimeStatus: "published" as const,
++              publicationBlockers: [],
++            },
++          }
++        : record,
++    );
++    const manifest = {
++      ...reviewedCbtVariantManifest,
++      batches: reviewedCbtVariantManifest.batches.map((batch, index) =>
++        index === 0
++          ? {
++              ...batch,
++              candidateCount: batch.candidateCount - 1,
++            }
++          : batch,
++      ),
++      recordsSha256: createHash("sha256")
++        .update(JSON.stringify(records), "utf8")
++        .digest("hex"),
++      records,
++    };
++
++    expect(() =>
++      validateReviewedCbtVariantManifest(source, manifest),
++    ).not.toThrow();
++    const runtime = mergeReviewedCbtVariants(source, manifest);
++    expect(
++      runtime.variants.find(
++        (variant) => variant.externalId === "2006-4-Q01",
++      )?.reviewState,
++    ).toBe("published");
++  });
++
++  it("repairs the telescope-cylinder concept group without changing IDs", () => {
++    const runtime = buildRuntimeContent(source);
++    const lesson = runtime.lessons.find(
++      (candidate) => candidate.id === "lesson-qnsesu",
++    );
++    const questions = runtime.questions.filter(
++      (question) => question.lessonId === "lesson-qnsesu",
++    );
++
++    expect(lesson?.conceptGroupId).toBe("s1-g02");
++    expect(questions.map((question) => question.id).sort()).toEqual([
++      "U-300",
++      "U-478",
++    ]);
++    expect(
++      questions.every((question) => question.conceptGroupId === "s1-g02"),
++    ).toBe(true);
++  });
++
++  it("keeps answer-bearing review data out of public question-variant rows", () => {
++    const runtime = buildRuntimeContent(source);
++    const plan = buildSupabaseMaterialization(
++      runtime,
++      "00000000-0000-0000-0000-000000000001",
++    );
++    const candidate = plan.questionVariants.find(
++      (variant) => variant.external_id === "2006-4-Q09",
++    );
++    const conflict = plan.questionVariants.find(
++      (variant) => variant.external_id === "2006-4-Q34",
++    );
++    const candidateSerialized = JSON.stringify(candidate?.payload);
++    const conflictSerialized = JSON.stringify(conflict?.payload);
++
++    const reviewedExternalIds = new Set(
++      reviewedCbtVariantManifest.records.map((record) => record.externalId),
++    );
++    const publishedReviewedRows = plan.questionVariants.filter(
++      (variant) =>
++        reviewedExternalIds.has(variant.external_id) &&
++        variant.status === "published",
++    );
++
++    expect(publishedReviewedRows).toHaveLength(0);
++    expect(candidate?.status).toBe("draft");
++    expect(candidate?.payload.reviewed).toMatchObject({
++      reviewState: "candidate",
++      normalizationApplied: true,
++      choiceConflict: false,
++    });
++    expect(conflict?.status).toBe("draft");
++    expect(conflict?.payload.reviewed).toMatchObject({
++      reviewState: "choice_conflict",
++      issueLabel: "선택지 충돌",
++      normalizationApplied: false,
++      choiceConflict: true,
++    });
++
++    for (const serialized of [candidateSerialized, conflictSerialized]) {
++      expect(serialized).toContain("orderedChoicesSha256");
++      expect(serialized).not.toContain("reviewedAnswerIndex");
++      expect(serialized).not.toContain("sourceAnswerIndex");
++      expect(serialized).not.toContain("directSolution");
++      expect(serialized).not.toContain("choiceByChoiceReasons");
++      expect(serialized).not.toContain("reviewedAnswerText");
++      expect(serialized).not.toContain("sourceAnswerText");
++    }
++  });
++});

@@ -1,0 +1,275 @@
+[
+  {
+    "lesson": {
+      "id": "lesson-cbt-safety-valve-simmering-correction",
+      "subjectId": "subject-3",
+      "conceptGroupId": "s3-g09",
+      "conceptId": "concept-cbt-safety-valve-simmering-correction",
+      "title": "안전밸브 심머링과 조정링 판단",
+      "aliases": [
+        "심머링",
+        "simmer",
+        "하부 조정 링",
+        "안전밸브 조정링"
+      ],
+      "summary": [
+        "심머링은 설정압력 부근에서 안전밸브가 완전 개방되지 못하고 미세하게 누설·진동하는 상태다.",
+        "독립 검토에 사용한 제조사 정비절차에서는 이 문항 조건의 직접 조치를 하부 조정 링 상향으로 판정했다.",
+        "실제 조정은 밸브 형식별 OEM 매뉴얼과 승인 절차를 따라야 하며 임의 조정하면 안 된다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 심머링은 설정압력 부근에서 안전밸브가 완전 개방되지 못하고 미세하게 누설·진동하는 상태다.\n2. 독립 검토에 사용한 제조사 정비절차에서는 이 문항 조건의 직접 조치를 하부 조정 링 상향으로 판정했다.\n3. 실제 조정은 밸브 형식별 OEM 매뉴얼과 승인 절차를 따라야 하며 임의 조정하면 안 된다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "안전밸브의 조정링은 개방 특성과 블로다운에 영향을 준다. 심머링의 조정 방향은 밸브 형식과 제조사 절차에 따라 달라질 수 있으므로 문제의 형식·조건을 확인해야 한다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "이 문항의 독립 풀이에서는 상부 링이 아니라 하부 조정 링을 한 단계씩 상향하는 조치가 심머링 제거 절차와 일치한다. 복원 정답 1번은 출처 기록으로 보존하고, 검수 정답은 3번으로 교정한다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 긍정·부정 조건을 표시하고 **안전밸브 심머링과 조정링 판단**의 직접 원리와 각 보기를 하나씩 대조한다. 유일한 답이 성립하지 않으면 정답키를 억지로 적용하지 않는다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "상부·하부 조정링은 모두 안전밸브 동작에 영향을 주어 보기만 보면 혼동하기 쉽다. 정답을 일반화하지 말고 해당 밸브 모델의 OEM 절차를 우선한다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 근거 URL 1: https://valves.bakerhughes.com/consolidated/safety-valves/type-1811-safety-valve\n- 근거 URL 2: https://manualzz.com/doc/70891025\n- 공개 상태: 직접 연결은 완료했으나 런타임·출처 검증 전까지 in_review 유지\n- CBT 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1215"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 919,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": true,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2010-4-Q59"
+    ],
+    "rationale": "2010-4-Q59의 독립 풀이·충돌 판정에 직접 근거를 제공하도록 추가",
+    "sourceAuthority": "exam_reconstruction_with_source_needed"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-cavitation-choice-conflict",
+      "subjectId": "subject-3",
+      "conceptGroupId": "s3-g10",
+      "conceptId": "concept-cbt-cavitation-choice-conflict",
+      "title": "펌프 캐비테이션 방지조건과 선택지 충돌",
+      "aliases": [
+        "NPSHa",
+        "NPSHr",
+        "양흡입 펌프",
+        "회전수 저감"
+      ],
+      "summary": [
+        "캐비테이션 방지의 기본은 NPSHa를 NPSHr 이상으로 확보하는 것이다.",
+        "흡입 실양정 감소, 양흡입 구조 적용, 회전수 저하는 모두 흡입여유를 높이거나 필요 NPSH를 낮추는 방향이다.",
+        "따라서 복원된 네 보기에는 잘못된 방지대책이 없어 단일정답이 성립하지 않는다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 캐비테이션 방지의 기본은 NPSHa를 NPSHr 이상으로 확보하는 것이다.\n2. 흡입 실양정 감소, 양흡입 구조 적용, 회전수 저하는 모두 흡입여유를 높이거나 필요 NPSH를 낮추는 방향이다.\n3. 따라서 복원된 네 보기에는 잘못된 방지대책이 없어 단일정답이 성립하지 않는다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "캐비테이션은 임펠러 입구의 국부압력이 증기압 이하로 내려가 기포가 발생·붕괴하는 현상이다. NPSHa와 NPSHr의 비교가 핵심 판단기준이다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "NPSHa≥NPSHr 여유를 확보하고 흡입손실·흡입양정·유체온도·회전수를 관리한다. 양흡입 임펠러는 입구 유량을 분산해 낮은 NPSH 요구조건에 사용할 수 있다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 긍정·부정 조건을 표시하고 **펌프 캐비테이션 방지조건과 선택지 충돌**의 직접 원리와 각 보기를 하나씩 대조한다. 유일한 답이 성립하지 않으면 정답키를 억지로 적용하지 않는다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "문두가 “잘못된 것”을 요구해도 네 보기 모두 방지 방향이면 정답키를 억지로 선택하지 않는다. 이 문항은 선택지 충돌로 비채점 처리한다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 근거 URL 1: https://www.ksb.com/en-global/centrifugal-pump-lexicon/article/npsh-1116954\n- 근거 URL 2: https://www.ksb.com/en-global/centrifugal-pump-lexicon/article/suction-characteristics-1117252\n- 근거 URL 3: https://www.ksb.com/ko-kr/eung-yong-bun-ya/seogyu-mich-gaseu-gisul/eobseuteulim\n- 공개 상태: 직접 연결은 완료했으나 런타임·출처 검증 전까지 in_review 유지\n- CBT 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1161"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 1014,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": true,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2011-4-Q42"
+    ],
+    "rationale": "2011-4-Q42의 독립 풀이·충돌 판정에 직접 근거를 제공하도록 추가",
+    "sourceAuthority": "authoritative_source"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-gear-undercut-choice-conflict",
+      "subjectId": "subject-3",
+      "conceptGroupId": "s3-g06",
+      "conceptId": "concept-cbt-gear-undercut-choice-conflict",
+      "title": "인벌류트 기어 언더컷과 선택지 충돌",
+      "aliases": [
+        "언더컷",
+        "최소 잇수",
+        "양의 전위",
+        "치근 두께"
+      ],
+      "summary": [
+        "언더컷은 표준 인벌류트 기어의 잇수가 너무 적을 때 치근부가 절삭되는 현상이다.",
+        "양의 전위는 치근 두께를 키우고 언더컷 방지에 사용할 수 있다.",
+        "복원 보기에서는 2번과 3번이 동시에 틀려 단일정답이 성립하지 않는다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 언더컷은 표준 인벌류트 기어의 잇수가 너무 적을 때 치근부가 절삭되는 현상이다.\n2. 양의 전위는 치근 두께를 키우고 언더컷 방지에 사용할 수 있다.\n3. 복원 보기에서는 2번과 3번이 동시에 틀려 단일정답이 성립하지 않는다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "인벌류트 기어의 언더컷은 창성가공 중 공구가 치근부 유효 치형을 과도하게 제거하는 현상이다. 최소 잇수와 전위계수는 발생 여부에 직접 영향을 준다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "잇수가 적을수록 언더컷 위험이 커지고, 양의 전위는 치근부 두께를 증가시켜 언더컷을 줄일 수 있다. 따라서 “잇수가 많을 때 발생”과 “표준기어가 전위기어보다 항상 강하다”는 문장은 모두 일반적으로 성립하지 않는다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 긍정·부정 조건을 표시하고 **인벌류트 기어 언더컷과 선택지 충돌**의 직접 원리와 각 보기를 하나씩 대조한다. 유일한 답이 성립하지 않으면 정답키를 억지로 적용하지 않는다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "복원 정답 3번만 고르면 2번의 강도 단정 오류를 놓친다. 이 문항은 두 개의 틀린 보기가 있어 비채점 처리한다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 근거 URL 1: https://khkgears.net/korea/\n- 근거 URL 2: https://khkgears.net/korea/spur-gears.html\n- 공개 상태: 직접 연결은 완료했으나 런타임·출처 검증 전까지 in_review 유지\n- CBT 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1166"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 784,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": true,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2011-4-Q59"
+    ],
+    "rationale": "2011-4-Q59의 독립 풀이·충돌 판정에 직접 근거를 제공하도록 추가",
+    "sourceAuthority": "authoritative_source"
+  }
+]

@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "command": "/opt/pyvenv/bin/python /mnt/data/cbt_batch06_work/repo/docs/audit-work/cbt-system-migration/import-batch-06/generate-import-batch-06.py",
+  "exitCode": 0,
+  "ownedFileCount": 18,
+  "byteIdentical": true,
+  "changedFiles": [],
+  "files": {
+    "src/data/generated/cbt-reviewed-variants.json": {
+      "size": 5695373,
+      "sha256": "ac923762d7bd7d423dc9908426d016cd1cb8376987a85b88ba16cdc0fd95f3b9"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/theory-lesson-additions.json": {
+      "size": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/canonical-question-changes.json": {
+      "size": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/direct-theory-link-matrix.jsonl": {
+      "size": 74879,
+      "sha256": "b1a0d50efba9123ad60dc0fb67f5c098366f654560bf4837c73b4a919a7e4816"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/variant-specific-choice-contract-queue.jsonl": {
+      "size": 590372,
+      "sha256": "baf898f348d18c1867a64ca4039db1c50601ac26dd675003691ab28008ee5ed0"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/image-verification-queue.jsonl": {
+      "size": 21829,
+      "sha256": "ee9a528235659a6f8cf40f1fc5c5e1a2c69339ca4aa3bb6d4d0e35863b87f29a"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/choice-conflict-queue.jsonl": {
+      "size": 18649,
+      "sha256": "36bd5cff1a2781de0a4a2ee01ae05254855f9a60192b586e09d24933f4d9e266"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/answer-key-correction-ledger.jsonl": {
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/manual-choice-mapping-ledger.jsonl": {
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/canonical-reassignment-ledger.jsonl": {
+      "size": 350,
+      "sha256": "57c2c79faa771346a379509ccb5f0bed08575e05c1b3144e311aa7fb3e58cea3"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/low-context-registration-ledger.jsonl": {
+      "size": 1412,
+      "sha256": "802ed952a86c4adec0b2d1aaad0446a7a08d362b877edca24cec4d7dcd09eb83"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/variant-mapping.jsonl": {
+      "size": 712067,
+      "sha256": "682c8e3c16d8176685cbc0ed9a9f5c31e9f12d87bebcdce24f7e67effaf5a954"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/external-ids.json": {
+      "size": 3205,
+      "sha256": "178b8e6a1b06b46d269d3ddd799648b77dc1f1ebeedcd2290df48e65408bb09c"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/theory-gap-audit.json": {
+      "size": 1043,
+      "sha256": "60dd0e43b0b72010b7dc5c2eb0646ac15527cd932588cf9b44a5d180fd28e319"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/batch-summary.json": {
+      "size": 774,
+      "sha256": "55d93c8fc6d2b38cfb4712a144cd15f8f842fce69d79c25df6bd62a35e85bad2"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/import-report.md": {
+      "size": 1593,
+      "sha256": "7262502022c21068868069167b11d456826eef61364c42d6ba4b5d11e748d235"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/validation.json": {
+      "size": 706,
+      "sha256": "85cf5181ee0069de06344a7c512b549ddac84e77d2b2a767e146697b83cb6f1d"
+    },
+    "docs/audit-work/cbt-system-migration/import-batch-06/artifact-manifest.json": {
+      "size": 3764,
+      "sha256": "669b394f168a90a6c2fa1675d0b6d6af7ba62dc5d80a804e574ffe506d3c0f47"
+    }
+  },
+  "stdout": "{\n  \"batchId\": \"import-06\",\n  \"generatedAt\": \"2026-08-07T21:10:10+09:00\",\n  \"recordCount\": 200,\n  \"states\": {\n    \"candidate\": 190,\n    \"hold\": 6,\n    \"choice_conflict\": 4\n  },\n  \"fullCanonicalChoiceMappingCount\": 25,\n  \"manualChoiceMappingCount\": 0,\n  \"variantSpecificFeedbackPendingCount\": 165,\n  \"theoryLessonAdditionCount\": 0,\n  \"canonicalQuestionChangeCount\": 0,\n  \"directTheoryLinkCount\": 200,\n  \"existingTheoryRelinkCount\": 1,\n  \"imageVerificationQueueCount\": 6,\n  \"choiceConflictCount\": 4,\n  \"answerKeyCorrectionCount\": 0,\n  \"canonicalReassignmentCount\": 1,\n  \"lowContextRegistrationCount\": 4,\n  \"formulaUnitSubstitutionCount\": 20,\n  \"sourceContentSha256Before\": \"7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4\",\n  \"sourceContentUnchanged\": true\n}\n\nmanifest sha ac923762d7bd7d423dc9908426d016cd1cb8376987a85b88ba16cdc0fd95f3b9",
+  "stderr": ""
+}

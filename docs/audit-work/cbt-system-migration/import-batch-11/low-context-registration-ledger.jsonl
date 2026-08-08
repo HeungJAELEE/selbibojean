@@ -1,0 +1,25 @@
+{"externalId":"2020-3B-Q58","riskNote":"댐퍼의 기동 위치는 송풍기 형식과 제조사 절차에 따라 다르다. 이 문항은 정상 운전 중 점검사항이라는 당시 교재 문맥으로 판정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-3B-Q60","riskNote":"조립 대기시간과 사용온도는 제품별 기술자료를 따라야 한다. 40~400℃를 모든 액상 개스킷의 공통 사양으로 일반화해서는 안 된다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-3B-Q77","riskNote":"첨가제의 수용성 요구는 첨가제 기능과 오일 조성에 따라 달라질 수 있다. 4번은 당시 윤활교재의 일반분류로 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-3B-Q89","riskNote":"진공계압력을 음의 게이지압력으로 정의하면 더하기 식으로도 쓸 수 있다. 이 문항은 진공도를 대기압에서 감소한 양의 값으로 표시하는 교재 정의를 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-4-Q08","riskNote":"저주파 소음대책은 질량·강성·감쇠·공진주파수·차음구조를 함께 설계한다. 1번은 해당 교재의 대표 분류로만 ACCEPT한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-4-Q15","riskNote":"실제 충격소음은 적용 규격에 따라 Fast 또는 Impulse 특성과 최대값·SEL 등을 사용한다. 핵심은 Slow가 부적절하다는 점이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-4-Q19","riskNote":"고무 재료선정은 온도·유체·오존·동적하중을 함께 검토한다. 나이트릴도 일정 내수성을 가질 수 있으나 대표 특성 분류는 내유성이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-4-Q26","riskNote":"목적별 분류자료도 공정능력 분석에 보조적으로 활용될 수 있다. 3번은 해당 교재가 분류의 직접 관리목적과 구분한 답이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-4-Q33","riskNote":"배기가스 관리는 실무 열관리의 중요한 세부활동이다. 1번은 당시 교재의 “기본영역” 분류에 한정한 판정이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-4-Q42","riskNote":"과잉 그리스는 실제로 베어링 발열과 진동·소음 증가를 일으킬 수 있다. 4번은 저맥락 기출의 “직접 펌프 고장원” 분류로만 ACCEPT한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-4-Q43","riskNote":"사후보전이 실제로 불량률 저하를 보장하는 것은 아니다. 4번은 “단점이 아닌 긍정문”을 찾는 출제의도에 따라 인정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-4-Q52","riskNote":"풀림도 조직과 조건에 따라 연성·인성을 높일 수 있다. 3번은 당시 교재의 대표목적 분류에 따른 저맥락 판정이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-4-Q59","riskNote":"팬·블로어·압축기 구분은 현행 표준에서 압력비와 용도도 함께 본다. 수치는 당시 교재 범위로만 사용한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-4-Q61","riskNote":"윤활관리 원칙의 명칭은 교재별로 적소를 포함하는 등 차이가 있다. 본 문항은 해당 회차의 4원칙 체계를 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-4-Q65","riskNote":"“오일 순환식 급유법”은 넓은 의미에서 강제순환급유와 중복될 수 있다. 2번은 당시 교재가 펌프 강제공급의 고유명칭으로 사용한 저맥락 판정이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-4-Q83","riskNote":"수분 제거율은 입구온도·냉각매체·주위조건에 따라 달라진다. 60%는 당시 교재의 대표값으로 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-4-Q86","riskNote":"스크루형 유체모터의 특수 적용은 존재할 수 있다. 3번은 당시 기초교재의 대표 유압모터 분류로만 ACCEPT한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2021-1-Q07","riskNote":"웜기어도 진동·음향·오일분석으로 상태진단할 수 있다. 1번은 해당 교재가 고속 기어진단의 대표대상에서 제외한 저맥락 분류다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2021-1-Q63","riskNote":"색·냄새·점도 관찰도 넓은 의미의 사용유 성상조사에 포함된다. 1번은 해당 교재가 포괄적 정식조사와 개별 간이시험을 구분한 답이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2021-1-Q64","riskNote":"비말급유를 엄밀한 펌프식 순환급유와 구분하는 문헌도 있다. 2번은 당시 교재의 순환·비순환 분류를 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2021-1-Q69","riskNote":"윤활유 절약도 넓게는 생산비와 생산성에 기여한다. 2번은 해당 교재의 효과분류에서 원가절감 항목으로 분리한 답이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2021-1-Q76","riskNote":"진동조건에서 지나치게 굳은 그리스는 유입불량과 발열을 일으킬 수 있다. 실제 선정은 속도·간극·온도·진동을 함께 검토하며 1번은 기출 교재의 대표 판단이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2021-1-Q78","riskNote":"일부 윤활관리 체계는 “적소”를 별도 원칙으로 포함한다. 3번은 해당 회차가 채택한 4원칙 명칭에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2021-1-Q89","riskNote":"현대 공압기기에는 나사 포트와 나사식 피팅이 일반적으로 사용된다. 이 정답은 당시 교재가 사용한 좁은 연결기 분류에만 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2021-1-Q99","riskNote":"고장도수율은 신뢰성을 역방향으로 나타내는 지표이며 신뢰도 그 자체의 확률값은 아니다. 해당 교재의 효과측정 분류를 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}

@@ -1,0 +1,31 @@
+{"externalId":"2019-2-Q62","riskNote":"원문의 “고온의 칭정 분산성”은 “고도의 청정·분산성” 계열의 복원 오탈자로 해석했다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-2-Q66","riskNote":"“감마작용”은 현대 윤활공학의 보편적 표준용어라기보다 해당 기출 교재의 기능 분류로 취급한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-2-Q67","riskNote":"저점도유도 심한 내부누설을 통해 토출량을 크게 줄일 수 있다. 1번은 “완전 무토출”의 대표 원인표를 적용한 저맥락 기출판정이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-2-Q68","riskNote":"인화점은 점도등급만으로 고정되지 않고 기유·첨가제·제품별 시험값이 우선한다. 이 판정은 KS M 2129의 기출 비교표에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-2-Q69","riskNote":"실제 정상·경보온도는 작동유 종류, 점도등급, 씰과 장치 제조사 기준을 우선한다. 55℃는 해당 교재 수치다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-2-Q73","riskNote":"다른 윤활관리 체계는 “적소”를 포함한 5R 또는 적유·적량·적기·적소로 정리하기도 한다. 4번은 해당 기출 교재의 네 항목에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-2-Q77","riskNote":"실제 윤활유는 압축기 제조사가 지정한 점도·첨가제·가스 적합 규격을 사용해야 한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-2-Q89","riskNote":"현행 안전실무에서는 산소가 포함된 공기를 가스봉입용으로 사용하지 않고 제조사가 지정한 건조 질소를 사용한다. 1번은 과거 교재 문구에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-2-Q96","riskNote":"1번도 일반적인 공압의 장점으로 제시되는 경우가 있다. 이 기출은 과부하 안전성을 가장 대표적인 단일 정답으로 선택한 저맥락 문항이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-12B-Q04","riskNote":"피로손상은 실제로 응력진폭·주파수·사이클수와 재료 S-N 특성에 좌우된다. 2번은 속도 증가와 손상위험의 방향을 묻는 기출 표현이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-12B-Q14","riskNote":"실제 소음조사에서는 생산량·가동률 자료도 시간가중 노출평가에 유용하다. 3번은 “도면 준비자료”의 직접성을 구분한 기출판정이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-12B-Q15","riskNote":"원문의 “자동 용량식”은 “정전용량식”의 복원 오탈자로 해석했다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-12B-Q18","riskNote":"고주파 EMC에서는 다점접지가 유리한 경우도 있다. 이 문항은 저주파 계측신호의 단일점 접지 원칙을 전제로 한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-12B-Q30","riskNote":"3번도 넓은 의미에서는 자주보전의 목적과 부합한다. 이 판정은 자주보전의 직접 활동범위와 TPM 전체 목표를 구분한 저맥락 기출에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-12B-Q47","riskNote":"실제 베어링 장착에는 유도가열기를 우선하고 화염가열은 국부 과열과 경도저하 위험 때문에 피해야 한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-12B-Q53","riskNote":"원장에는 원본 표 이미지 누락으로 표시됐지만 네 종류·기호가 텍스트로 완전히 복원돼 회차의 분류표 기준으로 판정했다. 현행 규격 적용 시 최신 KS를 별도로 확인해야 한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-12B-Q60","riskNote":"냉각팬의 억지끼움도 축변형·불평형·베어링 하중을 통해 실제 발열에 기여할 수 있다. 3번은 해당 기출 고장표의 직접원인 분류에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-12B-Q79","riskNote":"원문의 “중화주도”는 “혼화주도”의 복원 오탈자로 해석했다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-12B-Q82","riskNote":"일반 직선실린더 자체는 회전하지 않지만 랙-피니언 또는 요동형 공유압 액추에이터를 포함한 기출 표현으로 1번을 인정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-12B-Q88","riskNote":"그림을 직접 판독하지 않았지만 지문이 “로터의 연속접촉, 회전당 큰 토출량, 큰 토출변동”을 명시해 로브펌프를 텍스트만으로 판별할 수 있다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-12B-Q91","riskNote":"“실제 시간과 관계된 신호”라는 문구는 시간제어와 혼동될 수 있다. 2번은 해당 교재가 동기제어를 시간동기 방식으로 정의한 범위로 인정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-12B-Q94","riskNote":"넓은 의미에서는 1·3·4번도 자동으로 동작하는 제어다. 이 문항은 연속 피드백 서보제어를 “자동제어”의 대표형으로 좁게 구분한 기출이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-3B-Q15","riskNote":"원장에는 원본 이미지 누락으로 표시됐지만 네 용어와 기호가 텍스트로 완전히 복원돼 이미지 없이 판정할 수 있다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-3B-Q27","riskNote":"수리공사 분류명과 범위는 기업 보전규정에 따라 달라질 수 있다. 3번은 해당 교재의 사후수리 분류로 인정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-3B-Q32","riskNote":"원장에는 원본 이미지 누락으로 표시됐지만 지문과 네 기호법 명칭이 텍스트로 완전히 복원돼 이미지 없이 판정할 수 있다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-3B-Q33","riskNote":"엄밀한 정의는 만성로스가 복수 원인의 복합·변동 조합으로 발생한다는 것이다. 4번은 원문의 표현손상을 감안한 저맥락 기출판정이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-3B-Q34","riskNote":"표준 신뢰성공학 용어는 “가용도(availability)”다. 원문의 “유용성”은 과거 교재 번역표기로 보존한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-3B-Q36","riskNote":"원장에는 원본 그림 누락으로 표시됐지만 지문이 요구하는 통계도구와 네 명칭이 텍스트로 완전히 복원돼 이미지 없이 판정할 수 있다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-3B-Q43","riskNote":"허용온도는 재질규격·압력·부식여유·설계코드에 따라 달라진다. 수치범위는 과거 교재의 대표값이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-3B-Q46","riskNote":"필터·드라이어의 실제 위치는 시스템 설계와 장치형식에 따라 달라진다. 1번은 해당 교재의 표준 배치에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2020-3B-Q47","riskNote":"현대 버터플라이밸브는 등급과 씰구조에 따라 실제로 격리·차단용으로 널리 사용된다. 3번은 과거 교재의 대표용도 구분에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}

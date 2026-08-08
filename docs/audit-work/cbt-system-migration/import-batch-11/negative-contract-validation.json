@@ -1,0 +1,190 @@
+{
+  "status": "PASS",
+  "scenarioCount": 12,
+  "detectedCount": 12,
+  "allMutationsDetected": true,
+  "scenarios": [
+    {
+      "scenario": "records_sha_stale",
+      "expectedAnyFailedCheck": [
+        "records_sha"
+      ],
+      "actualFailedChecks": [
+        "records_sha",
+        "source_identity_hashes"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "records SHA mismatch",
+        "record source identity/hash mismatch"
+      ]
+    },
+    {
+      "scenario": "duplicate_external_id",
+      "expectedAnyFailedCheck": [
+        "ordered_external_ids",
+        "unique_external_ids"
+      ],
+      "actualFailedChecks": [
+        "canonical_reassignment",
+        "low_context_policy",
+        "ordered_external_ids",
+        "source_identity_hashes",
+        "theory_links",
+        "unique_external_ids",
+        "variant_specific_queue"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "external IDs are not unique",
+        "ordered external IDs mismatch",
+        "record source identity/hash mismatch",
+        "direct theory link mismatch",
+        "low-context risk policy mismatch",
+        "variant_specific_queue exact set mismatch",
+        "2021-1-Q100 canonical reassignment mismatch"
+      ]
+    },
+    {
+      "scenario": "hold_answer_activated",
+      "expectedAnyFailedCheck": [
+        "image_holds_disabled"
+      ],
+      "actualFailedChecks": [
+        "image_holds_disabled"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "image HOLD gate failed"
+      ]
+    },
+    {
+      "scenario": "hold_blocker_removed",
+      "expectedAnyFailedCheck": [
+        "image_holds_disabled"
+      ],
+      "actualFailedChecks": [
+        "image_holds_disabled"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "image HOLD gate failed"
+      ]
+    },
+    {
+      "scenario": "variant_mapping_fallback",
+      "expectedAnyFailedCheck": [
+        "full_choice_mappings",
+        "variant_specific_blocked"
+      ],
+      "actualFailedChecks": [
+        "canonical_reassignment",
+        "full_mapping_count",
+        "variant_specific_blocked"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "variant-specific gate failed",
+        "full mapping count is not 48",
+        "2021-1-Q100 canonical reassignment mismatch"
+      ]
+    },
+    {
+      "scenario": "q100_wrong_canonical",
+      "expectedAnyFailedCheck": [
+        "canonical_reassignment",
+        "theory_links"
+      ],
+      "actualFailedChecks": [
+        "canonical_reassignment",
+        "theory_links"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "direct theory link mismatch",
+        "2021-1-Q100 canonical reassignment mismatch"
+      ]
+    },
+    {
+      "scenario": "q100_wrong_theory",
+      "expectedAnyFailedCheck": [
+        "canonical_reassignment",
+        "theory_links"
+      ],
+      "actualFailedChecks": [
+        "canonical_reassignment",
+        "theory_links"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "direct theory link mismatch",
+        "2021-1-Q100 canonical reassignment mismatch"
+      ]
+    },
+    {
+      "scenario": "source_hash_tamper",
+      "expectedAnyFailedCheck": [
+        "source_identity_hashes"
+      ],
+      "actualFailedChecks": [
+        "source_identity_hashes"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "record source identity/hash mismatch"
+      ]
+    },
+    {
+      "scenario": "prior_record_mutation",
+      "expectedAnyFailedCheck": [
+        "prior_records_unchanged"
+      ],
+      "actualFailedChecks": [
+        "prior_records_unchanged"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "prior 1970 records changed"
+      ]
+    },
+    {
+      "scenario": "hold_policy_count",
+      "expectedAnyFailedCheck": [
+        "cumulative_hold_policy"
+      ],
+      "actualFailedChecks": [
+        "cumulative_hold_policy"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "cumulative hold policy mismatch"
+      ]
+    },
+    {
+      "scenario": "theory_additions_sha",
+      "expectedAnyFailedCheck": [
+        "theory_additions_sha"
+      ],
+      "actualFailedChecks": [
+        "theory_additions_sha"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "theory additions SHA mismatch"
+      ]
+    },
+    {
+      "scenario": "canonical_changes_sha",
+      "expectedAnyFailedCheck": [
+        "canonical_changes_sha"
+      ],
+      "actualFailedChecks": [
+        "canonical_changes_sha"
+      ],
+      "detected": true,
+      "validatorFailureMessages": [
+        "canonical changes SHA mismatch"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "batchId": "import-05",
+  "recordCount": 200,
+  "existingDirectTheoryLinksRetained": 199,
+  "existingTheoryRelinks": 1,
+  "newDirectTheoryLessonsAdded": 0,
+  "missingDirectTheoryAfterBatch": 0,
+  "relinkedRecords": [
+    {
+      "externalId": "2014-4-Q51",
+      "fromCanonicalId": "U-100",
+      "toCanonicalId": "U-362",
+      "lessonId": "lesson-w8vtqs",
+      "reason": "2008-4-Q53과 동일 원문이므로 기어 표면피로 canonical과 직접 이론으로 통합한다."
+    }
+  ],
+  "notes": [
+    "2014-2-Q40은 기존 설비관리 조직원칙 레슨이 과도한 전문화와 인간을 수단으로만 보는 보기의 동시 오류를 이미 직접 설명하므로 신규 이론을 만들지 않았다.",
+    "2014-4-Q87은 기존 스크루압축기 특성 레슨과 canonical U-990이 독립 정답 2번을 이미 직접 설명하므로 복원 답안만 교정 원장에 보존했다.",
+    "2014-4-Q51은 dry-run의 중복기출 재배정에 따라 U-362와 lesson-w8vtqs로 직접 재연결했다.",
+    "나머지 197문항은 검수본의 lesson·anchor·conceptGroup·concept가 현재 effective content와 직접 일치한다."
+  ]
+}

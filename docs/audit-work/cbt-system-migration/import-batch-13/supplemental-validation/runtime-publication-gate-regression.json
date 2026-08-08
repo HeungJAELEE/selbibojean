@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "recordCount": 2384,
+  "protectedCanonicalOverlayCount": 19,
+  "protectedTheoryAdditionCount": 20,
+  "protectedCanonicalPublishedCount": 0,
+  "protectedTheoryPublishedCount": 0,
+  "repairs": {
+    "U649": {
+      "lessonId": "lesson-cbt-gang-system-process-layout",
+      "conceptGroupId": "s4-g10",
+      "contentStatus": "in_review",
+      "readiness": "blocked"
+    },
+    "U478": {
+      "lessonId": "lesson-qnsesu",
+      "questionConceptGroupId": "s1-g06",
+      "lessonConceptGroupId": "s1-g06",
+      "contentStatus": "in_review",
+      "readiness": "blocked"
+    },
+    "answerKeyConflict": {
+      "externalId": "2020-3B-Q28",
+      "reviewState": "hold",
+      "answerLength": 0,
+      "explanationLength": 0
+    }
+  }
+}

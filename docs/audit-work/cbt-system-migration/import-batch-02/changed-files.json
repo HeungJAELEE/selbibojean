@@ -1,0 +1,66 @@
+{
+  "scope": "cumulative reviewed-CBT integration through import-02",
+  "sourceContentPreserved": {
+    "path": "src/data/generated/content.json",
+    "sha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "matchesUntouchedSnapshot": true
+  },
+  "files": [
+    {
+      "path": "src/data/generated/cbt-reviewed-variants.json",
+      "status": "new",
+      "size": 2012320,
+      "sha256": "0897c6826aa6b516fb1581e3c4117e4e26b1c66763e80593375a836d1049ed49",
+      "baselineSha256": null
+    },
+    {
+      "path": "src/lib/domain/types.ts",
+      "status": "modified",
+      "size": 13762,
+      "sha256": "103096905b5306551b8cb128a07074de5dad21cdfc5be50430a9c8ad62ef8b46",
+      "baselineSha256": "80268dd4608535123608e84b0b39e7ab23ce2a2e810644d60bec2db167de05c5"
+    },
+    {
+      "path": "src/lib/content/reviewed-cbt-variants.ts",
+      "status": "new",
+      "size": 31936,
+      "sha256": "b4f917f35d25c6665c870a9cfbe3685e0d8f26fb74219da136695f9222fa01fd",
+      "baselineSha256": null
+    },
+    {
+      "path": "src/lib/content/practice-presentations.ts",
+      "status": "modified",
+      "size": 7261,
+      "sha256": "6562297d25fa829bc1dcea1f1fbc13fd740cdb09be7f512197d94ed8333106c7",
+      "baselineSha256": "a643877c5bed8b19a9385f9f9b21945100cfdca21bea69c879721861e271bbb8"
+    },
+    {
+      "path": "src/lib/content/past-exam-examples.ts",
+      "status": "modified",
+      "size": 9256,
+      "sha256": "a72c1d51c5aefe81b2ed60d3b2d49056a7ccafcd458c333c67e855f866b78d68",
+      "baselineSha256": "09d02d112cf0d58e8f53f904c4b3ca504812e91ce8a7359313a22234dc515982"
+    },
+    {
+      "path": "src/lib/content/supabase-materialization.ts",
+      "status": "modified",
+      "size": 12323,
+      "sha256": "24fa698f84c44b860a89fef4f317eb3b258e596ddee049acbdb2f74b85e880ee",
+      "baselineSha256": "db2bfc1838de24b5506b6cc6e9936460e37ba4eb900c475bec81bd8187f5bafa"
+    },
+    {
+      "path": "scripts/verify-reviewed-cbt-variants.ts",
+      "status": "new",
+      "size": 19295,
+      "sha256": "e93dae2a555e83e121d9b08884cc7e3c947e8e9d27c6eec3cf59d00c634a831b",
+      "baselineSha256": null
+    },
+    {
+      "path": "tests/unit/reviewed-cbt-variants.test.ts",
+      "status": "new",
+      "size": 16057,
+      "sha256": "5cf7097f89377b9d4d234c3b265d798b71680941956213545bd886a0c256d62b",
+      "baselineSha256": null
+    }
+  ]
+}

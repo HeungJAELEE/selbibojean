@@ -1,0 +1,26 @@
+{
+  "status": "BLOCKED",
+  "currentNodeVersion": "v22.16.0",
+  "requiredNodeRange": ">=24.0.0 <25",
+  "attempts": [
+    {
+      "command": "npm run verify:node-runtime",
+      "exitCode": 1,
+      "result": "BLOCKED_BY_NODE_VERSION",
+      "log": "node-runtime-check.log"
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 1,
+      "result": "BLOCKED_BY_PRETYPECHECK_NODE_GATE",
+      "log": "official-typecheck-attempt.log"
+    }
+  ],
+  "notRun": [
+    "npm run test -- --maxWorkers=1",
+    "npm run lint",
+    "npm run verify:no-answer-leak",
+    "SQL migration tests"
+  ],
+  "reason": "The repository requires Node.js 24.x and this environment provides Node.js 22.16.0. Official repository commands are not reported as PASS."
+}

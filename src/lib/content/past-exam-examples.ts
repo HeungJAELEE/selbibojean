@@ -1,5 +1,9 @@
 import type { GeneratedContent } from "@/lib/domain/types";
 import { isPublishableQuestion } from "@/lib/domain/practice";
+import {
+  getReviewedCbtVariantAnswerIndex,
+  mapReviewedCbtVariantChoices,
+} from "@/lib/content/reviewed-cbt-variants";
 
 const VISUAL_ASSET_CUE = /그림|도면|회로도|사진|이미지|도시(?:한|된)|다음\s*회로|아래\s*회로/i;
 const CALCULATION_CUE = /계산|구하|얼마|몇\s*(?:배|개|%|kW|W|MPa|kPa|bar|rpm|Hz|dB|mm|cm|m)|값은|비율|효율|동력|토크|유량|속도/i;
@@ -110,6 +114,12 @@ export function getPastExamPatternSummary(
 export function isUsablePastExamVariant(
   variant: GeneratedContent["variants"][number],
 ): variant is GeneratedContent["variants"][number] & { year: number } {
+  if (
+    variant.reviewState !== undefined &&
+    variant.reviewState !== "published"
+  ) {
+    return false;
+  }
   const choices = variant.choices.map((choice) => choice.trim()).filter(Boolean);
   return Boolean(
     variant.year
@@ -161,8 +171,14 @@ function collectVerifiedPastExamExamples(
   for (const variant of content.variants) {
     const question = publicQuestions.get(variant.canonicalId);
     if (!question || !isUsablePastExamVariant(variant)) continue;
-    const mappedChoices = mapVariantChoices(question, variant.choices);
-    const answerIndex = parseVariantAnswerIndex(variant.answer, variant.choices);
+    const reviewedChoices = mapReviewedCbtVariantChoices(question, variant);
+    const mappedChoices = variant.reviewed
+      ? reviewedChoices
+      : mapVariantChoices(question, variant.choices);
+    const reviewedAnswerIndex = getReviewedCbtVariantAnswerIndex(variant);
+    const answerIndex = variant.reviewed
+      ? (reviewedAnswerIndex ?? -1)
+      : parseVariantAnswerIndex(variant.answer, variant.choices);
     if (
       !mappedChoices
       || answerIndex < 0

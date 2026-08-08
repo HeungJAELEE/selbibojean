@@ -1,0 +1,32 @@
+{
+  "batchId": "import-04",
+  "recordCount": 200,
+  "existingDirectTheoryLinksRetained": 198,
+  "newDirectTheoryLessonsAdded": 2,
+  "dryRunCanonicalOverrides": 1,
+  "missingDirectTheoryAfterBatch": 0,
+  "addedLessons": [
+    {
+      "lessonId": "lesson-cbt-forward-curved-fan-power-curve",
+      "title": "송풍기 날개형상과 축동력 곡선",
+      "conceptGroupId": "s3-g10",
+      "directExternalIds": [
+        "2013-4-Q48"
+      ]
+    },
+    {
+      "lessonId": "lesson-cbt-pneumatic-sequence-troubleshooting-choice-conflict",
+      "title": "공압 시퀀스 고장진단과 에너지 격리",
+      "conceptGroupId": "s1-g08",
+      "directExternalIds": [
+        "2013-4-Q84"
+      ]
+    }
+  ],
+  "notes": [
+    "2013-4-Q48의 기존 레슨은 복원 정답 터보 팬을 대표답으로 고정해 독립 기술검토와 충돌하므로 AMCA 팬 동력곡선 근거의 교정 레슨으로 대체했다.",
+    "2013-4-Q84의 기존 레슨은 공압 시퀀스 문항을 유압 제어밸브 개념군에 배치하고 안전격리를 오답으로 만들었으므로 공압 회로·시스템 개념군의 선택지 충돌 레슨으로 대체했다.",
+    "2012-4-Q08은 dry-run의 U-308 통합안보다 U-1099와 lesson-eqilq7이 원문 지문·선택지에 직접 일치해 현재 canonical을 유지했다.",
+    "나머지 197문항은 독립 검수 파일의 direct_source_topic_link, lesson anchor, conceptGroup·concept 존재를 재확인했다."
+  ]
+}

@@ -7,6 +7,7 @@ const LEGACY_LESSON_GROUP_OVERRIDES = new Map<string, string>([
 ]);
 
 const REVIEWED_LESSON_GROUP_OVERRIDES = new Map<string, string>([
+  ["lesson-qnsesu", "s1-g06"],
   ...[
     "lesson-w9cpkq",
     "lesson-10dr8g",

@@ -1,0 +1,14 @@
+[
+  {
+    "file": "/mnt/data/cbt_batch06_work/repo/scripts/verify-reviewed-cbt-variants.ts",
+    "errors": []
+  },
+  {
+    "file": "/mnt/data/cbt_batch06_work/repo/tests/unit/reviewed-cbt-variants.test.ts",
+    "errors": []
+  },
+  {
+    "file": "/mnt/data/cbt_batch06_work/repo/src/lib/content/reviewed-cbt-variants.ts",
+    "errors": []
+  }
+]

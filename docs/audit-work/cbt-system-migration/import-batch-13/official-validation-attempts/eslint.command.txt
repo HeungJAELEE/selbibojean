@@ -1,0 +1,1 @@
+/opt/pyvenv/lib/python3.13/site-packages/playwright/driver/node /opt/nvm/versions/node/v22.16.0/lib/node_modules/npm/bin/npm-cli.js run lint 

@@ -1,0 +1,35 @@
+{
+  "batchId": "import-03",
+  "recordCount": 200,
+  "existingDirectTheoryLinksRetained": 197,
+  "newDirectTheoryLessonsAdded": 3,
+  "missingDirectTheoryAfterBatch": 0,
+  "addedLessons": [
+    {
+      "lessonId": "lesson-cbt-safety-valve-simmering-correction",
+      "title": "안전밸브 심머링과 조정링 판단",
+      "directExternalIds": [
+        "2010-4-Q59"
+      ]
+    },
+    {
+      "lessonId": "lesson-cbt-cavitation-choice-conflict",
+      "title": "펌프 캐비테이션 방지조건과 선택지 충돌",
+      "directExternalIds": [
+        "2011-4-Q42"
+      ]
+    },
+    {
+      "lessonId": "lesson-cbt-gear-undercut-choice-conflict",
+      "title": "인벌류트 기어 언더컷과 선택지 충돌",
+      "directExternalIds": [
+        "2011-4-Q59"
+      ]
+    }
+  ],
+  "notes": [
+    "2010-4-Q59은 기존 레슨이 복원 정답을 확정 근거로 사용해 독립 풀이와 충돌하므로 교정 레슨으로 대체했다.",
+    "2011-4-Q42와 2011-4-Q59는 기존 레슨의 개념 정의는 일부 유효하지만 대표 정답·함정 설명이 선택지 충돌을 반영하지 못해 별도 직접 레슨으로 분리했다.",
+    "그 밖의 197문항은 독립 검수 파일의 direct_source_topic_link와 실제 lesson anchor 존재를 재확인했다."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "status": "PARTIALLY_AVAILABLE",
+  "node24": {
+    "status": "AVAILABLE",
+    "version": "v24.11.1",
+    "pathClass": "Playwright bundled runtime",
+    "repositoryContract": "PASS"
+  },
+  "projectDependencies": {
+    "status": "MISSING",
+    "nodeModulesIncluded": false,
+    "missingExecutables": [
+      "tsx",
+      "vitest",
+      "eslint"
+    ],
+    "typecheckMissingDeclarations": true
+  },
+  "completed": [
+    "Node 24 runtime contract",
+    "full reviewed-CBT runtime verifier via compatibility loader",
+    "source-scope no-answer-leak via compatibility loader",
+    "changed TypeScript syntax",
+    "Python independent validation",
+    "negative contract validation"
+  ],
+  "notCompleted": [
+    "official project tsx invocation",
+    "full dependency-aware TypeScript typecheck",
+    "Vitest",
+    "ESLint",
+    "production build",
+    "build-scope answer-leak scan",
+    "SQL migration tests",
+    "login/guest/merge/submit browser integration"
+  ],
+  "reason": "The repository snapshot has no installed project dependencies. Compatibility-loader PASS results are reported separately and are not relabeled as official dependency-backed PASS."
+}

@@ -1,0 +1,34 @@
+name: Quality gate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - codex/cbt-batch14-release-integration-20260808
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Pin npm
+        run: npm install --global npm@10.9.2
+      - name: Install exact lockfile dependencies
+        run: npm ci
+      - name: Verify data, types, lint, tests, build, and answer isolation
+        run: npm run check
+      - name: Verify deployment artifact contracts
+        run: npm run verify:deploy

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "nodeVersion": "v22.16.0",
+  "files": [
+    "scripts/verify-reviewed-cbt-variants.ts",
+    "tests/unit/reviewed-cbt-variants.test.ts"
+  ],
+  "method": "Node.js --experimental-strip-types --check; syntax-only, not repository typecheck",
+  "officialNode24Validation": false,
+  "logs": [
+    "docs/audit-work/cbt-system-migration/import-batch-10/verify-reviewed-cbt-syntax.log",
+    "docs/audit-work/cbt-system-migration/import-batch-10/reviewed-cbt-test-syntax.log"
+  ]
+}

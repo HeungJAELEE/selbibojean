@@ -1,0 +1,16 @@
+{
+  "batchId": "import-11",
+  "recordCount": 192,
+  "existingDirectTheoryLinksRetained": 191,
+  "existingTheoryRelinks": 1,
+  "newDirectTheoryLessonsAdded": 0,
+  "canonicalContentAndTheoryRepairs": 0,
+  "missingDirectTheoryAfterBatch": 0,
+  "sourceNeededTheoryGateCount": 0,
+  "lowContextDirectTheoryLinks": 25,
+  "notes": [
+    "2021-1-Q100은 전기 릴레이 채터링 U-170이 아니라 밸브 채터링 U-1236 및 lesson-10hvc85로 재배정했다.",
+    "이미지 HOLD 10건은 직접 이론을 감사용으로 보존하되 정답·채점·choice ID mapping은 비활성화했다.",
+    "신규 이론 레슨과 canonical replacement overlay는 필요하지 않았고 직접 이론 미연결은 0건이다."
+  ]
+}

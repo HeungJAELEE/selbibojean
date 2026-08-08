@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-08-07T23:25:00+09:00",
+  "nodeVersion": "v22.16.0",
+  "npmVersion": "10.9.2",
+  "attempts": [
+    {
+      "name": "typecheck",
+      "command": "npm run typecheck",
+      "exitCode": 1,
+      "status": "BLOCKED_NODE_RUNTIME",
+      "logFile": "official-validation-attempts/typecheck.log",
+      "executed": false
+    },
+    {
+      "name": "vitest",
+      "command": "npm test -- --maxWorkers=1 tests/unit/reviewed-cbt-variants.test.ts",
+      "exitCode": 1,
+      "status": "BLOCKED_NODE_RUNTIME",
+      "logFile": "official-validation-attempts/vitest.log",
+      "executed": false
+    },
+    {
+      "name": "eslint",
+      "command": "npx eslint scripts/verify-reviewed-cbt-variants.ts tests/unit/reviewed-cbt-variants.test.ts",
+      "exitCode": 1,
+      "status": "BLOCKED_NODE_RUNTIME",
+      "logFile": "official-validation-attempts/eslint.log",
+      "executed": false
+    },
+    {
+      "name": "verify-reviewed-cbt",
+      "command": "npm run verify:reviewed-cbt",
+      "exitCode": 127,
+      "status": "BLOCKED_DEPENDENCY_AND_PARTIAL_SNAPSHOT",
+      "logFile": "official-validation-attempts/verify-reviewed-cbt.log",
+      "executed": false
+    },
+    {
+      "name": "verify-no-answer-leak",
+      "command": "npm run verify:no-answer-leak",
+      "exitCode": 127,
+      "status": "BLOCKED_DEPENDENCY_AND_PARTIAL_SNAPSHOT",
+      "logFile": "official-validation-attempts/verify-no-answer-leak.log",
+      "executed": false
+    }
+  ]
+}

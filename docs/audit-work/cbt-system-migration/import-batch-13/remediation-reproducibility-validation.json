@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "runs": 2,
+  "inputManifestSha256": "b2a614eb26faadad231c30bb7eb69e55c18dfc9c28f8350515f7a50d6a4cfac5",
+  "outputManifestSha256": "e52c9f24acea019713bd451a9ed3792204d5f4390b1f61726310719bb670d838",
+  "run1ManifestSha256": "e52c9f24acea019713bd451a9ed3792204d5f4390b1f61726310719bb670d838",
+  "run2ManifestSha256": "e52c9f24acea019713bd451a9ed3792204d5f4390b1f61726310719bb670d838",
+  "run1ReportSha256": "d494c9367348efd0b97f3fe575c46fc904b9af024821fef3ffd64b0d578ae7ec",
+  "run2ReportSha256": "d494c9367348efd0b97f3fe575c46fc904b9af024821fef3ffd64b0d578ae7ec",
+  "byteIdenticalToIntegratedOutput": true
+}

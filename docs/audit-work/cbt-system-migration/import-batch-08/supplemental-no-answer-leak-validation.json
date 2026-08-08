@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "scope": "supplemental_reviewed_cbt_pre_submit_and_publication_gate_static_projection",
+  "recordCount": 200,
+  "checks": {
+    "candidateHoldConflictNotUsableBeforePublished": true,
+    "preSubmitForbiddenAnswerFieldsAbsent": true,
+    "imageHoldAnswersDisabled": true,
+    "choiceConflictAnswersDisabled": true,
+    "variantSpecificCanonicalFeedbackBlocked": true,
+    "sourceNeededTheoryBlocked": true
+  },
+  "forbiddenFields": [
+    "answerText",
+    "choiceByChoiceReasons",
+    "choiceIdMapping",
+    "correctChoiceId",
+    "directSolution",
+    "explanation",
+    "formulaUnitSubstitution",
+    "reviewedAnswerIndex",
+    "reviewedAnswerText",
+    "sourceAnswerIndex",
+    "sourceAnswerText"
+  ],
+  "projectionKeyCount": 9,
+  "failures": [],
+  "limitations": [
+    "This validates an explicit static pre-submit projection and manifest publication gates only.",
+    "The official repository verify:no-answer-leak command was not executable in this partial snapshot."
+  ]
+}

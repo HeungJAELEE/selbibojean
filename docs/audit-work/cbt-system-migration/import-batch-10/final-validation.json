@@ -1,0 +1,145 @@
+{
+  "batchContractStatus": "PASS",
+  "repositoryFinalValidationStatus": "NOT_RUN",
+  "generatedAt": "2026-08-08T21:30:00+09:00",
+  "scope": "import-10 actual exam-question overlay, image HOLD gating, answer-key conflict isolation, choice-conflict isolation, semantic canonical reassignment, U-478 taxonomy repair, low-context registration, formula structure, direct-theory binding, and publication safety",
+  "counts": {
+    "batchId": "import-10",
+    "recordCount": 200,
+    "states": {
+      "candidate": 187,
+      "hold": 11,
+      "choice_conflict": 2
+    },
+    "imageHoldCount": 10,
+    "answerKeyConflictHoldCount": 1,
+    "fullCanonicalChoiceMappingCount": 39,
+    "variantSpecificFeedbackPendingCount": 148,
+    "theoryLessonAdditionCount": 0,
+    "canonicalQuestionChangeCount": 1,
+    "canonicalReassignmentCount": 2,
+    "canonicalTheoryRepairCount": 1,
+    "answerKeyCorrectionAppliedCount": 0,
+    "answerKeyConflictCount": 1,
+    "choiceConflictCount": 2,
+    "directTheoryLinkCount": 200,
+    "formulaRecordCount": 7,
+    "lowContextRegistrationCount": 31,
+    "cumulativeRecordCount": 1970,
+    "cumulativeStates": {
+      "candidate": 1875,
+      "hold": 77,
+      "choice_conflict": 18
+    },
+    "unreviewedRecordCount": 414
+  },
+  "sourceIntegrity": {
+    "contentJsonSha256Expected": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "contentJsonPackaged": false,
+    "contentHashBindingVerified": true,
+    "contentJsonDirectlyRehashedThisRun": false,
+    "manifestSha256": "7b6d0d4cb66892976399094e433ed2f852c1aeaf11fe5e81afeeacb7b4c2b9fc",
+    "recordsSha256": "e3f9b46efe3f48d1560508eb38d769863486755cf59f060803b4dfd89d7ddd3c",
+    "dryRunMappingSha256": "6a03617e3c2c36973c08b36bdd7c6119c5a73974c9fb2cf641cff246d00c21fc",
+    "canonicalReferenceSha256": "e7deabe7dd47bc328c81fa17cd1428885ab7abaf8f6886dc40eb02f2f800c30e",
+    "exactExternalIdSet": true,
+    "sourceHashesMatch": true,
+    "prior1770RecordsUnchanged": true
+  },
+  "specialFindings": {
+    "imageHolds": [
+      "2019-2-Q94",
+      "2019-2-Q99",
+      "2020-12B-Q05",
+      "2020-12B-Q08",
+      "2020-12B-Q10",
+      "2020-12B-Q85",
+      "2020-12B-Q87",
+      "2020-3B-Q04",
+      "2020-3B-Q14",
+      "2020-3B-Q39"
+    ],
+    "choiceConflicts": [
+      {
+        "externalId": "2019-2-Q86",
+        "choiceIndices": [
+          0,
+          3
+        ]
+      },
+      {
+        "externalId": "2020-12B-Q92",
+        "choiceIndices": [
+          2,
+          3
+        ]
+      }
+    ],
+    "answerKeyConflict": {
+      "externalId": "2020-3B-Q28",
+      "sourceAnswerIndex": 0,
+      "independentAnswerIndex": 3,
+      "applied": false,
+      "runtimeStatus": "hold",
+      "publicationGate": "answer_key_correction_pending_runtime_validation"
+    },
+    "canonicalReassignments": [
+      {
+        "externalId": "2020-12B-Q75",
+        "from": "U-325",
+        "to": "U-787",
+        "duplicateOf": "2017-2-Q64"
+      },
+      {
+        "externalId": "2020-3B-Q26",
+        "from": "U-060",
+        "to": "U-1109",
+        "duplicateOf": "2012-4-Q40"
+      }
+    ],
+    "canonicalTheoryRepair": {
+      "externalId": "2020-12B-Q86",
+      "canonicalId": "U-478",
+      "priorConceptGroupId": "s1-g02",
+      "repairedConceptGroupId": "s1-g06",
+      "lessonId": "lesson-qnsesu",
+      "affectedExternalIds": [
+        "2007-4-Q84",
+        "2020-12B-Q86"
+      ],
+      "publicationGate": "canonical_theory_repair_runtime_validation"
+    },
+    "theoryGap": "200문항 모두 직접 이론 연결을 가지며 신규 이론 레슨은 필요하지 않았다. 2건은 target canonical로 재배정했고 1건은 기존 lesson을 유지한 taxonomy 교정이다.",
+    "calculationStructure": "7문항에 식·단위·대입·결과 구조를 보존했다.",
+    "choiceContract": "39문항은 canonical choice ID 1:1 매핑을 완료했고, 148문항은 variant 전용 선택지 계약 전까지 canonical 피드백 재사용을 차단했다."
+  },
+  "supplementalChecks": {
+    "generatorOwnedValidation": "PASS",
+    "independentValidation": "PASS",
+    "typescriptSyntax": "PASS",
+    "targetedTypecheck": "PASS_SYNTAX_ONLY",
+    "supplementalRuntime": "PASS_STATIC_SIMULATION",
+    "supplementalVerifier": "PASS_INDEPENDENT_PYTHON",
+    "supplementalNoAnswerLeak": "PASS_STATIC_PROJECTION",
+    "negativeContracts": "PASS_10_OF_10",
+    "generatorIdempotency": "PASS_26_ARTIFACTS",
+    "pythonGeneratorSyntax": "PASS"
+  },
+  "officialChecks": {
+    "node24Typecheck": "BLOCKED_NODE_VERSION_AND_PARTIAL_SNAPSHOT",
+    "vitestMaxWorkers1": "BLOCKED_NODE_VERSION_DEPENDENCIES_AND_PARTIAL_SNAPSHOT",
+    "eslintChangedFiles": "BLOCKED_NODE_VERSION_DEPENDENCIES_AND_PARTIAL_SNAPSHOT",
+    "verifyReviewedCbt": "BLOCKED_MISSING_TSX_AND_COMPLETE_TREE",
+    "verifyNoAnswerLeak": "BLOCKED_MISSING_TSX_AND_COMPLETE_TREE",
+    "buildRuntimeContentAndSupabaseMaterialization": "NOT_RUN_PARTIAL_SNAPSHOT",
+    "sqlMigrationTests": "NOT_RUN_BATCH_SCOPE",
+    "loginGuestFlows": "NOT_RUN_FINAL_RUNTIME_INTEGRATION"
+  },
+  "git": {
+    "repositoryMetadataAvailable": false,
+    "commitCreated": false,
+    "push": false,
+    "pullRequest": false,
+    "deploy": false
+  }
+}

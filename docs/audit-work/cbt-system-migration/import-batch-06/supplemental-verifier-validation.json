@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "exitCode": 0,
+  "nodeVersion": "v22.16.0",
+  "typescriptVersion": "5.8.3",
+  "scope": "supplemental transpile-only execution of repository reviewed-CBT verifier with runtime-content limited to reviewed overlay plus taxonomy normalization",
+  "output": "PASS: reviewed CBT imports verified (1200 records; 1140 candidates; 14 choice conflicts; 46 image holds; 1184 gated; 19 theory additions; 17 canonical overlays).",
+  "officialNode24Validation": false,
+  "limitations": [
+    "Runtime-content was substituted to avoid unrelated zod-dependent content modules that could not load without installed project dependencies.",
+    "This does not replace the official Node.js 24 verifier run."
+  ]
+}

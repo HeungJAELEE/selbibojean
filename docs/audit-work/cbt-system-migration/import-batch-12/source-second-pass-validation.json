@@ -1,0 +1,110 @@
+{
+  "secondPassVersion": 12,
+  "validatedAt": "2026-08-07T03:01:57+09:00",
+  "status": "PASS",
+  "failureCount": 0,
+  "failures": [],
+  "batchRecordCount": 222,
+  "batchUniqueExternalIdCount": 222,
+  "batchVerdictCounts": {
+    "ACCEPT": 210,
+    "REVISE": 0,
+    "CHOICE_ISSUE": 1,
+    "HOLD": 11
+  },
+  "nonAcceptExactSet": {
+    "2021-2-Q01": "HOLD",
+    "2021-2-Q06": "HOLD",
+    "2021-2-Q13": "CHOICE_ISSUE",
+    "2021-2-Q27": "HOLD",
+    "2021-2-Q97": "HOLD",
+    "2021-4-Q05": "HOLD",
+    "2022-1-Q75": "HOLD",
+    "2022-1-Q80": "HOLD",
+    "2022-2-Q13": "HOLD",
+    "2022-2-Q14": "HOLD",
+    "2022-2-Q22": "HOLD",
+    "2022-2-Q27": "HOLD"
+  },
+  "sessionResults": [
+    {
+      "sessionNumber": 45,
+      "sessionKey": "2021-05-15-Q01-Q50",
+      "file": "de20210515_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 46,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 3
+      },
+      "status": "PASS",
+      "failureCount": 0,
+      "sha256": "afbeaa460467de5815d010fbe874234477b227baf1b08839b5c153508b8fc15f"
+    },
+    {
+      "sessionNumber": 46,
+      "sessionKey": "2021-05-15-Q51-Q100",
+      "file": "de20210515_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 49,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      },
+      "status": "PASS",
+      "failureCount": 0,
+      "sha256": "d9c8dd53dc5454c4b1d2dda464cd8e1ef2faf17a9ae1475d17dc0efc66ba1522"
+    },
+    {
+      "sessionNumber": 47,
+      "sessionKey": "2021-09-12-Q01-Q20",
+      "file": "de20210912_q01-q20_independent-review.jsonl",
+      "recordCount": 20,
+      "verdictCounts": {
+        "ACCEPT": 19,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      },
+      "status": "PASS",
+      "failureCount": 0,
+      "sha256": "dde317d88bcbf61334e0554c8e8e0f7ab5cf5718c76e6cadbc00e35a26eeaebe"
+    },
+    {
+      "sessionNumber": 48,
+      "sessionKey": "2022-selected-102",
+      "file": "cet2022_selected-102_independent-review.jsonl",
+      "recordCount": 102,
+      "verdictCounts": {
+        "ACCEPT": 96,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 6
+      },
+      "status": "PASS",
+      "failureCount": 0,
+      "sha256": "6da7d728931937853d5e5dbf49fb07143b618d29256b514228f0d0d63f5f7bea"
+    }
+  ],
+  "checks": {
+    "sourceTextChoicesAnswerAndIdentityHashesRecomputed": true,
+    "choiceFeedbackSpecificBoundAndUnique": true,
+    "formulaStructure": true,
+    "publicationAndScoringGates": true,
+    "theoryEntityTraceAndDirectBasis": true,
+    "batchExactSet222": true,
+    "nonAcceptExactSet12": true
+  },
+  "notRun": [
+    "repository_typecheck_node24",
+    "vitest",
+    "eslint_changed_files",
+    "verify_no_answer_leak_runtime",
+    "runtime_publication_gate",
+    "login_guest_integration_flow",
+    "sql_migration_static_and_migration_test",
+    "git_commit"
+  ]
+}

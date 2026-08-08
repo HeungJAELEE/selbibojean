@@ -1,0 +1,97 @@
+{
+  "auditVersion": 11,
+  "auditedAt": "2026-08-07T01:36:52+09:00",
+  "batch": "sessions41-44",
+  "status": "PASS",
+  "batchRecordCount": 192,
+  "batchUniqueExternalIdCount": 192,
+  "batchVerdictCounts": {
+    "ACCEPT": 182,
+    "REVISE": 0,
+    "CHOICE_ISSUE": 0,
+    "HOLD": 10
+  },
+  "expectedNonAcceptExactSet": {
+    "2020-3B-Q62": "HOLD",
+    "2020-3B-Q81": "HOLD",
+    "2020-3B-Q97": "HOLD",
+    "2020-4-Q02": "HOLD",
+    "2020-4-Q37": "HOLD",
+    "2020-4-Q53": "HOLD",
+    "2020-4-Q89": "HOLD",
+    "2020-4-Q91": "HOLD",
+    "2021-1-Q27": "HOLD",
+    "2021-1-Q30": "HOLD"
+  },
+  "sourceImageHoldCount": 10,
+  "sourceImageMissingExternalIds": [
+    "2020-4-Q30",
+    "2020-4-Q53",
+    "2021-1-Q06",
+    "2021-1-Q26"
+  ],
+  "calculationExternalIds": [
+    "2020-3B-Q57",
+    "2020-4-Q16",
+    "2021-1-Q08",
+    "2021-1-Q27"
+  ],
+  "lowContextAcceptedExternalIds": [
+    "2020-3B-Q58",
+    "2020-3B-Q60",
+    "2020-3B-Q77",
+    "2020-3B-Q89",
+    "2020-4-Q08",
+    "2020-4-Q15",
+    "2020-4-Q19",
+    "2020-4-Q26",
+    "2020-4-Q33",
+    "2020-4-Q42",
+    "2020-4-Q43",
+    "2020-4-Q52",
+    "2020-4-Q59",
+    "2020-4-Q61",
+    "2020-4-Q65",
+    "2020-4-Q83",
+    "2020-4-Q86",
+    "2021-1-Q07",
+    "2021-1-Q63",
+    "2021-1-Q64",
+    "2021-1-Q69",
+    "2021-1-Q76",
+    "2021-1-Q78",
+    "2021-1-Q89",
+    "2021-1-Q99"
+  ],
+  "theoryRemappedExternalIds": [
+    "2021-1-Q100"
+  ],
+  "checks": {
+    "allSessionValidationsPass": true,
+    "secondPassPass": true,
+    "cumulativePass": true,
+    "mandatoryImagesRemainHeld": true,
+    "noSourceTextChoiceAnswerOverwrite": true,
+    "noGenericChoiceFeedback": true,
+    "allTheoryEntitiesResolve": true,
+    "independentValidationPass": true
+  },
+  "failureCount": 0,
+  "failures": [],
+  "notRun": [
+    "repository_typecheck",
+    "vitest",
+    "eslint",
+    "verify_no_answer_leak_runtime",
+    "runtime_publication_gate",
+    "login_guest_integration_flow",
+    "sql_migration_test",
+    "git_commit"
+  ],
+  "independentValidation": {
+    "fileName": "sessions41-44_independent-validation.json",
+    "status": "PASS",
+    "failureCount": 0,
+    "sha256": "1f915d14f4fd136d17dc021939f803cdb96fca350867911b05df899effa2da9a"
+  }
+}

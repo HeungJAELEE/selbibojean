@@ -1,0 +1,97 @@
+{
+  "independentValidatorVersion": 5,
+  "validatedAt": "2026-08-07T01:38:04+09:00",
+  "status": "PASS",
+  "failureCount": 0,
+  "failures": [],
+  "recordCount": 192,
+  "uniqueExternalIdCount": 192,
+  "verdictCounts": {
+    "ACCEPT": 182,
+    "REVISE": 0,
+    "CHOICE_ISSUE": 0,
+    "HOLD": 10
+  },
+  "publicationCandidateCount": 182,
+  "nonAcceptExactSet": {
+    "2020-3B-Q62": "HOLD",
+    "2020-3B-Q81": "HOLD",
+    "2020-3B-Q97": "HOLD",
+    "2020-4-Q02": "HOLD",
+    "2020-4-Q37": "HOLD",
+    "2020-4-Q53": "HOLD",
+    "2020-4-Q89": "HOLD",
+    "2020-4-Q91": "HOLD",
+    "2021-1-Q27": "HOLD",
+    "2021-1-Q30": "HOLD"
+  },
+  "sessions": [
+    {
+      "sessionNumber": 41,
+      "file": "de20200822_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "sha256": "2b974d89fc64d3d57e84358f7427d63b8e776b8be76b2ea5d41b986a22b98ac4",
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 3
+      }
+    },
+    {
+      "sessionNumber": 42,
+      "file": "de20200926_q01-q50_independent-review.jsonl",
+      "recordCount": 50,
+      "sha256": "5eb0299b31777ce71071837134308d9d9d99f33942e0c0aa97668d868924cc84",
+      "verdictCounts": {
+        "ACCEPT": 48,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 2
+      }
+    },
+    {
+      "sessionNumber": 43,
+      "file": "de20200926_q51-q100_independent-review.jsonl",
+      "recordCount": 50,
+      "sha256": "60e6dbc2f5bb0c38ce498c1723717236b8c6489bf248e972319cbd582c538fbc",
+      "verdictCounts": {
+        "ACCEPT": 47,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 3
+      }
+    },
+    {
+      "sessionNumber": 44,
+      "file": "de20210307_selected-42_independent-review.jsonl",
+      "recordCount": 42,
+      "sha256": "0a9d159f0206eadbb6b2c48cb360af17a73baf436de7b9f78319ec68a5a24a34",
+      "verdictCounts": {
+        "ACCEPT": 40,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 2
+      }
+    }
+  ],
+  "checks": {
+    "ledgerTextChoicesAnswerAndIdentityHashes": true,
+    "choiceSpecificityBindingAndUniqueness": true,
+    "formulaStructure": true,
+    "publicationScoringAcceptAndHoldGates": true,
+    "theoryEntityTraceAndDirectBasis": true,
+    "targetedRegressionRecordsStable": true,
+    "generatedReportsPass": true
+  },
+  "notRun": [
+    "repository_typecheck",
+    "vitest",
+    "eslint",
+    "verify_no_answer_leak_runtime",
+    "runtime_publication_gate",
+    "login_guest_integration_flow",
+    "sql_migration_test",
+    "git_commit"
+  ]
+}

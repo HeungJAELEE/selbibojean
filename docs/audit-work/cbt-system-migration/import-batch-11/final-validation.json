@@ -1,0 +1,112 @@
+{
+  "batchContractStatus": "PASS",
+  "repositoryFinalValidationStatus": "NOT_RUN",
+  "generatedAt": "2026-08-08T10:17:18+09:00",
+  "scope": "import-11 actual exam-question overlay, image HOLD gating, semantic canonical reassignment, low-context registration, formula structure, direct-theory binding, variant-choice isolation, and publication safety",
+  "counts": {
+    "batchId": "import-11",
+    "recordCount": 192,
+    "states": {
+      "candidate": 182,
+      "hold": 10,
+      "choice_conflict": 0
+    },
+    "imageHoldCount": 10,
+    "fullCanonicalChoiceMappingCount": 48,
+    "variantSpecificFeedbackPendingCount": 134,
+    "theoryLessonAdditionCount": 0,
+    "canonicalQuestionChangeCount": 0,
+    "canonicalReassignmentCount": 1,
+    "canonicalTheoryRepairCount": 0,
+    "answerKeyCorrectionAppliedCount": 0,
+    "answerKeyConflictCount": 0,
+    "choiceConflictCount": 0,
+    "directTheoryLinkCount": 192,
+    "formulaRecordCount": 4,
+    "lowContextRegistrationCount": 25,
+    "cumulativeRecordCount": 2162,
+    "cumulativeStates": {
+      "candidate": 2057,
+      "hold": 87,
+      "choice_conflict": 18
+    },
+    "unreviewedRecordCount": 222
+  },
+  "sourceIntegrity": {
+    "contentJsonSha256Expected": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "contentJsonPackaged": false,
+    "contentHashBindingVerified": true,
+    "contentJsonDirectlyRehashedThisRun": false,
+    "manifestSha256": "a2687df8675bb101ce574131ddae5b53abcc4250cb31a8d786e0bd671d7718e9",
+    "recordsSha256": "36f0ba1340ae854d10015eef0aacc5f0445248c809a270f569f07e8d0a8cd0e8",
+    "dryRunMappingSha256": "49c792aa605e858c6bc809d388e8bcedb87c4f8368d44c4e62b382f042197218",
+    "canonicalReferenceSha256": "416231fb163f313d2e456d933cb9bdb9cba2261082fc9e30e1eaaa8b1e7eca03",
+    "exactExternalIdSet": true,
+    "sourceHashesMatch": true,
+    "prior1970RecordsUnchanged": true
+  },
+  "specialFindings": {
+    "imageHolds": [
+      "2020-3B-Q62",
+      "2020-3B-Q81",
+      "2020-3B-Q97",
+      "2020-4-Q02",
+      "2020-4-Q37",
+      "2020-4-Q53",
+      "2020-4-Q89",
+      "2020-4-Q91",
+      "2021-1-Q27",
+      "2021-1-Q30"
+    ],
+    "choiceConflicts": [],
+    "answerKeyConflicts": [],
+    "canonicalReassignments": [
+      {
+        "externalId": "2021-1-Q100",
+        "from": "U-170",
+        "to": "U-1236",
+        "duplicateOf": "2010-4-Q99",
+        "theoryLink": {
+          "lessonId": "lesson-10hvc85",
+          "lessonAnchor": "principle",
+          "conceptGroupId": "s1-g04",
+          "conceptId": "concept-10hvc85"
+        },
+        "publicationGate": "variant_specific_choice_contract_pending"
+      }
+    ],
+    "theoryGap": "192문항 모두 직접 이론 연결을 가지며 신규 이론 레슨이나 canonical overlay는 필요하지 않았다. 1건은 기존 target canonical의 직접 이론으로 재연결했다.",
+    "calculationStructure": "4문항에 식·단위·대입·결과 구조를 보존했다.",
+    "choiceContract": "48문항은 canonical choice ID 1:1 매핑을 완료했고, 134문항은 variant 전용 선택지 계약 전까지 canonical 피드백 재사용을 차단했다.",
+    "timestampBoundary": "배치 10 스냅샷의 generatedAt이 실제 배치 11 실행 시각보다 뒤로 기록돼 있어 순서 검증에는 timestamp를 사용하지 않았다."
+  },
+  "supplementalChecks": {
+    "generatorOwnedValidation": "PASS",
+    "independentValidation": "PASS",
+    "typescriptSyntax": "PASS",
+    "targetedTypecheck": "PASS_SYNTAX_ONLY",
+    "supplementalRuntime": "PASS_STATIC_SIMULATION",
+    "supplementalVerifier": "PASS_INDEPENDENT_PYTHON",
+    "supplementalNoAnswerLeak": "PASS_STATIC_PROJECTION",
+    "negativeContracts": "PASS_12_OF_12",
+    "generatorIdempotency": "PASS_29_ARTIFACTS",
+    "pythonGeneratorSyntax": "PASS"
+  },
+  "officialChecks": {
+    "node24Typecheck": "BLOCKED_NODE_VERSION_AND_PARTIAL_SNAPSHOT",
+    "vitestMaxWorkers1": "BLOCKED_NODE_VERSION_DEPENDENCIES_AND_PARTIAL_SNAPSHOT",
+    "eslintChangedFiles": "BLOCKED_NODE_VERSION_DEPENDENCIES_AND_PARTIAL_SNAPSHOT",
+    "verifyReviewedCbt": "BLOCKED_MISSING_TSX_AND_COMPLETE_TREE",
+    "verifyNoAnswerLeak": "BLOCKED_MISSING_TSX_AND_COMPLETE_TREE",
+    "buildRuntimeContentAndSupabaseMaterialization": "NOT_RUN_PARTIAL_SNAPSHOT",
+    "sqlMigrationTests": "NOT_RUN_BATCH_SCOPE",
+    "loginGuestFlows": "NOT_RUN_FINAL_RUNTIME_INTEGRATION"
+  },
+  "git": {
+    "repositoryMetadataAvailable": false,
+    "commitCreated": false,
+    "push": false,
+    "pullRequest": false,
+    "deploy": false
+  }
+}

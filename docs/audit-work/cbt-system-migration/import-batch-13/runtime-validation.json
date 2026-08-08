@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "scope": "dependency-free Node.js 24 repository integration validation",
+  "nodeVersion": "v24.11.1",
+  "counts": {
+    "candidate": 2267,
+    "hold": 98,
+    "choice_conflict": 19
+  },
+  "checks": {
+    "node_major_24": true,
+    "content_sha": true,
+    "manifest_sha": true,
+    "record_count": true,
+    "records_digest": true,
+    "canonical_digest": true,
+    "state_counts": true,
+    "unique_external_ids": true,
+    "source_exact_set": true,
+    "conflicts_fail_closed": true,
+    "holds_fail_closed": true,
+    "canonical_audits_blocked": true
+  },
+  "failures": []
+}

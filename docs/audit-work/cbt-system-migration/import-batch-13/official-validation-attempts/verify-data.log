@@ -1,0 +1,9 @@
+
+> seolbi-learning-platform@0.1.0 preverify:data
+> npm run cleanup:runtime-public
+
+
+> seolbi-learning-platform@0.1.0 cleanup:runtime-public
+> tsx scripts/cleanup-runtime-public.ts
+
+sh: 1: tsx: not found

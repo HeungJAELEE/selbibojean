@@ -241,6 +241,41 @@ export function buildSupabaseMaterialization(
         `Variant ${variant.externalId} references missing question ${variant.canonicalId}.`,
       );
     }
+    const reviewedPublicationAllowed =
+      variant.reviewState === undefined
+        ? true
+        : variant.reviewState === "published";
+    const published =
+      publishableQuestionIds.has(variant.canonicalId) &&
+      reviewedPublicationAllowed;
+    const reviewedPayload = variant.reviewed
+      ? {
+          reviewState: variant.reviewState,
+          reviewVerdict: variant.reviewed.review.verdict,
+          issueLabel: variant.reviewed.review.issueLabel ?? null,
+          normalizationApplied: Boolean(
+            variant.reviewed.presentationNormalization,
+          ),
+          choiceConflict: variant.reviewState === "choice_conflict",
+          choices: variant.choices,
+          variantSpecificFeedbackRequired: Boolean(
+            variant.reviewed.variantSpecificFeedbackRequired,
+          ),
+          choiceContractReady:
+            !variant.reviewed.variantSpecificFeedbackRequired &&
+            variant.reviewed.choiceIdMapping.length === variant.choices.length,
+          sourceTextAuthority:
+            variant.reviewed.source.textAuthority,
+          sourceCaptureAuthority:
+            variant.reviewed.source.captureAuthority,
+          sourceDisplayLabel: variant.reviewed.source.displayLabel,
+          resolvedSourceUrl:
+            variant.reviewed.source.resolvedSourceUrl,
+          stemSha256: variant.reviewed.source.stemSha256,
+          orderedChoicesSha256:
+            variant.reviewed.source.orderedChoicesSha256,
+        }
+      : null;
     return {
       id: stableContentUuid("question-variant", variant.externalId),
       canonical_question_id: canonicalQuestionId,
@@ -253,10 +288,13 @@ export function buildSupabaseMaterialization(
         relationship: variant.relationship,
         subjectCode: variant.subjectCode,
         conceptAlias: variant.conceptAlias,
+        ...(reviewedPayload ? { reviewed: reviewedPayload } : {}),
       },
       source_id: null,
-      verification_note: "",
-      status: status(publishableQuestionIds.has(variant.canonicalId)),
+      verification_note: variant.reviewed
+        ? variant.verificationNote
+        : "",
+      status: status(published),
       shuffle_policy: variant.shufflePolicy ?? "all",
     };
   });

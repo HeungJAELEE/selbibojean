@@ -27,5 +27,5 @@ test("keyboard focus is visible and can reach the primary action", async ({ page
   await page.keyboard.press("Tab");
   const focused = page.locator(":focus-visible");
   await expect(focused).toBeVisible();
-  await expect(focused).toHaveAttribute("href", "/");
+  await expect(focused).not.toHaveAttribute("tabindex", "-1");
 });

@@ -12,6 +12,7 @@ import { isPublishableQuestion } from "@/lib/domain/practice";
 import { mergeApprovedWeldingProcessContent } from "@/lib/content/welding-process-approved";
 import { mergeApprovedWeldingSafetyContent } from "@/lib/content/welding-safety-approved";
 import { normalizeCanonicalTaxonomy } from "@/lib/content/taxonomy-normalization";
+import { mergeReviewedCbtVariants } from "@/lib/content/reviewed-cbt-variants";
 import type { GeneratedContent } from "@/lib/domain/types";
 
 const source = JSON.parse(
@@ -165,6 +166,43 @@ describe("written question audit manifest", () => {
     ).toBe(false);
   });
 
+  it("does not let an older accepted audit override a newer CBT non-scoring gate", () => {
+    const reviewed = mergeReviewedCbtVariants(source);
+    const overlaid = applyWrittenQuestionAuditManifest(reviewed, manifest);
+
+    for (const canonicalId of ["U-1161", "U-1166", "U-1089"]) {
+      const question = overlaid.questions.find(
+        (candidate) => candidate.id === canonicalId,
+      );
+      const lesson = overlaid.lessons.find(
+        (candidate) => candidate.id === question?.lessonId,
+      );
+      expect(question?.audit?.auditDisposition).toBe(
+        "held_answer_conflict",
+      );
+      expect(question?.contentStatus).toBe("in_review");
+      expect(question?.publication).toMatchObject({
+        readiness: "blocked",
+        blockers: expect.arrayContaining(["answer_conflict"]),
+      });
+      expect(lesson?.contentStatus).toBe("in_review");
+      expect(lesson?.publication?.readiness).toBe("blocked");
+    }
+  });
+
+  it("preserves the newer runtime-validation hold over an older accepted audit", () => {
+    const reviewed = mergeReviewedCbtVariants(source);
+    const overlaid = applyWrittenQuestionAuditManifest(reviewed, manifest);
+    const question = overlaid.questions.find((candidate) => candidate.id === "U-478");
+
+    expect(question?.audit?.auditDisposition).toBe("held_runtime_validation");
+    expect(question?.contentStatus).toBe("in_review");
+    expect(question?.publication).toMatchObject({
+      readiness: "blocked",
+      blockers: expect.arrayContaining(["mapping_unverified"]),
+    });
+  });
+
   it("keeps audit evidence internally while removing it from learner lesson copy", () => {
     const overlaid = applyWrittenQuestionAuditManifest(content, manifest);
     const lesson = overlaid.lessons.find(
@@ -188,4 +226,64 @@ describe("written question audit manifest", () => {
     expect(auditedQuestion?.evidenceUrls.length).toBeGreaterThan(0);
     expect(auditedQuestion?.reviewedAt).toBeTruthy();
   });
+
+  it("does not let an accepted audit override mapping_unverified", () => {
+    const original = source.questions.find((question) => question.id === "U-478");
+    expect(original).toBeDefined();
+    const blocked = {
+      ...original!,
+      contentStatus: "in_review" as const,
+      publication: {
+        readiness: "blocked" as const,
+        blockers: ["mapping_unverified" as const],
+      },
+    };
+    const gatedContent = {
+      ...source,
+      questions: source.questions.map((question) =>
+        question.id === blocked.id ? blocked : question,
+      ),
+    };
+    const accepted = {
+      schemaVersion: 1 as const,
+      generatedAt: "2026-08-08T00:00:00.000Z",
+      sourceGeneratedAt: "2026-08-08T00:00:00.000Z",
+      sourceSha256: "0".repeat(64),
+      counts: {
+        reviewQueueExpected: 1,
+        reviewQueueAudited: 1,
+        highRiskPublicAudited: 0,
+        verified: 1,
+        cbtCorrected: 0,
+        held: 0,
+      },
+      entries: [
+        {
+          questionId: blocked.id,
+          scope: "review_queue" as const,
+          sourceContentStatus: "in_review" as const,
+          auditDisposition: "verified" as const,
+          evidenceLevel: "primary" as const,
+          cbtAnswer: blocked.answerText,
+          verifiedAnswer: blocked.answerText,
+          evidenceUrls: ["https://example.com/primary"],
+          reviewNote: "mapping repair is still pending",
+          nextAction: "complete canonical mapping validation",
+          assetStatus: "not_required" as const,
+          reviewRationale: blocked.explanation,
+          reviewedAt: "2026-08-08T00:00:00.000Z",
+        },
+      ],
+    };
+    const result = applyWrittenQuestionAuditManifest(gatedContent, accepted);
+    const question = result.questions.find(
+      (candidate) => candidate.id === blocked.id,
+    );
+    expect(question?.contentStatus).toBe("in_review");
+    expect(question?.publication).toMatchObject({
+      readiness: "blocked",
+      blockers: ["mapping_unverified"],
+    });
+  });
+
 });

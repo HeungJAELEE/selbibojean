@@ -1,0 +1,26 @@
+{"externalId":"2018-4-Q51","riskNote":"플랜지 커플링의 허용 편심·흔들림 수치는 형식·직경·회전수·제조사 기준에 따라 달라진다. 2번 판정은 해당 회차의 용어와 대표 허용값에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2018-4-Q61","riskNote":"현대 윤활 용어에서는 압축공기로 오일을 미립화해 여러 점에 보내는 방식은 오일미스트·분무윤활이고, 오일욕에서 회전체가 튀기는 비말·비산윤활과 구분한다. 정답은 당시 교재 용어에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2018-4-Q86","riskNote":"레귤레이터·유량제어·폐루프 제어를 사용하면 공압모터 속도를 조절할 수 있다. 2번 판정은 “정밀 제어성이 본질적으로 우수하다”는 일반화가 틀리다는 뜻이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2018-4-Q87","riskNote":"밸브 그림의 전체 포트배치를 직접 판독하지 않았지만 지문이 “제어라인”을 명시하고 선택지 중 파일럿 계열 번호가 10으로 유일하다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2018-4-Q91","riskNote":"원문의 “퓨즈 단락”은 “퓨즈 단선·용단” 등의 복원 오탈자 가능성이 있다. 문장을 임의 수정하지 않고 현재 복원문 기준으로 2번을 인정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q04","riskNote":"일차·이차 고체음의 명칭은 소음공학 교재마다 직접방사·구조전달의 번호를 다르게 사용할 수 있다. 2번은 압력맥동이라는 현상과 사례가 명확하다는 해당 회차 기준으로 인정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q15","riskNote":"소음조사의 세부 명칭과 범위는 법정 환경소음 조사, 작업환경측정, 엔지니어링 진단 목적에 따라 달라진다. 3번은 해당 교재 분류에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q24","riskNote":"자주보전 단계의 세부 표현은 TPM 교재·기업 전개방식에 따라 다를 수 있다. 3번 판정은 해당 회차의 총점검 진행 항목표에 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q27","riskNote":"표준화도 예방보전 체계가 성숙하며 얻는 간접효과로 볼 수 있다. 이 문항은 직접 성과와 시행수단을 구분하는 교재 분류를 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q28","riskNote":"실제 보일러·노 운전에서는 저부하 대책으로 버너 턴다운, 연료·공기비, 버너 수, 재순환 등을 조정하며 연료 품질을 임의로 낮추지 않는다. 2번은 과거 교재표의 저맥락 정답이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q30","riskNote":"원장에는 원본 이미지 누락이 표시되어 있으나 지문과 네 선택지가 완전해 이미지 없이 판정할 수 있다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q36","riskNote":"“부하시간”을 총 운전시간과 같은 뜻으로 정의하면 3번과의 경계가 모호할 수 있다. 정답은 해당 교재의 표준식 용어에 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q42","riskNote":"원장에는 원본 이미지 누락이 표시되어 있으나 구조 설명과 보기만으로 베어링 종류를 판정할 수 있다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q46","riskNote":"현대 제조사 지침은 보통 120℃를 넘지 않도록 권고하며 베어링 재질·열처리에 따라 한계가 다르다. 130℃는 당시 시험 기준이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q49","riskNote":"이종재료와 극박·극후판 용접에는 금속학적·공정상 제약이 실제로 존재한다. 2번은 “일반적으로 제한되고 어렵다”는 과도한 진술을 오답으로 본다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q52","riskNote":"표준 용어는 “가용도(availability)”가 일반적이다. 원문 “유용성”은 과거 교재의 번역·표기이며 의미를 바꾸지 않고 유지한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q53","riskNote":"절연열화가 심해 권선단락·지락으로 진행되면 실제 기동불능 원인이 된다. 4번은 “열화 자체”와 직접 고장을 구분한 시험 분류다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q58","riskNote":"접촉무늬의 정확한 위치는 회전방향, 하중변형, 웜기어 형식과 제조사 절차에 따라 조정한다. 이 답은 해당 교재의 대표 정비원칙이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q65","riskNote":"기업 규모에 따라 현장 윤활팀이 윤활제 선정과 소비량 관리까지 담당할 수 있다. 4번은 과거 교재의 관리부서/실시부서 역할분담에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q81","riskNote":"실제 로드 좌굴은 유효길이, 지지단 조건, 편심, 재료, 충격하중과 제조사 허용하중으로 계산한다. 2.5~3.5는 과거 교재 경험값이다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q82","riskNote":"산업용 핸들링의 넓은 정의에서는 위치결정도 물류·이송 기능에 포함할 수 있다. 이 답은 해당 교재의 기능요소 분류에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q87","riskNote":"원장에는 이미지 누락 표시가 있으나 지문과 선택지가 완전해 이미지 없이 판정할 수 있다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-1-Q95","riskNote":"심한 공진이 베어링·마찰·냉각불량을 유발하면 간접 과열로 이어질 수 있다. 정답은 대표 직접원인 분류에 따른다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-2-Q42","riskNote":"3상 운전 중 한 상 단선·결상은 남은 상 전류를 증가시켜 과열될 수 있다. 정답은 완전 단선과 직접 과열원인을 구분한 과거 교재식 분류에 한정한다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-2-Q45","riskNote":"원장에는 제품호칭 이미지가 있으나 지문에 숫자 “2032”가 직접 제시되고 선택지도 완전해 이미지가 정답판정에 필수적이지 않다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}
+{"externalId":"2019-2-Q46","riskNote":"원장에는 원래 이미지 누락 표시가 있으나 지문과 문자 선택지가 완전해 이미지 없이 판정할 수 있다.","policy":"historical_or_textbook_exam_intent_accepted_with_practical_boundary_preserved"}

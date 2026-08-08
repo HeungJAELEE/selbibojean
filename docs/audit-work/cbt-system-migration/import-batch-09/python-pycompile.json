@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "pythonVersion": "3.13.5",
+  "files": [
+    "docs/audit-work/cbt-system-migration/import-batch-09/generate-import-batch-09.py",
+    "docs/audit-work/cbt-system-migration/import-batch-09/validate-import-batch-09.py",
+    "docs/audit-work/cbt-system-migration/import-batch-09/run-negative-contract-validation.py"
+  ],
+  "method": "python -m py_compile",
+  "logFile": "docs/audit-work/cbt-system-migration/import-batch-09/python-pycompile.log"
+}

@@ -1,0 +1,143 @@
+{
+  "batchContractStatus": "PASS",
+  "repositoryFinalValidationStatus": "NOT_RUN",
+  "generatedAt": "2026-08-08T13:40:00+09:00",
+  "scope": "import-08 actual exam-question overlay, image HOLD gating, choice-conflict isolation, canonical reassignment, source-gated canonical theory repair, low-context registration, formula structure, and publication safety",
+  "counts": {
+    "batchId": "import-08",
+    "recordCount": 200,
+    "states": {
+      "candidate": 191,
+      "hold": 8,
+      "choice_conflict": 1
+    },
+    "fullCanonicalChoiceMappingCount": 38,
+    "variantSpecificFeedbackPendingCount": 153,
+    "theoryLessonAdditionCount": 1,
+    "canonicalQuestionChangeCount": 1,
+    "canonicalReassignmentCount": 1,
+    "canonicalTheoryRepairCount": 1,
+    "answerKeyCorrectionCount": 0,
+    "choiceConflictCount": 1,
+    "directTheoryLinkCount": 200,
+    "formulaRecordCount": 8,
+    "lowContextRegistrationCount": 30,
+    "cumulativeRecordCount": 1570,
+    "cumulativeStates": {
+      "candidate": 1496,
+      "hold": 59,
+      "choice_conflict": 15
+    },
+    "unreviewedRecordCount": 814
+  },
+  "sourceIntegrity": {
+    "contentJsonSha256Expected": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "contentJsonPackaged": false,
+    "contentHashBindingVerified": true,
+    "contentJsonDirectlyRehashedThisRun": false,
+    "manifestSha256": "5bd1b38459c1bc15f3e7426023b5a91e3cc8e75883113a530b22d67dc5666803",
+    "recordsSha256": "058f348998cabc060faa93180071611e05d417acc2e3b729363a28ae5f113c5a",
+    "dryRunMappingSha256": "40b656165a1dcfbc69d26451c0fdc6615f541333644cdf8903297d77bed8fe0d",
+    "exactExternalIdSet": true,
+    "sourceHashesMatch": true,
+    "prior1370RecordsUnchanged": true
+  },
+  "specialFindings": {
+    "imageHolds": [
+      "2017-2-Q60",
+      "2018-2-Q05",
+      "2018-2-Q21",
+      "2018-2-Q45",
+      "2018-2-Q83",
+      "2018-4-Q15",
+      "2018-4-Q18",
+      "2018-4-Q37"
+    ],
+    "choiceConflicts": [
+      "2018-2-Q10"
+    ],
+    "canonicalReassignment": {
+      "externalId": "2018-4-Q19",
+      "from": "U-026",
+      "to": "U-997",
+      "theoryLessonId": "lesson-lqjgxa"
+    },
+    "canonicalTheoryRepair": {
+      "externalId": "2018-4-Q35",
+      "canonicalId": "U-649",
+      "newLessonId": "lesson-cbt-gang-system-process-layout",
+      "affectedExternalIds": [
+        "2015-2-Q23",
+        "2018-4-Q35"
+      ],
+      "publicationBlockers": [
+        "lesson_source_needed",
+        "pending_runtime_integration"
+      ]
+    },
+    "lowContextRegistered": [
+      "2017-2-Q58",
+      "2017-2-Q72",
+      "2017-2-Q75",
+      "2017-2-Q81",
+      "2017-2-Q82",
+      "2017-2-Q85",
+      "2017-2-Q88",
+      "2017-2-Q91",
+      "2018-2-Q01",
+      "2018-2-Q08",
+      "2018-2-Q18",
+      "2018-2-Q31",
+      "2018-2-Q42",
+      "2018-2-Q47",
+      "2018-2-Q58",
+      "2018-2-Q61",
+      "2018-2-Q68",
+      "2018-2-Q72",
+      "2018-2-Q90",
+      "2018-2-Q94",
+      "2018-4-Q02",
+      "2018-4-Q03",
+      "2018-4-Q04",
+      "2018-4-Q16",
+      "2018-4-Q17",
+      "2018-4-Q21",
+      "2018-4-Q26",
+      "2018-4-Q35",
+      "2018-4-Q44",
+      "2018-4-Q50"
+    ],
+    "theoryGap": "199문항은 기존 직접 이론 또는 canonical 재배정으로 연결했고, 2018-4-Q35는 검토 패킷 기반 source-gated 신규 레슨과 canonical overlay를 추가했다. 직접 이론 미연결은 0건이다.",
+    "calculationStructure": "8문항에 식·단위·대입·결과 구조를 보존했다.",
+    "choiceContract": "38문항은 canonical choice ID 1:1 매핑을 완료했고, 153문항은 variant 전용 선택지 계약 전까지 canonical 피드백 재사용을 차단했다."
+  },
+  "supplementalChecks": {
+    "generatorOwnedValidation": "PASS",
+    "independentValidation": "PASS",
+    "typescriptSyntax": "PASS",
+    "targetedTypecheck": "PASS_SYNTAX_ONLY",
+    "supplementalRuntime": "PASS_STATIC_SIMULATION",
+    "supplementalVerifier": "PASS_INDEPENDENT_PYTHON",
+    "supplementalNoAnswerLeak": "PASS_STATIC_PROJECTION",
+    "negativeContracts": "PASS_10_OF_10",
+    "generatorIdempotency": "PASS",
+    "pythonGeneratorSyntax": "PASS"
+  },
+  "officialChecks": {
+    "node24Typecheck": "BLOCKED_NODE_VERSION_AND_PARTIAL_SNAPSHOT",
+    "vitestMaxWorkers1": "BLOCKED_NODE_VERSION_DEPENDENCIES_AND_PARTIAL_SNAPSHOT",
+    "eslintChangedFiles": "BLOCKED_NODE_VERSION_DEPENDENCIES_AND_PARTIAL_SNAPSHOT",
+    "verifyReviewedCbt": "BLOCKED_MISSING_TSX_AND_COMPLETE_TREE",
+    "verifyNoAnswerLeak": "BLOCKED_MISSING_TSX_AND_COMPLETE_TREE",
+    "buildRuntimeContentAndSupabaseMaterialization": "NOT_RUN_PARTIAL_SNAPSHOT",
+    "sqlMigrationTests": "NOT_RUN_BATCH_SCOPE",
+    "loginGuestFlows": "NOT_RUN_FINAL_RUNTIME_INTEGRATION"
+  },
+  "git": {
+    "repositoryMetadataAvailable": false,
+    "commitCreated": false,
+    "push": false,
+    "pullRequest": false,
+    "deploy": false
+  }
+}

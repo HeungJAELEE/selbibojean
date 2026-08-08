@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "typescriptVersion": "5.8.3",
+  "files": [
+    {
+      "path": "src/lib/content/reviewed-cbt-variants.ts",
+      "bytes": 33181,
+      "errorCount": 0
+    },
+    {
+      "path": "src/lib/content/runtime-content.ts",
+      "bytes": 2901,
+      "errorCount": 0
+    },
+    {
+      "path": "src/lib/content/written-question-audit.ts",
+      "bytes": 13663,
+      "errorCount": 0
+    },
+    {
+      "path": "src/lib/content/taxonomy-normalization.ts",
+      "bytes": 5547,
+      "errorCount": 0
+    },
+    {
+      "path": "scripts/verify-reviewed-cbt-variants.ts",
+      "bytes": 97928,
+      "errorCount": 0
+    },
+    {
+      "path": "tests/unit/written-question-audit.test.ts",
+      "bytes": 8819,
+      "errorCount": 0
+    },
+    {
+      "path": "tests/integration/runtime-content-gates.test.ts",
+      "bytes": 4753,
+      "errorCount": 0
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,41 @@
+{
+  "status": "INCONCLUSIVE_DEPENDENCIES_MISSING",
+  "baseSnapshot": {
+    "lineCount": 7403,
+    "errorCodeCounts": {
+      "TS2307": 487,
+      "TS2503": 23,
+      "TS2580": 185,
+      "TS7006": 287,
+      "TS7031": 139,
+      "TS2339": 24,
+      "TS2322": 39,
+      "TS7026": 5845,
+      "TS2875": 110,
+      "TS7053": 4,
+      "TS18048": 172,
+      "TS2345": 9,
+      "TS2719": 1
+    }
+  },
+  "integratedSnapshot": {
+    "lineCount": 7422,
+    "errorCodeCounts": {
+      "TS2307": 480,
+      "TS2503": 23,
+      "TS2580": 186,
+      "TS7006": 288,
+      "TS7031": 139,
+      "TS2339": 24,
+      "TS2322": 39,
+      "TS7026": 5845,
+      "TS2875": 110,
+      "TS7053": 4,
+      "TS7016": 12,
+      "TS18048": 172,
+      "TS2345": 9,
+      "TS2719": 1
+    }
+  },
+  "assessment": "Both the untouched base snapshot and integrated snapshot fail at repository scale without node_modules. The added verifier nullability/type-shape errors found during integration were corrected; remaining new verifier/test diagnostics are missing Node/Vitest declarations, while the zod runtime shim intentionally has no declaration package."
+}

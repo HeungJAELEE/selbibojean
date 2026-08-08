@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, RotateCcw } from "lucide-react";
 import type { ConceptGroup, PracticeFeedback, PublicQuestion, Subject } from "@/lib/domain/types";
 import { cn } from "@/lib/utils";
@@ -46,6 +46,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
   const [isRetry, setIsRetry] = useState(() => Boolean(searchParams.get("retry")));
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const pendingAttemptRef = useRef<{ key: string; id: string } | null>(null);
 
   useEffect(() => {
     const resume = searchParams.get("resume");
@@ -105,11 +106,23 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
     if (!question || !selectedChoiceId || !session) return;
     setLoading(true);
     setError("");
+    const attemptKey = JSON.stringify([
+      session.sessionId,
+      question.id,
+      selectedChoiceId,
+      selfRating,
+      attemptKind,
+    ]);
+    const clientAttemptId =
+      pendingAttemptRef.current?.key === attemptKey
+        ? pendingAttemptRef.current.id
+        : crypto.randomUUID();
+    pendingAttemptRef.current = { key: attemptKey, id: clientAttemptId };
     try {
       const response = await fetch("/api/practice/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ questionId: question.id, choiceId: selectedChoiceId, selfRating, sessionId: session.sessionId, attemptKind }),
+        body: JSON.stringify({ clientAttemptId, questionId: question.id, choiceId: selectedChoiceId, selfRating, sessionId: session.sessionId, attemptKind }),
       });
       const result = await response.json() as PracticeFeedback & { error?: string };
       if (!response.ok) throw new Error(result.error);
@@ -119,10 +132,11 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
         const attempts = JSON.parse(localStorage.getItem(GUEST_ATTEMPTS_KEY) ?? "[]") as unknown[];
         const dueAt = new Date();
         dueAt.setMinutes(dueAt.getMinutes() + (result.isCorrect ? selfRating === "known" ? 7 * 1440 : selfRating === "unsure" ? 3 * 1440 : 1440 : 10));
-        attempts.push({ questionId: question.id, selectedChoiceId, isCorrect: result.isCorrect, selfRating, dueAt: dueAt.toISOString(), attemptKind, attemptedAt: new Date().toISOString() });
+        attempts.push({ clientAttemptId, questionId: question.id, selectedChoiceId, isCorrect: result.isCorrect, selfRating, dueAt: dueAt.toISOString(), attemptKind, attemptedAt: new Date().toISOString() });
         localStorage.setItem(GUEST_ATTEMPTS_KEY, JSON.stringify(attempts));
         notifyGuestAttemptsChanged();
       }
+      pendingAttemptRef.current = null;
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "채점하지 못했습니다.");
     } finally {

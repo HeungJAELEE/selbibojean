@@ -1,0 +1,8 @@
+{
+  "status": "APPLIED",
+  "sourceFile": "scripts/verify-reviewed-cbt-variants.ts",
+  "externalId": "2015-2-Q23",
+  "historicalBatch": "import-06",
+  "supersedingBatch": "import-08",
+  "reason": "Retain the immutable batch-06 direct-theory matrix as historical evidence while allowing a later, manifest-declared theory/canonical extension to supersede the current cumulative record link."
+}

@@ -1,0 +1,258 @@
+{
+  "comparisonBase": "/mnt/data/cbt_batch02_theory_work/repo",
+  "comparisonHead": "/mnt/data/cbt_batch03_final_work/repo",
+  "counts": {
+    "changed": 3,
+    "added": 33,
+    "removed": 0
+  },
+  "changed": [
+    {
+      "path": "scripts/verify-reviewed-cbt-variants.ts",
+      "before": {
+        "size": 19295,
+        "sha256": "e93dae2a555e83e121d9b08884cc7e3c947e8e9d27c6eec3cf59d00c634a831b"
+      },
+      "after": {
+        "size": 24134,
+        "sha256": "0708a705795bcff082f49e1da4514c62462748a175980b970478224efb5c5170"
+      }
+    },
+    {
+      "path": "src/data/generated/cbt-reviewed-variants.json",
+      "before": {
+        "size": 2012320,
+        "sha256": "0897c6826aa6b516fb1581e3c4117e4e26b1c66763e80593375a836d1049ed49"
+      },
+      "after": {
+        "size": 2952323,
+        "sha256": "137ef7d1c45f6af739f6597ea61a50d5b6b28018a4bf746d6d7fa600d0f246f3"
+      }
+    },
+    {
+      "path": "tests/unit/reviewed-cbt-variants.test.ts",
+      "before": {
+        "size": 16057,
+        "sha256": "5cf7097f89377b9d4d234c3b265d798b71680941956213545bd886a0c256d62b"
+      },
+      "after": {
+        "size": 17800,
+        "sha256": "3ca0639082a846c2ed2dbb7a3593ca416031b6c849d73ac8100cd370176b57bf"
+      }
+    }
+  ],
+  "added": [
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/answer-key-correction-ledger.jsonl",
+      "size": 3948,
+      "sha256": "aca163d8c6dfa97401ff452320bc27047a02e304903e37a73581a0a14b3fe3e2"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/artifact-manifest.json",
+      "size": 3111,
+      "sha256": "b31f1c1716a60c3bcd9652cee6b1783cb9caed3506f6287b6b9d32de34e7af68"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/batch-summary.json",
+      "size": 632,
+      "sha256": "ea78cbb67f207dd600c07a86efbd7b608ac09f76b7e9d728a1e6c982beac5ac5"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/canonical-question-changes.json",
+      "size": 24953,
+      "sha256": "1980542cfbd005cbff3f63f826ed2944dcb2dc0a6b14f19ff9d6075115d1ff69"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/choice-conflict-queue.jsonl",
+      "size": 9453,
+      "sha256": "54bd24bea2efb3ca17e11eaf962f4e9e4c8e0c1946b5ae1b56735d4d6972172b"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/code-changes.patch",
+      "size": 1246373,
+      "sha256": "77544171089e88b623cf678d407098927402f92387219bd84910e810f4accbae"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/completion-report.md",
+      "size": 6759,
+      "sha256": "8d90455d50230c2cf0fc5b6e9bbfb15557f3cfa39635f3c974c9fa74412aca6a"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/direct-theory-link-matrix.jsonl",
+      "size": 67816,
+      "sha256": "5517ef997f6400f30cc7db6e695dc9c667e49abbf9ea1ccfa782a09f0abc34ba"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/external-ids.json",
+      "size": 3205,
+      "sha256": "510f4f3e2b29ef0cb482c4c04709ea84bc8fdb08083332311bdb59c119b74563"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/final-validation.json",
+      "size": 3401,
+      "sha256": "f1a05eab9389ea2dd378d29672245016311abca685ff445f3ee436c8f3350b6e"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/generate-import-batch-03.py",
+      "size": 41604,
+      "sha256": "4cd3b5ae028f64a8fa38d755c5dfbd810b98d7b33eaf2ba2068a947587838483"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/idempotency-validation.json",
+      "size": 3167,
+      "sha256": "ee0f1731a5d5ac36dc3c843f372c25a743ab85e6e8abdfe6a0fedf2fe7a127aa"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/image-verification-queue.jsonl",
+      "size": 27972,
+      "sha256": "709567bd6b4bca75f5d702912ab863dc91af0a7bdda6c9332685d038afc9f168"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/import-report.md",
+      "size": 1380,
+      "sha256": "b4591dfe5e2c008730520091e8e0e7771510c384855ea1f31151f17c3aff97f4"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/independent-validation.json",
+      "size": 1273,
+      "sha256": "dae7b5a4619266843d4357ae242bc760b98d165ae9d6ed3560e1f6361ced7e2d"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/negative-contract-validation.json",
+      "size": 1323,
+      "sha256": "86c6d54a88552d075891426080589886b523e917cdbcf9a3d54e143b60b8c5c5"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/node-runtime-check.log",
+      "size": 345,
+      "sha256": "a3741b7a4f59df8b2d0c9a9ff1ad6683c2afbc8871b9eff2ef5ed10b91c04ad7"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/official-typecheck-attempt.log",
+      "size": 423,
+      "sha256": "0216c91b59819b871a4b01de1a018f3e13b95960aeccf5ff87cc6e995bc4a19c"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/pre-node-static-validation.json",
+      "size": 1511,
+      "sha256": "5c7735aa15faa8b8f79d74ff60f6a4de5af5f4d0e2628aed2836cda6ad778dd8"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/repository-verifier-attempt.json",
+      "size": 476,
+      "sha256": "4fefa92b61d11821f031ba2fa6f55f668612fd2429527ae8056dd26ff07144ef"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/repository-verifier-attempt.log",
+      "size": 1696,
+      "sha256": "0729232eb07d2bf410429f4039e13f4eab9f2b90506498d809569ffe57169fd3"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/run-independent-validation.py",
+      "size": 16448,
+      "sha256": "c503f97e2f452bbeb62329794e009da947e4728b65def2ff754dd099ff336692"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/supplemental-runtime-validation.json",
+      "size": 940,
+      "sha256": "0a393ee24fb37b473696ed657723f4f8ec225342e5b5b15c611b78e4176eb442"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/supplemental-verifier-validation.json",
+      "size": 693,
+      "sha256": "850bc4bde24da26a6a481272ac5b1b67ad8019f513def66abaaa403ed2dd7e3b"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/supplemental-verifier.log",
+      "size": 159,
+      "sha256": "6e1d84f06ba2aaf05c11f4ab3a317b0efc08f3188680b8cad5e3a0a5fcf1f5a3"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/syntax-validation.json",
+      "size": 434,
+      "sha256": "10bc5fd825ff23949b6a1bc8b6f79a4aa71fd58646e15a5cce1ac87e1f5e971b"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/targeted-typecheck-validation.json",
+      "size": 721,
+      "sha256": "531555d5962e19de8643ac4dba6b8e8c3956209f0a7813ef12a8187cd826819d"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/theory-gap-audit.json",
+      "size": 1298,
+      "sha256": "cf237a26dd73d4778fff84a3d2c41f1549d909ed6125a59497a8081995d63a67"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/theory-lesson-additions.json",
+      "size": 12534,
+      "sha256": "bb20c3934d65b4d06000838026ae1a9fda35ea03d6a7b09cff1c1ff1aa058042"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/toolchain-limitations.json",
+      "size": 749,
+      "sha256": "708dd3137688b0703bf9fc50f0821b8095694037f2b4999abc5b7177addda471"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/validation.json",
+      "size": 503,
+      "sha256": "d9598b028d6574a640fd9d22fc29b7a35b7cebade0b21480e2dc0f0f05181f0f"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/variant-mapping.jsonl",
+      "size": 706958,
+      "sha256": "ffc94ae0ee6e059c702f429e211f2a4f5f0d7e1e1ed1df84919976ee45e034d7"
+    },
+    {
+      "path": "docs/audit-work/cbt-system-migration/import-batch-03/variant-specific-choice-contract-queue.jsonl",
+      "size": 594909,
+      "sha256": "2b8a982b308e53e635579807c5c2a76658fc7b9dd0d1e3a2b021aeb5f603658e"
+    }
+  ],
+  "removed": [],
+  "productFilesChanged": [
+    "scripts/verify-reviewed-cbt-variants.ts",
+    "src/data/generated/cbt-reviewed-variants.json",
+    "tests/unit/reviewed-cbt-variants.test.ts"
+  ],
+  "auditFilesAdded": [
+    "docs/audit-work/cbt-system-migration/import-batch-03/answer-key-correction-ledger.jsonl",
+    "docs/audit-work/cbt-system-migration/import-batch-03/artifact-manifest.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/batch-summary.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/canonical-question-changes.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/choice-conflict-queue.jsonl",
+    "docs/audit-work/cbt-system-migration/import-batch-03/code-changes.patch",
+    "docs/audit-work/cbt-system-migration/import-batch-03/completion-report.md",
+    "docs/audit-work/cbt-system-migration/import-batch-03/direct-theory-link-matrix.jsonl",
+    "docs/audit-work/cbt-system-migration/import-batch-03/external-ids.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/final-validation.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/generate-import-batch-03.py",
+    "docs/audit-work/cbt-system-migration/import-batch-03/idempotency-validation.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/image-verification-queue.jsonl",
+    "docs/audit-work/cbt-system-migration/import-batch-03/import-report.md",
+    "docs/audit-work/cbt-system-migration/import-batch-03/independent-validation.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/negative-contract-validation.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/node-runtime-check.log",
+    "docs/audit-work/cbt-system-migration/import-batch-03/official-typecheck-attempt.log",
+    "docs/audit-work/cbt-system-migration/import-batch-03/pre-node-static-validation.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/repository-verifier-attempt.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/repository-verifier-attempt.log",
+    "docs/audit-work/cbt-system-migration/import-batch-03/run-independent-validation.py",
+    "docs/audit-work/cbt-system-migration/import-batch-03/supplemental-runtime-validation.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/supplemental-verifier-validation.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/supplemental-verifier.log",
+    "docs/audit-work/cbt-system-migration/import-batch-03/syntax-validation.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/targeted-typecheck-validation.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/theory-gap-audit.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/theory-lesson-additions.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/toolchain-limitations.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/validation.json",
+    "docs/audit-work/cbt-system-migration/import-batch-03/variant-mapping.jsonl",
+    "docs/audit-work/cbt-system-migration/import-batch-03/variant-specific-choice-contract-queue.jsonl"
+  ],
+  "preservedProductFiles": {
+    "src/data/generated/content.json": {
+      "size": 20924645,
+      "sha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4"
+    }
+  }
+}

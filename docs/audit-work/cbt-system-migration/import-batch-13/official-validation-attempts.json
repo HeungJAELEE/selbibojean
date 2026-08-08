@@ -1,0 +1,48 @@
+{
+  "nodeVersion": "v24.11.1",
+  "npmVersion": "10.9.2",
+  "attempts": [
+    {
+      "name": "node-runtime",
+      "status": "PASS",
+      "reason": "repository Node 24 contract executed successfully",
+      "exitCode": 0,
+      "logFile": "official-validation-attempts/node-runtime.log"
+    },
+    {
+      "name": "typecheck",
+      "status": "BLOCKED_MISSING_PROJECT_DEPENDENCIES",
+      "reason": "TypeScript ran under Node 24 but @types/node, Vite, Next, Playwright, Supabase and other installed project declarations are absent",
+      "exitCode": 1,
+      "logFile": "official-validation-attempts/typecheck.log"
+    },
+    {
+      "name": "vitest",
+      "status": "BLOCKED_MISSING_VITEST",
+      "reason": "vitest executable is not installed",
+      "exitCode": 127,
+      "logFile": "official-validation-attempts/vitest.log"
+    },
+    {
+      "name": "eslint",
+      "status": "BLOCKED_MISSING_ESLINT",
+      "reason": "eslint executable is not installed",
+      "exitCode": 127,
+      "logFile": "official-validation-attempts/eslint.log"
+    },
+    {
+      "name": "verify-reviewed-cbt",
+      "status": "BLOCKED_MISSING_TSX",
+      "reason": "project tsx executable is not installed; equivalent logic passed with the documented compatibility loader",
+      "exitCode": 127,
+      "logFile": "official-validation-attempts/verify-reviewed-cbt.log"
+    },
+    {
+      "name": "verify-no-answer-leak",
+      "status": "BLOCKED_MISSING_TSX",
+      "reason": "project tsx executable is not installed; source scope passed with the documented compatibility loader",
+      "exitCode": 127,
+      "logFile": "official-validation-attempts/verify-no-answer-leak.log"
+    }
+  ]
+}

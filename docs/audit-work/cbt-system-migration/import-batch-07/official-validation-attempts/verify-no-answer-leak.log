@@ -1,0 +1,5 @@
+BLOCKED PRECONDITION
+Current Node.js: v22.16.0
+Required Node.js: >=24.0.0 <25
+Installed project dependencies: absent
+The official command was not executed because tsx and the complete repository runtime tree are unavailable in this partial batch snapshot.

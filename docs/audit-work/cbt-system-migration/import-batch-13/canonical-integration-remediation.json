@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "scope": "batch-13 full-repository canonical integration remediation",
+  "contentJsonSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+  "manifestBeforeSha256": "b2a614eb26faadad231c30bb7eb69e55c18dfc9c28f8350515f7a50d6a4cfac5",
+  "manifestAfterSha256": "e52c9f24acea019713bd451a9ed3792204d5f4390b1f61726310719bb670d838",
+  "recordsSha256": "39de100e8d4369a396fb8fdbc1a5035e7ecb64445d8f968e86dc832c5eccc683",
+  "canonicalQuestionChangesSha256": "702e341baa17bc0e161df1a31a0f38ba05e207ecbf27ee1e64f2803cdbb508a8",
+  "recordCount": 2384,
+  "corrections": [
+    {
+      "kind": "canonical_replacement_guard",
+      "questionId": "U-649",
+      "beforeSha256": "44617af2e712441165dc00045ff9848caae99330e643b14281da042335fe4866",
+      "afterSha256": "3016da1929d96568fc768cbb0a176d322fb1bafabce9624f9f095cfb60037450",
+      "beforeBasis": "dry_run_canonical_contract",
+      "afterBasis": "content_json_full_question_contract"
+    },
+    {
+      "kind": "canonical_replacement_guard",
+      "questionId": "U-478",
+      "beforeSha256": "e8921a7fe71061153c108a92b05938d5698c2f2ed64d1f4929ef6c58fe9df0a3",
+      "afterSha256": "ff0c8ded5a013a81ec018e98478060f67749d7862aecdf513387068556598bda",
+      "beforeBasis": "dry_run_canonical_reference_contract",
+      "afterBasis": "content_json_full_question_contract"
+    },
+    {
+      "kind": "prior_record_theory_link",
+      "externalId": "2015-2-Q23",
+      "beforeRecordSha256": "3ff2b93dd334020aad911e0d01f1ae83bc7a3f5eb08903a3bf56ad1132cee9f9",
+      "afterRecordSha256": "4fc7b4083a6284c9b4c9a61817e0e5e3c7eb0ca6dc7d9bb0759dc87d04bbe19c",
+      "reason": "Batch 08 directExternalIds and canonical affectedExternalIds include this prior variant; its record had not been migrated to the added lesson."
+    },
+    {
+      "kind": "prior_record_taxonomy_link",
+      "externalId": "2007-4-Q84",
+      "beforeRecordSha256": "fcbc58873f98255e9b0d8074096fc4ce43cf7d423014f1789b2af0a01b3f2bb4",
+      "afterRecordSha256": "3eed81ccaf2e9c2bed5ce41d3b7ec42d63492be1b0a5dbf645c69f059239b0c3",
+      "beforeConceptGroupId": "s1-g02",
+      "afterConceptGroupId": "s1-g06",
+      "reason": "Batch 10 canonical affectedExternalIds includes this prior variant; its record had not inherited the U-478 taxonomy repair."
+    },
+    {
+      "kind": "machine_readable_theory_repair",
+      "batchId": "import-10",
+      "lessonId": "lesson-qnsesu",
+      "before": "2020-12B-Q86: U-478 conceptGroup s1-g02 -> s1-g06 taxonomy repair",
+      "after": "lesson-qnsesu:s1-g06",
+      "reason": "Runtime parses canonicalTheoryRepairs as lessonId:conceptGroupId; the narrative entry did not override the earlier s1-g02 repair."
+    },
+    {
+      "kind": "choice_conflict_runtime_schema",
+      "externalId": "2018-2-Q10",
+      "beforeRecordSha256": "d52b7f115ecb2ffb73bdfcdec7efc1d7085dfb8d934d947e3fc22c4cdc4af4df",
+      "afterRecordSha256": "fbc91e6676e7d8ed540e0c89a233f35b305ed0b4bcf6cb4c041f7139185c01dc",
+      "reason": "Normalize the cumulative choice-conflict record to the runtime non-scoring schema without changing its substantive review decision."
+    },
+    {
+      "kind": "choice_conflict_runtime_schema",
+      "externalId": "2019-2-Q32",
+      "beforeRecordSha256": "43833f184719301a04fb5413d3baeeb96b5a1cd8d9032e743caf83cf73340824",
+      "afterRecordSha256": "fb9a06bc7123d36c562686bc7f55f29494ad817fa2b65b4e8e3af43865c372ec",
+      "reason": "Normalize the cumulative choice-conflict record to the runtime non-scoring schema without changing its substantive review decision."
+    },
+    {
+      "kind": "choice_conflict_runtime_schema",
+      "externalId": "2019-2-Q86",
+      "beforeRecordSha256": "6e343769add4521a3ca70f0ec62d2de43187620f992084844ede51cbcf3192fa",
+      "afterRecordSha256": "81c0974a1c117934a19ffc0bebf2836793db6092129b9cfd1427b53bd33b9569",
+      "reason": "Normalize the cumulative choice-conflict record to the runtime non-scoring schema without changing its substantive review decision."
+    },
+    {
+      "kind": "choice_conflict_runtime_schema",
+      "externalId": "2020-12B-Q92",
+      "beforeRecordSha256": "0a43c3a83a52ffaf78385d0708914514683a15e14b17f8a9a06d5f8a1454205b",
+      "afterRecordSha256": "4b0898d7eb0a2e022f6969d66728bd84a304ed4668fb2ac0334d37410f34e819",
+      "reason": "Normalize the cumulative choice-conflict record to the runtime non-scoring schema without changing its substantive review decision."
+    },
+    {
+      "kind": "choice_conflict_runtime_schema",
+      "externalId": "2021-2-Q13",
+      "beforeRecordSha256": "09d4449b0becc98657db220a4511651fa567250555cc7c786a92f4efa3a964b4",
+      "afterRecordSha256": "4c36f0e696f049421343f9cdf6859af06deb258f4334b075c004f89b5dcd47c7",
+      "reason": "Normalize the cumulative choice-conflict record to the runtime non-scoring schema without changing its substantive review decision."
+    }
+  ]
+}

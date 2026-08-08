@@ -1,0 +1,104 @@
+{
+  "independentValidatorVersion": 6,
+  "validatedAt": "2026-08-07T03:02:01+09:00",
+  "status": "PASS",
+  "failureCount": 0,
+  "failures": [],
+  "recordCount": 222,
+  "uniqueExternalIdCount": 222,
+  "verdictCounts": {
+    "ACCEPT": 210,
+    "REVISE": 0,
+    "CHOICE_ISSUE": 1,
+    "HOLD": 11
+  },
+  "publicationCandidateCount": 208,
+  "theoryGapHoldExternalIds": [
+    "2022-1-Q61",
+    "2022-2-Q65"
+  ],
+  "nonAcceptExactSet": {
+    "2021-2-Q01": "HOLD",
+    "2021-2-Q06": "HOLD",
+    "2021-2-Q13": "CHOICE_ISSUE",
+    "2021-2-Q27": "HOLD",
+    "2021-2-Q97": "HOLD",
+    "2021-4-Q05": "HOLD",
+    "2022-1-Q75": "HOLD",
+    "2022-1-Q80": "HOLD",
+    "2022-2-Q13": "HOLD",
+    "2022-2-Q14": "HOLD",
+    "2022-2-Q22": "HOLD",
+    "2022-2-Q27": "HOLD"
+  },
+  "sessions": [
+    {
+      "sessionNumber": 45,
+      "file": "de20210515_q01-q100_independent-review.jsonl",
+      "recordCount": 100,
+      "verdictCounts": {
+        "ACCEPT": 95,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 1,
+        "HOLD": 4
+      },
+      "sha256": "bda0ceed260677c46c30ef8134702e99934d9d430f28b0fa38cec12c069659fe"
+    },
+    {
+      "sessionNumber": 46,
+      "file": "de20210912_q01-q20_independent-review.jsonl",
+      "recordCount": 20,
+      "verdictCounts": {
+        "ACCEPT": 19,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 1
+      },
+      "sha256": "dde317d88bcbf61334e0554c8e8e0f7ab5cf5718c76e6cadbc00e35a26eeaebe"
+    },
+    {
+      "sessionNumber": 47,
+      "file": "cet20220305_selected-50_independent-review.jsonl",
+      "recordCount": 50,
+      "verdictCounts": {
+        "ACCEPT": 48,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 2
+      },
+      "sha256": "647b9436c391205bcce121a956ab9b1c10eea98a74de48ab3c2e21d2281cfcc4"
+    },
+    {
+      "sessionNumber": 48,
+      "file": "cet20220424_selected-52_independent-review.jsonl",
+      "recordCount": 52,
+      "verdictCounts": {
+        "ACCEPT": 48,
+        "REVISE": 0,
+        "CHOICE_ISSUE": 0,
+        "HOLD": 4
+      },
+      "sha256": "0283b8d4407d1d57471b6e5e094e748bb774017f4ff26f18f5d459701b24f6b1"
+    }
+  ],
+  "checks": {
+    "ledgerIdentityTextChoicesAnswerAndHashes": true,
+    "choiceSpecificityBindingAndUniqueness": true,
+    "formulaStructure": true,
+    "publicationScoringAndImageGates": true,
+    "theoryEntitiesRelationsAndTargetedRemaps": true,
+    "targetedMaterialDecisionsStable": true,
+    "generatedReportsPass": true,
+    "cumulative2384Exact": true
+  },
+  "notRun": [
+    "repository_typecheck",
+    "vitest",
+    "eslint",
+    "verify_no_answer_leak_runtime",
+    "runtime_publication_gate",
+    "login_guest_integration_flow",
+    "sql_migration_test",
+    "git_commit"
+  ]
+}

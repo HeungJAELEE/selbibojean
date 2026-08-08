@@ -39,6 +39,11 @@ describe("runtime merged content gates", () => {
     ).toEqual([]);
   });
 
+  it("freezes the reviewed-integration runtime publication baseline", () => {
+    expect(content.questions.filter(isPublishableQuestion)).toHaveLength(1490);
+    expect(content.lessons.filter(isPublishableLesson)).toHaveLength(1283);
+  });
+
   it("publishes a question only when its linked lesson is also publishable", () => {
     const lessonById = new Map(
       content.lessons.map((lesson) => [lesson.id, lesson]),
@@ -90,6 +95,48 @@ describe("runtime merged content gates", () => {
           Boolean(question.audit?.nextAction.trim()),
       ),
     ).toBe(true);
+  });
+
+  it("keeps reviewed choice conflicts blocked with canonical answer-conflict blockers", () => {
+    const questionById = new Map(
+      content.questions.map((question) => [question.id, question]),
+    );
+    const lessonById = new Map(
+      content.lessons.map((lesson) => [lesson.id, lesson]),
+    );
+
+    for (const canonicalId of ["U-1215", "U-1161", "U-1166", "U-1072", "U-1089"]) {
+      const question = questionById.get(canonicalId);
+      expect(question).toBeDefined();
+      expect(question?.contentStatus).toBe("in_review");
+      expect(question?.publication).toMatchObject({
+        readiness: "blocked",
+        blockers: expect.arrayContaining(["answer_conflict"]),
+      });
+      expect(question?.publication?.blockers).not.toContain(
+        "choice_conflict_non_scoring",
+      );
+      expect(question?.publication?.blockers).not.toContain(
+        "answer_key_correction_pending_runtime_validation",
+      );
+      expect(isPublishableQuestion(question!)).toBe(false);
+
+      const lesson = lessonById.get(question!.lessonId);
+      expect(lesson).toBeDefined();
+      expect(isPublishableLesson(lesson!)).toBe(false);
+    }
+  });
+
+  it("keeps canonical runtime-integration repairs mapping-gated", () => {
+    for (const canonicalId of ["U-649", "U-478"]) {
+      const question = content.questions.find((item) => item.id === canonicalId);
+      expect(question).toBeDefined();
+      expect(question?.publication).toMatchObject({
+        readiness: "blocked",
+        blockers: expect.arrayContaining(["mapping_unverified"]),
+      });
+      expect(isPublishableQuestion(question!)).toBe(false);
+    }
   });
 
   it("publishes supplemental theory while keeping it outside question statistics", () => {

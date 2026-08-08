@@ -1,0 +1,4 @@
+(node:43747) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("/mnt/data/work-batch13/ts-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS: 원문 2384, 대표 1396, 매핑 2384, 잔여 276, 44개 세부항목군, 공개 레슨 1190, 선택지 해설 5584, 공개 문제 1314, 근거 확인 대기 82, 용접 안전 원본 283문제·30레슨·25회차, 명시승인 0문제·0레슨, 검수대기 150문제·30레슨, 런타임 공개 1490문제·1283레슨

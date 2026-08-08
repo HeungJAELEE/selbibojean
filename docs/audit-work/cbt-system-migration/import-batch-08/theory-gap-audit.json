@@ -1,0 +1,17 @@
+{
+  "batchId": "import-08",
+  "recordCount": 200,
+  "existingDirectTheoryLinksRetained": 198,
+  "existingTheoryRelinks": 1,
+  "newDirectTheoryLessonsAdded": 1,
+  "canonicalContentAndTheoryRepairs": 1,
+  "missingDirectTheoryAfterBatch": 0,
+  "sourceNeededTheoryGateCount": 1,
+  "lowContextDirectTheoryLinks": 30,
+  "notes": [
+    "2018-4-Q19는 U-026에서 U-997 및 lesson-lqjgxa로 재배정했다.",
+    "2018-4-Q35는 U-649의 기존 보전작업자 팀 조직 의미를 동일기종 집단배치 의미로 교정했다.",
+    "신규 lesson-cbt-gang-system-process-layout은 검토 패킷의 지문·독립 풀이만 재구성했으며 권위 출처가 없어 sourceNeeded와 공개 차단을 유지한다.",
+    "2015-2-Q23은 동일 source stem을 공유하므로 canonical overlay 영향대상에 포함하되 기존 감사 레코드는 변경하지 않았다."
+  ]
+}

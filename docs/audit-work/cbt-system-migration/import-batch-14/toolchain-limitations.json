@@ -1,0 +1,21 @@
+{
+  "status": "BLOCKED",
+  "generatedAt": "2026-08-08T15:06:54+09:00",
+  "blockingLayer": "environment",
+  "blockingFacts": [
+    "The configured internal npm registry returns 404 for required locked tarballs, beginning with zwitch@2.0.4.",
+    "Public npm registry access is unavailable from the current container because external DNS/network access is blocked.",
+    "Docker, Supabase CLI, and psql are not installed in the current runtime."
+  ],
+  "notEquivalentToOfficialValidation": [
+    "The TypeScript loader transpiles source without full semantic type checking.",
+    "The local Zod shim supports data-contract execution but is not the locked zod@4.4.3 package."
+  ],
+  "unblockedEnvironmentRequirements": [
+    "Node.js 24.x and npm 10.9.2",
+    "Reachable npm registry for package-lock.json",
+    "Docker and Supabase CLI 2.112.0",
+    "Playwright Chromium dependencies"
+  ],
+  "safeDisposition": "Do not merge or deploy until the three GitHub release workflows pass in an environment with the exact lockfile dependencies."
+}

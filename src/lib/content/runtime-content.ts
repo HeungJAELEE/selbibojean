@@ -7,6 +7,7 @@ import { notionGapWrittenLessons } from "@/lib/content/notion-gap-written-lesson
 import { refineLessonUnderstandingBackground } from "@/lib/content/lesson-understanding-background";
 import { supplementalWrittenLessons } from "@/lib/content/supplemental-written-lessons";
 import { applyWrittenQuestionAuditManifest } from "@/lib/content/written-question-audit";
+import { mergeReviewedCbtVariants } from "@/lib/content/reviewed-cbt-variants";
 import rawWrittenQuestionAudit from "@/data/generated/written-question-audit.json";
 import type { GeneratedContent } from "@/lib/domain/types";
 
@@ -18,7 +19,9 @@ export function buildRuntimeContent(content: GeneratedContent) {
           mergeApprovedWeldingSafetyContent(
             mergeApprovedCompressorContent(
               refineLessonUnderstandingBackground(
-                normalizeCanonicalTaxonomy(content),
+                normalizeCanonicalTaxonomy(
+                  mergeReviewedCbtVariants(content),
+                ),
               ),
             ),
           ),

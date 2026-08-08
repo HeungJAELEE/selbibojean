@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "scope": "source",
+  "runtime": "Node.js v24.11.1",
+  "fullBuildScope": "NOT_RUN_CLIENT_BUILD_MISSING",
+  "logFile": "node24-source-answer-leak.log"
+}

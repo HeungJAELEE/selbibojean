@@ -1,0 +1,96 @@
+{
+  "manifestVersion": 6,
+  "createdAt": "2026-08-07T01:38:53+09:00",
+  "bundleName": "sessions41-44_review_bundle_final.zip",
+  "batch": "sessions41-44",
+  "sessionCount": 4,
+  "recordCount": 192,
+  "fileCountExcludingManifest": 17,
+  "files": [
+    {
+      "fileName": "de20200822_q51-q100_independent-review.jsonl",
+      "sizeBytes": 195795,
+      "sha256": "2b974d89fc64d3d57e84358f7427d63b8e776b8be76b2ea5d41b986a22b98ac4"
+    },
+    {
+      "fileName": "de20200822_q51-q100_summary.json",
+      "sizeBytes": 1089,
+      "sha256": "ba0ef5c2d8d9cf02e461146a162db87c5e0cbf6af3d157fa03db3f39871096a1"
+    },
+    {
+      "fileName": "de20200822_q51-q100_validation.json",
+      "sizeBytes": 1004,
+      "sha256": "a801292343235372d12ce6ba280f217f3b565c3beda66d35e9591821269923d0"
+    },
+    {
+      "fileName": "de20200926_q01-q50_independent-review.jsonl",
+      "sizeBytes": 200524,
+      "sha256": "5eb0299b31777ce71071837134308d9d9d99f33942e0c0aa97668d868924cc84"
+    },
+    {
+      "fileName": "de20200926_q01-q50_summary.json",
+      "sizeBytes": 1114,
+      "sha256": "f62b4ac1e32f6709227e877a96607f1e7164f0015c24bd5e27b34e31d5f0b822"
+    },
+    {
+      "fileName": "de20200926_q01-q50_validation.json",
+      "sizeBytes": 1003,
+      "sha256": "16a690ad1cf8b65ed93346684a9fa19c1d86f6fcd66ac6c31287558b6d820129"
+    },
+    {
+      "fileName": "de20200926_q51-q100_independent-review.jsonl",
+      "sizeBytes": 193846,
+      "sha256": "60e6dbc2f5bb0c38ce498c1723717236b8c6489bf248e972319cbd582c538fbc"
+    },
+    {
+      "fileName": "de20200926_q51-q100_summary.json",
+      "sizeBytes": 1116,
+      "sha256": "16c7c4d9dd1832a7286d4f6a88f58631ed5c3bc2e91ad8dfc8bffd0a2e0f5245"
+    },
+    {
+      "fileName": "de20200926_q51-q100_validation.json",
+      "sizeBytes": 1004,
+      "sha256": "641bd71f9a9c0a3dbc84ad4775c178ca3beaf9c1479b5ca2128fc94a8b901763"
+    },
+    {
+      "fileName": "de20210307_selected-42_independent-review.jsonl",
+      "sizeBytes": 168682,
+      "sha256": "0a9d159f0206eadbb6b2c48cb360af17a73baf436de7b9f78319ec68a5a24a34"
+    },
+    {
+      "fileName": "de20210307_selected-42_summary.json",
+      "sizeBytes": 1894,
+      "sha256": "547eed97e8a2d3c2c741bc4e2d40716997928005270743d33bb0861f33b83a37"
+    },
+    {
+      "fileName": "de20210307_selected-42_validation.json",
+      "sizeBytes": 1007,
+      "sha256": "c83f567c9fb3cb5baa4abf7aada255ec3fe72e3451d4a2d3623cb896f3cecb22"
+    },
+    {
+      "fileName": "sessions41-44_batch-summary.json",
+      "sizeBytes": 9983,
+      "sha256": "affd510e104f0836d411d537985ca1e72a63b634a2aba4a492a3fc4d1222d7c6"
+    },
+    {
+      "fileName": "sessions41-44_second-pass-validation.json",
+      "sizeBytes": 2982,
+      "sha256": "750197a093d2843ac4fbb08693eeab66d7f16d75f5fd3d52fe2b59653f5775be"
+    },
+    {
+      "fileName": "sessions41-44_independent-validation.json",
+      "sizeBytes": 2526,
+      "sha256": "1f915d14f4fd136d17dc021939f803cdb96fca350867911b05df899effa2da9a"
+    },
+    {
+      "fileName": "sessions41-44_final-audit.json",
+      "sizeBytes": 2183,
+      "sha256": "c49be7549b0ca7948870ad00439663cb1a4c6c04c16fdc7481ee6759408e5c8e"
+    },
+    {
+      "fileName": "sessions01-44_cumulative-validation.json",
+      "sizeBytes": 17174,
+      "sha256": "9f339b92bd7d4794018aef55a2e982c15612fb102215b6b1bd3cc09b2ba8feff"
+    }
+  ]
+}

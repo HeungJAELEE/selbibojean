@@ -1,0 +1,22 @@
+{
+  "batchId": "import-12",
+  "recordCount": 222,
+  "existingDirectTheoryLinksRetained": 214,
+  "targetCanonicalTheoryRelinks": 6,
+  "newDirectTheoryLessonsAdded": 0,
+  "canonicalContentAndTheoryRepairsApplied": 0,
+  "taxonomyRepairPendingCount": 2,
+  "taxonomyRepairPendingExternalIds": [
+    "2022-1-Q61",
+    "2022-2-Q65"
+  ],
+  "missingAuditTheoryAfterBatch": 0,
+  "publicationSafeTheoryLinkCount": 220,
+  "lowContextDirectTheoryLinks": 30,
+  "notes": [
+    "6건은 dry-run target canonical의 직접 이론 계약으로 재배정했다.",
+    "2022-1-Q61과 2022-2-Q65는 원자료가 taxonomy mismatch를 확인했지만 정확한 replacement conceptGroup ID를 선택하지 않아 canonical overlay를 만들지 않았다.",
+    "두 taxonomy-gap 문항은 정답·직접 풀이를 candidate로 보존하되 이론 탐색과 published 승격을 차단한다.",
+    "이미지 HOLD 11건과 선택지 충돌 1건은 정답·채점·choice ID mapping을 비활성화했다."
+  ]
+}

@@ -11,6 +11,7 @@ import {
   createSupabaseServerClient,
 } from "@/lib/supabase/server";
 import { isReleaseFeatureEnabled } from "@/lib/release-features";
+import { isAuthSessionMissingError } from "@/lib/supabase/auth-errors";
 
 const requestSchema = z.object({
   mode: z.enum(["all", "subject", "group", "wrong", "due", "weak", "mock"]).default("all"),
@@ -57,7 +58,14 @@ export async function POST(request: Request) {
   const content = await getContent();
   const supabase = await createSupabaseServerClient();
   const admin = createSupabaseAdminClient();
-  const { data: auth } = supabase ? await supabase.auth.getUser() : { data: { user: null } };
+  const authResult = supabase ? await supabase.auth.getUser() : null;
+  if (authResult?.error && !isAuthSessionMissingError(authResult.error)) {
+    return NextResponse.json(
+      { error: "로그인 상태를 확인하지 못했습니다. 다시 시도해 주세요." },
+      { status: 503 },
+    );
+  }
+  const auth = authResult?.data ?? { user: null };
   let scopedIds = parsed.data.guestQuestionIds;
 
   if (auth.user && (parsed.data.mode === "wrong" || parsed.data.mode === "weak") && supabase) {

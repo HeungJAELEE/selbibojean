@@ -1,0 +1,439 @@
+[
+  {
+    "action": "replace",
+    "question": {
+      "id": "U-1215",
+      "canonicalNumber": 1218,
+      "subjectId": "subject-3",
+      "conceptGroupId": "s3-g09",
+      "conceptId": "concept-cbt-safety-valve-simmering-correction",
+      "lessonId": "lesson-cbt-safety-valve-simmering-correction",
+      "lessonAnchor": "principle",
+      "stem": "고압 증기 안전밸브에서 심머링(Simmering)현상이 발생할 경우 조치 요령은?",
+      "choices": [
+        {
+          "id": "U-1215-c1",
+          "order": 1,
+          "text": "상부 조정 링의 상향 조정",
+          "feedback": {
+            "rationale": "‘상부 조정 링의 상향 조정’는 정답 조건을 충족하지 않는다. 상부 조정 링은 주로 전양정 도달과 블로다운 조정에 관여하므로 상향조정이 심머링의 직접 표준조치가 아니다.",
+            "plausibleReason": "‘상부 조정 링의 상향 조정’도 같은 분야에서 사용하는 용어이지만 이 문항이 묻는 직접 원리와는 다르다.",
+            "incorrectPoint": "상부 조정 링은 주로 전양정 도달과 블로다운 조정에 관여하므로 상향조정이 심머링의 직접 표준조치가 아니다.",
+            "keyRule": "스프링식 고압증기 안전밸브의 심머링은 하부 조정 링이 너무 낮을 때 발생할 수 있으며, 제조사 정비절차는 하부 링을 한 노치씩 위로 올려 심머링을 제거하도록 한다. 따라서 독립 정답은 3번이다.",
+            "differenceFromCorrect": "정답 ‘하부 조정 링의 상향 조정’와 달리 ‘상부 조정 링의 상향 조정’는 문두의 직접 조건을 충족하지 않는다."
+          }
+        },
+        {
+          "id": "U-1215-c2",
+          "order": 2,
+          "text": "상부 조정 링의 하향 조정",
+          "feedback": {
+            "rationale": "‘상부 조정 링의 하향 조정’는 정답 조건을 충족하지 않는다. 상부 링을 하향하면 블로다운이 길어지는 방향으로 작용하며 심머링 제거의 직접 조치가 아니다.",
+            "plausibleReason": "‘상부 조정 링의 하향 조정’도 같은 분야에서 사용하는 용어이지만 이 문항이 묻는 직접 원리와는 다르다.",
+            "incorrectPoint": "상부 링을 하향하면 블로다운이 길어지는 방향으로 작용하며 심머링 제거의 직접 조치가 아니다.",
+            "keyRule": "스프링식 고압증기 안전밸브의 심머링은 하부 조정 링이 너무 낮을 때 발생할 수 있으며, 제조사 정비절차는 하부 링을 한 노치씩 위로 올려 심머링을 제거하도록 한다. 따라서 독립 정답은 3번이다.",
+            "differenceFromCorrect": "정답 ‘하부 조정 링의 상향 조정’와 달리 ‘상부 조정 링의 하향 조정’는 문두의 직접 조건을 충족하지 않는다."
+          }
+        },
+        {
+          "id": "U-1215-c3",
+          "order": 3,
+          "text": "하부 조정 링의 상향 조정",
+          "feedback": {
+            "rationale": "‘하부 조정 링의 상향 조정’가 문두의 조건에 직접 해당한다. 하부 조정 링을 서서히 상향하면 개방력을 보강하여 심머링을 제거하는 제조사 절차와 일치한다.",
+            "plausibleReason": "문두의 대상·원리·조건을 모두 충족하므로 정답으로 선택할 수 있다.",
+            "incorrectPoint": null,
+            "keyRule": "스프링식 고압증기 안전밸브의 심머링은 하부 조정 링이 너무 낮을 때 발생할 수 있으며, 제조사 정비절차는 하부 링을 한 노치씩 위로 올려 심머링을 제거하도록 한다. 따라서 독립 정답은 3번이다.",
+            "differenceFromCorrect": null
+          }
+        },
+        {
+          "id": "U-1215-c4",
+          "order": 4,
+          "text": "하부 조정 링의 하향 조정",
+          "feedback": {
+            "rationale": "‘하부 조정 링의 하향 조정’는 정답 조건을 충족하지 않는다. 하부 링을 더 낮추면 개방력이 약해져 심머링이 지속되거나 악화될 수 있다.",
+            "plausibleReason": "‘하부 조정 링의 하향 조정’도 같은 분야에서 사용하는 용어이지만 이 문항이 묻는 직접 원리와는 다르다.",
+            "incorrectPoint": "하부 링을 더 낮추면 개방력이 약해져 심머링이 지속되거나 악화될 수 있다.",
+            "keyRule": "스프링식 고압증기 안전밸브의 심머링은 하부 조정 링이 너무 낮을 때 발생할 수 있으며, 제조사 정비절차는 하부 링을 한 노치씩 위로 올려 심머링을 제거하도록 한다. 따라서 독립 정답은 3번이다.",
+            "differenceFromCorrect": "정답 ‘하부 조정 링의 상향 조정’와 달리 ‘하부 조정 링의 하향 조정’는 문두의 직접 조건을 충족하지 않는다."
+          }
+        }
+      ],
+      "correctChoiceId": "U-1215-c3",
+      "answerText": "하부 조정 링의 상향 조정",
+      "explanation": "스프링식 고압증기 안전밸브의 심머링은 하부 조정 링이 너무 낮을 때 발생할 수 있으며, 제조사 정비절차는 하부 링을 한 노치씩 위로 올려 심머링을 제거하도록 한다. 따라서 독립 정답은 3번이다.",
+      "errorReason": "복원 정답 교정",
+      "sourceLabel": "https://cbtbank.kr/exam/de20100905",
+      "reviewStatus": "배치 03 독립 풀이·직접 이론 연결 검수",
+      "contentStatus": "in_review",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed",
+          "answer_key_correction_pending_runtime_validation"
+        ]
+      },
+      "verification": {
+        "status": "blocked",
+        "method": "manual_source_required",
+        "variantCount": 1,
+        "sourceUrls": [
+          "https://cbtbank.kr/exam/de20100905",
+          "https://valves.bakerhughes.com/consolidated/safety-valves/type-1811-safety-valve",
+          "https://manualzz.com/doc/70891025"
+        ],
+        "riskTags": [
+          "editorial_reconstruction",
+          "answer_conflict"
+        ],
+        "note": "복원 원문과 독립 풀이를 보존했으며 운영 공개 전 런타임 계약과 출처 검증이 필요합니다.",
+        "reviewedAt": "2026-08-07T20:10:00+09:00"
+      },
+      "audit": {
+        "questionId": "U-1215",
+        "scope": "review_queue",
+        "sourceContentStatus": "in_review",
+        "auditDisposition": "held_answer_conflict",
+        "evidenceLevel": null,
+        "cbtAnswer": "상부 조정 링의 상향 조정",
+        "verifiedAnswer": "하부 조정 링의 상향 조정",
+        "evidenceUrls": [
+          "https://cbtbank.kr/exam/de20100905",
+          "https://valves.bakerhughes.com/consolidated/safety-valves/type-1811-safety-valve",
+          "https://manualzz.com/doc/70891025"
+        ],
+        "reviewNote": "스프링식 고압증기 안전밸브의 심머링은 하부 조정 링이 너무 낮을 때 발생할 수 있으며, 제조사 정비절차는 하부 링을 한 노치씩 위로 올려 심머링을 제거하도록 한다. 따라서 독립 정답은 3번이다.",
+        "assetStatus": "not_required",
+        "nextAction": "런타임 variant 계약과 기술 검증 후 공개 심사",
+        "reviewChoiceFeedback": [
+          {
+            "choiceId": "U-1215-c1",
+            "verdict": "incorrect",
+            "rationale": "상부 조정 링은 주로 전양정 도달과 블로다운 조정에 관여하므로 상향조정이 심머링의 직접 표준조치가 아니다."
+          },
+          {
+            "choiceId": "U-1215-c2",
+            "verdict": "incorrect",
+            "rationale": "상부 링을 하향하면 블로다운이 길어지는 방향으로 작용하며 심머링 제거의 직접 조치가 아니다."
+          },
+          {
+            "choiceId": "U-1215-c3",
+            "verdict": "correct",
+            "rationale": "하부 조정 링을 서서히 상향하면 개방력을 보강하여 심머링을 제거하는 제조사 절차와 일치한다."
+          },
+          {
+            "choiceId": "U-1215-c4",
+            "verdict": "incorrect",
+            "rationale": "하부 링을 더 낮추면 개방력이 약해져 심머링이 지속되거나 악화될 수 있다."
+          }
+        ],
+        "reviewedAt": "2026-08-07T20:10:00+09:00"
+      },
+      "validation": {
+        "answer": true,
+        "explanation": true,
+        "choiceFeedback": true,
+        "theoryLink": true,
+        "contentQuality": true
+      }
+    },
+    "previousQuestionSha256": "6d24752299fd4da91c02c34bcf610d1fd122d2246213942314fc3faff6a8f834",
+    "affectedExternalIds": [
+      "2010-4-Q59"
+    ],
+    "rationale": "2010-4-Q59의 독립 풀이 및 정답키 교정을 직접 반영"
+  },
+  {
+    "action": "replace",
+    "question": {
+      "id": "U-1161",
+      "canonicalNumber": 1164,
+      "subjectId": "subject-3",
+      "conceptGroupId": "s3-g10",
+      "conceptId": "concept-cbt-cavitation-choice-conflict",
+      "lessonId": "lesson-cbt-cavitation-choice-conflict",
+      "lessonAnchor": "principle",
+      "stem": "다음에서 펌프의 캐비테이션 방지조건으로 잘못된 것은?",
+      "choices": [
+        {
+          "id": "U-1161-c1",
+          "order": 1,
+          "text": "유효 NPSH를 필요 NPSH보다 크게 맞춘다.",
+          "feedback": {
+            "rationale": "NPSH_a를 NPSH_r보다 크게 확보하는 것은 캐비테이션 방지의 핵심 조건이다.",
+            "plausibleReason": "복원 선택지 집합 전체를 함께 비교해야 하며 단일 보기만으로 정답을 확정할 수 없다.",
+            "incorrectPoint": null,
+            "keyRule": "제시된 네 조치는 모두 원심펌프 캐비테이션을 줄이는 방향이다. NPSH_a>NPSH_r 확보, 흡입양정 감소, 양흡입 임펠러 적용, 회전수 저하는 각각 흡입여유 증가 또는 필요 NPSH 감소에 기여하므로 “잘못된 것”이 없다.",
+            "differenceFromCorrect": null
+          }
+        },
+        {
+          "id": "U-1161-c2",
+          "order": 2,
+          "text": "흡입 실양정을 작게 한다.",
+          "feedback": {
+            "rationale": "흡입 실양정을 줄이면 펌프 입구 압력과 NPSH_a가 증가한다.",
+            "plausibleReason": "복원 선택지 집합 전체를 함께 비교해야 하며 단일 보기만으로 정답을 확정할 수 없다.",
+            "incorrectPoint": null,
+            "keyRule": "제시된 네 조치는 모두 원심펌프 캐비테이션을 줄이는 방향이다. NPSH_a>NPSH_r 확보, 흡입양정 감소, 양흡입 임펠러 적용, 회전수 저하는 각각 흡입여유 증가 또는 필요 NPSH 감소에 기여하므로 “잘못된 것”이 없다.",
+            "differenceFromCorrect": null
+          }
+        },
+        {
+          "id": "U-1161-c3",
+          "order": 3,
+          "text": "편흡입 펌프를 양 흡입 펌프로 바꾼다.",
+          "feedback": {
+            "rationale": "양흡입형은 유량을 임펠러 양쪽으로 나눠 입구 유속과 필요 NPSH를 낮출 수 있다.",
+            "plausibleReason": "복원 선택지 집합 전체를 함께 비교해야 하며 단일 보기만으로 정답을 확정할 수 없다.",
+            "incorrectPoint": null,
+            "keyRule": "제시된 네 조치는 모두 원심펌프 캐비테이션을 줄이는 방향이다. NPSH_a>NPSH_r 확보, 흡입양정 감소, 양흡입 임펠러 적용, 회전수 저하는 각각 흡입여유 증가 또는 필요 NPSH 감소에 기여하므로 “잘못된 것”이 없다.",
+            "differenceFromCorrect": null
+          }
+        },
+        {
+          "id": "U-1161-c4",
+          "order": 4,
+          "text": "회전수를 낮춘다.",
+          "feedback": {
+            "rationale": "회전수를 낮추면 임펠러 입구의 압력저하와 필요 NPSH가 감소한다.",
+            "plausibleReason": "복원 선택지 집합 전체를 함께 비교해야 하며 단일 보기만으로 정답을 확정할 수 없다.",
+            "incorrectPoint": null,
+            "keyRule": "제시된 네 조치는 모두 원심펌프 캐비테이션을 줄이는 방향이다. NPSH_a>NPSH_r 확보, 흡입양정 감소, 양흡입 임펠러 적용, 회전수 저하는 각각 흡입여유 증가 또는 필요 NPSH 감소에 기여하므로 “잘못된 것”이 없다.",
+            "differenceFromCorrect": null
+          }
+        }
+      ],
+      "correctChoiceId": "U-1161-c1",
+      "answerText": "유효 NPSH를 필요 NPSH보다 크게 맞춘다.",
+      "explanation": "선택지 충돌: 제시된 네 조치는 모두 원심펌프 캐비테이션을 줄이는 방향이다. NPSH_a>NPSH_r 확보, 흡입양정 감소, 양흡입 임펠러 적용, 회전수 저하는 각각 흡입여유 증가 또는 필요 NPSH 감소에 기여하므로 “잘못된 것”이 없다.",
+      "errorReason": "선택지 충돌",
+      "sourceLabel": "https://cbtbank.kr/exam/de20111002",
+      "reviewStatus": "배치 03 독립 풀이·직접 이론 연결 검수",
+      "contentStatus": "in_review",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed",
+          "choice_conflict_non_scoring"
+        ]
+      },
+      "verification": {
+        "status": "blocked",
+        "method": "manual_source_required",
+        "variantCount": 1,
+        "sourceUrls": [
+          "https://cbtbank.kr/exam/de20111002",
+          "https://www.ksb.com/en-global/centrifugal-pump-lexicon/article/npsh-1116954",
+          "https://www.ksb.com/en-global/centrifugal-pump-lexicon/article/suction-characteristics-1117252",
+          "https://www.ksb.com/ko-kr/eung-yong-bun-ya/seogyu-mich-gaseu-gisul/eobseuteulim"
+        ],
+        "riskTags": [
+          "editorial_reconstruction",
+          "choice_conflict"
+        ],
+        "note": "복원 원문과 독립 풀이를 보존했으며 운영 공개 전 런타임 계약과 출처 검증이 필요합니다.",
+        "reviewedAt": "2026-08-07T20:10:00+09:00"
+      },
+      "audit": {
+        "questionId": "U-1161",
+        "scope": "review_queue",
+        "sourceContentStatus": "in_review",
+        "auditDisposition": "held_question_integrity",
+        "evidenceLevel": null,
+        "cbtAnswer": "유효 NPSH를 필요 NPSH보다 크게 맞춘다.",
+        "verifiedAnswer": null,
+        "evidenceUrls": [
+          "https://cbtbank.kr/exam/de20111002",
+          "https://www.ksb.com/en-global/centrifugal-pump-lexicon/article/npsh-1116954",
+          "https://www.ksb.com/en-global/centrifugal-pump-lexicon/article/suction-characteristics-1117252",
+          "https://www.ksb.com/ko-kr/eung-yong-bun-ya/seogyu-mich-gaseu-gisul/eobseuteulim"
+        ],
+        "reviewNote": "선택지 충돌: 제시된 네 조치는 모두 원심펌프 캐비테이션을 줄이는 방향이다. NPSH_a>NPSH_r 확보, 흡입양정 감소, 양흡입 임펠러 적용, 회전수 저하는 각각 흡입여유 증가 또는 필요 NPSH 감소에 기여하므로 “잘못된 것”이 없다.",
+        "assetStatus": "not_required",
+        "nextAction": "선택지 원문 재확인 전 비채점 유지",
+        "reviewChoiceFeedback": [
+          {
+            "choiceId": "U-1161-c1",
+            "verdict": "conflict",
+            "rationale": "NPSH_a를 NPSH_r보다 크게 확보하는 것은 캐비테이션 방지의 핵심 조건이다."
+          },
+          {
+            "choiceId": "U-1161-c2",
+            "verdict": "conflict",
+            "rationale": "흡입 실양정을 줄이면 펌프 입구 압력과 NPSH_a가 증가한다."
+          },
+          {
+            "choiceId": "U-1161-c3",
+            "verdict": "conflict",
+            "rationale": "양흡입형은 유량을 임펠러 양쪽으로 나눠 입구 유속과 필요 NPSH를 낮출 수 있다."
+          },
+          {
+            "choiceId": "U-1161-c4",
+            "verdict": "conflict",
+            "rationale": "회전수를 낮추면 임펠러 입구의 압력저하와 필요 NPSH가 감소한다."
+          }
+        ],
+        "reviewedAt": "2026-08-07T20:10:00+09:00"
+      },
+      "validation": {
+        "answer": false,
+        "explanation": true,
+        "choiceFeedback": true,
+        "theoryLink": true,
+        "contentQuality": true
+      }
+    },
+    "previousQuestionSha256": "0da154ff665d1b594d87bf2d0e14cfa42148ebec0f82db7033627014f5f030d5",
+    "affectedExternalIds": [
+      "2011-4-Q42"
+    ],
+    "rationale": "2011-4-Q42의 독립 풀이 및 선택지 충돌을 직접 반영"
+  },
+  {
+    "action": "replace",
+    "question": {
+      "id": "U-1166",
+      "canonicalNumber": 1169,
+      "subjectId": "subject-3",
+      "conceptGroupId": "s3-g06",
+      "conceptId": "concept-cbt-gear-undercut-choice-conflict",
+      "lessonId": "lesson-cbt-gear-undercut-choice-conflict",
+      "lessonAnchor": "principle",
+      "stem": "기어를 이용한 동력 전달 시 언더컷에 의해 기어가 파손되는 경우가 많이 발생하는데 언더컷의 설명중 틀린 것은?",
+      "choices": [
+        {
+          "id": "U-1166-c1",
+          "order": 1,
+          "text": "전위기어를 사용하면 언더컷을 방지할 수 있다.",
+          "feedback": {
+            "rationale": "양의 전위를 주면 최소잇수를 보완하여 언더컷을 방지할 수 있다.",
+            "plausibleReason": "복원 선택지 집합 전체를 함께 비교해야 하며 단일 보기만으로 정답을 확정할 수 없다.",
+            "incorrectPoint": null,
+            "keyRule": "언더컷은 표준기어의 잇수가 너무 적을 때 이뿌리가 절삭되는 현상이다. 따라서 3번은 틀리다. 동시에 2번도 전위 방향을 한정하지 않은 채 표준기어의 이 강도가 전위기어보다 크다고 단정해 일반적으로 틀리므로 단일정답이 성립하지 않는다.",
+            "differenceFromCorrect": null
+          }
+        },
+        {
+          "id": "U-1166-c2",
+          "order": 2,
+          "text": "기어의 이 강도는 표준기어가 전위기어보다 크다.",
+          "feedback": {
+            "rationale": "양의 전위기어는 이뿌리 두께와 굽힘강도가 커질 수 있으므로 표준기어가 항상 더 강하다는 설명은 성립하지 않는다.",
+            "plausibleReason": "복원 선택지 집합 전체를 함께 비교해야 하며 단일 보기만으로 정답을 확정할 수 없다.",
+            "incorrectPoint": null,
+            "keyRule": "언더컷은 표준기어의 잇수가 너무 적을 때 이뿌리가 절삭되는 현상이다. 따라서 3번은 틀리다. 동시에 2번도 전위 방향을 한정하지 않은 채 표준기어의 이 강도가 전위기어보다 크다고 단정해 일반적으로 틀리므로 단일정답이 성립하지 않는다.",
+            "differenceFromCorrect": null
+          }
+        },
+        {
+          "id": "U-1166-c3",
+          "order": 3,
+          "text": "표준기어에서는 잇수가 많을 때 언더컷이 일어난다.",
+          "feedback": {
+            "rationale": "언더컷은 잇수가 많을 때가 아니라 최소잇수보다 적을 때 발생한다.",
+            "plausibleReason": "복원 선택지 집합 전체를 함께 비교해야 하며 단일 보기만으로 정답을 확정할 수 없다.",
+            "incorrectPoint": null,
+            "keyRule": "언더컷은 표준기어의 잇수가 너무 적을 때 이뿌리가 절삭되는 현상이다. 따라서 3번은 틀리다. 동시에 2번도 전위 방향을 한정하지 않은 채 표준기어의 이 강도가 전위기어보다 크다고 단정해 일반적으로 틀리므로 단일정답이 성립하지 않는다.",
+            "differenceFromCorrect": null
+          }
+        },
+        {
+          "id": "U-1166-c4",
+          "order": 4,
+          "text": "전위계수가 크면 이 두께가 크게 된다.",
+          "feedback": {
+            "rationale": "양의 전위계수가 커지면 기준원 부근의 이 두께가 증가하는 방향이다.",
+            "plausibleReason": "복원 선택지 집합 전체를 함께 비교해야 하며 단일 보기만으로 정답을 확정할 수 없다.",
+            "incorrectPoint": null,
+            "keyRule": "언더컷은 표준기어의 잇수가 너무 적을 때 이뿌리가 절삭되는 현상이다. 따라서 3번은 틀리다. 동시에 2번도 전위 방향을 한정하지 않은 채 표준기어의 이 강도가 전위기어보다 크다고 단정해 일반적으로 틀리므로 단일정답이 성립하지 않는다.",
+            "differenceFromCorrect": null
+          }
+        }
+      ],
+      "correctChoiceId": "U-1166-c3",
+      "answerText": "표준기어에서는 잇수가 많을 때 언더컷이 일어난다.",
+      "explanation": "선택지 충돌: 언더컷은 표준기어의 잇수가 너무 적을 때 이뿌리가 절삭되는 현상이다. 따라서 3번은 틀리다. 동시에 2번도 전위 방향을 한정하지 않은 채 표준기어의 이 강도가 전위기어보다 크다고 단정해 일반적으로 틀리므로 단일정답이 성립하지 않는다.",
+      "errorReason": "선택지 충돌",
+      "sourceLabel": "https://cbtbank.kr/exam/de20111002",
+      "reviewStatus": "배치 03 독립 풀이·직접 이론 연결 검수",
+      "contentStatus": "in_review",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed",
+          "choice_conflict_non_scoring"
+        ]
+      },
+      "verification": {
+        "status": "blocked",
+        "method": "manual_source_required",
+        "variantCount": 1,
+        "sourceUrls": [
+          "https://cbtbank.kr/exam/de20111002",
+          "https://khkgears.net/korea/",
+          "https://khkgears.net/korea/spur-gears.html"
+        ],
+        "riskTags": [
+          "editorial_reconstruction",
+          "choice_conflict"
+        ],
+        "note": "복원 원문과 독립 풀이를 보존했으며 운영 공개 전 런타임 계약과 출처 검증이 필요합니다.",
+        "reviewedAt": "2026-08-07T20:10:00+09:00"
+      },
+      "audit": {
+        "questionId": "U-1166",
+        "scope": "review_queue",
+        "sourceContentStatus": "in_review",
+        "auditDisposition": "held_question_integrity",
+        "evidenceLevel": null,
+        "cbtAnswer": "표준기어에서는 잇수가 많을 때 언더컷이 일어난다.",
+        "verifiedAnswer": null,
+        "evidenceUrls": [
+          "https://cbtbank.kr/exam/de20111002",
+          "https://khkgears.net/korea/",
+          "https://khkgears.net/korea/spur-gears.html"
+        ],
+        "reviewNote": "선택지 충돌: 언더컷은 표준기어의 잇수가 너무 적을 때 이뿌리가 절삭되는 현상이다. 따라서 3번은 틀리다. 동시에 2번도 전위 방향을 한정하지 않은 채 표준기어의 이 강도가 전위기어보다 크다고 단정해 일반적으로 틀리므로 단일정답이 성립하지 않는다.",
+        "assetStatus": "not_required",
+        "nextAction": "선택지 원문 재확인 전 비채점 유지",
+        "reviewChoiceFeedback": [
+          {
+            "choiceId": "U-1166-c1",
+            "verdict": "conflict",
+            "rationale": "양의 전위를 주면 최소잇수를 보완하여 언더컷을 방지할 수 있다."
+          },
+          {
+            "choiceId": "U-1166-c2",
+            "verdict": "conflict",
+            "rationale": "양의 전위기어는 이뿌리 두께와 굽힘강도가 커질 수 있으므로 표준기어가 항상 더 강하다는 설명은 성립하지 않는다."
+          },
+          {
+            "choiceId": "U-1166-c3",
+            "verdict": "conflict",
+            "rationale": "언더컷은 잇수가 많을 때가 아니라 최소잇수보다 적을 때 발생한다."
+          },
+          {
+            "choiceId": "U-1166-c4",
+            "verdict": "conflict",
+            "rationale": "양의 전위계수가 커지면 기준원 부근의 이 두께가 증가하는 방향이다."
+          }
+        ],
+        "reviewedAt": "2026-08-07T20:10:00+09:00"
+      },
+      "validation": {
+        "answer": false,
+        "explanation": true,
+        "choiceFeedback": true,
+        "theoryLink": true,
+        "contentQuality": true
+      }
+    },
+    "previousQuestionSha256": "7bf8facc711a9dfccbec3f4e58856f91b8bf18dcbc5e9ba7b11867b5f979c5e8",
+    "affectedExternalIds": [
+      "2011-4-Q59"
+    ],
+    "rationale": "2011-4-Q59의 독립 풀이 및 선택지 충돌을 직접 반영"
+  }
+]

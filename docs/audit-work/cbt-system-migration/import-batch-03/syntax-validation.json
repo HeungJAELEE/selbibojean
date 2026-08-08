@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "typescriptVersion": "5.8.3",
+  "files": [
+    "/mnt/data/cbt_batch03_final_work/repo/scripts/verify-reviewed-cbt-variants.ts",
+    "/mnt/data/cbt_batch03_final_work/repo/tests/unit/reviewed-cbt-variants.test.ts",
+    "/mnt/data/cbt_batch03_final_work/repo/src/lib/content/reviewed-cbt-variants.ts",
+    "/mnt/data/cbt_batch03_final_work/repo/src/lib/content/supabase-materialization.ts"
+  ],
+  "errors": []
+}

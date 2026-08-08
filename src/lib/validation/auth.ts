@@ -10,6 +10,7 @@ export const passwordSchema = z.string().min(8, "비밀번호는 8자 이상이�
 
 export const guestAttemptSchema = z
   .object({
+    clientAttemptId: z.uuid().optional(),
     questionId: z.string().min(1),
     selectedChoiceId: z.string().min(1),
     isCorrect: z.boolean(),
@@ -40,10 +41,13 @@ export const registerSchema = z
 
 export const loginSchema = z.object({ username: usernameSchema, password: passwordSchema });
 
-export const submitAnswerSchema = z.object({
-  questionId: z.string().min(1),
-  choiceId: z.string().min(1),
-  selfRating: z.enum(["unknown", "unsure", "known"]),
-  sessionId: z.string().optional(),
-  attemptKind: z.enum(["initial", "retry"]).default("initial"),
-});
+export const submitAnswerSchema = z
+  .object({
+    clientAttemptId: z.uuid(),
+    questionId: z.string().min(1),
+    choiceId: z.string().min(1),
+    selfRating: z.enum(["unknown", "unsure", "known"]),
+    sessionId: z.uuid().optional(),
+    attemptKind: z.enum(["initial", "retry"]).default("initial"),
+  })
+  .strict();

@@ -1,0 +1,4 @@
+> node --experimental-strip-types --check scripts/verify-reviewed-cbt-variants.ts
+PASS scripts/verify-reviewed-cbt-variants.ts
+> node --experimental-strip-types --check tests/unit/reviewed-cbt-variants.test.ts
+PASS tests/unit/reviewed-cbt-variants.test.ts

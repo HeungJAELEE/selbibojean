@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "scope": "supplemental_targeted_typecheck_only",
+  "typescriptVersion": "5.8.3",
+  "nodeVersion": "v22.16.0",
+  "officialProjectNode24Check": false,
+  "checks": [
+    {
+      "name": "reviewed_variant_runtime_core",
+      "config": "/mnt/data/cbt_batch04_final_work/typecheck/tsconfig.json",
+      "exitCode": 0,
+      "diagnostics": []
+    },
+    {
+      "name": "reviewed_variant_verifier",
+      "config": "/mnt/data/cbt_batch04_final_work/typecheck/tsconfig-verifier.json",
+      "exitCode": 0,
+      "diagnostics": []
+    }
+  ],
+  "limitations": [
+    "This does not replace the repository-wide Node.js 24 typecheck.",
+    "Project dependencies were not installed in this environment."
+  ]
+}

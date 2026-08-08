@@ -6,11 +6,12 @@ import {
   isPublishableQuestion,
 } from "@/lib/domain/practice";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { isAuthSessionMissingError } from "@/lib/supabase/auth-errors";
 import { guestLearningMergeSchema } from "@/lib/validation/auth";
+import { deriveLegacyAttemptId } from "@/lib/learning/attempt-id";
 
 const MERGE_ERROR =
   "기기 기록 전체를 병합하지 못했습니다. 기록은 이 기기에 유지했습니다.";
-
 export async function POST(request: Request) {
   const parsed = guestLearningMergeSchema.safeParse(
     await request.json().catch(() => null),
@@ -23,9 +24,11 @@ export async function POST(request: Request) {
   }
 
   const supabase = await createSupabaseServerClient();
-  const { data: auth } = supabase
-    ? await supabase.auth.getUser()
-    : { data: { user: null } };
+  const authResult = supabase ? await supabase.auth.getUser() : null;
+  if (authResult?.error && !isAuthSessionMissingError(authResult.error)) {
+    return NextResponse.json({ error: MERGE_ERROR }, { status: 503 });
+  }
+  const auth = authResult?.data ?? { user: null };
   if (!supabase || !auth.user) {
     return NextResponse.json(
       { error: "로그인 후 기기 기록을 병합할 수 있습니다." },
@@ -53,6 +56,9 @@ export async function POST(request: Request) {
       );
       sanitized.push({
         ...attempt,
+        clientAttemptId:
+          attempt.clientAttemptId ??
+          deriveLegacyAttemptId(attempt),
         isCorrect: feedback.isCorrect,
       });
     } catch {

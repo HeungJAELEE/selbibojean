@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-08-08T15:06:54+09:00",
+  "runtime": {
+    "node": "v24.11.1",
+    "npm": "10.9.2",
+    "verifyNodeRuntime": "PASS"
+  },
+  "npmCi": {
+    "status": "BLOCKED_DEPENDENCY_REGISTRY",
+    "command": "npm ci --ignore-scripts --no-audit --no-fund",
+    "firstFailure": {
+      "package": "zwitch@2.0.4",
+      "statusCode": 404,
+      "log": "official-validation-attempts/npm-ci.log"
+    },
+    "diagnosticsAfterLocalSubstitution": [
+      {
+        "package": "zod-validation-error@4.0.2",
+        "statusCode": 404,
+        "log": "official-validation-attempts/npm-ci-local-zwitch-diagnostic.log"
+      },
+      {
+        "package": "zod@4.4.3",
+        "statusCode": 404,
+        "log": "official-validation-attempts/npm-ci-local-two-package-diagnostic.log"
+      }
+    ],
+    "publicRegistryAttempt": "BLOCKED_NETWORK_DNS",
+    "offlineAttempt": "BLOCKED_NOT_CACHED"
+  },
+  "officialChecks": {
+    "verifyNodeRuntime": "PASS",
+    "npmCi": "BLOCKED_DEPENDENCY_REGISTRY",
+    "typecheck": "NOT_RUN_DEPENDENCY_INSTALL_BLOCKED",
+    "eslint": "NOT_RUN_DEPENDENCY_INSTALL_BLOCKED",
+    "vitest": "NOT_RUN_DEPENDENCY_INSTALL_BLOCKED",
+    "productionBuild": "NOT_RUN_DEPENDENCY_INSTALL_BLOCKED",
+    "buildAnswerLeak": "NOT_RUN_BUILD_MISSING",
+    "supabaseDbLint": "NOT_RUN_TOOLCHAIN_MISSING",
+    "supabasePgTap": "NOT_RUN_TOOLCHAIN_MISSING",
+    "playwrightReleaseE2e": "NOT_RUN_DEPENDENCY_INSTALL_BLOCKED"
+  },
+  "databaseToolchain": {
+    "docker": false,
+    "supabaseCli": false,
+    "psql": false
+  },
+  "claimBoundary": "Supplemental loader/shim checks are recorded separately and are not reported as official npm-ci validation."
+}

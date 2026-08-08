@@ -1,0 +1,121 @@
+{
+  "batchContractStatus": "PASS",
+  "repositoryFinalValidationStatus": "NOT_RUN",
+  "generatedAt": "2026-08-08T19:20:00+09:00",
+  "scope": "import-09 actual exam-question overlay, image HOLD gating, choice-conflict isolation, low-context registration, formula structure, direct-theory binding, canonical preservation, and publication safety",
+  "counts": {
+    "batchId": "import-09",
+    "recordCount": 200,
+    "states": {
+      "candidate": 192,
+      "hold": 7,
+      "choice_conflict": 1
+    },
+    "fullCanonicalChoiceMappingCount": 28,
+    "variantSpecificFeedbackPendingCount": 164,
+    "theoryLessonAdditionCount": 0,
+    "canonicalQuestionChangeCount": 0,
+    "canonicalReassignmentCount": 0,
+    "canonicalTheoryRepairCount": 0,
+    "answerKeyCorrectionCount": 0,
+    "choiceConflictCount": 1,
+    "directTheoryLinkCount": 200,
+    "formulaRecordCount": 12,
+    "lowContextRegistrationCount": 26,
+    "cumulativeRecordCount": 1770,
+    "cumulativeStates": {
+      "candidate": 1688,
+      "hold": 66,
+      "choice_conflict": 16
+    },
+    "unreviewedRecordCount": 614
+  },
+  "sourceIntegrity": {
+    "contentJsonSha256Expected": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "contentJsonPackaged": false,
+    "contentHashBindingVerified": true,
+    "contentJsonDirectlyRehashedThisRun": false,
+    "manifestSha256": "6deeb56ea7bca091eb33bf7f3fe5c582c66d438e5df42ded9a90854074da0d4a",
+    "recordsSha256": "3e10c692103b8e5e3297b3fec0e6f20f45ef061f21f8b0b21e15e13b5dbe168a",
+    "dryRunMappingSha256": "f2b489e40f5fbe9dd632a8866e23aba0eaa6b27bf25bc7159f8744b5a239b6f6",
+    "exactExternalIdSet": true,
+    "sourceHashesMatch": true,
+    "prior1570RecordsUnchanged": true
+  },
+  "specialFindings": {
+    "imageHolds": [
+      "2018-4-Q89",
+      "2019-1-Q01",
+      "2019-1-Q91",
+      "2019-1-Q92",
+      "2019-1-Q98",
+      "2019-2-Q21",
+      "2019-2-Q35"
+    ],
+    "choiceConflicts": [
+      "2019-2-Q32"
+    ],
+    "canonicalReassignment": null,
+    "canonicalTheoryRepair": null,
+    "lowContextRegistered": [
+      "2018-4-Q51",
+      "2018-4-Q61",
+      "2018-4-Q86",
+      "2018-4-Q87",
+      "2018-4-Q91",
+      "2019-1-Q04",
+      "2019-1-Q15",
+      "2019-1-Q24",
+      "2019-1-Q27",
+      "2019-1-Q28",
+      "2019-1-Q30",
+      "2019-1-Q36",
+      "2019-1-Q42",
+      "2019-1-Q46",
+      "2019-1-Q49",
+      "2019-1-Q52",
+      "2019-1-Q53",
+      "2019-1-Q58",
+      "2019-1-Q65",
+      "2019-1-Q81",
+      "2019-1-Q82",
+      "2019-1-Q87",
+      "2019-1-Q95",
+      "2019-2-Q42",
+      "2019-2-Q45",
+      "2019-2-Q46"
+    ],
+    "theoryGap": "200문항 모두 기존 직접 이론 연결을 유지했고 canonical 재배정·내용 교정·신규 이론 레슨은 필요하지 않았다. 직접 이론 미연결은 0건이다.",
+    "calculationStructure": "12문항에 식·단위·대입·결과 구조를 보존했다.",
+    "choiceContract": "28문항은 canonical choice ID 1:1 매핑을 완료했고, 164문항은 variant 전용 선택지 계약 전까지 canonical 피드백 재사용을 차단했다."
+  },
+  "supplementalChecks": {
+    "generatorOwnedValidation": "PASS",
+    "independentValidation": "PASS",
+    "typescriptSyntax": "PASS",
+    "targetedTypecheck": "PASS_SYNTAX_ONLY",
+    "supplementalRuntime": "PASS_STATIC_SIMULATION",
+    "supplementalVerifier": "PASS_INDEPENDENT_PYTHON",
+    "supplementalNoAnswerLeak": "PASS_STATIC_PROJECTION",
+    "negativeContracts": "PASS_10_OF_10",
+    "generatorIdempotency": "PASS",
+    "pythonGeneratorSyntax": "PASS"
+  },
+  "officialChecks": {
+    "node24Typecheck": "BLOCKED_NODE_VERSION_AND_PARTIAL_SNAPSHOT",
+    "vitestMaxWorkers1": "BLOCKED_NODE_VERSION_DEPENDENCIES_AND_PARTIAL_SNAPSHOT",
+    "eslintChangedFiles": "BLOCKED_NODE_VERSION_DEPENDENCIES_AND_PARTIAL_SNAPSHOT",
+    "verifyReviewedCbt": "BLOCKED_MISSING_TSX_AND_COMPLETE_TREE",
+    "verifyNoAnswerLeak": "BLOCKED_MISSING_TSX_AND_COMPLETE_TREE",
+    "buildRuntimeContentAndSupabaseMaterialization": "NOT_RUN_PARTIAL_SNAPSHOT",
+    "sqlMigrationTests": "NOT_RUN_BATCH_SCOPE",
+    "loginGuestFlows": "NOT_RUN_FINAL_RUNTIME_INTEGRATION"
+  },
+  "git": {
+    "repositoryMetadataAvailable": false,
+    "commitCreated": false,
+    "push": false,
+    "pullRequest": false,
+    "deploy": false
+  }
+}

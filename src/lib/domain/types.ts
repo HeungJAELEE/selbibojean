@@ -19,36 +19,45 @@ export const ERROR_REASONS = [
 ] as const;
 export type ErrorReason = (typeof ERROR_REASONS)[number];
 
-export type PublicationBlocker =
-  | "incomplete"
-  | "answer_unverified"
-  | "mapping_unverified"
-  | "asset_required"
-  | "answer_conflict"
-  | "authoritative_source_required"
-  | "high_risk_source"
-  | "content_quality"
-  | "lesson_source_needed";
+export const PUBLICATION_BLOCKERS = [
+  "incomplete",
+  "answer_unverified",
+  "mapping_unverified",
+  "asset_required",
+  "answer_conflict",
+  "authoritative_source_required",
+  "high_risk_source",
+  "content_quality",
+  "lesson_source_needed",
+] as const;
+export type PublicationBlocker = (typeof PUBLICATION_BLOCKERS)[number];
 
 export type PublicationAssessment = {
   readiness: "ready" | "review" | "blocked";
   blockers: PublicationBlocker[];
 };
 
-export type VerificationRiskTag =
-  | "asset_required"
-  | "answer_conflict"
-  | "authoritative_source_required"
-  | "historical_context"
-  | "editorial_reconstruction";
+export const VERIFICATION_RISK_TAGS = [
+  "asset_required",
+  "answer_conflict",
+  "authoritative_source_required",
+  "historical_context",
+  "editorial_reconstruction",
+] as const;
+export type VerificationRiskTag = (typeof VERIFICATION_RISK_TAGS)[number];
+
+export const QUESTION_VERIFICATION_METHODS = [
+  "workbook_confirmed",
+  "source_backed_reconstruction",
+  "authoritative_source_verified",
+  "manual_source_required",
+] as const;
+export type QuestionVerificationMethod =
+  (typeof QUESTION_VERIFICATION_METHODS)[number];
 
 export type QuestionVerification = {
   status: "verified" | "blocked";
-  method:
-    | "workbook_confirmed"
-    | "source_backed_reconstruction"
-    | "authoritative_source_verified"
-    | "manual_source_required";
+  method: QuestionVerificationMethod;
   variantCount: number;
   sourceUrls: string[];
   riskTags: VerificationRiskTag[];
@@ -62,6 +71,7 @@ export const AUDIT_DISPOSITIONS = [
   "held_answer_conflict",
   "held_asset_missing",
   "held_source_missing",
+  "held_runtime_validation",
 ] as const;
 export type AuditDisposition = (typeof AUDIT_DISPOSITIONS)[number];
 
@@ -316,6 +326,195 @@ export type ImportReport = {
   warnings: string[];
 };
 
+export const REVIEWED_CBT_VARIANT_STATES = [
+  "unreviewed",
+  "candidate",
+  "published",
+  "choice_conflict",
+  "hold",
+] as const;
+export type ReviewedCbtVariantState =
+  (typeof REVIEWED_CBT_VARIANT_STATES)[number];
+
+export type ReviewedCbtVariantRecord = {
+  externalId: string;
+  currentCanonicalId: string;
+  canonicalId: string;
+  year: number | null;
+  sessionLabel: string;
+  questionNumber: number | null;
+  source: {
+    textAuthority: string;
+    captureAuthority: string;
+    answerAuthority: string;
+    displayLabel: string;
+    registeredSourceUrl: string;
+    resolvedSourceUrl: string;
+    questionNumber: number;
+    stemSha256: string;
+    orderedChoicesSha256: string;
+    registeredIdentitySha256: string;
+    resolvedIdentitySha256: string;
+  };
+  stem: string;
+  choices: string[];
+  sourceAnswerIndex: number | null;
+  reviewedAnswerIndex: number | null;
+  sourceAnswerText: string;
+  reviewedAnswerText: string;
+  choiceIdMapping: string[];
+  variantSpecificFeedbackRequired?: true;
+  directSolution: string;
+  formulaUnitSubstitution:
+    | string
+    | {
+        formula: string;
+        units: string;
+        substitution: string;
+        result: string;
+      }
+    | null;
+  presentationNormalization?: {
+    applied: true;
+    authority: "user_approved_minimal_normalization";
+    rawStem: string;
+    rawChoices: string[];
+    rawStemSha256: string;
+    rawOrderedChoicesSha256: string;
+    normalizedStem: string;
+    normalizedChoices: string[];
+    normalizedStemSha256: string;
+    normalizedOrderedChoicesSha256: string;
+    reasonCodes: string[];
+    note: string;
+    sourceTextPreserved: true;
+  };
+  choiceConflict?: {
+    label: "선택지 충돌";
+    conflictType: string;
+    choiceIndices: number[];
+    reason: string;
+    scoringPolicy: "non_scoring";
+    sourceAnswerTreatment: string;
+  };
+  choiceByChoiceReasons: Array<{
+    choiceIndex: number;
+    choiceText: string;
+    evaluation: string;
+    reason: string;
+  }>;
+  theoryLink: {
+    canonicalId: string;
+    lessonId: string;
+    lessonAnchor: string;
+    conceptGroupId: string;
+    conceptId: string;
+    canonicalStem: string;
+  } | null;
+  conceptKeywords: string[];
+  review: {
+    verdict: "ACCEPT" | "REVISE" | "CHOICE_ISSUE" | "HOLD";
+    issueLabel?: "선택지 충돌" | "필수 이미지 확인" | "정답키 충돌";
+    scoringDisposition: string;
+    sourceAnswerAgreement: string | null;
+    answerEvidence: string | null;
+    answerConfidence: string | null;
+    theoryLinkStatus: string | null;
+    holdReasons: string[];
+    answerConflictOrMultipleAnswerRisk: string | null;
+    runtimeStatus: Exclude<ReviewedCbtVariantState, "unreviewed">;
+    publicationBlockers: string[];
+    reviewedAt: string;
+  };
+  migration: {
+    mappingClass: string;
+    canonicalAction: string;
+    theoryAction: string;
+    runtimeDisposition: string;
+    confidence: string;
+    duplicateCanonicalCluster: boolean;
+    preserveExternalId: boolean;
+    preserveRegisteredSourceUrl: boolean;
+    preserveQuestionNumber: boolean;
+  };
+};
+
+export type ReviewedCbtTheoryLessonAddition = {
+  lesson: Lesson;
+  directExternalIds: string[];
+  rationale: string;
+  sourceAuthority:
+    | "authoritative_source"
+    | "exam_reconstruction_with_source_needed";
+};
+
+export type ReviewedCbtCanonicalQuestionChange = {
+  action: "add" | "replace";
+  question: Question;
+  previousQuestionSha256: string | null;
+  affectedExternalIds: string[];
+  rationale: string;
+};
+
+export type ReviewedCbtVariantManifest = {
+  formatVersion: 1;
+  generatedAt: string;
+  mappingRunId: string;
+  migrationPolicy: {
+    sourceTextClassification: string;
+    sourceCaptureClassification: string;
+    sourceAnswerDisplayLabel: string;
+    preserveExternalId: boolean;
+    preserveRegisteredSourceUrl: boolean;
+    preserveQuestionNumber: boolean;
+    preSubmitAnswerExposureAllowed: boolean;
+    runtimePublicationRequiresStatus: "published";
+    normalizedPresentationPreservesRawSource: boolean;
+    choiceConflictScoringAllowed: boolean;
+    imageReviewQueueRequiredForImageHolds: boolean;
+  };
+  holdResolutionPolicy: {
+    decisionAuthority: string;
+    decidedAt: string;
+    imageVerificationQueueCount: number;
+    normalizedAndRegisteredCount: number;
+    choiceConflictNonScoringCount: number;
+    lowContextRegisteredCount: number;
+    learnerPublicationStillRequiresStatus: "published";
+  };
+  batches: Array<{
+    batchId: string;
+    reviewSessions: string[];
+    externalIdRanges: string[];
+    recordCount: number;
+    candidateCount: number;
+    choiceConflictCount: number;
+    holdCount: number;
+    normalizationCount: number;
+    imageReviewCount: number;
+    lowContextRegistrationCount: number;
+    variantSpecificFeedbackCount?: number;
+    canonicalTheoryRepairs: string[];
+    theoryLessonAdditionIds?: string[];
+    canonicalQuestionChangeIds?: string[];
+    holdResolution: {
+      imageVerificationQueue: string[];
+      normalizedAndRegistered: string[];
+      choiceConflictNonScoring: string[];
+      lowContextRegistered: string[];
+      answerKeyCorrectionPending?: string[];
+      theoryTaxonomyRepairPending?: string[];
+    };
+    sourceFiles: Array<{ path: string; sha256: string }>;
+  }>;
+  theoryLessonAdditionsSha256?: string;
+  theoryLessonAdditions?: ReviewedCbtTheoryLessonAddition[];
+  canonicalQuestionChangesSha256?: string;
+  canonicalQuestionChanges?: ReviewedCbtCanonicalQuestionChange[];
+  recordsSha256: string;
+  records: ReviewedCbtVariantRecord[];
+};
+
 export type GeneratedContent = {
   formatVersion: 2;
   subjects: Subject[];
@@ -339,6 +538,8 @@ export type GeneratedContent = {
     reviewStatus: string;
     verificationNote: string;
     shufflePolicy?: "all" | "none" | "except_fixed";
+    reviewState?: ReviewedCbtVariantState;
+    reviewed?: ReviewedCbtVariantRecord;
   }>;
   backlog: Array<Record<string, string | number | null>>;
   report: ImportReport;

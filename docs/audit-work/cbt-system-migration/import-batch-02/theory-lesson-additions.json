@@ -1,0 +1,1261 @@
+[
+  {
+    "lesson": {
+      "id": "lesson-cbt-bimetal-temperature",
+      "subjectId": "subject-4",
+      "conceptGroupId": "s4-g05",
+      "conceptId": "concept-cbt-bimetal-temperature",
+      "title": "바이메탈 온도검출 원리",
+      "aliases": [
+        "바이메탈",
+        "bimetal",
+        "열팽창계수 차이"
+      ],
+      "summary": [
+        "열팽창계수가 다른 두 금속을 접합하면 온도 변화 때 서로 다른 길이변화가 생겨 굽힘이 발생한다.",
+        "바이메탈은 이 굽힘을 지시·스위칭 변위로 사용한다.",
+        "벨로즈와 부르동관은 주로 압력 변위를 이용하므로 작동원리가 다르다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 열팽창계수가 다른 두 금속을 접합하면 온도 변화 때 서로 다른 길이변화가 생겨 굽힘이 발생한다.\n2. 바이메탈은 이 굽힘을 지시·스위칭 변위로 사용한다.\n3. 벨로즈와 부르동관은 주로 압력 변위를 이용하므로 작동원리가 다르다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "바이메탈은 열팽창계수가 다른 두 금속층을 결합한 소자다. 온도가 변하면 두 층의 팽창량 차이 때문에 소자가 굽고, 이 변위를 온도 표시나 제어 접점 작동에 이용한다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "판단 순서는 ① 서로 다른 두 금속이 접합됐는지, ② 입력이 온도인지, ③ 팽창량 차이가 굽힘으로 변환되는지 확인하는 것이다. 이 세 조건이 모두 맞으면 바이메탈 원리다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 대상과 조건을 먼저 확인한다. 그다음 **바이메탈 온도검출 원리**의 정의·작동원리와 각 보기를 하나씩 대조한다. 비슷한 용어가 아니라 직접 원인·식·기능이 일치하는 보기를 선택한다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "자이로스코프는 각운동, 벨로즈와 부르동관은 압력에 따른 변형을 이용한다. 이름이 기계식 센서라는 공통점만으로 바이메탈과 혼동하면 안 된다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 근거 URL 1: https://www.wika.com/en-en/lp_temperature_measurement.WIKA\n- 공개 상태: 직접 연결은 완료했으나 추가 출처·기술 검수 전까지 in_review 유지\n- 원문 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1241"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 765,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": true,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2009-4-Q07"
+    ],
+    "rationale": "2009-4-Q07의 지문·보기·풀이에 직접 판단근거를 제공하도록 추가",
+    "sourceAuthority": "authoritative_source"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-basic-multimeter",
+      "subjectId": "subject-4",
+      "conceptGroupId": "s4-g01",
+      "conceptId": "concept-cbt-basic-multimeter",
+      "title": "기본 회로시험계의 측정범위",
+      "aliases": [
+        "멀티테스터",
+        "회로시험계",
+        "아날로그 멀티미터"
+      ],
+      "summary": [
+        "전통적인 회로시험계는 교류·직류 전압, 직류 전류와 저항 측정을 기본으로 한다.",
+        "현대 디지털 멀티미터는 모델에 따라 주파수·정전용량 등도 측정하므로 기기 사양을 확인해야 한다.",
+        "해당 기출은 당시의 기본 회로시험계 범위로 정답을 판단한다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 전통적인 회로시험계는 교류·직류 전압, 직류 전류와 저항 측정을 기본으로 한다.\n2. 현대 디지털 멀티미터는 모델에 따라 주파수·정전용량 등도 측정하므로 기기 사양을 확인해야 한다.\n3. 해당 기출은 당시의 기본 회로시험계 범위로 정답을 판단한다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "회로시험계는 선택 스위치와 내부 분압·분류·정류회로를 이용해 여러 전기량을 한 계기로 측정하는 장비다. 기출의 기본형은 전압·직류전류·저항을 핵심 범위로 본다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "측정 가능 여부는 기기 내부 기능과 선택 범위에 의해 결정된다. 현대 제품에 기능이 존재한다는 사실과 과거 기본형 시험 범위를 분리해 판단해야 한다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 대상과 조건을 먼저 확인한다. 그다음 **기본 회로시험계의 측정범위**의 정의·작동원리와 각 보기를 하나씩 대조한다. 비슷한 용어가 아니라 직접 원인·식·기능이 일치하는 보기를 선택한다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "현대 디지털 멀티미터에는 주파수 측정 기능이 흔하다. 따라서 “모든 멀티미터는 주파수를 못 잰다”가 아니라 “이 기출의 전통적 기본 회로시험계 범위에서는 주파수를 별도 계측량으로 본다”로 한정한다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 근거 URL 1: https://www.fluke.com/en-us/product/electrical-testing/digital-multimeters/fluke-115\n- 공개 상태: 직접 연결은 완료했으나 추가 출처·기술 검수 전까지 in_review 유지\n- 원문 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1245"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 835,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": true,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2009-4-Q16"
+    ],
+    "rationale": "2009-4-Q16의 지문·보기·풀이에 직접 판단근거를 제공하도록 추가",
+    "sourceAuthority": "authoritative_source"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-average-load",
+      "subjectId": "subject-4",
+      "conceptGroupId": "s4-g12",
+      "conceptId": "concept-cbt-average-load",
+      "title": "평균부하와 전력량·시간 관계",
+      "aliases": [
+        "평균 부하",
+        "평균전력",
+        "전력량/시간"
+      ],
+      "summary": [
+        "평균부하는 일정 기간의 전력량을 그 기간의 총시간으로 나눈 평균전력이다.",
+        "식은 평균부하 Pavg=E/t이며, kWh를 h로 나누면 kW가 된다.",
+        "부하율은 평균부하/최대부하의 비율이므로 평균부하 자체와 다르다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 평균부하는 일정 기간의 전력량을 그 기간의 총시간으로 나눈 평균전력이다.\n2. 식은 평균부하 Pavg=E/t이며, kWh를 h로 나누면 kW가 된다.\n3. 부하율은 평균부하/최대부하의 비율이므로 평균부하 자체와 다르다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "평균부하는 지정한 기간에 소비하거나 공급한 전기에너지를 같은 기간의 시간으로 나눈 값이다.",
+          "order": 2
+        },
+        {
+          "id": "formula",
+          "kind": "formula",
+          "title": "직접 판단근거",
+          "body": "식: Pavg=E/t. 단위: kWh/h=kW. 전력량과 기간이 주어지면 먼저 단위를 맞춘 뒤 나눈다. 부하율·부등률·설비이용률은 모두 비율이므로 구분한다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 대상과 조건을 먼저 확인한다. 그다음 **평균부하와 전력량·시간 관계**의 정의·작동원리와 각 보기를 하나씩 대조한다. 비슷한 용어가 아니라 직접 원인·식·기능이 일치하는 보기를 선택한다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "“평균”이라는 말만 보고 부하율을 고르면 안 된다. 부하율은 평균부하를 최대부하로 다시 나눈 무차원 비율이다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 근거 URL 1: https://www.eia.gov/energyexplained/electricity/measuring-electricity.php\n- 공개 상태: 직접 연결은 완료했으나 추가 출처·기술 검수 전까지 in_review 유지\n- 원문 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1397"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 709,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": true,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2009-4-Q21"
+    ],
+    "rationale": "2009-4-Q21의 지문·보기·풀이에 직접 판단근거를 제공하도록 추가",
+    "sourceAuthority": "authoritative_source"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-aipe-duties",
+      "subjectId": "subject-4",
+      "conceptGroupId": "s4-g10",
+      "conceptId": "concept-cbt-aipe-duties",
+      "title": "AIPE 설비기술자 임무 분류",
+      "aliases": [
+        "AIPE",
+        "설비공학 임무",
+        "설비기술자 임무"
+      ],
+      "summary": [
+        "해당 기출은 설비 배치·설계, 건설·설치, 운전·보전, 유틸리티·방재 같은 기술업무를 설비기술자의 임무로 분류한다.",
+        "고정자산의 장부·회계 관리는 기술적 설비공학 임무와 구분한다.",
+        "정확한 역사적 AIPE 5분류 원문은 추가 출처 대조가 필요하다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 해당 기출은 설비 배치·설계, 건설·설치, 운전·보전, 유틸리티·방재 같은 기술업무를 설비기술자의 임무로 분류한다.\n2. 고정자산의 장부·회계 관리는 기술적 설비공학 임무와 구분한다.\n3. 정확한 역사적 AIPE 5분류 원문은 추가 출처 대조가 필요하다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "이 레슨은 2009년 기출에 나타난 AIPE 설비기술자 임무 분류를 보존한다. 기술적 생애주기 업무와 회계상 자산관리를 구분하는 것이 핵심이다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "보기의 활동이 설비의 배치·설계·건설·설치·운전·보전·안전보호에 직접 해당하는지 확인한다. 장부가액·감가상각 등 회계관리라면 기술임무와 분리한다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 대상과 조건을 먼저 확인한다. 그다음 **AIPE 설비기술자 임무 분류**의 정의·작동원리와 각 보기를 하나씩 대조한다. 비슷한 용어가 아니라 직접 원인·식·기능이 일치하는 보기를 선택한다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "“설비”라는 단어가 포함돼도 고정자산 관리는 회계·재무 기능일 수 있다. 다만 역사적 5분류 명칭은 원전 확인 전까지 시험 맥락으로만 사용한다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 근거 URL 1: https://www.jipm.or.jp/business/facility/\n- 공개 상태: 직접 연결은 완료했으나 추가 출처·기술 검수 전까지 in_review 유지\n- 원문 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1395"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 761,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": true,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2009-4-Q30"
+    ],
+    "rationale": "2009-4-Q30의 지문·보기·풀이에 직접 판단근거를 제공하도록 추가",
+    "sourceAuthority": "exam_reconstruction_with_source_needed"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-basic-maintenance-duties",
+      "subjectId": "subject-4",
+      "conceptGroupId": "s4-g07",
+      "conceptId": "concept-cbt-basic-maintenance-duties",
+      "title": "기본 보전업무의 범위",
+      "aliases": [
+        "기본 보전업무",
+        "점검 교정 수리",
+        "보전과 설계"
+      ],
+      "summary": [
+        "기본 보전은 설비의 기능을 유지·회복하기 위한 점검, 교정, 조정과 수리를 포함한다.",
+        "신규 구조와 사양을 결정하는 설계는 기본 보전업무와 구분한다.",
+        "개량보전에서는 설계 변경이 발생할 수 있으므로 문제의 “기본” 범위를 확인한다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 기본 보전은 설비의 기능을 유지·회복하기 위한 점검, 교정, 조정과 수리를 포함한다.\n2. 신규 구조와 사양을 결정하는 설계는 기본 보전업무와 구분한다.\n3. 개량보전에서는 설계 변경이 발생할 수 있으므로 문제의 “기본” 범위를 확인한다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "기본 보전업무는 설비 상태를 확인하고 기준에서 벗어난 기능을 조정·교정·수리해 정상운전을 유지하는 활동이다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "점검은 이상을 찾고, 교정·조정은 기준으로 맞추며, 수리는 손상 기능을 복구한다. 설계는 새로운 구조·사양을 정하는 개발·개량 행위이므로 기본 보전과 구분한다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 대상과 조건을 먼저 확인한다. 그다음 **기본 보전업무의 범위**의 정의·작동원리와 각 보기를 하나씩 대조한다. 비슷한 용어가 아니라 직접 원인·식·기능이 일치하는 보기를 선택한다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "개량보전에는 설계 변경이 포함될 수 있다. 따라서 “보전에는 설계가 절대 없다”가 아니라 해당 문항이 묻는 기본 일상업무 범위로 제한한다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 근거 URL 1: https://www.jipm.or.jp/business/facility/\n- 근거 URL 2: https://www.jipm.or.jp/business/kikaihozenshi/\n- 공개 상태: 직접 연결은 완료했으나 추가 출처·기술 검수 전까지 in_review 유지\n- 원문 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1398"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 782,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": true,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2009-4-Q31"
+    ],
+    "rationale": "2009-4-Q31의 지문·보기·풀이에 직접 판단근거를 제공하도록 추가",
+    "sourceAuthority": "authoritative_source"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-tpm-exam-formula",
+      "subjectId": "subject-4",
+      "conceptGroupId": "s4-g09",
+      "conceptId": "concept-cbt-tpm-exam-formula",
+      "title": "TPM의 시험식 표현과 실제 범위",
+      "aliases": [
+        "TPM 수식",
+        "생산보전+자주보전",
+        "전원참가 생산보전"
+      ],
+      "summary": [
+        "TPM은 로스 제로를 지향하며 생산 관련 전 부문과 작업자가 참여하는 설비관리 체계다.",
+        "해당 기출은 이를 “생산보전 + 작업자 자주보전”이라는 축약식으로 표현한다.",
+        "축약식은 정의 전체가 아니라 시험용 구성관계를 나타낸다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. TPM은 로스 제로를 지향하며 생산 관련 전 부문과 작업자가 참여하는 설비관리 체계다.\n2. 해당 기출은 이를 “생산보전 + 작업자 자주보전”이라는 축약식으로 표현한다.\n3. 축약식은 정의 전체가 아니라 시험용 구성관계를 나타낸다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "TPM은 설비를 유지·개선해 고장·불량·낭비를 예방하고, 생산에 관련된 전 부문과 구성원이 참여하는 관리체계다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "시험에서는 전문보전 부문의 생산보전과 운전원의 자주보전을 결합한 표현을 고른다. 예방보전이나 사후보전 한 종류만으로 TPM 전체를 나타낼 수 없다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 대상과 조건을 먼저 확인한다. 그다음 **TPM의 시험식 표현과 실제 범위**의 정의·작동원리와 각 보기를 하나씩 대조한다. 비슷한 용어가 아니라 직접 원인·식·기능이 일치하는 보기를 선택한다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "“TPM=생산보전+자주보전”은 당시 교재의 축약식이다. JIPM의 실제 설명은 로스 제로, 전 부문·전원 참여와 지속적 유지·개선을 포함한다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 근거 URL 1: https://www.jipm.or.jp/business/tpm/\n- 공개 상태: 직접 연결은 완료했으나 추가 출처·기술 검수 전까지 in_review 유지\n- 원문 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1399"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 714,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": true,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2009-4-Q32"
+    ],
+    "rationale": "2009-4-Q32의 지문·보기·풀이에 직접 판단근거를 제공하도록 추가",
+    "sourceAuthority": "authoritative_source"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-actual-data-standard-time",
+      "subjectId": "subject-4",
+      "conceptGroupId": "s4-g10",
+      "conceptId": "concept-cbt-actual-data-standard-time",
+      "title": "실적자료법에 의한 표준시간 설정",
+      "aliases": [
+        "실적 자료법",
+        "표준시간",
+        "과거 작업기록"
+      ],
+      "summary": [
+        "실적자료법은 과거 실제 작업기록과 소요시간을 정리해 표준시간을 설정한다.",
+        "경험법은 개인 판단, MTM은 기본동작시간, PTS는 예정시간표준 체계다.",
+        "자료의 작업조건과 숙련도 차이를 확인하지 않으면 잘못된 표준이 된다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 실적자료법은 과거 실제 작업기록과 소요시간을 정리해 표준시간을 설정한다.\n2. 경험법은 개인 판단, MTM은 기본동작시간, PTS는 예정시간표준 체계다.\n3. 자료의 작업조건과 숙련도 차이를 확인하지 않으면 잘못된 표준이 된다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "실적자료법은 반복 작업의 실제 소요시간 기록을 분류·보정해 표준시간의 근거로 사용하는 방법이다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "작업범위와 조건이 같은 기록을 모으고 이상치·비정상 대기를 분리한 뒤 대표시간을 정한다. 단순 경험 추정이나 미리 정한 동작시간표와 구분한다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 대상과 조건을 먼저 확인한다. 그다음 **실적자료법에 의한 표준시간 설정**의 정의·작동원리와 각 보기를 하나씩 대조한다. 비슷한 용어가 아니라 직접 원인·식·기능이 일치하는 보기를 선택한다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "실적값을 그대로 평균내는 것만으로 충분하지 않다. 작업조건·숙련도·비정상 지연을 확인해야 하며, 정확한 절차는 승인된 작업측정 기준을 따른다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 독립 이론 출처: 추가 검토 필요\n- 현재 근거: 2009년 4회 복원 원문과 독립 풀이\n- 공개 상태: 직접 연결은 완료했으나 추가 출처·기술 검수 전까지 in_review 유지\n- 원문 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1252"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 700,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": false,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2009-4-Q36"
+    ],
+    "rationale": "2009-4-Q36의 지문·보기·풀이에 직접 판단근거를 제공하도록 추가",
+    "sourceAuthority": "exam_reconstruction_with_source_needed"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-cbn-tool-material",
+      "subjectId": "subject-3",
+      "conceptGroupId": "s3-g08",
+      "conceptId": "concept-cbt-cbn-tool-material",
+      "title": "CBN·PCBN 공구재료",
+      "aliases": [
+        "CBN",
+        "PCBN",
+        "입방정 질화붕소"
+      ],
+      "summary": [
+        "CBN은 붕소와 질소로 구성된 입방정 질화붕소의 초경질 공구재료다.",
+        "PCBN은 미세 CBN 분말을 결합재와 소결한 공구재료로 경화강·주철 가공에 사용된다.",
+        "다이아몬드·서멧·초경합금과 구성과 적용재료가 다르다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. CBN은 붕소와 질소로 구성된 입방정 질화붕소의 초경질 공구재료다.\n2. PCBN은 미세 CBN 분말을 결합재와 소결한 공구재료로 경화강·주철 가공에 사용된다.\n3. 다이아몬드·서멧·초경합금과 구성과 적용재료가 다르다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "CBN은 cubic boron nitride이며, PCBN은 CBN 입자를 소결해 만든 절삭공구 재료다. 높은 경도와 열안정성 때문에 경화강과 주철의 선삭·밀링에 적용된다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "재료명을 원자구성(B·N), 결정구조(입방정), 대표 적용재료(경화강·주철)로 확인한다. 세 조건이 함께 나오면 CBN/PCBN을 선택한다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 대상과 조건을 먼저 확인한다. 그다음 **CBN·PCBN 공구재료**의 정의·작동원리와 각 보기를 하나씩 대조한다. 비슷한 용어가 아니라 직접 원인·식·기능이 일치하는 보기를 선택한다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "다이아몬드는 탄소 결정이며 철계 재료 고온가공에서 반응 문제가 있다. 서멧과 초경합금도 초경질 공구지만 B·N 입방정 구조가 아니다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 근거 URL 1: https://www.secotools.com/en/Global/Products/Advanced-cutting-materials/PCBN\n- 공개 상태: 직접 연결은 완료했으나 추가 출처·기술 검수 전까지 in_review 유지\n- 원문 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1253"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 760,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": true,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2009-4-Q41"
+    ],
+    "rationale": "2009-4-Q41의 지문·보기·풀이에 직접 판단근거를 제공하도록 추가",
+    "sourceAuthority": "authoritative_source"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-shaper-cutting-speed",
+      "subjectId": "subject-3",
+      "conceptGroupId": "s3-g08",
+      "conceptId": "concept-cbt-shaper-cutting-speed",
+      "title": "세이퍼 절삭속도 계산",
+      "aliases": [
+        "세이퍼",
+        "shaper",
+        "램 왕복 절삭속도"
+      ],
+      "summary": [
+        "세이퍼의 평균 절삭속도는 분당 절삭행정 거리에서 구한다.",
+        "시험식은 V=nL/(1000k)이며 n은 왕복수, L은 행정길이, k는 1회 왕복시간에 대한 절삭행정시간의 비다.",
+        "원문 선택지가 이미지이므로 정답 번호는 이미지 확인 전 승인하지 않는다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 세이퍼의 평균 절삭속도는 분당 절삭행정 거리에서 구한다.\n2. 시험식은 V=nL/(1000k)이며 n은 왕복수, L은 행정길이, k는 1회 왕복시간에 대한 절삭행정시간의 비다.\n3. 원문 선택지가 이미지이므로 정답 번호는 이미지 확인 전 승인하지 않는다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "세이퍼는 램의 왕복운동 중 한 방향에서 절삭한다. 절삭행정 속도는 왕복횟수·행정길이와 절삭시간비를 이용해 계산한다.",
+          "order": 2
+        },
+        {
+          "id": "formula",
+          "kind": "formula",
+          "title": "직접 판단근거",
+          "body": "식: V=nL/(1000k). 단위: (stroke/min·mm/stroke)/1000=m/min. k가 절삭행정시간/왕복시간이면 1회 절삭행정의 속도에 맞게 보정된다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 대상과 조건을 먼저 확인한다. 그다음 **세이퍼 절삭속도 계산**의 정의·작동원리와 각 보기를 하나씩 대조한다. 비슷한 용어가 아니라 직접 원인·식·기능이 일치하는 보기를 선택한다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "nL/1000은 분당 왕복수와 행정길이만 곱한 값이다. 절삭행정과 귀환행정의 시간비가 다르므로 문제에서 정의한 k의 위치를 확인해야 한다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 독립 이론 출처: 추가 검토 필요\n- 현재 근거: 2009년 4회 복원 원문과 독립 풀이\n- 공개 상태: 직접 연결은 완료했으나 추가 출처·기술 검수 전까지 in_review 유지\n- 원문 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [],
+      "coverageStatus": "partial",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 748,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": false,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2009-4-Q46"
+    ],
+    "rationale": "2009-4-Q46의 지문·보기·풀이에 직접 판단근거를 제공하도록 추가",
+    "sourceAuthority": "exam_reconstruction_with_source_needed"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-valve-crawl",
+      "subjectId": "subject-3",
+      "conceptGroupId": "s3-g09",
+      "conceptId": "concept-cbt-valve-crawl",
+      "title": "고압증기 밸브의 crawl 현상",
+      "aliases": [
+        "crawl",
+        "설정압력 이동",
+        "스프링 온도상승"
+      ],
+      "summary": [
+        "고온 유체가 스프링에 직접 닿으면 온도상승으로 탄성계수가 변할 수 있다.",
+        "그 결과 밸브 설정압력이 서서히 이동하는 현상을 해당 기출은 crawl로 부른다.",
+        "blowdown·hunting·back pressure와 원인과 현상이 다르다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 고온 유체가 스프링에 직접 닿으면 온도상승으로 탄성계수가 변할 수 있다.\n2. 그 결과 밸브 설정압력이 서서히 이동하는 현상을 해당 기출은 crawl로 부른다.\n3. blowdown·hunting·back pressure와 원인과 현상이 다르다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "이 기출에서 crawl은 방출 증기의 열영향으로 스프링 특성이 변해 설정압력이 점진적으로 이동하는 현상이다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "핵심 단서는 고압증기, 스프링 직접 접촉, 온도상승, 탄성계수 변화, 설정압력의 점진적 변화다. 반복 진동이면 hunting, 개방·재폐쇄 압력차면 blowdown이다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 대상과 조건을 먼저 확인한다. 그다음 **고압증기 밸브의 crawl 현상**의 정의·작동원리와 각 보기를 하나씩 대조한다. 비슷한 용어가 아니라 직접 원인·식·기능이 일치하는 보기를 선택한다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "crawl은 제조사·밸브 형식에 따라 용어 사용이 다를 수 있다. 실제 정비에서는 승인된 매뉴얼의 용어와 조정 절차를 우선한다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 독립 이론 출처: 추가 검토 필요\n- 현재 근거: 2009년 4회 복원 원문과 독립 풀이\n- 공개 상태: 직접 연결은 완료했으나 추가 출처·기술 검수 전까지 in_review 유지\n- 원문 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1396"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 734,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": false,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2009-4-Q47"
+    ],
+    "rationale": "2009-4-Q47의 지문·보기·풀이에 직접 판단근거를 제공하도록 추가",
+    "sourceAuthority": "exam_reconstruction_with_source_needed"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-ultrasonic-condition-monitoring",
+      "subjectId": "subject-4",
+      "conceptGroupId": "s4-g06",
+      "conceptId": "concept-cbt-ultrasonic-condition-monitoring",
+      "title": "초음파 상태감시의 적용범위",
+      "aliases": [
+        "초음파 측정기",
+        "에어 누설",
+        "베어링 초음파"
+      ],
+      "summary": [
+        "초음파 상태감시는 누설·방전·마찰에서 발생하는 고주파 성분을 검출하는 데 사용한다.",
+        "진동·오일·소음 분석과는 검출 물리량과 대표 적용결함이 다르다.",
+        "해당 문항의 결함목록이 이미지에 있어 정답 번호는 이미지 확인 전 보류한다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 초음파 상태감시는 누설·방전·마찰에서 발생하는 고주파 성분을 검출하는 데 사용한다.\n2. 진동·오일·소음 분석과는 검출 물리량과 대표 적용결함이 다르다.\n3. 해당 문항의 결함목록이 이미지에 있어 정답 번호는 이미지 확인 전 보류한다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "초음파 상태감시는 사람이 듣기 어려운 고주파 음향에너지를 센서로 검출해 누설이나 초기 마찰 이상 등을 찾는 방법이다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "결함이 만드는 신호가 고주파 누설음·마찰음인지 확인한다. 회전주파수 성분은 진동, 윤활유 열화·마모입자는 오일분석이 더 직접적이다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 대상과 조건을 먼저 확인한다. 그다음 **초음파 상태감시의 적용범위**의 정의·작동원리와 각 보기를 하나씩 대조한다. 비슷한 용어가 아니라 직접 원인·식·기능이 일치하는 보기를 선택한다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "초음파가 모든 결함에 가장 쉽거나 유일한 방법은 아니다. 결함목록과 측정목적을 확인해야 하며, 현재 원문 이미지가 없으므로 이론만 연결하고 채점은 보류한다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 독립 이론 출처: 추가 검토 필요\n- 현재 근거: 2009년 4회 복원 원문과 독립 풀이\n- 공개 상태: 직접 연결은 완료했으나 추가 출처·기술 검수 전까지 in_review 유지\n- 원문 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [],
+      "coverageStatus": "partial",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 719,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": false,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2009-4-Q13"
+    ],
+    "rationale": "2009-4-Q13의 지문·보기·풀이에 직접 판단근거를 제공하도록 추가",
+    "sourceAuthority": "exam_reconstruction_with_source_needed"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-shaft-assembly-failure",
+      "subjectId": "subject-3",
+      "conceptGroupId": "s3-g04",
+      "conceptId": "concept-cbt-shaft-assembly-failure",
+      "title": "축 고장의 조립·정비 원인",
+      "aliases": [
+        "축 휨",
+        "조립불량",
+        "정비불량"
+      ],
+      "summary": [
+        "축 고장원인은 설계·재료·제작·조립·운전·정비 원인으로 분리한다.",
+        "부적절한 조립·분해·정렬·취급은 축 휨을 직접 만들 수 있다.",
+        "재질불량·강도부족·형상불량은 주로 설계·제작 원인이다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 축 고장원인은 설계·재료·제작·조립·운전·정비 원인으로 분리한다.\n2. 부적절한 조립·분해·정렬·취급은 축 휨을 직접 만들 수 있다.\n3. 재질불량·강도부족·형상불량은 주로 설계·제작 원인이다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "조립·정비 원인은 정상 부품을 설치·분해·정렬·취급하는 과정에서 발생한 변형과 손상을 뜻한다.",
+          "order": 2
+        },
+        {
+          "id": "diagnosis",
+          "kind": "diagnosis",
+          "title": "직접 판단근거",
+          "body": "원인의 발생단계를 묻는다. 재질과 강도는 설계·소재, 형상은 구조설계, 축 휨은 잘못된 취급·정렬·조립에서도 직접 발생할 수 있다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 대상과 조건을 먼저 확인한다. 그다음 **축 고장의 조립·정비 원인**의 정의·작동원리와 각 보기를 하나씩 대조한다. 비슷한 용어가 아니라 직접 원인·식·기능이 일치하는 보기를 선택한다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "축 휨은 과부하나 열변형으로도 생길 수 있다. 이 문항은 보기 중 조립·정비불량과 가장 직접 연결되는 원인을 고르는 분류형 문제다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 독립 이론 출처: 추가 검토 필요\n- 현재 근거: 2009년 4회 복원 원문과 독립 풀이\n- 공개 상태: 직접 연결은 완료했으나 추가 출처·기술 검수 전까지 in_review 유지\n- 원문 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1257"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 646,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": false,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2009-4-Q54"
+    ],
+    "rationale": "2009-4-Q54의 지문·보기·풀이에 직접 판단근거를 제공하도록 추가",
+    "sourceAuthority": "exam_reconstruction_with_source_needed"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-shaft-drawing-rules",
+      "subjectId": "subject-3",
+      "conceptGroupId": "s3-g01",
+      "conceptId": "concept-cbt-shaft-drawing-rules",
+      "title": "축의 도시방법",
+      "aliases": [
+        "축 도시",
+        "긴 축 생략",
+        "평면부 표시"
+      ],
+      "summary": [
+        "축은 일반적으로 길이방향 전단면을 피하고 필요한 곳만 부분단면으로 표시한다.",
+        "긴 축은 중간을 생략해 짧게 그려도 실제 길이 치수를 기입한다.",
+        "원형축의 평면부 표시는 가는 실선 대각선으로 나타내며 일점쇄선과 구분한다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 축은 일반적으로 길이방향 전단면을 피하고 필요한 곳만 부분단면으로 표시한다.\n2. 긴 축은 중간을 생략해 짧게 그려도 실제 길이 치수를 기입한다.\n3. 원형축의 평면부 표시는 가는 실선 대각선으로 나타내며 일점쇄선과 구분한다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "축의 도시는 긴 회전체의 형상·가공부·평면부를 도면에서 명확하고 간결하게 전달하는 제도 규칙이다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "작은 라운드·홈은 필요하면 확대하고, 긴 축은 생략선을 사용해 단축한다. 원형부의 일부 평면은 가는 실선 대각선으로 표시한다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 대상과 조건을 먼저 확인한다. 그다음 **축의 도시방법**의 정의·작동원리와 각 보기를 하나씩 대조한다. 비슷한 용어가 아니라 직접 원인·식·기능이 일치하는 보기를 선택한다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "중심선에 사용하는 일점쇄선과 평면부 표시용 가는 실선을 혼동하지 않는다. 실제 도면 작성은 적용 중인 KS/ISO 제도규격을 확인한다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 독립 이론 출처: 추가 검토 필요\n- 현재 근거: 2009년 4회 복원 원문과 독립 풀이\n- 공개 상태: 직접 연결은 완료했으나 추가 출처·기술 검수 전까지 in_review 유지\n- 원문 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1394"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 676,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": false,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2009-4-Q56"
+    ],
+    "rationale": "2009-4-Q56의 지문·보기·풀이에 직접 판단근거를 제공하도록 추가",
+    "sourceAuthority": "exam_reconstruction_with_source_needed"
+  },
+  {
+    "lesson": {
+      "id": "lesson-cbt-poppet-valve-components",
+      "subjectId": "subject-1",
+      "conceptGroupId": "s1-g04",
+      "conceptId": "concept-cbt-poppet-valve-components",
+      "title": "포핏밸브 폐쇄요소와 스풀밸브 구분",
+      "aliases": [
+        "포핏 밸브",
+        "poppet valve",
+        "시트 밸브",
+        "볼 포핏",
+        "원추 포핏",
+        "디스크 포핏"
+      ],
+      "summary": [
+        "포핏형 밸브는 폐쇄요소가 시트에 접근하거나 떨어지며 유로를 개폐한다.",
+        "기출의 교재 분류에서는 폐쇄요소 형상으로 디스크·원추·볼을 포핏형에 포함한다.",
+        "스풀은 원통형 랜드가 보어 안에서 미끄러지며 포트를 연결·차단하는 별도 구조다."
+      ],
+      "blocks": [
+        {
+          "id": "summary",
+          "kind": "summary",
+          "title": "핵심 요약",
+          "body": "1. 포핏형 밸브는 폐쇄요소가 시트에 접근하거나 떨어지며 유로를 개폐한다.\n2. 기출의 교재 분류에서는 폐쇄요소 형상으로 디스크·원추·볼을 포핏형에 포함한다.\n3. 스풀은 원통형 랜드가 보어 안에서 미끄러지며 포트를 연결·차단하는 별도 구조다.",
+          "order": 1
+        },
+        {
+          "id": "definition",
+          "kind": "definition",
+          "title": "정의와 범위",
+          "body": "포핏밸브는 폐쇄요소가 밸브 시트에 밀착해 유로를 차단하고 시트에서 이탈해 유로를 여는 구조다. 폐쇄요소의 구체 형상은 제품과 교재 분류에 따라 디스크·원추·볼 등으로 표현될 수 있다.",
+          "order": 2
+        },
+        {
+          "id": "principle",
+          "kind": "principle",
+          "title": "직접 판단근거",
+          "body": "보기의 부품이 시트에 직접 안착하는 폐쇄요소인지 확인한다. 디스크·원추·볼은 해당 기출의 포핏 폐쇄요소 분류에 들어가지만, 스풀은 밸브 보어를 축방향으로 이동하는 원통형 제어요소이므로 포핏형 구성요소가 아니다.",
+          "order": 3
+        },
+        {
+          "id": "exam-point",
+          "kind": "exam_point",
+          "title": "시험 판단 순서",
+          "body": "문두의 대상과 조건을 먼저 확인한다. 그다음 **포핏밸브 폐쇄요소와 스풀밸브 구분**의 정의·작동원리와 각 보기를 하나씩 대조한다. 비슷한 용어가 아니라 직접 원인·식·기능이 일치하는 보기를 선택한다.",
+          "order": 4
+        },
+        {
+          "id": "trap",
+          "kind": "trap",
+          "title": "혼동하기 쉬운 경계",
+          "body": "포핏밸브에도 스프링·시트·액추에이터가 함께 쓰일 수 있지만, 문항은 폐쇄요소의 형상을 묻는다. “스풀”이라는 이름이 다른 밸브에서도 보인다는 이유로 포핏과 혼동하지 않는다.",
+          "order": 5
+        },
+        {
+          "id": "source",
+          "kind": "source",
+          "title": "출처와 공개 상태",
+          "body": "- 근거 URL 1: https://www.festo.com/il/en/a/8036676/\n- 근거 URL 2: https://ipd.parker.com/viewitems/mpi-specialty-valves-and-filters/mac-and-macb-check-valves\n- 근거 URL 3: https://ph.parker.com/us/en/d1vw001cnkw\n- 공개 상태: 직접 연결은 완료했으나 추가 출처·기술 검수 전까지 in_review 유지\n- 원문 미러를 공식 발행처로 표시하지 않는다.",
+          "order": 6
+        }
+      ],
+      "relatedQuestionIds": [
+        "U-1400"
+      ],
+      "coverageStatus": "covered",
+      "contentStatus": "in_review",
+      "sourceNeeded": true,
+      "reviewedAt": null,
+      "contentRole": "exam_linked",
+      "publication": {
+        "readiness": "blocked",
+        "blockers": [
+          "lesson_source_needed"
+        ]
+      },
+      "quality": {
+        "tier": "standard",
+        "substantiveCharacters": 972,
+        "genericPhraseMatches": [],
+        "languageIssueMatches": [],
+        "sourceLinked": true,
+        "passed": true
+      }
+    },
+    "directExternalIds": [
+      "2009-4-Q84"
+    ],
+    "rationale": "2009-4-Q84의 지문·보기·풀이에 직접 판단근거를 제공하도록 추가",
+    "sourceAuthority": "authoritative_components_with_exam_taxonomy"
+  }
+]

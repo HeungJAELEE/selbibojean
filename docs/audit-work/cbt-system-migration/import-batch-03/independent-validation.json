@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "failureCount": 0,
+  "failures": [],
+  "checks": {
+    "cumulativeResolutionCounts": {
+      "imageVerificationQueueCount": 26,
+      "normalizedAndRegisteredCount": 5,
+      "choiceConflictNonScoringCount": 8,
+      "lowContextRegisteredCount": 5
+    },
+    "contentSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "manifestSha256": "137ef7d1c45f6af739f6597ea61a50d5b6b28018a4bf746d6d7fa600d0f246f3",
+    "recordCount": 600,
+    "batch3RecordCount": 200,
+    "cumulativeStates": {
+      "candidate": 566,
+      "hold": 26,
+      "choice_conflict": 8
+    },
+    "batch3States": {
+      "candidate": 190,
+      "hold": 8,
+      "choice_conflict": 2
+    },
+    "fullCanonicalChoiceMappingCount": 23,
+    "variantSpecificFeedbackPendingCount": 167,
+    "theoryLessonAdditionCount": 17,
+    "canonicalQuestionChangeCount": 15,
+    "batch3NewTheoryLessons": [
+      "lesson-cbt-safety-valve-simmering-correction",
+      "lesson-cbt-cavitation-choice-conflict",
+      "lesson-cbt-gear-undercut-choice-conflict"
+    ],
+    "batch3CanonicalChanges": [
+      "U-1215",
+      "U-1161",
+      "U-1166"
+    ],
+    "semanticReassignments": {
+      "2010-4-Q92": "U-561 -> U-1342",
+      "2011-4-Q65": "U-849 -> U-736"
+    }
+  }
+}

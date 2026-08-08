@@ -1,0 +1,12 @@
+{
+  "status": "BLOCKED",
+  "scope": "full_repository_reviewed_cbt_verifier_attempt",
+  "nodeVersion": "v22.16.0",
+  "officialNode24Validation": false,
+  "exitCode": 127,
+  "blocker": "PROJECT_DEPENDENCY_NOT_INSTALLED",
+  "missingModule": "tsx or project dependencies",
+  "log": "repository-verifier-attempt.log",
+  "reason": "The project package dependencies are not installed, and the environment is Node.js 22 rather than the required Node.js 24.",
+  "reportedAsPass": false
+}

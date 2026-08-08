@@ -1,0 +1,4 @@
+(node:16919) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("/mnt/data/work-batch13/ts-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS: reviewed CBT imports verified (2384 records; 2267 candidates; 19 choice conflicts; 98 image holds; 0 gated; 20 theory additions; 19 canonical overlays).

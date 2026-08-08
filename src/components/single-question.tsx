@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ChevronDown, ExternalLink, RotateCcw } from "lucide-react";
 import type { PracticeFeedback, PublicQuestion } from "@/lib/domain/types";
 import { cn } from "@/lib/utils";
@@ -94,15 +94,19 @@ function QuestionAnswerForm({
   const [feedback, setFeedback] = useState<PracticeFeedback | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const pendingAttemptId = useRef<string | null>(null);
 
   async function submit() {
     setLoading(true);
     setError("");
     try {
+      const clientAttemptId = pendingAttemptId.current ?? crypto.randomUUID();
+      pendingAttemptId.current = clientAttemptId;
       const response = await fetch("/api/practice/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          clientAttemptId,
           questionId: question.id,
           choiceId: choice,
           selfRating: "unsure",
@@ -116,6 +120,7 @@ function QuestionAnswerForm({
         throw new Error(result.error ?? "채점하지 못했습니다.");
       }
       setFeedback(result);
+      pendingAttemptId.current = null;
     } catch (caught) {
       setError(
         caught instanceof Error ? caught.message : "채점하지 못했습니다.",
@@ -126,6 +131,7 @@ function QuestionAnswerForm({
   }
 
   function retry() {
+    pendingAttemptId.current = null;
     setChoice("");
     setFeedback(null);
     setError("");
@@ -145,7 +151,7 @@ function QuestionAnswerForm({
                 key={item.id}
                 type="button"
                 aria-pressed={choice === item.id}
-                onClick={() => setChoice(item.id)}
+                onClick={() => { pendingAttemptId.current = null; setChoice(item.id); }}
                 className={cn(
                   "rounded-xl border p-4 text-left text-sm leading-6",
                   choice === item.id

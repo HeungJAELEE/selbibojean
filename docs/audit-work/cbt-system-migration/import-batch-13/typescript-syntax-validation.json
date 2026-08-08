@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "typescriptVersion": "5.8.3",
+  "files": [
+    {
+      "path": "src/lib/content/past-exam-examples.ts",
+      "size": 9256,
+      "parseDiagnosticCount": 0
+    },
+    {
+      "path": "src/lib/content/practice-presentations.ts",
+      "size": 7261,
+      "parseDiagnosticCount": 0
+    },
+    {
+      "path": "src/lib/content/reviewed-cbt-variants.ts",
+      "size": 33258,
+      "parseDiagnosticCount": 0
+    },
+    {
+      "path": "src/lib/content/runtime-content.ts",
+      "size": 2476,
+      "parseDiagnosticCount": 0
+    },
+    {
+      "path": "src/lib/content/supabase-materialization.ts",
+      "size": 12323,
+      "parseDiagnosticCount": 0
+    },
+    {
+      "path": "src/lib/content/taxonomy-normalization.ts",
+      "size": 5547,
+      "parseDiagnosticCount": 0
+    },
+    {
+      "path": "src/lib/content/written-question-audit.ts",
+      "size": 13537,
+      "parseDiagnosticCount": 0
+    },
+    {
+      "path": "src/lib/domain/types.ts",
+      "size": 13917,
+      "parseDiagnosticCount": 0
+    },
+    {
+      "path": "scripts/verify-generated-data.ts",
+      "size": 18858,
+      "parseDiagnosticCount": 0
+    },
+    {
+      "path": "scripts/verify-reviewed-cbt-variants.ts",
+      "size": 98139,
+      "parseDiagnosticCount": 0
+    },
+    {
+      "path": "tests/unit/reviewed-cbt-variants.test.ts",
+      "size": 51811,
+      "parseDiagnosticCount": 0
+    }
+  ],
+  "failures": []
+}

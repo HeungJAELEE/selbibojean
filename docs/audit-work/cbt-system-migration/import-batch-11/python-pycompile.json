@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "exitCode": 0,
+  "files": [
+    "docs/audit-work/cbt-system-migration/import-batch-11/generate-import-batch-11.py",
+    "docs/audit-work/cbt-system-migration/import-batch-11/validate-import-batch-11.py",
+    "docs/audit-work/cbt-system-migration/import-batch-11/run-negative-contract-validation.py"
+  ],
+  "logFile": "docs/audit-work/cbt-system-migration/import-batch-11/python-pycompile.log"
+}

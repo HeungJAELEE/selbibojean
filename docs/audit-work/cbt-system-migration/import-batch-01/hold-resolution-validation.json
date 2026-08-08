@@ -1,0 +1,62 @@
+{
+  "formatVersion": 1,
+  "status": "PASS",
+  "scope": "import-batch-01 hold-resolution static validation",
+  "checks": {
+    "recordCount": 200,
+    "recordsSha256": "9f1bd7284cd7cec502d121381b75ce8ad06a0b49d3cc67e989f8cc92df08c934",
+    "stateCounts": {
+      "candidate": 187,
+      "hold": 7,
+      "choice_conflict": 6
+    },
+    "contentSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
+    "queueCounts": {
+      "image-verification-queue.jsonl": 7,
+      "choice-conflict-queue.jsonl": 6,
+      "normalization-ledger.jsonl": 5
+    },
+    "normalizedExactSet": [
+      "2006-4-Q09",
+      "2006-4-Q15",
+      "2006-4-Q84",
+      "2006-4-Q89",
+      "2007-4-Q40"
+    ],
+    "lowContextExactSet": [
+      "2006-4-Q11",
+      "2007-4-Q36",
+      "2007-4-Q50",
+      "2007-4-Q61",
+      "2007-4-Q82"
+    ],
+    "choiceConflictExactSet": [
+      "2006-4-Q34",
+      "2006-4-Q49",
+      "2006-4-Q60",
+      "2006-4-Q93",
+      "2007-4-Q49",
+      "2007-4-Q66"
+    ],
+    "imageHoldExactSet": [
+      "2006-4-Q17",
+      "2006-4-Q37",
+      "2006-4-Q88",
+      "2006-4-Q91",
+      "2007-4-Q02",
+      "2007-4-Q10",
+      "2007-4-Q93"
+    ],
+    "candidateAnswerMappingsChecked": 187,
+    "nonScoringRecordsChecked": 13
+  },
+  "failures": [],
+  "requiredProjectChecksNotRun": [
+    "Node.js 24 typecheck",
+    "Vitest",
+    "changed-file ESLint",
+    "verify-no-answer-leak",
+    "login/guest/session merge integration flow",
+    "SQL migration tests"
+  ]
+}
