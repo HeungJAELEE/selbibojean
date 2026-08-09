@@ -30,6 +30,14 @@ export type WrittenTheorySubjectContent = {
   >;
   questions: PublicQuestion[];
 };
+export type WrittenMockSetupMetadata = {
+  subjects: Subject[];
+  availableBySubject: Record<string, number>;
+  publishedBySubject: Record<string, number>;
+  availableYears: number[];
+  availableByYearRange: Record<string, Record<string, number>>;
+  publishedByYearRange: Record<string, Record<string, number>>;
+};
 
 const subjectContentPromises = new Map<
   string,
@@ -88,6 +96,24 @@ async function loadContent() {
 export async function getContent() {
   contentPromise ??= loadContent();
   return contentPromise;
+}
+
+export async function getWrittenMockSetupMetadata() {
+  const assetFetcher = (globalThis as RuntimeGlobal).__SEOLBI_RUNTIME_ASSET_FETCH__;
+  if (assetFetcher) {
+    const response = await assetFetcher("/data/mock-setup.json");
+    if (!response.ok) {
+      throw new Error(`Written mock setup asset is unavailable (${response.status}).`);
+    }
+    return response.json() as Promise<WrittenMockSetupMetadata>;
+  }
+
+  const [{ readFile }, path] = await Promise.all([
+    import("node:fs/promises"),
+    import("node:path"),
+  ]);
+  const file = path.join(process.cwd(), ".runtime-assets", "data", "mock-setup.json");
+  return JSON.parse(await readFile(file, "utf8")) as WrittenMockSetupMetadata;
 }
 
 export async function getWrittenTheorySubjectContent(subjectId: string) {

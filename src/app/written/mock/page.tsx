@@ -1,13 +1,7 @@
 import { PageHeading } from "@/components/page-heading";
 import { DeviceLearningStorage } from "@/components/device-learning-storage";
 import { WrittenMockSetup } from "@/components/written-mock-setup";
-import { getContent } from "@/lib/content/repository";
-import {
-  countPublicOriginalVariantsBySubject,
-  getPublicOriginalVariantYears,
-  getSafeOriginalsByQuestion,
-} from "@/lib/content/practice-presentations";
-import { isPublishableQuestion } from "@/lib/domain/practice";
+import { getWrittenMockSetupMetadata } from "@/lib/content/repository";
 import { isReleaseFeatureEnabled } from "@/lib/release-features";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
@@ -16,90 +10,10 @@ export default async function WrittenMockPage() {
   const { data: auth } = supabase
     ? await supabase.auth.getUser()
     : { data: { user: null } };
-  const content = await getContent();
+  const setup = await getWrittenMockSetupMetadata();
   const choiceShuffleEnabled = isReleaseFeatureEnabled(
     "mock_choice_shuffle",
   );
-  const publishedBySubject = countPublicOriginalVariantsBySubject(
-    content.questions,
-    content.variants,
-  );
-  const safeOriginals = getSafeOriginalsByQuestion(
-    content.questions,
-    content.variants,
-  );
-  const questionById = new Map(
-    content.questions.map((question) => [question.id, question]),
-  );
-  const safeOriginalQuestionIds = new Set(safeOriginals.keys());
-  const availableBySubject = Object.fromEntries(
-    content.subjects.map((subject) => [
-      subject.id,
-      new Set(
-        content.questions
-          .filter(
-            (question) =>
-              question.subjectId === subject.id &&
-              (isPublishableQuestion(question) ||
-                safeOriginalQuestionIds.has(question.id)),
-          )
-          .map((question) => question.id),
-      ).size,
-    ]),
-  );
-  const publishedAvailabilityBySubject = Object.fromEntries(
-    content.subjects.map((subject) => [
-      subject.id,
-      publishedBySubject[subject.id] ?? 0,
-    ]),
-  );
-  const availableYears = getPublicOriginalVariantYears(
-    content.questions,
-    content.variants,
-  );
-  const availableByYearRange: Record<string, Record<string, number>> = {};
-  const publishedByYearRange: Record<string, Record<string, number>> = {};
-  for (const from of availableYears) {
-    for (const to of availableYears) {
-      if (from > to) continue;
-      const rangeCounts = countPublicOriginalVariantsBySubject(
-        content.questions,
-        content.variants,
-        from,
-        to,
-      );
-      const idsBySubject = new Map<string, Set<string>>();
-      for (const [questionId, variants] of safeOriginals) {
-        if (
-          !variants.some(
-            (variant) =>
-              variant.year !== null &&
-              variant.year >= from &&
-              variant.year <= to,
-          )
-        ) {
-          continue;
-        }
-        const subjectId = questionById.get(questionId)?.subjectId;
-        if (!subjectId) continue;
-        const ids = idsBySubject.get(subjectId) ?? new Set<string>();
-        ids.add(questionId);
-        idsBySubject.set(subjectId, ids);
-      }
-      availableByYearRange[`${from}-${to}`] = Object.fromEntries(
-        content.subjects.map((subject) => [
-          subject.id,
-          idsBySubject.get(subject.id)?.size ?? 0,
-        ]),
-      );
-      publishedByYearRange[`${from}-${to}`] = Object.fromEntries(
-        content.subjects.map((subject) => [
-          subject.id,
-          rangeCounts[subject.id] ?? 0,
-        ]),
-      );
-    }
-  }
   return (
     <div className="page-wrap">
       <PageHeading
@@ -134,12 +48,12 @@ export default async function WrittenMockPage() {
         </Link>
       </section>
       <WrittenMockSetup
-        subjects={content.subjects}
-        availableBySubject={availableBySubject}
-        publishedBySubject={publishedAvailabilityBySubject}
-        availableYears={availableYears}
-        availableByYearRange={availableByYearRange}
-        publishedByYearRange={publishedByYearRange}
+        subjects={setup.subjects}
+        availableBySubject={setup.availableBySubject}
+        publishedBySubject={setup.publishedBySubject}
+        availableYears={setup.availableYears}
+        availableByYearRange={setup.availableByYearRange}
+        publishedByYearRange={setup.publishedByYearRange}
         choiceShuffleEnabled={choiceShuffleEnabled}
       />
     </div>

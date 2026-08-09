@@ -3,6 +3,11 @@ import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { gzipSync } from "node:zlib";
 import { createPracticePresentations } from "../src/lib/content/practice-presentations";
+import {
+  countPublicOriginalVariantsBySubject,
+  getPublicOriginalVariantYears,
+  getSafeOriginalsByQuestion,
+} from "../src/lib/content/practice-presentations";
 import { buildRuntimeContent } from "../src/lib/content/runtime-content";
 import {
   isPublishableLesson,
@@ -45,6 +50,85 @@ const generatedContent = JSON.parse(source.toString("utf8")) as GeneratedContent
 const runtimeContent = buildRuntimeContent(generatedContent);
 const runtimeSource = Buffer.from(JSON.stringify(runtimeContent));
 
+const publishedBySubject = countPublicOriginalVariantsBySubject(
+  runtimeContent.questions,
+  runtimeContent.variants,
+);
+const safeOriginals = getSafeOriginalsByQuestion(
+  runtimeContent.questions,
+  runtimeContent.variants,
+);
+const questionById = new Map(
+  runtimeContent.questions.map((question) => [question.id, question]),
+);
+const safeOriginalQuestionIds = new Set(safeOriginals.keys());
+const availableBySubject = Object.fromEntries(
+  runtimeContent.subjects.map((subject) => [
+    subject.id,
+    new Set(
+      runtimeContent.questions
+        .filter(
+          (question) =>
+            question.subjectId === subject.id &&
+            (isPublishableQuestion(question) ||
+              safeOriginalQuestionIds.has(question.id)),
+        )
+        .map((question) => question.id),
+    ).size,
+  ]),
+);
+const availableYears = getPublicOriginalVariantYears(
+  runtimeContent.questions,
+  runtimeContent.variants,
+);
+const availableByYearRange: Record<string, Record<string, number>> = {};
+const publishedByYearRange: Record<string, Record<string, number>> = {};
+for (const from of availableYears) {
+  for (const to of availableYears) {
+    if (from > to) continue;
+    const rangeCounts = countPublicOriginalVariantsBySubject(
+      runtimeContent.questions,
+      runtimeContent.variants,
+      from,
+      to,
+    );
+    const idsBySubject = new Map<string, Set<string>>();
+    for (const [questionId, variants] of safeOriginals) {
+      if (
+        !variants.some(
+          (variant) =>
+            variant.year !== null && variant.year >= from && variant.year <= to,
+        )
+      ) continue;
+      const subjectId = questionById.get(questionId)?.subjectId;
+      if (!subjectId) continue;
+      const ids = idsBySubject.get(subjectId) ?? new Set<string>();
+      ids.add(questionId);
+      idsBySubject.set(subjectId, ids);
+    }
+    availableByYearRange[`${from}-${to}`] = Object.fromEntries(
+      runtimeContent.subjects.map((subject) => [
+        subject.id,
+        idsBySubject.get(subject.id)?.size ?? 0,
+      ]),
+    );
+    publishedByYearRange[`${from}-${to}`] = Object.fromEntries(
+      runtimeContent.subjects.map((subject) => [
+        subject.id,
+        rangeCounts[subject.id] ?? 0,
+      ]),
+    );
+  }
+}
+const mockSetupMetadata = {
+  subjects: runtimeContent.subjects,
+  availableBySubject,
+  publishedBySubject,
+  availableYears,
+  availableByYearRange,
+  publishedByYearRange,
+};
+
 const compressed = gzipSync(runtimeSource, { level: 9 });
 const sourceSha256 = createHash("sha256").update(runtimeSource).digest("hex");
 const metadata = {
@@ -61,6 +145,11 @@ await Promise.all(
     writeFile(
       path.join(outputDirectory, "content.meta.json"),
       `${JSON.stringify(metadata)}\n`,
+      "utf8",
+    ),
+    writeFile(
+      path.join(outputDirectory, "mock-setup.json"),
+      `${JSON.stringify(mockSetupMetadata)}\n`,
       "utf8",
     ),
   ]),

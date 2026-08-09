@@ -209,6 +209,7 @@ const packagedDataFiles = (await readdir(pagesDataDirectory)).sort();
 const expectedDataFiles = [
   "content.bin",
   "content.meta.json",
+  "mock-setup.json",
   ...["subject-1", "subject-2", "subject-3", "subject-4"].flatMap(
     (subjectId) => [
       `content-${subjectId}.bin`,
