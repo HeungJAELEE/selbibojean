@@ -19,6 +19,7 @@ type Session = {
   limited: boolean;
   originalRatio?: number;
   actualOriginalCount?: number;
+  shuffleChoices?: boolean;
   focus?: {
     fallback: boolean;
     groups: Array<{ id: string; title: string; mistakes: number }>;
@@ -28,7 +29,7 @@ type Session = {
 
 const SESSION_PREFIX = "seolbi:practice:";
 
-export function RandomPractice({ subjects, groups }: { subjects: Subject[]; groups: ConceptGroup[] }) {
+export function RandomPractice({ subjects, groups, choiceShuffleEnabled }: { subjects: Subject[]; groups: ConceptGroup[]; choiceShuffleEnabled: boolean }) {
   const searchParams = useSearchParams();
   const isHydrated = useHydrated();
   const [mode, setMode] = useState(searchParams.get("mode") ?? "all");
@@ -36,6 +37,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
   const [groupId, setGroupId] = useState("");
   const [count, setCount] = useState<"10" | "20" | "50" | "all">("20");
   const [originalRatio, setOriginalRatio] = useState<0 | 25 | 50 | 75 | 100>(50);
+  const [shuffleChoices, setShuffleChoices] = useState(choiceShuffleEnabled);
   const [session, setSession] = useState<Session | null>(null);
   const [index, setIndex] = useState(() => Number(searchParams.get("index") ?? 0));
   const [selectedChoiceId, setSelectedChoiceId] = useState("");
@@ -84,7 +86,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
       const response = await fetch("/api/practice/session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ mode, subjectId, conceptGroupId: groupId, count: count === "all" ? "all" : Number(count), originalRatio, guestQuestionIds }),
+        body: JSON.stringify({ mode, subjectId, conceptGroupId: groupId, count: count === "all" ? "all" : Number(count), originalRatio, shuffleChoices, guestQuestionIds }),
       });
       const result = await response.json() as Session & { error?: string };
       if (!response.ok) throw new Error(result.error);
@@ -174,8 +176,23 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
           {mode === "group" && <label className="grid gap-2 text-sm font-bold">세부항목군<select aria-label="세부항목군" disabled={!isHydrated} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50" value={groupId} onChange={(event) => setGroupId(event.target.value)}><option value="">선택하세요</option>{availableGroups.map((group) => <option key={group.id} value={group.id}>{group.title}</option>)}</select></label>}
           <label className="grid gap-2 text-sm font-bold">문제 수<select aria-label="문제 수" disabled={!isHydrated} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50" value={count} onChange={(event) => setCount(event.target.value as typeof count)}><option value="10">10문제</option><option value="20">20문제</option><option value="50">50문제</option><option value="all">가능한 문제 전체</option></select></label>
           <label className="grid gap-2 text-sm font-bold">실제 기출 비율<select aria-label="실제 기출 비율" disabled={!isHydrated} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50" value={originalRatio} onChange={(event) => setOriginalRatio(Number(event.target.value) as typeof originalRatio)}><option value="0">0% · 개념 문제만</option><option value="25">25% · 개념 중심</option><option value="50">50% · 균형 혼합</option><option value="75">75% · 기출 중심</option><option value="100">100% · 가능한 기출 전체</option></select></label>
+          <label className="flex min-h-12 items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-bold">
+            <input
+              type="checkbox"
+              checked={shuffleChoices}
+              disabled={!isHydrated || !choiceShuffleEnabled}
+              onChange={(event) => setShuffleChoices(event.target.checked)}
+              className="size-5 accent-[#16697a]"
+            />
+            <span>
+              보기 순서 섞기
+              <span className="mt-1 block text-xs font-normal text-slate-500">
+                문제마다 보기 위치를 바꾸며 정답은 보기 ID로 채점합니다.
+              </span>
+            </span>
+          </label>
         </div>
-        <p className="mt-4 rounded-xl bg-[#eaf7f6] p-3 text-sm leading-6 text-[#135c69]">{mode === "weak" ? "선택 과목의 오답 기록을 세부항목군별로 집계해 많이 틀린 최대 3개 영역의 다른 문제까지 무작위로 출제합니다. 오답 기록이 없으면 선택 과목 전체에서 시작합니다." : "선택한 범위와 기출 비율에 맞춰 새 세션마다 문제 순서를 무작위로 섞습니다."} 원문과 정답·보기가 정확히 대조되지 않은 문제는 실제 기출 출제에서 제외됩니다.</p>
+        <p className="mt-4 rounded-xl bg-[#eaf7f6] p-3 text-sm leading-6 text-[#135c69]">{mode === "weak" ? "선택 과목의 오답 기록을 세부항목군별로 집계해 많이 틀린 최대 3개 영역의 다른 문제까지 무작위로 출제합니다. 오답 기록이 없으면 선택 과목 전체에서 시작합니다." : "선택한 범위와 기출 비율에 맞춰 새 세션마다 문제 순서를 무작위로 섞습니다."} {shuffleChoices ? "보기 순서는 문제마다 섞어서 출제합니다." : "보기 순서는 원문 순서로 출제합니다."} 원문과 정답·보기가 정확히 대조되지 않은 문제는 실제 기출 출제에서 제외됩니다.</p>
         {error && <p className="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-700" role="alert">{error}</p>}
         <button onClick={startSession} disabled={!isHydrated || loading || (mode === "group" && !groupId)} className="mt-7 w-full rounded-xl bg-[#173957] px-5 py-4 font-extrabold text-white disabled:opacity-50">{loading ? "문제를 고르는 중…" : "중복 없이 랜덤 시작"}</button>
       </section>

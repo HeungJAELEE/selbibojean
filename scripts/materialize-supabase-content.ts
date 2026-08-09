@@ -80,6 +80,137 @@ async function countRows(
   return count ?? 0;
 }
 
+async function countRowsByIds(
+  client: SupabaseClient,
+  table: string,
+  column: string,
+  ids: string[],
+) {
+  let total = 0;
+  for (const batch of chunks(ids)) {
+    const { count, error } = await client
+      .from(table)
+      .select("*", { count: "exact", head: true })
+      .in(column, batch);
+    if (error) throw new Error(`${table} scoped readback failed: ${error.message}`);
+    total += count ?? 0;
+  }
+  return total;
+}
+
+async function replacePrimaryQuestionConcepts(
+  client: SupabaseClient,
+  rows: Array<Record<string, unknown>>,
+) {
+  for (const batch of chunks(rows)) {
+    const questionIds = batch.map((row) => String(row.question_id));
+    const { error: deleteError } = await client
+      .from("question_concepts")
+      .delete()
+      .in("question_id", questionIds)
+      .eq("role", "primary");
+    if (deleteError) {
+      throw new Error(
+        `question_concepts primary reconciliation failed: ${deleteError.message}`,
+      );
+    }
+    const { error: insertError } = await client
+      .from("question_concepts")
+      .insert(batch);
+    if (insertError) {
+      throw new Error(
+        `question_concepts primary insert failed: ${insertError.message}`,
+      );
+    }
+  }
+}
+
+async function pruneOrphanedConcepts(
+  client: SupabaseClient,
+  plannedConcepts: Array<Record<string, unknown>>,
+) {
+  const desiredIds = new Set(plannedConcepts.map((row) => String(row.id)));
+  const ownedGroupIds = new Set(
+    plannedConcepts.map((row) => String(row.concept_group_id)),
+  );
+  const staleIds: string[] = [];
+
+  for (let from = 0; ; from += 1_000) {
+    const { data, error } = await client
+      .from("concepts")
+      .select("id,concept_group_id,question_concepts(count)")
+      .range(from, from + 999);
+    if (error) {
+      throw new Error(`concept orphan readback failed: ${error.message}`);
+    }
+    for (const row of data ?? []) {
+      if (
+        !ownedGroupIds.has(String(row.concept_group_id)) ||
+        desiredIds.has(String(row.id))
+      ) {
+        continue;
+      }
+      const relationCount = Number(
+        (row.question_concepts as Array<{ count?: number }> | null)?.[0]
+          ?.count ?? 0,
+      );
+      if (relationCount > 0) {
+        throw new Error(
+          `stale concept ${String(row.id)} is still referenced by questions`,
+        );
+      }
+      staleIds.push(String(row.id));
+    }
+    if ((data ?? []).length < 1_000) break;
+  }
+
+  for (const batch of chunks(staleIds)) {
+    const { error } = await client.from("concepts").delete().in("id", batch);
+    if (error) {
+      throw new Error(`concept orphan cleanup failed: ${error.message}`);
+    }
+  }
+}
+
+async function archiveStaleQuestions(
+  client: SupabaseClient,
+  examTrackId: string,
+  plannedQuestions: Array<Record<string, unknown>>,
+) {
+  const desiredIds = new Set(plannedQuestions.map((row) => String(row.id)));
+  const staleIds: string[] = [];
+  for (let from = 0; ; from += 1_000) {
+    const { data, error } = await client
+      .from("questions")
+      .select("id")
+      .eq("exam_track_id", examTrackId)
+      .range(from, from + 999);
+    if (error) throw new Error(`stale question readback failed: ${error.message}`);
+    staleIds.push(
+      ...(data ?? [])
+        .map((row) => String(row.id))
+        .filter((id) => !desiredIds.has(id)),
+    );
+    if ((data ?? []).length < 1_000) break;
+  }
+  for (const batch of chunks(staleIds)) {
+    const { error: variantError } = await client
+      .from("question_variants")
+      .update({ status: "draft" })
+      .in("canonical_question_id", batch);
+    if (variantError) {
+      throw new Error(`stale variant archive failed: ${variantError.message}`);
+    }
+    const { error: questionError } = await client
+      .from("questions")
+      .update({ status: "draft" })
+      .in("id", batch);
+    if (questionError) {
+      throw new Error(`stale question archive failed: ${questionError.message}`);
+    }
+  }
+}
+
 async function resolveExamTrackId(client: SupabaseClient, apply: boolean) {
   const { data, error } = await client
     .from("exam_tracks")
@@ -151,15 +282,64 @@ async function verifyAdminReadback(
     question_concepts: plan.counts.questionConcepts,
     question_variants: plan.counts.questionVariants,
   };
-  const actual = Object.fromEntries(
-    await Promise.all(
-      Object.keys(expected).map(async (table) => [
-        table,
-        await countRows(client, table),
-      ]),
+  const actual = {
+    subjects: await countRowsByIds(
+      client,
+      "subjects",
+      "id",
+      plan.subjects.map((row) => row.id),
     ),
-  );
-  for (const [table, count] of Object.entries(expected)) {
+    concept_groups: await countRowsByIds(
+      client,
+      "concept_groups",
+      "id",
+      plan.conceptGroups.map((row) => row.id),
+    ),
+    concepts: await countRowsByIds(
+      client,
+      "concepts",
+      "id",
+      plan.concepts.map((row) => row.id),
+    ),
+    questions: await countRowsByIds(
+      client,
+      "questions",
+      "id",
+      plan.questions.map((row) => row.id),
+    ),
+    choices: await countRowsByIds(
+      client,
+      "choices",
+      "id",
+      plan.choices.map((row) => row.id),
+    ),
+    choice_feedback: await countRowsByIds(
+      client,
+      "choice_feedback",
+      "choice_id",
+      plan.choiceFeedback.map((row) => row.choice_id),
+    ),
+    answer_keys: await countRowsByIds(
+      client,
+      "answer_keys",
+      "question_id",
+      plan.answerKeys.map((row) => row.question_id),
+    ),
+    question_concepts: await countRowsByIds(
+      client,
+      "question_concepts",
+      "question_id",
+      plan.questionConcepts.map((row) => row.question_id),
+    ),
+    question_variants: await countRowsByIds(
+      client,
+      "question_variants",
+      "id",
+      plan.questionVariants.map((row) => row.id),
+    ),
+  };
+  for (const table of Object.keys(expected) as Array<keyof typeof expected>) {
+    const count = expected[table];
     if (actual[table] !== count) {
       throw new Error(
         `${table} reconciliation failed: expected ${count}, received ${actual[table]}`,
@@ -214,7 +394,10 @@ async function applyPlan(
     client,
     "concepts",
     plan.concepts,
-    "concept_group_id,canonical_name",
+    // Concept titles can be refined while their stable content identity stays
+    // the same. Reconcile by the stable primary key so a title correction
+    // updates the existing row instead of attempting a duplicate insert.
+    "id",
   );
   await upsertRows(client, "questions", plan.questions, "external_id");
   await upsertRows(client, "choices", plan.choices, "external_id");
@@ -230,17 +413,21 @@ async function applyPlan(
     plan.answerKeys,
     "question_id",
   );
-  await upsertRows(
-    client,
-    "question_concepts",
-    plan.questionConcepts,
-    "question_id,concept_id",
-  );
+  // A question has exactly one primary concept. When taxonomy improves, the
+  // concept_id changes while question_id stays stable, so replace only the
+  // primary edge and preserve any non-primary learning links.
+  await replacePrimaryQuestionConcepts(client, plan.questionConcepts);
+  await pruneOrphanedConcepts(client, plan.concepts);
   await upsertRows(
     client,
     "question_variants",
     plan.questionVariants,
     "external_id",
+  );
+  await archiveStaleQuestions(
+    client,
+    plan.identity.examTrackId,
+    plan.questions,
   );
 }
 

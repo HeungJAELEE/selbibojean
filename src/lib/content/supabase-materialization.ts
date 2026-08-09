@@ -69,9 +69,22 @@ export function buildSupabaseMaterialization(
   const lessonsByConceptId = new Map(
     content.lessons.map((lesson) => [lesson.conceptId, lesson]),
   );
+  const reviewedPublishedQuestionIds = new Set(
+    content.variants
+      .filter(
+        (variant) =>
+          variant.reviewed !== undefined &&
+          variant.reviewState === "published",
+      )
+      .map((variant) => variant.canonicalId),
+  );
   const publishableQuestionIds = new Set(
     content.questions
-      .filter(isPublishableQuestion)
+      .filter(
+        (question) =>
+          isPublishableQuestion(question) ||
+          reviewedPublishedQuestionIds.has(question.id),
+      )
       .map((question) => question.id),
   );
   const conceptSource = new Map<
@@ -165,6 +178,7 @@ export function buildSupabaseMaterialization(
   );
   const questions = content.questions.map((question) => {
     const published = publishableQuestionIds.has(question.id);
+    const reviewedPublished = reviewedPublishedQuestionIds.has(question.id);
     return {
       id: questionIds.get(question.id)!,
       external_id: question.id,
@@ -178,12 +192,15 @@ export function buildSupabaseMaterialization(
       source_label: question.sourceLabel,
       review_status_raw: question.reviewStatus,
       status: status(published),
-      answer_validated: question.validation.answer,
-      explanation_validated: question.validation.explanation,
-      choice_feedback_validated: question.validation.choiceFeedback,
+      answer_validated: question.validation.answer || reviewedPublished,
+      explanation_validated:
+        question.validation.explanation || reviewedPublished,
+      choice_feedback_validated:
+        question.validation.choiceFeedback || reviewedPublished,
       theory_link_validated:
-        question.validation.theoryLink &&
-        question.validation.contentQuality,
+        (question.validation.theoryLink &&
+          question.validation.contentQuality) ||
+        reviewedPublished,
     };
   });
   const choices = content.questions.flatMap((question) =>

@@ -25,6 +25,15 @@ describe("Supabase content materialization", () => {
   });
 
   it("materializes the complete runtime question bank", () => {
+    const reviewedPublishedQuestionIds = new Set(
+      runtime.variants
+        .filter(
+          (variant) =>
+            variant.reviewed !== undefined &&
+            variant.reviewState === "published",
+        )
+        .map((variant) => variant.canonicalId),
+    );
     expect(plan.counts.questions).toBe(runtime.questions.length);
     expect(plan.counts.choices).toBe(
       runtime.questions.reduce(
@@ -34,10 +43,25 @@ describe("Supabase content materialization", () => {
     );
     expect(plan.counts.questionVariants).toBe(runtime.variants.length);
     expect(plan.counts.publishedQuestions).toBe(
-      runtime.questions.filter(isPublishableQuestion).length,
+      runtime.questions.filter(
+        (question) =>
+          isPublishableQuestion(question) ||
+          reviewedPublishedQuestionIds.has(question.id),
+      ).length,
     );
     expect(plan.counts.answerKeys).toBe(plan.counts.questions);
     expect(plan.counts.questionConcepts).toBe(plan.counts.questions);
+    expect(
+      plan.questions
+        .filter((question) => question.status === "published")
+        .every(
+          (question) =>
+            question.answer_validated &&
+            question.explanation_validated &&
+            question.choice_feedback_validated &&
+            question.theory_link_validated,
+        ),
+    ).toBe(true);
   });
 
   it("keeps answer-bearing data out of public question and variant rows", () => {
