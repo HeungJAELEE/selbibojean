@@ -29,7 +29,7 @@ type Session = {
 
 const SESSION_PREFIX = "seolbi:practice:";
 
-export function RandomPractice({ subjects, groups, choiceShuffleEnabled }: { subjects: Subject[]; groups: ConceptGroup[]; choiceShuffleEnabled: boolean }) {
+export function RandomPractice({ subjects, groups, availableYears, choiceShuffleEnabled }: { subjects: Subject[]; groups: ConceptGroup[]; availableYears: number[]; choiceShuffleEnabled: boolean }) {
   const searchParams = useSearchParams();
   const isHydrated = useHydrated();
   const [mode, setMode] = useState(searchParams.get("mode") ?? "all");
@@ -38,6 +38,8 @@ export function RandomPractice({ subjects, groups, choiceShuffleEnabled }: { sub
   const [count, setCount] = useState<"10" | "20" | "50" | "all">("20");
   const [originalRatio, setOriginalRatio] = useState<0 | 25 | 50 | 75 | 100>(50);
   const [shuffleChoices, setShuffleChoices] = useState(choiceShuffleEnabled);
+  const [yearFrom, setYearFrom] = useState(availableYears[0] ?? new Date().getFullYear());
+  const [yearTo, setYearTo] = useState(availableYears.at(-1) ?? new Date().getFullYear());
   const [session, setSession] = useState<Session | null>(null);
   const [index, setIndex] = useState(() => Number(searchParams.get("index") ?? 0));
   const [selectedChoiceId, setSelectedChoiceId] = useState("");
@@ -86,7 +88,7 @@ export function RandomPractice({ subjects, groups, choiceShuffleEnabled }: { sub
       const response = await fetch("/api/practice/session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ mode, subjectId, conceptGroupId: groupId, count: count === "all" ? "all" : Number(count), originalRatio, shuffleChoices, guestQuestionIds }),
+        body: JSON.stringify({ mode, subjectId, conceptGroupId: groupId, count: count === "all" ? "all" : Number(count), originalRatio, shuffleChoices, yearFrom, yearTo, guestQuestionIds }),
       });
       const result = await response.json() as Session & { error?: string };
       if (!response.ok) throw new Error(result.error);
@@ -191,6 +193,45 @@ export function RandomPractice({ subjects, groups, choiceShuffleEnabled }: { sub
               </span>
             </span>
           </label>
+          <fieldset className="grid gap-2 md:col-span-2">
+            <legend className="text-sm font-bold">기출 연도 범위</legend>
+            <div className="grid grid-cols-[1fr_auto_1fr] items-end gap-3">
+              <label className="grid gap-2 text-sm font-bold">
+                시작 연도
+                <select
+                  value={yearFrom}
+                  disabled={!isHydrated}
+                  onChange={(event) => {
+                    const next = Number(event.target.value);
+                    setYearFrom(next);
+                    if (next > yearTo) setYearTo(next);
+                  }}
+                  className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50"
+                >
+                  {availableYears.map((year) => <option key={year} value={year}>{year}년</option>)}
+                </select>
+              </label>
+              <span className="pb-3 font-bold text-slate-400">~</span>
+              <label className="grid gap-2 text-sm font-bold">
+                종료 연도
+                <select
+                  value={yearTo}
+                  disabled={!isHydrated}
+                  onChange={(event) => {
+                    const next = Number(event.target.value);
+                    setYearTo(next);
+                    if (next < yearFrom) setYearFrom(next);
+                  }}
+                  className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50"
+                >
+                  {availableYears.map((year) => <option key={year} value={year}>{year}년</option>)}
+                </select>
+              </label>
+            </div>
+            <span className="text-xs font-normal leading-5 text-slate-500">
+              선택 기간의 공개 가능한 실제 기출만 사용하며 범위 밖 연도로 보충하지 않습니다.
+            </span>
+          </fieldset>
         </div>
         <p className="mt-4 rounded-xl bg-[#eaf7f6] p-3 text-sm leading-6 text-[#135c69]">{mode === "weak" ? "선택 과목의 오답 기록을 세부항목군별로 집계해 많이 틀린 최대 3개 영역의 다른 문제까지 무작위로 출제합니다. 오답 기록이 없으면 선택 과목 전체에서 시작합니다." : "선택한 범위와 기출 비율에 맞춰 새 세션마다 문제 순서를 무작위로 섞습니다."} {shuffleChoices ? "보기 순서는 문제마다 섞어서 출제합니다." : "보기 순서는 원문 순서로 출제합니다."} 원문과 정답·보기가 정확히 대조되지 않은 문제는 실제 기출 출제에서 제외됩니다.</p>
         {error && <p className="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-700" role="alert">{error}</p>}
