@@ -43,14 +43,15 @@ const source = await readFile(sourceFile);
 // Fail the build before emitting an asset when the canonical source is not valid JSON.
 const generatedContent = JSON.parse(source.toString("utf8")) as GeneratedContent;
 const runtimeContent = buildRuntimeContent(generatedContent);
+const runtimeSource = Buffer.from(JSON.stringify(runtimeContent));
 
-const compressed = gzipSync(source, { level: 9 });
-const sourceSha256 = createHash("sha256").update(source).digest("hex");
+const compressed = gzipSync(runtimeSource, { level: 9 });
+const sourceSha256 = createHash("sha256").update(runtimeSource).digest("hex");
 const metadata = {
   formatVersion: 1,
   encoding: "gzip",
   sourceSha256,
-  uncompressedBytes: source.byteLength,
+  uncompressedBytes: runtimeSource.byteLength,
   compressedBytes: compressed.byteLength,
 } as const;
 
@@ -138,9 +139,9 @@ if (process.env.ENABLE_BUSAN_KOPO_MEDIA === "true") {
   console.log("Busan KOPO media remains private (release flag is off).");
 }
 
-const ratio = ((compressed.byteLength / source.byteLength) * 100).toFixed(1);
+const ratio = ((compressed.byteLength / runtimeSource.byteLength) * 100).toFixed(1);
 console.log(
-  `Prepared server-only learning content: ${source.byteLength} bytes -> ${compressed.byteLength} gzip bytes (${ratio}%).`,
+  `Prepared server-only learning content: ${runtimeSource.byteLength} bytes -> ${compressed.byteLength} gzip bytes (${ratio}%).`,
 );
 console.log(
   "Runtime content staged for the internal ASSETS binding; the Worker blocks external /data requests.",
