@@ -34,6 +34,13 @@ describe("practice session persistence contract", () => {
     );
   });
 
+  it("chunks full-bank question lookup and item persistence without weakening rollback", () => {
+    expect(source).toContain("const SUPABASE_BATCH_SIZE = 500");
+    expect(source).toContain("for (const externalIds of chunkValues(");
+    expect(source).toContain("for (const itemBatch of chunkValues(items))");
+    expect(source).toContain("if (storageError || items.length !== selected.questions.length)");
+  });
+
   it("locks a validated past-exam year range into the stored session filter", () => {
     expect(source).toContain("yearFrom:");
     expect(source).toContain("yearTo:");

@@ -53,6 +53,15 @@ const requestSchema = z.object({
   }
 });
 
+const SUPABASE_BATCH_SIZE = 500;
+
+function chunkValues<T>(values: T[], size = SUPABASE_BATCH_SIZE) {
+  return Array.from(
+    { length: Math.ceil(values.length / size) },
+    (_, index) => values.slice(index * size, (index + 1) * size),
+  );
+}
+
 export async function POST(request: Request) {
   const parsed = requestSchema.safeParse(await request.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: "출제 조건을 확인해 주세요." }, { status: 400 });
@@ -166,20 +175,37 @@ export async function POST(request: Request) {
     }
 
     if (selected.questions.length) {
-      const { data: storedQuestions } = await supabase
-        .from("questions")
-        .select("id,external_id")
-        .in("external_id", selected.questions.map((question) => question.id));
+      const storedQuestions = [];
+      let storageError = false;
+      for (const externalIds of chunkValues(
+        selected.questions.map((question) => question.id),
+      )) {
+        const { data, error: questionError } = await supabase
+          .from("questions")
+          .select("id,external_id")
+          .in("external_id", externalIds);
+        if (questionError) {
+          storageError = true;
+          break;
+        }
+        storedQuestions.push(...(data ?? []));
+      }
       const storedByExternalId = new Map((storedQuestions ?? []).map((item) => [item.external_id as string, item.id as string]));
       const variantExternalIds = publicQuestions
         .map((question) => question.provenance.exam?.externalId)
         .filter((externalId): externalId is string => Boolean(externalId));
-      const { data: storedVariants } = variantExternalIds.length
-        ? await supabase
-            .from("question_variants")
-            .select("id,external_id")
-            .in("external_id", variantExternalIds)
-        : { data: [] };
+      const storedVariants = [];
+      for (const externalIds of chunkValues(variantExternalIds)) {
+        const { data, error: variantError } = await supabase
+          .from("question_variants")
+          .select("id,external_id")
+          .in("external_id", externalIds);
+        if (variantError) {
+          storageError = true;
+          break;
+        }
+        storedVariants.push(...(data ?? []));
+      }
       const variantByExternalId = new Map(
         (storedVariants ?? []).map((item) => [
           item.external_id as string,
@@ -202,10 +228,16 @@ export async function POST(request: Request) {
           };
         })
         .filter((item): item is NonNullable<typeof item> => Boolean(item));
-      const { error: itemError } = items.length
-        ? await supabase.from("practice_session_items").insert(items)
-        : { error: null };
-      if (itemError || items.length !== selected.questions.length) {
+      for (const itemBatch of chunkValues(items)) {
+        const { error: itemError } = await supabase
+          .from("practice_session_items")
+          .insert(itemBatch);
+        if (itemError) {
+          storageError = true;
+          break;
+        }
+      }
+      if (storageError || items.length !== selected.questions.length) {
         await supabase.from("practice_sessions").delete().eq("id", sessionId);
         return NextResponse.json(
           { error: "문항 순서를 저장하지 못했습니다." },
