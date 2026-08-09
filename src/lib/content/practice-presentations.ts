@@ -116,6 +116,24 @@ export function getAllSafeOriginalsByQuestion(
   return result;
 }
 
+export function getPublicOriginalOccurrenceWeights(
+  questions: Question[],
+  variants: Variant[],
+) {
+  const questionsById = new Map(
+    questions.map((question) => [question.id, question]),
+  );
+  const weights = new Map<string, number>();
+
+  for (const variant of variants) {
+    const question = questionsById.get(variant.canonicalId);
+    if (!question || !isPublicOriginalVariant(question, variant)) continue;
+    weights.set(question.id, (weights.get(question.id) ?? 0) + 1);
+  }
+
+  return weights;
+}
+
 export function countPublishedReviewedVariantsBySubject(
   questions: Question[],
   variants: Variant[],

@@ -19,6 +19,7 @@ export type SubjectAllocation = {
 
 export type PracticeSelectionPolicy = {
   additionalEligibleQuestionIds?: ReadonlySet<string>;
+  selectionWeights?: ReadonlyMap<string, number>;
 };
 
 function mulberry32(seed: number) {
@@ -38,6 +39,23 @@ export function shuffleQuestionIds(ids: string[], seed: number) {
     [result[index], result[swapIndex]] = [result[swapIndex], result[index]];
   }
   return result;
+}
+
+function rankQuestionIdsByWeight(
+  ids: string[],
+  seed: number,
+  weights?: ReadonlyMap<string, number>,
+) {
+  if (!weights) return shuffleQuestionIds(ids, seed);
+  const random = mulberry32(seed);
+  return ids
+    .map((id) => {
+      const weight = Math.max(1, weights.get(id) ?? 1);
+      const sample = Math.max(Number.EPSILON, 1 - random());
+      return { id, rank: -Math.log(sample) / weight };
+    })
+    .sort((left, right) => left.rank - right.rank || left.id.localeCompare(right.id))
+    .map(({ id }) => id);
 }
 
 export function isPublishableQuestion(question: Question) {
@@ -111,9 +129,10 @@ export function selectPracticeQuestions(
         .map((question) => [question.id, question]),
     ).values(),
   ];
-  const shuffledIds = shuffleQuestionIds(
+  const shuffledIds = rankQuestionIdsByWeight(
     eligible.map((question) => question.id),
     seed,
+    policy.selectionWeights,
   );
   const count = requestedCount === "all" ? shuffledIds.length : Math.min(requestedCount, shuffledIds.length);
   const selectedIds = shuffledIds.slice(0, count);

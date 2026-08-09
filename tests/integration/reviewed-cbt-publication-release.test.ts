@@ -9,6 +9,7 @@ import {
   createPracticePresentations,
   filterPracticeContentByYearRange,
   getAllSafeOriginalsByQuestion,
+  getPublicOriginalOccurrenceWeights,
   getSafeOriginalsByQuestion,
   isSafeOriginalPracticeVariant,
 } from "@/lib/content/practice-presentations";
@@ -219,6 +220,27 @@ describe("reviewed CBT publication release", () => {
     expect(
       presentations.every((question) => question.provenance.original),
     ).toBe(true);
+  });
+
+  it("weights only public original occurrences and keeps every held welding item excluded", () => {
+    const weights = getPublicOriginalOccurrenceWeights(
+      runtime.questions,
+      runtime.variants,
+    );
+    const approved = WELDING_CBT_ANSWER_REVIEWS.entries.filter(
+      (review) => review.reviewStatus === "approved",
+    );
+    const held = WELDING_CBT_ANSWER_REVIEWS.entries.filter(
+      (review) => review.reviewStatus === "hold",
+    );
+    for (const review of approved) {
+      expect(weights.get(review.canonicalId), review.canonicalId).toBeGreaterThanOrEqual(1);
+    }
+    for (const review of held) {
+      expect(weights.has(review.canonicalId), review.canonicalId).toBe(false);
+    }
+    expect(approved).toHaveLength(492);
+    expect(held).toHaveLength(33);
   });
 
   it("does not supplement a selected year with records from another year", () => {

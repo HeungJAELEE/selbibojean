@@ -4,6 +4,7 @@ import { getContent } from "@/lib/content/repository";
 import {
   createPracticePresentations,
   filterPracticeContentByYearRange,
+  getPublicOriginalOccurrenceWeights,
   getSafeOriginalsByQuestion,
 } from "@/lib/content/practice-presentations";
 import { buildWeakFocus, selectAllocatedPracticeQuestions, selectPracticeQuestions } from "@/lib/domain/practice";
@@ -106,6 +107,13 @@ export async function POST(request: Request) {
   const reviewedPublishedQuestionIds = new Set(
     getSafeOriginalsByQuestion(questionPool, yearFilteredVariants).keys(),
   );
+  const selectionWeights = parsed.data.mode === "mock"
+    ? getPublicOriginalOccurrenceWeights(questionPool, yearFilteredVariants)
+    : undefined;
+  const selectionPolicy = {
+    additionalEligibleQuestionIds: reviewedPublishedQuestionIds,
+    selectionWeights,
+  };
   const selectionQuestionPool = parsed.data.originalRatio === 100
     ? questionPool.filter((question) =>
         reviewedPublishedQuestionIds.has(question.id),
@@ -116,7 +124,7 @@ export async function POST(request: Request) {
         selectionQuestionPool,
         parsed.data.subjectAllocations ?? [],
         seed,
-        { additionalEligibleQuestionIds: reviewedPublishedQuestionIds },
+        selectionPolicy,
       )
     : selectPracticeQuestions(
         selectionQuestionPool,
@@ -127,7 +135,7 @@ export async function POST(request: Request) {
         },
         parsed.data.count,
         seed,
-        { additionalEligibleQuestionIds: reviewedPublishedQuestionIds },
+        selectionPolicy,
       );
   const publicQuestions = createPracticePresentations(
     selected.questions,

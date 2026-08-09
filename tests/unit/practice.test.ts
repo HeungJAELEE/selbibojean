@@ -69,6 +69,26 @@ describe("random practice", () => {
     expect(new Set(first)).toEqual(new Set(second));
   });
 
+  it("uses repeated exam occurrences as selection weight without duplicating a question", () => {
+    const questions = Array.from({ length: 10 }, (_, index) => makeQuestion(index + 1));
+    const selectionWeights = new Map(questions.map((question) => [question.id, 1]));
+    selectionWeights.set("U-1", 12);
+
+    let frequentSelections = 0;
+    let ordinarySelections = 0;
+    for (let seed = 1; seed <= 200; seed += 1) {
+      const result = selectPracticeQuestions(questions, {}, 3, seed, {
+        selectionWeights,
+      });
+      const ids = result.questions.map((question) => question.id);
+      expect(new Set(ids).size).toBe(ids.length);
+      if (ids.includes("U-1")) frequentSelections += 1;
+      if (ids.includes("U-2")) ordinarySelections += 1;
+    }
+
+    expect(frequentSelections).toBeGreaterThan(ordinarySelections * 2);
+  });
+
   it("shuffles choice IDs deterministically by session and variant while preserving fixed order", () => {
     const choices = ["choice-a", "choice-b", "choice-c", "choice-d"].map((id) => ({ id }));
     const first = orderPracticeChoices(choices, 20260801, "variant-1", true).map((choice) => choice.id);
