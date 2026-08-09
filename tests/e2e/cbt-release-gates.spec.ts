@@ -38,7 +38,7 @@ test("reviewed CBT release creates only prompt-safe public sessions", async ({
     expect(session.questions.length).toBeGreaterThan(0);
     expect(new Set(session.questions.map((item: { id: string }) => item.id)).size)
       .toBe(session.questions.length);
-    expect(session.actualOriginalCount).toBe(0);
+    expect(session.actualOriginalCount).toBe(session.questions.length);
 
     const serialized = JSON.stringify(session.questions);
     for (const field of forbiddenAnswerFields) {
@@ -104,6 +104,7 @@ test("guest submission reveals feedback only after a prompt-safe session", async
     data: {
       clientAttemptId: randomUUID(),
       questionId: question.id,
+      questionVariantExternalId: question.provenance.exam?.externalId,
       choiceId: question.choices[0].id,
       selfRating: "unsure",
       sessionId: session.sessionId,

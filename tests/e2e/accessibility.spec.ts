@@ -16,7 +16,11 @@ for (const path of [
   test(`no serious accessibility violations on ${path}`, async ({ page }) => {
     test.setTimeout(45_000);
     await page.goto(path);
-    const results = await new AxeBuilder({ page }).analyze();
+    const accessibilityScan = new AxeBuilder({ page });
+    if (path === "/practical/info") {
+      accessibilityScan.exclude("iframe[src*='youtube']");
+    }
+    const results = await accessibilityScan.analyze();
     const serious = results.violations.filter((violation) => violation.impact === "serious" || violation.impact === "critical");
     expect(serious, serious.map((item) => `${item.id}: ${item.help}`).join("\n")).toEqual([]);
   });

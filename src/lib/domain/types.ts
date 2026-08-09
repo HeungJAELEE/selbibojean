@@ -483,6 +483,21 @@ export type ReviewedCbtVariantManifest = {
     lowContextRegisteredCount: number;
     learnerPublicationStillRequiresStatus: "published";
   };
+  publicationRelease?: {
+    releaseId: string;
+    decisionAuthority: "user_explicit_approval";
+    approvedAt: string;
+    sourceState: "candidate";
+    targetState: "published";
+    reviewedRecordCount: number;
+    publishedCount: number;
+    holdCount: number;
+    choiceConflictCount: number;
+    promotedExternalIdsSha256: string;
+    sourceTextContractsSha256: string;
+    ignoredLegacyPublicationBlockers: string[];
+    preservedExcludedStates: Array<"hold" | "choice_conflict">;
+  };
   batches: Array<{
     batchId: string;
     reviewSessions: string[];

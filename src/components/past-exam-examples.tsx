@@ -129,6 +129,7 @@ function PastExamQuestionCard({
         body: JSON.stringify({
           clientAttemptId,
           questionId: example.canonicalId,
+          questionVariantExternalId: example.externalId,
           choiceId: selectedChoiceId,
           selfRating: "unsure",
           attemptKind: "initial",

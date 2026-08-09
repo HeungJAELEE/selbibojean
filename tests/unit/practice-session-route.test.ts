@@ -4,6 +4,7 @@ const mocks = vi.hoisted(() => ({
   getContent: vi.fn(),
   createPresentations: vi.fn(),
   filterByYear: vi.fn(),
+  getSafeOriginals: vi.fn(),
   buildWeakFocus: vi.fn(),
   selectAllocated: vi.fn(),
   selectQuestions: vi.fn(),
@@ -17,6 +18,7 @@ vi.mock("@/lib/content/repository", () => ({
 vi.mock("@/lib/content/practice-presentations", () => ({
   createPracticePresentations: mocks.createPresentations,
   filterPracticeContentByYearRange: mocks.filterByYear,
+  getSafeOriginalsByQuestion: mocks.getSafeOriginals,
 }));
 vi.mock("@/lib/domain/practice", () => ({
   buildWeakFocus: mocks.buildWeakFocus,
@@ -48,6 +50,7 @@ describe("POST /api/practice/session auth classification", () => {
       conceptGroups: [],
     });
     mocks.filterByYear.mockReturnValue({ questions: [], variants: [] });
+    mocks.getSafeOriginals.mockReturnValue(new Map());
     mocks.selectQuestions.mockReturnValue({
       questions: [],
       availableCount: 0,

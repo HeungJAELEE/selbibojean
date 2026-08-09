@@ -245,9 +245,9 @@ export function buildSupabaseMaterialization(
       variant.reviewState === undefined
         ? true
         : variant.reviewState === "published";
-    const published =
-      publishableQuestionIds.has(variant.canonicalId) &&
-      reviewedPublicationAllowed;
+    const published = variant.reviewed
+      ? reviewedPublicationAllowed
+      : publishableQuestionIds.has(variant.canonicalId);
     const reviewedPayload = variant.reviewed
       ? {
           reviewState: variant.reviewState,
@@ -261,9 +261,7 @@ export function buildSupabaseMaterialization(
           variantSpecificFeedbackRequired: Boolean(
             variant.reviewed.variantSpecificFeedbackRequired,
           ),
-          choiceContractReady:
-            !variant.reviewed.variantSpecificFeedbackRequired &&
-            variant.reviewed.choiceIdMapping.length === variant.choices.length,
+          choiceContractReady: variant.reviewState === "published",
           sourceTextAuthority:
             variant.reviewed.source.textAuthority,
           sourceCaptureAuthority:

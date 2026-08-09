@@ -108,6 +108,7 @@ function QuestionAnswerForm({
         body: JSON.stringify({
           clientAttemptId,
           questionId: question.id,
+          questionVariantExternalId: question.provenance.exam?.externalId,
           choiceId: choice,
           selfRating: "unsure",
           attemptKind: "initial",

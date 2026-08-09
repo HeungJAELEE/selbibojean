@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
-import { getLesson, getQuestion } from "@/lib/content/repository";
+import {
+  getLesson,
+  getQuestion,
+  getQuestionVariant,
+} from "@/lib/content/repository";
+import { buildReviewedCbtVariantGradingQuestion } from "@/lib/content/reviewed-cbt-grading";
 import {
   gradeQuestion,
   isPublishableLesson,
@@ -39,17 +44,27 @@ export async function POST(request: Request) {
   const sanitized = [];
   for (const attempt of parsed.data.attempts) {
     const question = await getQuestion(attempt.questionId);
-    if (!question || !isPublishableQuestion(question)) {
+    if (!question) {
+      return NextResponse.json({ error: MERGE_ERROR }, { status: 409 });
+    }
+    const variant = attempt.questionVariantExternalId
+      ? await getQuestionVariant(attempt.questionVariantExternalId)
+      : undefined;
+    const reviewedQuestion = buildReviewedCbtVariantGradingQuestion(
+      question,
+      variant,
+    );
+    if (!reviewedQuestion && !isPublishableQuestion(question)) {
       return NextResponse.json({ error: MERGE_ERROR }, { status: 409 });
     }
     const lesson = await getLesson(question.lessonId);
-    if (!lesson || !isPublishableLesson(lesson)) {
+    if (!lesson || (!reviewedQuestion && !isPublishableLesson(lesson))) {
       return NextResponse.json({ error: MERGE_ERROR }, { status: 409 });
     }
 
     try {
       const feedback = gradeQuestion(
-        question,
+        reviewedQuestion ?? question,
         attempt.selectedChoiceId,
         attempt.selfRating,
         lesson,

@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
-import { getLesson, getQuestion } from "@/lib/content/repository";
+import {
+  getLesson,
+  getQuestion,
+  getQuestionVariant,
+} from "@/lib/content/repository";
+import { buildReviewedCbtVariantGradingQuestion } from "@/lib/content/reviewed-cbt-grading";
 import {
   gradeQuestion,
   isPublishableLesson,
@@ -13,18 +18,35 @@ export async function POST(request: Request) {
   const parsed = submitAnswerSchema.safeParse(await request.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: "답안 정보를 확인해 주세요." }, { status: 400 });
   const question = await getQuestion(parsed.data.questionId);
-  if (!question || !isPublishableQuestion(question)) {
+  if (!question) {
+    return NextResponse.json({ error: "현재 공개된 문제가 아닙니다." }, { status: 404 });
+  }
+
+  const variant = parsed.data.questionVariantExternalId
+    ? await getQuestionVariant(parsed.data.questionVariantExternalId)
+    : undefined;
+  const reviewedQuestion = buildReviewedCbtVariantGradingQuestion(
+    question,
+    variant,
+  );
+  if (!reviewedQuestion && !isPublishableQuestion(question)) {
     return NextResponse.json({ error: "현재 공개된 문제가 아닙니다." }, { status: 404 });
   }
 
   const lesson = await getLesson(question.lessonId);
-  if (!lesson || !isPublishableLesson(lesson)) {
+  if (!lesson || (!reviewedQuestion && !isPublishableLesson(lesson))) {
     return NextResponse.json(
       { error: "연결 이론 검수가 완료되지 않은 문제입니다." },
       { status: 404 },
     );
   }
-  const feedback = gradeQuestion(question, parsed.data.choiceId, parsed.data.selfRating, lesson);
+  const gradingQuestion = reviewedQuestion ?? question;
+  const feedback = gradeQuestion(
+    gradingQuestion,
+    parsed.data.choiceId,
+    parsed.data.selfRating,
+    lesson,
+  );
   const supabase = await createSupabaseServerClient();
   const authResult = supabase ? await supabase.auth.getUser() : null;
   if (authResult?.error && !isAuthSessionMissingError(authResult.error)) {

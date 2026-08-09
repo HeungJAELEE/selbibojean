@@ -7,10 +7,10 @@ const CONTENT_SHA256 =
   "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4";
 const EXPECTED = Object.freeze({
   records: 2384,
-  candidate: 2267,
+  candidate: 0,
   hold: 98,
   choiceConflict: 19,
-  published: 0,
+  published: 2267,
   theoryLessonAdditions: 20,
   canonicalQuestionChanges: 19,
   batches: 13,
@@ -168,12 +168,61 @@ if (manifest.batches.at(-1)?.batchId !== "import-13") {
   fail("import-13 is not the final integration batch");
 }
 
+const release = manifest.publicationRelease;
+if (
+  release?.releaseId !== "reviewed-cbt-publication-2026-08-09" ||
+  release.decisionAuthority !== "user_explicit_approval" ||
+  release.reviewedRecordCount !== EXPECTED.records ||
+  release.publishedCount !== EXPECTED.published ||
+  release.holdCount !== EXPECTED.hold ||
+  release.choiceConflictCount !== EXPECTED.choiceConflict
+) {
+  fail("reviewed CBT publication release receipt is missing or inconsistent");
+}
+const promotedExternalIdsSha256 = sha256(
+  JSON.stringify(
+    manifest.records
+      .filter((record) => record.review.runtimeStatus === "published")
+      .map((record) => record.externalId)
+      .sort(),
+  ),
+);
+if (release.promotedExternalIdsSha256 !== promotedExternalIdsSha256) {
+  fail("published external-ID digest does not match the release receipt");
+}
+const sourceTextContractsSha256 = sha256(
+  JSON.stringify(
+    manifest.records
+      .map((record) => ({
+        externalId: record.externalId,
+        stem: record.stem,
+        choices: record.choices,
+        stemSha256: record.source.stemSha256,
+        orderedChoicesSha256: record.source.orderedChoicesSha256,
+        registeredSourceUrl: record.source.registeredSourceUrl,
+        resolvedSourceUrl: record.source.resolvedSourceUrl,
+        questionNumber: record.questionNumber,
+      }))
+      .sort((left, right) => left.externalId.localeCompare(right.externalId)),
+  ),
+);
+if (release.sourceTextContractsSha256 !== sourceTextContractsSha256) {
+  fail("source text contract digest does not match the release receipt");
+}
+
 for (const record of manifest.records) {
   const blockers = record.review.publicationBlockers ?? [];
+  if (sha256(record.stem) !== record.source.stemSha256) {
+    fail(`${record.externalId} stem changed from the source-reviewed text`);
+  }
+  if (
+    sha256(JSON.stringify(record.choices)) !==
+    record.source.orderedChoicesSha256
+  ) {
+    fail(`${record.externalId} ordered choices changed from the source-reviewed text`);
+  }
   if (record.review.runtimeStatus === "candidate") {
-    if (!blockers.includes("pending_runtime_integration")) {
-      fail(`${record.externalId} candidate bypasses runtime integration`);
-    }
+    fail(`${record.externalId} remained candidate after the approved release`);
   } else if (record.review.runtimeStatus === "hold") {
     if (record.reviewedAnswerIndex !== null || record.choiceIdMapping.length !== 0) {
       fail(`${record.externalId} HOLD carries an active answer contract`);
@@ -188,7 +237,12 @@ for (const record of manifest.records) {
       fail(`${record.externalId} choice-conflict contract is not non-scoring`);
     }
   } else if (record.review.runtimeStatus === "published") {
-    fail(`${record.externalId} was published without a release approval batch`);
+    if (
+      record.reviewedAnswerIndex === null ||
+      !record.review.scoringDisposition.startsWith("scored")
+    ) {
+      fail(`${record.externalId} published without an active reviewed answer`);
+    }
   } else {
     fail(`${record.externalId} has unknown runtime status`);
   }
@@ -362,10 +416,10 @@ console.log(
   [
     "PASS: CBT release invariants",
     `${EXPECTED.records} reviewed variants`,
-    `${EXPECTED.candidate} candidate blocked`,
+    `${EXPECTED.published} published`,
     `${EXPECTED.hold} HOLD non-scoring`,
     `${EXPECTED.choiceConflict} choice conflicts non-scoring`,
-    "0 auto-published",
+    "source stems and ordered choices hash-locked",
     `${EXPECTED.theoryLessonAdditions} theory additions blocked`,
     `${EXPECTED.canonicalQuestionChanges} canonical changes blocked`,
   ].join(" · "),

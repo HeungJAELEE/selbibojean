@@ -8,7 +8,6 @@ import {
 } from "@/lib/content/practice-presentations";
 import {
   reviewedCbtVariantManifest,
-  mergeReviewedCbtVariants,
   validateReviewedCbtVariantManifest,
 } from "@/lib/content/reviewed-cbt-variants";
 import { isUsablePastExamVariant } from "@/lib/content/past-exam-examples";
@@ -38,7 +37,7 @@ describe("reviewed CBT variant imports", () => {
     });
   });
 
-  it("applies the reclassified batch and gates every other source variant", () => {
+  it("publishes every reviewed candidate while preserving excluded states", () => {
     const runtime = buildRuntimeContent(source);
     const states = runtime.variants.reduce<Record<string, number>>(
       (counts, variant) => {
@@ -57,12 +56,12 @@ describe("reviewed CBT variant imports", () => {
     );
     expect(runtimeSourceVariants).toHaveLength(source.variants.length);
     expect(states).toMatchObject({
-      candidate: 2267,
+      published: 2267,
       choice_conflict: 19,
       hold: 98,
     });
     expect(states.unreviewed ?? 0).toBe(0);
-    expect(states.published ?? 0).toBe(0);
+    expect(states.candidate ?? 0).toBe(0);
 
     const reviewed = runtime.variants.find(
       (variant) => variant.externalId === "2006-4-Q01",
@@ -76,12 +75,12 @@ describe("reviewed CBT variant imports", () => {
       "응력법 - 설비 구조물의 응력 분포도 검사",
       "열화상법 - 전기, 전자 부품의 이상발견",
     ]);
-    expect(reviewed?.reviewState).toBe("candidate");
+    expect(reviewed?.reviewState).toBe("published");
 
     const finalReviewed = runtime.variants.find(
       (variant) => variant.externalId === "2022-2-Q80",
     );
-    expect(finalReviewed?.reviewState).toBe("candidate");
+    expect(finalReviewed?.reviewState).toBe("published");
   });
 
   it("preserves damaged raw source while displaying the approved normalization", () => {
@@ -90,7 +89,7 @@ describe("reviewed CBT variant imports", () => {
       (variant) => variant.externalId === "2006-4-Q09",
     );
 
-    expect(normalized?.reviewState).toBe("candidate");
+    expect(normalized?.reviewState).toBe("published");
     expect(normalized?.choices[1]).toBe("소음계");
     expect(normalized?.reviewed?.choices[1]).toBe("소음기");
     expect(normalized?.reviewed?.presentationNormalization).toMatchObject({
@@ -179,19 +178,33 @@ describe("reviewed CBT variant imports", () => {
     );
   });
 
-  it("excludes candidate, choice-conflict, hold, and unreviewed variants from learner DTOs", () => {
+  it("allows published reviews and excludes only choice conflicts and holds from learner DTOs", () => {
     const runtime = buildRuntimeContent(source);
-    const sourceVariantIds = new Set(
-      source.variants.map((variant) => variant.externalId),
+    const reviewedStates = new Map(
+      reviewedCbtVariantManifest.records.map((record) => [
+        record.externalId,
+        record.review.runtimeStatus,
+      ]),
     );
+    const reviewedVariants = runtime.variants.filter((variant) =>
+      reviewedStates.has(variant.externalId),
+    );
+
     expect(
-      runtime.variants
-        .filter((variant) => sourceVariantIds.has(variant.externalId))
+      reviewedVariants.filter((variant) => isUsablePastExamVariant(variant)),
+    ).toHaveLength(2267);
+    expect(
+      reviewedVariants
+        .filter((variant) =>
+          ["hold", "choice_conflict"].includes(
+            reviewedStates.get(variant.externalId) ?? "",
+          ),
+        )
         .every((variant) => !isUsablePastExamVariant(variant)),
     ).toBe(true);
   });
 
-  it("can present a reviewed source variant only after explicit publication", () => {
+  it("presents an explicitly published reviewed source variant", () => {
     const runtime = buildRuntimeContent(source);
     const candidate = runtime.variants.find(
       (variant) => variant.externalId === "2006-4-Q01",
@@ -202,15 +215,12 @@ describe("reviewed CBT variant imports", () => {
     expect(candidate).toBeDefined();
     expect(question).toBeDefined();
 
-    const published = {
-      ...candidate!,
-      reviewState: "published" as const,
-    };
-    expect(isSafeOriginalPracticeVariant(question!, published)).toBe(true);
+    expect(candidate?.reviewState).toBe("published");
+    expect(isSafeOriginalPracticeVariant(question!, candidate!)).toBe(true);
 
     const presentation = createPracticePresentations(
       [question!],
-      [published],
+      [candidate!],
       100,
       20260807,
       false,
@@ -225,29 +235,17 @@ describe("reviewed CBT variant imports", () => {
     );
   });
 
-  it("accepts an explicitly published record after manifest counts and digest are updated", () => {
+  it("rejects any stem change even when the manifest digest is recomputed", () => {
     const records = reviewedCbtVariantManifest.records.map((record, index) =>
       index === 0
         ? {
             ...record,
-            review: {
-              ...record.review,
-              runtimeStatus: "published" as const,
-              publicationBlockers: [],
-            },
+            stem: `${record.stem} 임의 변경`,
           }
         : record,
     );
     const manifest = {
       ...reviewedCbtVariantManifest,
-      batches: reviewedCbtVariantManifest.batches.map((batch, index) =>
-        index === 0
-          ? {
-              ...batch,
-              candidateCount: batch.candidateCount - 1,
-            }
-          : batch,
-      ),
       recordsSha256: createHash("sha256")
         .update(JSON.stringify(records), "utf8")
         .digest("hex"),
@@ -256,13 +254,7 @@ describe("reviewed CBT variant imports", () => {
 
     expect(() =>
       validateReviewedCbtVariantManifest(source, manifest),
-    ).not.toThrow();
-    const runtime = mergeReviewedCbtVariants(source, manifest);
-    expect(
-      runtime.variants.find(
-        (variant) => variant.externalId === "2006-4-Q01",
-      )?.reviewState,
-    ).toBe("published");
+    ).toThrow(/publication release receipt is invalid/i);
   });
 
   it("repairs the telescope-cylinder concept group without changing IDs", () => {
@@ -308,10 +300,10 @@ describe("reviewed CBT variant imports", () => {
         variant.status === "published",
     );
 
-    expect(publishedReviewedRows).toHaveLength(0);
-    expect(candidate?.status).toBe("draft");
+    expect(publishedReviewedRows).toHaveLength(2267);
+    expect(candidate?.status).toBe("published");
     expect(candidate?.payload.reviewed).toMatchObject({
-      reviewState: "candidate",
+      reviewState: "published",
       normalizationApplied: true,
       choiceConflict: false,
       variantSpecificFeedbackRequired: false,
@@ -364,7 +356,7 @@ describe("reviewed CBT variant imports", () => {
     );
     expect(cbnVariant).toMatchObject({
       canonicalId: "U-1253",
-      reviewState: "candidate",
+      reviewState: "published",
     });
     expect(cbnQuestion).toMatchObject({
       lessonId: "lesson-cbt-cbn-tool-material",
@@ -394,7 +386,7 @@ describe("reviewed CBT variant imports", () => {
       ),
     ).toMatchObject({
       canonicalId: "U-1257",
-      reviewState: "candidate",
+      reviewState: "published",
     });
     expect(
       runtime.variants.find(
@@ -402,7 +394,7 @@ describe("reviewed CBT variant imports", () => {
       ),
     ).toMatchObject({
       canonicalId: "U-1394",
-      reviewState: "candidate",
+      reviewState: "published",
     });
 
     const poppetVariant = runtime.variants.find(
@@ -416,7 +408,7 @@ describe("reviewed CBT variant imports", () => {
     );
     expect(poppetVariant).toMatchObject({
       canonicalId: "U-1400",
-      reviewState: "candidate",
+      reviewState: "published",
     });
     expect(poppetVariant?.reviewed?.variantSpecificFeedbackRequired).toBeUndefined();
     expect(poppetVariant?.reviewed?.choiceIdMapping).toHaveLength(4);
@@ -468,7 +460,7 @@ describe("reviewed CBT variant imports", () => {
     );
 
     expect(corrected).toMatchObject({
-      reviewState: "candidate",
+      reviewState: "published",
       answer: "③ 하부 조정 링의 상향 조정",
       reviewed: {
         sourceAnswerIndex: 0,
@@ -519,7 +511,7 @@ describe("reviewed CBT variant imports", () => {
     );
 
     expect(corrected).toMatchObject({
-      reviewState: "candidate",
+      reviewState: "published",
       answer: "③ 다익 팬",
       reviewed: {
         sourceAnswerIndex: 0,
@@ -566,7 +558,7 @@ describe("reviewed CBT variant imports", () => {
 
     expect(reliability).toMatchObject({
       canonicalId: "U-1099",
-      reviewState: "candidate",
+      reviewState: "published",
       reviewed: {
         migration: {
           mappingClass:
@@ -591,7 +583,7 @@ describe("reviewed CBT variant imports", () => {
 
     expect(corrected).toMatchObject({
       canonicalId: "U-990",
-      reviewState: "candidate",
+      reviewState: "published",
       answer: "② 저주파 소음이 없어서 소음 대책이 필요 없다.",
       reviewed: {
         sourceAnswerIndex: 3,
@@ -626,7 +618,7 @@ describe("reviewed CBT variant imports", () => {
 
     expect(reassigned).toMatchObject({
       canonicalId: "U-362",
-      reviewState: "candidate",
+      reviewState: "published",
       reviewed: {
         currentCanonicalId: "U-100",
         variantSpecificFeedbackRequired: true,
@@ -652,7 +644,7 @@ describe("reviewed CBT variant imports", () => {
     expect(batch06Records).toHaveLength(200);
     expect(
       batch06Records.filter(
-        (record) => record.review.runtimeStatus === "candidate",
+        (record) => record.review.runtimeStatus === "published",
       ),
     ).toHaveLength(190);
     expect(
@@ -707,7 +699,7 @@ describe("reviewed CBT variant imports", () => {
     );
     expect(reassigned).toMatchObject({
       canonicalId: "U-390",
-      reviewState: "candidate",
+      reviewState: "published",
       reviewed: {
         currentCanonicalId: "U-889",
         variantSpecificFeedbackRequired: true,
@@ -733,7 +725,7 @@ describe("reviewed CBT variant imports", () => {
       const record = batch06Records.find(
         (candidate) => candidate.externalId === externalId,
       );
-      expect(record?.review.runtimeStatus).toBe("candidate");
+      expect(record?.review.runtimeStatus).toBe("published");
       expect(record?.review.theoryLinkStatus).toBe(
         "direct_existing_theory_low_context_exam_intent",
       );
@@ -749,7 +741,7 @@ describe("reviewed CBT variant imports", () => {
     expect(batch07Records).toHaveLength(170);
     expect(
       batch07Records.filter(
-        (record) => record.review.runtimeStatus === "candidate",
+        (record) => record.review.runtimeStatus === "published",
       ),
     ).toHaveLength(165);
     expect(
@@ -810,7 +802,7 @@ describe("reviewed CBT variant imports", () => {
       const variant = runtime.variants.find(
         (candidate) => candidate.externalId === externalId,
       );
-      expect(variant?.reviewState).toBe("candidate");
+      expect(variant?.reviewState).toBe("published");
       expect(variant?.reviewed?.review.answerConflictOrMultipleAnswerRisk).toBeTruthy();
     }
 
@@ -822,7 +814,7 @@ describe("reviewed CBT variant imports", () => {
       const record = batch07Records.find(
         (candidate) => candidate.externalId === externalId,
       );
-      expect(record?.review.runtimeStatus).toBe("candidate");
+      expect(record?.review.runtimeStatus).toBe("published");
       expect(record?.review.theoryLinkStatus).toBe(
         "direct_existing_theory_low_context_exam_intent",
       );
@@ -845,7 +837,7 @@ describe("reviewed CBT variant imports", () => {
     expect(batch08Records).toHaveLength(200);
     expect(
       batch08Records.filter(
-        (record) => record.review.runtimeStatus === "candidate",
+        (record) => record.review.runtimeStatus === "published",
       ),
     ).toHaveLength(191);
     expect(
@@ -914,7 +906,7 @@ describe("reviewed CBT variant imports", () => {
     );
     expect(reassigned).toMatchObject({
       canonicalId: "U-997",
-      reviewState: "candidate",
+      reviewState: "published",
       reviewed: {
         currentCanonicalId: "U-026",
         choiceIdMapping: ["U-997-c2", "U-997-c1", "U-997-c4", "U-997-c3"],
@@ -934,7 +926,7 @@ describe("reviewed CBT variant imports", () => {
     );
     expect(repaired).toMatchObject({
       canonicalId: "U-649",
-      reviewState: "candidate",
+      reviewState: "published",
       reviewed: {
         choiceIdMapping: ["U-649-c1", "U-649-c2", "U-649-c3", "U-649-c4"],
         theoryLink: {
@@ -985,7 +977,7 @@ describe("reviewed CBT variant imports", () => {
     expect(batch09Records).toHaveLength(200);
     expect(
       batch09Records.filter(
-        (record) => record.review.runtimeStatus === "candidate",
+        (record) => record.review.runtimeStatus === "published",
       ),
     ).toHaveLength(192);
     expect(
@@ -1074,7 +1066,7 @@ describe("reviewed CBT variant imports", () => {
     expect(batch10Records).toHaveLength(200);
     expect(
       batch10Records.filter(
-        (record) => record.review.runtimeStatus === "candidate",
+        (record) => record.review.runtimeStatus === "published",
       ),
     ).toHaveLength(187);
     expect(
@@ -1176,7 +1168,7 @@ describe("reviewed CBT variant imports", () => {
     );
     expect(reassignedAccidentalFailure).toMatchObject({
       canonicalId: "U-787",
-      reviewState: "candidate",
+      reviewState: "published",
       reviewed: {
         currentCanonicalId: "U-325",
         theoryLink: {
@@ -1197,7 +1189,7 @@ describe("reviewed CBT variant imports", () => {
     );
     expect(reassignedSpeedLoss).toMatchObject({
       canonicalId: "U-1109",
-      reviewState: "candidate",
+      reviewState: "published",
       reviewed: {
         currentCanonicalId: "U-060",
         choiceIdMapping: [
@@ -1224,7 +1216,7 @@ describe("reviewed CBT variant imports", () => {
     );
     expect(repaired).toMatchObject({
       canonicalId: "U-478",
-      reviewState: "candidate",
+      reviewState: "published",
       reviewed: {
         currentCanonicalId: "U-478",
         theoryLink: {
@@ -1290,7 +1282,7 @@ describe("reviewed CBT variant imports", () => {
     expect(batch11Records).toHaveLength(192);
     expect(
       batch11Records.filter(
-        (record) => record.review.runtimeStatus === "candidate",
+        (record) => record.review.runtimeStatus === "published",
       ),
     ).toHaveLength(182);
     expect(
@@ -1348,7 +1340,7 @@ describe("reviewed CBT variant imports", () => {
     );
     expect(reassigned).toMatchObject({
       canonicalId: "U-1236",
-      reviewState: "candidate",
+      reviewState: "published",
       reviewed: {
         currentCanonicalId: "U-170",
         choiceIdMapping: [],
@@ -1397,7 +1389,7 @@ describe("reviewed CBT variant imports", () => {
     expect(batch12Records).toHaveLength(222);
     expect(
       batch12Records.filter(
-        (record) => record.review.runtimeStatus === "candidate",
+        (record) => record.review.runtimeStatus === "published",
       ),
     ).toHaveLength(210);
     expect(
@@ -1485,7 +1477,7 @@ describe("reviewed CBT variant imports", () => {
       );
       expect(variant).toMatchObject({
         canonicalId,
-        reviewState: "candidate",
+        reviewState: "published",
         reviewed: {
           theoryLink: { lessonId, lessonAnchor, conceptGroupId },
           migration: {
@@ -1518,7 +1510,7 @@ describe("reviewed CBT variant imports", () => {
       );
       expect(variant).toMatchObject({
         canonicalId,
-        reviewState: "candidate",
+        reviewState: "published",
         reviewed: {
           theoryLink: { conceptGroupId: currentConceptGroupId },
           review: {
@@ -1589,7 +1581,7 @@ describe("reviewed CBT variant imports", () => {
         (candidate) => candidate.externalId === externalId,
       );
       expect(variant).toMatchObject({
-        reviewState: "candidate",
+        reviewState: "published",
         reviewed: {
           theoryLink: { lessonId, conceptGroupId },
           migration: { canonicalAction: "APPLY_CANONICAL_OVERLAY" },
@@ -1672,13 +1664,13 @@ describe("reviewed CBT variant imports", () => {
     }
   });
 
-  it("does not let variant-specific choice contracts fall back to canonical text matching", () => {
+  it("builds a stable runtime choice contract without rewriting variant-specific source text", () => {
     const runtime = buildRuntimeContent(source);
     const batch02CandidateRecord = reviewedCbtVariantManifest.records
       .slice(200, 400)
       .find(
         (record) =>
-          record.review.runtimeStatus === "candidate" &&
+          record.review.runtimeStatus === "published" &&
           record.variantSpecificFeedbackRequired,
       );
     const candidate = runtime.variants.find(
@@ -1694,40 +1686,53 @@ describe("reviewed CBT variant imports", () => {
     expect(candidate?.reviewed?.review.publicationBlockers).toContain(
       "variant_specific_choice_contract_pending",
     );
-    expect(
-      isSafeOriginalPracticeVariant(question!, {
-        ...candidate!,
-        reviewState: "published",
-      }),
-    ).toBe(false);
+    expect(isSafeOriginalPracticeVariant(question!, candidate!)).toBe(true);
 
-    const targetExternalId = candidate!.externalId;
-    const records = reviewedCbtVariantManifest.records.map((record) =>
-      record.externalId === targetExternalId
+    const presentation = createPracticePresentations(
+      [question!],
+      [candidate!],
+      100,
+      20260809,
+      false,
+    )[0];
+    const correctChoiceId = question!.correctChoiceId;
+    const reviewedAnswerIndex = candidate!.reviewed!.reviewedAnswerIndex;
+    expect(reviewedAnswerIndex).not.toBeNull();
+
+    expect(presentation.stem).toBe(candidate!.stem);
+    expect(presentation.choices.map((choice) => choice.text)).toEqual(
+      candidate!.choices,
+    );
+    expect(new Set(presentation.choices.map((choice) => choice.id)).size).toBe(
+      candidate!.choices.length,
+    );
+    expect(
+      presentation.choices[reviewedAnswerIndex!].id,
+    ).toBe(correctChoiceId);
+    expect(candidate!.reviewed!.choiceIdMapping).toEqual([]);
+    expect(candidate!.stem).toBe(batch02CandidateRecord!.stem);
+    expect(candidate!.choices).toEqual(batch02CandidateRecord!.choices);
+  });
+
+  it("rejects any ordered-choice change even when the manifest digest is recomputed", () => {
+    const records = reviewedCbtVariantManifest.records.map((record, index) =>
+      index === 0
         ? {
             ...record,
-            review: {
-              ...record.review,
-              runtimeStatus: "published" as const,
-              publicationBlockers: [],
-            },
+            choices: [...record.choices].reverse(),
           }
         : record,
     );
     const manifest = {
       ...reviewedCbtVariantManifest,
-      batches: reviewedCbtVariantManifest.batches.map((batch) =>
-        batch.batchId === "import-02"
-          ? { ...batch, candidateCount: batch.candidateCount - 1 }
-          : batch,
-      ),
       recordsSha256: createHash("sha256")
         .update(JSON.stringify(records), "utf8")
         .digest("hex"),
       records,
     };
+
     expect(() => validateReviewedCbtVariantManifest(source, manifest)).toThrow(
-      /variant-specific choice contract/,
+      /publication release receipt is invalid/i,
     );
   });
 

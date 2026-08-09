@@ -17,6 +17,10 @@ export type SubjectAllocation = {
   count: number;
 };
 
+export type PracticeSelectionPolicy = {
+  additionalEligibleQuestionIds?: ReadonlySet<string>;
+};
+
 function mulberry32(seed: number) {
   return () => {
     let value = (seed += 0x6d2b79f5);
@@ -91,13 +95,15 @@ export function selectPracticeQuestions(
   filter: PracticeFilter,
   requestedCount: number | "all",
   seed = Date.now(),
+  policy: PracticeSelectionPolicy = {},
 ) {
   const eligible = [
     ...new Map(
       questions
         .filter(
           (question) =>
-            isPublishableQuestion(question) &&
+            (isPublishableQuestion(question) ||
+              policy.additionalEligibleQuestionIds?.has(question.id)) &&
             (!filter.subjectId || question.subjectId === filter.subjectId) &&
             (!filter.conceptGroupId || question.conceptGroupId === filter.conceptGroupId) &&
             (!filter.questionIds || filter.questionIds.includes(question.id)),
@@ -158,6 +164,7 @@ export function selectAllocatedPracticeQuestions(
   questions: Question[],
   allocations: SubjectAllocation[],
   seed: number,
+  policy: PracticeSelectionPolicy = {},
 ) {
   const selected: Question[] = [];
   const usedQuestionIds = new Set<string>();
@@ -167,6 +174,7 @@ export function selectAllocatedPracticeQuestions(
       { subjectId: allocation.subjectId },
       allocation.count,
       seed ^ ((index + 1) * 0x45d9f3b),
+      policy,
     );
     selected.push(...result.questions);
     result.questions.forEach((question) => usedQuestionIds.add(question.id));

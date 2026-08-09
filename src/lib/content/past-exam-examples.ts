@@ -127,7 +127,7 @@ export function isUsablePastExamVariant(
     && variant.stem.trim()
     && choices.length >= 4
     && /^https?:\/\//.test(variant.sourceUrl)
-    && !VISUAL_ASSET_CUE.test(variant.stem),
+    && (variant.reviewed || !VISUAL_ASSET_CUE.test(variant.stem)),
   );
 }
 

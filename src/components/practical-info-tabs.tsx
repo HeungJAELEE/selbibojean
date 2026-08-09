@@ -585,7 +585,7 @@ function TaskVideoLibrary({ videos }: { videos: PracticalInfoVideo[] }) {
               번호별·세부 학습 영상 {videos.length}개
             </h3>
           </div>
-          <p className="text-xs font-bold text-slate-500">
+          <p className="text-xs font-bold text-slate-600">
             한 번에 하나씩 선택해 시청
           </p>
         </div>
@@ -796,14 +796,14 @@ function ProblemCard({
         >
           {primary ? "기사 응시자 우선" : "산업기사 참고"}
         </span>
-        <span className="text-xs font-bold text-slate-500">
+        <span className="text-xs font-bold text-slate-600">
           {problem.appliedFrom}
         </span>
       </div>
       <h3 className="mt-4 text-xl font-extrabold text-slate-900">
         {problem.taskLabel}
       </h3>
-      <p className="mt-2 break-words text-xs leading-5 text-slate-500">
+      <p className="mt-2 break-words text-xs leading-5 text-slate-600">
         {problem.fileName}
       </p>
       <p className="mt-4 text-sm leading-6 text-slate-700">{problem.note}</p>

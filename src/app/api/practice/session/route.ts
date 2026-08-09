@@ -4,6 +4,7 @@ import { getContent } from "@/lib/content/repository";
 import {
   createPracticePresentations,
   filterPracticeContentByYearRange,
+  getSafeOriginalsByQuestion,
 } from "@/lib/content/practice-presentations";
 import { buildWeakFocus, selectAllocatedPracticeQuestions, selectPracticeQuestions } from "@/lib/domain/practice";
 import {
@@ -102,10 +103,23 @@ export async function POST(request: Request) {
   );
   const yearFilteredVariants = yearFiltered.variants;
   const questionPool = yearFiltered.questions;
+  const reviewedPublishedQuestionIds = new Set(
+    getSafeOriginalsByQuestion(questionPool, yearFilteredVariants).keys(),
+  );
+  const selectionQuestionPool = parsed.data.originalRatio === 100
+    ? questionPool.filter((question) =>
+        reviewedPublishedQuestionIds.has(question.id),
+      )
+    : questionPool;
   const selected = parsed.data.mode === "mock"
-    ? selectAllocatedPracticeQuestions(questionPool, parsed.data.subjectAllocations ?? [], seed)
+    ? selectAllocatedPracticeQuestions(
+        selectionQuestionPool,
+        parsed.data.subjectAllocations ?? [],
+        seed,
+        { additionalEligibleQuestionIds: reviewedPublishedQuestionIds },
+      )
     : selectPracticeQuestions(
-        questionPool,
+        selectionQuestionPool,
         {
           subjectId: parsed.data.mode === "subject" || parsed.data.mode === "group" || parsed.data.mode === "weak" ? parsed.data.subjectId : undefined,
           conceptGroupId: parsed.data.mode === "group" ? parsed.data.conceptGroupId : undefined,
@@ -113,6 +127,7 @@ export async function POST(request: Request) {
         },
         parsed.data.count,
         seed,
+        { additionalEligibleQuestionIds: reviewedPublishedQuestionIds },
       );
   const publicQuestions = createPracticePresentations(
     selected.questions,

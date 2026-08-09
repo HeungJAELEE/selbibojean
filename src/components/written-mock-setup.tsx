@@ -180,8 +180,8 @@ export function WrittenMockSetup({
         <fieldset className="mt-7">
           <legend className="text-sm font-extrabold">기출 연도 범위</legend>
           <p className="mt-2 text-sm leading-6 text-slate-600">
-            선택한 기간에 공개 검증된 원문 기출이 연결된 문제만 출제 풀에
-            포함됩니다.
+            선택한 기간의 published 검수 완료 기출만 사용합니다. 기간 안의
+            문항이 부족하면 다른 연도나 일반 문제로 보충하지 않습니다.
           </p>
           <div className="mt-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3">
             <label className="grid gap-2 text-sm font-bold">

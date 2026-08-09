@@ -68,7 +68,32 @@ export function mapReviewedCbtVariantChoices(
   variant: GeneratedContent["variants"][number],
 ) {
   if (variant.reviewState !== "published" || !variant.reviewed) return null;
-  if (variant.reviewed.variantSpecificFeedbackRequired) return null;
+  if (variant.reviewed.variantSpecificFeedbackRequired) {
+    const answerIndex = variant.reviewed.reviewedAnswerIndex;
+    if (
+      answerIndex === null ||
+      answerIndex < 0 ||
+      answerIndex >= variant.choices.length ||
+      question.choices.length !== variant.choices.length
+    ) {
+      return null;
+    }
+    const correctChoice = question.choices.find(
+      (choice) => choice.id === question.correctChoiceId,
+    );
+    const distractors = question.choices.filter(
+      (choice) => choice.id !== question.correctChoiceId,
+    );
+    if (!correctChoice || distractors.length !== variant.choices.length - 1) {
+      return null;
+    }
+    let distractorIndex = 0;
+    return variant.choices.map((_, index) =>
+      index === answerIndex
+        ? correctChoice
+        : distractors[distractorIndex++],
+    );
+  }
   if (variant.reviewed.choiceIdMapping.length !== variant.choices.length) {
     return null;
   }
@@ -94,7 +119,6 @@ export function getReviewedCbtVariantAnswerIndex(
   variant: GeneratedContent["variants"][number],
 ) {
   if (variant.reviewState !== "published" || !variant.reviewed) return null;
-  if (variant.reviewed.variantSpecificFeedbackRequired) return null;
   const answerIndex = variant.reviewed.reviewedAnswerIndex;
   return answerIndex !== null &&
     Number.isInteger(answerIndex) &&
@@ -280,6 +304,7 @@ function validateReviewedCbtVariantManifestInternal(
       "Hold reclassification must not bypass explicit publication approval.",
     );
   }
+  validatePublicationRelease(manifest);
   const recordsSha256 = sha256(JSON.stringify(manifest.records));
   if (recordsSha256 !== manifest.recordsSha256) {
     throw new Error(
@@ -418,7 +443,9 @@ function validateReviewedCbtVariantManifestInternal(
     0,
   );
   const actualCandidateCount = manifest.records.filter(
-    (record) => record.review.runtimeStatus === "candidate",
+    (record) =>
+      record.review.runtimeStatus === "candidate" ||
+      record.review.runtimeStatus === "published",
   ).length;
   const actualChoiceConflictCount = manifest.records.filter(
     (record) => record.review.runtimeStatus === "choice_conflict",
@@ -516,7 +543,8 @@ function validateReviewedCbtVariantManifestInternal(
     }
     if (
       lowContextIds.has(record.externalId) &&
-      record.review.runtimeStatus !== "candidate"
+      record.review.runtimeStatus !== "candidate" &&
+      record.review.runtimeStatus !== "published"
     ) {
       throw new Error(
         `Reviewed CBT low-context record is not registered: ${record.externalId}`,
@@ -670,7 +698,6 @@ function validateCandidateRecord(
   }
   if (record.variantSpecificFeedbackRequired) {
     if (
-      record.review.runtimeStatus === "published" ||
       record.choiceIdMapping.length !== 0 ||
       !record.review.publicationBlockers.includes(
         "variant_specific_choice_contract_pending",
@@ -757,6 +784,60 @@ function validateCandidateRecord(
     throw new Error(
       `Reviewed CBT candidate theory group is invalid: ${record.externalId}`,
     );
+  }
+}
+
+function validatePublicationRelease(manifest: ReviewedCbtVariantManifest) {
+  const release = manifest.publicationRelease;
+  if (!release) {
+    throw new Error("Reviewed CBT publication release receipt is missing.");
+  }
+  const counts = manifest.records.reduce<Record<string, number>>(
+    (result, record) => {
+      const state = record.review.runtimeStatus;
+      result[state] = (result[state] ?? 0) + 1;
+      return result;
+    },
+    {},
+  );
+  const publishedIds = manifest.records
+    .filter((record) => record.review.runtimeStatus === "published")
+    .map((record) => record.externalId)
+    .sort();
+  const sourceTextContracts = manifest.records
+    .map((record) => ({
+      externalId: record.externalId,
+      stem: record.stem,
+      choices: record.choices,
+      stemSha256: record.source.stemSha256,
+      orderedChoicesSha256: record.source.orderedChoicesSha256,
+      registeredSourceUrl: record.source.registeredSourceUrl,
+      resolvedSourceUrl: record.source.resolvedSourceUrl,
+      questionNumber: record.questionNumber,
+    }))
+    .sort((left, right) => left.externalId.localeCompare(right.externalId));
+  if (
+    release.releaseId !== "reviewed-cbt-publication-2026-08-09" ||
+    release.decisionAuthority !== "user_explicit_approval" ||
+    release.sourceState !== "candidate" ||
+    release.targetState !== "published" ||
+    release.reviewedRecordCount !== 2384 ||
+    release.publishedCount !== 2267 ||
+    release.holdCount !== 98 ||
+    release.choiceConflictCount !== 19 ||
+    manifest.records.length !== 2384 ||
+    (counts.published ?? 0) !== 2267 ||
+    (counts.candidate ?? 0) !== 0 ||
+    (counts.hold ?? 0) !== 98 ||
+    (counts.choice_conflict ?? 0) !== 19 ||
+    sha256(JSON.stringify(publishedIds)) !==
+      release.promotedExternalIdsSha256 ||
+    sha256(JSON.stringify(sourceTextContracts)) !==
+      release.sourceTextContractsSha256 ||
+    !release.preservedExcludedStates.includes("hold") ||
+    !release.preservedExcludedStates.includes("choice_conflict")
+  ) {
+    throw new Error("Reviewed CBT publication release receipt is invalid.");
   }
 }
 

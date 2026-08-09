@@ -16,15 +16,25 @@ export default async function WrittenMockPage() {
   const choiceShuffleEnabled = isReleaseFeatureEnabled(
     "mock_choice_shuffle",
   );
+  const safeOriginals = getSafeOriginalsByQuestion(
+    content.questions,
+    content.variants,
+  );
+  const reviewedPublishedQuestionIds = new Set(safeOriginals.keys());
   const availableBySubject = Object.fromEntries(
     content.subjects.map((subject) => [
       subject.id,
-      new Set(content.questions.filter((question) => question.subjectId === subject.id && isPublishableQuestion(question)).map((question) => question.id)).size,
+      new Set(
+        content.questions
+          .filter(
+            (question) =>
+              question.subjectId === subject.id &&
+              (isPublishableQuestion(question) ||
+                reviewedPublishedQuestionIds.has(question.id)),
+          )
+          .map((question) => question.id),
+      ).size,
     ]),
-  );
-  const safeOriginals = getSafeOriginalsByQuestion(
-    content.questions.filter(isPublishableQuestion),
-    content.variants,
   );
   const availableYears = [
     ...new Set(

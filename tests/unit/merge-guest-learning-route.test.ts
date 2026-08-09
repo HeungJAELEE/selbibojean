@@ -2,14 +2,21 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
   getQuestion: vi.fn(),
+  getQuestionVariant: vi.fn(),
   getLesson: vi.fn(),
+  buildVariantQuestion: vi.fn(),
   gradeQuestion: vi.fn(),
   createServerClient: vi.fn(),
 }));
 
 vi.mock("@/lib/content/repository", () => ({
   getQuestion: mocks.getQuestion,
+  getQuestionVariant: mocks.getQuestionVariant,
   getLesson: mocks.getLesson,
+}));
+
+vi.mock("@/lib/content/reviewed-cbt-grading", () => ({
+  buildReviewedCbtVariantGradingQuestion: mocks.buildVariantQuestion,
 }));
 
 vi.mock("@/lib/domain/practice", () => ({
@@ -37,6 +44,8 @@ describe("POST /api/account/merge-guest-learning", () => {
     vi.resetModules();
     vi.clearAllMocks();
     mocks.getQuestion.mockResolvedValue({ id: "question-1", lessonId: "lesson-1" });
+    mocks.getQuestionVariant.mockResolvedValue(null);
+    mocks.buildVariantQuestion.mockReturnValue(null);
     mocks.getLesson.mockResolvedValue({ id: "lesson-1" });
     mocks.gradeQuestion.mockReturnValue({ isCorrect: false });
   });

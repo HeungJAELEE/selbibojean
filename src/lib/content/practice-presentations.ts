@@ -5,7 +5,11 @@ import {
   mapReviewedCbtVariantChoices,
 } from "@/lib/content/reviewed-cbt-variants";
 import { orderPracticeChoices } from "@/lib/content/practice-choice-order";
-import { shuffleQuestionIds, toPublicQuestion } from "@/lib/domain/practice";
+import {
+  isPublishableQuestion,
+  shuffleQuestionIds,
+  toPublicQuestion,
+} from "@/lib/domain/practice";
 
 export type OriginalPracticeRatio = 0 | 25 | 50 | 75 | 100;
 
@@ -19,9 +23,27 @@ export function createPracticePresentations(
   shuffleChoices = true,
 ): PublicQuestion[] {
   const originalsByQuestion = getSafeOriginalsByQuestion(questions, variants);
-  const eligibleIds = questions.filter((question) => originalsByQuestion.has(question.id)).map((question) => question.id);
-  const targetCount = Math.min(Math.round(questions.length * (originalRatio / 100)), eligibleIds.length);
-  const originalIds = new Set(shuffleQuestionIds(eligibleIds, seed ^ 0x51f15e).slice(0, targetCount));
+  const eligibleIds = questions
+    .filter((question) => originalsByQuestion.has(question.id))
+    .map((question) => question.id);
+  const requiredOriginalIds = questions
+    .filter(
+      (question) =>
+        !isPublishableQuestion(question) && originalsByQuestion.has(question.id),
+    )
+    .map((question) => question.id);
+  const targetCount = Math.min(
+    Math.max(
+      Math.round(questions.length * (originalRatio / 100)),
+      requiredOriginalIds.length,
+    ),
+    eligibleIds.length,
+  );
+  const originalIds = new Set(requiredOriginalIds);
+  for (const id of shuffleQuestionIds(eligibleIds, seed ^ 0x51f15e)) {
+    if (originalIds.size >= targetCount) break;
+    originalIds.add(id);
+  }
 
   return questions.map((question) => {
     if (!originalIds.has(question.id)) return toPracticePresentation(question, question.id, seed, shuffleChoices);

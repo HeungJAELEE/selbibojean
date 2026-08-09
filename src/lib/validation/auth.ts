@@ -12,6 +12,7 @@ export const guestAttemptSchema = z
   .object({
     clientAttemptId: z.uuid().optional(),
     questionId: z.string().min(1),
+    questionVariantExternalId: z.string().min(1).optional(),
     selectedChoiceId: z.string().min(1),
     isCorrect: z.boolean(),
     selfRating: z.enum(["unknown", "unsure", "known"]),
@@ -45,6 +46,7 @@ export const submitAnswerSchema = z
   .object({
     clientAttemptId: z.uuid(),
     questionId: z.string().min(1),
+    questionVariantExternalId: z.string().min(1).optional(),
     choiceId: z.string().min(1),
     selfRating: z.enum(["unknown", "unsure", "known"]),
     sessionId: z.uuid().optional(),

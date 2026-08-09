@@ -5,7 +5,9 @@ import { isUsablePastExamVariant } from "../src/lib/content/past-exam-examples";
 import { isSafeOriginalPracticeVariant } from "../src/lib/content/practice-presentations";
 import {
   applyReviewedCbtTheoryAndCanonicalChanges,
+  getReviewedCbtVariantAnswerIndex,
   getReviewedCbtVariantPresentation,
+  mapReviewedCbtVariantChoices,
   reviewedCbtVariantManifest,
   validateReviewedCbtVariantManifest,
 } from "../src/lib/content/reviewed-cbt-variants";
@@ -133,7 +135,7 @@ if (failures.length > 0) {
 
 const states = countStates(runtime.variants);
 console.log(
-  `PASS: reviewed CBT imports verified (${reviewedCbtVariantManifest.records.length} records; ${states.candidate ?? 0} candidates; ${states.choice_conflict ?? 0} choice conflicts; ${states.hold ?? 0} holds; ${states.unreviewed ?? 0} gated; ${reviewedCbtVariantManifest.theoryLessonAdditions?.length ?? 0} theory additions; ${reviewedCbtVariantManifest.canonicalQuestionChanges?.length ?? 0} canonical overlays; batch 13 integration corrections applied).`,
+  `PASS: reviewed CBT imports verified (${reviewedCbtVariantManifest.records.length} records; ${states.published ?? 0} published; ${states.choice_conflict ?? 0} choice conflicts; ${states.hold ?? 0} holds; ${states.unreviewed ?? 0} gated; ${reviewedCbtVariantManifest.theoryLessonAdditions?.length ?? 0} theory additions; ${reviewedCbtVariantManifest.canonicalQuestionChanges?.length ?? 0} canonical overlays; source stem and ordered-choice hashes preserved).`,
 );
 
 function verifyManifestDigest() {
@@ -160,7 +162,7 @@ function verifySourceFilesAndBatchExactSets() {
     recordOffset += batch.recordCount;
 
     const sourceRows = batch.sourceFiles.flatMap((sourceFile) => {
-      const raw = readFileSync(sourceFile.path, "utf8");
+      const raw = normalizeTextFile(readFileSync(sourceFile.path, "utf8"));
       const actualSha256 = sha256(raw);
       if (actualSha256 !== sourceFile.sha256) {
         failures.push(
@@ -184,7 +186,8 @@ function verifySourceFilesAndBatchExactSets() {
 
     const batchStates = countRecordStates(batchRecords);
     if (
-      (batchStates.candidate ?? 0) !== batch.candidateCount ||
+      (batchStates.candidate ?? 0) + (batchStates.published ?? 0) !==
+        batch.candidateCount ||
       (batchStates.choice_conflict ?? 0) !== batch.choiceConflictCount ||
       (batchStates.hold ?? 0) !== batch.holdCount
     ) {
@@ -238,8 +241,12 @@ function verifyRuntimeVariants() {
       );
     }
   }
-  if ((actualStates.published ?? 0) !== 0) {
-    failures.push("reviewed CBT imports must not auto-publish variants");
+  if (
+    (actualStates.published ?? 0) !== 2267 ||
+    (actualStates.hold ?? 0) !== 98 ||
+    (actualStates.choice_conflict ?? 0) !== 19
+  ) {
+    failures.push("reviewed CBT publication split must be 2267/98/19");
   }
 
   for (const variant of runtimeSourceVariants) {
@@ -294,13 +301,23 @@ function verifyRuntimeVariants() {
           `${variant.externalId}: variant-specific choice blocker is invalid`,
         );
       }
-      const simulatedPublished = {
-        ...variant,
-        reviewState: "published" as const,
-      };
-      if (isSafeOriginalPracticeVariant(question, simulatedPublished)) {
+      if (!isSafeOriginalPracticeVariant(question, variant)) {
         failures.push(
-          `${variant.externalId}: variant-specific choice contract can bypass publication safety`,
+          `${variant.externalId}: published variant-specific choice contract is not usable`,
+        );
+      }
+      const mappedChoices = mapReviewedCbtVariantChoices(question, variant);
+      const answerIndex = getReviewedCbtVariantAnswerIndex(variant);
+      if (
+        !mappedChoices ||
+        mappedChoices.length !== record.choices.length ||
+        new Set(mappedChoices.map((choice) => choice.id)).size !==
+          record.choices.length ||
+        answerIndex === null ||
+        mappedChoices[answerIndex]?.id !== question.correctChoiceId
+      ) {
+        failures.push(
+          `${variant.externalId}: runtime choice contract does not preserve stable grading`,
         );
       }
       continue;
@@ -473,7 +490,7 @@ function verifyBatch01Contracts() {
     }
     if (
       expectedLowContext.has(record.externalId) &&
-      record.review.runtimeStatus !== "candidate"
+      record.review.runtimeStatus !== "published"
     ) {
       failures.push(`${record.externalId}: low-context registration was lost`);
     }
@@ -590,7 +607,7 @@ function verifyBatch02Contracts() {
   );
 
   if (
-    records.filter((record) => record.review.runtimeStatus === "candidate")
+    records.filter((record) => record.review.runtimeStatus === "published")
       .length !== 189 ||
     records.filter((record) => record.review.runtimeStatus === "hold").length !==
       11 ||
@@ -723,7 +740,7 @@ function verifyBatch03Contracts() {
   );
 
   if (
-    records.filter((record) => record.review.runtimeStatus === "candidate")
+    records.filter((record) => record.review.runtimeStatus === "published")
       .length !== 190 ||
     records.filter(
       (record) => record.review.runtimeStatus === "choice_conflict",
@@ -742,7 +759,7 @@ function verifyBatch03Contracts() {
   if (
     corrected?.sourceAnswerIndex !== 0 ||
     corrected.reviewedAnswerIndex !== 2 ||
-    corrected.review.runtimeStatus !== "candidate" ||
+    corrected.review.runtimeStatus !== "published" ||
     corrected.choiceIdMapping[2] !== "U-1215-c3" ||
     corrected.theoryLink?.lessonId !==
       "lesson-cbt-safety-valve-simmering-correction" ||
@@ -876,7 +893,7 @@ function verifyBatch04Contracts() {
   );
 
   if (
-    records.filter((record) => record.review.runtimeStatus === "candidate")
+    records.filter((record) => record.review.runtimeStatus === "published")
       .length !== 193 ||
     records.filter(
       (record) => record.review.runtimeStatus === "choice_conflict",
@@ -895,7 +912,7 @@ function verifyBatch04Contracts() {
   if (
     corrected?.sourceAnswerIndex !== 0 ||
     corrected.reviewedAnswerIndex !== 2 ||
-    corrected.review.runtimeStatus !== "candidate" ||
+    corrected.review.runtimeStatus !== "published" ||
     corrected.choiceIdMapping[2] !== "U-1072-c3" ||
     corrected.theoryLink?.lessonId !==
       "lesson-cbt-forward-curved-fan-power-curve" ||
@@ -1049,7 +1066,7 @@ function verifyBatch05Contracts() {
   );
 
   if (
-    records.filter((record) => record.review.runtimeStatus === "candidate")
+    records.filter((record) => record.review.runtimeStatus === "published")
       .length !== 191 ||
     records.filter(
       (record) => record.review.runtimeStatus === "choice_conflict",
@@ -1068,7 +1085,7 @@ function verifyBatch05Contracts() {
   if (
     corrected?.sourceAnswerIndex !== 3 ||
     corrected.reviewedAnswerIndex !== 1 ||
-    corrected.review.runtimeStatus !== "candidate" ||
+    corrected.review.runtimeStatus !== "published" ||
     corrected.variantSpecificFeedbackRequired ||
     JSON.stringify(corrected.choiceIdMapping) !==
       JSON.stringify(["U-990-c2", "U-990-c3", "U-990-c1", "U-990-c4"]) ||
@@ -1240,7 +1257,7 @@ function verifyBatch06Contracts() {
   );
 
   if (
-    records.filter((record) => record.review.runtimeStatus === "candidate")
+    records.filter((record) => record.review.runtimeStatus === "published")
       .length !== 190 ||
     records.filter(
       (record) => record.review.runtimeStatus === "choice_conflict",
@@ -1307,7 +1324,7 @@ function verifyBatch06Contracts() {
   ]) {
     const record = recordsById.get(externalId);
     if (
-      record?.review.runtimeStatus !== "candidate" ||
+      record?.review.runtimeStatus !== "published" ||
       record.review.theoryLinkStatus !==
         "direct_existing_theory_low_context_exam_intent" ||
       !record.review.answerConflictOrMultipleAnswerRisk
@@ -1446,7 +1463,7 @@ function verifyBatch07Contracts() {
   );
 
   if (
-    records.filter((record) => record.review.runtimeStatus === "candidate")
+    records.filter((record) => record.review.runtimeStatus === "published")
       .length !== 165 ||
     records.filter(
       (record) => record.review.runtimeStatus === "choice_conflict",
@@ -1503,7 +1520,7 @@ function verifyBatch07Contracts() {
   ]) {
     const record = recordsById.get(externalId);
     if (
-      record?.review.runtimeStatus !== "candidate" ||
+      record?.review.runtimeStatus !== "published" ||
       !record.review.answerConflictOrMultipleAnswerRisk ||
       record.reviewedAnswerIndex === null
     ) {
@@ -1514,7 +1531,7 @@ function verifyBatch07Contracts() {
   for (const externalId of batch.holdResolution.lowContextRegistered) {
     const record = recordsById.get(externalId);
     if (
-      record?.review.runtimeStatus !== "candidate" ||
+      record?.review.runtimeStatus !== "published" ||
       record.review.theoryLinkStatus !==
         "direct_existing_theory_low_context_exam_intent" ||
       !record.review.answerConflictOrMultipleAnswerRisk
@@ -1664,7 +1681,7 @@ function verifyBatch08Contracts() {
   );
 
   if (
-    records.filter((record) => record.review.runtimeStatus === "candidate")
+    records.filter((record) => record.review.runtimeStatus === "published")
       .length !== 191 ||
     records.filter(
       (record) => record.review.runtimeStatus === "choice_conflict",
@@ -1908,7 +1925,7 @@ function verifyBatch09Contracts() {
   );
 
   if (
-    records.filter((record) => record.review.runtimeStatus === "candidate")
+    records.filter((record) => record.review.runtimeStatus === "published")
       .length !== 192 ||
     records.filter(
       (record) => record.review.runtimeStatus === "choice_conflict",
@@ -1963,7 +1980,7 @@ function verifyBatch09Contracts() {
   for (const externalId of batch.holdResolution.lowContextRegistered) {
     const record = recordsById.get(externalId);
     if (
-      record?.review.runtimeStatus !== "candidate" ||
+      record?.review.runtimeStatus !== "published" ||
       record.review.theoryLinkStatus !==
         "direct_existing_theory_low_context_exam_intent" ||
       !record.review.answerConflictOrMultipleAnswerRisk
@@ -2155,7 +2172,7 @@ function verifyBatch10Contracts() {
   );
 
   if (
-    records.filter((record) => record.review.runtimeStatus === "candidate")
+    records.filter((record) => record.review.runtimeStatus === "published")
       .length !== 187 ||
     records.filter(
       (record) => record.review.runtimeStatus === "choice_conflict",
@@ -2236,7 +2253,7 @@ function verifyBatch10Contracts() {
   for (const externalId of batch.holdResolution.lowContextRegistered) {
     const record = recordsById.get(externalId);
     if (
-      record?.review.runtimeStatus !== "candidate" ||
+      record?.review.runtimeStatus !== "published" ||
       record.review.theoryLinkStatus !==
         "direct_existing_theory_low_context_exam_intent" ||
       !record.review.answerConflictOrMultipleAnswerRisk
@@ -2445,7 +2462,7 @@ function verifyBatch11Contracts() {
   );
 
   if (
-    records.filter((record) => record.review.runtimeStatus === "candidate")
+    records.filter((record) => record.review.runtimeStatus === "published")
       .length !== 182 ||
     records.filter((record) => record.review.runtimeStatus === "hold").length !==
       10 ||
@@ -2495,7 +2512,7 @@ function verifyBatch11Contracts() {
   for (const externalId of batch.holdResolution.lowContextRegistered) {
     const record = recordsByBatchId.get(externalId);
     if (
-      record?.review.runtimeStatus !== "candidate" ||
+      record?.review.runtimeStatus !== "published" ||
       record.review.theoryLinkStatus !==
         "direct_existing_theory_low_context_exam_intent" ||
       !record.review.answerConflictOrMultipleAnswerRisk
@@ -2656,7 +2673,7 @@ function verifyBatch12Contracts() {
   );
 
   if (
-    records.filter((record) => record.review.runtimeStatus === "candidate")
+    records.filter((record) => record.review.runtimeStatus === "published")
       .length !== 210 ||
     records.filter((record) => record.review.runtimeStatus === "hold").length !==
       11 ||
@@ -2775,7 +2792,7 @@ function verifyBatch12Contracts() {
     const repair = migration.taxonomyRepair;
     if (
       record.canonicalId !== canonicalId ||
-      record.review.runtimeStatus !== "candidate" ||
+      record.review.runtimeStatus !== "published" ||
       record.theoryLink.conceptGroupId !== currentGroupId ||
       record.migration.mappingClass !== "THEORY_TAXONOMY_REPAIR_PENDING" ||
       record.migration.canonicalAction !==
@@ -3081,8 +3098,11 @@ function verifyBatch13Contracts() {
     failures.push("batch 13 restored-source ledger count changed unexpectedly");
   }
   for (const restored of restoredSources) {
-    const raw = readFileSync(restored.path);
-    if (raw.length !== restored.size || sha256Buffer(raw) !== restored.sha256) {
+    const raw = normalizeTextFile(readFileSync(restored.path, "utf8"));
+    if (
+      Buffer.byteLength(raw, "utf8") !== restored.size ||
+      sha256(raw) !== restored.sha256
+    ) {
       failures.push(`${restored.path}: restored source integrity mismatch`);
     }
   }
@@ -3116,8 +3136,18 @@ function verifySupabaseProjection() {
   const reviewedRows = plan.questionVariants.filter((row) =>
     reviewedIds.has(row.external_id),
   );
-  if (reviewedRows.some((row) => row.status !== "draft")) {
-    failures.push("reviewed CBT rows were projected as published");
+  const rowStates = reviewedRows.reduce<Record<string, number>>(
+    (counts, row) => {
+      counts[row.status] = (counts[row.status] ?? 0) + 1;
+      return counts;
+    },
+    {},
+  );
+  if (
+    (rowStates.published ?? 0) !== 2267 ||
+    (rowStates.draft ?? 0) !== 117
+  ) {
+    failures.push("Supabase reviewed CBT projection must preserve 2267 published and 117 excluded rows");
   }
   const forbiddenKeys = new Set([
     "reviewedAnswerIndex",
@@ -3207,9 +3237,11 @@ function findForbiddenKey(
 }
 
 function sha256(value: string) {
-  return createHash("sha256").update(value, "utf8").digest("hex");
+  return createHash("sha256")
+    .update(normalizeTextFile(value), "utf8")
+    .digest("hex");
 }
 
-function sha256Buffer(value: Buffer) {
-  return createHash("sha256").update(value).digest("hex");
+function normalizeTextFile(value: string) {
+  return value.replace(/\r\n/gu, "\n");
 }

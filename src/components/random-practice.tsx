@@ -122,7 +122,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
       const response = await fetch("/api/practice/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ clientAttemptId, questionId: question.id, choiceId: selectedChoiceId, selfRating, sessionId: session.sessionId, attemptKind }),
+        body: JSON.stringify({ clientAttemptId, questionId: question.id, questionVariantExternalId: question.provenance.exam?.externalId, choiceId: selectedChoiceId, selfRating, sessionId: session.sessionId, attemptKind }),
       });
       const result = await response.json() as PracticeFeedback & { error?: string };
       if (!response.ok) throw new Error(result.error);
@@ -132,7 +132,7 @@ export function RandomPractice({ subjects, groups }: { subjects: Subject[]; grou
         const attempts = JSON.parse(localStorage.getItem(GUEST_ATTEMPTS_KEY) ?? "[]") as unknown[];
         const dueAt = new Date();
         dueAt.setMinutes(dueAt.getMinutes() + (result.isCorrect ? selfRating === "known" ? 7 * 1440 : selfRating === "unsure" ? 3 * 1440 : 1440 : 10));
-        attempts.push({ clientAttemptId, questionId: question.id, selectedChoiceId, isCorrect: result.isCorrect, selfRating, dueAt: dueAt.toISOString(), attemptKind, attemptedAt: new Date().toISOString() });
+        attempts.push({ clientAttemptId, questionId: question.id, questionVariantExternalId: question.provenance.exam?.externalId, selectedChoiceId, isCorrect: result.isCorrect, selfRating, dueAt: dueAt.toISOString(), attemptKind, attemptedAt: new Date().toISOString() });
         localStorage.setItem(GUEST_ATTEMPTS_KEY, JSON.stringify(attempts));
         notifyGuestAttemptsChanged();
       }
