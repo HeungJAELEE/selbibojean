@@ -257,7 +257,7 @@ describe("27th workbook reconciliation", () => {
     const coveredLessons = publishedLessons.filter((lesson) => getPastExamExamples(data, lesson.id, 3).length > 0);
 
     expect(publishedLessons).toHaveLength(1190);
-    expect(coveredLessons).toHaveLength(1176);
+    expect(coveredLessons).toHaveLength(1179);
 
     for (const lesson of coveredLessons) {
       const examples = getPastExamExamples(data, lesson.id, 3);
@@ -301,8 +301,8 @@ describe("27th workbook reconciliation", () => {
     const publishedQuestions = data.questions.filter(isPublishableQuestion);
     const originalsByQuestion = getSafeOriginalsByQuestion(publishedQuestions, data.variants);
 
-    expect(originalsByQuestion.size).toBe(1300);
-    expect([...originalsByQuestion.values()].flat()).toHaveLength(1377);
+    expect(originalsByQuestion.size).toBe(1303);
+    expect([...originalsByQuestion.values()].flat()).toHaveLength(1380);
 
     const sample = publishedQuestions.slice(0, 20);
     const mixed = createPracticePresentations(sample, data.variants, 50, 20260723);

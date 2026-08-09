@@ -20,14 +20,18 @@ type Allocation = {
 export function WrittenMockSetup({
   subjects,
   availableBySubject,
+  publishedBySubject,
   availableYears,
   availableByYearRange,
+  publishedByYearRange,
   choiceShuffleEnabled,
 }: {
   subjects: Subject[];
   availableBySubject: Record<string, number>;
+  publishedBySubject: Record<string, number>;
   availableYears: number[];
   availableByYearRange: Record<string, Record<string, number>>;
+  publishedByYearRange: Record<string, Record<string, number>>;
   choiceShuffleEnabled: boolean;
 }) {
   const router = useRouter();
@@ -49,6 +53,8 @@ export function WrittenMockSetup({
   const [error, setError] = useState("");
   const rangeAvailability =
     availableByYearRange[`${yearFrom}-${yearTo}`] ?? availableBySubject;
+  const publishedRangeAvailability =
+    publishedByYearRange[`${yearFrom}-${yearTo}`] ?? publishedBySubject;
 
   function applyYearRange(nextFrom: number, nextTo: number) {
     setYearFrom(nextFrom);
@@ -125,7 +131,7 @@ export function WrittenMockSetup({
           <div>
             <p className="text-xs font-black uppercase tracking-[.14em] text-[#8dd5ce]">Standard written mock</p>
             <h2 className="mt-2 text-2xl font-extrabold">실전형 80문제 구성</h2>
-            <p className="mt-3 leading-7 text-slate-200">시험 형식은 4과목을 각각 20문제씩 구성합니다. 현재 공개 검수를 통과한 문제는 총 {standardTotal}개이며 같은 문제는 한 시험에서 중복되지 않습니다.</p>
+            <p className="mt-3 leading-7 text-slate-200">시험 형식은 4과목을 각각 20문제씩 구성합니다. 공개 검수를 통과한 기출 은행은 총 {Object.values(publishedBySubject).reduce((total, count) => total + count, 0)}개이며, 한 시험에서는 80문제를 중복 없이 출제합니다.</p>
             {!standardReady && <p className="mt-3 rounded-xl bg-amber-300/15 px-4 py-3 text-sm font-bold text-amber-100">제2과목을 포함한 부족 문제를 검수·보강하면 자동으로 80문제 구성이 활성화됩니다.</p>}
           </div>
           <button type="button" onClick={() => startMock(true)} disabled={!isHydrated || loading} className="flex items-center justify-center gap-2 rounded-xl bg-[#8f3f0a] px-6 py-4 font-extrabold text-white disabled:opacity-50">
@@ -145,6 +151,7 @@ export function WrittenMockSetup({
             const allocation = allocations.find((item) => item.subjectId === subject.id);
             if (!allocation) return null;
             const availableCount = rangeAvailability[subject.id] ?? 0;
+            const publishedCount = publishedRangeAvailability[subject.id] ?? 0;
             const countOptions = [...new Set([5, 10, 15, 20, Math.min(20, availableCount)])]
               .filter((count) => count > 0 && count <= availableCount)
               .sort((left, right) => left - right);
@@ -158,7 +165,7 @@ export function WrittenMockSetup({
                   <select aria-label={`제${subject.code}과목 문제 수`} disabled={!isHydrated || !allocation.enabled} value={allocation.count} onChange={(event) => updateAllocation(subject.id, { count: Number(event.target.value) })} className="rounded-xl border border-slate-300 bg-white p-3 disabled:opacity-50">
                     {countOptions.map((count) => <option key={count} value={count}>{count}문제</option>)}
                   </select>
-                  <span className="text-xs font-medium text-slate-500">검수 완료 {availableCount}문제</span>
+                  <span className="text-xs font-medium text-slate-500">공개 기출 {publishedCount}문제 · 한 시험에서 중복 없이 최대 {Math.min(20, availableCount)}문제</span>
                 </label>
               </div>
             );

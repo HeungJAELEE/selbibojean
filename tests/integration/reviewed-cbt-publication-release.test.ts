@@ -1,9 +1,14 @@
 import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
 import generatedContent from "@/data/generated/content.json";
+import weldingCbtBank from "@/data/generated/welding-cbt-bank.json";
+import { WELDING_CBT_ANSWER_REVIEWS } from "@/data/source/welding-cbt-answer-review";
 import {
+  countPublicOriginalVariantsBySubject,
+  countPublishedReviewedVariantsBySubject,
   createPracticePresentations,
   filterPracticeContentByYearRange,
+  getAllSafeOriginalsByQuestion,
   getSafeOriginalsByQuestion,
   isSafeOriginalPracticeVariant,
 } from "@/lib/content/practice-presentations";
@@ -73,6 +78,115 @@ describe("reviewed CBT publication release", () => {
     }
 
     expect(publishedUsable).toBe(2267);
+  });
+
+  it("counts all 2267 published review occurrences without collapsing repeated canonical questions", () => {
+    const counts = countPublishedReviewedVariantsBySubject(
+      runtime.questions,
+      runtime.variants,
+    );
+    const originals = getAllSafeOriginalsByQuestion(
+      runtime.questions,
+      runtime.variants,
+    );
+    const publishedOccurrences = [...originals.values()]
+      .flat()
+      .filter(
+        (variant) =>
+          variant.reviewed && variant.reviewState === "published",
+      );
+
+    expect(counts).toEqual({
+      "subject-1": 450,
+      "subject-2": 29,
+      "subject-3": 416,
+      "subject-4": 1372,
+    });
+    expect(Object.values(counts).reduce((sum, count) => sum + count, 0)).toBe(
+      2267,
+    );
+    expect(publishedOccurrences).toHaveLength(2267);
+  });
+
+  it("makes all 492 approved welding questions eligible and excludes all 33 authored HOLD questions", () => {
+    const weldingQuestions = runtime.questions.filter((question) =>
+      question.id.startsWith("wcbt-"),
+    );
+    const safeOriginals = getSafeOriginalsByQuestion(
+      runtime.questions,
+      runtime.variants,
+    );
+    const approvedReviewIds = new Set(
+      WELDING_CBT_ANSWER_REVIEWS.entries
+        .filter((entry) => entry.reviewStatus === "approved")
+        .map((entry) => entry.canonicalId),
+    );
+    const heldReviewIds = new Set(
+      WELDING_CBT_ANSWER_REVIEWS.entries
+        .filter((entry) => entry.reviewStatus === "hold")
+        .map((entry) => entry.canonicalId),
+    );
+
+    expect(WELDING_CBT_ANSWER_REVIEWS.entries).toHaveLength(525);
+    expect(approvedReviewIds.size).toBe(492);
+    expect(heldReviewIds.size).toBe(33);
+    expect(weldingQuestions).toHaveLength(492);
+    expect(
+      weldingQuestions.every(
+        (question) =>
+          approvedReviewIds.has(question.id) && safeOriginals.has(question.id),
+      ),
+    ).toBe(true);
+    const presentations = createPracticePresentations(
+      weldingQuestions,
+      runtime.variants,
+      100,
+      20260809,
+      true,
+    );
+    expect(presentations).toHaveLength(492);
+    expect(
+      presentations.every((question) => question.provenance.original),
+    ).toBe(true);
+    expect(
+      presentations.every(
+        (question) =>
+          !("correctChoiceId" in question) &&
+          !("explanation" in question) &&
+          !("approvedReview" in question),
+      ),
+    ).toBe(true);
+    expect(
+      runtime.questions.some((question) => heldReviewIds.has(question.id)),
+    ).toBe(false);
+
+    const counts = countPublicOriginalVariantsBySubject(
+      runtime.questions,
+      runtime.variants,
+    );
+    expect(counts["subject-2"]).toBe(530);
+  });
+
+  it("preserves every published welding occurrence stem, ordered choices, and source answer", () => {
+    const sourceByExternalId = new Map(
+      weldingCbtBank.records.map((record) => [record.externalId, record]),
+    );
+    const weldingVariants = runtime.variants.filter((variant) =>
+      variant.canonicalId.startsWith("wcbt-"),
+    );
+
+    expect(weldingVariants).toHaveLength(499);
+    for (const variant of weldingVariants) {
+      const sourceRecord = sourceByExternalId.get(variant.externalId);
+      expect(sourceRecord, variant.externalId).toBeDefined();
+      if (!sourceRecord || sourceRecord.correctIndex === null) continue;
+
+      expect(variant.stem, variant.externalId).toBe(sourceRecord.stem);
+      expect(variant.choices, variant.externalId).toEqual(sourceRecord.choices);
+      expect(variant.answer, variant.externalId).toBe(
+        `${sourceRecord.correctIndex + 1}. ${sourceRecord.choices[sourceRecord.correctIndex]}`,
+      );
+    }
   });
 
   it("builds the default mock as 4 subjects by 20 without duplicate canonical questions", () => {

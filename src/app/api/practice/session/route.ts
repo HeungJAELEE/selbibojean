@@ -135,6 +135,7 @@ export async function POST(request: Request) {
     parsed.data.originalRatio,
     seed,
     shuffleChoices,
+    true,
   );
 
   const sessionId = crypto.randomUUID();

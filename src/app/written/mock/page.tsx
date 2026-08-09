@@ -2,7 +2,11 @@ import { PageHeading } from "@/components/page-heading";
 import { DeviceLearningStorage } from "@/components/device-learning-storage";
 import { WrittenMockSetup } from "@/components/written-mock-setup";
 import { getContent } from "@/lib/content/repository";
-import { getSafeOriginalsByQuestion } from "@/lib/content/practice-presentations";
+import {
+  countPublicOriginalVariantsBySubject,
+  getPublicOriginalVariantYears,
+  getSafeOriginalsByQuestion,
+} from "@/lib/content/practice-presentations";
 import { isPublishableQuestion } from "@/lib/domain/practice";
 import { isReleaseFeatureEnabled } from "@/lib/release-features";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
@@ -16,11 +20,18 @@ export default async function WrittenMockPage() {
   const choiceShuffleEnabled = isReleaseFeatureEnabled(
     "mock_choice_shuffle",
   );
+  const publishedBySubject = countPublicOriginalVariantsBySubject(
+    content.questions,
+    content.variants,
+  );
   const safeOriginals = getSafeOriginalsByQuestion(
     content.questions,
     content.variants,
   );
-  const reviewedPublishedQuestionIds = new Set(safeOriginals.keys());
+  const questionById = new Map(
+    content.questions.map((question) => [question.id, question]),
+  );
+  const safeOriginalQuestionIds = new Set(safeOriginals.keys());
   const availableBySubject = Object.fromEntries(
     content.subjects.map((subject) => [
       subject.id,
@@ -30,27 +41,33 @@ export default async function WrittenMockPage() {
             (question) =>
               question.subjectId === subject.id &&
               (isPublishableQuestion(question) ||
-                reviewedPublishedQuestionIds.has(question.id)),
+                safeOriginalQuestionIds.has(question.id)),
           )
           .map((question) => question.id),
       ).size,
     ]),
   );
-  const availableYears = [
-    ...new Set(
-      [...safeOriginals.values()]
-        .flat()
-        .map((variant) => variant.year)
-        .filter((year): year is number => year !== null),
-    ),
-  ].sort((left, right) => left - right);
-  const questionById = new Map(
-    content.questions.map((question) => [question.id, question]),
+  const publishedAvailabilityBySubject = Object.fromEntries(
+    content.subjects.map((subject) => [
+      subject.id,
+      publishedBySubject[subject.id] ?? 0,
+    ]),
+  );
+  const availableYears = getPublicOriginalVariantYears(
+    content.questions,
+    content.variants,
   );
   const availableByYearRange: Record<string, Record<string, number>> = {};
+  const publishedByYearRange: Record<string, Record<string, number>> = {};
   for (const from of availableYears) {
     for (const to of availableYears) {
       if (from > to) continue;
+      const rangeCounts = countPublicOriginalVariantsBySubject(
+        content.questions,
+        content.variants,
+        from,
+        to,
+      );
       const idsBySubject = new Map<string, Set<string>>();
       for (const [questionId, variants] of safeOriginals) {
         if (
@@ -73,6 +90,12 @@ export default async function WrittenMockPage() {
         content.subjects.map((subject) => [
           subject.id,
           idsBySubject.get(subject.id)?.size ?? 0,
+        ]),
+      );
+      publishedByYearRange[`${from}-${to}`] = Object.fromEntries(
+        content.subjects.map((subject) => [
+          subject.id,
+          rangeCounts[subject.id] ?? 0,
         ]),
       );
     }
@@ -113,8 +136,10 @@ export default async function WrittenMockPage() {
       <WrittenMockSetup
         subjects={content.subjects}
         availableBySubject={availableBySubject}
+        publishedBySubject={publishedAvailabilityBySubject}
         availableYears={availableYears}
         availableByYearRange={availableByYearRange}
+        publishedByYearRange={publishedByYearRange}
         choiceShuffleEnabled={choiceShuffleEnabled}
       />
     </div>

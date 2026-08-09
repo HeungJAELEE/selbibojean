@@ -201,7 +201,7 @@ export function selectAllocatedPracticeQuestions(
 }
 
 export function toPublicQuestion(question: Question): PublicQuestion {
-  const { correctChoiceId, answerText, explanation, errorReason, validation, reviewStatus, publication, verification, audit, choices, ...safeQuestion } = question;
+  const { correctChoiceId, answerText, explanation, errorReason, validation, reviewStatus, publication, verification, audit, approvedReview, choices, ...safeQuestion } = question;
   void correctChoiceId;
   void answerText;
   void explanation;
@@ -210,6 +210,7 @@ export function toPublicQuestion(question: Question): PublicQuestion {
   void reviewStatus;
   void publication;
   void audit;
+  void approvedReview;
   return {
     ...safeQuestion,
     choices: choices.map(({ id, order, text }) => ({ id, order, text })),
@@ -270,6 +271,12 @@ export function gradeQuestion(
           blocks: supportBlocks.map(({ id, kind, title, body }) => ({ id, kind, title, body })),
         }
       : null,
+    approvedReview: question.approvedReview
+      ? {
+          ...question.approvedReview,
+          selectedChoiceReason: selectedChoice.feedback.rationale,
+        }
+      : undefined,
     otherChoices: question.choices
       .filter((choice) => choice.id !== selectedChoice.id)
       .map((choice) => ({ id: choice.id, text: choice.text, isCorrect: choice.id === correctChoice.id, ...choice.feedback })),

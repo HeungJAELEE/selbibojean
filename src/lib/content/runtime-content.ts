@@ -2,6 +2,7 @@ import { mergeApprovedCompressorContent } from "@/lib/content/compressor-approve
 import { mergeApprovedWeldingDefectContent } from "@/lib/content/welding-defect-approved";
 import { mergeApprovedWeldingProcessContent } from "@/lib/content/welding-process-approved";
 import { mergeApprovedWeldingSafetyContent } from "@/lib/content/welding-safety-approved";
+import { mergeApprovedWeldingCbtContent } from "@/lib/content/welding-cbt-approved";
 import { normalizeCanonicalTaxonomy } from "@/lib/content/taxonomy-normalization";
 import { notionGapWrittenLessons } from "@/lib/content/notion-gap-written-lessons";
 import { refineLessonUnderstandingBackground } from "@/lib/content/lesson-understanding-background";
@@ -12,23 +13,31 @@ import rawWrittenQuestionAudit from "@/data/generated/written-question-audit.jso
 import type { GeneratedContent } from "@/lib/domain/types";
 
 export function buildRuntimeContent(content: GeneratedContent) {
-  return applyWrittenQuestionAuditManifest(
-    mergeSupplementalWrittenLessons(
-      mergeApprovedWeldingDefectContent(
-        mergeApprovedWeldingProcessContent(
-          mergeApprovedWeldingSafetyContent(
-            mergeApprovedCompressorContent(
-              refineLessonUnderstandingBackground(
-                normalizeCanonicalTaxonomy(
-                  mergeReviewedCbtVariants(content),
+  return buildRuntimeContentBeforeDirectFeedback(content);
+}
+
+export function buildRuntimeContentBeforeDirectFeedback(
+  content: GeneratedContent,
+) {
+  return mergeApprovedWeldingCbtContent(
+    applyWrittenQuestionAuditManifest(
+      mergeSupplementalWrittenLessons(
+        mergeApprovedWeldingDefectContent(
+          mergeApprovedWeldingProcessContent(
+            mergeApprovedWeldingSafetyContent(
+              mergeApprovedCompressorContent(
+                refineLessonUnderstandingBackground(
+                  normalizeCanonicalTaxonomy(
+                    mergeReviewedCbtVariants(content),
+                  ),
                 ),
               ),
             ),
           ),
         ),
       ),
+      rawWrittenQuestionAudit,
     ),
-    rawWrittenQuestionAudit,
   );
 }
 

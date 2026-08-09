@@ -40,8 +40,8 @@ describe("runtime merged content gates", () => {
   });
 
   it("freezes the reviewed-integration runtime publication baseline", () => {
-    expect(content.questions.filter(isPublishableQuestion)).toHaveLength(1490);
-    expect(content.lessons.filter(isPublishableLesson)).toHaveLength(1283);
+    expect(content.questions.filter(isPublishableQuestion)).toHaveLength(1982);
+    expect(content.lessons.filter(isPublishableLesson)).toHaveLength(1308);
   });
 
   it("publishes a question only when its linked lesson is also publishable", () => {
@@ -77,7 +77,7 @@ describe("runtime merged content gates", () => {
       question.audit?.auditDisposition.startsWith("held_"),
     );
 
-    expect(audited).toHaveLength(297);
+    expect(audited).toHaveLength(789);
     expect(
       audited.filter((question) => question.audit?.scope === "review_queue"),
     ).toHaveLength(274);
@@ -85,7 +85,7 @@ describe("runtime merged content gates", () => {
       audited.filter(
         (question) => question.audit?.scope === "high_risk_public",
       ),
-    ).toHaveLength(23);
+    ).toHaveLength(515);
     expect(held).toHaveLength(113);
     expect(held.some(isPublishableQuestion)).toBe(false);
     expect(

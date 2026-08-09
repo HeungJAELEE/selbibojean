@@ -5,7 +5,8 @@ import {
   mapReviewedCbtVariantChoices,
 } from "@/lib/content/reviewed-cbt-variants";
 
-const VISUAL_ASSET_CUE = /그림|도면|회로도|사진|이미지|도시(?:한|된)|다음\s*회로|아래\s*회로/i;
+const VISUAL_ASSET_CUE =
+  /\[이미지\]|<img|(?:다음|아래|위의)\s*(?:그림|도면|회로도|사진|이미지|투상도)|(?:그림|도면|회로도|사진|이미지)\s*(?:을|를|에서|으로)\s*(?:보고|판독|도시|표시|나타)|도시(?:한|된)\s*(?:그림|도면|회로도|사진|이미지|투상도)/i;
 const CALCULATION_CUE = /계산|구하|얼마|몇\s*(?:배|개|%|kW|W|MPa|kPa|bar|rpm|Hz|dB|mm|cm|m)|값은|비율|효율|동력|토크|유량|속도/i;
 const DIAGNOSIS_CUE = /고장|원인|대책|진단|이상|누설|점검|조치|설치|선정|조건|현상|방지/i;
 const NEGATIVE_CUE =

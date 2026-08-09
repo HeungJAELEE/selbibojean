@@ -21,8 +21,12 @@ export function createPracticePresentations(
   originalRatio: OriginalPracticeRatio,
   seed: number,
   shuffleChoices = true,
+  includeRepeatedOccurrences = false,
 ): PublicQuestion[] {
   const originalsByQuestion = getSafeOriginalsByQuestion(questions, variants);
+  const allOriginalsByQuestion = includeRepeatedOccurrences
+    ? getAllSafeOriginalsByQuestion(questions, variants)
+    : originalsByQuestion;
   const eligibleIds = questions
     .filter((question) => originalsByQuestion.has(question.id))
     .map((question) => question.id);
@@ -48,7 +52,24 @@ export function createPracticePresentations(
   return questions.map((question) => {
     if (!originalIds.has(question.id)) return toPracticePresentation(question, question.id, seed, shuffleChoices);
     const candidates = originalsByQuestion.get(question.id) ?? [];
-    const variant = candidates[stableIndex(`${seed}:${question.id}`, candidates.length)];
+    const representative =
+      candidates[stableIndex(`${seed}:${question.id}`, candidates.length)];
+    const matchingOccurrences = representative && includeRepeatedOccurrences
+      ? (allOriginalsByQuestion.get(question.id) ?? []).filter(
+          (variant) =>
+            normalizeText(variant.stem) === normalizeText(representative.stem),
+        )
+      : representative
+        ? [representative]
+        : [];
+    const variant = includeRepeatedOccurrences
+      ? matchingOccurrences[
+          stableIndex(
+            `${seed}:${question.id}:occurrence`,
+            matchingOccurrences.length,
+          )
+        ]
+      : representative;
     return variant
       ? toOriginalPublicQuestion(question, variant, seed, shuffleChoices)
       : toPracticePresentation(question, question.id, seed, shuffleChoices);
@@ -56,19 +77,35 @@ export function createPracticePresentations(
 }
 
 export function getSafeOriginalsByQuestion(questions: Question[], variants: Variant[]) {
+  const result = new Map<string, Variant[]>();
+
+  for (const [questionId, candidates] of getAllSafeOriginalsByQuestion(
+    questions,
+    variants,
+  )) {
+    const seenStems = new Set<string>();
+    const uniqueStems = candidates.filter((variant) => {
+      const stemKey = normalizeText(variant.stem);
+      if (seenStems.has(stemKey)) return false;
+      seenStems.add(stemKey);
+      return true;
+    });
+    result.set(questionId, uniqueStems);
+  }
+
+  return result;
+}
+
+export function getAllSafeOriginalsByQuestion(
+  questions: Question[],
+  variants: Variant[],
+) {
   const questionsById = new Map(questions.map((question) => [question.id, question]));
   const result = new Map<string, Variant[]>();
-  const seenStems = new Map<string, Set<string>>();
 
   for (const variant of variants) {
     const question = questionsById.get(variant.canonicalId);
     if (!question || !isSafeOriginalPracticeVariant(question, variant)) continue;
-
-    const stemKey = normalizeText(variant.stem);
-    const seen = seenStems.get(question.id) ?? new Set<string>();
-    if (seen.has(stemKey)) continue;
-    seen.add(stemKey);
-    seenStems.set(question.id, seen);
 
     const current = result.get(question.id) ?? [];
     current.push(variant);
@@ -77,6 +114,112 @@ export function getSafeOriginalsByQuestion(questions: Question[], variants: Vari
   }
 
   return result;
+}
+
+export function countPublishedReviewedVariantsBySubject(
+  questions: Question[],
+  variants: Variant[],
+  yearFrom?: number,
+  yearTo?: number,
+) {
+  const questionsById = new Map(
+    questions.map((question) => [question.id, question]),
+  );
+  const counts: Record<string, number> = {};
+
+  for (const variant of variants) {
+    if (
+      !variant.reviewed ||
+      variant.reviewState !== "published" ||
+      (yearFrom !== undefined &&
+        yearTo !== undefined &&
+        (variant.year === null ||
+          variant.year < yearFrom ||
+          variant.year > yearTo))
+    ) {
+      continue;
+    }
+    const question = questionsById.get(variant.canonicalId);
+    if (!question || !isSafeOriginalPracticeVariant(question, variant)) {
+      continue;
+    }
+    counts[question.subjectId] = (counts[question.subjectId] ?? 0) + 1;
+  }
+
+  return counts;
+}
+
+export function countPublicOriginalVariantsBySubject(
+  questions: Question[],
+  variants: Variant[],
+  yearFrom?: number,
+  yearTo?: number,
+) {
+  const questionsById = new Map(
+    questions.map((question) => [question.id, question]),
+  );
+  const counts: Record<string, number> = {};
+
+  for (const variant of variants) {
+    if (
+      yearFrom !== undefined &&
+      yearTo !== undefined &&
+      (variant.year === null || variant.year < yearFrom || variant.year > yearTo)
+    ) {
+      continue;
+    }
+    const question = questionsById.get(variant.canonicalId);
+    if (!question || !isPublicOriginalVariant(question, variant)) continue;
+    counts[question.subjectId] = (counts[question.subjectId] ?? 0) + 1;
+  }
+
+  return counts;
+}
+
+export function getPublishedReviewedVariantYears(
+  questions: Question[],
+  variants: Variant[],
+) {
+  const questionsById = new Map(
+    questions.map((question) => [question.id, question]),
+  );
+  const years = new Set<number>();
+
+  for (const variant of variants) {
+    if (
+      !variant.reviewed ||
+      variant.reviewState !== "published" ||
+      variant.year === null
+    ) {
+      continue;
+    }
+    const question = questionsById.get(variant.canonicalId);
+    if (question && isSafeOriginalPracticeVariant(question, variant)) {
+      years.add(variant.year);
+    }
+  }
+
+  return [...years].sort((left, right) => left - right);
+}
+
+export function getPublicOriginalVariantYears(
+  questions: Question[],
+  variants: Variant[],
+) {
+  const questionsById = new Map(
+    questions.map((question) => [question.id, question]),
+  );
+  const years = new Set<number>();
+
+  for (const variant of variants) {
+    if (variant.year === null) continue;
+    const question = questionsById.get(variant.canonicalId);
+    if (question && isPublicOriginalVariant(question, variant)) {
+      years.add(variant.year);
+    }
+  }
+
+  return [...years].sort((left, right) => left - right);
 }
 
 export function filterPracticeContentByYearRange(
@@ -118,6 +261,12 @@ export function isSafeOriginalPracticeVariant(question: Question, variant: Varia
     && answerIndex >= 0
     && mappedChoices[answerIndex]?.id === question.correctChoiceId,
   );
+}
+
+function isPublicOriginalVariant(question: Question, variant: Variant) {
+  if (!isSafeOriginalPracticeVariant(question, variant)) return false;
+  if (variant.reviewed) return variant.reviewState === "published";
+  return isPublishableQuestion(question);
 }
 
 function toPracticePresentation(
