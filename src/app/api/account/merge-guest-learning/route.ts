@@ -1,5 +1,13 @@
 import { NextResponse } from "next/server";
-import { getLesson, getQuestion } from "@/lib/content/repository";
+import {
+  getLesson,
+  getQuestion,
+  getQuestionVariant,
+} from "@/lib/content/repository";
+import {
+  gradeReviewedOriginalVariant,
+  isReviewedExactOriginalVariant,
+} from "@/lib/content/original-variant-practice";
 import {
   gradeQuestion,
   isPublishableLesson,
@@ -45,12 +53,33 @@ export async function POST(request: Request) {
     }
 
     try {
-      const feedback = gradeQuestion(
-        question,
-        attempt.selectedChoiceId,
-        attempt.selfRating,
-        lesson,
-      );
+      const variant = attempt.variantExternalId
+        ? await getQuestionVariant(attempt.variantExternalId)
+        : undefined;
+      if (
+        attempt.variantExternalId
+        && (
+          !variant
+          || variant.canonicalId !== question.id
+          || !isReviewedExactOriginalVariant(variant)
+        )
+      ) {
+        return NextResponse.json({ error: MERGE_ERROR }, { status: 409 });
+      }
+      const feedback = variant
+        ? gradeReviewedOriginalVariant(
+            question,
+            variant,
+            attempt.selectedChoiceId,
+            attempt.selfRating,
+            lesson,
+          )
+        : gradeQuestion(
+            question,
+            attempt.selectedChoiceId,
+            attempt.selfRating,
+            lesson,
+          );
       sanitized.push({
         ...attempt,
         isCorrect: feedback.isCorrect,

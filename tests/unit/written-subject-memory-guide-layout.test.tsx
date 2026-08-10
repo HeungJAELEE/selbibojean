@@ -50,6 +50,16 @@ describe("WrittenSubjectMemoryGuide hierarchy", () => {
     expect(screen.getByText(/대주제 01/)).toBeVisible();
     expect(screen.getByText("중주제 01")).toBeVisible();
     expect(screen.getAllByText("중주제 종합 정리")[0]).toBeVisible();
+    const summaryTable = screen.getByRole("region", {
+      name: "중주제 A 핵심 정리 표. 좌우로 드래그해 확인",
+    });
+    expect(summaryTable).toHaveAttribute("tabindex", "0");
+    expect(summaryTable).toHaveClass(
+      "overflow-x-auto",
+      "overscroll-x-contain",
+      "touch-pan-x",
+      "[-webkit-overflow-scrolling:touch]",
+    );
     expect(screen.getByText("소주제 선택")).toBeVisible();
     const subtopicLinks = screen.getAllByRole("link", { name: /소주제 A/ });
     expect(subtopicLinks).toHaveLength(2);

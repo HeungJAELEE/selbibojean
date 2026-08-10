@@ -64,14 +64,9 @@ function evidence(
 
 const subject1Core: ExamSummaryItem[] = [
   {
-    cue: "릴리프밸브",
-    answer: "설정압력 이상에서 탱크로 유량을 보내 회로 최고압력을 제한한다.",
-    conceptId: "PCON-SUP-007",
-    evidence: evidence(["EXP-SUP-007"]),
-  },
-  {
-    cue: "감압밸브",
-    answer: "분기된 회로의 2차측 압력을 설정값으로 낮춰 유지한다.",
+    cue: "릴리프밸브 / 감압밸브",
+    answer:
+      "릴리프밸브는 회로 최고압력을 제한하고, 감압밸브는 분기 회로의 2차측 압력을 낮춰 유지한다.",
     conceptId: "PCON-SUP-007",
     evidence: evidence(["EXP-SUP-007"]),
   },
@@ -135,6 +130,12 @@ const subject1Core: ExamSummaryItem[] = [
     conceptId: "PCON-032",
     evidence: evidence(["P-2025-1-Q03"]),
   },
+  {
+    cue: "송풍기 동력 상사법칙",
+    answer: "같은 송풍기·동일 유체·동일 효율이면 동력은 회전수의 세제곱에 비례한다.",
+    conceptId: "PCON-SUP-003",
+    evidence: evidence(["P-2026-2-Q03"]),
+  },
 ];
 
 const subject2Core: ExamSummaryItem[] = [
@@ -169,16 +170,11 @@ const subject2Core: ExamSummaryItem[] = [
     evidence: evidence(["EXP-W03"]),
   },
   {
-    cue: "VT / PT / MT",
-    answer: "VT는 외관, PT는 표면개구, MT는 강자성체의 표면·표면근처 결함 검사다.",
+    cue: "VT / PT / MT / UT / RT",
+    answer:
+      "VT는 외관, PT는 표면개구, MT는 강자성체 표면·표면근처, UT·RT는 내부 결함 검사에 쓴다.",
     conceptId: "PCON-045",
-    evidence: evidence(["P-2025-1-Q09"]),
-  },
-  {
-    cue: "UT / RT",
-    answer: "UT와 RT는 내부 결함을 검사하며 재료·두께·접근성에 맞춰 선택한다.",
-    conceptId: "PCON-045",
-    evidence: evidence(["P-2025-1-Q09"]),
+    evidence: evidence(["EXP-VIS-RT-FILM-01"]),
   },
   {
     cue: "WPS",
@@ -209,6 +205,12 @@ const subject2Core: ExamSummaryItem[] = [
     answer: "유해물질과 산소농도를 먼저 확인하고 산소결핍에는 공기정화식을 쓰지 않는다.",
     conceptId: "PCON-016",
     evidence: evidence(["P-2025-2-Q08"]),
+  },
+  {
+    cue: "연삭숫돌 시운전",
+    answer: "작업 시작 전 1분 이상, 숫돌 교체 후 3분 이상 시운전하고 파편 비산 방지 덮개를 갖춘다.",
+    conceptId: "PCON-SUP-043",
+    evidence: evidence(["P-2026-2-Q06"]),
   },
 ];
 

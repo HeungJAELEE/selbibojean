@@ -154,6 +154,17 @@ export type ApprovedQuestionReview = {
   calculation?: ApprovedCalculationFeedback;
 };
 
+export type OriginalVariantReview = {
+  answerConfidence: "confirmed" | "likely" | "conflict" | "unknown";
+  directSolution: string;
+  calculation: ApprovedCalculationFeedback | null;
+  choiceByChoiceReasons: string[];
+  conceptKeywords: string[];
+  theorySupplement: string;
+  imageRequirement: "none" | "required" | "source_image_missing";
+  answerConflictOrMultipleAnswerRisk: string | null;
+};
+
 export type Question = {
   id: string;
   canonicalNumber: number;
@@ -361,6 +372,8 @@ export type GeneratedContent = {
     reviewStatus: string;
     verificationNote: string;
     shufflePolicy?: "all" | "none" | "except_fixed";
+    sourceFidelity?: "exact" | "normalized_exact" | "mismatch" | "unreachable";
+    sourceReview?: OriginalVariantReview;
   }>;
   backlog: Array<Record<string, string | number | null>>;
   report: ImportReport;

@@ -3,6 +3,11 @@ import {
   isWeldingCbtAnswerReviewPublishable,
 } from "@/data/source/welding-cbt-answer-review";
 import { WELDING_CBT_LESSON_PROJECTION } from "@/data/source/welding-cbt-lesson-projection";
+import {
+  getOriginalVariantChoiceId,
+  isReviewedExactOriginalVariant,
+  parseOriginalVariantAnswerIndex,
+} from "@/lib/content/original-variant-practice";
 import type { GeneratedContent } from "@/lib/domain/types";
 import { isPublishableQuestion } from "@/lib/domain/practice";
 
@@ -210,12 +215,21 @@ function collectVerifiedPastExamExamples(
     ) {
       continue;
     }
-    const mappedChoices = mapVariantChoices(question, variant.choices);
-    const answerIndex = parseVariantAnswerIndex(variant.answer, variant.choices);
+    const reviewedExact = isReviewedExactOriginalVariant(variant);
+    const mappedChoices = reviewedExact
+      ? variant.choices.map((_, index) =>
+          getOriginalVariantChoiceId(variant.externalId, index))
+      : mapVariantChoices(question, variant.choices)?.map((choice) => choice.id);
+    const answerIndex = reviewedExact
+      ? parseOriginalVariantAnswerIndex(variant)
+      : parseVariantAnswerIndex(variant.answer, variant.choices);
     if (
       !mappedChoices
       || answerIndex < 0
-      || mappedChoices[answerIndex]?.id !== question.correctChoiceId
+      || (
+        !reviewedExact
+        && mappedChoices[answerIndex] !== question.correctChoiceId
+      )
     ) {
       continue;
     }
@@ -229,7 +243,7 @@ function collectVerifiedPastExamExamples(
       questionNumber: variant.questionNumber,
       stem: variant.stem.trim(),
       choices: variant.choices.map((choice) => choice.trim()).filter(Boolean),
-      choiceIds: mappedChoices.map((choice) => choice.id),
+      choiceIds: mappedChoices,
       sourceUrl: variant.sourceUrl,
       format,
       score: challengeScore(variant.stem, variant.choices, format),

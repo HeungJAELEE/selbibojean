@@ -236,14 +236,14 @@ export async function POST(request: Request) {
         .select("id,external_id")
             .in("external_id", selectedQuestionIds)
         : { data: [], error: null };
-    const canPersistAccountSession =
+    const hasCompleteQuestionMapping =
       !storedQuestionError &&
       hasCompletePracticeQuestionMapping(
         selectedQuestionIds,
         storedQuestions ?? [],
       );
 
-    if (!canPersistAccountSession) {
+    if (!hasCompleteQuestionMapping) {
       storageNotice =
         "일부 신규 문항이 계정 저장소와 동기화되기 전이라 이번 기록은 이 기기에 저장됩니다.";
     } else {
@@ -263,8 +263,16 @@ export async function POST(request: Request) {
           item.id as string,
         ]),
       );
+      const hasCompleteVariantMapping = variantExternalIds.every((externalId) =>
+        variantByExternalId.has(externalId),
+      );
 
-      const { error } = await supabase.from("practice_sessions").insert({
+      if (!hasCompleteVariantMapping) {
+        storageNotice =
+          "원문 회차 문항이 계정 저장소와 아직 동기화되지 않아 이번 기록은 이 기기에 저장됩니다.";
+      } else {
+
+        const { error } = await supabase.from("practice_sessions").insert({
         id: sessionId,
         user_id: auth.user.id,
         filter: { ...parsed.data, shuffleChoices },
@@ -273,15 +281,15 @@ export async function POST(request: Request) {
         status: "active",
         shuffle_choices: shuffleChoices,
         session_seed: seed,
-      });
-      if (error) {
-        return NextResponse.json(
-          { error: "학습 세션을 저장하지 못했습니다." },
-          { status: 503 },
-        );
-      }
+        });
+        if (error) {
+          return NextResponse.json(
+            { error: "학습 세션을 저장하지 못했습니다." },
+            { status: 503 },
+          );
+        }
 
-      const items = selected.questions
+        const items = selected.questions
         .map((question, index) => {
           const questionId = storedByExternalId.get(question.id);
           if (!questionId) return null;
@@ -297,40 +305,41 @@ export async function POST(request: Request) {
           };
         })
         .filter((item): item is NonNullable<typeof item> => Boolean(item));
-      const { error: itemError } = items.length
-        ? await supabase.from("practice_session_items").insert(items)
-        : { error: null };
-      if (itemError) {
-        await supabase.from("practice_sessions").delete().eq("id", sessionId);
-        return NextResponse.json(
-          { error: "문항 순서를 저장하지 못했습니다." },
-          { status: 503 },
-        );
-      }
+        const { error: itemError } = items.length
+          ? await supabase.from("practice_session_items").insert(items)
+          : { error: null };
+        if (itemError) {
+          await supabase.from("practice_sessions").delete().eq("id", sessionId);
+          return NextResponse.json(
+            { error: "문항 순서를 저장하지 못했습니다." },
+            { status: 503 },
+          );
+        }
 
-      if (!admin) {
-        await supabase.from("practice_sessions").delete().eq("id", sessionId);
-        return NextResponse.json(
-          { error: "계정 활동을 저장하지 못했습니다." },
-          { status: 503 },
+        if (!admin) {
+          await supabase.from("practice_sessions").delete().eq("id", sessionId);
+          return NextResponse.json(
+            { error: "계정 활동을 저장하지 못했습니다." },
+            { status: 503 },
+          );
+        }
+        const { data: touched, error: touchError } = await admin.rpc(
+          "touch_account_activity",
+          {
+            p_user_id: auth.user.id,
+            p_event: "practice_session",
+            p_reference_id: sessionId,
+          },
         );
+        if (touchError || !Array.isArray(touched) || touched.length !== 1) {
+          await supabase.from("practice_sessions").delete().eq("id", sessionId);
+          return NextResponse.json(
+            { error: "계정 활동을 저장하지 못했습니다." },
+            { status: 503 },
+          );
+        }
+        storage = "account";
       }
-      const { data: touched, error: touchError } = await admin.rpc(
-        "touch_account_activity",
-        {
-          p_user_id: auth.user.id,
-          p_event: "practice_session",
-          p_reference_id: sessionId,
-        },
-      );
-      if (touchError || !Array.isArray(touched) || touched.length !== 1) {
-        await supabase.from("practice_sessions").delete().eq("id", sessionId);
-        return NextResponse.json(
-          { error: "계정 활동을 저장하지 못했습니다." },
-          { status: 503 },
-        );
-      }
-      storage = "account";
     }
   }
 

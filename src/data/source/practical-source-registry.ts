@@ -86,7 +86,7 @@ const OUTPUT_HASH_BY_PATH: Record<string, string> = {
   "/practical/diagrams/external-gear-pump-drawing.svg":
     "457e373ff493d7ea92600aa5a7c8621581593a83214fcb5ec370551f15a5008e",
   "/practical/diagrams/ghs-pictograms-problem.svg":
-    "2f2f3d7705e87dd403e3d74320a9bb6da3105899094f9d4a09cc997a1aa2e0bb",
+    "46d1903baa7170435687df1b3722350dacecd564100a0a6f63eb23e72e4dcf82",
   "/practical/diagrams/grinding-wheel-safety.svg":
     "8a0c116041def4c0215796e7d8dd26b18da1c290a348c8476a393302113685e7",
   "/practical/diagrams/m18-thread-reconstruction.svg":

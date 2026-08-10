@@ -1,6 +1,8 @@
 import { PracticalQuestionSections } from "@/components/practical-question-sections";
+import { PracticalRecallRegistry } from "@/components/practical-recall-registry";
 import { PageHeading } from "@/components/page-heading";
 import { PracticalWrittenSectionNav } from "@/components/practical-written-section-nav";
+import { getPublicPracticalRecallRegistry } from "@/data/source/practical-question-recall-evidence";
 import {
   getPracticalContent,
   publicPracticalQuestions,
@@ -9,6 +11,7 @@ import {
 export default async function PracticalPastPage() {
   const content = await getPracticalContent();
   const questions = publicPracticalQuestions("past");
+  const recallRegistry = getPublicPracticalRecallRegistry();
   return (
     <div className="page-wrap py-12">
       <PageHeading
@@ -21,6 +24,7 @@ export default async function PracticalPastPage() {
         categories={content.studyCategories}
         questions={questions}
       />
+      <PracticalRecallRegistry entries={recallRegistry} />
     </div>
   );
 }

@@ -1,13 +1,23 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
-import { PRACTICAL_WRITTEN_EXAM_CARD_SEEDS } from "@/data/source/practical-written-exam-cards";
+import { describe, expect, it, vi } from "vitest";
+import {
+  PRACTICAL_WRITTEN_EXAM_CARD_SEEDS,
+  PRACTICAL_WRITTEN_FEATURED_CALCULATION_AND_SAFETY_PAST_IDS,
+} from "@/data/source/practical-written-exam-cards";
 import { PRACTICAL_VISUAL_AIDS } from "@/data/source/practical-source-registry";
+import {
+  getPracticalWrittenExamCards,
+  publicPracticalQuestions,
+} from "@/lib/content/practical-repository";
+import { toPublicPracticalQuestion } from "@/lib/domain/practical";
 import type {
   PracticalContent,
   PracticalQuestion,
 } from "@/lib/domain/practical-types";
 import type { PracticalWrittenGovernanceManifest } from "@/lib/domain/practical-execution-types";
+
+vi.mock("server-only", () => ({}));
 
 const [content, governance] = await Promise.all([
   readFile(
@@ -39,7 +49,46 @@ const questionsFor = (ids: string[]): PracticalQuestion[] =>
   });
 
 describe("practical written exam-first cards", () => {
-  it("defines the forty representative exam cards exactly once", () => {
+  it("links every featured calculation and safety-law recall to a public question and exam card", async () => {
+    const featuredIds = [
+      ...PRACTICAL_WRITTEN_FEATURED_CALCULATION_AND_SAFETY_PAST_IDS,
+    ];
+    const publicPastQuestions = publicPracticalQuestions("past");
+    const publicPastIds = new Set(
+      publicPastQuestions.map((question) => question.id),
+    );
+    const cards = await getPracticalWrittenExamCards();
+
+    expect(new Set(featuredIds).size).toBe(featuredIds.length);
+    expect(featuredIds).toEqual([
+      "P-2026-2-Q03",
+      "P-2026-2-Q06",
+      "P-2025-1-Q09",
+      "P-2025-2-Q08",
+      "P-2025-2-Q09",
+      "P-2025-3-Q02",
+      "P-2026-1-Q02",
+    ]);
+
+    for (const questionId of featuredIds) {
+      const question = publicPastQuestions.find(
+        (candidate) => candidate.id === questionId,
+      );
+      expect(publicPastIds.has(questionId), questionId).toBe(true);
+      expect(question?.occurrence, questionId).not.toBeNull();
+      expect(question, questionId).toBeDefined();
+      expect(
+        "modelAnswer" in toPublicPracticalQuestion(question!),
+        `${questionId} leaks modelAnswer`,
+      ).toBe(false);
+      expect(
+        cards.some((card) => card.pastQuestionIds.includes(questionId)),
+        `${questionId} missing written exam card`,
+      ).toBe(true);
+    }
+  });
+
+  it("defines the forty-two representative exam cards exactly once", () => {
     expect(PRACTICAL_WRITTEN_EXAM_CARD_SEEDS).toHaveLength(42);
     expect(
       new Set(PRACTICAL_WRITTEN_EXAM_CARD_SEEDS.map((card) => card.id)).size,

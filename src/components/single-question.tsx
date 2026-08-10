@@ -104,6 +104,7 @@ function QuestionAnswerForm({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           questionId: question.id,
+          variantExternalId: question.provenance.exam?.externalId,
           choiceId: choice,
           selfRating: "unsure",
           attemptKind: "initial",

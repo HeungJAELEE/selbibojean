@@ -12,6 +12,9 @@ import {
   PRACTICAL_WRITTEN_EXAM_CARD_SEEDS,
 } from "@/data/source/practical-written-exam-cards";
 import {
+  PRACTICAL_WRITTEN_EXAM_CARD_EDITORIAL_BY_QUESTION_ID,
+} from "@/data/source/practical-written-gpt-editorial";
+import {
   getPracticalTextbookPlacement,
   getPracticalTextbookStudyType as getPracticalTextbookStudyTypeRecord,
   getPracticalTextbookSubject as getPracticalTextbookSubjectRecord,
@@ -162,6 +165,11 @@ const generatedPastExamCards: PracticalWrittenExamCard[] =
       ) === index,
   )
   .map((question) => {
+    const editorial =
+      PRACTICAL_WRITTEN_EXAM_CARD_EDITORIAL_BY_QUESTION_ID.get(question.id);
+    if (!editorial) {
+      throw new Error(`필답 기출 카드 편집 원고가 없습니다: ${question.id}`);
+    }
     const samePastQuestions = uncoveredPastQuestions.filter(
       (candidate) =>
         candidate.title === question.title &&
@@ -202,27 +210,12 @@ const generatedPastExamCards: PracticalWrittenExamCard[] =
       directAnswer: question.modelAnswer,
       studyKeywords: question.requiredKeywords.slice(0, 5),
       keywordLinks,
-      answerSkeleton:
-        question.calculation.length > 0
-          ? question.calculation.slice(0, 4)
-          : question.rubric.map((item) => item.label).slice(0, 4),
-      recognitionPoints:
-        question.requiredKeywords.length > 0
-          ? question.requiredKeywords
-              .slice(0, 3)
-              .map((keyword) => `문제 조건에서 ‘${keyword}’ 단서를 찾습니다.`)
-          : ["요구 동사와 조건을 먼저 표시합니다."],
-      reasoningSummary: [
-        "문제에서 요구한 명칭·조건·관계를 답안 키워드와 연결합니다.",
-        "기출 답안을 외운 뒤 숫자·순서·설비가 바뀐 예상문제로 다시 확인합니다.",
-      ],
-      commonWrongAnswers: question.traps.slice(0, 3),
-      variationAxes: [
-        "수치와 단위 변경",
-        "요구 항목 수 변경",
-        "정의와 적용 사례 결합",
-        "인접 개념과 비교",
-      ],
+      answerSkeleton: editorial.answerSkeleton,
+      recognitionPoints: editorial.recognitionPoints,
+      reasoningSummary: editorial.reasoningSummary,
+      conceptBridge: editorial.conceptBridge,
+      commonWrongAnswers: editorial.commonWrongAnswers,
+      variationAxes: editorial.variationAxes,
       pastQuestionIds: samePastQuestions.map((item) => item.id),
       variantQuestionIds: relatedPredicted.slice(0, 1).map((item) => item.id),
       predictedQuestionIds: relatedPredicted.map((item) => item.id),

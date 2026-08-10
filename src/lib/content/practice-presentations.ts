@@ -1,4 +1,9 @@
 import type { GeneratedContent, PublicQuestion, Question } from "@/lib/domain/types";
+import {
+  isReviewedExactOriginalVariant,
+  parseOriginalVariantAnswerIndex,
+  toReviewedOriginalPublicQuestion,
+} from "@/lib/content/original-variant-practice";
 import { isUsablePastExamVariant } from "@/lib/content/past-exam-examples";
 import { orderPracticeChoices } from "@/lib/content/practice-choice-order";
 import { shuffleQuestionIds, toPublicQuestion } from "@/lib/domain/practice";
@@ -81,8 +86,9 @@ export function filterPracticeContentByYearRange(
 
 export function isSafeOriginalPracticeVariant(question: Question, variant: Variant) {
   if (!isUsablePastExamVariant(variant)) return false;
+  if (isReviewedExactOriginalVariant(variant)) return true;
   const mappedChoices = mapVariantChoices(question, variant);
-  const answerIndex = parseVariantAnswerIndex(variant);
+  const answerIndex = parseOriginalVariantAnswerIndex(variant);
 
   return Boolean(
     mappedChoices
@@ -112,6 +118,15 @@ function toOriginalPublicQuestion(
   seed: number,
   shuffleChoices: boolean,
 ): PublicQuestion {
+  if (isReviewedExactOriginalVariant(variant)) {
+    return toReviewedOriginalPublicQuestion(
+      question,
+      variant,
+      seed,
+      shuffleChoices,
+    );
+  }
+
   const publicQuestion = toPublicQuestion(question);
   const mappedChoices = mapVariantChoices(question, variant);
   if (!mappedChoices || variant.year === null) return toPracticePresentation(question, question.id, seed, shuffleChoices);
@@ -151,22 +166,6 @@ function mapVariantChoices(question: Question, variant: Variant) {
   if (mapped.some((choice) => !choice)) return null;
   const complete = mapped.filter((choice): choice is Question["choices"][number] => Boolean(choice));
   return new Set(complete.map((choice) => choice.id)).size === complete.length ? complete : null;
-}
-
-function parseVariantAnswerIndex(variant: Variant) {
-  const circled = ["①", "②", "③", "④", "⑤"];
-  const bySymbol = circled.findIndex((symbol) => variant.answer.startsWith(symbol));
-  if (bySymbol >= 0) return bySymbol;
-  const number = variant.answer.match(/^([1-5])/);
-  if (number) return Number(number[1]) - 1;
-
-  const normalizedAnswer = normalizeText(variant.answer.replace(/^[①②③④⑤1-5][.)]?\s*/, ""));
-  return variant.choices.findIndex((choice) => {
-    const normalizedChoice = normalizeText(choice);
-    return normalizedChoice === normalizedAnswer
-      || normalizedChoice.includes(normalizedAnswer)
-      || normalizedAnswer.includes(normalizedChoice);
-  });
 }
 
 function normalizeText(value: string) {

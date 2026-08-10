@@ -125,6 +125,7 @@ function PastExamQuestionCard({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           questionId: example.canonicalId,
+          variantExternalId: example.externalId,
           choiceId: selectedChoiceId,
           selfRating: "unsure",
           attemptKind: "initial",

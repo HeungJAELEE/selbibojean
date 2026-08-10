@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageHeading } from "@/components/page-heading";
 import { PracticalWrittenSectionNav } from "@/components/practical-written-section-nav";
+import { PRACTICAL_WRITTEN_FEATURED_CALCULATION_AND_SAFETY_PAST_IDS } from "@/data/source/practical-written-exam-cards";
 import {
   getPracticalContent,
   getPracticalTextbookSubjects,
@@ -14,8 +15,16 @@ export default async function PracticalWrittenPage() {
     getPracticalContent(),
     getPracticalTextbookSubjects(),
   ]);
-  const pastCount = publicPracticalQuestions("past").length;
+  const publicPastQuestions = publicPracticalQuestions("past");
+  const pastCount = publicPastQuestions.length;
   const predictedCount = publicPracticalQuestions("predicted").length;
+  const publicPastQuestionsById = new Map(
+    publicPastQuestions.map((question) => [question.id, question]),
+  );
+  const featuredCalculationAndSafetyQuestions =
+    PRACTICAL_WRITTEN_FEATURED_CALCULATION_AND_SAFETY_PAST_IDS.map(
+      (questionId) => publicPastQuestionsById.get(questionId),
+    ).filter((question) => question !== undefined);
 
   return (
     <div className="page-wrap py-12" data-testid="practical-written-hub">
@@ -65,6 +74,60 @@ export default async function PracticalWrittenPage() {
             기출복원으로 이동
           </span>
         </Link>
+      </section>
+
+      <section
+        className="mt-10 rounded-3xl border border-amber-200 bg-amber-50/60 p-6 md:p-8"
+        aria-labelledby="practical-written-featured-standards-title"
+        data-testid="practical-written-featured-standards"
+      >
+        <p className="text-xs font-extrabold text-[#8f3f0a]">
+          계산·안전 기준 기출
+        </p>
+        <h2
+          id="practical-written-featured-standards-title"
+          className="mt-2 text-2xl font-extrabold text-slate-950"
+        >
+          숫자와 기준을 정확히 쓰는 문제부터 연습합니다
+        </h2>
+        <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-700">
+          송풍기 동력 계산과 연삭숫돌 시운전, 안전표지·GHS·호흡보호구·LOTO처럼
+          실제 복원 기출에서 수치와 안전 기준을 직접 쓰는 문제를 모았습니다.
+          문제를 먼저 풀고 제출한 뒤 정답 근거와 연결 개념을 확인할 수 있습니다.
+        </p>
+        <div className="mt-6 grid gap-3 md:grid-cols-2">
+          {featuredCalculationAndSafetyQuestions.map((question) => (
+            <Link
+              key={question.id}
+              href={`/practical/written/question/${question.id}`}
+              className="rounded-2xl border border-amber-200 bg-white p-5 transition hover:border-[#16697a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16697a] focus-visible:ring-offset-2"
+              data-testid={`featured-written-question-${question.id}`}
+            >
+              <div className="flex flex-wrap items-center gap-2 text-xs font-extrabold">
+                <span className="rounded-full bg-[#eaf7f6] px-3 py-1 text-[#16697a]">
+                  {question.id === "P-2026-2-Q03"
+                    ? "계산 기출"
+                    : "안전·법규 기출"}
+                </span>
+                {question.occurrence ? (
+                  <span className="text-slate-500">
+                    {question.occurrence.year}년 {question.occurrence.round}회 ·{" "}
+                    {question.occurrence.questionNumber}
+                  </span>
+                ) : null}
+              </div>
+              <h3 className="mt-3 text-lg font-extrabold text-slate-950">
+                {question.title}
+              </h3>
+              <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">
+                {question.stem}
+              </p>
+              <span className="mt-4 inline-flex text-sm font-extrabold text-[#16697a]">
+                필답형으로 풀기 →
+              </span>
+            </Link>
+          ))}
+        </div>
       </section>
 
       <section className="mt-10">

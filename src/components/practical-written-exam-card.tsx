@@ -163,6 +163,33 @@ export function PracticalWrittenExamCardView({
           </section>
         ) : null}
 
+        {card.conceptBridge ? (
+          <section className="rounded-2xl border border-teal-200 bg-teal-50 p-5 md:p-6">
+            <p className="text-xs font-black uppercase tracking-[0.14em] text-teal-700">
+              Concept bridge
+            </p>
+            <h3 className="mt-2 text-lg font-extrabold text-teal-950">
+              개념과 기출을 이렇게 연결하세요
+            </h3>
+            <dl className="mt-4 grid gap-3 text-sm leading-7 text-slate-700">
+              <div className="rounded-xl bg-white p-4">
+                <dt className="font-extrabold text-teal-900">정의에서 확인</dt>
+                <dd className="mt-1">{card.conceptBridge.definitionSupport}</dd>
+              </div>
+              <div className="rounded-xl bg-white p-4">
+                <dt className="font-extrabold text-teal-900">원리와 배경</dt>
+                <dd className="mt-1">{card.conceptBridge.backgroundSupport}</dd>
+              </div>
+              <div className="rounded-xl bg-white p-4">
+                <dt className="font-extrabold text-teal-900">
+                  시험에서 묻는 방식
+                </dt>
+                <dd className="mt-1">{card.conceptBridge.examPattern}</dd>
+              </div>
+            </dl>
+          </section>
+        ) : null}
+
         <section
           aria-labelledby={`${card.id}-past-question`}
           className="rounded-2xl border border-slate-200 p-5 md:p-6"

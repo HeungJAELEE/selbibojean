@@ -182,6 +182,11 @@ export type PracticalWrittenExamCard = {
   answerSkeleton: string[];
   recognitionPoints: string[];
   reasoningSummary: string[];
+  conceptBridge?: {
+    definitionSupport: string;
+    backgroundSupport: string;
+    examPattern: string;
+  };
   commonWrongAnswers: string[];
   variationAxes: string[];
   pastQuestionIds: string[];

@@ -933,6 +933,28 @@ test("all subject memory guides fit 390, 1024, and 1440px and keep keyboard disc
         ),
       ).toBe(true);
 
+      if (width === 390) {
+        const summaryTable = guide.locator(
+          '[data-testid^="subject-"][data-testid*="-table-"]:visible',
+        ).first();
+        await expect(summaryTable).toBeVisible();
+        const scrollState = await summaryTable.evaluate((element) => {
+          const container = element as HTMLElement;
+          const before = container.scrollLeft;
+          container.scrollLeft = 160;
+          return {
+            before,
+            after: container.scrollLeft,
+            clientWidth: container.clientWidth,
+            scrollWidth: container.scrollWidth,
+            touchAction: getComputedStyle(container).touchAction,
+          };
+        });
+        expect(scrollState.scrollWidth).toBeGreaterThan(scrollState.clientWidth);
+        expect(scrollState.after).toBeGreaterThan(scrollState.before);
+        expect(scrollState.touchAction).toBe("pan-x");
+      }
+
       const disclosure = guide.locator("details:visible").first();
       const summary = disclosure.locator(":scope > summary");
       const wasOpen = (await disclosure.getAttribute("open")) !== null;

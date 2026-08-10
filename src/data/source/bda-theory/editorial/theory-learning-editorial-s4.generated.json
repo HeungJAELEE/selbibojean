@@ -1,0 +1,3433 @@
+[
+  {
+    "theoryNodeId": "T-S4-002",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "machine_learning"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "이 노드는 계산식 자체보다 결정계수가 무엇을 비교하는 비율인지 해석하는 데 초점을 둔다."
+      }
+    ],
+    "oneLineMeaning": "결정계수 R²는 기준 모형인 평균 예측과 비교해 회귀 모형이 결과값의 변동을 얼마나 줄여 설명했는지를 나타내는 지표다.",
+    "whyItMatters": "R²가 크다는 말만으로 좋은 예측 모형이라고 단정하지 않고, 데이터 범위·검증 방식·잔차와 함께 해석해야 회귀 성능을 올바르게 판단할 수 있다.",
+    "plainLanguageExplanation": [
+      "결과값들이 평균 주위에 흩어진 정도가 전체 변동량이다. 회귀 모형이 평균만 찍는 것보다 오차를 줄였다면 그만큼 변동을 설명한 것으로 본다.",
+      "훈련 자료에서 절편을 포함한 보통의 최소제곱 회귀는 R²가 0과 1 사이인 경우가 많다. 그러나 테스트 자료에서 계산하거나 절편을 빼면 0보다 작을 수도 있으므로 범위를 무조건 0~1로 외우면 안 된다.",
+      "R²는 설명된 변동의 비율이지 인과관계, 계수의 유의성, 새 데이터 예측력 자체를 증명하는 값이 아니다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "R²",
+        "meaning": "평균 예측을 기준으로 모형이 줄인 제곱오차의 상대적 비율"
+      },
+      {
+        "symbol": "SST",
+        "meaning": "관측값과 관측값 평균 사이의 제곱편차 합인 전체 변동량"
+      },
+      {
+        "symbol": "SSE",
+        "meaning": "관측값과 모형 예측값 사이의 제곱오차 합"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "먼저 회귀 문제인지, 그리고 R²가 훈련 자료인지 별도 검증 자료인지 확인한다.",
+      "비교 기준이 관측값 평균인지 확인하고 R²가 음수일 가능성도 열어 둔다.",
+      "R²만 보지 말고 MAE·RMSE, 잔차 진단, 교차검증 성능을 함께 확인한다."
+    ],
+    "beginnerTraps": [
+      "R²=0.8은 예측이 80% 정확하다는 뜻이 아니라 관측값 변동의 80%를 모형이 설명했다는 뜻이다.",
+      "R²가 높아도 누수·과적합·잘못된 함수 형태가 있으면 새 데이터 예측은 나쁠 수 있다.",
+      "R²가 음수이면 계산 오류라고 단정하지 않는다. 기준 평균 예측보다 못한 검증 예측에서는 음수가 가능하다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-002 lines 43-44: 결정계수와 변동량의 의미",
+      "editorial review: R²의 기준 모형, 음수 가능성, 비인과적 해석 교정"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-003",
+    "primaryProfile": "formula_calculation",
+    "secondaryCapabilities": [
+      "comparison"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "절편을 포함한 최소제곱 회귀에서는 전체 제곱합 SST가 회귀가 설명한 제곱합 SSR과 남은 오차 제곱합 SSE로 분해된다.",
+    "whyItMatters": "SST=SSR+SSE 구조를 이해하면 R² 공식이 왜 설명된 변동의 비율인지 계산과 해석을 함께 연결할 수 있다.",
+    "plainLanguageExplanation": [
+      "SST는 실제값이 전체 평균에서 얼마나 흩어졌는지, SSR은 예측값이 평균에서 얼마나 움직여 그 흩어짐을 설명했는지, SSE는 실제값과 예측값 사이에 얼마가 남았는지를 뜻한다.",
+      "절편이 있는 동일 자료의 최소제곱 적합에서는 SST=SSR+SSE가 성립한다. 절편이 없거나 다른 손실로 적합한 모형에는 이 분해를 그대로 적용할 수 없다.",
+      "교재마다 RSS를 회귀제곱합 또는 잔차제곱합의 약자로 다르게 쓰므로 시험에서는 약자보다 식과 정의를 확인한다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "SST",
+        "meaning": "Σ(yᵢ-ȳ)², 전체 제곱합"
+      },
+      {
+        "symbol": "SSR",
+        "meaning": "Σ(ŷᵢ-ȳ)², 회귀가 설명한 제곱합"
+      },
+      {
+        "symbol": "SSE",
+        "meaning": "Σ(yᵢ-ŷᵢ)², 잔차 또는 오차 제곱합"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "변동량 분해로 R² 구하기",
+        "setup": "절편을 포함한 최소제곱 회귀에서 SST=100이고 SSE=20이라고 하자.",
+        "steps": [
+          "SSR=SST-SSE=100-20=80을 구한다.",
+          "R²=SSR/SST=80/100=0.8 또는 1-SSE/SST=0.8로 계산한다."
+        ],
+        "result": "모형은 이 자료의 전체 변동 중 80%를 설명하고 20%는 잔차로 남겼다."
+      }
+    ],
+    "decisionSteps": [
+      "문제에서 SST·SSR·SSE가 각각 어떤 제곱합으로 정의되었는지 확인한다.",
+      "절편을 포함한 최소제곱 회귀라는 조건이면 SST=SSR+SSE를 사용한다.",
+      "R²는 SSR/SST 또는 1-SSE/SST로 계산하고 설명된 변동의 비율로 해석한다."
+    ],
+    "beginnerTraps": [
+      "SSR과 SSE의 약자를 이름만 보고 바꾸어 넣지 않는다. 교재 표기 차이가 있으므로 반드시 식을 본다.",
+      "SST=SSR+SSE를 모든 회귀 모형과 모든 평가 자료에서 자동으로 적용하지 않는다.",
+      "제곱합이 작다는 사실과 평균 오차의 단위가 작다는 사실을 혼동하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-003 lines 45-71: SST, SSR, SSE 변동량 분해",
+      "editorial review: 절편 포함 OLS 조건과 RSS 표기 혼동 보완"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-004",
+    "primaryProfile": "formula_calculation",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "결정계수는 R²=1-SSE/SST로 계산하며, 평균 예측보다 모형이 제곱오차를 얼마나 줄였는지를 나타낸다.",
+    "whyItMatters": "공식의 분자와 분모를 정확히 구분하고 예외 조건을 알면 R²를 정확도나 인과 효과로 오해하지 않을 수 있다.",
+    "plainLanguageExplanation": [
+      "SSE/SST는 평균 예측과 비교했을 때 아직 남은 오차의 비율이다. 이를 1에서 빼면 모형이 줄인 오차의 비율인 R²가 된다.",
+      "절편을 포함해 같은 자료에 최소제곱으로 적합한 모형에서는 R²=SSR/SST도 쓸 수 있다. 이 조건이 없으면 두 표현의 동치를 함부로 가정하지 않는다.",
+      "검증 자료의 R²나 절편 없는 회귀의 R²는 음수가 될 수 있다. R²가 1에 가까워도 인과관계나 예측의 절대 오차가 작다는 뜻은 아니다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "yᵢ",
+        "meaning": "i번째 실제 관측값"
+      },
+      {
+        "symbol": "ŷᵢ",
+        "meaning": "i번째 모형 예측값"
+      },
+      {
+        "symbol": "ȳ",
+        "meaning": "실제 관측값의 평균"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "SSE와 SST로 결정계수 계산",
+        "setup": "SST=50, SSE=15인 회귀 평가 결과가 주어졌다.",
+        "steps": [
+          "남은 오차 비율은 SSE/SST=15/50=0.3이다.",
+          "R²=1-0.3=0.7이다."
+        ],
+        "result": "평균 예측을 기준으로 전체 변동의 70%를 모형이 설명했다."
+      }
+    ],
+    "decisionSteps": [
+      "SSE가 실제값-예측값 제곱합이고 SST가 실제값-평균 제곱합인지 확인한다.",
+      "R²=1-SSE/SST를 계산한다.",
+      "자료·절편·검증 조건을 확인한 뒤 설명된 변동의 비율로 제한해 해석한다."
+    ],
+    "beginnerTraps": [
+      "R² 공식의 SSE와 SST 위치를 바꾸어 1-SST/SSE로 계산하지 않는다.",
+      "R²는 모든 상황에서 0 이상이라고 단정하지 않는다.",
+      "R²가 높다는 이유만으로 독립변수가 결과를 원인적으로 변화시켰다고 말하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-004 lines 72-80: 결정계수 공식",
+      "canonical-claim HOLD editorial correction: 음수 가능성과 적용 조건 명시"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-005",
+    "primaryProfile": "formula_calculation",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "수정된 결정계수는 R²에 표본 수와 설명변수 수를 반영한 벌점을 주어 불필요한 변수 추가를 경계하는 지표다.",
+    "whyItMatters": "설명변수 수가 다른 회귀 모형을 비교할 때 단순 R²의 자동 증가에 속지 않고 복잡도까지 고려할 수 있다.",
+    "plainLanguageExplanation": [
+      "보통 R²는 설명변수를 추가하면 줄지 않는다. 새 변수가 사실상 쓸모없어도 수치가 유지되거나 조금 오를 수 있다.",
+      "수정된 R²는 변수 수 p가 늘어난 만큼 벌점을 주므로 새 변수가 충분한 설명력을 더하지 못하면 내려갈 수 있다.",
+      "수정된 R²도 새 데이터 예측력이나 인과관계를 보증하지 않는다. 같은 종속변수와 같은 자료로 적합한 후보 모형을 비교할 때 보조 지표로 쓴다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "n",
+        "meaning": "분석에 사용한 관측치 수"
+      },
+      {
+        "symbol": "p",
+        "meaning": "절편을 제외한 설명변수 수"
+      },
+      {
+        "symbol": "R²adj",
+        "meaning": "1-(1-R²)(n-1)/(n-p-1)로 계산한 수정 결정계수"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "수정된 R² 계산",
+        "setup": "n=20, p=2, R²=0.60인 회귀 모형을 생각한다.",
+        "steps": [
+          "(1-R²)=0.40, (n-1)/(n-p-1)=19/17을 구한다.",
+          "R²adj=1-0.40×19/17≈0.553으로 계산한다."
+        ],
+        "result": "변수 수에 대한 벌점을 반영하면 수정된 R²는 약 0.553으로 단순 R²보다 낮다."
+      }
+    ],
+    "decisionSteps": [
+      "비교하는 모형의 종속변수와 표본이 같은지 확인한다.",
+      "n, p, R²를 공식에 넣어 수정된 R²를 계산한다.",
+      "변수를 추가했을 때 수정된 R²와 교차검증 성능이 함께 개선되는지 본다."
+    ],
+    "beginnerTraps": [
+      "수정된 R²가 높아졌다고 추가 변수가 통계적으로 유의하거나 인과적이라고 단정하지 않는다.",
+      "p에 절편까지 포함하는지 공식 정의를 확인하지 않고 대입하지 않는다.",
+      "서로 다른 종속변수나 다른 표본으로 만든 모형의 수정된 R²를 직접 비교하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-005 lines 81-91: 수정된 결정계수 필요성과 공식",
+      "canonical-claim HOLD editorial correction: 비교 조건과 해석 한계 보완"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-006",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [
+      "formula_calculation"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "회귀는 연속적인 수치를 예측하고 분류는 정해진 범주나 범주 확률을 예측하므로 평가 지표도 달라진다.",
+    "whyItMatters": "문제 유형을 먼저 판별해야 회귀에 정확도, 분류에 RMSE처럼 맞지 않는 지표를 적용하는 실수를 막을 수 있다.",
+    "plainLanguageExplanation": [
+      "집값·매출액처럼 값의 크기를 맞히면 회귀이고, 정상·이상이나 합격·불합격처럼 범주를 맞히면 분류다.",
+      "회귀는 MAE·RMSE·R² 등 오차 크기 지표를, 분류는 정확도·정밀도·재현율·F1·ROC-AUC 등을 주로 사용한다.",
+      "알고리즘 이름보다 목표변수와 출력 형태를 본다. 로지스틱 회귀는 이름에 회귀가 있지만 범주 확률을 예측하는 분류 모형이다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [
+      {
+        "title": "목표변수로 문제 유형 판별",
+        "setup": "고객의 다음 달 지출액과 이탈 여부를 각각 예측한다고 하자.",
+        "steps": [
+          "지출액은 연속 수치이므로 회귀로 분류한다.",
+          "이탈 여부는 예/아니오 범주이므로 분류로 분류한다."
+        ],
+        "result": "지출액에는 MAE·RMSE, 이탈 여부에는 재현율·정밀도·AUC 같은 지표를 검토한다."
+      }
+    ],
+    "decisionSteps": [
+      "목표변수가 연속 수치인지 범주인지 확인한다.",
+      "모형이 수치, 범주, 확률 중 무엇을 출력하는지 확인한다.",
+      "업무상 오류 비용에 맞는 회귀 또는 분류 지표를 고른다."
+    ],
+    "beginnerTraps": [
+      "숫자로 코딩된 0·1 목표변수도 의미가 범주이면 분류다.",
+      "로지스틱 회귀를 이름만 보고 회귀 문제로 분류하지 않는다.",
+      "분류 확률을 임계값으로 범주화한 뒤에는 임계값 의존 지표와 순위 지표를 구분한다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-006 lines 92-115: 회귀와 분류 판별",
+      "editorial review: 목표변수와 출력 형태 중심의 지표 선택"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-007",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "comparison"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "이 노드는 지표 계산 전에 양성 클래스와 네 칸의 의미를 정확히 구분하는 것이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "혼동행렬은 실제 범주와 예측 범주를 교차해 TP·FP·FN·TN의 건수를 보여 주는 표다.",
+    "whyItMatters": "전체 정답 수만 보지 않고 거짓 경보와 놓침을 분리해 어떤 오류가 많은지 파악할 수 있다.",
+    "plainLanguageExplanation": [
+      "P와 N은 기준으로 정한 양성·음성 범주를, T와 F는 예측이 실제와 맞았는지를 나타낸다.",
+      "TP는 실제 양성을 양성으로, FN은 실제 양성을 음성으로, FP는 실제 음성을 양성으로, TN은 실제 음성을 음성으로 예측한 경우다.",
+      "행과 열의 배치는 도구마다 달라질 수 있으므로 표 위치를 암기하기보다 축의 실제·예측 라벨을 읽는다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "TP",
+        "meaning": "실제 양성을 양성으로 맞게 예측한 수"
+      },
+      {
+        "symbol": "FP",
+        "meaning": "실제 음성을 양성으로 잘못 예측한 수"
+      },
+      {
+        "symbol": "FN",
+        "meaning": "실제 양성을 음성으로 놓친 수"
+      },
+      {
+        "symbol": "TN",
+        "meaning": "실제 음성을 음성으로 맞게 예측한 수"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "업무에서 무엇을 양성 클래스로 둘지 먼저 정한다.",
+      "실제 라벨과 예측 라벨을 교차해 네 칸의 건수를 센다.",
+      "FP와 FN 중 어느 오류 비용이 더 큰지 보고 후속 지표를 선택한다."
+    ],
+    "beginnerTraps": [
+      "P를 예측이 맞았다는 뜻으로 읽지 않는다. P는 양성 범주다.",
+      "FP를 언제나 제1종 오류, FN을 언제나 제2종 오류라고 기계적으로 연결하지 않는다. 가설검정의 귀무가설과 양성 정의가 어떻게 대응하는지 확인해야 한다.",
+      "양성 클래스를 바꾸면 TP·FP·FN·TN과 정밀도·재현율도 달라진다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-007 lines 143-172: 혼동행렬 네 요소",
+      "editorial review: 축 배치와 가설검정 오류의 조건부 대응 보완"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-008",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "간단한 공식보다 정확도·정밀도·재현율·F1이 답하는 질문의 차이를 판단하는 것이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "분류 지표는 전체 정답 비율, 양성 예측의 신뢰도, 실제 양성의 발견률처럼 서로 다른 질문에 답한다.",
+    "whyItMatters": "클래스 불균형과 오류 비용에 맞는 지표를 선택해야 높은 숫자 하나에 가려진 위험을 발견할 수 있다.",
+    "plainLanguageExplanation": [
+      "정확도는 전체 중 맞힌 비율, 정밀도는 양성이라고 예측한 것 중 실제 양성 비율, 재현율은 실제 양성 중 찾아낸 비율이다.",
+      "F1은 정밀도와 재현율의 조화평균이어서 둘 중 하나가 매우 낮으면 함께 낮아진다. 두 지표를 균형 있게 보려는 상황에 적합하다.",
+      "특이도는 실제 음성 중 음성으로 맞힌 비율이다. 어떤 지표를 우선할지는 거짓 경보 FP와 놓침 FN의 비용에 따라 달라진다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "Precision",
+        "meaning": "TP/(TP+FP), 양성 예측의 적중률"
+      },
+      {
+        "symbol": "Recall",
+        "meaning": "TP/(TP+FN), 실제 양성의 발견률"
+      },
+      {
+        "symbol": "F1",
+        "meaning": "2×Precision×Recall/(Precision+Recall), 두 지표의 조화평균"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "불균형 자료에서 지표 읽기",
+        "setup": "양성 10명, 음성 90명 중 TP=8, FN=2, FP=12, TN=78이다.",
+        "steps": [
+          "정확도=(8+78)/100=0.86이다.",
+          "정밀도=8/(8+12)=0.40, 재현율=8/(8+2)=0.80이다.",
+          "F1=2×0.40×0.80/(0.40+0.80)≈0.533이다."
+        ],
+        "result": "정확도 86%만 보면 양호해 보이지만 양성 예측의 60%가 거짓 경보라는 약점이 드러난다."
+      }
+    ],
+    "decisionSteps": [
+      "양성 클래스와 클래스 비율을 확인한다.",
+      "FP와 FN 중 더 큰 업무 비용을 정한다.",
+      "놓침이 중요하면 재현율, 거짓 경보가 중요하면 정밀도, 균형이 중요하면 F1을 우선 검토한다."
+    ],
+    "beginnerTraps": [
+      "정확도가 가장 높다는 이유만으로 불균형 데이터의 최선 모형이라고 하지 않는다.",
+      "F1은 TN을 직접 반영하지 않으므로 음성 분류 성능까지 모두 요약한다고 보지 않는다.",
+      "정밀도와 재현율은 임계값에 따라 함께 변하므로 임계값 조건 없이 비교하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-008 lines 173-213: 주요 분류 평가 지표",
+      "editorial review: 지표별 질문, 클래스 불균형, 임계값 의존성"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-009",
+    "primaryProfile": "machine_learning",
+    "secondaryCapabilities": [
+      "comparison"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "이 노드는 단일 수치 계산보다 ROC 곡선과 AUC가 임계값 전반에서 무엇을 요약하는지 이해하는 것이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "ROC 곡선은 분류 임계값을 바꿀 때 TPR과 FPR의 변화를 그리고, AUC는 그 곡선 아래 면적으로 순위 판별력을 요약한다.",
+    "whyItMatters": "아직 운영 임계값을 확정하지 않았을 때도 여러 임계값에서 양성과 음성을 구분하는 능력을 비교할 수 있다.",
+    "plainLanguageExplanation": [
+      "양성으로 판정하는 임계값을 낮추면 더 많은 양성을 잡지만 음성도 양성으로 잘못 잡기 쉽다. ROC는 이 두 변화의 균형을 그린다.",
+      "AUC는 무작위로 뽑은 양성 사례가 무작위 음성 사례보다 더 높은 점수를 받을 확률로도 해석할 수 있다.",
+      "ROC-AUC는 순위 성능을 요약하지만 특정 임계값의 정밀도, 확률 보정, 실제 오류 비용을 대신하지 않는다. 심한 불균형에서는 PR 곡선도 함께 본다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "TPR",
+        "meaning": "재현율 또는 민감도, TP/(TP+FN)"
+      },
+      {
+        "symbol": "FPR",
+        "meaning": "거짓 양성률, FP/(FP+TN)"
+      },
+      {
+        "symbol": "AUC",
+        "meaning": "ROC 곡선 아래 면적"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "연속 점수나 확률을 내는 이진 분류 문제인지 확인한다.",
+      "여러 임계값에서 TPR과 FPR을 계산해 ROC 곡선을 본다.",
+      "AUC로 순위 성능을 비교한 뒤 운영 목적에 맞는 임계값과 다른 지표를 별도로 선택한다."
+    ],
+    "beginnerTraps": [
+      "AUC가 높다고 특정 임계값의 정밀도나 재현율이 자동으로 높다고 보지 않는다.",
+      "AUC를 예측 확률의 정확성이나 보정 정도로 해석하지 않는다.",
+      "클래스가 매우 불균형한데 ROC-AUC 하나만 보고 양성 탐지 품질을 단정하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-009 line 214: ROC 곡선 및 AUC",
+      "editorial review: 순위 해석, 임계값·보정·불균형 한계"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-010",
+    "primaryProfile": "machine_learning",
+    "secondaryCapabilities": [
+      "formula_calculation"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "ROC 곡선은 각 분류 임계값에서 x축 FPR과 y축 TPR을 점으로 찍어 연결한 그래프다.",
+    "whyItMatters": "놓침을 줄이기 위해 임계값을 낮출 때 거짓 경보가 얼마나 늘어나는지 한눈에 비교할 수 있다.",
+    "plainLanguageExplanation": [
+      "임계값이 매우 높으면 거의 아무도 양성으로 예측하지 않아 TPR과 FPR이 모두 낮다. 임계값을 낮출수록 두 비율이 대체로 함께 증가한다.",
+      "좋은 모형은 낮은 FPR에서도 높은 TPR을 내므로 곡선이 좌상단에 가깝다. 대각선은 평균적으로 무작위 순위와 같은 수준이다.",
+      "ROC 곡선 위의 한 점은 운영 임계값 하나를 뜻한다. 최종 점은 오류 비용과 자원 제약을 반영해 고른다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "Threshold",
+        "meaning": "이 값 이상을 양성으로 판정하는 점수 기준"
+      },
+      {
+        "symbol": "TPR",
+        "meaning": "TP/(TP+FN)"
+      },
+      {
+        "symbol": "FPR",
+        "meaning": "FP/(FP+TN)=1-특이도"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "한 임계값의 ROC 좌표",
+        "setup": "TP=30, FN=10, FP=20, TN=40인 임계값을 생각한다.",
+        "steps": [
+          "TPR=30/(30+10)=0.75를 구한다.",
+          "FPR=20/(20+40)=1/3≈0.333을 구한다."
+        ],
+        "result": "ROC 평면에 (FPR 0.333, TPR 0.75)인 점 하나를 찍는다."
+      }
+    ],
+    "decisionSteps": [
+      "양성 점수와 실제 이진 라벨을 준비한다.",
+      "임계값을 순서대로 바꾸며 TPR과 FPR을 계산한다.",
+      "오류 비용을 고려해 곡선 위의 운영점을 선택한다."
+    ],
+    "beginnerTraps": [
+      "ROC의 x축을 특이도라고 쓰지 않는다. x축은 1-특이도인 FPR이다.",
+      "좌상단에 가깝다는 사실만으로 실제 운영 임계값이 결정되지는 않는다.",
+      "이미 0·1로 잘린 예측값만 있으면 충분한 임계값 곡선을 만들기 어렵다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-010 lines 215-235: ROC 정의, TPR, FPR",
+      "editorial review: 임계값별 좌표와 운영점 해석"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-011",
+    "primaryProfile": "formula_calculation",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "AUC는 ROC 곡선 아래 면적으로, 양성 사례가 음성 사례보다 높은 점수를 받을 순위 판별력을 0에서 1 사이로 요약한다.",
+    "whyItMatters": "특정 임계값 하나에 묶이지 않고 모형의 전반적인 순위 능력을 비교하되, 운영 지표와는 분리해 판단할 수 있다.",
+    "plainLanguageExplanation": [
+      "AUC=0.5는 점수 순위가 무작위 수준이라는 뜻이고, 1은 모든 양성이 모든 음성보다 높은 완전한 순위를 뜻한다.",
+      "AUC는 0보다 작지 않고 1보다 크지 않으며 0.5보다 작을 수도 있다. 0.5 미만이면 점수 방향이 대체로 반대로 정렬되었을 가능성을 점검한다.",
+      "AUC는 정확도도, 확률 보정도, 인과 효과도 아니다. 특정 임계값에서 발생하는 FP·FN 비용과 심한 불균형에서의 정밀도-재현율은 별도로 확인한다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "AUC",
+        "meaning": "ROC 곡선 아래 면적이자 양성 점수가 음성 점수보다 높을 순위 확률"
+      },
+      {
+        "symbol": "0.5",
+        "meaning": "동점 처리까지 포함한 무작위 순위의 기준 수준"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "양성-음성 점수쌍으로 AUC 이해",
+        "setup": "양성 점수 0.9, 0.6과 음성 점수 0.7, 0.2가 있다.",
+        "steps": [
+          "양성-음성의 네 쌍을 만든다.",
+          "0.9는 두 음성보다 높고, 0.6은 0.2보다 높지만 0.7보다 낮으므로 세 쌍의 순서가 맞다.",
+          "AUC=3/4=0.75로 해석한다."
+        ],
+        "result": "임의의 양성과 음성을 뽑았을 때 양성 점수가 더 높을 확률이 75%다."
+      }
+    ],
+    "decisionSteps": [
+      "모형이 연속 점수를 제공하는지 확인한다.",
+      "ROC 곡선의 면적 또는 양성-음성 순위쌍으로 AUC를 계산한다.",
+      "AUC와 함께 목표 임계값의 정밀도·재현율, 필요하면 PR-AUC와 보정 상태를 확인한다."
+    ],
+    "beginnerTraps": [
+      "AUC의 범위를 0.5~1로 제한하지 않는다. 잘못된 방향의 순위에서는 0.5 미만도 가능하다.",
+      "AUC 0.8을 80% 정확도로 읽지 않는다.",
+      "AUC가 높다는 이유로 예측 확률 0.8이 실제 발생률 80%로 잘 보정되었다고 보지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-011 lines 236-240: AUC 개념",
+      "canonical-claim HOLD editorial correction: 전체 범위, 순위 확률, 비정확도 해석"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-012",
+    "primaryProfile": "formula_calculation",
+    "secondaryCapabilities": [
+      "comparison"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "평가 지표는 문제 유형과 양성 클래스, 오류 비용, 클래스 불균형, 운영 임계값을 먼저 정한 뒤 선택한다.",
+    "whyItMatters": "같은 예측 결과도 업무에서 놓침과 거짓 경보의 비용이 다르므로 숫자가 가장 큰 지표가 아니라 목적에 맞는 지표를 골라야 한다.",
+    "plainLanguageExplanation": [
+      "회귀에서는 오차의 단위와 큰 오차의 비용을 보고 MAE와 RMSE를 고른다. 분류에서는 클래스 비율과 FP·FN 비용을 보고 정밀도·재현율·F1 등을 고른다.",
+      "희귀 질병 탐지처럼 놓침이 치명적이면 재현율을, 정상 메일 차단처럼 거짓 경보가 치명적이면 정밀도나 특이도를 우선할 수 있다.",
+      "임계값 전반의 순위를 비교하려면 ROC-AUC나 PR-AUC를 쓰고, 실제 운영 성능은 선택한 임계값에서 다시 계산한다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "FP cost",
+        "meaning": "음성을 양성으로 잘못 처리했을 때의 업무 비용"
+      },
+      {
+        "symbol": "FN cost",
+        "meaning": "양성을 음성으로 놓쳤을 때의 업무 비용"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "오류 비용으로 지표 선택",
+        "setup": "사기 탐지에서 사기를 놓친 비용이 정상 거래를 추가 확인하는 비용보다 훨씬 크다고 하자.",
+        "steps": [
+          "사기를 양성으로 정의한다.",
+          "놓침은 FN이므로 FN을 줄이는 재현율을 우선 지표로 둔다.",
+          "정밀도와 검토 인력 한도를 함께 보며 운영 임계값을 정한다."
+        ],
+        "result": "재현율 하나만 최대화하지 않고 높은 재현율을 유지하면서 감당 가능한 거짓 경보 수준을 선택한다."
+      }
+    ],
+    "decisionSteps": [
+      "회귀·분류·순위 예측 중 문제 유형을 정한다.",
+      "양성 클래스와 FP·FN 또는 수치 오차의 비용을 적는다.",
+      "클래스 비율과 임계값을 확인하고 주 지표와 보조 지표를 함께 정한다."
+    ],
+    "beginnerTraps": [
+      "모든 분류 문제에서 정확도를 기본 최종 지표로 쓰지 않는다.",
+      "재현율을 높이면 정밀도가 언제나 함께 높아진다고 생각하지 않는다.",
+      "검증 지표를 보고 임계값을 정한 뒤 같은 테스트 세트로 성능을 반복 최적화하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-012 lines 241-269: 상황별 평가 지표 선택",
+      "editorial review: 오류 비용과 임계값 중심 의사결정"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-013",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "모형 진단은 단일 공식보다 잔차 그래프와 가정별 증거를 종합하는 절차다."
+      }
+    ],
+    "oneLineMeaning": "모형 진단은 잔차와 영향점 등을 살펴 회귀의 선형성·독립성·등분산성 및 추론에 필요한 가정이 적절한지 확인하는 과정이다.",
+    "whyItMatters": "계수와 R²가 그럴듯해도 가정 위반이나 영향점이 있으면 표준오차·검정·예측 해석이 왜곡될 수 있다.",
+    "plainLanguageExplanation": [
+      "잔차는 실제값에서 예측값을 뺀 값이다. 잔차 대 적합값 그래프에 곡선이나 깔때기 모양이 보이면 선형성 또는 등분산성 문제를 의심한다.",
+      "독립성은 관측 순서와 자료 수집 구조를 함께 보고, 정규성은 주로 계수의 소표본 추론에 필요한 잔차 분포를 점검한다. 원자료 자체가 반드시 정규분포일 필요는 없다.",
+      "한 검정의 p값만으로 모든 가정을 판정하지 않고 그래프, 자료 생성 과정, 영향점과 다중공선성 진단을 함께 본다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "eᵢ",
+        "meaning": "yᵢ-ŷᵢ로 계산한 i번째 잔차"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "잔차 대 적합값 그래프로 비선형 패턴과 분산 변화를 확인한다.",
+      "관측 순서·군집 구조와 잔차 자기상관을 확인한다.",
+      "Q-Q plot, 영향점, 다중공선성을 보고 목적에 맞게 변환·모형·표준오차를 재검토한다."
+    ],
+    "beginnerTraps": [
+      "종속변수 원자료가 정규분포가 아니면 선형회귀를 절대 쓸 수 없다고 단정하지 않는다.",
+      "잔차 평균이 0에 가깝다는 사실만으로 모든 회귀 가정이 충족되었다고 보지 않는다.",
+      "이상치를 이유 없이 삭제해 진단 문제를 숨기지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-013 lines 287-288: 분석 모형 진단과 잔차",
+      "editorial review: 회귀 가정별 진단 대상과 추론 범위"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-014",
+    "primaryProfile": "statistical_decision",
+    "secondaryCapabilities": [
+      "formula_calculation",
+      "comparison"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "회귀 진단에서는 잔차의 자기상관은 더빈-왓슨, 정규성은 Q-Q plot과 샤피로-윌크처럼 가정별 도구로 나누어 살핀다.",
+    "whyItMatters": "검정마다 귀무가설과 대상 가정이 다르므로 통계량이나 p값 하나를 모든 진단의 합격표처럼 쓰는 오류를 막을 수 있다.",
+    "plainLanguageExplanation": [
+      "더빈-왓슨 통계량은 회귀 잔차의 인접한 1차 자기상관을 점검한다. 대략 2에 가까우면 1차 자기상관 증거가 약하지만 정확한 판단은 표본·설명변수·검정 기준을 함께 본다.",
+      "Q-Q plot은 잔차 분위수와 정규분포 분위수를 비교한다. 직선에서 체계적으로 벗어나면 왜도나 두꺼운 꼬리 등을 의심한다.",
+      "샤피로-윌크에서 p>α이면 정규성을 증명하거나 귀무가설을 채택하는 것이 아니라 정규성 가설을 기각할 근거가 부족하다고 표현한다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "DW",
+        "meaning": "0~4 범위의 더빈-왓슨 통계량으로, 대략 2는 1차 자기상관이 약한 상태를 시사"
+      },
+      {
+        "symbol": "H₀",
+        "meaning": "샤피로-윌크에서는 표본이 정규분포 모집단에서 왔다는 귀무가설"
+      },
+      {
+        "symbol": "α",
+        "meaning": "검정 전에 정하는 유의수준"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "샤피로-윌크 결과 문장 만들기",
+        "setup": "유의수준 α=0.05에서 잔차의 샤피로-윌크 p값이 0.12다.",
+        "steps": [
+          "p=0.12가 α=0.05보다 큰지 비교한다.",
+          "귀무가설을 기각하지 않는다."
+        ],
+        "result": "정규성을 기각할 충분한 증거가 없다고 보고하며, 정규성이 증명되었다고 쓰지 않는다."
+      }
+    ],
+    "decisionSteps": [
+      "진단하려는 가정이 독립성인지 정규성인지 정한다.",
+      "자료 구조와 모형에 맞는 그래프·검정을 선택한다.",
+      "통계량·p값을 귀무가설과 함께 해석하고 다른 진단 증거와 종합한다."
+    ],
+    "beginnerTraps": [
+      "DW가 정확히 2가 아니면 잔차가 독립이 아니라고 단정하지 않는다.",
+      "p>0.05를 귀무가설 채택 또는 정규성 증명으로 쓰지 않는다.",
+      "샤피로-윌크 결과 하나로 선형성·등분산성·독립성까지 확인했다고 보지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-014 lines 318-330: 더빈-왓슨, Q-Q plot, 샤피로-윌크",
+      "canonical-claim HOLD editorial correction: p값 문장과 진단 범위 교정"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-015",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "machine_learning",
+      "process"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "교차검증은 한 수치 공식보다 분할·학습·검증의 반복 구조와 누수 방지가 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "교차검증은 데이터를 여러 번 학습 부분과 검증 부분으로 나누어 새 데이터 성능의 변동을 추정하는 절차다.",
+    "whyItMatters": "한 번의 우연한 분할에 모델 선택이 좌우되는 위험을 줄이고 평균 성능과 변동성을 함께 확인할 수 있다.",
+    "plainLanguageExplanation": [
+      "k-fold에서는 데이터를 k개 묶음으로 나누고 한 묶음씩 검증에 쓰며 나머지로 학습한다. 이렇게 얻은 k개 점수를 요약한다.",
+      "교차검증은 데이터를 늘리는 방법이 아니라 가진 데이터를 역할만 바꾸어 반복 평가하는 방법이다.",
+      "스케일링·결측 대치·특성 선택처럼 데이터에서 학습되는 전처리는 매 반복의 훈련 부분에서만 맞춰야 한다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "k",
+        "meaning": "교차검증에서 나누는 폴드 수"
+      },
+      {
+        "symbol": "fold",
+        "meaning": "한 번씩 검증 역할을 맡는 데이터 묶음"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "자료의 독립성·클래스·시간 순서 구조를 확인한다.",
+      "구조에 맞는 분할기를 선택하고 각 폴드의 훈련 자료에서 전처리와 모형을 학습한다.",
+      "폴드별 점수의 평균과 산포를 보고 모델을 비교하고 마지막 테스트 세트는 손대지 않는다."
+    ],
+    "beginnerTraps": [
+      "교차검증 전에 전체 데이터로 전처리를 fit해 검증 정보가 새어 들어가게 하지 않는다.",
+      "시계열 자료를 무작위 k-fold로 섞어 미래 정보를 과거 학습에 넣지 않는다.",
+      "교차검증 점수의 평균만 보고 폴드 간 큰 변동을 숨기지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-015 lines 331-332: 교차검증 정의와 목적",
+      "editorial review: 폴드 내부 전처리와 테스트 세트 분리"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-016",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "machine_learning",
+      "process"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "이 노드는 자료 구조에 맞는 교차검증 기법의 선택이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "k-fold·층화 k-fold·LOOCV·시계열 분할은 검증 목적과 데이터 구조에 따라 선택하는 서로 다른 교차검증 기법이다.",
+    "whyItMatters": "클래스 비율, 동일 대상의 반복 측정, 시간 순서를 무시한 분할은 실제보다 지나치게 좋은 성능을 만들 수 있다.",
+    "plainLanguageExplanation": [
+      "일반 k-fold는 독립이고 비슷한 분포의 관측치를 k묶음으로 나누는 기본 방법이다. 층화 k-fold는 분류에서 각 폴드의 클래스 비율을 비슷하게 유지한다.",
+      "LOOCV는 관측치 하나씩 검증해 거의 모든 자료로 학습하지만 계산량이 크고 점수 변동성이 클 수 있다.",
+      "시계열은 과거로 학습해 미래를 검증하는 순서를 지키고, 같은 사람·장비의 반복 행은 같은 그룹으로 묶어 분할한다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "시간 순서, 그룹 중복, 클래스 불균형 여부를 확인한다.",
+      "일반·층화·그룹·시계열 분할 중 자료 생성 구조에 맞는 방법을 선택한다.",
+      "모든 전처리와 튜닝을 훈련 폴드 안에서 수행한다."
+    ],
+    "beginnerTraps": [
+      "층화 k-fold가 관측치 사이의 독립성을 만들어 주는 것은 아니다.",
+      "LOOCV가 항상 가장 정확하거나 가장 좋은 선택이라고 단정하지 않는다.",
+      "같은 사용자의 여러 행을 서로 다른 폴드에 넣어 개인 정보가 검증 폴드로 새게 하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-016 lines 333-366: 교차검증 기법",
+      "editorial review: 층화·그룹·시계열 분할 경계"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-017",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [
+      "machine_learning",
+      "formula_calculation"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "과대적합은 훈련 자료에는 지나치게 맞고 새 자료에는 약한 상태이며, 과소적합은 훈련 자료의 기본 패턴조차 충분히 배우지 못한 상태다.",
+    "whyItMatters": "훈련 성능과 검증 성능의 관계를 보면 모델을 더 단순하게 할지, 더 유연하게 할지 개선 방향을 정할 수 있다.",
+    "plainLanguageExplanation": [
+      "과대적합은 훈련 오차는 매우 낮지만 검증 오차가 큰 경우로, 높은 분산과 연결된다.",
+      "과소적합은 훈련 오차와 검증 오차가 모두 큰 경우로, 높은 편향과 연결된다.",
+      "절대적인 높고 낮음은 문제의 기준과 비교 모델에 따라 판단하며, 학습 곡선과 교차검증으로 확인한다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "generalization gap",
+        "meaning": "검증 성능과 훈련 성능 사이의 차이"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "훈련·검증 오차로 상태 구분",
+        "setup": "모형 A의 훈련 오차는 1, 검증 오차는 10이고 모형 B는 둘 다 9라고 하자.",
+        "steps": [
+          "A는 훈련과 검증의 격차가 크므로 과대적합을 의심한다.",
+          "B는 훈련에서도 오차가 크므로 과소적합을 의심한다."
+        ],
+        "result": "A는 규제·단순화·데이터 확대를, B는 표현력·특성·학습을 재검토한다."
+      }
+    ],
+    "decisionSteps": [
+      "훈련과 검증에 동일한 지표를 계산한다.",
+      "두 성능의 절대 수준과 차이를 함께 본다.",
+      "과대적합이면 복잡도와 규제를, 과소적합이면 모형 표현력과 특성을 조정한다."
+    ],
+    "beginnerTraps": [
+      "훈련 성능이 좋다는 사실만으로 모형이 좋다고 판단하지 않는다.",
+      "검증 성능이 나쁜 모든 경우를 과대적합이라고 부르지 않는다. 훈련 성능도 나쁘면 과소적합일 수 있다.",
+      "테스트 세트를 반복해서 보며 과대·과소적합을 조정하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-017 lines 388-417: 과대적합과 과소적합 비교",
+      "editorial review: 훈련-검증 격차 기반 진단"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-018",
+    "primaryProfile": "formula_calculation",
+    "secondaryCapabilities": [
+      "comparison"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "편향-분산 트레이드오프는 모형이 단순해 생기는 체계적 오차와 데이터 변화에 민감해 생기는 불안정성 사이의 균형이다.",
+    "whyItMatters": "모형 복잡도를 무조건 높이지 않고 새 데이터에서 기대 오차가 가장 낮은 지점을 찾는 관점을 제공한다.",
+    "plainLanguageExplanation": [
+      "편향이 크면 여러 학습 자료로 다시 학습해도 예측 평균이 정답에서 체계적으로 벗어난다. 분산이 크면 학습 자료가 조금 바뀔 때 예측이 크게 달라진다.",
+      "일반적으로 모형이 너무 단순하면 편향이 크고, 너무 복잡하면 분산이 커질 수 있다. 검증 오차가 가장 낮은 복잡도를 찾는다.",
+      "제곱오차 아래의 이론적 분해는 기대 예측오차=편향²+분산+줄일 수 없는 잡음으로 표현한다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "Bias²",
+        "meaning": "예측 평균과 참값 차이의 제곱"
+      },
+      {
+        "symbol": "Variance",
+        "meaning": "학습 표본이 바뀔 때 예측이 변하는 정도"
+      },
+      {
+        "symbol": "Irreducible noise",
+        "meaning": "입력만으로 설명할 수 없어 남는 잡음"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "편향²·분산·잡음으로 기대오차 비교",
+        "setup": "참값이 10이고 서로 다른 학습 표본으로 다시 학습한 모형 A의 예측이 [8,8,8], 줄일 수 없는 잡음 분산이 1이라고 가정합니다.",
+        "steps": [
+          "평균 예측은 8이므로 편향은 8−10=−2, 편향²은 4입니다.",
+          "세 예측이 모두 8이므로 예측 분산은 0입니다.",
+          "기대 제곱오차를 편향²+분산+잡음으로 분해하면 4+0+1=5입니다."
+        ],
+        "result": "이 예에서 오차 5는 높은 편향에서 주로 생깁니다. 실제 분석에서는 반복 표본이나 교차검증으로 복잡도별 일반화오차를 비교합니다."
+      }
+    ],
+    "decisionSteps": [
+      "훈련·검증 학습 곡선을 보고 편향과 분산 신호를 구분한다.",
+      "모형 복잡도나 규제 강도를 여러 값으로 검증한다.",
+      "평균 검증오차와 변동성이 함께 안정적인 지점을 선택한다."
+    ],
+    "beginnerTraps": [
+      "편향과 분산을 한 번 계산한 훈련오차 두 숫자와 동일시하지 않는다.",
+      "복잡한 모형은 언제나 분산이 크고 단순한 모형은 언제나 편향이 크다고 절대화하지 않는다.",
+      "상관관계 설명이나 특징 중요도를 인과 효과로 바꾸어 해석하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-018 lines 418-424: 편향, 분산, 기대오차 분해",
+      "editorial review: 제곱오차 기대값 조건과 비인과 해석"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-019",
+    "primaryProfile": "formula_calculation",
+    "secondaryCapabilities": [
+      "python_procedure"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "가중치 규제는 손실함수에 계수 크기에 대한 벌점을 더해 모형의 복잡도를 제어하는 방법이다.",
+    "whyItMatters": "훈련 자료의 잡음에 맞추려고 계수가 과도하게 커지는 것을 줄여 새 데이터 일반화를 개선할 수 있다.",
+    "plainLanguageExplanation": [
+      "학습은 예측오차만 줄이는 대신 예측오차와 계수 벌점의 합을 줄인다. 따라서 약간의 훈련오차를 허용하고 더 단순한 계수를 얻을 수 있다.",
+      "λ가 0이면 벌점이 없고 λ가 커질수록 계수 축소가 강해진다. 적절한 λ는 검증 자료나 교차검증으로 정한다.",
+      "스케일이 다른 특성은 같은 벌점 아래 다르게 취급될 수 있으므로 선형 L1·L2 규제 전에는 훈련 폴드 안에서 스케일링을 검토한다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "λ",
+        "meaning": "규제 강도를 조절하는 하이퍼파라미터"
+      },
+      {
+        "symbol": "w",
+        "meaning": "모형이 학습하는 계수 또는 가중치"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "규제 목적함수 비교",
+        "setup": "예측손실이 10, 벌점이 4인 후보 모형에 λ=0.5를 적용한다.",
+        "steps": [
+          "규제항은 λ×벌점=0.5×4=2다.",
+          "전체 목적함수는 10+2=12다."
+        ],
+        "result": "학습 알고리즘은 예측손실만이 아니라 12로 계산된 규제 목적함수를 줄인다."
+      }
+    ],
+    "decisionSteps": [
+      "과대적합과 큰 계수가 문제인지 확인한다.",
+      "L1·L2 등 벌점 형태와 λ 후보를 정한다.",
+      "전처리를 포함한 교차검증으로 λ를 고르고 별도 테스트 자료에서 확인한다."
+    ],
+    "beginnerTraps": [
+      "규제를 적용하면 훈련오차도 반드시 감소한다고 생각하지 않는다.",
+      "λ가 클수록 언제나 좋은 모형이라고 보지 않는다. 지나치면 과소적합한다.",
+      "테스트 성능을 반복 확인하며 λ를 고르지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-019 lines 425-428: 규제 손실과 λ",
+      "editorial review: 스케일링과 검증 기반 λ 선택"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-020",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [
+      "formula_calculation"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "L1은 절댓값 벌점, L2는 제곱 벌점, Elastic Net은 두 벌점을 결합해 계수 축소와 변수 선택 성질을 조절한다.",
+    "whyItMatters": "희소한 모형이 필요한지, 상관된 변수의 계수를 안정적으로 줄일지에 따라 적절한 규제를 선택할 수 있다.",
+    "plainLanguageExplanation": [
+      "L1 라쏘는 일부 계수를 정확히 0으로 만들 수 있어 변수 선택 효과가 있다. 상관이 큰 변수 중 일부만 남길 수 있다.",
+      "L2 릿지는 계수를 대체로 0 근처로 부드럽게 줄이지만 정확히 0으로 만들지는 않는다. 상관된 변수의 불안정한 큰 계수를 완화하는 데 유용하다.",
+      "Elastic Net은 L1과 L2를 함께 사용해 희소성과 안정성을 절충한다. 벌점 강도와 혼합 비율은 교차검증으로 정한다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "L1",
+        "meaning": "λΣ|wⱼ| 형태의 절댓값 벌점"
+      },
+      {
+        "symbol": "L2",
+        "meaning": "λΣwⱼ² 형태의 제곱 벌점"
+      },
+      {
+        "symbol": "Elastic Net",
+        "meaning": "L1과 L2를 가중 결합한 벌점"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "계수를 0으로 만들어 간결한 변수를 원하는지 확인한다.",
+      "상관된 변수 안정성이 중요하면 L2 또는 Elastic Net을 우선 검토한다.",
+      "스케일링을 훈련 폴드 안에서 수행하고 규제 강도와 혼합비를 교차검증한다."
+    ],
+    "beginnerTraps": [
+      "L2가 일반적으로 계수를 정확히 0으로 만들어 변수 선택한다고 쓰지 않는다.",
+      "라쏘가 선택한 변수를 인과적으로 중요한 변수라고 해석하지 않는다.",
+      "규제 전 특성 스케일 차이를 무시해 벌점 비교를 왜곡하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-020 lines 429-462: L1, L2, Elastic Net 비교",
+      "editorial review: 상관 변수, 희소성, 비인과 경계"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-021",
+    "primaryProfile": "machine_learning",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "드롭아웃은 수치 계산보다 학습 시 확률적 비활성화와 추론 시 동작 차이를 이해하는 것이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "드롭아웃은 신경망 학습 중 일부 활성값을 무작위로 0으로 만들어 특정 뉴런 조합에 대한 과도한 의존을 줄이는 규제 기법이다.",
+    "whyItMatters": "큰 신경망이 훈련 자료에만 맞는 공동 적응을 줄여 일반화 성능을 개선할 수 있다.",
+    "plainLanguageExplanation": [
+      "매 학습 단계마다 다른 뉴런 일부가 빠지므로 하나의 경로에만 기대지 않고 여러 표현을 사용하도록 압박한다.",
+      "드롭아웃 비율은 항상 50%가 아니다. 층과 자료에 따라 검증 성능으로 정하며 너무 높으면 필요한 정보까지 잃어 과소적합할 수 있다.",
+      "현대 구현의 inverted dropout은 학습 중 남은 활성값을 보정하고, 추론 시에는 드롭아웃을 끄고 모든 뉴런을 사용한다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "dropout rate",
+        "meaning": "학습 중 활성값을 0으로 만들 확률"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "훈련 성능과 검증 성능 격차로 과대적합을 확인한다.",
+      "검증 자료에서 드롭아웃 비율과 적용 위치를 조정한다.",
+      "평가·추론 모드에서는 드롭아웃이 꺼졌는지 확인한다."
+    ],
+    "beginnerTraps": [
+      "드롭아웃 비율은 언제나 0.5라고 외우지 않는다.",
+      "평가 시에도 학습 모드로 두어 예측이 무작위로 바뀌게 하지 않는다.",
+      "드롭아웃이 모든 모형에 적용되는 일반 변수 선택 기법이라고 보지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-021 lines 463-467: 드롭아웃의 과적합 방지 원리",
+      "editorial review: 비율 비고정과 inverted dropout 추론 동작"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-022",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "이 노드는 계산보다 학습되는 값과 학습 전에 정해 검증하는 값을 구분하는 것이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "매개변수는 학습 데이터로 추정되는 값이고, 하이퍼파라미터는 학습 절차와 모형 구조를 제어하며 검증으로 선택하는 설정값이다.",
+    "whyItMatters": "어떤 값을 학습 알고리즘이 정하고 어떤 값을 분석자가 튜닝해야 하는지 구분해야 올바른 검증 절차를 설계할 수 있다.",
+    "plainLanguageExplanation": [
+      "선형회귀의 계수, 신경망 가중치와 편향은 손실을 줄이는 학습 과정에서 정해지는 매개변수다.",
+      "학습률, 규제 강도, 트리 깊이, 이웃 수처럼 학습 방식이나 모형 용량을 정하는 값은 하이퍼파라미터다.",
+      "하이퍼파라미터는 훈련 성능이 아니라 검증 성능으로 고르고, 최종 테스트 세트는 선택이 끝난 뒤 한 번 평가한다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "그 값이 학습 중 데이터로부터 자동 추정되는지 확인한다.",
+      "학습 전에 설정하고 후보를 비교해야 하면 하이퍼파라미터로 분류한다.",
+      "하이퍼파라미터는 교차검증으로 선택하고 테스트 세트는 최종 확인에만 사용한다."
+    ],
+    "beginnerTraps": [
+      "모형이 사용하는 모든 숫자를 하이퍼파라미터라고 부르지 않는다.",
+      "학습된 회귀계수를 사람이 해석한다고 해서 하이퍼파라미터가 되는 것은 아니다.",
+      "테스트 세트에서 가장 좋은 하이퍼파라미터를 고르지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-022 lines 487-511: 매개변수와 하이퍼파라미터 구분",
+      "editorial review: 검증 기반 선택 경계"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-023",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "machine_learning",
+      "process"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "조기 종료는 공식 계산보다 검증 지표 감시와 최적 가중치 복원 절차가 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "조기 종료는 검증 성능이 더 이상 개선되지 않을 때 학습을 멈추고 가장 좋았던 시점의 모형을 사용하는 규제 절차다.",
+    "whyItMatters": "훈련을 오래 할수록 훈련오차는 줄어도 검증오차가 커지는 과대적합 구간에 들어가는 것을 막을 수 있다.",
+    "plainLanguageExplanation": [
+      "매 에포크마다 훈련 지표가 아니라 독립된 검증 지표를 관찰한다. 개선이 멈추면 일정한 patience만큼 기다린 뒤 중단한다.",
+      "작은 노이즈 때문에 한 번 반등한 즉시 멈추지 않도록 최소 개선량과 patience를 정할 수 있다.",
+      "마지막 에포크의 가중치가 아니라 검증 지표가 가장 좋았던 체크포인트를 복원해야 한다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "epoch",
+        "meaning": "전체 훈련 데이터를 한 번 학습한 단위"
+      },
+      {
+        "symbol": "patience",
+        "meaning": "개선이 없어도 기다리는 에포크 수"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "업무 목적에 맞는 검증 손실 또는 검증 지표를 정한다.",
+      "최소 개선량과 patience를 정하고 최적 체크포인트를 저장한다.",
+      "중단 후 최적 체크포인트를 복원해 손대지 않은 테스트 자료에서 평가한다."
+    ],
+    "beginnerTraps": [
+      "검증 손실이 한 번 올랐다는 이유만으로 반드시 즉시 중단하지 않는다.",
+      "마지막 학습 가중치를 최적 가중치라고 가정하지 않는다.",
+      "테스트 세트를 조기 종료 감시용으로 사용하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-023 lines 512-518: 조기 종료 원리와 최적 지점",
+      "editorial review: patience와 최적 체크포인트 복원"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-024",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "comparison"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "튜닝 기법은 단일 계산보다 탐색 공간을 어떻게 선택하는지 비교하는 것이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "그리드·랜덤·베이지안 탐색은 정해진 하이퍼파라미터 공간에서 검증 성능이 좋은 설정을 찾는 서로 다른 전략이다.",
+    "whyItMatters": "계산 예산과 탐색 공간의 크기에 맞는 방법을 골라 재현 가능한 방식으로 모형을 튜닝할 수 있다.",
+    "plainLanguageExplanation": [
+      "그리드 탐색은 지정한 값의 모든 조합을 평가해 단순하지만 차원이 늘면 조합 수가 급증한다.",
+      "랜덤 탐색은 분포에서 조합을 뽑아 제한된 예산에서 중요한 축을 더 다양하게 탐색할 수 있다.",
+      "베이지안 최적화는 이전 평가 결과로 다음 유망 후보를 고른다. 효율적일 수 있지만 초기 공간과 최적화 가정에 영향을 받는다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "search space",
+        "meaning": "탐색할 하이퍼파라미터 값 또는 분포의 범위"
+      },
+      {
+        "symbol": "budget",
+        "meaning": "평가할 조합 수나 허용 시간"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "튜닝할 하이퍼파라미터와 타당한 범위·스케일을 정한다.",
+      "조합 수와 평가 비용에 맞춰 그리드·랜덤·베이지안 전략을 고른다.",
+      "같은 교차검증과 지표로 후보를 비교하고 최종 테스트는 선택 후 한 번만 사용한다."
+    ],
+    "beginnerTraps": [
+      "그리드 탐색이 연속 공간의 진짜 최적값을 보장한다고 생각하지 않는다.",
+      "랜덤 탐색의 난수 시드와 샘플링 분포를 기록하지 않아 재현성을 잃지 않는다.",
+      "튜닝과 성능 추정을 같은 교차검증 결과로 낙관적으로 보고하지 않는다. 엄격한 추정에는 중첩 교차검증이나 별도 테스트가 필요하다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-024 lines 519-548: 하이퍼파라미터 탐색 기법",
+      "editorial review: 탐색 예산, 재현성, 중첩 검증"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-025",
+    "primaryProfile": "machine_learning",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "이 노드는 과대적합 원인과 자료·모형에 맞는 방지 전략의 선택이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "과대적합은 데이터 확대·증강, 규제, 드롭아웃, 조기 종료, 모형 단순화 등 자료와 모형에 맞는 전략으로 줄인다.",
+    "whyItMatters": "한 가지 기법을 모든 문제에 적용하지 않고 과대적합의 원인과 모델 종류에 맞춰 개선할 수 있다.",
+    "plainLanguageExplanation": [
+      "더 많은 독립 표본이나 의미를 보존하는 데이터 증강은 모형이 다양한 사례를 보게 해 일반화를 도울 수 있다.",
+      "L1·L2 규제와 모형 단순화는 유효 복잡도를 줄이고, 조기 종료는 검증 성능이 나빠지기 전에 학습을 멈춘다.",
+      "드롭아웃은 주로 신경망에 쓰인다. 배치 정규화는 학습 안정화가 주목적이며 과대적합 방지 효과를 항상 보장하는 규제로 단정하지 않는다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "훈련-검증 격차로 과대적합을 확인하고 누수를 먼저 배제한다.",
+      "자료 부족, 모형 복잡도, 학습 기간 중 주된 원인을 찾는다.",
+      "원인과 모델 종류에 맞는 전략을 적용하고 동일 검증 설계로 다시 비교한다."
+    ],
+    "beginnerTraps": [
+      "데이터 증강이 라벨 의미를 바꾸는 변환까지 허용한다고 생각하지 않는다.",
+      "배치 정규화를 언제나 과대적합 방지용 규제로만 설명하지 않는다.",
+      "검증 성능 저하의 원인이 분포 변화나 누수인데 규제만 더 강하게 걸지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-025 lines 549-555: 기타 과적합 방지 전략",
+      "editorial review: 기법별 적용 범위와 배치 정규화 목적"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-026",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [
+      "process"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "이 노드는 학습값과 설정값의 구분을 모델 선택 절차에 다시 적용하는 것이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "모형 학습은 훈련 자료로 매개변수를 추정하고 검증 자료로 하이퍼파라미터를 선택하는 두 수준의 절차다.",
+    "whyItMatters": "매개변수 추정과 설정 선택을 같은 데이터 성능에 섞지 않아 과도하게 낙관적인 평가를 막는다.",
+    "plainLanguageExplanation": [
+      "가중치와 회귀계수는 주어진 하이퍼파라미터 아래 훈련 손실을 줄이며 배운다.",
+      "학습률·규제 강도·트리 깊이 같은 하이퍼파라미터는 후보별 검증 성능을 비교해 고른다.",
+      "선택이 끝나면 정한 설정으로 훈련 자료를 다시 학습할 수 있지만 테스트 자료는 마지막 일반화 평가에만 사용한다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "후보 하이퍼파라미터마다 훈련 폴드에서 매개변수를 학습한다.",
+      "검증 폴드 점수로 하이퍼파라미터를 선택한다.",
+      "선택을 고정한 뒤 최종 학습하고 테스트 세트에서 한 번 평가한다."
+    ],
+    "beginnerTraps": [
+      "매개변수와 하이퍼파라미터를 모두 테스트 세트 성능으로 고르지 않는다.",
+      "하이퍼파라미터를 사람이 직접 정했다는 이유만으로 근거 없는 값 하나를 고정하지 않는다.",
+      "교차검증 밖에서 전처리 매개변수를 전체 데이터로 먼저 학습하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-026 lines 571-589: 매개변수와 하이퍼파라미터 재구분",
+      "editorial review: 훈련-검증-테스트 절차 연결"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-027",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "python_procedure"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "이 노드는 복잡한 미분 계산보다 기울기 반대 방향 업데이트의 절차적 의미가 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "경사하강법은 손실함수의 기울기 반대 방향으로 매개변수를 반복 이동해 손실이 작은 값을 찾는 최적화 방법이다.",
+    "whyItMatters": "많은 머신러닝 모형이 닫힌 형태의 해 대신 반복 업데이트로 가중치를 학습하는 원리를 이해할 수 있다.",
+    "plainLanguageExplanation": [
+      "기울기는 현재 위치에서 매개변수를 조금 늘렸을 때 손실이 어느 방향으로 얼마나 변하는지 알려 준다. 손실을 줄이려면 그 반대 방향으로 움직인다.",
+      "업데이트는 w←w-η∂L/∂w로 나타내며 η는 한 번에 움직이는 크기인 학습률이다.",
+      "비볼록 손실에서는 전역 최솟값을 반드시 보장하지 않으며 초기값·학습률·배치 방식에 따라 경로가 달라질 수 있다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "w",
+        "meaning": "업데이트할 매개변수"
+      },
+      {
+        "symbol": "η",
+        "meaning": "학습률"
+      },
+      {
+        "symbol": "∂L/∂w",
+        "meaning": "w에 대한 손실 L의 기울기"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "한 번의 경사하강 업데이트",
+        "setup": "현재 w=2, 기울기 ∂L/∂w=3, 학습률 η=0.1이다.",
+        "steps": [
+          "이동량은 η×기울기=0.1×3=0.3이다.",
+          "새 w=2-0.3=1.7이다."
+        ],
+        "result": "양의 기울기의 반대 방향으로 w가 2에서 1.7로 이동한다."
+      }
+    ],
+    "decisionSteps": [
+      "손실함수와 초기 매개변수를 정한다.",
+      "현재 배치에서 기울기를 계산하고 학습률을 곱해 반대 방향으로 업데이트한다.",
+      "손실·검증 성능·수렴 상태를 보며 반복하고 중단한다."
+    ],
+    "beginnerTraps": [
+      "기울기 방향으로 더해 손실을 키우지 않는다.",
+      "경사하강법이 모든 비볼록 문제에서 전역 최솟값을 보장한다고 하지 않는다.",
+      "훈련 손실 감소만 보고 검증 성능 악화를 무시하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-027 lines 590-592: 경사하강법과 업데이트 방향",
+      "editorial review: 학습률과 비볼록 최적화 한계"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-028",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "comparison"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "이 노드는 특정 수치 계산보다 학습률이 수렴 경로에 미치는 영향을 비교하는 것이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "학습률 η는 한 번의 경사 업데이트 보폭으로, 너무 크면 발산하고 너무 작으면 학습이 느리거나 정체될 수 있다.",
+    "whyItMatters": "손실이 안정적으로 줄어드는 속도와 최종 성능에 큰 영향을 주므로 최적화에서 가장 중요한 하이퍼파라미터 중 하나다.",
+    "plainLanguageExplanation": [
+      "학습률이 크면 골짜기의 최솟값을 건너뛰며 손실이 진동하거나 커질 수 있다.",
+      "학습률이 너무 작으면 손실은 안정적으로 보이지만 제한된 시간 안에 충분히 내려가지 못할 수 있다.",
+      "고정값만 쓰지 않고 스케줄러나 적응적 옵티마이저를 사용할 수 있지만, 시작 학습률과 검증 기준은 여전히 점검해야 한다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "η",
+        "meaning": "한 번의 업데이트에서 기울기에 곱하는 학습률"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "손실 곡선이 감소·진동·발산·정체 중 어떤 패턴인지 확인한다.",
+      "발산하면 학습률을 낮추고 지나치게 느리면 합리적 범위에서 높인다.",
+      "후보 학습률이나 스케줄을 같은 검증 조건에서 비교한다."
+    ],
+    "beginnerTraps": [
+      "학습률이 클수록 항상 빨리 좋은 해에 도달한다고 생각하지 않는다.",
+      "손실이 조금 흔들린다는 사실만으로 반드시 학습 실패라고 단정하지 않는다.",
+      "학습률 조정 결과를 테스트 세트에 반복 맞추지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-028 lines 593-607: 학습률 크기의 영향",
+      "editorial review: 원천의 비관련 설명가능성 문구를 배제하고 수렴 경계 교정"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-029",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [
+      "machine_learning"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "이 노드는 배치 크기에 따른 기울기 추정의 비용과 변동성 비교가 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "배치·확률적·미니배치 경사하강법은 한 번의 업데이트에 전체 자료, 한 관측치, 일부 묶음 중 무엇을 쓰는지로 구분한다.",
+    "whyItMatters": "메모리·계산 효율과 기울기 잡음, 수렴 안정성 사이의 균형에 맞춰 학습 방식을 선택할 수 있다.",
+    "plainLanguageExplanation": [
+      "배치 경사하강법은 전체 훈련 자료로 정확한 평균 기울기를 계산해 안정적이지만 큰 자료에서는 업데이트가 느리고 메모리를 많이 쓴다.",
+      "확률적 경사하강법은 한 관측치마다 빠르게 업데이트해 잡음이 크다. 미니배치는 일부 묶음을 사용해 병렬 계산과 안정성을 절충한다.",
+      "실무의 SGD라는 말은 한 건 방식뿐 아니라 미니배치 확률 최적화를 넓게 가리키기도 하므로 배치 크기를 확인한다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "batch size",
+        "meaning": "한 번의 기울기 계산에 사용하는 관측치 수"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "자료 크기와 메모리·가속기 제약을 확인한다.",
+      "안정성과 업데이트 빈도를 고려해 배치 크기를 정한다.",
+      "같은 검증 조건에서 학습 속도와 일반화 성능을 비교한다."
+    ],
+    "beginnerTraps": [
+      "확률적 업데이트의 진동을 언제나 나쁜 현상이라고만 보지 않는다.",
+      "미니배치가 배치와 확률적 방식의 장점을 아무 조건 없이 모두 보장한다고 하지 않는다.",
+      "배치 크기를 바꾸면서 학습률 등 연관 설정을 그대로 두고 공정한 비교라고 단정하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-029 lines 608-632: 데이터 사용 방식별 경사하강법",
+      "editorial review: 배치 크기, 잡음, SGD 용어 범위"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-030",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "이 노드는 각 옵티마이저가 기울기의 방향과 학습률을 어떻게 보정하는지 개념적으로 구분하는 것이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "Momentum·AdaGrad·RMSProp·Adam은 기본 경사 업데이트에 관성이나 매개변수별 적응 학습률을 더한 옵티마이저다.",
+    "whyItMatters": "손실 지형과 희소성, 계산 안정성에 맞는 업데이트 규칙을 선택해 학습 속도와 수렴을 개선할 수 있다.",
+    "plainLanguageExplanation": [
+      "Momentum은 과거 기울기 방향을 누적해 일관된 방향의 이동을 키우고 골짜기 좌우 진동을 줄인다.",
+      "AdaGrad는 누적 제곱기울기로 좌표별 학습률을 줄여 희소 특성에 유리할 수 있지만 학습률이 지나치게 작아질 수 있다. RMSProp은 최근 제곱기울기의 이동평균을 사용해 이 문제를 완화한다.",
+      "Adam은 Momentum과 RMSProp 계열 아이디어를 결합하지만 모든 문제에서 항상 최고의 일반화 성능을 보장하지 않는다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "기본 SGD에서 진동·느린 수렴·희소 기울기 문제가 있는지 확인한다.",
+      "Momentum 또는 적응 학습률 계열을 후보로 정한다.",
+      "동일 학습 예산과 검증 설계에서 수렴 속도와 최종 일반화 성능을 비교한다."
+    ],
+    "beginnerTraps": [
+      "옵티마이저의 발전 순서를 항상 이전 방법을 완전히 대체한 우열 순위로 보지 않는다.",
+      "Adam을 쓰면 학습률 튜닝이 불필요하다고 생각하지 않는다.",
+      "훈련 손실이 빨리 낮아지는 옵티마이저가 반드시 테스트 성능도 최고라고 단정하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-030 lines 633-663: 옵티마이저 비교",
+      "editorial review: 알고리즘별 역할과 비우열 해석"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-031",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "학습 곡선은 단일 계산보다 에포크에 따른 훈련·검증 성능의 모양을 해석하는 것이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "학습 곡선은 학습 진행에 따른 훈련·검증 지표를 함께 그려 과대적합, 과소적합, 조기 종료 시점을 판단하는 그래프다.",
+    "whyItMatters": "최종 점수 하나로는 보이지 않는 학습 과정의 변화를 보고 더 학습할지, 멈출지, 모형 용량을 바꿀지 결정할 수 있다.",
+    "plainLanguageExplanation": [
+      "에포크가 늘며 훈련 손실과 검증 손실이 함께 내려가면 아직 유용한 학습이 진행 중일 수 있다.",
+      "훈련 손실은 계속 내려가지만 검증 손실이 상승하면 과대적합 신호다. 검증 손실이 가장 낮았던 지점을 조기 종료 후보로 삼는다.",
+      "두 손실이 모두 높고 잘 줄지 않으면 과소적합, 학습률 문제, 특성 부족 등을 구분해 점검한다. 그래프 축과 지표 방향도 확인한다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "epoch",
+        "meaning": "훈련 자료 전체를 한 번 사용한 학습 단위"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "같은 축에 에포크별 훈련·검증 지표를 기록한다.",
+      "두 곡선의 수준과 간격, 검증 곡선의 최적점을 확인한다.",
+      "과대적합이면 최적 체크포인트 복원·규제를, 과소적합이면 표현력·학습 설정을 재검토한다."
+    ],
+    "beginnerTraps": [
+      "훈련 손실의 최저점이 최종 모형의 최적 시점이라고 생각하지 않는다.",
+      "정확도처럼 클수록 좋은 지표와 손실처럼 작을수록 좋은 지표의 방향을 혼동하지 않는다.",
+      "축 범위를 과도하게 잘라 작은 변화를 큰 성능 차이로 보이게 하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-031 lines 664-693: 학습 곡선과 조기 종료",
+      "editorial review: 곡선 패턴별 과대·과소적합 진단"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-032",
+    "primaryProfile": "statistical_decision",
+    "secondaryCapabilities": [
+      "process"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "정규성 판단은 한 공식 계산보다 분석 대상, 표본 크기, 그래프와 검정 결과를 종합하는 절차가 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "정규성 점검은 히스토그램·Q-Q plot 같은 그래프와 샤피로-윌크 등 검정을 함께 사용해 분석 대상의 정규분포 가정이 합리적인지 살피는 과정이다.",
+    "whyItMatters": "모수 검정과 회귀 추론의 가정이 어느 변수 또는 잔차에 필요한지 구분해 잘못된 검정 선택과 p값 단정을 막을 수 있다.",
+    "plainLanguageExplanation": [
+      "어떤 분석은 원자료가 아니라 집단별 오차나 회귀 잔차의 정규성을 가정한다. 먼저 무엇의 분포를 점검해야 하는지 정한다.",
+      "Q-Q plot은 왜도·꼬리·이상치의 모양을 보여 주고, 샤피로-윌크 같은 검정은 정규분포와의 차이에 대한 p값을 준다.",
+      "작은 표본은 검정력이 낮아 차이를 못 찾을 수 있고 큰 표본은 사소한 차이도 유의하게 만들 수 있다. 표본 크기, 그래프, 분석의 견고성을 함께 본다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "H₀",
+        "meaning": "정규성 검정에서 자료가 정규분포 모집단에서 왔다는 귀무가설"
+      },
+      {
+        "symbol": "α",
+        "meaning": "검정 전에 정한 유의수준"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "사용할 통계 절차가 무엇의 정규성을 가정하는지 확인한다.",
+      "히스토그램·Q-Q plot으로 분포의 모양과 이상치를 본다.",
+      "표본 크기를 고려해 검정 p값을 해석하고 필요하면 견고·비모수 방법을 검토한다."
+    ],
+    "beginnerTraps": [
+      "모든 분석 전에 모든 원자료 열이 정규분포여야 한다고 생각하지 않는다.",
+      "p>0.05를 정규성 증명 또는 귀무가설 채택으로 쓰지 않는다.",
+      "큰 표본의 작은 p값만 보고 실질적으로 영향 없는 미세한 비정규성까지 자동으로 분석 중단 사유로 삼지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-032 lines 712-739: 정규성 검정 기법 묶음",
+      "canonical-claim HOLD editorial correction: 대상 가정, 표본 크기, p값 한계"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-033",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "statistical_decision"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "Q-Q plot은 수치 계산보다 기준 직선에서 벗어나는 패턴을 시각적으로 해석하는 것이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "정규 Q-Q plot은 표본 분위수와 같은 확률의 정규분포 이론 분위수를 비교해 점들이 기준 직선에 가까운지 보는 그래프다.",
+    "whyItMatters": "정규성 검정의 p값만으로는 알기 어려운 왜도, 두꺼운 꼬리, 이상치의 형태를 눈으로 확인할 수 있다.",
+    "plainLanguageExplanation": [
+      "자료를 작은 값부터 큰 값까지 정렬해 각 위치의 표본 분위수를 정규분포의 이론 분위수와 짝지어 점으로 찍는다.",
+      "점들이 대체로 직선에 놓이면 정규분포와 비슷한 모양이고, S자나 꼬리의 체계적 이탈은 왜도 또는 꼬리 차이를 시사한다.",
+      "기준선이 반드시 화면상의 y=x일 필요는 없다. 축의 위치·척도 추정 방식에 따라 기울기와 절편이 달라질 수 있으므로 직선성 자체를 본다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "quantile",
+        "meaning": "분포를 누적확률 기준으로 나눈 위치의 값"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "정규성을 확인할 원자료·집단 오차·잔차 중 대상을 정한다.",
+      "Q-Q plot의 전체 직선성과 양쪽 꼬리 이탈을 확인한다.",
+      "표본 크기와 이상치, 정규성 검정 결과를 함께 종합한다."
+    ],
+    "beginnerTraps": [
+      "점 하나가 선에서 벗어났다는 이유만으로 전체 분포를 비정규라고 확정하지 않는다.",
+      "기준선은 항상 y=x여야 한다고 외우지 않는다.",
+      "Q-Q plot이 직선에 가깝다는 사실을 표본의 독립성이나 등분산성 증거로 확대하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-033 lines 740-742: Q-Q plot 판단 기준",
+      "editorial review: 기준선 형태와 꼬리 패턴 해석"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-034",
+    "primaryProfile": "statistical_decision",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "샤피로-윌크는 통계량을 손계산하기보다 귀무가설과 p값을 제한적으로 해석하는 것이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "샤피로-윌크 검정은 표본이 정규분포 모집단에서 왔다는 귀무가설을 검정하는 정규성 검정이다.",
+    "whyItMatters": "p값의 방향을 정확히 읽고도 정규성을 증명했다는 과도한 결론을 피할 수 있다.",
+    "plainLanguageExplanation": [
+      "귀무가설 H₀는 정규분포에서 왔다는 것이고 대립가설은 그렇지 않다는 것이다.",
+      "p<α이면 H₀를 기각할 증거가 있다. p≥α이면 H₀를 기각할 증거가 부족할 뿐 정규성이 참이라고 확정하거나 채택하는 것은 아니다.",
+      "작은 표본에서는 큰 이탈도 놓칠 수 있고 큰 표본에서는 작은 이탈도 검출할 수 있어 Q-Q plot과 분석 목적을 함께 본다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "W",
+        "meaning": "정렬된 표본값과 정규분포 기대 순서통계량의 일치 정도를 이용한 샤피로-윌크 통계량"
+      },
+      {
+        "symbol": "p-value",
+        "meaning": "H₀가 참일 때 관측 결과 이상으로 정규성에서 벗어난 결과가 나올 확률"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "정규성 검정의 두 결과",
+        "setup": "α=0.05에서 표본 A의 p=0.02, 표본 B의 p=0.20이다.",
+        "steps": [
+          "A는 p<α이므로 정규성 귀무가설을 기각한다.",
+          "B는 p≥α이므로 귀무가설을 기각하지 않는다."
+        ],
+        "result": "A에는 정규성 위반 증거가 있지만 B는 정규성이 증명된 것이 아니라 기각 근거가 부족한 상태다."
+      }
+    ],
+    "decisionSteps": [
+      "H₀와 α를 검정 전에 정한다.",
+      "p값을 α와 비교해 기각 또는 기각하지 않음으로 표현한다.",
+      "Q-Q plot·표본 크기·이상치와 함께 모수 또는 견고·비모수 방법을 결정한다."
+    ],
+    "beginnerTraps": [
+      "p>0.05를 H₀ 채택 또는 정규성 만족 확정으로 쓰지 않는다.",
+      "p값을 귀무가설이 참일 확률로 해석하지 않는다.",
+      "정규성 검정 결과만으로 독립성이나 등분산성까지 판정하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-034 lines 743-754: 샤피로-윌크 가설과 p값",
+      "canonical-claim HOLD editorial correction: fail-to-reject 표현과 표본 크기 한계"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-035",
+    "primaryProfile": "statistical_decision",
+    "secondaryCapabilities": [
+      "machine_learning",
+      "comparison"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "이 상위 노드는 계산보다 범주형 빈도 자료와 검정 목적을 판별하는 것이 핵심이며 통계량 계산은 하위 노드에서 다룬다."
+      }
+    ],
+    "oneLineMeaning": "카이제곱 검정은 범주별 관측빈도와 귀무가설 아래 기대빈도의 차이가 우연한 변동으로 설명될 만한지 평가한다.",
+    "whyItMatters": "연속값 평균 비교가 아니라 범주형 빈도 자료에서 적합도·독립성·동질성 질문을 검정할 수 있다.",
+    "plainLanguageExplanation": [
+      "자료는 개인별 원시 수치가 아니라 범주별 건수인 빈도표로 정리한다. 관측빈도 O와 귀무가설이 예상하는 기대빈도 E를 비교한다.",
+      "O와 E의 차이가 기대빈도에 비해 클수록 카이제곱 통계량이 커지고 귀무가설과 맞지 않는 증거가 강해진다.",
+      "유의한 관련성이 있어도 관계의 크기나 인과 방향은 알려 주지 않는다. 효과크기와 연구 설계를 별도로 본다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "O",
+        "meaning": "실제로 관측한 범주별 빈도"
+      },
+      {
+        "symbol": "E",
+        "meaning": "귀무가설 아래 예상하는 범주별 기대빈도"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "변수가 범주형이고 자료가 독립된 빈도인지 확인한다.",
+      "질문이 적합도·독립성·동질성 중 무엇인지 정하고 기대빈도를 계산한다.",
+      "카이제곱 p값과 기대빈도 조건, 효과크기를 함께 보고 결론을 낸다."
+    ],
+    "beginnerTraps": [
+      "백분율이나 평균만 있고 실제 빈도와 표본 수가 없는데 카이제곱 검정을 바로 적용하지 않는다.",
+      "카이제곱 유의성을 강한 관련성이나 인과관계의 증거로 쓰지 않는다.",
+      "같은 개인의 반복 관측을 독립된 빈도로 취급하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-035 lines 755-756: 범주형 자료의 카이제곱 검정",
+      "editorial review: 빈도·독립성·효과크기·비인과 경계"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-036",
+    "primaryProfile": "formula_calculation",
+    "secondaryCapabilities": [
+      "machine_learning",
+      "comparison"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "카이제곱 통계량은 각 셀의 (관측빈도-기대빈도)²/기대빈도를 합하고, 독립성 표의 기대빈도는 행합계×열합계/전체합계로 구한다.",
+    "whyItMatters": "기대되는 규모에 비해 관측 차이가 얼마나 큰지를 표준화해 범주형 빈도표 전체의 불일치를 계산할 수 있다.",
+    "plainLanguageExplanation": [
+      "같은 5건 차이라도 기대빈도 10에서의 차이는 기대빈도 100에서의 차이보다 상대적으로 크다. E로 나누는 이유가 이 상대적 크기 반영이다.",
+      "독립성 검정의 기대빈도는 두 변수가 관련 없다는 귀무가설 아래 주변합계만으로 계산한다.",
+      "통계량이 크면 귀무가설과의 불일치가 크지만 p값은 자유도와 함께 계산한다. 큰 표본에서는 작은 차이도 유의할 수 있어 효과크기를 같이 본다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "χ²",
+        "meaning": "Σ(O-E)²/E로 계산한 카이제곱 통계량"
+      },
+      {
+        "symbol": "O",
+        "meaning": "관측빈도"
+      },
+      {
+        "symbol": "E",
+        "meaning": "귀무가설 아래 기대빈도"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "2×2 표의 한 셀 기대빈도",
+        "setup": "전체 100명, 첫 행 합계 40명, 첫 열 합계 30명인 독립성 표가 있다.",
+        "steps": [
+          "첫 행·첫 열 셀의 기대빈도 E=40×30/100=12를 구한다.",
+          "그 셀의 관측빈도가 18이면 기여도는 (18-12)²/12=3이다."
+        ],
+        "result": "모든 셀의 기여도를 같은 방식으로 더해 χ²를 구한다."
+      }
+    ],
+    "decisionSteps": [
+      "교차표의 행합계·열합계·전체합계를 확인한다.",
+      "각 셀의 E=행합계×열합계/전체합계를 계산한다.",
+      "각 (O-E)²/E를 합하고 자유도로 p값을 해석한 뒤 기대빈도 조건과 효과크기를 확인한다."
+    ],
+    "beginnerTraps": [
+      "기대빈도를 전체 셀에 똑같이 배분하지 않는다. 주변합계를 반영한다.",
+      "χ²가 크다는 사실만으로 효과가 크다고 해석하지 않는다. 표본 크기의 영향을 받는다.",
+      "카이제곱 통계량을 음수로 계산하지 않는다. 제곱 항이므로 0 이상이다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-036 lines 757-762: 카이제곱 통계량과 기대빈도 공식",
+      "canonical-claim HOLD editorial correction: 자유도·표본 크기·효과크기 해석"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-037",
+    "primaryProfile": "statistical_decision",
+    "secondaryCapabilities": [
+      "machine_learning",
+      "comparison"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "이 노드는 같은 카이제곱 통계량보다 표집 방식과 귀무가설로 세 검정 유형을 구분하는 것이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "카이제곱 적합도는 한 범주변수의 분포, 독립성은 한 모집단의 두 범주변수 관계, 동질성은 여러 모집단의 범주분포 동일성을 검정한다.",
+    "whyItMatters": "비슷한 교차표와 같은 계산식을 사용해도 연구 질문과 표집 설계에 따라 귀무가설의 표현이 달라지는 점을 구분할 수 있다.",
+    "plainLanguageExplanation": [
+      "적합도 검정은 한 표본에서 한 범주변수의 관측 비율이 미리 정한 기대 비율과 같은지 묻는다.",
+      "독립성 검정은 한 모집단에서 뽑은 사람들의 두 범주변수, 예를 들어 흡연 여부와 질병 여부가 독립인지 묻는다.",
+      "동질성 검정은 서로 다른 모집단이나 집단에서 뽑은 표본들의 범주 분포가 같은지 묻는다. 계산은 유사하지만 표집과 질문이 다르다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "범주변수가 하나인지 둘인지 확인한다.",
+      "표본이 한 모집단에서 왔는지 여러 고정 집단에서 각각 왔는지 확인한다.",
+      "적합도·독립성·동질성에 맞게 H₀를 문장으로 쓰고 기대빈도를 계산한다."
+    ],
+    "beginnerTraps": [
+      "독립성과 동질성은 표 모양만 보고 구분하지 않는다. 표집 설계와 질문을 본다.",
+      "적합도 검정에서 기대 비율의 합이 1인지 확인하지 않고 계산하지 않는다.",
+      "유의한 독립성 검정 결과를 한 변수가 다른 변수를 원인적으로 만든다는 결론으로 바꾸지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-037 lines 763-799: 카이제곱 세 검정 유형",
+      "editorial review: 표집 설계와 귀무가설 중심 구분"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-038",
+    "primaryProfile": "statistical_decision",
+    "secondaryCapabilities": [
+      "data_architecture",
+      "process",
+      "formula_calculation"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "모수 유의성 검정은 H₀·H₁와 유의수준을 먼저 정하고 검정통계량·p값·신뢰구간·효과크기를 함께 해석하는 의사결정 체계다.",
+    "whyItMatters": "p값 하나를 결과의 크기나 인과성으로 오해하지 않고 통계적 불확실성과 실질적 중요성을 분리할 수 있다.",
+    "plainLanguageExplanation": [
+      "귀무가설은 차이 또는 효과가 없다는 기준 명제, 대립가설은 연구자가 검토하는 방향 또는 차이의 존재를 나타낸다. 유의수준 α는 자료를 보기 전에 정한다.",
+      "p값은 H₀가 참일 때 관측한 통계량 이상으로 극단적인 결과가 나올 확률이다. H₀가 참일 확률이나 결과가 우연일 확률이 아니다.",
+      "통계적 유의성은 효과의 크기와 다르다. 추정치·신뢰구간·Cohen's d, Cramér's V 같은 적절한 효과크기와 연구 설계를 함께 봐야 하며 관찰연구의 유의성만으로 인과를 주장할 수 없다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "α",
+        "meaning": "H₀가 참인데 기각할 제1종 오류의 허용 기준"
+      },
+      {
+        "symbol": "p-value",
+        "meaning": "H₀ 아래 관측 결과 이상으로 극단적인 결과의 확률"
+      },
+      {
+        "symbol": "CI",
+        "meaning": "모수의 그럴듯한 범위를 나타내는 신뢰구간"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "유의하지만 작은 효과 해석",
+        "setup": "매우 큰 표본에서 평균 차이 0.2, p<0.001, 95% 신뢰구간 [0.1, 0.3]이 나왔다.",
+        "steps": [
+          "p<α이므로 차이 0이라는 H₀를 기각한다.",
+          "차이 크기 0.2와 신뢰구간이 업무상 의미 있는 기준을 넘는지 확인한다.",
+          "배정 방식과 교란 통제를 보고 인과 해석 가능성을 따로 판단한다."
+        ],
+        "result": "통계적으로 유의해도 효과가 작거나 인과 근거가 부족할 수 있다."
+      }
+    ],
+    "decisionSteps": [
+      "질문과 모수에 맞는 H₀·H₁, α, 단측·양측 여부를 사전에 정한다.",
+      "자료 구조와 가정을 확인해 검정통계량과 p값을 계산한다.",
+      "기각 여부와 함께 추정치·신뢰구간·효과크기·연구 설계를 보고한다."
+    ],
+    "beginnerTraps": [
+      "p값을 H₀가 참일 확률로 해석하지 않는다.",
+      "p<0.05를 효과가 크거나 실무적으로 중요하다는 뜻으로 쓰지 않는다.",
+      "유의한 연관성을 인과관계로 단정하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-038 lines 800-839: 모수 유의성 검정 체계",
+      "editorial review: p값 정의, 신뢰구간, 효과크기, 비인과 경계"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-039",
+    "primaryProfile": "statistical_decision",
+    "secondaryCapabilities": [
+      "comparison"
+    ],
+    "notApplicableReasons": [
+      {
+        "capability": "formula_calculation",
+        "reason": "이 노드는 t 통계량 손계산보다 표본 구조에 맞는 세 t-검정 유형을 선택하는 것이 핵심이다."
+      }
+    ],
+    "oneLineMeaning": "단일표본 t-검정은 한 평균과 기준값, 독립표본 t-검정은 독립된 두 집단 평균, 대응표본 t-검정은 짝지어진 차이의 평균을 검정한다.",
+    "whyItMatters": "관측치가 독립인지 짝지어졌는지에 맞는 검정을 선택해야 표준오차와 p값을 올바르게 계산할 수 있다.",
+    "plainLanguageExplanation": [
+      "단일표본 t-검정은 한 집단 평균이 70 같은 기준값과 다른지 본다.",
+      "독립표본 t-검정은 A반과 B반처럼 서로 다른 대상의 두 집단 평균을 비교한다. 등분산을 확신할 수 없다면 Welch t-검정을 기본 후보로 검토한다.",
+      "대응표본 t-검정은 같은 사람의 전후 값 또는 짝지은 대상의 차이값을 만든 뒤 그 차이의 평균이 0인지 본다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "t",
+        "meaning": "추정된 평균 차이를 그 표준오차로 나눈 검정통계량"
+      },
+      {
+        "symbol": "df",
+        "meaning": "t 분포를 정하는 자유도"
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "비교 대상이 한 평균과 기준값인지 두 평균인지 확인한다.",
+      "두 표본이면 서로 독립인지 같은 대상의 전후처럼 짝지어졌는지 확인한다.",
+      "가정과 대립가설에 맞는 t-검정을 선택하고 차이 추정치·신뢰구간과 함께 해석한다."
+    ],
+    "beginnerTraps": [
+      "같은 사람의 전후 자료를 독립표본 t-검정으로 분석하지 않는다.",
+      "독립표본 t-검정에서 항상 등분산을 가정한 pooled 검정만 써야 한다고 생각하지 않는다.",
+      "p값만 보고 평균 차이의 크기와 신뢰구간을 생략하지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-039 lines 840-844: t-검정 세 유형",
+      "editorial review: 대응 구조, Welch 검정, 효과 추정"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-040",
+    "primaryProfile": "statistical_decision",
+    "secondaryCapabilities": [
+      "machine_learning",
+      "formula_calculation",
+      "comparison"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "카이제곱 검정은 독립 관측과 충분한 기대빈도를 점검하고, 희소표에서는 정확·몬테카를로 방법을 검토하며 p값을 효과크기와 함께 해석해야 한다.",
+    "whyItMatters": "기대빈도가 너무 작은 표에서 근사 p값을 믿거나 큰 표본의 미세한 차이를 중요한 관계로 과장하는 오류를 막을 수 있다.",
+    "plainLanguageExplanation": [
+      "카이제곱 분포를 이용한 p값은 기대빈도가 충분할 때의 근사다. 흔한 지침은 기대빈도 1 미만 셀이 없고 5 미만 셀이 전체의 20%를 넘지 않는지 살피는 것이지만 분야와 표 크기에 따라 기준을 기계적으로 적용하지 않는다.",
+      "희소한 2×2 표에서는 Fisher의 정확검정을, 더 큰 희소표에서는 정확 또는 몬테카를로 p값, 사전에 타당한 범주 결합 등을 검토한다.",
+      "큰 표본에서는 작은 차이도 작은 p값이 될 수 있다. Cramér's V 같은 효과크기와 셀별 잔차로 관계의 크기와 위치를 확인하며, 연관성이 인과성을 뜻하지는 않는다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "expected count",
+        "meaning": "귀무가설 아래 각 셀에 예상되는 빈도"
+      },
+      {
+        "symbol": "Cramér's V",
+        "meaning": "표본 크기와 표 차원을 보정해 범주형 연관성 크기를 요약하는 0~1 효과크기"
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "희소 교차표의 검정 선택",
+        "setup": "2×2 교차표에서 한 셀의 기대빈도가 2이고 전체 표본도 작다.",
+        "steps": [
+          "일반 카이제곱 근사의 기대빈도 조건이 약하다는 점을 확인한다.",
+          "독립 관측과 고정 주변합계 맥락을 확인하고 Fisher의 정확검정을 검토한다.",
+          "p값과 함께 오즈비 또는 적절한 효과크기와 신뢰구간을 보고한다."
+        ],
+        "result": "기대빈도가 작다는 이유로 결과를 억지로 카이제곱 근사에 넣지 않고 자료 구조에 맞는 대안을 선택한다."
+      }
+    ],
+    "decisionSteps": [
+      "원자료가 독립된 빈도인지와 범주 정의가 타당한지 확인한다.",
+      "모든 기대빈도를 계산해 희소 셀의 정도를 점검한다.",
+      "근사·정확·몬테카를로 방법을 선택하고 p값, 효과크기, 셀별 패턴을 함께 해석한다."
+    ],
+    "beginnerTraps": [
+      "모든 셀의 기대빈도가 반드시 5 이상이어야만 카이제곱 검정이 가능하다는 절대 규칙으로 외우지 않는다.",
+      "관측빈도와 기대빈도를 혼동해 5 미만 관측 셀만 세지 않는다.",
+      "p<0.05를 강한 효과나 인과관계의 증거로 쓰지 않는다."
+    ],
+    "sourceBasis": [
+      "s4-final T-S4-040 lines 845-850: 기대빈도와 큰 표본 주의",
+      "canonical-claim HOLD editorial correction: 희소표 지침, 정확검정, 효과크기, 비인과 경계"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-041",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "machine_learning",
+      "statistical_decision"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "분석 결과를 업무에 쓰기 전에는 데이터 신뢰성, 목적의 명확성, 모형 적합성, 통계적 타당성을 함께 확인해야 합니다.",
+    "whyItMatters": "성능 수치 하나만 보고 행동하면 데이터 오류, 잘못 잡은 목표, 과적합, 우연한 차이를 실제 효과로 착각할 수 있습니다.",
+    "plainLanguageExplanation": [
+      "데이터 신뢰성은 수집 오류·표본 편향·결측과 이상치 처리가 결과를 흔들지 않는지 보는 조건입니다.",
+      "분석 목적과 모형 적합성은 예측 대상과 업무 목표가 연결되는지, 새 데이터에도 성능이 유지되는지를 확인하는 조건입니다.",
+      "통계적 타당성은 p값 하나만 보는 일이 아닙니다. 효과 크기, 신뢰구간, 표본 설계와 가정을 함께 읽어 불확실성을 드러내야 합니다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "95% 신뢰구간",
+        "meaning": "같은 표본추출과 계산 절차를 반복할 때 만들어진 구간들 중 약 95%가 참 모수를 포함하도록 설계된 구간입니다."
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "데이터가 모집단과 운영 상황을 충분히 대표하며 품질 문제가 통제됐는지 확인합니다.",
+      "평가지표와 검증 방식이 분석 목적, 데이터 구조, 오류 비용에 맞는지 확인합니다.",
+      "효과 크기와 신뢰구간, 가정, 업무상 이익과 위험을 함께 보고 적용 여부를 결정합니다."
+    ],
+    "beginnerTraps": [
+      "p값이 작다는 사실만으로 효과가 크거나 업무에 유용하거나 인과관계가 입증됐다고 말할 수 없습니다.",
+      "95% 신뢰구간을 계산한 뒤 '참값이 이 구간 안에 있을 확률이 95%'라고 해석하는 것은 일반적인 빈도주의 해석과 다릅니다.",
+      "교차검증 점수가 좋아도 목표 정의가 틀렸거나 운영 데이터가 달라지면 올바른 의사결정을 보장하지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0057 lines 872-897: 데이터 신뢰성·목적 명확화·모형 적합성·통계적 유의성",
+      "편집 검토: 신뢰구간의 빈도주의 해석과 통계적 유의성의 한계를 보정"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-042",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [
+      "machine_learning"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "설명 가능성은 모델의 예측이 어떤 정보와 규칙에 의해 나왔는지 사람이 이해하고 검토할 수 있는 정도입니다.",
+    "whyItMatters": "정확도뿐 아니라 오류 원인, 편향, 책임 있는 사용 가능성을 판단하려면 모델의 작동과 개별 예측을 설명할 수 있어야 합니다.",
+    "plainLanguageExplanation": [
+      "해석 가능성은 모델 구조 자체가 단순해 읽히는 경우와, 복잡한 모델에 사후 설명 기법을 적용하는 경우로 나눠 볼 수 있습니다.",
+      "성능과 해석성 사이에 긴장이 생길 수 있지만 항상 한쪽이 오르면 다른 쪽이 떨어지는 법칙은 아닙니다.",
+      "필요한 설명 수준은 위험, 사용자, 의사결정 단위에 따라 다르므로 전역 설명과 개별 예측 설명을 구분합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "설명 대상이 모델 전체인지 특정 예측 한 건인지 정합니다.",
+      "의사결정 위험과 사용자에게 필요한 설명 수준을 정합니다.",
+      "설명이 원 모델을 충분히 충실하게 반영하는지와 편향·오용 위험을 함께 검토합니다."
+    ],
+    "beginnerTraps": [
+      "정확도가 높은 모델이 반드시 설명하기 어렵거나, 설명 가능한 모델이 반드시 성능이 낮은 것은 아닙니다.",
+      "설명 가능성은 설명이 그럴듯하다는 뜻이 아니라 원 모델의 동작을 얼마나 충실히 보여 주는지까지 포함합니다.",
+      "설명 도구를 붙였다고 모델의 공정성이나 안전성이 자동으로 보장되지는 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0058 lines 898-899: 예측력과 해석력의 관계",
+      "C032 통합 이론: 전역·지역 설명과 책임 있는 결과 활용"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-043",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "comparison",
+      "machine_learning"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "화이트박스는 계수나 분기 규칙처럼 예측 과정을 사람이 직접 살펴볼 수 있는 구조의 모델을 가리킵니다.",
+    "whyItMatters": "구조가 읽힌다는 장점과 실제 설명이 이해 가능하다는 주장을 구분해야 모델을 과신하지 않습니다.",
+    "plainLanguageExplanation": [
+      "선형·로지스틱 회귀는 계수의 부호와 크기를, 작은 의사결정나무는 분기 경로를 확인할 수 있어 대표적인 화이트박스 예로 듭니다.",
+      "그러나 변수가 많거나 강한 상관, 복잡한 전처리, 깊은 나무가 있으면 구조가 공개돼도 설명은 어려워질 수 있습니다.",
+      "계수 해석은 변수 단위, 인코딩, 링크 함수와 모형 가정을 확인한 뒤 해야 합니다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "β",
+        "meaning": "회귀식에서 다른 조건을 일정하게 두었을 때 입력 변수 변화와 예측값 변화의 관계를 나타내는 계수입니다."
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "모델의 계수·규칙·경로를 사람이 직접 확인할 수 있는지 봅니다.",
+      "전처리와 변수 수, 상관관계가 설명을 흐리지 않는지 확인합니다.",
+      "구조적 해석 가능성과 개별 예측의 타당성·인과성을 별도로 판단합니다."
+    ],
+    "beginnerTraps": [
+      "화이트박스라는 이름만으로 비전문가도 항상 쉽게 이해한다고 단정하지 않습니다.",
+      "회귀 계수나 나무 분기가 보인다고 그 변수가 결과의 원인이라는 뜻은 아닙니다.",
+      "의사결정나무도 너무 깊고 크면 실질적인 해석 가능성이 크게 낮아질 수 있습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0059 lines 900-904: 회귀 계수·분기 규칙과 대표 모델",
+      "theory-public-claim-policy: T-S4-043 canonical claim HOLD; 과도한 투명성·용이성 주장을 제외한 편집 투영"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-044",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "comparison",
+      "machine_learning"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "블랙박스는 내부 계산이 복잡해 사람이 예측 과정을 직접 따라가기 어려운 모델을 가리킵니다.",
+    "whyItMatters": "구조가 불투명한 모델을 쓸 때는 성능 검증과 함께 사후 설명, 오류 분석, 공정성·안전 점검이 필요합니다.",
+    "plainLanguageExplanation": [
+      "깊은 신경망이나 대규모 앙상블처럼 많은 변수와 비선형 결합을 쓰는 모델은 개별 예측 경로를 직관적으로 읽기 어렵습니다.",
+      "블랙박스는 '성능이 높다'는 등급이 아니라 '내부 판단 과정을 사람이 직접 해석하기 어렵다'는 성질을 나타냅니다.",
+      "PDP·LIME·SHAP 같은 도구로 행동의 일부를 설명할 수 있지만 그 설명은 원 모델을 단순화하거나 요약한 결과입니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "모델 구조와 개별 예측 경로를 사람이 직접 추적할 수 있는지 확인합니다.",
+      "업무 위험에 맞는 전역·지역 설명 방법과 성능 검증을 선택합니다.",
+      "설명의 충실도, 안정성, 편향과 책임 주체를 확인한 뒤 사용 범위를 정합니다."
+    ],
+    "beginnerTraps": [
+      "블랙박스 모델이라고 정확도가 반드시 높거나 화이트박스보다 항상 우수한 것은 아닙니다.",
+      "사후 설명 결과는 원 모델 자체가 투명해졌다는 뜻이 아닙니다.",
+      "모델 종류 이름만 보고 블랙박스 여부를 고정하지 말고 실제 복잡도와 구현을 함께 봅니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0060 lines 905-910: 복잡한 내부 구조와 설명의 어려움",
+      "theory-public-claim-policy: T-S4-044 canonical claim HOLD; 고성능 보장 표현을 제외한 편집 투영"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-045",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "comparison",
+      "machine_learning"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "결과 해석은 성능과 예측 근거를 업무 맥락에서 읽는 일이며, 변수 중요도는 그 근거를 요약하는 여러 방법 중 하나입니다.",
+    "whyItMatters": "모델 점수와 설명값을 행동으로 옮기려면 전체 경향, 개별 예측, 불확실성, 오류 비용을 서로 섞지 않아야 합니다.",
+    "plainLanguageExplanation": [
+      "전역 해석은 모델이 전체 데이터에서 보이는 평균적 패턴을, 지역 해석은 특정 관측치의 예측 근거를 다룹니다.",
+      "변수 중요도는 어떤 정보가 예측에 많이 쓰였는지 보여 주지만 계산 방법에 따라 순위와 의미가 달라집니다.",
+      "해석 결과는 성능지표, 잔차와 오류 사례, 공정성·개인정보 위험과 함께 읽어야 합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "먼저 회귀·분류 등 문제 유형과 업무 질문을 확인합니다.",
+      "성능, 전역 패턴, 개별 예측 중 무엇을 설명하려는지 구분합니다.",
+      "설명값의 계산 방법과 한계를 확인하고 인과 주장 없이 업무 판단에 연결합니다."
+    ],
+    "beginnerTraps": [
+      "전역적으로 중요한 변수가 모든 개별 예측에서도 가장 중요한 것은 아닙니다.",
+      "설명값이 안정적으로 보인다고 모델의 성능이나 공정성이 자동으로 검증되는 것은 아닙니다.",
+      "변수 중요도 순위를 인과효과의 크기 순서로 읽지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0061 lines 911-911: 결과 해석 및 변수 중요도 절",
+      "C032 통합 이론: 전역·지역 설명과 결과 활용 위험"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-046",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [
+      "statistical_decision"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "모델 해석에는 통계적 지표, 예측 성능 지표, 시각적 진단 도구가 서로 다른 질문에 답합니다.",
+    "whyItMatters": "계수의 의미를 묻는 문제에 정확도를 답하거나, 분류 성능을 회귀 오차로 판단하는 지표 혼동을 막아 줍니다.",
+    "plainLanguageExplanation": [
+      "통계적 지표는 계수, 검정, 결정계수처럼 관계와 불확실성을 설명합니다.",
+      "성능 지표는 RMSE·정확도·재현율·F1처럼 실제값과 예측값의 차이를 문제 유형에 맞게 요약합니다.",
+      "ROC 곡선, 잔차도, 학습곡선, 중요도 차트는 수치 하나로 보이지 않는 임계값·오차 구조·과적합 패턴을 드러냅니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "질문이 관계 해석, 예측 성능, 오류 진단 중 무엇을 요구하는지 표시합니다.",
+      "회귀·분류와 데이터 불균형, 오류 비용에 맞는 지표를 고릅니다.",
+      "수치 지표를 적절한 시각적 진단과 함께 확인해 한계까지 해석합니다."
+    ],
+    "beginnerTraps": [
+      "결정계수와 분류 정확도는 이름이 모두 '성능'과 관련돼도 같은 문제에 쓰는 지표가 아닙니다.",
+      "ROC 곡선이나 잔차도는 모델의 인과성을 증명하는 그림이 아닙니다.",
+      "신뢰구간이 좁다는 사실은 추정 정밀도가 높다는 뜻이지 모형이 올바르거나 효과가 크다는 보장은 아닙니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0062 lines 912-930: 통계적·성능·시각화 지표 구분",
+      "편집 검토: 신뢰구간의 정밀도와 모형 타당성을 분리"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-047",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "comparison",
+      "machine_learning"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "변수 중요도는 모델의 예측에서 각 변수가 얼마나 많이 사용되거나 성능에 기여했는지를 방법별 기준으로 요약한 값입니다.",
+    "whyItMatters": "중요도 계산 방식에 따라 의미와 편향이 다르므로 숫자 순위만 보고 변수를 제거하거나 원인으로 단정하면 안 됩니다.",
+    "plainLanguageExplanation": [
+      "나무의 불순도 감소를 합산하는 중요도와, 변수 값을 섞었을 때 성능이 얼마나 떨어지는지 보는 순열 중요도는 서로 다른 값입니다.",
+      "상관된 변수들은 기여를 나눠 가지거나 서로 대신할 수 있어 한 변수의 중요도가 예상보다 작게 나올 수 있습니다.",
+      "중요도는 모델과 데이터에 의존하며 인과관계를 직접 증명하지 않습니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "사용한 중요도가 불순도 기반, 순열 기반, 계수 기반 등 어느 방식인지 확인합니다.",
+      "검증 데이터에서 계산했는지와 상관 변수·범주 수 편향을 점검합니다.",
+      "업무 지식과 추가 분석을 함께 사용하고 인과 주장 없이 해석합니다."
+    ],
+    "beginnerTraps": [
+      "모든 변수 중요도가 '그 변수를 제거했을 때의 성능 손실'로 계산되는 것은 아닙니다.",
+      "중요도 1위 변수가 목표값의 직접 원인이라는 뜻은 아닙니다.",
+      "학습 데이터에서만 계산한 중요도 순위를 일반화된 사실처럼 사용하지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0063 lines 931-936: 변수 중요도의 용도와 인과 한계",
+      "bda-pdf-theory-supplements: 불순도 중요도 편향과 순열 중요도·SHAP 보완"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-048",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [
+      "machine_learning"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "PDP는 평균적 변수 효과, LIME은 한 관측치 주변의 국소 근사, SHAP은 기준 예측과의 차이를 변수 기여도로 나누어 설명합니다.",
+    "whyItMatters": "세 기법은 설명 범위와 가정이 달라 같은 질문에 서로 바꿔 쓸 수 없으며 결과를 인과효과로 읽어서도 안 됩니다.",
+    "plainLanguageExplanation": [
+      "PDP는 관심 변수 값을 바꿔 가며 다른 변수에 대해 평균낸 예측 변화를 보여 주는 전역 도구입니다.",
+      "LIME은 설명하려는 한 점 주변에 새 표본을 만들고 단순한 대리모델을 맞춰 그 주변의 판단을 근사합니다.",
+      "SHAP은 기준값에서 개별 예측까지의 차이를 샤플리값 원리에 따라 변수 기여도로 배분하며, 구현에 따라 전역 요약도 만들 수 있습니다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "PDP",
+        "meaning": "Partial Dependence Plot. 관심 변수 변화에 따른 평균 예측 변화를 보여 주는 부분의존도입니다."
+      },
+      {
+        "symbol": "LIME",
+        "meaning": "Local Interpretable Model-agnostic Explanations. 특정 관측치 주변을 단순 모델로 근사하는 국소 설명입니다."
+      },
+      {
+        "symbol": "SHAP",
+        "meaning": "SHapley Additive exPlanations. 기준 예측과 개별 예측의 차이를 변수별 기여도로 배분하는 설명 체계입니다."
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "전체 평균 경향인지 특정 한 건의 근거인지 설명 질문을 구분합니다.",
+      "전역 경향이면 PDP, 국소 근사면 LIME, 가산적 기여 분해면 SHAP을 후보로 둡니다.",
+      "상관 변수, 기준 데이터, 샘플링과 근사 안정성을 확인한 뒤 제한적으로 해석합니다."
+    ],
+    "beginnerTraps": [
+      "SHAP이 항상 가장 신뢰도 높은 설명이라는 보장은 없으며 기준 데이터와 계산 방식에 따라 값이 달라질 수 있습니다.",
+      "PDP는 강하게 상관된 변수에서 현실적으로 드문 조합을 평가해 오해를 만들 수 있습니다.",
+      "SHAP 계열에는 범용 KernelSHAP과 모델별 최적화 구현이 있어 모든 구현을 똑같은 의미의 '모델 불가지론'으로 단정하지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0064 lines 937-962: PDP·LIME·SHAP의 범위와 원리",
+      "C032 통합 이론: 상관 변수, 기준값, 근사 방식과 인과 과해석 제한"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-049",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [
+      "machine_learning"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "XAI 기법은 '설명 범위·계산 원리·적용 조건' 세 축으로 비교해야 올바르게 고를 수 있습니다.",
+    "whyItMatters": "PDP·LIME·SHAP의 이름만 외우면 전역과 국소 설명을 뒤바꾸거나 설명값을 성능·인과 지표로 오해하기 쉽습니다.",
+    "plainLanguageExplanation": [
+      "PDP는 전체 데이터에서 한 변수와 평균 예측의 관계를 요약하는 전역 설명입니다.",
+      "LIME은 특정 관측치 주변의 행동을 단순 모델로 근사하는 국소 설명입니다.",
+      "SHAP은 개별 예측 기여도를 계산하고 이를 여러 관측치에 모아 전역 요약도 만들 수 있습니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "문제에서 '전체 평균'과 '특정 한 건' 중 어느 표현이 나오는지 찾습니다.",
+      "PDP·LIME·SHAP이 내놓는 결과가 곡선, 국소 계수, 기여도 중 무엇인지 연결합니다.",
+      "설명 결과의 가정과 불확실성을 확인하고 성능 평가나 인과 추론과 분리합니다."
+    ],
+    "beginnerTraps": [
+      "LIME은 모델 전체 성능을 평가하는 도구가 아니라 특정 지점 주변을 설명하는 도구입니다.",
+      "SHAP 값은 정확도나 확률 그 자체가 아니라 기준 예측과의 차이를 나눈 기여도입니다.",
+      "PDP·LIME·SHAP을 적용할 수 있다는 사실만으로 설명이 안정적이거나 공정하다고 보장되지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0067 lines 978-1005: XAI 기법 비교표",
+      "C032 통합 이론: 전역·국소 범위와 설명 한계"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-050",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [
+      "process"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "시간 시각화는 관측 순서를 유지하면서 추세, 시점별 차이, 누적 규모, 값이 바뀐 순간을 보여 주는 방법입니다.",
+    "whyItMatters": "시간의 연속성과 질문에 맞는 차트를 골라야 추세를 범주 비교처럼 보이게 하거나 누적값을 개별값처럼 읽는 오류를 피할 수 있습니다.",
+    "plainLanguageExplanation": [
+      "연속적인 흐름은 선 그래프, 떨어진 시점의 크기 비교는 막대 그래프가 기본 후보입니다.",
+      "영역 차트는 선 아래를 채워 규모를 강조하고, 계단식 그래프는 값이 일정하다가 바뀌는 시점을 강조합니다.",
+      "시간 간격, 누락 구간, 집계 단위, 축 범위를 표시해야 변화 속도와 크기를 바르게 읽을 수 있습니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "시간이 연속적인지 이산적인 기간 비교인지 확인합니다.",
+      "추세·크기·누적·변경 시점 중 전달할 메시지를 하나 고릅니다.",
+      "시간 간격과 축, 단위, 누락값을 검토한 뒤 차트를 선택합니다."
+    ],
+    "beginnerTraps": [
+      "시간 데이터라는 이유만으로 항상 선 그래프를 쓰는 것은 아닙니다. 독립된 기간의 크기 비교에는 막대가 더 적합할 수 있습니다.",
+      "영역을 채웠다고 값이 자동으로 누적되는 것은 아니므로 누적 여부를 범례와 계산 정의로 확인합니다.",
+      "시간축 간격이 불균일한데 같은 간격으로 그리면 변화 속도를 왜곡할 수 있습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0074 lines 1054-1084: 선·막대·영역·계단식 그래프 비교"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-051",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "comparison"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "공간 시각화는 값에 위치나 영역 정보를 결합해 어디에서 어떤 패턴이 나타나는지 보여 주는 방법입니다.",
+    "whyItMatters": "같은 값도 점, 영역 색, 원 크기, 등값선, 왜곡 면적으로 표현할 때 의미와 오해 가능성이 달라집니다.",
+    "plainLanguageExplanation": [
+      "공간 데이터는 좌표의 정확한 위치를 보여 줄 수도 있고 행정구역처럼 영역별로 집계해 보여 줄 수도 있습니다.",
+      "표현 기법을 고를 때 관측 단위가 점인지 영역인지, 값이 연속적인지 집계값인지 먼저 확인합니다.",
+      "면적과 인구가 다른 지역을 원자료 건수만으로 색칠하면 큰 지역이 과도하게 강조될 수 있어 비율이나 표준화가 필요할 수 있습니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "데이터가 좌표, 영역 집계, 연속 표면 중 어떤 공간 단위인지 확인합니다.",
+      "위치·빈도·비율·등값·총량 중 보여 줄 값을 정합니다.",
+      "면적 효과, 분류 구간, 색상 범례와 위치 정밀도·개인정보를 점검합니다."
+    ],
+    "beginnerTraps": [
+      "지도에 표시됐다는 이유만으로 공간적 인과관계가 증명되는 것은 아닙니다.",
+      "지역별 총건수와 인구 대비 비율은 다른 질문에 답하므로 서로 바꿔 해석하지 않습니다.",
+      "정밀한 점 위치는 개인이나 시설을 노출할 수 있어 공개 범위를 따로 검토해야 합니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0075 lines 1085-1086: 공간 시각화의 정의",
+      "s4-final 공간 시각화 표: 점·영역·등값·면적 표현 구분"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-052",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "등치 지역도·도트 맵·버블 맵·등치선도·카토그램은 각각 영역 색, 점 위치, 원 크기, 같은 값의 선, 왜곡된 면적으로 공간 값을 표현합니다.",
+    "whyItMatters": "지도 모양만 보고 기법을 고르면 집계값, 개별 위치, 연속 표면, 총량의 의미를 뒤섞게 됩니다.",
+    "plainLanguageExplanation": [
+      "등치 지역도는 영역별 값을 색상이나 음영으로, 도트 맵은 개체의 위치나 분포를 점으로 나타냅니다.",
+      "버블 맵은 위치 위의 원 크기로 수치를, 등치선도는 같은 수치를 가진 지점을 이은 선으로 나타냅니다.",
+      "카토그램은 데이터 값에 비례하도록 지리적 면적이나 형상을 의도적으로 변형합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "관측 단위가 영역 집계, 개별 위치, 위치별 수치, 연속 표면 중 무엇인지 확인합니다.",
+      "영역 색·점·원 크기·등값선·면적 왜곡 중 데이터 단위에 맞는 표현을 고릅니다.",
+      "범례, 정규화 기준, 점의 의미와 지도 왜곡을 명시해 오해를 점검합니다."
+    ],
+    "beginnerTraps": [
+      "도트 맵의 점 하나가 항상 관측치 한 건을 뜻하는 것은 아닙니다. 점 하나가 여러 건을 나타내는 설계도 있어 범례를 확인해야 합니다.",
+      "카토그램은 실제 면적을 유지하는 지도가 아니라 값에 맞춰 면적이나 형상을 왜곡하는 지도입니다.",
+      "등치 지역도는 같은 값의 지점을 선으로 잇는 등치선도와 다릅니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0076 lines 1087-1119: 지리적 시각화 5종 비교",
+      "theory-public-claim-policy: T-S4-052 canonical claim HOLD; 점 1개 의미의 과도한 일반화를 제외한 편집 투영"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-053",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "공간 차트는 행정구역 집계면 등치 지역도, 개별 위치면 도트 맵, 등값이면 등치선도, 값 비례 면적이면 카토그램을 우선 검토합니다.",
+    "whyItMatters": "보여 주려는 공간 단위와 값의 의미를 먼저 정하면 비슷해 보이는 지도 기법을 빠르게 구분할 수 있습니다.",
+    "plainLanguageExplanation": [
+      "영역별 비율이나 집계값을 비교할 때는 영역을 색으로 채우는 등치 지역도가 적합합니다.",
+      "사건이나 시설의 위치를 보려면 도트 맵, 기온·기압처럼 연속적인 값의 경계를 보려면 등치선도를 사용합니다.",
+      "총량에 따라 지역 크기 자체를 바꾸려면 카토그램을 사용하되 원래 지형과 달라진다는 점을 알려야 합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "질문이 영역 비교, 위치 확인, 연속 표면, 비례 면적 중 무엇인지 찾습니다.",
+      "데이터의 집계 단위와 분모가 지도 표현과 맞는지 확인합니다.",
+      "범례와 왜곡 방식, 개인정보 위험을 표시한 뒤 최종 기법을 선택합니다."
+    ],
+    "beginnerTraps": [
+      "행정구역을 색칠했다고 총량 비교가 항상 적절한 것은 아닙니다. 인구나 면적 차이를 보정해야 할 수 있습니다.",
+      "연속적인 등값을 나타내는 등치선도와 영역별 값을 색칠하는 등치 지역도를 바꾸어 외우지 않습니다.",
+      "카토그램의 면적은 실제 지리적 면적이 아니므로 거리나 면적 비교에 쓰지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0077 lines 1120-1125: 공간 시각화 선택 기준"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-054",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "관계 시각화는 두 변수의 연관, 여러 변수 쌍의 패턴, 세 번째 수치, 절차의 흐름처럼 '무엇이 무엇과 연결되는가'를 보여 줍니다.",
+    "whyItMatters": "산점도 행렬, 버블 차트, 플로우 차트는 모두 관계를 다루지만 데이터 관계와 절차 관계라는 목적이 서로 다릅니다.",
+    "plainLanguageExplanation": [
+      "산점도 행렬은 여러 수치형 변수의 쌍별 산점도를 한 화면에 배열해 관계와 이상점을 탐색합니다.",
+      "버블 차트는 x와 y 위치에 더해 원 크기로 세 번째 수치를 표현합니다.",
+      "플로우 차트는 수치 변수의 상관보다 업무나 알고리즘의 단계와 분기를 표현합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "변수 간 수치 관계인지 절차의 선후 관계인지 먼저 구분합니다.",
+      "변수 두 개, 여러 쌍, 세 번째 크기 변수가 있는지 확인합니다.",
+      "축·원 크기·화살표의 의미를 명시하고 과도한 인과 해석을 점검합니다."
+    ],
+    "beginnerTraps": [
+      "산점도에서 패턴이 보인다고 한 변수가 다른 변수의 원인이라고 단정하지 않습니다.",
+      "버블의 반지름을 값에 비례시키면 면적이 제곱으로 커져 차이를 과장할 수 있으므로 보통 면적을 값에 비례시킵니다.",
+      "플로우 차트는 변수 상관을 보여 주는 산점도 계열이 아니라 절차와 분기를 나타내는 도식입니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0078 lines 1126-1150: 산점도 행렬·버블 차트·플로우 차트"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-055",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "히스토그램은 수치형 값의 구간별 분포를, 막대 그래프는 서로 구분되는 범주의 크기를 비교합니다.",
+    "whyItMatters": "둘 다 막대 모양이지만 구간의 연속성과 범주의 독립성이라는 데이터 의미가 다릅니다.",
+    "plainLanguageExplanation": [
+      "히스토그램은 수치 범위를 구간으로 나누고 각 구간의 빈도나 밀도를 표시하므로 구간 폭과 경계가 모양에 영향을 줍니다.",
+      "막대 그래프는 사과·배·포도처럼 구분되는 범주마다 하나의 값을 표시하며 순서를 바꿀 수도 있습니다.",
+      "히스토그램 막대는 연속 구간을 나타내므로 보통 붙어 있고, 범주 막대는 구분을 위해 간격을 둡니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "x축 값이 연속 수치인지 독립된 범주인지 확인합니다.",
+      "분포 모양을 볼지 범주 크기를 비교할지 정합니다.",
+      "히스토그램이면 구간 폭과 밀도·빈도 기준, 막대면 정렬과 0 기준을 확인합니다."
+    ],
+    "beginnerTraps": [
+      "정수형 데이터라고 무조건 막대 그래프를 쓰는 것은 아닙니다. 값의 분포를 구간으로 볼 목적이면 히스토그램을 쓸 수 있습니다.",
+      "히스토그램의 모양은 구간 폭과 시작 경계에 따라 달라질 수 있습니다.",
+      "막대 간격만 보고 판단하지 말고 x축이 수치 구간인지 범주인지 확인합니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0079 lines 1151-1179: 히스토그램과 막대 그래프 비교"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-056",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "statistical_decision"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "박스플롯은 사분위수와 수염, 별도 표시한 점을 이용해 분포의 중심·퍼짐·비대칭·잠재적 이상치를 압축해 보여 줍니다.",
+    "whyItMatters": "집단별 분포를 빠르게 비교할 수 있지만 원자료의 세부 모양과 표본 크기는 숨겨질 수 있어 해석 범위를 알아야 합니다.",
+    "plainLanguageExplanation": [
+      "상자는 Q1부터 Q3까지 중간 50%를, 상자 안의 선은 중위수를 나타냅니다.",
+      "일반적인 Tukey 방식에서는 수염이 1.5×IQR 경계 안의 가장 먼 관측치까지 이어지고 바깥 점은 따로 표시합니다.",
+      "박스플롯만으로 분포가 정규분포인지, 집단 차이가 통계적으로 유의한지 판단할 수는 없습니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "상자와 중앙선으로 Q1·중위수·Q3의 위치를 읽습니다.",
+      "수염 정의와 별도 점의 기준을 확인해 퍼짐과 잠재적 이상치를 봅니다.",
+      "표본 크기와 원자료 분포를 추가로 확인한 뒤 집단을 비교합니다."
+    ],
+    "beginnerTraps": [
+      "상자 안의 선은 평균이 아니라 중위수입니다.",
+      "수염 끝이 항상 전체 최솟값과 최댓값인 것은 아닙니다. 사용한 수염 규칙을 확인해야 합니다.",
+      "박스플롯 바깥 점을 오류라고 단정해 자동 삭제하지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0082 lines 1192-1193: 박스플롯과 5수치 요약",
+      "s4-final 박스플롯 절: 사분위수·IQR·이상치 표시"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-057",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "comparison",
+      "statistical_decision"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "박스플롯의 핵심 위치는 Q1, 중위수(Q2), Q3이며 수염 끝은 선택한 규칙 안에서의 낮은 값과 높은 값을 나타냅니다.",
+    "whyItMatters": "중앙선과 상자 경계를 정확히 읽어야 평균·중위수와 전체 최솟값·수염 끝을 혼동하지 않습니다.",
+    "plainLanguageExplanation": [
+      "Q1은 자료의 약 25%, 중위수는 약 50%, Q3는 약 75%가 그 이하에 놓이는 위치입니다.",
+      "Q1부터 Q3까지가 상자이고 그 폭인 IQR은 가운데 50%의 퍼짐을 나타냅니다.",
+      "교재에서 말하는 5수치 요약과 실제 상자그림의 수염 규칙은 구현에 따라 차이가 있을 수 있습니다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "Q1",
+        "meaning": "제1사분위수로, 자료의 약 25%가 이 값 이하에 놓이는 위치입니다."
+      },
+      {
+        "symbol": "Q2",
+        "meaning": "제2사분위수이자 중위수로, 정렬한 자료의 가운데 위치입니다."
+      },
+      {
+        "symbol": "Q3",
+        "meaning": "제3사분위수로, 자료의 약 75%가 이 값 이하에 놓이는 위치입니다."
+      }
+    ],
+    "workedExamples": [],
+    "decisionSteps": [
+      "상자 아래·안·위의 선을 각각 Q1·중위수·Q3로 연결합니다.",
+      "상자 길이 Q3−Q1로 중간 50%의 퍼짐을 비교합니다.",
+      "수염과 바깥 점의 정의가 최솟값·최댓값인지 Tukey 규칙인지 확인합니다."
+    ],
+    "beginnerTraps": [
+      "Q1과 Q3는 관측값 개수를 정확히 4등분한 단일 고정 계산법만 있는 것이 아니라 사분위수 계산 규칙에 따라 조금 달라질 수 있습니다.",
+      "중위수 선을 산술평균으로 읽지 않습니다.",
+      "수염 끝을 아무 조건 없이 원자료 전체의 최솟값·최댓값이라고 단정하지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0083 lines 1194-1226: 박스플롯 5수치 구성",
+      "편집 검토: Tukey 수염과 전체 최솟값·최댓값의 차이를 명시"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-058",
+    "primaryProfile": "formula_calculation",
+    "secondaryCapabilities": [
+      "statistical_decision"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "IQR 규칙은 Q1−1.5×IQR보다 작거나 Q3+1.5×IQR보다 큰 값을 잠재적 이상치로 표시하는 관례입니다.",
+    "whyItMatters": "평균과 표준편차보다 극단값에 덜 민감한 사분위수로 분포 밖의 값을 일관되게 탐색할 수 있습니다.",
+    "plainLanguageExplanation": [
+      "IQR은 Q3−Q1이며 정렬된 자료의 가운데 50%가 퍼진 범위를 나타냅니다.",
+      "하한과 상한은 각각 Q1−1.5×IQR, Q3+1.5×IQR로 계산합니다.",
+      "경계 밖의 값은 조사할 후보이지 오류나 제거 대상이라는 판결이 아닙니다."
+    ],
+    "symbolGlossary": [
+      {
+        "symbol": "IQR",
+        "meaning": "사분위범위로 Q3−Q1이며 자료의 가운데 50%가 퍼진 폭입니다."
+      },
+      {
+        "symbol": "Q1",
+        "meaning": "제1사분위수입니다."
+      },
+      {
+        "symbol": "Q3",
+        "meaning": "제3사분위수입니다."
+      }
+    ],
+    "workedExamples": [
+      {
+        "title": "IQR 경계 계산",
+        "setup": "Q1=10, Q3=18인 자료에서 잠재적 이상치 경계를 구합니다.",
+        "steps": [
+          "IQR=18−10=8입니다.",
+          "하한=10−1.5×8=−2입니다.",
+          "상한=18+1.5×8=30입니다."
+        ],
+        "result": "−2보다 작거나 30보다 큰 값은 잠재적 이상치로 표시해 원인을 확인합니다."
+      }
+    ],
+    "decisionSteps": [
+      "자료의 Q1과 Q3를 같은 사분위수 계산 규칙으로 구합니다.",
+      "IQR과 하한·상한을 계산하고 관측값을 경계와 비교합니다.",
+      "경계 밖 값의 입력 오류, 희귀하지만 정상인 사례, 업무 의미를 확인한 뒤 처리합니다."
+    ],
+    "beginnerTraps": [
+      "1.5×IQR 경계 밖이라는 이유만으로 관측값을 자동 삭제하지 않습니다.",
+      "IQR 자체와 이상치 상한·하한을 혼동하지 않습니다.",
+      "Q1·Q3 계산 방식이 도구마다 조금 다를 수 있으므로 경계 근처 값은 사용한 방법을 확인합니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0084 lines 1227-1232: IQR와 1.5×IQR 경계",
+      "theory-public-claim-policy: T-S4-058 canonical claim HOLD; 깨진 수식을 정규화하고 자동 제거 주장을 배제한 편집 투영",
+      "Q1=10, Q3=18 예제 독립 산술 검산"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-059",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "비교 시각화는 분포, 행렬 값, 여러 속성의 균형, 고차원 패턴처럼 비교하려는 구조에 맞춰 다른 도표를 선택합니다.",
+    "whyItMatters": "차트의 모양보다 데이터 구조와 비교 질문을 먼저 보면 히트맵·레이더·체르노프 페이스·평행 좌표를 바르게 구분할 수 있습니다.",
+    "plainLanguageExplanation": [
+      "박스플롯은 집단별 분포, 히트맵은 행렬의 셀 값, 레이더 차트는 소수 속성의 프로필 비교에 적합합니다.",
+      "체르노프 페이스는 여러 변수를 얼굴 특징에 대응시키고, 평행 좌표는 여러 변수 축을 가로지르는 선으로 관측치를 표현합니다.",
+      "각 기법은 축척, 색상, 변수 순서, 과도한 겹침 때문에 패턴을 과장하거나 숨길 수 있습니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "비교 대상이 분포, 행렬, 속성 프로필, 고차원 관측치 중 무엇인지 정합니다.",
+      "데이터 차원과 관측 개수에 맞는 후보 차트를 고릅니다.",
+      "축척·색상·순서·겹침과 표본 크기를 검토해 왜곡을 줄입니다."
+    ],
+    "beginnerTraps": [
+      "여러 변수를 한 그림에 담을 수 있다는 사실이 정확한 비교가 쉽다는 뜻은 아닙니다.",
+      "시각적으로 비슷한 모양을 통계적으로 같은 집단이라는 증거로 사용하지 않습니다.",
+      "색이나 면적만 강조하고 숫자 범례와 단위를 생략하지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0085 lines 1233-1233: 주요 비교 시각화 기법 절",
+      "s4-final 비교 시각화 표: 박스플롯·히트맵·레이더·체르노프·평행 좌표"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-060",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "comparison"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "히트맵은 행과 열이 만나는 각 셀의 값을 색으로 바꾸어 행렬 패턴을 빠르게 찾는 도표입니다.",
+    "whyItMatters": "상관행렬이나 시간·범주별 값처럼 셀이 많은 자료에서 큰 값, 작은 값, 군집과 예외를 한눈에 탐색할 수 있습니다.",
+    "plainLanguageExplanation": [
+      "각 셀의 숫자는 색상표의 위치로 변환되므로 색의 의미는 반드시 범례와 함께 읽어야 합니다.",
+      "상관 히트맵에서는 양수와 음수, 크기와 방향을 구분할 수 있는 발산형 색상표가 유용합니다.",
+      "행과 열의 정렬이나 군집화 방식이 패턴의 가시성을 크게 바꿀 수 있습니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "행·열·셀 값이 각각 무엇을 뜻하는지 확인합니다.",
+      "값의 범위와 중심에 맞는 연속형·발산형 색상표를 고릅니다.",
+      "범례, 결측값 색, 정렬 기준과 실제 숫자를 함께 확인합니다."
+    ],
+    "beginnerTraps": [
+      "색이 짙으면 항상 상관이 높다는 뜻은 아닙니다. 색상표와 범례에 따라 의미가 달라집니다.",
+      "상관 히트맵의 강한 색을 인과관계의 증거로 읽지 않습니다.",
+      "색 구분만 사용하면 색각 특성이 다른 사용자가 값을 구분하기 어려울 수 있습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0086 lines 1234-1237: 셀 값을 색으로 표현하는 히트맵",
+      "편집 검토: 색 농도의 방향은 범례에 의존함을 명시"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-061",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "스타·레이더 차트는 여러 속성을 중심에서 뻗은 축에 표시해 대상의 상대적 프로필을 방사형으로 비교합니다.",
+    "whyItMatters": "소수 대상의 강점·약점 윤곽은 빠르게 볼 수 있지만 축척과 축 순서가 모양을 크게 바꿉니다.",
+    "plainLanguageExplanation": [
+      "각 축은 서로 다른 변수를 나타내고 같은 대상의 값을 선으로 연결해 하나의 다각형을 만듭니다.",
+      "변수 단위가 다르면 공통 척도로 정규화해야 윤곽 비교가 의미를 갖습니다.",
+      "대상이나 축이 많아지면 겹침과 면적 착시가 커져 표나 평행 좌표가 더 나을 수 있습니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "비교할 속성이 적고 대상 수가 제한적인지 확인합니다.",
+      "모든 축의 방향과 범위를 통일하거나 정규화합니다.",
+      "축 순서와 겹침이 결론을 바꾸지 않는지 원수치와 함께 확인합니다."
+    ],
+    "beginnerTraps": [
+      "다각형 면적이 크다고 모든 속성이 우수한 것은 아닙니다.",
+      "단위와 범위가 다른 변수를 그대로 놓으면 큰 단위 변수가 시각적으로 지배합니다.",
+      "축 순서를 바꾸면 모양이 달라지므로 윤곽만 보고 객관적 순위를 정하지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0087 lines 1238-1241: 방사형 축과 속성 균형 비교"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-062",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "comparison"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "체르노프 페이스는 여러 변수를 눈·코·입·얼굴 윤곽 같은 얼굴 특징에 대응시켜 관측치의 다변량 패턴을 나타냅니다.",
+    "whyItMatters": "얼굴 차이를 빠르게 알아차리는 사람의 특성을 활용하지만 변수 매핑과 감정처럼 보이는 인상이 해석 편향을 만들 수 있습니다.",
+    "plainLanguageExplanation": [
+      "관측치 하나를 얼굴 하나로 만들고 각 수치 변수를 얼굴 부위의 크기나 모양에 연결합니다.",
+      "얼굴 특징마다 사람이 민감하게 느끼는 정도가 달라 같은 수치 차이도 시각적 중요도가 달라질 수 있습니다.",
+      "탐색적 패턴 발견에는 쓸 수 있지만 정밀 비교에는 원수치와 다른 도표를 함께 제공하는 편이 안전합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "각 변수를 어떤 얼굴 특징에 연결했는지 확인합니다.",
+      "변수 범위와 방향을 통일하고 매핑 순서를 기록합니다.",
+      "얼굴 인상에 따른 주관적 판단을 원수치·다른 차트와 대조합니다."
+    ],
+    "beginnerTraps": [
+      "사람이 얼굴을 잘 구분한다는 사실이 해석을 객관적으로 만든다는 뜻은 아닙니다.",
+      "눈이나 입처럼 눈에 잘 띄는 부위에 배정된 변수가 실제보다 중요해 보일 수 있습니다.",
+      "얼굴 표정을 좋고 나쁜 성과로 읽는 것은 데이터 정의에 없는 감정 의미를 덧붙이는 오류입니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0088 lines 1242-1245: 얼굴 부위 변수 매핑과 주관적 오류"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-063",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "comparison"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "평행 좌표 그래프는 여러 변수 축을 나란히 놓고 관측치 하나를 모든 축을 잇는 선 하나로 표현합니다.",
+    "whyItMatters": "고차원 데이터의 군집, 변수 간 동반 변화, 특이한 관측치를 한 화면에서 탐색할 수 있습니다.",
+    "plainLanguageExplanation": [
+      "각 수직축은 하나의 변수를 나타내며 선이 축을 지나는 높이가 그 관측치의 값입니다.",
+      "변수 단위가 다르면 표준화나 정규화가 필요하고 축 순서에 따라 가까운 변수 사이의 패턴이 더 잘 보입니다.",
+      "관측치가 많으면 선이 겹쳐 보이지 않으므로 투명도, 표본화, 군집별 색상 같은 보완이 필요합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "여러 수치 변수의 범위와 방향을 확인하고 공통 척도로 맞춥니다.",
+      "관심 있는 관계가 인접하도록 축 순서를 정합니다.",
+      "선 겹침과 색상 범례를 점검하고 원자료나 요약 통계로 패턴을 확인합니다."
+    ],
+    "beginnerTraps": [
+      "축의 물리적 간격이 변수 사이의 실제 거리나 상관 크기를 뜻하지 않습니다.",
+      "스케일이 다른 변수를 그대로 놓으면 범위가 큰 변수가 패턴을 지배합니다.",
+      "선이 교차한다고 항상 음의 상관이라는 단순 규칙으로 결론내리지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0089 lines 1246-1249: 평행 축과 고차원 패턴"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-064",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "governance_rule"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "인포그래픽은 글, 숫자, 도표, 아이콘과 배치를 결합해 복잡한 정보를 짧은 시각적 이야기로 전달하는 표현물입니다.",
+    "whyItMatters": "많은 정보를 빠르게 이해시키는 대신 출처, 단위, 축, 강조 방식이 부정확하면 그럴듯한 오정보가 되기 쉽습니다.",
+    "plainLanguageExplanation": [
+      "인포그래픽은 하나의 차트가 아니라 메시지 순서와 여러 시각 요소를 함께 설계한 결과물입니다.",
+      "대상 독자가 무엇을 먼저 보고 어떤 행동을 해야 하는지에 맞춰 정보 계층을 정합니다.",
+      "핵심 수치의 출처와 기준 시점, 분모, 단위를 표시하고 장식이 데이터 해석을 가리지 않게 해야 합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "독자와 전달할 핵심 메시지 한 가지를 정합니다.",
+      "정보형·리스트형·차트 통계형·비교형 중 구조를 고르고 읽는 순서를 설계합니다.",
+      "출처·단위·기준 시점과 접근성, 시각적 왜곡을 최종 검수합니다."
+    ],
+    "beginnerTraps": [
+      "그림이 많고 보기 좋다고 인포그래픽의 데이터가 정확한 것은 아닙니다.",
+      "면적·아이콘 크기로 값을 표현할 때 크기 비율을 과장하지 않습니다.",
+      "출처와 기준 시점이 없는 수치를 완성된 정보로 제시하지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0091 lines 1284-1285: 인포그래픽의 정의",
+      "s4-final 인포그래픽 절: 네 가지 유형과 예시"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-065",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "인포그래픽은 정보형, 리스트형, 차트 통계형, 비교형으로 나눠 메시지 구조에 맞게 사용할 수 있습니다.",
+    "whyItMatters": "전달하려는 내용이 설명, 순서, 수치, 대조 중 무엇인지 구분하면 장식보다 정보 구조를 먼저 선택할 수 있습니다.",
+    "plainLanguageExplanation": [
+      "정보형은 글과 이미지를 조합해 개념이나 절차를 설명하고, 리스트형은 순서나 항목을 빠르게 훑게 합니다.",
+      "차트 통계형은 수치 관계를 그래프로 보여 주며, 비교형은 두 개 이상 대상을 같은 기준으로 나란히 대조합니다.",
+      "실제 결과물은 여러 유형을 섞을 수 있지만 섹션마다 주된 읽기 목적은 분명해야 합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "핵심 내용이 설명, 목록, 수치, 비교 중 무엇인지 정합니다.",
+      "정보형·리스트형·차트 통계형·비교형 중 주된 구조를 선택합니다.",
+      "혼합할 때도 독자가 따라갈 순서와 출처·단위를 유지합니다."
+    ],
+    "beginnerTraps": [
+      "정보형과 리스트형은 그림 유무가 아니라 설명 중심인지 항목·순서 중심인지로 구분합니다.",
+      "차트 통계형은 수치를 그림으로 바꾸는 데서 끝나지 않고 축과 단위, 분모를 정확히 표시해야 합니다.",
+      "비교형에서 서로 다른 기준과 기간의 수치를 나란히 놓지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0092 lines 1286-1314: 정보형·리스트형·차트 통계형·비교형",
+      "편집 검토: 자동 프로필의 교차검증 설명을 배제하고 원천 제목·표에 맞춰 재작성"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-066",
+    "primaryProfile": "process",
+    "secondaryCapabilities": [
+      "machine_learning",
+      "governance_rule"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "분석 모형 전개는 검증된 모델을 실제 업무 시스템에 연결하고 안전하게 운영·감시할 수 있게 만드는 과정입니다.",
+    "whyItMatters": "노트북에서 점수가 좋은 모델도 운영 데이터, 응답 시간, 권한, 법적·윤리적 조건을 통과하지 못하면 실제 가치를 만들 수 없습니다.",
+    "plainLanguageExplanation": [
+      "전개에는 모델 파일을 옮기는 일뿐 아니라 입력 계약, 전처리, 추론 환경, 결과를 사용하는 업무 흐름이 포함됩니다.",
+      "오프라인 평가와 운영 전 테스트를 거쳐 점진적으로 적용하고 장애 시 롤백할 방법을 준비합니다.",
+      "배포 뒤에는 데이터 품질, 예측과 성능, 지연시간, 오류, 공정성 변화를 계속 감시합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "모델·전처리·입력과 출력 계약, 검증 데이터의 동일성을 확인합니다.",
+      "운영 환경에서 성능·지연·보안·법적·윤리적 기준을 시험합니다.",
+      "승인, 점진적 전개, 모니터링, 롤백과 유지보수 책임을 정합니다."
+    ],
+    "beginnerTraps": [
+      "모델 파일을 서버에 복사했다고 전개가 끝난 것은 아닙니다.",
+      "오프라인 정확도가 높아도 운영 지연이나 데이터 불일치 때문에 사용할 수 없을 수 있습니다.",
+      "배포 성공 응답만으로 실제 사용자 흐름과 비즈니스 효과가 검증됐다고 말하지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0095 lines 1328-1329: 운영 환경 이식과 업무 활용",
+      "C036 통합 이론: 배포 후 데이터·성능·운영 모니터링"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-067",
+    "primaryProfile": "process",
+    "secondaryCapabilities": [
+      "machine_learning"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "모형 전개는 모형 평가, 최종 선정, 운영 환경 구축·전개, 비즈니스 효과 모니터링, 피드백·유지보수의 다섯 단계로 이어집니다.",
+    "whyItMatters": "평가 직후 바로 배포하는 것으로 오해하지 않고 선정·환경 검증·운영 피드백까지 하나의 수명주기로 볼 수 있습니다.",
+    "plainLanguageExplanation": [
+      "먼저 후보 모델을 같은 기준으로 평가하고 업무 비용과 제약에 맞는 최종 모델을 고릅니다.",
+      "그다음 운영 입력과 전처리, 인프라, 테스트와 배포 방식을 준비합니다.",
+      "전개 뒤에는 기술 성능과 비즈니스 효과를 감시하고 피드백에 따라 유지보수나 재설계를 수행합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "평가 기준과 독립 검증 결과로 후보 모델을 비교합니다.",
+      "최종 모델과 운영 artifact를 고정하고 운영 환경에서 시험·전개합니다.",
+      "비즈니스·운영 지표를 모니터링하고 피드백과 유지보수로 연결합니다."
+    ],
+    "beginnerTraps": [
+      "모형 평가와 최종 모형 선정은 같은 단계가 아닙니다.",
+      "운영 환경 구축 전에 모델 점수만 보고 바로 전개하지 않습니다.",
+      "전개를 마지막 일회성 단계로 보지 말고 모니터링과 피드백까지 포함합니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0096 lines 1330-1341: 전개 표준 5단계"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-068",
+    "primaryProfile": "governance_rule",
+    "secondaryCapabilities": [
+      "machine_learning",
+      "data_architecture"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "모형 전개에서는 데이터 품질, 해석 가능성, 법적·윤리적 요구, 인프라 적합성을 함께 점검해야 합니다.",
+    "whyItMatters": "정확도만 좋은 모델이 운영 데이터 단절, 설명 부족, 개인정보·편향 위험, 지연과 자원 부족 때문에 실패하는 일을 막습니다.",
+    "plainLanguageExplanation": [
+      "데이터 품질은 최신성, 공급 안정성, 스키마와 전처리 일치 여부를 포함합니다.",
+      "해석 가능성과 법적·윤리적 검토는 사용자에게 필요한 근거, 개인정보, 차별적 결과, 책임과 이의제기 절차를 다룹니다.",
+      "인프라 적합성은 CPU·메모리·가속기뿐 아니라 응답 시간, 확장성, 장애 대응과 비용을 확인합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "운영 데이터의 품질·최신성·학습 시점과의 일관성을 확인합니다.",
+      "설명 요구와 개인정보·공정성·책임·승인 조건을 검토합니다.",
+      "지연시간·자원·확장성·장애·롤백 기준을 실제 운영 환경에서 시험합니다."
+    ],
+    "beginnerTraps": [
+      "학습 데이터가 깨끗했다는 이유로 운영 데이터 품질 검사를 생략하지 않습니다.",
+      "법적·윤리적 검토를 개인정보 노출 여부 하나로 줄이지 않습니다.",
+      "인프라 자원이 충분하다는 선언만으로 실제 응답 시간과 장애 복구가 검증되는 것은 아닙니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0097 lines 1342-1371: 데이터·해석·법·인프라 고려사항",
+      "편집 검토: 편향 '제거' 보장을 편향 위험 평가·완화로 정정"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-069",
+    "primaryProfile": "process",
+    "secondaryCapabilities": [
+      "governance_rule"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "분석 결과 활용 시나리오는 누가 언제 어떤 조건에서 예측을 보고 어떤 행동을 할지 정하는 업무 설계도입니다.",
+    "whyItMatters": "모델 출력이 실제 행동과 책임, 승인, 예외 처리로 연결되지 않으면 분석 결과는 업무 가치가 되지 못합니다.",
+    "plainLanguageExplanation": [
+      "먼저 결과에서 쓸 만한 인사이트와 적용 가능한 업무를 찾습니다.",
+      "자동 실행인지 사람 승인인지, 임계값과 예외는 무엇인지 의사결정 방법을 정합니다.",
+      "마지막으로 사용자에게 필요한 정보와 행동을 보여 줄 화면이나 보고 방식을 선택합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "분석 결과가 해결할 업무 문제와 수혜자, 책임자를 정합니다.",
+      "사용 시점, 임계값, 사람 승인, 예외·이의제기·중단 조건을 설계합니다.",
+      "필요한 시각화와 기록, 성과·위험 지표를 정하고 작은 범위에서 검증합니다."
+    ],
+    "beginnerTraps": [
+      "대시보드를 먼저 고르고 나중에 업무 목적을 끼워 맞추지 않습니다.",
+      "예측 확률을 자동 행동 규칙으로 쓰려면 오류 비용과 임계값, 사람 검토 조건이 필요합니다.",
+      "설명값이 있다고 자동 의사결정의 책임이 사라지는 것은 아닙니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0098 lines 1372-1373: 언제·누가·어떻게 사용할지 정의",
+      "s4-final 시나리오 개발 절: 인사이트·의사결정 방법·시각화 순서"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-070",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "governance_rule"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "활용 시나리오는 불확실한 상황의 대응책을 준비하고, 의사결정을 구체화하며, 이해관계자의 공통 언어를 만듭니다.",
+    "whyItMatters": "분석 결과를 숫자 보고서에 머물게 하지 않고 실행 가능한 선택지와 책임 있는 소통으로 바꿉니다.",
+    "plainLanguageExplanation": [
+      "여러 상황과 대응 기준을 미리 정하면 불확실성이 사라지는 것이 아니라 대응 가능한 범위가 넓어집니다.",
+      "모델 출력에 행동·승인·예외 규칙을 붙이면 의사결정이 더 일관되고 검토 가능해집니다.",
+      "같은 지표 정의와 시각화를 공유하면 분석가·현업·의사결정자가 결과를 서로 다르게 읽는 문제를 줄일 수 있습니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "예측 결과가 바꿀 수 있는 행동과 바꿀 수 없는 불확실성을 구분합니다.",
+      "상황별 선택지, 책임자, 승인과 중단 기준을 문서화합니다.",
+      "공통 지표·용어·시각화로 결과와 한계를 이해관계자에게 전달합니다."
+    ],
+    "beginnerTraps": [
+      "시나리오를 만들었다고 미래의 불확실성이 제거되는 것은 아닙니다.",
+      "분석 결과를 행동 지침으로 바꿀 때 오류 비용과 사람의 판단을 생략하지 않습니다.",
+      "커뮤니케이션이 좋아졌다는 주장은 실제 사용자 이해와 의사결정 결과로 확인해야 합니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0100 lines 1384-1388: 불확실성 대응·전략적 의사결정·커뮤니케이션"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-071",
+    "primaryProfile": "process",
+    "secondaryCapabilities": [
+      "machine_learning",
+      "governance_rule"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "모델 모니터링은 운영 중 입력, 예측, 실제 성능, 지연, 오류와 위험이 허용 범위 안에 있는지 계속 확인하는 활동입니다.",
+    "whyItMatters": "운영 환경은 학습 시점과 달라지므로 배포 당시 성능만으로 이후의 안전성과 유용성을 보장할 수 없습니다.",
+    "plainLanguageExplanation": [
+      "라벨이 바로 오지 않을 때는 입력 분포, 결측률, 예측 분포와 시스템 오류를 선행 신호로 봅니다.",
+      "라벨이 도착하면 정확도·재현율·오차 같은 실제 성능을 계산하고 집단별 차이도 확인합니다.",
+      "경보가 울리면 원인을 조사하고 재학습, 리모델링, 롤백, 중단 중 승인된 조치를 선택합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "기준선, 지표, 집단, 점검 주기와 허용 한계를 정합니다.",
+      "데이터·예측·성능·운영·공정성 지표를 수집하고 경보를 조사합니다.",
+      "원인과 영향에 따라 재학습·리모델링·롤백·중단을 승인하고 결과를 기록합니다."
+    ],
+    "beginnerTraps": [
+      "정확도만 감시하면 라벨이 늦는 동안 문제를 발견하지 못할 수 있습니다.",
+      "입력 분포가 변했다고 실제 성능이 반드시 나빠졌다고 단정하지 않습니다.",
+      "경보가 발생할 때마다 자동 재학습하면 오염된 데이터나 편향을 확대할 수 있습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0103 lines 1406-1407: 드리프트로 인한 성능 저하 감시",
+      "C036 통합 이론: 데이터 품질·예측 분포·지연 성능·오류 지표"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-072",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [
+      "machine_learning"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "데이터 드리프트는 입력 분포의 변화이고, 개념 드리프트는 입력과 목표 사이의 관계가 변하는 현상입니다.",
+    "whyItMatters": "두 변화는 원인과 대응이 다르므로 입력만 다시 맞출지 모델 구조와 목표까지 재검토할지 구분해야 합니다.",
+    "plainLanguageExplanation": [
+      "고객 연령대나 상품 비중이 학습 때와 달라지는 것은 데이터 드리프트의 예입니다.",
+      "같은 고객 특성이 예전과 다른 결과로 이어지기 시작하면 입력과 목표의 관계가 변한 개념 드리프트를 의심합니다.",
+      "실제 목표 라벨이 늦게 도착하면 개념 드리프트를 즉시 확정하기 어려워 입력·예측 신호와 나중의 성능을 함께 봅니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "학습 기준선과 운영 입력 분포를 비교합니다.",
+      "라벨이 있으면 입력-목표 관계와 실제 성능 변화를 집단별로 확인합니다.",
+      "계절성·데이터 오류를 구분하고 재학습·리모델링 필요성을 판단합니다."
+    ],
+    "beginnerTraps": [
+      "입력 분포 변화와 개념 드리프트를 같은 뜻으로 사용하지 않습니다.",
+      "데이터 드리프트가 감지됐다고 성능 저하가 확정된 것은 아닙니다.",
+      "예측 분포 변화만으로 개념 드리프트를 확정하지 않습니다. 실제 라벨이나 추가 근거가 필요합니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0104 lines 1408-1410: 데이터 드리프트와 개념 드리프트",
+      "C036 통합 이론: 입력 분포와 입력-타깃 관계의 구분"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-073",
+    "primaryProfile": "process",
+    "secondaryCapabilities": [
+      "machine_learning",
+      "governance_rule"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "모니터링 의사결정은 정상 유지, 원인 조사, 제한적 재학습, 구조적 리모델링·재배포를 증거와 승인에 따라 나누는 흐름입니다.",
+    "whyItMatters": "성능 저하 신호 하나에 즉시 재학습하거나 배포를 계속하는 양극단을 피하고 영향에 맞는 조치를 선택할 수 있습니다.",
+    "plainLanguageExplanation": [
+      "지표가 정상 범위면 운영을 계속하되 감시를 멈추지 않습니다.",
+      "저하가 보이면 데이터 오류, 계절성, 라벨 지연, 코드·인프라 문제, 실제 관계 변화 중 원인을 먼저 조사합니다.",
+      "기존 구조로 회복 가능한 경우 재학습을 검토하고 구조적 변화라면 리모델링과 독립 검증 후 점진적으로 재배포합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "기준선과 허용 한계로 경보가 실제인지 확인합니다.",
+      "데이터·모델·인프라·업무 변화의 원인과 영향 범위를 조사합니다.",
+      "계속 운영·재학습·리모델링·롤백·중단 중 승인된 조치를 실행하고 재검증합니다."
+    ],
+    "beginnerTraps": [
+      "저하가 작다는 이유만으로 원인 조사 없이 자동 재학습하지 않습니다.",
+      "심각한 저하가 모두 알고리즘 문제인 것은 아니며 입력 파이프라인 장애일 수 있습니다.",
+      "리모델링 후 오프라인 성능만 보고 바로 전체 재배포하지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0106 lines 1435-1446: 정상·재학습·리모델링 분기",
+      "편집 검토: 경보 확인·원인 조사·롤백·승인 단계를 보강"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-074",
+    "primaryProfile": "definition",
+    "secondaryCapabilities": [
+      "process",
+      "machine_learning"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "리모델링은 기존 구조로 성능과 업무 적합성을 회복하기 어려울 때 변수, 데이터, 알고리즘과 운영 설계를 다시 검토하는 재구축입니다.",
+    "whyItMatters": "새 데이터로 같은 모델을 다시 학습하는 조치와 문제 정의·구조까지 바꾸는 큰 변경을 구분해야 비용과 위험을 통제할 수 있습니다.",
+    "plainLanguageExplanation": [
+      "리모델링은 구조적 성능 저하, 목표 변화, 데이터 생성 과정 변화처럼 기존 설계의 전제가 깨졌을 때 검토합니다.",
+      "새 변수, 전처리, 알고리즘, 임계값과 업무 흐름을 다시 설계할 수 있습니다.",
+      "변경 범위가 크므로 독립 검증, 이전 모델과의 비교, 점진적 배포와 롤백 계획이 필요합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "성능 저하가 데이터 최신화만으로 해결 가능한지 구조적 변화인지 진단합니다.",
+      "목표·데이터·변수·알고리즘·업무 계약의 변경 범위를 설계합니다.",
+      "기존 모델과 독립적으로 비교하고 승인·점진 배포·롤백 후 운영에 반영합니다."
+    ],
+    "beginnerTraps": [
+      "성능이 조금 낮아졌다는 이유만으로 항상 리모델링하지 않습니다.",
+      "최신 알고리즘으로 교체하는 것 자체가 리모델링 성공을 보장하지 않습니다.",
+      "리모델링은 모델 코드만이 아니라 데이터와 업무 계약의 변경 위험도 포함합니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0107 lines 1447-1448: 구조적 저하와 전면 재구축",
+      "s4-final 리모델링 절: 변수·알고리즘 변경과 비교 전개"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-075",
+    "primaryProfile": "comparison",
+    "secondaryCapabilities": [
+      "machine_learning",
+      "process"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "재학습은 기존 모델 구조를 유지하고 새 데이터로 매개변수를 갱신하며, 리모델링은 변수·알고리즘·문제 설계까지 바꿀 수 있습니다.",
+    "whyItMatters": "저하 원인에 비해 너무 큰 변경을 하거나 구조적 문제에 단순 재학습만 반복하는 일을 막습니다.",
+    "plainLanguageExplanation": [
+      "데이터가 최신 패턴으로 조금 이동했지만 목표와 구조가 유효하면 기존 파이프라인의 재학습을 먼저 검토할 수 있습니다.",
+      "입력-목표 관계나 업무 목표가 근본적으로 바뀌면 새 변수·알고리즘·임계값을 포함한 리모델링이 필요할 수 있습니다.",
+      "두 경우 모두 새 데이터의 품질, 누수 없는 검증, 공정성·개인정보와 운영 승인을 다시 확인합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "저하가 일시적·데이터 최신화 문제인지 구조적 관계·목표 변화인지 진단합니다.",
+      "기존 구조가 유효하면 재학습, 구조 변경이 필요하면 리모델링 후보로 분류합니다.",
+      "변경된 모델을 독립 검증하고 비용·위험·롤백 조건을 비교해 승인합니다."
+    ],
+    "beginnerTraps": [
+      "새 데이터가 생길 때마다 자동으로 재학습해야 하는 것은 아닙니다.",
+      "재학습은 기존 구조를 유지하므로 잘못된 목표나 편향된 구조를 스스로 고치지 못합니다.",
+      "리모델링은 비용이 크다는 이유만으로 항상 더 좋은 성능을 내는 조치가 아닙니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0108 lines 1449-1476: 재학습과 리모델링의 범위·상황·비용 비교",
+      "C036 통합 이론: 재학습·롤백 기준과 승인 절차"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  },
+  {
+    "theoryNodeId": "T-S4-076",
+    "primaryProfile": "process",
+    "secondaryCapabilities": [
+      "machine_learning"
+    ],
+    "notApplicableReasons": [],
+    "oneLineMeaning": "리모델링은 기존 모형 분석, 데이터 재수집·전처리, 모형 재구축, 기존 모형과 비교한 운영 반영의 네 단계로 진행합니다.",
+    "whyItMatters": "원인 진단 없이 알고리즘부터 바꾸거나 테스트 데이터를 반복 탐색하는 재구축 오류를 막아 줍니다.",
+    "plainLanguageExplanation": [
+      "먼저 실패 사례를 분석해 데이터, 목표, 변수, 알고리즘, 운영 파이프라인 중 어디서 문제가 생겼는지 찾습니다.",
+      "최신 패턴을 대표하는 데이터를 다시 수집·정제하고 필요한 새 변수와 모델 후보를 설계합니다.",
+      "챔피언-챌린저 방식으로 기존 모델과 후보를 같은 독립 기준에서 비교한 뒤 점진적으로 운영에 반영합니다."
+    ],
+    "symbolGlossary": [],
+    "workedExamples": [],
+    "decisionSteps": [
+      "실패 사례와 세부 집단별 지표로 성능 저하 원인을 진단합니다.",
+      "데이터 수집·전처리와 변수·알고리즘을 누수 없이 다시 설계합니다.",
+      "독립 테스트에서 기존·후보 모델을 비교하고 승인·점진 배포·롤백 절차로 반영합니다."
+    ],
+    "beginnerTraps": [
+      "실패 원인을 찾기 전에 최신 알고리즘으로 교체하는 것부터 시작하지 않습니다.",
+      "테스트 세트를 반복 확인하며 변수와 하이퍼파라미터를 고르면 테스트 누수가 생깁니다.",
+      "후보 모델이 평균 점수에서 이겨도 중요한 집단의 오류, 지연시간, 비용과 안전 기준을 통과하지 못하면 전개하지 않습니다."
+    ],
+    "sourceBasis": [
+      "s4-final O-S4-0109 lines 1477-1487: 분석·데이터·재구축·챔피언-챌린저 4단계",
+      "C033/C036 통합 이론: 테스트셋 탐색 금지와 운영 검증"
+    ],
+    "technicalReviewStatus": "verified",
+    "pedagogyReviewStatus": "verified",
+    "reviewerStatus": "approved",
+    "reviewMethod": "editorial",
+    "publication": "public",
+    "reviewedAt": "2026-08-02"
+  }
+]

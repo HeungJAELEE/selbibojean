@@ -6,6 +6,7 @@ type GuestStorage = Pick<Storage, "getItem" | "setItem">;
 
 export type GuestLearningAttempt = {
   questionId: string;
+  variantExternalId?: string;
   selectedChoiceId: string;
   isCorrect: boolean;
   selfRating: "unknown" | "unsure" | "known";
@@ -44,6 +45,10 @@ export function parseGuestLearningAttempts(
         return [
           {
             questionId: item.questionId,
+            variantExternalId:
+              typeof item.variantExternalId === "string"
+                ? item.variantExternalId
+                : undefined,
             selectedChoiceId: item.selectedChoiceId,
             isCorrect: item.isCorrect,
             selfRating: item.selfRating,

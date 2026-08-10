@@ -73,7 +73,7 @@ export const PRACTICAL_PRIORITY_RECALL_AUDIT: PracticalQuestionRecallAuditItem[]
       sourceLineRanges: ["37576", "37922", "37930-37932", "40934"],
       classification: "answer_resolved_reconstructed",
       blockers: ["held_asset_missing"],
-      relatedContentIds: [],
+      relatedContentIds: ["P-2026-2-Q02"],
       nextEvidence: [
         "문제 전체 문장",
         "치수가 보이는 원본 도면",
@@ -91,7 +91,7 @@ export const PRACTICAL_PRIORITY_RECALL_AUDIT: PracticalQuestionRecallAuditItem[]
       sourceLineRanges: ["37250"],
       classification: "answer_resolved_reconstructed",
       blockers: [],
-      relatedContentIds: [],
+      relatedContentIds: ["P-2026-2-Q03"],
       nextEvidence: [
         "문제 전체 문장과 보기",
         "회전수·토크·풍량·압력 중 고정 조건",
@@ -126,7 +126,7 @@ export const PRACTICAL_PRIORITY_RECALL_AUDIT: PracticalQuestionRecallAuditItem[]
       sourceLineRanges: [],
       classification: "learning_source_verified",
       blockers: [],
-      relatedContentIds: [],
+      relatedContentIds: ["P-2026-2-Q06"],
       nextEvidence: [
         "실제 문제 전체 문장과 보기",
         "출제 당시 적용 법령 확인",
@@ -143,7 +143,7 @@ export const PRACTICAL_PRIORITY_RECALL_AUDIT: PracticalQuestionRecallAuditItem[]
       sourceLineRanges: [],
       classification: "learning_source_verified",
       blockers: ["held_asset_missing"],
-      relatedContentIds: [],
+      relatedContentIds: ["P-2026-2-Q05"],
       nextEvidence: ["문제 전체 문장", "사진 또는 선택지 전체", "선택 개수"],
       publicationStatus: "registered_reconstructed",
       evidenceClass: "unverified_user_report",

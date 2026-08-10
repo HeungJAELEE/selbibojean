@@ -77,6 +77,20 @@ export const PRACTICAL_WRITTEN_EXAM_FORMAT_LABELS: Record<
 };
 
 /**
+ * 수치·기준을 정확히 써야 하는 공개 기출복원 중 학습 허브에서 바로 찾아야 하는 문항이다.
+ * 문항을 복제하지 않고 기존 안정 ID와 공개 selector를 그대로 사용한다.
+ */
+export const PRACTICAL_WRITTEN_FEATURED_CALCULATION_AND_SAFETY_PAST_IDS = [
+  "P-2026-2-Q03",
+  "P-2026-2-Q06",
+  "P-2025-1-Q09",
+  "P-2025-2-Q08",
+  "P-2025-2-Q09",
+  "P-2025-3-Q02",
+  "P-2026-1-Q02",
+] as const;
+
+/**
  * 최근 복원문제에서 반복되거나, 사용자가 우선 완성을 지정한 대표 10개
  * 필답 유형이다. 실제 회차가 확인되지 않은 오버랩은 예상형으로 명시한다.
  */

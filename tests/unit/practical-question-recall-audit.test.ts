@@ -7,6 +7,7 @@ import {
   PRACTICAL_PRIORITY_RECALL_AUDIT,
   PRACTICAL_QUESTION_RECALL_AUDIT,
 } from "@/data/source/practical-question-recall-audit";
+import { PRACTICAL_RECALL_CONCEPT_EDITORIAL } from "@/data/source/practical-recall-concept-editorial";
 import {
   getPublicPracticalRecallRegistry,
   PRACTICAL_RECALL_ANSWER_DECISIONS,
@@ -106,7 +107,7 @@ describe("public reconstructed-question registry", () => {
     expect(
       registry.find((item) => item.id === "recall:2026-round2:m18-drawing")
         ?.status,
-    ).toBe("answer_resolved");
+    ).toBe("asset_required");
     expect(
       registry.find((item) => item.id === "recall:2026-round2:sems-bolt")
         ?.status,
@@ -130,9 +131,105 @@ describe("public reconstructed-question registry", () => {
         return counts;
       }, {}),
     ).toEqual({
-      answer_resolved: 6,
-      learning_verified: 28,
+      answer_resolved: 3,
+      asset_required: 3,
+      learning_verified: 26,
+      linked_existing: 2,
     });
+  });
+
+  it("adds broad concept coverage to every formerly independent recall topic", () => {
+    const expectedEditorialIds = [
+      "recall:2026-round2:m18-drawing",
+      "recall:2026-round2:blower-power",
+      "recall:2026-round2:grinding-wheel",
+      "recall:2026-round2:drip-lubrication",
+      "recall:2026-05-10:2",
+      "recall:2026-05-10:3",
+      "recall:2026-05-10:4",
+      "recall:2026-05-10:5",
+      "recall:2026-05-10:6",
+      "recall:2026-05-10:7",
+      "recall:2026-05-10:8",
+      "recall:2026-05-10:10",
+      "recall:2026-05-10:35",
+    ];
+
+    expect(
+      PRACTICAL_RECALL_CONCEPT_EDITORIAL.map((item) => item.auditId).sort(),
+    ).toEqual([...expectedEditorialIds].sort());
+    expect(
+      PRACTICAL_RECALL_CONCEPT_EDITORIAL.every(
+        (item) =>
+          item.definition.length > 20 &&
+          item.background.length > 30 &&
+          item.examCoverage.length >= 3 &&
+          item.keyRules.length >= 3 &&
+          item.traps.length >= 3 &&
+          item.mnemonic.length > 5,
+      ),
+    ).toBe(true);
+
+    const registryById = new Map(
+      getPublicPracticalRecallRegistry().map((item) => [item.id, item]),
+    );
+    for (const auditId of expectedEditorialIds) {
+      const entry = registryById.get(auditId);
+      expect(entry?.conceptDefinition).toBeTruthy();
+      expect(entry?.conceptBackground).toBeTruthy();
+      expect(entry?.examCoverage.length).toBeGreaterThanOrEqual(3);
+      expect(entry?.keyRules.length).toBeGreaterThanOrEqual(3);
+      expect(entry?.traps.length).toBeGreaterThanOrEqual(3);
+    }
+
+    expect(
+      PRACTICAL_RECALL_CONCEPT_EDITORIAL.reduce<Record<string, number>>(
+        (counts, item) => {
+          counts[item.action] = (counts[item.action] ?? 0) + 1;
+          return counts;
+        },
+        {},
+      ),
+    ).toEqual({
+      CONCEPT_ONLY: 6,
+      LINK_EXISTING: 2,
+      PROMOTE_RECONSTRUCTED: 5,
+    });
+
+    for (const auditId of [
+      "recall:2026-05-10:3",
+      "recall:2026-05-10:6",
+      "recall:2026-05-10:7",
+    ]) {
+      expect(registryById.get(auditId)?.statusLabel).toBe(
+        "응시자 복원 이력 · 개념만",
+      );
+    }
+  });
+
+  it("links known 2026 round-two equivalents without removing original-asset holds", () => {
+    const byId = new Map(
+      PRACTICAL_PRIORITY_RECALL_AUDIT.map((item) => [item.id, item]),
+    );
+
+    expect(
+      byId.get("recall:2026-round2:m18-drawing")?.relatedContentIds,
+    ).toEqual(["P-2026-2-Q02"]);
+    expect(
+      byId.get("recall:2026-round2:blower-power")?.relatedContentIds,
+    ).toEqual(["P-2026-2-Q03"]);
+    expect(
+      byId.get("recall:2026-round2:grinding-wheel")?.relatedContentIds,
+    ).toEqual(["P-2026-2-Q06"]);
+    expect(
+      byId.get("recall:2026-round2:drip-lubrication")?.relatedContentIds,
+    ).toEqual(["P-2026-2-Q05"]);
+    expect(
+      byId.get("recall:2026-round2:m18-drawing")?.blockers,
+    ).toContain("held_asset_missing");
+    expect(
+      byId.get("recall:2026-round2:drip-lubrication")?.blockers,
+    ).toContain("held_asset_missing");
   });
 
   it("promotes source-verified learning while keeping unresolved prompts on hold", () => {
@@ -186,7 +283,44 @@ describe("public reconstructed-question registry", () => {
           review.memoryTip !== null,
       ),
     ).toBe(true);
-    expect(PRACTICAL_RECALL_EVIDENCE_REVIEWS).toHaveLength(29);
+    expect(PRACTICAL_RECALL_EVIDENCE_REVIEWS).toHaveLength(30);
+    expect(
+      getPublicPracticalRecallRegistry()
+        .find((item) => item.id === "recall:2026-round2:blower-power")
+        ?.sourceLinks.some(
+          (source) =>
+            source.title.includes("ANSI/AMCA Standard 210-25") &&
+            source.authorityLabel === "공식 기술기준" &&
+            source.supports?.includes("세제곱"),
+        ),
+    ).toBe(true);
+    expect(
+      getPublicPracticalRecallRegistry()
+        .find((item) => item.id === "recall:2026-round2:grinding-wheel")
+        ?.sourceLinks.some(
+          (source) =>
+            source.authorityLabel === "현행 법령" &&
+            source.supports?.includes("교체 후 3분"),
+        ),
+    ).toBe(true);
+    const registryById = new Map(
+      getPublicPracticalRecallRegistry().map((item) => [item.id, item]),
+    );
+    expect(
+      registryById
+        .get("recall:2026-round2:blower-power")
+        ?.keyRules.some((rule) => rule.includes("(N₂/N₁)³")),
+    ).toBe(true);
+    expect(
+      registryById
+        .get("recall:2026-round2:grinding-wheel")
+        ?.keyRules.some((rule) => rule.includes("지름 5 cm")),
+    ).toBe(true);
+    expect(
+      registryById
+        .get("recall:2026-round2:grinding-wheel")
+        ?.keyRules.some((rule) => rule.includes("측면")),
+    ).toBe(true);
     expect(
       getPublicPracticalRecallRegistry()
         .find((item) => item.id === "recall:2026-round2:brake-lining")

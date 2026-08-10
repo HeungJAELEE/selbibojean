@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "generatedAt": "2026-07-31T04:38:08.837Z",
+  "generatedAt": "2026-08-04T01:12:56.977Z",
   "questions": [
     {
       "id": "P-2025-1-Q01",
@@ -530,12 +530,19 @@
       "title": "GHS 유해성 그림문자",
       "formatLabel": "GHS 유해성 그림문자",
       "stem": "다음 화학물질 경고 그림문자의 명칭과 의미를 쓰시오.",
-      "modelAnswer": "GHS 유해성·위험성 그림문자. 폭발성·인화성·산화성·독성·부식성 등 위험을 표시",
+      "modelAnswer": "가 폭발성, 나 인화성, 다 산화성, 라 고압가스, 마 부식성, 바 급성독성, 사 건강유해성, 아 환경유해성",
       "requiredKeywords": [
-        "GHS 유해성·위험성 그림문자. 폭발성·인화성·산화성·독성·부식성 등 위험을 표시"
+        "폭발성",
+        "인화성",
+        "산화성",
+        "고압가스",
+        "부식성",
+        "급성독성",
+        "건강유해성",
+        "환경유해성"
       ],
       "acceptedAnswers": [
-        "GHS 유해성·위험성 그림문자. 폭발성·인화성·산화성·독성·부식성 등 위험을 표시"
+        "가 폭발성, 나 인화성, 다 산화성, 라 고압가스, 마 부식성, 바 급성독성, 사 건강유해성, 아 환경유해성"
       ],
       "calculation": [],
       "unit": null,
@@ -547,7 +554,8 @@
         }
       ],
       "traps": [
-        "복원 해설의 'MSDS 경고표지'를 현행 명칭인 GHS 그림문자로 보정"
+        "그림문자 전체를 GHS라고만 쓰고 개별 명칭을 적지 않음",
+        "산화성·인화성 또는 급성독성·건강유해성을 서로 바꿈"
       ],
       "conceptIds": [
         "PCON-009"
@@ -582,7 +590,7 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "2025년 1회 복원 글의 GHS 그림문자 배열을 기준으로 같은 판독조건의 자체 도식을 제작했다."
+      "reviewNote": "복원 배열과 자체 도식의 가~아 위치를 대조해 각 GHS 그림문자의 명칭과 의미를 답하도록 구체화했다."
     },
     {
       "id": "P-2025-1-Q10",
@@ -2532,7 +2540,7 @@
       ],
       "acceptedAnswers": [
         "저널베어링 간극 측정",
-        "플라스틱 게이지를 이용한 저널베어링 간극 측정"
+        "연선법에 의한 저널베어링 간극 측정"
       ],
       "calculation": [],
       "unit": null,
@@ -2544,7 +2552,8 @@
         }
       ],
       "traps": [
-        "연선 압착 절차만 길게 쓰고 작업명 누락"
+        "연선 압착 절차만 길게 쓰고 작업명 누락",
+        "연선 대신 Plastigage를 사용한다고 바꾸어 씀"
       ],
       "conceptIds": [
         "PCON-035"
@@ -2579,7 +2588,7 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "원문은 절차 전체가 아니라 제시한 작업의 명칭을 요구한다. 절차 설명을 답안에서 분리하고 작업명으로 맞췄다."
+      "reviewNote": "원문은 연선을 눌러 두께를 재는 작업의 명칭을 요구한다. Plastigage는 유사 목적의 별도 측정재이므로 허용 답안에서 분리했다."
     },
     {
       "id": "P-2026-2-Q10",
@@ -2687,8 +2696,7 @@
       ],
       "acceptedAnswers": [
         "개회로 제어와 폐회로 제어",
-        "Open-loop control, Closed-loop control",
-        "시퀀스 제어와 피드백 제어"
+        "Open-loop control, Closed-loop control"
       ],
       "calculation": [],
       "unit": null,
@@ -2706,7 +2714,7 @@
       ],
       "traps": [
         "개회로와 폐회로 중 하나만 쓰지 않는다.",
-        "시퀀스 제어와 피드백 제어라는 복원 표현을 쓸 때 각각 개회로·폐회로와 연결한다."
+        "시퀀스 제어와 피드백 제어를 개회로·폐회로의 동의어로 쓰지 않는다."
       ],
       "conceptIds": [
         "PCON-SUP-004"
@@ -2741,7 +2749,7 @@
         "reconstructionConfidence": "B"
       },
       "predictedBasis": null,
-      "reviewNote": "복원 글의 Q1 번호와 ‘시퀀스제어·피드백제어’ 표현을 보존하되, 답안은 개회로·폐회로 명칭과 연결해 제시했다.",
+      "reviewNote": "복원 글에 혼재한 분류 표현을 분리했다. 이 문항의 확정 답안은 피드백 유무에 따른 개회로·폐회로이며 시퀀스·피드백 분류는 허용 답안으로 사용하지 않는다.",
       "examFormat": "definition",
       "examCardIds": [],
       "visualAidIds": [],
@@ -33186,7 +33194,7 @@
           "learningAltText": "가부터 아까지 여덟 개의 화학물질 경고 그림문자를 배열한 자체 제작 도식",
           "captionBeforeAnswer": null,
           "captionAfterAnswer": "마름모 안의 기호 형상을 보고 경고 종류와 의미를 구분한다.",
-          "outputAssetHash": "2f2f3d7705e87dd403e3d74320a9bb6da3105899094f9d4a09cc997a1aa2e0bb"
+          "outputAssetHash": "46d1903baa7170435687df1b3722350dacecd564100a0a6f63eb23e72e4dcf82"
         }
       ],
       "originType": "self_authored",
@@ -33196,7 +33204,7 @@
       "answerCritical": false,
       "derivedFromVisualAidId": null,
       "sourcePageImageHash": null,
-      "outputAssetHash": "2f2f3d7705e87dd403e3d74320a9bb6da3105899094f9d4a09cc997a1aa2e0bb",
+      "outputAssetHash": "46d1903baa7170435687df1b3722350dacecd564100a0a6f63eb23e72e4dcf82",
       "technicalReviewStatus": "verified",
       "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
       "technicalReviewer": "source-visual-audit",
@@ -33588,7 +33596,7 @@
     ]
   },
   "report": {
-    "generatedAt": "2026-07-31T04:38:08.837Z",
+    "generatedAt": "2026-08-04T01:12:56.977Z",
     "sourceFile": "설비보전기사_작업형실기_기출복원_출제예상40_개념통합_2차.xlsx",
     "sourceSha256": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
     "rows": {

@@ -80,7 +80,7 @@ export const PRACTICAL_VISUAL_COVERAGE: PracticalVisualCoverageItem[] = [
     id: "visual-coverage-accumulator-safety-circuit",
     conceptIds: ["PCON-040"],
     examCardIds: [],
-    questionIds: ["P-2025-1-Q08", "EXP-H04A", "EXP-H04B"],
+    questionIds: ["EXP-H04A", "EXP-H04B"],
     sequenceStepIds: [],
     visualRequirement: "V1",
     visualAidIds: ["ncs-accumulator-safety-circuit"],

@@ -113,6 +113,12 @@ export async function getQuestion(questionId: string): Promise<Question | undefi
   return (await getContent()).questions.find((question) => question.id === questionId);
 }
 
+export async function getQuestionVariant(externalId: string) {
+  return (await getContent()).variants.find(
+    (variant) => variant.externalId === externalId,
+  );
+}
+
 export async function getLesson(lessonId: string): Promise<Lesson | undefined> {
   return (await getContent()).lessons.find((lesson) => lesson.id === lessonId);
 }

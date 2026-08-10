@@ -38,6 +38,30 @@ test("global navigation opens the official constructed-response learning hub", a
   await expect(
     hub.getByRole("link", { name: /필답 모의고사/ }).last(),
   ).toHaveAttribute("href", "/practical/mock");
+
+  const featuredStandards = hub.getByTestId(
+    "practical-written-featured-standards",
+  );
+  await expect(
+    featuredStandards.getByRole("heading", {
+      name: "숫자와 기준을 정확히 쓰는 문제부터 연습합니다",
+    }),
+  ).toBeVisible();
+  for (const [questionTitle, questionId] of [
+    ["송풍기 동력 상사법칙", "P-2026-2-Q03"],
+    ["연삭숫돌 시운전과 덮개", "P-2026-2-Q06"],
+    ["GHS 유해성 그림문자", "P-2025-1-Q09"],
+    ["호흡보호구 종류와 용도", "P-2025-2-Q08"],
+    ["LOTO 기본순서", "P-2025-2-Q09"],
+    ["안전표지 식별", "P-2025-3-Q02"],
+    ["금지·경고·지시 안전표지", "P-2026-1-Q02"],
+  ] as const) {
+    await expect(
+      featuredStandards.getByRole("link", {
+        name: new RegExp(questionTitle),
+      }),
+    ).toHaveAttribute("href", `/practical/written/question/${questionId}`);
+  }
 });
 
 test("constructed-response section navigation stays consistent across top-level routes", async ({

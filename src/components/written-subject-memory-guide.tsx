@@ -191,7 +191,7 @@ export function WrittenSubjectMemoryGuide({
               id={`subject-${subjectSlug}-${part.id}`}
               key={part.id}
               open={partIndex === 0}
-              className="group/major scroll-mt-28 border-t border-slate-300 first:border-t-0"
+              className="group/major min-w-0 scroll-mt-28 border-t border-slate-300 first:border-t-0"
             >
               <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#16697a] [&::-webkit-details-marker]:hidden">
                 <span className="min-w-0">
@@ -212,7 +212,7 @@ export function WrittenSubjectMemoryGuide({
                 </span>
               </summary>
 
-              <div className="grid gap-8 border-t border-slate-200 pb-8 pt-6">
+              <div className="grid min-w-0 gap-8 border-t border-slate-200 pb-8 pt-6">
                 {partBundles.map((bundle, bundleIndex) => {
                   const bundleLessonTitles =
                     getWrittenSubjectBundleLessonTitles(subjectCode, bundle);
@@ -352,7 +352,7 @@ export function WrittenSubjectMemoryGuide({
                       key={bundle.id}
                       id={`subject-${subjectSlug}-${bundle.id}`}
                       open={bundleIndex === 0}
-                      className="group/middle scroll-mt-28 border-l-4 border-[#16697a] pl-4"
+                      className="group/middle min-w-0 max-w-full scroll-mt-28 border-l-4 border-[#16697a] pl-4"
                       data-testid={`subject-${subjectSlug}-bundle-${bundle.id}`}
                     >
                       <summary className="flex min-h-16 cursor-pointer list-none items-start justify-between gap-4 py-3 pr-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16697a] [&::-webkit-details-marker]:hidden">
@@ -374,15 +374,21 @@ export function WrittenSubjectMemoryGuide({
                         />
                       </summary>
 
-                      <div className="pb-2">
+                      <div className="min-w-0 pb-2">
                         <section
                           aria-label={`${bundle.title} 중주제 종합 정리`}
-                          className="mt-3"
+                          className="mt-3 min-w-0 max-w-full"
                         >
                         <p className="mb-2 text-xs font-black tracking-[.12em] text-slate-500">
                           중주제 종합 정리
                         </p>
-                        <div className="overflow-x-auto border-y border-slate-200">
+                        <div
+                          role="region"
+                          tabIndex={0}
+                          aria-label={`${bundle.title} 핵심 정리 표. 좌우로 드래그해 확인`}
+                          data-testid={`subject-${subjectSlug}-table-${bundle.id}`}
+                          className="w-full max-w-full overflow-x-auto overscroll-x-contain border-y border-slate-200 touch-pan-x [-webkit-overflow-scrolling:touch] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16697a] focus-visible:ring-inset"
+                        >
                           <table className="w-full min-w-[36rem] border-collapse text-left text-sm">
                             <thead className="bg-slate-100 text-[#173957]">
                               <tr>

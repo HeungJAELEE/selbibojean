@@ -22,7 +22,7 @@ export function PracticalRecallRegistry({
   const visibleStatuses = (
     [
       ["linked_existing", "기존문항 연결"],
-      ["learning_verified", "공식 근거 학습 승격"],
+      ["learning_verified", "응시자 복원·개념 보강"],
       ["evidence_reviewed", "근거 검토 완료"],
       ["answer_resolved", "정답 교정 완료"],
       ["answer_conflict", "정답 충돌"],
@@ -46,11 +46,11 @@ export function PracticalRecallRegistry({
             복원 기출 등록부
           </h2>
           <p className="mt-3 text-pretty leading-7 text-slate-600">
-            공식 PDF가 없더라도 응시자 기록에서 기출로 확인된 항목은 복원
-            기출로 등록했습니다. 원문·보기·사진이 빠진 경우에도 출제 이력은
-            보존합니다. 공식·전문 근거가 확인된 개념은 학습 내용으로
-            승격하고, 외부 이미지는 출처·이용조건과 시험 원사진이 아니라는
-            경계를 함께 표시합니다.
+            공식 PDF나 NCS locator가 없더라도 응시자 기록에서 출제가 확인된
+            항목은 응시자 복원 기출로 등록했습니다. 원문·보기·사진이 빠진
+            경우에도 출제 이력과 학습 개념은 보존하되, 정답 충돌이나
+            원그림이 필요한 문제만 별도로 보류합니다. 외부 이미지는
+            출처·이용조건과 시험 원사진이 아니라는 경계를 함께 표시합니다.
           </p>
         </div>
 
@@ -120,7 +120,7 @@ export function PracticalRecallRegistry({
 
                     <details className="mt-3">
                       <summary className="w-fit cursor-pointer rounded-md text-sm font-extrabold text-[#16697a] outline-none focus-visible:ring-2 focus-visible:ring-[#16697a] focus-visible:ring-offset-2">
-                        등록 근거·학습팁 보기
+                        등록 근거·개념 보강 보기
                       </summary>
                       <div className="mt-3 rounded-xl bg-slate-50 p-4">
                         {entry.learningPoint || entry.memoryTip ? (
@@ -146,6 +146,80 @@ export function PracticalRecallRegistry({
                               </div>
                             ) : null}
                           </div>
+                        ) : null}
+
+                        {entry.conceptTitle ? (
+                          <section className="mb-4 rounded-xl border border-teal-200 bg-white p-4">
+                            <p className="text-xs font-black text-[#16697a]">
+                              복원 기출 개념 보강
+                            </p>
+                            <h5 className="mt-1 text-base font-black text-slate-900">
+                              {entry.conceptTitle}
+                            </h5>
+                            {entry.conceptDefinition ? (
+                              <div className="mt-3">
+                                <p className="text-xs font-black text-slate-500">
+                                  정의
+                                </p>
+                                <p className="mt-1 text-sm leading-6 text-slate-700">
+                                  {entry.conceptDefinition}
+                                </p>
+                              </div>
+                            ) : null}
+                            {entry.conceptBackground ? (
+                              <div className="mt-3">
+                                <p className="text-xs font-black text-slate-500">
+                                  이해를 위한 배경
+                                </p>
+                                <p className="mt-1 text-sm leading-6 text-slate-700">
+                                  {entry.conceptBackground}
+                                </p>
+                              </div>
+                            ) : null}
+                            <div className="mt-4 grid gap-4 md:grid-cols-2">
+                              {entry.examCoverage.length > 0 ? (
+                                <div>
+                                  <p className="text-xs font-black text-[#16697a]">
+                                    관련 출제 유형
+                                  </p>
+                                  <ul className="mt-2 space-y-1.5 text-sm leading-6 text-slate-700">
+                                    {entry.examCoverage.map((coverage) => (
+                                      <li key={coverage}>• {coverage}</li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              ) : null}
+                              {entry.keyRules.length > 0 ? (
+                                <div>
+                                  <p className="text-xs font-black text-[#16697a]">
+                                    정답을 가르는 기준
+                                  </p>
+                                  <ul className="mt-2 space-y-1.5 text-sm leading-6 text-slate-700">
+                                    {entry.keyRules.map((rule) => (
+                                      <li key={rule}>• {rule}</li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              ) : null}
+                            </div>
+                            {entry.traps.length > 0 ? (
+                              <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-3">
+                                <p className="text-xs font-black text-amber-900">
+                                  대표 오답 함정
+                                </p>
+                                <ul className="mt-2 space-y-1.5 text-sm leading-6 text-slate-700">
+                                  {entry.traps.map((trap) => (
+                                    <li key={trap}>• {trap}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ) : null}
+                            {entry.residualRisk ? (
+                              <p className="mt-3 text-xs leading-5 text-slate-500">
+                                남은 경계: {entry.residualRisk}
+                              </p>
+                            ) : null}
+                          </section>
                         ) : null}
 
                         {entry.referenceVisual ? (

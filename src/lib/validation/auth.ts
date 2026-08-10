@@ -11,6 +11,7 @@ export const passwordSchema = z.string().min(8, "비밀번호는 8자 이상이�
 export const guestAttemptSchema = z
   .object({
     questionId: z.string().min(1),
+    variantExternalId: z.string().min(1).optional(),
     selectedChoiceId: z.string().min(1),
     isCorrect: z.boolean(),
     selfRating: z.enum(["unknown", "unsure", "known"]),
@@ -42,6 +43,7 @@ export const loginSchema = z.object({ username: usernameSchema, password: passwo
 
 export const submitAnswerSchema = z.object({
   questionId: z.string().min(1),
+  variantExternalId: z.string().min(1).optional(),
   choiceId: z.string().min(1),
   selfRating: z.enum(["unknown", "unsure", "known"]),
   sessionId: z.string().optional(),

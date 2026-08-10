@@ -28,6 +28,7 @@ import type {
   ErrorReason,
   GeneratedContent,
   Lesson,
+  OriginalVariantReview,
   PublicationBlocker,
   Question,
 } from "../src/lib/domain/types";
@@ -70,6 +71,139 @@ function rowsToRecords(sheetRows: CellValue[][]) {
 
 function asText(value: string | number | null | undefined) {
   return value === null || value === undefined ? "" : String(value).trim();
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
+}
+
+function parseCalculationReview(value: unknown) {
+  if (value === null || value === undefined || value === "") return null;
+  if (
+    isRecord(value)
+    && ["formula", "substitution", "result", "unit"].every(
+      (key) => typeof value[key] === "string",
+    )
+  ) {
+    return {
+      formula: String(value.formula).trim(),
+      substitution: String(value.substitution).trim(),
+      result: String(value.result).trim(),
+      unit: String(value.unit).trim(),
+    };
+  }
+  if (typeof value !== "string") return null;
+
+  const parts = new Map(
+    value
+      .split(";")
+      .map((part) => part.trim())
+      .map((part) => {
+        const separator = part.indexOf(":");
+        return separator >= 0
+          ? [part.slice(0, separator).trim(), part.slice(separator + 1).trim()]
+          : ["", part];
+      }),
+  );
+  const formula = parts.get("공식") ?? "";
+  const unit = parts.get("단위") ?? "";
+  const substitution = parts.get("수치 대입") ?? "";
+  const result = parts.get("결과") ?? "";
+  return formula || unit || substitution || result
+    ? { formula, unit, substitution, result }
+    : null;
+}
+
+function parseOriginalVariantReview(
+  value: string | number | null | undefined,
+): OriginalVariantReview | undefined {
+  const text = asText(value);
+  if (!text) return undefined;
+
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(text);
+  } catch {
+    return undefined;
+  }
+  if (!isRecord(parsed)) return undefined;
+
+  const answerConfidence = parsed.answerConfidence;
+  const imageRequirement = parsed.imageRequirement;
+  const rawReasons = parsed.choiceByChoiceReasons;
+  const conceptKeywords = parsed.conceptKeywords;
+  if (
+    !["confirmed", "likely", "conflict", "unknown"].includes(
+      String(answerConfidence),
+    )
+    || !["none", "required", "source_image_missing"].includes(
+      String(imageRequirement),
+    )
+    || typeof parsed.directSolution !== "string"
+    || typeof parsed.theorySupplement !== "string"
+    || !Array.isArray(rawReasons)
+    || !Array.isArray(conceptKeywords)
+  ) {
+    return undefined;
+  }
+
+  const choiceByChoiceReasons = rawReasons.map((reason) => {
+    if (typeof reason === "string") return reason.trim();
+    if (isRecord(reason) && typeof reason.reason === "string") {
+      return reason.reason.trim();
+    }
+    return "";
+  });
+  if (
+    choiceByChoiceReasons.some((reason) => !reason)
+    || conceptKeywords.some((keyword) => typeof keyword !== "string")
+  ) {
+    return undefined;
+  }
+
+  return {
+    answerConfidence: answerConfidence as OriginalVariantReview["answerConfidence"],
+    directSolution: parsed.directSolution.trim(),
+    calculation: parseCalculationReview(
+      parsed.calculation ?? parsed.formulaUnitSubstitution,
+    ),
+    choiceByChoiceReasons,
+    conceptKeywords: conceptKeywords.map((keyword) => String(keyword).trim()),
+    theorySupplement: parsed.theorySupplement.trim(),
+    imageRequirement:
+      imageRequirement as OriginalVariantReview["imageRequirement"],
+    answerConflictOrMultipleAnswerRisk: normalizeAnswerConflictRisk(
+      parsed.answerConflictOrMultipleAnswerRisk,
+    ),
+  };
+}
+
+function normalizeAnswerConflictRisk(value: unknown) {
+  if (typeof value !== "string") return null;
+  const normalized = value.trim();
+  if (
+    !normalized
+    || /^(?:없음|해당\s*없음|특이\s*사항\s*없음|충돌\s*없음)(?:[.!。]|$)/u.test(
+      normalized,
+    )
+  ) {
+    return null;
+  }
+  return normalized;
+}
+
+function parseSourceFidelity(value: string | number | null | undefined) {
+  const fidelity = asText(value);
+  return [
+    "exact",
+    "normalized_exact",
+    "mismatch",
+    "unreachable",
+  ].includes(fidelity)
+    ? (fidelity as NonNullable<
+        GeneratedContent["variants"][number]["sourceFidelity"]
+      >)
+    : undefined;
 }
 
 function normalizeConceptTitle(value: string) {
@@ -283,6 +417,9 @@ function findTheorySection(concept: string, groupTitle: string, sections: Theory
 
 async function main() {
   const sourcePath = path.resolve(process.argv[2] || process.env.SOURCE_WORKBOOK_PATH || DEFAULT_SOURCE);
+  const outputPath = path.resolve(
+    process.argv[3] || process.env.IMPORT_OUTPUT_PATH || OUTPUT,
+  );
   const sourceBuffer = await readFile(sourcePath);
   const theoryMarkdown = await readFile(THEORY_SOURCE, "utf8");
   const theorySections = parseTheorySections(theoryMarkdown);
@@ -685,6 +822,8 @@ async function main() {
         sourceUrl: asText(row["출처URL"]),
         reviewStatus: asText(row["검증상태"]),
         verificationNote: asText(mapping?.["판정 메모"]),
+        sourceFidelity: parseSourceFidelity(row["원문충실도"]),
+        sourceReview: parseOriginalVariantReview(row["원문검토JSON"]),
       };
     }),
     backlog: backlogRows,
@@ -718,8 +857,8 @@ async function main() {
     },
   };
 
-  await mkdir(path.dirname(OUTPUT), { recursive: true });
-  await writeFile(OUTPUT, JSON.stringify(generated));
+  await mkdir(path.dirname(outputPath), { recursive: true });
+  await writeFile(outputPath, JSON.stringify(generated));
   console.log(JSON.stringify(generated.report, null, 2));
   if (!exactMatch) process.exitCode = 1;
 }

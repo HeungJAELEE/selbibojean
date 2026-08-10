@@ -64,6 +64,31 @@ export const PRACTICAL_WRITTEN_AUDIT_DECISIONS: Record<
     traps: ["선택 기호 대신 임의로 재작성한 특징 문장만 제출"],
     evidenceUrls: [RECONSTRUCTION_2025_ROUND_1],
   },
+  "P-2025-1-Q09": {
+    disposition: "verified",
+    note:
+      "복원 배열과 자체 도식의 가~아 위치를 대조해 각 GHS 그림문자의 명칭과 의미를 답하도록 구체화했다.",
+    modelAnswer:
+      "가 폭발성, 나 인화성, 다 산화성, 라 고압가스, 마 부식성, 바 급성독성, 사 건강유해성, 아 환경유해성",
+    requiredKeywords: [
+      "폭발성",
+      "인화성",
+      "산화성",
+      "고압가스",
+      "부식성",
+      "급성독성",
+      "건강유해성",
+      "환경유해성",
+    ],
+    acceptedAnswers: [
+      "가 폭발성, 나 인화성, 다 산화성, 라 고압가스, 마 부식성, 바 급성독성, 사 건강유해성, 아 환경유해성",
+    ],
+    traps: [
+      "그림문자 전체를 GHS라고만 쓰고 개별 명칭을 적지 않음",
+      "산화성·인화성 또는 급성독성·건강유해성을 서로 바꿈",
+    ],
+    evidenceUrls: [KOREAN_SAFETY_SIGN_RULE, RECONSTRUCTION_2025_ROUND_1],
+  },
   "P-2025-2-Q04": {
     disposition: "verified",
     note:
@@ -262,11 +287,14 @@ export const PRACTICAL_WRITTEN_AUDIT_DECISIONS: Record<
   "P-2026-1-Q10": {
     disposition: "verified",
     note:
-      "원문은 절차 전체가 아니라 제시한 작업의 명칭을 요구한다. 절차 설명을 답안에서 분리하고 작업명으로 맞췄다.",
+      "원문은 연선을 눌러 두께를 재는 작업의 명칭을 요구한다. Plastigage는 유사 목적의 별도 측정재이므로 허용 답안에서 분리했다.",
     modelAnswer: "저널베어링 간극 측정",
     requiredKeywords: ["저널베어링", "간극 측정"],
-    acceptedAnswers: ["저널베어링 간극 측정", "플라스틱 게이지를 이용한 저널베어링 간극 측정"],
-    traps: ["연선 압착 절차만 길게 쓰고 작업명 누락"],
+    acceptedAnswers: ["저널베어링 간극 측정", "연선법에 의한 저널베어링 간극 측정"],
+    traps: [
+      "연선 압착 절차만 길게 쓰고 작업명 누락",
+      "연선 대신 Plastigage를 사용한다고 바꾸어 씀",
+    ],
     evidenceUrls: [NCS_DRIVE_MAINTENANCE, RECONSTRUCTION_2026_ROUND_1],
   },
 };

@@ -140,11 +140,10 @@ export const PRACTICAL_ROUND2_RECONSTRUCTED_QUESTIONS: PracticalQuestion[] = [
     acceptedAnswers: [
       "개회로 제어와 폐회로 제어",
       "Open-loop control, Closed-loop control",
-      "시퀀스 제어와 피드백 제어",
     ],
     traps: [
       "개회로와 폐회로 중 하나만 쓰지 않는다.",
-      "시퀀스 제어와 피드백 제어라는 복원 표현을 쓸 때 각각 개회로·폐회로와 연결한다.",
+      "시퀀스 제어와 피드백 제어를 개회로·폐회로의 동의어로 쓰지 않는다.",
     ],
     conceptIds: ["PCON-SUP-004"],
     category: "theory_concept",
@@ -157,7 +156,7 @@ export const PRACTICAL_ROUND2_RECONSTRUCTED_QUESTIONS: PracticalQuestion[] = [
     examFormat: "definition",
     confidence: "B",
     reviewNote:
-      "복원 글의 Q1 번호와 ‘시퀀스제어·피드백제어’ 표현을 보존하되, 답안은 개회로·폐회로 명칭과 연결해 제시했다.",
+      "복원 글에 혼재한 분류 표현을 분리했다. 이 문항의 확정 답안은 피드백 유무에 따른 개회로·폐회로이며 시퀀스·피드백 분류는 허용 답안으로 사용하지 않는다.",
   }),
   reconstructed({
     id: "P-2026-2-Q02",

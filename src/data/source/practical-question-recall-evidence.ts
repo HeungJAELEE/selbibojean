@@ -2,6 +2,10 @@ import {
   PRACTICAL_QUESTION_RECALL_AUDIT,
   type PracticalQuestionRecallAuditItem,
 } from "./practical-question-recall-audit";
+import {
+  PRACTICAL_RECALL_CONCEPT_EDITORIAL_BY_ID,
+  type PracticalRecallPromotionAction,
+} from "./practical-recall-concept-editorial";
 
 export type PracticalRecallEvidenceSource = {
   id: string;
@@ -21,7 +25,7 @@ export type PracticalRecallEvidenceSource = {
 
 export type PracticalRecallEvidenceReview = {
   auditId: string;
-  reviewedAt: "2026-07-28";
+  reviewedAt: "2026-07-28" | "2026-08-04";
   outcome:
     | "learning_source_verified_prompt_missing"
     | "source_search_completed_prompt_missing";
@@ -38,6 +42,29 @@ const LOCAL_PDF_SEARCH =
 
 export const PRACTICAL_RECALL_EVIDENCE_REVIEWS: PracticalRecallEvidenceReview[] =
   [
+    {
+      auditId: "recall:2026-round2:blower-power",
+      reviewedAt: "2026-08-04",
+      outcome: "learning_source_verified_prompt_missing",
+      sources: [
+        {
+          id: "ANSI-AMCA-210-25-FAN-LAWS",
+          title: "ANSI/AMCA Standard 210-25 — Fan Laws",
+          authority: "official_standard",
+          url: "https://www.amca.org/assets/resources/public/pdf/Publications/amca-210-25-downloadable.pdf",
+          supports:
+            "같은 송풍기와 유사한 운전조건에서 풍량은 회전수비, 압력은 회전수비의 제곱, 동력은 회전수비의 세제곱에 따르는 팬 상사법칙",
+          limitation:
+            "복원 문제의 원보기는 확인할 수 없으며, 같은 송풍기·같은 유체·유사한 운전조건이라는 상사법칙 전제가 필요하다.",
+        },
+      ],
+      localSearchSummary: LOCAL_PDF_SEARCH,
+      exactExamPromptFound: false,
+      publicAnswerAuthorized: false,
+      learningPoint:
+        "송풍기 회전수 변경 문제는 먼저 같은 송풍기·같은 유체·효율 조건을 확인하고, 풍량 1제곱·압력 2제곱·동력 3제곱의 비례식을 적용한다.",
+      memoryTip: "팬 법칙은 ‘풍 1·압 2·동 3’으로 지수를 묶어 외운다.",
+    },
     {
       auditId: "recall:2026-round2:sems-bolt",
       reviewedAt: "2026-07-28",
@@ -96,7 +123,7 @@ export const PRACTICAL_RECALL_EVIDENCE_REVIEWS: PracticalRecallEvidenceReview[] 
     },
     {
       auditId: "recall:2026-round2:grinding-wheel",
-      reviewedAt: "2026-07-28",
+      reviewedAt: "2026-08-04",
       outcome: "learning_source_verified_prompt_missing",
       sources: [
         {
@@ -776,8 +803,8 @@ export const PRACTICAL_RECALL_ANSWER_DECISIONS: PracticalRecallAnswerDecision[] 
         "같은 송풍기에서 공기밀도와 효율이 같고 회전수만 380 rpm에서 500 rpm으로 변하면 동력은 회전수비의 세제곱에 비례하므로 5.5×(500/380)^3≈12.53 hp이다.",
       sourceLinks: [
         {
-          title: "AMETEK Rotron Fan Laws",
-          url: "https://www.rotron.com/tech-corn/fanlaws",
+          title: "AMCA International — Derivation of the Fan Laws",
+          url: "https://www.amca.org/assets/resources/public/pdf/White%20Papers/2020%20-%20Derivation%20of%20the%20Fan%20Laws.pdf",
         },
       ],
       reconstructedChoiceBoundary:
@@ -1097,6 +1124,14 @@ export type PublicPracticalRecallRegistryEntry = {
   limitation: string;
   learningPoint: string | null;
   memoryTip: string | null;
+  conceptAction: PracticalRecallPromotionAction | null;
+  conceptTitle: string | null;
+  conceptDefinition: string | null;
+  conceptBackground: string | null;
+  examCoverage: string[];
+  keyRules: string[];
+  traps: string[];
+  residualRisk: string | null;
   referenceVisual: PracticalRecallReferenceVisual | null;
 };
 
@@ -1124,6 +1159,40 @@ const evidenceAuthorityLabels: Record<
 };
 
 function registryStatus(item: PracticalQuestionRecallAuditItem) {
+  const conceptAction =
+    PRACTICAL_RECALL_CONCEPT_EDITORIAL_BY_ID.get(item.id)?.action;
+  if (item.blockers.includes("held_asset_missing")) {
+    return {
+      status: "asset_required" as const,
+      statusLabel: "개념 보강 · 원그림 대기",
+      limitation:
+        "응시자 복원 기출로 등록하고 관련 개념은 공개했습니다. 다만 원그림·전체 보기가 없어 답안형 문제 공개만 보류합니다.",
+    };
+  }
+  if (conceptAction === "LINK_EXISTING") {
+    return {
+      status: "linked_existing" as const,
+      statusLabel: "기존문항 연결 · 개념 보강",
+      limitation:
+        "응시자 복원 기출 이력을 같은 주제의 기존 공개 문제에 연결했습니다. 중복 문제 ID는 만들지 않고 관련 개념과 출제 범위를 보강했습니다.",
+    };
+  }
+  if (conceptAction === "CONCEPT_ONLY") {
+    return {
+      status: "learning_verified" as const,
+      statusLabel: "응시자 복원 이력 · 개념만",
+      limitation:
+        "출제 이력과 관련 개념은 공개했지만 원문 조건이나 판별 단서가 부족해 단일 정답형 문제로 만들지 않았습니다. 공식 기출 원문으로 표시하지 않습니다.",
+    };
+  }
+  if (conceptAction === "PROMOTE_RECONSTRUCTED") {
+    return {
+      status: "learning_verified" as const,
+      statusLabel: "응시자 복원 기출 · 개념 보강",
+      limitation:
+        "NCS locator 유무와 무관하게 응시자 복원 기출 이력을 공개하고, 독립 기술 근거로 정의·원리·출제 유형을 보강했습니다. 공식 기출 원문으로 표시하지 않습니다.",
+    };
+  }
   if (item.classification === "answer_resolved_reconstructed") {
     return {
       status: "answer_resolved" as const,
@@ -1150,14 +1219,6 @@ function registryStatus(item: PracticalQuestionRecallAuditItem) {
         : "독립된 법령·공식·전문 근거로 학습 내용을 승격했습니다. 복원 원문과 보기는 불완전하므로 공식 기출 원문으로 표시하지 않습니다.",
     };
   }
-  if (item.blockers.includes("held_asset_missing")) {
-    return {
-      status: "asset_required" as const,
-      statusLabel: "원그림 필요",
-      limitation:
-        "출제 이력은 복원 기출로 등록했지만 원그림·전체 보기가 없어 답안형 문제 공개는 보류합니다.",
-    };
-  }
   if (
     item.classification === "duplicate_no_add" ||
     item.classification === "adjacent_existing_hold"
@@ -1182,6 +1243,8 @@ export function getPublicPracticalRecallRegistry(): PublicPracticalRecallRegistr
     const review = reviewByAuditId.get(item.id);
     const answerDecision = answerDecisionByAuditId.get(item.id);
     const studyGuide = PRACTICAL_RECALL_STUDY_GUIDES[item.id];
+    const conceptEditorial =
+      PRACTICAL_RECALL_CONCEPT_EDITORIAL_BY_ID.get(item.id);
     const status = registryStatus(item);
     const evidenceLabels = ["응시자 복원 기록"];
 
@@ -1227,7 +1290,19 @@ export function getPublicPracticalRecallRegistry(): PublicPracticalRecallRegistr
         })),
       ],
       learningPoint: review?.learningPoint ?? studyGuide?.learningPoint ?? null,
-      memoryTip: review?.memoryTip ?? studyGuide?.memoryTip ?? null,
+      memoryTip:
+        conceptEditorial?.mnemonic ??
+        review?.memoryTip ??
+        studyGuide?.memoryTip ??
+        null,
+      conceptAction: conceptEditorial?.action ?? null,
+      conceptTitle: conceptEditorial?.conceptTitle ?? null,
+      conceptDefinition: conceptEditorial?.definition ?? null,
+      conceptBackground: conceptEditorial?.background ?? null,
+      examCoverage: conceptEditorial?.examCoverage ?? [],
+      keyRules: conceptEditorial?.keyRules ?? [],
+      traps: conceptEditorial?.traps ?? [],
+      residualRisk: conceptEditorial?.residualRisk ?? null,
       referenceVisual: PRACTICAL_RECALL_REFERENCE_VISUALS[item.id] ?? null,
     };
   });

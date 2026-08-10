@@ -36,6 +36,7 @@
     "import:practical": "tsx scripts/import-practical-workbook.ts",
     "generate:practical-written-governance": "tsx scripts/generate-practical-written-governance.ts",
     "generate:cbt-audit": "tsx scripts/generate-cbt-source-audit.ts",
+    "audit:cbt-round-fidelity": "tsx scripts/audit-cbt-round-fidelity.ts",
     "import:cbt-audit": "tsx scripts/import-cbt-audit-workbook.ts",
     "verify:cbt-audit": "tsx scripts/verify-cbt-source-audit.ts",
     "verify:gated-media-cleanup": "tsx scripts/verify-gated-media-cleanup.ts",

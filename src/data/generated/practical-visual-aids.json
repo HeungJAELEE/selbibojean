@@ -5784,7 +5784,7 @@
         "learningAltText": "가부터 아까지 여덟 개의 화학물질 경고 그림문자를 배열한 자체 제작 도식",
         "captionBeforeAnswer": null,
         "captionAfterAnswer": "마름모 안의 기호 형상을 보고 경고 종류와 의미를 구분한다.",
-        "outputAssetHash": "2f2f3d7705e87dd403e3d74320a9bb6da3105899094f9d4a09cc997a1aa2e0bb"
+        "outputAssetHash": "46d1903baa7170435687df1b3722350dacecd564100a0a6f63eb23e72e4dcf82"
       }
     ],
     "originType": "self_authored",
@@ -5794,7 +5794,7 @@
     "answerCritical": false,
     "derivedFromVisualAidId": null,
     "sourcePageImageHash": null,
-    "outputAssetHash": "2f2f3d7705e87dd403e3d74320a9bb6da3105899094f9d4a09cc997a1aa2e0bb",
+    "outputAssetHash": "46d1903baa7170435687df1b3722350dacecd564100a0a6f63eb23e72e4dcf82",
     "technicalReviewStatus": "verified",
     "technicalReviewedAt": "2026-07-27T00:00:00.000Z",
     "technicalReviewer": "source-visual-audit",

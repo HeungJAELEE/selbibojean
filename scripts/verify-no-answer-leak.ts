@@ -17,6 +17,11 @@ import {
   isPublishablePracticalQuestion,
   toPublicPracticalQuestion,
 } from "../src/lib/domain/practical";
+import type { GeneratedContent } from "../src/lib/domain/types";
+import {
+  isReviewedExactOriginalVariant,
+  toReviewedOriginalPublicQuestion,
+} from "../src/lib/content/original-variant-practice";
 import type { PracticalContent } from "../src/lib/domain/practical-types";
 import { toPublicPracticalSequenceVisualAid } from "../src/lib/practical-sequence-server";
 import { PRACTICAL_VISUAL_AIDS } from "../src/data/source/practical-source-registry";
@@ -38,6 +43,7 @@ if (!["source", "build", "all"].includes(scope)) {
 }
 
 const findings: Finding[] = [];
+const written = writtenContent as GeneratedContent;
 const textExtensions = new Set([
   ".js",
   ".mjs",
@@ -114,6 +120,64 @@ async function scanJsonFile(file: string) {
 }
 
 async function verifySourceContracts(content: PracticalContent) {
+  const writtenQuestionsById = new Map(
+    written.questions.map((question) => [question.id, question]),
+  );
+  for (const variant of written.variants.filter(
+    isReviewedExactOriginalVariant,
+  )) {
+    const question = writtenQuestionsById.get(variant.canonicalId);
+    if (!question) {
+      findings.push({
+        code: "reviewed_variant_without_question",
+        file: `variant:${variant.externalId}`,
+        detail: `canonicalId=${variant.canonicalId}`,
+      });
+      continue;
+    }
+
+    const publicQuestion = toReviewedOriginalPublicQuestion(
+      question,
+      variant,
+      20260805,
+      true,
+    );
+    for (const finding of findForbiddenPreSubmitFields(publicQuestion)) {
+      findings.push({
+        code: "written_variant_pre_submit_dto_leak",
+        file: `variant:${variant.externalId}`,
+        detail: finding.field,
+      });
+    }
+
+    const serialized = JSON.stringify(publicQuestion);
+    const review = variant.sourceReview;
+    const serverOnlyValues = [
+      variant.answer,
+      variant.explanation,
+      review.directSolution,
+      review.theorySupplement,
+      review.answerConflictOrMultipleAnswerRisk ?? "",
+      ...review.choiceByChoiceReasons,
+      ...(review.calculation
+        ? [
+            review.calculation.formula,
+            review.calculation.substitution,
+            review.calculation.result,
+          ]
+        : []),
+    ].filter((value) => normalizeAnswerSentinel(value).length >= 8);
+    for (const value of serverOnlyValues) {
+      if (serialized.includes(value)) {
+        findings.push({
+          code: "written_variant_pre_submit_value_leak",
+          file: `variant:${variant.externalId}`,
+          detail: `sentinel=${sentinelId(value)}`,
+        });
+      }
+    }
+  }
+
   for (const question of content.questions.filter(
     isPublishablePracticalQuestion,
   )) {
@@ -339,9 +403,24 @@ async function verifyClientBuild(content: PracticalContent) {
         ...question.acceptedAnswers,
         ...question.calculation,
       ]),
-      ...writtenContent.questions.flatMap((question) => [
+      ...written.questions.flatMap((question) => [
         question.answerText,
         question.explanation,
+      ]),
+      ...written.variants.flatMap((variant) => [
+        variant.answer,
+        variant.explanation,
+        variant.sourceReview?.directSolution ?? "",
+        variant.sourceReview?.theorySupplement ?? "",
+        variant.sourceReview?.answerConflictOrMultipleAnswerRisk ?? "",
+        ...(variant.sourceReview?.choiceByChoiceReasons ?? []),
+        ...(variant.sourceReview?.calculation
+          ? [
+              variant.sourceReview.calculation.formula,
+              variant.sourceReview.calculation.substitution,
+              variant.sourceReview.calculation.result,
+            ]
+          : []),
       ]),
     ],
   );
