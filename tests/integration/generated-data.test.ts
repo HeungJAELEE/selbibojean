@@ -48,9 +48,9 @@ describe("27th workbook reconciliation", () => {
     expect(workbookPublishedQuestions).toHaveLength(1314);
     expect(data.questions.filter((question) => question.publication?.readiness === "blocked")).toHaveLength(82);
     expect(workbookPublishedQuestions.some((question) => !isPublishableQuestion(question))).toBe(true);
-    expect(runtimePublicQuestions).toHaveLength(2062);
+    expect(runtimePublicQuestions).toHaveLength(2063);
     expect(publishedBySubject).toEqual({
-      "subject-1": 314,
+      "subject-1": 315,
       "subject-2": 714,
       "subject-3": 255,
       "subject-4": 779,
@@ -312,8 +312,8 @@ describe("27th workbook reconciliation", () => {
     const publicQuestionIds = new Set(runtimePublicQuestions.map((question) => question.id));
     const coveredLessons = publishedLessons.filter((lesson) => getPastExamExamples(runtimeData, lesson.id, 3).length > 0);
 
-    expect(publishedLessons).toHaveLength(1362);
-    expect(coveredLessons).toHaveLength(1202);
+    expect(publishedLessons).toHaveLength(1363);
+    expect(coveredLessons).toHaveLength(1203);
 
     for (const lesson of coveredLessons) {
       const examples = getPastExamExamples(runtimeData, lesson.id, 3);
@@ -368,8 +368,8 @@ describe("27th workbook reconciliation", () => {
     const publishedQuestions = runtimePublicQuestions;
     const originalsByQuestion = getSafeOriginalsByQuestion(publishedQuestions, runtimeData.variants);
 
-    expect(originalsByQuestion.size).toBe(1845);
-    expect([...originalsByQuestion.values()].flat()).toHaveLength(1923);
+    expect(originalsByQuestion.size).toBe(1844);
+    expect([...originalsByQuestion.values()].flat()).toHaveLength(1922);
 
     const sample = publishedQuestions.slice(0, 20);
     const mixed = createPracticePresentations(sample, runtimeData.variants, 50, 20260723);

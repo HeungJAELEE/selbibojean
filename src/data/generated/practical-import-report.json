@@ -1,37 +1,38 @@
 {
-  "generatedAt": "2026-08-04T01:12:56.977Z",
+  "generatedAt": "2026-08-10T00:00:00.000Z",
   "sourceFile": "설비보전기사_작업형실기_기출복원_출제예상40_개념통합_2차.xlsx",
   "sourceSha256": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
   "rows": {
     "past": 51,
-    "predicted": 185,
+    "predicted": 212,
     "workbookPredicted": 41,
-    "authoredPredicted": 77,
+    "authoredPredicted": 104,
     "balancedPredicted": 67,
     "concepts": 46,
-    "supplementalConcepts": 43,
+    "supplementalConcepts": 70,
     "ncsDocuments": 11,
     "visualAids": 88
   },
   "publication": {
     "past": 51,
-    "predicted": 183,
+    "predicted": 210,
     "concepts": 46,
-    "supplementalConcepts": 43,
+    "supplementalConcepts": 70,
     "held": 0,
     "heldByDisposition": {}
   },
   "ncsCoverage": {
     "totalDocuments": 11,
     "accountedDocuments": 11,
-    "uniqueLessonCount": 84,
-    "sourceReferenceCount": 105,
+    "uniqueLessonCount": 111,
+    "sourceReferenceCount": 132,
     "heldItems": 8
   },
   "exactMatch": true,
   "warnings": [
     "EXP-C03 OEE 계산은 2026년 1회 복원문제의 공식과 조건을 바탕으로 이미지 없는 지문형 예상문제로 공개했다.",
     "제3각법 등 제3자 원도형은 공개 자산으로 복제하지 않고 같은 판독조건의 자체 SVG로 재구성했다.",
-    "응시자 복원 캡처와 블로그 이미지는 문항 대조에만 사용하고 공개 이미지로 복제하지 않았다."
+    "응시자 복원 캡처와 블로그 이미지는 문항 대조에만 사용하고 공개 이미지로 복제하지 않았다.",
+    "NCS 11종의 세부학습단위 대조에서 직접 연결이 비어 있던 27개 단원에 자체 보강 이론과 예상문제를 1개씩 추가했다."
   ]
 }

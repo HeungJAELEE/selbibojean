@@ -144,7 +144,7 @@ describe("runtime merged content gates", () => {
         (question) => question.audit?.scope === "high_risk_public",
       ),
     ).toHaveLength(24 + runtimeWeldingQuestions.length);
-    expect(held).toHaveLength(15);
+    expect(held).toHaveLength(14);
     expect(held.some(isPublishableQuestion)).toBe(false);
     expect(
       held.every(
@@ -153,6 +153,20 @@ describe("runtime merged content gates", () => {
           Boolean(question.audit?.nextAction.trim()),
       ),
     ).toBe(true);
+
+    const restoredVisualQuestion = content.questions.find(
+      (question) => question.id === "U-722",
+    );
+    expect(restoredVisualQuestion).toMatchObject({
+      contentStatus: "published",
+      correctChoiceId: "U-722-c2",
+      audit: {
+        auditDisposition: "verified",
+        assetStatus: "self_authored",
+        verifiedAnswer: "공압모터",
+      },
+    });
+    expect(isPublishableQuestion(restoredVisualQuestion!)).toBe(true);
   });
 
   it("publishes supplemental theory while keeping it outside question statistics", () => {

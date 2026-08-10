@@ -1,5 +1,6 @@
 import type { PracticalConcept } from "@/lib/domain/practical-types";
 import { PRACTICAL_NCS_COVERAGE_CONCEPTS } from "./practical-ncs-coverage-concepts";
+import { PRACTICAL_NCS_UNIT_REINFORCEMENT_CONCEPTS } from "./practical-ncs-unit-reinforcements";
 import { NCS_SOURCE_REGISTRY } from "./practical-source-registry";
 
 /**
@@ -197,4 +198,5 @@ const PRACTICAL_FOUNDATION_SUPPLEMENTAL_CONCEPTS: PracticalConcept[] = [
 export const PRACTICAL_SUPPLEMENTAL_CONCEPTS: PracticalConcept[] = [
   ...PRACTICAL_FOUNDATION_SUPPLEMENTAL_CONCEPTS,
   ...PRACTICAL_NCS_COVERAGE_CONCEPTS,
+  ...PRACTICAL_NCS_UNIT_REINFORCEMENT_CONCEPTS,
 ];

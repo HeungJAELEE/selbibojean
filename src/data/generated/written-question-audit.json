@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-03T12:50:07.346Z",
+  "generatedAt": "2026-08-10T11:54:50.329Z",
   "sourceGeneratedAt": "2026-07-23T04:27:30.336Z",
   "sourceSha256": "7861cd4247438a6b7e62cc346ab7ad743ef57c93d9811a2b2e6e2e56080e50d4",
   "counts": {
     "reviewQueueExpected": 257,
     "reviewQueueAudited": 257,
     "highRiskPublicAudited": 24,
-    "verified": 266,
+    "verified": 267,
     "cbtCorrected": 0,
-    "held": 15
+    "held": 14
   },
   "entries": [
     {
@@ -1570,19 +1570,43 @@
       "questionId": "U-722",
       "scope": "review_queue",
       "sourceContentStatus": "draft",
-      "auditDisposition": "held_asset_missing",
-      "evidenceLevel": null,
+      "auditDisposition": "verified",
+      "evidenceLevel": "dual_secondary",
       "cbtAnswer": "공압모터",
-      "verifiedAnswer": null,
+      "verifiedAnswer": "공압모터",
       "evidenceUrls": [
         "https://cbtbank.kr/exam/de20180428",
         "https://cbtbank.kr/exam/de20150919",
-        "https://cbtbank.kr/exam/de20111002"
+        "https://cbtbank.kr/exam/de20111002",
+        "https://www.festo.com/gb/en/e/blog/in-practice/create-circuit-diagrams-with-fluiddraw-id_1517386"
       ],
-      "reviewNote": "원문 이미지가 확보되기 전에는 CBT 답안 번호만으로 문항을 공개하면 안 됩니다.",
-      "nextAction": "정식 원문 그림을 확보해 포트·기호·보기 배열을 대조하고, 정확히 복원 가능한 경우에만 자체 SVG를 제작합니다.",
-      "assetStatus": "missing",
-      "reviewedAt": "2026-07-24T00:00:00.000Z"
+      "reviewNote": "2018년 원문 기호와 공개답을 직접 대조하고, 같은 판단기준이 반복되는 2015년·2011년 복원 및 ISO 1219 호환 기호 도구 설명을 교차 확인했습니다. 원본 픽셀을 복제하지 않고 기호 의미를 보존한 자체 SVG를 사용합니다.",
+      "nextAction": "원문 자산 또는 유체동력 기호 표준이 변경되면 자체 SVG의 삼각형 채움과 방향을 다시 대조합니다.",
+      "assetStatus": "self_authored",
+      "reviewRationale": "유체동력 기호에서 속이 빈 삼각형은 공압 매체를 나타내고, 삼각형의 꼭짓점이 원 중심을 향하면 압축공기 에너지를 회전 출력으로 바꾸는 모터를 뜻한다. 따라서 제시된 기호는 공압모터이다.",
+      "reviewChoiceFeedback": [
+        {
+          "choiceId": "U-722-c1",
+          "verdict": "incorrect",
+          "rationale": "공압실린더는 피스톤과 로드를 사각형 계열로 나타내는 직선운동 액추에이터이므로 원과 안쪽 방향 삼각형으로 구성된 회전형 기호가 아니다."
+        },
+        {
+          "choiceId": "U-722-c2",
+          "verdict": "correct",
+          "rationale": "속이 빈 삼각형은 공압을, 원 중심을 향하는 방향은 유체 에너지를 기계적 회전으로 바꾸는 모터 작용을 나타낸다."
+        },
+        {
+          "choiceId": "U-722-c3",
+          "verdict": "incorrect",
+          "rationale": "유압펌프는 액체를 나타내는 채운 삼각형과 원 바깥쪽을 향하는 토출 방향으로 구별하므로 제시 도해와 다르다."
+        },
+        {
+          "choiceId": "U-722-c4",
+          "verdict": "incorrect",
+          "rationale": "에어탱크는 압축공기를 저장하는 용기이며 회전운동을 만드는 에너지 변환기가 아니므로 이 모터 기호로 표시하지 않는다."
+        }
+      ],
+      "reviewedAt": "2026-08-10T09:00:00.000Z"
     },
     {
       "questionId": "U-728",

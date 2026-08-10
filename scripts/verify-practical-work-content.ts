@@ -5,6 +5,7 @@ import {
   PRACTICAL_WORK_TASKS,
 } from "../src/data/source/practical-work-tasks";
 import { PRACTICAL_REQUIRED_TOPICS_BY_NCS_CODE } from "../src/data/source/practical-required-topics";
+import { PRACTICAL_NCS_UNIT_PROMOTIONS } from "../src/data/source/practical-ncs-unit-reinforcements";
 import type { PracticalContent } from "../src/lib/domain/practical-types";
 
 const content = rawPracticalContent as PracticalContent;
@@ -40,6 +41,9 @@ const publishedConceptIds = new Set(
     .map((concept) => concept.id),
 );
 const taskIdSet = new Set(taskIds);
+const writtenOnlyReinforcementConceptIds = new Set(
+  PRACTICAL_NCS_UNIT_PROMOTIONS.map((item) => item.conceptId),
+);
 
 for (const workModule of PRACTICAL_WORK_MODULES) {
   const coverageDocument = content.ncsCoverage.documents.find(
@@ -60,7 +64,9 @@ for (const workModule of PRACTICAL_WORK_MODULES) {
     );
   } else {
     const missingCoverageConceptIds = coverageDocument.conceptIds.filter(
-      (conceptId) => !workModule.conceptIds.includes(conceptId),
+      (conceptId) =>
+        !writtenOnlyReinforcementConceptIds.has(conceptId) &&
+        !workModule.conceptIds.includes(conceptId),
     );
     if (missingCoverageConceptIds.length > 0) {
       errors.push(

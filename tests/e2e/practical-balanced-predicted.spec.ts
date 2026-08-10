@@ -5,7 +5,7 @@ test("predicted bank shows the reviewed per-type counts without visual padding",
 }) => {
   await page.goto("/practical/written/predicted");
 
-  for (const count of [19, 45, 60, 58]) {
+  for (const count of [31, 46, 64, 69]) {
     await expect(
       page.getByText(`NCS 학습유형 · ${count}문제`, { exact: true }),
     ).toBeVisible();

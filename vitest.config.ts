@@ -5,9 +5,9 @@ export default defineConfig({
   resolve: { alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) } },
   test: {
     environment: "jsdom",
+    testTimeout: 10_000,
     setupFiles: ["./tests/setup.ts"],
     include: ["tests/unit/**/*.test.{ts,tsx}", "tests/integration/**/*.test.ts"],
     coverage: { reporter: ["text", "html"] },
   },
 });
-

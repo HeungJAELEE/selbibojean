@@ -11,7 +11,7 @@ export default defineConfig({
   reporter: "html",
   use: { baseURL, trace: "on-first-retry" },
   webServer: {
-    command: `npm run dev -- --hostname 127.0.0.1 --port ${port}`,
+    command: `npm run dev -- --host 127.0.0.1 --port ${port}`,
     url: baseURL,
     reuseExistingServer: true,
     timeout: 180_000,

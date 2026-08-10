@@ -39,10 +39,10 @@ describe("curated practical predicted question bank", () => {
       theory_concept: countFor("theory_concept"),
       work_procedure: countFor("work_procedure"),
     }).toEqual({
-      visual_identification: 19,
+      visual_identification: 31,
       formula_calculation: 46,
-      theory_concept: 60,
-      work_procedure: 58,
+      theory_concept: 64,
+      work_procedure: 69,
     });
     expect(balanced).toHaveLength(67);
     expect(

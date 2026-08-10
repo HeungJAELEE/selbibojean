@@ -17,6 +17,7 @@ import subjectTwoGptBacklogBatch01 from "./subject-2-gpt-backlog-batch-01.json";
 import subjectTwoGptBacklogBatch02 from "./subject-2-gpt-backlog-batch-02.json";
 import subjectTwoGptBacklogBatch03 from "./subject-2-gpt-backlog-batch-03.json";
 import { applyIndependentReviewGates } from "./independent-review-gates";
+import { RESTORED_WRITTEN_VISUAL_REVIEWS } from "./restored-written-visuals";
 import { parseWrittenDirectQuestionReviews } from "./schema";
 import { SUBJECT_THREE_DIRECT_REVIEW_BATCH_01 } from "./subject-3-batch-01";
 import subjectThreeBatch02 from "./subject-3-batch-02.json";
@@ -71,6 +72,10 @@ const subjectTwoGptBacklogQuestionIds = new Set(
   ].map((review) => review.questionId),
 );
 
+const restoredWrittenVisualQuestionIds = new Set(
+  RESTORED_WRITTEN_VISUAL_REVIEWS.map((review) => review.questionId),
+);
+
 export const WRITTEN_DIRECT_QUESTION_REVIEWS =
   applyIndependentReviewGates(
     parseWrittenDirectQuestionReviews([
@@ -92,7 +97,9 @@ export const WRITTEN_DIRECT_QUESTION_REVIEWS =
       ),
       ...subjectOneGptHoldBatch01,
       ...subjectOneGptHoldBatch02,
-      ...subjectOneGptHoldBatch03,
+      ...subjectOneGptHoldBatch03.filter(
+        (review) => !restoredWrittenVisualQuestionIds.has(review.questionId),
+      ),
       ...subjectOneGptHoldBatch04,
       ...subjectOneGptHoldBatch05,
       ...subjectTwoBatch01.filter(
@@ -151,5 +158,6 @@ export const WRITTEN_DIRECT_QUESTION_REVIEWS =
       ...subjectFourGptBatch15,
       ...subjectFourGptBatch16,
       ...subjectFourGptHoldBatch01,
+      ...RESTORED_WRITTEN_VISUAL_REVIEWS,
     ]),
   );

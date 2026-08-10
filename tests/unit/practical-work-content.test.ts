@@ -7,9 +7,13 @@ import {
   PRACTICAL_WORK_TASKS,
 } from "@/data/source/practical-work-tasks";
 import { PRACTICAL_REQUIRED_TOPICS_BY_NCS_CODE } from "@/data/source/practical-required-topics";
+import { PRACTICAL_NCS_UNIT_PROMOTIONS } from "@/data/source/practical-ncs-unit-reinforcements";
 import type { PracticalContent } from "@/lib/domain/practical-types";
 
 const content = rawPracticalContent as PracticalContent;
+const writtenOnlyReinforcementConceptIds = new Set(
+  PRACTICAL_NCS_UNIT_PROMOTIONS.map((item) => item.conceptId),
+);
 
 describe("NCS practical work content", () => {
   it("covers all eleven books with real tasks and records", () => {
@@ -56,13 +60,17 @@ describe("NCS practical work content", () => {
     expect(getPracticalWorkTask(task.slug)?.id).toBe(task.id);
   });
 
-  it("connects every NCS coverage concept to at least one work task", () => {
+  it("connects every task-scoped NCS concept while keeping written-only reinforcements out of work tasks", () => {
     for (const document of content.ncsCoverage.documents) {
       const workModule = PRACTICAL_WORK_MODULES.find(
         (item) => item.ncsCode === document.ncsCode,
       );
       expect(workModule, document.ncsCode).toBeDefined();
       for (const conceptId of document.conceptIds) {
+        if (writtenOnlyReinforcementConceptIds.has(conceptId)) {
+          expect(getPracticalWorkTasksForConcept(conceptId)).toEqual([]);
+          continue;
+        }
         expect(
           workModule?.conceptIds,
           `${document.ncsCode}/${conceptId}`,

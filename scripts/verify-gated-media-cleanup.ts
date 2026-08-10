@@ -5,7 +5,6 @@ import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
 const root = process.cwd();
-const tsxCli = path.join(root, "node_modules", "tsx", "dist", "cli.mjs");
 const buildScript = path.join(root, "scripts", "run-vinext-build.ts");
 const publicBusanMedia = path.join(
   root,
@@ -17,7 +16,7 @@ const publicBusanMedia = path.join(
 
 let failedAsExpected = false;
 try {
-  await execFileAsync(process.execPath, [tsxCli, buildScript], {
+  await execFileAsync(process.execPath, ["--import", "tsx", buildScript], {
     cwd: root,
     env: {
       ...process.env,

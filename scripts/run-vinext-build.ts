@@ -8,7 +8,6 @@ const execFileAsync = promisify(execFile);
 const root = process.cwd();
 nextEnv.loadEnvConfig(root);
 const vinextCli = path.join(root, "node_modules", "vinext", "dist", "cli.js");
-const tsxCli = path.join(root, "node_modules", "tsx", "dist", "cli.mjs");
 const prepareScript = path.join(root, "scripts", "prepare-runtime-assets.ts");
 const transientPublicData = path.join(root, "public", "data");
 const privateRuntimeData = path.join(root, ".runtime-assets", "data");
@@ -26,7 +25,7 @@ let exitCode = 0;
 try {
   const prepared = await execFileAsync(
     process.execPath,
-    [tsxCli, prepareScript],
+    ["--import", "tsx", prepareScript],
     {
       cwd: root,
       env: process.env,

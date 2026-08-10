@@ -3,6 +3,7 @@ import type {
   PracticalQuestion,
   PracticalStudyCategoryId,
 } from "@/lib/domain/practical-types";
+import { PRACTICAL_NCS_UNIT_QUESTION_EDITORIAL_BY_CONCEPT_ID } from "./practical-ncs-unit-reinforcements";
 import { PRACTICAL_SUPPLEMENTAL_CONCEPTS } from "./practical-supplemental-concepts";
 
 const CATEGORY_BY_CONCEPT: Record<string, PracticalStudyCategoryId> = {
@@ -110,12 +111,15 @@ function formatLabelFor(category: PracticalStudyCategoryId) {
 }
 
 function makeQuestion(concept: PracticalConcept): PracticalQuestion {
-  const category = CATEGORY_BY_CONCEPT[concept.id];
+  const editorial =
+    PRACTICAL_NCS_UNIT_QUESTION_EDITORIAL_BY_CONCEPT_ID[concept.id];
+  const category =
+    editorial?.primaryStudyCategoryId ?? CATEGORY_BY_CONCEPT[concept.id];
   if (!category) {
     throw new Error(`보강용 예상문제의 유형 분류가 없습니다: ${concept.id}`);
   }
   const id = questionId(concept.id);
-  const modelAnswer = answerFor(concept, category);
+  const modelAnswer = editorial?.modelAnswer ?? answerFor(concept, category);
   const requiredKeywords = concept.requiredKeywords.slice(0, 6);
   const rubricKeywords = requiredKeywords.slice(0, 3);
   const studyCategoryIds = [
@@ -130,39 +134,47 @@ function makeQuestion(concept: PracticalConcept): PracticalQuestion {
     id,
     kind: "predicted",
     title: `${concept.title} 예상문제`,
-    formatLabel: formatLabelFor(category),
-    stem: stemFor(concept, category),
+    formatLabel: editorial?.formatLabel ?? formatLabelFor(category),
+    stem: editorial?.stem ?? stemFor(concept, category),
     modelAnswer,
+    answerDefinition: editorial?.answerDefinition,
+    memoryTip: editorial?.memoryTip,
     requiredKeywords,
     acceptedAnswers: [modelAnswer],
     calculation:
       category === "formula_calculation" ? concept.formula : [],
     unit: null,
-    rubric: [
-      {
-        id: `${id}-r1`,
-        label:
-          category === "work_procedure"
-            ? "작업 전 확인·안전조치"
-            : "개념 또는 대상의 정확한 정의",
-        points: 1,
-      },
-      ...rubricKeywords.map((keyword, index) => ({
-        id: `${id}-r${index + 2}`,
-        label: `필수 판단요소: ${keyword}`,
-        points: 1,
-      })),
-      {
-        id: `${id}-r${rubricKeywords.length + 2}`,
-        label:
-          category === "formula_calculation"
-            ? "공식의 적용조건과 단위 확인"
-            : category === "work_procedure"
-              ? "순서와 완료 확인"
-              : "원리와 실제 적용 연결",
-        points: 1,
-      },
-    ],
+    rubric: editorial
+      ? editorial.rubricLabels.map((label, index) => ({
+          id: `${id}-r${index + 1}`,
+          label,
+          points: 1,
+        }))
+      : [
+          {
+            id: `${id}-r1`,
+            label:
+              category === "work_procedure"
+                ? "작업 전 확인·안전조치"
+                : "개념 또는 대상의 정확한 정의",
+            points: 1,
+          },
+          ...rubricKeywords.map((keyword, index) => ({
+            id: `${id}-r${index + 2}`,
+            label: `필수 판단요소: ${keyword}`,
+            points: 1,
+          })),
+          {
+            id: `${id}-r${rubricKeywords.length + 2}`,
+            label:
+              category === "formula_calculation"
+                ? "공식의 적용조건과 단위 확인"
+                : category === "work_procedure"
+                  ? "순서와 완료 확인"
+                  : "원리와 실제 적용 연결",
+            points: 1,
+          },
+        ],
     traps: concept.traps.slice(0, 4),
     conceptIds: [concept.id],
     primaryStudyCategoryId: category,
@@ -177,6 +189,8 @@ function makeQuestion(concept: PracticalConcept): PracticalQuestion {
       `${sourceTitles.join("·")}의 NCS 수행내용과 ${concept.examFormats.join("·")} 출제형식을 바탕으로 자체 구성했다.`,
     reviewNote:
       "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+    examFormat: editorial?.examFormat,
+    examEvidenceStatus: editorial ? "ncs_supplement" : undefined,
   };
 }
 

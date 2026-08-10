@@ -325,10 +325,36 @@ test("held questions are unavailable from their direct public routes", async ({
 }) => {
   const sourceMissing = await request.get("/written/practice/U-267");
   expect(sourceMissing.status()).toBe(404);
-  const assetMissing = await request.get("/written/practice/U-035");
-  expect(assetMissing.status()).toBe(404);
+  for (const questionId of [
+    "U-035",
+    "U-040",
+    "U-129",
+    "U-319",
+    "U-332",
+    "U-477",
+    "U-1345",
+  ]) {
+    const assetMissing = await request.get(`/written/practice/${questionId}`);
+    expect(assetMissing.status(), questionId).toBe(404);
+  }
   const verified = await request.get("/written/practice/U-004");
   expect(verified.status()).toBe(200);
+});
+
+test("restored written symbol renders before submit and grades normally", async ({
+  page,
+}) => {
+  await page.goto("/written/practice/U-722");
+
+  const visual = page.getByTestId("written-question-visual-U-722");
+  await expect(visual).toBeVisible();
+  await expect(visual.locator("svg")).toHaveCount(1);
+  await expect(visual).toContainText("자체 재작성한 학습용 도해");
+  await expect(page.getByTestId("inline-cbt-feedback-U-722")).toHaveCount(0);
+
+  await page.getByRole("button", { name: /2\.\s*공압모터/ }).click();
+  await page.getByTestId("inline-cbt-submit-U-722").click();
+  await expect(page.getByTestId("inline-cbt-feedback-U-722")).toBeVisible();
 });
 
 test("welding review fields stay out of the pre-submit practice session payload", async ({

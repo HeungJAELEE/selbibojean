@@ -1,5 +1,19 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
+import { readFileSync } from "node:fs";
+import path from "node:path";
+
+const practicalContent = JSON.parse(
+  readFileSync(
+    path.join(process.cwd(), "src/data/generated/practical-content.json"),
+    "utf8",
+  ),
+) as {
+  questions: Array<{ id: string; title: string; stem: string }>;
+};
+const ncsReinforcementQuestions = practicalContent.questions.filter(
+  (question) => question.id.startsWith("EXP-NCS-"),
+);
 
 test("practical hub exposes the practical theory entry point", async ({
   page,
@@ -320,8 +334,8 @@ test("practical hub exposes only publishable source-backed content", async ({
   page,
 }) => {
   await page.goto("/practical/written");
-  await expect(page.getByText("22문제", { exact: true })).toBeVisible();
-  await expect(page.getByText("182문제", { exact: true })).toBeVisible();
+  await expect(page.getByText("51문제", { exact: true })).toBeVisible();
+  await expect(page.getByText("210문제", { exact: true })).toBeVisible();
   await expect(
     page.locator('a[href^="/practical/written/theory/subject/subject-"]'),
   ).toHaveCount(4);
@@ -333,6 +347,37 @@ test("practical hub exposes only publishable source-backed content", async ({
   ]) {
     await expect(page.getByRole("heading", { name: title })).toBeVisible();
   }
+});
+
+test("all 27 NCS reinforcement theories and predicted questions are reachable", async ({
+  page,
+  request,
+}) => {
+  expect(ncsReinforcementQuestions).toHaveLength(27);
+
+  for (const question of ncsReinforcementQuestions) {
+    const questionResponse = await request.get(
+      `/practical/written/question/${question.id}`,
+    );
+    expect(questionResponse.status(), question.id).toBe(200);
+
+    const conceptId = question.id.replace("EXP-NCS-", "PCON-NCS-");
+    const theoryResponse = await request.get(
+      `/practical/written/theory/${conceptId}`,
+    );
+    expect(theoryResponse.status(), conceptId).toBe(200);
+  }
+
+  const representative = ncsReinforcementQuestions[0];
+  await page.goto(`/practical/written/question/${representative.id}`);
+  await expect(
+    page.getByRole("heading", { name: representative.title }),
+  ).toBeVisible();
+  await expect(page.getByText(representative.stem, { exact: true })).toBeVisible();
+  await expect(page.getByTestId("practical-answer-feedback")).toHaveCount(0);
+  await page.locator("#practical-answer").fill("검수용 답안");
+  await page.getByRole("button", { name: "답안 제출" }).click();
+  await expect(page.getByTestId("practical-answer-feedback")).toBeVisible();
 });
 
 test("every supplemental lesson exposes its NCS-grounded predicted question", async ({

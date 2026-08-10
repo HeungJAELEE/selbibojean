@@ -5,6 +5,7 @@ import { ChevronDown, ExternalLink, RotateCcw } from "lucide-react";
 import type { PracticeFeedback, PublicQuestion } from "@/lib/domain/types";
 import { cn } from "@/lib/utils";
 import { PracticeFeedbackPanel } from "@/components/practice-feedback";
+import { WrittenQuestionVisual } from "@/components/written-question-visual";
 import { buildLessonReturnHref } from "@/lib/domain/practice";
 
 export function SingleQuestion({ question }: { question: PublicQuestion }) {
@@ -136,6 +137,7 @@ function QuestionAnswerForm({
     <>
       {!feedback ? (
         <>
+          <WrittenQuestionVisual questionId={question.id} />
           <div
             className={cn("grid gap-3", compact ? "mt-4" : "mt-7")}
             role="group"

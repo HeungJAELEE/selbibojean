@@ -72,14 +72,14 @@ async function main() {
   const runtimePublicQuestions = runtimeData.questions.filter(
     isPublishableQuestion,
   );
-  const expectedRuntimePublicQuestions = 2_062;
+  const expectedRuntimePublicQuestions = 2_063;
   if (runtimePublicQuestions.length !== expectedRuntimePublicQuestions) {
     errors.push(
       `런타임 공개 문제 수량 불일치: ${runtimePublicQuestions.length}/${expectedRuntimePublicQuestions}`,
     );
   }
   const expectedRuntimePublicBySubject = new Map([
-    ["subject-1", 314],
+    ["subject-1", 315],
     ["subject-2", 714],
     ["subject-3", 255],
     ["subject-4", 779],
@@ -383,7 +383,7 @@ async function main() {
     return;
   }
   console.log(
-    `PASS: 원문 ${data.report.rows.originals}, 원장 대표 ID ${data.report.rows.canonicalQuestions}, 매핑 ${data.report.rows.mappings}, 잔여 ${data.report.rows.backlog}, 44개 세부항목군, 공개 레슨 ${publishedLessons.length}, 선택지 해설 ${data.report.quality.choiceFeedbackPassed}, 원장 발행준비 ${data.report.publishedQuestionCount}, 근거 확인 대기 ${data.report.verification.blocked}, 용접 안전 원본 ${weldingSafety.counts.importedQuestions}문제·${weldingSafety.counts.importedLessons}레슨·${weldingSafety.counts.completedRounds}회차, 원본 단계 명시승인 ${approvedWeldingSafety.audit.publishedQuestions}문제·${approvedWeldingSafety.audit.publishedLessons}레슨, 원본 단계 검수대기 ${approvedWeldingSafety.audit.heldQuestions}문제·${approvedWeldingSafety.audit.heldLessons}레슨, 런타임 직접풀이 승인 ${publishedWeldingSafety.length}문제, 런타임 공개 ${runtimePublicQuestions.length}문제(subject-1 314·subject-2 714·subject-3 255·subject-4 779)·${runtimeData.lessons.filter(isPublishableLesson).length}레슨`,
+    `PASS: 원문 ${data.report.rows.originals}, 원장 대표 ID ${data.report.rows.canonicalQuestions}, 매핑 ${data.report.rows.mappings}, 잔여 ${data.report.rows.backlog}, 44개 세부항목군, 공개 레슨 ${publishedLessons.length}, 선택지 해설 ${data.report.quality.choiceFeedbackPassed}, 원장 발행준비 ${data.report.publishedQuestionCount}, 근거 확인 대기 ${data.report.verification.blocked}, 용접 안전 원본 ${weldingSafety.counts.importedQuestions}문제·${weldingSafety.counts.importedLessons}레슨·${weldingSafety.counts.completedRounds}회차, 원본 단계 명시승인 ${approvedWeldingSafety.audit.publishedQuestions}문제·${approvedWeldingSafety.audit.publishedLessons}레슨, 원본 단계 검수대기 ${approvedWeldingSafety.audit.heldQuestions}문제·${approvedWeldingSafety.audit.heldLessons}레슨, 런타임 직접풀이 승인 ${publishedWeldingSafety.length}문제, 런타임 공개 ${runtimePublicQuestions.length}문제(subject-1 315·subject-2 714·subject-3 255·subject-4 779)·${runtimeData.lessons.filter(isPublishableLesson).length}레슨`,
   );
 }
 

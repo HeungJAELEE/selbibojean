@@ -34,8 +34,8 @@ describe("practical written governance manifest", () => {
     expect(manifest.report.evidence).toEqual({
       pastReconstructed: 51,
       pastVariant: 0,
-      predictedRelated: 185,
-      ncsSupplement: 43,
+      predictedRelated: 212,
+      ncsSupplement: 70,
     });
     expect(validatePracticalExamEvidenceGraph(manifest.evidence)).toEqual([]);
     expect(countPracticalActualOccurrences(manifest.evidence)).toBe(51);

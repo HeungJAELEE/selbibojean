@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "generatedAt": "2026-07-31T04:38:08.837Z",
+  "generatedAt": "2026-08-10T00:00:00.000Z",
   "sourceSha256": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
   "scope": "practical_written_only",
   "evidence": [
@@ -25,7 +25,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -64,7 +64,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -104,7 +104,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -146,7 +146,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -189,7 +189,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -229,7 +229,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -276,7 +276,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -315,7 +315,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -359,12 +359,13 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
         "https://blog.naver.com/moru-1/223848831284",
-        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view",
+        "https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000207172"
       ],
       "formats": [
         "image"
@@ -374,7 +375,14 @@
         "PCON-009"
       ],
       "gradingRequiredKeywords": [
-        "GHS 유해성·위험성 그림문자. 폭발성·인화성·산화성·독성·부식성 등 위험을 표시"
+        "폭발성",
+        "인화성",
+        "산화성",
+        "고압가스",
+        "부식성",
+        "급성독성",
+        "건강유해성",
+        "환경유해성"
       ]
     },
     {
@@ -398,7 +406,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223848831284",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -439,7 +447,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -480,7 +488,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -524,7 +532,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -563,7 +571,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -604,7 +612,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -650,7 +658,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223951709068",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -689,7 +697,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -728,7 +736,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -770,7 +778,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -819,7 +827,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -858,7 +866,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/223952223215",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -899,7 +907,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -940,7 +948,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -983,7 +991,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1027,7 +1035,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1069,7 +1077,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1110,7 +1118,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1150,7 +1158,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1190,7 +1198,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1230,7 +1238,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1273,7 +1281,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224072357786",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1315,7 +1323,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1354,7 +1362,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1400,7 +1408,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1441,7 +1449,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1481,7 +1489,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1522,7 +1530,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1563,7 +1571,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1604,7 +1612,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1647,7 +1655,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1694,7 +1702,7 @@
           "sourceUrl": "https://blog.naver.com/moru-1/224275574425",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1734,7 +1742,7 @@
           "sourceUrl": null,
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1776,7 +1784,7 @@
           "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1818,7 +1826,7 @@
           "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1860,7 +1868,7 @@
           "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1902,7 +1910,7 @@
           "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1944,7 +1952,7 @@
           "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -1986,7 +1994,7 @@
           "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -2028,7 +2036,7 @@
           "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -2071,7 +2079,7 @@
           "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -2113,7 +2121,7 @@
           "sourceUrl": "https://blog.naver.com/bjs2236/224350755723",
           "sourceArtifactId": "practical-source:71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
           "sourceFileHash": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
-          "capturedAt": "2026-07-31T04:38:08.837Z"
+          "capturedAt": "2026-08-10T00:00:00.000Z"
         }
       ],
       "sourceRefs": [
@@ -7769,6 +7777,883 @@
       ]
     },
     {
+      "id": "evidence:EXP-NCS-MEASURE-SELECT",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-MEASURE-SELECT"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-MEASURE-SELECT"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "측정 대상과 공차에 맞는 측정기 선정 예상문제",
+        "측정기·보조기구 선정",
+        "PCON-NCS-MEASURE-SELECT"
+      ],
+      "gradingRequiredKeywords": [
+        "형상",
+        "측정범위",
+        "허용공차",
+        "분해능",
+        "재질",
+        "보조기구"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-DRAWING-REVISION",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-DRAWING-REVISION"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-DRAWING-REVISION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+      ],
+      "formats": [
+        "sequence",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "도면 개정과 최신본 확인 예상문제",
+        "도면 개정 확인 순서",
+        "PCON-NCS-DRAWING-REVISION"
+      ],
+      "gradingRequiredKeywords": [
+        "개정번호",
+        "개정사유",
+        "개정부위",
+        "승인",
+        "통보",
+        "최신본"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-DRAWING-MEASUREMENT-ELEMENTS",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-DRAWING-MEASUREMENT-ELEMENTS"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-DRAWING-MEASUREMENT-ELEMENTS"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+      ],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "도면에서 측정요소와 부품특성 찾기 예상문제",
+        "도면 측정요소 판독",
+        "PCON-NCS-DRAWING-MEASUREMENT-ELEMENTS"
+      ],
+      "gradingRequiredKeywords": [
+        "데이텀",
+        "개별공차",
+        "일반공차",
+        "측정치수",
+        "재질",
+        "주기사항"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-BRAKE-CHARACTERISTICS",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-BRAKE-CHARACTERISTICS"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-BRAKE-CHARACTERISTICS"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "브레이크 종류와 제동원리 예상문제",
+        "브레이크 종류·원리 비교",
+        "PCON-NCS-BRAKE-CHARACTERISTICS"
+      ],
+      "gradingRequiredKeywords": [
+        "포지티브",
+        "네거티브",
+        "디스크",
+        "드럼",
+        "마찰",
+        "유압"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-WELD-DEFECT-ESTIMATION",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-WELD-DEFECT-ESTIMATION"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-WELD-DEFECT-ESTIMATION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "sequence",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "용접 중 결함 원인과 예방 예상문제",
+        "용접결함 원인·예방",
+        "PCON-NCS-WELD-DEFECT-ESTIMATION"
+      ],
+      "gradingRequiredKeywords": [
+        "기공",
+        "슬래그 혼입",
+        "청소",
+        "용접봉 건조",
+        "적정 전류",
+        "운봉"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-WELD-REPAIR",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-WELD-REPAIR"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-WELD-REPAIR"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "용접결함 제거와 보수용접 예상문제",
+        "보수용접 작업순서",
+        "PCON-NCS-WELD-REPAIR"
+      ],
+      "gradingRequiredKeywords": [
+        "결함 확인",
+        "가우징",
+        "결함 제거",
+        "WPS",
+        "보수용접",
+        "후검사"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-WELD-NDT",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-WELD-NDT"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-WELD-NDT"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "image",
+        "sequence",
+        "matching"
+      ],
+      "learningKeywords": [
+        "보수용접 후 비파괴검사 선택 예상문제",
+        "비파괴검사법 선택",
+        "PCON-NCS-WELD-NDT"
+      ],
+      "gradingRequiredKeywords": [
+        "VT",
+        "PT",
+        "MT",
+        "RT",
+        "UT",
+        "표면·내부 결함"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-HYDRAULIC-VALVE-SELECTION",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-HYDRAULIC-VALVE-SELECTION"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-HYDRAULIC-VALVE-SELECTION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
+      "formats": [
+        "image",
+        "matching"
+      ],
+      "learningKeywords": [
+        "유압제어밸브 기능별 선정 예상문제",
+        "유압밸브 기능 매칭",
+        "PCON-NCS-HYDRAULIC-VALVE-SELECTION"
+      ],
+      "gradingRequiredKeywords": [
+        "압력제어",
+        "방향제어",
+        "유량제어",
+        "릴리프",
+        "감압",
+        "속도"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-ELECTROHYDRAULIC-CIRCUIT",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-ELECTROHYDRAULIC-CIRCUIT"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-ELECTROHYDRAULIC-CIRCUIT"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
+      "formats": [
+        "image",
+        "sequence"
+      ],
+      "learningKeywords": [
+        "전기유압 논리회로 구성 예상문제",
+        "전기유압 신호흐름",
+        "PCON-NCS-ELECTROHYDRAULIC-CIRCUIT"
+      ],
+      "gradingRequiredKeywords": [
+        "입력",
+        "릴레이",
+        "인터록",
+        "솔레노이드",
+        "AND·OR",
+        "전원차단"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-HYDRAULIC-SYSTEM-BUILD",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-HYDRAULIC-SYSTEM-BUILD"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-HYDRAULIC-SYSTEM-BUILD"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "유압시스템 구축 4단계 예상문제",
+        "유압시스템 구축 순서",
+        "PCON-NCS-HYDRAULIC-SYSTEM-BUILD"
+      ],
+      "gradingRequiredKeywords": [
+        "요구기능",
+        "회로도",
+        "부품목록",
+        "설치",
+        "초기값",
+        "저압 시험"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-HYDRAULIC-AUXILIARY-CONTROLS",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-HYDRAULIC-AUXILIARY-CONTROLS"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-HYDRAULIC-AUXILIARY-CONTROLS"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "유압 부가조건과 안전제어 예상문제",
+        "부가조건 스위치 기능",
+        "PCON-NCS-HYDRAULIC-AUXILIARY-CONTROLS"
+      ],
+      "gradingRequiredKeywords": [
+        "메인",
+        "시동",
+        "리셋",
+        "자동·수동",
+        "단속·연속",
+        "비상정지"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-PNEUMATIC-LOGIC",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-PNEUMATIC-LOGIC"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-PNEUMATIC-LOGIC"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
+      "formats": [
+        "image",
+        "matching"
+      ],
+      "learningKeywords": [
+        "공압 논리와 제어방식 예상문제",
+        "공압 논리요소 매칭",
+        "PCON-NCS-PNEUMATIC-LOGIC"
+      ],
+      "gradingRequiredKeywords": [
+        "3/2밸브",
+        "YES·NOT",
+        "2압밸브",
+        "AND",
+        "셔틀밸브",
+        "OR"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "공압회로 부품선정·배관·배선 예상문제",
+        "공압회로 구성순서",
+        "PCON-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY"
+      ],
+      "gradingRequiredKeywords": [
+        "부품목록",
+        "배치",
+        "배관",
+        "배선",
+        "누설",
+        "간섭"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-PNEUMATIC-COMMISSIONING",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-PNEUMATIC-COMMISSIONING"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-PNEUMATIC-COMMISSIONING"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "공압 부하특성 조정과 시운전 예상문제",
+        "공압 시운전·조정",
+        "PCON-NCS-PNEUMATIC-COMMISSIONING"
+      ],
+      "gradingRequiredKeywords": [
+        "초기위치",
+        "저압 시작",
+        "압력-힘",
+        "유량-속도",
+        "쿠션",
+        "기록"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-PNEUMATIC-TROUBLESHOOTING",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-PNEUMATIC-TROUBLESHOOTING"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-PNEUMATIC-TROUBLESHOOTING"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
+      "formats": [
+        "sequence",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "공압 이상 원인 추적 예상문제",
+        "공압 이상 추적",
+        "PCON-NCS-PNEUMATIC-TROUBLESHOOTING"
+      ],
+      "gradingRequiredKeywords": [
+        "압력",
+        "유량",
+        "누설",
+        "입력",
+        "제어",
+        "출력"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-SENSOR-RELAY-CIRCUIT",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-SENSOR-RELAY-CIRCUIT"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-SENSOR-RELAY-CIRCUIT"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "센서 출력과 릴레이제어 회로 예상문제",
+        "센서·릴레이 회로 판독",
+        "PCON-NCS-SENSOR-RELAY-CIRCUIT"
+      ],
+      "gradingRequiredKeywords": [
+        "센서 신호",
+        "N/O·N/C",
+        "릴레이",
+        "솔레노이드",
+        "입출력",
+        "변위-단계선도"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-SENSOR-MAINTENANCE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-SENSOR-MAINTENANCE"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-SENSOR-MAINTENANCE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "센서 점검과 이상조치 예상문제",
+        "센서 점검·이상조치",
+        "PCON-NCS-SENSOR-MAINTENANCE"
+      ],
+      "gradingRequiredKeywords": [
+        "설치상태",
+        "검출거리",
+        "오염",
+        "케이블",
+        "전원",
+        "출력신호"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-SYSTEM-GROUPING",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-SYSTEM-GROUPING"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-SYSTEM-GROUPING"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "기계시스템 구성요소 그룹화 예상문제",
+        "기계시스템 기능별 그룹화",
+        "PCON-NCS-SYSTEM-GROUPING"
+      ],
+      "gradingRequiredKeywords": [
+        "구조물",
+        "구동부",
+        "액추에이터",
+        "센서",
+        "제어기",
+        "그룹화"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-PPE-SELECTION",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-PPE-SELECTION"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-PPE-SELECTION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+      ],
+      "formats": [
+        "image",
+        "matching"
+      ],
+      "learningKeywords": [
+        "위험요인별 보호구 선정과 착용 예상문제",
+        "위험요인·보호구 매칭",
+        "PCON-NCS-PPE-SELECTION"
+      ],
+      "gradingRequiredKeywords": [
+        "위험요인",
+        "보호구 선정",
+        "사용 전 점검",
+        "밀착",
+        "노출 전 착용",
+        "공학적 대책"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-SAFETY-PREVENTION",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-SAFETY-PREVENTION"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-SAFETY-PREVENTION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "작업 전 안전점검과 사고예방 예상문제",
+        "작업 전 안전점검·이상조치",
+        "PCON-NCS-SAFETY-PREVENTION"
+      ],
+      "gradingRequiredKeywords": [
+        "위험요인",
+        "에너지원",
+        "방호장치",
+        "작업중지",
+        "격리·보고",
+        "재발방지"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-JIG-FIXTURE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-JIG-FIXTURE"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-JIG-FIXTURE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "지그와 고정구의 기능 예상문제",
+        "지그·고정구 정의 비교",
+        "PCON-NCS-JIG-FIXTURE"
+      ],
+      "gradingRequiredKeywords": [
+        "지그",
+        "고정구",
+        "공구 안내",
+        "위치결정",
+        "지지",
+        "클램핑"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-DRIVE-PART-INSPECTION",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-DRIVE-PART-INSPECTION"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-DRIVE-PART-INSPECTION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
+      "formats": [
+        "image",
+        "drawing",
+        "sequence"
+      ],
+      "learningKeywords": [
+        "구동부품 도면검사 예상문제",
+        "구동부품 도면검사",
+        "PCON-NCS-DRIVE-PART-INSPECTION"
+      ],
+      "gradingRequiredKeywords": [
+        "치수공차",
+        "기하공차",
+        "표면거칠기",
+        "끼워맞춤",
+        "측정기",
+        "합부판정"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-ASSEMBLY-STATE",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-ASSEMBLY-STATE"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-ASSEMBLY-STATE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "구동장치 조립상태 검사 예상문제",
+        "구동장치 조립상태 점검",
+        "PCON-NCS-ASSEMBLY-STATE"
+      ],
+      "gradingRequiredKeywords": [
+        "조립도",
+        "청결",
+        "끼워맞춤",
+        "체결",
+        "간극",
+        "축정렬"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-DYNAMIC-CHECK",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-DYNAMIC-CHECK"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-DYNAMIC-CHECK"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
+      "formats": [
+        "sequence",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "구동장치 동작상태 시운전 예상문제",
+        "구동장치 최초 시운전",
+        "PCON-NCS-DYNAMIC-CHECK"
+      ],
+      "gradingRequiredKeywords": [
+        "무부하·저속",
+        "회전방향",
+        "이상음·진동",
+        "온도",
+        "정지·차단",
+        "재시험"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-WELD-VERTICAL",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-WELD-VERTICAL"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-WELD-VERTICAL"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "수직 자세 맞대기용접 예상문제",
+        "수직 자세 용접조건",
+        "PCON-NCS-WELD-VERTICAL"
+      ],
+      "gradingRequiredKeywords": [
+        "수직 자세",
+        "WPS",
+        "아크길이",
+        "봉각도",
+        "운봉",
+        "용융지"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-WELD-HORIZONTAL",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-WELD-HORIZONTAL"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-WELD-HORIZONTAL"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "수평 자세 맞대기용접 예상문제",
+        "수평 자세 용접조건",
+        "PCON-NCS-WELD-HORIZONTAL"
+      ],
+      "gradingRequiredKeywords": [
+        "수평 자세",
+        "WPS",
+        "봉각도",
+        "운봉폭",
+        "속도",
+        "층간 청소"
+      ]
+    },
+    {
+      "id": "evidence:EXP-NCS-WELD-OVERHEAD",
+      "status": "predicted_related",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-WELD-OVERHEAD"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-WELD-OVERHEAD"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "위보기 자세 맞대기용접 예상문제",
+        "위보기 자세 용접조건",
+        "PCON-NCS-WELD-OVERHEAD"
+      ],
+      "gradingRequiredKeywords": [
+        "위보기 자세",
+        "WPS",
+        "짧은 아크",
+        "용융지",
+        "절연",
+        "낙하구역 통제"
+      ]
+    },
+    {
       "id": "evidence:ncs-supplement:PCON-SUP-001",
       "status": "ncs_supplement",
       "variantOfEvidenceId": null,
@@ -9142,6 +10027,802 @@
         "비산"
       ],
       "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-MEASURE-SELECT",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-MEASURE-SELECT"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-MEASURE-SELECT"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "측정 대상과 공차에 맞는 측정기 선정",
+        "형상",
+        "측정범위",
+        "허용공차",
+        "분해능",
+        "재질",
+        "보조기구"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-DRAWING-REVISION",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-DRAWING-REVISION"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-DRAWING-REVISION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+      ],
+      "formats": [
+        "sequence",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "도면 개정과 최신본 확인",
+        "개정번호",
+        "개정사유",
+        "개정부위",
+        "승인",
+        "통보",
+        "최신본"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-DRAWING-MEASUREMENT-ELEMENTS",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-DRAWING-MEASUREMENT-ELEMENTS"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-DRAWING-MEASUREMENT-ELEMENTS"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+      ],
+      "formats": [
+        "image",
+        "drawing"
+      ],
+      "learningKeywords": [
+        "도면에서 측정요소와 부품특성 찾기",
+        "데이텀",
+        "개별공차",
+        "일반공차",
+        "측정치수",
+        "재질",
+        "주기사항"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-BRAKE-CHARACTERISTICS",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-BRAKE-CHARACTERISTICS"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-BRAKE-CHARACTERISTICS"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "브레이크 종류와 제동원리",
+        "포지티브",
+        "네거티브",
+        "디스크",
+        "드럼",
+        "마찰",
+        "유압"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-WELD-DEFECT-ESTIMATION",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-WELD-DEFECT-ESTIMATION"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-WELD-DEFECT-ESTIMATION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "sequence",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "용접 중 결함 원인과 예방",
+        "기공",
+        "슬래그 혼입",
+        "청소",
+        "용접봉 건조",
+        "적정 전류",
+        "운봉"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-WELD-REPAIR",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-WELD-REPAIR"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-WELD-REPAIR"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "용접결함 제거와 보수용접",
+        "결함 확인",
+        "가우징",
+        "결함 제거",
+        "WPS",
+        "보수용접",
+        "후검사"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-WELD-NDT",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-WELD-NDT"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-WELD-NDT"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+      ],
+      "formats": [
+        "image",
+        "sequence",
+        "matching"
+      ],
+      "learningKeywords": [
+        "보수용접 후 비파괴검사 선택",
+        "VT",
+        "PT",
+        "MT",
+        "RT",
+        "UT",
+        "표면·내부 결함"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-HYDRAULIC-VALVE-SELECTION",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-HYDRAULIC-VALVE-SELECTION"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-HYDRAULIC-VALVE-SELECTION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
+      "formats": [
+        "image",
+        "matching"
+      ],
+      "learningKeywords": [
+        "유압제어밸브 기능별 선정",
+        "압력제어",
+        "방향제어",
+        "유량제어",
+        "릴리프",
+        "감압",
+        "속도"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-ELECTROHYDRAULIC-CIRCUIT",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-ELECTROHYDRAULIC-CIRCUIT"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-ELECTROHYDRAULIC-CIRCUIT"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
+      "formats": [
+        "image",
+        "sequence"
+      ],
+      "learningKeywords": [
+        "전기유압 논리회로 구성",
+        "입력",
+        "릴레이",
+        "인터록",
+        "솔레노이드",
+        "AND·OR",
+        "전원차단"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-HYDRAULIC-SYSTEM-BUILD",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-HYDRAULIC-SYSTEM-BUILD"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-HYDRAULIC-SYSTEM-BUILD"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "유압시스템 구축 4단계",
+        "요구기능",
+        "회로도",
+        "부품목록",
+        "설치",
+        "초기값",
+        "저압 시험"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-HYDRAULIC-AUXILIARY-CONTROLS",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-HYDRAULIC-AUXILIARY-CONTROLS"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-HYDRAULIC-AUXILIARY-CONTROLS"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "유압 부가조건과 안전제어",
+        "메인",
+        "시동",
+        "리셋",
+        "자동·수동",
+        "단속·연속",
+        "비상정지"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-PNEUMATIC-LOGIC",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-PNEUMATIC-LOGIC"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-PNEUMATIC-LOGIC"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
+      "formats": [
+        "image",
+        "matching"
+      ],
+      "learningKeywords": [
+        "공압 논리와 제어방식",
+        "3/2밸브",
+        "YES·NOT",
+        "2압밸브",
+        "AND",
+        "셔틀밸브",
+        "OR"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "공압회로 부품선정·배관·배선",
+        "부품목록",
+        "배치",
+        "배관",
+        "배선",
+        "누설",
+        "간섭"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-PNEUMATIC-COMMISSIONING",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-PNEUMATIC-COMMISSIONING"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-PNEUMATIC-COMMISSIONING"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "공압 부하특성 조정과 시운전",
+        "초기위치",
+        "저압 시작",
+        "압력-힘",
+        "유량-속도",
+        "쿠션",
+        "기록"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-PNEUMATIC-TROUBLESHOOTING",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-PNEUMATIC-TROUBLESHOOTING"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-PNEUMATIC-TROUBLESHOOTING"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+      ],
+      "formats": [
+        "sequence",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "공압 이상 원인 추적",
+        "압력",
+        "유량",
+        "누설",
+        "입력",
+        "제어",
+        "출력"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-SENSOR-RELAY-CIRCUIT",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-SENSOR-RELAY-CIRCUIT"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-SENSOR-RELAY-CIRCUIT"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "센서 출력과 릴레이제어 회로",
+        "센서 신호",
+        "N/O·N/C",
+        "릴레이",
+        "솔레노이드",
+        "입출력",
+        "변위-단계선도"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-SENSOR-MAINTENANCE",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-SENSOR-MAINTENANCE"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-SENSOR-MAINTENANCE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "센서 점검과 이상조치",
+        "설치상태",
+        "검출거리",
+        "오염",
+        "케이블",
+        "전원",
+        "출력신호"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-SYSTEM-GROUPING",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-SYSTEM-GROUPING"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-SYSTEM-GROUPING"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+      ],
+      "formats": [
+        "image"
+      ],
+      "learningKeywords": [
+        "기계시스템 구성요소 그룹화",
+        "구조물",
+        "구동부",
+        "액추에이터",
+        "센서",
+        "제어기",
+        "그룹화"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-PPE-SELECTION",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-PPE-SELECTION"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-PPE-SELECTION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+      ],
+      "formats": [
+        "image",
+        "matching"
+      ],
+      "learningKeywords": [
+        "위험요인별 보호구 선정과 착용",
+        "위험요인",
+        "보호구 선정",
+        "사용 전 점검",
+        "밀착",
+        "노출 전 착용",
+        "공학적 대책"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-SAFETY-PREVENTION",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-SAFETY-PREVENTION"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-SAFETY-PREVENTION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "작업 전 안전점검과 사고예방",
+        "위험요인",
+        "에너지원",
+        "방호장치",
+        "작업중지",
+        "격리·보고",
+        "재발방지"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-JIG-FIXTURE",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-JIG-FIXTURE"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-JIG-FIXTURE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "지그와 고정구의 기능",
+        "지그",
+        "고정구",
+        "공구 안내",
+        "위치결정",
+        "지지",
+        "클램핑"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-DRIVE-PART-INSPECTION",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-DRIVE-PART-INSPECTION"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-DRIVE-PART-INSPECTION"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
+      "formats": [
+        "image",
+        "drawing",
+        "sequence"
+      ],
+      "learningKeywords": [
+        "구동부품 도면검사",
+        "치수공차",
+        "기하공차",
+        "표면거칠기",
+        "끼워맞춤",
+        "측정기",
+        "합부판정"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-ASSEMBLY-STATE",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-ASSEMBLY-STATE"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-ASSEMBLY-STATE"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
+      "formats": [
+        "sequence"
+      ],
+      "learningKeywords": [
+        "구동장치 조립상태 검사",
+        "조립도",
+        "청결",
+        "끼워맞춤",
+        "체결",
+        "간극",
+        "축정렬"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-DYNAMIC-CHECK",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-DYNAMIC-CHECK"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-DYNAMIC-CHECK"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+      ],
+      "formats": [
+        "sequence",
+        "diagnosis"
+      ],
+      "learningKeywords": [
+        "구동장치 동작상태 시운전",
+        "무부하·저속",
+        "회전방향",
+        "이상음·진동",
+        "온도",
+        "정지·차단",
+        "재시험"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-WELD-VERTICAL",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-WELD-VERTICAL"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-WELD-VERTICAL"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "수직 자세 맞대기용접",
+        "수직 자세",
+        "WPS",
+        "아크길이",
+        "봉각도",
+        "운봉",
+        "용융지"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-WELD-HORIZONTAL",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-WELD-HORIZONTAL"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-WELD-HORIZONTAL"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "수평 자세 맞대기용접",
+        "수평 자세",
+        "WPS",
+        "봉각도",
+        "운봉폭",
+        "속도",
+        "층간 청소"
+      ],
+      "gradingRequiredKeywords": []
+    },
+    {
+      "id": "evidence:ncs-supplement:PCON-NCS-WELD-OVERHEAD",
+      "status": "ncs_supplement",
+      "variantOfEvidenceId": null,
+      "conceptIds": [
+        "PCON-NCS-WELD-OVERHEAD"
+      ],
+      "taskIds": [],
+      "questionIds": [
+        "EXP-NCS-WELD-OVERHEAD"
+      ],
+      "sessions": [],
+      "sourceRefs": [
+        "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+      ],
+      "formats": [
+        "definition"
+      ],
+      "learningKeywords": [
+        "위보기 자세 맞대기용접",
+        "위보기 자세",
+        "WPS",
+        "짧은 아크",
+        "용융지",
+        "절연",
+        "낙하구역 통제"
+      ],
+      "gradingRequiredKeywords": []
     }
   ],
   "coverage": [
@@ -9158,6 +10839,7 @@
             "PCON-024",
             "PCON-031",
             "PCON-037",
+            "PCON-NCS-MEASURE-SELECT",
             "PCON-SUP-023",
             "PCON-SUP-025",
             "PCON-SUP-026",
@@ -9221,7 +10903,8 @@
             "EXP-SUP-026",
             "EXP-SUP-027",
             "EXP-BAL-DEF-ABBE",
-            "EXP-BAL-CALC-SPINDLE"
+            "EXP-BAL-CALC-SPINDLE",
+            "EXP-NCS-MEASURE-SELECT"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -9259,6 +10942,8 @@
             "PCON-019",
             "PCON-028",
             "PCON-038",
+            "PCON-NCS-DRAWING-MEASUREMENT-ELEMENTS",
+            "PCON-NCS-DRAWING-REVISION",
             "PCON-SUP-024"
           ],
           "disposition": null,
@@ -9289,7 +10974,9 @@
             "EXP-M05",
             "EXP-M06",
             "EXP-C04",
-            "EXP-SUP-024"
+            "EXP-SUP-024",
+            "EXP-NCS-DRAWING-REVISION",
+            "EXP-NCS-DRAWING-MEASUREMENT-ELEMENTS"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -9326,6 +11013,10 @@
             "PCON-007",
             "PCON-013",
             "PCON-036",
+            "PCON-NCS-ASSEMBLY-STATE",
+            "PCON-NCS-DRIVE-PART-INSPECTION",
+            "PCON-NCS-DYNAMIC-CHECK",
+            "PCON-NCS-JIG-FIXTURE",
             "PCON-SUP-028",
             "PCON-SUP-031"
           ],
@@ -9369,7 +11060,11 @@
             "EXP-VIS-BEARING-PRESS-ASSEMBLY-01",
             "EXP-VIS-DRIVE-UNIT-ASSEMBLY-01",
             "EXP-SUP-028",
-            "EXP-SUP-031"
+            "EXP-SUP-031",
+            "EXP-NCS-JIG-FIXTURE",
+            "EXP-NCS-DRIVE-PART-INSPECTION",
+            "EXP-NCS-ASSEMBLY-STATE",
+            "EXP-NCS-DYNAMIC-CHECK"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -9406,6 +11101,8 @@
             "PCON-016",
             "PCON-017",
             "PCON-043",
+            "PCON-NCS-PPE-SELECTION",
+            "PCON-NCS-SAFETY-PREVENTION",
             "PCON-SUP-043"
           ],
           "disposition": null,
@@ -9436,7 +11133,9 @@
             "EXP-S01",
             "EXP-S03",
             "EXP-S04",
-            "EXP-SUP-043"
+            "EXP-SUP-043",
+            "EXP-NCS-PPE-SELECTION",
+            "EXP-NCS-SAFETY-PREVENTION"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -9471,6 +11170,7 @@
           "linkedIds": [
             "PCON-029",
             "PCON-039",
+            "PCON-NCS-SYSTEM-GROUPING",
             "PCON-SUP-001",
             "PCON-SUP-004",
             "PCON-SUP-015",
@@ -9528,7 +11228,8 @@
             "EXP-BAL-CALC-LOAD-FACTOR",
             "EXP-BAL-CALC-PERT",
             "EXP-BAL-CALC-PERFORMANCE-RATE",
-            "EXP-BAL-CALC-UNIT-MAINTENANCE-COST"
+            "EXP-BAL-CALC-UNIT-MAINTENANCE-COST",
+            "EXP-NCS-SYSTEM-GROUPING"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -9563,6 +11264,8 @@
           "linkedIds": [
             "PCON-003",
             "PCON-011",
+            "PCON-NCS-SENSOR-MAINTENANCE",
+            "PCON-NCS-SENSOR-RELAY-CIRCUIT",
             "PCON-SUP-011",
             "PCON-SUP-012",
             "PCON-SUP-013",
@@ -9601,7 +11304,9 @@
             "EXP-BAL-DEF-HYSTERESIS",
             "EXP-BAL-CALC-OHM",
             "EXP-BAL-CALC-NYQUIST",
-            "EXP-BAL-CALC-PROPORTIONAL-BAND"
+            "EXP-BAL-CALC-PROPORTIONAL-BAND",
+            "EXP-NCS-SENSOR-RELAY-CIRCUIT",
+            "EXP-NCS-SENSOR-MAINTENANCE"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -9636,6 +11341,10 @@
           "linkedIds": [
             "PCON-041",
             "PCON-042",
+            "PCON-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY",
+            "PCON-NCS-PNEUMATIC-COMMISSIONING",
+            "PCON-NCS-PNEUMATIC-LOGIC",
+            "PCON-NCS-PNEUMATIC-TROUBLESHOOTING",
             "PCON-SUP-003",
             "PCON-SUP-004",
             "PCON-SUP-005",
@@ -9670,7 +11379,11 @@
             "EXP-BAL-DEF-BOYLE",
             "EXP-BAL-DEF-CHARLES",
             "EXP-BAL-CALC-BOYLE",
-            "EXP-BAL-CALC-CHARLES"
+            "EXP-BAL-CALC-CHARLES",
+            "EXP-NCS-PNEUMATIC-LOGIC",
+            "EXP-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY",
+            "EXP-NCS-PNEUMATIC-COMMISSIONING",
+            "EXP-NCS-PNEUMATIC-TROUBLESHOOTING"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -9706,6 +11419,10 @@
             "PCON-008",
             "PCON-025",
             "PCON-040",
+            "PCON-NCS-ELECTROHYDRAULIC-CIRCUIT",
+            "PCON-NCS-HYDRAULIC-AUXILIARY-CONTROLS",
+            "PCON-NCS-HYDRAULIC-SYSTEM-BUILD",
+            "PCON-NCS-HYDRAULIC-VALVE-SELECTION",
             "PCON-SUP-006",
             "PCON-SUP-007",
             "PCON-SUP-008",
@@ -9754,7 +11471,11 @@
             "EXP-SUP-034",
             "EXP-BAL-DEF-CAVITATION",
             "EXP-BAL-DEF-WATER-HAMMER",
-            "EXP-BAL-CALC-PUMP-POWER"
+            "EXP-BAL-CALC-PUMP-POWER",
+            "EXP-NCS-HYDRAULIC-VALVE-SELECTION",
+            "EXP-NCS-ELECTROHYDRAULIC-CIRCUIT",
+            "EXP-NCS-HYDRAULIC-SYSTEM-BUILD",
+            "EXP-NCS-HYDRAULIC-AUXILIARY-CONTROLS"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -9800,6 +11521,7 @@
             "PCON-032",
             "PCON-033",
             "PCON-035",
+            "PCON-NCS-BRAKE-CHARACTERISTICS",
             "PCON-SUP-029",
             "PCON-SUP-030",
             "PCON-SUP-032",
@@ -9924,7 +11646,8 @@
             "EXP-BAL-CALC-PHASE",
             "EXP-BAL-CALC-ABSOLUTE-PRESSURE",
             "EXP-BAL-CALC-WAVE-FREQUENCY",
-            "EXP-BAL-PROC-BRAKE-LINING"
+            "EXP-BAL-PROC-BRAKE-LINING",
+            "EXP-NCS-BRAKE-CHARACTERISTICS"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -9960,7 +11683,10 @@
             "PCON-043",
             "PCON-044",
             "PCON-045",
-            "PCON-046"
+            "PCON-046",
+            "PCON-NCS-WELD-DEFECT-ESTIMATION",
+            "PCON-NCS-WELD-NDT",
+            "PCON-NCS-WELD-REPAIR"
           ],
           "disposition": null,
           "rationale": "NCS 원문 위치와 연결된 필답형 개념을 공개한다.",
@@ -9996,7 +11722,10 @@
             "EXP-BAL-DEF-LACK-PENETRATION",
             "EXP-BAL-DEF-LACK-FUSION",
             "EXP-BAL-DEF-CRATER",
-            "EXP-BAL-DEF-WELD-CRACK"
+            "EXP-BAL-DEF-WELD-CRACK",
+            "EXP-NCS-WELD-DEFECT-ESTIMATION",
+            "EXP-NCS-WELD-REPAIR",
+            "EXP-NCS-WELD-NDT"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -10030,6 +11759,9 @@
           "status": "published",
           "linkedIds": [
             "PCON-046",
+            "PCON-NCS-WELD-HORIZONTAL",
+            "PCON-NCS-WELD-OVERHEAD",
+            "PCON-NCS-WELD-VERTICAL",
             "PCON-SUP-002",
             "PCON-SUP-016",
             "PCON-SUP-017",
@@ -10076,7 +11808,10 @@
             "EXP-SUP-021",
             "EXP-SUP-022",
             "EXP-SUP-041",
-            "EXP-SUP-042"
+            "EXP-SUP-042",
+            "EXP-NCS-WELD-VERTICAL",
+            "EXP-NCS-WELD-HORIZONTAL",
+            "EXP-NCS-WELD-OVERHEAD"
           ],
           "disposition": null,
           "rationale": "검증 완료된 필답형 기출복원 또는 출제예상 문제다.",
@@ -10195,18 +11930,18 @@
     "evidence": {
       "pastReconstructed": 51,
       "pastVariant": 0,
-      "predictedRelated": 185,
-      "ncsSupplement": 43
+      "predictedRelated": 212,
+      "ncsSupplement": 70
     },
     "publication": {
       "past": 51,
-      "predicted": 183,
+      "predicted": 210,
       "held": 0
     },
     "coverage": {
       "ncsDocuments": 11,
-      "publishedTheoryLinks": 88,
-      "publishedAssessmentLinks": 236,
+      "publishedTheoryLinks": 115,
+      "publishedAssessmentLinks": 263,
       "publishedVisualLinks": 82,
       "excludedTaskDeliverables": 11,
       "excludedRecordDeliverables": 11

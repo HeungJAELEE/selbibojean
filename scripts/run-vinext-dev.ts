@@ -7,8 +7,7 @@ import nextEnv from "@next/env";
 const execFileAsync = promisify(execFile);
 const root = process.cwd();
 nextEnv.loadEnvConfig(root);
-const vinextCli = path.join(root, "node_modules", "vinext", "dist", "cli.js");
-const tsxCli = path.join(root, "node_modules", "tsx", "dist", "cli.mjs");
+const viteCli = path.join(root, "node_modules", "vite", "bin", "vite.js");
 const prepareScript = path.join(root, "scripts", "prepare-runtime-assets.ts");
 const transientPublicData = path.join(root, "public", "data");
 const gatedBusanMedia = path.join(
@@ -25,7 +24,7 @@ let exitCode = 1;
 try {
   const prepared = await execFileAsync(
     process.execPath,
-    [tsxCli, prepareScript],
+    ["--import", "tsx", prepareScript],
     {
       cwd: root,
       env: process.env,
@@ -36,7 +35,7 @@ try {
   if (prepared.stderr) process.stderr.write(prepared.stderr);
 
   exitCode = await new Promise<number>((resolve, reject) => {
-    const child = spawn(process.execPath, [vinextCli, "dev", ...vinextArgs], {
+    const child = spawn(process.execPath, [viteCli, ...vinextArgs], {
       cwd: root,
       env: process.env,
       stdio: "inherit",

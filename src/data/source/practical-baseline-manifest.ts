@@ -8,6 +8,12 @@ export const PRACTICAL_BASELINE_MANIFEST = {
   capturedAt: "2026-07-28T12:34:00+09:00",
   changeHistory: [
     {
+      changedAt: "2026-08-10T18:00:00+09:00",
+      scope: "questions+concepts",
+      summary:
+        "NCS 11종의 61개 세부학습단위를 대조해 기존 직접 연결이 없던 27개 단원에 보강 이론과 자체 예상문제를 1개씩 추가했다. 법령·표준·제조사·WPS 의존 수치는 고정하지 않고, 각 문제에 모범답안·필수어·채점기준·이론 및 NCS 출처를 연결했다.",
+    },
+    {
       changedAt: "2026-07-29T22:30:00+09:00",
       scope: "visualAids+publication",
       summary:
@@ -52,14 +58,14 @@ export const PRACTICAL_BASELINE_MANIFEST = {
   ],
   sets: {
     questions: {
-      count: 236,
+      count: 263,
       sortedIdsSha256:
-        "c1bbc2b86a32751313f6eae15180136a52fe748b03f8326dd923c91d4a308897",
+        "0261b49f54a423532dd2ff47cfce46f002749b2e413eca48e66428cf0483bf8a",
     },
     concepts: {
-      count: 89,
+      count: 116,
       sortedIdsSha256:
-        "f4ef818d5520a934949e3a18b16e3f58f4b88ca74ba8db6a48173da255249963",
+        "85db80fee09200c362bcbb0bd30340b6ddd58dd67249e3d133eb106e09599424",
     },
     visualAids: {
       count: 88,

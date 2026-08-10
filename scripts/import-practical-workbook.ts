@@ -1434,9 +1434,9 @@ async function main() {
     exactMatch:
       actualQuestions.length === 51 &&
       expandedWorkbookPredictedQuestions.length === 41 &&
-      authoredPredictedQuestions.length === 77 &&
+      authoredPredictedQuestions.length === 104 &&
       balancedPredictedQuestions.length === 67 &&
-      predictedQuestions.length === 185 &&
+      predictedQuestions.length === 212 &&
       workbookConcepts.length === 46 &&
       rowsToRecords(ncsRows).length === 11 &&
       ncsCoverage.summary.totalDocuments === 11 &&

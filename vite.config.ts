@@ -12,6 +12,8 @@ export default defineConfig(async () => {
       dedupe: ["react", "react-dom"],
     },
     server: {
+      host: "0.0.0.0",
+      allowedHosts: ["terminal.local"],
       watch: {
         ignored: ["**/playwright-report/**", "**/test-results/**", "**/tmp/**"],
       },

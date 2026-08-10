@@ -5,6 +5,8 @@
  * 읽는 순서를 위한 교재 분류다. 문제 통계나 공개 상태에는 영향을 주지 않는다.
  */
 
+import { PRACTICAL_NCS_UNIT_TEXTBOOK_PLACEMENTS } from "./practical-ncs-unit-reinforcements";
+
 export const practicalTextbookSubjects = [
   {
     id: "subject-1",
@@ -549,6 +551,7 @@ export const practicalTextbookPlacementByConceptId: Record<
     studyTypeIds: ["definition", "procedure", "visual", "diagnosis_safety"],
     sourceEvidence: "direct",
   },
+  ...PRACTICAL_NCS_UNIT_TEXTBOOK_PLACEMENTS,
 };
 
 export function getPracticalTextbookSubject(

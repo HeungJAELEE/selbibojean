@@ -18,20 +18,20 @@ describe("NCS practical content import", () => {
   it("reconciles all source rows", () => {
     expect(content.report.rows).toEqual({
       past: 51,
-      predicted: 185,
+      predicted: 212,
       workbookPredicted: 41,
-      authoredPredicted: 77,
+      authoredPredicted: 104,
       balancedPredicted: 67,
       concepts: 46,
-      supplementalConcepts: 43,
+      supplementalConcepts: 70,
       ncsDocuments: 11,
       visualAids: 88,
     });
     expect(content.report.exactMatch).toBe(true);
     expect(content.report.publication.past).toBe(51);
-    expect(content.report.publication.predicted).toBe(183);
+    expect(content.report.publication.predicted).toBe(210);
     expect(content.report.publication.concepts).toBe(46);
-    expect(content.report.publication.supplementalConcepts).toBe(43);
+    expect(content.report.publication.supplementalConcepts).toBe(70);
     expect(content.report.publication.held).toBe(0);
   });
 
@@ -214,7 +214,7 @@ describe("NCS practical content import", () => {
     const publishedConcepts = content.concepts.filter(
       (concept) => concept.contentStatus === "published",
     );
-    expect(publishedConcepts).toHaveLength(89);
+    expect(publishedConcepts).toHaveLength(116);
     expect(
       publishedConcepts.every(
         (concept) =>
@@ -237,8 +237,8 @@ describe("NCS practical content import", () => {
     expect(content.ncsCoverage.summary).toMatchObject({
       totalDocuments: 11,
       accountedDocuments: 11,
-      uniqueLessonCount: 84,
-      sourceReferenceCount: 105,
+      uniqueLessonCount: 111,
+      sourceReferenceCount: 132,
       heldItems: 8,
     });
     expect(content.report.ncsCoverage).toEqual(content.ncsCoverage.summary);
@@ -288,16 +288,16 @@ describe("NCS practical content import", () => {
         ]),
       ),
     ).toEqual({
-      visual_identification: 38,
+      visual_identification: 50,
       formula_calculation: 56,
-      theory_concept: 77,
-      work_procedure: 65,
+      theory_concept: 81,
+      work_procedure: 76,
     });
     const primaryIds = content.studyCategories.flatMap(
       (category) => category.questionIds,
     );
-    expect(primaryIds).toHaveLength(236);
-    expect(new Set(primaryIds).size).toBe(236);
+    expect(primaryIds).toHaveLength(263);
+    expect(new Set(primaryIds).size).toBe(263);
     expect(
       content.questions.every(
         (question) =>
@@ -335,9 +335,9 @@ describe("NCS practical content import", () => {
     const predicted = content.questions.filter(
       (question) => question.kind === "predicted",
     );
-    expect(predicted).toHaveLength(185);
+    expect(predicted).toHaveLength(212);
     expect(content.report.rows.workbookPredicted).toBe(41);
-    expect(content.report.rows.authoredPredicted).toBe(77);
+    expect(content.report.rows.authoredPredicted).toBe(104);
     expect(content.report.rows.balancedPredicted).toBe(67);
     expect(predicted.every((question) => question.occurrence === null)).toBe(
       true,
@@ -351,12 +351,20 @@ describe("NCS practical content import", () => {
     const supplementalConcepts = content.concepts.filter(
       (concept) => concept.contentRole === "supplemental",
     );
-    const supplementalPredicted = content.questions.filter((question) =>
-      question.id.startsWith("EXP-SUP-"),
+    const supplementalConceptIds = new Set(
+      supplementalConcepts.map((concept) => concept.id),
+    );
+    const supplementalPredicted = content.questions.filter(
+      (question) =>
+        question.kind === "predicted" &&
+        question.conceptIds.length === 1 &&
+        supplementalConceptIds.has(question.conceptIds[0]) &&
+        (question.id.startsWith("EXP-SUP-") ||
+          question.id.startsWith("EXP-NCS-")),
     );
 
-    expect(supplementalConcepts).toHaveLength(43);
-    expect(supplementalPredicted).toHaveLength(43);
+    expect(supplementalConcepts).toHaveLength(70);
+    expect(supplementalPredicted).toHaveLength(70);
     expect(
       supplementalPredicted.every(
         (question) =>

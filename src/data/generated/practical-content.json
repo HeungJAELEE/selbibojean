@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "generatedAt": "2026-08-04T01:12:56.977Z",
+  "generatedAt": "2026-08-10T00:00:00.000Z",
   "questions": [
     {
       "id": "P-2025-1-Q01",
@@ -18732,6 +18732,2162 @@
       "reviewNote": "숫자만 바꾼 반복 생성은 사용하지 않았다. 하나의 정의·법칙·계산식 계열당 한 문항만 선별하고 연결 필기 문항과 공개 근거를 함께 기록했다.",
       "examFormat": "sequence",
       "examEvidenceStatus": "predicted_related"
+    },
+    {
+      "id": "EXP-NCS-MEASURE-SELECT",
+      "kind": "predicted",
+      "title": "측정 대상과 공차에 맞는 측정기 선정 예상문제",
+      "formatLabel": "측정기·보조기구 선정",
+      "stem": "외경·내경·높이·원주 흔들림 측정에 알맞은 측정기와 보조기구를 각각 쓰고, 측정기 선정 기준 4가지를 쓰시오.",
+      "modelAnswer": "외경은 외측 마이크로미터, 내경은 내측 마이크로미터 또는 실린더 게이지, 높이는 정반과 하이트 게이지, 원주 흔들림은 V블록 또는 센터와 다이얼 게이지로 측정한다. 선정 시 형상, 측정범위, 허용공차에 필요한 분해능, 재질과 접촉 여부, 측정 수량과 환경을 확인한다.",
+      "answerDefinition": "측정기와 보조기구는 형상·범위·공차·분해능·재질·환경을 함께 보고 선정한다.",
+      "memoryTip": "무엇을, 얼마까지, 얼마나 정밀하게, 어떤 자세로 잴지 먼저 정한다.",
+      "requiredKeywords": [
+        "형상",
+        "측정범위",
+        "허용공차",
+        "분해능",
+        "재질",
+        "보조기구"
+      ],
+      "acceptedAnswers": [
+        "외경은 외측 마이크로미터, 내경은 내측 마이크로미터 또는 실린더 게이지, 높이는 정반과 하이트 게이지, 원주 흔들림은 V블록 또는 센터와 다이얼 게이지로 측정한다. 선정 시 형상, 측정범위, 허용공차에 필요한 분해능, 재질과 접촉 여부, 측정 수량과 환경을 확인한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-MEASURE-SELECT-r1",
+          "label": "외경·내경 측정기 연결",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-MEASURE-SELECT-r2",
+          "label": "높이·원주 흔들림 측정기와 보조구 연결",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-MEASURE-SELECT-r3",
+          "label": "측정범위·허용공차·분해능",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-MEASURE-SELECT-r4",
+          "label": "재질·접촉·수량·환경 고려",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "측정범위에 들어간다는 이유만으로 분해능과 공차를 확인하지 않고 선정하지 않는다.",
+        "원주 흔들림을 측정할 때 회전 기준과 지지방법을 생략하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-MEASURE-SELECT"
+      ],
+      "primaryStudyCategoryId": "visual_identification",
+      "studyCategoryIds": [
+        "visual_identification",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1502010504",
+          "documentTitle": "기본측정기 사용",
+          "version": "20v3",
+          "pdfPage": null,
+          "printedPage": 17,
+          "figureNumber": null,
+          "performanceCriteria": "2-1 측정기 및 필요한 보조 기구의 선정: 측정 대상과 공차에 맞는 측정기 선정의 정의·판단·작업절차",
+          "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+          "sourceUrl": "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "기본측정기 사용의 NCS 수행내용과 외경·내경·높이·원주흔들림 측정에 알맞은 측정기와 보조기구를 연결하시오.·연질 공작물과 대량 반복검사에서 측정기 선정 기준이 달라지는 이유를 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "matching",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-DRAWING-REVISION",
+      "kind": "predicted",
+      "title": "도면 개정과 최신본 확인 예상문제",
+      "formatLabel": "도면 개정 확인 순서",
+      "stem": "도면이 개정되었을 때 확인해야 할 항목과 관련 문서·부서에 반영하는 순서를 쓰시오. 작업지시서와 도면의 개정번호가 다를 때의 우선조치도 쓰시오.",
+      "modelAnswer": "도면번호·개정번호를 확인하고, 개정사유·개정부위와 작성·검토·승인 이력을 확인한다. 이어 작업지시서와 검사기준서의 개정상태를 대조하고 관련 부서에 통보하며 구본을 회수·식별한 뒤 최신 승인본으로 작업한다. 문서의 개정번호가 다르면 작업을 보류하고 승인된 최신본을 확인한다.",
+      "answerDefinition": "개정번호·사유·부위·승인·통보·관련 문서 일치를 확인한 뒤 최신본으로 작업한다.",
+      "memoryTip": "번호-사유-부위-승인-통보-구본회수.",
+      "requiredKeywords": [
+        "개정번호",
+        "개정사유",
+        "개정부위",
+        "승인",
+        "통보",
+        "최신본"
+      ],
+      "acceptedAnswers": [
+        "도면번호·개정번호를 확인하고, 개정사유·개정부위와 작성·검토·승인 이력을 확인한다. 이어 작업지시서와 검사기준서의 개정상태를 대조하고 관련 부서에 통보하며 구본을 회수·식별한 뒤 최신 승인본으로 작업한다. 문서의 개정번호가 다르면 작업을 보류하고 승인된 최신본을 확인한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-DRAWING-REVISION-r1",
+          "label": "개정번호·개정사유·개정부위 확인",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-DRAWING-REVISION-r2",
+          "label": "작성·검토·승인 이력 확인",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-DRAWING-REVISION-r3",
+          "label": "작업지시서·검사기준서 일치 확인",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-DRAWING-REVISION-r4",
+          "label": "불일치 시 작업보류와 최신본 확인",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "파일 수정일만 보고 최신 승인본이라고 판단하지 않는다.",
+        "도면만 바꾸고 작업지시서와 검사기준서의 개정을 누락하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-DRAWING-REVISION"
+      ],
+      "primaryStudyCategoryId": "work_procedure",
+      "studyCategoryIds": [
+        "work_procedure",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1502010511",
+          "documentTitle": "측정 도면 해독",
+          "version": "20v4",
+          "pdfPage": null,
+          "printedPage": 39,
+          "figureNumber": null,
+          "performanceCriteria": "1-2 설계 변경 사항 및 도면 표준 파악: 도면 개정과 최신본 확인의 정의·판단·작업절차",
+          "sourceFileHash": "07194561e122faedd5991d54852b9305f127c0acf852f7c463f686eba0e9198b",
+          "sourceUrl": "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "측정 도면 해독의 NCS 수행내용과 도면 개정 시 확인해야 할 항목과 관련 부서 통보 순서를 쓰시오.·작업지시서와 도면의 개정번호가 다를 때 우선 조치할 내용을 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "sequence",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-DRAWING-MEASUREMENT-ELEMENTS",
+      "kind": "predicted",
+      "title": "도면에서 측정요소와 부품특성 찾기 예상문제",
+      "formatLabel": "도면 측정요소 판독",
+      "stem": "도면에서 측정 전에 확인해야 할 요소 6가지를 쓰고, 일반공차와 개별공차가 함께 있을 때의 적용원칙을 설명하시오.",
+      "modelAnswer": "데이텀, 측정치수, 개별공차, 일반공차, 재질·열처리·표면처리, 표면거칠기와 주기사항을 확인한다. 개별공차가 표시된 치수에는 개별공차를 우선 적용하고, 별도 공차가 없는 치수에는 도면이 지정한 일반공차를 적용한다.",
+      "answerDefinition": "데이텀과 치수·공차·부품특성을 먼저 확정해야 측정기와 판정기준을 정할 수 있다.",
+      "memoryTip": "기준-치수-공차-재질-표면-주기.",
+      "requiredKeywords": [
+        "데이텀",
+        "개별공차",
+        "일반공차",
+        "측정치수",
+        "재질",
+        "주기사항"
+      ],
+      "acceptedAnswers": [
+        "데이텀, 측정치수, 개별공차, 일반공차, 재질·열처리·표면처리, 표면거칠기와 주기사항을 확인한다. 개별공차가 표시된 치수에는 개별공차를 우선 적용하고, 별도 공차가 없는 치수에는 도면이 지정한 일반공차를 적용한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-DRAWING-MEASUREMENT-ELEMENTS-r1",
+          "label": "데이텀·측정치수 확인",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-DRAWING-MEASUREMENT-ELEMENTS-r2",
+          "label": "개별공차·일반공차 확인",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-DRAWING-MEASUREMENT-ELEMENTS-r3",
+          "label": "재질·표면처리·주기사항 확인",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-DRAWING-MEASUREMENT-ELEMENTS-r4",
+          "label": "개별공차 우선 적용원칙",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "개별공차가 있는 치수에 일반공차를 중복 적용하지 않는다.",
+        "재질과 표면처리 요구를 치수검사와 무관한 정보로 버리지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-DRAWING-MEASUREMENT-ELEMENTS"
+      ],
+      "primaryStudyCategoryId": "visual_identification",
+      "studyCategoryIds": [
+        "visual_identification",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1502010511",
+          "documentTitle": "측정 도면 해독",
+          "version": "20v4",
+          "pdfPage": null,
+          "printedPage": 81,
+          "figureNumber": null,
+          "performanceCriteria": "3-1 측정할 요소, 치수 및 부품 특성 파악: 도면에서 측정요소와 부품특성 찾기의 정의·판단·작업절차",
+          "sourceFileHash": "07194561e122faedd5991d54852b9305f127c0acf852f7c463f686eba0e9198b",
+          "sourceUrl": "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "측정 도면 해독의 NCS 수행내용과 도면에서 측정 전 확인해야 할 데이텀·공차·부품 특성을 쓰시오.·일반공차와 개별공차가 함께 표시된 도면의 적용 우선순위를 설명하시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "drawing",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-BRAKE-CHARACTERISTICS",
+      "kind": "predicted",
+      "title": "브레이크 종류와 제동원리 예상문제",
+      "formatLabel": "브레이크 종류·원리 비교",
+      "stem": "포지티브 브레이크와 네거티브 브레이크의 중립·무동력 상태를 비교하고, 디스크식과 드럼식의 마찰 접촉부를 각각 쓰시오.",
+      "modelAnswer": "포지티브 브레이크는 작동 신호를 주어 제동하고 중립 상태에서는 해제되는 방식이다. 네거티브 브레이크는 중립·무동력 상태에서 제동되고 작동 신호로 해제된다. 디스크식은 패드와 디스크, 드럼식은 슈의 라이닝과 드럼이 마찰한다. 유압식은 작동압을 통해 조작력을 전달한다.",
+      "answerDefinition": "포지티브는 작동 시 제동, 네거티브는 무동력 시 제동이다.",
+      "memoryTip": "네거티브는 전원이 없어도 잡힌다.",
+      "requiredKeywords": [
+        "포지티브",
+        "네거티브",
+        "디스크",
+        "드럼",
+        "마찰",
+        "유압"
+      ],
+      "acceptedAnswers": [
+        "포지티브 브레이크는 작동 신호를 주어 제동하고 중립 상태에서는 해제되는 방식이다. 네거티브 브레이크는 중립·무동력 상태에서 제동되고 작동 신호로 해제된다. 디스크식은 패드와 디스크, 드럼식은 슈의 라이닝과 드럼이 마찰한다. 유압식은 작동압을 통해 조작력을 전달한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-BRAKE-CHARACTERISTICS-r1",
+          "label": "포지티브 브레이크 상태 설명",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-BRAKE-CHARACTERISTICS-r2",
+          "label": "네거티브 브레이크 상태 설명",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-BRAKE-CHARACTERISTICS-r3",
+          "label": "디스크-패드 연결",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-BRAKE-CHARACTERISTICS-r4",
+          "label": "드럼-슈·라이닝 연결",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "네거티브 브레이크를 역회전용 브레이크로 설명하지 않는다.",
+        "디스크와 드럼의 마찰 접촉부를 바꾸어 쓰지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-BRAKE-CHARACTERISTICS"
+      ],
+      "primaryStudyCategoryId": "visual_identification",
+      "studyCategoryIds": [
+        "visual_identification",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1505010108",
+          "documentTitle": "운반하역기계 구동장치 정비",
+          "version": "17v3",
+          "pdfPage": null,
+          "printedPage": 126,
+          "figureNumber": null,
+          "performanceCriteria": "4-1 브레이크 특성 파악: 브레이크 종류와 제동원리의 정의·판단·작업절차",
+          "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+          "sourceUrl": "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "운반하역기계 구동장치 정비의 NCS 수행내용과 포지티브 브레이크와 네거티브 브레이크의 무동력 상태를 비교하시오.·디스크식과 드럼식 브레이크의 구성품과 제동 접촉부를 연결하시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "matching",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-WELD-DEFECT-ESTIMATION",
+      "kind": "predicted",
+      "title": "용접 중 결함 원인과 예방 예상문제",
+      "formatLabel": "용접결함 원인·예방",
+      "stem": "기공과 슬래그 혼입의 주요 원인과 예방대책을 각각 3가지 이상 쓰시오.",
+      "modelAnswer": "기공의 원인은 모재의 오염·습기, 용접봉 건조불량, 긴 아크와 부적정한 용접속도 등이며, 모재 청소·건조, 규정된 용접봉 건조·보관, 적정 전류와 짧은 아크·속도 유지로 예방한다. 슬래그 혼입은 전층 슬래그 청소불량, 전류 부족, 부적절한 운봉·봉각도·속도가 원인이며, 층간청소, 적정 전류, 용융풀을 확인하는 운봉과 각도 조정으로 예방한다.",
+      "answerDefinition": "기공은 청결·건조·아크조건, 슬래그 혼입은 층간청소·전류·운봉을 먼저 본다.",
+      "memoryTip": "기공은 가스길, 슬래그는 청소길을 막은 결함.",
+      "requiredKeywords": [
+        "기공",
+        "슬래그 혼입",
+        "청소",
+        "용접봉 건조",
+        "적정 전류",
+        "운봉"
+      ],
+      "acceptedAnswers": [
+        "기공의 원인은 모재의 오염·습기, 용접봉 건조불량, 긴 아크와 부적정한 용접속도 등이며, 모재 청소·건조, 규정된 용접봉 건조·보관, 적정 전류와 짧은 아크·속도 유지로 예방한다. 슬래그 혼입은 전층 슬래그 청소불량, 전류 부족, 부적절한 운봉·봉각도·속도가 원인이며, 층간청소, 적정 전류, 용융풀을 확인하는 운봉과 각도 조정으로 예방한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-WELD-DEFECT-ESTIMATION-r1",
+          "label": "기공 원인 3가지",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-DEFECT-ESTIMATION-r2",
+          "label": "기공 예방대책",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-DEFECT-ESTIMATION-r3",
+          "label": "슬래그 혼입 원인 3가지",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-DEFECT-ESTIMATION-r4",
+          "label": "슬래그 혼입 예방대책",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "모든 기공을 전류 하나의 원인으로 단정하지 않는다.",
+        "슬래그를 남긴 채 다음 패스를 진행하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-WELD-DEFECT-ESTIMATION"
+      ],
+      "primaryStudyCategoryId": "work_procedure",
+      "studyCategoryIds": [
+        "work_procedure",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1601050108",
+          "documentTitle": "피복아크용접 결함부 보수용접",
+          "version": "21v3",
+          "pdfPage": null,
+          "printedPage": 13,
+          "figureNumber": null,
+          "performanceCriteria": "1-2 용접 중 결함 추정: 용접 중 결함 원인과 예방의 정의·판단·작업절차",
+          "sourceFileHash": "347e55fb188462c9472280b3f5f88b41978b849ff61d31dc56969cd4042e92d5",
+          "sourceUrl": "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "피복아크용접 결함부 보수용접의 NCS 수행내용과 기공과 슬래그 혼입의 원인 및 예방대책을 각각 쓰시오.·용접 결함 사진과 발생원인·조치방법을 연결하시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "diagnosis",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-WELD-REPAIR",
+      "kind": "predicted",
+      "title": "용접결함 제거와 보수용접 예상문제",
+      "formatLabel": "보수용접 작업순서",
+      "stem": "용접결함부 보수용접의 작업순서를 결함 확인부터 보수 후 검사까지 쓰고, 균열 보수 시 추가로 확인할 사항을 쓰시오.",
+      "modelAnswer": "안전·작업공간을 확보한 뒤 결함의 종류·위치·범위를 표시한다. 가우징·연삭 등으로 건전한 금속이 나올 때까지 결함을 제거하고 MT·PT 등으로 제거 완료를 확인한다. 이후 WPS와 보수시방에 따라 예열·보수용접·후처리를 하고 외관 및 지정 비파괴검사로 재검사한다. 균열은 필요 시 양 끝단 진행방지 조치를 하고 완전 제거 여부를 반드시 확인한다.",
+      "answerDefinition": "확인-표시-완전제거-제거검사-WPS 보수용접-후검사 순이다.",
+      "memoryTip": "결함을 덮지 말고 없앤 뒤 다시 용접한다.",
+      "requiredKeywords": [
+        "결함 확인",
+        "가우징",
+        "결함 제거",
+        "WPS",
+        "보수용접",
+        "후검사"
+      ],
+      "acceptedAnswers": [
+        "안전·작업공간을 확보한 뒤 결함의 종류·위치·범위를 표시한다. 가우징·연삭 등으로 건전한 금속이 나올 때까지 결함을 제거하고 MT·PT 등으로 제거 완료를 확인한다. 이후 WPS와 보수시방에 따라 예열·보수용접·후처리를 하고 외관 및 지정 비파괴검사로 재검사한다. 균열은 필요 시 양 끝단 진행방지 조치를 하고 완전 제거 여부를 반드시 확인한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-WELD-REPAIR-r1",
+          "label": "안전확보와 결함 위치·범위 확인",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-REPAIR-r2",
+          "label": "가우징·연삭에 의한 완전 제거",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-REPAIR-r3",
+          "label": "WPS에 따른 보수용접",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-REPAIR-r4",
+          "label": "균열 진행방지와 보수 후 검사",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "균열 위를 그대로 덧살 용접하지 않는다.",
+        "NCS 예시의 예열·후열 수치를 모든 재질에 고정 적용하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-WELD-REPAIR"
+      ],
+      "primaryStudyCategoryId": "work_procedure",
+      "studyCategoryIds": [
+        "work_procedure",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1601050108",
+          "documentTitle": "피복아크용접 결함부 보수용접",
+          "version": "21v3",
+          "pdfPage": null,
+          "printedPage": 54,
+          "figureNumber": null,
+          "performanceCriteria": "3-1 용접결함부 보수용접: 용접결함 제거와 보수용접의 정의·판단·작업절차",
+          "sourceFileHash": "347e55fb188462c9472280b3f5f88b41978b849ff61d31dc56969cd4042e92d5",
+          "sourceUrl": "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "피복아크용접 결함부 보수용접의 NCS 수행내용과 용접결함부 보수용접의 작업순서를 쓰시오.·균열·언더컷·슬래그 혼입의 보수 전 제거방법을 구분하시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "sequence",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-WELD-NDT",
+      "kind": "predicted",
+      "title": "보수용접 후 비파괴검사 선택 예상문제",
+      "formatLabel": "비파괴검사법 선택",
+      "stem": "VT·PT·MT·RT·UT를 주로 검출하는 결함 위치와 적용조건에 맞게 연결하고, PT의 기본 작업순서를 쓰시오.",
+      "modelAnswer": "VT는 외관·표면 형상, PT는 비다공성 재료의 표면 개구결함, MT는 강자성체의 표면 및 표면근처 결함, RT와 UT는 내부 결함 확인에 사용한다. PT는 전처리·세척 → 침투액 적용 → 침투시간 유지 → 잉여 침투액 제거 → 현상제 적용 → 관찰·판독 → 후처리 순으로 한다.",
+      "answerDefinition": "표면은 VT·PT·MT, 내부는 RT·UT를 중심으로 재질과 형상에 맞춰 선정한다.",
+      "memoryTip": "PT는 열린 표면, MT는 자성체, RT·UT는 내부.",
+      "requiredKeywords": [
+        "VT",
+        "PT",
+        "MT",
+        "RT",
+        "UT",
+        "표면·내부 결함"
+      ],
+      "acceptedAnswers": [
+        "VT는 외관·표면 형상, PT는 비다공성 재료의 표면 개구결함, MT는 강자성체의 표면 및 표면근처 결함, RT와 UT는 내부 결함 확인에 사용한다. PT는 전처리·세척 → 침투액 적용 → 침투시간 유지 → 잉여 침투액 제거 → 현상제 적용 → 관찰·판독 → 후처리 순으로 한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-WELD-NDT-r1",
+          "label": "VT·PT의 적용대상",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-NDT-r2",
+          "label": "MT의 강자성체 조건",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-NDT-r3",
+          "label": "RT·UT의 내부결함 연결",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-NDT-r4",
+          "label": "PT 작업순서",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "PT를 다공성 표면이나 내부결함 검사법으로 쓰지 않는다.",
+        "MT를 비자성 재료에 적용한다고 쓰지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-WELD-NDT"
+      ],
+      "primaryStudyCategoryId": "visual_identification",
+      "studyCategoryIds": [
+        "visual_identification",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1601050108",
+          "documentTitle": "피복아크용접 결함부 보수용접",
+          "version": "21v3",
+          "pdfPage": null,
+          "printedPage": 67,
+          "figureNumber": null,
+          "performanceCriteria": "3-2 용접부 비파괴검사: 보수용접 후 비파괴검사 선택의 정의·판단·작업절차",
+          "sourceFileHash": "347e55fb188462c9472280b3f5f88b41978b849ff61d31dc56969cd4042e92d5",
+          "sourceUrl": "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "피복아크용접 결함부 보수용접의 NCS 수행내용과 표면 결함과 내부 결함에 알맞은 비파괴검사법을 연결하시오.·침투탐상검사의 전처리부터 관찰까지 기본 순서를 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "matching",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-HYDRAULIC-VALVE-SELECTION",
+      "kind": "predicted",
+      "title": "유압제어밸브 기능별 선정 예상문제",
+      "formatLabel": "유압밸브 기능 매칭",
+      "stem": "릴리프·감압·시퀀스·방향제어·유량제어밸브의 기능을 각각 쓰고, 실린더 속도와 회로 최고압력을 조정할 밸브를 쓰시오.",
+      "modelAnswer": "릴리프밸브는 회로 최고압력을 제한하고, 감압밸브는 분기회로의 압력을 낮게 유지하며, 시퀀스밸브는 설정압력에 도달한 뒤 다음 동작을 허용한다. 방향제어밸브는 유로를 전환·단속하고 유량제어밸브는 유량을 조절해 액추에이터 속도를 제어한다. 실린더 속도는 유량제어밸브, 회로 최고압력은 릴리프밸브로 조정한다.",
+      "answerDefinition": "압력·방향·유량 중 무엇을 제어할지에 맞춰 밸브를 선정한다.",
+      "memoryTip": "힘은 압력, 길은 방향, 속도는 유량.",
+      "requiredKeywords": [
+        "압력제어",
+        "방향제어",
+        "유량제어",
+        "릴리프",
+        "감압",
+        "속도"
+      ],
+      "acceptedAnswers": [
+        "릴리프밸브는 회로 최고압력을 제한하고, 감압밸브는 분기회로의 압력을 낮게 유지하며, 시퀀스밸브는 설정압력에 도달한 뒤 다음 동작을 허용한다. 방향제어밸브는 유로를 전환·단속하고 유량제어밸브는 유량을 조절해 액추에이터 속도를 제어한다. 실린더 속도는 유량제어밸브, 회로 최고압력은 릴리프밸브로 조정한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-HYDRAULIC-VALVE-SELECTION-r1",
+          "label": "릴리프·감압 기능",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-HYDRAULIC-VALVE-SELECTION-r2",
+          "label": "시퀀스 기능",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-HYDRAULIC-VALVE-SELECTION-r3",
+          "label": "방향·유량제어 기능",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-HYDRAULIC-VALVE-SELECTION-r4",
+          "label": "속도와 최고압력 조정밸브 선정",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "릴리프밸브와 감압밸브의 목적을 바꾸지 않는다.",
+        "속도를 압력제어밸브만으로 조정한다고 쓰지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-HYDRAULIC-VALVE-SELECTION"
+      ],
+      "primaryStudyCategoryId": "visual_identification",
+      "studyCategoryIds": [
+        "visual_identification",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010216",
+          "documentTitle": "유압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 17,
+          "figureNumber": null,
+          "performanceCriteria": "1-2 유압제어 밸브 선정: 유압제어밸브 기능별 선정의 정의·판단·작업절차",
+          "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
+          "sourceUrl": "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "유압제어의 NCS 수행내용과 릴리프·감압·시퀀스·유량제어밸브의 기능을 연결하시오.·실린더 속도와 최고압력을 각각 조정할 밸브를 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "matching",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-ELECTROHYDRAULIC-CIRCUIT",
+      "kind": "predicted",
+      "title": "전기유압 논리회로 구성 예상문제",
+      "formatLabel": "전기유압 신호흐름",
+      "stem": "전기유압 회로의 신호 흐름을 입력부터 액추에이터까지 순서대로 쓰고, 두 스위치가 모두 눌려야 작동하는 논리와 배선 원칙을 쓰시오.",
+      "modelAnswer": "입력스위치·센서 → 릴레이 논리와 인터록 → 솔레노이드 코일 → 방향제어밸브 → 유압실린더·모터 순으로 신호와 동력이 전달된다. 두 스위치가 모두 눌려야 하는 조건은 AND 논리이며 두 N/O 접점을 직렬로 구성한다. 배선·배관 전에는 전원과 유압을 차단하고 잔압을 제거한다.",
+      "answerDefinition": "전기 입력·논리·출력이 유압밸브를 전환하여 액추에이터를 구동한다.",
+      "memoryTip": "입력-판단-솔레노이드-밸브-실린더.",
+      "requiredKeywords": [
+        "입력",
+        "릴레이",
+        "인터록",
+        "솔레노이드",
+        "AND·OR",
+        "전원차단"
+      ],
+      "acceptedAnswers": [
+        "입력스위치·센서 → 릴레이 논리와 인터록 → 솔레노이드 코일 → 방향제어밸브 → 유압실린더·모터 순으로 신호와 동력이 전달된다. 두 스위치가 모두 눌려야 하는 조건은 AND 논리이며 두 N/O 접점을 직렬로 구성한다. 배선·배관 전에는 전원과 유압을 차단하고 잔압을 제거한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-ELECTROHYDRAULIC-CIRCUIT-r1",
+          "label": "입력·릴레이 논리",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-ELECTROHYDRAULIC-CIRCUIT-r2",
+          "label": "솔레노이드·방향제어밸브",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-ELECTROHYDRAULIC-CIRCUIT-r3",
+          "label": "액추에이터까지의 순서",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-ELECTROHYDRAULIC-CIRCUIT-r4",
+          "label": "AND 논리와 직렬접점·전원차단",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "전기 입력과 유압 동력의 두 계통을 한 회로처럼 섞어 설명하지 않는다.",
+        "AND 조건에서 어느 한 접점만 닫혀도 동작한다고 쓰지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-ELECTROHYDRAULIC-CIRCUIT"
+      ],
+      "primaryStudyCategoryId": "visual_identification",
+      "studyCategoryIds": [
+        "visual_identification",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010216",
+          "documentTitle": "유압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 101,
+          "figureNumber": null,
+          "performanceCriteria": "2-2 전기 유압제어 회로 구성: 전기유압 논리회로 구성의 정의·판단·작업절차",
+          "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
+          "sourceUrl": "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "유압제어의 NCS 수행내용과 전기유압 회로에서 입력·논리·출력 요소를 구분하시오.·두 스위치가 모두 눌려야 작동하는 회로의 논리와 배선 원칙을 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "symbol",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-HYDRAULIC-SYSTEM-BUILD",
+      "kind": "predicted",
+      "title": "유압시스템 구축 4단계 예상문제",
+      "formatLabel": "유압시스템 구축 순서",
+      "stem": "유압시스템 구축 과정을 요구사항 확인부터 시운전까지 4단계 이상으로 쓰고, 최초 기동 전에 확인할 사항 4가지를 쓰시오.",
+      "modelAnswer": "요구기능·힘·압력·속도 확인 → 동작선도·회로도·부품목록 작성 → 안전수칙에 따른 설치·배관·배선 → 최초 기동 전 점검 → 저압·무부하 시운전과 기록 순으로 구축한다. 최초 기동 전에는 작동유의 양과 오염상태, 배관·포트와 누설, 전동기 회전방향, 밸브의 초기 설정과 릴리프 경로를 확인한다.",
+      "answerDefinition": "요구사항-설계-설치-사전점검-저압시험의 순서로 구축한다.",
+      "memoryTip": "기능을 정하고, 그리고, 설치하고, 낮게 시험한다.",
+      "requiredKeywords": [
+        "요구기능",
+        "회로도",
+        "부품목록",
+        "설치",
+        "초기값",
+        "저압 시험"
+      ],
+      "acceptedAnswers": [
+        "요구기능·힘·압력·속도 확인 → 동작선도·회로도·부품목록 작성 → 안전수칙에 따른 설치·배관·배선 → 최초 기동 전 점검 → 저압·무부하 시운전과 기록 순으로 구축한다. 최초 기동 전에는 작동유의 양과 오염상태, 배관·포트와 누설, 전동기 회전방향, 밸브의 초기 설정과 릴리프 경로를 확인한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-HYDRAULIC-SYSTEM-BUILD-r1",
+          "label": "요구기능·힘·압력·속도 확인",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-HYDRAULIC-SYSTEM-BUILD-r2",
+          "label": "회로도·부품목록 작성",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-HYDRAULIC-SYSTEM-BUILD-r3",
+          "label": "안전한 설치·사전점검",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-HYDRAULIC-SYSTEM-BUILD-r4",
+          "label": "저압·무부하 시험과 기록",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "회로검토 없이 부품부터 연결하지 않는다.",
+        "최초 기동을 정격압력·최대부하에서 시작하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-HYDRAULIC-SYSTEM-BUILD"
+      ],
+      "primaryStudyCategoryId": "work_procedure",
+      "studyCategoryIds": [
+        "work_procedure",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010216",
+          "documentTitle": "유압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 167,
+          "figureNumber": null,
+          "performanceCriteria": "3-1 유압시스템 구축: 유압시스템 구축 4단계의 정의·판단·작업절차",
+          "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
+          "sourceUrl": "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "유압제어의 NCS 수행내용과 유압시스템을 구축하는 네 단계를 순서대로 쓰시오.·최초 기동 전 확인해야 할 오일·전동기·밸브 조건을 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "sequence",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-HYDRAULIC-AUXILIARY-CONTROLS",
+      "kind": "predicted",
+      "title": "유압 부가조건과 안전제어 예상문제",
+      "formatLabel": "부가조건 스위치 기능",
+      "stem": "메인·시동·정지·리셋·비상정지 스위치의 역할을 각각 쓰고, 자동/수동 및 단속/연속 선택회로의 목적을 설명하시오.",
+      "modelAnswer": "메인스위치는 시스템 동력을 연결·격리하고, 시동은 선택된 운전모드를 시작하며, 정지는 정상 운전을 멈춘다. 리셋은 고장·정지 후 초기조건을 복구하고, 비상정지는 위험 시 장치를 안전상태로 정지시킨다. 자동/수동 선택은 제어 주체를, 단속/연속 선택은 한 사이클 운전과 반복 운전을 구분한다. 비상정지 해제 후에는 자동 재기동되지 않아야 한다.",
+      "answerDefinition": "부가조건은 기본 동작에 운전모드와 안전한 시작·정지·복귀 조건을 더한다.",
+      "memoryTip": "선택하고-시작하고-멈추고-초기화하고-위험하면 비상정지.",
+      "requiredKeywords": [
+        "메인",
+        "시동",
+        "리셋",
+        "자동·수동",
+        "단속·연속",
+        "비상정지"
+      ],
+      "acceptedAnswers": [
+        "메인스위치는 시스템 동력을 연결·격리하고, 시동은 선택된 운전모드를 시작하며, 정지는 정상 운전을 멈춘다. 리셋은 고장·정지 후 초기조건을 복구하고, 비상정지는 위험 시 장치를 안전상태로 정지시킨다. 자동/수동 선택은 제어 주체를, 단속/연속 선택은 한 사이클 운전과 반복 운전을 구분한다. 비상정지 해제 후에는 자동 재기동되지 않아야 한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-HYDRAULIC-AUXILIARY-CONTROLS-r1",
+          "label": "메인·시동·정지 역할",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-HYDRAULIC-AUXILIARY-CONTROLS-r2",
+          "label": "리셋 역할",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-HYDRAULIC-AUXILIARY-CONTROLS-r3",
+          "label": "비상정지와 재기동 방지",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-HYDRAULIC-AUXILIARY-CONTROLS-r4",
+          "label": "자동/수동·단속/연속 구분",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "정지와 비상정지를 같은 기능으로 설명하지 않는다.",
+        "리셋을 안전인터록 무효화 기능으로 사용하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-HYDRAULIC-AUXILIARY-CONTROLS"
+      ],
+      "primaryStudyCategoryId": "visual_identification",
+      "studyCategoryIds": [
+        "visual_identification",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010216",
+          "documentTitle": "유압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 184,
+          "figureNumber": null,
+          "performanceCriteria": "3-2 부가조건 회로 시운전: 유압 부가조건과 안전제어의 정의·판단·작업절차",
+          "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
+          "sourceUrl": "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "유압제어의 NCS 수행내용과 시동·리셋·정지·비상정지 스위치의 역할을 연결하시오.·단속/연속 및 자동/수동 선택회로의 목적을 설명하시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "matching",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-PNEUMATIC-LOGIC",
+      "kind": "predicted",
+      "title": "공압 논리와 제어방식 예상문제",
+      "formatLabel": "공압 논리요소 매칭",
+      "stem": "YES·NOT·AND·OR 논리기능에 대응하는 공압밸브를 각각 쓰고, 2압밸브와 셔틀밸브의 출력조건을 설명하시오.",
+      "modelAnswer": "YES는 정상닫힘 3/2밸브, NOT은 정상열림 3/2밸브, AND는 2압밸브, OR은 셔틀밸브에 대응한다. 2압밸브는 두 입력이 모두 있을 때 출력하고, 셔틀밸브는 두 입력 중 어느 하나가 있으면 출력한다.",
+      "answerDefinition": "2압밸브는 AND, 셔틀밸브는 OR이다.",
+      "memoryTip": "두 개 모두는 2압, 둘 중 하나는 셔틀.",
+      "requiredKeywords": [
+        "3/2밸브",
+        "YES·NOT",
+        "2압밸브",
+        "AND",
+        "셔틀밸브",
+        "OR"
+      ],
+      "acceptedAnswers": [
+        "YES는 정상닫힘 3/2밸브, NOT은 정상열림 3/2밸브, AND는 2압밸브, OR은 셔틀밸브에 대응한다. 2압밸브는 두 입력이 모두 있을 때 출력하고, 셔틀밸브는 두 입력 중 어느 하나가 있으면 출력한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-PNEUMATIC-LOGIC-r1",
+          "label": "YES·NOT 대응밸브",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PNEUMATIC-LOGIC-r2",
+          "label": "AND-2압밸브",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PNEUMATIC-LOGIC-r3",
+          "label": "OR-셔틀밸브",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PNEUMATIC-LOGIC-r4",
+          "label": "두 밸브의 출력조건 설명",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "2압밸브를 두 압력 중 높은 값을 선택하는 밸브로 설명하지 않는다.",
+        "셔틀밸브를 두 입력이 동시에 있어야 출력하는 AND로 쓰지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-PNEUMATIC-LOGIC"
+      ],
+      "primaryStudyCategoryId": "visual_identification",
+      "studyCategoryIds": [
+        "visual_identification",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010215",
+          "documentTitle": "공기압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 41,
+          "figureNumber": null,
+          "performanceCriteria": "1-2 제어 방법 설계: 공압 논리와 제어방식의 정의·판단·작업절차",
+          "sourceFileHash": "672b3ecfb646c601e5c040fcda8c51ccb8d0c657c9ec1b41080c7f6405aa811c",
+          "sourceUrl": "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "공기압제어의 NCS 수행내용과 2압밸브와 셔틀밸브의 논리기능을 쓰시오.·YES·NOT·AND·OR 기능에 대응하는 공압밸브를 연결하시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "matching",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY",
+      "kind": "predicted",
+      "title": "공압회로 부품선정·배관·배선 예상문제",
+      "formatLabel": "공압회로 구성순서",
+      "stem": "공압제어 회로를 구성하는 준비·배치·배관·배선·시험 순서를 쓰고, 회로도에서 생략되기 쉬운 실제 설치 부속품 4가지를 쓰시오.",
+      "modelAnswer": "회로도에서 부품명·수량·규격을 목록화하고, 점검성과 간섭을 고려해 배치한다. 공급공기와 전원을 차단하고 잔압을 제거한 뒤 배관하고 배선한다. 피팅 체결·호스 꺾임·배선 단락을 확인하고 저압 누설검사 후 단계별 동작시험을 한다. 생략되기 쉬운 부속품은 호스, 피팅, 소음기, 배관지지대·분배기·단자류 등이다.",
+      "answerDefinition": "목록-배치-차단-배관·배선-누설·동작시험 순으로 구성한다.",
+      "memoryTip": "도면 밖의 피팅·호스·소음기까지 챙긴다.",
+      "requiredKeywords": [
+        "부품목록",
+        "배치",
+        "배관",
+        "배선",
+        "누설",
+        "간섭"
+      ],
+      "acceptedAnswers": [
+        "회로도에서 부품명·수량·규격을 목록화하고, 점검성과 간섭을 고려해 배치한다. 공급공기와 전원을 차단하고 잔압을 제거한 뒤 배관하고 배선한다. 피팅 체결·호스 꺾임·배선 단락을 확인하고 저압 누설검사 후 단계별 동작시험을 한다. 생략되기 쉬운 부속품은 호스, 피팅, 소음기, 배관지지대·분배기·단자류 등이다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY-r1",
+          "label": "부품목록과 배치",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY-r2",
+          "label": "공급차단·잔압제거",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY-r3",
+          "label": "배관·배선과 간섭확인",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY-r4",
+          "label": "부속품과 누설·동작시험",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "회로도에 그려진 주부품만 준비하고 피팅·호스·소음기를 누락하지 않는다.",
+        "가압상태에서 호스를 다시 체결하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY"
+      ],
+      "primaryStudyCategoryId": "work_procedure",
+      "studyCategoryIds": [
+        "work_procedure",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010215",
+          "documentTitle": "공기압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 113,
+          "figureNumber": null,
+          "performanceCriteria": "2-2 공기압제어 회로 구성: 공압회로 부품선정·배관·배선의 정의·판단·작업절차",
+          "sourceFileHash": "672b3ecfb646c601e5c040fcda8c51ccb8d0c657c9ec1b41080c7f6405aa811c",
+          "sourceUrl": "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "공기압제어의 NCS 수행내용과 공압제어 회로 구성의 준비·배관·배선·시험 순서를 쓰시오.·회로도에는 생략되기 쉬우나 실제 구성에 필요한 부속품을 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "sequence",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-PNEUMATIC-COMMISSIONING",
+      "kind": "predicted",
+      "title": "공압 부하특성 조정과 시운전 예상문제",
+      "formatLabel": "공압 시운전·조정",
+      "stem": "공압실린더 시운전 시 압력·유량·쿠션을 조정하는 순서를 쓰고, 힘 부족과 속도 저하의 점검항목을 구분하시오.",
+      "modelAnswer": "초기위치와 안전구간을 확인하고 낮은 압력·충분히 열린 유량조건에서 시작한다. 요구 힘에 맞춰 압력을 조정하고, 전진·후진 속도에 맞춰 유량제어밸브를 조정한 뒤 행정 끝단 충격에 맞춰 쿠션을 조정하고 기록한다. 힘 부족은 공급압·누설·부하·마찰을, 속도 저하는 유량·배기저항·밸브와 호스 상태를 점검한다.",
+      "answerDefinition": "압력은 힘, 유량은 속도, 쿠션은 끝단 충격을 조정한다.",
+      "memoryTip": "낮게 시작해 힘-속도-충격 순으로 맞춘다.",
+      "requiredKeywords": [
+        "초기위치",
+        "저압 시작",
+        "압력-힘",
+        "유량-속도",
+        "쿠션",
+        "기록"
+      ],
+      "acceptedAnswers": [
+        "초기위치와 안전구간을 확인하고 낮은 압력·충분히 열린 유량조건에서 시작한다. 요구 힘에 맞춰 압력을 조정하고, 전진·후진 속도에 맞춰 유량제어밸브를 조정한 뒤 행정 끝단 충격에 맞춰 쿠션을 조정하고 기록한다. 힘 부족은 공급압·누설·부하·마찰을, 속도 저하는 유량·배기저항·밸브와 호스 상태를 점검한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-PNEUMATIC-COMMISSIONING-r1",
+          "label": "초기위치·저압 시작",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PNEUMATIC-COMMISSIONING-r2",
+          "label": "압력-힘 조정",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PNEUMATIC-COMMISSIONING-r3",
+          "label": "유량-속도 조정",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PNEUMATIC-COMMISSIONING-r4",
+          "label": "쿠션·기록과 고장점검 구분",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "속도를 높이기 위해 압력만 과도하게 올리지 않는다.",
+        "쿠션을 완전히 잠가 행정 끝 동작을 막지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-PNEUMATIC-COMMISSIONING"
+      ],
+      "primaryStudyCategoryId": "work_procedure",
+      "studyCategoryIds": [
+        "work_procedure",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010215",
+          "documentTitle": "공기압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 141,
+          "figureNumber": null,
+          "performanceCriteria": "3-1 부하의 운동 특성에 따른 조정 및 시운전: 공압 부하특성 조정과 시운전의 정의·판단·작업절차",
+          "sourceFileHash": "672b3ecfb646c601e5c040fcda8c51ccb8d0c657c9ec1b41080c7f6405aa811c",
+          "sourceUrl": "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "공기압제어의 NCS 수행내용과 공압 실린더 시운전 시 압력·유량·쿠션을 조정하는 순서를 쓰시오.·실린더 힘 부족과 속도 저하의 점검 항목을 구분하시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "sequence",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-PNEUMATIC-TROUBLESHOOTING",
+      "kind": "predicted",
+      "title": "공압 이상 원인 추적 예상문제",
+      "formatLabel": "공압 이상 추적",
+      "stem": "공압실린더가 움직이지 않을 때 공급부부터 액추에이터까지 점검순서를 쓰고, 압력·유량의 과대와 과소가 만드는 대표 현상을 쓰시오.",
+      "modelAnswer": "공급압력·유량·누설 → 입력스위치·센서 → 릴레이·논리 → 솔레노이드·방향제어밸브 → 액추에이터와 기계부하 순으로 점검한다. 압력 과대는 충격·누설위험, 압력 과소는 힘 부족·밸브 오동작을 만들 수 있다. 유량 부족은 속도 저하, 과대유량은 과속·끝단충격을 만든다. 한 번에 한 원인만 조치하고 재시험한다.",
+      "answerDefinition": "공급-입력-논리-출력-구동 순으로 한 단계씩 추적한다.",
+      "memoryTip": "공입논출구, 한 번에 하나.",
+      "requiredKeywords": [
+        "압력",
+        "유량",
+        "누설",
+        "입력",
+        "제어",
+        "출력"
+      ],
+      "acceptedAnswers": [
+        "공급압력·유량·누설 → 입력스위치·센서 → 릴레이·논리 → 솔레노이드·방향제어밸브 → 액추에이터와 기계부하 순으로 점검한다. 압력 과대는 충격·누설위험, 압력 과소는 힘 부족·밸브 오동작을 만들 수 있다. 유량 부족은 속도 저하, 과대유량은 과속·끝단충격을 만든다. 한 번에 한 원인만 조치하고 재시험한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-PNEUMATIC-TROUBLESHOOTING-r1",
+          "label": "압력·유량·누설 확인",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PNEUMATIC-TROUBLESHOOTING-r2",
+          "label": "입력·논리 확인",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PNEUMATIC-TROUBLESHOOTING-r3",
+          "label": "솔레노이드·밸브·액추에이터 확인",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PNEUMATIC-TROUBLESHOOTING-r4",
+          "label": "과대·과소 현상과 단일원인 재시험",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "여러 부품을 동시에 조정해 원인을 알 수 없게 만들지 않는다.",
+        "압력계만 보고 국부 누설과 배기막힘을 생략하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-PNEUMATIC-TROUBLESHOOTING"
+      ],
+      "primaryStudyCategoryId": "work_procedure",
+      "studyCategoryIds": [
+        "work_procedure",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010215",
+          "documentTitle": "공기압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 163,
+          "figureNumber": null,
+          "performanceCriteria": "3-2 공기압기기 이상 유무 파악: 공압 이상 원인 추적의 정의·판단·작업절차",
+          "sourceFileHash": "672b3ecfb646c601e5c040fcda8c51ccb8d0c657c9ec1b41080c7f6405aa811c",
+          "sourceUrl": "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "공기압제어의 NCS 수행내용과 공압 실린더가 움직이지 않을 때 공급부부터 출력부까지 점검순서를 쓰시오.·압력과 유량이 각각 과대·과소일 때 나타나는 현상을 연결하시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "diagnosis",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-SENSOR-RELAY-CIRCUIT",
+      "kind": "predicted",
+      "title": "센서 출력과 릴레이제어 회로 예상문제",
+      "formatLabel": "센서·릴레이 회로 판독",
+      "stem": "센서·릴레이·솔레노이드·액추에이터로 이어지는 제어 신호 흐름을 쓰고, N/O와 N/C 접점의 구분기준을 설명하시오.",
+      "modelAnswer": "센서가 물체를 검출하면 출력신호가 릴레이 코일 또는 제어입력으로 전달되고, 릴레이의 N/O·N/C 접점논리가 솔레노이드에 출력을 보내 밸브와 액추에이터를 구동한다. N/O와 N/C는 전원이 꺼지고 조작되지 않은 정상상태에서 접점이 열려 있는지 닫혀 있는지로 구분한다. 센서 전원·출력형식과 변위-단계선도의 순서를 함께 확인한다.",
+      "answerDefinition": "센서 입력을 릴레이 논리로 처리해 솔레노이드와 액추에이터를 구동한다.",
+      "memoryTip": "정상상태로 NO·NC를 읽고 입력-논리-출력을 따른다.",
+      "requiredKeywords": [
+        "센서 신호",
+        "N/O·N/C",
+        "릴레이",
+        "솔레노이드",
+        "입출력",
+        "변위-단계선도"
+      ],
+      "acceptedAnswers": [
+        "센서가 물체를 검출하면 출력신호가 릴레이 코일 또는 제어입력으로 전달되고, 릴레이의 N/O·N/C 접점논리가 솔레노이드에 출력을 보내 밸브와 액추에이터를 구동한다. N/O와 N/C는 전원이 꺼지고 조작되지 않은 정상상태에서 접점이 열려 있는지 닫혀 있는지로 구분한다. 센서 전원·출력형식과 변위-단계선도의 순서를 함께 확인한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-SENSOR-RELAY-CIRCUIT-r1",
+          "label": "센서 입력신호",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-SENSOR-RELAY-CIRCUIT-r2",
+          "label": "릴레이 코일·접점논리",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-SENSOR-RELAY-CIRCUIT-r3",
+          "label": "솔레노이드·액추에이터 출력",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-SENSOR-RELAY-CIRCUIT-r4",
+          "label": "N/O·N/C 정상상태 구분",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "N/O와 N/C를 현재 동작상태가 아니라 무조작 정상상태로 구분한다.",
+        "센서 출력의 허용전류를 확인하지 않고 부하를 직접 구동하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-SENSOR-RELAY-CIRCUIT"
+      ],
+      "primaryStudyCategoryId": "visual_identification",
+      "studyCategoryIds": [
+        "visual_identification",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010204",
+          "documentTitle": "센서 활용 기술",
+          "version": "14v3",
+          "pdfPage": null,
+          "printedPage": 98,
+          "figureNumber": null,
+          "performanceCriteria": "3-2 센서 활용을 위한 전기회로 설계: 센서 출력과 릴레이제어 회로의 정의·판단·작업절차",
+          "sourceFileHash": "4154bc962df85fb8f9b2b0a5cf48687ba8553d28f301c902959cac4acf30767a",
+          "sourceUrl": "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "센서 활용 기술의 NCS 수행내용과 센서·릴레이·솔레노이드가 연결된 제어 신호 흐름을 쓰시오.·N/O와 N/C 접점을 회로 동작조건에 맞게 구분하시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "symbol",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-SENSOR-MAINTENANCE",
+      "kind": "predicted",
+      "title": "센서 점검과 이상조치 예상문제",
+      "formatLabel": "센서 점검·이상조치",
+      "stem": "근접센서가 불규칙하게 동작할 때 점검항목 6가지를 쓰고, 센서 배선을 동력선·고압선과 분리하는 이유를 설명하시오.",
+      "modelAnswer": "설치방향과 체결상태, 검출거리, 검출물의 재질·크기, 검출면 오염, 케이블·커넥터, 전원전압과 출력신호를 확인한다. 또한 충격·주변온도와 입력신호 변화를 확인한다. 센서선을 동력선·고압선과 같은 덕트·전선관에 넣으면 유도노이즈로 오동작할 수 있으므로 분리 배선한다.",
+      "answerDefinition": "설치·거리·대상·오염·배선·전원·출력을 순서대로 점검한다.",
+      "memoryTip": "설거리대오배전출.",
+      "requiredKeywords": [
+        "설치상태",
+        "검출거리",
+        "오염",
+        "케이블",
+        "전원",
+        "출력신호"
+      ],
+      "acceptedAnswers": [
+        "설치방향과 체결상태, 검출거리, 검출물의 재질·크기, 검출면 오염, 케이블·커넥터, 전원전압과 출력신호를 확인한다. 또한 충격·주변온도와 입력신호 변화를 확인한다. 센서선을 동력선·고압선과 같은 덕트·전선관에 넣으면 유도노이즈로 오동작할 수 있으므로 분리 배선한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-SENSOR-MAINTENANCE-r1",
+          "label": "설치상태·검출거리",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-SENSOR-MAINTENANCE-r2",
+          "label": "검출물·오염",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-SENSOR-MAINTENANCE-r3",
+          "label": "케이블·전원·출력신호",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-SENSOR-MAINTENANCE-r4",
+          "label": "동력선 분리와 노이즈 이유",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "출력 표시등만 보고 실제 제어기 입력까지 정상이라고 단정하지 않는다.",
+        "센서를 과도한 힘으로 체결하거나 케이블을 잡아당기지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-SENSOR-MAINTENANCE"
+      ],
+      "primaryStudyCategoryId": "work_procedure",
+      "studyCategoryIds": [
+        "work_procedure",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010204",
+          "documentTitle": "센서 활용 기술",
+          "version": "14v3",
+          "pdfPage": null,
+          "printedPage": 111,
+          "figureNumber": null,
+          "performanceCriteria": "4-1 센서의 점검 및 관리: 센서 점검과 이상조치의 정의·판단·작업절차",
+          "sourceFileHash": "4154bc962df85fb8f9b2b0a5cf48687ba8553d28f301c902959cac4acf30767a",
+          "sourceUrl": "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "센서 활용 기술의 NCS 수행내용과 근접센서가 불규칙하게 동작할 때 점검 항목을 쓰시오.·센서 배선 시 동력선과 분리해야 하는 이유를 설명하시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "diagnosis",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-SYSTEM-GROUPING",
+      "kind": "predicted",
+      "title": "기계시스템 구성요소 그룹화 예상문제",
+      "formatLabel": "기계시스템 기능별 그룹화",
+      "stem": "자동화 설비의 구성요소를 기능별로 6개 그룹으로 나누고, 그룹별 부품목록에 기록할 사양항목 5가지를 쓰시오.",
+      "modelAnswer": "구조물, 구동부, 액추에이터, 센서, 제어기, 에너지공급부로 그룹화한다. 각 그룹에는 부품명, 종류·형식, 모델명, 정격·용량, 제어방식, 고정·설치방법과 기계·전기·유체 인터페이스를 기록한다.",
+      "answerDefinition": "구조·기능·에너지원별로 나누고 정격·제어·인터페이스를 기록한다.",
+      "memoryTip": "구-구-액-센-제-에.",
+      "requiredKeywords": [
+        "구조물",
+        "구동부",
+        "액추에이터",
+        "센서",
+        "제어기",
+        "그룹화"
+      ],
+      "acceptedAnswers": [
+        "구조물, 구동부, 액추에이터, 센서, 제어기, 에너지공급부로 그룹화한다. 각 그룹에는 부품명, 종류·형식, 모델명, 정격·용량, 제어방식, 고정·설치방법과 기계·전기·유체 인터페이스를 기록한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-SYSTEM-GROUPING-r1",
+          "label": "구조물·구동부",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-SYSTEM-GROUPING-r2",
+          "label": "액추에이터·센서",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-SYSTEM-GROUPING-r3",
+          "label": "제어기·에너지공급부",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-SYSTEM-GROUPING-r4",
+          "label": "모델·정격·제어·인터페이스 기록",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "부품명만 나열하고 기능·에너지원·인터페이스를 생략하지 않는다.",
+        "센서와 제어기, 액추에이터를 같은 기능으로 묶지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-SYSTEM-GROUPING"
+      ],
+      "primaryStudyCategoryId": "visual_identification",
+      "studyCategoryIds": [
+        "visual_identification",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010201",
+          "documentTitle": "기계시스템 분석",
+          "version": "14v3",
+          "pdfPage": null,
+          "printedPage": 71,
+          "figureNumber": null,
+          "performanceCriteria": "3-1 기계 구성요소를 그룹화하고 모델링: 기계시스템 구성요소 그룹화의 정의·판단·작업절차",
+          "sourceFileHash": "34717f4b8c8df1db9e4681fd90985ce6293830d050f7d0dc44a9abcf66be2441",
+          "sourceUrl": "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "기계시스템 분석의 NCS 수행내용과 자동화 설비의 구성요소를 기능별로 그룹화하시오.·공정별 부품목록에 포함해야 할 사양 항목을 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "matching",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-PPE-SELECTION",
+      "kind": "predicted",
+      "title": "위험요인별 보호구 선정과 착용 예상문제",
+      "formatLabel": "위험요인·보호구 매칭",
+      "stem": "비산·분진 또는 유해가스·소음·감전·낙하·용접광 위험에 알맞은 보호구를 연결하고, 보호구 사용 전 확인사항 4가지를 쓰시오.",
+      "modelAnswer": "비산에는 보안경·안면보호구, 분진·유해가스에는 위험성평가와 물질·농도에 맞는 호흡보호구, 소음에는 청력보호구, 감전에는 절연용 보호구, 낙하에는 안전모와 필요한 추락방호구, 용접광·불티에는 용접면·보호복·장갑을 사용한다. 사용 전 손상, 오염, 유효상태, 밀착과 작업 적합성을 확인하고 위험노출 전에 착용한다. 보호구보다 위험 제거·격리·환기·방호대책을 우선한다.",
+      "answerDefinition": "위험요인과 노출경로에 맞춰 선정하고 손상·유효상태·밀착을 확인한다.",
+      "memoryTip": "위험을 먼저 줄이고 남은 위험을 보호구로 막는다.",
+      "requiredKeywords": [
+        "위험요인",
+        "보호구 선정",
+        "사용 전 점검",
+        "밀착",
+        "노출 전 착용",
+        "공학적 대책"
+      ],
+      "acceptedAnswers": [
+        "비산에는 보안경·안면보호구, 분진·유해가스에는 위험성평가와 물질·농도에 맞는 호흡보호구, 소음에는 청력보호구, 감전에는 절연용 보호구, 낙하에는 안전모와 필요한 추락방호구, 용접광·불티에는 용접면·보호복·장갑을 사용한다. 사용 전 손상, 오염, 유효상태, 밀착과 작업 적합성을 확인하고 위험노출 전에 착용한다. 보호구보다 위험 제거·격리·환기·방호대책을 우선한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-PPE-SELECTION-r1",
+          "label": "비산·호흡 위험 보호구",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PPE-SELECTION-r2",
+          "label": "소음·감전·낙하·용접광 보호구",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PPE-SELECTION-r3",
+          "label": "사용 전 손상·유효상태·밀착 점검",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-PPE-SELECTION-r4",
+          "label": "공학적 대책 우선원칙",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "보호구 착용만으로 위험원이 제거되었다고 보지 않는다.",
+        "모든 분진·가스에 같은 마스크를 사용한다고 쓰지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-PPE-SELECTION"
+      ],
+      "primaryStudyCategoryId": "visual_identification",
+      "studyCategoryIds": [
+        "visual_identification",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010122",
+          "documentTitle": "조립안전관리",
+          "version": "16v1",
+          "pdfPage": null,
+          "printedPage": 19,
+          "figureNumber": null,
+          "performanceCriteria": "2-1 안전보호 장구 착용과 안전기준에 따른 작업 수행: 위험요인별 보호구 선정과 착용의 정의·판단·작업절차",
+          "sourceFileHash": "5eb5b16dd51a25d7814d054c89e0266eee4378d1200e74a2e9f0ae124d84e750",
+          "sourceUrl": "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "조립안전관리의 NCS 수행내용과 작업별 위험요인과 필요한 보호구를 연결하시오.·호흡보호구 사용 전 확인해야 할 사항을 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "matching",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-SAFETY-PREVENTION",
+      "kind": "predicted",
+      "title": "작업 전 안전점검과 사고예방 예상문제",
+      "formatLabel": "작업 전 안전점검·이상조치",
+      "stem": "기계조립 작업 전 안전점검 항목 6가지를 쓰고, 이상 발견부터 작업 재개까지의 조치 순서를 쓰시오.",
+      "modelAnswer": "작업절차와 위험요인, 전기·압력·중력 등 에너지원과 격리점, 방호장치·비상정지, 공구와 체결상태, 통로·조명·정리정돈, 안전표지와 비상연락을 확인한다. 이상 발견 시 작업중지 → 에너지 격리·위험구역 통제 → 보고 → 원인 시정 → 방호·안전기능 재확인 → 승인 후 재개 → 재발방지 기록 순으로 조치한다.",
+      "answerDefinition": "위험과 에너지를 먼저 확인하고 이상 시 중지-격리-보고-시정-확인-재개한다.",
+      "memoryTip": "중격보시확재.",
+      "requiredKeywords": [
+        "위험요인",
+        "에너지원",
+        "방호장치",
+        "작업중지",
+        "격리·보고",
+        "재발방지"
+      ],
+      "acceptedAnswers": [
+        "작업절차와 위험요인, 전기·압력·중력 등 에너지원과 격리점, 방호장치·비상정지, 공구와 체결상태, 통로·조명·정리정돈, 안전표지와 비상연락을 확인한다. 이상 발견 시 작업중지 → 에너지 격리·위험구역 통제 → 보고 → 원인 시정 → 방호·안전기능 재확인 → 승인 후 재개 → 재발방지 기록 순으로 조치한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-SAFETY-PREVENTION-r1",
+          "label": "위험요인·에너지원",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-SAFETY-PREVENTION-r2",
+          "label": "방호·비상정지·통로·표지",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-SAFETY-PREVENTION-r3",
+          "label": "작업중지·격리·보고",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-SAFETY-PREVENTION-r4",
+          "label": "시정·재확인·승인·재발방지",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "이상 발견 후 원인 확인 없이 리셋하여 재가동하지 않는다.",
+        "작업중지와 보고만 하고 시정·재확인을 생략하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-SAFETY-PREVENTION"
+      ],
+      "primaryStudyCategoryId": "work_procedure",
+      "studyCategoryIds": [
+        "work_procedure",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010122",
+          "documentTitle": "조립안전관리",
+          "version": "16v1",
+          "pdfPage": null,
+          "printedPage": 28,
+          "figureNumber": null,
+          "performanceCriteria": "2-2 안전기준 준수 사항 적용과 안전사고 예방 활동: 작업 전 안전점검과 사고예방의 정의·판단·작업절차",
+          "sourceFileHash": "5eb5b16dd51a25d7814d054c89e0266eee4378d1200e74a2e9f0ae124d84e750",
+          "sourceUrl": "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "조립안전관리의 NCS 수행내용과 기계조립 작업 전 안전점검 항목을 쓰시오.·이상 발견부터 작업 재개까지의 조치 순서를 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "sequence",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-JIG-FIXTURE",
+      "kind": "predicted",
+      "title": "지그와 고정구의 기능 예상문제",
+      "formatLabel": "지그·고정구 정의 비교",
+      "stem": "지그와 고정구의 공통 기능과 차이점을 공구 안내 여부를 포함해 설명하고, 치공구의 기본 기능 3가지를 쓰시오.",
+      "modelAnswer": "지그와 고정구는 모두 공작물을 위치결정·지지·고정한다. 지그는 드릴 부시 등으로 공구를 직접 안내하지만 고정구는 공작물을 위치·고정할 뿐 공구를 안내하지 않는다. 치공구의 기본 기능은 위치결정, 지지, 클램핑이며 공구와 작업공간의 간섭도 확인한다.",
+      "answerDefinition": "지그는 위치·고정과 공구 안내, 고정구는 위치·고정만 한다.",
+      "memoryTip": "지그에는 공구 길잡이가 있다.",
+      "requiredKeywords": [
+        "지그",
+        "고정구",
+        "공구 안내",
+        "위치결정",
+        "지지",
+        "클램핑"
+      ],
+      "acceptedAnswers": [
+        "지그와 고정구는 모두 공작물을 위치결정·지지·고정한다. 지그는 드릴 부시 등으로 공구를 직접 안내하지만 고정구는 공작물을 위치·고정할 뿐 공구를 안내하지 않는다. 치공구의 기본 기능은 위치결정, 지지, 클램핑이며 공구와 작업공간의 간섭도 확인한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-JIG-FIXTURE-r1",
+          "label": "공통 기능: 위치결정·지지·고정",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-JIG-FIXTURE-r2",
+          "label": "지그의 공구안내",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-JIG-FIXTURE-r3",
+          "label": "고정구의 비안내 특성",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-JIG-FIXTURE-r4",
+          "label": "간섭·작업공간 확인",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "지그와 고정구를 모두 공구를 안내하는 장치라고 쓰지 않는다.",
+        "클램핑만 하고 위치결정·지지를 생략하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-JIG-FIXTURE"
+      ],
+      "primaryStudyCategoryId": "theory_concept",
+      "studyCategoryIds": [
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010120",
+          "documentTitle": "기계구동장치 조립",
+          "version": "16v1",
+          "pdfPage": null,
+          "printedPage": 14,
+          "figureNumber": null,
+          "performanceCriteria": "1-2 조립 치공구 활용: 지그와 고정구의 기능의 정의·판단·작업절차",
+          "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+          "sourceUrl": "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "기계구동장치 조립의 NCS 수행내용과 지그와 고정구의 차이를 공구 안내 여부로 설명하시오.·치공구의 기본 기능 세 가지를 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "definition",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-DRIVE-PART-INSPECTION",
+      "kind": "predicted",
+      "title": "구동부품 도면검사 예상문제",
+      "formatLabel": "구동부품 도면검사",
+      "stem": "축과 베어링 끼워맞춤부를 검사할 때 확인할 도면정보와 측정기를 쓰고, 측정값으로 합격·불합격을 판정하는 순서를 쓰시오.",
+      "modelAnswer": "도면에서 축·구멍의 치수공차와 끼워맞춤, 기하공차, 표면거칠기, 데이텀을 확인한다. 축 외경은 외측 마이크로미터, 베어링 구멍은 내측 마이크로미터 또는 실린더 게이지, 원주 흔들림은 V블록과 다이얼게이지로 측정한다. 도면·개정 확인 → 측정기 선정·영점 → 반복측정 → 공차와 비교 → 합부판정 → 기록 순으로 수행한다.",
+      "answerDefinition": "도면 요구-측정기 선정-영점-측정-공차비교-판정·기록 순이다.",
+      "memoryTip": "치기거끼를 보고 외내흔을 잰다.",
+      "requiredKeywords": [
+        "치수공차",
+        "기하공차",
+        "표면거칠기",
+        "끼워맞춤",
+        "측정기",
+        "합부판정"
+      ],
+      "acceptedAnswers": [
+        "도면에서 축·구멍의 치수공차와 끼워맞춤, 기하공차, 표면거칠기, 데이텀을 확인한다. 축 외경은 외측 마이크로미터, 베어링 구멍은 내측 마이크로미터 또는 실린더 게이지, 원주 흔들림은 V블록과 다이얼게이지로 측정한다. 도면·개정 확인 → 측정기 선정·영점 → 반복측정 → 공차와 비교 → 합부판정 → 기록 순으로 수행한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-DRIVE-PART-INSPECTION-r1",
+          "label": "치수·기하공차·거칠기·끼워맞춤",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-DRIVE-PART-INSPECTION-r2",
+          "label": "축·구멍 측정기 선정",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-DRIVE-PART-INSPECTION-r3",
+          "label": "흔들림 측정기와 보조구",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-DRIVE-PART-INSPECTION-r4",
+          "label": "측정·비교·합부판정·기록 순서",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "치수만 맞으면 기하공차와 표면거칠기도 합격이라고 판단하지 않는다.",
+        "측정값만 기록하고 도면 개정·측정기 번호를 누락하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-DRIVE-PART-INSPECTION"
+      ],
+      "primaryStudyCategoryId": "visual_identification",
+      "studyCategoryIds": [
+        "visual_identification",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010120",
+          "documentTitle": "기계구동장치 조립",
+          "version": "16v1",
+          "pdfPage": null,
+          "printedPage": 23,
+          "figureNumber": null,
+          "performanceCriteria": "2-1 구동 부품 검사: 구동부품 도면검사의 정의·판단·작업절차",
+          "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+          "sourceUrl": "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "기계구동장치 조립의 NCS 수행내용과 축과 베어링 끼워맞춤부 검사에 필요한 도면정보와 측정기를 쓰시오.·측정값으로 구동부품의 합부를 판정하는 순서를 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "drawing",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-ASSEMBLY-STATE",
+      "kind": "predicted",
+      "title": "구동장치 조립상태 검사 예상문제",
+      "formatLabel": "구동장치 조립상태 점검",
+      "stem": "구동장치 시운전 전 조립상태 점검항목 6가지를 쓰고, 베어링 압입 시 전동체에 하중이 전달되지 않게 하는 원칙을 설명하시오.",
+      "modelAnswer": "조립도와 공정순서, 부품 방향·청결, 끼워맞춤과 베어링 압입부, 볼트 체결·풀림방지, 간극·엔드플레이, 축정렬, 윤활상태와 수동회전을 확인한다. 베어링은 축에 끼울 때 내륜, 하우징에 끼울 때 외륜에 압입력을 가하고 전동체를 통해 힘을 전달하지 않는다.",
+      "answerDefinition": "방향·청결·끼워맞춤·체결·간극·정렬·윤활을 시운전 전에 확인한다.",
+      "memoryTip": "끼우는 링에만 힘을 건다.",
+      "requiredKeywords": [
+        "조립도",
+        "청결",
+        "끼워맞춤",
+        "체결",
+        "간극",
+        "축정렬"
+      ],
+      "acceptedAnswers": [
+        "조립도와 공정순서, 부품 방향·청결, 끼워맞춤과 베어링 압입부, 볼트 체결·풀림방지, 간극·엔드플레이, 축정렬, 윤활상태와 수동회전을 확인한다. 베어링은 축에 끼울 때 내륜, 하우징에 끼울 때 외륜에 압입력을 가하고 전동체를 통해 힘을 전달하지 않는다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-ASSEMBLY-STATE-r1",
+          "label": "조립도·방향·청결",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-ASSEMBLY-STATE-r2",
+          "label": "끼워맞춤·체결",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-ASSEMBLY-STATE-r3",
+          "label": "간극·정렬·윤활",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-ASSEMBLY-STATE-r4",
+          "label": "베어링 압입력 적용링 원칙",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "베어링 반대쪽 링을 두드려 전동체로 압입력을 전달하지 않는다.",
+        "조립 완료를 외관만 보고 간극·정렬·윤활 확인 없이 판정하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-ASSEMBLY-STATE"
+      ],
+      "primaryStudyCategoryId": "work_procedure",
+      "studyCategoryIds": [
+        "work_procedure",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010120",
+          "documentTitle": "기계구동장치 조립",
+          "version": "16v1",
+          "pdfPage": null,
+          "printedPage": 42,
+          "figureNumber": null,
+          "performanceCriteria": "3-1 구동 장치 조립 상태 확인 및 검사: 구동장치 조립상태 검사의 정의·판단·작업절차",
+          "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+          "sourceUrl": "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "기계구동장치 조립의 NCS 수행내용과 구동장치 시운전 전 조립상태 점검 항목을 쓰시오.·베어링 조립 시 전동체에 하중이 전달되지 않게 하는 원칙을 설명하시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "sequence",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-DYNAMIC-CHECK",
+      "kind": "predicted",
+      "title": "구동장치 동작상태 시운전 예상문제",
+      "formatLabel": "구동장치 최초 시운전",
+      "stem": "구동장치 최초 시운전의 점검순서를 쓰고, 시운전 중 진동과 발열이 증가할 때의 우선조치와 원인 후보를 쓰시오.",
+      "modelAnswer": "방호·윤활·체결과 수동회전을 확인한 뒤 무부하·저속으로 시작해 회전방향, 이상음·진동, 온도, 누설, 전류와 체결상태를 확인·기록한다. 진동과 발열이 증가하면 즉시 정지하고 에너지를 차단한 뒤 축정렬, 간섭, 윤활상태, 베어링 손상과 체결상태를 점검·수정하고 같은 조건으로 재시험한다.",
+      "answerDefinition": "무부하·저속으로 시작해 방향-음·진동-온도-누설-전류를 본다.",
+      "memoryTip": "무저방음진온누전.",
+      "requiredKeywords": [
+        "무부하·저속",
+        "회전방향",
+        "이상음·진동",
+        "온도",
+        "정지·차단",
+        "재시험"
+      ],
+      "acceptedAnswers": [
+        "방호·윤활·체결과 수동회전을 확인한 뒤 무부하·저속으로 시작해 회전방향, 이상음·진동, 온도, 누설, 전류와 체결상태를 확인·기록한다. 진동과 발열이 증가하면 즉시 정지하고 에너지를 차단한 뒤 축정렬, 간섭, 윤활상태, 베어링 손상과 체결상태를 점검·수정하고 같은 조건으로 재시험한다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-DYNAMIC-CHECK-r1",
+          "label": "방호·윤활·수동회전",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-DYNAMIC-CHECK-r2",
+          "label": "무부하·저속과 회전방향",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-DYNAMIC-CHECK-r3",
+          "label": "소음·진동·온도·누설·전류",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-DYNAMIC-CHECK-r4",
+          "label": "이상 시 정지·차단·원인수정·재시험",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "최초부터 정격부하·최고속도로 운전하지 않는다.",
+        "이상음이 있어도 운전하며 체결부를 조정하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-DYNAMIC-CHECK"
+      ],
+      "primaryStudyCategoryId": "work_procedure",
+      "studyCategoryIds": [
+        "work_procedure",
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010120",
+          "documentTitle": "기계구동장치 조립",
+          "version": "16v1",
+          "pdfPage": null,
+          "printedPage": 48,
+          "figureNumber": null,
+          "performanceCriteria": "3-2 구동 장치 동작 상태 검사: 구동장치 동작상태 시운전의 정의·판단·작업절차",
+          "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+          "sourceUrl": "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "기계구동장치 조립의 NCS 수행내용과 구동장치 최초 시운전의 점검순서를 쓰시오.·시운전 중 진동과 발열이 증가할 때 우선 조치를 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "sequence",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-WELD-VERTICAL",
+      "kind": "predicted",
+      "title": "수직 자세 맞대기용접 예상문제",
+      "formatLabel": "수직 자세 용접조건",
+      "stem": "수직 자세 맞대기용접 전에 WPS에서 확인할 항목 6가지를 쓰고, 용융지 처짐을 줄이기 위해 조정할 요소를 쓰시오.",
+      "modelAnswer": "WPS에서 모재·두께, 이음형상과 루트조건, 용접봉·지름, 전원·극성, 자세와 진행방향, 패스순서, 예열·층간·후처리 조건을 확인한다. 용융지 처짐을 줄이려면 짧고 안정된 아크를 유지하고 봉각도, 운봉폭, 용접속도와 한 번에 만드는 용융지 크기를 조정하며 패스간 청소를 한다. 구체 수치는 WPS를 따른다.",
+      "answerDefinition": "수직 자세는 WPS를 확인하고 아크·각도·운봉·속도로 용융지 처짐을 제어한다.",
+      "memoryTip": "수직은 용융지를 작고 안정되게 지지한다.",
+      "requiredKeywords": [
+        "수직 자세",
+        "WPS",
+        "아크길이",
+        "봉각도",
+        "운봉",
+        "용융지"
+      ],
+      "acceptedAnswers": [
+        "WPS에서 모재·두께, 이음형상과 루트조건, 용접봉·지름, 전원·극성, 자세와 진행방향, 패스순서, 예열·층간·후처리 조건을 확인한다. 용융지 처짐을 줄이려면 짧고 안정된 아크를 유지하고 봉각도, 운봉폭, 용접속도와 한 번에 만드는 용융지 크기를 조정하며 패스간 청소를 한다. 구체 수치는 WPS를 따른다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-WELD-VERTICAL-r1",
+          "label": "모재·이음·용접재료",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-VERTICAL-r2",
+          "label": "전원·극성·자세·패스",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-VERTICAL-r3",
+          "label": "예열·층간·후처리의 WPS 조건",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-VERTICAL-r4",
+          "label": "아크·봉각도·운봉·속도 조정",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "아래보기 조건의 전류·운봉을 수직자세에 그대로 적용하지 않는다.",
+        "용융지 처짐을 막기 위해 아크를 과도하게 길게 하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-WELD-VERTICAL"
+      ],
+      "primaryStudyCategoryId": "theory_concept",
+      "studyCategoryIds": [
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1601050111",
+          "documentTitle": "피복아크용접 맞대기용접",
+          "version": "21v3",
+          "pdfPage": null,
+          "printedPage": 68,
+          "figureNumber": null,
+          "performanceCriteria": "3-1 수직 자세 용접: 수직 자세 맞대기용접의 정의·판단·작업절차",
+          "sourceFileHash": "d89b55bf8fd32dabd1aa7eaf61209c40ceecb88fba466a35599be93eb31b9ace",
+          "sourceUrl": "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "피복아크용접 맞대기용접의 NCS 수행내용과 수직 자세 용접 전 WPS에서 확인할 항목을 쓰시오.·수직 자세에서 용융지 처짐을 줄이는 조정요소를 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "definition",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-WELD-HORIZONTAL",
+      "kind": "predicted",
+      "title": "수평 자세 맞대기용접 예상문제",
+      "formatLabel": "수평 자세 용접조건",
+      "stem": "수평 자세 용접에서 비드 쏠림을 줄이는 조정요소를 쓰고, WPS·PQR·WPQ의 역할을 각각 구분하시오.",
+      "modelAnswer": "수평 자세에서는 봉각도, 운봉폭, 용접속도, 패스배치와 용융지 크기를 조정하고 패스간 슬래그를 제거해 상부 언더컷과 하부 오버랩을 줄인다. WPS는 실제 작업에 적용할 용접조건을 정한 절차서, PQR은 그 절차가 적정함을 시험·기록한 절차인정 기록, WPQ는 용접사의 해당 작업 자격을 확인한 기록이다.",
+      "answerDefinition": "수평 자세는 중력에 따른 비드 쏠림을 각도·운봉·속도·패스로 제어한다.",
+      "memoryTip": "WPS는 방법, PQR은 방법검증, WPQ는 사람검증.",
+      "requiredKeywords": [
+        "수평 자세",
+        "WPS",
+        "봉각도",
+        "운봉폭",
+        "속도",
+        "층간 청소"
+      ],
+      "acceptedAnswers": [
+        "수평 자세에서는 봉각도, 운봉폭, 용접속도, 패스배치와 용융지 크기를 조정하고 패스간 슬래그를 제거해 상부 언더컷과 하부 오버랩을 줄인다. WPS는 실제 작업에 적용할 용접조건을 정한 절차서, PQR은 그 절차가 적정함을 시험·기록한 절차인정 기록, WPQ는 용접사의 해당 작업 자격을 확인한 기록이다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-WELD-HORIZONTAL-r1",
+          "label": "봉각도·운봉폭·속도·패스",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-HORIZONTAL-r2",
+          "label": "WPS 역할",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-HORIZONTAL-r3",
+          "label": "PQR 역할",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-HORIZONTAL-r4",
+          "label": "WPQ 역할",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "WPS·PQR·WPQ를 모두 같은 작업지시서라고 쓰지 않는다.",
+        "비드 쏠림을 전류 하나만으로 조정하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-WELD-HORIZONTAL"
+      ],
+      "primaryStudyCategoryId": "theory_concept",
+      "studyCategoryIds": [
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1601050111",
+          "documentTitle": "피복아크용접 맞대기용접",
+          "version": "21v3",
+          "pdfPage": null,
+          "printedPage": 83,
+          "figureNumber": null,
+          "performanceCriteria": "4-1 수평 자세 용접: 수평 자세 맞대기용접의 정의·판단·작업절차",
+          "sourceFileHash": "d89b55bf8fd32dabd1aa7eaf61209c40ceecb88fba466a35599be93eb31b9ace",
+          "sourceUrl": "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "피복아크용접 맞대기용접의 NCS 수행내용과 수평 자세 용접에서 비드 쏠림을 줄이는 조정요소를 쓰시오.·WPS·PQR·WPQ의 역할을 구분하시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "definition",
+      "examEvidenceStatus": "ncs_supplement"
+    },
+    {
+      "id": "EXP-NCS-WELD-OVERHEAD",
+      "kind": "predicted",
+      "title": "위보기 자세 맞대기용접 예상문제",
+      "formatLabel": "위보기 자세 용접조건",
+      "stem": "위보기 자세 용접의 주요 위험 3가지와 보호조치를 쓰고, 아크길이와 용융지 크기를 작게 관리하는 이유를 설명하시오.",
+      "modelAnswer": "주요 위험은 용융금속·슬래그 낙하에 의한 화상, 아크광과 흄 노출, 케이블·홀더에 의한 감전 및 화재이다. 용접면·장갑·보호복과 목·상체 보호, 절연상태·환기·가연물 제거, 낙하구역 통제를 실시한다. 짧고 안정된 아크와 과도하지 않은 용융지를 유지하면 중력에 의한 용락·낙하와 비드 불안을 줄일 수 있다. 구체 전류·온도는 WPS를 따른다.",
+      "answerDefinition": "위보기는 짧은 아크·작은 용융지와 낙하·절연 방호가 핵심이다.",
+      "memoryTip": "위보기는 위에서 떨어지는 열과 전기를 함께 막는다.",
+      "requiredKeywords": [
+        "위보기 자세",
+        "WPS",
+        "짧은 아크",
+        "용융지",
+        "절연",
+        "낙하구역 통제"
+      ],
+      "acceptedAnswers": [
+        "주요 위험은 용융금속·슬래그 낙하에 의한 화상, 아크광과 흄 노출, 케이블·홀더에 의한 감전 및 화재이다. 용접면·장갑·보호복과 목·상체 보호, 절연상태·환기·가연물 제거, 낙하구역 통제를 실시한다. 짧고 안정된 아크와 과도하지 않은 용융지를 유지하면 중력에 의한 용락·낙하와 비드 불안을 줄일 수 있다. 구체 전류·온도는 WPS를 따른다."
+      ],
+      "calculation": [],
+      "unit": null,
+      "rubric": [
+        {
+          "id": "EXP-NCS-WELD-OVERHEAD-r1",
+          "label": "낙하·화상 위험과 보호",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-OVERHEAD-r2",
+          "label": "아크광·흄·감전·화재 방호",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-OVERHEAD-r3",
+          "label": "짧은 아크의 이유",
+          "points": 1
+        },
+        {
+          "id": "EXP-NCS-WELD-OVERHEAD-r4",
+          "label": "작은 용융지와 WPS 조건",
+          "points": 1
+        }
+      ],
+      "traps": [
+        "위보기에서 큰 용융지를 한 번에 만들지 않는다.",
+        "얼굴만 가리고 목·몸통·주변 낙하구역 보호를 생략하지 않는다."
+      ],
+      "conceptIds": [
+        "PCON-NCS-WELD-OVERHEAD"
+      ],
+      "primaryStudyCategoryId": "theory_concept",
+      "studyCategoryIds": [
+        "theory_concept"
+      ],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1601050111",
+          "documentTitle": "피복아크용접 맞대기용접",
+          "version": "21v3",
+          "pdfPage": null,
+          "printedPage": 98,
+          "figureNumber": null,
+          "performanceCriteria": "5-1 위보기 자세 용접: 위보기 자세 맞대기용접의 정의·판단·작업절차",
+          "sourceFileHash": "d89b55bf8fd32dabd1aa7eaf61209c40ceecb88fba466a35599be93eb31b9ace",
+          "sourceUrl": "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+        }
+      ],
+      "visualAidId": null,
+      "label": "predicted_exam",
+      "auditDisposition": "verified",
+      "contentStatus": "published",
+      "occurrence": null,
+      "predictedBasis": "피복아크용접 맞대기용접의 NCS 수행내용과 위보기 자세 용접의 주요 위험과 보호조치를 쓰시오.·위보기 자세에서 아크길이와 용융지 크기를 관리하는 이유를 쓰시오. 출제형식을 바탕으로 자체 구성했다.",
+      "reviewNote": "NCS 원문 기반 보강 개념의 자체 예상문제다. 실제 기출·복원문제가 아니며 출제 이력과 기출 빈도에 포함하지 않는다. 공개 이미지 없이도 답안 조건이 완결되도록 작성했다.",
+      "examFormat": "definition",
+      "examEvidenceStatus": "ncs_supplement"
     }
   ],
   "concepts": [
@@ -26946,6 +29102,2176 @@
         "NCS는 조립·정비에 사용하는 공구의 상태와 보호구·작업장 안전조건을 확인한 뒤 작업하도록 한다."
       ],
       "sourceReviewNote": "연마석 최고사용속도·법정 세부기준은 최신 규정과 제조사 지침을 확인하기 전 일반 수치로 표시하지 않는다."
+    },
+    {
+      "id": "PCON-NCS-MEASURE-SELECT",
+      "title": "측정 대상과 공차에 맞는 측정기 선정",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-3",
+      "groupLabel": "s3-g01",
+      "learningGoals": [
+        "측정 대상과 공차에 맞는 측정기 선정의 핵심 원리와 필수 답안어를 설명한다.",
+        "측정 대상과 공차에 맞는 측정기 선정의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "측정기 선정은 측정 대상의 형상, 측정범위, 허용공차와 필요한 분해능을 확인한 뒤 그 조건을 만족하는 측정기와 보조기구를 고르는 작업이다.",
+      "principle": "측정기는 대상의 형상·측정범위·허용공차·재질·수량·환경을 먼저 확인하고, 필요한 분해능과 접촉 여부에 맞춰 선정한다. 정반·V블록·스탠드·게이지블록 같은 보조기구도 측정 자세와 기준면에 맞춰 함께 고른다. 외경·내경·높이·흔들림처럼 측정요소가 달라지면 접촉 위치와 기준면도 달라진다. 같은 치수라도 재질, 수량, 작업환경과 접촉 허용 여부에 따라 비교측정기·한계게이지·비접촉 측정기를 선택할 수 있다.",
+      "components": [
+        "외경: 외측 마이크로미터",
+        "내경: 내측 마이크로미터 또는 실린더 게이지",
+        "높이: 정반과 하이트 게이지",
+        "원주 흔들림: V블록 또는 센터와 다이얼 게이지",
+        "기준 길이 설정: 게이지블록"
+      ],
+      "procedure": [
+        "도면에서 측정요소와 허용공차를 확인한다.",
+        "예상 측정범위와 필요한 분해능을 정한다.",
+        "재질·형상·수량·환경을 고려해 접촉식 또는 비접촉식을 고른다.",
+        "기준면과 측정자세를 재현할 보조기구를 함께 선정한다.",
+        "영점·교정상태를 확인한 뒤 반복 측정한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "공차보다 거친 분해능의 측정기는 합격·불합격 경계를 안정적으로 판정하기 어렵다.",
+        "연질 공작물은 측정력에 의한 변형, 대량검사는 반복성과 판정속도를 함께 고려한다."
+      ],
+      "safety": [
+        "원통형 측정물은 V블록이나 고정구로 굴림과 낙하를 방지한다."
+      ],
+      "examFormats": [
+        "외경·내경·높이·원주흔들림 측정에 알맞은 측정기와 보조기구를 연결하시오.",
+        "연질 공작물과 대량 반복검사에서 측정기 선정 기준이 달라지는 이유를 쓰시오."
+      ],
+      "requiredKeywords": [
+        "형상",
+        "측정범위",
+        "허용공차",
+        "분해능",
+        "재질",
+        "보조기구"
+      ],
+      "traps": [
+        "측정범위에 들어간다는 이유만으로 분해능과 공차를 확인하지 않고 선정하지 않는다.",
+        "원주 흔들림을 측정할 때 회전 기준과 지지방법을 생략하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-MEASURE-SELECT"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1502010504",
+          "documentTitle": "기본측정기 사용",
+          "version": "20v3",
+          "pdfPage": null,
+          "printedPage": 17,
+          "figureNumber": null,
+          "performanceCriteria": "2-1 측정기 및 필요한 보조 기구의 선정: 측정 대상과 공차에 맞는 측정기 선정의 정의·판단·작업절차",
+          "sourceFileHash": "afaa922600c0b5a824860bd50c025d8448f6a8552d5109f9a45c9ab0cb696215",
+          "sourceUrl": "https://drive.google.com/file/d/1tba0Xr1tv8ZggGr_zuART0u7t1eEuxa5/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "측정기는 대상의 형상·측정범위·허용공차·재질·수량·환경을 먼저 확인하고, 필요한 분해능과 접촉 여부에 맞춰 선정한다. 정반·V블록·스탠드·게이지블록 같은 보조기구도 측정 자세와 기준면에 맞춰 함께 고른다.",
+        "외경·내경·높이·흔들림처럼 측정요소가 달라지면 접촉 위치와 기준면도 달라진다. 같은 치수라도 재질, 수량, 작업환경과 접촉 허용 여부에 따라 비교측정기·한계게이지·비접촉 측정기를 선택할 수 있다."
+      ],
+      "sourceReviewNote": "NCS 1502010504 인쇄 17쪽에서 시작하는 2-1 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-DRAWING-REVISION",
+      "title": "도면 개정과 최신본 확인",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-3",
+      "groupLabel": "s3-g01",
+      "learningGoals": [
+        "도면 개정과 최신본 확인의 핵심 원리와 필수 답안어를 설명한다.",
+        "도면 개정과 최신본 확인의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "도면 개정관리는 변경된 설계내용이 승인된 최신 도면, 작업지시서와 검사기준서에 동일하게 반영되었는지를 확인하고 이력을 추적하는 활동이다.",
+      "principle": "설계변경 시 개정번호·개정사유·개정부위를 확인하고 승인·통보 이력을 추적한다. 작업지시서, 검사기준서와 도면의 개정상태가 일치하는 최신본인지 확인한 뒤 작업한다. 개정번호만 같다고 끝나는 것이 아니라 개정사유·개정부위·승인자·통보대상과 배포본 회수 여부를 함께 확인해야 구도면 사용을 막을 수 있다.",
+      "components": [
+        "개정번호와 개정일",
+        "개정사유와 개정부위",
+        "작성·검토·승인 이력",
+        "관련 부서 통보와 배포본",
+        "작업지시서·검사기준서의 개정상태"
+      ],
+      "procedure": [
+        "작업에 사용할 도면의 도면번호와 개정번호를 확인한다.",
+        "개정표에서 개정사유·개정부위·승인이력을 확인한다.",
+        "작업지시서와 검사기준서가 같은 개정상태인지 대조한다.",
+        "관련 부서에 변경내용을 통보하고 구본을 회수·식별한다.",
+        "최신 승인본으로 작업을 재개한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "문서 사이의 개정번호가 다르면 임의로 하나를 선택하지 말고 작업을 보류해 승인된 최신본을 확인한다."
+      ],
+      "safety": [
+        "설계변경이 안전치수나 방호조건에 영향을 줄 수 있으므로 불일치 상태에서 작업하지 않는다."
+      ],
+      "examFormats": [
+        "도면 개정 시 확인해야 할 항목과 관련 부서 통보 순서를 쓰시오.",
+        "작업지시서와 도면의 개정번호가 다를 때 우선 조치할 내용을 쓰시오."
+      ],
+      "requiredKeywords": [
+        "개정번호",
+        "개정사유",
+        "개정부위",
+        "승인",
+        "통보",
+        "최신본"
+      ],
+      "traps": [
+        "파일 수정일만 보고 최신 승인본이라고 판단하지 않는다.",
+        "도면만 바꾸고 작업지시서와 검사기준서의 개정을 누락하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-DRAWING-REVISION"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1502010511",
+          "documentTitle": "측정 도면 해독",
+          "version": "20v4",
+          "pdfPage": null,
+          "printedPage": 39,
+          "figureNumber": null,
+          "performanceCriteria": "1-2 설계 변경 사항 및 도면 표준 파악: 도면 개정과 최신본 확인의 정의·판단·작업절차",
+          "sourceFileHash": "07194561e122faedd5991d54852b9305f127c0acf852f7c463f686eba0e9198b",
+          "sourceUrl": "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "설계변경 시 개정번호·개정사유·개정부위를 확인하고 승인·통보 이력을 추적한다. 작업지시서, 검사기준서와 도면의 개정상태가 일치하는 최신본인지 확인한 뒤 작업한다.",
+        "개정번호만 같다고 끝나는 것이 아니라 개정사유·개정부위·승인자·통보대상과 배포본 회수 여부를 함께 확인해야 구도면 사용을 막을 수 있다."
+      ],
+      "sourceReviewNote": "NCS 1502010511 인쇄 39쪽에서 시작하는 1-2 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-DRAWING-MEASUREMENT-ELEMENTS",
+      "title": "도면에서 측정요소와 부품특성 찾기",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-3",
+      "groupLabel": "s3-g01",
+      "learningGoals": [
+        "도면에서 측정요소와 부품특성 찾기의 핵심 원리와 필수 답안어를 설명한다.",
+        "도면에서 측정요소와 부품특성 찾기의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "도면의 측정요소 판독은 데이텀과 측정치수, 개별·일반공차, 재질·표면처리·주기사항을 찾아 실제 측정대상과 판정기준을 정하는 작업이다.",
+      "principle": "작업지시서와 도면에서 데이텀, 개별·일반공차, 측정치수, 재질·표면처리·주기사항을 확인해 측정요소를 정한다. 데이텀 기준과 부품 특성을 빠뜨리면 같은 치수라도 측정방법이 달라질 수 있다. 개별공차가 표시된 치수에는 그 공차를 적용하고, 별도 공차가 없는 치수에는 도면이 지정한 일반공차를 적용한다. 데이텀과 부품 특성은 측정자세와 고정방법을 결정한다.",
+      "components": [
+        "데이텀 기준면·기준축",
+        "측정치수와 개별공차",
+        "표제란 또는 주기의 일반공차",
+        "재질·열처리·표면처리",
+        "표면거칠기와 기타 부가기호"
+      ],
+      "procedure": [
+        "도면번호·개정상태와 표제란을 확인한다.",
+        "데이텀과 측정할 형상·치수를 표시한다.",
+        "개별공차 유무를 확인하고 없으면 일반공차를 적용한다.",
+        "재질·표면처리·거칠기·주기사항을 확인한다.",
+        "기준과 공차에 맞는 측정기·고정방법을 정한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "데이텀이 다르면 같은 치수라도 측정값의 재현성과 기하공차 판정이 달라질 수 있다."
+      ],
+      "safety": [
+        "대형·회전체 부품은 측정 전에 정지·고정하고 기준면의 이물질을 제거한다."
+      ],
+      "examFormats": [
+        "도면에서 측정 전 확인해야 할 데이텀·공차·부품 특성을 쓰시오.",
+        "일반공차와 개별공차가 함께 표시된 도면의 적용 우선순위를 설명하시오."
+      ],
+      "requiredKeywords": [
+        "데이텀",
+        "개별공차",
+        "일반공차",
+        "측정치수",
+        "재질",
+        "주기사항"
+      ],
+      "traps": [
+        "개별공차가 있는 치수에 일반공차를 중복 적용하지 않는다.",
+        "재질과 표면처리 요구를 치수검사와 무관한 정보로 버리지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-DRAWING-MEASUREMENT-ELEMENTS"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1502010511",
+          "documentTitle": "측정 도면 해독",
+          "version": "20v4",
+          "pdfPage": null,
+          "printedPage": 81,
+          "figureNumber": null,
+          "performanceCriteria": "3-1 측정할 요소, 치수 및 부품 특성 파악: 도면에서 측정요소와 부품특성 찾기의 정의·판단·작업절차",
+          "sourceFileHash": "07194561e122faedd5991d54852b9305f127c0acf852f7c463f686eba0e9198b",
+          "sourceUrl": "https://drive.google.com/file/d/1JezAz2punWHcYYaDzHC9xnA0nUkNZ6Gj/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "작업지시서와 도면에서 데이텀, 개별·일반공차, 측정치수, 재질·표면처리·주기사항을 확인해 측정요소를 정한다. 데이텀 기준과 부품 특성을 빠뜨리면 같은 치수라도 측정방법이 달라질 수 있다.",
+        "개별공차가 표시된 치수에는 그 공차를 적용하고, 별도 공차가 없는 치수에는 도면이 지정한 일반공차를 적용한다. 데이텀과 부품 특성은 측정자세와 고정방법을 결정한다."
+      ],
+      "sourceReviewNote": "NCS 1502010511 인쇄 81쪽에서 시작하는 3-1 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-BRAKE-CHARACTERISTICS",
+      "title": "브레이크 종류와 제동원리",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-3",
+      "groupLabel": "s3-g07",
+      "learningGoals": [
+        "브레이크 종류와 제동원리의 핵심 원리와 필수 답안어를 설명한다.",
+        "브레이크 종류와 제동원리의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "브레이크는 회전체의 속도를 줄이거나 정지·유지하기 위해 주로 마찰력을 이용해 제동력을 만드는 장치이다.",
+      "principle": "포지티브 브레이크는 작동시켜 제동하고, 네거티브 브레이크는 무동력·중립 상태에서 제동되며 작동 신호로 해제된다. 디스크·드럼 브레이크는 마찰을 이용하고, 유압식은 파스칼 원리로 조작력을 전달한다. 포지티브 브레이크는 작동시켜 제동하고, 네거티브 브레이크는 중립·무동력 상태에서 제동되며 작동 신호로 해제된다. 디스크식은 패드와 디스크, 드럼식은 슈·라이닝과 드럼이 접촉한다.",
+      "components": [
+        "포지티브 브레이크",
+        "네거티브 브레이크",
+        "디스크와 패드",
+        "드럼과 슈·라이닝",
+        "유압식 마스터실린더와 휠실린더"
+      ],
+      "procedure": [
+        "정비지침서에서 브레이크 형식과 정상상태를 확인한다.",
+        "무동력 상태의 제동·해제 상태를 확인한다.",
+        "마찰재·작동부·복귀부와 유압 누설을 점검한다.",
+        "조정 후 무부하에서 제동과 해제를 확인한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "네거티브 브레이크가 무동력에서 풀려 있으면 스프링·링크·해제기구의 이상을 의심한다.",
+        "오염·편마모·누설은 제동력 저하와 끌림의 원인이 될 수 있다."
+      ],
+      "safety": [
+        "중량물을 지지하는 브레이크는 기계적 지지 없이 해제하거나 분해하지 않는다."
+      ],
+      "examFormats": [
+        "포지티브 브레이크와 네거티브 브레이크의 무동력 상태를 비교하시오.",
+        "디스크식과 드럼식 브레이크의 구성품과 제동 접촉부를 연결하시오."
+      ],
+      "requiredKeywords": [
+        "포지티브",
+        "네거티브",
+        "디스크",
+        "드럼",
+        "마찰",
+        "유압"
+      ],
+      "traps": [
+        "네거티브 브레이크를 역회전용 브레이크로 설명하지 않는다.",
+        "디스크와 드럼의 마찰 접촉부를 바꾸어 쓰지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-BRAKE-CHARACTERISTICS"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1505010108",
+          "documentTitle": "운반하역기계 구동장치 정비",
+          "version": "17v3",
+          "pdfPage": null,
+          "printedPage": 126,
+          "figureNumber": null,
+          "performanceCriteria": "4-1 브레이크 특성 파악: 브레이크 종류와 제동원리의 정의·판단·작업절차",
+          "sourceFileHash": "9456380b7fbc89c4b417b49335697293182383801a2cbd78ca6d8cb9467e7574",
+          "sourceUrl": "https://drive.google.com/file/d/1D1mnd6vEYqnVvHy1J894vjpGv6_qoBzV/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "포지티브 브레이크는 작동시켜 제동하고, 네거티브 브레이크는 무동력·중립 상태에서 제동되며 작동 신호로 해제된다. 디스크·드럼 브레이크는 마찰을 이용하고, 유압식은 파스칼 원리로 조작력을 전달한다.",
+        "포지티브 브레이크는 작동시켜 제동하고, 네거티브 브레이크는 중립·무동력 상태에서 제동되며 작동 신호로 해제된다. 디스크식은 패드와 디스크, 드럼식은 슈·라이닝과 드럼이 접촉한다."
+      ],
+      "sourceReviewNote": "NCS 1505010108 인쇄 126쪽에서 시작하는 4-1 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-WELD-DEFECT-ESTIMATION",
+      "title": "용접 중 결함 원인과 예방",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-2",
+      "groupLabel": "s2-g02",
+      "learningGoals": [
+        "용접 중 결함 원인과 예방의 핵심 원리와 필수 답안어를 설명한다.",
+        "용접 중 결함 원인과 예방의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "용접 중 결함 추정은 결함의 형상과 발생위치를 보고 오염·습기·전류·아크길이·운봉·층간청소 같은 원인 후보를 구분하는 작업이다.",
+      "principle": "기공·피트는 오염·습기·용접봉 건조불량·긴 아크·부적정 속도와 연결되고, 슬래그 혼입은 층간 청소불량·전류과소·운봉과 봉각도 불량과 연결된다. 원인에 맞춰 청소·건조·적정 전류·아크길이·운봉을 조정한다. 기공은 모재 오염과 습기, 용접봉 건조불량, 긴 아크 등 가스 보호를 해치는 조건과 연결된다. 슬래그 혼입은 전층 슬래그 제거불량, 부적절한 전류·속도·운봉과 개선부 접근성 부족에서 생기기 쉽다.",
+      "components": [
+        "기공·피트",
+        "슬래그 혼입",
+        "모재 청결과 용접봉 건조",
+        "전류·아크길이·용접속도",
+        "운봉·봉각도와 층간청소"
+      ],
+      "procedure": [
+        "결함의 종류와 발생위치를 확인한다.",
+        "모재 청결·습기와 용접재료 보관상태를 확인한다.",
+        "WPS의 전류·극성·아크길이·속도와 실제 조건을 대조한다.",
+        "운봉·봉각도와 전층 슬래그 제거상태를 확인한다.",
+        "원인별 조치 후 재용접·검사한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "기공은 청소·건조·짧고 안정된 아크와 적정 속도를 우선 확인한다.",
+        "슬래그 혼입은 층간청소·적정 전류·용융풀 관찰·운봉과 개선각을 확인한다."
+      ],
+      "safety": [
+        "결함 제거와 재용접 전 가연물·환기·보호구와 전원상태를 확인한다."
+      ],
+      "examFormats": [
+        "기공과 슬래그 혼입의 원인 및 예방대책을 각각 쓰시오.",
+        "용접 결함 사진과 발생원인·조치방법을 연결하시오."
+      ],
+      "requiredKeywords": [
+        "기공",
+        "슬래그 혼입",
+        "청소",
+        "용접봉 건조",
+        "적정 전류",
+        "운봉"
+      ],
+      "traps": [
+        "모든 기공을 전류 하나의 원인으로 단정하지 않는다.",
+        "슬래그를 남긴 채 다음 패스를 진행하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-WELD-DEFECT-ESTIMATION"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1601050108",
+          "documentTitle": "피복아크용접 결함부 보수용접",
+          "version": "21v3",
+          "pdfPage": null,
+          "printedPage": 13,
+          "figureNumber": null,
+          "performanceCriteria": "1-2 용접 중 결함 추정: 용접 중 결함 원인과 예방의 정의·판단·작업절차",
+          "sourceFileHash": "347e55fb188462c9472280b3f5f88b41978b849ff61d31dc56969cd4042e92d5",
+          "sourceUrl": "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "기공·피트는 오염·습기·용접봉 건조불량·긴 아크·부적정 속도와 연결되고, 슬래그 혼입은 층간 청소불량·전류과소·운봉과 봉각도 불량과 연결된다. 원인에 맞춰 청소·건조·적정 전류·아크길이·운봉을 조정한다.",
+        "기공은 모재 오염과 습기, 용접봉 건조불량, 긴 아크 등 가스 보호를 해치는 조건과 연결된다. 슬래그 혼입은 전층 슬래그 제거불량, 부적절한 전류·속도·운봉과 개선부 접근성 부족에서 생기기 쉽다."
+      ],
+      "sourceReviewNote": "NCS 1601050108 인쇄 13쪽에서 시작하는 1-2 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-WELD-REPAIR",
+      "title": "용접결함 제거와 보수용접",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-2",
+      "groupLabel": "s2-g02",
+      "learningGoals": [
+        "용접결함 제거와 보수용접의 핵심 원리와 필수 답안어를 설명한다.",
+        "용접결함 제거와 보수용접의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "보수용접은 결함부를 확인·제거한 뒤 적용 WPS와 보수시방에 따라 재용접하고 비파괴검사로 완료 여부를 확인하는 작업이다.",
+      "principle": "보수용접은 안전·청결·작업공간 확보 → 결함 위치 확인 → 가우징·연삭 등으로 결함 제거 → WPS와 재질에 맞는 예열·보수용접 → 후열·세척·검사 순으로 진행한다. 균열은 끝단 진행을 막는 조치 후 완전히 제거한다. 결함을 덮어 용접하지 않고 건전한 금속이 나올 때까지 제거해야 한다. 균열은 필요 시 끝단 진행방지 조치를 하고 완전 제거 여부를 확인한 뒤 재용접한다.",
+      "components": [
+        "결함 위치와 범위 표시",
+        "가우징·연삭·절삭 제거",
+        "균열 정지구멍과 제거 확인",
+        "WPS·보수용접시방",
+        "예열·층간·후열 조건",
+        "보수 후 비파괴검사"
+      ],
+      "procedure": [
+        "작업장 안전·가연물·환기·보호구를 확인한다.",
+        "결함 종류·위치·범위를 표시한다.",
+        "가우징·연삭 등 지정 방법으로 결함을 완전히 제거한다.",
+        "MT·PT 등 적절한 방법으로 제거 완료를 확인한다.",
+        "WPS와 보수시방에 따라 예열·보수용접·후처리를 한다.",
+        "외관 및 지정 비파괴검사로 재검사하고 기록한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "균열이 남았거나 가우징부가 오염되면 재균열과 융합불량이 발생할 수 있다."
+      ],
+      "safety": [
+        "예열·후열의 구체 수치는 모재·두께·용접재료와 적용 WPS를 따른다."
+      ],
+      "examFormats": [
+        "용접결함부 보수용접의 작업순서를 쓰시오.",
+        "균열·언더컷·슬래그 혼입의 보수 전 제거방법을 구분하시오."
+      ],
+      "requiredKeywords": [
+        "결함 확인",
+        "가우징",
+        "결함 제거",
+        "WPS",
+        "보수용접",
+        "후검사"
+      ],
+      "traps": [
+        "균열 위를 그대로 덧살 용접하지 않는다.",
+        "NCS 예시의 예열·후열 수치를 모든 재질에 고정 적용하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-WELD-REPAIR"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1601050108",
+          "documentTitle": "피복아크용접 결함부 보수용접",
+          "version": "21v3",
+          "pdfPage": null,
+          "printedPage": 54,
+          "figureNumber": null,
+          "performanceCriteria": "3-1 용접결함부 보수용접: 용접결함 제거와 보수용접의 정의·판단·작업절차",
+          "sourceFileHash": "347e55fb188462c9472280b3f5f88b41978b849ff61d31dc56969cd4042e92d5",
+          "sourceUrl": "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "보수용접은 안전·청결·작업공간 확보 → 결함 위치 확인 → 가우징·연삭 등으로 결함 제거 → WPS와 재질에 맞는 예열·보수용접 → 후열·세척·검사 순으로 진행한다. 균열은 끝단 진행을 막는 조치 후 완전히 제거한다.",
+        "결함을 덮어 용접하지 않고 건전한 금속이 나올 때까지 제거해야 한다. 균열은 필요 시 끝단 진행방지 조치를 하고 완전 제거 여부를 확인한 뒤 재용접한다."
+      ],
+      "sourceReviewNote": "NCS 1601050108 인쇄 54쪽에서 시작하는 3-1 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-WELD-NDT",
+      "title": "보수용접 후 비파괴검사 선택",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-2",
+      "groupLabel": "s2-g04",
+      "learningGoals": [
+        "보수용접 후 비파괴검사 선택의 핵심 원리와 필수 답안어를 설명한다.",
+        "보수용접 후 비파괴검사 선택의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "비파괴검사는 용접부를 파괴하지 않고 표면 또는 내부 결함의 존재와 위치를 확인하는 검사이다.",
+      "principle": "표면 결함은 육안검사(VT)·침투탐상(PT)·자분탐상(MT), 내부 결함은 방사선투과(RT)·초음파탐상(UT)을 중심으로 확인한다. 재질, 예상 결함 위치와 형상에 따라 방법을 선택하고 보수 완료 여부를 판정한다. VT는 외관, PT는 비다공성 재료의 표면 개구결함, MT는 강자성체의 표면·표면근처 결함, RT와 UT는 내부 결함 확인에 주로 사용한다.",
+      "components": [
+        "VT 육안검사",
+        "PT 침투탐상검사",
+        "MT 자분탐상검사",
+        "RT 방사선투과검사",
+        "UT 초음파탐상검사"
+      ],
+      "procedure": [
+        "예상 결함이 표면인지 내부인지 구분한다.",
+        "재질의 자성·다공성, 두께와 형상을 확인한다.",
+        "적용 가능한 검사법을 선정하고 표면을 전처리한다.",
+        "검사를 수행해 지시를 관찰·판독한다.",
+        "보수 완료 여부를 판정하고 기록한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "PT는 전처리→침투액 적용→침투시간→잉여 침투액 제거→현상→관찰→후처리 순으로 수행한다.",
+        "MT는 강자성체에 적용하며 RT·UT는 결함 방향·두께·접근성에 따라 선택한다."
+      ],
+      "safety": [
+        "RT는 방사선 안전구역과 자격·절차를 준수하고, 모든 검사는 적용 표준과 검사절차서를 따른다."
+      ],
+      "examFormats": [
+        "표면 결함과 내부 결함에 알맞은 비파괴검사법을 연결하시오.",
+        "침투탐상검사의 전처리부터 관찰까지 기본 순서를 쓰시오."
+      ],
+      "requiredKeywords": [
+        "VT",
+        "PT",
+        "MT",
+        "RT",
+        "UT",
+        "표면·내부 결함"
+      ],
+      "traps": [
+        "PT를 다공성 표면이나 내부결함 검사법으로 쓰지 않는다.",
+        "MT를 비자성 재료에 적용한다고 쓰지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-WELD-NDT"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1601050108",
+          "documentTitle": "피복아크용접 결함부 보수용접",
+          "version": "21v3",
+          "pdfPage": null,
+          "printedPage": 67,
+          "figureNumber": null,
+          "performanceCriteria": "3-2 용접부 비파괴검사: 보수용접 후 비파괴검사 선택의 정의·판단·작업절차",
+          "sourceFileHash": "347e55fb188462c9472280b3f5f88b41978b849ff61d31dc56969cd4042e92d5",
+          "sourceUrl": "https://drive.google.com/file/d/1L9aM9OM5B0oL95BBhKweJbwH3VYkydFx/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "표면 결함은 육안검사(VT)·침투탐상(PT)·자분탐상(MT), 내부 결함은 방사선투과(RT)·초음파탐상(UT)을 중심으로 확인한다. 재질, 예상 결함 위치와 형상에 따라 방법을 선택하고 보수 완료 여부를 판정한다.",
+        "VT는 외관, PT는 비다공성 재료의 표면 개구결함, MT는 강자성체의 표면·표면근처 결함, RT와 UT는 내부 결함 확인에 주로 사용한다."
+      ],
+      "sourceReviewNote": "NCS 1601050108 인쇄 67쪽에서 시작하는 3-2 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-HYDRAULIC-VALVE-SELECTION",
+      "title": "유압제어밸브 기능별 선정",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-1",
+      "groupLabel": "s1-g03",
+      "learningGoals": [
+        "유압제어밸브 기능별 선정의 핵심 원리와 필수 답안어를 설명한다.",
+        "유압제어밸브 기능별 선정의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "유압제어밸브는 회로의 압력, 유체 흐름방향과 유량을 제어하여 액추에이터의 힘·방향·속도를 조절하는 요소이다.",
+      "principle": "유압밸브는 압력·방향·유량 제어로 나누고, 회로의 요구압력·유량·작동방향·부하조건에 맞춰 선정한다. 릴리프는 최고압 제한, 감압은 분기압 저감, 방향제어는 유로 전환, 유량제어는 속도 조절에 사용한다. 릴리프밸브는 최고압력을 제한하고, 감압밸브는 분기회로 압력을 낮게 유지하며, 방향제어밸브는 유로를 전환하고, 유량제어밸브는 액추에이터 속도를 조절한다.",
+      "components": [
+        "압력제어밸브: 릴리프·감압·시퀀스",
+        "방향제어밸브: 유로 전환·단속",
+        "유량제어밸브: 교축·유량조정",
+        "체크밸브: 역류 방지"
+      ],
+      "procedure": [
+        "회로가 요구하는 최고압력·분기압·속도·작동방향을 구분한다.",
+        "정격압력·유량과 포트·조작방식을 확인한다.",
+        "기호와 실물의 연결구를 대조한다.",
+        "무부하에서 설정 후 부하조건에서 동작을 확인한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "최고압력은 릴리프밸브, 속도는 유량제어밸브, 분기저압은 감압밸브로 조정한다."
+      ],
+      "safety": [
+        "압력 설정 전 압력계와 릴리프 경로를 확인하고 하중을 기계적으로 지지한다."
+      ],
+      "examFormats": [
+        "릴리프·감압·시퀀스·유량제어밸브의 기능을 연결하시오.",
+        "실린더 속도와 최고압력을 각각 조정할 밸브를 쓰시오."
+      ],
+      "requiredKeywords": [
+        "압력제어",
+        "방향제어",
+        "유량제어",
+        "릴리프",
+        "감압",
+        "속도"
+      ],
+      "traps": [
+        "릴리프밸브와 감압밸브의 목적을 바꾸지 않는다.",
+        "속도를 압력제어밸브만으로 조정한다고 쓰지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-HYDRAULIC-VALVE-SELECTION"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010216",
+          "documentTitle": "유압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 17,
+          "figureNumber": null,
+          "performanceCriteria": "1-2 유압제어 밸브 선정: 유압제어밸브 기능별 선정의 정의·판단·작업절차",
+          "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
+          "sourceUrl": "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "유압밸브는 압력·방향·유량 제어로 나누고, 회로의 요구압력·유량·작동방향·부하조건에 맞춰 선정한다. 릴리프는 최고압 제한, 감압은 분기압 저감, 방향제어는 유로 전환, 유량제어는 속도 조절에 사용한다.",
+        "릴리프밸브는 최고압력을 제한하고, 감압밸브는 분기회로 압력을 낮게 유지하며, 방향제어밸브는 유로를 전환하고, 유량제어밸브는 액추에이터 속도를 조절한다."
+      ],
+      "sourceReviewNote": "NCS 1503010216 인쇄 17쪽에서 시작하는 1-2 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-ELECTROHYDRAULIC-CIRCUIT",
+      "title": "전기유압 논리회로 구성",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-1",
+      "groupLabel": "s1-g04",
+      "learningGoals": [
+        "전기유압 논리회로 구성의 핵심 원리와 필수 답안어를 설명한다.",
+        "전기유압 논리회로 구성의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "전기유압 회로는 전기 입력과 릴레이 논리로 솔레노이드를 구동하고, 방향제어밸브를 전환하여 유압 액추에이터를 움직이는 시스템이다.",
+      "principle": "전기유압 회로는 입력스위치·센서 → 릴레이 논리·인터록 → 솔레노이드 출력 → 방향제어밸브·액추에이터 순으로 읽는다. 전원을 차단한 상태에서 배선·배관하고 AND·OR 조건과 접점상태를 확인한 뒤 시험한다. 회로는 입력스위치·센서 → 릴레이·인터록 → 솔레노이드 → 방향제어밸브 → 액추에이터 순으로 읽는다. 두 입력이 모두 필요한 AND 조건은 직렬 접점 등으로 구성한다.",
+      "components": [
+        "입력: 스위치·센서",
+        "신호처리: 릴레이·접점·인터록",
+        "출력: 솔레노이드 코일",
+        "유압제어: 방향제어밸브",
+        "구동: 실린더·유압모터"
+      ],
+      "procedure": [
+        "전원과 유압을 차단하고 잔압을 제거한다.",
+        "회로도에서 입력·논리·출력과 포트를 구분한다.",
+        "전기 배선과 유압 배관을 도면대로 구성한다.",
+        "N/O·N/C 접점과 AND·OR·인터록 조건을 확인한다.",
+        "단계별로 통전·가압해 입력부터 액추에이터까지 추적한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "입력은 정상인데 움직이지 않으면 릴레이 출력·솔레노이드 통전·밸브 스풀과 유압공급을 순서대로 본다."
+      ],
+      "safety": [
+        "배선과 배관 변경 전 전원차단·잔압제거를 하고 예기치 않은 액추에이터 움직임을 막는다."
+      ],
+      "examFormats": [
+        "전기유압 회로에서 입력·논리·출력 요소를 구분하시오.",
+        "두 스위치가 모두 눌려야 작동하는 회로의 논리와 배선 원칙을 쓰시오."
+      ],
+      "requiredKeywords": [
+        "입력",
+        "릴레이",
+        "인터록",
+        "솔레노이드",
+        "AND·OR",
+        "전원차단"
+      ],
+      "traps": [
+        "전기 입력과 유압 동력의 두 계통을 한 회로처럼 섞어 설명하지 않는다.",
+        "AND 조건에서 어느 한 접점만 닫혀도 동작한다고 쓰지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-ELECTROHYDRAULIC-CIRCUIT"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010216",
+          "documentTitle": "유압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 101,
+          "figureNumber": null,
+          "performanceCriteria": "2-2 전기 유압제어 회로 구성: 전기유압 논리회로 구성의 정의·판단·작업절차",
+          "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
+          "sourceUrl": "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "전기유압 회로는 입력스위치·센서 → 릴레이 논리·인터록 → 솔레노이드 출력 → 방향제어밸브·액추에이터 순으로 읽는다. 전원을 차단한 상태에서 배선·배관하고 AND·OR 조건과 접점상태를 확인한 뒤 시험한다.",
+        "회로는 입력스위치·센서 → 릴레이·인터록 → 솔레노이드 → 방향제어밸브 → 액추에이터 순으로 읽는다. 두 입력이 모두 필요한 AND 조건은 직렬 접점 등으로 구성한다."
+      ],
+      "sourceReviewNote": "NCS 1503010216 인쇄 101쪽에서 시작하는 2-2 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-HYDRAULIC-SYSTEM-BUILD",
+      "title": "유압시스템 구축 4단계",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-1",
+      "groupLabel": "s1-g02",
+      "learningGoals": [
+        "유압시스템 구축 4단계의 핵심 원리와 필수 답안어를 설명한다.",
+        "유압시스템 구축 4단계의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "유압시스템 구축은 요구기능을 회로도와 부품목록으로 구체화하고, 안전하게 설치한 뒤 낮은 위험조건에서 시운전하여 기능을 확인하는 과정이다.",
+      "principle": "유압시스템 구축은 요구기능·힘·압력·속도 확인 → 동작선도·회로도·부품목록 작성 → 안전수칙과 정해진 순서에 따른 설치 → 오일량·회전방향·밸브 초기값을 확인한 저압 시험운전 순으로 진행한다. 설치보다 먼저 필요한 힘·압력·속도와 동작순서를 정해야 하며, 최초 기동 전 오일량·오염·배관·전동기 회전방향·밸브 초기값을 확인한다.",
+      "components": [
+        "요구기능·힘·압력·속도",
+        "동작선도·유압회로도",
+        "부품목록·배관목록",
+        "동력원·밸브·액추에이터",
+        "초기 설정과 시험기록"
+      ],
+      "procedure": [
+        "요구기능과 힘·압력·속도·동작순서를 정한다.",
+        "동작선도·회로도와 부품목록을 작성한다.",
+        "안전수칙과 정해진 순서에 따라 부품·배관·배선을 설치한다.",
+        "오일량·오염·회전방향·밸브 초기값과 누설을 확인한다.",
+        "저압·무부하에서 시작해 단계적으로 기능을 시험하고 기록한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "최초 기동 시 소음·캐비테이션·과압이 발생하면 즉시 정지하고 흡입측·회전방향·밸브 설정을 확인한다."
+      ],
+      "safety": [
+        "릴리프 경로와 비상정지 기능을 확인하고, 고압 누설은 손으로 찾지 않는다."
+      ],
+      "examFormats": [
+        "유압시스템을 구축하는 네 단계를 순서대로 쓰시오.",
+        "최초 기동 전 확인해야 할 오일·전동기·밸브 조건을 쓰시오."
+      ],
+      "requiredKeywords": [
+        "요구기능",
+        "회로도",
+        "부품목록",
+        "설치",
+        "초기값",
+        "저압 시험"
+      ],
+      "traps": [
+        "회로검토 없이 부품부터 연결하지 않는다.",
+        "최초 기동을 정격압력·최대부하에서 시작하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-HYDRAULIC-SYSTEM-BUILD"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010216",
+          "documentTitle": "유압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 167,
+          "figureNumber": null,
+          "performanceCriteria": "3-1 유압시스템 구축: 유압시스템 구축 4단계의 정의·판단·작업절차",
+          "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
+          "sourceUrl": "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "유압시스템 구축은 요구기능·힘·압력·속도 확인 → 동작선도·회로도·부품목록 작성 → 안전수칙과 정해진 순서에 따른 설치 → 오일량·회전방향·밸브 초기값을 확인한 저압 시험운전 순으로 진행한다.",
+        "설치보다 먼저 필요한 힘·압력·속도와 동작순서를 정해야 하며, 최초 기동 전 오일량·오염·배관·전동기 회전방향·밸브 초기값을 확인한다."
+      ],
+      "sourceReviewNote": "NCS 1503010216 인쇄 167쪽에서 시작하는 3-1 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-HYDRAULIC-AUXILIARY-CONTROLS",
+      "title": "유압 부가조건과 안전제어",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-1",
+      "groupLabel": "s1-g04",
+      "learningGoals": [
+        "유압 부가조건과 안전제어의 핵심 원리와 필수 답안어를 설명한다.",
+        "유압 부가조건과 안전제어의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "유압 부가조건 회로는 기본 1사이클 동작에 운전모드, 시작·정지·리셋과 비상정지 같은 안전·편의 조건을 추가한 제어회로이다.",
+      "principle": "기본 1사이클 회로에 메인·시동·리셋·자동/수동·단속/연속·정지·비상정지 조건을 추가한다. 비상정지 동작은 장치와 에너지 특성에 맞게 위험을 키우지 않는 정지상태를 만들도록 설계·검증한다. 메인스위치는 동력을 격리하고, 시동은 선택된 모드에서 운전을 시작하며, 리셋은 고장·정지 후 초기조건을 복구한다. 비상정지는 장치의 에너지 특성에 맞는 안전상태를 만들어야 한다.",
+      "components": [
+        "메인스위치",
+        "시동·정지 스위치",
+        "리셋 스위치",
+        "자동·수동 선택",
+        "단속·연속 선택",
+        "비상정지와 인터록"
+      ],
+      "procedure": [
+        "기본 1사이클 동작과 안전상태를 정한다.",
+        "자동·수동과 단속·연속의 선택조건을 구성한다.",
+        "시동·정지·리셋·비상정지 접점을 배치한다.",
+        "단일동작에서 각 스위치 기능을 시험한다.",
+        "비상정지 후 재시동이 자동으로 일어나지 않는지 확인한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "리셋은 고장원인을 없애지 않고 강제로 운전시키는 기능이 아니라 재시작 가능한 초기상태를 만드는 기능이다."
+      ],
+      "safety": [
+        "비상정지 해제만으로 자동 재기동되지 않도록 별도의 시동동작과 안전조건을 확인한다."
+      ],
+      "examFormats": [
+        "시동·리셋·정지·비상정지 스위치의 역할을 연결하시오.",
+        "단속/연속 및 자동/수동 선택회로의 목적을 설명하시오."
+      ],
+      "requiredKeywords": [
+        "메인",
+        "시동",
+        "리셋",
+        "자동·수동",
+        "단속·연속",
+        "비상정지"
+      ],
+      "traps": [
+        "정지와 비상정지를 같은 기능으로 설명하지 않는다.",
+        "리셋을 안전인터록 무효화 기능으로 사용하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-HYDRAULIC-AUXILIARY-CONTROLS"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010216",
+          "documentTitle": "유압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 184,
+          "figureNumber": null,
+          "performanceCriteria": "3-2 부가조건 회로 시운전: 유압 부가조건과 안전제어의 정의·판단·작업절차",
+          "sourceFileHash": "60379b6b19966077104615b547f7c98a98dbfce6a201540bad2675a40898e2e3",
+          "sourceUrl": "https://drive.google.com/file/d/1qZvyCVbIfMBxJ_1XpFQvULvnp5JSpNnv/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "기본 1사이클 회로에 메인·시동·리셋·자동/수동·단속/연속·정지·비상정지 조건을 추가한다. 비상정지 동작은 장치와 에너지 특성에 맞게 위험을 키우지 않는 정지상태를 만들도록 설계·검증한다.",
+        "메인스위치는 동력을 격리하고, 시동은 선택된 모드에서 운전을 시작하며, 리셋은 고장·정지 후 초기조건을 복구한다. 비상정지는 장치의 에너지 특성에 맞는 안전상태를 만들어야 한다."
+      ],
+      "sourceReviewNote": "NCS 1503010216 인쇄 184쪽에서 시작하는 3-2 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-PNEUMATIC-LOGIC",
+      "title": "공압 논리와 제어방식",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-1",
+      "groupLabel": "s1-g08",
+      "learningGoals": [
+        "공압 논리와 제어방식의 핵심 원리와 필수 답안어를 설명한다.",
+        "공압 논리와 제어방식의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "공압 논리제어는 압축공기 신호의 유무를 이용하여 YES·NOT·AND·OR 조건을 만들고 액추에이터의 동작허가를 결정하는 방식이다.",
+      "principle": "3/2밸브의 정상닫힘·정상열림은 YES·NOT 기능에 대응하고, 2압밸브는 두 입력이 모두 있어야 출력되는 AND, 셔틀밸브는 어느 한 입력으로 출력되는 OR 기능을 만든다. 정상닫힘 3/2밸브는 입력에 따라 출력하는 YES, 정상열림 3/2밸브는 입력을 반전하는 NOT에 대응한다. 2압밸브는 두 입력이 모두 필요한 AND, 셔틀밸브는 어느 한 입력으로 출력하는 OR 기능을 한다.",
+      "components": [
+        "정상닫힘 3/2밸브: YES",
+        "정상열림 3/2밸브: NOT",
+        "2압밸브: AND",
+        "셔틀밸브: OR"
+      ],
+      "procedure": [
+        "원하는 출력조건을 진리표로 정한다.",
+        "YES·NOT·AND·OR 중 필요한 논리를 고른다.",
+        "밸브의 정상상태와 포트·신호방향을 확인한다.",
+        "입력 조합별 출력상태를 시험한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "AND 출력이 없으면 두 입력압력과 2압밸브의 연결을, OR 역류가 있으면 셔틀밸브 내부와 포트를 점검한다."
+      ],
+      "safety": [
+        "회로 변경 전 공급공기를 차단하고 잔압을 제거한다."
+      ],
+      "examFormats": [
+        "2압밸브와 셔틀밸브의 논리기능을 쓰시오.",
+        "YES·NOT·AND·OR 기능에 대응하는 공압밸브를 연결하시오."
+      ],
+      "requiredKeywords": [
+        "3/2밸브",
+        "YES·NOT",
+        "2압밸브",
+        "AND",
+        "셔틀밸브",
+        "OR"
+      ],
+      "traps": [
+        "2압밸브를 두 압력 중 높은 값을 선택하는 밸브로 설명하지 않는다.",
+        "셔틀밸브를 두 입력이 동시에 있어야 출력하는 AND로 쓰지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-PNEUMATIC-LOGIC"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010215",
+          "documentTitle": "공기압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 41,
+          "figureNumber": null,
+          "performanceCriteria": "1-2 제어 방법 설계: 공압 논리와 제어방식의 정의·판단·작업절차",
+          "sourceFileHash": "672b3ecfb646c601e5c040fcda8c51ccb8d0c657c9ec1b41080c7f6405aa811c",
+          "sourceUrl": "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "3/2밸브의 정상닫힘·정상열림은 YES·NOT 기능에 대응하고, 2압밸브는 두 입력이 모두 있어야 출력되는 AND, 셔틀밸브는 어느 한 입력으로 출력되는 OR 기능을 만든다.",
+        "정상닫힘 3/2밸브는 입력에 따라 출력하는 YES, 정상열림 3/2밸브는 입력을 반전하는 NOT에 대응한다. 2압밸브는 두 입력이 모두 필요한 AND, 셔틀밸브는 어느 한 입력으로 출력하는 OR 기능을 한다."
+      ],
+      "sourceReviewNote": "NCS 1503010215 인쇄 41쪽에서 시작하는 1-2 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY",
+      "title": "공압회로 부품선정·배관·배선",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-1",
+      "groupLabel": "s1-g08",
+      "learningGoals": [
+        "공압회로 부품선정·배관·배선의 핵심 원리와 필수 답안어를 설명한다.",
+        "공압회로 부품선정·배관·배선의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "공압회로 구성은 회로도에서 부품과 부속품을 목록화하고, 간섭이 없게 배치한 뒤 배관·배선·누설검사를 거쳐 동작을 확인하는 작업이다.",
+      "principle": "회로도에서 공압부품과 전기제어부품의 명칭·수량·규격을 목록화하고 간섭이 없게 배치한다. 공급을 차단한 상태에서 보통 배관 후 배선하며, 피팅·호스경로·소음기·가동부 여유와 누설·단락을 확인한 뒤 시험한다. 도면에는 피팅·소음기·배관지지·가동부 여유 같은 설치 부속품이 생략될 수 있다. 실제 구성에서는 호스 꺾임, 전선 단락, 가동부 간섭과 배기방향을 함께 확인한다.",
+      "components": [
+        "공압부품·전기부품 목록",
+        "호스·피팅·분배기",
+        "소음기·배관지지",
+        "전선·단자·보호기기",
+        "가동부 여유와 간섭방지"
+      ],
+      "procedure": [
+        "회로도에서 부품명·수량·규격과 부속품을 목록화한다.",
+        "조작·점검성과 가동부 간섭을 고려해 배치한다.",
+        "공급을 차단한 상태에서 배관하고 필요 시 전기배선한다.",
+        "호스 꺾임·피팅 체결·배선 단락과 접지를 확인한다.",
+        "저압에서 누설검사 후 단계별 동작시험을 한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "실린더가 느리면 호스 꺾임·피팅 구경·소음기 막힘·누설을, 솔레노이드 무응답은 전원·접점을 확인한다."
+      ],
+      "safety": [
+        "배관·배선 작업 전 공급공기와 전원을 차단하고 잔압을 제거한다."
+      ],
+      "examFormats": [
+        "공압제어 회로 구성의 준비·배관·배선·시험 순서를 쓰시오.",
+        "회로도에는 생략되기 쉬우나 실제 구성에 필요한 부속품을 쓰시오."
+      ],
+      "requiredKeywords": [
+        "부품목록",
+        "배치",
+        "배관",
+        "배선",
+        "누설",
+        "간섭"
+      ],
+      "traps": [
+        "회로도에 그려진 주부품만 준비하고 피팅·호스·소음기를 누락하지 않는다.",
+        "가압상태에서 호스를 다시 체결하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010215",
+          "documentTitle": "공기압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 113,
+          "figureNumber": null,
+          "performanceCriteria": "2-2 공기압제어 회로 구성: 공압회로 부품선정·배관·배선의 정의·판단·작업절차",
+          "sourceFileHash": "672b3ecfb646c601e5c040fcda8c51ccb8d0c657c9ec1b41080c7f6405aa811c",
+          "sourceUrl": "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "회로도에서 공압부품과 전기제어부품의 명칭·수량·규격을 목록화하고 간섭이 없게 배치한다. 공급을 차단한 상태에서 보통 배관 후 배선하며, 피팅·호스경로·소음기·가동부 여유와 누설·단락을 확인한 뒤 시험한다.",
+        "도면에는 피팅·소음기·배관지지·가동부 여유 같은 설치 부속품이 생략될 수 있다. 실제 구성에서는 호스 꺾임, 전선 단락, 가동부 간섭과 배기방향을 함께 확인한다."
+      ],
+      "sourceReviewNote": "NCS 1503010215 인쇄 113쪽에서 시작하는 2-2 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-PNEUMATIC-COMMISSIONING",
+      "title": "공압 부하특성 조정과 시운전",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-1",
+      "groupLabel": "s1-g05",
+      "learningGoals": [
+        "공압 부하특성 조정과 시운전의 핵심 원리와 필수 답안어를 설명한다.",
+        "공압 부하특성 조정과 시운전의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "공압 시운전은 회로의 초기상태를 확인한 뒤 낮은 위험조건에서 작동시키며 압력·유량·쿠션을 부하특성에 맞게 조정하는 작업이다.",
+      "principle": "시운전은 초기위치와 안전구간을 확인하고 낮은 압력·충분히 열린 유량조건에서 시작한다. 압력은 힘, 유량은 속도에 주로 영향을 주므로 부하 움직임을 보며 압력·유량·쿠션을 단계적으로 조정하고 결과를 기록한다. 압력은 실린더 힘, 유량은 속도에 주로 영향을 주고 쿠션은 행정 끝단의 충격을 줄인다. 한 번에 하나씩 조정하고 전진·후진 결과를 기록해야 원인을 구분할 수 있다.",
+      "components": [
+        "초기위치·안전구간",
+        "레귤레이터와 압력계",
+        "유량제어밸브",
+        "실린더 쿠션",
+        "속도·힘·충격 기록"
+      ],
+      "procedure": [
+        "액추에이터 초기위치와 이동구간의 안전을 확인한다.",
+        "낮은 압력과 충분히 열린 유량조건에서 시작한다.",
+        "요구 힘에 맞춰 압력을 조정한다.",
+        "전진·후진 속도에 맞춰 유량을 조정한다.",
+        "행정 끝단 충격에 맞춰 쿠션을 조정하고 결과를 기록한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "힘 부족은 공급압·누설·부하·마찰을, 속도 저하는 유량·배기저항·밸브·호스를 점검한다."
+      ],
+      "safety": [
+        "시운전 중 액추에이터의 협착구역에 접근하지 않고 비상정지 수단을 확보한다."
+      ],
+      "examFormats": [
+        "공압 실린더 시운전 시 압력·유량·쿠션을 조정하는 순서를 쓰시오.",
+        "실린더 힘 부족과 속도 저하의 점검 항목을 구분하시오."
+      ],
+      "requiredKeywords": [
+        "초기위치",
+        "저압 시작",
+        "압력-힘",
+        "유량-속도",
+        "쿠션",
+        "기록"
+      ],
+      "traps": [
+        "속도를 높이기 위해 압력만 과도하게 올리지 않는다.",
+        "쿠션을 완전히 잠가 행정 끝 동작을 막지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-PNEUMATIC-COMMISSIONING"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010215",
+          "documentTitle": "공기압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 141,
+          "figureNumber": null,
+          "performanceCriteria": "3-1 부하의 운동 특성에 따른 조정 및 시운전: 공압 부하특성 조정과 시운전의 정의·판단·작업절차",
+          "sourceFileHash": "672b3ecfb646c601e5c040fcda8c51ccb8d0c657c9ec1b41080c7f6405aa811c",
+          "sourceUrl": "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "시운전은 초기위치와 안전구간을 확인하고 낮은 압력·충분히 열린 유량조건에서 시작한다. 압력은 힘, 유량은 속도에 주로 영향을 주므로 부하 움직임을 보며 압력·유량·쿠션을 단계적으로 조정하고 결과를 기록한다.",
+        "압력은 실린더 힘, 유량은 속도에 주로 영향을 주고 쿠션은 행정 끝단의 충격을 줄인다. 한 번에 하나씩 조정하고 전진·후진 결과를 기록해야 원인을 구분할 수 있다."
+      ],
+      "sourceReviewNote": "NCS 1503010215 인쇄 141쪽에서 시작하는 3-1 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-PNEUMATIC-TROUBLESHOOTING",
+      "title": "공압 이상 원인 추적",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-1",
+      "groupLabel": "s1-g07",
+      "learningGoals": [
+        "공압 이상 원인 추적의 핵심 원리와 필수 답안어를 설명한다.",
+        "공압 이상 원인 추적의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "공압 고장추적은 공급에너지와 누설을 먼저 확인하고 입력·논리·출력·액추에이터 순으로 신호를 따라가며 이상구간을 좁히는 작업이다.",
+      "principle": "공급압·유량·누설을 먼저 확인하고 입력센서 → 릴레이·논리 → 솔레노이드·밸브 → 액추에이터 순으로 신호를 추적한다. 한 번에 하나의 원인만 점검·조치하고 결과를 재확인한다. 공압기기는 압축공기 공급부, 제어요소와 액추에이터가 서로 영향을 준다. 따라서 부품을 임의 교체하기보다 압력·유량·누설과 신호 유무를 단계별로 확인한다.",
+      "components": [
+        "공급압력·유량·누설",
+        "입력스위치·센서",
+        "릴레이·공압논리",
+        "솔레노이드·방향제어밸브",
+        "실린더·부하"
+      ],
+      "procedure": [
+        "공급압력·유량과 누설을 확인한다.",
+        "입력스위치·센서 신호를 확인한다.",
+        "릴레이·논리부의 출력조건을 확인한다.",
+        "솔레노이드 통전과 밸브 전환을 확인한다.",
+        "액추에이터·부하·기계적 걸림을 확인한다.",
+        "한 가지 원인만 조치하고 같은 조건으로 재시험한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "압력 과대는 충격과 누설위험, 압력 과소는 힘 부족과 밸브 오동작을 만들 수 있다.",
+        "유량 부족은 속도 저하, 과대유량은 과속과 끝단충격을 만들 수 있다."
+      ],
+      "safety": [
+        "점검 중 회로를 변경할 때마다 공급을 차단하고 잔압을 제거한다."
+      ],
+      "examFormats": [
+        "공압 실린더가 움직이지 않을 때 공급부부터 출력부까지 점검순서를 쓰시오.",
+        "압력과 유량이 각각 과대·과소일 때 나타나는 현상을 연결하시오."
+      ],
+      "requiredKeywords": [
+        "압력",
+        "유량",
+        "누설",
+        "입력",
+        "제어",
+        "출력"
+      ],
+      "traps": [
+        "여러 부품을 동시에 조정해 원인을 알 수 없게 만들지 않는다.",
+        "압력계만 보고 국부 누설과 배기막힘을 생략하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-PNEUMATIC-TROUBLESHOOTING"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010215",
+          "documentTitle": "공기압제어",
+          "version": "16v4",
+          "pdfPage": null,
+          "printedPage": 163,
+          "figureNumber": null,
+          "performanceCriteria": "3-2 공기압기기 이상 유무 파악: 공압 이상 원인 추적의 정의·판단·작업절차",
+          "sourceFileHash": "672b3ecfb646c601e5c040fcda8c51ccb8d0c657c9ec1b41080c7f6405aa811c",
+          "sourceUrl": "https://drive.google.com/file/d/1I_xThj7-jMfXlsQ1HvoetUrXARWYWh6C/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "공급압·유량·누설을 먼저 확인하고 입력센서 → 릴레이·논리 → 솔레노이드·밸브 → 액추에이터 순으로 신호를 추적한다. 한 번에 하나의 원인만 점검·조치하고 결과를 재확인한다.",
+        "공압기기는 압축공기 공급부, 제어요소와 액추에이터가 서로 영향을 준다. 따라서 부품을 임의 교체하기보다 압력·유량·누설과 신호 유무를 단계별로 확인한다."
+      ],
+      "sourceReviewNote": "NCS 1503010215 인쇄 163쪽에서 시작하는 3-2 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-SENSOR-RELAY-CIRCUIT",
+      "title": "센서 출력과 릴레이제어 회로",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-1",
+      "groupLabel": "s1-g10",
+      "learningGoals": [
+        "센서 출력과 릴레이제어 회로의 핵심 원리와 필수 답안어를 설명한다.",
+        "센서 출력과 릴레이제어 회로의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "센서 릴레이제어회로는 센서의 검출신호를 접점논리로 처리해 솔레노이드 등 출력기기를 구동하는 회로이다.",
+      "principle": "센서 신호는 접점·릴레이 논리를 거쳐 솔레노이드와 액추에이터를 구동한다. N/O·N/C 접점, 센서 출력형식과 전원조건을 확인하고 변위-단계선도의 동작순서와 실제 입출력을 대조한다. 센서 전원과 출력형식, N/O·N/C 접점의 정상상태를 확인하고 변위-단계선도의 완료신호와 실제 입출력 순서를 대조해야 한다.",
+      "components": [
+        "센서 전원·출력신호",
+        "N/O·N/C 접점",
+        "릴레이 코일·접점",
+        "솔레노이드 출력",
+        "변위-단계선도와 완료센서"
+      ],
+      "procedure": [
+        "변위-단계선도에서 필요한 입력과 출력순서를 정한다.",
+        "센서 전원·출력형식과 N/O·N/C 상태를 확인한다.",
+        "릴레이 코일과 접점논리를 구성한다.",
+        "솔레노이드 출력과 액추에이터를 연결한다.",
+        "입력을 단계별로 변화시키며 실제 입출력을 기록한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "센서 표시등은 켜지지만 릴레이가 동작하지 않으면 출력형식·공통선·전압과 접점배선을 확인한다."
+      ],
+      "safety": [
+        "배선 변경 전 전원을 차단하고 출력 액추에이터의 예기치 않은 움직임을 방지한다."
+      ],
+      "examFormats": [
+        "센서·릴레이·솔레노이드가 연결된 제어 신호 흐름을 쓰시오.",
+        "N/O와 N/C 접점을 회로 동작조건에 맞게 구분하시오."
+      ],
+      "requiredKeywords": [
+        "센서 신호",
+        "N/O·N/C",
+        "릴레이",
+        "솔레노이드",
+        "입출력",
+        "변위-단계선도"
+      ],
+      "traps": [
+        "N/O와 N/C를 현재 동작상태가 아니라 무조작 정상상태로 구분한다.",
+        "센서 출력의 허용전류를 확인하지 않고 부하를 직접 구동하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-SENSOR-RELAY-CIRCUIT"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010204",
+          "documentTitle": "센서 활용 기술",
+          "version": "14v3",
+          "pdfPage": null,
+          "printedPage": 98,
+          "figureNumber": null,
+          "performanceCriteria": "3-2 센서 활용을 위한 전기회로 설계: 센서 출력과 릴레이제어 회로의 정의·판단·작업절차",
+          "sourceFileHash": "4154bc962df85fb8f9b2b0a5cf48687ba8553d28f301c902959cac4acf30767a",
+          "sourceUrl": "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "센서 신호는 접점·릴레이 논리를 거쳐 솔레노이드와 액추에이터를 구동한다. N/O·N/C 접점, 센서 출력형식과 전원조건을 확인하고 변위-단계선도의 동작순서와 실제 입출력을 대조한다.",
+        "센서 전원과 출력형식, N/O·N/C 접점의 정상상태를 확인하고 변위-단계선도의 완료신호와 실제 입출력 순서를 대조해야 한다."
+      ],
+      "sourceReviewNote": "NCS 1503010204 인쇄 98쪽에서 시작하는 3-2 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-SENSOR-MAINTENANCE",
+      "title": "센서 점검과 이상조치",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-1",
+      "groupLabel": "s1-g10",
+      "learningGoals": [
+        "센서 점검과 이상조치의 핵심 원리와 필수 답안어를 설명한다.",
+        "센서 점검과 이상조치의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "센서 유지관리는 설치·검출·배선·전원·출력상태를 주기적으로 확인하고 이상 원인을 입력부터 출력까지 구분해 조치하는 활동이다.",
+      "principle": "센서는 설치상태·검출거리·검출물·오염·케이블·전원·출력신호를 주기적으로 확인한다. 충격과 과도한 체결력을 피하고 동력선·고압선과 배선을 분리하며, 이상 시 입력과 출력의 변화를 순서대로 확인한다. 검출거리와 대상 재질·크기, 오염, 체결력, 케이블 손상과 전기노이즈는 센서 오동작의 대표 원인이다. 동력선·고압선과 분리 배선하면 유도노이즈에 의한 오동작을 줄일 수 있다.",
+      "components": [
+        "설치방향·체결상태",
+        "검출거리·검출물",
+        "오염·충격·온도",
+        "케이블·커넥터",
+        "전원전압·출력신호"
+      ],
+      "procedure": [
+        "외관·설치·검출면과 검출물 상태를 확인한다.",
+        "검출거리와 정렬을 확인한다.",
+        "케이블·커넥터·전원전압을 확인한다.",
+        "검출물 변화에 따른 입력과 출력신호를 측정한다.",
+        "원인을 조치한 뒤 같은 조건으로 재시험하고 기록한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "불규칙 동작은 검출거리 경계, 오염, 케이블 접촉불량, 전원변동과 동력선 노이즈를 우선 확인한다."
+      ],
+      "safety": [
+        "센서 위치를 조정할 때 설비를 정지·격리하고 움직이는 부품과의 충돌을 방지한다."
+      ],
+      "examFormats": [
+        "근접센서가 불규칙하게 동작할 때 점검 항목을 쓰시오.",
+        "센서 배선 시 동력선과 분리해야 하는 이유를 설명하시오."
+      ],
+      "requiredKeywords": [
+        "설치상태",
+        "검출거리",
+        "오염",
+        "케이블",
+        "전원",
+        "출력신호"
+      ],
+      "traps": [
+        "출력 표시등만 보고 실제 제어기 입력까지 정상이라고 단정하지 않는다.",
+        "센서를 과도한 힘으로 체결하거나 케이블을 잡아당기지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-SENSOR-MAINTENANCE"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010204",
+          "documentTitle": "센서 활용 기술",
+          "version": "14v3",
+          "pdfPage": null,
+          "printedPage": 111,
+          "figureNumber": null,
+          "performanceCriteria": "4-1 센서의 점검 및 관리: 센서 점검과 이상조치의 정의·판단·작업절차",
+          "sourceFileHash": "4154bc962df85fb8f9b2b0a5cf48687ba8553d28f301c902959cac4acf30767a",
+          "sourceUrl": "https://drive.google.com/file/d/1GwpAK0UGS_123Kk02VvQZl2-BzoRazcc/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "센서는 설치상태·검출거리·검출물·오염·케이블·전원·출력신호를 주기적으로 확인한다. 충격과 과도한 체결력을 피하고 동력선·고압선과 배선을 분리하며, 이상 시 입력과 출력의 변화를 순서대로 확인한다.",
+        "검출거리와 대상 재질·크기, 오염, 체결력, 케이블 손상과 전기노이즈는 센서 오동작의 대표 원인이다. 동력선·고압선과 분리 배선하면 유도노이즈에 의한 오동작을 줄일 수 있다."
+      ],
+      "sourceReviewNote": "NCS 1503010204 인쇄 111쪽에서 시작하는 4-1 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-SYSTEM-GROUPING",
+      "title": "기계시스템 구성요소 그룹화",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-4",
+      "groupLabel": "s4-g07",
+      "learningGoals": [
+        "기계시스템 구성요소 그룹화의 핵심 원리와 필수 답안어를 설명한다.",
+        "기계시스템 구성요소 그룹화의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "기계시스템 그룹화는 하드웨어 구성요소를 구조·기능·공정·에너지 방식별 단위로 나누고 상호 인터페이스를 모델로 표현하는 작업이다.",
+      "principle": "기계시스템을 구조물·구동부·액추에이터·센서·제어기·에너지공급부로 나누고 공정 또는 기능·에너지원별로 그룹화한다. 그룹별 정격·제어방식·연결관계를 목록화하면 모델링과 부품선정의 기준이 된다. 구조물·구동부·액추에이터·센서·제어기·에너지공급부로 나누면 각 요소의 정격·제어방식·연결관계와 책임범위를 명확히 할 수 있다.",
+      "components": [
+        "구조물·가이드·프레임",
+        "모터·감속기·전달기구",
+        "공압·유압·전동 액추에이터",
+        "센서·스위치",
+        "PLC·릴레이·드라이브",
+        "전기·공압·유압 공급부"
+      ],
+      "procedure": [
+        "공정과 요구기능을 구분한다.",
+        "구성요소를 구조·기능·에너지원별로 그룹화한다.",
+        "각 요소의 종류·형식·모델·정격·제어방식을 기록한다.",
+        "기계·전기·유체 인터페이스를 표시한다.",
+        "블록도·목록·모델로 표현해 공유한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "그룹 경계와 인터페이스가 빠지면 부품은 나열되어도 신호·동력 전달관계를 검증하기 어렵다."
+      ],
+      "safety": [
+        "에너지원과 위험구역을 별도 그룹으로 표시해 격리점과 안전인터록을 확인한다."
+      ],
+      "examFormats": [
+        "자동화 설비의 구성요소를 기능별로 그룹화하시오.",
+        "공정별 부품목록에 포함해야 할 사양 항목을 쓰시오."
+      ],
+      "requiredKeywords": [
+        "구조물",
+        "구동부",
+        "액추에이터",
+        "센서",
+        "제어기",
+        "그룹화"
+      ],
+      "traps": [
+        "부품명만 나열하고 기능·에너지원·인터페이스를 생략하지 않는다.",
+        "센서와 제어기, 액추에이터를 같은 기능으로 묶지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-SYSTEM-GROUPING"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010201",
+          "documentTitle": "기계시스템 분석",
+          "version": "14v3",
+          "pdfPage": null,
+          "printedPage": 71,
+          "figureNumber": null,
+          "performanceCriteria": "3-1 기계 구성요소를 그룹화하고 모델링: 기계시스템 구성요소 그룹화의 정의·판단·작업절차",
+          "sourceFileHash": "34717f4b8c8df1db9e4681fd90985ce6293830d050f7d0dc44a9abcf66be2441",
+          "sourceUrl": "https://drive.google.com/file/d/1V9c8ORL0t5UbaDXbfYfeAZsNugH3dGQC/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "기계시스템을 구조물·구동부·액추에이터·센서·제어기·에너지공급부로 나누고 공정 또는 기능·에너지원별로 그룹화한다. 그룹별 정격·제어방식·연결관계를 목록화하면 모델링과 부품선정의 기준이 된다.",
+        "구조물·구동부·액추에이터·센서·제어기·에너지공급부로 나누면 각 요소의 정격·제어방식·연결관계와 책임범위를 명확히 할 수 있다."
+      ],
+      "sourceReviewNote": "NCS 1503010201 인쇄 71쪽에서 시작하는 3-1 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-PPE-SELECTION",
+      "title": "위험요인별 보호구 선정과 착용",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-2",
+      "groupLabel": "s2-g03",
+      "learningGoals": [
+        "위험요인별 보호구 선정과 착용의 핵심 원리와 필수 답안어를 설명한다.",
+        "위험요인별 보호구 선정과 착용의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "보호구 선정은 작업의 비산·분진·유해가스·소음·감전·낙하·용접광 위험을 확인하고 노출경로와 수준에 맞는 보호구를 고르는 과정이다.",
+      "principle": "보호구는 비산·분진·유해가스·소음·감전·낙하·용접광 등 위험요인에 맞춰 선정하고, 사용 전 손상·유효상태·밀착을 확인한 뒤 위험 노출 전에 착용한다. 보호구만으로 위험을 제거했다고 보지 않는다. 보호구는 위험 제거·격리·환기·방호 같은 공학적·관리적 대책을 보완하는 최후 방어수단이다. 사용 전 손상·오염·유효상태·밀착과 작업 적합성을 확인한다.",
+      "components": [
+        "비산: 보안경·안면보호구",
+        "분진·유해가스: 위험성평가에 맞는 호흡보호구",
+        "소음: 청력보호구",
+        "감전: 절연용 보호구",
+        "낙하: 안전모·필요 시 추락방호",
+        "용접광·불티: 용접면·보호복·장갑"
+      ],
+      "procedure": [
+        "작업과 물질의 위험요인·노출경로를 확인한다.",
+        "제거·격리·환기·방호대책을 먼저 적용한다.",
+        "남은 위험에 맞는 인증·적합 보호구를 선정한다.",
+        "손상·오염·밀착·유효상태를 점검한다.",
+        "위험노출 전에 착용하고 사용 후 세척·보관한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "호흡보호구는 물질 종류·농도·산소상태에 따라 형식이 달라지므로 외형만 보고 선정하지 않는다."
+      ],
+      "safety": [
+        "법정 등급·교체주기와 필터 선택은 현행 공식기준·위험성평가·제조사 지침을 따른다."
+      ],
+      "examFormats": [
+        "작업별 위험요인과 필요한 보호구를 연결하시오.",
+        "호흡보호구 사용 전 확인해야 할 사항을 쓰시오."
+      ],
+      "requiredKeywords": [
+        "위험요인",
+        "보호구 선정",
+        "사용 전 점검",
+        "밀착",
+        "노출 전 착용",
+        "공학적 대책"
+      ],
+      "traps": [
+        "보호구 착용만으로 위험원이 제거되었다고 보지 않는다.",
+        "모든 분진·가스에 같은 마스크를 사용한다고 쓰지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-PPE-SELECTION"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010122",
+          "documentTitle": "조립안전관리",
+          "version": "16v1",
+          "pdfPage": null,
+          "printedPage": 19,
+          "figureNumber": null,
+          "performanceCriteria": "2-1 안전보호 장구 착용과 안전기준에 따른 작업 수행: 위험요인별 보호구 선정과 착용의 정의·판단·작업절차",
+          "sourceFileHash": "5eb5b16dd51a25d7814d054c89e0266eee4378d1200e74a2e9f0ae124d84e750",
+          "sourceUrl": "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "보호구는 비산·분진·유해가스·소음·감전·낙하·용접광 등 위험요인에 맞춰 선정하고, 사용 전 손상·유효상태·밀착을 확인한 뒤 위험 노출 전에 착용한다. 보호구만으로 위험을 제거했다고 보지 않는다.",
+        "보호구는 위험 제거·격리·환기·방호 같은 공학적·관리적 대책을 보완하는 최후 방어수단이다. 사용 전 손상·오염·유효상태·밀착과 작업 적합성을 확인한다."
+      ],
+      "sourceReviewNote": "NCS 1503010122 인쇄 19쪽에서 시작하는 2-1 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-SAFETY-PREVENTION",
+      "title": "작업 전 안전점검과 사고예방",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-2",
+      "groupLabel": "s2-g03",
+      "learningGoals": [
+        "작업 전 안전점검과 사고예방의 핵심 원리와 필수 답안어를 설명한다.",
+        "작업 전 안전점검과 사고예방의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "작업 전 안전점검은 위험요인과 에너지원, 방호장치·작업통로·표지·비상대응 상태를 확인해 사고를 예방하는 활동이다.",
+      "principle": "작업 전 위험요인과 에너지원·통로·방호장치·표지·비상연락을 확인하고, 작업 중 기준 준수 여부를 점검한다. 이상은 즉시 작업을 멈추고 격리·보고·시정한 뒤 재발방지 기록을 남긴다. 이상 발견 시 작업을 계속하며 관찰하지 않고 즉시 정지한 뒤 에너지를 격리하고 보고·시정·재확인한다. 작업 재개는 원인과 방호상태를 확인한 뒤 승인된 절차에 따른다.",
+      "components": [
+        "위험요인·작업절차",
+        "전기·압력·중력 등 에너지원",
+        "방호장치·비상정지",
+        "통로·조명·정리정돈",
+        "안전표지·비상연락",
+        "작업중지·격리·보고·재발방지"
+      ],
+      "procedure": [
+        "작업내용과 위험요인을 확인한다.",
+        "에너지원과 격리점·잔류에너지를 확인한다.",
+        "방호장치·비상정지·공구·통로·표지를 점검한다.",
+        "이상 발견 시 작업을 중지하고 격리·보고한다.",
+        "원인을 시정하고 안전기능을 재확인한다.",
+        "승인 후 작업을 재개하고 재발방지 기록을 남긴다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "방호장치가 해제되었거나 에너지 격리가 불완전하면 작업을 시작하지 않는다."
+      ],
+      "safety": [
+        "재해보고 기한 등 법령 수치는 최신 공식근거 확인 없이 답안으로 고정하지 않는다."
+      ],
+      "examFormats": [
+        "기계조립 작업 전 안전점검 항목을 쓰시오.",
+        "이상 발견부터 작업 재개까지의 조치 순서를 쓰시오."
+      ],
+      "requiredKeywords": [
+        "위험요인",
+        "에너지원",
+        "방호장치",
+        "작업중지",
+        "격리·보고",
+        "재발방지"
+      ],
+      "traps": [
+        "이상 발견 후 원인 확인 없이 리셋하여 재가동하지 않는다.",
+        "작업중지와 보고만 하고 시정·재확인을 생략하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-SAFETY-PREVENTION"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010122",
+          "documentTitle": "조립안전관리",
+          "version": "16v1",
+          "pdfPage": null,
+          "printedPage": 28,
+          "figureNumber": null,
+          "performanceCriteria": "2-2 안전기준 준수 사항 적용과 안전사고 예방 활동: 작업 전 안전점검과 사고예방의 정의·판단·작업절차",
+          "sourceFileHash": "5eb5b16dd51a25d7814d054c89e0266eee4378d1200e74a2e9f0ae124d84e750",
+          "sourceUrl": "https://drive.google.com/file/d/1OZWIVylCHqqinulTcbkOINdQtpCN9v4q/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "작업 전 위험요인과 에너지원·통로·방호장치·표지·비상연락을 확인하고, 작업 중 기준 준수 여부를 점검한다. 이상은 즉시 작업을 멈추고 격리·보고·시정한 뒤 재발방지 기록을 남긴다.",
+        "이상 발견 시 작업을 계속하며 관찰하지 않고 즉시 정지한 뒤 에너지를 격리하고 보고·시정·재확인한다. 작업 재개는 원인과 방호상태를 확인한 뒤 승인된 절차에 따른다."
+      ],
+      "sourceReviewNote": "NCS 1503010122 인쇄 28쪽에서 시작하는 2-2 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-JIG-FIXTURE",
+      "title": "지그와 고정구의 기능",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-3",
+      "groupLabel": "s3-g07",
+      "learningGoals": [
+        "지그와 고정구의 기능의 핵심 원리와 필수 답안어를 설명한다.",
+        "지그와 고정구의 기능의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "지그와 고정구는 공작물의 위치를 정하고 지지·고정하여 작업 재현성을 높이는 치공구이며, 지그는 공구 안내 기능까지 갖는다는 점이 다르다.",
+      "principle": "지그는 공작물을 위치·고정하면서 부시 등으로 공구를 안내하고, 고정구는 공작물을 위치·고정하지만 공구를 직접 안내하지 않는다. 위치결정·지지·클램핑·공구 및 작업공간 간섭을 함께 확인한다. 두 치공구 모두 위치결정·지지·클램핑과 작업공간 확보가 기본이지만, 드릴 부시처럼 절삭공구의 경로를 직접 안내하면 지그로 구분한다.",
+      "components": [
+        "위치결정구",
+        "지지구",
+        "클램프",
+        "공구 안내부시",
+        "몸체와 기준면"
+      ],
+      "procedure": [
+        "도면과 조립순서에서 기준면·위치를 확인한다.",
+        "공작물을 안정적으로 지지·위치결정한다.",
+        "변형 없이 필요한 힘으로 클램핑한다.",
+        "공구·부품·작업자의 간섭과 접근성을 확인한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "위치결정이 불완전하면 반복정밀도가 나빠지고 과도한 클램핑은 공작물 변형을 만든다."
+      ],
+      "safety": [
+        "치공구와 공작물의 체결상태를 확인한 뒤 공구를 작동한다."
+      ],
+      "examFormats": [
+        "지그와 고정구의 차이를 공구 안내 여부로 설명하시오.",
+        "치공구의 기본 기능 세 가지를 쓰시오."
+      ],
+      "requiredKeywords": [
+        "지그",
+        "고정구",
+        "공구 안내",
+        "위치결정",
+        "지지",
+        "클램핑"
+      ],
+      "traps": [
+        "지그와 고정구를 모두 공구를 안내하는 장치라고 쓰지 않는다.",
+        "클램핑만 하고 위치결정·지지를 생략하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-JIG-FIXTURE"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010120",
+          "documentTitle": "기계구동장치 조립",
+          "version": "16v1",
+          "pdfPage": null,
+          "printedPage": 14,
+          "figureNumber": null,
+          "performanceCriteria": "1-2 조립 치공구 활용: 지그와 고정구의 기능의 정의·판단·작업절차",
+          "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+          "sourceUrl": "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "지그는 공작물을 위치·고정하면서 부시 등으로 공구를 안내하고, 고정구는 공작물을 위치·고정하지만 공구를 직접 안내하지 않는다. 위치결정·지지·클램핑·공구 및 작업공간 간섭을 함께 확인한다.",
+        "두 치공구 모두 위치결정·지지·클램핑과 작업공간 확보가 기본이지만, 드릴 부시처럼 절삭공구의 경로를 직접 안내하면 지그로 구분한다."
+      ],
+      "sourceReviewNote": "NCS 1503010120 인쇄 14쪽에서 시작하는 1-2 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-DRIVE-PART-INSPECTION",
+      "title": "구동부품 도면검사",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-3",
+      "groupLabel": "s3-g05",
+      "learningGoals": [
+        "구동부품 도면검사의 핵심 원리와 필수 답안어를 설명한다.",
+        "구동부품 도면검사의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "구동부품 검사는 도면의 치수·기하공차, 표면거칠기와 끼워맞춤 요구를 측정값과 비교하여 조립 적합성을 판정하는 작업이다.",
+      "principle": "구동부품은 도면의 치수공차·기하공차·표면거칠기·끼워맞춤 요구를 확인하고 알맞은 측정기와 보조구로 측정한다. 측정값을 검사기준과 비교해 합부를 판정하고 기록한다. 축 외경, 베어링 구멍, 원주 흔들림과 표면상태는 각각 다른 측정기와 기준이 필요하다. 측정값은 도면·검사기준에 따라 합격·불합격으로 판정하고 측정기와 조건을 함께 기록한다.",
+      "components": [
+        "치수공차·기하공차",
+        "표면거칠기",
+        "축·구멍 끼워맞춤",
+        "외측·내측 측정기",
+        "다이얼게이지와 V블록",
+        "검사성적서"
+      ],
+      "procedure": [
+        "도면번호·개정과 검사대상 치수·공차를 확인한다.",
+        "측정범위·분해능에 맞는 측정기와 보조구를 선정한다.",
+        "영점과 측정면 청결을 확인하고 반복 측정한다.",
+        "도면공차·끼워맞춤·거칠기 요구와 비교해 합부를 판정한다.",
+        "측정값·측정기·조건·판정을 기록한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "축 외경은 외측 마이크로미터, 구멍은 내측 마이크로미터·실린더 게이지, 흔들림은 다이얼게이지를 사용한다."
+      ],
+      "safety": [
+        "회전체는 정지·고정하고 무거운 부품은 낙하방지 후 측정한다."
+      ],
+      "examFormats": [
+        "축과 베어링 끼워맞춤부 검사에 필요한 도면정보와 측정기를 쓰시오.",
+        "측정값으로 구동부품의 합부를 판정하는 순서를 쓰시오."
+      ],
+      "requiredKeywords": [
+        "치수공차",
+        "기하공차",
+        "표면거칠기",
+        "끼워맞춤",
+        "측정기",
+        "합부판정"
+      ],
+      "traps": [
+        "치수만 맞으면 기하공차와 표면거칠기도 합격이라고 판단하지 않는다.",
+        "측정값만 기록하고 도면 개정·측정기 번호를 누락하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-DRIVE-PART-INSPECTION"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010120",
+          "documentTitle": "기계구동장치 조립",
+          "version": "16v1",
+          "pdfPage": null,
+          "printedPage": 23,
+          "figureNumber": null,
+          "performanceCriteria": "2-1 구동 부품 검사: 구동부품 도면검사의 정의·판단·작업절차",
+          "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+          "sourceUrl": "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "구동부품은 도면의 치수공차·기하공차·표면거칠기·끼워맞춤 요구를 확인하고 알맞은 측정기와 보조구로 측정한다. 측정값을 검사기준과 비교해 합부를 판정하고 기록한다.",
+        "축 외경, 베어링 구멍, 원주 흔들림과 표면상태는 각각 다른 측정기와 기준이 필요하다. 측정값은 도면·검사기준에 따라 합격·불합격으로 판정하고 측정기와 조건을 함께 기록한다."
+      ],
+      "sourceReviewNote": "NCS 1503010120 인쇄 23쪽에서 시작하는 2-1 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-ASSEMBLY-STATE",
+      "title": "구동장치 조립상태 검사",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-3",
+      "groupLabel": "s3-g05",
+      "learningGoals": [
+        "구동장치 조립상태 검사의 핵심 원리와 필수 답안어를 설명한다.",
+        "구동장치 조립상태 검사의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "구동장치 조립상태 검사는 시운전 전에 조립도와 공정순서대로 부품이 청결하고 올바른 방향·끼워맞춤·간극·정렬·윤활상태로 조립되었는지 확인하는 작업이다.",
+      "principle": "시운전 전 부품 방향·청결·끼워맞춤·베어링 압입부·체결과 풀림방지·간극·축정렬·윤활상태를 조립도와 공정순서에 맞춰 확인하고 검사값을 기록한다. 베어링 압입력은 끼워맞추는 링에 직접 가해야 하며 전동체를 거쳐 전달하면 궤도와 전동체를 손상시킬 수 있다.",
+      "components": [
+        "부품 방향·청결",
+        "끼워맞춤·베어링 압입",
+        "볼트 체결·풀림방지",
+        "간극·엔드플레이",
+        "축정렬·원활한 회전",
+        "윤활유·그리스 상태"
+      ],
+      "procedure": [
+        "조립도·부품표·공정순서를 대조한다.",
+        "부품 방향·청결과 끼워맞춤·압입부를 확인한다.",
+        "체결토크와 풀림방지 상태를 확인한다.",
+        "간극·엔드플레이·축정렬을 측정한다.",
+        "윤활과 수동회전 상태를 확인하고 기록한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "베어링은 축에 끼울 때 내륜, 하우징에 끼울 때 외륜에 압입력을 가해 전동체를 통과시키지 않는다."
+      ],
+      "safety": [
+        "시운전 전 방호커버와 체결상태를 확인하고 회전체에 공구가 남지 않게 한다."
+      ],
+      "examFormats": [
+        "구동장치 시운전 전 조립상태 점검 항목을 쓰시오.",
+        "베어링 조립 시 전동체에 하중이 전달되지 않게 하는 원칙을 설명하시오."
+      ],
+      "requiredKeywords": [
+        "조립도",
+        "청결",
+        "끼워맞춤",
+        "체결",
+        "간극",
+        "축정렬"
+      ],
+      "traps": [
+        "베어링 반대쪽 링을 두드려 전동체로 압입력을 전달하지 않는다.",
+        "조립 완료를 외관만 보고 간극·정렬·윤활 확인 없이 판정하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-ASSEMBLY-STATE"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010120",
+          "documentTitle": "기계구동장치 조립",
+          "version": "16v1",
+          "pdfPage": null,
+          "printedPage": 42,
+          "figureNumber": null,
+          "performanceCriteria": "3-1 구동 장치 조립 상태 확인 및 검사: 구동장치 조립상태 검사의 정의·판단·작업절차",
+          "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+          "sourceUrl": "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "시운전 전 부품 방향·청결·끼워맞춤·베어링 압입부·체결과 풀림방지·간극·축정렬·윤활상태를 조립도와 공정순서에 맞춰 확인하고 검사값을 기록한다.",
+        "베어링 압입력은 끼워맞추는 링에 직접 가해야 하며 전동체를 거쳐 전달하면 궤도와 전동체를 손상시킬 수 있다."
+      ],
+      "sourceReviewNote": "NCS 1503010120 인쇄 42쪽에서 시작하는 3-1 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-DYNAMIC-CHECK",
+      "title": "구동장치 동작상태 시운전",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-4",
+      "groupLabel": "s4-g06",
+      "learningGoals": [
+        "구동장치 동작상태 시운전의 핵심 원리와 필수 답안어를 설명한다.",
+        "구동장치 동작상태 시운전의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "구동장치 동작검사는 조립 후 무부하·저속에서 회전방향과 소음·진동·온도·누설·전류를 확인하고 기준과 비교하는 시운전이다.",
+      "principle": "동작검사는 무부하·저속에서 시작해 회전방향, 이상음, 진동, 온도, 누설, 전류와 체결상태를 확인하고 기준값과 비교한다. 이상이 있으면 정지·에너지차단 후 원인을 수정하고 같은 조건으로 재시험한다. 소형장치는 수동회전으로 걸림을 먼저 확인하고, 대형장치는 무부하로 짧게 기동해 회전상태와 간섭을 확인한 뒤 단계적으로 운전한다.",
+      "components": [
+        "수동회전·무부하·저속",
+        "회전방향",
+        "이상음·진동",
+        "베어링·하우징 온도",
+        "오일·공기·유압 누설",
+        "전동기 전류·체결상태"
+      ],
+      "procedure": [
+        "방호·윤활·체결·공구제거와 수동회전을 확인한다.",
+        "무부하·저속 또는 짧은 기동으로 회전방향을 확인한다.",
+        "이상음·진동·간섭·누설·전류를 확인한다.",
+        "정해진 시간 동안 온도와 상태변화를 기록한다.",
+        "이상 시 정지·에너지차단 후 원인을 수정하고 같은 조건으로 재시험한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "진동과 발열 증가는 정렬불량·간섭·윤활불량·과도한 체결·베어링 손상 등을 의심한다."
+      ],
+      "safety": [
+        "회전체 방호를 설치하고 이상 발생 시 측정하려고 접근하기보다 먼저 정지·격리한다."
+      ],
+      "examFormats": [
+        "구동장치 최초 시운전의 점검순서를 쓰시오.",
+        "시운전 중 진동과 발열이 증가할 때 우선 조치를 쓰시오."
+      ],
+      "requiredKeywords": [
+        "무부하·저속",
+        "회전방향",
+        "이상음·진동",
+        "온도",
+        "정지·차단",
+        "재시험"
+      ],
+      "traps": [
+        "최초부터 정격부하·최고속도로 운전하지 않는다.",
+        "이상음이 있어도 운전하며 체결부를 조정하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-DYNAMIC-CHECK"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1503010120",
+          "documentTitle": "기계구동장치 조립",
+          "version": "16v1",
+          "pdfPage": null,
+          "printedPage": 48,
+          "figureNumber": null,
+          "performanceCriteria": "3-2 구동 장치 동작 상태 검사: 구동장치 동작상태 시운전의 정의·판단·작업절차",
+          "sourceFileHash": "a896fe6db7a7378c8a5b67081613dcdeaad90e6cf8fbe8c40c1adf97d46acd33",
+          "sourceUrl": "https://drive.google.com/file/d/1E_-Y6dLCjPBTOReDk4RAQ9Xetohp0gc6/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "동작검사는 무부하·저속에서 시작해 회전방향, 이상음, 진동, 온도, 누설, 전류와 체결상태를 확인하고 기준값과 비교한다. 이상이 있으면 정지·에너지차단 후 원인을 수정하고 같은 조건으로 재시험한다.",
+        "소형장치는 수동회전으로 걸림을 먼저 확인하고, 대형장치는 무부하로 짧게 기동해 회전상태와 간섭을 확인한 뒤 단계적으로 운전한다."
+      ],
+      "sourceReviewNote": "NCS 1503010120 인쇄 48쪽에서 시작하는 3-2 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-WELD-VERTICAL",
+      "title": "수직 자세 맞대기용접",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-2",
+      "groupLabel": "s2-g02",
+      "learningGoals": [
+        "수직 자세 맞대기용접의 핵심 원리와 필수 답안어를 설명한다.",
+        "수직 자세 맞대기용접의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "수직 자세 맞대기용접은 용접선이 수직으로 놓인 상태에서 중력에 의한 용융지 처짐을 제어하며 수행하는 맞대기용접이다.",
+      "principle": "수직 자세는 WPS에서 모재·이음형상·용접봉·전원·극성·패스와 전후처리를 확인하고 용융지가 처지지 않도록 아크길이·봉각도·운봉·속도를 조절한다. 구체 전류·온도는 WPS 조건을 따른다. WPS에서 모재·이음·용접재료·극성·자세·패스·예열과 층간조건을 확인하고, 아크길이·봉각도·운봉폭·속도를 조절해 용융지를 지지한다.",
+      "components": [
+        "WPS와 자세·진행방향",
+        "모재·이음·용접봉·극성",
+        "루트·충전·마감 패스",
+        "아크길이·봉각도·운봉·속도",
+        "층간청소와 온도관리"
+      ],
+      "procedure": [
+        "WPS의 재료·이음·자세·전기조건을 확인한다.",
+        "모재를 고정하고 루트간격·가용접 상태를 확인한다.",
+        "짧고 안정된 아크와 적절한 봉각도·운봉으로 용융지를 제어한다.",
+        "각 패스 후 슬래그를 제거하고 층간조건을 확인한다.",
+        "외관과 요구검사를 수행한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "용융지 처짐·오버랩은 과도한 용융지, 부적절한 각도·운봉·속도를 점검한다."
+      ],
+      "safety": [
+        "구체 전류·예열·층간온도는 모재·두께·용접봉과 적용 WPS를 따른다."
+      ],
+      "examFormats": [
+        "수직 자세 용접 전 WPS에서 확인할 항목을 쓰시오.",
+        "수직 자세에서 용융지 처짐을 줄이는 조정요소를 쓰시오."
+      ],
+      "requiredKeywords": [
+        "수직 자세",
+        "WPS",
+        "아크길이",
+        "봉각도",
+        "운봉",
+        "용융지"
+      ],
+      "traps": [
+        "아래보기 조건의 전류·운봉을 수직자세에 그대로 적용하지 않는다.",
+        "용융지 처짐을 막기 위해 아크를 과도하게 길게 하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-WELD-VERTICAL"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1601050111",
+          "documentTitle": "피복아크용접 맞대기용접",
+          "version": "21v3",
+          "pdfPage": null,
+          "printedPage": 68,
+          "figureNumber": null,
+          "performanceCriteria": "3-1 수직 자세 용접: 수직 자세 맞대기용접의 정의·판단·작업절차",
+          "sourceFileHash": "d89b55bf8fd32dabd1aa7eaf61209c40ceecb88fba466a35599be93eb31b9ace",
+          "sourceUrl": "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "수직 자세는 WPS에서 모재·이음형상·용접봉·전원·극성·패스와 전후처리를 확인하고 용융지가 처지지 않도록 아크길이·봉각도·운봉·속도를 조절한다. 구체 전류·온도는 WPS 조건을 따른다.",
+        "WPS에서 모재·이음·용접재료·극성·자세·패스·예열과 층간조건을 확인하고, 아크길이·봉각도·운봉폭·속도를 조절해 용융지를 지지한다."
+      ],
+      "sourceReviewNote": "NCS 1601050111 인쇄 68쪽에서 시작하는 3-1 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-WELD-HORIZONTAL",
+      "title": "수평 자세 맞대기용접",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-2",
+      "groupLabel": "s2-g02",
+      "learningGoals": [
+        "수평 자세 맞대기용접의 핵심 원리와 필수 답안어를 설명한다.",
+        "수평 자세 맞대기용접의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "수평 자세 맞대기용접은 용접축이 수평이고 용접면이 수직에 가까운 상태에서 아래쪽으로 쏠리는 용융금속을 제어하며 수행하는 용접이다.",
+      "principle": "수평 자세는 WPS의 이음·모재·용접재료·자세 기호를 확인하고 중력으로 용융금속이 아래쪽에 치우치지 않도록 봉각도·운봉폭·속도와 층간 청소를 관리한다. 봉각도·운봉폭·속도와 패스배치를 조절해 상부 언더컷과 하부 오버랩·처짐을 예방한다. 작업조건은 WPS, 절차의 적정성은 PQR, 작업자 자격은 WPQ로 구분한다.",
+      "components": [
+        "WPS 작업 용접조건",
+        "PQR 절차인정 시험기록",
+        "WPQ 용접사 자격기록",
+        "봉각도·운봉폭·속도",
+        "상부 언더컷·하부 오버랩"
+      ],
+      "procedure": [
+        "WPS의 이음·재료·자세와 전기조건을 확인한다.",
+        "모재를 수평자세로 고정하고 가용접·루트상태를 확인한다.",
+        "중력 방향을 고려해 봉각도·운봉폭·속도를 조절한다.",
+        "패스간 슬래그를 제거하고 상·하부 비드형상을 확인한다.",
+        "외관과 요구검사를 수행한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "상부 언더컷은 아크·각도·속도를, 하부 오버랩은 용융지 과대와 진행속도를 확인한다."
+      ],
+      "safety": [
+        "용접조건 수치는 적용 WPS를 따르고 작업물 고정·환기·화재방호를 확인한다."
+      ],
+      "examFormats": [
+        "수평 자세 용접에서 비드 쏠림을 줄이는 조정요소를 쓰시오.",
+        "WPS·PQR·WPQ의 역할을 구분하시오."
+      ],
+      "requiredKeywords": [
+        "수평 자세",
+        "WPS",
+        "봉각도",
+        "운봉폭",
+        "속도",
+        "층간 청소"
+      ],
+      "traps": [
+        "WPS·PQR·WPQ를 모두 같은 작업지시서라고 쓰지 않는다.",
+        "비드 쏠림을 전류 하나만으로 조정하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-WELD-HORIZONTAL"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1601050111",
+          "documentTitle": "피복아크용접 맞대기용접",
+          "version": "21v3",
+          "pdfPage": null,
+          "printedPage": 83,
+          "figureNumber": null,
+          "performanceCriteria": "4-1 수평 자세 용접: 수평 자세 맞대기용접의 정의·판단·작업절차",
+          "sourceFileHash": "d89b55bf8fd32dabd1aa7eaf61209c40ceecb88fba466a35599be93eb31b9ace",
+          "sourceUrl": "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "수평 자세는 WPS의 이음·모재·용접재료·자세 기호를 확인하고 중력으로 용융금속이 아래쪽에 치우치지 않도록 봉각도·운봉폭·속도와 층간 청소를 관리한다.",
+        "봉각도·운봉폭·속도와 패스배치를 조절해 상부 언더컷과 하부 오버랩·처짐을 예방한다. 작업조건은 WPS, 절차의 적정성은 PQR, 작업자 자격은 WPQ로 구분한다."
+      ],
+      "sourceReviewNote": "NCS 1601050111 인쇄 83쪽에서 시작하는 4-1 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
+    },
+    {
+      "id": "PCON-NCS-WELD-OVERHEAD",
+      "title": "위보기 자세 맞대기용접",
+      "contentRole": "supplemental",
+      "labels": [
+        "predicted_exam"
+      ],
+      "subjectLabel": "subject-2",
+      "groupLabel": "s2-g02",
+      "learningGoals": [
+        "위보기 자세 맞대기용접의 핵심 원리와 필수 답안어를 설명한다.",
+        "위보기 자세 맞대기용접의 선정·점검·작업순서를 필답형 답안으로 구성한다."
+      ],
+      "definition": "위보기 자세 맞대기용접은 작업자 위쪽의 이음부를 용접하면서 중력에 의한 용융금속 낙하와 전기·화상 위험을 통제하는 용접이다.",
+      "principle": "위보기 자세는 WPS와 자세기호를 확인하고 낙하·화상 위험을 통제한 뒤 짧은 아크와 과도하지 않은 용융지로 작업한다. 전원차단·절연·보호구와 상부 용융금속 낙하구역 통제가 특히 중요하다. 짧고 안정된 아크와 과도하지 않은 용융지 크기로 낙하를 줄이고, 얼굴·목·상체 보호와 절연·상부 낙하구역 통제가 중요하다. 구체 조건은 WPS를 따른다.",
+      "components": [
+        "WPS와 위보기 자세기호",
+        "짧은 아크·작은 용융지",
+        "봉각도·운봉·속도",
+        "용접면·보호복·장갑·목 보호",
+        "절연·환기·낙하구역 통제"
+      ],
+      "procedure": [
+        "WPS와 이음·재료·자세·전기조건을 확인한다.",
+        "작업발판·모재고정·절연과 낙하구역을 점검한다.",
+        "얼굴·목·상체를 포함한 보호구를 착용한다.",
+        "짧은 아크와 작은 용융지를 유지하며 패스한다.",
+        "층간청소 후 외관과 요구검사를 수행한다."
+      ],
+      "formula": [],
+      "diagnosis": [
+        "용락·낙하는 과도한 용융지·긴 아크·부적절한 속도와 이음조건을 확인한다."
+      ],
+      "safety": [
+        "젖은 장소·손상 케이블을 피하고 상부 용융금속의 낙하범위에 사람과 가연물이 없게 한다."
+      ],
+      "examFormats": [
+        "위보기 자세 용접의 주요 위험과 보호조치를 쓰시오.",
+        "위보기 자세에서 아크길이와 용융지 크기를 관리하는 이유를 쓰시오."
+      ],
+      "requiredKeywords": [
+        "위보기 자세",
+        "WPS",
+        "짧은 아크",
+        "용융지",
+        "절연",
+        "낙하구역 통제"
+      ],
+      "traps": [
+        "위보기에서 큰 용융지를 한 번에 만들지 않는다.",
+        "얼굴만 가리고 목·몸통·주변 낙하구역 보호를 생략하지 않는다."
+      ],
+      "relatedPastQuestionIds": [],
+      "relatedPredictedQuestionIds": [
+        "EXP-NCS-WELD-OVERHEAD"
+      ],
+      "existingLessonId": null,
+      "theoryTreatment": "NCS 세부학습단위 직접 보강 레슨 (+NCS 보강)",
+      "visualAidIds": [],
+      "ncsSources": [
+        {
+          "sourceKind": "ncs",
+          "ncsCode": "1601050111",
+          "documentTitle": "피복아크용접 맞대기용접",
+          "version": "21v3",
+          "pdfPage": null,
+          "printedPage": 98,
+          "figureNumber": null,
+          "performanceCriteria": "5-1 위보기 자세 용접: 위보기 자세 맞대기용접의 정의·판단·작업절차",
+          "sourceFileHash": "d89b55bf8fd32dabd1aa7eaf61209c40ceecb88fba466a35599be93eb31b9ace",
+          "sourceUrl": "https://drive.google.com/file/d/1EJGtPKaX9BqGGK_yaGOG0B6ZYAAyuiXO/view"
+        }
+      ],
+      "ncsLearningPoints": [
+        "위보기 자세는 WPS와 자세기호를 확인하고 낙하·화상 위험을 통제한 뒤 짧은 아크와 과도하지 않은 용융지로 작업한다. 전원차단·절연·보호구와 상부 용융금속 낙하구역 통제가 특히 중요하다.",
+        "짧고 안정된 아크와 과도하지 않은 용융지 크기로 낙하를 줄이고, 얼굴·목·상체 보호와 절연·상부 낙하구역 통제가 중요하다. 구체 조건은 WPS를 따른다."
+      ],
+      "sourceReviewNote": "NCS 1601050111 인쇄 98쪽에서 시작하는 5-1 학습단위를 직접 대조했다. 문제는 NCS 원문을 그대로 복제하지 않고 텍스트만으로 답안조건이 완결되도록 자체 구성했다. 법령·표준·제조사·WPS별 수치는 고정 답안으로 사용하지 않는다.",
+      "contentStatus": "published"
     }
   ],
   "studyCategories": [
@@ -27004,7 +31330,19 @@
         "EXP-SUP-031",
         "EXP-SUP-035",
         "EXP-SUP-037",
-        "EXP-SUP-039"
+        "EXP-SUP-039",
+        "EXP-NCS-MEASURE-SELECT",
+        "EXP-NCS-DRAWING-MEASUREMENT-ELEMENTS",
+        "EXP-NCS-BRAKE-CHARACTERISTICS",
+        "EXP-NCS-WELD-NDT",
+        "EXP-NCS-HYDRAULIC-VALVE-SELECTION",
+        "EXP-NCS-ELECTROHYDRAULIC-CIRCUIT",
+        "EXP-NCS-HYDRAULIC-AUXILIARY-CONTROLS",
+        "EXP-NCS-PNEUMATIC-LOGIC",
+        "EXP-NCS-SENSOR-RELAY-CIRCUIT",
+        "EXP-NCS-SYSTEM-GROUPING",
+        "EXP-NCS-PPE-SELECTION",
+        "EXP-NCS-DRIVE-PART-INSPECTION"
       ],
       "conceptIds": [
         "PCON-004",
@@ -27037,7 +31375,19 @@
         "PCON-SUP-031",
         "PCON-SUP-035",
         "PCON-SUP-037",
-        "PCON-SUP-039"
+        "PCON-SUP-039",
+        "PCON-NCS-MEASURE-SELECT",
+        "PCON-NCS-DRAWING-MEASUREMENT-ELEMENTS",
+        "PCON-NCS-BRAKE-CHARACTERISTICS",
+        "PCON-NCS-WELD-NDT",
+        "PCON-NCS-HYDRAULIC-VALVE-SELECTION",
+        "PCON-NCS-ELECTROHYDRAULIC-CIRCUIT",
+        "PCON-NCS-HYDRAULIC-AUXILIARY-CONTROLS",
+        "PCON-NCS-PNEUMATIC-LOGIC",
+        "PCON-NCS-SENSOR-RELAY-CIRCUIT",
+        "PCON-NCS-SYSTEM-GROUPING",
+        "PCON-NCS-PPE-SELECTION",
+        "PCON-NCS-DRIVE-PART-INSPECTION"
       ]
     },
     {
@@ -27236,7 +31586,11 @@
         "EXP-BAL-DEF-TPM",
         "EXP-BAL-DEF-MAINTENANCE-HISTORY",
         "EXP-BAL-DEF-BATHTUB",
-        "EXP-BAL-DEF-MTBF-MTTR"
+        "EXP-BAL-DEF-MTBF-MTTR",
+        "EXP-NCS-JIG-FIXTURE",
+        "EXP-NCS-WELD-VERTICAL",
+        "EXP-NCS-WELD-HORIZONTAL",
+        "EXP-NCS-WELD-OVERHEAD"
       ],
       "conceptIds": [
         "PCON-003",
@@ -27277,7 +31631,11 @@
         "PCON-SUP-035",
         "PCON-SUP-036",
         "PCON-SUP-039",
-        "PCON-SUP-040"
+        "PCON-SUP-040",
+        "PCON-NCS-JIG-FIXTURE",
+        "PCON-NCS-WELD-VERTICAL",
+        "PCON-NCS-WELD-HORIZONTAL",
+        "PCON-NCS-WELD-OVERHEAD"
       ]
     },
     {
@@ -27362,7 +31720,18 @@
         "EXP-SUP-041",
         "EXP-SUP-042",
         "EXP-SUP-043",
-        "EXP-BAL-PROC-BRAKE-LINING"
+        "EXP-BAL-PROC-BRAKE-LINING",
+        "EXP-NCS-DRAWING-REVISION",
+        "EXP-NCS-WELD-DEFECT-ESTIMATION",
+        "EXP-NCS-WELD-REPAIR",
+        "EXP-NCS-HYDRAULIC-SYSTEM-BUILD",
+        "EXP-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY",
+        "EXP-NCS-PNEUMATIC-COMMISSIONING",
+        "EXP-NCS-PNEUMATIC-TROUBLESHOOTING",
+        "EXP-NCS-SENSOR-MAINTENANCE",
+        "EXP-NCS-SAFETY-PREVENTION",
+        "EXP-NCS-ASSEMBLY-STATE",
+        "EXP-NCS-DYNAMIC-CHECK"
       ],
       "conceptIds": [
         "PCON-002",
@@ -27404,7 +31773,18 @@
         "PCON-SUP-038",
         "PCON-SUP-041",
         "PCON-SUP-042",
-        "PCON-SUP-043"
+        "PCON-SUP-043",
+        "PCON-NCS-DRAWING-REVISION",
+        "PCON-NCS-WELD-DEFECT-ESTIMATION",
+        "PCON-NCS-WELD-REPAIR",
+        "PCON-NCS-HYDRAULIC-SYSTEM-BUILD",
+        "PCON-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY",
+        "PCON-NCS-PNEUMATIC-COMMISSIONING",
+        "PCON-NCS-PNEUMATIC-TROUBLESHOOTING",
+        "PCON-NCS-SENSOR-MAINTENANCE",
+        "PCON-NCS-SAFETY-PREVENTION",
+        "PCON-NCS-ASSEMBLY-STATE",
+        "PCON-NCS-DYNAMIC-CHECK"
       ]
     }
   ],
@@ -33256,8 +37636,8 @@
     "summary": {
       "totalDocuments": 11,
       "accountedDocuments": 11,
-      "uniqueLessonCount": 84,
-      "sourceReferenceCount": 105,
+      "uniqueLessonCount": 111,
+      "sourceReferenceCount": 132,
       "heldItems": 8
     },
     "documents": [
@@ -33272,12 +37652,13 @@
           "PCON-024",
           "PCON-031",
           "PCON-037",
+          "PCON-NCS-MEASURE-SELECT",
           "PCON-SUP-023",
           "PCON-SUP-025",
           "PCON-SUP-026",
           "PCON-SUP-027"
         ],
-        "sourceReferenceCount": 11,
+        "sourceReferenceCount": 12,
         "heldItems": [],
         "status": "covered"
       },
@@ -33293,9 +37674,11 @@
           "PCON-019",
           "PCON-028",
           "PCON-038",
+          "PCON-NCS-DRAWING-MEASUREMENT-ELEMENTS",
+          "PCON-NCS-DRAWING-REVISION",
           "PCON-SUP-024"
         ],
-        "sourceReferenceCount": 6,
+        "sourceReferenceCount": 8,
         "heldItems": [
           {
             "id": "NCS-HOLD-DRAWING-STANDARD-TABLES",
@@ -33325,10 +37708,14 @@
           "PCON-007",
           "PCON-013",
           "PCON-036",
+          "PCON-NCS-ASSEMBLY-STATE",
+          "PCON-NCS-DRIVE-PART-INSPECTION",
+          "PCON-NCS-DYNAMIC-CHECK",
+          "PCON-NCS-JIG-FIXTURE",
           "PCON-SUP-028",
           "PCON-SUP-031"
         ],
-        "sourceReferenceCount": 7,
+        "sourceReferenceCount": 11,
         "heldItems": [],
         "status": "covered"
       },
@@ -33343,9 +37730,11 @@
           "PCON-016",
           "PCON-017",
           "PCON-043",
+          "PCON-NCS-PPE-SELECTION",
+          "PCON-NCS-SAFETY-PREVENTION",
           "PCON-SUP-043"
         ],
-        "sourceReferenceCount": 5,
+        "sourceReferenceCount": 7,
         "heldItems": [
           {
             "id": "NCS-HOLD-SAFE-LEGAL",
@@ -33372,12 +37761,13 @@
         "conceptIds": [
           "PCON-029",
           "PCON-039",
+          "PCON-NCS-SYSTEM-GROUPING",
           "PCON-SUP-001",
           "PCON-SUP-004",
           "PCON-SUP-015",
           "PCON-SUP-036"
         ],
-        "sourceReferenceCount": 10,
+        "sourceReferenceCount": 11,
         "heldItems": [
           {
             "id": "NCS-HOLD-MSA-IPIK",
@@ -33417,6 +37807,8 @@
         "conceptIds": [
           "PCON-003",
           "PCON-011",
+          "PCON-NCS-SENSOR-MAINTENANCE",
+          "PCON-NCS-SENSOR-RELAY-CIRCUIT",
           "PCON-SUP-011",
           "PCON-SUP-012",
           "PCON-SUP-013",
@@ -33424,7 +37816,7 @@
           "PCON-SUP-039",
           "PCON-SUP-040"
         ],
-        "sourceReferenceCount": 8,
+        "sourceReferenceCount": 10,
         "heldItems": [
           {
             "id": "NCS-HOLD-SEN-LOADCELL",
@@ -33449,13 +37841,17 @@
         "conceptIds": [
           "PCON-041",
           "PCON-042",
+          "PCON-NCS-PNEUMATIC-CIRCUIT-ASSEMBLY",
+          "PCON-NCS-PNEUMATIC-COMMISSIONING",
+          "PCON-NCS-PNEUMATIC-LOGIC",
+          "PCON-NCS-PNEUMATIC-TROUBLESHOOTING",
           "PCON-SUP-003",
           "PCON-SUP-004",
           "PCON-SUP-005",
           "PCON-SUP-037",
           "PCON-SUP-038"
         ],
-        "sourceReferenceCount": 9,
+        "sourceReferenceCount": 13,
         "heldItems": [
           {
             "id": "NCS-HOLD-PNE-FLOW-CALC",
@@ -33483,6 +37879,10 @@
           "PCON-008",
           "PCON-025",
           "PCON-040",
+          "PCON-NCS-ELECTROHYDRAULIC-CIRCUIT",
+          "PCON-NCS-HYDRAULIC-AUXILIARY-CONTROLS",
+          "PCON-NCS-HYDRAULIC-SYSTEM-BUILD",
+          "PCON-NCS-HYDRAULIC-VALVE-SELECTION",
           "PCON-SUP-006",
           "PCON-SUP-007",
           "PCON-SUP-008",
@@ -33490,7 +37890,7 @@
           "PCON-SUP-010",
           "PCON-SUP-034"
         ],
-        "sourceReferenceCount": 10,
+        "sourceReferenceCount": 14,
         "heldItems": [
           {
             "id": "NCS-HOLD-HYD-MOTOR-TORQUE",
@@ -33528,13 +37928,14 @@
           "PCON-032",
           "PCON-033",
           "PCON-035",
+          "PCON-NCS-BRAKE-CHARACTERISTICS",
           "PCON-SUP-029",
           "PCON-SUP-030",
           "PCON-SUP-032",
           "PCON-SUP-033",
           "PCON-SUP-035"
         ],
-        "sourceReferenceCount": 23,
+        "sourceReferenceCount": 24,
         "heldItems": [],
         "status": "covered"
       },
@@ -33548,9 +37949,12 @@
           "PCON-043",
           "PCON-044",
           "PCON-045",
-          "PCON-046"
+          "PCON-046",
+          "PCON-NCS-WELD-DEFECT-ESTIMATION",
+          "PCON-NCS-WELD-NDT",
+          "PCON-NCS-WELD-REPAIR"
         ],
-        "sourceReferenceCount": 4,
+        "sourceReferenceCount": 7,
         "heldItems": [],
         "status": "covered"
       },
@@ -33562,6 +37966,9 @@
         "sourceFileHash": "d89b55bf8fd32dabd1aa7eaf61209c40ceecb88fba466a35599be93eb31b9ace",
         "conceptIds": [
           "PCON-046",
+          "PCON-NCS-WELD-HORIZONTAL",
+          "PCON-NCS-WELD-OVERHEAD",
+          "PCON-NCS-WELD-VERTICAL",
           "PCON-SUP-002",
           "PCON-SUP-016",
           "PCON-SUP-017",
@@ -33573,7 +37980,7 @@
           "PCON-SUP-041",
           "PCON-SUP-042"
         ],
-        "sourceReferenceCount": 12,
+        "sourceReferenceCount": 15,
         "heldItems": [
           {
             "id": "NCS-HOLD-WELD-CONDITIONS",
@@ -33596,40 +38003,41 @@
     ]
   },
   "report": {
-    "generatedAt": "2026-08-04T01:12:56.977Z",
+    "generatedAt": "2026-08-10T00:00:00.000Z",
     "sourceFile": "설비보전기사_작업형실기_기출복원_출제예상40_개념통합_2차.xlsx",
     "sourceSha256": "71aad19a0e7de0cc6b51f9a8ebdfee899bfda217f2af0130c4d33db23fa80d60",
     "rows": {
       "past": 51,
-      "predicted": 185,
+      "predicted": 212,
       "workbookPredicted": 41,
-      "authoredPredicted": 77,
+      "authoredPredicted": 104,
       "balancedPredicted": 67,
       "concepts": 46,
-      "supplementalConcepts": 43,
+      "supplementalConcepts": 70,
       "ncsDocuments": 11,
       "visualAids": 88
     },
     "publication": {
       "past": 51,
-      "predicted": 183,
+      "predicted": 210,
       "concepts": 46,
-      "supplementalConcepts": 43,
+      "supplementalConcepts": 70,
       "held": 0,
       "heldByDisposition": {}
     },
     "ncsCoverage": {
       "totalDocuments": 11,
       "accountedDocuments": 11,
-      "uniqueLessonCount": 84,
-      "sourceReferenceCount": 105,
+      "uniqueLessonCount": 111,
+      "sourceReferenceCount": 132,
       "heldItems": 8
     },
     "exactMatch": true,
     "warnings": [
       "EXP-C03 OEE 계산은 2026년 1회 복원문제의 공식과 조건을 바탕으로 이미지 없는 지문형 예상문제로 공개했다.",
       "제3각법 등 제3자 원도형은 공개 자산으로 복제하지 않고 같은 판독조건의 자체 SVG로 재구성했다.",
-      "응시자 복원 캡처와 블로그 이미지는 문항 대조에만 사용하고 공개 이미지로 복제하지 않았다."
+      "응시자 복원 캡처와 블로그 이미지는 문항 대조에만 사용하고 공개 이미지로 복제하지 않았다.",
+      "NCS 11종의 세부학습단위 대조에서 직접 연결이 비어 있던 27개 단원에 자체 보강 이론과 예상문제를 1개씩 추가했다."
     ]
   }
 }
