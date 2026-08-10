@@ -166,7 +166,7 @@ test("practical work groups circuit, article, industrial-engineer, and paid vide
 test("practical theory keeps the six study-type slots together below each concept", async ({
   page,
 }) => {
-  await page.goto("/practical/written/theory");
+  await page.goto("/practical/written/theory?view=concept");
   await expect(
     page.getByTestId("practical-textbook-learning-types"),
   ).toBeVisible();
@@ -378,6 +378,28 @@ test("all 27 NCS reinforcement theories and predicted questions are reachable", 
   await page.locator("#practical-answer").fill("검수용 답안");
   await page.getByRole("button", { name: "답안 제출" }).click();
   await expect(page.getByTestId("practical-answer-feedback")).toBeVisible();
+  await expect(page.getByTestId("practical-answer-sources")).toContainText(
+    /인쇄 p\.\d+/,
+  );
+  await expect(page.getByTestId("practical-answer-sources")).not.toContainText(
+    "확인 중",
+  );
+
+  const conceptId = representative.id.replace("EXP-NCS-", "PCON-NCS-");
+  await page.goto(`/practical/written/theory/${conceptId}`);
+  await expect(
+    page.getByTestId("practical-written-concept-summary"),
+  ).not.toContainText("시험용 한 줄 요약 검수 중");
+  await expect(
+    page.getByTestId("practical-written-concept-summary"),
+  ).toContainText("30초 이해");
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(`/practical/written/question/${representative.id}`);
+  await expect(page.locator("#practical-answer")).toBeVisible();
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth),
+  ).toBeLessThanOrEqual(390);
 });
 
 test("every supplemental lesson exposes its NCS-grounded predicted question", async ({

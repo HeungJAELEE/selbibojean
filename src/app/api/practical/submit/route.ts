@@ -12,6 +12,7 @@ import {
   resolvePracticalSequenceFrameTokens,
   toPracticalSequenceFrameTokens,
 } from "@/lib/practical-sequence-server";
+import { formatPracticalSourcePage } from "@/lib/content/practical-source-page";
 import { SELF_RATINGS } from "@/lib/domain/types";
 
 const schema = z.object({
@@ -107,14 +108,7 @@ export async function POST(request: Request) {
           ? source.documentTitle
           : `NCS ${source.documentTitle}`,
       href: source.sourceUrl,
-      page:
-        source.sourceKind === "written_question_bank"
-          ? "필기 기출·해설 근거"
-          : `${
-              source.sourceKind === "official_reference" ? "공식 근거" : "PDF"
-            } p.${source.pdfPage ?? "확인 중"}${
-              source.figureNumber ? ` · ${source.figureNumber}` : ""
-            }`,
+      page: formatPracticalSourcePage(source),
     })),
     selfRating: parsed.data.selfRating,
     sequenceResult,

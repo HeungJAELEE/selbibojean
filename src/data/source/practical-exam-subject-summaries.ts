@@ -1,4 +1,8 @@
 import { getExamTermDisplayLabel } from "./exam-terms";
+import {
+  PRACTICAL_NCS_UNIT_PROMOTIONS,
+  PRACTICAL_NCS_UNIT_REINFORCEMENT_CONCEPTS,
+} from "./practical-ncs-unit-reinforcements";
 import type { PracticalTextbookSubjectId } from "./practical-textbook-taxonomy";
 import type { PracticalSourceRef } from "@/lib/domain/practical-types";
 
@@ -61,6 +65,32 @@ function evidence(
     ncsSourceRefs: [],
   };
 }
+
+const ncsUnitQuestionIdByConceptId = new Map(
+  PRACTICAL_NCS_UNIT_PROMOTIONS.map((promotion) => [
+    promotion.conceptId,
+    promotion.questionId,
+  ]),
+);
+
+const ncsUnitSummaryItems: ExamSummaryItem[] =
+  PRACTICAL_NCS_UNIT_REINFORCEMENT_CONCEPTS.map((concept) => {
+    const questionId = ncsUnitQuestionIdByConceptId.get(concept.id);
+    if (!questionId) {
+      throw new Error(`NCS 보강 예상문제 연결이 없습니다: ${concept.id}`);
+    }
+    return {
+      cue: concept.title,
+      answer: concept.definition,
+      conceptId: concept.id,
+      evidence: {
+        evidenceIds: [`evidence:${questionId}`],
+        writtenQuestionIds: [],
+        practicalQuestionIds: [questionId],
+        ncsSourceRefs: concept.ncsSources,
+      },
+    };
+  });
 
 const subject1Core: ExamSummaryItem[] = [
   {
@@ -534,5 +564,6 @@ export function getExamSubjectLens(
 export function getExamSummaryItemByConceptId(conceptId: string) {
   return EXAM_SUBJECT_CHEAT_SHEETS.flatMap(
     (summary) => summary.sharedCore,
-  ).find((item) => item.conceptId === conceptId);
+  ).find((item) => item.conceptId === conceptId)
+    ?? ncsUnitSummaryItems.find((item) => item.conceptId === conceptId);
 }

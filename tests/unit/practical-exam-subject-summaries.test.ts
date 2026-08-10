@@ -2,8 +2,13 @@ import { describe, expect, it } from "vitest";
 import {
   EXAM_SUBJECT_CHEAT_SHEETS,
   getExamSubjectCheatSheet,
+  getExamSummaryItemByConceptId,
 } from "@/data/source/practical-exam-subject-summaries";
 import { getExamTerm } from "@/data/source/exam-terms";
+import {
+  PRACTICAL_NCS_UNIT_PROMOTIONS,
+  PRACTICAL_NCS_UNIT_REINFORCEMENT_CONCEPTS,
+} from "@/data/source/practical-ncs-unit-reinforcements";
 
 describe("practical exam subject cheat sheets", () => {
   it("keeps all four subjects inside the low-density contract", () => {
@@ -92,6 +97,31 @@ describe("practical exam subject cheat sheets", () => {
       "초기수율",
     ]) {
       expect(body).toContain(label);
+    }
+  });
+
+  it("gives every published NCS reinforcement a reviewed quick summary", () => {
+    expect(PRACTICAL_NCS_UNIT_REINFORCEMENT_CONCEPTS).toHaveLength(27);
+    expect(PRACTICAL_NCS_UNIT_PROMOTIONS).toHaveLength(27);
+
+    for (const concept of PRACTICAL_NCS_UNIT_REINFORCEMENT_CONCEPTS) {
+      const promotion = PRACTICAL_NCS_UNIT_PROMOTIONS.find(
+        (item) => item.conceptId === concept.id,
+      );
+      const summary = getExamSummaryItemByConceptId(concept.id);
+
+      expect(promotion?.publicationStatus, concept.id).toBe("published");
+      expect(summary, concept.id).toMatchObject({
+        cue: concept.title,
+        answer: concept.definition,
+        conceptId: concept.id,
+      });
+      expect(summary?.evidence.practicalQuestionIds, concept.id).toEqual([
+        promotion?.questionId,
+      ]);
+      expect(summary?.evidence.ncsSourceRefs, concept.id).toEqual(
+        concept.ncsSources,
+      );
     }
   });
 });
