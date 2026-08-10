@@ -24,6 +24,12 @@ export function PracticalSequenceQuestion({
   const [feedback, setFeedback] = useState<PracticalReveal | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [loadedFrameIds, setLoadedFrameIds] = useState<Set<string>>(
+    () => new Set(),
+  );
+  const [unavailableFrameIds, setUnavailableFrameIds] = useState<Set<string>>(
+    () => new Set(),
+  );
   const framesById = new Map(
     (visualAid.frames ?? []).map((frame) => [frame.id, frame]),
   );
@@ -35,6 +41,34 @@ export function PracticalSequenceQuestion({
   );
   const useHorizontalPortraitStrip =
     visualAid.layout === "horizontal-portrait-strip";
+  const hasUnavailableFrame = unavailableFrameIds.size > 0;
+  const allFramesLoaded =
+    visualAid.frames.length > 0 &&
+    visualAid.frames.every((frame) => loadedFrameIds.has(frame.id));
+
+  function markFrameLoaded(frameId: string) {
+    setLoadedFrameIds((current) => {
+      if (current.has(frameId)) return current;
+      const next = new Set(current);
+      next.add(frameId);
+      return next;
+    });
+  }
+
+  function markFrameUnavailable(frameId: string) {
+    setLoadedFrameIds((current) => {
+      if (!current.has(frameId)) return current;
+      const next = new Set(current);
+      next.delete(frameId);
+      return next;
+    });
+    setUnavailableFrameIds((current) => {
+      if (current.has(frameId)) return current;
+      const next = new Set(current);
+      next.add(frameId);
+      return next;
+    });
+  }
 
   function move(fromIndex: number, toIndex: number) {
     if (feedback) return;
@@ -52,6 +86,14 @@ export function PracticalSequenceQuestion({
   }
 
   async function submit() {
+    if (!allFramesLoaded || hasUnavailableFrame) {
+      setError(
+        hasUnavailableFrame
+          ? "이미지를 불러오지 못한 카드가 있어 정답을 제출할 수 없습니다. 페이지를 새로고침해 주세요."
+          : "모든 작업 이미지를 불러온 뒤 정답을 제출해 주세요.",
+      );
+      return;
+    }
     setLoading(true);
     setError("");
     const response = await fetch("/api/practical/submit", {
@@ -152,6 +194,7 @@ export function PracticalSequenceQuestion({
             feedback && correctIndex !== undefined
               ? correctIndex === index
               : false;
+          const isFrameUnavailable = unavailableFrameIds.has(frame.id);
           return (
             <li
               key={frame.id}
@@ -209,7 +252,18 @@ export function PracticalSequenceQuestion({
                   }
                   className="object-contain p-2"
                   style={{ objectFit: "contain" }}
+                  onLoad={() => markFrameLoaded(frame.id)}
+                  onError={() => markFrameUnavailable(frame.id)}
                 />
+                {isFrameUnavailable ? (
+                  <div
+                    className="absolute inset-2 flex items-center justify-center rounded-xl border border-rose-200 bg-rose-50 p-4 text-center text-sm font-bold leading-6 text-rose-800"
+                    data-testid="sequence-frame-unavailable"
+                    role="alert"
+                  >
+                    이미지를 불러오지 못했습니다. 페이지를 새로고침해 주세요.
+                  </div>
+                ) : null}
               </div>
               <p
                 data-testid="sequence-action-description"
@@ -262,12 +316,23 @@ export function PracticalSequenceQuestion({
           />
           <button
             type="button"
-            disabled={loading}
+            disabled={loading || !allFramesLoaded || hasUnavailableFrame}
             onClick={submit}
             className="mt-4 rounded-xl bg-[#173957] px-6 py-3 font-extrabold text-white disabled:opacity-50"
           >
-            {loading ? "순서 확인 중…" : "이 순서로 정답 확인"}
+            {loading
+              ? "순서 확인 중…"
+              : hasUnavailableFrame
+                ? "이미지 확인 필요"
+                : !allFramesLoaded
+                  ? "이미지 불러오는 중…"
+                  : "이 순서로 정답 확인"}
           </button>
+          {hasUnavailableFrame ? (
+            <p className="mt-3 text-sm font-bold text-rose-700" role="alert">
+              이미지를 불러오지 못한 카드가 있어 정답 제출을 막았습니다.
+            </p>
+          ) : null}
         </>
       ) : (
         <div

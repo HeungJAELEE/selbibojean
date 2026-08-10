@@ -5,6 +5,7 @@ import rawPracticalWrittenGovernance from "@/data/generated/practical-written-go
 import type { ExamSummaryEvidence } from "@/data/source/practical-exam-subject-summaries";
 import { PRACTICAL_VISUAL_AIDS } from "@/data/source/practical-source-registry";
 import {
+  isApprovedReconstructedPastPromptVisualMapping,
   PRACTICAL_VISUAL_COVERAGE,
   visualAidIdsForQuestion,
 } from "@/data/source/practical-visual-coverage";
@@ -40,6 +41,7 @@ import type {
 } from "@/lib/domain/practical-types";
 import {
   canUsePracticalVisualAid,
+  isSafeReconstructedNonOriginalVisualAid,
   learnerVisiblePracticalVisualAid,
 } from "@/lib/domain/practical-visual-policy";
 import type { PracticalWrittenGovernanceManifest } from "@/lib/domain/practical-execution-types";
@@ -539,19 +541,29 @@ export async function getPublicPracticalQuestionVisualAids(
   >,
   use: "prompt" | PracticalVisualUsage,
 ): Promise<PracticalVisualAid[]> {
+  const usage = use === "prompt" ? "past_exam_prompt" : use;
   const visualAidIds = visualAidIdsForQuestion(question.id, [
     question.visualAidId,
     ...(question.visualAidIds ?? []),
   ]);
-  const visualAids = await Promise.all(
-    visualAidIds.map((visualAidId) =>
-      getPublicPracticalVisualAid(visualAidId, use),
-    ),
-  );
 
-  return visualAids.filter(
-    (visualAid): visualAid is PracticalVisualAid => Boolean(visualAid),
-  );
+  return visualAidIds
+    .map((visualAidId) =>
+      content.visualAids.find((visualAid) => visualAid.id === visualAidId),
+    )
+    .filter((visualAid): visualAid is PracticalVisualAid => {
+      if (!visualAid) return false;
+      if (canUsePracticalVisualAid(visualAid, usage)) return true;
+
+      return (
+        usage === "past_exam_prompt" &&
+        isApprovedReconstructedPastPromptVisualMapping(
+          question.id,
+          visualAid.id,
+        ) &&
+        isSafeReconstructedNonOriginalVisualAid(visualAid)
+      );
+    });
 }
 
 export function deriveExamEvidenceDisplayKinds(

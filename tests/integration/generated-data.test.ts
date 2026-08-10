@@ -16,6 +16,7 @@ import {
   filterPracticeContentByYearRange,
   getSafeOriginalsByQuestion,
 } from "@/lib/content/practice-presentations";
+import { isReviewedExactOriginalVariant } from "@/lib/content/original-variant-practice";
 import { buildRuntimeContent } from "@/lib/content/runtime-content";
 
 const data = JSON.parse(await readFile(path.join(process.cwd(), "src/data/generated/content.json"), "utf8")) as GeneratedContent;
@@ -382,12 +383,60 @@ describe("27th workbook reconciliation", () => {
 
     for (const presented of originalFocused.filter((question) => question.provenance.original)) {
       const canonical = publishedQuestions.find((question) => question.id === presented.id);
+      const sourceVariant = runtimeData.variants.find(
+        (variant) =>
+          variant.externalId === presented.provenance.exam?.externalId,
+      );
       expect(canonical).toBeTruthy();
+      expect(sourceVariant).toBeTruthy();
+      expect(presented.provenance.submissionMode).toBe(
+        sourceVariant && isReviewedExactOriginalVariant(sourceVariant)
+          ? "variant"
+          : "canonical",
+      );
       expect(new Set(presented.choices.map((choice) => choice.id))).toEqual(new Set(canonical?.choices.map((choice) => choice.id)));
       expect(JSON.stringify(presented)).not.toContain("correctChoiceId");
       expect(JSON.stringify(presented)).not.toContain("answerText");
       expect(JSON.stringify(presented)).not.toContain("explanation");
     }
+  });
+
+  it("keeps 2020-4-Q71 visible for U-297 while submitting its safe legacy choices canonically", () => {
+    const canonical = runtimePublicQuestions.find(
+      (question) => question.id === "U-297",
+    );
+    const sourceVariant = runtimeData.variants.find(
+      (variant) => variant.externalId === "2020-4-Q71",
+    );
+
+    expect(canonical?.stem).toBe(
+      "스퍼·헬리컬·베벨기어 등 밀폐식 기어장치에 적합한 급유법은?",
+    );
+    expect(sourceVariant).toMatchObject({ canonicalId: "U-297" });
+    expect(sourceVariant && isReviewedExactOriginalVariant(sourceVariant)).toBe(
+      false,
+    );
+
+    const [presentation] = createPracticePresentations(
+      canonical ? [canonical] : [],
+      sourceVariant ? [sourceVariant] : [],
+      100,
+      20260810,
+      false,
+    );
+
+    expect(presentation).toMatchObject({
+      id: "U-297",
+      stem: "스퍼·헬리컬·베벨기어 등 밀폐식 기어장치에 적합한 급유법은?",
+      provenance: {
+        original: true,
+        submissionMode: "canonical",
+        exam: { externalId: "2020-4-Q71" },
+      },
+    });
+    expect(presentation.choices.map((choice) => choice.id)).toEqual(
+      canonical?.choices.map((choice) => choice.id),
+    );
   });
 
   it("limits the mock pool to answer-safe originals inside the chosen years", () => {

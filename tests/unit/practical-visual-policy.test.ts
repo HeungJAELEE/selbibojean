@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { PRACTICAL_VISUAL_AIDS } from "@/data/source/practical-source-registry";
 import {
   canUsePracticalVisualAid,
+  isSafeReconstructedNonOriginalVisualAid,
   learnerVisiblePracticalVisualAid,
 } from "@/lib/domain/practical-visual-policy";
 import type { PracticalVisualAid } from "@/lib/domain/practical-types";
@@ -42,6 +43,21 @@ describe("practical visual publication policy", () => {
 
     expect(canUsePracticalVisualAid(variant, "variant_exam_prompt")).toBe(true);
     expect(canUsePracticalVisualAid(variant, "past_exam_prompt")).toBe(false);
+  });
+
+  it("recognizes reviewed self-authored reconstructions without globally treating them as past originals", () => {
+    const reconstructed = aid("diagram-third-angle-projection-problem");
+
+    expect(isSafeReconstructedNonOriginalVisualAid(reconstructed)).toBe(true);
+    expect(
+      canUsePracticalVisualAid(reconstructed, "past_exam_prompt"),
+    ).toBe(false);
+    expect(
+      isSafeReconstructedNonOriginalVisualAid({
+        ...reconstructed,
+        originType: "ai_generated",
+      }),
+    ).toBe(false);
   });
 
   it("allows verified NCS crops in predicted prompts only when explicitly declared", () => {

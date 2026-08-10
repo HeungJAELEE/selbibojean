@@ -147,6 +147,7 @@ function toOriginalPublicQuestion(
     choices,
     sourceLabel: variant.sourceUrl,
     provenance: {
+      submissionMode: "canonical",
       reconstructed: false,
       historical: publicQuestion.provenance.historical,
       original: true,

@@ -14,6 +14,9 @@ type WorkerEnv = Parameters<typeof worker.fetch>[1];
 type WorkerContext = Parameters<typeof worker.fetch>[2];
 type RuntimeGlobal = typeof globalThis & {
   __SEOLBI_RUNTIME_ASSET_FETCH__?: (path: string) => Promise<Response>;
+  __SEOLBI_PRACTICAL_VISUAL_ASSET_FETCH__?: (
+    path: string,
+  ) => Promise<Response>;
 };
 
 const context: WorkerContext = {
@@ -42,6 +45,8 @@ describe("Worker runtime asset boundary", () => {
 
   afterEach(() => {
     delete (globalThis as RuntimeGlobal).__SEOLBI_RUNTIME_ASSET_FETCH__;
+    delete (globalThis as RuntimeGlobal)
+      .__SEOLBI_PRACTICAL_VISUAL_ASSET_FETCH__;
   });
 
   it.each([
@@ -202,5 +207,87 @@ describe("Worker runtime asset boundary", () => {
     expect(
       new URL(assetFetch.mock.calls[0]![0].url).pathname,
     ).toBe("/data/content.bin");
+  });
+
+  it("reads an allowlisted practical sequence image through the internal ASSETS binding", async () => {
+    const imageBytes = new Uint8Array([0x89, 0x50, 0x4e, 0x47]);
+    const assetFetch = vi.fn(async (request: Request) => {
+      void request;
+      return new Response(imageBytes, {
+        status: 200,
+        headers: { "Content-Type": "image/png" },
+      });
+    });
+
+    await worker.fetch(
+      new Request("https://example.test/practical/written"),
+      createEnv(assetFetch),
+      context,
+    );
+    const practicalVisualFetch = (globalThis as RuntimeGlobal)
+      .__SEOLBI_PRACTICAL_VISUAL_ASSET_FETCH__;
+    const response = await practicalVisualFetch!(
+      "/practical/visuals/crack-repair-stop-holes.png",
+    );
+
+    expect(response.status).toBe(200);
+    expect(response.headers.get("Content-Type")).toBe("image/png");
+    expect(new Uint8Array(await response.arrayBuffer())).toEqual(imageBytes);
+    expect(assetFetch).toHaveBeenCalledTimes(1);
+    expect(
+      new URL(assetFetch.mock.calls[0]![0].url).pathname,
+    ).toBe("/practical/visuals/crack-repair-stop-holes.png");
+  });
+
+  it.each([
+    "/practical/visuals/../data/content.bin",
+    "/practical/visuals/%2e%2e%2fdata%2fcontent.bin",
+    "/practical/ncs/frame.png",
+    "/practical/visuals/frame.svg",
+    "/practical/visuals/frame.png?download=1",
+  ])("blocks non-allowlisted practical sequence asset %s", async (pathname) => {
+    const assetFetch = vi.fn(async () =>
+      new Response(new Uint8Array([0x89, 0x50]), {
+        status: 200,
+        headers: { "Content-Type": "image/png" },
+      }),
+    );
+
+    await worker.fetch(
+      new Request("https://example.test/practical/written"),
+      createEnv(assetFetch),
+      context,
+    );
+    const practicalVisualFetch = (globalThis as RuntimeGlobal)
+      .__SEOLBI_PRACTICAL_VISUAL_ASSET_FETCH__;
+    const response = await practicalVisualFetch!(pathname);
+
+    expect(response.status).toBe(404);
+    expect(response.headers.get("Cache-Control")).toBe("no-store");
+    expect(assetFetch).not.toHaveBeenCalled();
+  });
+
+  it("does not expose a practical asset whose MIME is not an image", async () => {
+    const assetFetch = vi.fn(async () =>
+      new Response("not an image", {
+        status: 200,
+        headers: { "Content-Type": "text/plain" },
+      }),
+    );
+
+    await worker.fetch(
+      new Request("https://example.test/practical/written"),
+      createEnv(assetFetch),
+      context,
+    );
+    const practicalVisualFetch = (globalThis as RuntimeGlobal)
+      .__SEOLBI_PRACTICAL_VISUAL_ASSET_FETCH__;
+    const response = await practicalVisualFetch!(
+      "/practical/visuals/frame.png",
+    );
+
+    expect(response.status).toBe(404);
+    expect(response.headers.get("Cache-Control")).toBe("no-store");
+    expect(await response.text()).not.toContain("not an image");
   });
 });

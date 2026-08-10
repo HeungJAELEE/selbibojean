@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { PracticalSequenceQuestion } from "@/components/practical-sequence-question";
@@ -99,5 +99,69 @@ describe("practical sequence question", () => {
       "horizontal-portrait-strip",
     );
     expect(sequence).toHaveClass("overflow-x-auto");
+  });
+
+  it("keeps an image failure sticky and prevents answer submission", async () => {
+    render(
+      <PracticalSequenceQuestion
+        question={question}
+        visualAid={visualAid}
+        initialFrameIds={["opaque-step-b", "opaque-step-a"]}
+      />,
+    );
+
+    fireEvent.error(
+      screen.getByAltText("작업 순서를 판단하기 위한 첫 번째 장면"),
+    );
+
+    expect(screen.getByTestId("sequence-frame-unavailable")).toBeVisible();
+    expect(
+      screen.getByText("이미지를 불러오지 못한 카드가 있어 정답 제출을 막았습니다."),
+    ).toBeVisible();
+    expect(
+      screen.getByRole("button", { name: "이미지 확인 필요" }),
+    ).toBeDisabled();
+
+    fireEvent.load(
+      screen.getByAltText("작업 순서를 판단하기 위한 첫 번째 장면"),
+    );
+    fireEvent.load(
+      screen.getByAltText("작업 순서를 판단하기 위한 두 번째 장면"),
+    );
+    await waitFor(() =>
+      expect(
+        screen.getByRole("button", { name: "이미지 확인 필요" }),
+      ).toBeDisabled(),
+    );
+    expect(screen.getByTestId("sequence-frame-unavailable")).toBeVisible();
+  });
+
+  it("keeps submission closed until every sequence frame has loaded", async () => {
+    render(
+      <PracticalSequenceQuestion
+        question={question}
+        visualAid={visualAid}
+        initialFrameIds={["opaque-step-b", "opaque-step-a"]}
+      />,
+    );
+
+    const submitButton = screen.getByRole("button", {
+      name: "이미지 불러오는 중…",
+    });
+    expect(submitButton).toBeDisabled();
+
+    fireEvent.load(
+      screen.getByAltText("작업 순서를 판단하기 위한 첫 번째 장면"),
+    );
+    expect(submitButton).toBeDisabled();
+
+    fireEvent.load(
+      screen.getByAltText("작업 순서를 판단하기 위한 두 번째 장면"),
+    );
+    await waitFor(() =>
+      expect(
+        screen.getByRole("button", { name: "이 순서로 정답 확인" }),
+      ).toBeEnabled(),
+    );
   });
 });

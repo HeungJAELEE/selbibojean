@@ -313,6 +313,7 @@ export const PRACTICAL_VISUAL_COVERAGE: PracticalVisualCoverageItem[] = [
     visualRequirement: "V2",
     visualAidIds: ["diagram-third-angle-projection-problem"],
     status: "ready",
+    pastPromptTreatment: "reconstructed_non_original",
     rationale:
       "복원 글의 입체·화살표·정면도·빈 평면도와 우측면도 배치를 자체 SVG로 재구성했다.",
   },
@@ -325,6 +326,7 @@ export const PRACTICAL_VISUAL_COVERAGE: PracticalVisualCoverageItem[] = [
     visualRequirement: "V2",
     visualAidIds: ["diagram-ghs-pictograms-problem"],
     status: "ready",
+    pastPromptTreatment: "reconstructed_non_original",
     rationale:
       "화학물질 경고 그림문자의 형상이 정답을 결정하므로 복원 배열을 자체 도식으로 제공한다.",
   },
@@ -337,6 +339,7 @@ export const PRACTICAL_VISUAL_COVERAGE: PracticalVisualCoverageItem[] = [
     visualRequirement: "V2",
     visualAidIds: ["diagram-bracket-drawing-annotations"],
     status: "ready",
+    pastPromptTreatment: "reconstructed_non_original",
     rationale:
       "A의 나사 구멍 지시와 B의 리브 지시 위치를 문제 기준에 맞춰 자체 도면으로 표시했다.",
   },
@@ -361,6 +364,7 @@ export const PRACTICAL_VISUAL_COVERAGE: PracticalVisualCoverageItem[] = [
     visualRequirement: "V2",
     visualAidIds: ["diagram-vernier-48-2"],
     status: "ready",
+    pastPromptTreatment: "reconstructed_non_original",
     rationale:
       "복원 답 48.2 mm가 나오도록 주척과 버니어 일치눈금을 자체 제작했다.",
   },
@@ -397,6 +401,7 @@ export const PRACTICAL_VISUAL_COVERAGE: PracticalVisualCoverageItem[] = [
     visualRequirement: "V2",
     visualAidIds: ["diagram-thread-profiles"],
     status: "ready",
+    pastPromptTreatment: "reconstructed_non_original",
     rationale: "네 나사산의 하중면과 곡률 차이가 답을 결정한다.",
   },
   {
@@ -408,6 +413,7 @@ export const PRACTICAL_VISUAL_COVERAGE: PracticalVisualCoverageItem[] = [
     visualRequirement: "V2",
     visualAidIds: ["diagram-shaft-misalignment"],
     status: "ready",
+    pastPromptTreatment: "reconstructed_non_original",
     rationale: "두 축 중심선의 평행 오프셋과 각도 차이를 자체 도식으로 비교한다.",
   },
   {
@@ -430,6 +436,7 @@ export const PRACTICAL_VISUAL_COVERAGE: PracticalVisualCoverageItem[] = [
     visualRequirement: "V2",
     visualAidIds: ["diagram-dial-vblock"],
     status: "ready",
+    pastPromptTreatment: "reconstructed_non_original",
     rationale: "축 휨 측정에서 주 공구와 보조 공구의 접촉 배치를 보여 준다.",
   },
   {
@@ -464,6 +471,7 @@ export const PRACTICAL_VISUAL_COVERAGE: PracticalVisualCoverageItem[] = [
     visualRequirement: "V2",
     visualAidIds: ["diagram-drive-unit-section-labels"],
     status: "ready",
+    pastPromptTreatment: "reconstructed_non_original",
     rationale: "⑥·⑦·⑧이 가리키는 베어링·오일실·키의 결합 위치를 자체 단면도로 복원했다.",
   },
   {
@@ -487,6 +495,7 @@ export const PRACTICAL_VISUAL_COVERAGE: PracticalVisualCoverageItem[] = [
     visualRequirement: "V2",
     visualAidIds: ["diagram-external-gear-pump-drawing"],
     status: "ready",
+    pastPromptTreatment: "reconstructed_non_original",
     rationale:
       "외접 평기어, 공차 프레임, 끼워맞춤 치수의 판독 조건을 한 자체 도면에 배치했다.",
   },
@@ -515,7 +524,7 @@ export const PRACTICAL_VISUAL_COVERAGE: PracticalVisualCoverageItem[] = [
   },
   {
     id: "visual-coverage-drip-lubrication",
-    conceptIds: ["PCON-SUP-039"],
+    conceptIds: ["PCON-SUP-032"],
     examCardIds: [],
     questionIds: ["P-2026-2-Q05"],
     sequenceStepIds: [],
@@ -547,6 +556,21 @@ export const PRACTICAL_VISUAL_COVERAGE: PracticalVisualCoverageItem[] = [
     rationale: "측정축과 기준 눈금축의 동일선 배치와 오프셋 배치를 비교한다.",
   },
 ];
+
+export function isApprovedReconstructedPastPromptVisualMapping(
+  questionId: string,
+  visualAidId: string,
+) {
+  return PRACTICAL_VISUAL_COVERAGE.some(
+    (item) =>
+      item.status === "ready" &&
+      item.pastPromptTreatment === "reconstructed_non_original" &&
+      item.questionIds.length === 1 &&
+      item.visualAidIds.length === 1 &&
+      item.questionIds[0] === questionId &&
+      item.visualAidIds[0] === visualAidId,
+  );
+}
 
 export function visualAidIdsForQuestion(
   questionId: string,

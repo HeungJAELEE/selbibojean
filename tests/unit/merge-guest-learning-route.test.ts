@@ -7,6 +7,7 @@ const mocks = vi.hoisted(() => ({
   gradeQuestion: vi.fn(),
   gradeReviewedOriginalVariant: vi.fn(),
   isReviewedExactOriginalVariant: vi.fn(),
+  isSafeOriginalPracticeVariant: vi.fn(),
   createServerClient: vi.fn(),
 }));
 
@@ -25,6 +26,10 @@ vi.mock("@/lib/domain/practice", () => ({
   isPublishableQuestion: () => true,
   isPublishableLesson: () => true,
   gradeQuestion: mocks.gradeQuestion,
+}));
+
+vi.mock("@/lib/content/practice-presentations", () => ({
+  isSafeOriginalPracticeVariant: mocks.isSafeOriginalPracticeVariant,
 }));
 
 vi.mock("@/lib/supabase/server", () => ({
@@ -54,6 +59,7 @@ describe("POST /api/account/merge-guest-learning", () => {
     });
     mocks.gradeReviewedOriginalVariant.mockReturnValue({ isCorrect: true });
     mocks.isReviewedExactOriginalVariant.mockReturnValue(true);
+    mocks.isSafeOriginalPracticeVariant.mockReturnValue(false);
   });
 
   it("requires an authenticated account", async () => {
@@ -222,5 +228,54 @@ describe("POST /api/account/merge-guest-learning", () => {
     );
 
     expect(response.status).toBe(409);
+  });
+
+  it("sanitizes an old safe legacy variant attempt into a canonical merge record", async () => {
+    mocks.isReviewedExactOriginalVariant.mockReturnValue(false);
+    mocks.isSafeOriginalPracticeVariant.mockReturnValue(true);
+    const rpc = vi.fn().mockResolvedValue({ data: 1, error: null });
+    mocks.createServerClient.mockResolvedValue({
+      auth: {
+        getUser: vi.fn().mockResolvedValue({
+          data: { user: { id: "user-1" } },
+        }),
+      },
+      rpc,
+    });
+    const { POST } = await import(
+      "@/app/api/account/merge-guest-learning/route"
+    );
+
+    const response = await POST(
+      new Request("http://localhost/api/account/merge-guest-learning", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          attempts: [
+            {
+              ...attempt,
+              variantExternalId: "variant-1",
+              isCorrect: true,
+            },
+          ],
+        }),
+      }),
+    );
+
+    expect(response.status).toBe(200);
+    expect(mocks.gradeQuestion).toHaveBeenCalledWith(
+      expect.objectContaining({ id: "question-1" }),
+      "choice-2",
+      "unsure",
+      expect.objectContaining({ id: "lesson-1" }),
+    );
+    expect(mocks.gradeReviewedOriginalVariant).not.toHaveBeenCalled();
+    const mergedAttempt = rpc.mock.calls[0]?.[1]?.p_payload?.[0];
+    expect(mergedAttempt).toMatchObject({
+      questionId: "question-1",
+      selectedChoiceId: "choice-2",
+      isCorrect: false,
+    });
+    expect(mergedAttempt).not.toHaveProperty("variantExternalId");
   });
 });

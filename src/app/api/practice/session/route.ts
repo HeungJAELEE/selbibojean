@@ -249,6 +249,9 @@ export async function POST(request: Request) {
     } else {
       const storedByExternalId = new Map((storedQuestions ?? []).map((item) => [item.external_id as string, item.id as string]));
       const variantExternalIds = publicQuestions
+        .filter(
+          (question) => question.provenance.submissionMode === "variant",
+        )
         .map((question) => question.provenance.exam?.externalId)
         .filter((externalId): externalId is string => Boolean(externalId));
       const { data: storedVariants } = variantExternalIds.length
@@ -297,7 +300,9 @@ export async function POST(request: Request) {
           return {
             session_id: sessionId,
             question_id: questionId,
-            question_variant_id: presentation.provenance.exam?.externalId
+            question_variant_id:
+              presentation.provenance.submissionMode === "variant" &&
+              presentation.provenance.exam?.externalId
               ? variantByExternalId.get(presentation.provenance.exam.externalId) ?? null
               : null,
             choice_order: presentation.choices.map((choice) => choice.id),

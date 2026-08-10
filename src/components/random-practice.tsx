@@ -152,7 +152,10 @@ export function RandomPractice({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           questionId: question.id,
-          variantExternalId: question.provenance.exam?.externalId,
+          ...(question.provenance.submissionMode === "variant" &&
+          question.provenance.exam?.externalId
+            ? { variantExternalId: question.provenance.exam.externalId }
+            : {}),
           choiceId: selectedChoiceId,
           selfRating,
           sessionId: session.sessionId,
@@ -168,7 +171,10 @@ export function RandomPractice({
         dueAt.setMinutes(dueAt.getMinutes() + (result.isCorrect ? selfRating === "known" ? 7 * 1440 : selfRating === "unsure" ? 3 * 1440 : 1440 : 10));
         appendGuestLearningAttempt(localStorage, {
           questionId: question.id,
-          variantExternalId: question.provenance.exam?.externalId,
+          ...(question.provenance.submissionMode === "variant" &&
+          question.provenance.exam?.externalId
+            ? { variantExternalId: question.provenance.exam.externalId }
+            : {}),
           selectedChoiceId,
           isCorrect: result.isCorrect,
           selfRating,

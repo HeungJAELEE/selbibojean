@@ -1,12 +1,18 @@
 import { describe, expect, it } from "vitest";
 
-import type { PracticalVisualAid } from "@/lib/domain/practical-types";
+import rawPracticalContent from "@/data/generated/practical-content.json";
+import { PRACTICAL_VISUAL_AIDS } from "@/data/source/practical-source-registry";
+import type {
+  PracticalContent,
+  PracticalVisualAid,
+} from "@/lib/domain/practical-types";
 import {
   findPracticalSequenceFrameByToken,
   resolvePracticalSequenceFrameTokens,
   toPracticalSequenceFrameTokens,
   toPublicPracticalSequenceVisualAid,
 } from "@/lib/practical-sequence-server";
+import { normalizePracticalSequenceVisualAssetPath } from "@/lib/practical-visual-asset-path";
 import { findForbiddenPreSubmitFields } from "@/lib/security/answer-leak";
 
 const visualAid = {
@@ -102,5 +108,60 @@ describe("practical sequence prompt projection", () => {
         tokens?.[0] ?? "",
       )?.id,
     ).toBe(canonicalIds[0]);
+  });
+
+  it("changes opaque frame URLs when the verified asset bytes change", () => {
+    const canonicalIds = visualAid.frames.map((frame) => frame.id);
+    const originalTokens = toPracticalSequenceFrameTokens(
+      "question-1",
+      visualAid,
+      canonicalIds,
+    );
+    const correctedVisualAid = {
+      ...visualAid,
+      frames: visualAid.frames.map((frame, index) =>
+        index === 0
+          ? { ...frame, outputAssetHash: "corrected-first-asset-hash" }
+          : frame,
+      ),
+    } as PracticalVisualAid;
+    const correctedTokens = toPracticalSequenceFrameTokens(
+      "question-1",
+      correctedVisualAid,
+      canonicalIds,
+    );
+
+    expect(correctedTokens?.[0]).not.toBe(originalTokens?.[0]);
+    expect(correctedTokens?.[1]).toBe(originalTokens?.[1]);
+    expect(
+      findPracticalSequenceFrameByToken(
+        "question-1",
+        correctedVisualAid,
+        originalTokens?.[0] ?? "",
+      ),
+    ).toBeUndefined();
+  });
+
+  it("keeps every generated sequence frame inside the Worker raster allowlist", () => {
+    const content = rawPracticalContent as PracticalContent;
+    const visualAidById = new Map(
+      PRACTICAL_VISUAL_AIDS.map((item) => [item.id, item] as const),
+    );
+    const sequenceQuestions = content.questions.filter(
+      (question) => question.examFormat === "sequence" && question.visualAidId,
+    );
+
+    expect(sequenceQuestions.length).toBeGreaterThan(0);
+    for (const question of sequenceQuestions) {
+      const sequenceVisualAid = visualAidById.get(question.visualAidId!);
+      expect(sequenceVisualAid, question.id).toBeDefined();
+      expect(sequenceVisualAid?.frames.length, question.id).toBeGreaterThan(1);
+      for (const frame of sequenceVisualAid?.frames ?? []) {
+        expect(
+          normalizePracticalSequenceVisualAssetPath(frame.path),
+          `${question.id}:${frame.id}`,
+        ).toBe(frame.path);
+      }
+    }
   });
 });

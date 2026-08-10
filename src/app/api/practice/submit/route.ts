@@ -9,6 +9,7 @@ import {
   isReviewedExactOriginalVariant,
   OriginalVariantPracticeError,
 } from "@/lib/content/original-variant-practice";
+import { isSafeOriginalPracticeVariant } from "@/lib/content/practice-presentations";
 import {
   gradeQuestion,
   isPublishableLesson,
@@ -35,25 +36,29 @@ export async function POST(request: Request) {
   const variant = parsed.data.variantExternalId
     ? await getQuestionVariant(parsed.data.variantExternalId)
     : undefined;
-  if (
-    parsed.data.variantExternalId
-    && (
-      !variant
-      || variant.canonicalId !== question.id
-      || !isReviewedExactOriginalVariant(variant)
-    )
-  ) {
-    return NextResponse.json(
-      { error: "검토가 완료된 원문 문항을 확인할 수 없습니다." },
-      { status: 404 },
-    );
+  let reviewedVariant: typeof variant;
+  if (parsed.data.variantExternalId) {
+    if (!variant || variant.canonicalId !== question.id) {
+      return NextResponse.json(
+        { error: "검토가 완료된 원문 문항을 확인할 수 없습니다." },
+        { status: 404 },
+      );
+    }
+    if (isReviewedExactOriginalVariant(variant)) {
+      reviewedVariant = variant;
+    } else if (!isSafeOriginalPracticeVariant(question, variant)) {
+      return NextResponse.json(
+        { error: "검토가 완료된 원문 문항을 확인할 수 없습니다." },
+        { status: 404 },
+      );
+    }
   }
   let feedback;
   try {
-    feedback = variant
+    feedback = reviewedVariant
       ? gradeReviewedOriginalVariant(
           question,
-          variant,
+          reviewedVariant,
           parsed.data.choiceId,
           parsed.data.selfRating,
           lesson,
@@ -84,10 +89,10 @@ export async function POST(request: Request) {
     const errorNarrative = feedback.isCorrect
       ? null
       : `${feedback.selectedChoice.incorrectPoint ?? ""} ${feedback.selectedChoice.differenceFromCorrect ?? ""}`.trim();
-    const rpcCall = variant
+    const rpcCall = reviewedVariant
       ? supabase.rpc("record_variant_attempt", {
           p_question_external_id: question.id,
-          p_variant_external_id: variant.externalId,
+          p_variant_external_id: reviewedVariant.externalId,
           p_selected_variant_choice_id: parsed.data.choiceId,
           p_is_correct: feedback.isCorrect,
           p_self_rating: parsed.data.selfRating,

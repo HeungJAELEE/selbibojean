@@ -6,6 +6,10 @@ import {
   handleImageOptimization,
 } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
+import {
+  normalizePracticalSequenceVisualAssetPath,
+  type PracticalVisualAssetGlobal,
+} from "../src/lib/practical-visual-asset-path";
 
 interface Env {
   ASSETS: { fetch(request: Request): Promise<Response> };
@@ -128,6 +132,28 @@ async function fetchBundledRuntimeAsset(pathname: string, env: Env) {
   });
 }
 
+async function fetchBundledPracticalVisualAsset(pathname: string, env: Env) {
+  const normalizedPath = normalizePracticalSequenceVisualAssetPath(pathname);
+  if (!normalizedPath) return protectedNotFound();
+
+  const assetUrl = new URL(normalizedPath, "https://practical-visuals.internal");
+  const response = await env.ASSETS.fetch(new Request(assetUrl));
+  const contentType = response.headers.get("Content-Type") ?? "";
+  if (!response.ok || !contentType.toLowerCase().startsWith("image/")) {
+    return protectedNotFound();
+  }
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: {
+      "Cache-Control": "no-store",
+      "Content-Type": contentType,
+      "X-Content-Type-Options": "nosniff",
+    },
+  });
+}
+
 const worker = {
   async fetch(request: Request, env: Env, context: ExecutionContext) {
     const url = new URL(request.url);
@@ -192,6 +218,9 @@ const worker = {
       }
     ).__SEOLBI_RUNTIME_ASSET_FETCH__ = (path) =>
       fetchBundledRuntimeAsset(path, env);
+    (globalThis as PracticalVisualAssetGlobal)
+      .__SEOLBI_PRACTICAL_VISUAL_ASSET_FETCH__ = (path) =>
+        fetchBundledPracticalVisualAsset(path, env);
 
     return handler.fetch(request, env, context);
   },

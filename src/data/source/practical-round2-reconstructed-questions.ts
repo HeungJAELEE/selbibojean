@@ -296,7 +296,7 @@ export const PRACTICAL_ROUND2_RECONSTRUCTED_QUESTIONS: PracticalQuestion[] = [
       "유욕·비말·유환처럼 회전부가 기름을 퍼 올리는 방식을 포함하지 않는다.",
       "보기의 선택지 순서를 바꿔도 세 방식이 모두 있어야 한다.",
     ],
-    conceptIds: ["PCON-SUP-039"],
+    conceptIds: ["PCON-SUP-032"],
     category: "theory_concept",
     source: ncsSource(
       "1505010108",

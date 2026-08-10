@@ -233,6 +233,7 @@ export function toPublicQuestion(question: Question): PublicQuestion {
     ...safeQuestion,
     choices: choices.map(({ id, order, text }) => ({ id, order, text })),
     provenance: {
+      submissionMode: "canonical",
       reconstructed: verification?.riskTags.includes("editorial_reconstruction") ?? false,
       historical: verification?.riskTags.includes("historical_context") ?? false,
       original: false,

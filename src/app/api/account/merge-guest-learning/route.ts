@@ -8,6 +8,7 @@ import {
   gradeReviewedOriginalVariant,
   isReviewedExactOriginalVariant,
 } from "@/lib/content/original-variant-practice";
+import { isSafeOriginalPracticeVariant } from "@/lib/content/practice-presentations";
 import {
   gradeQuestion,
   isPublishableLesson,
@@ -56,20 +57,21 @@ export async function POST(request: Request) {
       const variant = attempt.variantExternalId
         ? await getQuestionVariant(attempt.variantExternalId)
         : undefined;
-      if (
-        attempt.variantExternalId
-        && (
-          !variant
-          || variant.canonicalId !== question.id
-          || !isReviewedExactOriginalVariant(variant)
-        )
-      ) {
-        return NextResponse.json({ error: MERGE_ERROR }, { status: 409 });
+      let reviewedVariant: typeof variant;
+      if (attempt.variantExternalId) {
+        if (!variant || variant.canonicalId !== question.id) {
+          return NextResponse.json({ error: MERGE_ERROR }, { status: 409 });
+        }
+        if (isReviewedExactOriginalVariant(variant)) {
+          reviewedVariant = variant;
+        } else if (!isSafeOriginalPracticeVariant(question, variant)) {
+          return NextResponse.json({ error: MERGE_ERROR }, { status: 409 });
+        }
       }
-      const feedback = variant
+      const feedback = reviewedVariant
         ? gradeReviewedOriginalVariant(
             question,
-            variant,
+            reviewedVariant,
             attempt.selectedChoiceId,
             attempt.selfRating,
             lesson,
@@ -80,10 +82,14 @@ export async function POST(request: Request) {
             attempt.selfRating,
             lesson,
           );
-      sanitized.push({
-        ...attempt,
-        isCorrect: feedback.isCorrect,
-      });
+      const { variantExternalId: legacyVariantExternalId, ...canonicalAttempt } =
+        attempt;
+      void legacyVariantExternalId;
+      sanitized.push(
+        reviewedVariant
+          ? { ...attempt, isCorrect: feedback.isCorrect }
+          : { ...canonicalAttempt, isCorrect: feedback.isCorrect },
+      );
     } catch {
       return NextResponse.json({ error: MERGE_ERROR }, { status: 409 });
     }

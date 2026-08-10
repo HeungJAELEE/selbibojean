@@ -202,6 +202,7 @@ export type PublicQuestion = Omit<
 > & {
   choices: Array<Pick<Choice, "id" | "order" | "text">>;
   provenance: {
+    submissionMode?: "canonical" | "variant";
     reconstructed: boolean;
     historical: boolean;
     original: boolean;

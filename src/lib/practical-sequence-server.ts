@@ -13,14 +13,16 @@ function createPracticalSequenceFrameToken(
   questionId: string,
   visualAidId: string,
   frameId: string,
+  outputAssetHash: string,
 ) {
   return createHash("sha256")
     .update(
       JSON.stringify([
-        "practical-sequence-v1",
+        "practical-sequence-v2",
         questionId,
         visualAidId,
         frameId,
+        outputAssetHash,
       ]),
     )
     .digest("base64url")
@@ -29,7 +31,12 @@ function createPracticalSequenceFrameToken(
 
 function frameTokenEntries(questionId: string, visualAid: PracticalVisualAid) {
   return visualAid.frames.map((frame) => [
-    createPracticalSequenceFrameToken(questionId, visualAid.id, frame.id),
+    createPracticalSequenceFrameToken(
+      questionId,
+      visualAid.id,
+      frame.id,
+      frame.outputAssetHash,
+    ),
     frame,
   ] as const);
 }

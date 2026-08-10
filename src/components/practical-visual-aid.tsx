@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { PracticalVisualAid } from "@/lib/domain/practical-types";
+import { isSafeReconstructedNonOriginalVisualAid } from "@/lib/domain/practical-visual-policy";
 
 export function PracticalVisualAidFigure({
   visualAid,
@@ -20,6 +21,8 @@ export function PracticalVisualAidFigure({
   const isPrompt = mode === "prompt";
   const isLicensedEquivalent =
     visualAid.examMatchStatus === "licensed_equivalent";
+  const isReconstructedNonOriginal =
+    isPrompt && isSafeReconstructedNonOriginalVisualAid(visualAid);
   const frameById = new Map(
     visualAid.frames.map((frame) => [frame.id, frame] as const),
   );
@@ -41,13 +44,18 @@ export function PracticalVisualAidFigure({
       {isPrompt ? (
         <div
           className={`border-b px-5 py-3 ${
-            isLicensedEquivalent
+            isLicensedEquivalent || isReconstructedNonOriginal
               ? "border-amber-200 bg-amber-50"
               : "border-slate-200 bg-slate-50"
           }`}
         >
-          <p className="text-sm font-extrabold text-[#173957]">
-            {isLicensedEquivalent
+          <p
+            data-testid="practical-visual-prompt-source-notice"
+            className="text-sm font-extrabold text-[#173957]"
+          >
+            {isReconstructedNonOriginal
+              ? "NCS 근거 기반 자체 제작 복원 도식이며, 원시험 원본 이미지가 아닙니다."
+              : isLicensedEquivalent
               ? "저작권 문제로 NCS·외부 공개 자료를 활용하였으며, 원시험 이미지와 동일하지 않습니다."
               : "NCS 원문 이미지"}
           </p>

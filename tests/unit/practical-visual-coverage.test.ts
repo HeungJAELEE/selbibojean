@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { PRACTICAL_VISUAL_AIDS } from "@/data/source/practical-source-registry";
 import {
+  isApprovedReconstructedPastPromptVisualMapping,
   PRACTICAL_VISUAL_COVERAGE,
   visualAidIdsForQuestion,
   visualAidIdsForSubjectSummary,
@@ -13,6 +14,17 @@ const sequenceStepIds = new Set(
     card.sequenceSteps.map((step) => step.id),
   ),
 );
+const reconstructedPastPromptMappings = new Map([
+  ["P-2025-1-Q05", "diagram-third-angle-projection-problem"],
+  ["P-2025-1-Q09", "diagram-ghs-pictograms-problem"],
+  ["P-2025-2-Q03", "diagram-bracket-drawing-annotations"],
+  ["P-2025-2-Q05", "diagram-vernier-48-2"],
+  ["P-2025-3-Q04", "diagram-thread-profiles"],
+  ["P-2025-3-Q05", "diagram-shaft-misalignment"],
+  ["P-2025-3-Q07", "diagram-dial-vblock"],
+  ["P-2026-1-Q03", "diagram-drive-unit-section-labels"],
+  ["P-2026-1-Q09", "diagram-external-gear-pump-drawing"],
+]);
 
 describe("representative practical visual coverage", () => {
   it("tracks every curated visual coverage item as ready", () => {
@@ -56,6 +68,41 @@ describe("representative practical visual coverage", () => {
         });
       }
     }
+  });
+
+  it("approves exactly nine one-to-one reconstructed past prompt mappings", () => {
+    const approvedItems = PRACTICAL_VISUAL_COVERAGE.filter(
+      (item) =>
+        item.pastPromptTreatment === "reconstructed_non_original",
+    );
+
+    expect(approvedItems).toHaveLength(reconstructedPastPromptMappings.size);
+    for (const item of approvedItems) {
+      expect(item.questionIds).toHaveLength(1);
+      expect(item.visualAidIds).toHaveLength(1);
+      expect(reconstructedPastPromptMappings.get(item.questionIds[0])).toBe(
+        item.visualAidIds[0],
+      );
+      expect(
+        isApprovedReconstructedPastPromptVisualMapping(
+          item.questionIds[0],
+          item.visualAidIds[0],
+        ),
+      ).toBe(true);
+    }
+
+    expect(
+      isApprovedReconstructedPastPromptVisualMapping(
+        "P-2025-1-Q05",
+        "diagram-oee-six-losses",
+      ),
+    ).toBe(false);
+    expect(
+      isApprovedReconstructedPastPromptVisualMapping(
+        "P-2025-2-Q05",
+        "ncs-vernier-reading",
+      ),
+    ).toBe(false);
   });
 
   it("limits subject summary visuals to the curated low-density set", () => {
@@ -167,6 +214,16 @@ describe("representative practical visual coverage", () => {
       conceptIds: ["PCON-SUP-043"],
       questionIds: ["P-2026-2-Q06"],
       visualAidIds: ["diagram-grinding-wheel-safety"],
+      status: "ready",
+    });
+    expect(
+      PRACTICAL_VISUAL_COVERAGE.find(
+        (item) => item.id === "visual-coverage-drip-lubrication",
+      ),
+    ).toMatchObject({
+      conceptIds: ["PCON-SUP-032"],
+      questionIds: ["P-2026-2-Q05"],
+      visualAidIds: ["diagram-drip-lubrication"],
       status: "ready",
     });
   });

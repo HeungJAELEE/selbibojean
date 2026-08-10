@@ -1936,7 +1936,7 @@
       "status": "past_reconstructed",
       "variantOfEvidenceId": null,
       "conceptIds": [
-        "PCON-SUP-039"
+        "PCON-SUP-032"
       ],
       "taskIds": [],
       "questionIds": [
@@ -1965,7 +1965,7 @@
       "learningKeywords": [
         "적하급유법 분류",
         "보기에서 적하급유법 모두 고르기",
-        "PCON-SUP-039"
+        "PCON-SUP-032"
       ],
       "gradingRequiredKeywords": [
         "사이펀급유법",

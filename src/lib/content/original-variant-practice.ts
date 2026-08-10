@@ -104,6 +104,7 @@ export function toReviewedOriginalPublicQuestion(
     choices,
     sourceLabel: variant.sourceUrl,
     provenance: {
+      submissionMode: "variant",
       reconstructed: false,
       historical: publicQuestion.provenance.historical,
       original: true,

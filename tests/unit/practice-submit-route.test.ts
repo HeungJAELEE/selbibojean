@@ -7,6 +7,7 @@ const mocks = vi.hoisted(() => ({
   gradeQuestion: vi.fn(),
   gradeReviewedOriginalVariant: vi.fn(),
   isReviewedExactOriginalVariant: vi.fn(),
+  isSafeOriginalPracticeVariant: vi.fn(),
   createServerClient: vi.fn(),
 }));
 
@@ -32,6 +33,10 @@ vi.mock("@/lib/domain/practice", () => ({
   isPublishableQuestion: () => true,
   isPublishableLesson: () => true,
   gradeQuestion: mocks.gradeQuestion,
+}));
+
+vi.mock("@/lib/content/practice-presentations", () => ({
+  isSafeOriginalPracticeVariant: mocks.isSafeOriginalPracticeVariant,
 }));
 
 vi.mock("@/lib/supabase/server", () => ({
@@ -77,6 +82,7 @@ describe("POST /api/practice/submit", () => {
     mocks.gradeQuestion.mockReturnValue(feedback);
     mocks.gradeReviewedOriginalVariant.mockReturnValue(feedback);
     mocks.isReviewedExactOriginalVariant.mockReturnValue(true);
+    mocks.isSafeOriginalPracticeVariant.mockReturnValue(false);
   });
 
   it("records an authenticated exact source variant through the variant RPC", async () => {
@@ -181,5 +187,76 @@ describe("POST /api/practice/submit", () => {
       "record_variant_attempt",
       expect.anything(),
     );
+  });
+
+  it("accepts the U-297 legacy 2020-4-Q71 presentation but grades and records it canonically", async () => {
+    mocks.getQuestion.mockResolvedValue({
+      id: "U-297",
+      lessonId: "lesson-297",
+      stem: "스퍼·헬리컬·베벨기어 등 밀폐식 기어장치에 적합한 급유법은?",
+    });
+    mocks.getLesson.mockResolvedValue({ id: "lesson-297" });
+    mocks.getQuestionVariant.mockResolvedValue({
+      canonicalId: "U-297",
+      externalId: "2020-4-Q71",
+    });
+    mocks.isReviewedExactOriginalVariant.mockReturnValue(false);
+    mocks.isSafeOriginalPracticeVariant.mockReturnValue(true);
+    const rpc = vi.fn().mockResolvedValue({
+      data: "attempt-canonical-297",
+      error: null,
+    });
+    mocks.createServerClient.mockResolvedValue({
+      auth: {
+        getUser: vi.fn().mockResolvedValue({
+          data: { user: { id: "user-1" } },
+        }),
+      },
+      rpc,
+    });
+    const { POST } = await import("@/app/api/practice/submit/route");
+
+    const response = await POST(
+      submit({
+        questionId: "U-297",
+        variantExternalId: "2020-4-Q71",
+        choiceId: "U-297-c2",
+      }),
+    );
+
+    expect(response.status).toBe(200);
+    expect(mocks.gradeQuestion).toHaveBeenCalledWith(
+      expect.objectContaining({ id: "U-297" }),
+      "U-297-c2",
+      "known",
+      expect.objectContaining({ id: "lesson-297" }),
+    );
+    expect(mocks.gradeReviewedOriginalVariant).not.toHaveBeenCalled();
+    expect(rpc).toHaveBeenCalledWith(
+      "record_attempt",
+      expect.objectContaining({
+        p_question_external_id: "U-297",
+        p_selected_choice_external_id: "U-297-c2",
+      }),
+    );
+    expect(rpc).not.toHaveBeenCalledWith(
+      "record_variant_attempt",
+      expect.anything(),
+    );
+  });
+
+  it("still rejects an unreviewed variant that is not a safe legacy presentation", async () => {
+    mocks.isReviewedExactOriginalVariant.mockReturnValue(false);
+    mocks.isSafeOriginalPracticeVariant.mockReturnValue(false);
+    mocks.createServerClient.mockResolvedValue(null);
+    const { POST } = await import("@/app/api/practice/submit/route");
+
+    const response = await POST(
+      submit({ variantExternalId: "variant-1" }),
+    );
+
+    expect(response.status).toBe(404);
+    expect(mocks.gradeQuestion).not.toHaveBeenCalled();
+    expect(mocks.gradeReviewedOriginalVariant).not.toHaveBeenCalled();
   });
 });

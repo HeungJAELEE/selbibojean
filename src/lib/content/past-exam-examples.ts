@@ -22,6 +22,7 @@ export type PastExamFormat = "calculation" | "diagnosis" | "negative" | "concept
 export type PastExamExample = {
   externalId: string;
   canonicalId: string;
+  submissionMode?: "canonical" | "variant";
   year: number;
   sessionLabel: string;
   questionNumber: number | null;
@@ -238,6 +239,7 @@ function collectVerifiedPastExamExamples(
     examples.push({
       externalId: variant.externalId,
       canonicalId: variant.canonicalId,
+      submissionMode: reviewedExact ? "variant" : "canonical",
       year: variant.year,
       sessionLabel: variant.sessionLabel,
       questionNumber: variant.questionNumber,
@@ -278,6 +280,7 @@ function toPastExamExample(example: RankedExample): PastExamExample {
   return {
     externalId: example.externalId,
     canonicalId: example.canonicalId,
+    submissionMode: example.submissionMode,
     year: example.year,
     sessionLabel: example.sessionLabel,
     questionNumber: example.questionNumber,

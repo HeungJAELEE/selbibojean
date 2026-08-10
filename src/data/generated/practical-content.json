@@ -3069,7 +3069,7 @@
         "보기의 선택지 순서를 바꿔도 세 방식이 모두 있어야 한다."
       ],
       "conceptIds": [
-        "PCON-SUP-039"
+        "PCON-SUP-032"
       ],
       "primaryStudyCategoryId": "theory_concept",
       "studyCategoryIds": [
@@ -28057,6 +28057,7 @@
     {
       "contentRole": "supplemental",
       "labels": [
+        "practical_exam",
         "predicted_exam"
       ],
       "components": [
@@ -28101,13 +28102,17 @@
         "회전속도만으로 급유방식을 결정하지 않음",
         "그리스를 많이 넣을수록 좋다고 쓰지 않음"
       ],
-      "relatedPastQuestionIds": [],
+      "relatedPastQuestionIds": [
+        "P-2026-2-Q05"
+      ],
       "relatedPredictedQuestionIds": [
         "EXP-SUP-032"
       ],
       "existingLessonId": null,
       "theoryTreatment": "NCS 원문 기반 실기 보강 레슨 (+보강용)",
-      "visualAidIds": [],
+      "visualAidIds": [
+        "diagram-drip-lubrication"
+      ],
       "contentStatus": "published",
       "id": "PCON-SUP-032",
       "title": "베어링 윤활방식·급유점검",
@@ -28689,7 +28694,6 @@
     {
       "contentRole": "supplemental",
       "labels": [
-        "practical_exam",
         "predicted_exam"
       ],
       "components": [
@@ -28731,17 +28735,13 @@
         "리미트스위치를 비접촉 근접센서로 설명하지 않음",
         "정격·보호등급은 제조사 사양 없이 임의로 단정하지 않음"
       ],
-      "relatedPastQuestionIds": [
-        "P-2026-2-Q05"
-      ],
+      "relatedPastQuestionIds": [],
       "relatedPredictedQuestionIds": [
         "EXP-SUP-039"
       ],
       "existingLessonId": null,
       "theoryTreatment": "NCS 원문 기반 실기 보강 레슨 (+보강용)",
-      "visualAidIds": [
-        "diagram-drip-lubrication"
-      ],
+      "visualAidIds": [],
       "contentStatus": "published",
       "id": "PCON-SUP-039",
       "title": "리미트스위치와 기계식 위치검출",
@@ -31628,9 +31628,9 @@
         "PCON-SUP-014",
         "PCON-SUP-015",
         "PCON-SUP-016",
+        "PCON-SUP-032",
         "PCON-SUP-035",
         "PCON-SUP-036",
-        "PCON-SUP-039",
         "PCON-SUP-040",
         "PCON-NCS-JIG-FIXTURE",
         "PCON-NCS-WELD-VERTICAL",

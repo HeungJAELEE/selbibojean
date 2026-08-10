@@ -325,6 +325,12 @@ export type PracticalVisualCoverageItem = {
   visualRequirement: PracticalVisualRequirement;
   visualAidIds: string[];
   status: "ready" | "held" | "not_required";
+  /**
+   * 원시험 원본이 아니라 복원 문항의 판독 조건을 다시 그린 자체 제작
+   * 도식임을 명시한다. 이 표시는 전역 공개 허용이 아니라 이 coverage의
+   * 단일 문항-도식 매핑에만 적용된다.
+   */
+  pastPromptTreatment?: "reconstructed_non_original";
   rationale: string;
 };
 
